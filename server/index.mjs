@@ -300,9 +300,10 @@ export function createRolecraftServer(options={}) {
 }
 
 if(process.argv[1] && path.resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
-  const port=Number(process.env.ROLECRAFT_PORT || 4318);
+  const port=Number(process.env.PORT || process.env.ROLECRAFT_PORT || 4318);
   if(!Number.isInteger(port)||port<1024||port>65535)throw Error('ROLECRAFT_PORT must be 1024–65535');
+  const host=process.env.HOST || '127.0.0.1';
   const app=createRolecraftServer();
-  app.server.listen(port,'127.0.0.1',()=>process.stdout.write(`Rolecraft ${PRODUCT_VERSION}: http://127.0.0.1:${port}\nLocal development; persistent SQLite in ${app.dataDir}\n`));
+  app.server.listen(port,host,()=>process.stdout.write(`Rolecraft ${PRODUCT_VERSION}: http://${host}:${port}\nPersistent SQLite in ${app.dataDir}\n`));
   let stopping=false;for(const signal of ['SIGINT','SIGTERM'])process.on(signal,async()=>{if(stopping)return;stopping=true;await app.close();process.exitCode=0;});
 }
