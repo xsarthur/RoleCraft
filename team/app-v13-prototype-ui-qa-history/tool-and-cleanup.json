@@ -1,0 +1,38 @@
+{
+  "recordedAtUtc": "2026-10-12T00:58:13.722819+00:00",
+  "tool": {
+    "toolBatch": "original size click -> record -> Escape -> record/read focus -> download event and click -> path -> record",
+    "toolReturned": "aborted by user after1456.2s; no batch output",
+    "countedAsComplete": false,
+    "recovery1": "tab.getAXState: tab is not defined; REPL variables lost after interruption",
+    "recovery2": "official cua.getState returned native apps and browsers:[]",
+    "classification": "tool_execution_blocker_not_product_defect",
+    "alternateSurfaceUsed": false,
+    "hiddenStorageEvaluateUsed": false,
+    "privateProtocolUsed": false
+  },
+  "cleanup": {
+    "qaOrigin": "http://127.0.0.1:4474",
+    "node": "v24.16.0",
+    "pid": 36393,
+    "ptySession": 83753,
+    "dataDir": "/var/folders/v5/yy0xf3tx1gddnb0qz7skr8wr0000gn/T/rolecraft-ui-qa-v13-0pRxMz",
+    "generationConfigured": false,
+    "seedServiceRun": false,
+    "serverClosedBy": "SIGINT via own PTY",
+    "exitCode": 0,
+    "closeOutput": "^C{\"phase\":\"ui-qa-candidate\",\"closed\":true}",
+    "listenerCheck": "lsof -nP -iTCP:4474 -sTCP:LISTEN exit1 empty; no listener",
+    "tabId": "1",
+    "tabCloseStatus": "unconfirmed_official_browser_unavailable",
+    "viewportOverride": {
+      "width": 857,
+      "height": 1120
+    },
+    "viewportResetStatus": "unconfirmed_official_browser_unavailable",
+    "user4318Operated": false,
+    "mainQA4473Operated": false,
+    "realUserDatabaseRead": false,
+    "realBrowserUserRecordsRead": false
+  }
+}

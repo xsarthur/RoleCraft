@@ -1,0 +1,18 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4475/#records".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 71-91
+~					64 text 本次表达： React 是前端框架还是 Agent 的方法？我想学它。
+~				65 text 提交时：未限定起点 · 全部 30 篇
+~				66 text 本地概念检索 · 未调用语义模型
+~				67 heading 补充一个信息, Value: 3
+~					68 text 补充一个信息
+~				69 text 你想找哪个方向的内容？当前教材讲解 Agent ReAct，不提供前端 React 教程。
+~				70 button Agent 的 ReAct 方法
++				71 button 前端 React 框架
++				72 text 选择后重新查找，也可以直接改写表达。
++		73 container lw-find-form
++			74 text 查教材
++			75 text entry area (settable) 查教材, Value: React 是前端框架还是 Agent 的方法？我想学它。, ID: lw-query
++			76 button 查找
++			77 button (expanded) Description: 收起检索结果, Secondary Actions: Collapse
+The focused UI element is 75 text entry area (settable) 查教材, Value: React 是前端框架还是 Agent 的方法？我想学它。, ID: lw-query

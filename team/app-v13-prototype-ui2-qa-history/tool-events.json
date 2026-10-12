@@ -1,0 +1,39 @@
+{
+  "environmentIssues": [
+    {
+      "event": "sandbox_listen_EPERM",
+      "scope": "own4475 seed startup",
+      "resolution": "native require_escalated auto-review approved authorized local preview, then own seed started"
+    },
+    {
+      "event": "frozen_source_copy_initially_incomplete",
+      "scope": "v14 shared source moved while assembling fixture",
+      "resolution": "No mixed app UI executed; complete candidate02 SHA-matching static copy used. Failed candidate exited1 before listen."
+    },
+    {
+      "event": "snapshot_or_locator_observation_mismatch",
+      "scope": "summary/exact link labels and first hash-only navigation after seed server switch",
+      "resolution": "Preserved first observation, used fresh DOM labels/reload and separately saved real product observation; not product defects."
+    },
+    {
+      "event": "download_listener_across_calls_timeout",
+      "timeoutMs": 15000,
+      "resolution": "Not counted; subsequent same short call did listener+click and got actual download event."
+    },
+    {
+      "event": "first_valid_download_tool_long_return",
+      "requestedToolTimeoutMs": 45000,
+      "actualWallSeconds": 121.6829,
+      "result": "Actual file path returned and bytes independently checked. Later event/click and path were split and returned promptly."
+    },
+    {
+      "event": "official_IAB_resource_block",
+      "url": "http://127.0.0.1:4486/api/content/reference/n03-plan-execution.py?version=textbook-v12",
+      "reported": "net::ERR_BLOCKED_BY_CLIENT",
+      "action": "Stop this resource action; no surface/protocol/host/proxy/repackaging bypass."
+    }
+  ],
+  "failedStartupTempDirsRemoved": [
+    "/var/folders/v5/yy0xf3tx1gddnb0qz7skr8wr0000gn/T/rolecraft-ui2-qa-v13-UMvlHT"
+  ]
+}

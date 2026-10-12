@@ -1,0 +1,26 @@
+{
+  "recordedAtUtc": "2026-10-11T16:26:49.465232+00:00",
+  "humanDate": "2026-10-12",
+  "timezone": "Asia/Shanghai",
+  "actualAttempts": [
+    {
+      "api": "cua.getState()",
+      "result": "browsers: []",
+      "scope": "Only browser inventory; no private browser history or user records inspected."
+    },
+    {
+      "api": "agent.documentation.get(browser-troubleshooting)",
+      "result": "Official documentation read; no hidden protocol/alternate driver or settings change."
+    },
+    {
+      "api": "cua.getBrowser({id:2})",
+      "basis": "PM same-round inventory reports public IAB browser ID2",
+      "result": "Browser is not available: 2",
+      "role": "One official recovery attempt"
+    }
+  ],
+  "browserOperationConclusion": "insufficient",
+  "newQaTabsCreated": 0,
+  "userTabsChanged": false,
+  "limitation": "No real new UI reading/search/navigation/record test yet. HTTP/static evidence will be labeled separately; no prior UI result inherited."
+}

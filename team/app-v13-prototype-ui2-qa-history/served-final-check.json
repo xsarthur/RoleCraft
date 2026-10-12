@@ -1,0 +1,77 @@
+{
+  "version": "ui2-qa-final-served-check-1",
+  "runtime": "v24.16.0",
+  "port": 4486,
+  "files": [
+    {
+      "name": "index.html",
+      "status": 200,
+      "servedSha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+      "frozenSha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+      "equal": true
+    },
+    {
+      "name": "app.js",
+      "status": 200,
+      "servedSha256": "05167ec7df6cea51d6e137aaa0ff53ea4cb949a66a4c813d6ce7167651b2f30e",
+      "frozenSha256": "05167ec7df6cea51d6e137aaa0ff53ea4cb949a66a4c813d6ce7167651b2f30e",
+      "equal": true
+    },
+    {
+      "name": "learning-workbench.js",
+      "status": 200,
+      "servedSha256": "55c6f5db634d1b723e863fe9a94f604fadcf895c15acbb984025d35be15c6266",
+      "frozenSha256": "55c6f5db634d1b723e863fe9a94f604fadcf895c15acbb984025d35be15c6266",
+      "equal": true
+    },
+    {
+      "name": "learning-experience-v13.js",
+      "status": 200,
+      "servedSha256": "e731f617891e8a08ea52e5f58267a47c3ff9c43d0ae12dd6c7d443576afdf42f",
+      "frozenSha256": "e731f617891e8a08ea52e5f58267a47c3ff9c43d0ae12dd6c7d443576afdf42f",
+      "equal": true
+    },
+    {
+      "name": "learning-experience-v13.css",
+      "status": 200,
+      "servedSha256": "87d7c3207eb615022b8298e2fa955f72227672c71d7d8fab47c70cad40dd15fd",
+      "frozenSha256": "87d7c3207eb615022b8298e2fa955f72227672c71d7d8fab47c70cad40dd15fd",
+      "equal": true
+    },
+    {
+      "name": "learning-v13-data.js",
+      "status": 200,
+      "servedSha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "frozenSha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "equal": true
+    }
+  ],
+  "healthStatus": 200,
+  "health": {
+    "productVersion": "local-mvp-0.4",
+    "mode": "local-development",
+    "generation": {
+      "configured": false,
+      "missing": [
+        "OPENAI_API_KEY",
+        "OPENAI_MODEL",
+        "OPENAI_MAX_OUTPUT_TOKENS",
+        "ROLECRAFT_GENERATION_BUDGET_USD",
+        "ROLECRAFT_ESTIMATED_MAX_COST_USD"
+      ]
+    },
+    "contentRetrieval": {
+      "available": true,
+      "retrievalVersion": "content-retrieval-0.12-v12",
+      "corpusVersion": "textbook-v12",
+      "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+      "units": 30,
+      "localSemanticPrepared": true,
+      "runtimeSupported": true,
+      "requiredNodeMajor": 24,
+      "nodeVersion": "v24.16.0",
+      "providerCalled": false
+    }
+  },
+  "meaning": "Final frozen e731/87d7 client bytes over actual HTTP; current extended compatibility server is separately identified, not old backend whole regression."
+}

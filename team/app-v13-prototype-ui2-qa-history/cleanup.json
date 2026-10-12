@@ -1,0 +1,95 @@
+{
+  "at": "2026-10-12T09:27:53.391148",
+  "phases": [
+    {
+      "port": 4475,
+      "kind": "seed",
+      "pid": 40259,
+      "session": 16773,
+      "closedExitCode": 0
+    },
+    {
+      "port": 4475,
+      "kind": "frozen7fc/d190",
+      "pid": 40517,
+      "session": 97818,
+      "closedExitCode": 0,
+      "noListenerAtClose": true
+    },
+    {
+      "port": 4486,
+      "kind": "seed-empty",
+      "pid": 42166,
+      "session": 6426,
+      "closedExitCode": 0
+    },
+    {
+      "port": 4486,
+      "kind": "frozen-e731/d190",
+      "pid": 42572,
+      "session": 76757,
+      "closedExitCode": 0
+    },
+    {
+      "port": 4486,
+      "kind": "seed-valid-legacy",
+      "pid": 42954,
+      "session": 39618,
+      "closedExitCode": 0
+    },
+    {
+      "port": 4486,
+      "kind": "frozen-e731/d190-valid-legacy",
+      "pid": 42997,
+      "session": 33383,
+      "closedExitCode": 0
+    },
+    {
+      "port": 4486,
+      "kind": "seed-corrupt-v10",
+      "pid": 43391,
+      "session": 21638,
+      "closedExitCode": 0
+    },
+    {
+      "port": 4486,
+      "kind": "frozen-e731/87d7-corrupt-history-mobile-retest",
+      "pid": 43401,
+      "session": 2884,
+      "closedExitCode": 0,
+      "noListenerAtClose": true
+    }
+  ],
+  "4485OccupiedPid40760NotOperated": true,
+  "final4486NoListener": true,
+  "viewportReset": true,
+  "ownedTab1Closed": true,
+  "user4318NotOperated": true,
+  "userDatabaseNotReadOrModified": true,
+  "tempRuntimeCleaned": [
+    {
+      "path": "/var/folders/v5/yy0xf3tx1gddnb0qz7skr8wr0000gn/T/rolecraft-ui2-qa-v13-9Kb83J",
+      "existed": true,
+      "removed": true
+    },
+    {
+      "path": "/var/folders/v5/yy0xf3tx1gddnb0qz7skr8wr0000gn/T/rolecraft-ui2-qa-v13-yQSjRl",
+      "existed": true,
+      "removed": true
+    },
+    {
+      "path": "/var/folders/v5/yy0xf3tx1gddnb0qz7skr8wr0000gn/T/rolecraft-ui2-qa-v13-TXZhsA",
+      "existed": true,
+      "removed": true
+    },
+    {
+      "path": "/var/folders/v5/yy0xf3tx1gddnb0qz7skr8wr0000gn/T/rolecraft-ui2-qa-v13-bwpcyg",
+      "existed": true,
+      "removed": true
+    }
+  ],
+  "downloadArtifacts": "Returned new QA browser downloads kept; exact copies stored in this evidence directory.",
+  "extraFailedStartupTemporaryDirectoriesRemoved": [
+    "/var/folders/v5/yy0xf3tx1gddnb0qz7skr8wr0000gn/T/rolecraft-ui2-qa-v13-UMvlHT"
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "boundAtUtc": "2026-10-11T17:01:02.023499+00:00",
+  "humanDate": "2026-10-12",
+  "timezone": "Asia/Shanghai",
+  "auditor": "独立测试工程师 /root/qa_app_retrieval_v11",
+  "artifactVersion": {
+    "clientVersion": "local-workbench-0.12-textbook",
+    "retrievalVersion": "content-retrieval-0.12-v12",
+    "corpusVersion": "textbook-v12",
+    "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+    "bookSha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+    "runtimeActuallyTested": "Node.js v24.16.0",
+    "modelActuallyInferred": {
+      "modelId": "Xenova/bge-small-zh-v1.5",
+      "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+      "dtype": "int8",
+      "pooling": "cls",
+      "dimensions": 512,
+      "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5"
+    },
+    "finalCoreSha256": "b3535b2249effdb0118713295ae9b86e117e0d86c86041aade3e8c33a0fc092d",
+    "chapterCount": 30,
+    "sectionCount": 273,
+    "vectorChunks": 561,
+    "vectorDimensions": 512
+  },
+  "conclusions": {
+    "verifiedStaticHttpVmScope": "met_within_scope",
+    "allRequiredIntegrationConditions": "insufficient",
+    "formalLearningProduct": "not_met",
+    "reason": "必要实际UI证据缺失；两个原正式产品门槛fail，其余证据不足，不能由局部检索或教材接入抵消。"
+  },
+  "files": [
+    {
+      "path": "dist/app.js",
+      "bytes": 91914,
+      "sha256": "cc361b3a8debb8318518ca7856f0d227a025ced56600eda10edd160cc1569d19"
+    },
+    {
+      "path": "dist/content-retrieval-core.js",
+      "bytes": 24073,
+      "sha256": "b3535b2249effdb0118713295ae9b86e117e0d86c86041aade3e8c33a0fc092d"
+    },
+    {
+      "path": "dist/content-v12-data.js",
+      "bytes": 1545912,
+      "sha256": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 4756,
+      "sha256": "5c69d6037a73393b190c708bff14c4118f7462fbc7942aca48732e5f484507c3"
+    },
+    {
+      "path": "dist/learning-workbench.js",
+      "bytes": 53317,
+      "sha256": "b708c0fb6cc58c9e48698c65671964ca5511ba91e6e98675bd54e56d19879d7b"
+    },
+    {
+      "path": "server/index.mjs",
+      "bytes": 31639,
+      "sha256": "63cee03519aaeb53257108227d17464bc3fb8942a7636ea87fddd13a76d2182b"
+    },
+    {
+      "path": "server/retrieval/content-v12-index.json",
+      "bytes": 1591766,
+      "sha256": "ac87bfa9c88f6e1709fc59c05fc3af1fcf98b7274aeb1be48a07e490578bdd6b"
+    },
+    {
+      "path": "server/retrieval/index.mjs",
+      "bytes": 7744,
+      "sha256": "acc8555c9b23603f04afa20ff7dd6eb2fc5429894b7474814d4b16114e1ded0d"
+    },
+    {
+      "path": "server/retrieval/intent-vectors-v12.json",
+      "bytes": 606009,
+      "sha256": "cd0f1e55e25d9b275558baf1693f0721b6ae9eb896a7519c582e8e75a0b51431"
+    },
+    {
+      "path": "server/retrieval/semantic.mjs",
+      "bytes": 16045,
+      "sha256": "d101163e0934cac93309265c4949fccbc9fe304120c5954ef9466a4fe68a4115"
+    },
+    {
+      "path": "server/retrieval/vectors-v12.json",
+      "bytes": 6084178,
+      "sha256": "c28e1e27e7185638aeecc4357498ae19e99f5277e5d271a7d529e57aa1754164"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-frontend-binding.json",
+      "bytes": 1510,
+      "sha256": "3d7b28edac784d0ce20f8f60d89c08ec11af3223755d73e2f9634c74e976ab9d"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-frontend.md",
+      "bytes": 5495,
+      "sha256": "36544f0c72c893da5047c1982fe7fa3085414079503529208477c87fbbce3604"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-product.md",
+      "bytes": 11185,
+      "sha256": "5803ff5be1af9b6db081ff519505f7531af9bb2c5426d3f879ef26bdfe483765"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-baseline.json",
+      "bytes": 173586,
+      "sha256": "54cab64ef8ad90940bd83020212ec192ef8aec1fd7d920911fbd5465a8f97b98"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/affected-retest-cases.json",
+      "bytes": 2294,
+      "sha256": "a4128a567fc3c4e432bdb6e28dbf855fb29862fc2989c0fea2c358fcafd23629"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/baseline-scope-reconciliation.json",
+      "bytes": 2873,
+      "sha256": "8c37a228b6fa0012ad8eadc9a0add297ed3c363862cd22e97c5ba0c545bd45c4"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/check-client-logic.mjs",
+      "bytes": 11336,
+      "sha256": "1cec6e881d552ee2bf19d4bd1c8e739abcfdac84646c6f1a2a61132870b1373a"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/check-mismatch.mjs",
+      "bytes": 3864,
+      "sha256": "3e66f3de8d9f3b1b8330289daf30db8fb9dcaee30953f488ce5fd2346602d071"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/check-transport.mjs",
+      "bytes": 6729,
+      "sha256": "4d72e962e785cd767bdd76797298f665ccc20513ab7229e6134460dc0299d6f2"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/cleanup-final.json",
+      "bytes": 1055,
+      "sha256": "aa9611a13941ba7c418aabb5b909eb9ce199daf932bfb2794e8e7ade00977518"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/client-logic-candidate.json",
+      "bytes": 100443,
+      "sha256": "3ef6f28aa34c17a306008309962497f373f37487d1d3c6a68a6622fa71b3d3ad"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/client-logic-extended.json",
+      "bytes": 100667,
+      "sha256": "5aa26a3af57215a04b450dfcd2dce1f4823ba58785463d6fe8675ee14c1bdd5b"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/client-logic-final.json",
+      "bytes": 100902,
+      "sha256": "bdc82885d7a35b5f2f3cda4554f4fbfe1eef07cb85355006a9d8e315b36cff34"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/final-version-binding.json",
+      "bytes": 37495,
+      "sha256": "d1c41c3d293f2bc15fad8d1c6d2c83781b40fda3065b30f222946127e2c0e8c8"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/frozen-query-cases.json",
+      "bytes": 6149,
+      "sha256": "df80515266d5702b370a4e5eb14810eb1071604a6c048ed56e4471dddb9f527a"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/harness-setup-notes.json",
+      "bytes": 2048,
+      "sha256": "5d41d09e8b17be548a64df9a65e446de05aa6809d993a0b3d7adfad264e4057a"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/http-candidate.json",
+      "bytes": 142240,
+      "sha256": "d1330cf6429a96ad4bbccfd30ff30175b0c754ac3966072d4308b0a8d438326f"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/http-repair-empty-selection.json",
+      "bytes": 1495,
+      "sha256": "5cfe4b197ce8e4eeea4472d6995288fcd6ae5e04312db9efc91b0c26e6685144"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/http-repair.json",
+      "bytes": 55094,
+      "sha256": "b1fb3db89726e8acd66c46ebb8f535a0e111feb08f372bb71b5b39556fc8bfd4"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/mismatch-http.json",
+      "bytes": 13089,
+      "sha256": "4c0d6bb7d727a629cd5866689ddda198f1e96dcf19093610ee12d73e3c5df6f9"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/plan.json",
+      "bytes": 1683,
+      "sha256": "cb77dcc0130f4960a09903a9305242a089a94c2937b6a7c208c12e33a4222229"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/protected-final.json",
+      "bytes": 274113,
+      "sha256": "6a17fc78fb7d423e6e12456aff52cc91425d8fb14e3cd7c77c92167ad2ab337a"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/report-selfcheck.json",
+      "bytes": 740,
+      "sha256": "94cce3347c8a7f274d07752f9a00132c633057e3cac1146d485f91f5d6cdc5ba"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/resource-types-entry.json",
+      "bytes": 2223,
+      "sha256": "7742e66c1296ad9d390b8ea74820aa27162171b5e73a5b0a6629d8a65ba02d14"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/run-query-cases.mjs",
+      "bytes": 4721,
+      "sha256": "6907de02d0a0d62172272b7f8ecdb4a25bfc026b50c4af9af097af9fade159de"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/start-server.mjs",
+      "bytes": 671,
+      "sha256": "f5fd7f1a178724fe60eca355494e0184d365599e7dd83b06681d1e739ff86022"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/static-source-candidate.json",
+      "bytes": 22826,
+      "sha256": "6105bd636a228382411eb2892780bb37f34b4d7fa98345b9afea6f431eb809e2"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/transport-candidate.json",
+      "bytes": 163266,
+      "sha256": "d860787004d4d2a8064fb2e24b0cf13a4378eaedca8f4a57969dd62f9eb7fa80"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa-history/ui-availability.json",
+      "bytes": 971,
+      "sha256": "ecabb0c2ba28981a479fbf248267c00608193ba7ffa2cc6cd0a9ef1d9b790ea7"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa.json",
+      "bytes": 32785,
+      "sha256": "816a38da6bbe72152a8eead84576fd78445a09047c8c9d1a40b059562724a979"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-qa.md",
+      "bytes": 12210,
+      "sha256": "3f5d3a22ba1981bc87b28eba7d4cf9d75cdc9f9e9d12ba97b8a2714a398042ea"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-retrieval-binding.json",
+      "bytes": 20926,
+      "sha256": "066e5f1292649af2c2e204a8fea61f6adf5bd8eb775a66feb46fa7d3d2ca1e16"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-retrieval-preview.json",
+      "bytes": 12529,
+      "sha256": "12ed7c1906881b80ff06644c7efa65302dfcd7ed097ad32ef5933547090e00ea"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-retrieval.md",
+      "bytes": 9132,
+      "sha256": "316fd376d4e2484a1032eeef34dbbe7df40e5fd75da09b53d1d4622bc5ab63ff"
+    },
+    {
+      "path": "team/product-gates.json",
+      "bytes": 8080,
+      "sha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06"
+    },
+    {
+      "path": "textbooks/v12/agent-engineering-textbook.md",
+      "bytes": 523145,
+      "sha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e"
+    },
+    {
+      "path": "textbooks/v12/assembly-manifest.json",
+      "bytes": 3749,
+      "sha256": "16907987dcebb2195f9bae4df3f0648d566f597f49722e681fb589b87e32305e"
+    }
+  ],
+  "scope": "Final independent QA reports/new evidence and exact current public professional version files. Original received799 list/797 match plus authorized2 administrative prefix proof remain unedited in evidence. This manifest excludes itself and live PM administrative TASKS/RETROSPECTIVES to avoid cyclic hashes or preventing authorized AP12/R19 closure. No private DB/env/browser data.",
+  "professionalDeclaredArtifactCount": 119,
+  "professionalDeclarationEvidence": "team/app-v12-textbook-integration-qa-history/final-version-binding.json",
+  "protectionEvidence": "team/app-v12-textbook-integration-qa-history/protected-final.json",
+  "administrativeScopeReconciliation": "team/app-v12-textbook-integration-qa-history/baseline-scope-reconciliation.json",
+  "qaCleanupEvidence": "team/app-v12-textbook-integration-qa-history/cleanup-final.json",
+  "limitation": "No independent actual browser operations this round; HTTP/VM/PM display do not substitute. Finite first21 and final7 source points remain distinct."
+}

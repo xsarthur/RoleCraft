@@ -1,0 +1,36 @@
+{
+  "atUtc": "2026-10-12T01:09:29.432172+00:00",
+  "candidate": "candidate01",
+  "surface": "official CUA IAB2 owned tab1",
+  "url": "http://127.0.0.1:4485",
+  "loadedFrontendBinding": "app-v14-dialog-frontend-binding-1",
+  "steps": [
+    {
+      "id": "UI14-01",
+      "status": "pass_within_observed",
+      "action": "实际ReAct是什么提交，等待/两简答句、来源1卡、原文默认折叠；当前真实BGE HTTP",
+      "observedAnswer": [
+        "ReAct 将任务解释、下一行动与新观察交错。",
+        "策略可以组合：固定流程中的一个调查节点使用 ReAct；上层 DAG 将可独立取证任务并行，每个节点内部仍固定。"
+      ]
+    },
+    {
+      "id": "UI14-02",
+      "status": "pass_within_observed",
+      "action": "点击来源1正文标记，URL仍home、焦点card；展开原文，连续片段可见；点击阅读这一节→n03/s-da63f3dcff17，heading聚焦；reload同节heading，back回home仍ReAct原题保留、面板收起"
+    },
+    {
+      "id": "UI14-03",
+      "status": "fail",
+      "defect": "DG14-04",
+      "action": "home短追问丢focusTerm/错主题；清主题后它有什么缺点实际澄清且无旧答"
+    }
+  ],
+  "screenshotEvidence": {
+    "taken": true,
+    "description": "official tool emitted actual ReAct answer at1280x720 before detail changes; screenshot not persisted as local file, do not claim file hash"
+  },
+  "frozenCandidateFiles": "candidate01/received-binding.json",
+  "next": "candidate2 source/repair/detail freeze and true UI retest",
+  "noUserStorageRead": true
+}

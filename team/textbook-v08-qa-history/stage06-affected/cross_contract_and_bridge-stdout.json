@@ -1,0 +1,454 @@
+{
+  "status": "affected_contract_and_bridge_checks_passed",
+  "records": [
+    {
+      "name": "canonical:fixed_unicode_utf8_bytes",
+      "actual": "7b22617267756d656e7473223a7b22626f6479223a22e6a0b9e59ba0e5be85e6a0b8e5ae9e5c6ee4b88de887aae58aa8e98080e6acbe222c2265766964656e63655f696473223a5b227265706f40386531323a7372632f726566756e642e70793a312d32222c227265706f72742d37313a6661696c7572652d31225d2c2270726f6a656374223a22726566756e642d6d61696e74656e616e6365222c227469746c65223a22e7acace4b883e5a4a9e98080e6acbee5a4b1e8b4a5227d2c2263616e6f6e6963616c5f76657273696f6e223a2269737375652d6a736f6e2d757466382d7631222c22746f6f6c5f76657273696f6e223a226372656174655f69737375652f7631227d",
+      "expected": "7b22617267756d656e7473223a7b22626f6479223a22e6a0b9e59ba0e5be85e6a0b8e5ae9e5c6ee4b88de887aae58aa8e98080e6acbe222c2265766964656e63655f696473223a5b227265706f40386531323a7372632f726566756e642e70793a312d32222c227265706f72742d37313a6661696c7572652d31225d2c2270726f6a656374223a22726566756e642d6d61696e74656e616e6365222c227469746c65223a22e7acace4b883e5a4a9e98080e6acbee5a4b1e8b4a5227d2c2263616e6f6e6963616c5f76657273696f6e223a2269737375652d6a736f6e2d757466382d7631222c22746f6f6c5f76657273696f6e223a226372656174655f69737375652f7631227d",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "canonical:fixed_unicode_hash",
+      "actual": "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee",
+      "expected": "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "canonical:order_and_duplicate_set",
+      "actual": [
+        "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee",
+        "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee"
+      ],
+      "expected": [
+        "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee",
+        "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee"
+      ],
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "canonical:json_unicode_representation",
+      "actual": "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee",
+      "expected": "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "canonical:body_newline_is_content",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "canonical:no_unicode_normalization",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "canonical:surrogate",
+      "actual": "NOT_UTF8_BODY",
+      "expected": "NOT_UTF8_BODY",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "canonical:utf8_title_limit",
+      "actual": "TOO_LARGE_TITLE",
+      "expected": "TOO_LARGE_TITLE",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "canonical:extra_identity",
+      "actual": "ARGUMENT_FIELDS",
+      "expected": "ARGUMENT_FIELDS",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "c03:effect_before_lost_reply",
+      "actual": [
+        "UNKNOWN",
+        "attempt-1",
+        1
+      ],
+      "expected": [
+        "UNKNOWN",
+        "attempt-1",
+        1
+      ],
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "c03:lookup_original_operation",
+      "actual": [
+        "CONFIRMED_SUCCESS",
+        "operation-1"
+      ],
+      "expected": [
+        "CONFIRMED_SUCCESS",
+        "operation-1"
+      ],
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "c03:same_key_no_duplicate",
+      "actual": [
+        "SUCCESS",
+        1,
+        "ISSUE-1"
+      ],
+      "expected": [
+        "SUCCESS",
+        1,
+        "ISSUE-1"
+      ],
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "c03:key_argument_conflict_attempt_only",
+      "actual": [
+        "KNOWN_NO_EFFECT",
+        "THIS_ATTEMPT_ONLY",
+        1
+      ],
+      "expected": [
+        "KNOWN_NO_EFFECT",
+        "THIS_ATTEMPT_ONLY",
+        1
+      ],
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "c03:other_operation_same_content_rejected",
+      "actual": "UNTRUSTED_RECEIPT",
+      "expected": "UNTRUSTED_RECEIPT",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "c03:new_key_is_new_effect",
+      "actual": 2,
+      "expected": 2,
+      "pass": true,
+      "detail": "Intentional negative control, all objects are in-memory fixtures."
+    },
+    {
+      "name": "c03:noncanonical_dispatch_never_sends",
+      "actual": [
+        "DISPATCH_INTENT_MISMATCH",
+        2
+      ],
+      "expected": [
+        "DISPATCH_INTENT_MISMATCH",
+        2
+      ],
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "cross:Store_and_adapter_same_fingerprint",
+      "actual": [
+        "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee",
+        {
+          "body": "根因待核实\n不自动退款",
+          "evidence_ids": [
+            "repo@8e12:src/refund.py:1-2",
+            "report-71:failure-1"
+          ],
+          "project": "refund-maintenance",
+          "title": "第七天退款失败"
+        }
+      ],
+      "expected": [
+        "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee",
+        {
+          "project": "refund-maintenance",
+          "title": "第七天退款失败",
+          "body": "根因待核实\n不自动退款",
+          "evidence_ids": [
+            "repo@8e12:src/refund.py:1-2",
+            "report-71:failure-1"
+          ]
+        }
+      ],
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "cross:reordered_reuses_original_approved_action",
+      "actual": [
+        "set-equivalence-action",
+        "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee",
+        {
+          "approval_id": "set-equivalence-approval",
+          "action_id": "set-equivalence-action",
+          "intent_hash": "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee",
+          "expires_at": 90,
+          "revoked": 0,
+          "consumed": 0
+        }
+      ],
+      "expected": [
+        "set-equivalence-action",
+        "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee",
+        {
+          "approval_id": "set-equivalence-approval",
+          "action_id": "set-equivalence-action",
+          "intent_hash": "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee",
+          "expires_at": 90,
+          "revoked": 0,
+          "consumed": 0
+        }
+      ],
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "cross:duplicate_reuses_original_approved_action",
+      "actual": [
+        "set-equivalence-action",
+        "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee",
+        {
+          "approval_id": "set-equivalence-approval",
+          "action_id": "set-equivalence-action",
+          "intent_hash": "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee",
+          "expires_at": 90,
+          "revoked": 0,
+          "consumed": 0
+        }
+      ],
+      "expected": [
+        "set-equivalence-action",
+        "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee",
+        {
+          "approval_id": "set-equivalence-approval",
+          "action_id": "set-equivalence-action",
+          "intent_hash": "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee",
+          "expires_at": 90,
+          "revoked": 0,
+          "consumed": 0
+        }
+      ],
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "cross:legacy_hash_approval_not_overwritten",
+      "actual": "APPROVAL_MISMATCH",
+      "expected": "APPROVAL_MISMATCH",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "cross:approval_unchanged_after_reject",
+      "actual": {
+        "approval_id": "set-equivalence-approval",
+        "action_id": "set-equivalence-action",
+        "intent_hash": "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee",
+        "expires_at": 90,
+        "revoked": 0,
+        "consumed": 0
+      },
+      "expected": {
+        "approval_id": "set-equivalence-approval",
+        "action_id": "set-equivalence-action",
+        "intent_hash": "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee",
+        "expires_at": 90,
+        "revoked": 0,
+        "consumed": 0
+      },
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "cross:legacy_persisted_protocol_blocks_begin",
+      "actual": "INTENT_PROTOCOL_MISMATCH",
+      "expected": "INTENT_PROTOCOL_MISMATCH",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "cross:legacy_reject_does_not_migrate_approval",
+      "actual": [
+        "2faa20cfcae51cf192407060a0142066a2ec55acdcf85ddccb049071c809c10b",
+        0
+      ],
+      "expected": [
+        "2faa20cfcae51cf192407060a0142066a2ec55acdcf85ddccb049071c809c10b",
+        0
+      ],
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bridge:original_identifiers_and_unknown_committed",
+      "actual": [
+        "bridge-action",
+        "bridge-attempt",
+        "bridge-operation",
+        "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee",
+        {
+          "body": "根因待核实\n不自动退款",
+          "evidence_ids": [
+            "repo@8e12:src/refund.py:1-2",
+            "report-71:failure-1"
+          ],
+          "project": "refund-maintenance",
+          "title": "第七天退款失败"
+        },
+        "UNKNOWN",
+        "bridge-attempt",
+        1,
+        "UNRESOLVED"
+      ],
+      "expected": [
+        "bridge-action",
+        "bridge-attempt",
+        "bridge-operation",
+        "884801c53204925de32bbc3560407610b1042acb8c6e9b739891bf1a4df4ecee",
+        {
+          "project": "refund-maintenance",
+          "title": "第七天退款失败",
+          "body": "根因待核实\n不自动退款",
+          "evidence_ids": [
+            "repo@8e12:src/refund.py:1-2",
+            "report-71:failure-1"
+          ]
+        },
+        "UNKNOWN",
+        "bridge-attempt",
+        1,
+        "UNRESOLVED"
+      ],
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bridge:repeated_begin_cannot_resend",
+      "actual": "EVENT_ALREADY_RECORDED",
+      "expected": "EVENT_ALREADY_RECORDED",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bridge:repeat_keeps_one_call_and_object",
+      "actual": [
+        1,
+        1,
+        1
+      ],
+      "expected": [
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bridge:wrong_action_id_rollback",
+      "actual": "OUTCOME_BINDING",
+      "expected": "OUTCOME_BINDING",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bridge:wrong_action_id_keeps_started",
+      "actual": "STARTED",
+      "expected": "STARTED",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bridge:wrong_attempt_id_rollback",
+      "actual": "OUTCOME_BINDING",
+      "expected": "OUTCOME_BINDING",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bridge:wrong_attempt_id_keeps_started",
+      "actual": "STARTED",
+      "expected": "STARTED",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bridge:wrong_operation_id_rollback",
+      "actual": "OUTCOME_BINDING",
+      "expected": "OUTCOME_BINDING",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bridge:wrong_operation_id_keeps_started",
+      "actual": "STARTED",
+      "expected": "STARTED",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bridge:wrong_intent_hash_rollback",
+      "actual": "OUTCOME_BINDING",
+      "expected": "OUTCOME_BINDING",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bridge:wrong_intent_hash_keeps_started",
+      "actual": "STARTED",
+      "expected": "STARTED",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bridge:outcome_replay_without_adapter",
+      "actual": [
+        true,
+        1,
+        1
+      ],
+      "expected": [
+        true,
+        1,
+        1
+      ],
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bridge:attempt_no_effect_preserves_unresolved_operation",
+      "actual": [
+        "FINISHED",
+        "KNOWN_NO_EFFECT",
+        "THIS_ATTEMPT_ONLY",
+        "UNRESOLVED"
+      ],
+      "expected": [
+        "FINISHED",
+        "KNOWN_NO_EFFECT",
+        "THIS_ATTEMPT_ONLY",
+        "UNRESOLVED"
+      ],
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bridge:no_effect_does_not_enable_automatic_resend",
+      "actual": "NOT_DISPATCHABLE",
+      "expected": "NOT_DISPATCHABLE",
+      "pass": true,
+      "detail": null
+    }
+  ]
+}

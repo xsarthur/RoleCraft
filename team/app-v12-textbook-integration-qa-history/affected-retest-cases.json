@@ -1,0 +1,69 @@
+{
+  "frozenAtUtc": "2026-10-11T16:45:15.596166+00:00",
+  "scope": "Three original independently frozen failures plus original toolcatalog/recovery/multi-intent controls; generic-memory ambiguity contrast explicitly requested by PM based on existing behavior. Prepared after repair candidate receipt, not claimed blind. No new language benchmark.",
+  "originalInputFile": "frozen-query-cases.json",
+  "cases": [
+    {
+      "id": "V12Q07",
+      "query": "程序崩了以后怎么接着干，又不把已经做过的事情再做一遍？",
+      "expectedUnitIds": [
+        "e01"
+      ],
+      "expectedSectionTitlePattern": "",
+      "kind": "old-recovery"
+    },
+    {
+      "id": "V12Q08",
+      "query": "想知道中断后不重复做事，以及整个任务一共花了多少钱。",
+      "expectedUnitIds": [
+        "e01",
+        "e05"
+      ],
+      "expectedSectionTitlePattern": "",
+      "kind": "old-two-intents"
+    },
+    {
+      "id": "V12Q14",
+      "query": "保存的偏好后来被证明是错的，依赖这条记忆的结果应该怎样撤回？",
+      "expectedUnitIds": [
+        "n02-context-memory-prompt"
+      ],
+      "expectedSectionTitlePattern": "",
+      "kind": "independent-new-topic"
+    },
+    {
+      "id": "V12Q15",
+      "query": "工具目录有上百个工具，怎样逐步发现并接入，而不是全部塞进提示？",
+      "expectedUnitIds": [
+        "n04-tools-mcp"
+      ],
+      "expectedSectionTitlePattern": "",
+      "kind": "independent-new-topic"
+    },
+    {
+      "id": "V12Q18",
+      "query": "A2A 和 MCP 的交接边界有什么区别，多个 Agent 怎样保留控制责任？",
+      "expectedUnitIds": [
+        "n07-multiagent-a2a"
+      ],
+      "expectedSectionTitlePattern": "",
+      "kind": "independent-new-topic"
+    },
+    {
+      "id": "V12Q21",
+      "query": "英文任务正常，中文任务失败，怎样找到第一处证据偏离并交给另一位工程师复现？",
+      "expectedUnitIds": [
+        "n10-evaluation-projects"
+      ],
+      "expectedSectionTitlePattern": "",
+      "kind": "independent-new-topic"
+    },
+    {
+      "id": "V12C01",
+      "query": "我想学记忆",
+      "expectedUnitIds": [],
+      "expectedSectionTitlePattern": "",
+      "kind": "needs-clarification"
+    }
+  ]
+}

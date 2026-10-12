@@ -1,0 +1,204 @@
+{
+  "version": "app-v13-prototype-ui-qa-1",
+  "role": "independent_test_engineer_browser_specialist",
+  "recordedAtUtc": "2026-10-12T00:58:13.722819+00:00",
+  "status": "insufficient",
+  "scope": "Finite independent officialCUA actualUI evidence; current7fc full necessary UI not verified",
+  "phases": [
+    {
+      "phase": "phase01_actual_ui",
+      "loadedExperienceSha256": "9af4d9aabe568eeff45a97a3307ad9e7ad1357fa3f86a5d16a4f57536d2afdbd",
+      "bindingVersion": "app-v13-prototype-frontend-binding-2",
+      "bindingSha256": "1bd55ac5dcb65303c2b3a014a82cf064a229b10bd4fcb03e806ba544beeaea96",
+      "cssSha256": "d190bdc09f0fb9b3ae4eb308cd52b358c935f69d3b9b93ae16ea4418789654bd",
+      "pageReloadAfterNavRepair": false,
+      "status": "finite_actual_ui_evidence_saved_not_all_conditions_met"
+    },
+    {
+      "phase": "phase02_recovery",
+      "currentExperienceSha256": "7fc778e5d85702688caebf76370308ddee435b74acee7665666387a4dc902b9e",
+      "bindingVersion": "app-v13-prototype-frontend-binding-3",
+      "bindingSha256": "73038957f7fe89cd3fcf7d50c419f2b0d8bd02b9c0a0020386059dd5f1978fa3",
+      "actualUiExecuted": false,
+      "reason": "official getState browsers empty after interrupted tool; did not guess IDs or change surface",
+      "status": "insufficient"
+    }
+  ],
+  "observedResults": [
+    {
+      "id": "UI13-01",
+      "result": "pass_within_observed_scope",
+      "description": "4474 fresh origin opens Agent route directly; fixed Agent, five nav names present, local identity and one collapsed 查教材 visible. Four navigation controls used; question-bank menu not executed."
+    },
+    {
+      "id": "UI13-02",
+      "result": "pass_within_observed_scope",
+      "description": "Actual map 放大 gives110%; 缩小 gives100%; restore action accepted; 已学习 filter has honest empty state and 回到全部. Move button clicked but postmove scroll offset not measured; drag unexecuted."
+    },
+    {
+      "id": "UI13-03",
+      "result": "pass_within_observed_scope",
+      "description": "Directory lists actual30 unit summaries; keyboard Enter expands first unit and Enter on explicit root link focuses current root heading. Units18/30 and reload/back not tested."
+    },
+    {
+      "id": "UI13-04",
+      "result": "pass_within_observed_scope",
+      "description": "No learned state has pool0/no start. Explicit 00 root pool1; select20 starts1/1 Q1 with shortage wording, no Q9/Q20; skip produces0right/0wrong/1skip and Q1 result only."
+    },
+    {
+      "id": "UI13-05",
+      "result": "pass_within_observed_scope",
+      "description": "Settings hides lookup textbox. Change starting point to existing-programming and20px; returned root article computed fontSize20px. Persisted refresh and query context not tested."
+    },
+    {
+      "id": "UI13-06",
+      "result": "pass_within_observed_scope",
+      "description": "857x1120 visible sidebar fixed at left, five single-column nav, main starts at top. Previous3+2/313px shell symptom absent in this actual viewport. 390/desktop breakpoints not tested."
+    },
+    {
+      "id": "UI13-07",
+      "result": "pass_within_observed_scope",
+      "description": "v12 30unit engineering overview actual zoom dialog has image, close/originalsize controls and default full-view; saved image-expanded-857.jpg. Close/ESC/originalsize verification not counted due interrupted following call."
+    }
+  ],
+  "necessaryScenarios": [
+    {
+      "id": "PT13-01",
+      "status": "insufficient",
+      "reason": "Direct fresh Agent route and five labels/local identity observed; questions navigation operation unexecuted."
+    },
+    {
+      "id": "PT13-02",
+      "status": "insufficient",
+      "reason": "Zoom/filter and keyboard directory first root executed; move outcome/drag,18/30 and whole reachable path incomplete."
+    },
+    {
+      "id": "PT13-03",
+      "status": "insufficient",
+      "reason": "Full root rendered and engineering image expanded; table/code scrolling, close focus, originalsize, examples and downloads incomplete."
+    },
+    {
+      "id": "PT13-04",
+      "status": "insufficient",
+      "reason": "Not executed; NAV01/BANK01 repaired7fc not reloaded/tested with actualUI. MainQA VM separate."
+    },
+    {
+      "id": "PT13-05",
+      "status": "insufficient",
+      "reason": "Question mark/unmark/selfmark/refresh/state synchronization not executed."
+    },
+    {
+      "id": "PT13-06",
+      "status": "insufficient",
+      "reason": "Honest empty records/review link observed; two-question actualreview not executed."
+    },
+    {
+      "id": "PT13-07",
+      "status": "insufficient",
+      "reason": "Empty pool and rootonlyQ1 select20 shortage/skip actual; isolated ReAct,Q10/Q99/navigation,5/10,repeatedpool/correctwrong choice incomplete."
+    },
+    {
+      "id": "PT13-08",
+      "status": "insufficient",
+      "reason": "Single collapsedlookup visible; actualUI BGE queries/wait/collapse/switch/ready not executed."
+    },
+    {
+      "id": "PT13-09",
+      "status": "insufficient",
+      "reason": "ActualUI ambiguity/no-match/unavailable/late-response not executed."
+    },
+    {
+      "id": "PT13-10",
+      "status": "insufficient",
+      "reason": "No seed service ran; historical/current exports and project record actualUI not executed."
+    },
+    {
+      "id": "PT13-11",
+      "status": "insufficient",
+      "reason": "Root heading actual focused; oldroutes/version/unknown targets/refresh/back incomplete."
+    },
+    {
+      "id": "PT13-12",
+      "status": "insufficient",
+      "reason": "857 geometry, directory keyboard and20px applied,settings no input observed;390/desktop,keyboard modal/lookup refocus/lastbuttons incomplete."
+    }
+  ],
+  "newProductDefects": [],
+  "existingDefects": {
+    "DEV13-SHELL-01": "857 original symptom absent in actual old9afloaded UI with d190 CSS;390/desktop incomplete, not globallyclosed",
+    "QI13-NAV01": "new7fc actualUI not executed; mainQA VM judgment not inherited",
+    "DEV13-BANK-01": "new7fc actualUI not executed; mainQA VM judgment not inherited"
+  },
+  "toolBlocker": {
+    "toolBatch": "original size click -> record -> Escape -> record/read focus -> download event and click -> path -> record",
+    "toolReturned": "aborted by user after1456.2s; no batch output",
+    "countedAsComplete": false,
+    "recovery1": "tab.getAXState: tab is not defined; REPL variables lost after interruption",
+    "recovery2": "official cua.getState returned native apps and browsers:[]",
+    "classification": "tool_execution_blocker_not_product_defect",
+    "alternateSurfaceUsed": false,
+    "hiddenStorageEvaluateUsed": false,
+    "privateProtocolUsed": false
+  },
+  "cleanup": {
+    "qaOrigin": "http://127.0.0.1:4474",
+    "node": "v24.16.0",
+    "pid": 36393,
+    "ptySession": 83753,
+    "dataDir": "/var/folders/v5/yy0xf3tx1gddnb0qz7skr8wr0000gn/T/rolecraft-ui-qa-v13-0pRxMz",
+    "generationConfigured": false,
+    "seedServiceRun": false,
+    "serverClosedBy": "SIGINT via own PTY",
+    "exitCode": 0,
+    "closeOutput": "^C{\"phase\":\"ui-qa-candidate\",\"closed\":true}",
+    "listenerCheck": "lsof -nP -iTCP:4474 -sTCP:LISTEN exit1 empty; no listener",
+    "tabId": "1",
+    "tabCloseStatus": "unconfirmed_official_browser_unavailable",
+    "viewportOverride": {
+      "width": 857,
+      "height": 1120
+    },
+    "viewportResetStatus": "unconfirmed_official_browser_unavailable",
+    "user4318Operated": false,
+    "mainQA4473Operated": false,
+    "realUserDatabaseRead": false,
+    "realBrowserUserRecordsRead": false
+  },
+  "evidenceFiles": {
+    "team/app-v13-prototype-ui-qa-history/candidate-received.json": {
+      "sha256": "b931ad460374dcee80f2cb18b0e283a399bec9f6ad7f5788ec8af8f59ab34fd3",
+      "bytes": 2139
+    },
+    "team/app-v13-prototype-ui-qa-history/candidate-server.mjs": {
+      "sha256": "98eb7d5f07744d195e6fa5d7b475480094e9a4809daa69c850acb480cdda8864",
+      "bytes": 873
+    },
+    "team/app-v13-prototype-ui-qa-history/image-expanded-857.jpg": {
+      "sha256": "8fcb4082bc8962b4b59b974501686a554833e871473367a73d8a23cbecfbcead",
+      "bytes": 86626
+    },
+    "team/app-v13-prototype-ui-qa-history/phase-receipt.json": {
+      "sha256": "f836809ecdc32ad09af38a3986eb2f06fd1566eed39393977704b83c2aec9992",
+      "bytes": 1770
+    },
+    "team/app-v13-prototype-ui-qa-history/seed-server.mjs": {
+      "sha256": "cef8c9ba11c67e8dbc818b66e64309f4e9f4866081d576ac897fc4982081f850",
+      "bytes": 663
+    },
+    "team/app-v13-prototype-ui-qa-history/seed.html": {
+      "sha256": "9cc14eb467efbf6c06c0a1731d378b96734bda1a4ce257f2330b05f09b0b58fe",
+      "bytes": 3550
+    },
+    "team/app-v13-prototype-ui-qa-history/tool-and-cleanup.json": {
+      "sha256": "1b70bb47adf32ee54e4dcf455fe92cf680064555cd58fc0d5efe166654f9af37",
+      "bytes": 1523
+    },
+    "team/app-v13-prototype-ui-qa-history/ui-observations-part01.json": {
+      "sha256": "83253fa5262470fea42173e796c00ab3a3ec2093996692dcd81d4788077867f2",
+      "bytes": 72973
+    }
+  },
+  "handoff": "MainQA merges own mechanicalHTTPVM evidence separately; PM delegates remaining actualUI when official browser is available without weakening PV13/PT13.",
+  "fullProductAssessmentOwner": "main_independent_QA_and_product_gate_owners; this browser specialist does not score original8 gates or grant full product pass",
+  "fullProductEvidenceBoundary": "Finite actual UI cannot grant occupation/industry/expert/learner/production claims; existing broader not_met conclusions are not reevaluated here."
+}

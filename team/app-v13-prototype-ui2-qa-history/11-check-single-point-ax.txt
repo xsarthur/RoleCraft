@@ -1,0 +1,39 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4475/#check".
+1 AXWebArea 职造 · Agent 学习工作台, URL: 127.0.0.1:4475/#check
+	2 link Description: 跳到主要内容, Value: 127.0.0.1:4475/#main-content
+	3 container primary-sidebar
+		4 link Description: 职 职造 Agent 开发学习, Value: 127.0.0.1:4475/#home
+		5 container 主导航
+			6 button 首页
+			7 button 课程学习
+			8 button 题库浏览
+			9 button 学习记录
+			10 button 个人设置
+		11 text 当前学习方向
+		12 text Agent 开发者
+		13 link Description: 本机学习者 记录保存在此浏览器, Value: 127.0.0.1:4475/#settings
+	14 container main-content
+		15 container
+			100 text 检验学习结果
+			101 text 从看过的知识点出题，只作本人自评
+		18 container app
+			102 heading 检验学习结果, Value: 1
+				103 text 检验学习结果
+			104 text 仅抽取当前版已访问知识点对应的适用题
+			105 text 目前可用 2 题，排除需真实经历的题目。数量不足时使用全部可用题，不重复补足。
+			106 text 本次题数
+			107 pop up button (collapsed, settable) 本次题数, Value: 5, ID: v13-check-count, Secondary Actions: Expand
+				108 menu
+					109 (selected) 5
+					110 10
+					111 20
+			112 button 开始本次自评
+		98 container
+			99 text 职造 · Agent 开发学习 教材 v12 · 本浏览器保存
+	113 container lw-find-form
+		114 text 查教材
+		115 text entry area (settable) 查教材, ID: lw-query
+		116 button 查找
+		117 button (collapsed) Description: 展开检索结果, Secondary Actions: Expand
+
+The focused UI element is 102 heading 检验学习结果, Value: 1

@@ -1,0 +1,337 @@
+{
+  "kind": "engineering_preview_identity_not_browser_QA",
+  "checkedAt": "2026-10-11T16:48:05.857Z",
+  "url": "http://127.0.0.1:4318/#learn",
+  "deepLink": "http://127.0.0.1:4318/#learn/agent/n03-planning-reflection/s-da63f3dcff17",
+  "processReceipt": {
+    "previousPid": 95893,
+    "previousSession": 81687,
+    "previousExitCode": 0,
+    "pid": 23034,
+    "ptySession": 13862,
+    "command": "/Users/shengxiong/.nvm/versions/node/v24.16.0/bin/node sites/rolecraft/server/index.mjs",
+    "cwd": "/Users/shengxiong/Documents/ChatGPT/一人公司建设",
+    "dataDir": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/.runtime",
+    "databaseOperation": "same_existing_path_no_read_migration_or_deletion",
+    "stop": "SIGINT / Ctrl-C in PTY 13862"
+  },
+  "statuses": {
+    "health": 200,
+    "catalog": 200,
+    "recommend": 200,
+    "chapter": 200,
+    "page": 200
+  },
+  "health": {
+    "productVersion": "local-mvp-0.4",
+    "mode": "local-development",
+    "generation": {
+      "configured": false,
+      "missing": [
+        "OPENAI_API_KEY",
+        "OPENAI_MODEL",
+        "OPENAI_MAX_OUTPUT_TOKENS",
+        "ROLECRAFT_GENERATION_BUDGET_USD",
+        "ROLECRAFT_ESTIMATED_MAX_COST_USD"
+      ]
+    },
+    "contentRetrieval": {
+      "available": true,
+      "retrievalVersion": "content-retrieval-0.12-v12",
+      "corpusVersion": "textbook-v12",
+      "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+      "units": 30,
+      "localSemanticPrepared": true,
+      "runtimeSupported": true,
+      "requiredNodeMajor": 24,
+      "nodeVersion": "v24.16.0",
+      "providerCalled": false
+    }
+  },
+  "catalogIdentity": {
+    "corpusVersion": "textbook-v12",
+    "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+    "bookSha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+    "units": [
+      {
+        "unitId": "00-learning-route",
+        "order": 1,
+        "sourceSha256": "452129591648ca6c146945fae000e3e905e87c2794315109c727592a7b16dced"
+      },
+      {
+        "unitId": "01-foundation",
+        "order": 2,
+        "sourceSha256": "3ca5c2391ccfba389cb16d7eac85034bcb50d0768f0e9e7374c92917044232d7"
+      },
+      {
+        "unitId": "n01-python-model-foundations",
+        "order": 3,
+        "sourceSha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62"
+      },
+      {
+        "unitId": "p01-discovery",
+        "order": 4,
+        "sourceSha256": "2d0340f4e6e05129f423977a272b515c56bd37295a6b00f392f1d56fca25392e"
+      },
+      {
+        "unitId": "02-task-acceptance",
+        "order": 5,
+        "sourceSha256": "2a15989e762cf659822a9ec3d0b37d881fb28ddcd2d8f1503957ad73d8343ec1"
+      },
+      {
+        "unitId": "03-trust-boundary",
+        "order": 6,
+        "sourceSha256": "8ff1050570a84ade4751619e28bb6e02bdd06d2b914d74e5192ea446b045272e"
+      },
+      {
+        "unitId": "f01",
+        "order": 7,
+        "sourceSha256": "5fcb2bd1db423ca8e149b0803bafedeaf0e77ca2331312ff32f63a2087ba9d61"
+      },
+      {
+        "unitId": "f02",
+        "order": 8,
+        "sourceSha256": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8"
+      },
+      {
+        "unitId": "n02-context-memory-prompt",
+        "order": 9,
+        "sourceSha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537"
+      },
+      {
+        "unitId": "c01-selection",
+        "order": 10,
+        "sourceSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4"
+      },
+      {
+        "unitId": "c01-control-primer",
+        "order": 11,
+        "sourceSha256": "ef50f49868351894e0b928eced4cfb2fdabb9cb28ca03eb9043b9cf42d5689b9"
+      },
+      {
+        "unitId": "c02",
+        "order": 12,
+        "sourceSha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330"
+      },
+      {
+        "unitId": "c03",
+        "order": 13,
+        "sourceSha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3"
+      },
+      {
+        "unitId": "n04-tools-mcp",
+        "order": 14,
+        "sourceSha256": "b3432424e61870ac250db2068423ed33e827c97cfc2f1440f3ae2987bfd4f39a"
+      },
+      {
+        "unitId": "e01",
+        "order": 15,
+        "sourceSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a"
+      },
+      {
+        "unitId": "c01-fixed-workflow",
+        "order": 16,
+        "sourceSha256": "5dd87adc743723c842ed22f80065fda6408d28aee369adf8dfe1206ac81c2fcf"
+      },
+      {
+        "unitId": "c01-control-loop",
+        "order": 17,
+        "sourceSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8"
+      },
+      {
+        "unitId": "n03-planning-reflection",
+        "order": 18,
+        "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd"
+      },
+      {
+        "unitId": "n05-retrieval-ingestion",
+        "order": 19,
+        "sourceSha256": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16"
+      },
+      {
+        "unitId": "n06-graph-orchestration",
+        "order": 20,
+        "sourceSha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb"
+      },
+      {
+        "unitId": "n07-multiagent-a2a",
+        "order": 21,
+        "sourceSha256": "24268cff6bfb435713458912750a5a958dd00d0aa935ef71b139e74c6dd23fb2"
+      },
+      {
+        "unitId": "e02",
+        "order": 22,
+        "sourceSha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f"
+      },
+      {
+        "unitId": "n10-evaluation-projects",
+        "order": 23,
+        "sourceSha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b"
+      },
+      {
+        "unitId": "p01-mvp",
+        "order": 24,
+        "sourceSha256": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9"
+      },
+      {
+        "unitId": "e03",
+        "order": 25,
+        "sourceSha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70"
+      },
+      {
+        "unitId": "n08-sandbox-security",
+        "order": 26,
+        "sourceSha256": "16b1fe631c244ec394965f9443bc680380997cf4427a7555184c26cf3ee064f2"
+      },
+      {
+        "unitId": "e04",
+        "order": 27,
+        "sourceSha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8"
+      },
+      {
+        "unitId": "e05",
+        "order": 28,
+        "sourceSha256": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6"
+      },
+      {
+        "unitId": "n09-runtime-delivery",
+        "order": 29,
+        "sourceSha256": "b621b838657aaa9915506a5bee6e25f7733b41085b08c50143e5965722157714"
+      },
+      {
+        "unitId": "p02",
+        "order": 30,
+        "sourceSha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8"
+      }
+    ]
+  },
+  "query": {
+    "query": "react",
+    "corpusVersion": "textbook-v12"
+  },
+  "recommendation": {
+    "status": "recommended",
+    "retrievalVersion": "content-retrieval-0.12-v12",
+    "engineMode": "local_semantic_retrieval",
+    "matchingMethods": [
+      "local_semantic_vectors",
+      "local_task_concepts",
+      "source_term_recall"
+    ],
+    "providerCalled": false,
+    "corpusVersion": "textbook-v12",
+    "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+    "interpretedIntents": [
+      {
+        "id": "source_term_0",
+        "label": "查找正文中的 ReAct",
+        "evidence": [
+          "ReAct"
+        ],
+        "unitIds": [
+          "n03-planning-reflection",
+          "00-learning-route",
+          "n05-retrieval-ingestion"
+        ],
+        "sectionKeys": [
+          "00-learning-route/s-7547e5ce91f8",
+          "00-learning-route/s-810a87808157",
+          "n03-planning-reflection/s-da63f3dcff17",
+          "n03-planning-reflection/s-dc2e15b8cffc",
+          "n05-retrieval-ingestion/s-ec5a23388832"
+        ],
+        "term": "react",
+        "preferredUnit": "n03-planning-reflection"
+      },
+      {
+        "id": "react_strategy",
+        "label": "比较推理行动交错与先计划的策略",
+        "evidence": [
+          "react"
+        ],
+        "unitIds": [
+          "n03-planning-reflection"
+        ]
+      }
+    ],
+    "excludedIntents": [],
+    "results": [
+      {
+        "unitId": "n03-planning-reflection",
+        "sectionId": "s-dc2e15b8cffc",
+        "order": 18,
+        "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+        "sectionTitle": "7 从演算到作品",
+        "title": "7 从演算到作品",
+        "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
+        "evidenceExcerpt": "EX-N03-C：写出同一任务的固定、ReAct、先计划三条正常轨迹及各一条失败轨迹，做受限反思实验设计。参考分析应给事件、可观察证据、修正和停止条件，不以“采用更先进模式”代替选择依据。",
+        "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+        "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+        "version": "textbook-v12",
+        "href": "#learn/agent/n03-planning-reflection/s-dc2e15b8cffc",
+        "intentId": "source_term_0",
+        "matchingBasis": "source_term",
+        "matchedSourceTerms": [
+          "react"
+        ],
+        "prerequisiteUnitIds": [
+          "c01-control-loop",
+          "02-task-acceptance"
+        ]
+      },
+      {
+        "unitId": "n03-planning-reflection",
+        "sectionId": "s-da63f3dcff17",
+        "order": 18,
+        "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+        "sectionTitle": "1 三种策略改变的是控制对象",
+        "title": "1 三种策略改变的是控制对象",
+        "reason": "你表达了“react”；这一小节说明比较推理行动交错与先计划的策略的具体机制。",
+        "evidenceExcerpt": "ReAct 将任务解释、下一行动与新观察交错。根据 report-71 发现 `refund(7)` 失败，选择读取退款函数；观察实际实现是 `<7` 后再查生效规则。每轮仅承诺一个或少数下一步，适合证据逐步揭示、路径难以先列全的调查。其成本是轮次增加、上下文污染与短视；下一步看似相关，不保证最终证据完整。[ReAct 原论文 v3](https://arxiv.org/abs/2210.03629v3)研究推理轨迹与行动交错。本教材记录可审查的短决策依据、行动参数和观察，不要求取得或展示模型隐藏的内部思维。",
+        "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+        "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+        "version": "textbook-v12",
+        "href": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
+        "intentId": "react_strategy",
+        "matchingBasis": "task_intent",
+        "matchedSourceTerms": [
+          "react"
+        ],
+        "prerequisiteUnitIds": [
+          "c01-control-loop",
+          "02-task-acceptance"
+        ]
+      }
+    ],
+    "clarification": null,
+    "limitations": [
+      "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+    ],
+    "semanticProvenance": {
+      "modelId": "Xenova/bge-small-zh-v1.5",
+      "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+      "dtype": "int8",
+      "pooling": "cls",
+      "dimensions": 512,
+      "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+      "corpusVersion": "textbook-v12",
+      "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+      "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+      "passages": 561,
+      "remoteModelsAllowed": false,
+      "querySentExternally": false
+    }
+  },
+  "chapterIdentity": {
+    "corpusVersion": "textbook-v12",
+    "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+    "unitId": "n03-planning-reflection",
+    "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+    "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd"
+  },
+  "pageSha256": "5c69d6037a73393b190c708bff14c4118f7462fbc7942aca48732e5f484507c3",
+  "identityValid": true,
+  "originalExcerptsValid": true,
+  "reactCovered": true,
+  "browserVerified": false
+}

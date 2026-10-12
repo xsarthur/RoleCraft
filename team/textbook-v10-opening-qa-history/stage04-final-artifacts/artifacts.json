@@ -1,0 +1,3625 @@
+{
+  "readIntervalUtc": {
+    "started": "2026-10-11T02:32:58.939345+00:00",
+    "completed": "2026-10-11T02:32:58.996402+00:00"
+  },
+  "mechanicalPythonVersion": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "scriptSha256": "1ac9fbcae226f018ae7e810481ab2297ba53da7f99d8cff0dee767a89aca10e7",
+  "method": "Independent current-source reconstruction under the explicit heading/link/footer rules. Author builder is read as handoff data but never imported/executed.",
+  "book": {
+    "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+    "sha256": "6707a4f03b298a5b234ce56a88edcbd9d79af6d40cb978227461a9d9d522f76e",
+    "bytes": 392881,
+    "entireBookEqualsOnlyPermittedSourceAssembly": true,
+    "fullFenceSha256InOrderMatches20Sources": true,
+    "fullFenceCount": 39
+  },
+  "sources": [
+    {
+      "unitId": "00-learning-route",
+      "order": 1,
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "sha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+      "bytes": 14114,
+      "h1MatchesSpec": true,
+      "receivedOriginSha256MatchesSpec": true,
+      "retainedBodyOnlyPermittedHistoricalLabelChange": null,
+      "fullFencesEqualReceived": true,
+      "fullFenceSha256InOrder": [],
+      "manifestCurrentSourceMatches": true,
+      "manifestFullFencesMatch": true,
+      "manifestPermittedBodyMatches": true
+    },
+    {
+      "unitId": "01-foundation",
+      "order": 2,
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "sha256": "9e21a39ca80ea9045111885d33f8a60e0c5fc403a43e74b86f0f58a23347abad",
+      "bytes": 8936,
+      "h1MatchesSpec": true,
+      "receivedOriginSha256MatchesSpec": true,
+      "retainedBodyOnlyPermittedHistoricalLabelChange": true,
+      "fullFencesEqualReceived": true,
+      "fullFenceSha256InOrder": [
+        "75007425a585d365e4ad7a240b4a11b29c87d067bcbcb302450a50f2135e6e6a"
+      ],
+      "manifestCurrentSourceMatches": true,
+      "manifestFullFencesMatch": true,
+      "manifestPermittedBodyMatches": true
+    },
+    {
+      "unitId": "p01-discovery",
+      "order": 3,
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "sha256": "dfbaf177deeba2bd4f71a633764533a65dce7d14d036e75400744e8c0aee111b",
+      "bytes": 10860,
+      "h1MatchesSpec": true,
+      "receivedOriginSha256MatchesSpec": true,
+      "retainedBodyOnlyPermittedHistoricalLabelChange": true,
+      "fullFencesEqualReceived": true,
+      "fullFenceSha256InOrder": [
+        "848f12c3faa3621a1816d9e5082ecbfc1d7f77470230e71d7fd8b39f1e224d22"
+      ],
+      "manifestCurrentSourceMatches": true,
+      "manifestFullFencesMatch": true,
+      "manifestPermittedBodyMatches": true
+    },
+    {
+      "unitId": "02-task-acceptance",
+      "order": 4,
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "sha256": "73d4157f1db7a146b7f84c7913be05dadbb91d2a256560531a7ae748932bc5fc",
+      "bytes": 4947,
+      "h1MatchesSpec": true,
+      "receivedOriginSha256MatchesSpec": true,
+      "retainedBodyOnlyPermittedHistoricalLabelChange": true,
+      "fullFencesEqualReceived": true,
+      "fullFenceSha256InOrder": [
+        "59cdcb87ceb2a9483d90afb124d5ffdf0b0c278e611ef5fc717092f864435253"
+      ],
+      "manifestCurrentSourceMatches": true,
+      "manifestFullFencesMatch": true,
+      "manifestPermittedBodyMatches": true
+    },
+    {
+      "unitId": "03-trust-boundary",
+      "order": 5,
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "sha256": "ede8fbe33929ecceafe800fadcc20186c854f8b4bd4b8288e6b74d3690db1f53",
+      "bytes": 4562,
+      "h1MatchesSpec": true,
+      "receivedOriginSha256MatchesSpec": true,
+      "retainedBodyOnlyPermittedHistoricalLabelChange": true,
+      "fullFencesEqualReceived": true,
+      "fullFenceSha256InOrder": [],
+      "manifestCurrentSourceMatches": true,
+      "manifestFullFencesMatch": true,
+      "manifestPermittedBodyMatches": true
+    },
+    {
+      "unitId": "f01",
+      "order": 6,
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "sha256": "54fa66bf5d2072b69a033516602e6db3498cd9cfe9dffecf13622f7d86b39f4e",
+      "bytes": 14624,
+      "h1MatchesSpec": true,
+      "receivedOriginSha256MatchesSpec": true,
+      "retainedBodyOnlyPermittedHistoricalLabelChange": true,
+      "fullFencesEqualReceived": true,
+      "fullFenceSha256InOrder": [
+        "1cfed00118e6995cf65f4941ec1cb3bae2494f487a94566d215332e42515827a"
+      ],
+      "manifestCurrentSourceMatches": true,
+      "manifestFullFencesMatch": true,
+      "manifestPermittedBodyMatches": true
+    },
+    {
+      "unitId": "f02",
+      "order": 7,
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "sha256": "7179f323186c9af9930532d0f6cb96c45aa64121c8bf6afd171a9b23531918cf",
+      "bytes": 16098,
+      "h1MatchesSpec": true,
+      "receivedOriginSha256MatchesSpec": true,
+      "retainedBodyOnlyPermittedHistoricalLabelChange": true,
+      "fullFencesEqualReceived": true,
+      "fullFenceSha256InOrder": [
+        "95b9d50f32226f8aaca99530db375adba2a0170ba2d7e2db9ec70f1093500984"
+      ],
+      "manifestCurrentSourceMatches": true,
+      "manifestFullFencesMatch": true,
+      "manifestPermittedBodyMatches": true
+    },
+    {
+      "unitId": "c01-selection",
+      "order": 8,
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f",
+      "bytes": 9037,
+      "h1MatchesSpec": true,
+      "receivedOriginSha256MatchesSpec": true,
+      "retainedBodyOnlyPermittedHistoricalLabelChange": true,
+      "fullFencesEqualReceived": true,
+      "fullFenceSha256InOrder": [],
+      "manifestCurrentSourceMatches": true,
+      "manifestFullFencesMatch": true,
+      "manifestPermittedBodyMatches": true
+    },
+    {
+      "unitId": "c01-control-primer",
+      "order": 9,
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "sha256": "345dd67c5bd8165a9d77dc7de819133f50dfcf39f91f59dec05bf385aba3d8c8",
+      "bytes": 5259,
+      "h1MatchesSpec": true,
+      "receivedOriginSha256MatchesSpec": true,
+      "retainedBodyOnlyPermittedHistoricalLabelChange": true,
+      "fullFencesEqualReceived": true,
+      "fullFenceSha256InOrder": [],
+      "manifestCurrentSourceMatches": true,
+      "manifestFullFencesMatch": true,
+      "manifestPermittedBodyMatches": true
+    },
+    {
+      "unitId": "c02",
+      "order": 10,
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "sha256": "2614eaa7a00a00f54c484dc9cc36e8ed3bedcc144c5895947fcfe4094d47566d",
+      "bytes": 20301,
+      "h1MatchesSpec": true,
+      "receivedOriginSha256MatchesSpec": true,
+      "retainedBodyOnlyPermittedHistoricalLabelChange": true,
+      "fullFencesEqualReceived": true,
+      "fullFenceSha256InOrder": [
+        "c8251b05cb0983301d649539947a92198a54bc36f9fd1a2fef2a0e3b56cd991e"
+      ],
+      "manifestCurrentSourceMatches": true,
+      "manifestFullFencesMatch": true,
+      "manifestPermittedBodyMatches": true
+    },
+    {
+      "unitId": "c03",
+      "order": 11,
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "sha256": "4f4c0750bce1fa8de15a5f6bc94bc972c66a3e877e4b161b41890b4af8771261",
+      "bytes": 22534,
+      "h1MatchesSpec": true,
+      "receivedOriginSha256MatchesSpec": true,
+      "retainedBodyOnlyPermittedHistoricalLabelChange": true,
+      "fullFencesEqualReceived": true,
+      "fullFenceSha256InOrder": [
+        "da054305f80eb291d9803380b9c8fe5662484e442cc460b8a71e2b1f72e4584d",
+        "ca2a23e0ca503a11d30cef75fdf00c76113388f6d124e2ca76666cc8361cfc21",
+        "44cd55cddb9349a1b508198e76a024ec34b879891f2aa679987e1f825cd1ec3f",
+        "2d262645011b6fd0eee59562e737c77c711cd69ac894457c44844db616c53d1a",
+        "392fee477ddd047f90e3369bf2d897492a9b7a3c5d97f58f96bbd5cc109d51d5"
+      ],
+      "manifestCurrentSourceMatches": true,
+      "manifestFullFencesMatch": true,
+      "manifestPermittedBodyMatches": true
+    },
+    {
+      "unitId": "e01",
+      "order": 12,
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "sha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5",
+      "bytes": 32028,
+      "h1MatchesSpec": true,
+      "receivedOriginSha256MatchesSpec": true,
+      "retainedBodyOnlyPermittedHistoricalLabelChange": true,
+      "fullFencesEqualReceived": true,
+      "fullFenceSha256InOrder": [
+        "d5c1ffd094a977164893a83832995223e436a8e89bce28f9d889d20559cc3e1a",
+        "a39e1c953da5a2131e83243acfb27564bcaa7e79a56ad7fc9b0b5c34c260ed47"
+      ],
+      "manifestCurrentSourceMatches": true,
+      "manifestFullFencesMatch": true,
+      "manifestPermittedBodyMatches": true
+    },
+    {
+      "unitId": "c01-fixed-workflow",
+      "order": 13,
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "sha256": "d4f8ea6dd8065d0afc2a4c2176964161a03e23463397b2518036b7e11530822e",
+      "bytes": 13410,
+      "h1MatchesSpec": true,
+      "receivedOriginSha256MatchesSpec": true,
+      "retainedBodyOnlyPermittedHistoricalLabelChange": true,
+      "fullFencesEqualReceived": true,
+      "fullFenceSha256InOrder": [
+        "0ff2feb4b15960a5e79bdee3dc6d41373c2584859d2a22a4cc3f7cfa8e9052ff",
+        "67dfdfc7639f7b7a8ba3eda0550561d6c7034de5a36cf1ba2fab6847149bbce1",
+        "1a895389e103c1f1602134e87969c214160a0c04fb056cebf6b2650670cc6474"
+      ],
+      "manifestCurrentSourceMatches": true,
+      "manifestFullFencesMatch": true,
+      "manifestPermittedBodyMatches": true
+    },
+    {
+      "unitId": "c01-control-loop",
+      "order": 14,
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38",
+      "bytes": 78111,
+      "h1MatchesSpec": true,
+      "receivedOriginSha256MatchesSpec": true,
+      "retainedBodyOnlyPermittedHistoricalLabelChange": true,
+      "fullFencesEqualReceived": true,
+      "fullFenceSha256InOrder": [
+        "c23f711d5ab01e16f12b7d009e15bebf97d2913f3f4df16f39af4cc03593dd33",
+        "5683d7dfe097eedfe405ac4493947c0be98dea0378bf1cd0f81818b63870c8b4",
+        "310009fe835475b522142a8ebcfe7f010e0da90fd893d01550ab43df92e5b48b",
+        "aa713273edafe470cb0df725484bd93ffe89dfa030c76881472e5a2879620c76",
+        "f28cb92c46c90abcea6cf564de1a62be79d3cea7cfaf4e597172ed5fa0664056",
+        "dbaec6ca43e352ff97860f22335a67f4a09b211f08e5793feddccbe5b8936ef3",
+        "3185f9a75dd621506a49f697cf2e1d27eefee965b93ec5b12a4fba4081f76d4b",
+        "3106e524e299a53ef14606a949373f2910b42a24b176ee60736cd2b8d0911a21",
+        "cbb20a07731fd104c4be9ccfbb79256317512a7161cb3fa778a9119ad507e20f",
+        "080ea9cb2e72902e24fd6198c36177f2de1ca46b221a4409e0bf4b4d7321be44",
+        "12b6c982dfaa37a384d1202080bc1955827739b1c6fc6ee8cb8910101bafd11c",
+        "2482562e4dc2b616a8c68f1166bc1ffcd0e14024c64c47d3203509c79250b81f"
+      ],
+      "manifestCurrentSourceMatches": true,
+      "manifestFullFencesMatch": true,
+      "manifestPermittedBodyMatches": true
+    },
+    {
+      "unitId": "e02",
+      "order": 15,
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1",
+      "bytes": 24395,
+      "h1MatchesSpec": true,
+      "receivedOriginSha256MatchesSpec": true,
+      "retainedBodyOnlyPermittedHistoricalLabelChange": true,
+      "fullFencesEqualReceived": true,
+      "fullFenceSha256InOrder": [
+        "6d7bc6426e75fa398d6183f334f10e8a959374a4d8aa7d3d1474646026b12d83",
+        "bd6a56bc0c20151082b6f07d5104dadca24c25ffa29928dfa829eec0e8d6838f"
+      ],
+      "manifestCurrentSourceMatches": true,
+      "manifestFullFencesMatch": true,
+      "manifestPermittedBodyMatches": true
+    },
+    {
+      "unitId": "p01-mvp",
+      "order": 16,
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "sha256": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5",
+      "bytes": 10302,
+      "h1MatchesSpec": true,
+      "receivedOriginSha256MatchesSpec": true,
+      "retainedBodyOnlyPermittedHistoricalLabelChange": true,
+      "fullFencesEqualReceived": true,
+      "fullFenceSha256InOrder": [
+        "10e269372ff5eed54456725d583f1a5e228ae8410179fa78b8f530ab6b23f4ba"
+      ],
+      "manifestCurrentSourceMatches": true,
+      "manifestFullFencesMatch": true,
+      "manifestPermittedBodyMatches": true
+    },
+    {
+      "unitId": "e03",
+      "order": 17,
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a",
+      "bytes": 24914,
+      "h1MatchesSpec": true,
+      "receivedOriginSha256MatchesSpec": true,
+      "retainedBodyOnlyPermittedHistoricalLabelChange": true,
+      "fullFencesEqualReceived": true,
+      "fullFenceSha256InOrder": [
+        "b8bd18021be5433c2b6481b1a47cb0a05cf90d9fe8658c86cfe9866f97476bd7",
+        "1848dc6fc913f62a332c311881ba6555407690abfe9907565b03a17d3b9efb3e"
+      ],
+      "manifestCurrentSourceMatches": true,
+      "manifestFullFencesMatch": true,
+      "manifestPermittedBodyMatches": true
+    },
+    {
+      "unitId": "e04",
+      "order": 18,
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "sha256": "cc0fdfe84f772dc444a24fd89b4a8d67f1bad600ab6818cf58f6e9d37dace025",
+      "bytes": 20524,
+      "h1MatchesSpec": true,
+      "receivedOriginSha256MatchesSpec": true,
+      "retainedBodyOnlyPermittedHistoricalLabelChange": true,
+      "fullFencesEqualReceived": true,
+      "fullFenceSha256InOrder": [
+        "7d19c2dbe19675660278215f80f2c3856ac9234e06f7766ae63a46186f821847",
+        "3deef724ab1f47c3669051e3af166b88fcd4f27efeb0018de7240edd83af9506"
+      ],
+      "manifestCurrentSourceMatches": true,
+      "manifestFullFencesMatch": true,
+      "manifestPermittedBodyMatches": true
+    },
+    {
+      "unitId": "e05",
+      "order": 19,
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d",
+      "bytes": 20607,
+      "h1MatchesSpec": true,
+      "receivedOriginSha256MatchesSpec": true,
+      "retainedBodyOnlyPermittedHistoricalLabelChange": true,
+      "fullFencesEqualReceived": true,
+      "fullFenceSha256InOrder": [
+        "df3405dd6b664282b416d91b7141a3bb328a3905dcfd577d62ac5a2168bb8f99",
+        "8ade90356abf9f1f07733ff7779a97733eea07146cd56530c2845a2b0966258e",
+        "c496c8e4e34b9c6a83eea5431ceab158563c6f6a718e03e8512fa2364168a9e8"
+      ],
+      "manifestCurrentSourceMatches": true,
+      "manifestFullFencesMatch": true,
+      "manifestPermittedBodyMatches": true
+    },
+    {
+      "unitId": "p02",
+      "order": 20,
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "sha256": "7a4ddb35b1a34d2a2ed99b4fa73124794b5220ed1498ef395e48817d5197c487",
+      "bytes": 20280,
+      "h1MatchesSpec": true,
+      "receivedOriginSha256MatchesSpec": true,
+      "retainedBodyOnlyPermittedHistoricalLabelChange": true,
+      "fullFencesEqualReceived": true,
+      "fullFenceSha256InOrder": [
+        "933fef3e1bf0b9bb74e9f95c072644e17061e509d9b18e69f9e1868a009c58de"
+      ],
+      "manifestCurrentSourceMatches": true,
+      "manifestFullFencesMatch": true,
+      "manifestPermittedBodyMatches": true
+    }
+  ],
+  "all20CurrentSourceClaimsMatch": true,
+  "all19ProfessionalBodiesAnd39FullFencesPreserved": true,
+  "chapterDiagramGroups": [
+    {
+      "order": 1,
+      "unitId": "00-learning-route",
+      "group": "learning",
+      "label": "1 认识 Agent 工程",
+      "groupMatchesSpec": true,
+      "shortLabelMatches": true
+    },
+    {
+      "order": 2,
+      "unitId": "01-foundation",
+      "group": "learning",
+      "label": "2 基础预备",
+      "groupMatchesSpec": true,
+      "shortLabelMatches": true
+    },
+    {
+      "order": 3,
+      "unitId": "p01-discovery",
+      "group": "problem",
+      "label": "3 问题发现",
+      "groupMatchesSpec": true,
+      "shortLabelMatches": true
+    },
+    {
+      "order": 4,
+      "unitId": "02-task-acceptance",
+      "group": "problem",
+      "label": "4 任务验收",
+      "groupMatchesSpec": true,
+      "shortLabelMatches": true
+    },
+    {
+      "order": 5,
+      "unitId": "03-trust-boundary",
+      "group": "problem",
+      "label": "5 信任边界",
+      "groupMatchesSpec": true,
+      "shortLabelMatches": true
+    },
+    {
+      "order": 6,
+      "unitId": "f01",
+      "group": "components",
+      "label": "6 外部 API",
+      "groupMatchesSpec": true,
+      "shortLabelMatches": true
+    },
+    {
+      "order": 7,
+      "unitId": "f02",
+      "group": "components",
+      "label": "7 模型候选",
+      "groupMatchesSpec": true,
+      "shortLabelMatches": true
+    },
+    {
+      "order": 8,
+      "unitId": "c01-selection",
+      "group": "choice",
+      "label": "8 方案选择",
+      "groupMatchesSpec": true,
+      "shortLabelMatches": true
+    },
+    {
+      "order": 9,
+      "unitId": "c01-control-primer",
+      "group": "control",
+      "label": "9 动作身份",
+      "groupMatchesSpec": true,
+      "shortLabelMatches": true
+    },
+    {
+      "order": 10,
+      "unitId": "c02",
+      "group": "components",
+      "label": "10 检索证据",
+      "groupMatchesSpec": true,
+      "shortLabelMatches": true
+    },
+    {
+      "order": 11,
+      "unitId": "c03",
+      "group": "components",
+      "label": "11 写工具",
+      "groupMatchesSpec": true,
+      "shortLabelMatches": true
+    },
+    {
+      "order": 12,
+      "unitId": "e01",
+      "group": "control",
+      "label": "12 持久恢复",
+      "groupMatchesSpec": true,
+      "shortLabelMatches": true
+    },
+    {
+      "order": 13,
+      "unitId": "c01-fixed-workflow",
+      "group": "control",
+      "label": "13 固定端到端流程",
+      "groupMatchesSpec": true,
+      "shortLabelMatches": true
+    },
+    {
+      "order": 14,
+      "unitId": "c01-control-loop",
+      "group": "control",
+      "label": "14 完整动态循环",
+      "groupMatchesSpec": true,
+      "shortLabelMatches": true
+    },
+    {
+      "order": 15,
+      "unitId": "e02",
+      "group": "guard",
+      "label": "15 版本评价",
+      "groupMatchesSpec": true,
+      "shortLabelMatches": true
+    },
+    {
+      "order": 16,
+      "unitId": "p01-mvp",
+      "group": "choice",
+      "label": "16 完整 MVP 决策",
+      "groupMatchesSpec": true,
+      "shortLabelMatches": true
+    },
+    {
+      "order": 17,
+      "unitId": "e03",
+      "group": "guard",
+      "label": "17 强制安全",
+      "groupMatchesSpec": true,
+      "shortLabelMatches": true
+    },
+    {
+      "order": 18,
+      "unitId": "e04",
+      "group": "delivery",
+      "label": "18 发布回退",
+      "groupMatchesSpec": true,
+      "shortLabelMatches": true
+    },
+    {
+      "order": 19,
+      "unitId": "e05",
+      "group": "delivery",
+      "label": "19 性能成本",
+      "groupMatchesSpec": true,
+      "shortLabelMatches": true
+    },
+    {
+      "order": 20,
+      "unitId": "p02",
+      "group": "delivery",
+      "label": "20 独立交付与复盘",
+      "groupMatchesSpec": true,
+      "shortLabelMatches": true
+    }
+  ],
+  "all20DiagramGroupsMatch": true,
+  "assets": [
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-engineering-landscape.dot",
+      "sha256": "7a280385d49ebefe9c4d82bd81630101f67692c8ea7ac5cfb61194b70f1c829b",
+      "bytes": 3471,
+      "actualSha256": "7a280385d49ebefe9c4d82bd81630101f67692c8ea7ac5cfb61194b70f1c829b",
+      "manifestMatches": true
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-engineering-landscape.png",
+      "sha256": "7136b1c83c29f3ed357437e3c9885901b8b90238763e6263dead3fdd89249bd6",
+      "bytes": 592044,
+      "actualSha256": "7136b1c83c29f3ed357437e3c9885901b8b90238763e6263dead3fdd89249bd6",
+      "manifestMatches": true
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-engineering-landscape.svg",
+      "sha256": "fd235b6f248af4ada7556044a7c393810832cde838f0945c98a7a22b3bd0a8f9",
+      "bytes": 14891,
+      "actualSha256": "fd235b6f248af4ada7556044a7c393810832cde838f0945c98a7a22b3bd0a8f9",
+      "manifestMatches": true
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-runtime-loop.dot",
+      "sha256": "7fcde3319a3f611f3909472530a29e73480ab5a8049b65313be53278e312ee5b",
+      "bytes": 2125,
+      "actualSha256": "7fcde3319a3f611f3909472530a29e73480ab5a8049b65313be53278e312ee5b",
+      "manifestMatches": true
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-runtime-loop.png",
+      "sha256": "9497f77fa43566eb621549175ee55870a02b50e8ebd3144405e820d0ac2c7106",
+      "bytes": 386511,
+      "actualSha256": "9497f77fa43566eb621549175ee55870a02b50e8ebd3144405e820d0ac2c7106",
+      "manifestMatches": true
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-runtime-loop.svg",
+      "sha256": "c1929a8021f331df4452e949272028fcde05c037b996453e883d3f84a83e5a15",
+      "bytes": 11151,
+      "actualSha256": "c1929a8021f331df4452e949272028fcde05c037b996453e883d3f84a83e5a15",
+      "manifestMatches": true
+    }
+  ],
+  "allAuthorAssetClaimsMatch": true,
+  "localLinks": [
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 21,
+      "target": "c01-selection.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 27,
+      "target": "assets/agent-runtime-loop.png",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-runtime-loop.png",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 29,
+      "target": "assets/agent-runtime-loop.svg",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-runtime-loop.svg",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 29,
+      "target": "assets/agent-runtime-loop.dot",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-runtime-loop.dot",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 42,
+      "target": "c01-fixed-workflow.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 42,
+      "target": "c01-control-loop.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 48,
+      "target": "assets/agent-engineering-landscape.png",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-engineering-landscape.png",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 50,
+      "target": "assets/agent-engineering-landscape.svg",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-engineering-landscape.svg",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 50,
+      "target": "assets/agent-engineering-landscape.dot",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-engineering-landscape.dot",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 64,
+      "target": "00-learning-route.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 65,
+      "target": "01-foundation.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 66,
+      "target": "p01-discovery.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 67,
+      "target": "02-task-acceptance.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 68,
+      "target": "03-trust-boundary.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 69,
+      "target": "f01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 70,
+      "target": "f02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 71,
+      "target": "c01-selection.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 72,
+      "target": "c01-control-primer.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 73,
+      "target": "c02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 74,
+      "target": "c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 75,
+      "target": "e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 76,
+      "target": "c01-fixed-workflow.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 77,
+      "target": "c01-control-loop.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 78,
+      "target": "e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 79,
+      "target": "p01-mvp.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 80,
+      "target": "e03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 81,
+      "target": "e04.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 82,
+      "target": "e05.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 83,
+      "target": "p02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 87,
+      "target": "01-foundation.md#先做入口诊断",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "fileExists": true,
+      "markdownAnchorExists": true
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 91,
+      "target": "p01-discovery.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 91,
+      "target": "02-task-acceptance.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 91,
+      "target": "03-trust-boundary.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 106,
+      "target": "01-foundation.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 106,
+      "target": "p01-discovery.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 106,
+      "target": "README.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "line": 106,
+      "target": "../../team/textbook-v09-curriculum.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-curriculum.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "line": 16,
+      "target": "p01-discovery.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "line": 100,
+      "target": "f01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "line": 104,
+      "target": "p01-discovery.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "line": 5,
+      "target": "00-learning-route.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "line": 5,
+      "target": "e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "line": 5,
+      "target": "p01-mvp.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "line": 92,
+      "target": "02-task-acceptance.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "line": 5,
+      "target": "p01-discovery.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "line": 58,
+      "target": "e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "line": 68,
+      "target": "03-trust-boundary.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "line": 5,
+      "target": "02-task-acceptance.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "line": 5,
+      "target": "f01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "line": 5,
+      "target": "c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "line": 5,
+      "target": "e03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "line": 41,
+      "target": "f01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "line": 6,
+      "target": "01-foundation.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "line": 6,
+      "target": "02-task-acceptance.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "line": 6,
+      "target": "03-trust-boundary.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "line": 197,
+      "target": "c02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "line": 205,
+      "target": "c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "line": 205,
+      "target": "e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "line": 208,
+      "target": "01-foundation.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "line": 211,
+      "target": "f02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "line": 211,
+      "target": "../../team/textbook-v09-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "line": 6,
+      "target": "f01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "line": 200,
+      "target": "c02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "line": 207,
+      "target": "c01-selection.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "line": 207,
+      "target": "../../team/textbook-v09-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "line": 5,
+      "target": "f02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "line": 5,
+      "target": "02-task-acceptance.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "line": 24,
+      "target": "c01-fixed-workflow.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "line": 47,
+      "target": "e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "line": 62,
+      "target": "c01-control-primer.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "line": 5,
+      "target": "c01-selection.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "line": 5,
+      "target": "03-trust-boundary.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "line": 5,
+      "target": "c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "line": 5,
+      "target": "e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "line": 5,
+      "target": "c01-control-loop.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "line": 48,
+      "target": "c02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "line": 48,
+      "target": "c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "line": 48,
+      "target": "c01-fixed-workflow.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "line": 6,
+      "target": "f02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "line": 6,
+      "target": "03-trust-boundary.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "line": 34,
+      "target": "c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "line": 234,
+      "target": "e03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "line": 249,
+      "target": "c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "line": 249,
+      "target": "../../team/textbook-v09-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "line": 6,
+      "target": "f01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "line": 6,
+      "target": "c01-selection.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "line": 6,
+      "target": "c01-control-primer.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "line": 6,
+      "target": "e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "line": 26,
+      "target": "e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "line": 91,
+      "target": "e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "line": 277,
+      "target": "e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "line": 288,
+      "target": "e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "line": 288,
+      "target": "../../team/textbook-v09-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "line": 6,
+      "target": "c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "line": 6,
+      "target": "c01-control-primer.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "line": 6,
+      "target": "c01-fixed-workflow.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "line": 30,
+      "target": "c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "line": 378,
+      "target": "c01-control-loop.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "line": 404,
+      "target": "c01-fixed-workflow.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "line": 404,
+      "target": "../../team/textbook-v09-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "line": 5,
+      "target": "f02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "line": 5,
+      "target": "c02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "line": 5,
+      "target": "c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "line": 5,
+      "target": "e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "line": 49,
+      "target": "f02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "line": 51,
+      "target": "e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "line": 177,
+      "target": "c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "line": 177,
+      "target": "e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "line": 185,
+      "target": "c01-control-loop.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "line": 7,
+      "target": "c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "line": 7,
+      "target": "e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "line": 7,
+      "target": "c01-fixed-workflow.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "line": 905,
+      "target": "e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "line": 6,
+      "target": "c02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "line": 6,
+      "target": "c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "line": 6,
+      "target": "c01-control-loop.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "line": 6,
+      "target": "02-task-acceptance.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "line": 59,
+      "target": "c01-control-loop.md#3-用动作账本表达进度-不要只保存聊天文本",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": true
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "line": 229,
+      "target": "e03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "line": 272,
+      "target": "p01-mvp.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "line": 272,
+      "target": "../../team/textbook-v09-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "line": 5,
+      "target": "p01-discovery.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "line": 5,
+      "target": "c01-selection.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "line": 5,
+      "target": "e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "line": 5,
+      "target": "e03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "line": 5,
+      "target": "e04.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "line": 13,
+      "target": "e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "line": 13,
+      "target": "e05.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "line": 6,
+      "target": "03-trust-boundary.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "line": 6,
+      "target": "c02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "line": 6,
+      "target": "c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "line": 6,
+      "target": "e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "line": 278,
+      "target": "c01-control-loop.md#8-把这些约束落实到完整控制骨架",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": true
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "line": 315,
+      "target": "e04.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "line": 315,
+      "target": "../../team/textbook-v09-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "line": 6,
+      "target": "e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "line": 6,
+      "target": "e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "line": 6,
+      "target": "e03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "line": 146,
+      "target": "c01-control-loop.md#9-并发要分开处理工具依赖与运行推进权",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": true
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "line": 218,
+      "target": "e05.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "line": 218,
+      "target": "../../team/textbook-v09-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "line": 6,
+      "target": "e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "line": 6,
+      "target": "e04.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "line": 140,
+      "target": "e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "line": 227,
+      "target": "p02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "line": 227,
+      "target": "../../team/textbook-v09-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "line": 6,
+      "target": "e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "line": 6,
+      "target": "e03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "line": 6,
+      "target": "e04.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "line": 6,
+      "target": "e05.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "line": 6,
+      "target": "p01-mvp.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "line": 25,
+      "target": "e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "line": 25,
+      "target": "e04.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "line": 113,
+      "target": "../../team/product-gates.json",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/product-gates.json",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "line": 113,
+      "target": "../../team/product-creation-standard.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/product-creation-standard.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "line": 127,
+      "target": "e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "line": 131,
+      "target": "p01-mvp.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "line": 147,
+      "target": "c01-control-loop.md#6-先核对未决动作-再让模型继续",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": true
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "line": 164,
+      "target": "e05.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "line": 164,
+      "target": "e03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "line": 199,
+      "target": "README.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "line": 199,
+      "target": "../../team/textbook-v09-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 3,
+      "target": "00-learning-route.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 5,
+      "target": "agent-engineering-textbook.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 9,
+      "target": "p01-discovery.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 9,
+      "target": "02-task-acceptance.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 9,
+      "target": "03-trust-boundary.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 9,
+      "target": "c01-selection.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 9,
+      "target": "c01-control-primer.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 11,
+      "target": "01-foundation.md#先做入口诊断",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "fileExists": true,
+      "markdownAnchorExists": true
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 11,
+      "target": "../../team/textbook-v09-curriculum.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-curriculum.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 19,
+      "target": "00-learning-route.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 20,
+      "target": "01-foundation.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 21,
+      "target": "p01-discovery.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 22,
+      "target": "02-task-acceptance.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 23,
+      "target": "03-trust-boundary.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 24,
+      "target": "f01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 25,
+      "target": "f02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 26,
+      "target": "c01-selection.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 27,
+      "target": "c01-control-primer.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 28,
+      "target": "c02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 29,
+      "target": "c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 30,
+      "target": "e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 31,
+      "target": "c01-fixed-workflow.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 32,
+      "target": "c01-control-loop.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 33,
+      "target": "e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 34,
+      "target": "p01-mvp.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 35,
+      "target": "e03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 36,
+      "target": "e04.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 37,
+      "target": "e05.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 38,
+      "target": "p02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 42,
+      "target": "../../team/textbook-v10-opening-spec.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-spec.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 43,
+      "target": "../../team/textbook-v09-manifest.json",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-manifest.json",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 44,
+      "target": "../../team/TEXTBOOK_WRITING_STANDARD.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/TEXTBOOK_WRITING_STANDARD.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 45,
+      "target": "../../team/textbook-v10-opening-content-review.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-content-review.md",
+      "fileExists": false,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 46,
+      "target": "../../team/textbook-v10-opening-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 23,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 29,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-runtime-loop.png",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-runtime-loop.png",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 31,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-runtime-loop.svg",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-runtime-loop.svg",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 31,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-runtime-loop.dot",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-runtime-loop.dot",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 44,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 44,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 50,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-engineering-landscape.png",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-engineering-landscape.png",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 52,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-engineering-landscape.svg",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-engineering-landscape.svg",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 52,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-engineering-landscape.dot",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/assets/agent-engineering-landscape.dot",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 66,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 67,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 68,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 69,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 70,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 71,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 72,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 73,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 74,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 75,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 76,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 77,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 78,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 79,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 80,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 81,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 82,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 83,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 84,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 85,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 89,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md#先做入口诊断",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "fileExists": true,
+      "markdownAnchorExists": true
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 93,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 93,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 93,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 108,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 108,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 108,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 108,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-curriculum.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-curriculum.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 110,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 129,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 213,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 217,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 219,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 227,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 227,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 227,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 314,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 316,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 324,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 377,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 387,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 389,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 397,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 397,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 397,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 397,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 433,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 435,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 444,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 444,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 444,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 635,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 643,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 643,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 646,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/01-foundation.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 649,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 649,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 651,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 660,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 854,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 861,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 861,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 863,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 871,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 871,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 890,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 913,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 928,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 930,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 938,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 938,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 938,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 938,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 938,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 981,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 981,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 981,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 983,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 992,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 992,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1020,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1220,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1235,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1235,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1237,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1246,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1246,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1246,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1246,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1266,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1331,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1517,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1528,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1528,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1530,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1539,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1539,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-primer.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1539,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1563,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1911,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1937,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1937,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1939,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1947,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1947,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1947,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1947,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1991,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/f02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 1993,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 2119,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 2119,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 2127,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 2129,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 2139,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 2139,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 2139,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3037,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3039,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3048,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3048,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3048,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3048,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3101,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md#3-用动作账本表达进度-不要只保存聊天文本",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": true
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3271,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3314,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3314,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3316,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3324,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-discovery.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3324,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-selection.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3324,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3324,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3324,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3332,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3332,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3409,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3418,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/03-trust-boundary.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3418,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3418,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3418,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3690,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md#8-把这些约束落实到完整控制骨架",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": true
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3727,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3727,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3729,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3738,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3738,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3738,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3878,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md#9-并发要分开处理工具依赖与运行推进权",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": true
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3950,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3950,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3952,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3961,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 3961,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4095,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4182,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4182,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4184,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4193,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e01.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4193,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4193,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4193,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4193,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4212,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4212,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e04.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4300,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/product-gates.json",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/product-gates.json",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4300,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/product-creation-standard.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/product-creation-standard.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4314,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4318,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p01-mvp.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4334,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md#6-先核对未决动作-再让模型继续",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/c01-control-loop.md",
+      "fileExists": true,
+      "markdownAnchorExists": true
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4351,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e05.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4351,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/e03.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4386,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4386,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-qa.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    },
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "line": 4388,
+      "target": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/p02.md",
+      "fileExists": true,
+      "markdownAnchorExists": null
+    }
+  ],
+  "localLinkOccurrenceCount": 378,
+  "missingLocalTargets": [
+    {
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "line": 45,
+      "target": "../../team/textbook-v10-opening-content-review.md",
+      "resolvedPath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-content-review.md",
+      "fileExists": false,
+      "markdownAnchorExists": null
+    }
+  ],
+  "invalidMarkdownAnchors": [],
+  "oldBehaviorRerun": false,
+  "textbookBehaviorExecutionsThisRound": 0,
+  "scopeLimit": "Static source/assembly/navigation preservation and chapter placement; not browser rendering, runtime behavior, expert or learner validation."
+}

@@ -1,0 +1,46 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4475/#check".
+1 AXWebArea 职造 · Agent 学习工作台, URL: 127.0.0.1:4475/#check
+	2 link Description: 跳到主要内容, Value: 127.0.0.1:4475/#main-content
+	3 container primary-sidebar
+		4 link Description: 职 职造 Agent 开发学习, Value: 127.0.0.1:4475/#home
+		5 container 主导航
+			6 button 首页
+			7 button 课程学习
+			8 button 题库浏览
+			9 button 学习记录
+			10 button 个人设置
+		11 text 当前学习方向
+		12 text Agent 开发者
+		13 link Description: 本机学习者 记录保存在此浏览器, Value: 127.0.0.1:4475/#settings
+	14 container main-content
+		15 container
+			100 text 检验学习结果
+			101 text 从看过的知识点出题，只作本人自评
+		18 container app
+			102 heading 本次自评已结束, Value: 1
+				103 text 本次自评已结束
+			104 text 本人判断，未作机器评分或专业考试
+			105 text 自评答对 0
+			106 text 自评答错 0
+			107 text 跳过 2
+			108 container
+				109 text Q11 · 固定题组
+				110 link Description: ReAct 如何组织推理、行动与观察？它与一次性生成计划有什么不同？, Value: 127.0.0.1:4475/#questions/Q11
+				111 link Description: 1 三种策略改变的是控制对象, Value: 127.0.0.1:4475/#learn/agent/n03-planning-reflection/s-da63f3dcff17?from=Q11
+				112 checkbox 未掌握, Value: 0
+			113 container
+				114 text Q12 · 固定题组
+				115 link Description: ReAct、Plan-and-Execute 和固定状态机，你会如何按任务特征选择？, Value: 127.0.0.1:4475/#questions/Q12
+				116 link Description: 1 三种策略改变的是控制对象, Value: 127.0.0.1:4475/#learn/agent/n03-planning-reflection/s-da63f3dcff17?from=Q12
+				117 checkbox 未掌握, Value: 0
+			118 button 重新选择题目
+			119 link Description: 返回学习记录, Value: 127.0.0.1:4475/#records
+		98 container
+			99 text 职造 · Agent 开发学习 教材 v12 · 本浏览器保存
+	120 container lw-find-form
+		121 text 查教材
+		122 text entry area (settable) 查教材, ID: lw-query
+		123 button 查找
+		124 button (collapsed) Description: 展开检索结果, Secondary Actions: Expand
+
+The focused UI element is 1 AXWebArea 职造 · Agent 学习工作台, URL: 127.0.0.1:4475/#check

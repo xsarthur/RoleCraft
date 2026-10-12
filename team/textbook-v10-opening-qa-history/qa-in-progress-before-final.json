@@ -1,0 +1,28 @@
+{
+  "version": "textbook-v10-opening",
+  "role": "测试工程师",
+  "status": "in_progress",
+  "documentScopeStatus": "in_progress_visual_repair_pending_final_assembly",
+  "fullProductStatus": "not_met",
+  "oldBehaviorRerun": false,
+  "evidence": "textbook-v10-opening-qa-history/baseline.json",
+  "stageEvidence": {
+    "baseline": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-qa-history/baseline.json",
+    "retained19Chapters": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-qa-history/stage01-migration/retained-chapters.json",
+    "visualOriginalFindings": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-qa-history/stage02-figures/visual-findings-before.json",
+    "firstRepairRecheck": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-qa-history/stage02-figures/after-layout-repair-1/visual-recheck.json"
+  },
+  "retainedCompleteCodeFences": 39,
+  "textbookBehaviorExecutionsThisRound": 0,
+  "visualFindings": [
+    {
+      "id": "QA10-01",
+      "status": "open_residual_arrow_label_intersection"
+    },
+    {
+      "id": "QA10-02",
+      "status": "open_residual_arrow_label_intersection"
+    }
+  ],
+  "scopeBoundary": "Current static preservation, diagram rendering and navigation/assembly only. No current full technical review of the 19 unchanged professional chapters; no previous QA conclusion inherited."
+}

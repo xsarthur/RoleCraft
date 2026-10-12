@@ -1,0 +1,336 @@
+{
+  "kind": "author_self_check_not_independent_acceptance",
+  "startedFromProductFiniteCases": true,
+  "nodeVersion": "v24.16.0",
+  "providerCalled": false,
+  "corpusVersion": "textbook-v12",
+  "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+  "bookSha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+  "units": 30,
+  "sourceBinding": {
+    "server/retrieval/index.mjs": "acc8555c9b23603f04afa20ff7dd6eb2fc5429894b7474814d4b16114e1ded0d",
+    "server/retrieval/semantic.mjs": "d101163e0934cac93309265c4949fccbc9fe304120c5954ef9466a4fe68a4115",
+    "server/retrieval/build-content-v12.mjs": "9593c399b4b0b94f5bb34966f5aacaae679fd30c8dda28009dc51bc51cdb83f4",
+    "dist/content-retrieval-core.js": "7905edee26ab460c8a78accb4e3fcb0bd1ff97e0d44885ba3df7c7713b2fbfb6",
+    "server/index.mjs": "63cee03519aaeb53257108227d17464bc3fb8942a7636ea87fddd13a76d2182b",
+    "server/retrieval/content-v12-index.json": "ac87bfa9c88f6e1709fc59c05fc3af1fcf98b7274aeb1be48a07e490578bdd6b",
+    "server/retrieval/vectors-v12.json": "c28e1e27e7185638aeecc4357498ae19e99f5277e5d271a7d529e57aa1754164",
+    "server/retrieval/intent-vectors-v12.json": "cd0f1e55e25d9b275558baf1693f0721b6ae9eb896a7519c582e8e75a0b51431",
+    "dist/content-v12-data.js": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224"
+  },
+  "runs": [
+    {
+      "id": "react",
+      "query": "react",
+      "pass": false,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "invalid_input",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_concept_retrieval",
+        "matchingMethods": [
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "请填写 1–1200 字的学习需求，并使用当前教材的有效上下文。"
+        ]
+      }
+    },
+    {
+      "id": "react-mechanism",
+      "query": "ReAct 怎么把推理和动作交错？",
+      "pass": false,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "invalid_input",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_concept_retrieval",
+        "matchingMethods": [
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "请填写 1–1200 字的学习需求，并使用当前教材的有效上下文。"
+        ]
+      }
+    },
+    {
+      "id": "planning-term",
+      "query": "Planning",
+      "pass": false,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "invalid_input",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_concept_retrieval",
+        "matchingMethods": [
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "请填写 1–1200 字的学习需求，并使用当前教材的有效上下文。"
+        ]
+      }
+    },
+    {
+      "id": "planning-meaning",
+      "query": "怎样从目标倒推步骤，再检查计划能不能执行？",
+      "pass": false,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "invalid_input",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_concept_retrieval",
+        "matchingMethods": [
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "请填写 1–1200 字的学习需求，并使用当前教材的有效上下文。"
+        ]
+      }
+    },
+    {
+      "id": "replanning-term",
+      "query": "Replanning",
+      "pass": false,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "invalid_input",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_concept_retrieval",
+        "matchingMethods": [
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "请填写 1–1200 字的学习需求，并使用当前教材的有效上下文。"
+        ]
+      }
+    },
+    {
+      "id": "replanning-meaning",
+      "query": "新证据推翻计划后，哪些步骤要重做，哪些事实该保留？",
+      "pass": false,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "invalid_input",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_concept_retrieval",
+        "matchingMethods": [
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "请填写 1–1200 字的学习需求，并使用当前教材的有效上下文。"
+        ]
+      }
+    },
+    {
+      "id": "recovery",
+      "query": "程序崩了以后怎么接着干，又不把已经做过的事情再做一遍？",
+      "pass": false,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "invalid_input",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_concept_retrieval",
+        "matchingMethods": [
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "请填写 1–1200 字的学习需求，并使用当前教材的有效上下文。"
+        ]
+      }
+    },
+    {
+      "id": "multi",
+      "query": "想知道中断后不重复做事，以及整个任务一共花了多少钱。",
+      "pass": false,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "invalid_input",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_concept_retrieval",
+        "matchingMethods": [
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "请填写 1–1200 字的学习需求，并使用当前教材的有效上下文。"
+        ]
+      }
+    },
+    {
+      "id": "negation",
+      "query": "先不看 ReAct，我只想知道中断后怎样继续。",
+      "pass": false,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "invalid_input",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_concept_retrieval",
+        "matchingMethods": [
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "请填写 1–1200 字的学习需求，并使用当前教材的有效上下文。"
+        ]
+      }
+    },
+    {
+      "id": "frontend",
+      "query": "React 前端框架的 JSX 和 Hooks",
+      "pass": false,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "invalid_input",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_concept_retrieval",
+        "matchingMethods": [
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "请填写 1–1200 字的学习需求，并使用当前教材的有效上下文。"
+        ]
+      }
+    },
+    {
+      "id": "ambiguity",
+      "query": "React 是前端框架还是 Agent 的方法？我想学它。",
+      "pass": false,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "invalid_input",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_concept_retrieval",
+        "matchingMethods": [
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "请填写 1–1200 字的学习需求，并使用当前教材的有效上下文。"
+        ]
+      }
+    },
+    {
+      "id": "no-match",
+      "query": "装修厨房台面怎么选材料？",
+      "pass": false,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "invalid_input",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_concept_retrieval",
+        "matchingMethods": [
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "请填写 1–1200 字的学习需求，并使用当前教材的有效上下文。"
+        ]
+      }
+    }
+  ],
+  "pass": false
+}

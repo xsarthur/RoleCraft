@@ -1,0 +1,1116 @@
+{
+  "atUtc": "2026-10-12T01:06:01.708193+00:00",
+  "candidate": "candidate01",
+  "sourceBinding": "received-binding.json",
+  "scope": "Independent real Node24/BGE HTTP plus manual source/question/subject matching. Mechanical exact quote alone is not answer relevance.",
+  "mechanicalChecks": 268,
+  "mechanicalFailedChecks": 5,
+  "defects": [
+    {
+      "id": "DG14-01",
+      "title": "自然表达相同职业机制未正确召回/回答",
+      "owner": "内容检索工程师",
+      "cases": [
+        {
+          "case": "HV14-01",
+          "query": "工作流被中断后从哪里继续，如何避免重复执行工具",
+          "actual": "e03/source迁移说明与人工创建说明；首句本篇原专业正文与代码完整迁移…与所问恢复机制无关",
+          "expected": "应依据e01/c01/n09的权威动作账本、未决效果/幂等恢复机制简答，不拿审计导航句作答案",
+          "actualResponse": {
+            "status": "recommended",
+            "retrievalVersion": "content-retrieval-0.12-v12",
+            "dialogVersion": "content-dialog-0.14-extractive",
+            "engineMode": "local_semantic_retrieval",
+            "providerCalled": false,
+            "corpusVersion": "textbook-v12",
+            "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+            "interpretedIntents": [
+              {
+                "id": "semantic_topic",
+                "label": "与当前教材小节相关的学习需求",
+                "evidence": [
+                  "如何避免重复执行工具"
+                ],
+                "unitIds": [
+                  "e03"
+                ]
+              }
+            ],
+            "excludedIntents": [],
+            "results": [
+              {
+                "unitId": "e03",
+                "sectionId": "s-7abbcb1b419d",
+                "order": 25,
+                "unitTitle": "在数据返回和动作发送前强制执行权限",
+                "sectionTitle": "v12 学习衔接",
+                "title": "v12 学习衔接",
+                "reason": "你表达了“如何避免重复执行工具”；这一小节说明与当前教材小节相关的学习需求的具体机制。",
+                "evidenceExcerpt": "本单元为30单元路线的第25单元。正式先修：[检索证据](c02.md), [写工具](c03.md), [版本评价](e02.md), [信任边界](03-trust-boundary.md)。按v12完整路线，下一单元为[代码沙箱](n08-sandbox-security.md)；上文保留的旧版关联仍可作主题参考。本篇原专业正文与代码完整迁移，历史验证仍只适用于原记录范围，不因复制获得新的执行结论。",
+                "sourcePath": "textbooks/v12/e03.md",
+                "sourceSha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+                "version": "textbook-v12",
+                "href": "#learn/agent/e03/s-7abbcb1b419d",
+                "intentId": "semantic_topic",
+                "matchingBasis": "task_intent",
+                "matchedSourceTerms": [],
+                "prerequisiteUnitIds": [
+                  "c02",
+                  "c03",
+                  "e02",
+                  "03-trust-boundary"
+                ]
+              },
+              {
+                "unitId": "e03",
+                "sectionId": "s-c29ae19f0661",
+                "order": 25,
+                "unitTitle": "在数据返回和动作发送前强制执行权限",
+                "sectionTitle": "从局部替身走到远端 哪些保证会消失",
+                "title": "从局部替身走到远端 哪些保证会消失",
+                "reason": "你表达了“如何避免重复执行工具”；这一小节说明与当前教材小节相关的学习需求的具体机制。",
+                "evidenceExcerpt": "替身中批准消费和教学效果在同一个锁内状态替换，能够避免两个线程各自创建。但真实服务的网络发送不在本地事务里：批准已消费、请求发出、远端成功、本地回执未保存，仍可能中断。",
+                "sourcePath": "textbooks/v12/e03.md",
+                "sourceSha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+                "version": "textbook-v12",
+                "href": "#learn/agent/e03/s-c29ae19f0661",
+                "intentId": "semantic_topic",
+                "matchingBasis": "task_intent",
+                "matchedSourceTerms": [],
+                "prerequisiteUnitIds": [
+                  "c02",
+                  "c03",
+                  "e02",
+                  "03-trust-boundary"
+                ]
+              }
+            ],
+            "clarification": null,
+            "limitations": [
+              "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。",
+              "回答为教材原文提取，不是生成式模型辅导；有限语义分类仍可能需要澄清。"
+            ],
+            "dialog": {
+              "status": "answered",
+              "answerMode": "extractive",
+              "sentences": [
+                {
+                  "text": "本篇原专业正文与代码完整迁移，历史验证仍只适用于原记录范围，不因复制获得新的执行结论。",
+                  "citationIds": [
+                    "c1"
+                  ]
+                },
+                {
+                  "text": "项目只开放普通创建接口、既不能查询操作又没有幂等键时，应将自动写路径缩为“形成待审说明、人工创建和核对”，这会增加人工成本，却比假装恢复安全更符合证据。",
+                  "citationIds": [
+                    "c2"
+                  ]
+                }
+              ],
+              "citations": [
+                {
+                  "id": "c1",
+                  "unitId": "e03",
+                  "sectionId": "s-7abbcb1b419d",
+                  "order": 25,
+                  "unitTitle": "在数据返回和动作发送前强制执行权限",
+                  "sectionTitle": "v12 学习衔接",
+                  "title": "v12 学习衔接",
+                  "reason": "你表达了“如何避免重复执行工具”；这一小节说明与当前教材小节相关的学习需求的具体机制。",
+                  "evidenceExcerpt": "本单元为30单元路线的第25单元。正式先修：[检索证据](c02.md), [写工具](c03.md), [版本评价](e02.md), [信任边界](03-trust-boundary.md)。按v12完整路线，下一单元为[代码沙箱](n08-sandbox-security.md)；上文保留的旧版关联仍可作主题参考。本篇原专业正文与代码完整迁移，历史验证仍只适用于原记录范围，不因复制获得新的执行结论。",
+                  "sourcePath": "textbooks/v12/e03.md",
+                  "sourceSha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+                  "version": "textbook-v12",
+                  "href": "#learn/agent/e03/s-7abbcb1b419d",
+                  "intentId": "semantic_topic",
+                  "matchingBasis": "task_intent",
+                  "matchedSourceTerms": [],
+                  "prerequisiteUnitIds": [
+                    "c02",
+                    "c03",
+                    "e02",
+                    "03-trust-boundary"
+                  ],
+                  "corpusVersion": "textbook-v12",
+                  "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+                  "quote": "本篇原专业正文与代码完整迁移，历史验证仍只适用于原记录范围，不因复制获得新的执行结论。",
+                  "quoteStart": 174,
+                  "quoteEnd": 217
+                },
+                {
+                  "id": "c2",
+                  "unitId": "e03",
+                  "sectionId": "s-c29ae19f0661",
+                  "order": 25,
+                  "unitTitle": "在数据返回和动作发送前强制执行权限",
+                  "sectionTitle": "从局部替身走到远端 哪些保证会消失",
+                  "title": "从局部替身走到远端 哪些保证会消失",
+                  "reason": "你表达了“如何避免重复执行工具”；这一小节说明与当前教材小节相关的学习需求的具体机制。",
+                  "evidenceExcerpt": "替身中批准消费和教学效果在同一个锁内状态替换，能够避免两个线程各自创建。但真实服务的网络发送不在本地事务里：批准已消费、请求发出、远端成功、本地回执未保存，仍可能中断。",
+                  "sourcePath": "textbooks/v12/e03.md",
+                  "sourceSha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+                  "version": "textbook-v12",
+                  "href": "#learn/agent/e03/s-c29ae19f0661",
+                  "intentId": "semantic_topic",
+                  "matchingBasis": "task_intent",
+                  "matchedSourceTerms": [],
+                  "prerequisiteUnitIds": [
+                    "c02",
+                    "c03",
+                    "e02",
+                    "03-trust-boundary"
+                  ],
+                  "corpusVersion": "textbook-v12",
+                  "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+                  "quote": "项目只开放普通创建接口、既不能查询操作又没有幂等键时，应将自动写路径缩为“形成待审说明、人工创建和核对”，这会增加人工成本，却比假装恢复安全更符合证据。",
+                  "quoteStart": 389,
+                  "quoteEnd": 465
+                }
+              ],
+              "scope": {
+                "relatedSegments": [
+                  "如何避免重复执行工具"
+                ],
+                "filteredSegments": [],
+                "contextUsed": null,
+                "classification": {
+                  "descriptionHash": "ad0f4a857eb906ce0e789d263c6bcd429fa7002935b40284dcde9c29f145e8b5",
+                  "method": "local_bge_domain_comparison_with_explicit_scope_guards",
+                  "segments": [
+                    {
+                      "text": "工作流被中断后从哪里继续",
+                      "decision": "uncertain",
+                      "relatedSimilarity": 0.4949,
+                      "unrelatedSimilarity": 0.4004
+                    },
+                    {
+                      "text": "如何避免重复执行工具",
+                      "decision": "related",
+                      "relatedSimilarity": 0.6792,
+                      "unrelatedSimilarity": 0.4842
+                    }
+                  ]
+                }
+              },
+              "message": "以下是教材中的简要回答。",
+              "context": {
+                "unitId": "e03",
+                "sectionId": "s-7abbcb1b419d",
+                "corpusVersion": "textbook-v12",
+                "sourceSha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70"
+              }
+            },
+            "matchingMethods": [
+              "local_semantic_vectors",
+              "local_task_concepts",
+              "source_term_recall"
+            ],
+            "semanticProvenance": {
+              "modelId": "Xenova/bge-small-zh-v1.5",
+              "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+              "dtype": "int8",
+              "pooling": "cls",
+              "dimensions": 512,
+              "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+              "corpusVersion": "textbook-v12",
+              "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+              "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+              "passages": 561,
+              "remoteModelsAllowed": false,
+              "querySentExternally": false
+            }
+          },
+          "elapsedMs": 80
+        },
+        {
+          "case": "HV14-02",
+          "query": "新版本到底有没有进步，应该拿什么样本对照",
+          "actual": "related_uncovered",
+          "expected": "e02同任务/冻结案例/配对比较有实际足够教材依据，应答到评估机制",
+          "actualResponse": {
+            "status": "no_match",
+            "retrievalVersion": "content-retrieval-0.12-v12",
+            "dialogVersion": "content-dialog-0.14-extractive",
+            "engineMode": "local_semantic_retrieval",
+            "providerCalled": false,
+            "corpusVersion": "textbook-v12",
+            "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+            "interpretedIntents": [],
+            "excludedIntents": [],
+            "results": [],
+            "clarification": null,
+            "limitations": [
+              "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+            ],
+            "dialog": {
+              "status": "related_uncovered",
+              "answerMode": "extractive",
+              "sentences": [],
+              "citations": [],
+              "scope": {
+                "relatedSegments": [
+                  "应该拿什么样本对照"
+                ],
+                "filteredSegments": [],
+                "contextUsed": null,
+                "classification": {
+                  "descriptionHash": "ad0f4a857eb906ce0e789d263c6bcd429fa7002935b40284dcde9c29f145e8b5",
+                  "method": "local_bge_domain_comparison_with_explicit_scope_guards",
+                  "segments": [
+                    {
+                      "text": "新版本到底有没有进步",
+                      "decision": "uncertain",
+                      "relatedSimilarity": 0.4954,
+                      "unrelatedSimilarity": 0.4471
+                    },
+                    {
+                      "text": "应该拿什么样本对照",
+                      "decision": "related",
+                      "relatedSimilarity": 0.543,
+                      "unrelatedSimilarity": 0.4289
+                    }
+                  ]
+                }
+              },
+              "message": "问题属于职业知识，但当前教材中尚未找到足够依据。",
+              "context": null
+            },
+            "matchingMethods": [
+              "local_semantic_vectors",
+              "local_task_concepts",
+              "source_term_recall"
+            ],
+            "semanticProvenance": {
+              "modelId": "Xenova/bge-small-zh-v1.5",
+              "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+              "dtype": "int8",
+              "pooling": "cls",
+              "dimensions": 512,
+              "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+              "corpusVersion": "textbook-v12",
+              "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+              "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+              "passages": 561,
+              "remoteModelsAllowed": false,
+              "querySentExternally": false
+            }
+          },
+          "elapsedMs": 52
+        },
+        {
+          "case": "HV14-04",
+          "query": "智能体执行计划时观察到了新约束，下一步怎么调整",
+          "actual": "c01 s-de2c83d4eb9e；并发工具将在下一节按契约扩展。本篇伪代码未运行…",
+          "expected": "n03重规划触发/保留有效事实/失效后继的机制，不能用未运行包装句回答",
+          "actualResponse": {
+            "status": "recommended",
+            "retrievalVersion": "content-retrieval-0.12-v12",
+            "dialogVersion": "content-dialog-0.14-extractive",
+            "engineMode": "local_semantic_retrieval",
+            "providerCalled": false,
+            "corpusVersion": "textbook-v12",
+            "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+            "interpretedIntents": [
+              {
+                "id": "runtime",
+                "label": "实现受控的动态循环",
+                "evidence": [
+                  "智能体执行计划时观察到了新约束"
+                ],
+                "unitIds": [
+                  "c01-control-loop"
+                ]
+              }
+            ],
+            "excludedIntents": [],
+            "results": [
+              {
+                "unitId": "c01-control-loop",
+                "sectionId": "s-de2c83d4eb9e",
+                "order": 17,
+                "unitTitle": "Agent 控制循环 设计一个可恢复 受控并能验收的运行时",
+                "sectionTitle": "8 把这些约束落实到完整控制骨架",
+                "title": "8 把这些约束落实到完整控制骨架",
+                "reason": "你表达了“智能体执行计划时观察到了新约束”；这一小节说明实现受控的动态循环的具体机制。",
+                "evidenceExcerpt": "下面的伪代码选择**单运行、单推进者、串行执行工具**作为基线。并发工具将在下一节按契约扩展。模型、数据库、工单服务和策略服务都通过接口接入；不假定它们共享事务。本篇伪代码未运行，实际外部服务契约也未实测。",
+                "sourcePath": "textbooks/v12/c01-control-loop.md",
+                "sourceSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+                "version": "textbook-v12",
+                "href": "#learn/agent/c01-control-loop/s-de2c83d4eb9e",
+                "intentId": "runtime",
+                "matchingBasis": "task_intent",
+                "matchedSourceTerms": [],
+                "prerequisiteUnitIds": [
+                  "c01-fixed-workflow",
+                  "c03",
+                  "e01"
+                ]
+              }
+            ],
+            "clarification": null,
+            "limitations": [
+              "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。",
+              "回答为教材原文提取，不是生成式模型辅导；有限语义分类仍可能需要澄清。"
+            ],
+            "dialog": {
+              "status": "answered",
+              "answerMode": "extractive",
+              "sentences": [
+                {
+                  "text": "并发工具将在下一节按契约扩展。",
+                  "citationIds": [
+                    "c1"
+                  ]
+                },
+                {
+                  "text": "本篇伪代码未运行，实际外部服务契约也未实测。",
+                  "citationIds": [
+                    "c1"
+                  ]
+                }
+              ],
+              "citations": [
+                {
+                  "id": "c1",
+                  "unitId": "c01-control-loop",
+                  "sectionId": "s-de2c83d4eb9e",
+                  "order": 17,
+                  "unitTitle": "Agent 控制循环 设计一个可恢复 受控并能验收的运行时",
+                  "sectionTitle": "8 把这些约束落实到完整控制骨架",
+                  "title": "8 把这些约束落实到完整控制骨架",
+                  "reason": "你表达了“智能体执行计划时观察到了新约束”；这一小节说明实现受控的动态循环的具体机制。",
+                  "evidenceExcerpt": "下面的伪代码选择**单运行、单推进者、串行执行工具**作为基线。并发工具将在下一节按契约扩展。模型、数据库、工单服务和策略服务都通过接口接入；不假定它们共享事务。本篇伪代码未运行，实际外部服务契约也未实测。",
+                  "sourcePath": "textbooks/v12/c01-control-loop.md",
+                  "sourceSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+                  "version": "textbook-v12",
+                  "href": "#learn/agent/c01-control-loop/s-de2c83d4eb9e",
+                  "intentId": "runtime",
+                  "matchingBasis": "task_intent",
+                  "matchedSourceTerms": [],
+                  "prerequisiteUnitIds": [
+                    "c01-fixed-workflow",
+                    "c03",
+                    "e01"
+                  ],
+                  "corpusVersion": "textbook-v12",
+                  "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+                  "quote": "并发工具将在下一节按契约扩展。模型、数据库、工单服务和策略服务都通过接口接入；不假定它们共享事务。本篇伪代码未运行，实际外部服务契约也未实测。",
+                  "quoteStart": 53,
+                  "quoteEnd": 124
+                }
+              ],
+              "scope": {
+                "relatedSegments": [
+                  "智能体执行计划时观察到了新约束"
+                ],
+                "filteredSegments": [],
+                "contextUsed": null,
+                "classification": {
+                  "descriptionHash": "ad0f4a857eb906ce0e789d263c6bcd429fa7002935b40284dcde9c29f145e8b5",
+                  "method": "local_bge_domain_comparison_with_explicit_scope_guards",
+                  "segments": [
+                    {
+                      "text": "智能体执行计划时观察到了新约束",
+                      "decision": "related",
+                      "relatedSimilarity": 0.6132,
+                      "unrelatedSimilarity": 0.4264
+                    },
+                    {
+                      "text": "下一步怎么调整",
+                      "decision": "uncertain",
+                      "relatedSimilarity": 0.4869,
+                      "unrelatedSimilarity": 0.423
+                    }
+                  ]
+                }
+              },
+              "message": "以下是教材中的简要回答。",
+              "context": {
+                "unitId": "c01-control-loop",
+                "sectionId": "s-de2c83d4eb9e",
+                "corpusVersion": "textbook-v12",
+                "sourceSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8"
+              }
+            },
+            "matchingMethods": [
+              "local_semantic_vectors",
+              "local_task_concepts",
+              "source_term_recall"
+            ],
+            "semanticProvenance": {
+              "modelId": "Xenova/bge-small-zh-v1.5",
+              "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+              "dtype": "int8",
+              "pooling": "cls",
+              "dimensions": 512,
+              "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+              "corpusVersion": "textbook-v12",
+              "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+              "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+              "passages": 561,
+              "remoteModelsAllowed": false,
+              "querySentExternally": false
+            }
+          },
+          "elapsedMs": 161
+        },
+        {
+          "case": "HV14-08",
+          "query": "怎样做旅行Agent，才能确认订房工具已经成功",
+          "actual": "related_uncovered",
+          "expected": "用户问Agent工具可靠性，非旅游执行；c03/e01已有回执/查询核对机制，应引用真实机制而非无覆盖",
+          "actualResponse": {
+            "status": "no_match",
+            "retrievalVersion": "content-retrieval-0.12-v12",
+            "dialogVersion": "content-dialog-0.14-extractive",
+            "engineMode": "local_semantic_retrieval",
+            "providerCalled": false,
+            "corpusVersion": "textbook-v12",
+            "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+            "interpretedIntents": [],
+            "excludedIntents": [],
+            "results": [],
+            "clarification": null,
+            "limitations": [
+              "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+            ],
+            "dialog": {
+              "status": "related_uncovered",
+              "answerMode": "extractive",
+              "sentences": [],
+              "citations": [],
+              "scope": {
+                "relatedSegments": [
+                  "怎样做旅行Agent"
+                ],
+                "filteredSegments": [],
+                "contextUsed": null,
+                "classification": {
+                  "descriptionHash": "ad0f4a857eb906ce0e789d263c6bcd429fa7002935b40284dcde9c29f145e8b5",
+                  "method": "local_bge_domain_comparison_with_explicit_scope_guards",
+                  "segments": [
+                    {
+                      "text": "怎样做旅行Agent",
+                      "decision": "related",
+                      "relatedSimilarity": 0.5014,
+                      "unrelatedSimilarity": 0.533
+                    },
+                    {
+                      "text": "才能确认订房工具已经成功",
+                      "decision": "uncertain",
+                      "relatedSimilarity": 0.519,
+                      "unrelatedSimilarity": 0.4642
+                    }
+                  ]
+                }
+              },
+              "message": "问题属于职业知识，但当前教材中尚未找到足够依据。",
+              "context": null
+            },
+            "matchingMethods": [
+              "local_semantic_vectors",
+              "local_task_concepts",
+              "source_term_recall"
+            ],
+            "semanticProvenance": {
+              "modelId": "Xenova/bge-small-zh-v1.5",
+              "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+              "dtype": "int8",
+              "pooling": "cls",
+              "dimensions": 512,
+              "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+              "corpusVersion": "textbook-v12",
+              "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+              "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+              "passages": 561,
+              "remoteModelsAllowed": false,
+              "querySentExternally": false
+            }
+          },
+          "elapsedMs": 59
+        },
+        {
+          "case": "HV14-10",
+          "query": "我不想看向量数据库，先讲计划失败后如何反思",
+          "actual": "任务验收练习对原任务列业务规则缺项；反思主题未召回",
+          "expected": "n03 Reflection或有效重规划失败机制短答；排除向量库主入口",
+          "actualResponse": {
+            "status": "recommended",
+            "retrievalVersion": "content-retrieval-0.12-v12",
+            "dialogVersion": "content-dialog-0.14-extractive",
+            "engineMode": "local_semantic_retrieval",
+            "providerCalled": false,
+            "corpusVersion": "textbook-v12",
+            "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+            "interpretedIntents": [
+              {
+                "id": "stopping",
+                "label": "设置完成和合理停止条件",
+                "evidence": [
+                  "我不想看向量数据库，先讲计划失败后如何反思"
+                ],
+                "unitIds": [
+                  "02-task-acceptance",
+                  "c01-control-loop"
+                ]
+              },
+              {
+                "id": "security",
+                "label": "执行数据和动作权限",
+                "evidence": [
+                  "我不想看向量数据库"
+                ],
+                "unitIds": [
+                  "e03",
+                  "03-trust-boundary"
+                ]
+              }
+            ],
+            "excludedIntents": [],
+            "results": [
+              {
+                "unitId": "02-task-acceptance",
+                "sectionId": "s-a6477c329739",
+                "order": 5,
+                "unitTitle": "动手前定义任务成功与合理停止",
+                "sectionTitle": "用反例修任务记录",
+                "title": "用反例修任务记录",
+                "reason": "你表达了“我不想看向量数据库，先讲计划失败后如何反思”；这一小节说明设置完成和合理停止条件的具体机制。",
+                "evidenceExcerpt": "练习：参与者要求“确认第七天应退款”，目前只有给定函数和失败报告。另一位把目标改成“描述边界差异”，让题通过。这个改动是否允许。",
+                "sourcePath": "textbooks/v12/02-task-acceptance.md",
+                "sourceSha256": "2a15989e762cf659822a9ec3d0b37d881fb28ddcd2d8f1503957ad73d8343ec1",
+                "version": "textbook-v12",
+                "href": "#learn/agent/02-task-acceptance/s-a6477c329739",
+                "intentId": "stopping",
+                "matchingBasis": "task_intent",
+                "matchedSourceTerms": [],
+                "prerequisiteUnitIds": [
+                  "p01-discovery"
+                ]
+              }
+            ],
+            "clarification": null,
+            "limitations": [
+              "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。",
+              "回答为教材原文提取，不是生成式模型辅导；有限语义分类仍可能需要澄清。"
+            ],
+            "dialog": {
+              "status": "answered",
+              "answerMode": "extractive",
+              "sentences": [
+                {
+                  "text": "对原任务应列业务规则缺项并等待；不能事后改目标掩盖未完成。",
+                  "citationIds": [
+                    "c1"
+                  ]
+                },
+                {
+                  "text": "练习：参与者要求“确认第七天应退款”，目前只有给定函数和失败报告。",
+                  "citationIds": [
+                    "c1"
+                  ]
+                }
+              ],
+              "citations": [
+                {
+                  "id": "c1",
+                  "unitId": "02-task-acceptance",
+                  "sectionId": "s-a6477c329739",
+                  "order": 5,
+                  "unitTitle": "动手前定义任务成功与合理停止",
+                  "sectionTitle": "用反例修任务记录",
+                  "title": "用反例修任务记录",
+                  "reason": "你表达了“我不想看向量数据库，先讲计划失败后如何反思”；这一小节说明设置完成和合理停止条件的具体机制。",
+                  "evidenceExcerpt": "练习：参与者要求“确认第七天应退款”，目前只有给定函数和失败报告。另一位把目标改成“描述边界差异”，让题通过。这个改动是否允许。",
+                  "sourcePath": "textbooks/v12/02-task-acceptance.md",
+                  "sourceSha256": "2a15989e762cf659822a9ec3d0b37d881fb28ddcd2d8f1503957ad73d8343ec1",
+                  "version": "textbook-v12",
+                  "href": "#learn/agent/02-task-acceptance/s-a6477c329739",
+                  "intentId": "stopping",
+                  "matchingBasis": "task_intent",
+                  "matchedSourceTerms": [],
+                  "prerequisiteUnitIds": [
+                    "p01-discovery"
+                  ],
+                  "corpusVersion": "textbook-v12",
+                  "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+                  "quote": "练习：参与者要求“确认第七天应退款”，目前只有给定函数和失败报告。另一位把目标改成“描述边界差异”，让题通过。这个改动是否允许。\n\n参考分析：后者可以是另一个较弱任务，但必须由任务责任人确认并保存新条件。对原任务应列业务规则缺项并等待；不能事后改目标掩盖未完成。",
+                  "quoteStart": 180,
+                  "quoteEnd": 311
+                }
+              ],
+              "scope": {
+                "relatedSegments": [
+                  "我不想看向量数据库",
+                  "先讲计划失败后如何反思"
+                ],
+                "filteredSegments": [],
+                "contextUsed": null,
+                "classification": {
+                  "descriptionHash": "ad0f4a857eb906ce0e789d263c6bcd429fa7002935b40284dcde9c29f145e8b5",
+                  "method": "local_bge_domain_comparison_with_explicit_scope_guards",
+                  "segments": [
+                    {
+                      "text": "我不想看向量数据库",
+                      "decision": "related",
+                      "relatedSimilarity": 0.5511,
+                      "unrelatedSimilarity": 0.5306
+                    },
+                    {
+                      "text": "先讲计划失败后如何反思",
+                      "decision": "related",
+                      "relatedSimilarity": 0.5651,
+                      "unrelatedSimilarity": 0.4304
+                    }
+                  ]
+                }
+              },
+              "message": "以下是教材中的简要回答。",
+              "context": {
+                "unitId": "02-task-acceptance",
+                "sectionId": "s-a6477c329739",
+                "corpusVersion": "textbook-v12",
+                "sourceSha256": "2a15989e762cf659822a9ec3d0b37d881fb28ddcd2d8f1503957ad73d8343ec1"
+              }
+            },
+            "matchingMethods": [
+              "local_semantic_vectors",
+              "local_task_concepts",
+              "source_term_recall"
+            ],
+            "semanticProvenance": {
+              "modelId": "Xenova/bge-small-zh-v1.5",
+              "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+              "dtype": "int8",
+              "pooling": "cls",
+              "dimensions": 512,
+              "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+              "corpusVersion": "textbook-v12",
+              "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+              "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+              "passages": 561,
+              "remoteModelsAllowed": false,
+              "querySentExternally": false
+            }
+          },
+          "elapsedMs": 113
+        }
+      ]
+    },
+    {
+      "id": "DG14-02",
+      "title": "短句虽真实却对所问主题/主语失配",
+      "owner": "内容检索工程师",
+      "cases": [
+        {
+          "case": "HV14-03",
+          "query": "我想知道边推理边行动为什么会反复尝试同一个失败工具",
+          "actual": "ReAct将任务解释… + 适合路径稳定…它的局限遇到动态未知依赖需要预先编更多分支",
+          "expected": "第二句是固定状态机段落，不能接在ReAct定义后暗示它描述ReAct；应解释无进展/重复检测/局限相关机制",
+          "actualResponse": {
+            "status": "recommended",
+            "retrievalVersion": "content-retrieval-0.12-v12",
+            "dialogVersion": "content-dialog-0.14-extractive",
+            "engineMode": "local_semantic_retrieval",
+            "providerCalled": false,
+            "corpusVersion": "textbook-v12",
+            "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+            "interpretedIntents": [
+              {
+                "id": "react_strategy",
+                "label": "比较推理行动交错与先计划的策略",
+                "evidence": [
+                  "我想知道边推理边行动为什么会反复尝试同一个失败工具"
+                ],
+                "unitIds": [
+                  "n03-planning-reflection"
+                ]
+              }
+            ],
+            "excludedIntents": [],
+            "results": [
+              {
+                "unitId": "n03-planning-reflection",
+                "sectionId": "s-da63f3dcff17",
+                "order": 18,
+                "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+                "sectionTitle": "1 三种策略改变的是控制对象",
+                "title": "1 三种策略改变的是控制对象",
+                "reason": "你表达了“我想知道边推理边行动为什么会反复尝试同一个失败工具”；这一小节说明比较推理行动交错与先计划的策略的具体机制。",
+                "evidenceExcerpt": "ReAct 将任务解释、下一行动与新观察交错。根据 report-71 发现 `refund(7)` 失败，选择读取退款函数；观察实际实现是 `<7` 后再查生效规则。每轮仅承诺一个或少数下一步，适合证据逐步揭示、路径难以先列全的调查。其成本是轮次增加、上下文污染与短视；下一步看似相关，不保证最终证据完整。[ReAct 原论文 v3](https://arxiv.org/abs/2210.03629v3)研究推理轨迹与行动交错。本教材记录可审查的短决策依据、行动参数和观察，不要求取得或展示模型隐藏的内部思维。",
+                "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+                "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+                "version": "textbook-v12",
+                "href": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
+                "intentId": "react_strategy",
+                "matchingBasis": "task_intent",
+                "matchedSourceTerms": [],
+                "prerequisiteUnitIds": [
+                  "c01-control-loop",
+                  "02-task-acceptance"
+                ]
+              }
+            ],
+            "clarification": null,
+            "limitations": [
+              "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。",
+              "回答为教材原文提取，不是生成式模型辅导；有限语义分类仍可能需要澄清。"
+            ],
+            "dialog": {
+              "status": "answered",
+              "answerMode": "extractive",
+              "sentences": [
+                {
+                  "text": "ReAct 将任务解释、下一行动与新观察交错。",
+                  "citationIds": [
+                    "c1"
+                  ]
+                },
+                {
+                  "text": "适合路径稳定、输入明确、动作可枚举的工作；它的局限是遇到动态未知依赖时需要预先编更多分支。",
+                  "citationIds": [
+                    "c1"
+                  ]
+                }
+              ],
+              "citations": [
+                {
+                  "id": "c1",
+                  "unitId": "n03-planning-reflection",
+                  "sectionId": "s-da63f3dcff17",
+                  "order": 18,
+                  "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+                  "sectionTitle": "1 三种策略改变的是控制对象",
+                  "title": "1 三种策略改变的是控制对象",
+                  "reason": "你表达了“我想知道边推理边行动为什么会反复尝试同一个失败工具”；这一小节说明比较推理行动交错与先计划的策略的具体机制。",
+                  "evidenceExcerpt": "ReAct 将任务解释、下一行动与新观察交错。根据 report-71 发现 `refund(7)` 失败，选择读取退款函数；观察实际实现是 `<7` 后再查生效规则。每轮仅承诺一个或少数下一步，适合证据逐步揭示、路径难以先列全的调查。其成本是轮次增加、上下文污染与短视；下一步看似相关，不保证最终证据完整。[ReAct 原论文 v3](https://arxiv.org/abs/2210.03629v3)研究推理轨迹与行动交错。本教材记录可审查的短决策依据、行动参数和观察，不要求取得或展示模型隐藏的内部思维。",
+                  "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+                  "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+                  "version": "textbook-v12",
+                  "href": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
+                  "intentId": "react_strategy",
+                  "matchingBasis": "task_intent",
+                  "matchedSourceTerms": [],
+                  "prerequisiteUnitIds": [
+                    "c01-control-loop",
+                    "02-task-acceptance"
+                  ],
+                  "corpusVersion": "textbook-v12",
+                  "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+                  "quote": "适合路径稳定、输入明确、动作可枚举的工作；它的局限是遇到动态未知依赖时需要预先编更多分支。固定状态机也可以包含模型节点，不能把“用了模型”就叫动态 Agent。\n\nReAct 将任务解释、下一行动与新观察交错。",
+                  "quoteStart": 172,
+                  "quoteEnd": 277
+                }
+              ],
+              "scope": {
+                "relatedSegments": [
+                  "我想知道边推理边行动为什么会反复尝试同一个失败工具"
+                ],
+                "filteredSegments": [],
+                "contextUsed": null,
+                "classification": {
+                  "descriptionHash": "ad0f4a857eb906ce0e789d263c6bcd429fa7002935b40284dcde9c29f145e8b5",
+                  "method": "local_bge_domain_comparison_with_explicit_scope_guards",
+                  "segments": [
+                    {
+                      "text": "我想知道边推理边行动为什么会反复尝试同一个失败工具",
+                      "decision": "related",
+                      "relatedSimilarity": 0.5643,
+                      "unrelatedSimilarity": 0.423
+                    }
+                  ]
+                }
+              },
+              "message": "以下是教材中的简要回答。",
+              "context": {
+                "unitId": "n03-planning-reflection",
+                "sectionId": "s-da63f3dcff17",
+                "corpusVersion": "textbook-v12",
+                "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd"
+              }
+            },
+            "matchingMethods": [
+              "local_semantic_vectors",
+              "local_task_concepts",
+              "source_term_recall"
+            ],
+            "semanticProvenance": {
+              "modelId": "Xenova/bge-small-zh-v1.5",
+              "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+              "dtype": "int8",
+              "pooling": "cls",
+              "dimensions": 512,
+              "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+              "corpusVersion": "textbook-v12",
+              "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+              "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+              "passages": 561,
+              "remoteModelsAllowed": false,
+              "querySentExternally": false
+            }
+          },
+          "elapsedMs": 118
+        },
+        {
+          "case": "DV14-01-c",
+          "query": "先做好日志还是先加模型",
+          "actual": "实现本篇方案时，先让这几个反例成为可复现的协议检查，再接真实模型。OWASP日志指导…",
+          "expected": "首句依赖未展示的这几个反例，未说明日志/可观察协议与模型顺序。需完整可独立理解且答到取舍的原文，不能只有字节真",
+          "actualResponse": {
+            "status": "recommended",
+            "retrievalVersion": "content-retrieval-0.12-v12",
+            "dialogVersion": "content-dialog-0.14-extractive",
+            "engineMode": "local_semantic_retrieval",
+            "providerCalled": false,
+            "corpusVersion": "textbook-v12",
+            "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+            "interpretedIntents": [
+              {
+                "id": "dialog_semantic_0",
+                "label": "观测与日志应能重建系统决定和模型工具调用，使用结构化记录保护敏感数据，先建立可验证运行协议再接入真实模型。",
+                "evidence": [
+                  "先做好日志还是先加模型"
+                ],
+                "unitIds": [
+                  "c01-control-loop",
+                  "e01"
+                ]
+              }
+            ],
+            "excludedIntents": [],
+            "results": [
+              {
+                "unitId": "c01-control-loop",
+                "sectionId": "s-e786e1f42efe",
+                "order": 17,
+                "unitTitle": "Agent 控制循环 设计一个可恢复 受控并能验收的运行时",
+                "sectionTitle": "练习四 让故障测试真正覆盖未知窗口",
+                "title": "练习四 让故障测试真正覆盖未知窗口",
+                "reason": "根据职业知识语义定位到当前教材原文。",
+                "evidenceExcerpt": "为 `create_issue` 设计三个可控故障场景：发送前崩溃、外部创建后本地提交前崩溃、结果提交后提交回执丢失。",
+                "sourcePath": "textbooks/v12/c01-control-loop.md",
+                "sourceSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+                "version": "textbook-v12",
+                "href": "#learn/agent/c01-control-loop/s-e786e1f42efe",
+                "intentId": "dialog_semantic_topic",
+                "matchingBasis": "local_semantic_topic",
+                "matchedSourceTerms": [],
+                "prerequisiteUnitIds": [
+                  "c01-fixed-workflow",
+                  "c03",
+                  "e01"
+                ]
+              },
+              {
+                "unitId": "c01-control-loop",
+                "sectionId": "s-9b659b4dbfe6",
+                "order": 17,
+                "unitTitle": "Agent 控制循环 设计一个可恢复 受控并能验收的运行时",
+                "sectionTitle": "13 观测要能重建决定 评估要有分母",
+                "title": "13 观测要能重建决定 评估要有分母",
+                "reason": "你表达了“先做好日志还是先加模型”；这一小节说明观测与日志应能重建系统决定和模型工具调用，使用结构化记录保护敏感数据，先建立可验证运行协议再接入真实模型。的具体机制。",
+                "evidenceExcerpt": "记录政策拒绝的具体原因、预算预留和结算差额、未知结果的起止时间、恢复选择依据。否则看到“工具失败 3 次”无法分辨三次物理尝试属于一个动作，还是模型创建了三个逻辑动作。服务端响应时间、工具排队时间、模型时间和人工等待也要拆分，不能把审批耗时误算成模型慢。",
+                "sourcePath": "textbooks/v12/c01-control-loop.md",
+                "sourceSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+                "version": "textbook-v12",
+                "href": "#learn/agent/c01-control-loop/s-9b659b4dbfe6",
+                "intentId": "dialog_semantic_0",
+                "matchingBasis": "task_intent",
+                "matchedSourceTerms": [],
+                "prerequisiteUnitIds": [
+                  "c01-fixed-workflow",
+                  "c03",
+                  "e01"
+                ]
+              }
+            ],
+            "clarification": null,
+            "limitations": [
+              "本地任务概念规则与原文术语查找只覆盖所选 Agent 教材；没有调用大模型。",
+              "回答为教材原文提取，不是生成式模型辅导；有限语义分类仍可能需要澄清。"
+            ],
+            "dialog": {
+              "status": "answered",
+              "answerMode": "extractive",
+              "sentences": [
+                {
+                  "text": "实现本篇方案时，先让这几个反例成为可复现的协议检查，再接真实模型。",
+                  "citationIds": [
+                    "c1"
+                  ]
+                },
+                {
+                  "text": "OWASP 的日志指导明确要求控制敏感信息与日志访问，不能以“全量日志方便调试”为由复制凭据或个人数据。",
+                  "citationIds": [
+                    "c2"
+                  ]
+                }
+              ],
+              "citations": [
+                {
+                  "id": "c1",
+                  "unitId": "c01-control-loop",
+                  "sectionId": "s-e786e1f42efe",
+                  "order": 17,
+                  "unitTitle": "Agent 控制循环 设计一个可恢复 受控并能验收的运行时",
+                  "sectionTitle": "练习四 让故障测试真正覆盖未知窗口",
+                  "title": "练习四 让故障测试真正覆盖未知窗口",
+                  "reason": "根据职业知识语义定位到当前教材原文。",
+                  "evidenceExcerpt": "为 `create_issue` 设计三个可控故障场景：发送前崩溃、外部创建后本地提交前崩溃、结果提交后提交回执丢失。",
+                  "sourcePath": "textbooks/v12/c01-control-loop.md",
+                  "sourceSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+                  "version": "textbook-v12",
+                  "href": "#learn/agent/c01-control-loop/s-e786e1f42efe",
+                  "intentId": "dialog_semantic_topic",
+                  "matchingBasis": "local_semantic_topic",
+                  "matchedSourceTerms": [],
+                  "prerequisiteUnitIds": [
+                    "c01-fixed-workflow",
+                    "c03",
+                    "e01"
+                  ],
+                  "corpusVersion": "textbook-v12",
+                  "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+                  "quote": "实现本篇方案时，先让这几个反例成为可复现的协议检查，再接真实模型。",
+                  "quoteStart": 341,
+                  "quoteEnd": 374
+                },
+                {
+                  "id": "c2",
+                  "unitId": "c01-control-loop",
+                  "sectionId": "s-9b659b4dbfe6",
+                  "order": 17,
+                  "unitTitle": "Agent 控制循环 设计一个可恢复 受控并能验收的运行时",
+                  "sectionTitle": "13 观测要能重建决定 评估要有分母",
+                  "title": "13 观测要能重建决定 评估要有分母",
+                  "reason": "你表达了“先做好日志还是先加模型”；这一小节说明观测与日志应能重建系统决定和模型工具调用，使用结构化记录保护敏感数据，先建立可验证运行协议再接入真实模型。的具体机制。",
+                  "evidenceExcerpt": "记录政策拒绝的具体原因、预算预留和结算差额、未知结果的起止时间、恢复选择依据。否则看到“工具失败 3 次”无法分辨三次物理尝试属于一个动作，还是模型创建了三个逻辑动作。服务端响应时间、工具排队时间、模型时间和人工等待也要拆分，不能把审批耗时误算成模型慢。",
+                  "sourcePath": "textbooks/v12/c01-control-loop.md",
+                  "sourceSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+                  "version": "textbook-v12",
+                  "href": "#learn/agent/c01-control-loop/s-9b659b4dbfe6",
+                  "intentId": "dialog_semantic_0",
+                  "matchingBasis": "task_intent",
+                  "matchedSourceTerms": [],
+                  "prerequisiteUnitIds": [
+                    "c01-fixed-workflow",
+                    "c03",
+                    "e01"
+                  ],
+                  "corpusVersion": "textbook-v12",
+                  "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+                  "quote": "OWASP 的日志指导明确要求控制敏感信息与日志访问，不能以“全量日志方便调试”为由复制凭据或个人数据。",
+                  "quoteStart": 775,
+                  "quoteEnd": 827
+                }
+              ],
+              "scope": {
+                "relatedSegments": [
+                  "先做好日志还是先加模型"
+                ],
+                "filteredSegments": [],
+                "contextUsed": null,
+                "classification": {
+                  "descriptionHash": "ad0f4a857eb906ce0e789d263c6bcd429fa7002935b40284dcde9c29f145e8b5",
+                  "method": "local_bge_domain_comparison_with_explicit_scope_guards",
+                  "segments": [
+                    {
+                      "text": "先做好日志还是先加模型",
+                      "decision": "related",
+                      "relatedSimilarity": 0.6819,
+                      "unrelatedSimilarity": 0.4879
+                    }
+                  ]
+                }
+              },
+              "message": "以下是教材中的简要回答。",
+              "context": {
+                "unitId": "c01-control-loop",
+                "sectionId": "s-e786e1f42efe",
+                "corpusVersion": "textbook-v12",
+                "sourceSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8"
+              }
+            },
+            "matchingMethods": [
+              "local_semantic_vectors",
+              "local_dialog_topic_vectors"
+            ],
+            "semanticProvenance": {
+              "modelId": "Xenova/bge-small-zh-v1.5",
+              "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+              "dtype": "int8",
+              "pooling": "cls",
+              "dimensions": 512,
+              "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+              "corpusVersion": "textbook-v12",
+              "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+              "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+              "passages": 561,
+              "remoteModelsAllowed": false,
+              "querySentExternally": false
+            }
+          },
+          "elapsedMs": 189
+        }
+      ]
+    },
+    {
+      "id": "DG14-03",
+      "title": "明确纯娱乐请求未作为无关过滤",
+      "owner": "内容检索工程师",
+      "cases": [
+        {
+          "case": "HV14-06",
+          "query": "推荐三部喜剧电影",
+          "actual": "needs_clarification",
+          "expected": "纯娱乐属于产品明确无关，unrelated、无内容/来源；不让用户澄清职业方向",
+          "actualResponse": {
+            "status": "needs_clarification",
+            "retrievalVersion": "content-retrieval-0.12-v12",
+            "dialogVersion": "content-dialog-0.14-extractive",
+            "engineMode": "local_semantic_extractive_dialog",
+            "providerCalled": false,
+            "corpusVersion": "textbook-v12",
+            "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+            "interpretedIntents": [],
+            "excludedIntents": [],
+            "results": [],
+            "clarification": {
+              "question": "请说明它与 Agent 开发、软件工程或产品实现有什么关系。",
+              "options": []
+            },
+            "limitations": [],
+            "dialog": {
+              "status": "needs_clarification",
+              "answerMode": "extractive",
+              "sentences": [],
+              "citations": [],
+              "scope": {
+                "relatedSegments": [],
+                "filteredSegments": [],
+                "contextUsed": null,
+                "classification": {
+                  "descriptionHash": "ad0f4a857eb906ce0e789d263c6bcd429fa7002935b40284dcde9c29f145e8b5",
+                  "method": "local_bge_domain_comparison_with_explicit_scope_guards",
+                  "segments": [
+                    {
+                      "text": "推荐三部喜剧电影",
+                      "decision": "uncertain",
+                      "relatedSimilarity": 0.3158,
+                      "unrelatedSimilarity": 0.4603
+                    }
+                  ]
+                }
+              },
+              "message": "请说明它与 Agent 开发、软件工程或产品实现有什么关系。",
+              "context": null
+            }
+          },
+          "elapsedMs": 8
+        }
+      ]
+    }
+  ],
+  "status": "fail",
+  "noCodeChangedByQA": true
+}

@@ -1,0 +1,279 @@
+{
+  "date": "2026-10-11",
+  "role": "独立测试工程师",
+  "status": "reviewed_with_limitations",
+  "overall_product_status": "not_met",
+  "counts": {
+    "充分": 54,
+    "部分": 36,
+    "未覆盖": 10
+  },
+  "denominator": 100,
+  "fully_supported_percentage": 54,
+  "categories": [
+    {
+      "category": 1,
+      "name": "概念与方案选择",
+      "question_range": [
+        1,
+        10
+      ],
+      "充分": 7,
+      "部分": 3,
+      "未覆盖": 0
+    },
+    {
+      "category": 2,
+      "name": "ReAct、Planning与执行控制",
+      "question_range": [
+        11,
+        20
+      ],
+      "充分": 5,
+      "部分": 5,
+      "未覆盖": 0
+    },
+    {
+      "category": 3,
+      "name": "Tool Calling、MCP与接口契约",
+      "question_range": [
+        21,
+        30
+      ],
+      "充分": 4,
+      "部分": 3,
+      "未覆盖": 3
+    },
+    {
+      "category": 4,
+      "name": "上下文、记忆与提示",
+      "question_range": [
+        31,
+        40
+      ],
+      "充分": 3,
+      "部分": 5,
+      "未覆盖": 2
+    },
+    {
+      "category": 5,
+      "name": "RAG与语义检索",
+      "question_range": [
+        41,
+        50
+      ],
+      "充分": 5,
+      "部分": 5,
+      "未覆盖": 0
+    },
+    {
+      "category": 6,
+      "name": "LangGraph与有状态编排",
+      "question_range": [
+        51,
+        60
+      ],
+      "充分": 3,
+      "部分": 5,
+      "未覆盖": 2
+    },
+    {
+      "category": 7,
+      "name": "多Agent协作",
+      "question_range": [
+        61,
+        70
+      ],
+      "充分": 6,
+      "部分": 2,
+      "未覆盖": 2
+    },
+    {
+      "category": 8,
+      "name": "评测与故障排查",
+      "question_range": [
+        71,
+        80
+      ],
+      "充分": 9,
+      "部分": 1,
+      "未覆盖": 0
+    },
+    {
+      "category": 9,
+      "name": "安全、权限与可靠性",
+      "question_range": [
+        81,
+        90
+      ],
+      "充分": 7,
+      "部分": 2,
+      "未覆盖": 1
+    },
+    {
+      "category": 10,
+      "name": "生产、成本与项目设计",
+      "question_range": [
+        91,
+        100
+      ],
+      "充分": 5,
+      "部分": 5,
+      "未覆盖": 0
+    }
+  ],
+  "uncovered_ids": [
+    24,
+    27,
+    28,
+    34,
+    39,
+    51,
+    58,
+    62,
+    70,
+    86
+  ],
+  "partial_ids": [
+    4,
+    8,
+    10,
+    11,
+    12,
+    16,
+    17,
+    18,
+    22,
+    29,
+    30,
+    31,
+    35,
+    36,
+    37,
+    38,
+    41,
+    44,
+    46,
+    47,
+    50,
+    52,
+    53,
+    54,
+    59,
+    60,
+    65,
+    68,
+    78,
+    81,
+    89,
+    91,
+    93,
+    95,
+    98,
+    99
+  ],
+  "fully_supported_ids": [
+    1,
+    2,
+    3,
+    5,
+    6,
+    7,
+    9,
+    13,
+    14,
+    15,
+    19,
+    20,
+    21,
+    23,
+    25,
+    26,
+    32,
+    33,
+    40,
+    42,
+    43,
+    45,
+    48,
+    49,
+    55,
+    56,
+    57,
+    61,
+    63,
+    64,
+    66,
+    67,
+    69,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    79,
+    80,
+    82,
+    83,
+    84,
+    85,
+    87,
+    88,
+    90,
+    92,
+    94,
+    96,
+    97,
+    100
+  ],
+  "question_integrity": "逐题与本轮会话原题人工对照，脚本核编号、重复及计数",
+  "evidence": "interview100-coverage-qa-evidence.json",
+  "defects_closed": [
+    "D1",
+    "D2",
+    "D3",
+    "D4"
+  ],
+  "scope": "只验证当前v10对固定100题正文回答支持；独立AI静态复核，不是学员答题测试、真人专家评价或市场题集代表性认证",
+  "limitations": [
+    "54充分仅表示正文可组织完整回答，不等于学员答对或就业",
+    "36部分不能并入完整可答率；其中10/99个人真实经历缺失",
+    "55/56/57按通用题干支持，不等于LangGraph框架教学充分",
+    "没有运行教材代码或真实模型、没有真实学习者验证",
+    "当前完整培养与行业目标not_met；未重跑原八门槛，也不继承旧版通过"
+  ],
+  "source_unchanged": {
+    "count": 28,
+    "same": true,
+    "changed": []
+  },
+  "report_bindings": {
+    "sites/rolecraft/team/interview100-coverage-01-50.md": "afce41e2db128e751f10239ce70c76b66b467b8f54c7a1ccc01a78f995886dcb",
+    "sites/rolecraft/team/interview100-coverage-01-50.json": "fd582669e2bc735bb41f3d2a6fac3ed8454a669dc75e7cec526276c9d14c879a",
+    "sites/rolecraft/team/interview100-coverage-51-100.md": "fbf08c35edb558021cc11ea7cea5cfff1d3b71d034f51ce6bb54f7480fd0fbc3",
+    "sites/rolecraft/team/interview100-coverage-51-100.json": "14a053b82d13eff78f60c7a8dee32da38bd5c3814e0c0114e350bc2ff2a33267",
+    "sites/rolecraft/team/interview100-coverage-product.md": "c7eb618bf2cd906b59f83ad03aaec8953ff050ac0297ddc84e67fe78258f5d66"
+  },
+  "curriculum_handoff_check": {
+    "file": "sites/rolecraft/team/interview100-coverage-curriculum.md",
+    "sha256": "18fcf6f19c38340d19f5b140e7d325674bf030907f20bc82270665807b9a64d1",
+    "scope": "仅核与最终缺题引用一致、54/36/10统计及规划未冒称完成；不审核尚未产出的新教学设计",
+    "uncovered_ids_present": [
+      24,
+      27,
+      28,
+      34,
+      39,
+      51,
+      58,
+      62,
+      70,
+      86
+    ],
+    "counts_match": true,
+    "does_not_claim_gap_closed": true,
+    "status": "consistent_with_final_audit"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "checkedAtUtc": "2026-10-11T14:40:58.760Z",
+  "runtime": "v24.16.0",
+  "scope": "Final candidate actual public recommend→chapter source proof only; SF11-11 browser click/reload/copy still NOT verified.",
+  "request": {
+    "query": "react"
+  },
+  "output": {
+    "status": "recommended",
+    "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+    "engineMode": "local_semantic_retrieval",
+    "matchingMethods": [
+      "local_semantic_vectors",
+      "local_task_concepts",
+      "source_term_recall"
+    ],
+    "providerCalled": false,
+    "corpusVersion": "textbook-v10",
+    "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+    "interpretedIntents": [
+      {
+        "id": "source_term_0",
+        "label": "查找正文中的 ReAct",
+        "evidence": [
+          "ReAct"
+        ],
+        "unitIds": [
+          "00-learning-route"
+        ],
+        "sectionKeys": [
+          "00-learning-route/s-7547e5ce91f8"
+        ],
+        "term": "react"
+      }
+    ],
+    "excludedIntents": [],
+    "results": [
+      {
+        "unitId": "00-learning-route",
+        "sectionId": "s-7547e5ce91f8",
+        "order": 1,
+        "unitTitle": "认识 Agent 工程",
+        "sectionTitle": "一次任务怎样形成反馈闭环",
+        "title": "一次任务怎样形成反馈闭环",
+        "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
+        "evidenceExcerpt": "上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。[ReAct](https://arxiv.org/abs/2210.03629)",
+        "sourcePath": "textbooks/v10/00-learning-route.md",
+        "sourceSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+        "version": "textbook-v10",
+        "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
+        "intentId": "source_term_0",
+        "matchingBasis": "source_term",
+        "matchedSourceTerms": [
+          "react"
+        ],
+        "prerequisiteUnitIds": []
+      }
+    ],
+    "clarification": null,
+    "limitations": [
+      "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+    ],
+    "semanticProvenance": {
+      "modelId": "Xenova/bge-small-zh-v1.5",
+      "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+      "dtype": "int8",
+      "pooling": "cls",
+      "dimensions": 512,
+      "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+      "remoteModelsAllowed": false,
+      "querySentExternally": false
+    }
+  },
+  "target": {
+    "unitId": "00-learning-route",
+    "sectionId": "s-7547e5ce91f8",
+    "order": 1,
+    "unitTitle": "认识 Agent 工程",
+    "sectionTitle": "一次任务怎样形成反馈闭环",
+    "title": "一次任务怎样形成反馈闭环",
+    "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
+    "evidenceExcerpt": "上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。[ReAct](https://arxiv.org/abs/2210.03629)",
+    "sourcePath": "textbooks/v10/00-learning-route.md",
+    "sourceSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+    "version": "textbook-v10",
+    "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
+    "intentId": "source_term_0",
+    "matchingBasis": "source_term",
+    "matchedSourceTerms": [
+      "react"
+    ],
+    "prerequisiteUnitIds": []
+  },
+  "checks": {
+    "recommended": true,
+    "target": true,
+    "exactHref": true,
+    "title": true,
+    "exactExcerpt": true,
+    "termInExcerpt": true,
+    "paperReference": true,
+    "fullChapter": true,
+    "sourceSha": true
+  },
+  "sourceHashes": {
+    "dist/content-retrieval-core.js": "e5d178306c992fb2f8143b67fc714ab73519eedb65a66c09c42caec9b5e31889",
+    "server/retrieval/index.mjs": "1d16d453dd96a88dc8627a702363a33d8e73b6b84b8991dd9f190bc5f2de817f",
+    "server/index.mjs": "f845271c8ab5a5c00b60cf7c6728f05f8fc6ff9a5df50f7d667abd03f5a8e464",
+    "textbooks/v10/00-learning-route.md": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac"
+  }
+}

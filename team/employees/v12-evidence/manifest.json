@@ -1,0 +1,176 @@
+{
+  "version": "employee-v12-evidence-1",
+  "scope": "eight_existing_roles_prompt_and_onboarding",
+  "date": "2026-10-11",
+  "team_role_count": 15,
+  "pm_role": "项目经理",
+  "runtime": "on_demand_independent_agent_sessions",
+  "product_status": "not_met",
+  "product_status_source": "sites/rolecraft/team/textbook-v12-product-assessment.md",
+  "status": "configuration_complete",
+  "qa_status": "met_within_configuration_scope",
+  "employees": [
+    {
+      "employee_id": "EV12-01",
+      "role_id": "content-reviewer",
+      "name": "内容审校员",
+      "domain": "技术内容审校",
+      "prompt": "content-reviewer/prompt.md",
+      "onboarding": "content-reviewer/onboarding.md",
+      "first_task": "确认v12审校输入、专业复核包的范围与待真人验证项",
+      "handoff": "课程架构师；正文问题经PM交教材研发员",
+      "gates": [
+        "teaching_quality"
+      ],
+      "status": "accepted_with_dependencies",
+      "agent_name": "/root/employee_v12_content_review",
+      "qa_status": "met_within_configuration_scope",
+      "configuration_qa": "met_within_configuration_scope",
+      "future_professional_evidence_status": "pending_domain_inputs_and_assignment"
+    },
+    {
+      "employee_id": "EV12-02",
+      "role_id": "practicum-evaluator",
+      "name": "实训评估员",
+      "domain": "学习者实训评价",
+      "prompt": "practicum-evaluator/prompt.md",
+      "onboarding": "practicum-evaluator/onboarding.md",
+      "first_task": "定位既有量规，列作品、帮助范围、陌生任务评价所需输入",
+      "handoff": "课程架构师；用户来源交用户研究员；标准交产品经理",
+      "gates": [
+        "learner_creation"
+      ],
+      "status": "accepted_with_dependencies",
+      "agent_name": "/root/employee_v12_practicum",
+      "qa_status": "met_within_configuration_scope",
+      "configuration_qa": "met_within_configuration_scope",
+      "future_professional_evidence_status": "pending_domain_inputs_and_assignment"
+    },
+    {
+      "employee_id": "EV12-03",
+      "role_id": "user-researcher",
+      "name": "用户研究员",
+      "domain": "用户研究",
+      "prompt": "user-researcher/prompt.md",
+      "onboarding": "user-researcher/onboarding.md",
+      "first_task": "列真实用户研究前置条件、证据记录与跨岗位交接",
+      "handoff": "产品经理；实训作品证据交实训评估员",
+      "gates": [
+        "user_value"
+      ],
+      "status": "accepted_with_dependencies",
+      "agent_name": "/root/employee_v12_user_research",
+      "qa_status": "met_within_configuration_scope",
+      "configuration_qa": "met_within_configuration_scope",
+      "future_professional_evidence_status": "pending_domain_inputs_and_assignment"
+    },
+    {
+      "employee_id": "EV12-04",
+      "role_id": "generation-engineer",
+      "name": "AI生成工程师",
+      "domain": "模型生成服务",
+      "prompt": "generation-engineer/prompt.md",
+      "onboarding": "generation-engineer/onboarding.md",
+      "first_task": "确认当前生成服务交接资料、配置/预算依赖及后续验证分类",
+      "handoff": "软件工程师的客户端接口；后端数据工程师任务协议；QA独立验证",
+      "gates": [
+        "real_generation"
+      ],
+      "status": "accepted_with_dependencies",
+      "agent_name": "/root/employee_v12_generation",
+      "qa_status": "met_within_configuration_scope",
+      "configuration_qa": "met_within_configuration_scope",
+      "future_professional_evidence_status": "pending_domain_inputs_and_assignment"
+    },
+    {
+      "employee_id": "EV12-05",
+      "role_id": "backend-data-engineer",
+      "name": "后端数据工程师",
+      "domain": "服务端数据与任务",
+      "prompt": "backend-data-engineer/prompt.md",
+      "onboarding": "backend-data-engineer/onboarding.md",
+      "first_task": "确认现有后端交接、隔离验证边界与当前生产缺证",
+      "handoff": "AI生成工程师模型接口；软件工程师客户端接口；QA独立验证",
+      "gates": [
+        "reliable_delivery"
+      ],
+      "status": "accepted_with_dependencies",
+      "agent_name": "/root/employee_v12_backend",
+      "qa_status": "met_within_configuration_scope",
+      "configuration_qa": "met_within_configuration_scope",
+      "future_professional_evidence_status": "pending_domain_inputs_and_assignment"
+    },
+    {
+      "employee_id": "EV12-06",
+      "role_id": "benchmark-researcher",
+      "name": "竞品研究员",
+      "domain": "行业对比研究",
+      "prompt": "benchmark-researcher/prompt.md",
+      "onboarding": "benchmark-researcher/onboarding.md",
+      "first_task": "确认已有市场样本与公平比较前置条件，不重新编造排名",
+      "handoff": "产品经理冻结可比条件；课程架构师整合能力差距；QA/实训岗负责实际验证",
+      "gates": [
+        "comparative_advantage"
+      ],
+      "status": "accepted_with_dependencies",
+      "agent_name": "/root/employee_v12_benchmark",
+      "qa_status": "met_within_configuration_scope",
+      "configuration_qa": "met_within_configuration_scope",
+      "future_professional_evidence_status": "pending_domain_inputs_and_assignment"
+    },
+    {
+      "employee_id": "EV12-07",
+      "role_id": "operations-analyst",
+      "name": "运营分析员",
+      "domain": "运营经济分析",
+      "prompt": "operations-analyst/prompt.md",
+      "onboarding": "operations-analyst/onboarding.md",
+      "first_task": "确认运营数据来源、成本口径前置依赖与估算/实测分栏",
+      "handoff": "产品经理的预算与质量护栏；工程岗实际用量；QA核原始证据",
+      "gates": [
+        "operating_economics"
+      ],
+      "status": "accepted_with_dependencies",
+      "agent_name": "/root/employee_v12_operations",
+      "qa_status": "met_within_configuration_scope",
+      "configuration_qa": "met_within_configuration_scope",
+      "future_professional_evidence_status": "pending_domain_inputs_and_assignment"
+    },
+    {
+      "employee_id": "EV12-08",
+      "role_id": "qa-engineer",
+      "name": "测试工程师",
+      "domain": "质量验证",
+      "prompt": "qa-engineer/prompt.md",
+      "onboarding": "qa-engineer/onboarding.md",
+      "first_task": "独立验收本次八岗配置、实际接单、领域边界和版本保护",
+      "handoff": "PM分派责任人；产品经理门槛与当前版本判定",
+      "gates": [
+        "iteration_trace",
+        "real_generation",
+        "reliable_delivery"
+      ],
+      "status": "accepted_with_dependencies",
+      "agent_name": "/root/employee_v12_qa",
+      "qa_status": "met_within_configuration_scope",
+      "configuration_qa": "met_within_configuration_scope",
+      "future_professional_evidence_status": "pending_domain_inputs_and_assignment"
+    }
+  ],
+  "configuration_candidate": "prompt-and-common-r1",
+  "stable_prompt_bindings": {
+    "COMMON.md": "f2a8a5e935fd521030f0cc1a7445cb9a2138cc3b417c228cc9ab43cfacb67bf0",
+    "content-reviewer/prompt.md": "429e058c480d439fad2e1ec749008e9494d698faa2713a6549ea8db7b25d4ac1",
+    "practicum-evaluator/prompt.md": "de54569b4bd40c3b5a81e2cf4648e85612f739cb299069aad81f62e2ca8506ba",
+    "user-researcher/prompt.md": "e57d386e6962d8b59f403415360f5b1d876efd6615e247e9f20ea8ff50cf7eb4",
+    "generation-engineer/prompt.md": "358494296b7c64fccc35dbdba075bb8a7794fe6c953f53e49be90bb13878ec77",
+    "backend-data-engineer/prompt.md": "6a4a1deb94045e8dc756cb234735f4171b9e13d20134bd79478734eaaf66461f",
+    "benchmark-researcher/prompt.md": "1ba53c107d30f1e2ebbb0dc12413aabd881174d47a938cd23a3f059cd7974655",
+    "operations-analyst/prompt.md": "60e2835291a1125bbcd94f6a325e8a45f606c958ae981846ef5b292ca3fbfa2e",
+    "qa-engineer/prompt.md": "9786285cc53d2d195f2d10d7bdbcbef76c175bd078e97e3f129374e263a785c5"
+  },
+  "qa_report": "qa-engineer/audit.md",
+  "qa_evidence": "qa-engineer/audit.json",
+  "artifact_binding": "qa-engineer/artifact-binding.json",
+  "professional_execution_status": "not_completed_by_this_configuration_task"
+}

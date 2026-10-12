@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-11T23:08:22.114988+08:00",
+  "rows": 114,
+  "unique_ids": 114,
+  "missing_ids": [],
+  "counts": {
+    "fixed100": {
+      "n": 100,
+      "baseline": {
+        "充分": 54,
+        "部分": 36,
+        "未覆盖": 10
+      },
+      "final": {
+        "充分": 98,
+        "部分": 2
+      }
+    },
+    "market14": {
+      "n": 14,
+      "baseline": {
+        "部分": 7,
+        "未覆盖": 6,
+        "充分": 1
+      },
+      "final": {
+        "充分": 14
+      }
+    }
+  },
+  "problems": [
+    [
+      "hash",
+      53,
+      "finalEvidence",
+      "sites/rolecraft/textbooks/v12/n02-context-memory-prompt.md"
+    ],
+    [
+      "hash",
+      53,
+      "finalEvidence",
+      "sites/rolecraft/textbooks/v12/n02-context-memory-prompt.md"
+    ]
+  ]
+}

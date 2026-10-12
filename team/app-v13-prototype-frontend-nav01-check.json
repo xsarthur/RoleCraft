@@ -1,0 +1,51 @@
+{
+  "version": "app-v13-prototype-frontend-nav01-check-1",
+  "issueId": "QI13-NAV01",
+  "scope": "developer narrow isolated VM route/contract check only; not independent QA or real browser",
+  "runtime": "v24.16.0",
+  "createdAt": "2026-10-12T00:31:41.452Z",
+  "files": {
+    "dist/index.html": {
+      "sha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f"
+    },
+    "dist/app.js": {
+      "sha256": "05167ec7df6cea51d6e137aaa0ff53ea4cb949a66a4c813d6ce7167651b2f30e"
+    },
+    "dist/learning-workbench.js": {
+      "sha256": "55c6f5db634d1b723e863fe9a94f604fadcf895c15acbb984025d35be15c6266"
+    },
+    "dist/learning-experience-v13.js": {
+      "sha256": "7fc778e5d85702688caebf76370308ddee435b74acee7665666387a4dc902b9e"
+    },
+    "dist/learning-experience-v13.css": {
+      "sha256": "d190bdc09f0fb9b3ae4eb308cd52b358c935f69d3b9b93ae16ea4418789654bd"
+    },
+    "dist/learning-v13-data.js": {
+      "sha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb"
+    }
+  },
+  "tests": [
+    {
+      "name": "QI13-NAV01 original filtered Q11 to exact textbook evidence retains validated filter context",
+      "status": "pass"
+    },
+    {
+      "name": "Textbook returns to original Q11 and then same unit/knowledge-point filtered list",
+      "status": "pass"
+    },
+    {
+      "name": "Related knowledge-point jump and valid status/set filter use same return contract",
+      "status": "pass"
+    },
+    {
+      "name": "No-filter existing reference still returns Q11; unknown filters/external return values are not promoted",
+      "status": "pass"
+    }
+  ],
+  "corpusVersion": "textbook-v12",
+  "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+  "original": "#questions/Q11?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17",
+  "target": "#learn/agent/n03-planning-reflection/s-da63f3dcff17?from=Q11&fromUnit=n03-planning-reflection&fromKp=n03-planning-reflection%3As-da63f3dcff17",
+  "back": "#questions/Q11?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17",
+  "list": "#questions?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17"
+}

@@ -1,0 +1,45 @@
+{
+  "version": "app-v14-dialog-frontend-DG06-dev-check-4",
+  "runtime": "v24.16.0",
+  "clientVersion": "local-workbench-0.14-dialog-detail",
+  "scope": "Five narrow developer VM cached-clarification lifecycle checks; no actual browser/HTTP/model or independent QA",
+  "files": {
+    "dist/learning-workbench.js": {
+      "sha256": "9099d3bbf6ea51816c01f422517ae5323fb0c1048854f4acc54caa88bff65cca"
+    },
+    "dist/learning-experience-v13.js": {
+      "sha256": "d9664458d1e60c54d8235e160c4c229b1629c8b694d0f16d7136557b3374cd23"
+    },
+    "dist/learning-experience-v13.css": {
+      "sha256": "1f20aafb25a30842e660a18b2d51445efc6ab3527d359b95703131332fcb9aaf"
+    },
+    "dist/app.js": {
+      "sha256": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd"
+    }
+  },
+  "tests": [
+    {
+      "name": "DG14-06 old cached clarification history resubmits frozen query/context to current service; never reuses old choices",
+      "status": "pass"
+    },
+    {
+      "name": "Refresh and repeated refresh render controlled retry without old choices or source-revalidated claim; retry freezes old context",
+      "status": "pass"
+    },
+    {
+      "name": "Requery transport failure remains unavailable, never revives cached choices; narrow retry fetches current choices",
+      "status": "pass"
+    },
+    {
+      "name": "Requery pending collapse and late earlier clarification cannot reopen or replace newer question",
+      "status": "pass"
+    },
+    {
+      "name": "Answered history still rechecks exact sources locally without new service request; no other client bytes change",
+      "status": "pass"
+    }
+  ],
+  "privateRecordsAccessed": false,
+  "modelInvoked": false,
+  "actualBrowserTested": false
+}

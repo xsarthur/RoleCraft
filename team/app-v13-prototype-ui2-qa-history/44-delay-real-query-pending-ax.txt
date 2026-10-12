@@ -1,0 +1,22 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4475/#learn/agent/n03-planning-reflection/s-da63f3dcff17".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 205-208
+~	203 container lw-assistant
+~		204 container Description: 教材内容检索, ID: lw-find-panel
++			205 heading 找对应教材, Value: 2
++				206 text 找对应教材
++			207 text 只推荐当前 v12 教材中的真实内容
++			208 button 收起
++			209 text 学习起点：未限定 结合当前章：规划与反思 / 1 三种策略改变的是控制对象
++			210 button 清除章节上下文
++			211 container lw-find-results
++				212 button (collapsed) 最近查询 · 本会话, Secondary Actions: Expand
++					213 text 最近查询 · 本会话
++				214 text 正在当前教材中查找…
++		215 container lw-find-form
++			216 text 查教材
++			217 text entry area (settable) 查教材, Value: 新证据推翻计划后哪些步骤要重做, ID: lw-query
++			218 button 查找
++			219 button (expanded) Description: 收起检索结果, Secondary Actions: Collapse
++			220 text 正在教材中查找，可收起继续学习
+The focused UI element is 217 text entry area (settable) 查教材, Value: 新证据推翻计划后哪些步骤要重做, ID: lw-query

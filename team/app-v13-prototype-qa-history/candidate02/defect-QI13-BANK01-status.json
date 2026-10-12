@@ -1,0 +1,18 @@
+{
+  "id": "QI13-BANK01",
+  "ownerOriginalId": "DEV13-BANK-01",
+  "discoverer": "client engineer during direct narrow return-to-bank check; QA did not independently first discover",
+  "productConditions": [
+    "PV13-01",
+    "PV13-04"
+  ],
+  "scenarios": [
+    "PT13-01",
+    "PT13-04"
+  ],
+  "oldExperienceSha256": "9af4d9aabe568eeff45a97a3307ad9e7ad1357fa3f86a5d16a4f57536d2afdbd",
+  "newExperienceSha256": "7fc778e5d85702688caebf76370308ddee435b74acee7665666387a4dc902b9e",
+  "independentReproduction": "From frozen old public source, empty question ID #questions displaysQ1 and zero list cards. New source displays114 actual cards.",
+  "status": "closed_in_executed_source_vm_scope_pending_actual_ui",
+  "retest": "independent-nav-repair.json"
+}

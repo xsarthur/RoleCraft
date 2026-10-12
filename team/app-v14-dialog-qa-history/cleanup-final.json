@@ -1,0 +1,59 @@
+{
+  "atUtc": "2026-10-12T01:45:53.131449+00:00",
+  "ownedCandidateServices": [
+    {
+      "pid": 40760,
+      "pty": 25069,
+      "port": 4485,
+      "exitCode": 0
+    },
+    {
+      "pid": 43057,
+      "pty": 77024,
+      "port": 4485,
+      "exitCode": 0
+    },
+    {
+      "pid": 47567,
+      "pty": 49739,
+      "port": 4485,
+      "exitCode": 0
+    }
+  ],
+  "ownedFaultServices": [
+    {
+      "pid": 43370,
+      "pty": 83289,
+      "port": 4496,
+      "exitCode": 0
+    },
+    {
+      "pid": 48135,
+      "pty": 34624,
+      "port": 4496,
+      "exitCode": 0,
+      "phase": "old received JS/response UI seed only"
+    },
+    {
+      "pid": 48384,
+      "pty": 67645,
+      "port": 4496,
+      "exitCode": 0
+    }
+  ],
+  "signal": "each owned PTY Ctrl-C and actual process exit0",
+  "temporaryKnownDbDirsRemoved": [
+    "/var/folders/v5/yy0xf3tx1gddnb0qz7skr8wr0000gn/T/rolecraft-qa-v14-zlUeTf",
+    "/var/folders/v5/yy0xf3tx1gddnb0qz7skr8wr0000gn/T/rolecraft-qa-v14-HXtG1D",
+    "/var/folders/v5/yy0xf3tx1gddnb0qz7skr8wr0000gn/T/rolecraft-qa-v14-OtY4Bl"
+  ],
+  "ownedBrowserTab": "IAB2 tab1 close actual; viewport override reset actual",
+  "unknownOccupiedPorts": [
+    4475,
+    4486
+  ],
+  "unknownPortProcessesNeverStoppedOrVisited": true,
+  "user4318NeverOperatedByQA": true,
+  "parallelV13NeverOperatedByQA": true,
+  "note": "first sandbox denied listen had unlogged temp path; no unknown dirs globbed/deleted"
+}

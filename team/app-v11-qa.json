@@ -1,0 +1,500 @@
+{
+  "version": "app-v11-independent-qa-final",
+  "auditor": "测试工程师 /root/qa_app_retrieval_v11",
+  "checkedAtUtc": "2026-10-11T08:25:41.172918+00:00",
+  "appVersion": "local-workbench-0.11",
+  "corpusVersion": "textbook-v10",
+  "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+  "localDelivery": "met_within_scope",
+  "scope": "本轮本地学习工作台、v10阅读、受限自然语言教材推荐与原文定位；正式语义服务Node24，实际验证24.16.0。",
+  "formalLearningProduct": "not_met",
+  "standardVersion": "product-creation-2026-10-10",
+  "standardSha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06",
+  "appCriteria": [
+    {
+      "id": "APP11-01",
+      "status": "pass",
+      "actual": "20 actual source bodies/formal order and 174 sections;39 original fences preserved, six source diagram assets and nine public references allowlisted. Actual all20 browser render/two zoom dialogs/desktop375320.",
+      "evidence": "corpus-preflight.json, http-boundary-final.json, browser-evidence-final.json"
+    },
+    {
+      "id": "APP11-02",
+      "status": "pass",
+      "actual": "Actual home/path/catalog/reader/project/records and11 legacy routes; explicit beginner path and direct experienced query, current chapter can be cleared.",
+      "evidence": "browser-evidence-final.json"
+    },
+    {
+      "id": "APP11-03",
+      "status": "pass_within_scope",
+      "actual": "Fixed meaning/synonym pairs plus independently frozen paraphrases, negation/multi-intent and finite related variants passed after mechanism repairs. Real BGE query/prototype/chunk vectors plus concept constraints; no fixed query response templates.",
+      "evidence": "retrieval-http-first.json, retrieval-http-repair1.json, retrieval-http-repair2.json, retrieval-http-recovery-final.json, model-resources-final.json"
+    },
+    {
+      "id": "APP11-04",
+      "status": "pass",
+      "actual": "All actual positive responses validated unit/section/source hash/version/href/exact substring. Actual source expansion and H2 navigation/reload/back/section-copy; caches validated against current corpus.",
+      "evidence": "retrieval-http-repair2.json, http-boundary-final.json, browser-evidence-final.json"
+    },
+    {
+      "id": "APP11-05",
+      "status": "pass",
+      "actual": "Blank/long/unknown/ambiguity/temporary resource failures distinct; no false quotation or no-match for loading failure; retry and old-result removal/late-response isolation actual.",
+      "evidence": "resource-faults-final.json, retrieval-http-repair2.json, browser-evidence-final.json, race-proxy-results.json"
+    },
+    {
+      "id": "APP11-06",
+      "status": "pass_within_scope",
+      "actual": "Local-only public read-only routes, private paths/method/cross-site/invalid contract blocked, no paid API/private data access; isolated new record keys. Supported Node24 actual semantic inference+natural signal close0;Node26 blocked before native model initialization.",
+      "evidence": "http-boundary-final.json, owned-shutdown-natural-final.json, protected-final.json, final-preview-identity.json"
+    }
+  ],
+  "fixedScenarios": [
+    {
+      "id": "R11-01",
+      "status": "pass_within_local_scope",
+      "evidence": "browser-evidence-final.json; http-boundary-final.json"
+    },
+    {
+      "id": "R11-02",
+      "status": "pass_within_local_scope",
+      "evidence": "retrieval-http-recovery-final.json; supported Node24 representative browser/HTTP checks"
+    },
+    {
+      "id": "R11-03",
+      "status": "pass_within_local_scope",
+      "evidence": "retrieval-http-recovery-final.json; supported Node24 representative browser/HTTP checks"
+    },
+    {
+      "id": "R11-04",
+      "status": "pass_within_local_scope",
+      "evidence": "retrieval-http-repair2.json"
+    },
+    {
+      "id": "R11-05",
+      "status": "pass_within_local_scope",
+      "evidence": "retrieval-http-repair2.json"
+    },
+    {
+      "id": "R11-06",
+      "status": "pass_within_local_scope",
+      "evidence": "retrieval-http-repair2.json"
+    },
+    {
+      "id": "R11-07",
+      "status": "pass_within_local_scope",
+      "evidence": "retrieval-http-repair2.json"
+    },
+    {
+      "id": "R11-08",
+      "status": "pass_within_local_scope",
+      "evidence": "retrieval-http-recovery-final.json; supported Node24 representative browser/HTTP checks"
+    },
+    {
+      "id": "R11-09",
+      "status": "pass_within_local_scope",
+      "evidence": "retrieval-http-repair2.json"
+    },
+    {
+      "id": "R11-10",
+      "status": "pass_within_local_scope",
+      "evidence": "retrieval-http-repair2.json"
+    },
+    {
+      "id": "R11-11",
+      "status": "pass_within_local_scope",
+      "evidence": "retrieval-http-repair2.json"
+    },
+    {
+      "id": "R11-12",
+      "status": "pass_within_local_scope",
+      "evidence": "retrieval-http-recovery-final.json; supported Node24 representative browser/HTTP checks"
+    },
+    {
+      "id": "R11-13",
+      "status": "pass_within_local_scope",
+      "evidence": "retrieval-http-repair2.json"
+    },
+    {
+      "id": "R11-14",
+      "status": "pass_within_local_scope",
+      "evidence": "retrieval-http-repair2.json"
+    },
+    {
+      "id": "R11-15",
+      "status": "pass_within_local_scope",
+      "evidence": "retrieval-http-repair2.json"
+    },
+    {
+      "id": "R11-16",
+      "status": "pass_within_local_scope",
+      "evidence": "retrieval-http-repair2.json"
+    },
+    {
+      "id": "R11-17",
+      "status": "pass_within_local_scope",
+      "evidence": "retrieval-http-repair2.json"
+    },
+    {
+      "id": "R11-18",
+      "status": "pass_within_local_scope",
+      "evidence": "retrieval-http-repair2.json"
+    },
+    {
+      "id": "R11-19",
+      "status": "pass_within_local_scope",
+      "evidence": "retrieval-http-repair2.json"
+    },
+    {
+      "id": "R11-20",
+      "status": "pass_within_local_scope",
+      "evidence": "retrieval-http-repair2.json"
+    },
+    {
+      "id": "R11-21",
+      "status": "pass_within_local_scope",
+      "evidence": "browser-evidence-final.json; http-boundary-final.json"
+    },
+    {
+      "id": "R11-22",
+      "status": "pass_within_local_scope",
+      "evidence": "browser-evidence-final.json; http-boundary-final.json"
+    },
+    {
+      "id": "R11-23",
+      "status": "pass_within_local_scope",
+      "evidence": "browser-evidence-final.json; http-boundary-final.json"
+    },
+    {
+      "id": "R11-24",
+      "status": "pass_within_local_scope",
+      "evidence": "resource-faults-final.json; browser-evidence-final.json"
+    }
+  ],
+  "issues": [
+    {
+      "id": "Q11-RET01",
+      "owner": "内容检索工程师",
+      "initial": "H11-01/02/03/04 missed everyday task meaning or definitively picked release rather than version evaluation.",
+      "cause": "Only professional-text vectors plus early rejection lost everyday task semantics; weaker clause over-intents and neighboring recovery/stop ranking required narrower controls.",
+      "action": "Real BGE vectors for32 generic task descriptions, positive/negative scope and strong contextual intent handling; final explicit recovery suppresses unstated stop.",
+      "retest": "Original four and finite H11-08..11, plus four affected R02/03/08/12 after final recovery change.",
+      "status": "closed_within_tested_scope",
+      "evidence": [
+        "retrieval-http-first.json",
+        "retrieval-http-repair1.json",
+        "retrieval-http-repair2.json",
+        "retrieval-http-recovery-final.json"
+      ]
+    },
+    {
+      "id": "Q11-RET02",
+      "owner": "内容检索工程师",
+      "initial": "H11-05 explicitly negated retrieval but c02 returned;write dedup/uncertain result and cost omitted.",
+      "cause": "Negation scope/multi-intent coverage incomplete.",
+      "action": "Negation scope and semantic clause aggregation mechanism.",
+      "retest": "Same mixed input excluded retrieval, returned write/dedup plus cost as separate legitimate groups;quotes exact.",
+      "status": "closed_within_tested_scope",
+      "evidence": [
+        "retrieval-http-first.json",
+        "retrieval-http-repair2.json"
+      ]
+    },
+    {
+      "id": "Q11-RET03",
+      "owner": "内容检索工程师",
+      "initial": "H11-07 nonliteral remembering returned no_match instead of concrete ambiguity.",
+      "cause": "Ambiguous memory wording lacked concrete disambiguation.",
+      "action": "Clarify among actual context/retrieval/task-fact directions.",
+      "retest": "Original memory wording and fixedR15 return needs_clarification; no certain article before choice.",
+      "status": "closed_within_tested_scope",
+      "evidence": [
+        "retrieval-http-first.json",
+        "retrieval-http-repair2.json",
+        "browser-evidence-final.json"
+      ]
+    },
+    {
+      "id": "Q11-UI01",
+      "owner": "软件工程师",
+      "initial": "R02 query→e01 section→reload→back lost original expression/results.",
+      "cause": "In-memory query state did not survive reload.",
+      "action": "Separate query session cache, revalidate current corpus/full source identity/quote on restore.",
+      "retest": "New post-repair original sequence preserved query/result;exact H2/reload/back and copied section URL.",
+      "status": "closed_within_tested_scope",
+      "evidence": [
+        "browser-evidence-final.json"
+      ]
+    },
+    {
+      "id": "Q11-UI02",
+      "owner": "软件工程师",
+      "initial": "Beginner opening memory query→clear start/chapter→clarification choice reused old beginner/reading context.",
+      "cause": "Clarification submitted old snapshot rather than current visible scope.",
+      "action": "Clarification/retry uses currentContext;explicit restoration and scope flags.",
+      "retest": "Same sequence new submission unlimited/all20 no forced foundations;prior result retains original snapshot.",
+      "status": "closed_within_tested_scope",
+      "evidence": [
+        "browser-evidence-final.json"
+      ]
+    },
+    {
+      "id": "Q11-OPS01",
+      "owner": "内容检索工程师",
+      "initial": "Actual Node24 and26 CPU inference then forced process.exit after close produced SIGABRT, not26-only.",
+      "cause": "Native forcedexit boundary observed; complete native root cause not claimed.",
+      "action": "Await pipeline dispose/active requests and native natural CLI process.exitCode;restrict supported model runtime before initialization.",
+      "retest": "Node24.16 actual HTTP semantic→SIGINT code0/no stderr;Node26.3 unavailable/runtime_unsupported without model load→SIGINT code0.",
+      "status": "closed_within_Node24_supported_scope_and_Node26_guard",
+      "evidence": [
+        "owned-shutdown-recheck.json",
+        "owned-shutdown-natural-final.json"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "UI-OBS01",
+      "status": "closed",
+      "actual": "Default diagram original-size empty upperleft impeded immediate understanding; fitfull repaired and375/fulloriginaltoggle/Escape rechecked."
+    },
+    {
+      "id": "UI-OBS02",
+      "status": "non_blocking_open_copy_observation",
+      "actual": "Network failure shows raw English Failed to fetch after Chinese unavailable heading; recovery/status/old-response isolation verified, not a fake successful result."
+    }
+  ],
+  "gateResults": [
+    {
+      "id": "user_value",
+      "required": true,
+      "criterion": "目标人群、问题和验证指标在试验前定义，有真实用户证据且达到预定阈值。",
+      "ownerFromUnchangedStandard": "产品经理",
+      "currentResponsibleRoles": "产品经理 / 用户研究员",
+      "status": "insufficient",
+      "evidenceReason": "No new real target-user study or predeclared success metric results. UI/test input is constructed QA, not customer approval.",
+      "nextAction": "Run authorized real target-user pilot against predeclared problem/metrics; retain original positive and negative evidence.",
+      "retestCondition": "Frozen new artifact/version and actual evidence in that gate scope, independently checked; no prior pass inherited."
+    },
+    {
+      "id": "teaching_quality",
+      "required": true,
+      "criterion": "能力、章节、练习和作品建立关联；内容覆盖、深度、来源与案例通过内容核对和专业复核。",
+      "ownerFromUnchangedStandard": "课程架构师",
+      "currentResponsibleRoles": "课程架构师 / 教材研发员 / 内容审校员",
+      "status": "insufficient",
+      "evidenceReason": "v10 source/version/body maps preserved; no new human industry-expert review or whole-book behavior/learning verification. Earlier AI limited review stays historical.",
+      "nextAction": "Obtain actual professional review and meaningful implementation/learning evidence for frozen教材; do not infer from39 rendered fences.",
+      "retestCondition": "Frozen new artifact/version and actual evidence in that gate scope, independently checked; no prior pass inherited."
+    },
+    {
+      "id": "real_generation",
+      "required": true,
+      "criterion": "真实模型依学习档案生成教材，保存生成过程、来源及版本，示例验证与失败状态真实。",
+      "ownerFromUnchangedStandard": "软件工程师",
+      "currentResponsibleRoles": "软件工程师（原门槛owner）；AI生成工程师负责模型生成服务",
+      "status": "fail",
+      "evidenceReason": "Current generationConfigured:false; real local embedding retrieves existingv10, does not generate教材 from learner profile or dynamic source validation.",
+      "nextAction": "Once configuration/budget authorized, actual profile-bound generation+source/version/example/failure evidence then independent QA.",
+      "retestCondition": "Frozen new artifact/version and actual evidence in that gate scope, independently checked; no prior pass inherited."
+    },
+    {
+      "id": "comparative_advantage",
+      "required": true,
+      "criterion": "选定行业产品及研究基线，在同任务、样本、资源与评分条件下验证差异化指标，并记录专业评审。",
+      "ownerFromUnchangedStandard": "产品经理",
+      "currentResponsibleRoles": "产品经理 / 竞品研究员",
+      "status": "insufficient",
+      "evidenceReason": "No frozen same-task industry/research baselines, comparable measured outcomes or professional advantage review for current product.",
+      "nextAction": "Define comparable tasks/versions/resources/metrics first; measure actual baselines and current product.",
+      "retestCondition": "Frozen new artifact/version and actual evidence in that gate scope, independently checked; no prior pass inherited."
+    },
+    {
+      "id": "learner_creation",
+      "required": true,
+      "criterion": "学习者产出可运行 MVP，具备测试、目标用户验证和独立作品评审，并满足预定评分条件。",
+      "ownerFromUnchangedStandard": "课程架构师",
+      "currentResponsibleRoles": "课程架构师 / 实训评估员",
+      "status": "insufficient",
+      "evidenceReason": "No real learner independent unknown-task MVP, user validation or third-party作品评审; project fields explicitly self-report.",
+      "nextAction": "Collect actual learner artifacts/unknown-task runs and independent assessment against existing量规.",
+      "retestCondition": "Frozen new artifact/version and actual evidence in that gate scope, independently checked; no prior pass inherited."
+    },
+    {
+      "id": "reliable_delivery",
+      "required": true,
+      "criterion": "真实系统的持久化、账户权限隔离、异常恢复及版本追踪经独立验证，满足明确运行范围。",
+      "ownerFromUnchangedStandard": "软件工程师",
+      "currentResponsibleRoles": "软件工程师 / 后端数据工程师 / 内容检索工程师（仅检索服务）",
+      "status": "fail",
+      "evidenceReason": "Current deliverable expressly local development/browser records, not formal production account-synced learning system. Historical local account/job tests not repeated or inherited. Node24 graceful close/local transport do not establish formal delivery.",
+      "nextAction": "Freeze formal operating scope; verify current account isolation/persistence/recovery/versioning and deployment independently.",
+      "retestCondition": "Frozen new artifact/version and actual evidence in that gate scope, independently checked; no prior pass inherited."
+    },
+    {
+      "id": "operating_economics",
+      "required": true,
+      "criterion": "真实调用与交付记录包含成本、耗时、质量及维护机制，达到预定资源预算。",
+      "ownerFromUnchangedStandard": "产品经理",
+      "currentResponsibleRoles": "产品经理 / 运营分析员",
+      "status": "insufficient",
+      "evidenceReason": "Local timings/provenance do not supply actual generation bills, production budget+quality+maintenance evidence.",
+      "nextAction": "Predeclare resource budget then collect real current task cost/time/quality and maintenance records.",
+      "retestCondition": "Frozen new artifact/version and actual evidence in that gate scope, independently checked; no prior pass inherited."
+    },
+    {
+      "id": "iteration_trace",
+      "required": true,
+      "criterion": "每次产出记录版本、门槛、实际证据、差距、原因、责任人、下一步及复验条件与结果；自评、QA、专业审核分别记录。",
+      "ownerFromUnchangedStandard": "项目经理",
+      "currentResponsibleRoles": "项目经理 / 测试工程师",
+      "status": "pass",
+      "evidenceReason": "Within this local app iteration: received WIP/timestamps protected93, first failures retained, owner repairs and actual original/affected reruns, final hashes+gaps/owners/actions. Does not close external professional/user evidence.",
+      "nextAction": "PM integrate R14 final scope and future actions; every new artifact obtains its own versioned review.",
+      "retestCondition": "Frozen new artifact/version and actual evidence in that gate scope, independently checked; no prior pass inherited."
+    }
+  ],
+  "tests": [
+    {
+      "path": "team/app-v11-qa-history/browser-evidence-final.json",
+      "sha256": "ba97898192c0d218fc7cf698c9304e0936e7ab50cdcd305f602fde1d9f17d31f"
+    },
+    {
+      "path": "team/app-v11-qa-history/corpus-preflight.json",
+      "sha256": "e3d24048d8d847a1835f4a605f96d767a9bb3e81cb8befd54f9e9fe9f6f17ed8"
+    },
+    {
+      "path": "team/app-v11-qa-history/final-preview-identity.json",
+      "sha256": "ef49c4797bda4e63226aeff9fd047c49bee1cf1875ff55c69c53795a4484b69c"
+    },
+    {
+      "path": "team/app-v11-qa-history/final-version-binding.json",
+      "sha256": "32e37c22e06524d18edaa8ca8a79d99d7a630f94fae2b34d2488f27019977b7a"
+    },
+    {
+      "path": "team/app-v11-qa-history/findings-first.json",
+      "sha256": "6871bf768ee1686e4b6a0bb015082028a993f656bc4cb2906c35a0f2691c9f36"
+    },
+    {
+      "path": "team/app-v11-qa-history/first-execution-binding.json",
+      "sha256": "9772d4bac5f9a0523651dc533f963bffcffd1c77092677711781c1325511b9f1"
+    },
+    {
+      "path": "team/app-v11-qa-history/http-boundary-final.json",
+      "sha256": "71f76a39158f07e1f0a32735a17d7001a6722578f4891e8a9494acc037dd0db2"
+    },
+    {
+      "path": "team/app-v11-qa-history/http-boundary-first.json",
+      "sha256": "32b4cd04c443c8c43bbb343d3067e5a1fc20820029d962f0bc5a8f8eb87c3468"
+    },
+    {
+      "path": "team/app-v11-qa-history/independent-queries-after-findings.json",
+      "sha256": "f6d687926cfa959602e1595afc9e59a168b832cea6d46b651721b19cce7a6bef"
+    },
+    {
+      "path": "team/app-v11-qa-history/independent-queries-before-execution.json",
+      "sha256": "4236de5455250199fce6876af2fa03f63c0831bf5dcf1dd94221511d8711fdf8"
+    },
+    {
+      "path": "team/app-v11-qa-history/model-resources-final.json",
+      "sha256": "bedc31751cf176f1484614993df02e93f86385cca3465b26605301b9fbc299da"
+    },
+    {
+      "path": "team/app-v11-qa-history/owned-shutdown-natural-final.json",
+      "sha256": "87f9f603d9d9043db693d319c2d83d6d9cf67fe09b4028103a480a2267f128fd"
+    },
+    {
+      "path": "team/app-v11-qa-history/owned-shutdown-recheck.json",
+      "sha256": "8e39a32190b524f2374ffc40301ba98f8cdfec7c144cf26f6d5dcf8d1baaaa19"
+    },
+    {
+      "path": "team/app-v11-qa-history/protected-final.json",
+      "sha256": "f4a8ce78bc50e69cf9477973fe087422003f4ae103f9cb61f80572e6acd7653c"
+    },
+    {
+      "path": "team/app-v11-qa-history/race-proxy-results.json",
+      "sha256": "4be0c8f6a66e6d9b74a5131e61c22277128ded1f95f4a6d2b3602d4c9daaba06"
+    },
+    {
+      "path": "team/app-v11-qa-history/received-baseline.json",
+      "sha256": "15659f24a7f0c9e96bb9f89950fd80995cad89753cc3a678f3ea8e86decb361e"
+    },
+    {
+      "path": "team/app-v11-qa-history/resource-faults-final.json",
+      "sha256": "50c07632262563942769d831d64adce2a15bc2f8df1eb401dc9dc0e55d19ebcc"
+    },
+    {
+      "path": "team/app-v11-qa-history/resource-faults-first.json",
+      "sha256": "27fd5faa49185221f9dfee0cc287f57eacb1b666a9bebf88dbcddd277513f81f"
+    },
+    {
+      "path": "team/app-v11-qa-history/retrieval-http-first.json",
+      "sha256": "7449a2252d6d65f1bd7b907d2bc6f0992bc86c60ad5bc022154c954c26d23af7"
+    },
+    {
+      "path": "team/app-v11-qa-history/retrieval-http-recovery-final.json",
+      "sha256": "0eeb3efb54906fec988e927c04e11be4d74c2ff919a2e1241928ba7f41ad789e"
+    },
+    {
+      "path": "team/app-v11-qa-history/retrieval-http-repair1.json",
+      "sha256": "8803976f46132170ace5535bbad541b40b13b887aaf7ee6a547d739d96e3f783"
+    },
+    {
+      "path": "team/app-v11-qa-history/retrieval-http-repair2.json",
+      "sha256": "06557026b2f9f002eaad3d18d1023de1e974e09fe64dea06e7ec8ff2961dbf26"
+    },
+    {
+      "path": "team/app-v11-qa-history/cleanup-final.json",
+      "sha256": "82afd7f014f3878aa9d144fcf9ba7cc10c4653818496995bf749547db540c457"
+    }
+  ],
+  "protectedFilesResult": "93/93 actual received endpoint files byte/hash unchanged; administrative update excluded",
+  "model": "Actual CPU BGE-small-zh int8 512-dimension CLS normalized model and query/prototype/chunk vector ranking; no external provider invocation. providerCalled:false is not no-model-execution.",
+  "runtimeEvidence": "31 fixed+independent functional requests onNode26 before guard; final limited ranking4 affected checks thenNode24 representative live UI/HTTP/inference+shutdown. No fabricated all31 Node24 rerun or crossversion native compatibility.",
+  "limits": [
+    "No paid external API/credential/private-account/userDB access/publication.",
+    "No textbook teaching-code behavior execution in this app round;39 fenced blocks preserve/render only.",
+    "Finite task semantics tested; not arbitrary Chinese understanding accuracy guarantee.",
+    "No human expert/user satisfaction/real learning transfer/industry comparison/production certification.",
+    "Real IME composition not driven; source guards plus actual basic keyboard/focus only.",
+    "Protected endpoint named-file scope only, not full-workspace forensic history."
+  ],
+  "cleanup": {
+    "checkedAtUtc": "2026-10-11T08:28:01.582704+00:00",
+    "qaService4421": {
+      "sessionId": 72399,
+      "signal": "SIGINT",
+      "exitCode": 0,
+      "output": "",
+      "postStopLsof": {
+        "command": "lsof -nP -iTCP:4421 -sTCP:LISTEN",
+        "exitCode": 1,
+        "output": "",
+        "interpretation": "no listener"
+      }
+    },
+    "qaTimingProxy4434": {
+      "sessionId": 24351,
+      "signal": "SIGINT",
+      "exitCode": 0,
+      "postStopLsof": {
+        "command": "lsof -nP -iTCP:4434 -sTCP:LISTEN",
+        "exitCode": 1,
+        "output": "",
+        "interpretation": "no listener"
+      }
+    },
+    "temporaryTabs": [
+      {
+        "id": "1",
+        "operation": "qaTab.close",
+        "result": "completed without error"
+      },
+      {
+        "id": "2",
+        "operation": "raceTab.close",
+        "result": "completed without error"
+      }
+    ],
+    "scope": "Only QA-owned temporary processes/tabs closed; user4318 PID83835 and PMdeliverabletab6 untouched. Isolated temp data left as evidence; no user/DB deletion."
+  }
+}

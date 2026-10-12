@@ -1,0 +1,51 @@
+{
+  "version": "app-v13-prototype-frontend-review01-dev-check-1",
+  "issueId": "UI2-REVIEW01",
+  "createdAt": "2026-10-12T01:11:29.147Z",
+  "runtime": "v24.16.0",
+  "scope": "developer isolated VM using complete frozen v13 sources plus only repaired experience JS; no live dist writes or actual browser",
+  "files": {
+    "team/app-v13-prototype-qa-history/candidate02/index.html": {
+      "sha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f"
+    },
+    "team/app-v13-prototype-qa-history/candidate02/app.js": {
+      "sha256": "05167ec7df6cea51d6e137aaa0ff53ea4cb949a66a4c813d6ce7167651b2f30e"
+    },
+    "team/app-v13-prototype-qa-history/candidate02/learning-workbench.js": {
+      "sha256": "55c6f5db634d1b723e863fe9a94f604fadcf895c15acbb984025d35be15c6266"
+    },
+    "team/app-v13-prototype-qa-history/candidate02/learning-experience-v13.css": {
+      "sha256": "d190bdc09f0fb9b3ae4eb308cd52b358c935f69d3b9b93ae16ea4418789654bd"
+    },
+    "team/app-v13-prototype-qa-history/candidate02/learning-v13-data.js": {
+      "sha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb"
+    },
+    "team/app-v13-prototype-frontend-history/review01-repaired-client/learning-experience-v13.js": {
+      "sha256": "e731f617891e8a08ea52e5f58267a47c3ff9c43d0ae12dd6c7d443576afdf42f"
+    }
+  },
+  "baseline": {
+    "status": "original_failure_reproduced",
+    "sourceSha256": "7fc778e5d85702688caebf76370308ddee435b74acee7665666387a4dc902b9e",
+    "falseEmptyShown": true,
+    "Q11Status": "weak",
+    "Q12Status": "known"
+  },
+  "tests": [
+    {
+      "name": "UI2-REVIEW01 original Q11 retained/Q12 known sequence gives honest one-remaining completion and valid continuation",
+      "status": "pass"
+    },
+    {
+      "name": "Continue-review entry actually restarts remaining Q11; record weak/known lists agree without state conversion",
+      "status": "pass"
+    },
+    {
+      "name": "Genuinely empty pool and zero-mark new user retain honest empty state with question-bank/records entrances",
+      "status": "pass"
+    }
+  ],
+  "liveDistPatched": false,
+  "realUiTested": false,
+  "servicesOperated": false
+}

@@ -1,0 +1,388 @@
+/* Client-only learning workspace. Public textbook data and recommendations are supplied by the retrieval owner. */
+(function () {
+  'use strict';
+  const VERSION = 'local-workbench-0.13-learning';
+  const CURRENT = 'textbook-v12', HISTORICAL = 'textbook-v10';
+  const STORE = 'rolecraft-reading-v13', PREVIOUS_STORE = 'rolecraft-learning-v12', OLD_STORE = 'rolecraft-learning-v11';
+  const SESSION = 'rolecraft-content-query-v13', OLD_SESSION = 'rolecraft-content-query-v11';
+  const STARTS = { beginner: '零基础', developer: '已有编程基础', practitioner: '已有 Agent 项目经验' };
+  const STAGES = [
+    { title: '起点与问题', output: '基础诊断、问题档案、允许结果和风险边界', ids: ['00-learning-route', '01-foundation', 'n01-python-model-foundations', 'p01-discovery', '02-task-acceptance', '03-trust-boundary'] },
+    { title: '程序与模型边界', output: '可判错的读取适配器、经结构和业务校验的候选、上下文与记忆', ids: ['f01', 'f02', 'n02-context-memory-prompt'] },
+    { title: '选型与组件', output: '最小方案决定、证据包、写工具合同、工具接入和持久账本', ids: ['c01-selection', 'c01-control-primer', 'c02', 'c03', 'n04-tools-mcp', 'e01'] },
+    { title: '固定与动态流程', output: '完整固定流程、动态控制循环与规划，再按需要组织检索、图和协作', ids: ['c01-fixed-workflow', 'c01-control-loop', 'n03-planning-reflection', 'n05-retrieval-ingestion', 'n06-graph-orchestration', 'n07-multiagent-a2a'] },
+    { title: '评价与产品决定', output: '同条件版本比较、跨场景验证、MVP 契约、安全与沙箱、运行交付和任务账目', ids: ['e02', 'n10-evaluation-projects', 'p01-mvp', 'e03', 'n08-sandbox-security', 'e04', 'e05', 'n09-runtime-delivery'] },
+    { title: '交付与迭代', output: '可复现作品、独立判定、原问题复验和未知任务', ids: ['p02'] }
+  ];
+  const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const asText = (value, n = 12000) => typeof value === 'string' ? value.slice(0, n) : '';
+  const empty = () => ({ corpusVersion: CURRENT, startingPoint: null, visits: [], bookmarks: [], notes: {}, project: { title: '', problem: '', evidence: '', result: '', gap: '', next: '' } });
+  let local = empty(), storageError = '', activeView = '', assistantOpen = false, query = '', response = null, submission = null, pending = false, requestId = 0, controller = null;
+  let historicalRaw = null, historical = null, oldQueryPresent = false, queryHistory = [];
+  let contextEnabled = true, startingEnabled = true, composing = false, trigger = null, activeReadingUnitId = '', activeReadingVersion = '';
+  const memoryScroll = new Map();
+  try {
+    const raw = localStorage.getItem(STORE) || localStorage.getItem(PREVIOUS_STORE);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (parsed.corpusVersion !== CURRENT) throw Error('Record version mismatch');
+      local.startingPoint = Object.hasOwn(STARTS, parsed.startingPoint) ? parsed.startingPoint : null;
+      local.visits = Array.isArray(parsed.visits) ? parsed.visits.filter(v => v && typeof v.unitId === 'string' && typeof v.at === 'string').slice(-200) : [];
+      local.bookmarks = Array.isArray(parsed.bookmarks) ? parsed.bookmarks.filter(v => v && typeof v.unitId === 'string' && typeof v.sectionId === 'string').slice(0, 200) : [];
+      local.notes = parsed.notes && typeof parsed.notes === 'object' && !Array.isArray(parsed.notes) ? parsed.notes : {};
+      if (parsed.project && typeof parsed.project === 'object') for (const k of Object.keys(local.project)) local.project[k] = asText(parsed.project[k]);
+    }
+  } catch { storageError = '读取本浏览器学习记录失败。新输入仍可留在页面并导出。'; }
+  try { historicalRaw = localStorage.getItem(OLD_STORE); historical = historicalRaw ? JSON.parse(historicalRaw) : null; } catch { /* Original historical bytes remain available for export. */ }
+  try { oldQueryPresent = sessionStorage.getItem(OLD_SESSION) !== null || sessionStorage.getItem('rolecraft-content-query-v12') !== null; } catch { /* Old query cache is never imported. */ }
+  function corpus(version = CURRENT) {
+    const c = version === CURRENT ? globalThis.RolecraftContentV12 : version === HISTORICAL ? globalThis.RolecraftContentV10 : null, count = version === CURRENT ? 30 : 20;
+    if (!c || c.corpusVersion !== version || !Array.isArray(c.units) || c.units.length !== count || new Set(c.units.map(u => u.unitId)).size !== count || c.units.some((u, i) => u.order !== i + 1 || !u.bodyMarkdown || !Array.isArray(u.sections))) return null;
+    return c;
+  }
+  function unit(id, version = CURRENT) { return corpus(version)?.units.find(u => u.unitId === id); }
+  function unitVersion(u) { return u?.sourcePath?.startsWith('textbooks/v10/') ? HISTORICAL : CURRENT; }
+  function section(u, id) { return u?.sections.find(s => s.sectionId === id); }
+  function currentRecord(v) { return v?.corpusVersion === CURRENT && v.corpusHash === corpus()?.corpusHash && unit(v.unitId)?.sourceSha256 === v.sourceSha256 && (!v.sectionId || section(unit(v.unitId), v.sectionId)); }
+  function noteText(u) { const n = local.notes[u?.unitId]; return n?.corpusVersion === CURRENT && n.sourceSha256 === u?.sourceSha256 ? asText(n.text) : ''; }
+  function loc() {
+    const [path, search = ''] = location.hash.slice(1).split('?'), p = path.split('/'), requestedVersion = new URLSearchParams(search).get('version');
+    return { unitId: p[0] === 'learn' && p[1] === 'agent' ? p[2] || '' : '', sectionId: p[0] === 'learn' && p[1] === 'agent' ? p[3] || '' : '', version: requestedVersion || CURRENT };
+  }
+  function href(u, s = '') { return '#learn/agent/' + u.unitId + (s ? '/' + s : '') + (unitVersion(u) === HISTORICAL ? '?version=' + HISTORICAL : ''); }
+  function save() {
+    try { localStorage.setItem(STORE, JSON.stringify(local)); storageError = ''; return true; }
+    catch { storageError = '浏览器无法保存。输入还在当前页面；关闭前可导出学习记录。'; return false; }
+  }
+  function notify(message) {
+    const node = document.getElementById('lw-status');
+    if (node) node.textContent = message;
+    else if (typeof toast === 'function') toast(message);
+  }
+  function asset(name, version = CURRENT) {
+    const a = corpus(version)?.assets?.find(a => a.name === name);
+    if (!a) return '';
+    return location.protocol === 'file:' ? a.staticHref : a.href || a.staticHref;
+  }
+  function slug(value) { return value.toLowerCase().replace(/[^\p{L}\p{N}\s_-]/gu, '').trim().replace(/\s+/g, '-'); }
+  function resolveLink(raw, current, image = false) {
+    let value;
+    try { value = decodeURIComponent(raw); } catch { value = raw; }
+    if (/^(https?:)\/\//i.test(value)) return image ? '' : value;
+    if (/^(javascript|data|file|vbscript):/i.test(value) || value.startsWith('//')) return '';
+    const version = unitVersion(current), c = corpus(version);
+    if (value.startsWith('assets/')) return asset(value.split('/').pop(), version);
+    if (image) return '';
+    if (value.startsWith('#')) {
+      const target = current.sections.find(s => slug(s.title) === value.slice(1) || s.title === value.slice(1) || s.sectionId === value.slice(1));
+      return target ? href(current, target.sectionId) : '';
+    }
+    const parts = value.split('#'), name = parts[0].split('/').pop();
+    const resolvedPath = new URL(value, 'https://local.invalid/' + current.sourcePath).pathname.slice(1);
+    const publicReference = c?.references?.find(r => r.sourcePath === resolvedPath || r.sourcePath === value);
+    if (publicReference) return location.protocol === 'file:' ? publicReference.staticHref : publicReference.href || publicReference.staticHref;
+    if (value === 'README.md' || value === 'agent-engineering-textbook.md') return '#learn';
+    const u = c?.units.find(u => u.sourcePath === resolvedPath.split('#')[0]);
+    if (u) {
+      const s = parts[1] ? u.sections.find(s => slug(s.title) === parts[1] || s.title === parts[1]) : null;
+      return !parts[1] || s ? href(u, s?.sectionId) : '';
+    }
+    const reference = c?.references?.find(r => r.name === name && !value.includes('/'));
+    return reference ? (location.protocol === 'file:' ? reference.staticHref : reference.href || reference.staticHref) : '';
+  }
+  function inline(text, u) {
+    const values = [], token = html => '\u0001' + (values.push(html) - 1) + '\u0002';
+    // Text is always escaped; only code, emphasis and whitelisted public links gain markup.
+    let t = String(text).replace(/`([^`\n]+)`/g, (_, content) => token('<code>' + esc(content) + '</code>'));
+    t = t.replace(/(!?)\[([^\]\n]*)\]\(([^\s)]+)(?:\s+"[^"]*")?\)/g, (_, img, label, raw) => {
+      const url = resolveLink(raw, u, !!img);
+      if (!url) return token('<span class="lw-unavailable-link">' + esc(label) + ' <small>（参考位置暂未提供）</small></span>');
+      if (img) return token('<figure class="lw-figure"><button type="button" data-lw-image="' + esc(url) + '" data-lw-alt="' + esc(label) + '" aria-label="放大查看：' + esc(label) + '"><img src="' + esc(url) + '" alt="' + esc(label) + '" loading="lazy"></button><figcaption><button type="button" data-lw-image="' + esc(url) + '" data-lw-alt="' + esc(label) + '">放大查看</button></figcaption></figure>');
+      return token('<a href="' + esc(url) + '"' + (/^https?:/.test(url) ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' + esc(label) + '</a>');
+    });
+    t = esc(t).replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/(?<!\*)\*([^*]+)\*(?!\*)/g, '<em>$1</em>');
+    return t.replace(/\u0001(\d+)\u0002/g, (_, i) => values[Number(i)] || '');
+  }
+  function markdown(u) {
+    const lines = u.bodyMarkdown.replace(/\r\n?/g, '\n').split('\n'), out = [], byLine = new Map(u.sections.map(s => [s.startLine, s]));
+    let para = [], code = null, lang = '', list = [], listStack = [], quote = [];
+    const flushPara = () => { if (para.length) { out.push('<p>' + para.map(l => inline(l, u)).join('\n') + '</p>'); para = []; } };
+    const listHTML = node => '<' + node.type + (node.type === 'ol' && node.start !== 1 ? ' start="' + node.start + '"' : '') + '>' + node.items.map(item => '<li>' + inline(item.text, u) + item.children.map(listHTML).join('') + '</li>').join('') + '</' + node.type + '>';
+    const flushList = () => { if (list.length) out.push(list.map(listHTML).join('')); list = []; listStack = []; };
+    const appendListItem = (indent, type, text, start) => {
+      while (listStack.length && listStack.at(-1).indent > indent) listStack.pop();
+      let node = listStack.at(-1);
+      if (!node || node.indent !== indent || node.type !== type) {
+        if (node?.indent === indent) listStack.pop();
+        const parent = listStack.at(-1), siblings = parent && parent.items.length ? parent.items.at(-1).children : list;
+        node = { indent, type, start, items: [] }; siblings.push(node); listStack.push(node);
+      }
+      node.items.push({ text, children: [] });
+    };
+    const flushQuote = () => { if (quote.length) { out.push('<blockquote>' + quote.map(l => inline(l, u)).join('<br>') + '</blockquote>'); quote = []; } };
+    const flush = () => { flushPara(); flushList(); flushQuote(); };
+    const cells = l => l.trim().replace(/^\|/, '').replace(/\|$/, '').split(/(?<!\\)\|/).map(c => c.trim().replace(/\\\|/g, '|'));
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      if (code !== null) { if (/^\s*```\s*$/.test(line)) { out.push('<div class="lw-code"><span>' + esc(lang || '代码') + ' · 网页不执行代码</span><pre tabindex="0"><code>' + esc(code.join('\n')) + '</code></pre></div>'); code = null; } else code.push(line); continue; }
+      const fence = line.match(/^\s*```([^`]*)$/);
+      if (fence) { flush(); code = []; lang = fence[1].trim(); continue; }
+      if (!line.trim()) { flush(); continue; }
+      const h = line.match(/^(#{1,6})\s+(.+)$/);
+      if (h) { flush(); const s = byLine.get(i + 1), id = s?.sectionId || ''; out.push('<h' + h[1].length + ' id="' + esc(id) + '" tabindex="-1">' + inline(h[2], u) + '</h' + h[1].length + '>'); continue; }
+      if (line.includes('|') && /^\s*\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?\s*$/.test(lines[i + 1] || '')) {
+        flush(); const head = cells(line), rows = []; i += 2;
+        while (i < lines.length && lines[i].trim() && lines[i].includes('|')) { rows.push(cells(lines[i])); i++; } i--;
+        out.push('<div class="lw-table" tabindex="0" role="region" aria-label="教材表格，可横向滚动"><table><thead><tr>' + head.map(c => '<th scope="col">' + inline(c, u) + '</th>').join('') + '</tr></thead><tbody>' + rows.map(r => '<tr>' + head.map((_, j) => '<td>' + inline(r[j] || '', u) + '</td>').join('') + '</tr>').join('') + '</tbody></table></div>'); continue;
+      }
+      if (/^>\s?/.test(line)) { flushPara(); flushList(); quote.push(line.replace(/^>\s?/, '')); continue; }
+      flushQuote();
+      const item = line.match(/^(\s*)(?:([-*+])\s+|(\d+)[.)]\s+)(.+)$/);
+      if (item) { flushPara(); appendListItem(item[1].replace(/\t/g, '    ').length, item[2] ? 'ul' : 'ol', item[4], Number(item[3]) || 1); continue; }
+      if (/^\s*(---+|\*\*\*+)\s*$/.test(line)) { flush(); out.push('<hr>'); continue; }
+      flushList(); para.push(line);
+    }
+    flush(); if (code !== null) out.push('<pre tabindex="0"><code>' + esc(code.join('\n')) + '</code></pre>');
+    return out.join('');
+  }
+  const heading = (label, name, desc) => '<div class="lw-page-head"><span class="lw-kicker">' + label + '</span><h1 tabindex="-1">' + name + '</h1><p>' + desc + '</p></div>';
+  function errorPage(message) { return heading('教材阅读', '教材资源暂不可用', esc(message)) + '<button class="outline" data-lw-reload>重新加载</button><a class="outline" href="#home">返回工作台</a>'; }
+  function startSelect() {
+    return '<div class="lw-start"><label for="lw-starting-point">我的学习起点</label><select id="lw-starting-point"><option value="">尚未选择</option>' + Object.entries(STARTS).map(([id, label]) => '<option value="' + id + '"' + (local.startingPoint === id ? ' selected' : '') + '>' + label + '</option>').join('') + '</select><span>自选起点，诊断需实际完成</span></div>';
+  }
+  function unitLink(u, klass = '') { return '<a class="' + klass + '" href="' + href(u) + '"><span class="lw-num">' + String(u.order).padStart(2, '0') + '</span><span>' + esc(u.navigationLabel) + '</span></a>'; }
+  function catalog() {
+    return '<div class="lw-catalog">' + corpus().units.map(u => '<details class="lw-unit"><summary><span class="lw-num">' + String(u.order).padStart(2, '0') + '</span><span><strong>' + esc(u.navigationLabel) + '</strong><small>' + esc(u.title) + '</small></span><span class="lw-chevron">＋</span></summary><div class="lw-unit-detail"><a class="primary" href="' + href(u) + '">阅读本篇 →</a><ul>' + u.sections.filter(s => s.level > 1).map(s => '<li><a href="' + href(u, s.sectionId) + '">' + esc(s.title) + '</a></li>').join('') + '</ul></div></details>').join('') + '</div>';
+  }
+  function stages() {
+    return '<div class="lw-stages">' + STAGES.map((st, i) => '<section class="lw-stage"><div class="lw-stage-number">' + String(i + 1).padStart(2, '0') + '</div><div><h2>' + st.title + '</h2><p>' + st.output + '</p><div class="lw-stage-links">' + st.ids.map(id => unitLink(unit(id))).join('') + '</div></div></section>').join('') + '</div>';
+  }
+  function homePage(routeOnly = false) {
+    if (!corpus()) return errorPage('当前 v12 教材包没有完整加载；不会用历史教材替代。');
+    const latest = local.visits.filter(currentRecord).at(-1), first = corpus().units[0];
+    const graphSection = first.sections.find(s => s.title === '一套可交付系统还需要哪些工程工作');
+    const showCatalog = location.hash === '#learn' || location.hash === '#learn/agent';
+    return '<div class="lw-home">' + heading('职业学习 · Agent 工程', 'Agent 开发者', '读懂一个系统怎样工作，再用实际作品验证你的想法。') + startSelect() + '<div class="lw-entry"><div><h2>' + (latest ? '继续上次阅读' : '从认识 Agent 工程开始') + '</h2><p>' + (latest ? esc(unit(latest.unitId).navigationLabel) + ' · 只记录阅读位置' : '先了解它解决什么问题，再找到自己的学习路径。') + '</p></div><a class="primary" href="' + (latest ? href(unit(latest.unitId), latest.sectionId || '') : href(first)) + '">' + (latest ? '继续阅读' : '开始阅读') + ' →</a></div>' + (local.startingPoint === 'beginner' ? '<div class="lw-route-hint">零基础起步：先读开篇，再做<a href="' + href(unit('01-foundation'), unit('01-foundation').sections.find(s => s.title === '先做入口诊断')?.sectionId) + '">基础诊断</a>，按实际缺项补学。</div>' : local.startingPoint ? '<div class="lw-route-hint">已有基础：可直接查具体问题。正式先修保留在各篇说明中，不锁住阅读。</div>' : '') + '<div class="lw-tabs" aria-label="教材浏览方式"><a href="#path"' + (!showCatalog ? ' aria-current="page"' : '') + '>学习路线</a><a href="#learn"' + (showCatalog ? ' aria-current="page"' : '') + '>课程目录 <small>30 篇</small></a></div>' + (showCatalog ? catalog() : stages()) + (!routeOnly && !showCatalog ? '<section class="lw-panorama"><div><span class="lw-kicker">先看全貌</span><h2>Agent 工程不止是一次模型调用</h2><p>从问题、组件到验证与交付，找到章节所处的环节。组件按需求采用，图中分组不替代正式阅读顺序。</p><a href="' + href(first, graphSection?.sectionId) + '">查看工程全景与章节位置 →</a></div><button type="button" data-lw-image="' + esc(asset('agent-engineering-landscape-v12.png')) + '" data-lw-alt="Agent工程全景与30篇章节位置"><img src="' + esc(asset('agent-engineering-landscape-v12.png')) + '" alt="Agent工程全景与30篇章节位置" loading="lazy"><span>放大工程全景</span></button></section>' : '') + '</div>';
+  }
+  function readerPage() {
+    const location = loc(), c = corpus(location.version);
+    if (!c) return errorPage('请求的教材版本没有完整加载。当前版本为 v12，历史版为 v10；不会替换为其他来源。');
+    if (!location.unitId) return homePage(true);
+    const u = unit(location.unitId, location.version); if (!u) return errorPage('请求的章节不属于所选教材版本。');
+    const historicalReading = location.version === HISTORICAL, s = section(u, location.sectionId), index = c.units.indexOf(u);
+    const bookmark = !historicalReading && local.bookmarks.some(b => currentRecord(b) && b.unitId === u.unitId && b.sectionId === (s?.sectionId || ''));
+    const oldUnit = unit(location.unitId, HISTORICAL), oldSection = section(oldUnit, location.sectionId), currentUnit = unit(location.unitId);
+    const missingLocation = location.sectionId && !s ? '<div class="lw-message" role="alert">这处教材位置在所选版本中不可用；不会换成另一小节。可<a href="' + href(u) + '">打开本章</a>' + (!historicalReading && oldSection ? '，或<a href="' + href(oldUnit, oldSection.sectionId) + '">查看 v10 的原位置：' + esc(oldSection.title) + '</a>' : '') + '。</div>' : '';
+    const noteArea = historicalReading ? '<section class="lw-note-area"><h2>历史阅读 · 教材 v10</h2><p>旧笔记和足迹保持原来源，当前只读，不写入 v12 学习记录。</p>' + (asText(historical?.notes?.[u.unitId]).trim() ? '<p class="lw-user-text">' + esc(asText(historical.notes[u.unitId])) + '</p>' : '<p>此篇没有保留的 v10 笔记。</p>') + '<a class="outline" href="#records">查看与导出历史记录</a>' + (currentUnit ? '<a class="primary" href="' + href(currentUnit) + '">阅读 v12 当前篇 →</a>' : '') + '</section>' : '<section class="lw-note-area"><h2>我的阅读笔记 · 教材 v12</h2><p>只保存在此浏览器，按当前原稿记录。疑问或实际尝试不自动评价能力。</p><label for="lw-note">本篇笔记</label><textarea id="lw-note" rows="5" maxlength="12000">' + esc(noteText(u)) + '</textarea><button class="primary" data-lw-save-note>保存笔记</button></section>';
+    return '<div class="lw-reader-layout"><aside class="lw-chapter-nav"><details><summary>' + (historicalReading ? '历史目录 v10' : '课程目录 v12') + ' <small>' + c.units.length + ' 篇</small></summary><div>' + c.units.map(other => '<a href="' + href(other) + '"' + (other.unitId === u.unitId ? ' aria-current="page"' : '') + '><span class="lw-num">' + String(other.order).padStart(2, '0') + '</span><span>' + esc(other.navigationLabel) + (other.unitId === u.unitId ? '<small>当前阅读</small>' : '') + '</span></a>').join('') + '</div></details></aside><div class="lw-reading"><div class="lw-reader-top"><a href="#learn">← 当前 v12 课程目录</a><span>第 ' + String(u.order).padStart(2, '0') + ' 篇 / ' + c.units.length + '</span></div><p class="lw-reader-identity">教材 ' + (historicalReading ? 'v10 · 历史正文，只读记录' : 'v12') + '</p>' + (historicalReading ? '<div class="lw-history-notice"><strong>正在阅读历史教材 v10</strong><p>此页保留旧来源与位置，不授予新版学习证据。</p>' + (currentUnit ? '<a href="' + href(currentUnit) + '">查看 v12 对应篇 →</a>' : '') + '</div>' : '') + missingLocation + '<details class="lw-section-toc"><summary>本章小节</summary><ul>' + u.sections.filter(s => s.level > 1).map(s => '<li class="lw-level-' + s.level + '"><a href="' + href(u, s.sectionId) + '">' + esc(s.title) + '</a></li>').join('') + '</ul></details><article class="lw-prose" aria-label="' + esc(u.title) + '">' + markdown(u) + '</article><div class="lw-reader-tools">' + (!historicalReading ? '<button class="outline" data-lw-bookmark>' + (bookmark ? '已收藏此位置 · 取消' : '收藏当前阅读位置') + '</button>' : '') + '<button class="outline" data-lw-copy>复制定位链接</button><button class="outline" data-lw-download="' + esc(u.unitId) + '" data-lw-version="' + esc(location.version) + '">下载本篇 Markdown</button></div><details class="lw-textbook-info"><summary>教材说明与先修</summary><p>版本：' + esc(c.corpusVersion) + '。当前源是完整正文；阅读、收藏和自记笔记不代表掌握或职业认证。</p><p>正式先修：' + (u.prerequisiteUnitIds.length ? u.prerequisiteUnitIds.map(id => unitLink(unit(id, location.version))).join('、') : '无') + '。先修需实际证据，不强制解锁。</p><p>来源：<code>' + esc(u.sourcePath) + '</code></p><p>原稿 SHA256：<code>' + esc(u.sourceSha256) + '</code></p><p>文稿独立 AI 审校有范围限制；示例执行与应用接入分别记录。网站不执行教材代码，不据此评价作品。完整培养目标仍待真实实训、专家及行业比较验证。</p></details>' + noteArea + '<nav class="lw-pagination" aria-label="相邻篇章">' + (index > 0 ? '<a href="' + href(c.units[index - 1]) + '">← 上一篇<br><strong>' + esc(c.units[index - 1].navigationLabel) + '</strong></a>' : '<a href="#learn">返回当前目录</a>') + (index < c.units.length - 1 ? '<a href="' + href(c.units[index + 1]) + '">下一篇 →<br><strong>' + esc(c.units[index + 1].navigationLabel) + '</strong></a>' : '<a href="#projects">带着作品复盘 →</a>') + '</nav></div></div>';
+  }
+  function projectsPage() {
+    if (!corpus()) return errorPage('项目章节指引尚未加载。');
+    const labels = { title: '我的项目名称', problem: '要解决的真实问题', evidence: '用户、现有方案与比较证据', result: '已取得的实际结果与作品位置', gap: '未达标准的部分与原因', next: '下一步、责任人与复验方法' };
+    return heading('实作与作品', '项目工坊', '把所学落到同一个真实问题。这里保存你的自述材料，不自动判定作品通过。') + '<div class="lw-project-layout"><section class="lw-project-form"><h2>我的项目档案</h2><p>记录保存在此浏览器，链接仅保存文字，不自动访问或运行。</p>' + Object.entries(labels).map(([id, label]) => '<label for="lw-project-' + id + '">' + label + '</label>' + (id === 'title' ? '<input id="lw-project-' + id + '" data-lw-project="' + id + '" maxlength="12000" value="' + esc(local.project[id]) + '">' : '<textarea id="lw-project-' + id + '" data-lw-project="' + id + '" rows="4" maxlength="12000">' + esc(local.project[id]) + '</textarea>')).join('') + '<button class="primary" data-lw-save-project>保存项目档案</button><button class="outline" data-lw-export>导出记录</button><p class="lw-small">自述资料 · 未独立评价 · 行业先进性未验证</p></section><aside class="lw-project-guide"><h2>按教材推进实作</h2>' + STAGES.map(st => '<section><h3>' + st.title + '</h3><p>' + st.output + '</p>' + st.ids.map(id => unitLink(unit(id))).join('') + '</section>').join('') + '<a href="#product-review">进入产品达标复盘 →</a><a href="#projects-history">查看历史项目记录 →</a></aside></div>';
+  }
+  function historicalRecordsHTML() {
+    if (!historicalRaw) return '<section class="lw-record-section"><h2>历史 v10 学习记录</h2><p>此浏览器没有保留的 v11 工作台记录。更早的档案、测验与项目可在更多工具查看。</p></section>';
+    const recordLink = v => {
+      const u = unit(v?.unitId, HISTORICAL), sec = section(u, v?.sectionId);
+      return u ? '<a href="' + href(u, sec?.sectionId || '') + '">' + esc(u.navigationLabel) + (sec ? ' · ' + esc(sec.title) : v?.sectionId ? ' · 原位置已失效，可看历史章首' : '') + '</a>' : esc(v?.unitId || '位置未知');
+    };
+    const visits = Array.isArray(historical?.visits) ? historical.visits : [], bookmarks = Array.isArray(historical?.bookmarks) ? historical.bookmarks : [];
+    const notes = historical?.notes && typeof historical.notes === 'object' && !Array.isArray(historical.notes) ? historical.notes : {};
+    const project = historical?.project && typeof historical.project === 'object' && !Array.isArray(historical.project) ? historical.project : {};
+    return '<section class="lw-record-section"><h2>历史 v10 学习记录 · 只读保留</h2><p>来源：原 v11 工作台。旧字段没有单独版本时，按原存储来源注明为 v10；不会转写成 v12 笔记、足迹或能力证据。导出包含原始记录。</p>' + (!historical ? '<p role="alert">历史记录无法解析，原始数据仍可导出。</p>' : '') + '<details><summary>旧收藏 · ' + bookmarks.length + ' 条</summary><ul>' + bookmarks.map(v => '<li>' + recordLink(v) + '</li>').join('') + '</ul></details><details><summary>旧阅读足迹 · ' + visits.length + ' 条</summary><ul>' + visits.slice(-20).reverse().map(v => '<li>' + recordLink(v) + ' · ' + esc(v?.at) + '</li>').join('') + '</ul></details><h3>旧阅读笔记</h3>' + Object.entries(notes).filter(([, text]) => asText(text).trim()).map(([id, text]) => '<details><summary>' + esc(unit(id, HISTORICAL)?.navigationLabel || id) + ' · v10</summary><p class="lw-user-text">' + esc(asText(text)) + '</p>' + (unit(id, HISTORICAL) ? '<a href="' + href(unit(id, HISTORICAL)) + '">查看历史正文 →</a>' : '') + '</details>').join('') + '<details><summary>旧项目自述 · 未独立评价</summary>' + Object.entries(project).map(([key, text]) => '<p><strong>' + esc(key) + '：</strong><span class="lw-user-text">' + esc(asText(text)) + '</span></p>').join('') + '</details></section>';
+  }
+  function recordsPage() {
+    if (!corpus()) return errorPage('教材版本未加载，无法核对记录中的阅读位置。');
+    const visits = local.visits.filter(currentRecord).slice(-20).reverse(), bookmarks = local.bookmarks.filter(currentRecord);
+    const link = v => '<a href="' + href(unit(v.unitId), v.sectionId) + '">' + esc(unit(v.unitId).navigationLabel) + (v.sectionId ? ' · ' + esc(section(unit(v.unitId), v.sectionId)?.title) : '') + '</a>';
+    return heading('本浏览器的足迹', '学习记录', '当前教材 v12。阅读、收藏和笔记不换算成完成率或能力等级；历史记录保留原版身份。') + '<div class="lw-record-toolbar"><button class="outline" data-lw-export>导出当前与历史学习记录</button><a href="#reflections">打开学习与员工复盘 →</a></div><section class="lw-record-section"><h2>v12 收藏的位置</h2>' + (bookmarks.length ? '<ul>' + bookmarks.map(v => '<li>' + link(v) + '</li>').join('') + '</ul>' : '<p>还没有新版收藏。阅读时可以收藏当前章或小节。</p>') + '</section><section class="lw-record-section"><h2>v12 最近阅读</h2>' + (visits.length ? '<ul>' + visits.map(v => '<li>' + link(v) + '<time>' + esc(new Date(v.at).toLocaleString('zh-CN')) + '</time></li>').join('') + '</ul>' : '<p>还没有打开过新版教材正文。</p>') + '</section><section class="lw-record-section"><h2>v12 阅读笔记</h2>' + corpus().units.filter(u => noteText(u).trim()).map(u => '<details><summary>' + esc(u.navigationLabel) + '</summary><p class="lw-user-text">' + esc(noteText(u)) + '</p><a href="' + href(u) + '">回到本篇</a></details>').join('') + '</section>' + historicalRecordsHTML() + '<p class="lw-small">保存范围：本浏览器、各自来源。未同步账户。更早的档案、测验、项目与复盘仍在更多工具中保留。</p>';
+  }
+  function currentContext() {
+    const l = loc(), related = globalThis.LearningExperienceV13?.queryContext?.(), u = activeView === 'learn' && l.version === CURRENT ? unit(l.unitId) : unit(related?.unitId);
+    return { startingPoint: startingEnabled ? (globalThis.LearningExperienceV13?.startingPoint?.() ?? local.startingPoint) : null, currentUnitId: contextEnabled && u ? u.unitId : null, currentSectionId: contextEnabled && u ? section(u, activeView === 'learn' ? l.sectionId : related?.sectionId)?.sectionId || null : null, corpusVersion: CURRENT };
+  }
+  function modeLabel(r) {
+    if (r?.providerCalled) return '模型辅助内容检索';
+    if (/semantic|embedding/.test(r?.engineMode || '')) return '离线语义检索 · 查询留在本机';
+    if (/concept|rule/.test(r?.engineMode || '')) return '本地概念检索 · 未调用语义模型';
+    return '当前教材内容检索';
+  }
+  function resultHTML() {
+    if (pending) return '<p class="lw-find-message">正在当前教材中查找…</p>';
+    if (!response) return '<div class="lw-find-empty"><h3>把问题说出来，不必知道章节名</h3><p>在当前 v12 的 30 篇中查找，并给出原文依据。</p>' + (oldQueryPresent ? '<p class="lw-small">旧查询已保留，历史结果未带入当前界面；请重新提交问题。</p>' : '') + '<div class="lw-examples"><button data-lw-example="我是零基础，先从哪里开始">零基础从哪里开始</button><button data-lw-example="程序改了一版，怎么判断效果真的变好了">怎样比较改动后的效果</button></div></div>';
+    const context = submission?.context || {}, cu = unit(context.currentUnitId), cs = section(cu, context.currentSectionId);
+    const head = '<div class="lw-result-meta"><p><strong>本次表达：</strong>' + esc(submission?.query || query) + '</p><p>提交时：' + esc(STARTS[context.startingPoint] || '未限定起点') + ' · ' + (cu ? esc(cu.navigationLabel) + (cs ? ' / ' + esc(cs.title) : '') : '全部 30 篇') + '</p><span class="lw-mode">' + esc(modeLabel(response)) + '</span></div>';
+    const status = response.status;
+    if (status === 'unavailable') return head + '<div class="lw-message" role="alert"><h3>暂时无法检索</h3><p>' + esc(response.message || response.error?.message || '教材检索资源没有就绪。你仍可通过目录阅读。') + '</p><button class="outline" data-lw-retry>重试本次表达</button><a href="#learn">打开课程目录</a></div>';
+    if (status === 'invalid_input') return head + '<p class="lw-message" role="alert">' + esc(response.message || '请输入 1—1200 字的问题描述。') + '</p>';
+    if (status === 'no_match') return head + '<div class="lw-message"><h3>当前 Agent 教材没有找到足够对应内容</h3><p>' + esc(response.message || '检索范围是 v12 的 30 篇。你可以换一种表达，或从目录查看教材覆盖范围。') + '</p><a href="#learn">打开课程目录 →</a></div>';
+    if (status === 'needs_clarification') {
+      const c = response.clarification || {}, options = Array.isArray(c.options) ? c.options : [];
+      return head + '<div class="lw-message"><h3>补充一个信息</h3><p>' + esc(typeof c === 'string' ? c : c.question || c.message || '你想解决哪一类问题？') + '</p><div class="lw-clarifications">' + options.slice(0, 3).map((o, i) => '<button class="outline" data-lw-clarify="' + i + '">' + esc(typeof o === 'string' ? o : o.label || o.title || o.query) + '</button>').join('') + '</div><p class="lw-small">选择后重新查找，也可以直接改写表达。</p></div>';
+    }
+    if (status !== 'recommended') return head + '<p class="lw-message" role="alert">检索响应状态无法识别，请重试。</p>';
+    const intents = Array.isArray(response.interpretedIntents) ? response.interpretedIntents : [];
+    const exclusions = Array.isArray(response.excludedIntents) ? response.excludedIntents : [];
+    const cards = response.results || []; let previousIntent = '';
+    return head + '<h3>推荐阅读</h3>' + (intents.length ? '<p class="lw-intent-label">检索理解：' + esc(intents.map(i => typeof i === 'string' ? i : i.label || i.title || i.description || i.intentId).join('；')) + '</p>' : '') + (exclusions.length ? '<p class="lw-small">这次不推荐：' + esc(exclusions.map(i => typeof i === 'string' ? i : i.label || i.title || i.intentId).join('、')) + '</p>' : '') + cards.map(r => {
+      const u = unit(r.unitId), s = section(u, r.sectionId), intent = intents.find(i => i.intentId === r.intentId || i.id === r.intentId), group = intents.length > 1 && r.intentId !== previousIntent ? '<h4 class="lw-intent-group">' + esc(intent?.label || intent?.title || '补充阅读') + '</h4>' : ''; previousIntent = r.intentId;
+      return group + '<article class="lw-result-card"><span class="lw-result-position">第 ' + String(u.order).padStart(2, '0') + ' 篇 · ' + esc(u.navigationLabel) + (r.intentId ? ' <small>' + esc(intents.find(i => i.intentId === r.intentId || i.id === r.intentId)?.label || '') + '</small>' : '') + '</span><h4>' + esc(s.title) + '</h4><p class="lw-reason">' + esc(r.reason) + '</p><div class="lw-evidence"><span>教材原文</span><blockquote>' + esc(r.evidenceExcerpt) + '</blockquote></div><div class="lw-result-actions"><a class="primary" data-lw-result href="' + href(u, s.sectionId) + '">阅读这一节 →</a><details><summary>查看出处</summary><p>Agent 工程教材 v12<br>' + esc(u.title) + '<br>' + esc(u.sourcePath) + ' · ' + esc(s.title) + '</p><p class="lw-hash">原稿 SHA256：' + esc(u.sourceSha256) + '</p></details></div></article>';
+    }).join('') + (Array.isArray(response.limitations) && response.limitations.length ? '<p class="lw-small">' + esc(response.limitations.join('；')) + '</p>' : '');
+  }
+  function assistantHTML() {
+    const c = currentContext(), u = unit(c.currentUnitId), s = section(u, c.currentSectionId);
+    return '<div class="lw-assistant ' + (assistantOpen ? 'is-open' : '') + '" id="lw-assistant"><section id="lw-find-panel" aria-label="教材内容检索"' + (!assistantOpen ? ' hidden' : '') + '><div class="lw-assistant-head"><div><h2>找对应教材</h2><p>只推荐当前 v12 教材中的真实内容</p></div><button class="outline" data-lw-collapse>收起</button></div><div class="lw-context"><span>学习起点：' + esc(STARTS[c.startingPoint] || '未限定') + '</span>' + (c.startingPoint ? '<button data-lw-clear-start>本次不限定起点</button>' : local.startingPoint ? '<button data-lw-use-start>使用我的起点</button>' : '') + '<span>' + (u ? '结合当前章：' + esc(u.navigationLabel) + (s ? ' / ' + esc(s.title) : '') : '在全部 30 篇中查找') + '</span>' + (u ? '<button data-lw-clear-context>清除章节上下文</button>' : activeView === 'learn' && loc().version === CURRENT && unit(loc().unitId) ? '<button data-lw-use-context>结合当前阅读</button>' : '') + '</div><div class="lw-find-results" id="lw-find-results">' + (queryHistory.length ? '<details class="lw-query-history"><summary>最近查询 · 本会话</summary>' + queryHistory.map((h,i) => '<button class="outline" data-lw-history="' + i + '">' + esc(h.query) + '</button>').join('') + '</details>' : '') + resultHTML() + '</div></section><form id="lw-find-form"><label for="lw-query">查教材</label><textarea id="lw-query" rows="1" placeholder="' + esc(globalThis.LearningExperienceV13?.inputHint?.() || '描述想解决的问题，查对应教材') + '" aria-describedby="lw-query-feedback"' + (pending ? ' aria-busy="true"' : '') + '>' + esc(query) + '</textarea><button class="primary" type="submit">查找</button><button class="lw-open-toggle" type="button" data-lw-toggle aria-expanded="' + assistantOpen + '" aria-controls="lw-find-panel" aria-label="' + (assistantOpen ? '收起检索结果' : '展开检索结果') + '">' + (assistantOpen ? '⌄' : '⌃') + '</button><p id="lw-query-feedback" class="lw-query-feedback" role="status" aria-live="polite">' + (pending ? '正在教材中查找，可收起继续学习' : response && !assistantOpen ? '教材检索已就绪，展开查看' : '') + '</p></form></div>';
+  }
+  function validateResponse(r, submitted) {
+    const c = corpus();
+    if (!c) throw Error('当前教材资源没有完整加载。');
+    if (submitted?.context?.corpusVersion !== CURRENT) throw Error('查询缓存属于其他教材版本，请重新提交。');
+    if (!r || !['recommended', 'needs_clarification', 'no_match', 'invalid_input', 'unavailable'].includes(r.status)) throw Error('检索响应状态不合法。');
+    if (['unavailable', 'invalid_input'].includes(r.status)) return r;
+    if (r.corpusVersion !== c.corpusVersion || r.corpusHash !== c.corpusHash) throw Error('检索与阅读资源的版本不一致，请重新加载。');
+    if (r.status !== 'recommended') return r;
+    if (!Array.isArray(r.results) || !r.results.length || r.results.length > 6) throw Error('推荐结果缺失或超过范围。');
+    const groups = new Map();
+    for (const result of r.results) {
+      const group = result.intentId || 'single'; groups.set(group, (groups.get(group) || 0) + 1);
+      if (groups.get(group) > 3) throw Error('单项需求的推荐超过允许范围。');
+      const u = unit(result.unitId), s = section(u, result.sectionId);
+      if (!u || !s || result.sourceSha256 !== u.sourceSha256 || result.sourcePath !== u.sourcePath || result.version !== c.corpusVersion || result.unitTitle !== u.title || result.sectionTitle !== s.title || typeof result.reason !== 'string' || typeof result.evidenceExcerpt !== 'string' || !result.evidenceExcerpt.trim() || !s.bodyMarkdown.includes(result.evidenceExcerpt) || !result.reason || result.href !== href(u, s.sectionId)) throw Error('推荐的来源或原文无法在当前教材核对，暂不显示为可用结果。');
+    }
+    return r;
+  }
+  async function find(specificQuery, specificContext) {
+    const expression = (specificQuery ?? query).trim();
+    const feedback = document.getElementById('lw-query-feedback');
+    if (!expression || expression.length > 1200) { ++requestId; controller?.abort(); pending = false; submission = { query: specificQuery ?? query, context: specificContext || currentContext() }; response = { status: 'invalid_input', message: !expression ? '先描述一个你想解决的问题。' : '请把问题控制在 1200 字以内，当前输入已保留。' }; assistantOpen = true; refreshAssistant(); const field = document.getElementById('lw-query'); field?.setAttribute('aria-invalid', 'true'); field?.focus(); return; }
+    query = expression;
+    const id = ++requestId; controller?.abort(); const activeController = new AbortController(); controller = activeController;
+    const context = specificContext || currentContext(), submitted = { query: expression, context: { ...context } }; submission = submitted; response = null; pending = true; assistantOpen = true; refreshAssistant(); document.getElementById('lw-query')?.focus({ preventScroll: true });
+    try {
+      if (!corpus()) throw Error('教材资源没有完整加载。');
+      let result;
+      if (location.protocol === 'file:') {
+        if (typeof globalThis.RolecraftContentRetrieval?.recommend !== 'function') throw Error('本地概念检索资源没有加载。');
+        result = await globalThis.RolecraftContentRetrieval.recommend(corpus(), { query: expression, ...context });
+      } else {
+        const timeout = setTimeout(() => activeController.abort(), 120000);
+        try {
+          const http = await fetch('/api/content/recommend', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ query: expression, ...context }), signal: activeController.signal, credentials: 'omit' });
+          if (!http.ok) throw Error(http.status === 404 ? '当前预览只有静态阅读资源，请启动本地检索服务。' : '本地检索服务暂不可用。');
+          result = await http.json();
+        } finally { clearTimeout(timeout); }
+      }
+      if (id !== requestId) return;
+      submission = submitted; response = validateResponse(result, submitted);
+    } catch (error) {
+      if (id !== requestId) return;
+      response = { status: 'unavailable', engineMode: '', providerCalled: false, message: error.name === 'AbortError' ? '本次查询未在限定时间内完成，可重试；不会用旧响应代替。' : error.message };
+    } finally {
+      if (id === requestId) { pending = false; queryHistory = [{query: submission.query, context: submission.context, response, at: new Date().toISOString()}, ...queryHistory].slice(0,5); refreshAssistant(); }
+    }
+  }
+  function refreshAssistant() {
+    try { sessionStorage.setItem(SESSION, JSON.stringify({ query, response: pending ? null : response, submission, assistantOpen, contextEnabled, startingEnabled, queryHistory })); } catch { /* Reading and the in-memory query remain available. */ }
+    const host = document.getElementById('lw-assistant-host');
+    const focused = document.activeElement?.id === 'lw-query', input = focused ? document.getElementById('lw-query') : null, range = input ? [input.selectionStart, input.selectionEnd] : null;
+    if (host) host.innerHTML = assistantHTML();
+    if (focused) { const next = document.getElementById('lw-query'); next?.focus({ preventScroll: true }); if (range && next?.setSelectionRange) next.setSelectionRange(range[0], range[1]); }
+  }
+  function collapse() { assistantOpen = false; refreshAssistant(); trigger?.isConnected ? trigger.focus() : document.getElementById('lw-query')?.focus({ preventScroll: true }); }
+  function captureNotes() {
+    const note = document.getElementById('lw-note');
+    const u = unit(activeReadingUnitId);
+    if (note && activeReadingVersion === CURRENT && u) local.notes[activeReadingUnitId] = { text: note.value.slice(0, 12000), corpusVersion: CURRENT, sourceSha256: u.sourceSha256, updatedAt: new Date().toISOString() };
+    document.querySelectorAll('[data-lw-project]').forEach(n => { if (Object.hasOwn(local.project, n.dataset.lwProject)) local.project[n.dataset.lwProject] = n.value.slice(0, 12000); });
+  }
+  function download(text, name, type = 'text/markdown;charset=utf-8') { const blob = new Blob([text], { type }), url = URL.createObjectURL(blob), a = document.createElement('a'); a.href = url; a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); }
+  function exportRecords() {
+    captureNotes();
+    const data = { schemaVersion: '1', clientVersion: VERSION, exportedAt: new Date().toISOString(), scope: '本浏览器记录与本人自述，不是独立能力评价', current: { corpusVersion: CURRENT, corpusHash: corpus()?.corpusHash || null, storageKey: STORE, records: local }, historical: { corpusVersion: HISTORICAL, storageKey: OLD_STORE, records: historical, originalStorageValue: historicalRaw }, earlierRecords: 'rolecraft-v1 档案、测验与项目原值未改，可由更多工具原有导出入口取得' };
+    download(JSON.stringify(data, null, 2), '职造-学习记录-v12与历史v10.json', 'application/json;charset=utf-8'); notify('已导出 v12 记录与保留的 v10 原始记录；自述未独立评价。');
+  }
+  let focusFrame = 0;
+  function mount(view) {
+    activeView = view;
+    const isWorkbench = ['home', 'path', 'learn', 'records', 'projects'].includes(view);
+    document.body.classList.toggle('lw-active', isWorkbench);
+    const banner = document.getElementById('save-status'); if (isWorkbench && banner) banner.textContent = storageError || '当前教材 v12；新记录独立保存于本浏览器，未同步账户。v10 记录可在学习记录查看与导出。';
+    let host = document.getElementById('lw-assistant-host');
+    if (!host) { host = document.createElement('div'); host.id = 'lw-assistant-host'; document.body.appendChild(host); }
+    host.hidden = view === 'generation' || view === 'settings'; refreshAssistant();
+    let status = document.getElementById('lw-status'); if (!status) { status = document.createElement('div'); status.id = 'lw-status'; status.className = 'lw-status'; status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite'); document.body.appendChild(status); }
+    if (!document.getElementById('lw-image-dialog')) {
+      const d = document.createElement('dialog'); d.id = 'lw-image-dialog'; d.setAttribute('aria-label', '放大教学图'); d.innerHTML = '<div class="lw-image-top"><strong>教学图原图</strong><div><button class="outline" data-lw-image-size>切换原尺寸</button><button class="outline" data-lw-close-image>关闭</button></div></div><div class="lw-image-scroll"><img alt=""></div><p>默认查看全貌；切换原尺寸后可横向与纵向滚动查看细节。按 Esc 关闭。</p>'; document.body.appendChild(d);
+      d.addEventListener('close', () => trigger?.isConnected && trigger.focus({ preventScroll: true }));
+    }
+    cancelAnimationFrame(focusFrame);
+    const l = loc(), u = view === 'learn' ? unit(l.unitId, l.version) : null;
+    activeReadingUnitId = u?.unitId || '';
+    activeReadingVersion = u ? l.version : '';
+    if (u && (!l.sectionId || section(u, l.sectionId))) {
+      const last = local.visits.at(-1);
+      if (l.version === CURRENT && (!last || last.unitId !== u.unitId || last.sectionId !== l.sectionId || !currentRecord(last))) { local.visits.push({ unitId: u.unitId, sectionId: l.sectionId, corpusVersion: CURRENT, corpusHash: corpus().corpusHash, sourceSha256: u.sourceSha256, at: new Date().toISOString() }); local.visits = local.visits.slice(-200); save(); }
+      focusFrame = requestAnimationFrame(() => {
+        const target = document.getElementById(l.sectionId || u.sections[0]?.sectionId);
+        if (target) { target.focus({ preventScroll: true }); target.scrollIntoView({ block: 'start' }); }
+      });
+    }
+  }
+  function beforeRender() { captureNotes(); }
+  function page(view) { return ({ home: () => homePage(), path: () => homePage(true), learn: readerPage, records: recordsPage, projects: projectsPage }[view] || (() => errorPage('页面暂不可用。')))(); }
+  document.addEventListener('click', e => {
+    const el = e.target.closest('button,a'); if (!el) return;
+    if (el.hasAttribute('data-lw-result')) { assistantOpen = false; refreshAssistant(); return; }
+    if (el.hasAttribute('data-lw-image')) { trigger = el; const d = document.getElementById('lw-image-dialog'), image = d.querySelector('img'); image.src = el.dataset.lwImage; image.alt = el.dataset.lwAlt || 'Agent 教学图'; d.classList.remove('is-original'); d.querySelector('[data-lw-image-size]').textContent = '切换原尺寸'; d.showModal(); d.querySelector('[data-lw-close-image]').focus(); return; }
+    if (el.hasAttribute('data-lw-image-size')) { const d = document.getElementById('lw-image-dialog'); d.classList.toggle('is-original'); el.textContent = d.classList.contains('is-original') ? '适配全貌' : '切换原尺寸'; return; }
+    if (el.hasAttribute('data-lw-close-image')) { document.getElementById('lw-image-dialog').close(); return; }
+    if (el.hasAttribute('data-lw-toggle')) { trigger = el; assistantOpen = !assistantOpen; refreshAssistant(); if (assistantOpen) document.getElementById('lw-query')?.focus(); return; }
+    if (el.hasAttribute('data-lw-collapse')) { collapse(); return; }
+    if (el.hasAttribute('data-lw-example')) { query = el.dataset.lwExample; refreshAssistant(); document.getElementById('lw-query')?.focus(); return; }
+    if (el.hasAttribute('data-lw-clear-start')) { startingEnabled = false; refreshAssistant(); return; }
+    if (el.hasAttribute('data-lw-use-start')) { startingEnabled = true; refreshAssistant(); return; }
+    if (el.hasAttribute('data-lw-clear-context')) { contextEnabled = false; refreshAssistant(); return; }
+    if (el.hasAttribute('data-lw-use-context')) { contextEnabled = true; refreshAssistant(); return; }
+    if (el.hasAttribute('data-lw-history')) { const h = queryHistory[Number(el.dataset.lwHistory)]; if(h) { ++requestId; controller?.abort(); pending = false; query = h.query; submission = {query: h.query, context: h.context}; try { response = validateResponse(h.response,submission); } catch(error) { response = {status:'unavailable',message:error.message}; } assistantOpen = true; refreshAssistant(); } return; }
+    if (el.hasAttribute('data-lw-retry')) { find(submission?.query, currentContext()); return; }
+    if (el.hasAttribute('data-lw-clarify')) { const c = response?.clarification, o = c?.options?.[Number(el.dataset.lwClarify)]; if (o) { const added = typeof o === 'string' ? o : o.query || o.label || o.title; find((submission?.query || query) + '；我指的是：' + added, currentContext()); } return; }
+    if (el.hasAttribute('data-lw-reload')) { location.reload(); return; }
+    if (el.hasAttribute('data-lw-save-note')) { captureNotes(); notify(save() ? '阅读笔记已保存在此浏览器。' : storageError); return; }
+    if (el.hasAttribute('data-lw-save-project')) { captureNotes(); notify(save() ? '项目档案已保存在此浏览器，尚未独立评价。' : storageError); return; }
+    if (el.hasAttribute('data-lw-export')) { exportRecords(); return; }
+    if (el.hasAttribute('data-lw-download')) { const u = unit(el.dataset.lwDownload, el.dataset.lwVersion || CURRENT); if (u) download(u.bodyMarkdown, 'Agent教材-' + unitVersion(u) + '-' + u.unitId + '.md'); return; }
+    if (el.hasAttribute('data-lw-bookmark')) { const l = loc(), u = unit(l.unitId), s = section(u, l.sectionId); if (!u || l.version !== CURRENT || l.sectionId && !s) return; const id = s?.sectionId || '', exists = local.bookmarks.some(b => currentRecord(b) && b.unitId === u.unitId && b.sectionId === id); local.bookmarks = local.bookmarks.filter(b => !(currentRecord(b) && b.unitId === u.unitId && b.sectionId === id)); if (!exists) local.bookmarks.push({ unitId: u.unitId, sectionId: id, corpusVersion: CURRENT, corpusHash: corpus().corpusHash, sourceSha256: u.sourceSha256 }); save(); el.textContent = exists ? '收藏当前阅读位置' : '已收藏此位置 · 取消'; notify(exists ? '已取消收藏。' : '已收藏当前阅读位置。'); return; }
+    if (el.hasAttribute('data-lw-copy')) { if (navigator.clipboard?.writeText) navigator.clipboard.writeText(location.href).then(() => notify('已复制当前定位链接。')).catch(() => notify('无法自动复制，可从地址栏复制当前链接。')); else notify('请从地址栏复制当前定位链接。'); }
+  });
+  document.addEventListener('change', e => {
+    if (e.target.id === 'lw-starting-point') { local.startingPoint = Object.hasOwn(STARTS, e.target.value) ? e.target.value : null; startingEnabled = true; save(); if (typeof render === 'function') render(); }
+  });
+  document.addEventListener('input', e => {
+    if (e.target.id === 'lw-query') { query = e.target.value; e.target.removeAttribute('aria-invalid'); try { sessionStorage.setItem(SESSION, JSON.stringify({ query, response: pending ? null : response, submission, assistantOpen, contextEnabled, startingEnabled, queryHistory })); } catch {} }
+    if (e.target.id === 'lw-note' || e.target.hasAttribute('data-lw-project')) { captureNotes(); save(); }
+  });
+  document.addEventListener('compositionstart', e => { if (e.target.id === 'lw-query') composing = true; });
+  document.addEventListener('compositionend', e => { if (e.target.id === 'lw-query') composing = false; });
+  document.addEventListener('keydown', e => {
+    if (e.target.id === 'lw-query' && e.key === 'Enter' && !e.shiftKey && !e.isComposing && !composing) { e.preventDefault(); query = e.target.value; find(); }
+    if (e.key === 'Escape' && assistantOpen && !document.getElementById('lw-image-dialog')?.open) { e.preventDefault(); collapse(); }
+  });
+  document.addEventListener('submit', e => { if (e.target.id === 'lw-find-form') { e.preventDefault(); query = document.getElementById('lw-query').value; find(); } });
+  try {
+    const received = JSON.parse(sessionStorage.getItem(SESSION) || 'null');
+    if (received && typeof received === 'object') {
+      query = asText(received.query, 20000);
+      queryHistory = Array.isArray(received.queryHistory) ? received.queryHistory.filter(h=>h && typeof h.query==='string' && h.context?.corpusVersion===CURRENT && h.response).slice(0,5) : [];
+      assistantOpen = received.assistantOpen === true;
+      contextEnabled = received.contextEnabled !== false; startingEnabled = received.startingEnabled !== false;
+      submission = received.submission && typeof received.submission.query === 'string' && received.submission.context && typeof received.submission.context === 'object' ? received.submission : null;
+      if (received.response && submission) {
+        try { response = validateResponse(received.response, submission); }
+        catch (error) { response = { status: 'unavailable', message: error.message, providerCalled: false }; }
+      }
+    }
+  } catch { /* A damaged query cache is not used as a recommendation. */ }
+  globalThis.LearningWorkbench = { version: VERSION, page, mount, beforeRender, markdown, validateResponse, currentContext, refreshAssistant, readingRecords: () => local, recordIsCurrent: currentRecord, recordsExportData: () => { captureNotes(); return { current: local, historical: { records: historical, originalStorageValue: historicalRaw } }; } };
+  document.addEventListener('click', e => { if (assistantOpen && !e.target.closest('#lw-assistant-host,button,a,input,textarea,select,summary,dialog')) collapse(); });
+})();

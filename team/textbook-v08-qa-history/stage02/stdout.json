@@ -1,0 +1,135 @@
+{
+  "status": "passed_within_offline_accounting_scope",
+  "records": [
+    {
+      "name": "e05:default_outputs",
+      "actual": [
+        "4 2",
+        "1000 7000 10000",
+        "None 5 3"
+      ],
+      "expected": [
+        "4 2",
+        "1000 7000 10000",
+        "None 5 3"
+      ],
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "e05:failures_and_timeouts_kept_in_denominator",
+      "actual": [
+        4,
+        6,
+        "10"
+      ],
+      "expected": [
+        4,
+        6,
+        "10"
+      ],
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "e05:pending_reservation_not_upper_bound",
+      "actual": [
+        null,
+        "3"
+      ],
+      "expected": [
+        null,
+        "3"
+      ],
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "e05:zero_accepted_cost_undefined",
+      "actual": [
+        null,
+        null
+      ],
+      "expected": [
+        null,
+        null
+      ],
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "e05:inflight_denominator_not_frozen",
+      "actual": [
+        null,
+        null,
+        [
+          12000
+        ]
+      ],
+      "expected": [
+        null,
+        null,
+        [
+          12000
+        ]
+      ],
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "e05:duplicate",
+      "actual": "DUPLICATE_LOGICAL_TASK",
+      "expected": "DUPLICATE_LOGICAL_TASK",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "e05:negative_cost",
+      "actual": "COST_INVALID",
+      "expected": "COST_INVALID",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "e05:nan_cost",
+      "actual": "COST_INVALID",
+      "expected": "COST_INVALID",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "e05:boolean_latency",
+      "actual": "LATENCY_INVALID",
+      "expected": "LATENCY_INVALID",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "e05:negative_attempt",
+      "actual": "ATTEMPT_COUNT_INVALID",
+      "expected": "ATTEMPT_COUNT_INVALID",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "e05:confirmed_pending",
+      "actual": "CONFIRMED_WITH_PENDING_RESERVATION",
+      "expected": "CONFIRMED_WITH_PENDING_RESERVATION",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "e05:empty_summary_not_false_cost_zero",
+      "actual": [
+        null,
+        null
+      ],
+      "expected": [
+        null,
+        null
+      ],
+      "pass": true,
+      "detail": null
+    }
+  ]
+}

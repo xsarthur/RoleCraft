@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1",
+  "scope": "client developer isolated VM checks only; no real browser, HTTP, model, user storage or independent QA",
+  "createdAt": "2026-10-11T16:37:15.480Z",
+  "runtime": "v24.16.0",
+  "clientVersion": "local-workbench-0.12-textbook",
+  "corpusVersion": "textbook-v12",
+  "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+  "files": {
+    "dist/index.html": {
+      "sha256": "5c69d6037a73393b190c708bff14c4118f7462fbc7942aca48732e5f484507c3"
+    },
+    "dist/app.js": {
+      "sha256": "cc361b3a8debb8318518ca7856f0d227a025ced56600eda10edd160cc1569d19"
+    },
+    "dist/learning-workbench.js": {
+      "sha256": "b708c0fb6cc58c9e48698c65671964ca5511ba91e6e98675bd54e56d19879d7b"
+    }
+  },
+  "tests": [
+    {
+      "name": "Default v12 catalog, formal reading order, 30 chapter readers and prerequisites",
+      "status": "pass"
+    },
+    {
+      "name": "All v12 prose links resolve to public original targets; code and tables retained",
+      "status": "pass"
+    },
+    {
+      "name": "Old records read-only; new n03 note/bookmark/visit separate with source identity; history deep links and missing position",
+      "status": "pass"
+    },
+    {
+      "name": "Export contains unchanged v10 original bytes and separate v12 records",
+      "status": "pass"
+    },
+    {
+      "name": "Current original recommendation accepted; old corpus/source/submission rejected",
+      "status": "pass"
+    },
+    {
+      "name": "Old cache ignored; injected stale current-key result displayed as unavailable",
+      "status": "pass"
+    }
+  ],
+  "unavailableLinks": [],
+  "protectedFixtureKeysUnchanged": true,
+  "realBrowserTested": false
+}

@@ -1,0 +1,73 @@
+{
+  "version": "app-v14-prerequisite-copy-node-static-receipt-3",
+  "atUtc": "2026-10-12T03:41:20.082Z",
+  "scope": "Current public static assets only; not browser/model/independent QA",
+  "transport": "direct Node http without environment proxy or cookies",
+  "assets": [
+    {
+      "file": "dist/index.html",
+      "url": "http://127.0.0.1:4318/index.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "byteLength": 4362,
+      "sourceSha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+      "httpSha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+      "matchesSource": true
+    },
+    {
+      "file": "dist/app.js",
+      "url": "http://127.0.0.1:4318/app.js",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8",
+      "byteLength": 92350,
+      "sourceSha256": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd",
+      "httpSha256": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd",
+      "matchesSource": true
+    },
+    {
+      "file": "dist/learning-workbench.js",
+      "url": "http://127.0.0.1:4318/learning-workbench.js",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8",
+      "byteLength": 64329,
+      "sourceSha256": "9a30a208e9fae48589ab67f9262793d140607d8151d6d3f950382d5a5eba43f8",
+      "httpSha256": "9a30a208e9fae48589ab67f9262793d140607d8151d6d3f950382d5a5eba43f8",
+      "matchesSource": true
+    },
+    {
+      "file": "dist/learning-experience-v13.js",
+      "url": "http://127.0.0.1:4318/learning-experience-v13.js",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8",
+      "byteLength": 34407,
+      "sourceSha256": "1b704a627be11990cad9ad45893fb89233af6b37ff82292e5a1887dbb0f2e166",
+      "httpSha256": "1b704a627be11990cad9ad45893fb89233af6b37ff82292e5a1887dbb0f2e166",
+      "matchesSource": true
+    },
+    {
+      "file": "dist/learning-experience-v13.css",
+      "url": "http://127.0.0.1:4318/learning-experience-v13.css",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8",
+      "byteLength": 26180,
+      "sourceSha256": "d10e2f6e9b724f42bcfb4334b22240261f15c4a3978b1c27135a6af5aa341c37",
+      "httpSha256": "d10e2f6e9b724f42bcfb4334b22240261f15c4a3978b1c27135a6af5aa341c37",
+      "matchesSource": true
+    },
+    {
+      "file": "dist/learning-v13-data.js",
+      "url": "http://127.0.0.1:4318/learning-v13-data.js",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8",
+      "byteLength": 841206,
+      "sourceSha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "httpSha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "matchesSource": true
+    }
+  ],
+  "status": "matches_current_sources",
+  "serviceOperated": false,
+  "privateDatabaseRead": false,
+  "environmentRead": false,
+  "signalsSent": false
+}

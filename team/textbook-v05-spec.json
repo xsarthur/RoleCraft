@@ -1,0 +1,2627 @@
+{
+  "schemaVersion": "1.0",
+  "id": "agent-developer-textbook-v05-spec",
+  "version": "textbook-spec-0.5",
+  "textbookVersion": "textbook-draft-0.5",
+  "status": "curriculum_authoring_spec_not_textbook",
+  "updatedAt": "2026-10-10",
+  "baseCurriculumVersion": "curriculum-draft-0.2",
+  "baseCreationPathVersion": "creation-path-draft-0.1",
+  "goal": "专业岗位能力与从0到1创造有可验证比较优势的Agent产品；阅读完成不认证能力",
+  "chapterStructure": {
+    "id": "uniform-v1",
+    "title": "每章统一教学结构",
+    "sections": [
+      {
+        "id": "scope",
+        "title": "职业任务与边界",
+        "required": "明确一个主要任务、适用与不适用条件"
+      },
+      {
+        "id": "outcomes",
+        "title": "学习目标与先修",
+        "required": "2—4 个可观察目标，列出先修能力与诊断方式"
+      },
+      {
+        "id": "concepts",
+        "title": "原理与方案取舍",
+        "required": "关键概念、至少一个误区；涉及选择时比较方案"
+      },
+      {
+        "id": "case",
+        "title": "完整案例",
+        "required": "输入、过程、结果与失败分支相互对应"
+      },
+      {
+        "id": "example",
+        "title": "示例与环境",
+        "required": "注明可运行代码或伪代码；版本、输入、预期输出与验证记录"
+      },
+      {
+        "id": "practice",
+        "title": "分层练习",
+        "required": "脚手架、独立实现、迁移各一类；明确提交物"
+      },
+      {
+        "id": "validation",
+        "title": "验证与反馈",
+        "required": "至少正常、边界、失败三类；参考解法、评分依据与错因"
+      },
+      {
+        "id": "sources",
+        "title": "来源与审核",
+        "required": "关键主张位置、来源版本、访问日期；审核状态分别记录"
+      },
+      {
+        "id": "reflection",
+        "title": "复盘与迁移",
+        "required": "失败证据、原因假设、改进实验和新任务验证"
+      }
+    ]
+  },
+  "rubric": {
+    "status": "教学量规草案，未由行业专家校准",
+    "scoreScale": [
+      {
+        "score": 0,
+        "label": "无证据或关键行为错误"
+      },
+      {
+        "score": 1,
+        "label": "依赖脚手架，证据不完整"
+      },
+      {
+        "score": 2,
+        "label": "独立完成约定任务，证据可复现"
+      },
+      {
+        "score": 3,
+        "label": "在未知任务和异常下复现，能解释与改进"
+      }
+    ],
+    "dimensions": [
+      {
+        "id": "correctness",
+        "title": "任务正确性",
+        "evidence": "预期结果、引用或外部业务状态"
+      },
+      {
+        "id": "reliability",
+        "title": "可靠性与恢复",
+        "evidence": "失败、重试、中断与恢复记录"
+      },
+      {
+        "id": "safety",
+        "title": "安全与权限",
+        "evidence": "授权、数据边界与受控对抗测试"
+      },
+      {
+        "id": "evaluation",
+        "title": "评估与证据",
+        "evidence": "基线、保留案例、轨迹与失败分类"
+      },
+      {
+        "id": "operations",
+        "title": "性能、成本与维护",
+        "evidence": "约定负载、延迟、预算、部署与回退"
+      },
+      {
+        "id": "communication",
+        "title": "产品理解与协作",
+        "evidence": "场景、取舍、文档、评审与答辩"
+      }
+    ],
+    "gate": "适用维度至少 2 分且安全关键测试无失败；综合职业交付再经外部评审与未知案例。当前只展示量规，未授予通过状态。",
+    "thresholdOrigin": "课程架构师提出，非企业招聘评分"
+  },
+  "profileLevels": [
+    "beginner",
+    "intermediate",
+    "advanced"
+  ],
+  "beginnerBridge": {
+    "entryModuleId": "f01",
+    "addNewModule": false,
+    "includeIn": "outcomes/example/practice",
+    "diagnosis": [
+      "解释变量、函数、列表与字典",
+      "读取并修改虚构JSON字段",
+      "区分请求、响应、HTTP状态与异常",
+      "在命令行运行小脚本与断言",
+      "提交代码版本及环境说明"
+    ],
+    "failureAction": "在f01写可独立学习的入门补习说明与脚手架，完成对应作品再进下一层；不得依据自报身份跳级",
+    "otherModules": "逐章按原先修给简短诊断、补读链接和需要的作品证据；允许预览但不判通过"
+  },
+  "profilePolicy": {
+    "beginner": "解释基础术语与小步操作；练习给输入夹具与提示",
+    "intermediate": "减少提示，要求独立实现并定位失败",
+    "advanced": "增加未知变体、异常、方案比较和改进解释",
+    "frozen": "原模块目标、先修、量规、安全门槛与审核身份一致"
+  },
+  "mainProject": {
+    "id": "controlled-after-sales-assistant",
+    "title": "受控售后知识助手",
+    "scenario": "课程原创假设场景：按当前用户权限读取手册与虚构工单，给带证据建议并保存草稿；外发仅无网络工具替身且准确批准；不执行真实退款。",
+    "actors": [
+      "虚构租户A",
+      "虚构租户B"
+    ],
+    "fixtures": [
+      "DEMO-42订单/工单",
+      "A可读退款手册及版本",
+      "B不可读预算/工单",
+      "冲突或过期手册",
+      "敏感字段虚构值",
+      "准确动作T1与受控审批时钟"
+    ],
+    "capabilityGrowth": [
+      "f01可校验小服务",
+      "f02模型建议与双重校验",
+      "c01固定流程和动态控制对照",
+      "c02引用与缺证",
+      "c03受控工具副作用",
+      "e01恢复",
+      "e02独立评价",
+      "e03安全",
+      "e04交接运维",
+      "e05经济取舍",
+      "p01真实发现与差异假设",
+      "p02真实试用/作品答辩/未知任务/二次复验"
+    ],
+    "realWorldAssignments": [
+      "由学习者取得真实目标用户问题证据；没有则标假设",
+      "选择代表性人工/程序/行业产品基线，冻结版本/场景/任务/资源",
+      "提出可证伪差异假设及事前指标/护栏，未知门槛交产品责任人",
+      "实现MVP并提交实际轨迹",
+      "取得真实使用行为、负面反馈和改进复测"
+    ],
+    "baselinePolicy": "普通程序、人工流程、单次模型调用为必考虑替代；不强制选择最复杂Agent或多Agent；没有比较证据不声明先进。"
+  },
+  "glossaryPolicy": {
+    "sourceOfTruth": "本规格与原九段式/量规；作者在全书维护统一术语表",
+    "terms": {
+      "模型输出": "候选内容，不等于执行事实",
+      "工具建议": "拟议操作，未授权也未执行",
+      "任务状态": "应用保存的执行进度与结果引用",
+      "业务结果": "外部或替身系统实际状态",
+      "证据": "带条件、版本、输入和结果的可核记录",
+      "先修": "以作品和诊断核对的前置能力",
+      "实测": "实际运行并有记录；与预期结果分开",
+      "专业审核": "记录实际身份与范围；AI审校不是人类专家",
+      "行业先进": "需真实价值、可比优势和专业证据；不是教材版本标签"
+    }
+  },
+  "environmentPolicy": {
+    "baseline": "本地隔离环境；Python标准库为可选示例基线，记录实际Python/SQLite版本；不新增必须付费依赖",
+    "model": "离线模型替身允许验证执行器合同；真实模型调用是原f02目标，不因替身完成降低目标，缺配置/预算即标未实现/未测",
+    "tools": "仅内存/临时SQLite/无网络替身；禁止真实外发、退款或真实敏感输入",
+    "exampleLabels": [
+      "可运行示例（未执行）",
+      "伪代码（未执行）",
+      "推演练习（非运行证据）"
+    ],
+    "runRequirement": "命令、依赖锁定或标准库声明、输入、预期、实际版本与执行记录分别写；未执行actualResults为空",
+    "hostedPlatforms": "官方平台只作机制来源，不要求订阅、上传文件或调用收费API"
+  },
+  "sources": [
+    {
+      "id": "agent-patterns",
+      "title": "Building effective agents",
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "version": "2024-12-19",
+      "accessedAt": "2026-10-10",
+      "verification": "official_page_accessed_scope_only",
+      "locator": "What are agents; When (and when not); Building blocks; Agents",
+      "supports": [
+        "工作流与动态控制",
+        "简单方案基线",
+        "工具、检索、记忆和停止"
+      ],
+      "limits": "原理参考；文章已注明工具生态变化，不断言现行最佳框架。",
+      "quotation": "none; paraphrase with attribution only"
+    },
+    {
+      "id": "agent-evals",
+      "title": "Demystifying evals for AI agents",
+      "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+      "version": "rolling; concrete API version not pinned",
+      "accessedAt": "2026-10-10",
+      "verification": "official_page_accessed_scope_only",
+      "locator": "definitions; Types of graders; Capability vs regression",
+      "supports": [
+        "结果与轨迹",
+        "重复试验",
+        "评分器与校准",
+        "回归与成本记录"
+      ],
+      "limits": "未复现论文或产品成绩；本课程数字与判据非企业认可标准。",
+      "quotation": "none; paraphrase with attribution only"
+    },
+    {
+      "id": "owasp-injection",
+      "title": "LLM01:2025 Prompt Injection",
+      "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+      "version": "2025",
+      "accessedAt": "2026-10-10",
+      "verification": "official_page_accessed_scope_only",
+      "locator": "Types; Prevention and Mitigation",
+      "supports": [
+        "直接间接注入",
+        "最小权限",
+        "风险缓解有限性"
+      ],
+      "limits": "不证明任何实现可完全阻断攻击。",
+      "quotation": "none; paraphrase with attribution only"
+    },
+    {
+      "id": "owasp-cheat",
+      "title": "Prompt Injection Prevention Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html",
+      "version": "rolling; concrete API version not pinned",
+      "accessedAt": "2026-10-10",
+      "verification": "official_page_accessed_scope_only",
+      "locator": "Structured Prompts; HITL; Agent-Specific; Least Privilege; Monitoring",
+      "supports": [
+        "分隔非授权边界",
+        "工具核权",
+        "准确动作批准",
+        "敏感日志排除"
+      ],
+      "limits": "虚构字段、单次审批消费、时钟与算法属于课程设计；滚动页无固定修订号。",
+      "quotation": "none; paraphrase with attribution only"
+    },
+    {
+      "id": "openai-prompt",
+      "title": "Prompt engineering",
+      "url": "https://developers.openai.com/api/docs/guides/prompt-engineering",
+      "version": "rolling; concrete API version not pinned",
+      "accessedAt": "2026-10-10",
+      "verification": "official_page_accessed_scope_only",
+      "locator": "Few-shot learning; Include relevant context; Planning for context window",
+      "supports": [
+        "相关上下文",
+        "示例输入输出",
+        "上下文预算",
+        "版本评价必要性"
+      ],
+      "limits": "不引用特定模型默认值、窗口数或价格；不把提示等同授权。",
+      "quotation": "none; paraphrase with attribution only"
+    },
+    {
+      "id": "openai-evals",
+      "title": "Evaluation best practices",
+      "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+      "version": "rolling; concrete API version not pinned",
+      "accessedAt": "2026-10-10",
+      "verification": "official_page_accessed_scope_only",
+      "locator": "Human evals; LLM-as-a-judge; model variability",
+      "supports": [
+        "评价设计",
+        "模型波动",
+        "专家校准模型评分"
+      ],
+      "limits": "仅采用方法，不依赖Evals产品API；页面已有产品弃用提示，不据此要求外部付费平台。",
+      "quotation": "none; paraphrase with attribution only"
+    },
+    {
+      "id": "openai-tools",
+      "title": "Function calling",
+      "url": "https://developers.openai.com/api/docs/guides/function-calling",
+      "version": "rolling; concrete API version not pinned",
+      "accessedAt": "2026-10-10",
+      "verification": "official_page_accessed_scope_only",
+      "locator": "The tool calling flow",
+      "supports": [
+        "模型建议、应用执行、结果回传的分工"
+      ],
+      "limits": "具体SDK/API未作为本轮运行环境；授权与幂等仍由应用负责。",
+      "quotation": "none; paraphrase with attribution only"
+    },
+    {
+      "id": "openai-retrieval",
+      "title": "Retrieval",
+      "url": "https://developers.openai.com/api/docs/guides/retrieval",
+      "version": "rolling; concrete API version not pinned",
+      "accessedAt": "2026-10-10",
+      "verification": "official_page_accessed_scope_only",
+      "locator": "Semantic search; Attribute filtering",
+      "supports": [
+        "语义相似检索",
+        "检索元数据过滤"
+      ],
+      "limits": "官方托管示例非本项目必需依赖；离线词法比较为教学设计，不证明语义检索效果。",
+      "quotation": "none; paraphrase with attribution only"
+    },
+    {
+      "id": "langgraph",
+      "title": "LangGraph overview",
+      "url": "https://docs.langchain.com/oss/python/langgraph/overview",
+      "version": "rolling; concrete API version not pinned",
+      "accessedAt": "2026-10-10",
+      "verification": "official_page_accessed_scope_only",
+      "locator": "Core benefits",
+      "supports": [
+        "持久化",
+        "人工介入",
+        "显式状态与恢复方向"
+      ],
+      "limits": "框架概览不保证外部副作用恰好一次；不要求安装或托管产品。",
+      "quotation": "none; paraphrase with attribution only"
+    },
+    {
+      "id": "python-errors",
+      "title": "Python errors and exceptions",
+      "url": "https://docs.python.org/3/tutorial/errors.html",
+      "version": "3.15 docs",
+      "accessedAt": "2026-10-10",
+      "verification": "official_page_accessed_scope_only",
+      "locator": "8.1/8.2/8.3",
+      "supports": [
+        "语法错误、运行异常和选定异常处理"
+      ],
+      "limits": "页面当前3.15；作者使用3.10+稳定语法仍需实际运行核对，不使用新版本特性。",
+      "quotation": "none; paraphrase with attribution only"
+    },
+    {
+      "id": "sqlite",
+      "title": "Python sqlite3",
+      "url": "https://docs.python.org/3/library/sqlite3.html",
+      "version": "3.15 docs",
+      "accessedAt": "2026-10-10",
+      "verification": "official_page_accessed_scope_only",
+      "locator": "Tutorial; transaction control; placeholders",
+      "supports": [
+        "SQLite本地持久化与参数化基本机制"
+      ],
+      "limits": "事务不覆盖外部工具副作用；与运行时SQLite版本分开记录。",
+      "quotation": "none; paraphrase with attribution only"
+    },
+    {
+      "id": "experiment",
+      "title": "Patterns of Trustworthy Experimentation: Pre-Experiment Stage",
+      "url": "https://www.microsoft.com/en-us/research/articles/patterns-of-trustworthy-experimentation-pre-experiment-stage/",
+      "version": "rolling; concrete API version not pinned",
+      "accessedAt": "2026-10-10",
+      "verification": "official_page_accessed_scope_only",
+      "locator": "Hypothesis; metrics and guardrails; trustworthy experimentation",
+      "supports": [
+        "可证伪假设",
+        "成功及护栏",
+        "事前比较设计"
+      ],
+      "limits": "小样本试点不自动证明因果或市场领先；访谈与行业基线证据需实际取得。",
+      "quotation": "none; paraphrase with attribution only"
+    }
+  ],
+  "sourcePolicy": {
+    "sourceClaimLink": "事实写sourceId/locator/supportScope；原创案例、数字、字段、题目和阈值明确original_design",
+    "unknown": "不支持或未核则注明待核，不能伪造访问/作者/真题/实测",
+    "copyright": "每官方源仅短引用或原创释义；不复制网页全文、领航全文或题库",
+    "technicalBoundary": "不照抄官方复杂SDKAPI作已验证代码；具体版本接口需专项核对",
+    "methodOnly": "任何方法来源不证明当前教材或产品达到行业先进"
+  },
+  "localReferences": {
+    "linghangRoot": "/Users/shengxiong/Desktop/领航",
+    "readOnly": true,
+    "scope": "v3全文文件中的目标/知识点结构、逐点题与实践映射；抽样检查正文机制、迁移、综合项目段落，未全量技术核验",
+    "adopt": [
+      "知识点与主考题直接映射",
+      "案例—误区—解析—条件变化",
+      "离线替身和真实能力分开",
+      "版本和审核状态分开"
+    ],
+    "doNotCopy": [
+      "166点数量配额",
+      "有编程基础作为零基础默认",
+      "阅读自评作能力认证",
+      "demo内容当专家通过"
+    ],
+    "publicationStatus": "demo; 所有题待人工审核，不能继承审核"
+  },
+  "modules": [
+    {
+      "id": "f01",
+      "title": "编程、HTTP 与软件测试",
+      "level": "foundation",
+      "competencyIds": [
+        "software"
+      ],
+      "depth": "理解原理并在脚手架下实现",
+      "prerequisites": [],
+      "objectives": [
+        "实现输入校验、异常处理与 API 请求",
+        "使用 Git、依赖锁定和测试复现服务"
+      ],
+      "evidence": [
+        "命令行或 API 服务",
+        "有效与非法输入测试",
+        "环境和提交记录"
+      ],
+      "validation": [
+        "陌生环境启动",
+        "解释至少一种异常路径"
+      ],
+      "knowledgePoints": [
+        {
+          "id": "f01-k01",
+          "title": "输入类型与非法输入",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "python-errors"
+          ],
+          "primaryQuestion": "工单编号传入列表时如何处理？",
+          "questionId": "f01-k01-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "改为空字符串或超长正文",
+          "exerciseIds": [
+            "f01-scaffold",
+            "f01-independent",
+            "f01-transfer"
+          ],
+          "artifactRequirement": "命令行或 API 服务",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "f01-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "f01-k02",
+          "title": "HTTP请求与失败分类",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "agent-patterns"
+          ],
+          "primaryQuestion": "接口超时后可否报告查到订单？",
+          "questionId": "f01-k02-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "改为权限拒绝，判断是否重试",
+          "exerciseIds": [
+            "f01-scaffold",
+            "f01-independent",
+            "f01-transfer"
+          ],
+          "artifactRequirement": "命令行或 API 服务",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "f01-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "f01-k03",
+          "title": "依赖与版本复现",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "python-errors"
+          ],
+          "primaryQuestion": "自己电脑能跑但同伴不能跑，交接缺什么？",
+          "questionId": "f01-k03-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "改运行时版本并记录差异",
+          "exerciseIds": [
+            "f01-scaffold",
+            "f01-independent",
+            "f01-transfer"
+          ],
+          "artifactRequirement": "有效与非法输入测试",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "f01-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "f01-k04",
+          "title": "测试断言与变更记录",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "python-errors"
+          ],
+          "primaryQuestion": "只有成功截图能否证明非法输入被处理？",
+          "questionId": "f01-k04-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "改变夹具并检查原断言",
+          "exerciseIds": [
+            "f01-scaffold",
+            "f01-independent",
+            "f01-transfer"
+          ],
+          "artifactRequirement": "有效与非法输入测试",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "f01-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        }
+      ],
+      "creationStageIds": [
+        "mvp"
+      ],
+      "chapterTemplateId": "uniform-v1",
+      "chapterVersion": "textbook-draft-0.5",
+      "caseProjectId": "controlled-after-sales-assistant",
+      "caseRequirement": "本章明确输入夹具、处理链、预期结果、正常/边界/失败及对应证据；衔接主项目上一阶段，不假称已有运行结果。",
+      "practiceRequirement": "逐知识点直接情景题就近给解析；本章另给脚手架、独立实现、未知迁移三层任务及参考方案、提交物、反馈；题目不能全是知识点定义复述。",
+      "sourceIds": [
+        "agent-patterns",
+        "python-errors"
+      ],
+      "minimumSubstance": "九项正文实际写出机制和操作，不用标题、提纲、链接或待填项冒充教材；有待运行状态不等于可省略案例预期与参考解法。",
+      "objectiveIds": [
+        "f01-o1",
+        "f01-o2"
+      ]
+    },
+    {
+      "id": "f02",
+      "title": "模型调用与上下文基础",
+      "level": "foundation",
+      "competencyIds": [
+        "model-context",
+        "software"
+      ],
+      "depth": "理解原理并在脚手架下实现",
+      "prerequisites": [
+        "f01"
+      ],
+      "objectives": [
+        "完成真实模型调用及结构与业务双重校验",
+        "区分用户输入、工具结果与指令来源"
+      ],
+      "evidence": [
+        "请求与响应示例",
+        "缺失信息处理",
+        "超时和成本记录"
+      ],
+      "validation": [
+        "校验格式合法但业务无效的数据",
+        "解释上下文截断风险"
+      ],
+      "knowledgePoints": [
+        {
+          "id": "f02-k01",
+          "title": "模型请求与完成结果",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "openai-prompt"
+          ],
+          "primaryQuestion": "只收到半段响应能否保存为完成？",
+          "questionId": "f02-k01-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "增加拒绝或截断状态",
+          "exerciseIds": [
+            "f02-scaffold",
+            "f02-independent",
+            "f02-transfer"
+          ],
+          "artifactRequirement": "请求与响应示例",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "f02-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "f02-k02",
+          "title": "结构与业务双重校验",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "openai-tools"
+          ],
+          "primaryQuestion": "合法JSON的订单归属错误能否接受？",
+          "questionId": "f02-k02-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "改为引用不支持结论",
+          "exerciseIds": [
+            "f02-scaffold",
+            "f02-independent",
+            "f02-transfer"
+          ],
+          "artifactRequirement": "请求与响应示例",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "f02-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "f02-k03",
+          "title": "可信指令与外部资料",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "owasp-cheat"
+          ],
+          "primaryQuestion": "手册自称系统指令能否提高权限？",
+          "questionId": "f02-k03-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "同样文字来自工具输出",
+          "exerciseIds": [
+            "f02-scaffold",
+            "f02-independent",
+            "f02-transfer"
+          ],
+          "artifactRequirement": "缺失信息处理",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "f02-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "f02-k04",
+          "title": "上下文预算与缺信息",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "openai-prompt"
+          ],
+          "primaryQuestion": "摘要删掉退款例外条件会怎样？",
+          "questionId": "f02-k04-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "改变输入长度与必须保留字段",
+          "exerciseIds": [
+            "f02-scaffold",
+            "f02-independent",
+            "f02-transfer"
+          ],
+          "artifactRequirement": "缺失信息处理",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "f02-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        }
+      ],
+      "creationStageIds": [
+        "mvp"
+      ],
+      "chapterTemplateId": "uniform-v1",
+      "chapterVersion": "textbook-draft-0.5",
+      "caseProjectId": "controlled-after-sales-assistant",
+      "caseRequirement": "本章明确输入夹具、处理链、预期结果、正常/边界/失败及对应证据；衔接主项目上一阶段，不假称已有运行结果。",
+      "practiceRequirement": "逐知识点直接情景题就近给解析；本章另给脚手架、独立实现、未知迁移三层任务及参考方案、提交物、反馈；题目不能全是知识点定义复述。",
+      "sourceIds": [
+        "openai-prompt",
+        "openai-tools",
+        "owasp-cheat"
+      ],
+      "minimumSubstance": "九项正文实际写出机制和操作，不用标题、提纲、链接或待填项冒充教材；有待运行状态不等于可省略案例预期与参考解法。",
+      "objectiveIds": [
+        "f02-o1",
+        "f02-o2"
+      ]
+    },
+    {
+      "id": "c01",
+      "title": "工作流、Agent 循环与方案选择",
+      "level": "core",
+      "competencyIds": [
+        "model-context",
+        "tools-state"
+      ],
+      "depth": "独立实现，比较至少两种合理方案",
+      "prerequisites": [
+        "f02"
+      ],
+      "objectives": [
+        "按任务不确定性选择固定流程或动态决策",
+        "根据工具反馈决策并设置停止预算"
+      ],
+      "evidence": [
+        "两种方案比较",
+        "执行轨迹与停止说明"
+      ],
+      "validation": [
+        "正常、工具失败和预算耗尽场景",
+        "说明复杂度与效果取舍"
+      ],
+      "knowledgePoints": [
+        {
+          "id": "c01-k01",
+          "title": "单次调用与工作流基线",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "agent-patterns"
+          ],
+          "primaryQuestion": "固定查手册任务为何要先测简单方案？",
+          "questionId": "c01-k01-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "请求需要动态澄清",
+          "exerciseIds": [
+            "c01-scaffold",
+            "c01-independent",
+            "c01-transfer"
+          ],
+          "artifactRequirement": "两种方案比较",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "c01-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "c01-k02",
+          "title": "动态循环与复杂度取舍",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "agent-patterns"
+          ],
+          "primaryQuestion": "多次模型调用是否已经构成Agent？",
+          "questionId": "c01-k02-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "将固定分支改为依据观察决策",
+          "exerciseIds": [
+            "c01-scaffold",
+            "c01-independent",
+            "c01-transfer"
+          ],
+          "artifactRequirement": "两种方案比较",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "c01-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "c01-k03",
+          "title": "行动观察与重规划",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "agent-patterns"
+          ],
+          "primaryQuestion": "工具拒绝后模型自称成功如何处理？",
+          "questionId": "c01-k03-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "取得新证据使旧计划失效",
+          "exerciseIds": [
+            "c01-scaffold",
+            "c01-independent",
+            "c01-transfer"
+          ],
+          "artifactRequirement": "执行轨迹与停止说明",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "c01-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "c01-k04",
+          "title": "停止预算与协作边界",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "agent-patterns"
+          ],
+          "primaryQuestion": "连续三次相同工具错误后怎么停止？",
+          "questionId": "c01-k04-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "比较单Agent与角色分工协调成本",
+          "exerciseIds": [
+            "c01-scaffold",
+            "c01-independent",
+            "c01-transfer"
+          ],
+          "artifactRequirement": "执行轨迹与停止说明",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "c01-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        }
+      ],
+      "creationStageIds": [
+        "baseline",
+        "mvp"
+      ],
+      "chapterTemplateId": "uniform-v1",
+      "chapterVersion": "textbook-draft-0.5",
+      "caseProjectId": "controlled-after-sales-assistant",
+      "caseRequirement": "本章明确输入夹具、处理链、预期结果、正常/边界/失败及对应证据；衔接主项目上一阶段，不假称已有运行结果。",
+      "practiceRequirement": "逐知识点直接情景题就近给解析；本章另给脚手架、独立实现、未知迁移三层任务及参考方案、提交物、反馈；题目不能全是知识点定义复述。",
+      "sourceIds": [
+        "agent-patterns"
+      ],
+      "minimumSubstance": "九项正文实际写出机制和操作，不用标题、提纲、链接或待填项冒充教材；有待运行状态不等于可省略案例预期与参考解法。",
+      "objectiveIds": [
+        "c01-o1",
+        "c01-o2"
+      ]
+    },
+    {
+      "id": "c02",
+      "title": "资料治理、检索与有据回答",
+      "level": "core",
+      "competencyIds": [
+        "retrieval-data",
+        "model-context"
+      ],
+      "depth": "独立实现，比较至少两种合理方案",
+      "prerequisites": [
+        "f02"
+      ],
+      "objectives": [
+        "记录数据来源、版本与访问范围",
+        "比较检索策略并验证引用与无答案行为"
+      ],
+      "evidence": [
+        "带版本资料集",
+        "检索实验与片段引用",
+        "可答及不可答问题"
+      ],
+      "validation": [
+        "旧版本、冲突资料与证据不足测试",
+        "独立复核引用是否支持结论"
+      ],
+      "knowledgePoints": [
+        {
+          "id": "c02-k01",
+          "title": "文档版本与可读范围",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "openai-retrieval"
+          ],
+          "primaryQuestion": "新政策入库是否代表已用于本次回答？",
+          "questionId": "c02-k01-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "同文档不同租户或生效日",
+          "exerciseIds": [
+            "c02-scaffold",
+            "c02-independent",
+            "c02-transfer"
+          ],
+          "artifactRequirement": "带版本资料集",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "c02-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "c02-k02",
+          "title": "片段与证据归属",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "agent-evals"
+          ],
+          "primaryQuestion": "引用编号存在但片段无该结论怎么办？",
+          "questionId": "c02-k02-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "片段支持部分而非全部主张",
+          "exerciseIds": [
+            "c02-scaffold",
+            "c02-independent",
+            "c02-transfer"
+          ],
+          "artifactRequirement": "带版本资料集",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "c02-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "c02-k03",
+          "title": "词法与语义检索比较",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "openai-retrieval"
+          ],
+          "primaryQuestion": "同义查询召回失败先改哪一层？",
+          "questionId": "c02-k03-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "精确订单编号与语义问句对照",
+          "exerciseIds": [
+            "c02-scaffold",
+            "c02-independent",
+            "c02-transfer"
+          ],
+          "artifactRequirement": "检索实验与片段引用",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "c02-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "c02-k04",
+          "title": "冲突和无答案",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "agent-evals"
+          ],
+          "primaryQuestion": "两份政策冲突能否自行选有利条款？",
+          "questionId": "c02-k04-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "过期资料和权限不足分别处理",
+          "exerciseIds": [
+            "c02-scaffold",
+            "c02-independent",
+            "c02-transfer"
+          ],
+          "artifactRequirement": "检索实验与片段引用",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "c02-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        }
+      ],
+      "creationStageIds": [
+        "baseline",
+        "mvp"
+      ],
+      "chapterTemplateId": "uniform-v1",
+      "chapterVersion": "textbook-draft-0.5",
+      "caseProjectId": "controlled-after-sales-assistant",
+      "caseRequirement": "本章明确输入夹具、处理链、预期结果、正常/边界/失败及对应证据；衔接主项目上一阶段，不假称已有运行结果。",
+      "practiceRequirement": "逐知识点直接情景题就近给解析；本章另给脚手架、独立实现、未知迁移三层任务及参考方案、提交物、反馈；题目不能全是知识点定义复述。",
+      "sourceIds": [
+        "agent-evals",
+        "openai-retrieval"
+      ],
+      "minimumSubstance": "九项正文实际写出机制和操作，不用标题、提纲、链接或待填项冒充教材；有待运行状态不等于可省略案例预期与参考解法。",
+      "objectiveIds": [
+        "c02-o1",
+        "c02-o2"
+      ]
+    },
+    {
+      "id": "c03",
+      "title": "工具契约与业务动作",
+      "level": "core",
+      "competencyIds": [
+        "tools-state",
+        "software"
+      ],
+      "depth": "独立实现，比较至少两种合理方案",
+      "prerequisites": [
+        "c01",
+        "f01"
+      ],
+      "objectives": [
+        "实现输入输出契约与授权规则",
+        "验证幂等请求与失败反馈"
+      ],
+      "evidence": [
+        "契约与业务工具",
+        "授权和重复请求记录"
+      ],
+      "validation": [
+        "重复写入、错误参数和权限不足实验",
+        "核对业务记录而非模型自述"
+      ],
+      "knowledgePoints": [
+        {
+          "id": "c03-k01",
+          "title": "工具定义建议与实际执行",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "openai-tools"
+          ],
+          "primaryQuestion": "模型提出create_draft是否表示草稿已保存？",
+          "questionId": "c03-k01-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "输出关联ID错位",
+          "exerciseIds": [
+            "c03-scaffold",
+            "c03-independent",
+            "c03-transfer"
+          ],
+          "artifactRequirement": "契约与业务工具",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "c03-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "c03-k02",
+          "title": "参数语义与对象授权",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "owasp-cheat"
+          ],
+          "primaryQuestion": "用户传tenant=B能否改变读取身份？",
+          "questionId": "c03-k02-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "合法schema但目标越权",
+          "exerciseIds": [
+            "c03-scaffold",
+            "c03-independent",
+            "c03-transfer"
+          ],
+          "artifactRequirement": "契约与业务工具",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "c03-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "c03-k03",
+          "title": "幂等与重复请求",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "sqlite"
+          ],
+          "primaryQuestion": "保存超时后重新提交为何可能产生两份？",
+          "questionId": "c03-k03-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "同逻辑动作不同请求ID",
+          "exerciseIds": [
+            "c03-scaffold",
+            "c03-independent",
+            "c03-transfer"
+          ],
+          "artifactRequirement": "授权和重复请求记录",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "c03-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "c03-k04",
+          "title": "业务失败与未知结果",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "openai-tools"
+          ],
+          "primaryQuestion": "工具超时可否报告失败并立即再写？",
+          "questionId": "c03-k04-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "查询到既有回执后如何继续",
+          "exerciseIds": [
+            "c03-scaffold",
+            "c03-independent",
+            "c03-transfer"
+          ],
+          "artifactRequirement": "授权和重复请求记录",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "c03-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        }
+      ],
+      "creationStageIds": [
+        "mvp"
+      ],
+      "chapterTemplateId": "uniform-v1",
+      "chapterVersion": "textbook-draft-0.5",
+      "caseProjectId": "controlled-after-sales-assistant",
+      "caseRequirement": "本章明确输入夹具、处理链、预期结果、正常/边界/失败及对应证据；衔接主项目上一阶段，不假称已有运行结果。",
+      "practiceRequirement": "逐知识点直接情景题就近给解析；本章另给脚手架、独立实现、未知迁移三层任务及参考方案、提交物、反馈；题目不能全是知识点定义复述。",
+      "sourceIds": [
+        "openai-tools",
+        "owasp-cheat",
+        "sqlite"
+      ],
+      "minimumSubstance": "九项正文实际写出机制和操作，不用标题、提纲、链接或待填项冒充教材；有待运行状态不等于可省略案例预期与参考解法。",
+      "objectiveIds": [
+        "c03-o1",
+        "c03-o2"
+      ]
+    },
+    {
+      "id": "e01",
+      "title": "状态、检查点与失败恢复",
+      "level": "engineering",
+      "competencyIds": [
+        "tools-state"
+      ],
+      "depth": "故障注入、回归、安全与性能分析",
+      "prerequisites": [
+        "c03"
+      ],
+      "objectives": [
+        "显式保存任务状态与已完成动作",
+        "在中断后核对外部系统再恢复"
+      ],
+      "evidence": [
+        "持久状态结构",
+        "各阶段故障与恢复轨迹"
+      ],
+      "validation": [
+        "写入前后及通知阶段中断",
+        "恢复不重复业务动作"
+      ],
+      "knowledgePoints": [
+        {
+          "id": "e01-k01",
+          "title": "任务事件与业务事实",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "langgraph"
+          ],
+          "primaryQuestion": "聊天说已保存、任务仍提交中，谁是证据？",
+          "questionId": "e01-k01-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "摘要压缩导致关键信息丢失",
+          "exerciseIds": [
+            "e01-scaffold",
+            "e01-independent",
+            "e01-transfer"
+          ],
+          "artifactRequirement": "持久状态结构",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "e01-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "e01-k02",
+          "title": "检查点与状态转换",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "langgraph"
+          ],
+          "primaryQuestion": "取消后迟到结果能否把任务标完成？",
+          "questionId": "e01-k02-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "恢复同任务的两名执行者",
+          "exerciseIds": [
+            "e01-scaffold",
+            "e01-independent",
+            "e01-transfer"
+          ],
+          "artifactRequirement": "持久状态结构",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "e01-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "e01-k03",
+          "title": "中断与副作用核对",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "sqlite"
+          ],
+          "primaryQuestion": "写入后记录前崩溃如何避免重复？",
+          "questionId": "e01-k03-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "把崩溃点移到写入前",
+          "exerciseIds": [
+            "e01-scaffold",
+            "e01-independent",
+            "e01-transfer"
+          ],
+          "artifactRequirement": "各阶段故障与恢复轨迹",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "e01-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "e01-k04",
+          "title": "恢复与版本冲突",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "langgraph"
+          ],
+          "primaryQuestion": "旧快照恢复到新字段结构能否直接运行？",
+          "questionId": "e01-k04-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "检查审批参数也已变更",
+          "exerciseIds": [
+            "e01-scaffold",
+            "e01-independent",
+            "e01-transfer"
+          ],
+          "artifactRequirement": "各阶段故障与恢复轨迹",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "e01-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        }
+      ],
+      "creationStageIds": [
+        "quality"
+      ],
+      "chapterTemplateId": "uniform-v1",
+      "chapterVersion": "textbook-draft-0.5",
+      "caseProjectId": "controlled-after-sales-assistant",
+      "caseRequirement": "本章明确输入夹具、处理链、预期结果、正常/边界/失败及对应证据；衔接主项目上一阶段，不假称已有运行结果。",
+      "practiceRequirement": "逐知识点直接情景题就近给解析；本章另给脚手架、独立实现、未知迁移三层任务及参考方案、提交物、反馈；题目不能全是知识点定义复述。",
+      "sourceIds": [
+        "langgraph",
+        "sqlite"
+      ],
+      "minimumSubstance": "九项正文实际写出机制和操作，不用标题、提纲、链接或待填项冒充教材；有待运行状态不等于可省略案例预期与参考解法。",
+      "objectiveIds": [
+        "e01-o1",
+        "e01-o2"
+      ]
+    },
+    {
+      "id": "e02",
+      "title": "评估集、追踪与回归",
+      "level": "engineering",
+      "competencyIds": [
+        "eval-safety",
+        "operations"
+      ],
+      "depth": "故障注入、回归、安全与性能分析",
+      "prerequisites": [
+        "c02",
+        "c03"
+      ],
+      "objectives": [
+        "区分能力、回归和独立保留案例",
+        "分别评价任务结果、轨迹和成本"
+      ],
+      "evidence": [
+        "案例集与量规",
+        "基线、改进和回归报告",
+        "失败分类"
+      ],
+      "validation": [
+        "固定条件比较版本",
+        "模型评分需要人工校准",
+        "不得使用训练时见过的样例代替迁移评价"
+      ],
+      "knowledgePoints": [
+        {
+          "id": "e02-k01",
+          "title": "能力回归与保留案例",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "agent-evals"
+          ],
+          "primaryQuestion": "反复调过的十题能证明迁移吗？",
+          "questionId": "e02-k01-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "保留案例被提前看到",
+          "exerciseIds": [
+            "e02-scaffold",
+            "e02-independent",
+            "e02-transfer"
+          ],
+          "artifactRequirement": "案例集与量规",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "e02-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "e02-k02",
+          "title": "重复测量与对照条件",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "openai-evals"
+          ],
+          "primaryQuestion": "只展示最好一次是否证明改进？",
+          "questionId": "e02-k02-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "交换模型版本与同一任务样本",
+          "exerciseIds": [
+            "e02-scaffold",
+            "e02-independent",
+            "e02-transfer"
+          ],
+          "artifactRequirement": "案例集与量规",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "e02-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "e02-k03",
+          "title": "结果轨迹与成本",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "agent-evals"
+          ],
+          "primaryQuestion": "回答拒绝但读取越权是否安全？",
+          "questionId": "e02-k03-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "工具成功但答案漏引用",
+          "exerciseIds": [
+            "e02-scaffold",
+            "e02-independent",
+            "e02-transfer"
+          ],
+          "artifactRequirement": "基线、改进和回归报告",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "e02-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "e02-k04",
+          "title": "评分器校准与归因",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "openai-evals"
+          ],
+          "primaryQuestion": "另一个模型赞同能否视为专家审核？",
+          "questionId": "e02-k04-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "替换检索片段隔离生成错误",
+          "exerciseIds": [
+            "e02-scaffold",
+            "e02-independent",
+            "e02-transfer"
+          ],
+          "artifactRequirement": "基线、改进和回归报告",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "e02-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        }
+      ],
+      "creationStageIds": [
+        "baseline",
+        "hypothesis",
+        "quality",
+        "iterate"
+      ],
+      "chapterTemplateId": "uniform-v1",
+      "chapterVersion": "textbook-draft-0.5",
+      "caseProjectId": "controlled-after-sales-assistant",
+      "caseRequirement": "本章明确输入夹具、处理链、预期结果、正常/边界/失败及对应证据；衔接主项目上一阶段，不假称已有运行结果。",
+      "practiceRequirement": "逐知识点直接情景题就近给解析；本章另给脚手架、独立实现、未知迁移三层任务及参考方案、提交物、反馈；题目不能全是知识点定义复述。",
+      "sourceIds": [
+        "agent-evals",
+        "openai-evals"
+      ],
+      "minimumSubstance": "九项正文实际写出机制和操作，不用标题、提纲、链接或待填项冒充教材；有待运行状态不等于可省略案例预期与参考解法。",
+      "objectiveIds": [
+        "e02-o1",
+        "e02-o2"
+      ]
+    },
+    {
+      "id": "e03",
+      "title": "安全边界与对抗输入",
+      "level": "engineering",
+      "competencyIds": [
+        "eval-safety",
+        "tools-state",
+        "retrieval-data"
+      ],
+      "depth": "故障注入、回归、安全与性能分析",
+      "prerequisites": [
+        "c02",
+        "c03",
+        "e02"
+      ],
+      "objectives": [
+        "区分不可信资料与指令",
+        "验证最小权限、敏感数据处理和人工介入"
+      ],
+      "evidence": [
+        "威胁假设",
+        "受控攻击样例",
+        "权限拒绝与脱敏记录"
+      ],
+      "validation": [
+        "注入、跨用户数据及未授权动作检查",
+        "安全关键失败不能以平均分抵消"
+      ],
+      "knowledgePoints": [
+        {
+          "id": "e03-k01",
+          "title": "威胁模型与提示注入",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "owasp-injection"
+          ],
+          "primaryQuestion": "手册要求外发全文时谁有授权？",
+          "questionId": "e03-k01-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "注入来自工具输出或记忆",
+          "exerciseIds": [
+            "e03-scaffold",
+            "e03-independent",
+            "e03-transfer"
+          ],
+          "artifactRequirement": "威胁假设",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "e03-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "e03-k02",
+          "title": "提示分隔与强制边界",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "owasp-cheat"
+          ],
+          "primaryQuestion": "加上不可信标签能否保证不越权？",
+          "questionId": "e03-k02-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "跨租户数据已经进入上下文",
+          "exerciseIds": [
+            "e03-scaffold",
+            "e03-independent",
+            "e03-transfer"
+          ],
+          "artifactRequirement": "威胁假设",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "e03-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "e03-k03",
+          "title": "敏感字段与日志",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "owasp-cheat"
+          ],
+          "primaryQuestion": "输出遮蔽但原秘密写入日志能否通过？",
+          "questionId": "e03-k03-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "检查上下文、载荷与日志",
+          "exerciseIds": [
+            "e03-scaffold",
+            "e03-independent",
+            "e03-transfer"
+          ],
+          "artifactRequirement": "受控攻击样例",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "e03-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "e03-k04",
+          "title": "精确审批与副作用",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "owasp-cheat"
+          ],
+          "primaryQuestion": "用户同意T1后收件人改变能否沿用批准？",
+          "questionId": "e03-k04-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "合法路径、过期、已消费分别对照",
+          "exerciseIds": [
+            "e03-scaffold",
+            "e03-independent",
+            "e03-transfer"
+          ],
+          "artifactRequirement": "受控攻击样例",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "e03-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        }
+      ],
+      "creationStageIds": [
+        "quality"
+      ],
+      "chapterTemplateId": "uniform-v1",
+      "chapterVersion": "textbook-draft-0.5",
+      "caseProjectId": "controlled-after-sales-assistant",
+      "caseRequirement": "本章明确输入夹具、处理链、预期结果、正常/边界/失败及对应证据；衔接主项目上一阶段，不假称已有运行结果。",
+      "practiceRequirement": "逐知识点直接情景题就近给解析；本章另给脚手架、独立实现、未知迁移三层任务及参考方案、提交物、反馈；题目不能全是知识点定义复述。",
+      "sourceIds": [
+        "owasp-cheat",
+        "owasp-injection"
+      ],
+      "minimumSubstance": "九项正文实际写出机制和操作，不用标题、提纲、链接或待填项冒充教材；有待运行状态不等于可省略案例预期与参考解法。",
+      "objectiveIds": [
+        "e03-o1",
+        "e03-o2"
+      ]
+    },
+    {
+      "id": "e04",
+      "title": "部署、可观测性与运行维护",
+      "level": "engineering",
+      "competencyIds": [
+        "operations",
+        "software"
+      ],
+      "depth": "故障注入、回归、安全与性能分析",
+      "prerequisites": [
+        "e01",
+        "e02",
+        "e03"
+      ],
+      "objectives": [
+        "提供分环境配置、可观测运行和回退",
+        "用故障记录定位服务阶段"
+      ],
+      "evidence": [
+        "部署说明",
+        "监测日志",
+        "故障与回退演示"
+      ],
+      "validation": [
+        "他人按说明部署",
+        "依赖失效、重启和回退复现"
+      ],
+      "knowledgePoints": [
+        {
+          "id": "e04-k01",
+          "title": "环境配置与依赖隔离",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "langgraph"
+          ],
+          "primaryQuestion": "本地演示启动能否算生产部署？",
+          "questionId": "e04-k01-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "开发配置误入发布包",
+          "exerciseIds": [
+            "e04-scaffold",
+            "e04-independent",
+            "e04-transfer"
+          ],
+          "artifactRequirement": "部署说明",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "e04-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "e04-k02",
+          "title": "可观测性与回退",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "agent-evals"
+          ],
+          "primaryQuestion": "新版本故障怎样保留未完成任务？",
+          "questionId": "e04-k02-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "回退时状态格式不同",
+          "exerciseIds": [
+            "e04-scaffold",
+            "e04-independent",
+            "e04-transfer"
+          ],
+          "artifactRequirement": "部署说明",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "e04-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "e04-k03",
+          "title": "运行事实与故障阶段",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "agent-evals"
+          ],
+          "primaryQuestion": "最终失败但不知哪个阶段出错怎么查？",
+          "questionId": "e04-k03-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "检索、模型、工具分别失效",
+          "exerciseIds": [
+            "e04-scaffold",
+            "e04-independent",
+            "e04-transfer"
+          ],
+          "artifactRequirement": "监测日志",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "e04-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "e04-k04",
+          "title": "恢复说明与他人复现",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "sqlite"
+          ],
+          "primaryQuestion": "同伴按说明重启后记录缺失说明什么？",
+          "questionId": "e04-k04-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "检查敏感日志和权限",
+          "exerciseIds": [
+            "e04-scaffold",
+            "e04-independent",
+            "e04-transfer"
+          ],
+          "artifactRequirement": "监测日志",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "e04-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        }
+      ],
+      "creationStageIds": [
+        "quality",
+        "usage",
+        "iterate"
+      ],
+      "chapterTemplateId": "uniform-v1",
+      "chapterVersion": "textbook-draft-0.5",
+      "caseProjectId": "controlled-after-sales-assistant",
+      "caseRequirement": "本章明确输入夹具、处理链、预期结果、正常/边界/失败及对应证据；衔接主项目上一阶段，不假称已有运行结果。",
+      "practiceRequirement": "逐知识点直接情景题就近给解析；本章另给脚手架、独立实现、未知迁移三层任务及参考方案、提交物、反馈；题目不能全是知识点定义复述。",
+      "sourceIds": [
+        "agent-evals",
+        "langgraph",
+        "sqlite"
+      ],
+      "minimumSubstance": "九项正文实际写出机制和操作，不用标题、提纲、链接或待填项冒充教材；有待运行状态不等于可省略案例预期与参考解法。",
+      "objectiveIds": [
+        "e04-o1",
+        "e04-o2"
+      ]
+    },
+    {
+      "id": "e05",
+      "title": "性能、成本与规模取舍",
+      "level": "engineering",
+      "competencyIds": [
+        "operations",
+        "model-context"
+      ],
+      "depth": "故障注入、回归、安全与性能分析",
+      "prerequisites": [
+        "e02",
+        "e04"
+      ],
+      "objectives": [
+        "在约定负载下记录尾延迟与每任务成本",
+        "比较缓存、模型选择或并发方案"
+      ],
+      "evidence": [
+        "负载条件",
+        "p50/p95 延迟、成功率与成本报告",
+        "优化前后比较"
+      ],
+      "validation": [
+        "注明模型、样本、重复次数与限制",
+        "不得只展示最优单次结果"
+      ],
+      "knowledgePoints": [
+        {
+          "id": "e05-k01",
+          "title": "任务成本与单位",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "agent-evals"
+          ],
+          "primaryQuestion": "只看模型单价能否得到成功任务成本？",
+          "questionId": "e05-k01-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "加入失败、重试和人工耗时",
+          "exerciseIds": [
+            "e05-scaffold",
+            "e05-independent",
+            "e05-transfer"
+          ],
+          "artifactRequirement": "负载条件",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "e05-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "e05-k02",
+          "title": "延迟分布与失败分母",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "openai-evals"
+          ],
+          "primaryQuestion": "只计算成功请求p95会漏掉什么？",
+          "questionId": "e05-k02-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "含取消和超时并注明分母",
+          "exerciseIds": [
+            "e05-scaffold",
+            "e05-independent",
+            "e05-transfer"
+          ],
+          "artifactRequirement": "负载条件",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "e05-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "e05-k03",
+          "title": "缓存与模型选择比较",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "openai-prompt"
+          ],
+          "primaryQuestion": "旧政策缓存更快是否必然更好？",
+          "questionId": "e05-k03-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "按租户、资料版本和质量护栏比较",
+          "exerciseIds": [
+            "e05-scaffold",
+            "e05-independent",
+            "e05-transfer"
+          ],
+          "artifactRequirement": "p50/p95 延迟、成功率与成本报告",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "e05-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "e05-k04",
+          "title": "并发预算与资源取舍",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "agent-evals"
+          ],
+          "primaryQuestion": "并发翻倍为何成本和尾延迟不一定下降？",
+          "questionId": "e05-k04-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "保持同负载对照并记录限流",
+          "exerciseIds": [
+            "e05-scaffold",
+            "e05-independent",
+            "e05-transfer"
+          ],
+          "artifactRequirement": "p50/p95 延迟、成功率与成本报告",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "e05-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        }
+      ],
+      "creationStageIds": [
+        "hypothesis",
+        "quality",
+        "usage",
+        "iterate"
+      ],
+      "chapterTemplateId": "uniform-v1",
+      "chapterVersion": "textbook-draft-0.5",
+      "caseProjectId": "controlled-after-sales-assistant",
+      "caseRequirement": "本章明确输入夹具、处理链、预期结果、正常/边界/失败及对应证据；衔接主项目上一阶段，不假称已有运行结果。",
+      "practiceRequirement": "逐知识点直接情景题就近给解析；本章另给脚手架、独立实现、未知迁移三层任务及参考方案、提交物、反馈；题目不能全是知识点定义复述。",
+      "sourceIds": [
+        "agent-evals",
+        "openai-evals",
+        "openai-prompt"
+      ],
+      "minimumSubstance": "九项正文实际写出机制和操作，不用标题、提纲、链接或待填项冒充教材；有待运行状态不等于可省略案例预期与参考解法。",
+      "objectiveIds": [
+        "e05-o1",
+        "e05-o2"
+      ]
+    },
+    {
+      "id": "p01",
+      "title": "业务理解、技术协作与文档",
+      "level": "professional",
+      "competencyIds": [
+        "product-collaboration",
+        "software"
+      ],
+      "depth": "综合交付、评审答辩与未知任务迁移",
+      "prerequisites": [
+        "c01",
+        "e02"
+      ],
+      "objectives": [
+        "把用户问题映射为可衡量的技术任务",
+        "通过架构评审和文档解释取舍"
+      ],
+      "evidence": [
+        "场景和任务标准",
+        "架构决策与评审修改",
+        "使用与维护文档"
+      ],
+      "validation": [
+        "非作者根据文档复现",
+        "向技术和业务受众解释同一方案"
+      ],
+      "knowledgePoints": [
+        {
+          "id": "p01-k01",
+          "title": "真实问题与作者假设",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "experiment"
+          ],
+          "primaryQuestion": "虚构客服故事能否当用户访谈？",
+          "questionId": "p01-k01-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "负面反馈推翻原问题判断",
+          "exerciseIds": [
+            "p01-scaffold",
+            "p01-independent",
+            "p01-transfer"
+          ],
+          "artifactRequirement": "场景和任务标准",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "p01-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "p01-k02",
+          "title": "行业基线与差异假设",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "experiment"
+          ],
+          "primaryQuestion": "演示比宣传视频好看能否声称领先？",
+          "questionId": "p01-k02-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "冻结版本任务资源与护栏后比较",
+          "exerciseIds": [
+            "p01-scaffold",
+            "p01-independent",
+            "p01-transfer"
+          ],
+          "artifactRequirement": "场景和任务标准",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "p01-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "p01-k03",
+          "title": "MVP范围与架构决策",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "agent-patterns"
+          ],
+          "primaryQuestion": "为了展示框架增加多Agent的代价是什么？",
+          "questionId": "p01-k03-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "改用普通程序完成同一任务",
+          "exerciseIds": [
+            "p01-scaffold",
+            "p01-independent",
+            "p01-transfer"
+          ],
+          "artifactRequirement": "架构决策与评审修改",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "p01-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "p01-k04",
+          "title": "协作交接与用户反馈",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "experiment"
+          ],
+          "primaryQuestion": "实现完成后用户不用应检查什么？",
+          "questionId": "p01-k04-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "业务与技术受众分别解释取舍",
+          "exerciseIds": [
+            "p01-scaffold",
+            "p01-independent",
+            "p01-transfer"
+          ],
+          "artifactRequirement": "架构决策与评审修改",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "p01-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        }
+      ],
+      "creationStageIds": [
+        "discover",
+        "hypothesis",
+        "mvp",
+        "usage",
+        "iterate"
+      ],
+      "chapterTemplateId": "uniform-v1",
+      "chapterVersion": "textbook-draft-0.5",
+      "caseProjectId": "controlled-after-sales-assistant",
+      "caseRequirement": "本章明确输入夹具、处理链、预期结果、正常/边界/失败及对应证据；衔接主项目上一阶段，不假称已有运行结果。",
+      "practiceRequirement": "逐知识点直接情景题就近给解析；本章另给脚手架、独立实现、未知迁移三层任务及参考方案、提交物、反馈；题目不能全是知识点定义复述。",
+      "sourceIds": [
+        "agent-patterns",
+        "experiment"
+      ],
+      "minimumSubstance": "九项正文实际写出机制和操作，不用标题、提纲、链接或待填项冒充教材；有待运行状态不等于可省略案例预期与参考解法。",
+      "objectiveIds": [
+        "p01-o1",
+        "p01-o2"
+      ]
+    },
+    {
+      "id": "p02",
+      "title": "综合作品、答辩与复盘",
+      "level": "professional",
+      "competencyIds": [
+        "software",
+        "model-context",
+        "retrieval-data",
+        "tools-state",
+        "eval-safety",
+        "operations",
+        "product-collaboration"
+      ],
+      "depth": "综合交付、评审答辩与未知任务迁移",
+      "prerequisites": [
+        "e01",
+        "e03",
+        "e04",
+        "e05",
+        "p01"
+      ],
+      "objectives": [
+        "整合证据并完成外部评审",
+        "用失败分析改进并迁移到未知任务"
+      ],
+      "evidence": [
+        "可部署作品",
+        "完整评价报告",
+        "复盘与二次验证",
+        "独立任务答辩"
+      ],
+      "validation": [
+        "按项目量规评审",
+        "保留案例与修改任务",
+        "说明当前适用边界"
+      ],
+      "knowledgePoints": [
+        {
+          "id": "p02-k01",
+          "title": "作品证据与外部评审",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "agent-evals"
+          ],
+          "primaryQuestion": "作品能启动但无真实任务结果能否毕业？",
+          "questionId": "p02-k01-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "独立评审无法重现关键路径",
+          "exerciseIds": [
+            "p02-scaffold",
+            "p02-independent",
+            "p02-transfer"
+          ],
+          "artifactRequirement": "可部署作品",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "p02-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "p02-k02",
+          "title": "真实使用与比较局限",
+          "objectiveIndexes": [
+            0
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "experiment"
+          ],
+          "primaryQuestion": "两名用户说满意能否证明行业先进？",
+          "questionId": "p02-k02-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "记录使用失败、退出和对照限制",
+          "exerciseIds": [
+            "p02-scaffold",
+            "p02-independent",
+            "p02-transfer"
+          ],
+          "artifactRequirement": "可部署作品",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "p02-o1"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "p02-k03",
+          "title": "失败复盘与二次验证",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "agent-evals"
+          ],
+          "primaryQuestion": "修提示后未复测是否关闭原缺陷？",
+          "questionId": "p02-k03-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "修复一个问题引出另一个回归",
+          "exerciseIds": [
+            "p02-scaffold",
+            "p02-independent",
+            "p02-transfer"
+          ],
+          "artifactRequirement": "完整评价报告",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "p02-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        },
+        {
+          "id": "p02-k04",
+          "title": "未知任务与能力边界",
+          "objectiveIndexes": [
+            1
+          ],
+          "teachingRequirement": "解释机制、一个具体例子、取舍或误区及适用边界；不只列术语",
+          "sourceIds": [
+            "openai-evals"
+          ],
+          "primaryQuestion": "换行业但保留原答案能否算迁移？",
+          "questionId": "p02-k04-q",
+          "answerRequirement": "作者写直接结论、基于题定条件的逐步解析、错因、适用边界；不得用泛泛提示替代答案",
+          "transferQuestion": "非作者安排新资料与约束",
+          "exerciseIds": [
+            "p02-scaffold",
+            "p02-independent",
+            "p02-transfer"
+          ],
+          "artifactRequirement": "完整评价报告",
+          "contentOrigin": "curriculum_design; facts require listed source support; fixture original",
+          "validationStatus": "not_run",
+          "objectiveIds": [
+            "p02-o2"
+          ],
+          "sectionIds": [
+            "concepts",
+            "practice",
+            "validation"
+          ]
+        }
+      ],
+      "creationStageIds": [
+        "usage",
+        "iterate"
+      ],
+      "chapterTemplateId": "uniform-v1",
+      "chapterVersion": "textbook-draft-0.5",
+      "caseProjectId": "controlled-after-sales-assistant",
+      "caseRequirement": "本章明确输入夹具、处理链、预期结果、正常/边界/失败及对应证据；衔接主项目上一阶段，不假称已有运行结果。",
+      "practiceRequirement": "逐知识点直接情景题就近给解析；本章另给脚手架、独立实现、未知迁移三层任务及参考方案、提交物、反馈；题目不能全是知识点定义复述。",
+      "sourceIds": [
+        "agent-evals",
+        "experiment",
+        "openai-evals"
+      ],
+      "minimumSubstance": "九项正文实际写出机制和操作，不用标题、提纲、链接或待填项冒充教材；有待运行状态不等于可省略案例预期与参考解法。",
+      "objectiveIds": [
+        "p02-o1",
+        "p02-o2"
+      ]
+    }
+  ],
+  "authorOutputContract": {
+    "topLevelRequired": [
+      "schemaVersion",
+      "id",
+      "version",
+      "title",
+      "status",
+      "sources",
+      "chapters",
+      "rubric",
+      "review",
+      "limitations",
+      "updatedAt",
+      "curriculumVersion",
+      "provenance",
+      "learnerProfiles"
+    ],
+    "chapterRequired": [
+      "moduleId",
+      "title",
+      "objectives",
+      "prerequisites",
+      "sections",
+      "knowledgePoints",
+      "exercises",
+      "verification",
+      "review",
+      "id",
+      "version",
+      "competencyIds",
+      "creationStageIds",
+      "sourceIds",
+      "claims",
+      "examples",
+      "limits"
+    ],
+    "sectionShape": {
+      "id": "原模板id",
+      "title": "原模板title",
+      "bodyMarkdown": "实质正文",
+      "sourceIds": "该节事实依据id数组"
+    },
+    "knowledgePointShape": {
+      "id": "本规格知识点id",
+      "objectiveIndexes": "保留目标索引",
+      "title": "主题",
+      "explanation": "机制/例子/边界实质讲解，可定位concepts正文",
+      "question": "直接考察题",
+      "answer": "参考结论",
+      "analysis": "条件推理、误区、边界",
+      "transfer": "新条件问题",
+      "sourceIds": "受支持来源",
+      "supportScope": "机制事实与原创案例分开",
+      "objectiveIds": "按objectiveIndexes派生 moduleId-o1/moduleId-o2（1基命名）；仅定位，不改变目标正文",
+      "sectionIds": [
+        "concepts",
+        "practice",
+        "validation"
+      ]
+    },
+    "exercisesShape": "每章三层任务数组：id/level/knowledgePointIds/task/input/deliverables/referenceSolution/feedback/normal/boundary/failure/executionStatus；未知迁移参考只供评阅，不拿已公开题当独立保留案例；每章3层综合任务可覆盖多个知识点，共享moduleId-scaffold/independent/transfer id；逐点情景题另用knowledgePoint questionId，不需每点重复三套实操",
+    "version": "textbook-draft-0.5",
+    "status": "AI教材草稿；未全量运行/待独立审校/待真人专家与真实学习验证",
+    "checks": [
+      "12原模块目标/先修完全一致",
+      "每章9节非空且内容实质",
+      "每点直接题/解/迁移和来源范围",
+      "目标与提交证据映射",
+      "正常/边界/失败预期",
+      "作者不能审核自己",
+      "原e03 CR03/04成对练习保留并标未运行"
+    ],
+    "generationIdentity": "本轮作者代理生成编辑草稿；不冒充网站用户模型调用任务或真实API生成证据",
+    "sourceShape": {
+      "id": "来源id",
+      "title": "资料名",
+      "organization": "出版组织",
+      "type": "official_reference",
+      "url": "原官方链接",
+      "version": "已知版本/滚动未知",
+      "accessedAt": "实际日期",
+      "locator": "已读位置",
+      "supports": "受支持范围",
+      "limits": "限制"
+    },
+    "claimShape": {
+      "id": "唯一主张id",
+      "text": "外部事实或原创设计",
+      "sourceIds": "支持的事实来源；设计可空但明示original_design",
+      "locators": "具体小节",
+      "status": "source_checked/not_verified/original_design",
+      "limits": "不得扩大来源支持或当作运行证明"
+    },
+    "exampleShape": {
+      "id": "唯一示例id",
+      "title": "示例名",
+      "kind": "pseudocode/unexecuted_code/paper_exercise",
+      "environment": "运行时/标准库或待指定环境",
+      "expectedResult": "题定预期",
+      "executionStatus": "not_run",
+      "evidenceReferences": [],
+      "limits": "实际执行未发生，非真实模型/生产证据"
+    },
+    "provenance": {
+      "authorRole": "教材研发员",
+      "generationMode": "agent_authored_draft",
+      "limitations": [
+        "本轮不为网站用户供应商任务",
+        "未真实模型调用",
+        "未自动认证"
+      ]
+    },
+    "review": {
+      "aiContentReview": "not_reviewed",
+      "humanExpertReview": "not_done",
+      "learnerValidation": "not_done"
+    }
+  },
+  "reviewPolicy": {
+    "authorSelfCheck": "只自查完整性与已知缺证，不自授通过",
+    "contentReviewer": "独立核技术论断与来源/边界/参考解法",
+    "qa": "独立核内容结构和网站集成；代码运行证据需真实执行",
+    "humanExpert": "未完成；身份/范围/原评语单列",
+    "learning": "未验证；需要真实学员独立作品、反馈及未知任务迁移"
+  },
+  "consistencyChecks": [
+    "术语与主项目对象一致",
+    "先修图沿原数据",
+    "同一例外/权限在章节间不冲突",
+    "每源访问/版本真实",
+    "正常与异常参考结果对应输入",
+    "不得把结构检查累计为教学效果"
+  ],
+  "domainSelfCheck": {
+    "moduleCount": 12,
+    "plannedKnowledgePointCount": 48,
+    "countIsQuota": false,
+    "originalStandardsPreserved": true,
+    "noTextbookBodyWritten": true,
+    "noExternalPaidCallAdded": true,
+    "independentReviewPending": true
+  }
+}

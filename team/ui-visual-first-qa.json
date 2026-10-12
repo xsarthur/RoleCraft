@@ -1,0 +1,449 @@
+{
+  "date": "2026-10-12",
+  "timezone": "Asia/Shanghai",
+  "owner": "测试工程师",
+  "status": "met_within_scope",
+  "scope": "长期视觉表达规则、当前公开源只读复盘、有限静态SVG概念图；不包括当前应用真实UI、全状态视觉交付或真人理解",
+  "baseline": [
+    {
+      "path": "sites/rolecraft/dist/index.html",
+      "bytes": 4362,
+      "sha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f"
+    },
+    {
+      "path": "sites/rolecraft/dist/app.js",
+      "bytes": 92350,
+      "sha256": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd"
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-workbench.js",
+      "bytes": 64329,
+      "sha256": "9a30a208e9fae48589ab67f9262793d140607d8151d6d3f950382d5a5eba43f8"
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-experience-v13.js",
+      "bytes": 33698,
+      "sha256": "903e6092132a979afff36e6201879b53a5aa17c59dcc3dff29be069ead74d376"
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-workbench.css",
+      "bytes": 20490,
+      "sha256": "c13ed2dbe5b68770e142ef9ec3962eb14f7ccdd745c99ff650c7b47def9c5ace"
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-experience-v13.css",
+      "bytes": 25491,
+      "sha256": "cdd014999bccee644072ac3c41fb389f50463e7e0dfcb5dff8976a8afe76aa60"
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-v13-data.js",
+      "bytes": 841206,
+      "sha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb"
+    },
+    {
+      "path": "sites/rolecraft/dist/product-gates-data.js",
+      "bytes": 8807,
+      "sha256": "a331ad6c46adc7d463e9b56d918a8f96765ebaecfa1ff6c07c2c5e6c19e09b0e"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/agent-engineering-textbook.md",
+      "bytes": 523145,
+      "sha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e"
+    },
+    {
+      "path": "sites/rolecraft/team/textbook-v12-product-assessment.json",
+      "bytes": 3301,
+      "sha256": "cf5bd1e77fead2f51bbfe0ef836ea27d9aa39fac792e64957026797f18143811"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-detail-design.md",
+      "bytes": 5957,
+      "sha256": "7cd90e6553281b735f6874c1a1b270213dd7279576a3637f2e26cf1eec51e165"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-code-contrast-design.md",
+      "bytes": 4204,
+      "sha256": "896a95869782f50acdb64ff8bc3eab51b76ab66917a5e9dfca21e28d4e33429c"
+    }
+  ],
+  "protected_count": 12,
+  "baseline_boundary": "本轮QA首次读取指定12个公开文件，不扫描私有数据或全项目",
+  "planned_inputs": [
+    "sites/rolecraft/team/ui-visual-first-product.md",
+    "sites/rolecraft/team/DESIGN_COMMUNICATION_STANDARD.md",
+    "sites/rolecraft/team/ui-visual-first-design-review.md",
+    "sites/rolecraft/team/ui-visual-first-concept.svg"
+  ],
+  "checks": [
+    {
+      "id": "QA-VF01",
+      "status": "pass_static_rule_scope",
+      "evidence": "标准明确先空间/层级/真实关系/操作形态/直接反馈，必要短标签、真实错误、来源与无障碍名称保留；后续必须交实际视觉稿和受影响状态，未另设字数/秒数或得分阈值"
+    },
+    {
+      "id": "QA-VF02",
+      "status": "pass_static_concept_scope",
+      "evidence": "sharp0.34.5/librsvg2.61.2实际渲染1400×900，独立view_image以original实看；未观察文字、卡片或箭头裁切/重叠。三列位置/主辅层级、当前边界、返回和下一篇、可选问教材及两互斥状态可辨"
+    },
+    {
+      "id": "QA-VF03",
+      "status": "pass_static_relationship_scope",
+      "evidence": "只读解析content-v12-data.js确认30篇、首两篇真实导航名、首篇无正式前置；相邻下一篇由readerPage同源序列生成。图不画强制解锁/学习完成/正式先修必经链，问教材是可选分支，不恢复已撤工具或详情配套题"
+    },
+    {
+      "id": "QA-VF04",
+      "status": "pass_for_shown_states_only",
+      "evidence": "静态图只含无前置、等待、已有依据结果；等待和结果以不同结构/图标/短标签区分且颜色非唯一线索。正文/来源卡均明确占位，不虚构真实答复/出处/用户学习记录"
+    },
+    {
+      "id": "QA-VF05",
+      "status": "pass_after_original_binding_retest",
+      "evidence": "3应用source绑定及产品最终hash实际相符；QA-VF-BIND01原产品旧hash不符由设计作者更新，按同一产品路径重算/核review声明闭合"
+    },
+    {
+      "id": "QA-VF06",
+      "status": "pass_evidence_boundary",
+      "evidence": "规范/产品/复盘/图均明确静态提案与实际UI、用户理解不同；未宣称职业能力、满意、行业先进或完整产品通过，原八门槛保留"
+    },
+    {
+      "id": "QA-VF07",
+      "status": "pass",
+      "evidence": "指定12公开文件起止12一致、0变化；不宣称全项目或其他并行工作的保护结果"
+    }
+  ],
+  "complete_product_goal": "not_met",
+  "application_understandability": "insufficient_real_user_evidence",
+  "runtime_execution_count": 0,
+  "textbook_execution_count": 0,
+  "user_data_access": false,
+  "service_operations": false,
+  "application_edits": false,
+  "product_criteria": [
+    "VF-P01",
+    "VF-P02",
+    "VF-P03",
+    "VF-P04",
+    "VF-P05"
+  ],
+  "render": {
+    "renderer": "sharp 0.34.5 / librsvg 2.61.2",
+    "node": "24.16.0",
+    "input_sha256": "fd7b163723e842a4e25d9048f7ea8c6f9e8d68a634f6a271c60f559d0f581de8",
+    "output_path": "sites/rolecraft/team/ui-visual-first-qa-preview.png",
+    "output_sha256": "195af787ee76e27caff46a3600a8099e7cb0eeaa48ede4b1712499ae3e0ddb81",
+    "width": 1400,
+    "height": 900,
+    "density": 144,
+    "resized_width": 1400,
+    "independently_viewed": true,
+    "view_detail": "original",
+    "observed_clipping_or_overlap": false,
+    "browser_or_mobile_ui_render": false
+  },
+  "svg_static": {
+    "xml_parse": true,
+    "role": "img",
+    "aria_labelledby": "title desc",
+    "script_count": 0,
+    "external_references": [],
+    "labels": [
+      "位置、动作、反馈，由界面直接表达",
+      "设计提案 · 非运行截图 / 非用户记录",
+      "既有区域与关系示意；阅读可直接继续，问教材是可选辅助。",
+      "找到内容",
+      "当前阅读",
+      "可选：问教材",
+      "课程学习",
+      "起点与问题",
+      "当前示意",
+      "01 认识Agent工程",
+      "当前阅读",
+      "状态样例",
+      "02 基础预备",
+      "暂无本版足迹",
+      "其余真实篇章继续向下",
+      "仅截取前两篇作视觉示意",
+      "打开",
+      "← 返回课程",
+      "课程 / 认识Agent工程",
+      "认识 Agent 工程",
+      "需掌握的前置",
+      "无前置章节",
+      "本篇小节 ▾",
+      "教材正文",
+      "全文保持；灰线仅为设计占位，不是教材内容。",
+      "返回课程",
+      "下一篇 →",
+      "基础预备",
+      "可选",
+      "问教材",
+      "描述问题…",
+      "发送",
+      "同一面板，两种互斥状态样例",
+      "查教材中",
+      "收起",
+      "可以继续阅读",
+      "未完成；不展示上一题回答",
+      "教材简答",
+      "来源 1",
+      "对应教材小节",
+      "阅读这一节 →",
+      "展开教材原文 ▾",
+      "只在真实出处核对通过后展示",
+      "回原文",
+      "线索：边界与“当前阅读”定位；留白区分主体和辅助；有方向的已有入口；等待与结果形态不同。",
+      "状态都是样例，不是实际学习记录；未表示学会、认证或完整产品达标。真实操作与用户理解待独立验证。"
+    ]
+  },
+  "observed_content_binding": {
+    "path": "sites/rolecraft/dist/content-v12-data.js",
+    "sha256": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224",
+    "read_method": "JSON parse of generated assignment, no application execution",
+    "corpus_version": "textbook-v12",
+    "unit_count": 30,
+    "first_two": [
+      {
+        "unitId": "00-learning-route",
+        "order": 1,
+        "navigationLabel": "认识Agent工程",
+        "prerequisiteUnitIds": []
+      },
+      {
+        "unitId": "01-foundation",
+        "order": 2,
+        "navigationLabel": "基础预备",
+        "prerequisiteUnitIds": [
+          "00-learning-route"
+        ]
+      }
+    ]
+  },
+  "designer_source_binding": [
+    {
+      "path": "sites/rolecraft/dist/learning-experience-v13.js",
+      "sha256": "903e6092132a979afff36e6201879b53a5aa17c59dcc3dff29be069ead74d376",
+      "matches_design_review": true
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-experience-v13.css",
+      "sha256": "cdd014999bccee644072ac3c41fb389f50463e7e0dfcb5dff8976a8afe76aa60",
+      "matches_design_review": true
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-workbench.js",
+      "sha256": "9a30a208e9fae48589ab67f9262793d140607d8151d6d3f950382d5a5eba43f8",
+      "matches_design_review": true
+    },
+    {
+      "path": "sites/rolecraft/team/ui-visual-first-product.md",
+      "sha256": "a5c0223018ce3ee41b04490a746436cef21e2cc879928c2fd5233d0ba8a0d390",
+      "matches_design_review": true
+    }
+  ],
+  "reference_check": [
+    {
+      "in": "ui-visual-first-product.md",
+      "reference": "DESIGN_COMMUNICATION_STANDARD.md",
+      "exists": true
+    },
+    {
+      "in": "ui-visual-first-product.md",
+      "reference": "app-v13-product-discussion.md",
+      "exists": true
+    },
+    {
+      "in": "ui-visual-first-product.md",
+      "reference": "app-v13-prototype-product.md",
+      "exists": true
+    },
+    {
+      "in": "ui-visual-first-product.md",
+      "reference": "app-v14-detail-product-footer-clarification.md",
+      "exists": true
+    },
+    {
+      "in": "ui-visual-first-product.md",
+      "reference": "app-v14-detail-product-questions-deferred.md",
+      "exists": true
+    },
+    {
+      "in": "ui-visual-first-product.md",
+      "reference": "app-v14-detail-product.md",
+      "exists": true
+    },
+    {
+      "in": "ui-visual-first-product.md",
+      "reference": "app-v14-dialog-product-clarification.md",
+      "exists": true
+    },
+    {
+      "in": "ui-visual-first-product.md",
+      "reference": "app-v14-dialog-product.md",
+      "exists": true
+    },
+    {
+      "in": "ui-visual-first-product.md",
+      "reference": "app-v14-prerequisite-copy-product-addendum.md",
+      "exists": true
+    },
+    {
+      "in": "ui-visual-first-product.md",
+      "reference": "app-v14-prerequisite-copy-product-course-controls.md",
+      "exists": true
+    },
+    {
+      "in": "ui-visual-first-product.md",
+      "reference": "ui-visual-first-design-review.md",
+      "exists": true
+    },
+    {
+      "in": "DESIGN_COMMUNICATION_STANDARD.md",
+      "reference": "design-standard.md",
+      "exists": true
+    },
+    {
+      "in": "ui-visual-first-design-review.md",
+      "reference": "team/ui-visual-first-product.md",
+      "exists": true
+    }
+  ],
+  "protected_final": [
+    {
+      "path": "sites/rolecraft/dist/index.html",
+      "sha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+      "bytes": 4362,
+      "same": true
+    },
+    {
+      "path": "sites/rolecraft/dist/app.js",
+      "sha256": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd",
+      "bytes": 92350,
+      "same": true
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-workbench.js",
+      "sha256": "9a30a208e9fae48589ab67f9262793d140607d8151d6d3f950382d5a5eba43f8",
+      "bytes": 64329,
+      "same": true
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-experience-v13.js",
+      "sha256": "903e6092132a979afff36e6201879b53a5aa17c59dcc3dff29be069ead74d376",
+      "bytes": 33698,
+      "same": true
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-workbench.css",
+      "sha256": "c13ed2dbe5b68770e142ef9ec3962eb14f7ccdd745c99ff650c7b47def9c5ace",
+      "bytes": 20490,
+      "same": true
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-experience-v13.css",
+      "sha256": "cdd014999bccee644072ac3c41fb389f50463e7e0dfcb5dff8976a8afe76aa60",
+      "bytes": 25491,
+      "same": true
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-v13-data.js",
+      "sha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "bytes": 841206,
+      "same": true
+    },
+    {
+      "path": "sites/rolecraft/dist/product-gates-data.js",
+      "sha256": "a331ad6c46adc7d463e9b56d918a8f96765ebaecfa1ff6c07c2c5e6c19e09b0e",
+      "bytes": 8807,
+      "same": true
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/agent-engineering-textbook.md",
+      "sha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+      "bytes": 523145,
+      "same": true
+    },
+    {
+      "path": "sites/rolecraft/team/textbook-v12-product-assessment.json",
+      "sha256": "cf5bd1e77fead2f51bbfe0ef836ea27d9aa39fac792e64957026797f18143811",
+      "bytes": 3301,
+      "same": true
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-detail-design.md",
+      "sha256": "7cd90e6553281b735f6874c1a1b270213dd7279576a3637f2e26cf1eec51e165",
+      "bytes": 5957,
+      "same": true
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-code-contrast-design.md",
+      "sha256": "896a95869782f50acdb64ff8bc3eab51b76ab66917a5e9dfca21e28d4e33429c",
+      "bytes": 4204,
+      "same": true
+    }
+  ],
+  "protected_unchanged_count": 12,
+  "protected_changes": [],
+  "final_binding": [
+    {
+      "path": "sites/rolecraft/team/ui-visual-first-product.md",
+      "bytes": 7499,
+      "sha256": "a5c0223018ce3ee41b04490a746436cef21e2cc879928c2fd5233d0ba8a0d390"
+    },
+    {
+      "path": "sites/rolecraft/team/DESIGN_COMMUNICATION_STANDARD.md",
+      "bytes": 3866,
+      "sha256": "ace746f12cf1e0755919c875a4fa43646c209dd8512ccf5615b43b904f9f36c3"
+    },
+    {
+      "path": "sites/rolecraft/team/ui-visual-first-design-review.md",
+      "bytes": 5176,
+      "sha256": "b9570b214c7cb739091c4fc2bc54fab0877653ed5fa389a9bd07260a9a2c39e9"
+    },
+    {
+      "path": "sites/rolecraft/team/ui-visual-first-concept.svg",
+      "bytes": 7914,
+      "sha256": "fd7b163723e842a4e25d9048f7ea8c6f9e8d68a634f6a271c60f559d0f581de8"
+    },
+    {
+      "path": "sites/rolecraft/team/ui-visual-first-qa-preview.png",
+      "bytes": 137308,
+      "sha256": "195af787ee76e27caff46a3600a8099e7cb0eeaa48ede4b1712499ae3e0ddb81"
+    }
+  ],
+  "defects": [
+    {
+      "id": "QA-VF-BIND01",
+      "status": "closed",
+      "original": "设计复盘产品来源hash为b8a235c3f849ddfea40524faa6d2642dff619d26fc7c2c273b73b135ced090f0；产品末自查已更新，当前实际a5c0223018ce3ee41b04490a746436cef21e2cc879928c2fd5233d0ba8a0d390",
+      "cause": "产品最后自查定稿产生版本变化；不归为应用运行缺陷",
+      "owner": "设计师",
+      "repair": "作者重读产品定稿并更新复盘来源hash及合同语义快核记录；SVG不变",
+      "original_retest": "同一路径产品最终SHA256重算，实际与设计复盘声明一致，最终复盘b9570b214c7cb739091c4fc2bc54fab0877653ed5fa389a9bd07260a9a2c39e9"
+    }
+  ],
+  "not_covered": [
+    {
+      "item": "全部页面/五入口及多前置、澄清、未覆盖、无关、不可用/失败完整视觉稿",
+      "status": "not_delivered_in_this_concept",
+      "owner": "设计师"
+    },
+    {
+      "item": "当前应用真实点击/等待/恢复/定位/不抢焦点、响应式、键盘/辅助技术与动态状态",
+      "status": "not_tested_this_round",
+      "owner": "软件工程师/测试工程师"
+    },
+    {
+      "item": "真实用户能否理解程序意图和用户认可",
+      "status": "insufficient",
+      "owner": "用户研究员/产品经理"
+    },
+    {
+      "item": "完整职业培养与行业先进目标",
+      "status": "not_met",
+      "owner": "原八门槛领域责任人"
+    }
+  ],
+  "original_gate_ids_and_standards_changed": false,
+  "full_goal_evidence_basis": "当前原八门槛及textbook-v12-product-assessment.json/最新有效项目记录仍缺真人用户、专家、学员作品/陌生任务、行业比较、真实生成、正式生产与经济性；本轮不重审或关闭这些门槛",
+  "writes": "仅QA.md/.json及PM追加授权的由定稿SVG派生QA预览PNG；不改作者设计源/产品或保护文件"
+}

@@ -1,0 +1,47 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4486/#questions/Q10".
+1 AXWebArea 职造 · Agent 学习工作台, URL: 127.0.0.1:4486/#questions/Q10
+	2 link Description: 跳到主要内容, Value: 127.0.0.1:4486/#main-content
+	3 container primary-sidebar
+		4 link Description: 职 职造 Agent 开发学习, Value: 127.0.0.1:4486/#home
+		5 container 主导航
+			6 button 首页
+			7 button 课程学习
+			8 button 题库浏览
+			9 button 学习记录
+			10 button 个人设置
+		11 text 当前学习方向
+		12 text Agent 开发者
+		13 link Description: 本机学习者 记录保存在此浏览器, Value: 127.0.0.1:4486/#settings
+	14 container main-content
+		15 container
+			34 text 题库浏览
+			35 text 从问题查缺，再回到教材
+		18 container app
+			36 link Description: ← 返回题库, Value: 127.0.0.1:4486/#questions
+			37 heading Q10 · 题目详情, Value: 1
+				38 text Q10 · 题目详情
+			39 text 需结合你的真实经历
+			40 heading 请用一个真实项目说明：Agent 改善了谁的什么工作，你如何证明改善成立？, Value: 2
+				41 text 请用一个真实项目说明：Agent 改善了谁的什么工作，你如何证明改善成立？
+			42 button (collapsed) 查看教材参考分析, Secondary Actions: Expand
+				43 text 查看教材参考分析
+			44 checkbox 未掌握, Value: 0
+			45 container
+				46 heading 关联知识点, Value: 2
+					47 text 关联知识点
+				48 link Description: 问题证据与方案意图分成两条链 未学习, Value: 127.0.0.1:4486/#learn/agent/p01-discovery/s-2f2d98b9f960?from=Q10
+				49 link Description: 预定义公平实验 而不是挑一次演示 未学习, Value: 127.0.0.1:4486/#learn/agent/p01-mvp/s-840a9096f772?from=Q10
+				50 link Description: 真实反馈改变假设 不能只变宣传 未学习, Value: 127.0.0.1:4486/#learn/agent/p01-mvp/s-8d3141dfb97f?from=Q10
+				51 link Description: 从实验走向一个独立作品 未学习, Value: 127.0.0.1:4486/#learn/agent/n10-evaluation-projects/s-caf1ec2e47ac?from=Q10
+			52 container
+				53 link Description: ← 上一题, Value: 127.0.0.1:4486/#questions/Q9
+				54 link Description: 下一题 →, Value: 127.0.0.1:4486/#questions/Q11
+		32 container
+			33 text 职造 · Agent 开发学习 教材 v12 · 本浏览器保存
+	55 container lw-find-form
+		56 text 查教材
+		57 text entry area (settable) 查教材, ID: lw-query
+		58 button 查找
+		59 button (collapsed) Description: 展开检索结果, Secondary Actions: Expand
+
+The focused UI element is 37 heading Q10 · 题目详情, Value: 1

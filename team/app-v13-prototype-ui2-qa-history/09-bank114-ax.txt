@@ -1,0 +1,1010 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4475/#questions".
+1 AXWebArea 职造 · Agent 学习工作台, URL: 127.0.0.1:4475/
+	2 link Description: 跳到主要内容, Value: 127.0.0.1:4475/
+	3 container primary-sidebar
+		4 link Description: 职 职造 Agent 开发学习, Value: 127.0.0.1:4475/
+		5 container 主导航
+			6 button 首页
+			7 button 课程学习
+			8 button 题库浏览
+			9 button 学习记录
+			10 button 个人设置
+		11 text 当前学习方向
+		12 text Agent 开发者
+		13 link Description: 本机学习者 记录保存在此浏览器, Value: 127.0.0.1:4475/
+	14 container main-content
+		15 container
+			100 text 题库浏览
+			101 text 从问题查缺，再回到教材
+		18 container app
+			102 heading 题库浏览, Value: 1
+				103 text 题库浏览
+			104 text 从问题查缺，再回到教材读懂机制
+			105 container v13-question-filters
+				106 container
+					107 text 课程
+					108 pop up button (collapsed, settable) 课程, Value: 全部课程, Secondary Actions: Expand
+						109 menu
+							110 (selected) 全部课程
+							111 认识Agent工程
+							112 基础预备
+							113 Python与模型基础
+							114 问题发现
+							115 任务验收
+							116 信任边界
+							117 外部API
+							118 模型候选
+							119 上下文、记忆与提示
+							120 方案选择
+							121 动作身份
+							122 检索证据
+							123 写工具
+							124 工具目录与MCP
+							125 持久恢复
+							126 固定流程
+							127 动态循环
+							128 规划与反思
+							129 进阶检索与摄取
+							130 图编排
+							131 多Agent与A2A
+							132 版本评价
+							133 跨场景评价与移交
+							134 MVP决定
+							135 强制安全
+							136 代码沙箱
+							137 发布回退
+							138 性能成本
+							139 运行交付
+							140 独立作品与复盘
+				141 container
+					142 text 知识点
+					143 pop up button (collapsed, settable) 知识点, Value: 全部知识点, Secondary Actions: Expand
+						144 menu
+							145 (selected) 全部知识点
+							146 认识 Agent 工程
+							147 哪些需求值得采用动态 Agent
+							148 一次任务怎样形成反馈闭环
+							149 一套可交付系统还需要哪些工程工作
+							150 从哪个起点进入实作
+							151 v12新增训练如何接到原实作
+							152 把文本输入变成可运行可判错的小程序
+							153 先做入口诊断
+							154 准备一个独立练习目录
+							155 完整短程序
+							156 顺着数据和控制流读程序
+							157 根据失败补对应基础
+							158 v12 学习衔接
+							159 让 Agent 的语言运行时与模型输出具有可解释的边界
+							160 1 对象共享必须是设计选择
+							161 2 固定工作者解决的是在途工作上限
+							162 3 LRU 容量、复杂度与权限不是同一个问题
+							163 4 从 token 到下一 token：模型在哪里获得事实
+							164 5 合法结构是消费起点
+							165 6 可运行入口与迁移练习
+							166 从真实任务取得值得解决的问题证据
+							167 问题证据与方案意图分成两条链
+							168 取得证据时 让任务过程暴露反例
+							169 基线应代表用户现在真正能选的方案
+							170 把差异写成能失败的假设
+							171 练习与参考分析
+							172 v12 学习衔接
+							173 动手前定义任务成功与合理停止
+							174 用同一份记录限制输入和结果
+							175 演算四种不同结局
+							176 分开检查产物和过程
+							177 用反例修任务记录
+							178 v12 学习衔接
+							179 分清事实资料与动作授权
+							180 攻击者能够改什么
+							181 给每种来源一个具体权限解释
+							182 检测与阻断发生在不同位置
+							183 v12 学习衔接
+							184 外部 API 请求的可判错边界
+							185 成功需要跨过四道边界
+							186 一个完整的只读适配器
+							187 让另一个开发者复现 而不是复制成功截图
+							188 何时扩展这个边界
+							189 三个推理与实作任务
+							190 v12 学习衔接
+							191 把模型响应变成经校验的业务候选
+							192 把任务状态与模型输入拆开
+							193 先定义候选 而不是要求模型“给一个可靠答案”
+							194 一次真实协议请求与完整候选闸门
+							195 三种失败需要三个不同处理
+							196 完成原目标所需的练习证据
+							197 v12 学习衔接
+							198 让跨轮上下文保留事实，让长期记忆可以被纠正
+							199 1 四种保存对象，四种生命周期
+							200 2 写入之前先确定这是什么信息
+							201 3 错误记忆要沿来源和依赖撤回
+							202 4 先过滤作用域，再召回，读回时再核一次
+							203 5 压缩的是证据投影，不是事实账本
+							204 6 Few-shot 用具体边界教模型怎样选择
+							205 7 话题切换不能继承旧任务的动作权
+							206 8 运行与作品
+							207 为一个任务选择最小可用方案 程序 单次模型 流程与动态 Agent
+							208 同一任务 四种控制权
+							209 先固定共同任务条件
+							210 三种输入暴露不同的必要性
+							211 多 Agent 的升级点是可分工 而不是人数
+							212 怎样做一个公平且能定位原因的比较
+							213 用条件做选择的练习
+							214 v12 学习衔接
+							215 在重复提议和发送中识别同一个动作
+							216 每一步由谁决定
+							217 六个名称回答六个不同问题
+							218 一次创建后的超时轨迹
+							219 调度与效果分别判断
+							220 v12 学习衔接
+							221 构造符合版本和权限的证据包
+							222 本次回答看到的是哪一个资料版本
+							223 检索策略必须按查询类型比较
+							224 把关联检查与支持判断分别建模
+							225 一个完整的过滤 排序 读回与事实支持链
+							226 无答案应能解释是哪一层缺证
+							227 做一个能定位问题的检索比较
+							228 v12 学习衔接
+							229 把模型提议变成可授权可去重的写工具
+							230 工具名与合法 JSON 都不能授执行权
+							231 一个意图 多个协议调用与发送尝试
+							232 审批绑定不可变动作 重发资格另行核对
+							233 本地事务和下游接口各承担哪一半
+							234 一个有真实效果账本的无网络替身
+							235 取舍与失效顺序
+							236 v12 学习衔接
+							237 工具增长到上百个时，怎样发现、选择并安全接入
+							238 1 工具说明必须帮助区分近邻
+							239 2 能力目录与渐进暴露
+							240 3 MCP 位于模型外部的连接层
+							241 4 Tools、Resources、Prompts 提供不同对象
+							242 5 把协议错误、业务失败和效果未知分开
+							243 6 第三方认证是独立合同
+							244 7 Tool Calling、MCP、Skills 与 A2A 如何一起使用
+							245 8 运行与作品
+							246 用持久状态保存动作事实
+							247 三个提交点定义可恢复事实
+							248 先分清调度状态与效果状态
+							249 一个可检查的存储最小实现
+							250 用一次恢复轨迹读懂提交边界
+							251 已实现的终态保证与版本变化
+							252 用故障位置验证 而不是只测正常重启
+							253 v12 学习衔接
+							254 用固定路径完成同一受控任务
+							255 完整任务与结果合同
+							256 一个固定流程的完整决策骨架
+							257 v12 学习衔接
+							258 Agent 控制循环 设计一个可恢复 受控并能验收的运行时
+							259 1 先固定完成条件 才能决定循环控制什么
+							260 2 控制权在运行时 聊天上下文只是一种投影
+							261 3 用动作账本表达进度 不要只保存聊天文本
+							262 4 提交边界决定哪些事情可以在崩溃后重做
+							263 5 完整模型输出才有资格成为执行计划
+							264 6 先核对未决动作 再让模型继续
+							265 7 审批 取消和预算都必须跨暂停保留
+							266 8 把这些约束落实到完整控制骨架
+							267 9 并发要分开处理工具依赖与运行推进权
+							268 10 用逐事件轨迹检查代码有没有兑现语义
+							269 11 成功 等待和停止必须保留不同的含义
+							270 12 选择最小足够的循环 而不是先选最复杂框架
+							271 13 观测要能重建决定 评估要有分母
+							272 14 练习 用反例检验设计判断
+							273 v12 学习衔接
+							274 让计划依据观察前进，而不是在反复规划中空转
+							275 1 三种策略改变的是控制对象
+							276 2 从验收产物倒推候选计划
+							277 3 验证计划比检查 JSON 多一层
+							278 4 重规划保留事实，失效的是依赖假设
+							279 5 用实质进展阻止“再想一次”
+							280 6 Reflection 必须提出可以失败的修正
+							281 7 从演算到作品
+							282 从原始文档到可比较的自适应检索链
+							283 1 摄取先恢复文档含义，再切块
+							284 2 增量更新是来源到块的生命周期
+							285 3 先算清向量，再选择索引
+							286 4 ANN 的误差要相对精确基线测
+							287 5 重排解决候选优先级，不解决摄取丢失
+							288 6 改写、多查询与多跳要保持原问题约束
+							289 7 固定 RAG 与 Agentic RAG 的完整对照
+							290 8 RAG、长上下文与微调按缺失能力选择
+							291 9 运行、失败轨迹与作品
+							292 把控制循环映射为可恢复的状态图
+							293 先定义状态的所有者，再画节点
+							294 一条真实框架执行路径
+							295 Checkpoint不是远端事务
+							296 子图是一份契约，不是共享所有记忆
+							297 流式输出是一串事件，不是逐字成功凭证
+							298 何时值得自研
+							299 让多个 Agent 协作而不稀释任务责任
+							300 三种协作模式改变谁持有控制权
+							301 分解任务就是定义可验收接口
+							302 分歧、缺席与预算怎样向上传播
+							303 A2A把什么放到线上契约中
+							304 与MCP、Skills和Tool Calling的边界
+							305 用证据决定是否保留多Agent
+							306 判断版本改动是否改善任务结果
+							307 把“好”拆成能被不同证据推翻的命题
+							308 案例不是问答文本 而是一份执行契约
+							309 开发 回归和保留部分控制的是信息使用
+							310 先冻结比较 再运行所有被分配的任务
+							311 一个判定器怎样拒绝把缺证当通过
+							312 Trace 用来定位因果 不能当事实数据库
+							313 模型评分器的误差需要量化到决策用途
+							314 从失败分类到一次能够关闭的回归
+							315 推理与实现练习
+							316 v12 学习衔接
+							317 用新场景、分层实验和独立移交检验工程能力
+							318 客服系统先划业务责任，不先选Agent框架
+							319 消融要回答收益来自哪里
+							320 英文正常、中文失败：找第一处证据偏离
+							321 从实验走向一个独立作品
+							322 技术移交是一次接收方实验
+							323 分层练习与参考判断
+							324 依据问题和评价证据冻结 MVP 决定
+							325 预定义公平实验 而不是挑一次演示
+							326 MVP 契约限制的是要验证的机制
+							327 架构决定要能解释放弃了什么
+							328 同一决定交给业务与技术受众
+							329 真实反馈改变假设 不能只变宣传
+							330 练习与参考分析
+							331 v12 学习衔接
+							332 在数据返回和动作发送前强制执行权限
+							333 威胁模型先确定攻击者能够改变哪一段数据
+							334 读取边界比最终答案过滤更早
+							335 内容投影需要覆盖四个通道
+							336 精确批准绑定的是一次逻辑意图
+							337 无网络替身把局部保证做完整
+							338 从局部替身走到远端 哪些保证会消失
+							339 失败顺序决定正确的补救
+							340 成对安全练习及参考分析
+							341 v12 学习衔接
+							342 把模型生成代码限制在可验证的执行边界内
+							343 直接与间接提示注入究竟跨越什么边界
+							344 一次执行有四个可信阶段
+							345 资源限制需要指定谁执行它
+							346 准入模型能验证什么，不能验证什么
+							347 代码运行与业务动作分离
+							348 验证边界要保留正常任务
+							349 发布回退时保住在途任务事实
+							350 发布对象是一组相互兼容的版本
+							351 分环境配置在启动前验证
+							352 新任务与旧任务可以走不同工作者集合
+							353 一次发布的控制路径
+							354 状态迁移比镜像回退更难
+							355 观测记录应回答哪一阶段首次偏离
+							356 可由他人执行的故障处理说明
+							357 练习与参考分析
+							358 v12 学习衔接
+							359 在质量护栏下比较性能与成本
+							360 成本归到逻辑任务 才能看见失败代价
+							361 延迟必须注明用户等到的是什么
+							362 一个不把失败和未知费用丢掉的汇总器
+							363 负载决定并发实验测到了什么
+							364 缓存应复用证据和候选 不能复用批准
+							365 模型路由改变的不只是单价
+							366 预算与限流需要一个共同执行边界
+							367 练习与参考分析
+							368 v12 学习衔接
+							369 让长任务在故障、容量和成本约束下交付
+							370 长时间研究任务要保存可继续调查的状态
+							371 部分成功之后怎样补偿
+							372 并发、超时和熔断限制不同的东西
+							373 内存持续增长应先找到持有者
+							374 本地模型与托管API比较的是交付责任
+							375 高级选读：prefill、decode与KV cache
+							376 用独立作品证据判定交付并复验改进
+							377 一个证据包应使独立者从入口走到结论
+							378 文件完整性检查不能替代证据真实性
+							379 先核具体作品 再判更大的能力范围
+							380 独立评阅按一条实际任务走完全程
+							381 真实使用与可比优势需要从作品外取得证据
+							382 一次完整复盘 写后中断变成重复工单
+							383 未知任务测的是独立判断 不是换标题
+							384 练习与参考分析
+							385 v12 学习衔接
+				386 container
+					387 text 本人标注
+					388 pop up button (collapsed, settable) 本人标注, Value: 全部状态, Secondary Actions: Expand
+						389 menu
+							390 (selected) 全部状态
+							391 未掌握
+							392 已掌握（自评）
+				393 container
+					394 text 题组
+					395 pop up button (collapsed, settable) 题组, Value: 全部题组（100 + 14）, Secondary Actions: Expand
+						396 menu
+							397 (selected) 全部题组（100 + 14）
+							398 固定100题
+							399 市场补充14题
+				400 button 应用筛选
+				401 link Description: 清除筛选, Value: 127.0.0.1:4475/
+			402 text 当前 114 题。按冻结题号排列；状态为本人自记，没有平台热度或频次排名。
+			403 container
+				404 text Q1 · 固定题组
+				405 link Description: 如何界定 LLM Agent？你会用哪些可观察行为区分它与普通聊天应用？, Value: 127.0.0.1:4475/
+				406 link Description: 认识 Agent 工程, Value: 127.0.0.1:4475/
+				407 link Description: 同一任务 四种控制权, Value: 127.0.0.1:4475/
+				408 checkbox 未掌握, Value: 0
+			409 container
+				410 text Q2 · 固定题组
+				411 link Description: 单次模型调用、固定 Workflow 和动态 Agent，分别适合什么业务条件？, Value: 127.0.0.1:4475/
+				412 link Description: 同一任务 四种控制权, Value: 127.0.0.1:4475/
+				413 checkbox 未掌握, Value: 0
+			414 container
+				415 text Q3 · 固定题组
+				416 link Description: 用户说“帮我做一个 Agent”时，你先澄清哪些需求，才能决定实现方案？, Value: 127.0.0.1:4475/
+				417 link Description: 问题证据与方案意图分成两条链, Value: 127.0.0.1:4475/
+				418 link Description: 用同一份记录限制输入和结果, Value: 127.0.0.1:4475/
+				419 link Description: 先固定共同任务条件, Value: 127.0.0.1:4475/
+				420 checkbox 未掌握, Value: 0
+			421 container
+				422 text Q4 · 固定题组
+				423 link Description: 工具调用、状态维护、规划和长期记忆，哪些取决于具体场景，并非每个 Agent 都需要？, Value: 127.0.0.1:4475/
+				424 link Description: 1 四种保存对象，四种生命周期, Value: 127.0.0.1:4475/
+				425 checkbox 未掌握, Value: 0
+			426 container
+				427 text Q5 · 固定题组
+				428 link Description: 怎样判断增加自主决策带来的收益，足以抵消不确定性与运行成本？, Value: 127.0.0.1:4475/
+				429 link Description: 怎样做一个公平且能定位原因的比较, Value: 127.0.0.1:4475/
+				430 link Description: 预定义公平实验 而不是挑一次演示, Value: 127.0.0.1:4475/
+				431 link Description: 成本归到逻辑任务 才能看见失败代价, Value: 127.0.0.1:4475/
+				432 checkbox 未掌握, Value: 0
+			433 container
+				434 text Q6 · 固定题组
+				435 link Description: 如果需求可以用 SQL、规则或传统搜索解决，你如何解释自己的技术选择？, Value: 127.0.0.1:4475/
+				436 link Description: 同一任务 四种控制权, Value: 127.0.0.1:4475/
+				437 link Description: 用条件做选择的练习, Value: 127.0.0.1:4475/
+				438 link Description: 架构决定要能解释放弃了什么, Value: 127.0.0.1:4475/
+				439 checkbox 未掌握, Value: 0
+			440 container
+				441 text Q7 · 固定题组
+				442 link Description: 单 Agent 多工具与多 Agent 协作，在架构上有什么区别？, Value: 127.0.0.1:4475/
+				443 link Description: 1 先固定完成条件 才能决定循环控制什么, Value: 127.0.0.1:4475/
+				444 link Description: 2 控制权在运行时 聊天上下文只是一种投影, Value: 127.0.0.1:4475/
+				445 link Description: 多 Agent 的升级点是可分工 而不是人数, Value: 127.0.0.1:4475/
+				446 checkbox 未掌握, Value: 0
+			447 container
+				448 text Q8 · 固定题组
+				449 link Description: 你会如何评估自研 Agent 运行时、开源框架和低代码平台？, Value: 127.0.0.1:4475/
+				450 link Description: 何时值得自研, Value: 127.0.0.1:4475/
+				451 checkbox 未掌握, Value: 0
+			452 container
+				453 text Q9 · 固定题组
+				454 link Description: 从演示原型到可交付的 Agent 服务，需要补齐哪些工程能力？, Value: 127.0.0.1:4475/
+				455 link Description: 一套可交付系统还需要哪些工程工作, Value: 127.0.0.1:4475/
+				456 link Description: 同一决定交给业务与技术受众, Value: 127.0.0.1:4475/
+				457 link Description: 一次发布的控制路径, Value: 127.0.0.1:4475/
+				458 link Description: 一个证据包应使独立者从入口走到结论, Value: 127.0.0.1:4475/
+				459 checkbox 未掌握, Value: 0
+			460 container
+				461 text Q10 · 固定题组
+				462 link Description: 请用一个真实项目说明：Agent 改善了谁的什么工作，你如何证明改善成立？, Value: 127.0.0.1:4475/
+				463 link Description: 问题证据与方案意图分成两条链, Value: 127.0.0.1:4475/
+				464 link Description: 预定义公平实验 而不是挑一次演示, Value: 127.0.0.1:4475/
+				465 link Description: 真实反馈改变假设 不能只变宣传, Value: 127.0.0.1:4475/
+				466 link Description: 从实验走向一个独立作品, Value: 127.0.0.1:4475/
+				467 checkbox 未掌握, Value: 0
+			468 container
+				469 text Q11 · 固定题组
+				470 link Description: ReAct 如何组织推理、行动与观察？它与一次性生成计划有什么不同？, Value: 127.0.0.1:4475/
+				471 link Description: 1 三种策略改变的是控制对象, Value: 127.0.0.1:4475/
+				472 checkbox 未掌握, Value: 0
+			473 container
+				474 text Q12 · 固定题组
+				475 link Description: ReAct、Plan-and-Execute 和固定状态机，你会如何按任务特征选择？, Value: 127.0.0.1:4475/
+				476 link Description: 1 三种策略改变的是控制对象, Value: 127.0.0.1:4475/
+				477 checkbox 未掌握, Value: 0
+			478 container
+				479 text Q13 · 固定题组
+				480 link Description: 不依赖现成框架，手写一个最小 Agent 控制循环，需要哪些状态和分支？, Value: 127.0.0.1:4475/
+				481 link Description: 2 控制权在运行时 聊天上下文只是一种投影, Value: 127.0.0.1:4475/
+				482 link Description: 8 把这些约束落实到完整控制骨架, Value: 127.0.0.1:4475/
+				483 link Description: 11 成功 等待和停止必须保留不同的含义, Value: 127.0.0.1:4475/
+				484 checkbox 未掌握, Value: 0
+			485 container
+				486 text Q14 · 固定题组
+				487 link Description: 如何区分“模型宣布完成”和“任务实际上完成”？, Value: 127.0.0.1:4475/
+				488 link Description: 1 先固定完成条件 才能决定循环控制什么, Value: 127.0.0.1:4475/
+				489 link Description: 10 用逐事件轨迹检查代码有没有兑现语义, Value: 127.0.0.1:4475/
+				490 link Description: 11 成功 等待和停止必须保留不同的含义, Value: 127.0.0.1:4475/
+				491 checkbox 未掌握, Value: 0
+			492 container
+				493 text Q15 · 固定题组
+				494 link Description: 怎样设置最大步数、时间和费用限制，同时避免过早中止任务？, Value: 127.0.0.1:4475/
+				495 link Description: 7 审批 取消和预算都必须跨暂停保留, Value: 127.0.0.1:4475/
+				496 link Description: 11 成功 等待和停止必须保留不同的含义, Value: 127.0.0.1:4475/
+				497 checkbox 未掌握, Value: 0
+			498 container
+				499 text Q16 · 固定题组
+				500 link Description: 面对带前置依赖的复杂任务，如何生成和验证可执行计划？, Value: 127.0.0.1:4475/
+				501 link Description: 2 从验收产物倒推候选计划, Value: 127.0.0.1:4475/
+				502 checkbox 未掌握, Value: 0
+			503 container
+				504 text Q17 · 固定题组
+				505 link Description: 什么信号应触发 Replanning？如何避免反复改计划却没有实际进展？, Value: 127.0.0.1:4475/
+				506 link Description: 4 重规划保留事实，失效的是依赖假设, Value: 127.0.0.1:4475/
+				507 checkbox 未掌握, Value: 0
+			508 container
+				509 text Q18 · 固定题组
+				510 link Description: Reflection 或自我纠错在哪些情况下有帮助，又可能怎样放大原始错误？, Value: 127.0.0.1:4475/
+				511 link Description: 6 Reflection 必须提出可以失败的修正, Value: 127.0.0.1:4475/
+				512 checkbox 未掌握, Value: 0
+			513 container
+				514 text Q19 · 固定题组
+				515 link Description: 工具结果与原计划冲突时，运行时应该如何更新状态和后续决策？, Value: 127.0.0.1:4475/
+				516 link Description: 5 完整模型输出才有资格成为执行计划, Value: 127.0.0.1:4475/
+				517 link Description: 8 把这些约束落实到完整控制骨架, Value: 127.0.0.1:4475/
+				518 link Description: 10 用逐事件轨迹检查代码有没有兑现语义, Value: 127.0.0.1:4475/
+				519 link Description: 4 重规划保留事实，失效的是依赖假设, Value: 127.0.0.1:4475/
+				520 checkbox 未掌握, Value: 0
+			521 container
+				522 text Q20 · 固定题组
+				523 link Description: 如何识别和处理重复动作、无效搜索以及循环卡死？, Value: 127.0.0.1:4475/
+				524 link Description: 3 用动作账本表达进度 不要只保存聊天文本, Value: 127.0.0.1:4475/
+				525 link Description: 一次任务怎样形成反馈闭环, Value: 127.0.0.1:4475/
+				526 link Description: 10 用逐事件轨迹检查代码有没有兑现语义, Value: 127.0.0.1:4475/
+				527 link Description: 7 审批 取消和预算都必须跨暂停保留, Value: 127.0.0.1:4475/
+				528 link Description: 5 用实质进展阻止“再想一次”, Value: 127.0.0.1:4475/
+				529 checkbox 未掌握, Value: 0
+			530 container
+				531 text Q21 · 固定题组
+				532 link Description: Function Calling 从模型输出到函数真正执行，中间经过哪些步骤？, Value: 127.0.0.1:4475/
+				533 link Description: 工具名与合法 JSON 都不能授执行权, Value: 127.0.0.1:4475/
+				534 link Description: 5 完整模型输出才有资格成为执行计划, Value: 127.0.0.1:4475/
+				535 link Description: 3 用动作账本表达进度 不要只保存聊天文本, Value: 127.0.0.1:4475/
+				536 checkbox 未掌握, Value: 0
+			537 container
+				538 text Q22 · 固定题组
+				539 link Description: 如何设计工具名称、描述和参数 Schema，减少错选工具与错误参数？, Value: 127.0.0.1:4475/
+				540 link Description: 1 工具说明必须帮助区分近邻, Value: 127.0.0.1:4475/
+				541 checkbox 未掌握, Value: 0
+			542 container
+				543 text Q23 · 固定题组
+				544 link Description: 工具参数的 JSON 格式正确，为什么不等于调用安全、业务合法？, Value: 127.0.0.1:4475/
+				545 link Description: 工具名与合法 JSON 都不能授执行权, Value: 127.0.0.1:4475/
+				546 link Description: 先定义候选 而不是要求模型“给一个可靠答案”, Value: 127.0.0.1:4475/
+				547 link Description: 读取边界比最终答案过滤更早, Value: 127.0.0.1:4475/
+				548 checkbox 未掌握, Value: 0
+			549 container
+				550 text Q24 · 固定题组
+				551 link Description: 工具数量达到数百个时，怎样降低选择错误和上下文负担？, Value: 127.0.0.1:4475/
+				552 link Description: 2 能力目录与渐进暴露, Value: 127.0.0.1:4475/
+				553 checkbox 未掌握, Value: 0
+			554 container
+				555 text Q25 · 固定题组
+				556 link Description: 工具超时、限流、参数错误和业务拒绝，应采用同一种重试策略吗？, Value: 127.0.0.1:4475/
+				557 link Description: 成功需要跨过四道边界, Value: 127.0.0.1:4475/
+				558 link Description: 三种失败需要三个不同处理, Value: 127.0.0.1:4475/
+				559 link Description: 6 先核对未决动作 再让模型继续, Value: 127.0.0.1:4475/
+				560 link Description: 9 并发要分开处理工具依赖与运行推进权, Value: 127.0.0.1:4475/
+				561 checkbox 未掌握, Value: 0
+			562 container
+				563 text Q26 · 固定题组
+				564 link Description: 对可能产生外部副作用的工具，如何防止重试导致重复执行？, Value: 127.0.0.1:4475/
+				565 link Description: 一个意图 多个协议调用与发送尝试, Value: 127.0.0.1:4475/
+				566 link Description: 6 先核对未决动作 再让模型继续, Value: 127.0.0.1:4475/
+				567 link Description: 10 用逐事件轨迹检查代码有没有兑现语义, Value: 127.0.0.1:4475/
+				568 checkbox 未掌握, Value: 0
+			569 container
+				570 text Q27 · 固定题组
+				571 link Description: MCP 解决哪一层集成问题？它与模型的 Tool Calling 有什么关系？, Value: 127.0.0.1:4475/
+				572 link Description: 3 MCP 位于模型外部的连接层, Value: 127.0.0.1:4475/
+				573 checkbox 未掌握, Value: 0
+			574 container
+				575 text Q28 · 固定题组
+				576 link Description: MCP 中的 Tools、Resources 和 Prompts，各自适合表达什么能力？, Value: 127.0.0.1:4475/
+				577 link Description: 4 Tools、Resources、Prompts 提供不同对象, Value: 127.0.0.1:4475/
+				578 checkbox 未掌握, Value: 0
+			579 container
+				580 text Q29 · 固定题组
+				581 link Description: 接入第三方工具服务时，如何处理认证、权限、版本与错误契约？, Value: 127.0.0.1:4475/
+				582 link Description: 5 把协议错误、业务失败和效果未知分开, Value: 127.0.0.1:4475/
+				583 link Description: 3 MCP 位于模型外部的连接层, Value: 127.0.0.1:4475/
+				584 checkbox 未掌握, Value: 0
+			585 container
+				586 text Q30 · 固定题组
+				587 link Description: Tool Calling、MCP、Agent Skills（可复用技能说明与资源包）和 A2A，分别解决什么问题？, Value: 127.0.0.1:4475/
+				588 link Description: 7 Tool Calling、MCP、Skills 与 A2A 如何一起使用, Value: 127.0.0.1:4475/
+				589 checkbox 未掌握, Value: 0
+			590 container
+				591 text Q31 · 固定题组
+				592 link Description: 会话历史、任务工作状态和长期记忆有什么不同？应分别存储什么？, Value: 127.0.0.1:4475/
+				593 link Description: 1 四种保存对象，四种生命周期, Value: 127.0.0.1:4475/
+				594 checkbox 未掌握, Value: 0
+			595 container
+				596 text Q32 · 固定题组
+				597 link Description: 上下文不足时，如何在截断、摘要、检索和外部状态之间选择？, Value: 127.0.0.1:4475/
+				598 link Description: 把任务状态与模型输入拆开, Value: 127.0.0.1:4475/
+				599 link Description: 2 控制权在运行时 聊天上下文只是一种投影, Value: 127.0.0.1:4475/
+				600 link Description: 5 压缩的是证据投影，不是事实账本, Value: 127.0.0.1:4475/
+				601 checkbox 未掌握, Value: 0
+			602 container
+				603 text Q33 · 固定题组
+				604 link Description: 摘要压缩如何避免丢失用户约束、未完成事项和关键事实？, Value: 127.0.0.1:4475/
+				605 link Description: 2 控制权在运行时 聊天上下文只是一种投影, Value: 127.0.0.1:4475/
+				606 link Description: 把任务状态与模型输入拆开, Value: 127.0.0.1:4475/
+				607 link Description: 完成原目标所需的练习证据, Value: 127.0.0.1:4475/
+				608 link Description: 5 压缩的是证据投影，不是事实账本, Value: 127.0.0.1:4475/
+				609 checkbox 未掌握, Value: 0
+			610 container
+				611 text Q34 · 固定题组
+				612 link Description: 长期记忆应该在什么条件下写入、更新、合并或删除？, Value: 127.0.0.1:4475/
+				613 link Description: 2 写入之前先确定这是什么信息, Value: 127.0.0.1:4475/
+				614 link Description: 3 错误记忆要沿来源和依赖撤回, Value: 127.0.0.1:4475/
+				615 checkbox 未掌握, Value: 0
+			616 container
+				617 text Q35 · 固定题组
+				618 link Description: 如何发现错误记忆对后续任务的持续污染，并修正受影响结果？, Value: 127.0.0.1:4475/
+				619 link Description: 3 错误记忆要沿来源和依赖撤回, Value: 127.0.0.1:4475/
+				620 checkbox 未掌握, Value: 0
+			621 container
+				622 text Q36 · 固定题组
+				623 link Description: 如何隔离不同用户、组织和会话的记忆？, Value: 127.0.0.1:4475/
+				624 link Description: 4 先过滤作用域，再召回，读回时再核一次, Value: 127.0.0.1:4475/
+				625 checkbox 未掌握, Value: 0
+			626 container
+				627 text Q37 · 固定题组
+				628 link Description: 检索材料、历史记忆与当前用户要求相冲突时，应如何处理？, Value: 127.0.0.1:4475/
+				629 link Description: 4 先过滤作用域，再召回，读回时再核一次, Value: 127.0.0.1:4475/
+				630 link Description: 2 写入之前先确定这是什么信息, Value: 127.0.0.1:4475/
+				631 checkbox 未掌握, Value: 0
+			632 container
+				633 text Q38 · 固定题组
+				634 link Description: 如何设计系统提示，使角色、工具使用规则和输出要求清晰而可测试？, Value: 127.0.0.1:4475/
+				635 link Description: 6 Few-shot 用具体边界教模型怎样选择, Value: 127.0.0.1:4475/
+				636 checkbox 未掌握, Value: 0
+			637 container
+				638 text Q39 · 固定题组
+				639 link Description: Few-shot 示例如何帮助工具选择？示例过多或失真会带来什么问题？, Value: 127.0.0.1:4475/
+				640 link Description: 6 Few-shot 用具体边界教模型怎样选择, Value: 127.0.0.1:4475/
+				641 checkbox 未掌握, Value: 0
+			642 container
+				643 text Q40 · 固定题组
+				644 link Description: 如何验证一次提示或记忆策略调整确实改善了结果，而非只修好几个演示样例？, Value: 127.0.0.1:4475/
+				645 link Description: 开发 回归和保留部分控制的是信息使用, Value: 127.0.0.1:4475/
+				646 link Description: 从失败分类到一次能够关闭的回归, Value: 127.0.0.1:4475/
+				647 checkbox 未掌握, Value: 0
+			648 container
+				649 text Q41 · 固定题组
+				650 link Description: RAG、长上下文直接阅读和模型微调，分别适合解决哪些知识问题？, Value: 127.0.0.1:4475/
+				651 link Description: 8 RAG、长上下文与微调按缺失能力选择, Value: 127.0.0.1:4475/
+				652 checkbox 未掌握, Value: 0
+			653 container
+				654 text Q42 · 固定题组
+				655 link Description: 一个完整 RAG 管线包含哪些环节？如何逐段定位回答错误？, Value: 127.0.0.1:4475/
+				656 link Description: 本次回答看到的是哪一个资料版本, Value: 127.0.0.1:4475/
+				657 link Description: 无答案应能解释是哪一层缺证, Value: 127.0.0.1:4475/
+				658 link Description: 先定义候选 而不是要求模型“给一个可靠答案”, Value: 127.0.0.1:4475/
+				659 checkbox 未掌握, Value: 0
+			660 container
+				661 text Q43 · 固定题组
+				662 link Description: 如何根据文档结构、查询类型和引用需求设计切块策略？, Value: 127.0.0.1:4475/
+				663 link Description: 本次回答看到的是哪一个资料版本, Value: 127.0.0.1:4475/
+				664 link Description: 做一个能定位问题的检索比较, Value: 127.0.0.1:4475/
+				665 link Description: 1 摄取先恢复文档含义，再切块, Value: 127.0.0.1:4475/
+				666 checkbox 未掌握, Value: 0
+			667 container
+				668 text Q44 · 固定题组
+				669 link Description: 如何选择 Embedding 模型，评估领域术语、中文与多语言查询效果？, Value: 127.0.0.1:4475/
+				670 link Description: 3 先算清向量，再选择索引, Value: 127.0.0.1:4475/
+				671 checkbox 未掌握, Value: 0
+			672 container
+				673 text Q45 · 固定题组
+				674 link Description: 关键词检索、向量检索和混合检索分别有什么优势与盲区？, Value: 127.0.0.1:4475/
+				675 link Description: 检索策略必须按查询类型比较, Value: 127.0.0.1:4475/
+				676 link Description: 做一个能定位问题的检索比较, Value: 127.0.0.1:4475/
+				677 checkbox 未掌握, Value: 0
+			678 container
+				679 text Q46 · 固定题组
+				680 link Description: Reranker 改善的是哪一阶段？怎样衡量它带来的质量与时延代价？, Value: 127.0.0.1:4475/
+				681 link Description: 5 重排解决候选优先级，不解决摄取丢失, Value: 127.0.0.1:4475/
+				682 checkbox 未掌握, Value: 0
+			683 container
+				684 text Q47 · 固定题组
+				685 link Description: 查询改写、多查询和多跳检索什么时候有效，什么时候容易改变原意？, Value: 127.0.0.1:4475/
+				686 link Description: 6 改写、多查询与多跳要保持原问题约束, Value: 127.0.0.1:4475/
+				687 checkbox 未掌握, Value: 0
+			688 container
+				689 text Q48 · 固定题组
+				690 link Description: 如何让答案引用与实际支持结论的原文、版本及位置对应？, Value: 127.0.0.1:4475/
+				691 link Description: 本次回答看到的是哪一个资料版本, Value: 127.0.0.1:4475/
+				692 link Description: 把关联检查与支持判断分别建模, Value: 127.0.0.1:4475/
+				693 link Description: 一个完整的过滤 排序 读回与事实支持链, Value: 127.0.0.1:4475/
+				694 checkbox 未掌握, Value: 0
+			695 container
+				696 text Q49 · 固定题组
+				697 link Description: 没有足够证据、资料互相矛盾或知识已经过期时，系统应怎样响应？, Value: 127.0.0.1:4475/
+				698 link Description: 无答案应能解释是哪一层缺证, Value: 127.0.0.1:4475/
+				699 link Description: 三种输入暴露不同的必要性, Value: 127.0.0.1:4475/
+				700 checkbox 未掌握, Value: 0
+			701 container
+				702 text Q50 · 固定题组
+				703 link Description: Agentic RAG 相对固定 RAG 增加了什么决策能力？如何证明额外复杂度值得？, Value: 127.0.0.1:4475/
+				704 link Description: 7 固定 RAG 与 Agentic RAG 的完整对照, Value: 127.0.0.1:4475/
+				705 checkbox 未掌握, Value: 0
+			706 container
+				707 text Q51 · 固定题组
+				708 link Description: 在你采用的版本中，LangChain 和 LangGraph 分别承担什么职责？, Value: 127.0.0.1:4475/
+				709 link Description: 把控制循环映射为可恢复的状态图, Value: 127.0.0.1:4475/
+				710 checkbox 未掌握, Value: 0
+			711 container
+				712 text Q52 · 固定题组
+				713 link Description: 用图表示 Agent 时，节点、边和共享状态分别应该包含什么？, Value: 127.0.0.1:4475/
+				714 link Description: 先定义状态的所有者，再画节点, Value: 127.0.0.1:4475/
+				715 checkbox 未掌握, Value: 0
+			716 container
+				717 text Q53 · 固定题组
+				718 link Description: 状态字段应如何建模，避免把全部消息和中间数据无限累积？, Value: 127.0.0.1:4475/
+				719 link Description: 1 四种保存对象，四种生命周期, Value: 127.0.0.1:4475/
+				720 link Description: 5 压缩的是证据投影，不是事实账本, Value: 127.0.0.1:4475/
+				721 checkbox 未掌握, Value: 0
+			722 container
+				723 text Q54 · 固定题组
+				724 link Description: 并行节点同时更新状态时，如何处理合并规则和写入冲突？, Value: 127.0.0.1:4475/
+				725 link Description: 先定义状态的所有者，再画节点, Value: 127.0.0.1:4475/
+				726 checkbox 未掌握, Value: 0
+			727 container
+				728 text Q55 · 固定题组
+				729 link Description: 条件路由由规则决定还是由模型决定，各有什么适用场景？, Value: 127.0.0.1:4475/
+				730 link Description: 同一任务 四种控制权, Value: 127.0.0.1:4475/
+				731 link Description: 三种输入暴露不同的必要性, Value: 127.0.0.1:4475/
+				732 link Description: 一条真实框架执行路径, Value: 127.0.0.1:4475/
+				733 checkbox 未掌握, Value: 0
+			734 container
+				735 text Q56 · 固定题组
+				736 link Description: Checkpoint 应保存什么，才能支持失败恢复与人工介入？, Value: 127.0.0.1:4475/
+				737 link Description: 三个提交点定义可恢复事实, Value: 127.0.0.1:4475/
+				738 link Description: 2 控制权在运行时 聊天上下文只是一种投影, Value: 127.0.0.1:4475/
+				739 link Description: Checkpoint不是远端事务, Value: 127.0.0.1:4475/
+				740 checkbox 未掌握, Value: 0
+			741 container
+				742 text Q57 · 固定题组
+				743 link Description: 恢复执行时，如何保证已经完成的外部操作不会再次产生副作用？, Value: 127.0.0.1:4475/
+				744 link Description: 6 先核对未决动作 再让模型继续, Value: 127.0.0.1:4475/
+				745 link Description: 用一次恢复轨迹读懂提交边界, Value: 127.0.0.1:4475/
+				746 link Description: Checkpoint不是远端事务, Value: 127.0.0.1:4475/
+				747 checkbox 未掌握, Value: 0
+			748 container
+				749 text Q58 · 固定题组
+				750 link Description: 子图怎样封装独立任务？父图与子图之间如何交接状态？, Value: 127.0.0.1:4475/
+				751 link Description: 子图是一份契约，不是共享所有记忆, Value: 127.0.0.1:4475/
+				752 checkbox 未掌握, Value: 0
+			753 container
+				754 text Q59 · 固定题组
+				755 link Description: 流式输出怎样区分文本、工具进度、暂停、错误和最终结果？, Value: 127.0.0.1:4475/
+				756 link Description: 流式输出是一串事件，不是逐字成功凭证, Value: 127.0.0.1:4475/
+				757 checkbox 未掌握, Value: 0
+			758 container
+				759 text Q60 · 固定题组
+				760 link Description: 如果去掉 LangGraph，你如何实现等价的状态机，并说明取舍？, Value: 127.0.0.1:4475/
+				761 link Description: 何时值得自研, Value: 127.0.0.1:4475/
+				762 checkbox 未掌握, Value: 0
+			763 container
+				764 text Q61 · 固定题组
+				765 link Description: 什么实验或业务证据会使你选择多 Agent，而不是给单 Agent 增加工具或步骤？, Value: 127.0.0.1:4475/
+				766 link Description: 多 Agent 的升级点是可分工 而不是人数, Value: 127.0.0.1:4475/
+				767 link Description: 怎样做一个公平且能定位原因的比较, Value: 127.0.0.1:4475/
+				768 checkbox 未掌握, Value: 0
+			769 container
+				770 text Q62 · 固定题组
+				771 link Description: Supervisor、交接式协作和共享讨论，分别适合什么任务？, Value: 127.0.0.1:4475/
+				772 link Description: 三种协作模式改变谁持有控制权, Value: 127.0.0.1:4475/
+				773 checkbox 未掌握, Value: 0
+			774 container
+				775 text Q63 · 固定题组
+				776 link Description: 如何定义各 Agent 的输入、输出、职责边界和完成条件？, Value: 127.0.0.1:4475/
+				777 link Description: 多 Agent 的升级点是可分工 而不是人数, Value: 127.0.0.1:4475/
+				778 link Description: 分解任务就是定义可验收接口, Value: 127.0.0.1:4475/
+				779 checkbox 未掌握, Value: 0
+			780 container
+				781 text Q64 · 固定题组
+				782 link Description: 如何把任务拆成可以并行的部分，并保留必要的依赖顺序？, Value: 127.0.0.1:4475/
+				783 link Description: 多 Agent 的升级点是可分工 而不是人数, Value: 127.0.0.1:4475/
+				784 link Description: 9 并发要分开处理工具依赖与运行推进权, Value: 127.0.0.1:4475/
+				785 checkbox 未掌握, Value: 0
+			786 container
+				787 text Q65 · 固定题组
+				788 link Description: 多 Agent 应共享完整上下文，还是只传递必要材料？怎样判断？, Value: 127.0.0.1:4475/
+				789 link Description: 分解任务就是定义可验收接口, Value: 127.0.0.1:4475/
+				790 checkbox 未掌握, Value: 0
+			791 container
+				792 text Q66 · 固定题组
+				793 link Description: 子 Agent 返回互相矛盾的结果时，协调者应如何处理？, Value: 127.0.0.1:4475/
+				794 link Description: 三种输入暴露不同的必要性, Value: 127.0.0.1:4475/
+				795 link Description: 多 Agent 的升级点是可分工 而不是人数, Value: 127.0.0.1:4475/
+				796 link Description: 用条件做选择的练习, Value: 127.0.0.1:4475/
+				797 checkbox 未掌握, Value: 0
+			798 container
+				799 text Q67 · 固定题组
+				800 link Description: 如何防止子 Agent 的错误结论在汇总过程中变成“已验证事实”？, Value: 127.0.0.1:4475/
+				801 link Description: 多 Agent 的升级点是可分工 而不是人数, Value: 127.0.0.1:4475/
+				802 link Description: 把关联检查与支持判断分别建模, Value: 127.0.0.1:4475/
+				803 checkbox 未掌握, Value: 0
+			804 container
+				805 text Q68 · 固定题组
+				806 link Description: 某个子 Agent 超时或失败时，整体任务应等待、重分派还是部分交付？, Value: 127.0.0.1:4475/
+				807 link Description: 分歧、缺席与预算怎样向上传播, Value: 127.0.0.1:4475/
+				808 checkbox 未掌握, Value: 0
+			809 container
+				810 text Q69 · 固定题组
+				811 link Description: 多 Agent 的通信次数、费用和时延怎样纳入统一预算？, Value: 127.0.0.1:4475/
+				812 link Description: 多 Agent 的升级点是可分工 而不是人数, Value: 127.0.0.1:4475/
+				813 link Description: 成本归到逻辑任务 才能看见失败代价, Value: 127.0.0.1:4475/
+				814 link Description: 预算与限流需要一个共同执行边界, Value: 127.0.0.1:4475/
+				815 link Description: 分歧、缺席与预算怎样向上传播, Value: 127.0.0.1:4475/
+				816 checkbox 未掌握, Value: 0
+			817 container
+				818 text Q70 · 固定题组
+				819 link Description: A2A 与应用内部的多 Agent 编排有何区别？跨系统任务交接需要哪些契约？, Value: 127.0.0.1:4475/
+				820 link Description: A2A把什么放到线上契约中, Value: 127.0.0.1:4475/
+				821 checkbox 未掌握, Value: 0
+			822 container
+				823 text Q71 · 固定题组
+				824 link Description: 如何定义 Agent 的任务成功率，避免把“生成了回答”当成任务成功？, Value: 127.0.0.1:4475/
+				825 link Description: 把“好”拆成能被不同证据推翻的命题, Value: 127.0.0.1:4475/
+				826 link Description: 先冻结比较 再运行所有被分配的任务, Value: 127.0.0.1:4475/
+				827 link Description: 一个判定器怎样拒绝把缺证当通过, Value: 127.0.0.1:4475/
+				828 checkbox 未掌握, Value: 0
+			829 container
+				830 text Q72 · 固定题组
+				831 link Description: 最终结果评测和执行轨迹评测分别能够发现什么问题？, Value: 127.0.0.1:4475/
+				832 link Description: 把“好”拆成能被不同证据推翻的命题, Value: 127.0.0.1:4475/
+				833 link Description: Trace 用来定位因果 不能当事实数据库, Value: 127.0.0.1:4475/
+				834 checkbox 未掌握, Value: 0
+			835 container
+				836 text Q73 · 固定题组
+				837 link Description: 如何构建包含正常、边界、歧义、失败和恶意输入的评测集？, Value: 127.0.0.1:4475/
+				838 link Description: 案例不是问答文本 而是一份执行契约, Value: 127.0.0.1:4475/
+				839 link Description: 开发 回归和保留部分控制的是信息使用, Value: 127.0.0.1:4475/
+				840 link Description: 精确批准绑定的是一次逻辑意图, Value: 127.0.0.1:4475/
+				841 link Description: 成对安全练习及参考分析, Value: 127.0.0.1:4475/
+				842 checkbox 未掌握, Value: 0
+			843 container
+				844 text Q74 · 固定题组
+				845 link Description: 如何区分检索失败、规划失败、工具失败和最终表达失败？, Value: 127.0.0.1:4475/
+				846 link Description: Trace 用来定位因果 不能当事实数据库, Value: 127.0.0.1:4475/
+				847 link Description: 检索策略必须按查询类型比较, Value: 127.0.0.1:4475/
+				848 link Description: 观测记录应回答哪一阶段首次偏离, Value: 127.0.0.1:4475/
+				849 checkbox 未掌握, Value: 0
+			850 container
+				851 text Q75 · 固定题组
+				852 link Description: 如何使用 LLM-as-a-Judge，并控制评判偏差及与人工结论的不一致？, Value: 127.0.0.1:4475/
+				853 link Description: 模型评分器的误差需要量化到决策用途, Value: 127.0.0.1:4475/
+				854 checkbox 未掌握, Value: 0
+			855 container
+				856 text Q76 · 固定题组
+				857 link Description: 同一个任务多次运行结果不同，应该怎样报告成功率与稳定性？, Value: 127.0.0.1:4475/
+				858 link Description: 先冻结比较 再运行所有被分配的任务, Value: 127.0.0.1:4475/
+				859 checkbox 未掌握, Value: 0
+			860 container
+				861 text Q77 · 固定题组
+				862 link Description: 一条 Agent Trace 应记录什么，才能定位问题且避免泄露敏感信息？, Value: 127.0.0.1:4475/
+				863 link Description: Trace 用来定位因果 不能当事实数据库, Value: 127.0.0.1:4475/
+				864 link Description: 观测记录应回答哪一阶段首次偏离, Value: 127.0.0.1:4475/
+				865 link Description: 内容投影需要覆盖四个通道, Value: 127.0.0.1:4475/
+				866 checkbox 未掌握, Value: 0
+			867 container
+				868 text Q78 · 固定题组
+				869 link Description: 如何设计模型、工具和检索组件的消融实验？, Value: 127.0.0.1:4475/
+				870 link Description: 消融要回答收益来自哪里, Value: 127.0.0.1:4475/
+				871 checkbox 未掌握, Value: 0
+			872 container
+				873 text Q79 · 固定题组
+				874 link Description: 模型、提示、工具或知识库升级后，如何判断新版本能否发布？, Value: 127.0.0.1:4475/
+				875 link Description: 先冻结比较 再运行所有被分配的任务, Value: 127.0.0.1:4475/
+				876 link Description: 从失败分类到一次能够关闭的回归, Value: 127.0.0.1:4475/
+				877 link Description: 发布对象是一组相互兼容的版本, Value: 127.0.0.1:4475/
+				878 link Description: 一次发布的控制路径, Value: 127.0.0.1:4475/
+				879 checkbox 未掌握, Value: 0
+			880 container
+				881 text Q80 · 固定题组
+				882 link Description: 用户报告一个偶发失败，但你本地无法复现，下一步怎么调查？, Value: 127.0.0.1:4475/
+				883 link Description: 从失败分类到一次能够关闭的回归, Value: 127.0.0.1:4475/
+				884 link Description: 先冻结比较 再运行所有被分配的任务, Value: 127.0.0.1:4475/
+				885 link Description: 观测记录应回答哪一阶段首次偏离, Value: 127.0.0.1:4475/
+				886 link Description: 独立评阅按一条实际任务走完全程, Value: 127.0.0.1:4475/
+				887 checkbox 未掌握, Value: 0
+			888 container
+				889 text Q81 · 固定题组
+				890 link Description: 直接提示注入和来自网页、文档或工具结果的间接注入，有什么不同？, Value: 127.0.0.1:4475/
+				891 link Description: 直接与间接提示注入究竟跨越什么边界, Value: 127.0.0.1:4475/
+				892 checkbox 未掌握, Value: 0
+			893 container
+				894 text Q82 · 固定题组
+				895 link Description: Agent 为什么不能仅靠系统提示保证工具权限与数据安全？, Value: 127.0.0.1:4475/
+				896 link Description: 在数据返回和动作发送前强制执行权限, Value: 127.0.0.1:4475/
+				897 link Description: 威胁模型先确定攻击者能够改变哪一段数据, Value: 127.0.0.1:4475/
+				898 link Description: 读取边界比最终答案过滤更早, Value: 127.0.0.1:4475/
+				899 checkbox 未掌握, Value: 0
+			900 container
+				901 text Q83 · 固定题组
+				902 link Description: 如何让工具执行权限与当前用户身份、资源归属和操作范围一致？, Value: 127.0.0.1:4475/
+				903 link Description: 读取边界比最终答案过滤更早, Value: 127.0.0.1:4475/
+				904 checkbox 未掌握, Value: 0
+			905 container
+				906 text Q84 · 固定题组
+				907 link Description: 高风险操作的人类确认应展示什么，才能构成有意义的批准？, Value: 127.0.0.1:4475/
+				908 link Description: 精确批准绑定的是一次逻辑意图, Value: 127.0.0.1:4475/
+				909 checkbox 未掌握, Value: 0
+			910 container
+				911 text Q85 · 固定题组
+				912 link Description: 如何防止确认后参数被修改，或一次确认被用于后续不同操作？, Value: 127.0.0.1:4475/
+				913 link Description: 精确批准绑定的是一次逻辑意图, Value: 127.0.0.1:4475/
+				914 checkbox 未掌握, Value: 0
+			915 container
+				916 text Q86 · 固定题组
+				917 link Description: 执行模型生成代码时，沙箱应限制哪些资源与外部访问？, Value: 127.0.0.1:4475/
+				918 link Description: 资源限制需要指定谁执行它, Value: 127.0.0.1:4475/
+				919 link Description: 准入模型能验证什么，不能验证什么, Value: 127.0.0.1:4475/
+				920 checkbox 未掌握, Value: 0
+			921 container
+				922 text Q87 · 固定题组
+				923 link Description: 如何防止检索内容、日志和错误消息泄露跨租户资料或密钥？, Value: 127.0.0.1:4475/
+				924 link Description: 读取边界比最终答案过滤更早, Value: 127.0.0.1:4475/
+				925 link Description: 内容投影需要覆盖四个通道, Value: …
+				926 checkbox 未掌握, Value: 0
+			927 container
+				928 text Q88 · 固定题组
+				929 link Description: 外部工具声称操作成功，你如何核实真实状态？, Value: …
+				930 link Description: 6 先核对未决动作 再让模型继续, Value: …
+				931 link Description: 本地事务和下游接口各承担哪一半, Value: …
+				932 checkbox 未掌握, Value: 0
+			933 container
+				934 text Q89 · 固定题组
+				935 link Description: 多步骤任务部分成功后失败，如何设计补偿、恢复和用户告知？, Value: …
+				936 link Description: 部分成功之后怎样补偿, Value: …
+				937 checkbox 未掌握, Value: 0
+			938 container
+				939 text Q90 · 固定题组
+				940 link Description: 如何把安全反例纳入自动化回归，并验证修复没有破坏正常任务？, Value: …
+				941 link Description: 精确批准绑定的是一次逻辑意图, Value: …
+				942 link Description: 成对安全练习及参考分析, Value: …
+				943 link Description: 成对安全练习及参考分析, Value: …
+				944 link Description: 从失败分类到一次能够关闭的回归, Value: …
+				945 checkbox 未掌握, Value: 0
+			946 container
+				947 text Q91 · 固定题组
+				948 link Description: 设计一个客服工单 Agent：如何确定自动处理范围、转人工条件及验收指标？, Value: …
+				949 link Description: 客服系统先划业务责任，不先选Agent框架, Value: …
+				950 checkbox 未掌握, Value: 0
+			951 container
+				952 text Q92 · 固定题组
+				953 link Description: 设计一个企业知识 Agent：如何同时保证检索质量、权限和更新时效？, Value: …
+				954 link Description: 本次回答看到的是哪一个资料版本, Value: …
+				955 link Description: 做一个能定位问题的检索比较, Value: …
+				956 link Description: 读取边界比最终答案过滤更早, Value: …
+				957 checkbox 未掌握, Value: 0
+			958 container
+				959 text Q93 · 固定题组
+				960 link Description: 设计一个长时间运行的研究 Agent：如何保存进度、取消任务和恢复执行？, Value: …
+				961 link Description: 长时间研究任务要保存可继续调查的状态, Value: …
+				962 checkbox 未掌握, Value: 0
+			963 container
+				964 text Q94 · 固定题组
+				965 link Description: 请求量增长十倍时，如何识别模型、工具、队列或存储中的主要瓶颈？, Value: …
+				966 link Description: 负载决定并发实验测到了什么, Value: …
+				967 link Description: 观测记录应回答哪一阶段首次偏离, Value: …
+				968 checkbox 未掌握, Value: 0
+			969 container
+				970 text Q95 · 固定题组
+				971 link Description: 如何设计并发限制、超时、退避和熔断，避免故障扩大？, Value: …
+				972 link Description: 并发、超时和熔断限制不同的东西, Value: …
+				973 checkbox 未掌握, Value: 0
+			974 container
+				975 text Q96 · 固定题组
+				976 link Description: 怎样分解一次任务的费用和时延，找到最值得优化的环节？, Value: …
+				977 link Description: 成本归到逻辑任务 才能看见失败代价, Value: …
+				978 link Description: 延迟必须注明用户等到的是什么, Value: …
+				979 link Description: 负载决定并发实验测到了什么, Value: …
+				980 checkbox 未掌握, Value: 0
+			981 container
+				982 text Q97 · 固定题组
+				983 link Description: 什么时候使用小模型路由、大模型升级或缓存？如何量化质量损失？, Value: …
+				984 link Description: 缓存应复用证据和候选 不能复用批准, Value: …
+				985 link Description: 模型路由改变的不只是单价, Value: …
+				986 checkbox 未掌握, Value: 0
+			987 container
+				988 text Q98 · 固定题组
+				989 link Description: 从质量、成本和运维角度，怎样选择本地模型与托管 API？, Value: …
+				990 link Description: 本地模型与托管API比较的是交付责任, Value: …
+				991 checkbox 未掌握, Value: 0
+			992 container
+				993 text Q99 · 固定题组
+				994 link Description: 请介绍一次实际 Agent 故障或失败案例：原因是什么，如何修复，怎样证明修复有效？, Value: …
+				995 link Description: 从实验走向一个独立作品, Value: …
+				996 checkbox 未掌握, Value: 0
+			997 container
+				998 text Q100 · 固定题组
+				999 link Description: 如果必须在两周内交付一个可用 Agent，你会怎样确定最小范围、基线、风险与上线条件？, Value: …
+				1000 link Description: 依据问题和评价证据冻结 MVP 决定, Value: …
+				1001 link Description: 预定义公平实验 而不是挑一次演示, Value: …
+				1002 link Description: MVP 契约限制的是要验证的机制, Value: …
+				1003 link Description: 架构决定要能解释放弃了什么, Value: …
+				1004 link Description: 从失败分类到一次能够关闭的回归, Value: …
+				1005 link Description: 发布对象是一组相互兼容的版本, Value: …
+				1006 link Description: 一次发布的控制路径, Value: …
+				1007 checkbox 未掌握, Value: 0
+			1008 container
+				1009 text M101 · 市场补充题组
+				1010 link Description: 调用多个模型或工具API时，如何用Python asyncio组织并发？阻塞调用、无界任务创建和取消清理分别会导致什么问题，怎样用最小例定位？, Value: …
+				1011 link Description: 2 固定工作者解决的是在途工作上限, Value: …
+				1012 link Description: 6 可运行入口与迁移练习, Value: …
+				1013 checkbox 未掌握, Value: 0
+			1014 container
+				1015 text M102 · 市场补充题组
+				1016 link Description: 把请求状态放进Python列表或字典时，别名与浅拷贝会怎样污染另一个任务？请说明不可变容器的边界，并解释如何用装饰器封装工具日志而保持函数行为。, Value: …
+				1017 link Description: 1 对象共享必须是设计选择, Value: …
+				1018 checkbox 未掌握, Value: 0
+			1019 container
+				1020 text M103 · 市场补充题组
+				1021 link Description: 实现容量受限的LRU缓存，说明get/put复杂度，并给出容量为零、覆盖已有键和淘汰次序的测试。, Value: …
+				1022 link Description: 3 LRU 容量、复杂度与权限不是同一个问题, Value: …
+				1023 link Description: 6 可运行入口与迁移练习, Value: …
+				1024 checkbox 未掌握, Value: 0
+			1025 container
+				1026 text M104 · 市场补充题组
+				1027 link Description: Agent服务运行数小时后内存持续增长，但请求量平稳。如何区别对象仍被引用、缓存无界、待完成任务堆积与暂时内存峰值，并验证修复？, Value: …
+				1028 link Description: 内存持续增长应先找到持有者, Value: …
+				1029 checkbox 未掌握, Value: 0
+			1030 container
+				1031 text M105 · 市场补充题组
+				1032 link Description: 余弦相似度、点积和欧氏距离如何计算？向量归一化会怎样改变它们的排序关系，零向量和维度不符怎样处理？, Value: …
+				1033 link Description: 3 先算清向量，再选择索引, Value: …
+				1034 checkbox 未掌握, Value: 0
+			1035 container
+				1036 text M106 · 市场补充题组
+				1037 link Description: 如何用精确向量检索建立基线，再比较HNSW与IVF的召回、内存、构建和查询代价？过滤条件加入后还需要怎样测量？, Value: …
+				1038 link Description: 4 ANN 的误差要相对精确基线测, Value: …
+				1039 checkbox 未掌握, Value: 0
+			1040 container
+				1041 text M107 · 市场补充题组
+				1042 link Description: 文档局部修改、删除或权限变化时，怎样增量更新分块和向量索引？如何检测漏删、重复块及新旧版本混用？, Value: …
+				1043 link Description: 2 增量更新是来源到块的生命周期, Value: …
+				1044 checkbox 未掌握, Value: 0
+			1045 container
+				1046 text M108 · 市场补充题组
+				1047 link Description: 包含扫描页、表格和跨页段落的PDF怎样进入RAG？如何保留页码与结构、测解析质量，并防止OCR错误被引用成原文事实？, Value: …
+				1048 link Description: 1 摄取先恢复文档含义，再切块, Value: …
+				1049 checkbox 未掌握, Value: 0
+			1050 container
+				1051 text M109 · 市场补充题组
+				1052 link Description: 解释decoder-only Transformer从token到下一token分布的基本推理过程：因果注意力、多头、位置、前馈层各起什么作用？这与检索外部事实有什么区别？, Value: …
+				1053 link Description: 4 从 token 到下一 token：模型在哪里获得事实, Value: …
+				1054 checkbox 未掌握, Value: 0
+			1055 container
+				1056 text M110 · 市场补充题组
+				1057 link Description: 提示模型返回JSON、使用JSON模式和按Schema约束生成分别能保证什么？遇到拒绝、截断、类型合法但语义错误时，应用怎样处理？, Value: …
+				1058 link Description: 5 合法结构是消费起点, Value: …
+				1059 checkbox 未掌握, Value: 0
+			1060 container
+				1061 text M111 · 市场补充题组
+				1062 link Description: 同一Agent英语任务表现正常，中文或混合语言却失败，怎样分别检查分词/检索、提示、工具参数与评测样本，而不是直接换模型？, Value: …
+				1063 link Description: 英文正常、中文失败：找第一处证据偏离, Value: …
+				1064 checkbox 未掌握, Value: 0
+			1065 container
+				1066 text M112 · 市场补充题组
+				1067 link Description: 用户在多轮任务中突然换话题，又用“继续刚才那个”返回，怎样识别任务切换、保存各自状态并澄清指代，防止旧任务动作误执行？, Value: …
+				1068 link Description: 7 话题切换不能继承旧任务的动作权, Value: …
+				1069 checkbox 未掌握, Value: 0
+			1070 container
+				1071 text M113 · 市场补充题组
+				1072 link Description: 部署本地推理服务时，怎样区分prefill与decode瓶颈，解释KV cache与批处理对吞吐、首token和尾延迟的影响，并设计公平比较而非先认定某框架更快？, Value: …
+				1073 link Description: 高级选读：prefill、decode与KV cache, Value: …
+				1074 checkbox 未掌握, Value: 0
+			1075 container
+				1076 text M114 · 市场补充题组
+				1077 link Description: 面对客户工程团队，怎样交付一份可复现的Agent技术移交包，使对方能重建环境、运行评测、理解架构决策并报告失败？如何证明接手成功？, Value: …
+				1078 link Description: 一个证据包应使独立者从入口走到结论, Value: …
+				1079 link Description: 独立评阅按一条实际任务走完全程, Value: …
+				1080 link Description: 架构决定要能解释放弃了什么, Value: …
+				1081 link Description: 练习与参考分析, Value: …
+				1082 link Description: 技术移交是一次接收方实验, Value: …
+				1083 checkbox 未掌握, Value: 0
+		98 container
+			99 text 职造 · Agent 开发学习 教材 v12 · 本浏览器保存
+	1084 container lw-find-form
+		1085 text 查教材
+		1086 text entry area (settable) 查教材, ID: lw-query
+		1087 button 查找
+		1088 button (collapsed) Description: 展开检索结果, Secondary Actions: Expand
+
+The focused UI element is 102 heading 题库浏览, Value: 1

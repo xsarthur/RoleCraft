@@ -1,0 +1,38 @@
+{
+  "version": "app-v13-prototype-frontend-review01-repair-binding-1",
+  "issueId": "UI2-REVIEW01",
+  "status": "frozen_v13_repair_developer_checked_pending_independent_retest_live_not_applied",
+  "corpusVersion": "textbook-v12",
+  "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+  "files": {
+    "team/app-v13-prototype-qa-history/candidate02/index.html": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+    "team/app-v13-prototype-qa-history/candidate02/app.js": "05167ec7df6cea51d6e137aaa0ff53ea4cb949a66a4c813d6ce7167651b2f30e",
+    "team/app-v13-prototype-qa-history/candidate02/learning-workbench.js": "55c6f5db634d1b723e863fe9a94f604fadcf895c15acbb984025d35be15c6266",
+    "team/app-v13-prototype-qa-history/candidate02/learning-experience-v13.js": "7fc778e5d85702688caebf76370308ddee435b74acee7665666387a4dc902b9e",
+    "team/app-v13-prototype-qa-history/candidate02/learning-experience-v13.css": "d190bdc09f0fb9b3ae4eb308cd52b358c935f69d3b9b93ae16ea4418789654bd",
+    "team/app-v13-prototype-qa-history/candidate02/learning-v13-data.js": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+    "team/app-v13-prototype-qa-history/candidate02/received-binding.json": "fadfa98317cf72a7787a764b0b7223e72105c7b1cc8f69495e456eea7e4d73c0",
+    "team/app-v13-prototype-frontend-history/review01-repaired-client/learning-experience-v13.js": "e731f617891e8a08ea52e5f58267a47c3ff9c43d0ae12dd6c7d443576afdf42f",
+    "team/app-v13-prototype-frontend-review01-repair.md": "05256ab017c2b189665e6a25c2710b6d97b05b8d1080ecef01f502252240afc4",
+    "team/app-v13-prototype-frontend-review01-dev-check.mjs": "4a94dbf79bf2f40291211438d16d9a6efef45569d46cc043c3a2efc549014821",
+    "team/app-v13-prototype-frontend-review01-dev-check.json": "86d4c7b3be0c4702a503808eaf1f68407fbc904347db672248e2826a587e615a",
+    "team/app-v13-prototype-frontend-review01-source-receipt.json": "4e62a473841f1cf771c113647dd2b9acf39661f007fac748515f623367c42c2a",
+    "team/app-v13-prototype-frontend-review01-patch.json": "ac7a53d26076c03295d54c760d39c2e2f83315e0443bdcbe0ab3739dab9dcf4c",
+    "team/app-v13-prototype-frontend-review01-apply.mjs": "06022cb287109b34acd106023e53b2af1d694a63248e32d9a38572a60d9c21e9",
+    "team/app-v13-prototype-frontend-review01-current-apply-check.json": "4b82d788dcaf3a4f1cb62ee6d4e72db4a585a2c01a6e7e81650362a9d7ee1ed5"
+  },
+  "testedClientAssembly": {
+    "index": "candidate02/index.html",
+    "app": "candidate02/app.js",
+    "workbench": "candidate02/learning-workbench.js",
+    "experience": "team/app-v13-prototype-frontend-history/review01-repaired-client/learning-experience-v13.js",
+    "style": "candidate02/learning-experience-v13.css",
+    "learningData": "candidate02/learning-v13-data.js"
+  },
+  "developerGroups": 3,
+  "liveDistPatched": false,
+  "actualBrowserTestedByAuthor": false,
+  "independentQaClosed": false,
+  "servicesOperated": false,
+  "requiredNext": "UI2 frozen fixture independent original/empty-pool check; PM exclusive current v14 owner handoff; actual partial apply and current-version affected independent verification"
+}

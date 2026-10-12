@@ -1,0 +1,65 @@
+{
+  "version": "app-v14-dialog-frontend-footer-dev-check-3",
+  "runtime": "v24.16.0",
+  "clientVersion": "local-workbench-0.14-dialog-detail",
+  "scope": "Narrow developer VM page-attribute/source checks; no actual CSS/browser/HTTP/model or independent QA",
+  "files": {
+    "dist/learning-workbench.js": {
+      "sha256": "e6918f1afb322c79e6a966200dda42cfecbe48bf437711ac3e18b3ca5289aa1f"
+    },
+    "dist/learning-experience-v13.js": {
+      "sha256": "d9664458d1e60c54d8235e160c4c229b1629c8b694d0f16d7136557b3374cd23"
+    },
+    "dist/learning-experience-v13.css": {
+      "sha256": "1f20aafb25a30842e660a18b2d51445efc6ab3527d359b95703131332fcb9aaf"
+    },
+    "dist/app.js": {
+      "sha256": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd"
+    }
+  },
+  "tests": [
+    {
+      "name": "#home carries expected page attribute for narrow footer selector",
+      "status": "pass"
+    },
+    {
+      "name": "#learn carries expected page attribute for narrow footer selector",
+      "status": "pass"
+    },
+    {
+      "name": "#learn/agent/n03-planning-reflection carries expected page attribute for narrow footer selector",
+      "status": "pass"
+    },
+    {
+      "name": "#learn/agent/c02?version=textbook-v10 carries expected page attribute for narrow footer selector",
+      "status": "pass"
+    },
+    {
+      "name": "#questions carries expected page attribute for narrow footer selector",
+      "status": "pass"
+    },
+    {
+      "name": "#records carries expected page attribute for narrow footer selector",
+      "status": "pass"
+    },
+    {
+      "name": "#settings carries expected page attribute for narrow footer selector",
+      "status": "pass"
+    },
+    {
+      "name": "Only routine footer span selected on detail; brand/footer element and other page selectors untouched",
+      "status": "pass"
+    },
+    {
+      "name": "Candidate2 CSS prefix and all non-CSS client source bytes retained",
+      "status": "pass"
+    },
+    {
+      "name": "Explicit historical reader identity still present",
+      "status": "pass"
+    }
+  ],
+  "privateRecordsAccessed": false,
+  "modelInvoked": false,
+  "actualBrowserTested": false
+}

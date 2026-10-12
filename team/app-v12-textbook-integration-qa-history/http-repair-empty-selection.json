@@ -1,0 +1,40 @@
+{
+  "completedAtUtc": "2026-10-11T16:45:41.749Z",
+  "runtime": "v24.16.0",
+  "executable": "/Users/shengxiong/.nvm/versions/node/v24.16.0/bin/node",
+  "phase": "repair",
+  "inputFile": "affected-retest-cases.json",
+  "frozenInputSha256": "a4128a567fc3c4e432bdb6e28dbf855fb29862fc2989c0fea2c358fcafd23629",
+  "implementationBinding": [
+    {
+      "path": "dist/content-retrieval-core.js",
+      "sha256": "b3535b2249effdb0118713295ae9b86e117e0d86c86041aade3e8c33a0fc092d"
+    },
+    {
+      "path": "server/retrieval/index.mjs",
+      "sha256": "acc8555c9b23603f04afa20ff7dd6eb2fc5429894b7474814d4b16114e1ded0d"
+    },
+    {
+      "path": "server/retrieval/semantic.mjs",
+      "sha256": "d101163e0934cac93309265c4949fccbc9fe304120c5954ef9466a4fe68a4115"
+    },
+    {
+      "path": "server/index.mjs",
+      "sha256": "63cee03519aaeb53257108227d17464bc3fb8942a7636ea87fddd13a76d2182b"
+    },
+    {
+      "path": "dist/learning-workbench.js",
+      "sha256": "b708c0fb6cc58c9e48698c65671964ca5511ba91e6e98675bd54e56d19879d7b"
+    },
+    {
+      "path": "server/retrieval/content-v12-index.json",
+      "sha256": "ac87bfa9c88f6e1709fc59c05fc3af1fcf98b7274aeb1be48a07e490578bdd6b"
+    },
+    {
+      "path": "server/retrieval/vectors-v12.json",
+      "sha256": "c28e1e27e7185638aeecc4357498ae19e99f5277e5d271a7d529e57aa1754164"
+    }
+  ],
+  "scope": "Finite default Node24 real HTTP query/source assertions; not UI, arbitrary-language reliability or occupational qualification.",
+  "records": []
+}

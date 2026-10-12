@@ -1,0 +1,27 @@
+{
+  "version": "app-v14-code-contrast-qa-plan-1",
+  "baselineSha256": "2a76eda8519989096a965521de8b0ba169b2be27a964b5c6c8894c0e120c3ff6",
+  "original": {
+    "unitId": "01-foundation",
+    "sourceSha256": "3ca5c2391ccfba389cb16d7eac85034bcb50d0768f0e9e7374c92917044232d7",
+    "sectionId": "s-cdf0ad611ebb",
+    "title": "完整短程序",
+    "href": "#learn/agent/01-foundation/s-cdf0ad611ebb",
+    "code": "refund(days)/check_case/text parser",
+    "languageLabel": "python · 网页不执行代码"
+  },
+  "methods": [
+    "official CUA true rendering/screenshot",
+    "DOM-backed getComputedStyle for code/pre/label/inline/body, actual ancestor composited background + RGB relative-luminance ratio",
+    "4.5:1 normal text based official W3C SC1.4.3; no screenshotpixel anti-aliasing as sole metric",
+    "1280 desktop and375 narrow original and inline/label/body, source/line wrapping/overflow unchanged",
+    "old dark declaration compatibility evaluated only where real cascade exists, do not invent user dark-mode capability"
+  ],
+  "limits": [
+    "no whole-site WCAG certificate",
+    "no292 or old textbook code execution",
+    "no screenshots/user DB edits/storage reads",
+    "browser unavailable retain true limit"
+  ],
+  "missedPreviousQA": "old actual v14 scoped evidence had true reader/layout/source checks but no computed code foreground/background or ratio; textbook execution is separate and unnecessary for text readability; current plan omission becomes explicit repeated affected-style check"
+}

@@ -1,0 +1,107 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4475/#questions?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17".
+1 AXWebArea 职造 · Agent 学习工作台, URL: 127.0.0.1:4475/#questions?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17
+	2 link Description: 跳到主要内容, Value: 127.0.0.1:4475/#main-content
+	3 container primary-sidebar
+		4 link Description: 职 职造 Agent 开发学习, Value: 127.0.0.1:4475/#home
+		5 container 主导航
+			6 button 首页
+			7 button 课程学习
+			8 button 题库浏览
+			9 button 学习记录
+			10 button 个人设置
+		11 text 当前学习方向
+		12 text Agent 开发者
+		13 link Description: 本机学习者 记录保存在此浏览器, Value: 127.0.0.1:4475/#settings
+	14 container main-content
+		15 container
+			211 text 题库浏览
+			212 text 从问题查缺，再回到教材
+		18 container app
+			213 heading 题库浏览, Value: 1
+				214 text 题库浏览
+			215 text 从问题查缺，再回到教材读懂机制
+			216 container v13-question-filters
+				217 container
+					218 text 课程
+					219 pop up button (collapsed, settable) 课程, Value: 规划与反思, Secondary Actions: Expand
+						220 menu
+							221 全部课程
+							222 认识Agent工程
+							223 基础预备
+							224 Python与模型基础
+							225 问题发现
+							226 任务验收
+							227 信任边界
+							228 外部API
+							229 模型候选
+							230 上下文、记忆与提示
+							231 方案选择
+							232 动作身份
+							233 检索证据
+							234 写工具
+							235 工具目录与MCP
+							236 持久恢复
+							237 固定流程
+							238 动态循环
+							239 (selected) 规划与反思
+							240 进阶检索与摄取
+							241 图编排
+							242 多Agent与A2A
+							243 版本评价
+							244 跨场景评价与移交
+							245 MVP决定
+							246 强制安全
+							247 代码沙箱
+							248 发布回退
+							249 性能成本
+							250 运行交付
+							251 独立作品与复盘
+				252 container
+					253 text 知识点
+					254 pop up button (collapsed, settable) 知识点, Value: 1 三种策略改变的是控制对象, Secondary Actions: Expand
+						255 menu
+							256 全部知识点
+							257 让计划依据观察前进，而不是在反复规划中空转
+							258 (selected) 1 三种策略改变的是控制对象
+							259 2 从验收产物倒推候选计划
+							260 3 验证计划比检查 JSON 多一层
+							261 4 重规划保留事实，失效的是依赖假设
+							262 5 用实质进展阻止“再想一次”
+							263 6 Reflection 必须提出可以失败的修正
+							264 7 从演算到作品
+				265 container
+					266 text 本人标注
+					267 pop up button (collapsed, settable) 本人标注, Value: 全部状态, Secondary Actions: Expand
+						268 menu
+							269 (selected) 全部状态
+							270 未掌握
+							271 已掌握（自评）
+				272 container
+					273 text 题组
+					274 pop up button (collapsed, settable) 题组, Value: 全部题组（100 + 14）, Secondary Actions: Expand
+						275 menu
+							276 (selected) 全部题组（100 + 14）
+							277 固定100题
+							278 市场补充14题
+				279 button 应用筛选
+				280 link Description: 清除筛选, Value: 127.0.0.1:4475/#questions
+			281 text 当前 2 题。按冻结题号排列；状态为本人自记，没有平台热度或频次排名。
+			282 container
+				283 text Q11 · 固定题组
+				284 link Description: ReAct 如何组织推理、行动与观察？它与一次性生成计划有什么不同？, Value: 127.0.0.1:4475/#questions/Q11?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17
+				285 link Description: 1 三种策略改变的是控制对象, Value: 127.0.0.1:4475/#learn/agent/n03-planning-reflection/s-da63f3dcff17?from=Q11&fromUnit=n03-planning-reflection&fromKp=n03-planning-reflection%3As-da63f3dcff17
+				286 checkbox 未掌握, Value: 0
+			287 container
+				288 text Q12 · 固定题组
+				289 link Description: ReAct、Plan-and-Execute 和固定状态机，你会如何按任务特征选择？, Value: 127.0.0.1:4475/#questions/Q12?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17
+				290 link Description: 1 三种策略改变的是控制对象, Value: 127.0.0.1:4475/#learn/agent/n03-planning-reflection/s-da63f3dcff17?from=Q12&fromUnit=n03-planning-reflection&fromKp=n03-planning-reflection%3As-da63f3dcff17
+				291 checkbox 未掌握, Value: 0
+		209 container
+			210 text 职造 · Agent 开发学习 教材 v12 · 本浏览器保存
+	292 container lw-find-form
+		293 text 查教材
+		294 text entry area (settable) 查教材, ID: lw-query
+		295 button 查找
+		296 button (collapsed) Description: 展开检索结果, Secondary Actions: Expand
+
+The focused UI element is 213 heading 题库浏览, Value: 1

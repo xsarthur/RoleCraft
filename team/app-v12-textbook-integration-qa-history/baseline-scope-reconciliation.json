@@ -1,0 +1,43 @@
+{
+  "capturedAtUtc": "2026-10-11T16:56:19.045299+00:00",
+  "humanDate": "2026-10-12",
+  "timezone": "Asia/Shanghai",
+  "baselineUnmodified": true,
+  "rawEndpointUnmodified": true,
+  "baselineSha256": "54cab64ef8ad90940bd83020212ec192ef8aec1fd7d920911fbd5465a8f97b98",
+  "selectionDiscrepancy": "Baseline metadata intended to exclude TASKS/RETROSPECTIVES administrative records, but selector included nested team/TASKS.md and team/RETROSPECTIVES.md. Keep actual 799-row received list and 797/799 raw endpoint result; do not silently rewrite baseline.",
+  "receivedNamedRows": 799,
+  "rawEndpointUnchangedRows": 797,
+  "rawEndpointChangedRows": 2,
+  "professionalAndPublicProtectedRows": 797,
+  "professionalAndPublicProtectedUnchangedRows": 797,
+  "administrativeRows": [
+    {
+      "path": "sites/rolecraft/team/RETROSPECTIVES.md",
+      "receivedBytes": 84177,
+      "receivedSha256": "ac1cf8aa4e8ce25e7fa424d225013a1fcd78077510bab6955d3fb2a39e320f87",
+      "endpointSha256": "411310a499cf7c58f38617ddc2840b778b0161b3cfee2a0513036e680b9de6be",
+      "scopeReconciliationBytes": 85794,
+      "scopeReconciliationSha256": "411310a499cf7c58f38617ddc2840b778b0161b3cfee2a0513036e680b9de6be",
+      "receivedLengthPrefixSha256": "ac1cf8aa4e8ce25e7fa424d225013a1fcd78077510bab6955d3fb2a39e320f87",
+      "receivedLengthPrefixMatches": true,
+      "classification": "authorized_administrative_append",
+      "authority": "User AGENTS organization rules allow PM to edit plans/tasks/retrospectives; PM explicitly confirmed this round AP12/R19 administrative additions.",
+      "appendScope": "Only new AP12/R19 administrative text appended at this evidence point; received full byte prefix remains exact."
+    },
+    {
+      "path": "sites/rolecraft/team/TASKS.md",
+      "receivedBytes": 62771,
+      "receivedSha256": "f1ce389c6fe06d89ff865fd60462d553caee178b6470b120f448d8f303e18299",
+      "endpointSha256": "0c07b81d6216a73311c5f339369a145d03e224cf3440f557a8381133aadccf35",
+      "scopeReconciliationBytes": 64279,
+      "scopeReconciliationSha256": "794489b3166a0ee84cf01e8c5969d990cc9e9b6c1b671924a7980dec9fdceaad",
+      "receivedLengthPrefixSha256": "f1ce389c6fe06d89ff865fd60462d553caee178b6470b120f448d8f303e18299",
+      "receivedLengthPrefixMatches": true,
+      "classification": "authorized_administrative_append",
+      "authority": "User AGENTS organization rules allow PM to edit plans/tasks/retrospectives; PM explicitly confirmed this round AP12/R19 administrative additions.",
+      "appendScope": "Only new AP12/R19 administrative text appended at this evidence point; received full byte prefix remains exact."
+    }
+  ],
+  "limitation": "Two endpoint SHA checks and prefix proof at recorded times only, not continuous surveillance or whole-workspace protection. Future authorized PM edits to new AP12/R19 are outside professional frozen deliverables."
+}

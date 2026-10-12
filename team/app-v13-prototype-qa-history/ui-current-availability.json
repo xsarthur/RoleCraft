@@ -1,0 +1,32 @@
+{
+  "phase": "stable_candidate_actual_execution",
+  "observations": [
+    {
+      "action": "createBrowserTab id2 to own4473 seed",
+      "result": "Browser is not available: 2"
+    },
+    {
+      "action": "fresh cua.getState",
+      "result": {
+        "browsers": []
+      }
+    },
+    {
+      "action": "read official browser-troubleshooting",
+      "result": "read"
+    },
+    {
+      "action": "one known id2 getBrowser recovery after parent fresh inventory",
+      "result": "Browser is not available: 2"
+    }
+  ],
+  "contrast": "Preparation official IAB2 was available; current failure independently attempted rather than old conclusion inherited. Parent channel IAB2/tab8 is not this QA channel and not independent test evidence.",
+  "successfulQaTabs": 0,
+  "seedPageLoaded": false,
+  "storageWrittenThroughUi": false,
+  "viewportChanged": false,
+  "actualDownloads": 0,
+  "workaroundsAttempted": false,
+  "guiStatus": "insufficient",
+  "scope": "Main QA official browser capability unavailable; child UI QA independently tasked by PM has separate receipt."
+}

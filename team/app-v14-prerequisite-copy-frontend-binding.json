@@ -1,0 +1,31 @@
+{
+  "version": "app-v14-prerequisite-copy-frontend-binding-1",
+  "clientVersion": "local-workbench-0.14-dialog-detail",
+  "status": "candidate_pending_independent_narrow_qa",
+  "changedApplicationFiles": [
+    "dist/learning-workbench.js",
+    "dist/learning-experience-v13.css"
+  ],
+  "files": {
+    "dist/learning-workbench.js": "3b519ab2c1cebf3f31ab3b8d883fea922499744ab40dd3046967fc4b9dc4e542",
+    "dist/learning-experience-v13.css": "f3b495e59c0431797cec1ef8cb0e30fbb27a299767cd4ca27ff33c9256f8adce",
+    "dist/styles.css": "47850ba437e3598424846361bb10463fc83513a3eae4d5ff7f1abcd6ad404139",
+    "dist/learning-workbench.css": "c13ed2dbe5b68770e142ef9ec3962eb14f7ccdd745c99ff650c7b47def9c5ace",
+    "dist/index.html": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+    "dist/learning-experience-v13.js": "d9664458d1e60c54d8235e160c4c229b1629c8b694d0f16d7136557b3374cd23",
+    "dist/app.js": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd",
+    "dist/learning-v13-data.js": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+    "team/app-v14-prerequisite-copy-design.md": "12bc72d936f5d5d74c7020ca61b1a4946c301fe8273db1dc6bf37f8b29db7314",
+    "team/app-v14-prerequisite-copy-frontend.md": "6f3f84611969c3e839b5bdfba5e3a574a18c200765859f59707960b12de6e47f",
+    "team/app-v14-prerequisite-copy-frontend-history/received/manifest.json": "3300f522aa2051d7bee157e68cc477eaa302ee5aa5d67d173c5a53868b431649",
+    "team/app-v14-prerequisite-copy-frontend-history/source-change.diff": "9f778cb5dd8ca28d7e440453c9bc0802e4b77ddc5f5e3a21ee65d21e0490745b",
+    "team/app-v14-prerequisite-copy-frontend-history/public-static-receipt.json": "73ddb356ef90a1a55dd63334832fed2b3a4d5fda8c10e89b698629d2b1534f34"
+  },
+  "developerCheckScope": "Narrow source difference/ARIA/empty-state review and Node24 JS syntax only; no behavior mirror tests or old VM/HTTP/code/model runs",
+  "qaBaseline": "team/app-v14-prerequisite-copy-qa-history/received-baseline.json",
+  "actualBrowserTested": false,
+  "actualPublicResourceReceived": false,
+  "actualModelTested": false,
+  "privateUserRecordsRead": false,
+  "serviceOperated": false
+}

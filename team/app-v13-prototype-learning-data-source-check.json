@@ -1,0 +1,312 @@
+{
+  "version": "app-v13-prototype-learning-data-source-check-1",
+  "role": "课程架构师",
+  "kind": "domain_source_mapping_self_check_not_independent_qa",
+  "at": "2026-10-12T08:01:42.428643+08:00",
+  "output": {
+    "path": "sites/rolecraft/team/app-v13-prototype-learning-data.json",
+    "sha256": "2c0165b5013a88d5ae93fbe841901853cdf7d3cb184f576971e56ab2f572a394",
+    "bytes": 841103
+  },
+  "counts": {
+    "units": 30,
+    "indexedSections": 273,
+    "knowledgePoints": 240,
+    "knowledgePointKinds": {
+      "unit_introduction": 30,
+      "core": 172,
+      "navigation": 20,
+      "exercise": 18
+    },
+    "questions": 114,
+    "questionSets": {
+      "fixed100": 100,
+      "market14": 14
+    },
+    "evidence": 327,
+    "selfTestEligible": 112,
+    "personalEvidenceRequired": 2,
+    "qaHoldoutVariantsIncluded": 0,
+    "sourceBindings": 37
+  },
+  "checks": {
+    "fixed100_market14_full_unique_ids_and_unchanged_question_text": true,
+    "all_327_quotes_exact_in_original_source_ranges_and_precise_heading": true,
+    "all_source_sha_and_37_input_bindings_match": true,
+    "all_30_bodies_equal_frozen_source_bytes": true,
+    "formal_reading_order_and_prerequisites_unchanged": true,
+    "js_pack_equals_same_corpus_index": true,
+    "all_273_indexed_headings_are_real_and_titles_preserved": true,
+    "all_240_points_and_33_level3_parent_targets_real": true,
+    "all_114_have_current_knowledge_refs": true,
+    "Q10_Q99_personal_only_excluded_from_self_test": true,
+    "bidirectional_question_mapping_uses_actual_evidence": true,
+    "existing_6_stages_preserve_names_and_30_unit_membership": true,
+    "qa_holdout_variants_not_read_or_imported": true
+  },
+  "originalReviewRangesCrossNextHeadingCount": 22,
+  "rangeNote": "部分原审校范围跨后续heading；引文本身仍在原声明节。新数据另给精确引文行，原范围保留，不改旧矩阵。",
+  "authoringGuardNote": "首作者转换尝试将heading尾部空格误裁后触发断言，未写数据；改为精确保留收到标题。源和索引未改，此为作者转换检查错误而非应用缺陷。",
+  "executionBoundary": "No app/browser tests, example execution, models, learner simulation, independent review or user data access.",
+  "sourceBindings": [
+    {
+      "path": "sites/rolecraft/team/textbook-v12-qa-matrix.json",
+      "sourcePath": "team/textbook-v12-qa-matrix.json",
+      "sha256": "01485e3c9a4ea65ac25985b3907dc6b4ab70115139bcf0c74308f161965320cf",
+      "bytes": 770209,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/team/textbook-v12-curriculum.json",
+      "sourcePath": "team/textbook-v12-curriculum.json",
+      "sha256": "02dcab757b4e72f7fb28b39f648b30090b0e57b3725ca0af25e421e0fafad5ae",
+      "bytes": 144114,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/content-v12-index.json",
+      "sourcePath": "server/retrieval/content-v12-index.json",
+      "sha256": "ac87bfa9c88f6e1709fc59c05fc3af1fcf98b7274aeb1be48a07e490578bdd6b",
+      "bytes": 1591766,
+      "kind": "same_corpus_derived_input"
+    },
+    {
+      "path": "sites/rolecraft/dist/content-v12-data.js",
+      "sourcePath": "dist/content-v12-data.js",
+      "sha256": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224",
+      "bytes": 1545912,
+      "kind": "same_corpus_derived_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/agent-engineering-textbook.md",
+      "sourcePath": "textbooks/v12/agent-engineering-textbook.md",
+      "sha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+      "bytes": 523145,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/README.md",
+      "sourcePath": "textbooks/v12/README.md",
+      "sha256": "f6e8b37b318dd2a662c064f6681509fdf7873cbd7687a7b91a6f7ed3bf2683a6",
+      "bytes": 8920,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/assembly-manifest.json",
+      "sourcePath": "textbooks/v12/assembly-manifest.json",
+      "sha256": "16907987dcebb2195f9bae4df3f0648d566f597f49722e681fb589b87e32305e",
+      "bytes": 3749,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/00-learning-route.md",
+      "sourcePath": "textbooks/v12/00-learning-route.md",
+      "sha256": "452129591648ca6c146945fae000e3e905e87c2794315109c727592a7b16dced",
+      "bytes": 15717,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/01-foundation.md",
+      "sourcePath": "textbooks/v12/01-foundation.md",
+      "sha256": "3ca5c2391ccfba389cb16d7eac85034bcb50d0768f0e9e7374c92917044232d7",
+      "bytes": 9341,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n01-python-model-foundations.md",
+      "sourcePath": "textbooks/v12/n01-python-model-foundations.md",
+      "sha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62",
+      "bytes": 16052,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/p01-discovery.md",
+      "sourcePath": "textbooks/v12/p01-discovery.md",
+      "sha256": "2d0340f4e6e05129f423977a272b515c56bd37295a6b00f392f1d56fca25392e",
+      "bytes": 11246,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/02-task-acceptance.md",
+      "sourcePath": "textbooks/v12/02-task-acceptance.md",
+      "sha256": "2a15989e762cf659822a9ec3d0b37d881fb28ddcd2d8f1503957ad73d8343ec1",
+      "bytes": 5323,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/03-trust-boundary.md",
+      "sourcePath": "textbooks/v12/03-trust-boundary.md",
+      "sha256": "8ff1050570a84ade4751619e28bb6e02bdd06d2b914d74e5192ea446b045272e",
+      "bytes": 4926,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/f01.md",
+      "sourcePath": "textbooks/v12/f01.md",
+      "sha256": "5fcb2bd1db423ca8e149b0803bafedeaf0e77ca2331312ff32f63a2087ba9d61",
+      "bytes": 15063,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/f02.md",
+      "sourcePath": "textbooks/v12/f02.md",
+      "sha256": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8",
+      "bytes": 16484,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n02-context-memory-prompt.md",
+      "sourcePath": "textbooks/v12/n02-context-memory-prompt.md",
+      "sha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+      "bytes": 15254,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+      "sourcePath": "textbooks/v12/c01-selection.md",
+      "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+      "bytes": 9444,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c01-control-primer.md",
+      "sourcePath": "textbooks/v12/c01-control-primer.md",
+      "sha256": "ef50f49868351894e0b928eced4cfb2fdabb9cb28ca03eb9043b9cf42d5689b9",
+      "bytes": 5660,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c02.md",
+      "sourcePath": "textbooks/v12/c02.md",
+      "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+      "bytes": 20689,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c03.md",
+      "sourcePath": "textbooks/v12/c03.md",
+      "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+      "bytes": 22973,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n04-tools-mcp.md",
+      "sourcePath": "textbooks/v12/n04-tools-mcp.md",
+      "sha256": "b3432424e61870ac250db2068423ed33e827c97cfc2f1440f3ae2987bfd4f39a",
+      "bytes": 15451,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/e01.md",
+      "sourcePath": "textbooks/v12/e01.md",
+      "sha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+      "bytes": 32432,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c01-fixed-workflow.md",
+      "sourcePath": "textbooks/v12/c01-fixed-workflow.md",
+      "sha256": "5dd87adc743723c842ed22f80065fda6408d28aee369adf8dfe1206ac81c2fcf",
+      "bytes": 13845,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+      "sourcePath": "textbooks/v12/c01-control-loop.md",
+      "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+      "bytes": 78547,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n03-planning-reflection.md",
+      "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+      "sha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+      "bytes": 13362,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n05-retrieval-ingestion.md",
+      "sourcePath": "textbooks/v12/n05-retrieval-ingestion.md",
+      "sha256": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16",
+      "bytes": 19699,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+      "sourcePath": "textbooks/v12/n06-graph-orchestration.md",
+      "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+      "bytes": 11304,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n07-multiagent-a2a.md",
+      "sourcePath": "textbooks/v12/n07-multiagent-a2a.md",
+      "sha256": "24268cff6bfb435713458912750a5a958dd00d0aa935ef71b139e74c6dd23fb2",
+      "bytes": 11599,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/e02.md",
+      "sourcePath": "textbooks/v12/e02.md",
+      "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+      "bytes": 24838,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n10-evaluation-projects.md",
+      "sourcePath": "textbooks/v12/n10-evaluation-projects.md",
+      "sha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+      "bytes": 10885,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/p01-mvp.md",
+      "sourcePath": "textbooks/v12/p01-mvp.md",
+      "sha256": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9",
+      "bytes": 10723,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/e03.md",
+      "sourcePath": "textbooks/v12/e03.md",
+      "sha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+      "bytes": 25367,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n08-sandbox-security.md",
+      "sourcePath": "textbooks/v12/n08-sandbox-security.md",
+      "sha256": "16b1fe631c244ec394965f9443bc680380997cf4427a7555184c26cf3ee064f2",
+      "bytes": 8648,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/e04.md",
+      "sourcePath": "textbooks/v12/e04.md",
+      "sha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8",
+      "bytes": 20925,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/e05.md",
+      "sourcePath": "textbooks/v12/e05.md",
+      "sha256": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6",
+      "bytes": 21001,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n09-runtime-delivery.md",
+      "sourcePath": "textbooks/v12/n09-runtime-delivery.md",
+      "sha256": "b621b838657aaa9915506a5bee6e25f7733b41085b08c50143e5965722157714",
+      "bytes": 11664,
+      "kind": "frozen_teaching_input"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/p02.md",
+      "sourcePath": "textbooks/v12/p02.md",
+      "sha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8",
+      "bytes": 20733,
+      "kind": "frozen_teaching_input"
+    }
+  ]
+}

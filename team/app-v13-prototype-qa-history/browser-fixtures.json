@@ -1,0 +1,22 @@
+{
+  "version": "app-v13-prototype-qa-browser-fixtures-1",
+  "scope": "Fabricated disposable QA-only origin; never real user records. UI seed writes only listed local/session keys.",
+  "legacyValid": {
+    "rolecraft-v1": "{\n  \"profile\": {\"level\":\"developer\",\"goal\":\"product\",\"hours\":8}, \"notes\":{\"old\":\"QA更早原值，非用户记录\"}, \"projects\":{\"mvp\":{\"title\":\"QA v1 自述\"}}\n}",
+    "rolecraft-learning-v11": "{\n \"notes\":{\"e01\":\"QA v10 原笔记（保留原字符）\"}, \"visits\":[{\"unitId\":\"e01\",\"sectionId\":\"\",\"at\":\"2026-10-10T00:00:00.000Z\"}], \"bookmarks\":[{\"unitId\":\"e01\",\"sectionId\":\"\"}], \"project\":{\"title\":\"QA v10 自述\",\"problem\":\"虚构验证材料\"}\n}",
+    "rolecraft-learning-v12": "{\n  \"corpusVersion\": \"textbook-v12\",\n  \"startingPoint\": \"developer\",\n  \"notes\": {\n    \"e01\": {\n      \"text\": \"QA 合法旧 v12 笔记\",\n      \"corpusVersion\": \"textbook-v12\",\n      \"sourceSha256\": \"0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a\",\n      \"updatedAt\": \"2026-10-11T00:00:00.000Z\"\n    }\n  },\n  \"visits\": [\n    {\n      \"unitId\": \"e01\",\n      \"sectionId\": \"\",\n      \"corpusVersion\": \"textbook-v12\",\n      \"corpusHash\": \"1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e\",\n      \"sourceSha256\": \"0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a\",\n      \"at\": \"2026-10-11T00:00:00.000Z\"\n    }\n  ],\n  \"bookmarks\": [],\n  \"project\": {\n    \"title\": \"QA 旧 v12 自述\",\n    \"problem\": \"保留的问题\"\n  }\n}"
+  },
+  "legacyCorruptV10": "{\"notes\":{\"e01\":\"QA损坏历史串",
+  "keys": [
+    "rolecraft-v1",
+    "rolecraft-learning-v11",
+    "rolecraft-learning-v12",
+    "rolecraft-reading-v13",
+    "rolecraft-experience-v13"
+  ],
+  "sessionKeys": [
+    "rolecraft-content-query-v11",
+    "rolecraft-content-query-v12",
+    "rolecraft-content-query-v13"
+  ]
+}

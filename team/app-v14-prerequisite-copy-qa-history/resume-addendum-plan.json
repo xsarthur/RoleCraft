@@ -1,0 +1,24 @@
+{
+  "version": "resume-compact-added-plan-1",
+  "atUtc": "2026-10-12T03:19:39.533684+00:00",
+  "receivedFunctionLines": [
+    {
+      "line": 51,
+      "text": "function latestVisit(){return (LearningWorkbench.readingRecords().visits||[]).filter(LearningWorkbench.recordIsCurrent).at(-1);}"
+    },
+    {
+      "line": 52,
+      "text": "function continuation(){const v=latestVisit(),u=unit(v?.unitId)||corpus()?.units[0];return '<section class=\"v13-continue\"><div><small>'+(v?'继续上次阅读':'从这里开始')+'</small><h2>'+esc(u?.navigationLabel||'认识 Agent')+'</h2><p>'+ (v?esc(u.sections.find(s=>s.sectionId===v.sectionId)?.title||'本篇章首')+' · '+esc(new Date(v.at).toLocaleString('zh-CN')):'先了解 Agent 解决什么问题，再沿路线读懂、实现与验证。')+'</p></div><a class=\"primary\" href=\"#learn/agent/'+esc(u?.unitId||'00-learning-route')+(v?.sectionId?'/'+esc(v.sectionId):'')+'\">'+(v?'继续阅读':'开始阅读')+' →</a></section>';}"
+    }
+  ],
+  "frozenCurrentSrc": "received/learning-experience-v13.js; received-baseline-with-course.json",
+  "checks": [
+    "same actual visit chapter/navigation name and original href in compact shared course resume",
+    "no raw timestamp/section title metadata displayed in resume card",
+    "reading f01 in own origin then candidate reload retains actual resume target",
+    "historical source identity filtering retained, no old record silently promoted to v12",
+    "hidden target remains PC14 controlled hidden notice"
+  ],
+  "sourceObservation": "latestVisit uses LearningWorkbench.recordIsCurrent filter; task never seeds real user browser data",
+  "pendingDesign": true
+}

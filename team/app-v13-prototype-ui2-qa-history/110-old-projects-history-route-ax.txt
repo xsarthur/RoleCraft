@@ -1,0 +1,71 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4486/#projects-history".
+1 AXWebArea 职造 · Agent 学习工作台, URL: 127.0.0.1:4486/#projects-history
+	2 link Description: 跳到主要内容, Value: 127.0.0.1:4486/#main-content
+	211 container primary-sidebar
+		212 link Description: 职 职造 Agent 开发学习, Value: 127.0.0.1:4486/#home
+		213 container 主导航
+			214 button 首页
+			215 button 课程学习
+			216 button 题库浏览
+			217 button 学习记录
+			218 button 个人设置
+		219 text 当前学习方向
+		220 text Agent 开发者
+		221 link Description: 本机学习者 记录保存在此浏览器, Value: 127.0.0.1:4486/#settings
+	14 container main-content
+		15 container
+			222 text 历史资料与研发记录
+			223 text 原版本与证据范围保持
+		18 container app
+			224 text PROOF OF YOUR SKILLS
+			225 heading 用作品，让能力看得见。, Value: 1
+				226 text 用作品，让能力看得见。
+			227 text 检查项由你自行确认。提交真实作品并接受评审，才能验证实际交付能力。
+			228 text 工坊保存项目检查项和作品备注，不进行 AI 批改，也不会授予职业资格。请在备注中记录仓库链接、运行结果和待解决的问题。
+			229 container
+				230 text {↗} PROJECT 01 · 基础实战
+				231 heading 有据可查的知识助手, Value: 2
+					232 text 有据可查的知识助手
+				233 text 围绕真实业务资料构建一个文档问答助手。它要能够引用证据，并正确处理“资料里没有答案”的情况。 0 / 5 项自查完成
+				234 checkbox (settable, integer) Description: 准备至少 5 份有来源和版本的资料, Value: 0
+				235 text 准备至少 5 份有来源和版本的资料
+				236 checkbox (settable, integer) Description: 答案能够定位到支持它的文档片段, Value: 0
+				237 text 答案能够定位到支持它的文档片段
+				238 checkbox (settable, integer) Description: 证据不足时说明原因，不补造事实, Value: 0
+				239 text 证据不足时说明原因，不补造事实
+				240 checkbox (settable, integer) Description: 建立至少 10 个代表性评估案例, Value: 0
+				241 text 建立至少 10 个代表性评估案例
+				242 checkbox (settable, integer) Description: 提供运行说明、结果报告和失败演示, Value: 0
+				243 text 提供运行说明、结果报告和失败演示 作品链接与实践记录（仅保存在当前浏览器）
+				244 text entry area (settable) 作品链接与实践记录（仅保存在当前浏览器）, ID: note-p1
+				245 button 记录作品复盘
+				246 button 查看证据量规
+				247 button 保存实践记录
+			248 container
+				249 text ⌘ PROJECT 02 · 毕业作品
+				250 heading 可恢复的业务 Agent, Value: 2
+					251 text 可恢复的业务 Agent
+				252 text 选择咨询预约、工单分流或资料研究场景，完成一个带真实工具、状态恢复和质量评估的应用。 0 / 5 项自查完成
+				253 checkbox (settable, integer) Description: 定义工具契约、输入校验与权限边界, Value: 0
+				254 text 定义工具契约、输入校验与权限边界
+				255 checkbox (settable, integer) Description: 通过请求标识避免重复写入, Value: 0
+				256 text 通过请求标识避免重复写入
+				257 checkbox (settable, integer) Description: 模拟工具超时并验证恢复流程, Value: 0
+				258 text 模拟工具超时并验证恢复流程
+				259 checkbox (settable, integer) Description: 同时评估最终结果与工具调用轨迹, Value: 0
+				260 text 同时评估最终结果与工具调用轨迹
+				261 checkbox (settable, integer) Description: 提交可部署代码、成本说明和作品演示, Value: 0
+				262 text 提交可部署代码、成本说明和作品演示 作品链接与实践记录（仅保存在当前浏览器）
+				263 text entry area (settable) 作品链接与实践记录（仅保存在当前浏览器）, ID: note-p2
+				264 button 记录作品复盘
+				265 button 查看证据量规
+				266 button 保存实践记录
+		209 container
+			210 text 职造 · Agent 开发学习 教材 v12 · 本浏览器保存
+	267 container lw-find-form
+		268 text 查教材
+		269 text entry area (settable) 查教材, ID: lw-query
+		270 button 查找
+		271 button (collapsed) Description: 展开检索结果, Secondary Actions: Expand
+
+The focused UI element is 225 heading 用作品，让能力看得见。, Value: 1

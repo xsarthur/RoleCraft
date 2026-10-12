@@ -1,0 +1,38 @@
+{
+  "version": "app-v14-prerequisite-copy-frontend-binding-3",
+  "clientVersion": "local-workbench-0.14-dialog-detail",
+  "status": "node_only_candidate_pending_independent_narrow_qa",
+  "changedApplicationFiles": [
+    "dist/learning-experience-v13.js",
+    "dist/learning-experience-v13.css"
+  ],
+  "files": {
+    "dist/index.html": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+    "dist/app.js": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd",
+    "dist/learning-workbench.js": "9a30a208e9fae48589ab67f9262793d140607d8151d6d3f950382d5a5eba43f8",
+    "dist/learning-experience-v13.js": "1b704a627be11990cad9ad45893fb89233af6b37ff82292e5a1887dbb0f2e166",
+    "dist/learning-experience-v13.css": "d10e2f6e9b724f42bcfb4334b22240261f15c4a3978b1c27135a6af5aa341c37",
+    "dist/learning-v13-data.js": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+    "dist/content-v12-data.js": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224",
+    "team/app-v14-prerequisite-copy-node-state-design.md": "9af54675c53b4f0df11b0213bbaf2bf44fa86f6030909b3cbac1588719af494d",
+    "team/app-v14-prerequisite-copy-node-state-design.svg": "8a4df617e62a22b189c6541257a864c08ca114f54d6524a4520e43f9d3175ffb",
+    "team/app-v14-prerequisite-copy-frontend-node-repair.md": "0982f2c40c96e192b130a3445d1e34c46d053392bed5a7313ca0dd7ba3d62f33",
+    "team/app-v14-prerequisite-copy-frontend-history/candidate02/manifest.json": "5387f0e740f08c31c16e4c253f105fc52bc27fe15ae82fa5bd0be8f9b6509eb3",
+    "team/app-v14-prerequisite-copy-frontend-history/node-source-change.diff": "79016dded4d8a45d3dd93cc517ea584e32bfd73371467254b682bc722ee8c7c8",
+    "team/app-v14-prerequisite-copy-frontend-history/node-public-static-receipt.json": "8bd6f92bd1b60fe92b4c17de613e716c21bf18d04c4c721dde6794fbaa05a6a2",
+    "team/app-v14-prerequisite-copy-preview-post-session.json": "c06d88320ceeca43ac05656b220018ae1897d183156abe27065d8c527b427ca5"
+  },
+  "priorBinding": "team/app-v14-prerequisite-copy-frontend-binding2.json",
+  "preservedCandidate2": "team/app-v14-prerequisite-copy-frontend-history/candidate02/",
+  "developerCheckScope": "Node-only source/record/ARIA diff review and Node24 JS syntax; no mirror tests or old VM/292/code/model/UI regression",
+  "publicStaticAssets": {
+    "tested": 6,
+    "http200AndSourceMatch": 6,
+    "scope": "current public static bytes only"
+  },
+  "actualBrowserTested": false,
+  "actualModelTested": false,
+  "privateUserRecordsRead": false,
+  "signalsSent": false,
+  "serviceRestarted": false
+}

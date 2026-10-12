@@ -1,0 +1,151 @@
+{
+  "version": "app-v11-search-fix-qa-evidence-binding-1",
+  "frozenAtUtc": "2026-10-11T14:52:11.327727+00:00",
+  "auditor": "independent QA /root/qa_app_retrieval_v11",
+  "scope": "Final artifact integrity binding of existing finite QA evidence; no new functional execution. Self-excluded to avoid cyclic hashes. No old report rewritten.",
+  "serviceAndSourceConclusion": "met_within_scope",
+  "fullSearchFixConclusion": "insufficient",
+  "formalLearningProduct": "not_met",
+  "missingRequiredCondition": "SF11-11 independent real browser search-card-target-reload-copy flow",
+  "integrityCheck": {
+    "reportAndVersionEvidenceHashesMatch": true,
+    "criteriaAndOriginalGateIdsUnchanged": true,
+    "recordedFinalAffectedHttpCasesPass": 10,
+    "recordedProtectedFilesUnchanged": 125,
+    "recordedQaOwnedServersStopped": 4,
+    "recorded4452Listener": "none"
+  },
+  "files": [
+    {
+      "path": "team/app-v11-search-fix-qa.md",
+      "bytes": 10562,
+      "sha256": "6baa9d6942f1c098b564fb174cb840852d3a02babf16e9a893499fc314e60c73"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa.json",
+      "bytes": 18756,
+      "sha256": "5767b86dbed6c305c983a4b246891beb9b34edb13808863516935128520ca6f4"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/cleanup-final.json",
+      "bytes": 993,
+      "sha256": "e7171eab536756d40b881f8076d8713d324688a109705c952e6c9a59142c5f43"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/final-version-binding.json",
+      "bytes": 15694,
+      "sha256": "1af327365c9af297f3964236c0d18de2ff610079ed081ec0fcd19cf04bcbdd77"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/http-candidate.json",
+      "bytes": 97816,
+      "sha256": "6d226863192a94f07971ac1a72af7d4524e0d87887d9f4afc3b0556b6a85204e"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/http-repair.json",
+      "bytes": 30637,
+      "sha256": "f58d3478865dfc76c9bbc7afbc9a546631534b091e3f57773a02e448ec9135ca"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/http-repair2.json",
+      "bytes": 32576,
+      "sha256": "182c9df7d44069cdd67df965b84bc951c14102b4748d17399fea974791b5fb1c"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/independent-candidate-review.json",
+      "bytes": 2860,
+      "sha256": "98ba4ce8f863967079f26388d0e440c95378582e4c264fe7ba2a3e72ddce7cc7"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/independent-inputs-before-repair.json",
+      "bytes": 2446,
+      "sha256": "21bba8f54daaeb91f132a643a402adcc0f8ff5425b7d34d64bdd35209ba73745"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/independent-repair-review.json",
+      "bytes": 858,
+      "sha256": "3d698ecdea833b2f95b1d9faf44506f3186ea0b40ef35074d2e0ceea6ac872f3"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/protected-final.json",
+      "bytes": 48802,
+      "sha256": "01137cee24564b94adaeee45e6ad312fbf6465a2de95e029eb70ec7ea854eec2"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/react-http-first.json",
+      "bytes": 1300,
+      "sha256": "f297fa20729f0d4fb334129db3121cc6b035658b4a3d9cfc21037b2540a777cd"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/received-baseline.json",
+      "bytes": 31908,
+      "sha256": "6c5738ec9b9335a453ef2e082c16e332df2ef43c40065fd37380b4d6f8172d0d"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/run-search-cases.mjs",
+      "bytes": 5550,
+      "sha256": "43a4046a9b4090ca7182a289e92ab20b3aa0712accb9224334f713a4bee1a69e"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/sf-cases-frozen.json",
+      "bytes": 2293,
+      "sha256": "b4eb36f4694ce1e452626b92052ee28dda303cbafe066168b338f896998eea0b"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/start-server.mjs",
+      "bytes": 661,
+      "sha256": "d7297be97c422f824e01dcafea3ee6b00751a47e8717f127baadce0a55e427f2"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/target-prose-http-final.json",
+      "bytes": 4864,
+      "sha256": "6d215a0219c86a321dc3527445c5b711193c22134bc8b951d9910fc1cde99ca5"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/target-prose-http.json",
+      "bytes": 2018,
+      "sha256": "639786e94eff7789cabc96f27893054e26ffcbdb10432960f0faadf2d5709e09"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/ui-first-availability.json",
+      "bytes": 404,
+      "sha256": "6590b0637e77125e90e6be0e51fd52cde33089057d1827f4e3fc71cdd4e16b6c"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/ui-recovery-attempt.json",
+      "bytes": 465,
+      "sha256": "939660672c54e53e3c04e9c40a121b88adea971f08e1301d67d42c8c0fb8f1ab"
+    },
+    {
+      "path": "team/app-v11-search-fix-product.md",
+      "bytes": 7919,
+      "sha256": "ca9e4201fb69cdf904f650caf59265390a60d93c6c82138d2bd5ef78c6702cdb"
+    },
+    {
+      "path": "team/app-v11-search-fix-retrieval.md",
+      "bytes": 7479,
+      "sha256": "ee63fe603c850056dacd55a84028f0c9e15d0cd2b8a49aff690ea2df8d8df389"
+    },
+    {
+      "path": "team/app-v11-search-fix-retrieval-binding.json",
+      "bytes": 9976,
+      "sha256": "fb9a3975e3a5081caca619119e520e9d23efb6be43f244c9f3178a9c2f9c0bae"
+    },
+    {
+      "path": "team/app-v11-search-fix-retrieval-preview.json",
+      "bytes": 7721,
+      "sha256": "51f114ea78f44194849aeda31f5dd6a9124d652cb99057434c4f1d223bdfbabb"
+    }
+  ],
+  "finalImplementation": [
+    {
+      "path": "dist/content-retrieval-core.js",
+      "sha256": "e5d178306c992fb2f8143b67fc714ab73519eedb65a66c09c42caec9b5e31889"
+    },
+    {
+      "path": "server/retrieval/index.mjs",
+      "sha256": "1d16d453dd96a88dc8627a702363a33d8e73b6b84b8991dd9f190bc5f2de817f"
+    }
+  ],
+  "limitations": "Current SF11-11 remains insufficient. The first 23 queries were not rerun in full on final source; only the 10 affected frozen cases plus source proof. User4318 remains retained; no QA userDB operation or successful browser page creation."
+}

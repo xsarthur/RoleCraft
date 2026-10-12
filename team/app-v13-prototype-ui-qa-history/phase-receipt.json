@@ -1,0 +1,46 @@
+{
+  "recordedAtUtc": "2026-10-12T00:58:13.722819+00:00",
+  "phases": [
+    {
+      "phase": "phase01_actual_ui",
+      "loadedExperienceSha256": "9af4d9aabe568eeff45a97a3307ad9e7ad1357fa3f86a5d16a4f57536d2afdbd",
+      "bindingVersion": "app-v13-prototype-frontend-binding-2",
+      "bindingSha256": "1bd55ac5dcb65303c2b3a014a82cf064a229b10bd4fcb03e806ba544beeaea96",
+      "cssSha256": "d190bdc09f0fb9b3ae4eb308cd52b358c935f69d3b9b93ae16ea4418789654bd",
+      "pageReloadAfterNavRepair": false,
+      "status": "finite_actual_ui_evidence_saved_not_all_conditions_met"
+    },
+    {
+      "phase": "phase02_recovery",
+      "currentExperienceSha256": "7fc778e5d85702688caebf76370308ddee435b74acee7665666387a4dc902b9e",
+      "bindingVersion": "app-v13-prototype-frontend-binding-3",
+      "bindingSha256": "73038957f7fe89cd3fcf7d50c419f2b0d8bd02b9c0a0020386059dd5f1978fa3",
+      "actualUiExecuted": false,
+      "reason": "official getState browsers empty after interrupted tool; did not guess IDs or change surface",
+      "status": "insufficient"
+    }
+  ],
+  "observedTranscriptAdditional": [
+    {
+      "name": "settings-preferences-changed",
+      "startingPoint": "已有编程基础",
+      "font": "20px",
+      "evidence": "official tool returned selected options; not saved in part01 before interruption"
+    },
+    {
+      "name": "reading20px",
+      "fontSize": "20px",
+      "articleRect": {
+        "x": 262,
+        "y": 58.0859375,
+        "width": 573,
+        "height": 9377.15625
+      },
+      "evidence": "official read-only DOM computedStyle/rect tool result"
+    },
+    {
+      "name": "engineering-image-expanded",
+      "evidence": "official actual dialog screenshot saved; part01 does not include subsequent memory-only snapshot"
+    }
+  ]
+}

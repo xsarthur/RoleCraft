@@ -1,0 +1,39 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4486/#reflections".
+1 AXWebArea 职造 · Agent 学习工作台, URL: 127.0.0.1:4486/#reflections
+	2 link Description: 跳到主要内容, Value: 127.0.0.1:4486/#main-content
+	211 container primary-sidebar
+		212 link Description: 职 职造 Agent 开发学习, Value: 127.0.0.1:4486/#home
+		213 container 主导航
+			214 button 首页
+			215 button 课程学习
+			216 button 题库浏览
+			217 button 学习记录
+			218 button 个人设置
+		219 text 当前学习方向
+		220 text Agent 开发者
+		221 link Description: 本机学习者 记录保存在此浏览器, Value: 127.0.0.1:4486/#settings
+	14 container main-content
+		15 container
+			222 text 历史资料与研发记录
+			223 text 原版本与证据范围保持
+		18 container app
+			224 text IMPROVE WITH EVIDENCE
+			225 heading 复盘中心, Value: 1
+				226 text 复盘中心
+			227 text 学习与电子员工产物分别复盘；自述不代表独立审核
+			228 text 多条记录保存在当前浏览器，可导出全部记录及当前草稿。概念题、作品自查和复验自述均不能转为职业达标。每个模块至少分析一项失败或限制；每个项目至少完成一次改进及二次验证。
+			229 button 新建复盘
+			230 button 导出全部复盘（含草稿）
+			231 container
+				232 heading 已提交的复盘记录 · 0 条, Value: 2
+					233 text 已提交的复盘记录 · 0 条
+				234 text 还没有已提交复盘。选择教材、练习、作品或电子员工产物，对照目标与实际证据安排改进；允许记录证据不足和原因待确认。
+		209 container
+			210 text 职造 · Agent 开发学习 教材 v12 · 本浏览器保存
+	235 container lw-find-form
+		236 text 查教材
+		237 text entry area (settable) 查教材, ID: lw-query
+		238 button 查找
+		239 button (collapsed) Description: 展开检索结果, Secondary Actions: Expand
+
+The focused UI element is 225 heading 复盘中心, Value: 1

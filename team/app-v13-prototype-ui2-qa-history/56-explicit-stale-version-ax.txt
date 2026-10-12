@@ -1,0 +1,16 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4475/#questions/Q11".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 55-81
+~				52 text 当前教材内容检索
+~				53 container
+~					54 heading 暂时无法检索, Value: 3
++						55 text 暂时无法检索
++					56 text 检索与阅读资源的版本不一致，请重新加载。
++					57 button 重试本次表达
++					58 link Description: 打开课程目录, Value: 127.0.0.1:4475/#learn
++		59 container lw-find-form
++			60 text 查教材
++			61 text entry area (settable) 查教材, Value: react, ID: lw-query
++			62 button 查找
++			63 button (expanded) Description: 收起检索结果, Secondary Actions: Collapse
+The focused UI element is 61 text entry area (settable) 查教材, Value: react, ID: lw-query

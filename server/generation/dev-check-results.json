@@ -1,0 +1,72 @@
+{
+  "type": "engineering_self_check",
+  "simulation": true,
+  "realProviderCalled": false,
+  "checkedAt": "2026-10-10T07:45:16.328Z",
+  "results": [
+    {
+      "name": "readiness fails closed without key",
+      "status": "passed"
+    },
+    {
+      "name": "missing config never dispatches",
+      "status": "passed"
+    },
+    {
+      "name": "budget overrun never dispatches",
+      "status": "passed"
+    },
+    {
+      "name": "valid simulated chapter retains all audit separations",
+      "status": "passed"
+    },
+    {
+      "name": "unknown profile rejected",
+      "status": "passed"
+    },
+    {
+      "name": "source snapshot mismatch rejected",
+      "status": "passed"
+    },
+    {
+      "name": "refusal rejected",
+      "status": "passed"
+    },
+    {
+      "name": "incomplete rejected",
+      "status": "passed"
+    },
+    {
+      "name": "missing ninth section rejected",
+      "status": "passed"
+    },
+    {
+      "name": "unknown claim reference rejected",
+      "status": "passed"
+    },
+    {
+      "name": "claimed executed example rejected",
+      "status": "passed"
+    },
+    {
+      "name": "provider body not propagated on authentication failure",
+      "status": "passed"
+    },
+    {
+      "name": "pre-cancelled never dispatches",
+      "status": "passed"
+    },
+    {
+      "name": "timeout evidence retains unknown external outcome",
+      "status": "passed"
+    },
+    {
+      "name": "oversized response rejected",
+      "status": "passed"
+    },
+    {
+      "name": "prerequisites cannot be bypassed",
+      "status": "passed"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+
+/* UI2-MOBILE01: keep native long-option selects inside the filter grid. */
+.v13-question-filters{min-width:0;width:100%;max-width:100%}
+.v13-question-filters>label{min-width:0;max-width:100%}
+.v13-question-filters select{box-sizing:border-box;min-width:0;width:100%;max-width:100%;min-height:44px}
+.v13-question-filters>button,.v13-question-filters>a{min-width:0;min-height:44px}
+.v13-question-filters>a{display:flex;align-items:center}
+@media(max-width:480px){.v13-question-filters{grid-template-columns:minmax(0,1fr)}}

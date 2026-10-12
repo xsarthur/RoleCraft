@@ -1,0 +1,103 @@
+{
+  "atUtc": "2026-10-11T16:49:45.043Z",
+  "runtime": "v24.16.0",
+  "scope": "Read-only current QA4453 HTTP resource MIME and actual entry script availability, no real UI execution or visual claim.",
+  "rows": [
+    {
+      "name": "n03-plan-execution.py",
+      "sourcePath": "textbooks/v12/examples/n03-plan-execution.py",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "hashMatches": true,
+      "readOnlyTextExample": true
+    },
+    {
+      "name": "product-gates.json",
+      "sourcePath": "team/product-gates.json",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "hashMatches": true,
+      "readOnlyTextExample": true
+    },
+    {
+      "name": "agent-engineering-landscape-v12.png",
+      "sourcePath": "textbooks/v12/assets/agent-engineering-landscape-v12.png",
+      "status": 200,
+      "contentType": "image/png",
+      "hashMatches": true,
+      "readOnlyTextExample": true
+    }
+  ],
+  "entryHttpStatus": 200,
+  "scripts": [
+    {
+      "src": "curriculum-data.js",
+      "status": 200
+    },
+    {
+      "src": "product-gates-data.js",
+      "status": 200
+    },
+    {
+      "src": "creation-path-data.js",
+      "status": 200
+    },
+    {
+      "src": "product-audit-data.js",
+      "status": 200
+    },
+    {
+      "src": "generation-curriculum-data.js",
+      "status": 200
+    },
+    {
+      "src": "generation.js",
+      "status": 200
+    },
+    {
+      "src": "textbook-v05-data.js",
+      "status": 200
+    },
+    {
+      "src": "textbook-v05-content-review-data.js",
+      "status": 200
+    },
+    {
+      "src": "textbook-data.js",
+      "status": 200
+    },
+    {
+      "src": "textbook-content-review-data.js",
+      "status": 200
+    },
+    {
+      "src": "textbook-pilot.js",
+      "status": 200
+    },
+    {
+      "src": "textbook.js",
+      "status": 200
+    },
+    {
+      "src": "content-v10-data.js",
+      "status": 200
+    },
+    {
+      "src": "content-v12-data.js",
+      "status": 200
+    },
+    {
+      "src": "content-retrieval-core.js",
+      "status": 200
+    },
+    {
+      "src": "learning-workbench.js",
+      "status": 200
+    },
+    {
+      "src": "app.js",
+      "status": 200
+    }
+  ],
+  "status": "pass"
+}

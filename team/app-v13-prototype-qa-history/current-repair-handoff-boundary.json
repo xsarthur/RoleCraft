@@ -1,0 +1,10 @@
+{
+  "atUtc": "2026-10-12T01:39:08.465990+00:00",
+  "method": "Read-only current source fragment/patch presence, no new functional or UI test",
+  "currentReviewFunctionHasOldUnifiedEmptyMessage": true,
+  "reviewRemainingCountPhrasePresent": false,
+  "exactMobile01PatchPresent": false,
+  "experienceSha256": "d9664458d1e60c54d8235e160c4c229b1629c8b694d0f16d7136557b3374cd23",
+  "cssSha256": "1f20aafb25a30842e660a18b2d51445efc6ab3527d359b95703131332fcb9aaf",
+  "conclusion": "Frozen original fixes verified by UI2 do not close current/live application handoff; current fragment still contains first review defect and full mobile patch not present at this read-only endpoint. No assumption of stable newer candidate."
+}

@@ -1,0 +1,7 @@
+import {mkdtempSync,readFileSync} from 'node:fs';import {fileURLToPath} from 'node:url';import {tmpdir} from 'node:os';import path from 'node:path';
+for(const k of ['OPENAI_API_KEY','OPENAI_MODEL','OPENAI_MAX_OUTPUT_TOKENS','ROLECRAFT_GENERATION_BUDGET_USD','ROLECRAFT_ESTIMATED_MAX_COST_USD'])delete process.env[k];
+const {createRolecraftServer}=await import('../../server/index.mjs');const dataDir=mkdtempSync(path.join(tmpdir(),'rolecraft-qa-prerequisite-'));const app=createRolecraftServer({dataDir});
+const phase=process.env.QA_PREREQUISITE_PHASE||'candidate',here=path.dirname(fileURLToPath(import.meta.url));
+if(phase==='received'){const handlers=app.server.listeners('request');app.server.removeAllListeners('request');app.server.on('request',(req,res)=>{const name=req.url.split('?')[0].slice(1);if(req.method==='GET'&&['learning-workbench.js','learning-experience-v13.js','learning-experience-v13.css'].includes(name)){res.writeHead(200,{'content-type':name.endsWith('.css')?'text/css; charset=utf-8':'text/javascript; charset=utf-8','cache-control':'no-store'});res.end(readFileSync(path.join(here,'received',name)));return;}for(const handler of handlers)handler(req,res);});}
+app.server.listen(4498,'127.0.0.1',()=>console.log(JSON.stringify({phase,pid:process.pid,node:process.version,url:'http://127.0.0.1:4498/',dataDir,readingOnly:true})));
+let stop=false;for(const sig of ['SIGINT','SIGTERM'])process.on(sig,async()=>{if(stop)return;stop=true;await app.close();console.log(JSON.stringify({closed:true}));process.exitCode=0;});

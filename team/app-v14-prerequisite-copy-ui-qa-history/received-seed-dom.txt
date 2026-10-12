@@ -1,0 +1,178 @@
+- link "跳到主要内容":
+  - /url: "#main-content"
+- complementary:
+  - link "职 职造 Agent 开发学习":
+    - /url: "#home"
+    - generic: 职
+    - strong:
+      - text: 职造
+      - generic: Agent 开发学习
+  - navigation "主导航":
+    - button "首页":
+      - generic: ⌂
+      - text: 首页
+    - button "课程学习":
+      - generic: ▤
+      - text: 课程学习
+    - button "题库浏览":
+      - generic: ◇
+      - text: 题库浏览
+    - button "学习记录":
+      - generic: ↻
+      - text: 学习记录
+    - button "个人设置":
+      - generic: ⚙
+      - text: 个人设置
+  - generic: 当前学习方向
+  - strong: Agent 开发者
+  - link "本机学习者 记录保存在此浏览器":
+    - /url: "#settings"
+    - generic: 本
+    - text: 本机学习者
+    - generic: 记录保存在此浏览器
+- main:
+  - strong: 课程学习
+  - paragraph: 读懂机制，再回到自己的问题
+  - heading "Agent 开发学习路线" [level=1]
+  - paragraph: 从理解 Agent，到实现、验证与交付自己的产品
+  - text: 继续上次阅读
+  - heading "外部API" [level=2]
+  - paragraph: 外部 API 请求的可判错边界 · 2026/10/12 11:22:32
+  - link "继续阅读 →":
+    - /url: "#learn/agent/f01/s-6c7503f2c3ca"
+  - button "路线图"
+  - button "目录" [pressed]
+  - button "全部"
+  - button "已学习"
+  - button "未掌握"
+  - button "未学习" [pressed]
+  - paragraph: 已学习只表示访问过；题目状态由你自记，不能代表专业能力。
+  - generic "01 认识Agent工程 未学习":
+    - generic: "01"
+    - strong: 认识Agent工程
+    - generic: 未学习
+  - generic "02 基础预备 未学习":
+    - generic: "02"
+    - strong: 基础预备
+    - generic: 未学习
+  - generic "03 Python与模型基础 未学习":
+    - generic: "03"
+    - strong: Python与模型基础
+    - generic: 未学习
+  - generic "04 问题发现 未学习":
+    - generic: "04"
+    - strong: 问题发现
+    - generic: 未学习
+  - generic "05 任务验收 未学习":
+    - generic: "05"
+    - strong: 任务验收
+    - generic: 未学习
+  - generic "06 信任边界 未学习":
+    - generic: "06"
+    - strong: 信任边界
+    - generic: 未学习
+  - generic "07 外部API 本章打开过":
+    - generic: "07"
+    - strong: 外部API
+    - generic: 本章打开过
+  - generic "08 模型候选 未学习":
+    - generic: "08"
+    - strong: 模型候选
+    - generic: 未学习
+  - generic "09 上下文、记忆与提示 未学习":
+    - generic: "09"
+    - strong: 上下文、记忆与提示
+    - generic: 未学习
+  - generic "10 方案选择 未学习":
+    - generic: "10"
+    - strong: 方案选择
+    - generic: 未学习
+  - generic "11 动作身份 未学习":
+    - generic: "11"
+    - strong: 动作身份
+    - generic: 未学习
+  - generic "12 检索证据 未学习":
+    - generic: "12"
+    - strong: 检索证据
+    - generic: 未学习
+  - generic "13 写工具 未学习":
+    - generic: "13"
+    - strong: 写工具
+    - generic: 未学习
+  - generic "14 工具目录与MCP 未学习":
+    - generic: "14"
+    - strong: 工具目录与MCP
+    - generic: 未学习
+  - generic "15 持久恢复 未学习":
+    - generic: "15"
+    - strong: 持久恢复
+    - generic: 未学习
+  - generic "16 固定流程 未学习":
+    - generic: "16"
+    - strong: 固定流程
+    - generic: 未学习
+  - generic "17 动态循环 未学习":
+    - generic: "17"
+    - strong: 动态循环
+    - generic: 未学习
+  - generic "18 规划与反思 未学习":
+    - generic: "18"
+    - strong: 规划与反思
+    - generic: 未学习
+  - generic "19 进阶检索与摄取 未学习":
+    - generic: "19"
+    - strong: 进阶检索与摄取
+    - generic: 未学习
+  - generic "20 图编排 未学习":
+    - generic: "20"
+    - strong: 图编排
+    - generic: 未学习
+  - generic "21 多Agent与A2A 未学习":
+    - generic: "21"
+    - strong: 多Agent与A2A
+    - generic: 未学习
+  - generic "22 版本评价 未学习":
+    - generic: "22"
+    - strong: 版本评价
+    - generic: 未学习
+  - generic "23 跨场景评价与移交 未学习":
+    - generic: "23"
+    - strong: 跨场景评价与移交
+    - generic: 未学习
+  - generic "24 MVP决定 未学习":
+    - generic: "24"
+    - strong: MVP决定
+    - generic: 未学习
+  - generic "25 强制安全 未学习":
+    - generic: "25"
+    - strong: 强制安全
+    - generic: 未学习
+  - generic "26 代码沙箱 未学习":
+    - generic: "26"
+    - strong: 代码沙箱
+    - generic: 未学习
+  - generic "27 发布回退 未学习":
+    - generic: "27"
+    - strong: 发布回退
+    - generic: 未学习
+  - generic "28 性能成本 未学习":
+    - generic: "28"
+    - strong: 性能成本
+    - generic: 未学习
+  - generic "29 运行交付 未学习":
+    - generic: "29"
+    - strong: 运行交付
+    - generic: 未学习
+  - generic "30 独立作品与复盘 未学习":
+    - generic: "30"
+    - strong: 独立作品与复盘
+    - generic: 未学习
+  - text: 职造 · Agent 开发学习
+  - generic: 教材 v12 · 本浏览器保存
+- status
+- generic: 问教材
+- textbox "问教材":
+  - /placeholder: 描述 Agent 开发、学习或项目中的问题
+- button "发送"
+- button "展开学习问答": ⌃
+- status

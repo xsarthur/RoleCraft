@@ -1,0 +1,395 @@
+{
+  "method": "QA sequential reading of current bodies, formal graph and required capacities; manual decisions above go beyond keyword/manifest counts. Guidance references to later mechanisms are permitted when explicitly conceptual, not required full implementation.",
+  "graph": {
+    "acyclic": true,
+    "allPrerequisitesEarlier": true,
+    "nodes": 20,
+    "edges": 46
+  },
+  "units": [
+    {
+      "unitId": "00-learning-route",
+      "order": 1,
+      "path": "sites/rolecraft/textbooks/v09/00-learning-route.md",
+      "currentSha256": "5b61bb59a3db5973f2f8ed2312a6e61e5368b2fba34ba9a1c8853333e160defa",
+      "formalPrerequisites": [],
+      "QAContextJudgment": "起点先交诊断、问题、验收和风险，现有生成器只能作候选，缺问题/批准/回执不能以角色人数补齐。",
+      "noRemainingKnownPrematureCompleteImplementation": true,
+      "actualLearningEffect": "not_measured"
+    },
+    {
+      "unitId": "01-foundation",
+      "order": 2,
+      "path": "sites/rolecraft/textbooks/v09/01-foundation.md",
+      "currentSha256": "9e21a39ca80ea9045111885d33f8a60e0c5fc403a43e74b86f0f58a23347abad",
+      "formalPrerequisites": [
+        "00-learning-route"
+      ],
+      "QAContextJudgment": "独立短程序自含定义与入口；类型、函数、JSON、退出和断言产物及补学表先于完整HTTP适配器。",
+      "noRemainingKnownPrematureCompleteImplementation": true,
+      "actualLearningEffect": "not_measured"
+    },
+    {
+      "unitId": "p01-discovery",
+      "order": 3,
+      "path": "sites/rolecraft/textbooks/v09/p01-discovery.md",
+      "currentSha256": "dfbaf177deeba2bd4f71a633764533a65dce7d14d036e75400744e8c0aee111b",
+      "formalPrerequisites": [
+        "00-learning-route"
+      ],
+      "QAContextJudgment": "零实现依赖，先取得真实或明确构造的问题/替代/反例；成本指标只规划不要求后置实测。",
+      "noRemainingKnownPrematureCompleteImplementation": true,
+      "actualLearningEffect": "not_measured"
+    },
+    {
+      "unitId": "02-task-acceptance",
+      "order": 4,
+      "path": "sites/rolecraft/textbooks/v09/02-task-acceptance.md",
+      "currentSha256": "73d4157f1db7a146b7f84c7913be05dadbb91d2a256560531a7ae748932bc5fc",
+      "formalPrerequisites": [
+        "p01-discovery"
+      ],
+      "QAContextJudgment": "任务记录与缺证/未知/成功的证据条件先于完整评分器；没有CaseRecord复杂ID或Store先修。",
+      "noRemainingKnownPrematureCompleteImplementation": true,
+      "actualLearningEffect": "not_measured"
+    },
+    {
+      "unitId": "03-trust-boundary",
+      "order": 5,
+      "path": "sites/rolecraft/textbooks/v09/03-trust-boundary.md",
+      "currentSha256": "ede8fbe33929ecceafe800fadcc20186c854f8b4bd4b8288e6b74d3690db1f53",
+      "formalPrerequisites": [
+        "02-task-acceptance"
+      ],
+      "QAContextJudgment": "只分类数据与授权及对象范围；实际强制机制仍由后置e03实现，真实敏感读写之前必须学完。",
+      "noRemainingKnownPrematureCompleteImplementation": true,
+      "actualLearningEffect": "not_measured"
+    },
+    {
+      "unitId": "f01",
+      "order": 6,
+      "path": "sites/rolecraft/textbooks/v09/f01.md",
+      "currentSha256": "a960288d8ffd5ba281ed3aec1366433533ba22ee7eddfc5c0537a84f6f4b3b6b",
+      "formalPrerequisites": [
+        "01-foundation",
+        "02-task-acceptance",
+        "03-trust-boundary"
+      ],
+      "QAContextJudgment": "在类型/函数/断言和任务/信任之后学API边界；补学指向独立预备，实际网络不由QA调用。",
+      "noRemainingKnownPrematureCompleteImplementation": true,
+      "actualLearningEffect": "not_measured"
+    },
+    {
+      "unitId": "f02",
+      "order": 7,
+      "path": "sites/rolecraft/textbooks/v09/f02.md",
+      "currentSha256": "341f74e36852a020fb4633ee284396f95082e762a61010d6d10b1cedfb19fe05",
+      "formalPrerequisites": [
+        "f01"
+      ],
+      "QAContextJudgment": "先有API响应和异常基础再接完整模型候选闸门；外部main依赖/凭据另列，不冒称本轮真实调用。",
+      "noRemainingKnownPrematureCompleteImplementation": true,
+      "actualLearningEffect": "not_measured"
+    },
+    {
+      "unitId": "c01-selection",
+      "order": 8,
+      "path": "sites/rolecraft/textbooks/v09/c01-selection.md",
+      "currentSha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f",
+      "formalPrerequisites": [
+        "f02",
+        "02-task-acceptance"
+      ],
+      "QAContextJudgment": "对比控制权、任务不确定性和公平条件，只选择原则；完整TaskContract/Delivery移到组件后。",
+      "noRemainingKnownPrematureCompleteImplementation": true,
+      "actualLearningEffect": "not_measured"
+    },
+    {
+      "unitId": "c01-control-primer",
+      "order": 9,
+      "path": "sites/rolecraft/textbooks/v09/c01-control-primer.md",
+      "currentSha256": "345dd67c5bd8165a9d77dc7de819133f50dfcf39f91f59dec05bf385aba3d8c8",
+      "formalPrerequisites": [
+        "c01-selection",
+        "03-trust-boundary"
+      ],
+      "QAContextJudgment": "只有六名称、职责与短未知轨迹；未提前复制巨大Types、StateStore或整体恢复函数。",
+      "noRemainingKnownPrematureCompleteImplementation": true,
+      "actualLearningEffect": "not_measured"
+    },
+    {
+      "unitId": "c02",
+      "order": 10,
+      "path": "sites/rolecraft/textbooks/v09/c02.md",
+      "currentSha256": "dcc837358d21523fe5cfb16e91682220346b151ed86b84a294f48dd6aee7aff8",
+      "formalPrerequisites": [
+        "f02",
+        "03-trust-boundary"
+      ],
+      "QAContextJudgment": "固定修订、权限和候选基础足以读证据链；语义服务的实际实现保持单独未验证。",
+      "noRemainingKnownPrematureCompleteImplementation": true,
+      "actualLearningEffect": "not_measured"
+    },
+    {
+      "unitId": "c03",
+      "order": 11,
+      "path": "sites/rolecraft/textbooks/v09/c03.md",
+      "currentSha256": "5784b4d0332cc9ddce2277fcdcae2f39b7d2c0887426a0e13f1db89081369d4b",
+      "formalPrerequisites": [
+        "f01",
+        "c01-selection",
+        "c01-control-primer"
+      ],
+      "QAContextJudgment": "身份语言和API先于写工具，事务仅接口合同/要求；明确实际Store到e01，不强迫首次顺读先实现后置存储。",
+      "noRemainingKnownPrematureCompleteImplementation": true,
+      "actualLearningEffect": "not_measured"
+    },
+    {
+      "unitId": "e01",
+      "order": 12,
+      "path": "sites/rolecraft/textbooks/v09/e01.md",
+      "currentSha256": "86af5b074a277c5f2325e53767cea17218a75c4ce5529cec254c01e8a9858b11",
+      "formalPrerequisites": [
+        "c03",
+        "c01-control-primer"
+      ],
+      "QAContextJudgment": "c03提供canonical和Dispatch接口，最小SQLite保存原action/attempt并桥接；未要求完整模型账本，整体循环后置。",
+      "noRemainingKnownPrematureCompleteImplementation": true,
+      "actualLearningEffect": "not_measured"
+    },
+    {
+      "unitId": "c01-fixed-workflow",
+      "order": 13,
+      "path": "sites/rolecraft/textbooks/v09/c01-fixed-workflow.md",
+      "currentSha256": "d4f8ea6dd8065d0afc2a4c2176964161a03e23463397b2518036b7e11530822e",
+      "formalPrerequisites": [
+        "f02",
+        "c02",
+        "c03",
+        "e01"
+      ],
+      "QAContextJudgment": "已具备模型/检索/写工具/存储后，接完整TaskContract→candidate→intent→approval→receipt→completion，未知绑定原action。",
+      "noRemainingKnownPrematureCompleteImplementation": true,
+      "actualLearningEffect": "not_measured"
+    },
+    {
+      "unitId": "c01-control-loop",
+      "order": 14,
+      "path": "sites/rolecraft/textbooks/v09/c01-control-loop.md",
+      "currentSha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38",
+      "formalPrerequisites": [
+        "c01-fixed-workflow",
+        "c03",
+        "e01"
+      ],
+      "QAContextJudgment": "固定流程之后增加观察决策；全部状态、计划、恢复与故障矩阵完整保留，先验概念不冒称运行时已实现。",
+      "noRemainingKnownPrematureCompleteImplementation": true,
+      "actualLearningEffect": "not_measured"
+    },
+    {
+      "unitId": "e02",
+      "order": 15,
+      "path": "sites/rolecraft/textbooks/v09/e02.md",
+      "currentSha256": "ee08b65f1bd78bf87324d7edac1a7642dae74f7fb1fadd41f4197410b32f4069",
+      "formalPrerequisites": [
+        "c02",
+        "c03",
+        "c01-control-loop"
+      ],
+      "QAContextJudgment": "在有组件与轨迹后学完整判定、对照、保留案例与校准；前置原则不代替完整评价。",
+      "noRemainingKnownPrematureCompleteImplementation": true,
+      "actualLearningEffect": "not_measured"
+    },
+    {
+      "unitId": "p01-mvp",
+      "order": 16,
+      "path": "sites/rolecraft/textbooks/v09/p01-mvp.md",
+      "currentSha256": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5",
+      "formalPrerequisites": [
+        "p01-discovery",
+        "c01-selection",
+        "e02"
+      ],
+      "QAContextJudgment": "反读问题证据并以e02冻结比较、MVP/ADR；教学实现是可行性素材，可退回程序方案，自身MVP此后实施。",
+      "noRemainingKnownPrematureCompleteImplementation": true,
+      "actualLearningEffect": "not_measured"
+    },
+    {
+      "unitId": "e03",
+      "order": 17,
+      "path": "sites/rolecraft/textbooks/v09/e03.md",
+      "currentSha256": "e91f8462415fe1c3906eb8b5740b94a59310adaee72bc20124d401f56a258dc0",
+      "formalPrerequisites": [
+        "c02",
+        "c03",
+        "e02",
+        "03-trust-boundary"
+      ],
+      "QAContextJudgment": "真实自身敏感资料/外部写入前完成对象权限、四通道投影及准确批准；读导读不授真实业务授权。",
+      "noRemainingKnownPrematureCompleteImplementation": true,
+      "actualLearningEffect": "not_measured"
+    },
+    {
+      "unitId": "e04",
+      "order": 18,
+      "path": "sites/rolecraft/textbooks/v09/e04.md",
+      "currentSha256": "de92b0f2c1de87aacf7a549c39965fb68e43f667e9f34804907895df6b5a6cd2",
+      "formalPrerequisites": [
+        "e01",
+        "e02",
+        "e03"
+      ],
+      "QAContextJudgment": "状态/评价/安全能力之后学在途兼容、配置、回退和runbook；真实试用/部署前完成，QA不执行发布。",
+      "noRemainingKnownPrematureCompleteImplementation": true,
+      "actualLearningEffect": "not_measured"
+    },
+    {
+      "unitId": "e05",
+      "order": 19,
+      "path": "sites/rolecraft/textbooks/v09/e05.md",
+      "currentSha256": "649430ad094793c4740c5fda6224d7917a5bf3cfe6b5b3136e1ede20915a67b1",
+      "formalPrerequisites": [
+        "e02",
+        "e04"
+      ],
+      "QAContextJudgment": "完整费用/分母/负载在评价与运行之后；早期经济护栏只是计划，实际报告未知费用而非伪造价格。",
+      "noRemainingKnownPrematureCompleteImplementation": true,
+      "actualLearningEffect": "not_measured"
+    },
+    {
+      "unitId": "p02",
+      "order": 20,
+      "path": "sites/rolecraft/textbooks/v09/p02.md",
+      "currentSha256": "edee96e191076ca60a182d830cdd60cab6d2054e1acc9bfa3a2009c53e3427a4",
+      "formalPrerequisites": [
+        "e01",
+        "e03",
+        "e04",
+        "e05",
+        "p01-mvp"
+      ],
+      "QAContextJudgment": "最后独立证据包/陌生任务/原反例复验；索引一致不授专业认证、真实价值或行业优势。",
+      "noRemainingKnownPrematureCompleteImplementation": true,
+      "actualLearningEffect": "not_measured"
+    }
+  ],
+  "actualStageTableSource": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v09-curriculum.md",
+  "actualStageTableSha256": "3be6d21f77da19db6acb0e34df3947b8ef77fb310757d3497c33e4d99e359874",
+  "stages": [
+    {
+      "id": "entry",
+      "curriculumRow": [
+        "起点与预备",
+        "学习入口、基础预备",
+        "小程序、诊断输入输出、断言失败和环境修改记录",
+        "是否能解释真实控制路径与失败位置，是否可按步骤复现",
+        "解释器/路径回预备环境节；类型/JSON/函数/断言回对应练习"
+      ],
+      "artifactCheckRemediationAllConcrete": true,
+      "judgment": "实际文本列出工件、进入下一阶段检查和对应缺口回退；任务与真实证据保持分离，没有由目录/夹具授值的跳步。",
+      "executedByLearner": "not_verified"
+    },
+    {
+      "id": "discover",
+      "curriculumRow": [
+        "问题与限制",
+        "问题发现、任务验收、信任边界",
+        "真实问题档案或明确构造练习、现有替代、价值假设、任务范围、风险表",
+        "观察与解释是否分开；反例是否保留；成功/等待/未知是否分别定义；授权来自哪里",
+        "无问题证据回发现；指标不对应任务回验收；数据被当授权回信任"
+      ],
+      "artifactCheckRemediationAllConcrete": true,
+      "judgment": "实际文本列出工件、进入下一阶段检查和对应缺口回退；任务与真实证据保持分离，没有由目录/夹具授值的跳步。",
+      "executedByLearner": "not_verified"
+    },
+    {
+      "id": "teaching_feasibility",
+      "curriculumRow": [
+        "教学工程可行性",
+        "API、模型候选、选型、身份、检索、工具、恢复、固定流程、动态循环",
+        "教学夹具下可判错组件、同一任务的固定与动态方案、授权及中断轨迹",
+        "事实对象与版本一致；候选不冒充完成；写后未知保持原动作；可解释增复杂度的条件",
+        "引用缺证回检索；身份/重复动作回导读和工具；中断事实丢失回恢复"
+      ],
+      "artifactCheckRemediationAllConcrete": true,
+      "judgment": "实际文本列出工件、进入下一阶段检查和对应缺口回退；任务与真实证据保持分离，没有由目录/夹具授值的跳步。",
+      "executedByLearner": "not_verified"
+    },
+    {
+      "id": "mvp_decision",
+      "curriculumRow": [
+        "评价与真实MVP决定",
+        "完整评价、MVP决策；反读问题档案",
+        "冻结比较条件、开发回归与独立保留安排、MVP合同、ADR、协作说明",
+        "各方案任务和机会是否相同；未知与失败是否保留；现有替代是否可能已经足够",
+        "比较不公平回评价；主负担与假设不符回发现；范围不能验证假设回MVP"
+      ],
+      "artifactCheckRemediationAllConcrete": true,
+      "judgment": "实际文本列出工件、进入下一阶段检查和对应缺口回退；任务与真实证据保持分离，没有由目录/夹具授值的跳步。",
+      "executedByLearner": "not_verified"
+    },
+    {
+      "id": "own_mvp",
+      "curriculumRow": [
+        "自己的MVP实现与边界",
+        "早先组件与流程、完整强制安全",
+        "自己场景的实现、数据/工具授权、四通道投影、准确批准与拒绝正反例",
+        "真实敏感读取和外部写入前是否已建立强制边界并取得相应授权；正常功能是否也成立",
+        "关键权限失败先暂停相关真实路径，回信任/安全；保留已发生和未决效果，不伪造无副作用"
+      ],
+      "artifactCheckRemediationAllConcrete": true,
+      "judgment": "实际文本列出工件、进入下一阶段检查和对应缺口回退；任务与真实证据保持分离，没有由目录/夹具授值的跳步。",
+      "executedByLearner": "not_verified"
+    },
+    {
+      "id": "delivery_and_usage",
+      "curriculumRow": [
+        "交付与真实使用",
+        "发布回退、完整MVP的反馈安排",
+        "版本与依赖、兼容配置、维护复现、真实采用与退出反馈",
+        "非作者能否复现；在途任务是否保持；用户负担与接收者返工是否都记录",
+        "版本状态不兼容回恢复/发布；采用障碍与目标问题不符回发现/MVP"
+      ],
+      "artifactCheckRemediationAllConcrete": true,
+      "judgment": "实际文本列出工件、进入下一阶段检查和对应缺口回退；任务与真实证据保持分离，没有由目录/夹具授值的跳步。",
+      "executedByLearner": "not_verified"
+    },
+    {
+      "id": "economics_and_iteration",
+      "curriculumRow": [
+        "经济比较与迭代",
+        "性能成本、评价、反馈安排",
+        "全任务分母、费用与未知项、延迟负载、质量护栏、原失败与回归复验",
+        "缓存/模型/并发是否在相同条件下改善；是否转移人工负担或损害质量安全",
+        "未知账单不填实际数；删失败分母回成本/评价；改进无收益回假设或停止扩范围"
+      ],
+      "artifactCheckRemediationAllConcrete": true,
+      "judgment": "实际文本列出工件、进入下一阶段检查和对应缺口回退；任务与真实证据保持分离，没有由目录/夹具授值的跳步。",
+      "executedByLearner": "not_verified"
+    },
+    {
+      "id": "independent_transfer",
+      "curriculumRow": [
+        "独立作品与迁移",
+        "交付复盘",
+        "可复现证据包、真实使用与行业比较边界、非作者未知任务、改进复验",
+        "独立者能否从版本与原始证据复核结论；职业与先进性是否有相应真实证据",
+        "只会公开例题回独立未知任务；来源/比较不足补真实证据；失败未复验不关闭"
+      ],
+      "artifactCheckRemediationAllConcrete": true,
+      "judgment": "实际文本列出工件、进入下一阶段检查和对应缺口回退；任务与真实证据保持分离，没有由目录/夹具授值的跳步。",
+      "executedByLearner": "not_verified"
+    }
+  ],
+  "routes": "概要预览原则/正式深读依赖/阶段实作各自说明；同一诊断证据支持已有基础者跳补学，零基础先补诊断缺项；不是自报基础或认证。",
+  "realWritePreconditions": "Own MVP after task/compare decision; e03 + actual authorization before first sensitive read or external write; e04 before real trial/deployment; e05 before economics conclusions.",
+  "scope": "document structure and current context only",
+  "unknown": [
+    "real first-time comprehension",
+    "remediation success",
+    "actual professional execution",
+    "learner transfer",
+    "user value",
+    "human specialist/industry validation"
+  ]
+}

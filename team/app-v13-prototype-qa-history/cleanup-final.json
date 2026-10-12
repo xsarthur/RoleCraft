@@ -1,0 +1,19 @@
+{
+  "atUtc": "2026-10-12T01:39:08.465287+00:00",
+  "main4473ClosedEarlierExit0": "cleanup-main.json",
+  "finalReadOnlyListenerCheck": {
+    "command": "lsof -nP -iTCP:4473 -iTCP:4474 -iTCP:4486 -sTCP:LISTEN",
+    "exitCode": 1,
+    "stdout": "",
+    "meaning": "no listeners at this check; 4475/4485 could belong to other concurrent work and not operated."
+  },
+  "mainOwnedRuntime": {
+    "path": "/var/folders/v5/yy0xf3tx1gddnb0qz7skr8wr0000gn/T/rolecraft-qa-v13-HUSpSy",
+    "existed": true,
+    "removed": true
+  },
+  "ui1Cleanup": "See original tool-and-cleanup.json: service exited0; tab/viewport unconfirmed. Main did not operate those GUI resources or delete another QA owned runtime.",
+  "ui2Cleanup": "Eight phases exited0; final own4486 no listener, viewport reset and own tab close reported with official actual result; temporary runtimes removed.",
+  "user4318Operated": false,
+  "realDbReadOrModified": false
+}

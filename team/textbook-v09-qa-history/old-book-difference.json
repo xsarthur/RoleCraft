@@ -1,0 +1,540 @@
+{
+  "recordedAt": "2026-10-11T00:45:47.356811+00:00",
+  "method": "read-only per-chapter text comparison against unchanged frozen source SHA and validated permitted transformed-body SHA; old assembly/audit scripts not run; no combined book reconstructed on disk",
+  "book": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/agent-engineering-textbook.md",
+  "baselineCurrentSha256": "f68f553bcd5fd6a86ef988fd780d5433cd305413111c5c4d08966a7fc39b3816",
+  "previousFrozenSha256": "fd9f295bf112e13271b98f7e5c004d6099b335781d23c7bd6269b24768d717e5",
+  "headerChanges": [
+    {
+      "kind": "replace",
+      "expectedLines": [
+        3,
+        3
+      ],
+      "currentLines": [
+        3,
+        3
+      ],
+      "expected": "[按主题选择分章阅读](</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/README.md>)。\n",
+      "current": "[按主题选择分章阅读](/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/README.md)。\n"
+    },
+    {
+      "kind": "replace",
+      "expectedLines": [
+        5,
+        5
+      ],
+      "currentLines": [
+        5,
+        5
+      ],
+      "expected": "按课程阅读顺序合并当前十三篇正文；每篇开头保留权威源文件链接。正文只调整围栏外标题层级与本地链接，代码围栏字节保持原样。实际审校和执行范围见[内容审校](</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-content-review.md>)及[QA记录](</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-qa.md>)。\n",
+      "current": "按课程阅读顺序合并当前十三篇正文；每篇开头保留权威源文件链接。正文只调整围栏外标题层级与本地链接，代码围栏字节保持原样。实际审校和执行范围见[内容审校](/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-content-review.md)及[QA记录](/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-qa.md)。\n"
+    }
+  ],
+  "chapters": [
+    {
+      "chapter": "f01.md",
+      "sourceSha256": "f106810ec9d99b5a2946cc87f0afe4a6b6947ecae8614c62d167007e8b84dc73",
+      "labelSame": true,
+      "sourceLinkExpected": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f01.md>",
+      "sourceLinkCurrent": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f01.md",
+      "bodyChanges": [
+        {
+          "kind": "replace",
+          "expectedLines": [
+            5,
+            5
+          ],
+          "currentLines": [
+            5,
+            5
+          ],
+          "expected": "本文的核心问题是：**怎样使一个外部 API 调用既可判错，又能在另一台开发机上复现？**适用条件是上游提供不可变修订的读取服务、调用者身份由可信入口确定、响应大小有界。接口地址、数据合同和夹具都是原创教学设计；作者编写时未执行下方最小代码。本轮独立 QA 在 Python 3.12.14 仅检查假 HTTP 响应、输入/响应边界及离线断言，具体范围见 [QA 记录](/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-qa.md)；真实读取服务和 Python 3.14 目标环境未测。它没有实现生产认证、服务端访问控制或整体 Agent。\n",
+          "current": "本文的核心问题是：**怎样使一个外部 API 调用既可判错，又能在另一台开发机上复现？**&#x9002;用条件是上游提供不可变修订的读取服务、调用者身份由可信入口确定、响应大小有界。接口地址、数据合同和夹具都是原创教学设计；作者编写时未执行下方最小代码。本轮独立 QA 在 Python 3.12.14 仅检查假 HTTP 响应、输入/响应边界及离线断言，具体范围见 [QA 记录](/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-qa.md)；真实读取服务和 Python 3.14 目标环境未测。它没有实现生产认证、服务端访问控制或整体 Agent。\n"
+        },
+        {
+          "kind": "replace",
+          "expectedLines": [
+            13,
+            13
+          ],
+          "currentLines": [
+            13,
+            13
+          ],
+          "expected": "发出请求也不等于取得结果。HTTP 状态描述响应语义，响应正文还需满足业务合同；`200` 内含旧修订文件不是本任务成功。网络超时则没有提供成功正文：对本篇不可变、只读接口可以有界重读，但这仍是一次新尝试。这个结论不能迁移到创建工单。HTTP 对幂等方法的定义与自动重试限制见 [RFC 9110 §9.2.2](https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2)，本文业务读接口还要求不存在会改变任务对象的副作用。\n",
+          "current": "发出请求也不等于取得结果。HTTP 状态描述响应语义，响应正文还需满足业务合同；`200` 内含旧修订文件不是本任务成功。网络超时则没有提供成功正文：对本篇不可变、只读接口可以有界重读，但这仍是一次新尝试。这个结论不能迁移到创建工单。HTTP 对幂等方法的定义与自动重试限制见 [RFC 9110 §9.2.2](https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2)，本文业务读接口还要求不存在会改变任务对象的副作用。g\n"
+        },
+        {
+          "kind": "insert",
+          "expectedLines": [
+            16,
+            15
+          ],
+          "currentLines": [
+            16,
+            16
+          ],
+          "expected": "",
+          "current": "\n"
+        },
+        {
+          "kind": "replace",
+          "expectedLines": [
+            200,
+            200
+          ],
+          "currentLines": [
+            201,
+            201
+          ],
+          "expected": "**补齐一个失败分支。**给上述测试添加空路径、未知 `tenant` 字段、`403`、`503`、非法 JSON、错误哈希以及 `content` 含转义孤立代理字符的 JSON。先写各自预期及请求次数，再写测试。参考判断：空路径与未知字段在本地拒绝且零请求；`403` 已取得拒绝响应且不自动重试；`503` 是没有取得本篇结果，可受限重读；非法 JSON 与错误哈希是响应不可信。JSON 能解析为字符串还不保证可编码为本合同的 UTF-8，孤立代理字符在编码处返回 `CONTENT_NOT_UTF8`，不能越过归约或产出证据。应保留本地拒绝与上游拒绝两种不同观察。\n",
+          "current": "**补齐一个失败分支。**&#x7ED9;上述测试添加空路径、未知 `tenant` 字段、`403`、`503`、非法 JSON、错误哈希以及 `content` 含转义孤立代理字符的 JSON。先写各自预期及请求次数，再写测试。参考判断：空路径与未知字段在本地拒绝且零请求；`403` 已取得拒绝响应且不自动重试；`503` 是没有取得本篇结果，可受限重读；非法 JSON 与错误哈希是响应不可信。JSON 能解析为字符串还不保证可编码为本合同的 UTF-8，孤立代理字符在编码处返回 `CONTENT_NOT_UTF8`，不能越过归约或产出证据。应保留本地拒绝与上游拒绝两种不同观察。\n"
+        },
+        {
+          "kind": "replace",
+          "expectedLines": [
+            202,
+            202
+          ],
+          "currentLines": [
+            203,
+            203
+          ],
+          "expected": "**定位“同伴跑不起来”。**作者交来五项绿色截图和 `HEAD`，同伴报告缺少导入的第三方包，而教材声明仅标准库。参考分析：先核截图所用源文件与提交差异，极可能交付代码已扩展但环境说明未更新。补齐实际依赖版本和重建命令，让非作者重跑同样输入；没有非作者记录则复现仍未完成。不能从截图推导陌生环境可启动。\n",
+          "current": "**定位“同伴跑不起来”。**&#x4F5C;者交来五项绿色截图和 `HEAD`，同伴报告缺少导入的第三方包，而教材声明仅标准库。参考分析：先核截图所用源文件与提交差异，极可能交付代码已扩展但环境说明未更新。补齐实际依赖版本和重建命令，让非作者重跑同样输入；没有非作者记录则复现仍未完成。不能从截图推导陌生环境可启动。\n"
+        },
+        {
+          "kind": "replace",
+          "expectedLines": [
+            204,
+            204
+          ],
+          "currentLines": [
+            205,
+            205
+          ],
+          "expected": "**迁移到写接口。**把读取改成 `create_issue`，请求超时后应该怎样改变返回和重试？参考分析：`UNAVAILABLE` 的只读重读策略必须撤回，保存逻辑动作身份和可能已发状态；超时返回外部效果未知，按原操作身份核对，不换键创建。接口幂等、审批和结果归约分别在 [写工具章节](/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md) 与 [持久恢复章节](/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e01.md) 展开。能够写出这项差异，比把五项原测试照搬成写接口测试更能证明理解。\n",
+          "current": "**迁移到写接口。**&#x628A;读取改成 `create_issue`，请求超时后应该怎样改变返回和重试？参考分析：`UNAVAILABLE` 的只读重读策略必须撤回，保存逻辑动作身份和可能已发状态；超时返回外部效果未知，按原操作身份核对，不换键创建。接口幂等、审批和结果归约分别在 [写工具章节](/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md) 与 [持久恢复章节](/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e01.md) 展开。能够写出这项差异，比把五项原测试照搬成写接口测试更能证明理解。\n"
+        },
+        {
+          "kind": "replace",
+          "expectedLines": [
+            206,
+            206
+          ],
+          "currentLines": [
+            207,
+            207
+          ],
+          "expected": "**必要补学路径。**若不能解释字典取字段、类型分支、函数返回与断言失败，先手算 `test_invalid_type_never_calls_upstream` 的控制路径，再在独立练习目录把 `path` 改为列表、空字符串、合法字符串，保存输入与真实结果。补学使用 [Python 官方入门](https://docs.python.org/3.14/tutorial/)；本篇专业正文不把这项先修证据当作已经取得。\n",
+          "current": "**必要补学路径。**&#x82E5;不能解释字典取字段、类型分支、函数返回与断言失败，先手算 `test_invalid_type_never_calls_upstream` 的控制路径，再在独立练习目录把 `path` 改为列表、空字符串、合法字符串，保存输入与真实结果。补学使用 [Python 官方入门](https://docs.python.org/3.14/tutorial/)；本篇专业正文不把这项先修证据当作已经取得。\n"
+        }
+      ],
+      "codeFencesByteSame": true
+    },
+    {
+      "chapter": "f02.md",
+      "sourceSha256": "bddc63842ffdc846127ef97519387372aaf92f24536a0c9b7f0b46335a041277",
+      "labelSame": true,
+      "sourceLinkExpected": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f02.md>",
+      "sourceLinkCurrent": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f02.md",
+      "bodyChanges": [
+        {
+          "kind": "insert",
+          "expectedLines": [
+            24,
+            23
+          ],
+          "currentLines": [
+            24,
+            24
+          ],
+          "expected": "",
+          "current": "\n"
+        },
+        {
+          "kind": "replace",
+          "expectedLines": [
+            189,
+            189
+          ],
+          "currentLines": [
+            190,
+            190
+          ],
+          "expected": "**格式完整，事实错位。**模型输出 `actual=True`，JSON 与 Schema 都合法，却与报告矛盾。闸门返回 `FACT_MISMATCH(actual)`，可在剩余预算内把具体差异反馈给模型。不能把冲突响应修改成报告值后声称模型原来正确；修正产物应记录其来源。\n",
+          "current": "**格式完整，事实错位。**&#x6A21;型输出 `actual=True`，JSON 与 Schema 都合法，却与报告矛盾。闸门返回 `FACT_MISMATCH(actual)`，可在剩余预算内把具体差异反馈给模型。不能把冲突响应修改成报告值后声称模型原来正确；修正产物应记录其来源。\n"
+        },
+        {
+          "kind": "replace",
+          "expectedLines": [
+            191,
+            191
+          ],
+          "currentLines": [
+            192,
+            192
+          ],
+          "expected": "**响应未完成。**正文已经显示一个 JSON 前缀，但 `status=incomplete` 或连接断开。本方案不消费它，不创建后续计划。将完整输出上限调整到足以容纳目标文档可能修复截断，但如果是内容过滤、拒绝或无权限，增大上限不会解决。流式 UI 可预览文本，预览不进入业务候选。\n",
+          "current": "**响应未完成。**&#x6B63;文已经显示一个 JSON 前缀，但 `status=incomplete` 或连接断开。本方案不消费它，不创建后续计划。将完整输出上限调整到足以容纳目标文档可能修复截断，但如果是内容过滤、拒绝或无权限，增大上限不会解决。流式 UI 可预览文本，预览不进入业务候选。\n"
+        },
+        {
+          "kind": "replace",
+          "expectedLines": [
+            199,
+            199
+          ],
+          "currentLines": [
+            200,
+            200
+          ],
+          "expected": "**协议与业务反例。**构造完整合法、完整但 `actual` 错位、`incomplete`、包含 `refusal` 四个 REST 文档，再加入顶层为数组/null的响应。给合法候选一个并不存在的引用 ID。参考分析：分别得到候选、事实拒绝、协议拒绝、模型拒绝、顶层对象拒绝和上下文引用拒绝。调用包装层也须检查对象类型，不能在解析器已拒绝后无条件读 `response.get`。引用 ID 存在只证明关联合法，根因主张仍未证实；[证据包章节](/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c02.md) 将处理主张支持关系。提交各输入、预期、实际及当前解析器版本。\n",
+          "current": "**协议与业务反例。**&#x6784;造完整合法、完整但 `actual` 错位、`incomplete`、包含 `refusal` 四个 REST 文档，再加入顶层为数组/null的响应。给合法候选一个并不存在的引用 ID。参考分析：分别得到候选、事实拒绝、协议拒绝、模型拒绝、顶层对象拒绝和上下文引用拒绝。调用包装层也须检查对象类型，不能在解析器已拒绝后无条件读 `response.get`。引用 ID 存在只证明关联合法，根因主张仍未证实；[证据包章节](/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c02.md) 将处理主张支持关系。提交各输入、预期、实际及当前解析器版本。\n"
+        },
+        {
+          "kind": "replace",
+          "expectedLines": [
+            201,
+            201
+          ],
+          "currentLines": [
+            202,
+            202
+          ],
+          "expected": "**摘要损失。**把源代码片段替成“七天内可退”，报告保持不变。说明为什么事实校验可能仍通过，而根因判断质量下降。参考分析：校验器仍可比对报告，但摘要没有比较符，无法判断边界实现；应保留源文件原行及修订，不能仅通过增加提示词修复消失的证据。提交改变前后的请求内容和候选，不虚构质量改善百分比。\n",
+          "current": "**摘要损失。**&#x628A;源代码片段替成“七天内可退”，报告保持不变。说明为什么事实校验可能仍通过，而根因判断质量下降。参考分析：校验器仍可比对报告，但摘要没有比较符，无法判断边界实现；应保留源文件原行及修订，不能仅通过增加提示词修复消失的证据。提交改变前后的请求内容和候选，不虚构质量改善百分比。\n"
+        },
+        {
+          "kind": "replace",
+          "expectedLines": [
+            203,
+            203
+          ],
+          "currentLines": [
+            204,
+            204
+          ],
+          "expected": "**真实请求作业。**读者在获准的隔离环境选择一个支持本 Schema 的具体模型或快照，先核当前官方模型页与账户权限，再主动配置上述两个环境变量，运行 `python3 f02_candidate.py`。只使用教学材料，记录请求配置、脱敏输入、响应 ID、完整状态、候选校验、实际用量、耗时和凭据/预算失败。凭据不得进入提交物。没有配置或预算则真实调用目标保持未完成；替身通过不能替代它。接着将 `actual` 反例通过离线夹具注入校验器，证明合法 JSON 的业务拒绝仍工作。当前教材没有作者调用结果、价格版本、账单或读者效果证据。\n",
+          "current": "**真实请求作业。**&#x8BFB;者在获准的隔离环境选择一个支持本 Schema 的具体模型或快照，先核当前官方模型页与账户权限，再主动配置上述两个环境变量，运行 `python3 f02_candidate.py`。只使用教学材料，记录请求配置、脱敏输入、响应 ID、完整状态、候选校验、实际用量、耗时和凭据/预算失败。凭据不得进入提交物。没有配置或预算则真实调用目标保持未完成；替身通过不能替代它。接着将 `actual` 反例通过离线夹具注入校验器，证明合法 JSON 的业务拒绝仍工作。当前教材没有作者调用结果、价格版本、账单或读者效果证据。\n"
+        }
+      ],
+      "codeFencesByteSame": true
+    },
+    {
+      "chapter": "c01-solution-selection.md",
+      "sourceSha256": "4d052f25f586c885cec380abc7a697761a0915c41a8b1391a5550246172e23f9",
+      "labelSame": true,
+      "sourceLinkExpected": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c01-solution-selection.md>",
+      "sourceLinkCurrent": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c01-solution-selection.md",
+      "bodyChanges": [
+        {
+          "kind": "replace",
+          "expectedLines": [
+            11,
+            16
+          ],
+          "currentLines": [
+            11,
+            16
+          ],
+          "expected": "| 方案 | 谁选下一步 | 同一缺陷任务中的可用实现 | 应放弃或升级的条件 |\n| --- | --- | --- | --- |\n| 普通程序 | 代码 | 解析固定测试格式，填报告与工单模板 | 必需解释无法用现有规则覆盖的语义，规则维护成本明显上升 |\n| 单次模型 | 模型只写候选，输入由代码一次构造 | 已有文件、报告和规则齐全，一次生成缺陷说明 | 需要根据结果回到环境取得新证据，或必须多步分离不同验证 |\n| 固定 workflow | 代码选分支，模型完成指定节点 | 读报告→读报告所列文件→生成→校验→等待审批→创建 | 相关文件选择无法由稳定规则表达，新增分支不断依赖新观察 |\n| 动态 Agent | 模型提议调查路径；运行时裁定能否执行 | 先读失败报告，再判断需读实现、调用者或规则文件 | 额外探索没有提高合格率，权限/预算/恢复代价超过收益 |\n",
+          "current": "| 方案          | 谁选下一步              | 同一缺陷任务中的可用实现              | 应放弃或升级的条件                   |\n| ----------- | ------------------ | ------------------------- | --------------------------- |\n| 普通程序        | 代码                 | 解析固定测试格式，填报告与工单模板         | 必需解释无法用现有规则覆盖的语义，规则维护成本明显上升 |\n| 单次模型        | 模型只写候选，输入由代码一次构造   | 已有文件、报告和规则齐全，一次生成缺陷说明     | 需要根据结果回到环境取得新证据，或必须多步分离不同验证 |\n| 固定 workflow | 代码选分支，模型完成指定节点     | 读报告→读报告所列文件→生成→校验→等待审批→创建 | 相关文件选择无法由稳定规则表达，新增分支不断依赖新观察 |\n| 动态 Agent    | 模型提议调查路径；运行时裁定能否执行 | 先读失败报告，再判断需读实现、调用者或规则文件   | 额外探索没有提高合格率，权限/预算/恢复代价超过收益  |\n"
+        },
+        {
+          "kind": "insert",
+          "expectedLines": [
+            61,
+            60
+          ],
+          "currentLines": [
+            61,
+            61
+          ],
+          "expected": "",
+          "current": "\n"
+        },
+        {
+          "kind": "replace",
+          "expectedLines": [
+            228,
+            228
+          ],
+          "currentLines": [
+            229,
+            229
+          ],
+          "expected": "**固定字段还是 Agent？**报告格式稳定、所需说明只有输入/预期/实际，维护者禁止推断根因。参考分析：普通程序加模板满足目标；LLM 和动态调查没有目标内收益。保留错误解析与缺项分支，不能因为不用模型就省掉验收。\n",
+          "current": "**固定字段还是 Agent？**&#x62A5;告格式稳定、所需说明只有输入/预期/实际，维护者禁止推断根因。参考分析：普通程序加模板满足目标；LLM 和动态调查没有目标内收益。保留错误解析与缺项分支，不能因为不用模型就省掉验收。\n"
+        },
+        {
+          "kind": "replace",
+          "expectedLines": [
+            230,
+            230
+          ],
+          "currentLines": [
+            231,
+            231
+          ],
+          "expected": "**未知路径。**失败报告给 `service.py`，读后发现它调用动态注册的处理器，实际处理器随配置变化。固定流程读两处能否足够？参考分析：先看配置和注册是否能以确定规则解析；能则扩充固定流程。若名称与语义关系需要依据观察逐步判断，可试动态只读 Agent，但保持同一修订、资源范围和最大调查次数。一次题目复杂不足以证明整个产品应全面 Agent 化。\n",
+          "current": "**未知路径。**&#x5931;败报告给 `service.py`，读后发现它调用动态注册的处理器，实际处理器随配置变化。固定流程读两处能否足够？参考分析：先看配置和注册是否能以确定规则解析；能则扩充固定流程。若名称与语义关系需要依据观察逐步判断，可试动态只读 Agent，但保持同一修订、资源范围和最大调查次数。一次题目复杂不足以证明整个产品应全面 Agent 化。\n"
+        },
+        {
+          "kind": "replace",
+          "expectedLines": [
+            232,
+            232
+          ],
+          "currentLines": [
+            233,
+            233
+          ],
+          "expected": "**协作失败。**代码调查员用 `repo@8e12`，测试调查员交来 `repo@9a01` 的报告，却两者结论一致。参考分析：交接版本不匹配，整合者应拒绝合并并重新取得同修订证据；一致结论没有消除条件差异。把第二位换为更强模型并不修复输入合同。\n",
+          "current": "**协作失败。**&#x4EE3;码调查员用 `repo@8e12`，测试调查员交来 `repo@9a01` 的报告，却两者结论一致。参考分析：交接版本不匹配，整合者应拒绝合并并重新取得同修订证据；一致结论没有消除条件差异。把第二位换为更强模型并不修复输入合同。\n"
+        },
+        {
+          "kind": "replace",
+          "expectedLines": [
+            234,
+            234
+          ],
+          "currentLines": [
+            235,
+            235
+          ],
+          "expected": "**升级实验。**设计一组同预算的固定流程与动态循环对照，写出会支持升级、会使你保留固定流程的结果。参考分析：支持升级需要目标内合格改善来自新观察选路，并且错误完成、越权和成本护栏仍满足事前要求；保留固定流程的结果包括材料完整题优势相近、动态题失败源于模型误读而非缺路径、或新增调查不带来可验证收益。具体产品通过门槛由产品责任人定义，本文不自创认证分数。\n",
+          "current": "**升级实验。**&#x8BBE;计一组同预算的固定流程与动态循环对照，写出会支持升级、会使你保留固定流程的结果。参考分析：支持升级需要目标内合格改善来自新观察选路，并且错误完成、越权和成本护栏仍满足事前要求；保留固定流程的结果包括材料完整题优势相近、动态题失败源于模型误读而非缺路径、或新增调查不带来可验证收益。具体产品通过门槛由产品责任人定义，本文不自创认证分数。\n"
+        }
+      ],
+      "codeFencesByteSame": true
+    },
+    {
+      "chapter": "agent-control-loop-v07.md",
+      "sourceSha256": "996e5aeb084b66405a0dd1023a375743d2e359c335b29517ac923f9f6a033c5c",
+      "labelSame": true,
+      "sourceLinkExpected": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/agent-control-loop-v07.md>",
+      "sourceLinkCurrent": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/agent-control-loop-v07.md",
+      "bodyChanges": [
+        {
+          "kind": "replace",
+          "expectedLines": [
+            28,
+            32
+          ],
+          "currentLines": [
+            28,
+            32
+          ],
+          "expected": "| 工具 | 输入与产物 | 执行性质 | 恢复依据 |\n| --- | --- | --- | --- |\n| `read_source` | 允许仓库、固定修订、允许路径 → 文件内容及内容哈希 | 只读；不能换成任意 URL 或本机路径 | 在该不可变修订上可以重新读取；结果必须保留修订和哈希 |\n| `read_test_report` | 允许的报告 ID → 失败断言、运行环境及报告哈希 | 只读；不能把模型猜测当报告 | 读取同一不可变报告；服务失败不等于测试通过 |\n| `create_issue` | 固定项目、标题、正文、证据引用 → 工单 ID 与内容版本 | 外部写操作；需指定内容审批 | 本文示例假定支持按客户端操作 ID 查询，以及有明确有效期的幂等键；缺少这些能力时改用人工核对 |\n",
+          "current": "| 工具                 | 输入与产物                         | 执行性质                | 恢复依据                                            |\n| ------------------ | ----------------------------- | ------------------- | ----------------------------------------------- |\n| `read_source`      | 允许仓库、固定修订、允许路径 → 文件内容及内容哈希    | 只读；不能换成任意 URL 或本机路径 | 在该不可变修订上可以重新读取；结果必须保留修订和哈希                      |\n| `read_test_report` | 允许的报告 ID → 失败断言、运行环境及报告哈希     | 只读；不能把模型猜测当报告       | 读取同一不可变报告；服务失败不等于测试通过                           |\n| `create_issue`     | 固定项目、标题、正文、证据引用 → 工单 ID 与内容版本 | 外部写操作；需指定内容审批       | 本文示例假定支持按客户端操作 ID 查询，以及有明确有效期的幂等键；缺少这些能力时改用人工核对 |\n"
+        },
+        {
+          "kind": "replace",
+          "expectedLines": [
+            52,
+            52
+          ],
+          "currentLines": [
+            52,
+            52
+          ],
+          "expected": "**State 是恢复与授权依据。**它保存目标版本、运行修订号、动作账本、尝试记录、审批、取消请求、预算和验收反馈。未决动作不能因为上下文压缩而消失，审批不能因为模型在对话里写了“用户已同意”而产生。\n",
+          "current": "**State 是恢复与授权依据。**&#x5B83;保存目标版本、运行修订号、动作账本、尝试记录、审批、取消请求、预算和验收反馈。未决动作不能因为上下文压缩而消失，审批不能因为模型在对话里写了“用户已同意”而产生。\n"
+        },
+        {
+          "kind": "replace",
+          "expectedLines": [
+            54,
+            54
+          ],
+          "currentLines": [
+            54,
+            54
+          ],
+          "expected": "**Context 是模型这一次看到的状态投影。**完整历史可能包含几十 MB 的日志和文件，本轮模型只需知道当前问题、相关证据、已经完成的动作、尚未解决的动作和最近的验收失败。投影必须有版本或摘要哈希，便于解释模型为什么提出这一步；它没有执行权限。\n",
+          "current": "**Context 是模型这一次看到的状态投影。**&#x5B8C;整历史可能包含几十 MB 的日志和文件，本轮模型只需知道当前问题、相关证据、已经完成的动作、尚未解决的动作和最近的验收失败。投影必须有版本或摘要哈希，便于解释模型为什么提出这一步；它没有执行权限。\n"
+        },
+        {
+          "kind": "replace",
+          "expectedLines": [
+            225,
+            230
+          ],
+          "currentLines": [
+            225,
+            230
+          ],
+          "expected": "| 模型请求结果 | 本轮处理 | 是否可能已经产生本篇工具副作用 |\n| --- | --- | --- |\n| 完整、可解析、协议有效 | 持久化响应后校验决策 | 还没有；本方案禁止提交前调工具 |\n| 截断、流断开、参数未闭合 | 记录输出不完整；受限重试模型 | 没有；已显示文本只是预览 |\n| 协议有效但工具参数非法 | 记录具体协议反馈；允许修正 | 没有 |\n| 拒绝、内容过滤、服务报错 | 分类保存；按可重试性停止或重试 | 没有 |\n",
+          "current": "| 模型请求结果         | 本轮处理              | 是否可能已经产生本篇工具副作用   |\n| -------------- | ----------------- | ----------------- |\n| 完整、可解析、协议有效    | 持久化响应后校验决策        | 还没有；本方案禁止提交前调工具   |\n| 截断、流断开、参数未闭合   | 记录输出不完整；受限重试模型    | 没有；已显示文本只是预览      |\n| 协议有效但工具参数非法    | 记录具体协议反馈；允许修正     | 没有                |\n| 拒绝、内容过滤、服务报错   | 分类保存；按可重试性停止或重试   | 没有                |\n"
+        },
+        {
+          "kind": "replace",
+          "expectedLines": [
+            280,
+            287
+          ],
+          "currentLines": [
+            280,
+            287
+          ],
+          "expected": "| 预算 | 何时消耗 | 为什么不能合并成 `max_steps` |\n| --- | --- | --- |\n| 模型请求尝试 | 发请求前预留并计数，成功或失败都保留 | 一次失败请求也可能有费用；重试不一定产生工具 |\n| 逻辑动作数 | 首次提交动作意图 | 一个动作可以多次执行，不该重复算成多个目标动作 |\n| 工具执行尝试 | 发工具请求前计数 | 同动作的重试和并发扇出消耗额外资源 |\n| 核对次数与恢复时间 | 每次状态查询前计数 | 暂停重启不能变成无限轮询；恢复应有独立额度 |\n| 总截止时间 | 持久化绝对截止时间 | 重启不能重新开始计时；等待审批是否计入要明确 |\n| token/费用 | 请求前保守预留，事后结算 | 计费可延迟、失败请求用量未知，实际账单不能由调用次数代替 |\n",
+          "current": "| 预算        | 何时消耗               | 为什么不能合并成 `max_steps`         |\n| --------- | ------------------ | ---------------------------- |\n| 模型请求尝试    | 发请求前预留并计数，成功或失败都保留 | 一次失败请求也可能有费用；重试不一定产生工具       |\n| 逻辑动作数     | 首次提交动作意图           | 一个动作可以多次执行，不该重复算成多个目标动作      |\n| 工具执行尝试    | 发工具请求前计数           | 同动作的重试和并发扇出消耗额外资源            |\n| 核对次数与恢复时间 | 每次状态查询前计数          | 暂停重启不能变成无限轮询；恢复应有独立额度        |\n| 总截止时间     | 持久化绝对截止时间          | 重启不能重新开始计时；等待审批是否计入要明确       |\n| token/费用  | 请求前保守预留，事后结算       | 计费可延迟、失败请求用量未知，实际账单不能由调用次数代替 |\n"
+        },
+        {
+          "kind": "insert",
+          "expectedLines": [
+            296,
+            295
+          ],
+          "currentLines": [
+            296,
+            296
+          ],
+          "expected": "",
+          "current": "\n"
+        }
+      ],
+      "codeFencesByteSame": true
+    },
+    {
+      "chapter": "c02.md",
+      "sourceSha256": "9fe18c2ffaae3740425e82e7196b9fa61acac85d596cce76e109e7b41c7a196a",
+      "labelSame": true,
+      "sourceLinkExpected": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c02.md>",
+      "sourceLinkCurrent": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c02.md>",
+      "bodyChanges": [
+        {
+          "kind": "insert",
+          "expectedLines": [
+            34,
+            33
+          ],
+          "currentLines": [
+            34,
+            34
+          ],
+          "expected": "",
+          "current": "\n"
+        }
+      ],
+      "codeFencesByteSame": true
+    },
+    {
+      "chapter": "c03.md",
+      "sourceSha256": "83f22cddfc2e6958e71a1ae9464f1342d3744f995985c75870c9630e2e884cfe",
+      "labelSame": true,
+      "sourceLinkExpected": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md>",
+      "sourceLinkCurrent": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md>",
+      "bodyChanges": [],
+      "codeFencesByteSame": true
+    },
+    {
+      "chapter": "e01.md",
+      "sourceSha256": "a9c6b72345f35acea039fce140908876bed095edcc517ded3acec701bec99e60",
+      "labelSame": true,
+      "sourceLinkExpected": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e01.md>",
+      "sourceLinkCurrent": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e01.md>",
+      "bodyChanges": [
+        {
+          "kind": "insert",
+          "expectedLines": [
+            24,
+            23
+          ],
+          "currentLines": [
+            24,
+            24
+          ],
+          "expected": "",
+          "current": "\n"
+        }
+      ],
+      "codeFencesByteSame": true
+    },
+    {
+      "chapter": "e02.md",
+      "sourceSha256": "6f9be813e460401ef0b25bae7d56a722ba53c53fb22adc23e713fd3ffd047333",
+      "labelSame": true,
+      "sourceLinkExpected": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e02.md>",
+      "sourceLinkCurrent": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e02.md>",
+      "bodyChanges": [],
+      "codeFencesByteSame": true
+    },
+    {
+      "chapter": "e03.md",
+      "sourceSha256": "8cfd5fe6e8ee73258ce83d3baa347b693ff632fcc1f670fecb9b275892e02761",
+      "labelSame": true,
+      "sourceLinkExpected": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e03.md>",
+      "sourceLinkCurrent": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e03.md>",
+      "bodyChanges": [
+        {
+          "kind": "insert",
+          "expectedLines": [
+            64,
+            63
+          ],
+          "currentLines": [
+            64,
+            64
+          ],
+          "expected": "",
+          "current": "\n"
+        }
+      ],
+      "codeFencesByteSame": true
+    },
+    {
+      "chapter": "e04.md",
+      "sourceSha256": "a4d966da379b5e2c2bacb5db662beb040f9004ec12a0c020100a9bad3d17106c",
+      "labelSame": true,
+      "sourceLinkExpected": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e04.md>",
+      "sourceLinkCurrent": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e04.md>",
+      "bodyChanges": [],
+      "codeFencesByteSame": true
+    },
+    {
+      "chapter": "e05.md",
+      "sourceSha256": "3d3fa17284a018cfed61d2c8b40e9b52b60eace5afb04544849fd19c69a8f03b",
+      "labelSame": true,
+      "sourceLinkExpected": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e05.md>",
+      "sourceLinkCurrent": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e05.md>",
+      "bodyChanges": [],
+      "codeFencesByteSame": true
+    },
+    {
+      "chapter": "p01.md",
+      "sourceSha256": "d067573c93e44e0ab6a0b44f69916f52a89f2776b1bfd6a7f3098dd4ed648342",
+      "labelSame": true,
+      "sourceLinkExpected": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p01.md>",
+      "sourceLinkCurrent": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p01.md>",
+      "bodyChanges": [],
+      "codeFencesByteSame": true
+    },
+    {
+      "chapter": "p02.md",
+      "sourceSha256": "05aff19b4ff1a33c72ffa854626b528a62cecba74cf25b281f18bf2572c5eee7",
+      "labelSame": true,
+      "sourceLinkExpected": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p02.md>",
+      "sourceLinkCurrent": "</Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p02.md>",
+      "bodyChanges": [],
+      "codeFencesByteSame": true
+    }
+  ],
+  "chaptersWithBodyChanges": [
+    "f01.md",
+    "f02.md",
+    "c01-solution-selection.md",
+    "agent-control-loop-v07.md",
+    "c02.md",
+    "e01.md",
+    "e03.md"
+  ],
+  "all37CodeFencesByteSame": true,
+  "sourceLinkWrapperChangedCount": 4,
+  "noOldInputFilesModified": true,
+  "noTextbookOrApplicationExecuted": true,
+  "attribution": "unknown pre-baseline user/external change; preserved; not assigned to v09 author",
+  "notNewQualityOrExecutionAcceptance": true
+}

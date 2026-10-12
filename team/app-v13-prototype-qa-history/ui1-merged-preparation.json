@@ -1,0 +1,143 @@
+{
+  "atUtc": "2026-10-12T01:07:26.241134+00:00",
+  "meaning": "UI1 report, JSON, all11 complete DOM observations, phase/cleanup and screenshot read by main QA; screenshot visually inspected. This review does not add browser actions or expand specialist source scope.",
+  "loadedExperienceSha256": "9af4d9aabe568eeff45a97a3307ad9e7ad1357fa3f86a5d16a4f57536d2afdbd",
+  "loadedCssSha256": "d190bdc09f0fb9b3ae4eb308cd52b358c935f69d3b9b93ae16ea4418789654bd",
+  "current7fcExecuted": false,
+  "domObservations": [
+    {
+      "name": "route-controls-zoom-move",
+      "url": "http://127.0.0.1:4474/#home",
+      "characters": 7865
+    },
+    {
+      "name": "route-filter-empty",
+      "url": "http://127.0.0.1:4474/#home",
+      "characters": 1398
+    },
+    {
+      "name": "empty-records",
+      "url": "http://127.0.0.1:4474/#records",
+      "characters": 1554
+    },
+    {
+      "name": "empty-selftest",
+      "url": "http://127.0.0.1:4474/#check",
+      "characters": 1210
+    },
+    {
+      "name": "catalog-before-reading",
+      "url": "http://127.0.0.1:4474/#learn",
+      "characters": 3904
+    },
+    {
+      "name": "catalog-unit1-open-keyboard",
+      "url": "http://127.0.0.1:4474/#learn",
+      "characters": 4807
+    },
+    {
+      "name": "root-reading",
+      "url": "http://127.0.0.1:4474/#learn/agent/00-learning-route/s-3b82fdeafaab",
+      "characters": 19392
+    },
+    {
+      "name": "root-only-Q1-pool",
+      "url": "http://127.0.0.1:4474/#check",
+      "characters": 1130
+    },
+    {
+      "name": "root-only-Q1-start20",
+      "url": "http://127.0.0.1:4474/#check",
+      "characters": 1305
+    },
+    {
+      "name": "root-selftest-result",
+      "url": "http://127.0.0.1:4474/#check",
+      "characters": 1377
+    },
+    {
+      "name": "settings-first",
+      "url": "http://127.0.0.1:4474/#settings",
+      "characters": 1445
+    }
+  ],
+  "actualEvidenceReviewed": [
+    {
+      "path": "team/app-v13-prototype-ui-qa-history/candidate-received.json",
+      "sha256": "b931ad460374dcee80f2cb18b0e283a399bec9f6ad7f5788ec8af8f59ab34fd3",
+      "bytes": 2139
+    },
+    {
+      "path": "team/app-v13-prototype-ui-qa-history/candidate-server.mjs",
+      "sha256": "98eb7d5f07744d195e6fa5d7b475480094e9a4809daa69c850acb480cdda8864",
+      "bytes": 873
+    },
+    {
+      "path": "team/app-v13-prototype-ui-qa-history/image-expanded-857.jpg",
+      "sha256": "8fcb4082bc8962b4b59b974501686a554833e871473367a73d8a23cbecfbcead",
+      "bytes": 86626
+    },
+    {
+      "path": "team/app-v13-prototype-ui-qa-history/phase-receipt.json",
+      "sha256": "f836809ecdc32ad09af38a3986eb2f06fd1566eed39393977704b83c2aec9992",
+      "bytes": 1770
+    },
+    {
+      "path": "team/app-v13-prototype-ui-qa-history/seed-server.mjs",
+      "sha256": "cef8c9ba11c67e8dbc818b66e64309f4e9f4866081d576ac897fc4982081f850",
+      "bytes": 663
+    },
+    {
+      "path": "team/app-v13-prototype-ui-qa-history/seed.html",
+      "sha256": "9cc14eb467efbf6c06c0a1731d378b96734bda1a4ce257f2330b05f09b0b58fe",
+      "bytes": 3550
+    },
+    {
+      "path": "team/app-v13-prototype-ui-qa-history/tool-and-cleanup.json",
+      "sha256": "1b70bb47adf32ee54e4dcf455fe92cf680064555cd58fc0d5efe166654f9af37",
+      "bytes": 1523
+    },
+    {
+      "path": "team/app-v13-prototype-ui-qa-history/ui-observations-part01.json",
+      "sha256": "83253fa5262470fea42173e796c00ab3a3ec2093996692dcd81d4788077867f2",
+      "bytes": 72973
+    },
+    {
+      "path": "team/app-v13-prototype-ui-qa.md",
+      "sha256": "e8de836d3d85027619320178a9f459580dbaa0e8ad3bf97f703b4e0746c8dc3f",
+      "bytes": 7432
+    },
+    {
+      "path": "team/app-v13-prototype-ui-qa.json",
+      "sha256": "136056bb97299853ecd8f3ee4a90a15ae108a1ff54678082343f0b0bb6c04576",
+      "bytes": 9483
+    }
+  ],
+  "acceptedScope": "old9af+d190 finite first-entry/map controls/directory-root/empty androotQ1selftest/settings20px/857 original symptom absent/image-expanded; no bank/nav repair UI, remaining actual UI incomplete",
+  "unreturnedBatch": "1456.2s abort with no observations; originalsize/Esc/refocus/download not counted",
+  "cleanup": {
+    "qaOrigin": "http://127.0.0.1:4474",
+    "node": "v24.16.0",
+    "pid": 36393,
+    "ptySession": 83753,
+    "dataDir": "/var/folders/v5/yy0xf3tx1gddnb0qz7skr8wr0000gn/T/rolecraft-ui-qa-v13-0pRxMz",
+    "generationConfigured": false,
+    "seedServiceRun": false,
+    "serverClosedBy": "SIGINT via own PTY",
+    "exitCode": 0,
+    "closeOutput": "^C{\"phase\":\"ui-qa-candidate\",\"closed\":true}",
+    "listenerCheck": "lsof -nP -iTCP:4474 -sTCP:LISTEN exit1 empty; no listener",
+    "tabId": "1",
+    "tabCloseStatus": "unconfirmed_official_browser_unavailable",
+    "viewportOverride": {
+      "width": 857,
+      "height": 1120
+    },
+    "viewportResetStatus": "unconfirmed_official_browser_unavailable",
+    "user4318Operated": false,
+    "mainQA4473Operated": false,
+    "realUserDatabaseRead": false,
+    "realBrowserUserRecordsRead": false
+  },
+  "status": "insufficient"
+}

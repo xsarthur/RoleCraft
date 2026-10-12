@@ -1,0 +1,616 @@
+{
+  "kind": "author_defect_reproduction_not_independent_QA",
+  "nodeVersion": "v24.16.0",
+  "rows": [
+    {
+      "query": "保存的偏好后来被证明是错的，依赖这条记忆的结果应该怎样撤回？",
+      "response": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "interpretedIntents": [
+          {
+            "id": "context_memory",
+            "label": "维护跨轮上下文与可纠正的长期记忆",
+            "evidence": [
+              "偏好",
+              "记忆的结果应该怎样撤回"
+            ],
+            "unitIds": [
+              "n02-context-memory-prompt"
+            ]
+          },
+          {
+            "id": "replanning",
+            "label": "重规划时保留事实并失效依赖假设",
+            "evidence": [
+              "保存的偏好后来被证明是错的，依赖这条记忆的结果应该怎样撤回"
+            ],
+            "unitIds": [
+              "n03-planning-reflection"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "n02-context-memory-prompt",
+            "sectionId": "s-735bdf162e41",
+            "order": 9,
+            "unitTitle": "让跨轮上下文保留事实，让长期记忆可以被纠正",
+            "sectionTitle": "3 错误记忆要沿来源和依赖撤回",
+            "title": "3 错误记忆要沿来源和依赖撤回",
+            "reason": "你表达了“偏好、记忆的结果应该怎样撤回”；这一小节说明维护跨轮上下文与可纠正的长期记忆的具体机制。",
+            "evidenceExcerpt": "假设记忆 m1 保存“报告 71 属于修订 R1”，基于 m1 产生分析 o1 与后续经验 m2。后来原始报告证实它实际属于 R2。只更正 m1 的文本会保留 o1 与 m2 的旧推断，下次检索仍可能命中它们。",
+            "sourcePath": "textbooks/v12/n02-context-memory-prompt.md",
+            "sourceSha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n02-context-memory-prompt/s-735bdf162e41",
+            "intentId": "context_memory",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "f02",
+              "03-trust-boundary"
+            ]
+          },
+          {
+            "unitId": "n02-context-memory-prompt",
+            "sectionId": "s-8761129ebca7",
+            "order": 9,
+            "unitTitle": "让跨轮上下文保留事实，让长期记忆可以被纠正",
+            "sectionTitle": "8 运行与作品",
+            "title": "8 运行与作品",
+            "reason": "你表达了“偏好、记忆的结果应该怎样撤回”；这一小节说明维护跨轮上下文与可纠正的长期记忆的具体机制。",
+            "evidenceExcerpt": "EX-N02-B：把一条错误来源同时关联两条记忆和三个产物，撤销来源后列受影响对象；加入依赖环并证明遍历结束，再证明删除后检索不能命中。参考分析：失效状态与反向依赖控制继续使用；原输出不应被悄悄改写，新的更正有版本。没有记录依赖的旧产物须单列影响未知。",
+            "sourcePath": "textbooks/v12/n02-context-memory-prompt.md",
+            "sourceSha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n02-context-memory-prompt/s-8761129ebca7",
+            "intentId": "context_memory",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "f02",
+              "03-trust-boundary"
+            ]
+          },
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-7ee14c15626d",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "4 重规划保留事实，失效的是依赖假设",
+            "title": "4 重规划保留事实，失效的是依赖假设",
+            "reason": "你表达了“保存的偏好后来被证明是错的，依赖这条记忆的结果应该怎样撤回”；这一小节说明重规划时保留事实并失效依赖假设的具体机制。",
+            "evidenceExcerpt": "设 plan-v1 中 report、rule、draft 已完成，随后发现规则修订错误。标记 rule 的旧证据无效，沿后继边传播到 draft；report 的报告事实若仍有效则保留。plan-v2 引用原 report 证据并重新取得正确 rule，完成后重新生成 draft。失效传播是有向依赖闭包，不能只重做被点名节点，也不能清空所有有效事实增加成本。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-7ee14c15626d",
+            "intentId": "replanning",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ]
+          },
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-da63f3dcff17",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "1 三种策略改变的是控制对象",
+            "title": "1 三种策略改变的是控制对象",
+            "reason": "你表达了“保存的偏好后来被证明是错的，依赖这条记忆的结果应该怎样撤回”；这一小节说明重规划时保留事实并失效依赖假设的具体机制。",
+            "evidenceExcerpt": "Plan-and-Execute 先产出可执行依赖图，再由执行器推进；新观察使计划失效时回到规划器。它适合已知产物和依赖、需要并行安排或资源估计的任务。一次性计划可能基于错误假设，例如假设报告内有规则版本，结果只包含测试名；若执行器盲从清单，后续步骤会逐层捏造输入。先计划的思想可参考 [Plan-and-Solve v3](https://arxiv.org/abs/2305.04091v3)，但该论文的推理提示实验不是持久工具运行时；下面的 DAG、授权与重规划是本篇工程设计。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
+            "intentId": "replanning",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ]
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      }
+    },
+    {
+      "query": "A2A 和 MCP 的交接边界有什么区别，多个 Agent 怎样保留控制责任？",
+      "response": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "interpretedIntents": [
+          {
+            "id": "tool_catalog",
+            "label": "发现选择工具并接入MCP协议",
+            "evidence": [
+              "MCP"
+            ],
+            "unitIds": [
+              "n04-tools-mcp"
+            ]
+          },
+          {
+            "id": "delegation",
+            "label": "协调多Agent交接与消息身份",
+            "evidence": [
+              "A2A"
+            ],
+            "unitIds": [
+              "n07-multiagent-a2a"
+            ]
+          },
+          {
+            "id": "selection",
+            "label": "选择最小可用方案",
+            "evidence": [
+              "A2A 和 MCP 的交接边界有什么区别，多个 Agent 怎样保留控制责任"
+            ],
+            "unitIds": [
+              "c01-selection"
+            ]
+          },
+          {
+            "id": "python_foundations",
+            "label": "理解对象并发与模型输出边界",
+            "evidence": [
+              "A2A 和 MCP 的交接边界有什么区别"
+            ],
+            "unitIds": [
+              "n01-python-model-foundations"
+            ]
+          },
+          {
+            "id": "source_term_0",
+            "label": "查找正文中的 A2A",
+            "evidence": [
+              "A2A"
+            ],
+            "unitIds": [
+              "n04-tools-mcp",
+              "n07-multiagent-a2a",
+              "00-learning-route"
+            ],
+            "sectionKeys": [
+              "00-learning-route/s-810a87808157",
+              "n04-tools-mcp/s-7a434a389348",
+              "n07-multiagent-a2a/s-0a62736917f0",
+              "n07-multiagent-a2a/s-93cf8cf5812f",
+              "n07-multiagent-a2a/s-ad001b665c76"
+            ],
+            "term": "a2a",
+            "preferredUnit": "n04-tools-mcp"
+          },
+          {
+            "id": "source_term_1",
+            "label": "查找正文中的 MCP",
+            "evidence": [
+              "MCP"
+            ],
+            "unitIds": [
+              "n04-tools-mcp",
+              "n07-multiagent-a2a",
+              "00-learning-route",
+              "c03"
+            ],
+            "sectionKeys": [
+              "00-learning-route/s-810a87808157",
+              "00-learning-route/s-7be19d9ebfa3",
+              "c03/s-7abbcb1b419d",
+              "n04-tools-mcp/s-d92d46deed86",
+              "n04-tools-mcp/s-48e105344fce",
+              "n04-tools-mcp/s-8f3ddfb4d485",
+              "n04-tools-mcp/s-7a434a389348",
+              "n04-tools-mcp/s-8761129ebca7",
+              "n07-multiagent-a2a/s-ad001b665c76"
+            ],
+            "term": "mcp",
+            "preferredUnit": "n04-tools-mcp"
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "n04-tools-mcp",
+            "sectionId": "s-7a434a389348",
+            "order": 14,
+            "unitTitle": "工具增长到上百个时，怎样发现、选择并安全接入",
+            "sectionTitle": "7 Tool Calling、MCP、Skills 与 A2A 如何一起使用",
+            "title": "7 Tool Calling、MCP、Skills 与 A2A 如何一起使用",
+            "reason": "你表达了“MCP”；这一小节说明发现选择工具并接入MCP协议的具体机制。",
+            "evidenceExcerpt": "一个具体组合是：宿主加载“报告分析”技能以理解工作方法，通过 MCP server 发现和读取报告，模型 Tool Calling 提议选择对应只读能力，确需外部研究服务时再通过 A2A 委派子任务。没有外部 Agent 时无需 A2A；只有三个自有函数时直接适配也可合理。协议增加统一接入和复用，同时增加版本、认证、观测与故障面的成本，按项目边界选择。",
+            "sourcePath": "textbooks/v12/n04-tools-mcp.md",
+            "sourceSha256": "b3432424e61870ac250db2068423ed33e827c97cfc2f1440f3ae2987bfd4f39a",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n04-tools-mcp/s-7a434a389348",
+            "intentId": "tool_catalog",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [
+              "a2a",
+              "mcp"
+            ],
+            "prerequisiteUnitIds": [
+              "c03",
+              "f01",
+              "c01-control-primer"
+            ]
+          },
+          {
+            "unitId": "n04-tools-mcp",
+            "sectionId": "s-d92d46deed86",
+            "order": 14,
+            "unitTitle": "工具增长到上百个时，怎样发现、选择并安全接入",
+            "sectionTitle": "3 MCP 位于模型外部的连接层",
+            "title": "3 MCP 位于模型外部的连接层",
+            "reason": "你表达了“MCP”；这一小节说明发现选择工具并接入MCP协议的具体机制。",
+            "evidenceExcerpt": "宿主 host 是运行应用、管理会话和策略的主体；client 维护与 server 的协议连接；server 暴露工具、资源与提示。典型路径是宿主把工具描述适配给模型，模型返回 Tool Calling 提议，宿主校验后通过 MCP client 发送请求，server 调用具体业务能力并回传结果。模型不直接获得 OAuth 令牌或任意网络连接。",
+            "sourcePath": "textbooks/v12/n04-tools-mcp.md",
+            "sourceSha256": "b3432424e61870ac250db2068423ed33e827c97cfc2f1440f3ae2987bfd4f39a",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n04-tools-mcp/s-d92d46deed86",
+            "intentId": "tool_catalog",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [
+              "mcp"
+            ],
+            "prerequisiteUnitIds": [
+              "c03",
+              "f01",
+              "c01-control-primer"
+            ]
+          },
+          {
+            "unitId": "n07-multiagent-a2a",
+            "sectionId": "s-ad001b665c76",
+            "order": 21,
+            "unitTitle": "让多个 Agent 协作而不稀释任务责任",
+            "sectionTitle": "与MCP、Skills和Tool Calling的边界",
+            "title": "与MCP、Skills和Tool Calling的边界",
+            "reason": "你表达了“A2A”；这一小节说明协调多Agent交接与消息身份的具体机制。",
+            "evidenceExcerpt": "Tool Calling把模型建议表示成工具名及参数，真正执行由宿主负责；MCP标准化宿主与工具/资源服务的能力交互；可复用Skills描述任务做法、说明与资源，实际载体取决于产品；A2A表达独立Agent之间消息、任务和产物。一个远端Agent可以在内部用MCP工具，也可以作为本地Agent的“工具”被包装，但包装层仍需保留远端任务身份、等待和取消语义。不能因为所有接口都传JSON就认为可以互相替代。[工具与协议的完整实现边界](n04-tools-mcp.md)",
+            "sourcePath": "textbooks/v12/n07-multiagent-a2a.md",
+            "sourceSha256": "24268cff6bfb435713458912750a5a958dd00d0aa935ef71b139e74c6dd23fb2",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n07-multiagent-a2a/s-ad001b665c76",
+            "intentId": "delegation",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [
+              "a2a",
+              "mcp"
+            ],
+            "prerequisiteUnitIds": [
+              "n06-graph-orchestration",
+              "n02-context-memory-prompt",
+              "n04-tools-mcp"
+            ]
+          },
+          {
+            "unitId": "n07-multiagent-a2a",
+            "sectionId": "s-93cf8cf5812f",
+            "order": 21,
+            "unitTitle": "让多个 Agent 协作而不稀释任务责任",
+            "sectionTitle": "A2A把什么放到线上契约中",
+            "title": "A2A把什么放到线上契约中",
+            "reason": "你表达了“A2A”；这一小节说明协调多Agent交接与消息身份的具体机制。",
+            "evidenceExcerpt": "A2A用能力发现、消息、任务状态和产物表达这种交接。",
+            "sourcePath": "textbooks/v12/n07-multiagent-a2a.md",
+            "sourceSha256": "24268cff6bfb435713458912750a5a958dd00d0aa935ef71b139e74c6dd23fb2",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n07-multiagent-a2a/s-93cf8cf5812f",
+            "intentId": "delegation",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [
+              "a2a"
+            ],
+            "prerequisiteUnitIds": [
+              "n06-graph-orchestration",
+              "n02-context-memory-prompt",
+              "n04-tools-mcp"
+            ]
+          },
+          {
+            "unitId": "c01-selection",
+            "sectionId": "s-8368c310c8e2",
+            "order": 10,
+            "unitTitle": "为一个任务选择最小可用方案 程序 单次模型 流程与动态 Agent",
+            "sectionTitle": "多 Agent 的升级点是可分工 而不是人数",
+            "title": "多 Agent 的升级点是可分工 而不是人数",
+            "reason": "你表达了“A2A 和 MCP 的交接边界有什么区别，多个 Agent 怎样保留控制责任”；这一小节说明选择最小可用方案的具体机制。",
+            "evidenceExcerpt": "一个可检查的交接至少包含 `subtask_id`、目标修订、输入证据清单与哈希、允许资源、输出主张与逐项引用、缺项、实际消耗、状态。整合者先查版本与权限，再整合结论；超时或 `INCOMPLETE` 不能当作“没有问题”。两位调查者对同一事实冲突时保留冲突，不按最后到达的答案覆盖。",
+            "sourcePath": "textbooks/v12/c01-selection.md",
+            "sourceSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+            "version": "textbook-v12",
+            "href": "#learn/agent/c01-selection/s-8368c310c8e2",
+            "intentId": "selection",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "f02",
+              "02-task-acceptance"
+            ]
+          },
+          {
+            "unitId": "c01-selection",
+            "sectionId": "s-e458cc35eeb7",
+            "order": 10,
+            "unitTitle": "为一个任务选择最小可用方案 程序 单次模型 流程与动态 Agent",
+            "sectionTitle": "同一任务 四种控制权",
+            "title": "同一任务 四种控制权",
+            "reason": "你表达了“A2A 和 MCP 的交接边界有什么区别，多个 Agent 怎样保留控制责任”；这一小节说明选择最小可用方案的具体机制。",
+            "evidenceExcerpt": "这个 workflow/agent 控制权区分与 Anthropic 2024 年文章一致；该文章已注明生态发生变化，因此这里引用架构定义，不把它作为当前框架排名或性能基准。",
+            "sourcePath": "textbooks/v12/c01-selection.md",
+            "sourceSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+            "version": "textbook-v12",
+            "href": "#learn/agent/c01-selection/s-e458cc35eeb7",
+            "intentId": "selection",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "f02",
+              "02-task-acceptance"
+            ]
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      }
+    },
+    {
+      "query": "英文任务正常，中文任务失败，怎样找到第一处证据偏离并交给另一位工程师复现？",
+      "response": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "interpretedIntents": [
+          {
+            "id": "transfer_evaluation",
+            "label": "用跨场景实验与技术移交检验能力",
+            "evidence": [
+              "证据偏离"
+            ],
+            "unitIds": [
+              "n10-evaluation-projects"
+            ]
+          },
+          {
+            "id": "recovery",
+            "label": "中断后恢复任务",
+            "evidence": [
+              "英文任务正常，中文任务失败，怎样找到第一处证据偏离并交给另一位工程师复现"
+            ],
+            "unitIds": [
+              "e01",
+              "c01-control-primer"
+            ]
+          },
+          {
+            "id": "graph_orchestration",
+            "label": "映射可恢复状态图与子图",
+            "evidence": [
+              "怎样找到第一处证据偏离并交给另一位工程师复现"
+            ],
+            "unitIds": [
+              "n06-graph-orchestration"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "n10-evaluation-projects",
+            "sectionId": "s-f84a0ab61c72",
+            "order": 23,
+            "unitTitle": "用新场景、分层实验和独立移交检验工程能力",
+            "sectionTitle": "英文正常、中文失败：找第一处证据偏离",
+            "title": "英文正常、中文失败：找第一处证据偏离",
+            "reason": "你表达了“证据偏离”；这一小节说明用跨场景实验与技术移交检验能力的具体机制。",
+            "evidenceExcerpt": "先在首个偏离层做最小修正，然后复测后续端到端结果和其他语言回归。例如英文/中文检索到同一政策，中文工具参数却把订单ID译为汉字，优先修参数规范和验证；反之中文检索是空列表，即便模型最后回答流畅也不算修好。多个层可能同时有问题，第一处修好后继续定位，不能因一个反例通过就宣布任意中文可靠。",
+            "sourcePath": "textbooks/v12/n10-evaluation-projects.md",
+            "sourceSha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n10-evaluation-projects/s-f84a0ab61c72",
+            "intentId": "transfer_evaluation",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "e02",
+              "n05-retrieval-ingestion",
+              "n07-multiagent-a2a"
+            ]
+          },
+          {
+            "unitId": "n10-evaluation-projects",
+            "sectionId": "s-5bcc0776075f",
+            "order": 23,
+            "unitTitle": "用新场景、分层实验和独立移交检验工程能力",
+            "sectionTitle": "技术移交是一次接收方实验",
+            "title": "技术移交是一次接收方实验",
+            "reason": "你表达了“证据偏离”；这一小节说明用跨场景实验与技术移交检验能力的具体机制。",
+            "evidenceExcerpt": "- 环境锁与支持版本，配置模板只列变量名和取得方式；不附密钥。\n- 启动、停止、迁移与最小烟测命令，所需权限与网络条件。\n- 架构图、任务状态、关键ADR及放弃方案的条件。\n- 数据/索引/模型/提示版本、许可和权限边界、可用夹具。\n- 评测入口、预期结果、差异容忍范围以及不适用条件。\n- 一个实际失败的最小复现、修复绑定和回归输入。\n- 监控字段、告警归属、取消/恢复/回退方法、已知限制和升级责任。",
+            "sourcePath": "textbooks/v12/n10-evaluation-projects.md",
+            "sourceSha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n10-evaluation-projects/s-5bcc0776075f",
+            "intentId": "transfer_evaluation",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "e02",
+              "n05-retrieval-ingestion",
+              "n07-multiagent-a2a"
+            ]
+          },
+          {
+            "unitId": "e01",
+            "sectionId": "s-735bd2d08fdf",
+            "order": 15,
+            "unitTitle": "用持久状态保存动作事实",
+            "sectionTitle": "用故障位置验证 而不是只测正常重启",
+            "title": "用故障位置验证 而不是只测正常重启",
+            "reason": "你表达了“英文任务正常，中文任务失败，怎样找到第一处证据偏离并交给另一位工程师复现”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "**练习：可重启替身。**把 c03 内存替身改为独立临时SQLite文件，操作键与工单在该替身自己的事务中插入；运行时数据库用另一个文件。创建后终止工作者，重新启动读两个数据库，按原键补回执。参考分析：两个本地文件仍没有跨库事务，此练习故意保留危险窗口；单对象来自替身去重与核对，而非运行时checkpoint。所有实际文件限隔离练习目录，提交运行前后快照，未执行时不填写对象数。",
+            "sourcePath": "textbooks/v12/e01.md",
+            "sourceSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+            "version": "textbook-v12",
+            "href": "#learn/agent/e01/s-735bd2d08fdf",
+            "intentId": "recovery",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c03",
+              "c01-control-primer"
+            ]
+          },
+          {
+            "unitId": "c01-control-primer",
+            "sectionId": "s-13bbf9fcf319",
+            "order": 11,
+            "unitTitle": "在重复提议和发送中识别同一个动作",
+            "sectionTitle": "调度与效果分别判断",
+            "title": "调度与效果分别判断",
+            "reason": "你表达了“英文任务正常，中文任务失败，怎样找到第一处证据偏离并交给另一位工程师复现”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "成功、等待和停止也不同。无批准是等待批准；效果未知是等待核对；取消禁止未来发送，但不撤销已发生工单。取消后核对出成功，仍保存该效果并完成停止，不把用户已取消的任务改成正常完成。这里先学判断语言，存储章再把它们落到提交事件。",
+            "sourcePath": "textbooks/v12/c01-control-primer.md",
+            "sourceSha256": "ef50f49868351894e0b928eced4cfb2fdabb9cb28ca03eb9043b9cf42d5689b9",
+            "version": "textbook-v12",
+            "href": "#learn/agent/c01-control-primer/s-13bbf9fcf319",
+            "intentId": "recovery",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c01-selection",
+              "03-trust-boundary"
+            ]
+          },
+          {
+            "unitId": "n06-graph-orchestration",
+            "sectionId": "s-f5b63c3363d8",
+            "order": 20,
+            "unitTitle": "把控制循环映射为可恢复的状态图",
+            "sectionTitle": "何时值得自研",
+            "title": "何时值得自研",
+            "reason": "你表达了“怎样找到第一处证据偏离并交给另一位工程师复现”；这一小节说明映射可恢复状态图与子图的具体机制。",
+            "evidenceExcerpt": "若只有几个稳定状态，已有数据库任务表和运维平台，自研显式状态机可能更易审计：表中存task_id、revision、state、next_step、pending_approval、lease；worker按版本比较更新领任务，执行幂等步骤，追加观察后提交下一个状态；过期lease由另一worker接管。失败重放从账本中确定哪些逻辑动作已有结果，不能只回到上次函数调用。",
+            "sourcePath": "textbooks/v12/n06-graph-orchestration.md",
+            "sourceSha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n06-graph-orchestration/s-f5b63c3363d8",
+            "intentId": "graph_orchestration",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "e01",
+              "c01-control-loop",
+              "n03-planning-reflection"
+            ]
+          },
+          {
+            "unitId": "n06-graph-orchestration",
+            "sectionId": "s-a30d7922425b",
+            "order": 20,
+            "unitTitle": "把控制循环映射为可恢复的状态图",
+            "sectionTitle": "一条真实框架执行路径",
+            "title": "一条真实框架执行路径",
+            "reason": "你表达了“怎样找到第一处证据偏离并交给另一位工程师复现”；这一小节说明映射可恢复状态图与子图的具体机制。",
+            "evidenceExcerpt": "正常轨迹：两个读取完成→按来源键合并→子图返回草稿→暂停，`get_state(config).next`为`('approve',)`→宿主用同一个`thread_id`传入`Command(resume=...)`→摘要一致且approve为真正布尔True→只形成`approved_candidate_only`。",
+            "sourcePath": "textbooks/v12/n06-graph-orchestration.md",
+            "sourceSha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n06-graph-orchestration/s-a30d7922425b",
+            "intentId": "graph_orchestration",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "e01",
+              "c01-control-loop",
+              "n03-planning-reflection"
+            ]
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      }
+    }
+  ]
+}

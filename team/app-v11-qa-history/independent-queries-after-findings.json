@@ -1,0 +1,36 @@
+{
+  "frozenAtUtc": "2026-10-11T08:00:04.981435+00:00",
+  "reason": "Four finite variations of affected mechanisms after actual first-run failures; no arbitrary-language certification. Not sent to implementer before retest.",
+  "cases": [
+    {
+      "id": "H11-08",
+      "query": "机器坏掉又修好后，想沿着已完成的步骤往后走，不从头把对外的操作再来一遍。",
+      "expectedCoreUnits": [
+        "e01"
+      ]
+    },
+    {
+      "id": "H11-09",
+      "query": "旧制度和现行制度都放在一起，我要它引用有效的那份，而且只能使用提问人获准看的材料。",
+      "expectedCoreUnits": [
+        "c02"
+      ]
+    },
+    {
+      "id": "H11-10",
+      "query": "同一批任务先用改动前的程序跑，再用改动后的程序跑，怎样判断哪个实际更可靠？",
+      "expectedCoreUnits": [
+        "e02"
+      ]
+    },
+    {
+      "id": "H11-11",
+      "query": "试来试去总不能得到符合要求的结果，我要预先限定最多尝试几回并在用完后收手。",
+      "expectedCoreUnits": [
+        "02-task-acceptance",
+        "c01-control-loop"
+      ],
+      "anyOf": true
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "version": "textbook-v12-market-1",
+  "access_date": "2026-10-11",
+  "role": "竞品研究员",
+  "status": "ready_for_product_and_curriculum_review",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "牛客：字节27实习候选人面经",
+      "url": "https://www.nowcoder.com/feed/main/detail/c40d154b3b3847269da3c9fd9e381a72",
+      "publication_date": "05-06 18:25，年份未显示",
+      "source_type": "候选人自述，非企业认证",
+      "level": "实习/初级",
+      "independent_group": "NC-c40d",
+      "evidence": "原页正文读取；距离度量、增量索引、asyncio及推理框架；原题有预设优劣，不能照搬技术结论。",
+      "access_date": "2026-10-11"
+    },
+    {
+      "id": "S02",
+      "title": "牛客：某小厂AI Agent面经",
+      "url": "https://api-cdn.nowcoder.com/feed/main/detail/10b2fcaf73d2401f8636bd0459e1cd08",
+      "publication_date": "09-04 11:07，年份未显示",
+      "source_type": "候选人自述，非企业认证",
+      "level": "实习/应届；海量规模另列高级",
+      "independent_group": "NC-10b2",
+      "evidence": "搜索返回正文可读，直接open失败；PDF、Transformer、向量与BM25。证据访问受限。",
+      "access_date": "2026-10-11"
+    },
+    {
+      "id": "S03",
+      "title": "GitHub AI Engineering Interview Questions",
+      "url": "https://github.com/amitshekhariitbhu/ai-engineering-interview-questions",
+      "publication_date": "未知，动态仓库",
+      "source_type": "公开整理题库，带课程链接",
+      "level": "混合级别",
+      "independent_group": "GH-amitshekhariitbhu",
+      "evidence": "原页可读；ANN、结构化输出、多语言、话题切换。不是企业真题频次。",
+      "access_date": "2026-10-11"
+    },
+    {
+      "id": "S04",
+      "title": "Index.dev AI Agent Developer Interview Questions",
+      "url": "https://www.index.dev/interview-questions/ai-agent-developer",
+      "publication_date": "未知",
+      "source_type": "商业练习题库",
+      "level": "混合；页面自称expert级",
+      "independent_group": "INDEX-agent",
+      "evidence": "原页可读；LRU、内存泄漏、异步队列排错。其exactly-once承诺题应审查前提，不接受为事实。",
+      "access_date": "2026-10-11"
+    },
+    {
+      "id": "S05",
+      "title": "牛客04/28腾讯百度面经汇总",
+      "url": "https://www.nowcoder.com/discuss/878600528970735616",
+      "publication_date": "标题04/28；内述2026-04-23等",
+      "source_type": "转载汇编",
+      "level": "实习/未知",
+      "independent_group": "NC-62d4",
+      "evidence": "Python元组列表、函数对象、装饰器；原帖https://www.nowcoder.com/feed/main/detail/62d4ca9866d84d63bf6eafbb0a947bb8只读到标题，原始事实未独立确认。",
+      "access_date": "2026-10-11"
+    },
+    {
+      "id": "S06",
+      "title": "Anthropic Applied AI Engineer Startups官方JD",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5432575008",
+      "publication_date": "未知",
+      "source_type": "官方招聘JD",
+      "level": "4+年，高级参考",
+      "independent_group": "ANTHROPIC-5432575008",
+      "evidence": "原文读取：生产Python、客户共同开发、评测套件、架构图/技术文档和跨行业交付。不是面试原题。",
+      "access_date": "2026-10-11"
+    },
+    {
+      "id": "S07",
+      "title": "Sierra Agent新卒官方岗位",
+      "url": "https://jobs.ashbyhq.com/Sierra/149f368c-52d5-408f-ba26-ad888f318a00",
+      "publication_date": "未知",
+      "source_type": "官方招聘入口",
+      "level": "New Grad 2027",
+      "independent_group": "SIERRA-agent-newgrad",
+      "evidence": "官方careers列出并链接该岗位，JD页只提取标题；不凭镜像补写要求。官方入口https://sierra.ai/careers。",
+      "access_date": "2026-10-11"
+    },
+    {
+      "id": "S08",
+      "title": "Reddit Agent coding interview",
+      "url": "https://www.reddit.com/r/Anthropic/comments/1wy1bd7/agent_coding_interview/",
+      "publication_date": "未知，仅相对时间",
+      "source_type": "候选人求助/邀请自述，不是已完成面经",
+      "level": "Forward Deployed Engineer；年限未知",
+      "independent_group": "REDDIT-1wy1bd7",
+      "evidence": "原页可读：候选人称将进行API实作。只能支持有实作准备需求，不能证明具体企业题目或面试结果。",
+      "access_date": "2026-10-11"
+    },
+    {
+      "id": "S09",
+      "title": "JoinAI Agent system design interview",
+      "url": "https://www.joinai.com/blog/ai-agent-system-design-interview",
+      "publication_date": "2026-08-25（页面注明）",
+      "source_type": "自编练习说明",
+      "level": "中高级",
+      "independent_group": "JOINAI-systemdesign",
+      "evidence": "搜索摘录明确为独立练习，不代表雇主面试；作为既有系统设计主题旁证，不新增重复题。",
+      "access_date": "2026-10-11"
+    },
+    {
+      "id": "S10",
+      "title": "牛客字节算法面经汇编04",
+      "url": "https://www.nowcoder.com/discuss/922308546966847488",
+      "publication_date": "未知；内文自称2026-04-01",
+      "source_type": "转载/汇编，来源可信度待核",
+      "level": "算法岗/混合",
+      "independent_group": "NC-c40d",
+      "evidence": "09/10节互相重复且与S01题组高度一致，日期冲突；合入同源组，不增加独立出现次数。",
+      "access_date": "2026-10-11"
+    }
+  ],
+  "questions": [
+    {
+      "id": 101,
+      "question": "调用多个模型或工具API时，如何用Python asyncio组织并发？阻塞调用、无界任务创建和取消清理分别会导致什么问题，怎样用最小例定位？",
+      "capability": "异步IO与资源生命周期",
+      "level": "初中级",
+      "sources": [
+        "S01",
+        "S04"
+      ],
+      "novelty": "Q55/95讨论编排和限流，本题核语言运行时/事件循环具体机制。",
+      "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+      "source_intent": "API异步优势与异步队列停止处理"
+    },
+    {
+      "id": 102,
+      "question": "把请求状态放进Python列表或字典时，别名与浅拷贝会怎样污染另一个任务？请说明不可变容器的边界，并解释如何用装饰器封装工具日志而保持函数行为。",
+      "capability": "Python可变性/函数对象/装饰器",
+      "level": "基础补学",
+      "sources": [
+        "S05"
+      ],
+      "novelty": "原100没有语言对象语义与函数包装实作；后半为根据原题意组合的任务化追问。",
+      "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+      "source_intent": "元组列表、函数对象和装饰器"
+    },
+    {
+      "id": 103,
+      "question": "实现容量受限的LRU缓存，说明get/put复杂度，并给出容量为零、覆盖已有键和淘汰次序的测试。",
+      "capability": "数据结构与独立编码",
+      "level": "基础补学",
+      "sources": [
+        "S04"
+      ],
+      "novelty": "Q97只问使用缓存的取舍，不检验具体数据结构实现。",
+      "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+      "source_intent": "LRU编码及复杂度"
+    },
+    {
+      "id": 104,
+      "question": "Agent服务运行数小时后内存持续增长，但请求量平稳。如何区别对象仍被引用、缓存无界、待完成任务堆积与暂时内存峰值，并验证修复？",
+      "capability": "运行时内存排错",
+      "level": "中级",
+      "sources": [
+        "S04"
+      ],
+      "novelty": "Q80泛化偶发故障，本题要求专门内存诊断路径。",
+      "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+      "source_intent": "长时Agent内存泄漏排查"
+    },
+    {
+      "id": 105,
+      "question": "余弦相似度、点积和欧氏距离如何计算？向量归一化会怎样改变它们的排序关系，零向量和维度不符怎样处理？",
+      "capability": "向量检索数学与输入校验",
+      "level": "初中级",
+      "sources": [
+        "S01",
+        "S02"
+      ],
+      "novelty": "Q44/45模型与混合检索选择未要求距离计算与不变量。",
+      "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+      "source_intent": "余弦与欧氏距离比较"
+    },
+    {
+      "id": 106,
+      "question": "如何用精确向量检索建立基线，再比较HNSW与IVF的召回、内存、构建和查询代价？过滤条件加入后还需要怎样测量？",
+      "capability": "ANN索引选型",
+      "level": "中高级专题",
+      "sources": [
+        "S03"
+      ],
+      "novelty": "Q45/46不是近似索引参数与精确基线比较。",
+      "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+      "source_intent": "HNSW/IVF/flat比较"
+    },
+    {
+      "id": 107,
+      "question": "文档局部修改、删除或权限变化时，怎样增量更新分块和向量索引？如何检测漏删、重复块及新旧版本混用？",
+      "capability": "索引增量与删除一致性",
+      "level": "中级",
+      "sources": [
+        "S01",
+        "S03"
+      ],
+      "novelty": "Q49过期应答/Q92更新时效泛述；这里单列可操作的增量数据生命周期。",
+      "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+      "source_intent": "文档局部更新与增量索引"
+    },
+    {
+      "id": 108,
+      "question": "包含扫描页、表格和跨页段落的PDF怎样进入RAG？如何保留页码与结构、测解析质量，并防止OCR错误被引用成原文事实？",
+      "capability": "文档解析/OCR/结构溯源",
+      "level": "初中级；TB规模不作初级门槛",
+      "sources": [
+        "S02",
+        "S03"
+      ],
+      "novelty": "Q43切块建立在已有可用文本上，本题核上游解析。",
+      "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+      "source_intent": "混合PDF解析与入库"
+    },
+    {
+      "id": 109,
+      "question": "解释decoder-only Transformer从token到下一token分布的基本推理过程：因果注意力、多头、位置、前馈层各起什么作用？这与检索外部事实有什么区别？",
+      "capability": "模型基础先修",
+      "level": "基础补学",
+      "sources": [
+        "S02"
+      ],
+      "novelty": "原100是应用架构，没有基础推理机制；不扩为训练研究岗要求。",
+      "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+      "source_intent": "Transformer结构与推理"
+    },
+    {
+      "id": 110,
+      "question": "提示模型返回JSON、使用JSON模式和按Schema约束生成分别能保证什么？遇到拒绝、截断、类型合法但语义错误时，应用怎样处理？",
+      "capability": "结构化输出生成与消费契约",
+      "level": "初中级",
+      "sources": [
+        "S03"
+      ],
+      "novelty": "Q23是工具参数合法性，本题补输出生成阶段和不完整响应路径。",
+      "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+      "source_intent": "稳定结构化输出"
+    },
+    {
+      "id": 111,
+      "question": "同一Agent英语任务表现正常，中文或混合语言却失败，怎样分别检查分词/检索、提示、工具参数与评测样本，而不是直接换模型？",
+      "capability": "跨语言整链排错",
+      "level": "中级",
+      "sources": [
+        "S03"
+      ],
+      "novelty": "Q44只覆盖embedding，本题是整链语言分布迁移。",
+      "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+      "source_intent": "英语有效而其他语言失败"
+    },
+    {
+      "id": 112,
+      "question": "用户在多轮任务中突然换话题，又用“继续刚才那个”返回，怎样识别任务切换、保存各自状态并澄清指代，防止旧任务动作误执行？",
+      "capability": "多任务会话与指代路由",
+      "level": "初中级",
+      "sources": [
+        "S03"
+      ],
+      "novelty": "Q37是内容冲突，本题处理并存任务及切换语义。",
+      "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+      "source_intent": "聊天中话题切换失败"
+    },
+    {
+      "id": 113,
+      "question": "部署本地推理服务时，怎样区分prefill与decode瓶颈，解释KV cache与批处理对吞吐、首token和尾延迟的影响，并设计公平比较而非先认定某框架更快？",
+      "capability": "推理服务性能",
+      "level": "高级专题",
+      "sources": [
+        "S01"
+      ],
+      "novelty": "Q98本地/托管选型不含推理引擎内部机制；改写原面经诱导性优劣前提。",
+      "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+      "source_intent": "推理框架比较"
+    },
+    {
+      "id": 114,
+      "question": "面对客户工程团队，怎样交付一份可复现的Agent技术移交包，使对方能重建环境、运行评测、理解架构决策并报告失败？如何证明接手成功？",
+      "capability": "工程技术交接与复现",
+      "level": "中高级；入门可做缩小版",
+      "sources": [
+        "S06"
+      ],
+      "novelty": "由JD能力派生，非企业原题；Q10/99要求本人经历，本题要求交接产物与接手验证。",
+      "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+      "source_intent": "客户共同开发、技术文档与评测交接"
+    }
+  ],
+  "limitations": [
+    "便利样本而非市场全量，不能计算市场热度或雇主真实出题概率",
+    "独立组代表可辨识来源归组，不证明作者相互独立",
+    "候选人自述未获企业确认；商业题库不证明招聘实践",
+    "初级官方JD全文不足，高级JD不得下压为入门门槛",
+    "题目为原创任务化改写，技术答案必须由作者用官方文档/论文独立核实"
+  ]
+}

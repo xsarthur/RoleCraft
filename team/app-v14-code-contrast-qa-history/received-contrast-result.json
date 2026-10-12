@@ -1,0 +1,98 @@
+{
+  "schema": "contrast-check-result-1",
+  "checkedAtUtc": "2026-10-12T02:32:22.668228+00:00",
+  "sourceKind": "official_browser_computed",
+  "snapshot": "sites/rolecraft/team/app-v14-code-contrast-ui-qa-history/received-rendered-snapshot.json",
+  "snapshotSha256": "9eb4f9c4e2927ad7ec92b912ab4cf9efe8ae3eccf18c600fb9ef76a5563d7e8b",
+  "binding": "sites/rolecraft/team/app-v14-code-contrast-qa-history/received-rendered-snapshot-binding.json",
+  "boundFiles": {
+    "dist/learning-experience-v13.css": "1f20aafb25a30842e660a18b2d51445efc6ab3527d359b95703131332fcb9aaf",
+    "dist/learning-workbench.css": "c13ed2dbe5b68770e142ef9ec3962eb14f7ccdd745c99ff650c7b47def9c5ace",
+    "dist/styles.css": "47850ba437e3598424846361bb10463fc83513a3eae4d5ff7f1abcd6ad404139",
+    "dist/index.html": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+    "dist/learning-workbench.js": "9099d3bbf6ea51816c01f422517ae5323fb0c1048854f4acc54caa88bff65cca",
+    "textbooks/v12/01-foundation.md": "3ca5c2391ccfba389cb16d7eac85034bcb50d0768f0e9e7374c92917044232d7",
+    "dist/content-v12-data.js": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224"
+  },
+  "standard": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+  "scope": "bound selected code/label/inline/body only; not whole-site WCAG certification",
+  "method": "sRGB linearization/relative luminance; alpha over actual ancestor backgrounds; no rounded pass threshold",
+  "rows": [
+    {
+      "kind": "block_code",
+      "selector": ".lw-code pre code containing def refund(days)",
+      "fontSize": "13px",
+      "foreground": "rgb(231, 238, 231)",
+      "effectiveBackgroundRgb": [
+        243.0,
+        240.0,
+        234.0
+      ],
+      "contrastRatio": 1.038330376957137,
+      "minimum": 4.5,
+      "status": "fail",
+      "backgroundAncestorCount": 11
+    },
+    {
+      "kind": "block_pre",
+      "selector": ".lw-code pre containing def refund(days)",
+      "fontSize": "13px",
+      "foreground": "rgb(231, 238, 231)",
+      "effectiveBackgroundRgb": [
+        243.0,
+        240.0,
+        234.0
+      ],
+      "contrastRatio": 1.038330376957137,
+      "minimum": 4.5,
+      "status": "fail",
+      "backgroundAncestorCount": 10
+    },
+    {
+      "kind": "language_label",
+      "selector": ".lw-code > span before the target pre",
+      "fontSize": "12px",
+      "foreground": "rgb(187, 204, 189)",
+      "effectiveBackgroundRgb": [
+        243.0,
+        240.0,
+        234.0
+      ],
+      "contrastRatio": 1.4788288942336465,
+      "minimum": 4.5,
+      "status": "fail",
+      "backgroundAncestorCount": 10
+    },
+    {
+      "kind": "inline_code",
+      "selector": ".lw-prose p code:first matched",
+      "fontSize": "14.08px",
+      "foreground": "rgb(38, 60, 49)",
+      "effectiveBackgroundRgb": [
+        238.0,
+        242.0,
+        235.0
+      ],
+      "contrastRatio": 10.453913690382345,
+      "minimum": 4.5,
+      "status": "pass",
+      "backgroundAncestorCount": 10
+    },
+    {
+      "kind": "body_paragraph",
+      "selector": ".lw-prose > p:first matched",
+      "fontSize": "16px",
+      "foreground": "rgb(38, 60, 49)",
+      "effectiveBackgroundRgb": [
+        249.0,
+        247.0,
+        243.0
+      ],
+      "contrastRatio": 11.068965807383355,
+      "minimum": 4.5,
+      "status": "pass",
+      "backgroundAncestorCount": 9
+    }
+  ],
+  "status": "fail"
+}

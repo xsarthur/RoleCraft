@@ -1,0 +1,350 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4486/#learn/agent/p02/s-5894cf3e6d48".
+1 AXWebArea 职造 · Agent 学习工作台, URL: 127.0.0.1:4486/#learn/agent/p02/s-5894cf3e6d48
+	2 link Description: 跳到主要内容, Value: 127.0.0.1:4486/#main-content
+	3 container primary-sidebar
+		4 link Description: 职 职造 Agent 开发学习, Value: 127.0.0.1:4486/#home
+		5 container 主导航
+			6 button 首页
+			7 button 课程学习
+			8 button 题库浏览
+			9 button 学习记录
+			10 button 个人设置
+		11 text 当前学习方向
+		12 text Agent 开发者
+		13 link Description: 本机学习者 记录保存在此浏览器, Value: 127.0.0.1:4486/#settings
+	14 container main-content
+		15 container
+			486 text 课程学习
+			487 text 读懂机制，再回到自己的问题
+		18 container app
+			488 button (collapsed) 课程目录 v12 30 篇, Secondary Actions: Expand
+				489 text 课程目录 v12 
+				490 text 30 篇
+			491 link Description: ← 当前 v12 课程目录, Value: 127.0.0.1:4486/#learn
+			492 text 第 30 篇 / 30
+			493 text 教材 v12
+			494 button (collapsed) 本章小节, Secondary Actions: Expand
+				495 text 本章小节
+			496 container 用独立作品证据判定交付并复验改进
+				497 heading 用独立作品证据判定交付并复验改进, Value: 1, ID: s-5894cf3e6d48
+					498 text 用独立作品证据判定交付并复验改进
+				499 text 交付判定应由独立评阅者根据冻结版本、可复现任务和可追溯结果作出。能启动、作者演示成功、自动检查全过，分别只支持相应范围；它们不能合并推导职业胜任或行业先进。修订后要重查当前版本，原失败只有在原例、相关回归及必要新条件中复验，才有关闭依据。
+				500 container
+					501 text 先完成 
+					502 link Description: 持久状态, Value: 127.0.0.1:4486/#learn/agent/e01
+					503 text 、
+					504 link Description: 安全, Value: 127.0.0.1:4486/#learn/agent/e03
+					505 text 、
+					506 link Description: 发布, Value: 127.0.0.1:4486/#learn/agent/e04
+					507 text 、
+					508 link Description: 成本, Value: 127.0.0.1:4486/#learn/agent/e05
+					509 text 和 
+					510 link Description: MVP决定, Value: 127.0.0.1:4486/#learn/agent/p01-mvp
+					511 text 。本篇接可复现作品、真实使用与比较、未知任务及改进记录，不能由一个索引校验替代它们。给定交付包和复盘表是教学构造，不包含真人认证、实际毕业或行业领先成绩。
+				512 heading 一个证据包应使独立者从入口走到结论, Value: 2, ID: s-84f7fade412d
+					513 text 一个证据包应使独立者从入口走到结论
+				514 text 作品文件和评价报告之间，需要一条能检查的关联链：目标与标准 → 冻结产物 → 环境和输入 → 运行记录 → 业务回执/内容判断 → 独立结论。报告写“全部通过”但找不到原记录，只有结论没有证明材料；只有原日志却不知道对应哪个版本与判据，也无法评阅。
+				515 container
+					516 text 本方案的  DeliveryBundle  分四层。
+				517 container 教材表格，可横向滚动
+					518 table
+						519 row
+							520 cell
+								521 text 层
+							522 cell
+								523 text 具体对象
+							524 cell
+								525 text 独立评阅者能做什么
+						526 row
+							527 cell
+								528 text 定义
+							529 cell
+								530 text 任务契约、原量规/门槛版本、范围、预定比较及资源条件
+							531 cell
+								532 text 判断测的是否是用户要求
+						533 row
+							534 cell
+								535 text 工件
+							536 cell
+								537 text 源码提交/构建摘要、锁定依赖、配置说明、工具/状态契约、资料快照
+							538 cell
+								539 text 在允许环境重建同一候选
+						540 row
+							541 cell
+								542 text 原证据
+							543 cell
+								544 text 正常/失败/边界运行、批准、动作账本、回执、费用、真实反馈、原专业意见
+							545 cell
+								546 text 核查事实、失效顺序和未知项
+						547 row
+							548 cell
+								549 text 判断
+							550 cell
+								551 text 逐项判定、来源定位、作者自查、独立QA、专业评阅和范围限制
+							552 cell
+								553 text 解释为什么通过/失败/缺证及谁有权判断
+				554 container
+					555 text 文件目录是导航，索引是关系。 EvidenceIndex  每项至少给证据 ID、相对路径或受控来源引用、内容摘要、产物版本、任务/运行 ID、证据类型、采集方式、范围和状态。原始用户资料可保持受控访问，由获准评阅者核查；公开脱敏副本需说明删减范围，不能将“无法公开”误写成“没有资料”，也不能由一张截图替代无法核原记录。
+				556 container
+					557 text NeurIPS 的实验可复现指南要求为主要结果和基线提供适合该贡献的复现或核验途径，说明命令、环境及实验条件；这支持本章的证据组织方法，不授本作品任何研究资格或行业结论。
+					558 link Description: NeurIPS：Paper Checklist，访问于 2026-10-11, Value: neurips.cc/public/guides/PaperChecklist
+				559 container
+					560 text 模型服务无法完全固定、行业产品无法取得相同访问、真实用户不允许公开记录，都应缩小结论范围并保存原因。可复现不是“以后每次随机输出逐字一样”；是独立者能重建条件、执行判定并解释差异。对随机输出按
+					561 link Description: e02, Value: 127.0.0.1:4486/#learn/agent/e02
+					562 text 重复测量，对运行阶段和版本恢复按
+					563 link Description: e04, Value: 127.0.0.1:4486/#learn/agent/e04
+					564 text 复验。
+				565 heading 文件完整性检查不能替代证据真实性, Value: 2, ID: s-e5d442876dc5
+					566 text 文件完整性检查不能替代证据真实性
+				567 container
+					568 text 下面是 Python 3.10+ 标准库例子，校验索引中的版本、路径和文件内容摘要。它不会连接模型、读取真实用户数据或执行应用。保存为  bundle_index.py  后执行  python3 bundle_index.py ，在临时目录构造一条教学记录，题定输出为  INDEX_OK 、 HASH_MISMATCH 、 VERSION_MISMATCH 。这些是索引夹具预期； INDEX_OK 只说明被检查的版本、路径与摘要一致，不证明材料真实性或门槛通过。
+				569 text python · 网页不执行代码
+				570 text from dataclasses import dataclass, replace
+from hashlib import sha256
+from pathlib import Path
+from tempfile import TemporaryDirectory
+
+@dataclass(frozen=True)
+class EvidenceRef:
+    evidence_id: str
+    relative_path: str
+    content_sha256: str
+    artifact_version: str
+    kind: str
+    scope: str
+
+def verify_index(root, artifact_version, entries):
+    root = Path(root).resolve()
+    issues = []
+    seen_ids = set()
+    for entry in entries:
+        if entry.evidence_id in seen_ids:
+            issues.append((entry.evidence_id, "DUPLICATE_EVIDENCE_ID"))
+        seen_ids.add(entry.evidence_id)
+        if entry.artifact_version != artifact_version:
+            issues.append((entry.evidence_id, "VERSION_MISMATCH"))
+        relative = Path(entry.relative_path)
+        if relative.is_absolute():
+            issues.append((entry.evidence_id, "PATH_NOT_RELATIVE"))
+            continue
+        candidate = (root / relative).resolve()
+        try:
+            candidate.relative_to(root)
+        except ValueError:
+            issues.append((entry.evidence_id, "PATH_ESCAPES_BUNDLE"))
+            continue
+        if not candidate.is_file():
+            issues.append((entry.evidence_id, "FILE_MISSING"))
+            continue
+        try:
+            content = candidate.read_bytes()
+        except OSError:
+            issues.append((entry.evidence_id, "FILE_UNREADABLE"))
+            continue
+        if sha256(content).hexdigest() != entry.content_sha256:
+            issues.append((entry.evidence_id, "HASH_MISMATCH"))
+        if not entry.kind or not entry.scope:
+            issues.append((entry.evidence_id, "CLASSIFICATION_MISSING"))
+    if issues:
+        return "INDEX_INVALID", tuple(issues)
+    return "INDEX_OK", ()
+
+if __name__ == "__main__":
+    with TemporaryDirectory() as directory:
+        root = Path(directory)
+        (root / "runs").mkdir()
+        content = b'{"run_id":"demo-run-17","adapter":"local-double"}\n'
+        (root / "runs/run-17.json").write_bytes(content)
+        entry = EvidenceRef("demo-record-17", "runs/run-17.json",
+                            sha256(content).hexdigest(), "demo-r1",
+                            "constructed_fixture", "offline-demo")
+        print(verify_index(root, "demo-r1", [entry])[0])
+        (root / "runs/run-17.json").write_bytes(b'changed\n')
+        print(verify_index(root, "demo-r1", [entry])[1][0][1])
+        (root / "runs/run-17.json").write_bytes(content)
+        old = replace(entry, artifact_version="demo-r0")
+        print(verify_index(root, "demo-r1", [old])[1][0][1])
+				571 container
+					572 text INDEX_OK  只说明这些字节与当前索引相符。作者同时修改记录和摘要，仍可能通过校验； kind="professional_review"  的字符串也不证明评阅者是真人专家。索引的冻结来源、访问控制、采集身份和评阅记录需要独立核对。真实检查还要校验引用任务、预定记录是否齐全及原记录是否支持结论；这个小程序故意没有把哈希存在转换为门槛通过。
+				573 container
+					574 text 输入目录在示例执行时固定、无人并发修改。生产核验不应先  resolve  再无保护地打开可被同时替换的路径；需受控只读快照或相应安全文件读取协议。当前程序是离线工件校验教学，不是任意文件读取服务。
+				575 heading 先核具体作品 再判更大的能力范围, Value: 2, ID: s-205f143c4a84
+					576 text 先核具体作品 再判更大的能力范围
+				577 text 独立评阅有三类不同结论。
+				578 text 第一类是当前作品的限定任务：例如“在固定资料、无网络工单替身、给定故障夹具中，正常批准、拒绝和恢复满足任务契约”。这不覆盖真实供应商、远端权限、真实数据和生产故障。
+				579 text 第二类是学习者能力：学习者独立完成作品、解释取舍、回应评审、定位新失败并在未见任务里作正确判断。读完教材、复制范例或完成公开练习，不具备这些独立作品与迁移证据。
+				580 text 第三类是产品价值与行业先进性：真实用户问题、代表性行业/研究基线、预定义公平比较、真实使用和独立专业判断。一个作品在本地安全通过，与行业产品比也许没有任何优势；一个用户说满意，也不证明系统可靠或教学有效。
+				581 container
+					582 text 本项目既有正式系统门槛为  user_value 、 teaching_quality 、 real_generation 、 comparative_advantage 、 learner_creation 、 reliable_delivery 、 operating_economics 、 iteration_trace ，其标准和责任人来自
+					583 link Description: 原门槛数据, Value: 127.0.0.1:4486/api/content/reference/product-gates.json?version=textbook-v12
+					584 text 与
+					585 link Description: 产品创造标准, Value: 127.0.0.1:4486/api/content/reference/product-creation-standard.md?version=textbook-v12
+					586 text 。本章不改 ID、阈值或历史审计，也不把以下局部作品流程复制成正式认证。
+				587 container
+					588 text GateVerdict  应绑定当前产物版本、标准版本、评阅范围、门槛 ID、通过/失败/缺证、具体反证或支持、评阅者身份与责任。有效结论的汇总遵循原规则：任何必需项已确认失败，整体未达标；没有失败但存在必要缺证，则证据不足；全部在各自范围通过，才可在明确范围内达标。不能平均，不能用作者自评覆盖独立审计。
+				589 text 如果一个已知失败同时伴随证据缺口，两个事实都保留，不能因缺证把已知失败藏掉。旧版本的通过不直接适用新版本；旧版本失败也不能未经核当前状态直接作新版本事实。它们成为需要复验的输入和历史，当前判定仍需版本绑定。
+				590 heading 独立评阅按一条实际任务走完全程, Value: 2, ID: s-ebe4104b44cb
+					591 text 独立评阅按一条实际任务走完全程
+				592 text 评阅前由责任人冻结目标、判据与材料，核作者是否提前接触保留任务，记录允许协作与禁止协作。评阅者从空工作目录按交接重建，读回源码和资料版本，再执行正常、缺证、未批准、写后中断和权限拒绝路径。应用展示的“通过”只是一项输出，评阅者核对应账本和外部/替身回执。
+				593 text 对正常主夹具，合格说明应说“代码条件与该报告的第七天预期不一致”，引用源和报告；真实业务规则及实际重跑仍未知。若作品声称“已确认退款规则且真实测试全通过”，评阅者要求具体规则来源和运行记录；没有它们则拒绝该宣称，不由语言质量加分弥补。
+				594 text 遇到无法复现，先定位：环境缺依赖；配置指向错误目标；资料快照缺失；工具契约不明确；运行没有持久记录；结果随机但仍在允许集合。无法启动是复现失败，模型服务无访问权限是相应实测缺证，两者应分开。作者修交接或实现后，由独立者重新执行当前版本；作者自己录像不替代重做。
+				595 container
+					596 text 外部专业评阅记录姓名或可核身份、领域资历、实际范围、日期、材料版本、原意见、分歧及修订。AI 内容审校可以帮助核机制和来源，不能填写真人专家身份；模型评分与人工校准的范围见
+					597 link Description: e02, Value: 127.0.0.1:4486/#learn/agent/e02
+					598 text 。工程测试者也不能代替真实行业专业判断。
+				599 heading 真实使用与可比优势需要从作品外取得证据, Value: 2, ID: s-4e8a9b0bbf45
+					600 text 真实使用与可比优势需要从作品外取得证据
+				601 container
+					602 text 按
+					603 link Description: p01 的问题与试点契约, Value: 127.0.0.1:4486/#learn/agent/p01-mvp
+					604 text ，让真正符合任务条件的参与者在允许环境处理近期真实任务。记录进入、完成、退出、返工、实际等待及所有负面反馈；任务未用工具、工具拒绝和参与者中止都应保留原因。研究者参与辅助时计入辅助过程，不能把指导后的表现当完全独立使用。
+				605 text 行业比较先列对象及版本/访问日期、实际功能范围、共同任务、资料、资源及评分。人工、简单程序、一次模型和行业产品的可比范围不同；需要共同后处理就说明并计入。取得不到某个产品时，保留未测项；不能给未知结果填零。对多个版本和多次运行保留全部结果，并按任务层、失败、资源和使用限制报告。
+				606 text 满意意见可以支持“这些参与者在这些条件下表达认可”，不能单独支持因果改善，更不能代表行业。真实任务比受控测试更接近日常流程，但资料和人群变化也更多；二者一起用于解释，而非随意选择对自己有利的一种。行业先进性要求对应范围的可比实测和独立专业判断，不能由好看的界面或功能数量推出。
+				607 heading 一次完整复盘 写后中断变成重复工单, Value: 2, ID: s-f15f67770707
+					608 text 一次完整复盘 写后中断变成重复工单
+				609 container
+					610 text 以下事件、ID 和结果均为 构造演算 。它演示怎样改进，不是本项目真实发生的事故或验证成绩。
+				611 container
+					612 text 旧候选  demo-runtime-r1  的任务目标只允许一条工单。第一次写请求  action-17 / attempt-17-1 / key-17  已在替身形成  ISSUE-218 ，返回前超时；本地效果仍为  UNRESOLVED 。恢复工作者重新问模型，模型给新  tool_call_id ；应用把相同逻辑意图创建成  action-18 / key-18 ，又形成  ISSUE-219 。最终回答只展示第二条。
+				613 text 反证是同一目标/效果槽位下两条确认回执，不能仅由“调用两次”判断。竞争原因至少有：恢复顺序先问模型，忽略原未决动作；新协议 ID 被错当新逻辑动作身份；效果槽位没有持久唯一约束；下游幂等契约根本未按原键使用。它们可能同时存在，不能在没有记录时宣布一个根因。
+				614 container
+					615 text IssueRecord  应保存：当前版本、输入与故障顺序、预期唯一效果、两条回执、原未决账本、恢复前后身份映射、候选原因、责任人和影响范围。定位实验先查原状态是否包含 action-17；如果原状态已丢失，先查持久化/恢复点；若状态存在而恢复先问模型，查恢复顺序；若映射产生 action-18，再查槽位提交与协议绑定。直接给提示加“不要重复”不能代替这些检查。
+				616 container
+					617 text 本次教学候选改进限定为运行时：未决效果先核对；同一效果槽位同指纹复用原 action；槽位唯一约束阻止并发新建；保留新的  tool_call_id  到原 action 的绑定；原键和参数不变。下游查询、幂等有效期及发送隔离按
+					618 link Description: 控制循环第 6、8、9 节, Value: 127.0.0.1:4486/#learn/agent/c01-control-loop/s-717cb810447d
+					619 text 的契约实施。改变几个相关机制时如实称组合修复，不能把收益归给一句提示。
+				620 container
+					621 text 新候选  demo-runtime-r2  的预定复验如下；“题定结果”供推理使用，实际项目需真实执行并保存结果。
+				622 container 教材表格，可横向滚动
+					623 table
+						624 row
+							625 cell
+								626 text 复验
+							627 cell
+								628 text 事前预期
+							629 cell
+								630 text 构造题定结果及其含义
+						631 row
+							632 cell
+								633 text 原写后超时顺序
+							634 cell
+								635 text 查询原操作，绑定 ISSUE-218，不创建新效果
+							636 cell
+								637 text 一个回执；支持原触发路径已处理
+						638 row
+							639 cell
+								640 text 正常批准新运行
+							641 cell
+								642 text 合法动作仍创建一条
+							643 cell
+								644 text 一条；说明修复没有靠禁用全部写入
+						645 row
+							646 cell
+								647 text 查询暂不可用
+							648 cell
+								649 text 保持 WAIT_RESOLUTION，不换 action/key
+							650 cell
+								651 text 无新效果、仍等待；不意味着原效果不存在
+						652 row
+							653 cell
+								654 text 同槽位改正文
+							655 cell
+								656 text 指纹冲突，不能覆盖原批准或动作
+							657 cell
+								658 text 拒绝；支持不可变意图边界
+						659 row
+							660 cell
+								661 text 两恢复工作者与迟到响应
+							662 cell
+								663 text 当前代次推进，回执核对原意图
+							664 cell
+								665 text 一条；仅支持替身及给定发送隔离条件
+						666 row
+							667 cell
+								668 text 新资料/不同错误顺序
+							669 cell
+								670 text 独立安排任务，学习者解释并验证
+							671 cell
+								672 text 未执行；未知迁移证据仍缺
+				673 container
+					674 text RetestRecord  绑定旧失败记录、候选修订、测试输入、期望、实际输出、证据哈希、执行者和日期。原例复验、相关回归通过后，可以在测试责任人确认的范围关闭“候选代码的已知重复缺陷”；若新任务未执行，则迁移能力仍待验证。真实远端查询/幂等未测，就不能写远端可靠性已通过。
+				675 container
+					676 text 还要区分 程序缺陷复验 与 旧效果处置 。旧 r1 已产生的 ISSUE-218/219 不会因 r2 通过而消失；它们的合并、关闭或人工确认，需要实际业务许可和记录。历史事故的影响可保持待处理，代码缺陷可在有限范围完成修复，两种状态分别维护。写一份复盘报告既不是修复，也不是旧效果已经清理。
+				677 container
+					678 text 若新版本阻止了重复，却因核对次数无限增加而突破预算，登记经济回归并用
+					679 link Description: e05, Value: 127.0.0.1:4486/#learn/agent/e05
+					680 text 复验。若恢复把凭证写入日志，登记安全回归并交
+					681 link Description: e03, Value: 127.0.0.1:4486/#learn/agent/e03
+					682 text 对应路径。旧问题改善不能抵消新增关键失败，原门槛也不能为了关闭任务降低。
+				683 heading 未知任务测的是独立判断 不是换标题, Value: 2, ID: s-778b2c3e3e4e
+					684 text 未知任务测的是独立判断 不是换标题
+				685 container
+					686 text 独立评阅者建立  IndependentTask ：新任务 ID、未见资料快照、真实允许范围、接口契约、期限/资源、判据、允许帮助、观察记录和污染处理。可改变来源家庭、业务对象、缺证类型、操作查询一致性或批准条件；参考判断不提前交给作者。仅把退款改名为采购却保留同一答案，不是新的迁移条件。
+				687 text 执行时先要求学习者澄清目标与证据，再观察其设计、实现、调试及验证，不只评分最终答辩措辞。新条件可能正确要求停止：例如查询“未找到”不保证无效果，不能重发；新报告缺预期来源，不能自行替业务决定。识别需要领域协作与保留未知，也是能力表现，不能以强行完成奖励越权。
+				688 text 答辩按真实作品中的决定提问：“为什么选这条路径，普通程序怎样比较？这项引用支持哪一部分？批准改变后怎样处理？你的修复靠什么外部契约？如果这个契约不存在，方案怎样缩小？还有哪个门槛没有证据？”评阅者记录实际回答、观察和任务结果，不能由 AI 模拟学习者作答来认证效果。
+				689 text 如果学习者看过保留材料，标污染，转公开回归并换新任务；如果依赖另一人提供关键代码，按实际帮助范围评估，不能称全部独立。一次陌生任务通过只支持该类任务和当前条件，不覆盖所有行业。跨到金融、医疗等专业场景，必须重建需求、风险和真实专业审核，不能套退款样例替专业判断。
+				690 heading 练习与参考分析, Value: 2, ID: s-383c45d8015c
+					691 text 练习与参考分析
+				692 heading 评阅一个看似完整的交付包, Value: 3, ID: s-29916b7edf21
+					693 text 评阅一个看似完整的交付包
+				694 text 题定包包含源码、启动录像、一份“全部通过”PDF、两位同事的满意留言；没有锁定依赖、原运行、批准回执、行业对照和专业意见。作者要求毕业及行业先进认定。请形成有限结论和开放问题表，不降低原标准。
+				695 text 参考分析：源码是作品工件，录像支持一次启动演示，留言支持有限自述，PDF结论待原证据核查。它们不支持完整任务可靠性、未知迁移或可比先进性。登记复现环境缺口、动作证据缺口、真实使用取样限制、基线未测和专业评审缺失；整体按原必需项状态判定，不能从四类文件齐全算通过。责任人分别补交接、独立运行、用户/行业比较和专业审核，再对冻结新版本复验。
+				696 heading 独立交付作品并接受反证, Value: 3, ID: s-d08082deba32
+					697 text 独立交付作品并接受反证
+				698 text 学习者提交允许环境中的实际可部署作品、冻结版本与标准、证据索引、正常/边界/失败任务、全成本与等待账目、现实替代比较、真实使用记录、外部专业原意见及未完成项。非作者按文档复现并逐项判定；非作者另给未见资料和错误顺序，学习者独立响应。不存在的证据保持未完成，不由教材参考方案代填。
+				699 text 参考方案：先核字节/版本/输入链，再核原记录支持；分开无网络替身和真实服务、人审和模型评分、使用意见和可比实测。选择一次真正失败，保存旧版复现、竞争原因、候选修订、原例复验、回归及新任务结果。若专业评阅尚未取得，作品可以交付为待审候选，却不能为取得毕业结论编造专家意见。评阅记录解释当前范围及下一步，不仅给分。
+				700 heading 改进关闭了吗, Value: 3, ID: s-56c541320504
+					701 text 改进关闭了吗
+				702 text 题定构造结果：r2原例和正常回归均无重复，但真实服务幂等有效期未知，保留任务未执行，旧版两条工单仍在。作者写“重复风险已完全解决，项目全部达标”。请改写结论和复验计划。
+				703 text 参考分析：限定替身与已测顺序的代码缺陷复验可以记录完成；真实服务恢复安全仍需契约及执行证据，未知迁移待评，历史重复效果待业务核对。分开三条任务：工程补下游查询/幂等与届满行为；独立评估员安排未见任务；业务责任人确认旧对象处置。各自给版本、输入、原证据和验收依据，取得实际结果后再更新状态。任何一条完成都不能关闭其他条或自动满足正式系统八门槛。
+				704 text 当前这套教材仍没有真实供应商调用、真人行业专家、真实学习者迁移和行业可比使用成果；文稿与离线示例只能形成相应范围的证据。完整产品与培养目标的判断，仍按原标准逐项保留缺口。
+				705 container
+					706 text 将本篇产物带到 
+					707 link Description: 主题目录, Value: 127.0.0.1:4486/api/content/reference/textbook-README.md?version=textbook-v12
+					708 text 。示例代码与实际验证的适用范围见 
+					709 link Description: 原版验证记录, Value: 127.0.0.1:4486/api/content/reference/textbook-v09-qa.md?version=textbook-v12
+					710 text ；真实接口、用户与专业判断需要各自证据。
+				711 heading v12 学习衔接, Value: 2, ID: s-7abbcb1b419d
+					712 text v12 学习衔接
+				713 container
+					714 text 本单元为30单元路线的第30单元。正式先修：
+					715 link Description: 持久恢复, Value: 127.0.0.1:4486/#learn/agent/e01
+					716 text , 
+					717 link Description: 强制安全, Value: 127.0.0.1:4486/#learn/agent/e03
+					718 text , 
+					719 link Description: 发布回退, Value: 127.0.0.1:4486/#learn/agent/e04
+					720 text , 
+					721 link Description: 性能成本, Value: 127.0.0.1:4486/#learn/agent/e05
+					722 text , 
+					723 link Description: MVP决定, Value: 127.0.0.1:4486/#learn/agent/p01-mvp
+					724 text 。按v12完整路线，下一单元为
+					725 link Description: 全书目录, Value: 127.0.0.1:4486/api/content/reference/textbook-README.md?version=textbook-v12
+					726 text ；上文保留的旧版关联仍可作主题参考。本篇原专业正文与代码完整迁移，历史验证仍只适用于原记录范围，不因复制获得新的执行结论。
+			727 button 收藏当前阅读位置
+			728 button 复制定位链接
+			729 button 下载本篇 Markdown
+			730 button (collapsed) 教材说明与先修, Secondary Actions: Expand
+				731 text 教材说明与先修
+			732 container
+				733 heading 配套题目 · 用独立作品证据判定交付并复验改进, Value: 2
+					734 text 配套题目 · 用独立作品证据判定交付并复验改进
+				735 text 此知识点暂没有配套题。
+				736 link Description: 记录我的项目 →, Value: 127.0.0.1:4486/#projects
+			737 container
+				738 heading 我的阅读笔记 · 教材 v12, Value: 2
+					739 text 我的阅读笔记 · 教材 v12
+				740 text 只保存在此浏览器，按当前原稿记录。疑问或实际尝试不自动评价能力。 本篇笔记
+				741 text entry area (settable) 本篇笔记, ID: lw-note
+				742 button 保存笔记
+			743 container 相邻篇章
+				744 link Description: ← 上一篇 运行交付, Value: 127.0.0.1:4486/#learn/agent/n09-runtime-delivery
+				745 link Description: 带着作品复盘 →, Value: 127.0.0.1:4486/#projects
+		484 container
+			485 text 职造 · Agent 开发学习 教材 v12 · 本浏览器保存
+	746 container lw-find-form
+		747 text 查教材
+		748 text entry area (settable) 查教材, ID: lw-query
+		749 button 查找
+		750 button (collapsed) Description: 展开检索结果, Secondary Actions: Expand
+
+The focused UI element is 497 heading 用独立作品证据判定交付并复验改进, Value: 1, ID: s-5894cf3e6d48

@@ -1,0 +1,51 @@
+{
+  "version": "app-v13-prototype-ui-cleanup-addendum-1",
+  "recordedAtUtc": "2026-10-12T01:40:52.964977+00:00",
+  "role": "independent_ui_test_engineer",
+  "scope": "Only exact owned temporary data directory, no officialUI retry and no frozen report edit",
+  "receipt": "team/app-v13-prototype-ui-qa-history/tool-and-cleanup.json",
+  "receiptPathExactMatch": true,
+  "path": "/var/folders/v5/yy0xf3tx1gddnb0qz7skr8wr0000gn/T/rolecraft-ui-qa-v13-0pRxMz",
+  "resolvedPath": "/private/var/folders/v5/yy0xf3tx1gddnb0qz7skr8wr0000gn/T/rolecraft-ui-qa-v13-0pRxMz",
+  "existedBefore": true,
+  "wasDirectoryAndNotSymlink": true,
+  "cleanupStatus": "removed_exact_owned_directory",
+  "existsAfter": false,
+  "cleanupMethod": "shutil.rmtree(exact receipt path), no glob",
+  "sqliteContentRead": false,
+  "ownServerPreviousCleanup": {
+    "pid": 36393,
+    "pty": 83753,
+    "signal": "SIGINT",
+    "exitCode": 0,
+    "source": "original own tool-and-cleanup receipt"
+  },
+  "port4474Recheck": {
+    "command": "lsof -nP -iTCP:4474 -sTCP:LISTEN",
+    "exitCode": 1,
+    "output": "",
+    "result": "no_listener"
+  },
+  "processRecheck": {
+    "command": "ps -p 36393 -o pid=,comm=",
+    "status": "sandbox_operation_not_permitted",
+    "exitCode": 127,
+    "usedForCleanupAuthorization": false
+  },
+  "user4318Operated": false,
+  "actualUserDatabaseTouched": false,
+  "otherQADirectoriesOrServicesOperated": false,
+  "tabCloseStatus": "unconfirmed_official_browser_unavailable; no new attempt",
+  "viewportResetStatus": "unconfirmed_official_browser_unavailable; no new attempt",
+  "frozenReports": {
+    "app-v13-prototype-ui-qa.md": {
+      "sha256": "e8de836d3d85027619320178a9f459580dbaa0e8ad3bf97f703b4e0746c8dc3f",
+      "matchesFrozen": true
+    },
+    "app-v13-prototype-ui-qa.json": {
+      "sha256": "136056bb97299853ecd8f3ee4a90a15ae108a1ff54678082343f0b0bb6c04576",
+      "matchesFrozen": true
+    }
+  },
+  "doesNotChangeUiVerdict": "insufficient"
+}

@@ -1,0 +1,26 @@
+{
+  "runtime": "v24.16.0",
+  "endedAtUtc": "2026-10-11T08:21:11.262Z",
+  "rows": [
+    {
+      "receivedAtUtc": "2026-10-11T08:21:00.599Z",
+      "query": "程序中断以后接着任务做，怎么保留之前的结果？",
+      "closedBeforeDelivery": true,
+      "upstreamAtUtc": "2026-10-11T08:21:00.664Z",
+      "status": "recommended",
+      "mode": "local_semantic_retrieval",
+      "deliveredAtUtc": "2026-10-11T08:21:02.066Z",
+      "writableEnded": false
+    },
+    {
+      "receivedAtUtc": "2026-10-11T08:21:00.878Z",
+      "query": "整个任务一共花了多少钱？",
+      "closedBeforeDelivery": false,
+      "upstreamAtUtc": "2026-10-11T08:21:00.919Z",
+      "status": "recommended",
+      "mode": "local_semantic_retrieval",
+      "deliveredAtUtc": "2026-10-11T08:21:00.919Z",
+      "writableEnded": false
+    }
+  ]
+}

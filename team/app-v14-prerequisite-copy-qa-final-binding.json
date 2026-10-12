@@ -1,0 +1,34 @@
+{
+  "version": "app-v14-prerequisite-copy-qa-final-binding-2",
+  "status": "candidate03_narrow_verified",
+  "qa": {
+    "report": "team/app-v14-prerequisite-copy-qa-final.md",
+    "json": "team/app-v14-prerequisite-copy-qa-final.json"
+  },
+  "frontend": "team/app-v14-prerequisite-copy-frontend-binding3.json",
+  "uiSpecialist": {
+    "report": "team/app-v14-prerequisite-copy-ui-qa.md",
+    "json": "team/app-v14-prerequisite-copy-ui-qa.json",
+    "reportSha256": "b157ed672b7e57206645aa3f18af43429cceb472efc0916b16d611b491a538bd",
+    "jsonSha256": "85b78babb19e0e2fdd9565a432379746c0a344b6c180140f6df5a6de29b3a5be",
+    "actualBrowserTested": true,
+    "surface": "official Codex In-app Browser id2"
+  },
+  "candidate2EvidencePreserved": "team/app-v14-prerequisite-copy-ui-qa.md#candidate-2",
+  "scope": [
+    "visited open-book and warm boundary",
+    "unvisited closed-book and neutral boundary",
+    "visible status-row removal and compact spacing",
+    "knowledge expand/collapse",
+    "Tab and Enter keyboard navigation"
+  ],
+  "notReRun": ["candidate2 seven-condition matrix", "old 292 HTTP matrix", "full responsive/accessibility matrix"],
+  "cleanup": {
+    "selfOwnedTabClosed": true,
+    "temporaryViewportReset": true,
+    "formal4318Operated": false,
+    "privateStorageReadOrWrite": false,
+    "serviceRestarted": false
+  },
+  "fullProductStatus": "not_met"
+}

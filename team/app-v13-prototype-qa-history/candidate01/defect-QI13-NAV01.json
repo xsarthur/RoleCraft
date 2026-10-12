@@ -1,0 +1,15 @@
+{
+  "id": "QI13-NAV01",
+  "productCondition": "PV13-04",
+  "scenario": "PT13-04",
+  "owner": "客户端软件工程师",
+  "status": "open_waiting_frozen_repair",
+  "evidenceKind": "independent executed client logic in VM, not real GUI",
+  "candidateExperienceSha256": "9af4d9aabe568eeff45a97a3307ad9e7ad1357fa3f86a5d16a4f57536d2afdbd",
+  "originalQuestionHref": "#questions/Q11?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17",
+  "renderedSourceHref": "#learn/agent/n03-planning-reflection/s-da63f3dcff17?from=Q11",
+  "renderedReturnHref": "#questions/Q11",
+  "expected": "preserve original question and original unit/kp filter in return navigation",
+  "output": "independent-client-vm.json",
+  "retest": "same Q11 roundtrip; filtered/no-filter/unknown origin cases and original source/section identity; later true UI remains separately required"
+}

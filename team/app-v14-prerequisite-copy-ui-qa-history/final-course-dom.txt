@@ -1,0 +1,303 @@
+- link "跳到主要内容":
+  - /url: "#main-content"
+- complementary:
+  - link "职 职造 Agent 开发学习":
+    - /url: "#home"
+    - generic: 职
+    - strong:
+      - text: 职造
+      - generic: Agent 开发学习
+  - navigation "主导航":
+    - button "首页":
+      - generic: ⌂
+      - text: 首页
+    - button "课程学习":
+      - generic: ▤
+      - text: 课程学习
+    - button "题库浏览":
+      - generic: ◇
+      - text: 题库浏览
+    - button "学习记录":
+      - generic: ↻
+      - text: 学习记录
+    - button "个人设置":
+      - generic: ⚙
+      - text: 个人设置
+  - generic: 当前学习方向
+  - strong: Agent 开发者
+  - link "本机学习者 记录保存在此浏览器":
+    - /url: "#settings"
+    - generic: 本
+    - text: 本机学习者
+    - generic: 记录保存在此浏览器
+- main:
+  - strong: 课程学习
+  - paragraph: 读懂机制，再回到自己的问题
+  - heading "Agent 开发学习路线" [level=1]
+  - paragraph: 从理解 Agent，到实现、验证与交付自己的产品
+  - generic: 继续阅读 · 外部API
+  - link "继续阅读：外部API":
+    - /url: "#learn/agent/f01/s-6c7503f2c3ca"
+    - text: 继续 →
+  - generic "学习路线图，可滚动":
+    - heading "01 起点与问题" [level=2]:
+      - generic: "01"
+      - text: 起点与问题
+    - article:
+      - link "01 认识Agent工程":
+        - /url: "#learn/agent/00-learning-route"
+        - generic: "01"
+        - strong: 认识Agent工程
+      - generic: 尚无本版足迹
+      - generic "知识点 6"
+      - text: →
+    - article:
+      - link "02 基础预备":
+        - /url: "#learn/agent/01-foundation"
+        - generic: "02"
+        - strong: 基础预备
+      - generic: 尚无本版足迹
+      - generic "知识点 7"
+      - text: →
+    - article:
+      - link "03 Python与模型基础":
+        - /url: "#learn/agent/n01-python-model-foundations"
+        - generic: "03"
+        - strong: Python与模型基础
+      - generic: 尚无本版足迹
+      - generic "知识点 7"
+    - article:
+      - link "04 问题发现":
+        - /url: "#learn/agent/p01-discovery"
+        - generic: "04"
+        - strong: 问题发现
+      - generic: 尚无本版足迹
+      - generic "知识点 7"
+      - text: →
+    - article:
+      - link "05 任务验收":
+        - /url: "#learn/agent/02-task-acceptance"
+        - generic: "05"
+        - strong: 任务验收
+      - generic: 尚无本版足迹
+      - generic "知识点 6"
+      - text: →
+    - article:
+      - link "06 信任边界":
+        - /url: "#learn/agent/03-trust-boundary"
+        - generic: "06"
+        - strong: 信任边界
+      - generic: 尚无本版足迹
+      - generic "知识点 5"
+    - text: ↓
+    - heading "02 程序与模型边界" [level=2]:
+      - generic: "02"
+      - text: 程序与模型边界
+    - article:
+      - link "07 外部API":
+        - /url: "#learn/agent/f01"
+        - generic: "07"
+        - strong: 外部API
+      - generic: 本章打开过
+      - generic "知识点 7"
+      - text: →
+    - article:
+      - link "08 模型候选":
+        - /url: "#learn/agent/f02"
+        - generic: "08"
+        - strong: 模型候选
+      - generic: 尚无本版足迹
+      - generic "知识点 7"
+      - text: →
+    - article:
+      - link "09 上下文、记忆与提示":
+        - /url: "#learn/agent/n02-context-memory-prompt"
+        - generic: "09"
+        - strong: 上下文、记忆与提示
+      - generic: 尚无本版足迹
+      - generic "知识点 9"
+    - text: ↓
+    - heading "03 选型与组件" [level=2]:
+      - generic: "03"
+      - text: 选型与组件
+    - article:
+      - link "10 方案选择":
+        - /url: "#learn/agent/c01-selection"
+        - generic: "10"
+        - strong: 方案选择
+      - generic: 尚无本版足迹
+      - generic "知识点 8"
+      - text: →
+    - article:
+      - link "11 动作身份":
+        - /url: "#learn/agent/c01-control-primer"
+        - generic: "11"
+        - strong: 动作身份
+      - generic: 尚无本版足迹
+      - generic "知识点 6"
+      - text: →
+    - article:
+      - link "12 检索证据":
+        - /url: "#learn/agent/c02"
+        - generic: "12"
+        - strong: 检索证据
+      - generic: 尚无本版足迹
+      - generic "知识点 8"
+    - article:
+      - link "13 写工具":
+        - /url: "#learn/agent/c03"
+        - generic: "13"
+        - strong: 写工具
+      - generic: 尚无本版足迹
+      - generic "知识点 8"
+      - text: →
+    - article:
+      - link "14 工具目录与MCP":
+        - /url: "#learn/agent/n04-tools-mcp"
+        - generic: "14"
+        - strong: 工具目录与MCP
+      - generic: 尚无本版足迹
+      - generic "知识点 9"
+      - text: →
+    - article:
+      - link "15 持久恢复":
+        - /url: "#learn/agent/e01"
+        - generic: "15"
+        - strong: 持久恢复
+      - generic: 尚无本版足迹
+      - generic "知识点 8"
+    - text: ↓
+    - heading "04 固定与动态流程" [level=2]:
+      - generic: "04"
+      - text: 固定与动态流程
+    - article:
+      - link "16 固定流程":
+        - /url: "#learn/agent/c01-fixed-workflow"
+        - generic: "16"
+        - strong: 固定流程
+      - generic: 尚无本版足迹
+      - generic "知识点 4"
+      - text: →
+    - article:
+      - link "17 动态循环":
+        - /url: "#learn/agent/c01-control-loop"
+        - generic: "17"
+        - strong: 动态循环
+      - generic: 尚无本版足迹
+      - generic "知识点 16"
+      - text: →
+    - article:
+      - link "18 规划与反思":
+        - /url: "#learn/agent/n03-planning-reflection"
+        - generic: "18"
+        - strong: 规划与反思
+      - generic: 尚无本版足迹
+      - generic "知识点 8"
+    - article:
+      - link "19 进阶检索与摄取":
+        - /url: "#learn/agent/n05-retrieval-ingestion"
+        - generic: "19"
+        - strong: 进阶检索与摄取
+      - generic: 尚无本版足迹
+      - generic "知识点 10"
+      - text: →
+    - article:
+      - link "20 图编排":
+        - /url: "#learn/agent/n06-graph-orchestration"
+        - generic: "20"
+        - strong: 图编排
+      - generic: 尚无本版足迹
+      - generic "知识点 7"
+      - text: →
+    - article:
+      - link "21 多Agent与A2A":
+        - /url: "#learn/agent/n07-multiagent-a2a"
+        - generic: "21"
+        - strong: 多Agent与A2A
+      - generic: 尚无本版足迹
+      - generic "知识点 7"
+    - text: ↓
+    - heading "05 评价与产品决定" [level=2]:
+      - generic: "05"
+      - text: 评价与产品决定
+    - article:
+      - link "22 版本评价":
+        - /url: "#learn/agent/e02"
+        - generic: "22"
+        - strong: 版本评价
+      - generic: 尚无本版足迹
+      - generic "知识点 11"
+      - text: →
+    - article:
+      - link "23 跨场景评价与移交":
+        - /url: "#learn/agent/n10-evaluation-projects"
+        - generic: "23"
+        - strong: 跨场景评价与移交
+      - generic: 尚无本版足迹
+      - generic "知识点 7"
+      - text: →
+    - article:
+      - link "24 MVP决定":
+        - /url: "#learn/agent/p01-mvp"
+        - generic: "24"
+        - strong: MVP决定
+      - generic: 尚无本版足迹
+      - generic "知识点 8"
+    - article:
+      - link "25 强制安全":
+        - /url: "#learn/agent/e03"
+        - generic: "25"
+        - strong: 强制安全
+      - generic: 尚无本版足迹
+      - generic "知识点 10"
+      - text: →
+    - article:
+      - link "26 代码沙箱":
+        - /url: "#learn/agent/n08-sandbox-security"
+        - generic: "26"
+        - strong: 代码沙箱
+      - generic: 尚无本版足迹
+      - generic "知识点 7"
+      - text: →
+    - article:
+      - link "27 发布回退":
+        - /url: "#learn/agent/e04"
+        - generic: "27"
+        - strong: 发布回退
+      - generic: 尚无本版足迹
+      - generic "知识点 10"
+    - article:
+      - link "28 性能成本":
+        - /url: "#learn/agent/e05"
+        - generic: "28"
+        - strong: 性能成本
+      - generic: 尚无本版足迹
+      - generic "知识点 10"
+      - text: →
+    - article:
+      - link "29 运行交付":
+        - /url: "#learn/agent/n09-runtime-delivery"
+        - generic: "29"
+        - strong: 运行交付
+      - generic: 尚无本版足迹
+      - generic "知识点 7"
+    - text: ↓
+    - heading "06 交付与迭代" [level=2]:
+      - generic: "06"
+      - text: 交付与迭代
+    - article:
+      - link "30 独立作品与复盘":
+        - /url: "#learn/agent/p02"
+        - generic: "30"
+        - strong: 独立作品与复盘
+      - generic: 尚无本版足迹
+      - generic "知识点 10"
+  - text: 职造 · Agent 开发学习
+  - generic: 教材 v12 · 本浏览器保存
+- status
+- generic: 问教材
+- textbox "问教材":
+  - /placeholder: 描述 Agent 开发、学习或项目中的问题
+- button "发送"
+- button "展开学习问答": ⌃
+- status

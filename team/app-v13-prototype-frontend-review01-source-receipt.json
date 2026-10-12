@@ -1,0 +1,48 @@
+{
+  "issueId": "UI2-REVIEW01",
+  "sourceFrozenPath": "team/app-v13-prototype-qa-history/candidate02/learning-experience-v13.js",
+  "sourceFrozenSha256": "7fc778e5d85702688caebf76370308ddee435b74acee7665666387a4dc902b9e",
+  "repairedPath": "team/app-v13-prototype-frontend-history/review01-repaired-client/learning-experience-v13.js",
+  "repairedSha256": "e731f617891e8a08ea52e5f58267a47c3ff9c43d0ae12dd6c7d443576afdf42f",
+  "scope": "only honest review completion copy and continuation links; no state/marks/score changes",
+  "readOnlyDistReceipt": [
+    {
+      "name": "index.html",
+      "frozenSha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+      "currentDistSha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+      "currentMatchesFrozen": true
+    },
+    {
+      "name": "app.js",
+      "frozenSha256": "05167ec7df6cea51d6e137aaa0ff53ea4cb949a66a4c813d6ce7167651b2f30e",
+      "currentDistSha256": "46b502c179e179b8fd7004bc4ced3888bb10249cba1d8b04659418d4b2bff663",
+      "currentMatchesFrozen": false
+    },
+    {
+      "name": "learning-workbench.js",
+      "frozenSha256": "55c6f5db634d1b723e863fe9a94f604fadcf895c15acbb984025d35be15c6266",
+      "currentDistSha256": "100404b410f970636908b785a816480f1a25375ed95898d98914702eecbb218f",
+      "currentMatchesFrozen": false
+    },
+    {
+      "name": "learning-experience-v13.js",
+      "frozenSha256": "7fc778e5d85702688caebf76370308ddee435b74acee7665666387a4dc902b9e",
+      "currentDistSha256": "e8ffa56d832e72822ca6bb45567479d9abca539f8fceec292a66fe33602e385c",
+      "currentMatchesFrozen": false
+    },
+    {
+      "name": "learning-experience-v13.css",
+      "frozenSha256": "d190bdc09f0fb9b3ae4eb308cd52b358c935f69d3b9b93ae16ea4418789654bd",
+      "currentDistSha256": "0bcd6fd898e222bedc69f459fbe3f79fa49760023d1e68f1a619fd538b4d2e34",
+      "currentMatchesFrozen": false
+    },
+    {
+      "name": "learning-v13-data.js",
+      "frozenSha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "currentDistSha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "currentMatchesFrozen": true
+    }
+  ],
+  "currentDistModified": false,
+  "currentV14WriterStatus": "not inferred from file timestamps; PM must confirm stable exclusive handoff before applying"
+}

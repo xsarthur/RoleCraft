@@ -1,0 +1,26 @@
+{
+  "version": "app-v14-prerequisite-copy-public-static-receipt",
+  "atUtc": "2026-10-12T03:13:31.923487+00:00",
+  "status": "unavailable_no_listener_observed",
+  "assets": [
+    {
+      "url": "http://127.0.0.1:4318/learning-workbench.js",
+      "localSha256": "3b519ab2c1cebf3f31ab3b8d883fea922499744ab40dd3046967fc4b9dc4e542",
+      "curlExit": 7,
+      "routing": "noproxy_127.0.0.1",
+      "resourceReceived": false,
+      "equalsLocal": null
+    },
+    {
+      "url": "http://127.0.0.1:4318/learning-experience-v13.css",
+      "localSha256": "f3b495e59c0431797cec1ef8cb0e30fbb27a299767cd4ca27ff33c9256f8adce",
+      "curlExit": 7,
+      "routing": "noproxy_127.0.0.1",
+      "resourceReceived": false,
+      "equalsLocal": null
+    }
+  ],
+  "listenerCheck": "lsof -nP -iTCP:4318 -sTCP:LISTEN produced no listener",
+  "serviceOperated": false,
+  "privateDataAccessed": false
+}

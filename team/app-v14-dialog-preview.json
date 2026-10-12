@@ -1,0 +1,365 @@
+{
+  "version": "app-v14-dialog-preview-1",
+  "atUtc": "2026-10-12T01:26:56.988Z",
+  "clientDate": "2026-10-12",
+  "clientTimezone": "Asia/Shanghai",
+  "oldService": {
+    "pid": 23034,
+    "pty": 13862,
+    "ptyAvailable": false,
+    "identityReconfirmed": true,
+    "signal": "SIGINT",
+    "signalCommandExitCode": 0,
+    "listenerAbsentAfterSignal": true,
+    "pidAbsentAfterSignal": true,
+    "processExitCode": null,
+    "processExitCodeLimitation": "Original PTY13862 was unavailable; actual target exit status could not be retrieved. SIGINT was used, then no listener and no old PID were observed."
+  },
+  "newService": {
+    "pid": 45903,
+    "pty": 66851,
+    "node": "24.16.0",
+    "origin": "http://127.0.0.1:4318",
+    "runtimePath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/.runtime",
+    "retained": true
+  },
+  "calls": [
+    {
+      "name": "health",
+      "path": "/api/health",
+      "httpStatus": 200,
+      "payload": {
+        "productVersion": "local-mvp-0.4",
+        "mode": "local-development",
+        "contentRetrieval": {
+          "available": true,
+          "retrievalVersion": "content-retrieval-0.12-v12",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "units": 30,
+          "localSemanticPrepared": true,
+          "runtimeSupported": true,
+          "requiredNodeMajor": 24,
+          "nodeVersion": "v24.16.0",
+          "providerCalled": false
+        }
+      }
+    },
+    {
+      "name": "dialog",
+      "path": "/api/content/dialog",
+      "httpStatus": 200,
+      "payload": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "dialogVersion": "content-dialog-0.14-extractive",
+        "engineMode": "local_semantic_retrieval",
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "interpretedIntents": [
+          {
+            "id": "dialog_topic_react",
+            "label": "边推理边行动的ReAct策略根据新观察逐步决定下一工具；重复失败可能来自短视、上下文污染和没有实质进展，需要事实指纹、重复检测和有界停止。",
+            "evidence": [
+              "ReAct是什么"
+            ],
+            "unitIds": [
+              "n03-planning-reflection"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-da63f3dcff17",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "1 三种策略改变的是控制对象",
+            "title": "1 三种策略改变的是控制对象",
+            "reason": "根据职业知识语义定位到当前教材原文。",
+            "evidenceExcerpt": "仍用“解释失败报告并形成有证据的缺陷说明”，设一开始只知道 report-71。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
+            "intentId": "dialog_semantic_topic",
+            "matchingBasis": "local_semantic_topic",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ]
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。",
+          "回答为教材原文提取，不是生成式模型辅导；有限语义分类仍可能需要澄清。"
+        ],
+        "dialog": {
+          "status": "answered",
+          "answerMode": "extractive",
+          "sentences": [
+            {
+              "text": "ReAct 将任务解释、下一行动与新观察交错。",
+              "citationIds": [
+                "c1"
+              ]
+            },
+            {
+              "text": "策略可以组合：固定流程中的一个调查节点使用 ReAct；上层 DAG 将可独立取证任务并行，每个节点内部仍固定。",
+              "citationIds": [
+                "c1"
+              ]
+            }
+          ],
+          "citations": [
+            {
+              "id": "c1",
+              "unitId": "n03-planning-reflection",
+              "sectionId": "s-da63f3dcff17",
+              "order": 18,
+              "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+              "sectionTitle": "1 三种策略改变的是控制对象",
+              "title": "1 三种策略改变的是控制对象",
+              "reason": "根据职业知识语义定位到当前教材原文。",
+              "evidenceExcerpt": "仍用“解释失败报告并形成有证据的缺陷说明”，设一开始只知道 report-71。",
+              "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+              "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+              "version": "textbook-v12",
+              "href": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
+              "intentId": "dialog_semantic_topic",
+              "matchingBasis": "local_semantic_topic",
+              "matchedSourceTerms": [],
+              "prerequisiteUnitIds": [
+                "c01-control-loop",
+                "02-task-acceptance"
+              ],
+              "corpusVersion": "textbook-v12",
+              "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+              "quote": "ReAct 将任务解释、下一行动与新观察交错。根据 report-71 发现 `refund(7)` 失败，选择读取退款函数；观察实际实现是 `<7` 后再查生效规则。每轮仅承诺一个或少数下一步，适合证据逐步揭示、路径难以先列全的调查。其成本是轮次增加、上下文污染与短视；下一步看似相关，不保证最终证据完整。[ReAct 原论文 v3](https://arxiv.org/abs/2210.03629v3)研究推理轨迹与行动交错。本教材记录可审查的短决策依据、行动参数和观察，不要求取得或展示模型隐藏的内部思维。\n\nPlan-and-Execute 先产出可执行依赖图，再由执行器推进；新观察使计划失效时回到规划器。它适合已知产物和依赖、需要并行安排或资源估计的任务。一次性计划可能基于错误假设，例如假设报告内有规则版本，结果只包含测试名；若执行器盲从清单，后续步骤会逐层捏造输入。先计划的思想可参考 [Plan-and-Solve v3](https://arxiv.org/abs/2305.04091v3)，但该论文的推理提示实验不是持久工具运行时；下面的 DAG、授权与重规划是本篇工程设计。\n\n| 同一事件 | 固定状态机 | ReAct | Plan-and-Execute |\n| --- | --- | --- | --- |\n| 报告缺源路径 | 走预设缺项分支 | 提议一次受限搜索 | 标记路径节点未满足，补计划 |\n| 新规则否定旧假设 | 进入规则冲突分支 | 下一轮改调查问题 | 失效受影响子图，生成新版本 |\n| 计划看似完成但无规则证据 | 验收拒绝 | 验收拒绝 | 验收拒绝 |\n| 已有完整且稳定输入 | 成本小、可预测 | 动态轮次未必有收益 | 计划维护可能多余 |\n\n策略可以组合：固定流程中的一个调查节点使用 ReAct；上层 DAG 将可独立取证任务并行，每个节点内部仍固定。",
+              "quoteStart": 254,
+              "quoteEnd": 1068
+            }
+          ],
+          "scope": {
+            "relatedSegments": [
+              "ReAct是什么"
+            ],
+            "filteredSegments": [],
+            "contextUsed": null,
+            "classification": {
+              "descriptionHash": "720be2c29a398818a324ad26c3a6298e17ec66d2d803bc43c30d314568787ffe",
+              "method": "local_bge_domain_comparison_with_explicit_scope_guards",
+              "segments": [
+                {
+                  "text": "ReAct是什么",
+                  "decision": "related",
+                  "relatedSimilarity": 0.5088,
+                  "unrelatedSimilarity": 0.41
+                }
+              ]
+            }
+          },
+          "message": "以下是教材中的简要回答。",
+          "context": {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-da63f3dcff17",
+            "corpusVersion": "textbook-v12",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "focusTerm": "ReAct"
+          }
+        },
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_dialog_topic_vectors"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      }
+    },
+    {
+      "name": "legacyRecommend",
+      "path": "/api/content/recommend",
+      "httpStatus": 200,
+      "payload": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "interpretedIntents": [
+          {
+            "id": "source_term_0",
+            "label": "查找正文中的 ReAct",
+            "evidence": [
+              "ReAct"
+            ],
+            "unitIds": [
+              "n03-planning-reflection",
+              "00-learning-route",
+              "n05-retrieval-ingestion"
+            ],
+            "sectionKeys": [
+              "00-learning-route/s-7547e5ce91f8",
+              "00-learning-route/s-810a87808157",
+              "n03-planning-reflection/s-da63f3dcff17",
+              "n03-planning-reflection/s-dc2e15b8cffc",
+              "n05-retrieval-ingestion/s-ec5a23388832"
+            ],
+            "term": "react",
+            "preferredUnit": "n03-planning-reflection"
+          },
+          {
+            "id": "react_strategy",
+            "label": "比较推理行动交错与先计划的策略",
+            "evidence": [
+              "react"
+            ],
+            "unitIds": [
+              "n03-planning-reflection"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-dc2e15b8cffc",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "7 从演算到作品",
+            "title": "7 从演算到作品",
+            "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
+            "evidenceExcerpt": "EX-N03-C：写出同一任务的固定、ReAct、先计划三条正常轨迹及各一条失败轨迹，做受限反思实验设计。参考分析应给事件、可观察证据、修正和停止条件，不以“采用更先进模式”代替选择依据。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-dc2e15b8cffc",
+            "intentId": "source_term_0",
+            "matchingBasis": "source_term",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ]
+          },
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-da63f3dcff17",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "1 三种策略改变的是控制对象",
+            "title": "1 三种策略改变的是控制对象",
+            "reason": "你表达了“react”；这一小节说明比较推理行动交错与先计划的策略的具体机制。",
+            "evidenceExcerpt": "ReAct 将任务解释、下一行动与新观察交错。根据 report-71 发现 `refund(7)` 失败，选择读取退款函数；观察实际实现是 `<7` 后再查生效规则。每轮仅承诺一个或少数下一步，适合证据逐步揭示、路径难以先列全的调查。其成本是轮次增加、上下文污染与短视；下一步看似相关，不保证最终证据完整。[ReAct 原论文 v3](https://arxiv.org/abs/2210.03629v3)研究推理轨迹与行动交错。本教材记录可审查的短决策依据、行动参数和观察，不要求取得或展示模型隐藏的内部思维。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
+            "intentId": "react_strategy",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ]
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      }
+    }
+  ],
+  "resources": [
+    {
+      "path": "index.html",
+      "httpStatus": 200,
+      "sha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+      "localSha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+      "sameAsWorkspace": true
+    },
+    {
+      "path": "learning-workbench.js",
+      "httpStatus": 200,
+      "sha256": "e6918f1afb322c79e6a966200dda42cfecbe48bf437711ac3e18b3ca5289aa1f",
+      "localSha256": "e6918f1afb322c79e6a966200dda42cfecbe48bf437711ac3e18b3ca5289aa1f",
+      "sameAsWorkspace": true
+    },
+    {
+      "path": "learning-experience-v13.js",
+      "httpStatus": 200,
+      "sha256": "d9664458d1e60c54d8235e160c4c229b1629c8b694d0f16d7136557b3374cd23",
+      "localSha256": "d9664458d1e60c54d8235e160c4c229b1629c8b694d0f16d7136557b3374cd23",
+      "sameAsWorkspace": true
+    },
+    {
+      "path": "learning-experience-v13.css",
+      "httpStatus": 200,
+      "sha256": "1f20aafb25a30842e660a18b2d51445efc6ab3527d359b95703131332fcb9aaf",
+      "localSha256": "1f20aafb25a30842e660a18b2d51445efc6ab3527d359b95703131332fcb9aaf",
+      "sameAsWorkspace": true
+    }
+  ],
+  "serviceFiles": [
+    {
+      "path": "sites/rolecraft/server/retrieval/dialog.mjs",
+      "sha256": "f3acbc01a0973591cb0049bce26dbaf16ea96cf3e444b261c380f8ce9794008c"
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/index.mjs",
+      "sha256": "c87dfde6c1ae60ee7594bf5f033ab4fc2a90554a55deabe8520f1045bfc43530"
+    },
+    {
+      "path": "sites/rolecraft/server/index.mjs",
+      "sha256": "f8c24960d16bedf253baf903ff9ab3973b055c53030a80427e000565f5cdfceb"
+    }
+  ],
+  "databaseContentsReadByAgent": false,
+  "databaseMigrated": false,
+  "databaseDeleted": false,
+  "externalModelCalled": false,
+  "paidCall": false,
+  "published": false,
+  "note": "Operational public read-only smoke checks after independent candidate2 core approval. Not independent QA or full production/old-product acceptance."
+}

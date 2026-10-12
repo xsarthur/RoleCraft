@@ -1,0 +1,383 @@
+{
+  "version": "textbook-v12-qa-final",
+  "at": "2026-10-11T23:12:45.610290+08:00",
+  "role": "独立测试工程师",
+  "status": "met_with_limitations",
+  "scope": "v12独立教材的114题正文支持、10保留变体静态迁移、12新增离线例、指定原反例、导航组装图示及保护版本",
+  "overall_product_status": "not_met",
+  "counts": {
+    "fixed100": {
+      "baseline": {
+        "充分": 54,
+        "部分": 36,
+        "未覆盖": 10
+      },
+      "final": {
+        "充分": 98,
+        "部分": 2,
+        "未覆盖": 0
+      }
+    },
+    "market14": {
+      "baseline": {
+        "充分": 1,
+        "部分": 7,
+        "未覆盖": 6
+      },
+      "final": {
+        "充分": 14,
+        "部分": 0,
+        "未覆盖": 0
+      }
+    }
+  },
+  "holdout": {
+    "first_result": {
+      "充分": 10,
+      "部分": 0,
+      "未覆盖": 0
+    },
+    "denominator": 10,
+    "method": "冻结后正文静态迁移审计，非模型作答/真实学员测试；共享文件系统非强盲",
+    "freeze_sha256": "f4256a269967cd23f1e91193e92aede5aab86a865ce3a5e55040a6d1b511f7ce",
+    "first_open_binding": "textbook-v12-qa-history/holdout-first-open-binding.json"
+  },
+  "remaining_partial_ids": [
+    10,
+    99
+  ],
+  "new_examples": {
+    "count": 12,
+    "exit_zero": 12,
+    "python": "3.14.5",
+    "framework_versions": {
+      "langgraph": "1.2.4",
+      "langgraph-checkpoint": "4.1.1",
+      "langchain-core": "1.4.0"
+    },
+    "evidence": [
+      "textbook-v12-qa-history/a-r2-execution-first.json",
+      "textbook-v12-qa-history/b-execution-first.json"
+    ],
+    "independent_counterexample_scripts": [
+      "textbook-v12-qa-history/retest-a.py",
+      "textbook-v12-qa-history/retest-b.py"
+    ]
+  },
+  "structure": {
+    "units": 30,
+    "old_bodies_preserved": 19,
+    "old_fences_identical": 39,
+    "old_behavior_runs": 0,
+    "local_links_checked": 790,
+    "protected_files_same": 103,
+    "diagram": "original1120 and scaled760 offline PNG visual checks; SVG labels and semantics checked; no browser CSS test"
+  },
+  "issues": [
+    {
+      "id": "CA-01",
+      "severity": "major",
+      "file": "n05-retrieval-ingestion.md",
+      "reason": "Agentic RAG先判calls_left=0再判unresolved为空；最后一次检索补齐证据仍返回INSUFFICIENT；无效planner提议拒绝也缺明确预算消耗/停止。",
+      "counterexample": "calls_left=1, unresolved={policy};检索取得有效policy后更新为空，回顶先被0预算拒绝。",
+      "owner": "教材研发员A",
+      "status": "closed_independent_QA_retest",
+      "review": "static only",
+      "retest": "返修把冲突/已有证据核验置于新调用准入前；最后一次检索补齐后calls_left=0可返回已核事实表。新生成/外部核验仍需预算；无效提议计数且模型调用先扣预算，不能无限拒绝。已读control_gate与五断言，但未运行。",
+      "executionStatus": "本岗未运行；QA独立执行另授结论",
+      "finalFileHash": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16",
+      "contentReviewStatus": "closed_static",
+      "qaMethod": "original_case_execution_with_finite_boundary_variant",
+      "qaEvidence": "textbook-v12-qa-history/retest-a.stdout.txt"
+    },
+    {
+      "id": "CA-02",
+      "severity": "minor_contract",
+      "file": "n02-context-memory-prompt.md",
+      "reason": "MemoryRecord状态枚举无requires_recheck，失效传播伪代码却对memory/output赋该状态；状态合同不一致。",
+      "counterexample": "m2依赖m1；撤回m1来源后m2被写成未声明枚举值，读者不能依据声明穷举消费状态。",
+      "owner": "教材研发员A",
+      "status": "closed_independent_QA_retest",
+      "review": "static only",
+      "retest": "MemoryRecord枚举新增requires_recheck，派生产物状态另定义；来源revoked、直接来源source_invalid与依赖传播requires_recheck区分，active为消费必要条件。原m1→m2/o1事件不再产生未声明状态。",
+      "executionStatus": "本岗未运行；QA独立执行另授结论",
+      "finalFileHash": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+      "contentReviewStatus": "closed_static",
+      "qaMethod": "independent_current_text_contract_or_navigation_recheck",
+      "qaEvidence": "textbook-v12-qa-history/structure-final.json; current chapter quotes in merged matrix"
+    },
+    {
+      "id": "CA-03",
+      "severity": "major",
+      "file": "n03-planning-reflection.md",
+      "code": "examples/n03-plan-execution.py",
+      "reason": "invalidate仅write且status=done转EFFECT_RECHECK，write in_flight/unknown会变stale；未知效果可能被当作单纯重规划节点。",
+      "counterexample": "issue依赖draft，issue=unknown；rule失效传播至issue，函数输出stale。",
+      "owner": "教材研发员A",
+      "status": "closed_independent_QA_retest",
+      "review": "static only",
+      "retest": "invalidate只把pending/confirmed_no_effect写节点转stale，done/in_flight/unknown/EFFECT_RECHECK和不明写状态均保留核对。原rule→draft→issue=unknown变EFFECT_RECHECK；新增五状态断言，未由本岗运行。",
+      "executionStatus": "本岗未运行；QA独立执行另授结论",
+      "finalFileHash": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+      "finalCodeHash": "211eabbd5fc5da020e8909742c0f7bf174e54478b07ea792f1daea0e1866db80",
+      "contentReviewStatus": "closed_static",
+      "qaMethod": "original_case_execution_with_finite_boundary_variant",
+      "qaEvidence": "textbook-v12-qa-history/retest-a.stdout.txt"
+    },
+    {
+      "id": "CB-01",
+      "severity": "medium",
+      "file": "textbooks/v12/examples/n07-delegation.py",
+      "status": "closed_independent_QA_retest",
+      "counterexample": "同一个event_id与完全相同JSON键值，仅用dict(reversed(list(original.items())))重排键顺序，repr不同导致错误冲突。",
+      "expected": "键序不同不改变JSON对象语义；规范化支持载荷后相同事件幂等，真改内容仍拒绝。",
+      "verification": "原问题静态复验：CB-01 sort_keys JSON指纹与键重排自查，CB-02完整共享前提、need_input及未拆封条件反例和同条件比较已写；运行交QA",
+      "contentReviewStatus": "closed_static_retest",
+      "qaMethod": "original_case_execution_with_finite_boundary_variant",
+      "qaEvidence": "textbook-v12-qa-history/retest-b.stdout.txt"
+    },
+    {
+      "id": "CB-02",
+      "severity": "medium",
+      "file": "textbooks/v12/n07-multiagent-a2a.md",
+      "status": "closed_independent_QA_retest",
+      "counterexample": "小型同权限固定资料全共享与选择性摘要丢关键限制，两种条件下读者尚缺何时选择、如何验证的正文方法。",
+      "expected": "补完整/最小共享条件及遗漏诊断/对比，Q65方可充分。",
+      "verification": "原问题静态复验：CB-01 sort_keys JSON指纹与键重排自查，CB-02完整共享前提、need_input及未拆封条件反例和同条件比较已写；运行交QA",
+      "contentReviewStatus": "closed_static_retest",
+      "qaMethod": "independent_current_text_contract_or_navigation_recheck",
+      "qaEvidence": "textbook-v12-qa-history/structure-final.json; current chapter quotes in merged matrix"
+    },
+    {
+      "id": "CB-03",
+      "severity": "medium",
+      "file": "textbooks/v12/examples/n08-sandbox-policy.py",
+      "status": "closed_independent_QA_retest",
+      "counterexample": "export_result('exited_zero','汉'*1000,1)按字符数1000接受却标bytes，实际UTF-8是3000字节。",
+      "expected": "限定bytes或编码后限字节，并校验配额。",
+      "verification": "CB-03限制bytes与有界正整数输出配额、UTF8原例自查；CB-04增加宿主reassign(expected_epoch)、事件epoch核对并保留spent、原代次迟到先于新终态被拒；静态核，运行仍交QA。",
+      "contentReviewStatus": "closed_static_retest",
+      "qaMethod": "original_case_execution_with_finite_boundary_variant",
+      "qaEvidence": "textbook-v12-qa-history/retest-b.stdout.txt"
+    },
+    {
+      "id": "CB-04",
+      "severity": "high",
+      "file": "textbooks/v12/examples/n07-delegation.py",
+      "status": "closed_independent_QA_retest",
+      "counterexample": "重派任务同task_id/source_version，新worker已working时旧worker completed仍可接受；终态回退检查不能阻止这个旧完成。",
+      "expected": "执行代次/尝试身份由宿主控制并对迟到核代次；明确等待/重派/必要与可选超时。",
+      "verification": "CB-03限制bytes与有界正整数输出配额、UTF8原例自查；CB-04增加宿主reassign(expected_epoch)、事件epoch核对并保留spent、原代次迟到先于新终态被拒；静态核，运行仍交QA。",
+      "contentReviewStatus": "closed_static_retest",
+      "qaMethod": "original_case_execution_with_finite_boundary_variant",
+      "qaEvidence": "textbook-v12-qa-history/retest-b.stdout.txt"
+    },
+    {
+      "id": "CB-05",
+      "severity": "high",
+      "file": "textbooks/v12/examples/n09-runtime-recovery.py",
+      "status": "closed_independent_QA_retest",
+      "counterexample": "旧closed请求仍在途；两次其他失败使open；冷却后新half_open探测开始；旧请求success此时outcome会清probe并关闭，真正probe失败仅记一次closed失败。",
+      "expected": "每次acquire返回受控generation/request或probe身份，结果绑定身份，旧轮不得影响新轮；单线程策略仍须拒绝这种时序。",
+      "verification": "acquire签发generation/sequence/probe token，outcome先核pending与generation，旧closed迟到成功不改变新half_open；重复token无第二次作用。原顺序静态复验，实际运行待QA。",
+      "contentReviewStatus": "closed_static_retest",
+      "qaMethod": "original_case_execution_with_finite_boundary_variant",
+      "qaEvidence": "textbook-v12-qa-history/retest-b.stdout.txt"
+    },
+    {
+      "id": "CB-NAV-01",
+      "severity": "low",
+      "file": "textbooks/v12/n07-multiagent-a2a.md",
+      "status": "closed_independent_QA_retest",
+      "counterexample": "先修链接n03-planning-control.md不存在，实际A篇是n03-planning-reflection.md。",
+      "expected": "总装修正文链接并由QA导航检查",
+      "verification": "集成稿链接已指实际n03-planning-reflection.md，文件存在；全面导航运行仍交QA。",
+      "contentReviewStatus": "closed_static_retest",
+      "qaMethod": "independent_current_text_contract_or_navigation_recheck",
+      "qaEvidence": "textbook-v12-qa-history/structure-final.json; current chapter quotes in merged matrix"
+    },
+    {
+      "id": "CB-NAV-02",
+      "severity": "low",
+      "file": "textbooks/v12/00-learning-route.md",
+      "status": "closed_independent_QA_retest",
+      "counterexample": "开篇把可跳过补学、需完成Python补学、已有基础直接转问题发现并列，和README按能力补学不一致。",
+      "expected": "通过01诊断可跳过01正文，仍按n01对应能力自检与补缺，再入问题发现。",
+      "verification": "开篇已统一：通过01诊断可跳过01正文，先按n01能力自检补缺，再入问题发现。上下段入口一致；静态重读，完整导航待QA。",
+      "contentReviewStatus": "closed_static_retest",
+      "qaMethod": "independent_current_text_contract_or_navigation_recheck",
+      "qaEvidence": "textbook-v12-qa-history/structure-final.json; current chapter quotes in merged matrix"
+    },
+    {
+      "id": "QA-BIND-01",
+      "status": "closed_independent_QA_retest",
+      "reason": "Q53 two n02 final evidence hashes retained r1 after r2 repair",
+      "owner": "内容审校员B",
+      "fix": "B r6-final binds current n02; no textbook change",
+      "evidence": "textbook-v12-qa-history/matrix-first.json → matrix-final-bound.json"
+    }
+  ],
+  "gates": [
+    {
+      "id": "user_value",
+      "status": "insufficient",
+      "criterion_unchanged": true,
+      "owner": "产品经理",
+      "reason": "无真实学习者验证和预定义效果实测"
+    },
+    {
+      "id": "teaching_quality",
+      "status": "insufficient",
+      "criterion_unchanged": true,
+      "owner": "课程架构师",
+      "reason": "有当前机制正文、映射、独立AI审校及12例有限QA，真人专业和外部机制实测不足"
+    },
+    {
+      "id": "real_generation",
+      "status": "fail",
+      "criterion_unchanged": true,
+      "owner": "软件工程师",
+      "reason": "未提供产品依学习档案真实生成执行链，AI作者写正文不替代此门槛"
+    },
+    {
+      "id": "comparative_advantage",
+      "status": "insufficient",
+      "criterion_unchanged": true,
+      "owner": "产品经理",
+      "reason": "便利样本查缺不是同条件产品/研究比较实测"
+    },
+    {
+      "id": "learner_creation",
+      "status": "insufficient",
+      "criterion_unchanged": true,
+      "owner": "课程架构师",
+      "reason": "无真实学员MVP、用户验证、独立陌生任务评价"
+    },
+    {
+      "id": "reliable_delivery",
+      "status": "fail",
+      "criterion_unchanged": true,
+      "owner": "软件工程师",
+      "reason": "本轮独立教材，不是正式生产系统运行验证"
+    },
+    {
+      "id": "operating_economics",
+      "status": "insufficient",
+      "criterion_unchanged": true,
+      "owner": "产品经理",
+      "reason": "无真实生成调用及生产成本质量账单与预算验证"
+    },
+    {
+      "id": "iteration_trace",
+      "status": "pass",
+      "criterion_unchanged": true,
+      "owner": "项目经理",
+      "reason": "当前版本的缺陷、责任、返修、原反例复验和保护/最终绑定已实际闭合；仅本轮教材改进轨迹范围"
+    }
+  ],
+  "artifact_sha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+  "bindings": {
+    "sites/rolecraft/textbooks/v12/assembly-manifest.json": "16907987dcebb2195f9bae4df3f0648d566f597f49722e681fb589b87e32305e",
+    "sites/rolecraft/textbooks/v12/e03.md": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+    "sites/rolecraft/textbooks/v12/n02-context-memory-prompt.md": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+    "sites/rolecraft/textbooks/v12/p01-mvp.md": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9",
+    "sites/rolecraft/textbooks/v12/f01.md": "5fcb2bd1db423ca8e149b0803bafedeaf0e77ca2331312ff32f63a2087ba9d61",
+    "sites/rolecraft/textbooks/v12/00-learning-route.md": "452129591648ca6c146945fae000e3e905e87c2794315109c727592a7b16dced",
+    "sites/rolecraft/textbooks/v12/p02.md": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8",
+    "sites/rolecraft/textbooks/v12/e02.md": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+    "sites/rolecraft/textbooks/v12/n08-sandbox-security.md": "16b1fe631c244ec394965f9443bc680380997cf4427a7555184c26cf3ee064f2",
+    "sites/rolecraft/textbooks/v12/p01-discovery.md": "2d0340f4e6e05129f423977a272b515c56bd37295a6b00f392f1d56fca25392e",
+    "sites/rolecraft/textbooks/v12/n01-python-model-foundations.md": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62",
+    "sites/rolecraft/textbooks/v12/n07-multiagent-a2a.md": "24268cff6bfb435713458912750a5a958dd00d0aa935ef71b139e74c6dd23fb2",
+    "sites/rolecraft/textbooks/v12/n09-runtime-delivery.md": "b621b838657aaa9915506a5bee6e25f7733b41085b08c50143e5965722157714",
+    "sites/rolecraft/textbooks/v12/c03.md": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+    "sites/rolecraft/textbooks/v12/c01-selection.md": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+    "sites/rolecraft/textbooks/v12/c01-control-loop.md": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+    "sites/rolecraft/textbooks/v12/c02.md": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+    "sites/rolecraft/textbooks/v12/02-task-acceptance.md": "2a15989e762cf659822a9ec3d0b37d881fb28ddcd2d8f1503957ad73d8343ec1",
+    "sites/rolecraft/textbooks/v12/03-trust-boundary.md": "8ff1050570a84ade4751619e28bb6e02bdd06d2b914d74e5192ea446b045272e",
+    "sites/rolecraft/textbooks/v12/c01-fixed-workflow.md": "5dd87adc743723c842ed22f80065fda6408d28aee369adf8dfe1206ac81c2fcf",
+    "sites/rolecraft/textbooks/v12/build_textbook.py": "4f9982abfb89c09654f3aa76e43e9d9314bae05eb200f7b8b1915005fa75be9e",
+    "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+    "sites/rolecraft/textbooks/v12/README.md": "f6e8b37b318dd2a662c064f6681509fdf7873cbd7687a7b91a6f7ed3bf2683a6",
+    "sites/rolecraft/textbooks/v12/agent-engineering-textbook.md": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+    "sites/rolecraft/textbooks/v12/n04-tools-mcp.md": "b3432424e61870ac250db2068423ed33e827c97cfc2f1440f3ae2987bfd4f39a",
+    "sites/rolecraft/textbooks/v12/c01-control-primer.md": "ef50f49868351894e0b928eced4cfb2fdabb9cb28ca03eb9043b9cf42d5689b9",
+    "sites/rolecraft/textbooks/v12/01-foundation.md": "3ca5c2391ccfba389cb16d7eac85034bcb50d0768f0e9e7374c92917044232d7",
+    "sites/rolecraft/textbooks/v12/n03-planning-reflection.md": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+    "sites/rolecraft/textbooks/v12/f02.md": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8",
+    "sites/rolecraft/textbooks/v12/e05.md": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6",
+    "sites/rolecraft/textbooks/v12/n10-evaluation-projects.md": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+    "sites/rolecraft/textbooks/v12/e01.md": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+    "sites/rolecraft/textbooks/v12/n05-retrieval-ingestion.md": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16",
+    "sites/rolecraft/textbooks/v12/e04.md": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8",
+    "sites/rolecraft/textbooks/v12/examples/n03-plan-execution.py": "211eabbd5fc5da020e8909742c0f7bf174e54478b07ea792f1daea0e1866db80",
+    "sites/rolecraft/textbooks/v12/examples/n01-runtime-boundaries.py": "a156424a76bddc73cb831bda826ea676facce8191311bc0ca15f372f4deab75a",
+    "sites/rolecraft/textbooks/v12/examples/n06-graph-contracts.py": "d2ce027e04056fc598bf70f8dc7f3ecae5926f3848723ca85f167e959b0d9dc8",
+    "sites/rolecraft/textbooks/v12/examples/n06-graph.py": "51ed00eea1cb36983e1eac38efe6cb122fd80357688152002f383e23607bb866",
+    "sites/rolecraft/textbooks/v12/examples/n07-delegation.py": "c374265dd30165b99bee6512ce06c646ba7f4443e595ff358a7e4c1ccce84840",
+    "sites/rolecraft/textbooks/v12/examples/n02-memory-routing.py": "400452b186375011da69c0c58b3917bb0cdd9b54e2e14e7b0f2d09ed5b584249",
+    "sites/rolecraft/textbooks/v12/examples/README.md": "855bfe68fe4873f4fdeb7c3f71527375a05e316d37945f1f36f7b08488b94b40",
+    "sites/rolecraft/textbooks/v12/examples/n08-sandbox-policy.py": "6157b8fb93f56e72db7614913baf379c2446a0860f9d3c97ff0381e3771fb7c3",
+    "sites/rolecraft/textbooks/v12/examples/n10-evaluation-matrix.py": "d30b8b8a3297203fa0be35a603bb8e19eea3332e79f73da2487e1cb55e09024b",
+    "sites/rolecraft/textbooks/v12/examples/n04-tool-catalog.py": "194e7d3c033357e781069973090605f21831429ee1419d4ba40d0508f66bf2c3",
+    "sites/rolecraft/textbooks/v12/examples/n05-index-lifecycle.py": "a1364480c2d34b97208d75bd0358faeebf75d80f6f1f101faf0469654c44906b",
+    "sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py": "9d90ef1295ed3543b909f935ffeb60f17b9681396a0779e20ca8dd7a4b75980d",
+    "sites/rolecraft/textbooks/v12/examples/n09-runtime-recovery.py": "e984d32ffa7f6b02d40ee6be2ce633dd8692d688a11dbdf037275d2607574f32",
+    "sites/rolecraft/textbooks/v12/assets/agent-runtime-loop.svg": "c1929a8021f331df4452e949272028fcde05c037b996453e883d3f84a83e5a15",
+    "sites/rolecraft/textbooks/v12/assets/agent-engineering-landscape-v12.png": "198bff0d7cbd597c3e284755aeb79d8867214d6114151fd2f504e6adbe8d523d",
+    "sites/rolecraft/textbooks/v12/assets/agent-runtime-loop.dot": "7fcde3319a3f611f3909472530a29e73480ab5a8049b65313be53278e312ee5b",
+    "sites/rolecraft/textbooks/v12/assets/agent-engineering-landscape-v12.svg": "fad2379ad07797ad046ed507b63f4efc9bb2db24d1d1a6347ca1f062a5a6e718",
+    "sites/rolecraft/textbooks/v12/assets/agent-runtime-loop.png": "9497f77fa43566eb621549175ee55870a02b50e8ebd3144405e820d0ac2c7106",
+    "sites/rolecraft/team/textbook-v12-product.md": "ded892bce12edc87b962b9661cf12f079a4e567a4cc12c85deeefc1ce9c318e3",
+    "sites/rolecraft/team/textbook-v12-product.json": "3b806afaa5a0bf03ef8e3d1451211c43d097871a0c118c5d363df98ca7a08e64",
+    "sites/rolecraft/team/textbook-v12-market.md": "c7be1fa44b442a5a127a44307d7ae5eb6bf7ae5e9fbc26c299b4138dea2039d9",
+    "sites/rolecraft/team/textbook-v12-market.json": "9a7c1fbed8117960a2412091250f3e2545003a335f6cdec4d56956dc52ba12ed",
+    "sites/rolecraft/team/textbook-v12-curriculum.md": "60629842d563df8a1906aa56cac40b0724bb38468ed3243de896e48c60153cd8",
+    "sites/rolecraft/team/textbook-v12-curriculum.json": "02dcab757b4e72f7fb28b39f648b30090b0e57b3725ca0af25e421e0fafad5ae",
+    "sites/rolecraft/team/textbook-v12-author-a.json": "ff3af21b8d44d6d8cefb5d5231a5244933fe7b59c739e0d844a888bec6b37414",
+    "sites/rolecraft/team/textbook-v12-author-b.json": "4688d4b5fe7ff7c9f5df9f4e726a9e760bf1b01adfb7dfeb1f35b17a5bf8d8e2",
+    "sites/rolecraft/team/textbook-v12-content-a.md": "49cb1133589e4f27325105f84d67cfa85fe853c853dba4ceef8538ce7284af60",
+    "sites/rolecraft/team/textbook-v12-content-a.json": "2b0d1a1a30fb8755fb92049e931d5fc65d657c1d9ee74590d43766ec4d6af7a5",
+    "sites/rolecraft/team/textbook-v12-content-b.md": "ff72f79112ee10f9e21b41f09e368bfff5b6854e993046dedb15403b1d9797c3",
+    "sites/rolecraft/team/textbook-v12-content-b.json": "54c1f57a05676628ff49a790debc5c5ffae73a157a440638fc440dd3b428e4cd",
+    "sites/rolecraft/team/textbook-v12-qa-matrix.md": "3f4e6cc8290b5bd539a7e1c3747e1b3d0ebfc7941d405bdae8b47c4b49212bac",
+    "sites/rolecraft/team/textbook-v12-qa-matrix.json": "01485e3c9a4ea65ac25985b3907dc6b4ab70115139bcf0c74308f161965320cf",
+    "sites/rolecraft/team/textbook-v12-qa-history/retest-a-parser-first.py": "a9c035b1487c52940bfc01c3ccc268e78ff9cbcdb6a9602e75000375bf82d205",
+    "sites/rolecraft/team/textbook-v12-qa-history/structure-first.json": "057ab18461f5de2040ebfe3eb8339a03af96a1b8f08eb620ea0a757704378c3f",
+    "sites/rolecraft/team/textbook-v12-qa-history/retest-a.py": "3691fda1f58b37b820680005bf88d9f8648a590db2a7dad7c24ecfe59ba8c97d",
+    "sites/rolecraft/team/textbook-v12-qa-history/matrix-final.json": "665c0d3280c8bf0cb7393a9ea81c213c8c001c3bf57abfded1442fc0963a2080",
+    "sites/rolecraft/team/textbook-v12-qa-history/check-matrix-final.py": "d1edaf29beae20d641938e0fad0df8423e8173a9c766850b446ccc2de5008a07",
+    "sites/rolecraft/team/textbook-v12-qa-history/check-matrix.py": "ba98acedba16fb0bc3dcadc2c9b48ca3814f6a7c598c75a7eaee8d75751bcdca",
+    "sites/rolecraft/team/textbook-v12-qa-history/holdout-first-results.json": "2d9641ba76e9f88dee6cd2378ba3c82fbcfbedf1b089664c0872115a430feb2d",
+    "sites/rolecraft/team/textbook-v12-qa-history/check-structure.py": "d2e978259e8f5a6ae9a0793e9c0a1c8d3280594499ba653733693bd83db8a4c2",
+    "sites/rolecraft/team/textbook-v12-qa-history/protected-end.json": "8b89a458ed3252518aee433f53e8efdf43f97186a9f0316ee927b53685939218",
+    "sites/rolecraft/team/textbook-v12-qa-history/a-r2-execution-first.json": "4489f6fc38b31039549cca055d5883f841fb2628b031671e7a9b81751df52eb5",
+    "sites/rolecraft/team/textbook-v12-qa-history/retest-a.stdout.txt": "c19ab03a58bcd6fb9f13a6fc7719401610d20b495d2d5086ead9130b34eaeba8",
+    "sites/rolecraft/team/textbook-v12-qa-history/retest-a-parser-first.stdout.txt": "8a37dcac41b38dc6547ba2521885dde956a75f21a68b5d9b52425cda9dd94e6a",
+    "sites/rolecraft/team/textbook-v12-qa-history/retest-b.stdout.txt": "9e32104d55e27518d2513baa0592f79e9b978338e3d0b9e72583712b6b9db7e2",
+    "sites/rolecraft/team/textbook-v12-qa-history/assembly-visual-final.json": "86f38f8bc37050dd48a4d24e459c784e6073ac498e480f1e7e0fc382d33ac2d5",
+    "sites/rolecraft/team/textbook-v12-qa-history/check-structure-final.py": "628d0768520952977dd892df5f0bc85c4cc811593ee0b44f39957f63871b0af3",
+    "sites/rolecraft/team/textbook-v12-qa-history/check-matrix-final-bound.py": "bbac4e2d79fe59ab850c228767f96b7d625f0d0d197aa5ff3bb5b5aba678e816",
+    "sites/rolecraft/team/textbook-v12-qa-history/b-execution-first.json": "6073fa3989ca515dc4c5493a081abe8521d4c8cdf48c5939d6997b13003ec877",
+    "sites/rolecraft/team/textbook-v12-qa-history/landscape-760.png": "36444b64a4a9f55a48658ce4875faae12f105dcad3a2b2e820733ca884961e5f",
+    "sites/rolecraft/team/textbook-v12-qa-history/retest-b.py": "a65951966417cb584bbf8b2102280a7c50d74da693ed083d325c6af11a891a91",
+    "sites/rolecraft/team/textbook-v12-qa-history/holdout-first-open-binding.json": "1955a11ce930e338d139a8da593ac5891cfceb7f2d07c7a9baca23412491bd80",
+    "sites/rolecraft/team/textbook-v12-qa-history/matrix-final-bound.json": "9a039253b8ae34d4dd8351cd145bd1cb43fb4671498c35185e73ca6343cc465b",
+    "sites/rolecraft/team/textbook-v12-qa-history/structure-final.json": "851866b7830bda47fa8e89c6922a16d1523792730036dee0bb0f5d1bcf9fd534",
+    "sites/rolecraft/team/textbook-v12-qa-history/curriculum-preservation.json": "c6dc3a25204cc0616a8a735a86d24fe5970fd13950f90125880d011a64b326d6",
+    "sites/rolecraft/team/textbook-v12-qa-history/matrix-first.json": "0f0b90839ca2f9456e70c33d935746dde4ace24684d6d0bbf9fb18ab070bf0c3",
+    "sites/rolecraft/team/textbook-v12-qa-history/run-a.py": "f79ca76778ceb36605b969611ac3b9d7d064792738bafbfefd27cd0bb7af68bc",
+    "sites/rolecraft/team/textbook-v12-qa-history/run-b.py": "8b319d59e22391928e68a276d022a8aa9053763e05a722982038704924f6e5a9",
+    "sites/rolecraft/team/textbook-v12-qa.md": "c2d6e7aae31d750ccc04a6c058251be097b8e3114638c004a455a053d37444d3"
+  },
+  "limitations": [
+    "市场便利样本非统计热度、全市场代表性或企业题目认证",
+    "正文充分不代表学习者作答、实现、岗位胜任或录用",
+    "实际模型/Few-shot/反思质量、MCP/A2A互操作、OCR/Embedding/ANN未实测",
+    "系统级代码沙箱、GPU推理性能、真实远端/持久跨进程图恢复未验证",
+    "12例有限夹具不是全部伪代码与旧代码实跑；内存例不证明生产长期负载",
+    "真人专家/学习者/用户/招聘反馈与行业同条件比较和经济性均缺证",
+    "QA自身CA02初版schema截取误报及PIL缺依赖已记录，未算教材缺陷"
+  ]
+}

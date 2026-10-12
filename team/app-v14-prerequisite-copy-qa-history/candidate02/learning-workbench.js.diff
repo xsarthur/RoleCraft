@@ -1,0 +1,62 @@
+--- received/learning-workbench.js
++++ candidate02/learning-workbench.js
+@@ -104,8 +104,17 @@
+     t = esc(t).replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/(?<!\*)\*([^*]+)\*(?!\*)/g, '<em>$1</em>');
+     return t.replace(/\u0001(\d+)\u0002/g, (_, i) => values[Number(i)] || '');
+   }
+-  function markdown(u) {
++  function hiddenLearningContinuity(u) {
++    if (unitVersion(u) !== CURRENT) return [];
++    const lines = u.bodyMarkdown.replace(/\r\n?/g, '\n').split('\n');
++    return u.sections.filter(s => s.level === 2 && s.title === 'v12 学习衔接' && lines[s.startLine - 1] === '## v12 学习衔接').map(s => {
++      const endLine = u.sections.find(next => next.startLine > s.startLine && next.level <= s.level)?.startLine || lines.length + 1;
++      return {startLine:s.startLine,endLine,sectionIds:u.sections.filter(child => child.startLine >= s.startLine && child.startLine < endLine).map(child => child.sectionId)};
++    });
++  }
++  function markdown(u, hideLearningContinuity = false) {
+     const lines = u.bodyMarkdown.replace(/\r\n?/g, '\n').split('\n'), out = [], byLine = new Map(u.sections.map(s => [s.startLine, s]));
++    const hiddenRanges = hideLearningContinuity ? hiddenLearningContinuity(u) : [];
+     let para = [], code = null, lang = '', list = [], listStack = [], quote = [];
+     const flushPara = () => { if (para.length) { out.push('<p>' + para.map(l => inline(l, u)).join('\n') + '</p>'); para = []; } };
+     const listHTML = node => '<' + node.type + (node.type === 'ol' && node.start !== 1 ? ' start="' + node.start + '"' : '') + '>' + node.items.map(item => '<li>' + inline(item.text, u) + item.children.map(listHTML).join('') + '</li>').join('') + '</' + node.type + '>';
+@@ -124,6 +133,8 @@
+     const flush = () => { flushPara(); flushList(); flushQuote(); };
+     const cells = l => l.trim().replace(/^\|/, '').replace(/\|$/, '').split(/(?<!\\)\|/).map(c => c.trim().replace(/\\\|/g, '|'));
+     for (let i = 0; i < lines.length; i++) {
++      const hiddenRange = hiddenRanges.find(range => range.startLine === i + 1);
++      if (hiddenRange) { flush(); i = hiddenRange.endLine - 2; continue; }
+       const line = lines[i];
+       if (code !== null) { if (/^\s*```\s*$/.test(line)) { out.push('<div class="lw-code"><span>' + esc(lang || '代码') + ' · 网页不执行代码</span><pre tabindex="0"><code>' + esc(code.join('\n')) + '</code></pre></div>'); code = null; } else code.push(line); continue; }
+       const fence = line.match(/^\s*```([^`]*)$/);
+@@ -171,15 +182,17 @@
+     if (!location.unitId) return homePage(true);
+     const u = unit(location.unitId, location.version); if (!u) return errorPage('请求的章节不属于所选教材版本。');
+     const historicalReading = location.version === HISTORICAL, s = section(u, location.sectionId), index = c.units.indexOf(u);
++    const hiddenRanges = hiddenLearningContinuity(u), hiddenSection = id => hiddenRanges.some(range => range.sectionIds.includes(id));
++    const hiddenNotice = hiddenSection(location.sectionId) ? '<div class="lw-message lw-hidden-section" id="lw-hidden-section" tabindex="-1"><p>此学习衔接区块已从阅读页隐藏</p><a href="' + href(u) + '">打开本篇正文</a> <a href="#learn">返回课程</a></div>' : '';
+     const bookmark = !historicalReading && local.bookmarks.some(b => currentRecord(b) && b.unitId === u.unitId && b.sectionId === (s?.sectionId || ''));
+     const oldUnit = unit(location.unitId, HISTORICAL), oldSection = section(oldUnit, location.sectionId), currentUnit = unit(location.unitId);
+     const missingLocation = location.sectionId && !s ? '<div class="lw-message" role="alert">这处教材位置在所选版本中不可用；不会换成另一小节。可<a href="' + href(u) + '">打开本章</a>' + (!historicalReading && oldSection ? '，或<a href="' + href(oldUnit, oldSection.sectionId) + '">查看 v10 的原位置：' + esc(oldSection.title) + '</a>' : '') + '。</div>' : '';
+     const prerequisites = Array.isArray(u.prerequisiteUnitIds) ? u.prerequisiteUnitIds.map(id => unit(id, location.version)) : null;
+-    if (!prerequisites || prerequisites.some(p => !p)) return errorPage('本篇正式先修来源无法核对，请重新加载教材。');
+-    const prereqLabel = prerequisites.length ? '正式先修 ' + prerequisites.length + ' 篇' : '无正式先修';
+-    const priorHTML = '<aside class="lw-prerequisites" id="lw-prerequisites" aria-labelledby="lw-prereq-title"><h2 id="lw-prereq-title" tabindex="-1">开始前需要</h2>' + (prerequisites.length ? '<p>正式先修</p><ul>' + prerequisites.map(p => '<li><a href="' + esc(href(p)) + '">' + esc(p.navigationLabel) + '</a></li>').join('') + '</ul>' : '<p>无正式先修</p>') + '<p class="lw-small">可直接阅读，也可先补这些内容</p></aside>';
++    if (!prerequisites || prerequisites.some(p => !p)) return errorPage('本篇前置章节来源无法核对，请重新加载教材。');
++    const prereqLabel = prerequisites.length ? '需掌握的前置 · ' + prerequisites.length + ' 篇' : '需掌握的前置：无';
++    const priorHTML = '<aside class="lw-prerequisites" id="lw-prerequisites" aria-labelledby="lw-prereq-title"><h2 id="lw-prereq-title" tabindex="-1">需掌握的前置</h2>' + (prerequisites.length ? '<ul>' + prerequisites.map(p => '<li><a href="' + esc(href(p)) + '">' + esc(p.navigationLabel) + '</a></li>').join('') + '</ul>' : '<p>无前置章节</p>') + '</aside>';
+     const noteArea = historicalReading ? '<section class="lw-note-area"><h2>历史阅读 · 教材 v10</h2><p>旧笔记和足迹保持原来源，当前只读，不写入 v12 学习记录。</p>' + (asText(historical?.notes?.[u.unitId]).trim() ? '<p class="lw-user-text">' + esc(asText(historical.notes[u.unitId])) + '</p>' : '<p>此篇没有保留的 v10 笔记。</p>') + '<a class="outline" href="#records">查看与导出历史记录</a>' + (currentUnit ? '<a class="primary" href="' + href(currentUnit) + '">阅读 v12 当前篇 →</a>' : '') + '</section>' : '<section class="lw-note-area"><h2>我的阅读笔记</h2><p>只保存在此浏览器，记录本篇疑问与实际尝试。</p><label for="lw-note">本篇笔记</label><textarea id="lw-note" rows="5" maxlength="12000">' + esc(noteText(u)) + '</textarea><button class="primary" data-lw-save-note>保存笔记</button></section>';
+-    return '<div class="lw-reader-layout lw-detail"><div class="lw-reader-top" id="lw-reader-start" tabindex="-1"><a href="#learn">← 返回课程</a><span>' + esc(u.navigationLabel) + '</span></div>' + (historicalReading ? '<div class="lw-history-notice"><strong>历史教材 v10</strong><p>此页保留旧来源与位置，当前只读。</p>' + (currentUnit ? '<a href="' + href(currentUnit) + '">查看 v12 对应篇 →</a>' : '') + '</div>' : '') + missingLocation + '<div class="lw-prereq-strip" id="lw-prereq-strip"><span>' + esc(prereqLabel) + '</span><button type="button" data-lw-prereq-location>查看本篇先修</button></div><div class="lw-reader-columns">' + priorHTML + '<div class="lw-reading"><details class="lw-section-toc"><summary>本篇小节</summary><ul>' + u.sections.filter(s => s.level > 1).map(s => '<li class="lw-level-' + s.level + '"><a href="' + href(u, s.sectionId) + '">' + esc(s.title) + '</a></li>').join('') + '</ul></details><article class="lw-prose" aria-label="' + esc(u.title) + '">' + markdown(u) + '</article><div class="lw-reader-tools">' + (!historicalReading ? '<button class="outline" data-lw-bookmark>' + (bookmark ? '已收藏此位置 · 取消' : '收藏当前阅读位置') + '</button>' : '') + '<button class="outline" data-lw-copy>复制定位链接</button><button class="outline" data-lw-download="' + esc(u.unitId) + '" data-lw-version="' + esc(location.version) + '">下载本篇 Markdown</button></div>' + noteArea + '<nav class="lw-pagination" aria-label="相邻篇章">' + (index > 0 ? '<a href="' + href(c.units[index - 1]) + '">← 上一篇<br><strong>' + esc(c.units[index - 1].navigationLabel) + '</strong></a>' : '<a href="#learn">返回课程</a>') + (index < c.units.length - 1 ? '<a href="' + href(c.units[index + 1]) + '">下一篇 →<br><strong>' + esc(c.units[index + 1].navigationLabel) + '</strong></a>' : '<a href="#projects">带着作品复盘 →</a>') + '</nav></div></div></div>';
++    return '<div class="lw-reader-layout lw-detail"><div class="lw-reader-top" id="lw-reader-start" tabindex="-1"><a href="#learn">← 返回课程</a><span>' + esc(u.navigationLabel) + '</span></div>' + (historicalReading ? '<div class="lw-history-notice"><strong>历史教材 v10</strong><p>此页保留旧来源与位置，当前只读。</p>' + (currentUnit ? '<a href="' + href(currentUnit) + '">查看 v12 对应篇 →</a>' : '') + '</div>' : '') + missingLocation + hiddenNotice + '<div class="lw-prereq-strip" id="lw-prereq-strip"><span>' + esc(prereqLabel) + '</span>' + (prerequisites.length ? '<button type="button" data-lw-prereq-location aria-label="查看需掌握的前置章节">查看章节</button>' : '') + '</div><div class="lw-reader-columns">' + priorHTML + '<div class="lw-reading"><details class="lw-section-toc"><summary>本篇小节</summary><ul>' + u.sections.filter(s => s.level > 1 && !hiddenSection(s.sectionId)).map(s => '<li class="lw-level-' + s.level + '"><a href="' + href(u, s.sectionId) + '">' + esc(s.title) + '</a></li>').join('') + '</ul></details><article class="lw-prose" aria-label="' + esc(u.title) + '">' + markdown(u, true) + '</article><div class="lw-reader-tools">' + (!historicalReading ? '<button class="outline" data-lw-bookmark>' + (bookmark ? '已收藏此位置 · 取消' : '收藏当前阅读位置') + '</button>' : '') + '</div>' + noteArea + '<nav class="lw-pagination" aria-label="相邻篇章">' + (index > 0 ? '<a href="' + href(c.units[index - 1]) + '">← 上一篇<br><strong>' + esc(c.units[index - 1].navigationLabel) + '</strong></a>' : '<a href="#learn">返回课程</a>') + (index < c.units.length - 1 ? '<a href="' + href(c.units[index + 1]) + '">下一篇 →<br><strong>' + esc(c.units[index + 1].navigationLabel) + '</strong></a>' : '<a href="#projects">带着作品复盘 →</a>') + '</nav></div></div></div>';
+   }
+   function projectsPage() {
+     if (!corpus()) return errorPage('项目章节指引尚未加载。');
+@@ -372,7 +385,8 @@
+       if (l.version === CURRENT && (!last || last.unitId !== u.unitId || last.sectionId !== l.sectionId || !currentRecord(last))) { local.visits.push({ unitId: u.unitId, sectionId: l.sectionId, corpusVersion: CURRENT, corpusHash: corpus().corpusHash, sourceSha256: u.sourceSha256, at: new Date().toISOString() }); local.visits = local.visits.slice(-200); save(); }
+       focusFrame = requestAnimationFrame(() => {
+         readerGeometry();
+-        const target = document.getElementById(l.sectionId || 'lw-reader-start');
++        const hidden = hiddenLearningContinuity(u).some(range => range.sectionIds.includes(l.sectionId));
++        const target = document.getElementById(hidden ? 'lw-hidden-section' : l.sectionId || 'lw-reader-start');
+         if (target) { target.focus({ preventScroll: true }); target.scrollIntoView({ block: 'start' }); }
+       });
+     }

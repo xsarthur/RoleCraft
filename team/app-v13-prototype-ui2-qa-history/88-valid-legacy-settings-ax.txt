@@ -1,0 +1,57 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4486/#settings".
+1 AXWebArea 职造 · Agent 学习工作台, URL: 127.0.0.1:4486/#settings
+	2 link Description: 跳到主要内容, Value: 127.0.0.1:4486/#main-content
+	3 container primary-sidebar
+		4 link Description: 职 职造 Agent 开发学习, Value: 127.0.0.1:4486/#home
+		5 container 主导航
+			6 button 首页
+			7 button 课程学习
+			8 button 题库浏览
+			9 button 学习记录
+			10 button 个人设置
+		11 text 当前学习方向
+		12 text Agent 开发者
+		13 link Description: 本机学习者 记录保存在此浏览器, Value: 127.0.0.1:4486/#settings
+	14 container main-content
+		15 container
+			211 text 个人设置
+			212 text 阅读偏好与本浏览器记录
+		18 container app
+			213 heading 个人设置, Value: 1
+				214 text 个人设置
+			215 text 调整阅读偏好，管理本浏览器的记录
+			216 container
+				217 heading 学习偏好, Value: 2
+					218 text 学习偏好
+				219 text 我的起点
+				220 pop up button (collapsed, settable) 我的起点, Value: 尚未选择, ID: v13-starting, Secondary Actions: Expand
+					221 menu
+						222 (selected) 尚未选择
+						223 零基础
+						224 已有编程基础
+						225 已有 Agent 项目经验
+				226 text 正文字号
+				227 pop up button (collapsed, settable) 正文字号, Value: 16px · 标准, ID: v13-font-size, Secondary Actions: Expand
+					228 menu
+						229 (selected) 16px · 标准
+						230 18px
+						231 20px
+				232 text 起点用于本人偏好和查教材上下文，不是 AI 能力诊断。
+			233 container
+				234 heading 记录与保存, Value: 2
+					235 text 记录与保存
+				236 text 本机学习者 · 仅当前浏览器，未同步账户。
+				237 button 导出当前与历史记录
+				238 text 没有接入短信、微信或跨设备同步，不需登录即可阅读、标记和保存。
+			239 container
+				240 heading 教材说明, Value: 2
+					241 text 教材说明
+				242 text 当前教材 v12，30 篇；题库使用100固定题与14市场补充题的真实题面及教材摘录。
+				243 button (collapsed) 查看来源与能力范围, Secondary Actions: Expand
+					244 text 查看来源与能力范围
+			245 button (collapsed) 历史资料与研发工具, Secondary Actions: Expand
+				246 text 历史资料与研发工具
+		209 container
+			210 text 职造 · Agent 开发学习 教材 v12 · 本浏览器保存
+
+The focused UI element is 213 heading 个人设置, Value: 1

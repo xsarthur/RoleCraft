@@ -1,0 +1,896 @@
+{
+  "modules": 12,
+  "objectives": 24,
+  "knowledgePoints": 48,
+  "old_code_fences": 39,
+  "old_fences_exact": true,
+  "old_behavior_runs_this_round": 0,
+  "knowledgePointDestinations": [
+    {
+      "id": "f01-k01",
+      "objectives": [
+        "f01-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "f01",
+          "original_body_retained": true,
+          "sha256": "5fcb2bd1db423ca8e149b0803bafedeaf0e77ca2331312ff32f63a2087ba9d61"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "f01-k02",
+      "objectives": [
+        "f01-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "f01",
+          "original_body_retained": true,
+          "sha256": "5fcb2bd1db423ca8e149b0803bafedeaf0e77ca2331312ff32f63a2087ba9d61"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "f01-k03",
+      "objectives": [
+        "f01-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "f01",
+          "original_body_retained": true,
+          "sha256": "5fcb2bd1db423ca8e149b0803bafedeaf0e77ca2331312ff32f63a2087ba9d61"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "f01-k04",
+      "objectives": [
+        "f01-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "f01",
+          "original_body_retained": true,
+          "sha256": "5fcb2bd1db423ca8e149b0803bafedeaf0e77ca2331312ff32f63a2087ba9d61"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "f02-k01",
+      "objectives": [
+        "f02-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "f02",
+          "original_body_retained": true,
+          "sha256": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "f02-k02",
+      "objectives": [
+        "f02-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "f02",
+          "original_body_retained": true,
+          "sha256": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "f02-k03",
+      "objectives": [
+        "f02-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "f02",
+          "original_body_retained": true,
+          "sha256": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "f02-k04",
+      "objectives": [
+        "f02-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "f02",
+          "original_body_retained": true,
+          "sha256": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "c01-k01",
+      "objectives": [
+        "c01-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "c01-selection",
+          "original_body_retained": true,
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4"
+        },
+        {
+          "unit": "c01-fixed-workflow",
+          "original_body_retained": true,
+          "sha256": "5dd87adc743723c842ed22f80065fda6408d28aee369adf8dfe1206ac81c2fcf"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "c01-k02",
+      "objectives": [
+        "c01-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "c01-selection",
+          "original_body_retained": true,
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4"
+        },
+        {
+          "unit": "c01-control-loop",
+          "original_body_retained": true,
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "c01-k03",
+      "objectives": [
+        "c01-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "c01-control-loop",
+          "original_body_retained": true,
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "c01-k04",
+      "objectives": [
+        "c01-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "c01-selection",
+          "original_body_retained": true,
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4"
+        },
+        {
+          "unit": "c01-control-loop",
+          "original_body_retained": true,
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "c02-k01",
+      "objectives": [
+        "c02-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "c02",
+          "original_body_retained": true,
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "c02-k02",
+      "objectives": [
+        "c02-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "c02",
+          "original_body_retained": true,
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "c02-k03",
+      "objectives": [
+        "c02-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "c02",
+          "original_body_retained": true,
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "c02-k04",
+      "objectives": [
+        "c02-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "c02",
+          "original_body_retained": true,
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "c03-k01",
+      "objectives": [
+        "c03-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "c03",
+          "original_body_retained": true,
+          "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "c03-k02",
+      "objectives": [
+        "c03-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "c03",
+          "original_body_retained": true,
+          "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "c03-k03",
+      "objectives": [
+        "c03-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "c03",
+          "original_body_retained": true,
+          "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "c03-k04",
+      "objectives": [
+        "c03-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "c03",
+          "original_body_retained": true,
+          "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "e01-k01",
+      "objectives": [
+        "e01-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "e01",
+          "original_body_retained": true,
+          "sha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "e01-k02",
+      "objectives": [
+        "e01-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "e01",
+          "original_body_retained": true,
+          "sha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "e01-k03",
+      "objectives": [
+        "e01-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "e01",
+          "original_body_retained": true,
+          "sha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "e01-k04",
+      "objectives": [
+        "e01-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "e01",
+          "original_body_retained": true,
+          "sha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "e02-k01",
+      "objectives": [
+        "e02-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "e02",
+          "original_body_retained": true,
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "e02-k02",
+      "objectives": [
+        "e02-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "e02",
+          "original_body_retained": true,
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "e02-k03",
+      "objectives": [
+        "e02-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "e02",
+          "original_body_retained": true,
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "e02-k04",
+      "objectives": [
+        "e02-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "e02",
+          "original_body_retained": true,
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "e03-k01",
+      "objectives": [
+        "e03-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "e03",
+          "original_body_retained": true,
+          "sha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "e03-k02",
+      "objectives": [
+        "e03-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "e03",
+          "original_body_retained": true,
+          "sha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "e03-k03",
+      "objectives": [
+        "e03-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "e03",
+          "original_body_retained": true,
+          "sha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "e03-k04",
+      "objectives": [
+        "e03-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "e03",
+          "original_body_retained": true,
+          "sha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "e04-k01",
+      "objectives": [
+        "e04-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "e04",
+          "original_body_retained": true,
+          "sha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "e04-k02",
+      "objectives": [
+        "e04-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "e04",
+          "original_body_retained": true,
+          "sha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "e04-k03",
+      "objectives": [
+        "e04-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "e04",
+          "original_body_retained": true,
+          "sha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "e04-k04",
+      "objectives": [
+        "e04-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "e04",
+          "original_body_retained": true,
+          "sha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "e05-k01",
+      "objectives": [
+        "e05-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "e05",
+          "original_body_retained": true,
+          "sha256": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "e05-k02",
+      "objectives": [
+        "e05-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "e05",
+          "original_body_retained": true,
+          "sha256": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "e05-k03",
+      "objectives": [
+        "e05-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "e05",
+          "original_body_retained": true,
+          "sha256": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "e05-k04",
+      "objectives": [
+        "e05-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "e05",
+          "original_body_retained": true,
+          "sha256": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "p01-k01",
+      "objectives": [
+        "p01-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "p01-discovery",
+          "original_body_retained": true,
+          "sha256": "2d0340f4e6e05129f423977a272b515c56bd37295a6b00f392f1d56fca25392e"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "p01-k02",
+      "objectives": [
+        "p01-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "p01-discovery",
+          "original_body_retained": true,
+          "sha256": "2d0340f4e6e05129f423977a272b515c56bd37295a6b00f392f1d56fca25392e"
+        },
+        {
+          "unit": "p01-mvp",
+          "original_body_retained": true,
+          "sha256": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "p01-k03",
+      "objectives": [
+        "p01-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "p01-mvp",
+          "original_body_retained": true,
+          "sha256": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "p01-k04",
+      "objectives": [
+        "p01-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "p01-mvp",
+          "original_body_retained": true,
+          "sha256": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "p02-k01",
+      "objectives": [
+        "p02-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "p02",
+          "original_body_retained": true,
+          "sha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "p02-k02",
+      "objectives": [
+        "p02-o1"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "p02",
+          "original_body_retained": true,
+          "sha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "p02-k03",
+      "objectives": [
+        "p02-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "p02",
+          "original_body_retained": true,
+          "sha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    },
+    {
+      "id": "p02-k04",
+      "objectives": [
+        "p02-o2"
+      ],
+      "currentDestinations": [
+        {
+          "unit": "p02",
+          "original_body_retained": true,
+          "sha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8"
+        }
+      ],
+      "scope": "原专业正文完整保持，因此原知识点教学去向未删除；不继承旧行为实跑或真实能力结论"
+    }
+  ],
+  "newUnits": [
+    {
+      "id": "n01-python-model-foundations",
+      "capability": "为什么同一段调用逻辑会阻塞、串改状态或收下无效模型结果，以及怎样重建机制",
+      "questions": [
+        101,
+        102,
+        103,
+        109,
+        110
+      ],
+      "exercises": [
+        "EX-N01-A：修复嵌套字典跨任务污染并解释为何tuple未保护内部列表。",
+        "EX-N01-B：实现有界异步任务组，在一个超时和一个异常下清理所有本地任务，给取消不等于远端撤销的反例。",
+        "EX-N01-C：独立实现LRU三边界；手算小注意力掩码；将拒绝/截断/合法但错误归属的JSON正确分类。"
+      ],
+      "artifact": "W-N01：运行命令、受控输入与输出、LRU实现、并发与对象反例、模型消费状态图",
+      "chapter_exists": true
+    },
+    {
+      "id": "n02-context-memory-prompt",
+      "capability": "哪些信息应进入当前上下文，跨任务保存哪些记忆，以及错误和话题切换怎样恢复",
+      "questions": [
+        4,
+        31,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        53,
+        112
+      ],
+      "exercises": [
+        "EX-N02-A：同一用户更改偏好和跨租户同名记录，验证只影响授权作用域。",
+        "EX-N02-B：撤销错误来源后列出受影响记忆与输出，删除后重检不能返回。",
+        "EX-N02-C：设计包含相近工具的Few-shot对照；“继续刚才那个”存在两个未完任务时必须澄清并禁止误发动作。"
+      ],
+      "artifact": "W-N02：记忆schema/生命周期与失效记录、提示版本和实验契约、双任务切换轨迹",
+      "chapter_exists": true
+    },
+    {
+      "id": "n03-planning-reflection",
+      "capability": "在观察逐步揭示依赖和风险时，怎样选择、执行并修订决策策略",
+      "questions": [
+        11,
+        12,
+        16,
+        17,
+        18
+      ],
+      "exercises": [
+        "EX-N03-A：实现计划DAG校验并拒绝环、缺依赖和不可满足输入。",
+        "EX-N03-B：观察更新后只使依赖失效的子图重做，解释为什么已发生副作用不能消失。",
+        "EX-N03-C：比较无反思/有证据修正/空泛反思，记录首次失败和最终结果而非只报最后一次。"
+      ],
+      "artifact": "W-N03：三策略轨迹、计划版本图、重规划理由和停止证据、反思对照契约",
+      "chapter_exists": true
+    },
+    {
+      "id": "n04-tools-mcp",
+      "capability": "当工具来自不同服务且数量增长时，怎样让模型选得准、宿主接得稳",
+      "questions": [
+        22,
+        24,
+        27,
+        28,
+        29,
+        30
+      ],
+      "exercises": [
+        "EX-N04-A：给搜索/读取/写入三个相近工具重写契约，以近义/否定/越权输入判候选。",
+        "EX-N04-B：构造100个目录项，权限过滤后选少量schema，检查候选漏召回、版本变更和调用重验。",
+        "EX-N04-C：追踪MCP会话初始化至调用返回；注入过期令牌/错误audience/不兼容版本并说明拒绝层。"
+      ],
+      "artifact": "W-N04：版本化工具目录、MCP时序与消息、第三方接入契约矩阵和失败归因",
+      "chapter_exists": true
+    },
+    {
+      "id": "n05-retrieval-ingestion",
+      "capability": "检索失败发生在入库、召回、排序还是调查策略，以及如何用基线定位",
+      "questions": [
+        41,
+        44,
+        46,
+        47,
+        50,
+        105,
+        106,
+        107,
+        108
+      ],
+      "exercises": [
+        "EX-N05-A：从构造的页/表格/OCR错误对象追溯引用并隔离未核文本。",
+        "EX-N05-B：修改/删除/权限收回后发布新索引，证明旧块不漏入当前版本。",
+        "EX-N05-C：验证向量排序等价与非法输入；设计flat/ANN、无重排/重排及固定/Agentic的同条件实验。"
+      ],
+      "artifact": "W-N05：摄取manifest、来源页坐标、版本索引、召回/排序/任务分层指标与错误归因",
+      "chapter_exists": true
+    },
+    {
+      "id": "n06-graph-orchestration",
+      "capability": "怎样用LangGraph表达已知运行不变量，并识别框架承担和未承担的职责",
+      "questions": [
+        8,
+        51,
+        52,
+        53,
+        54,
+        58,
+        59,
+        60
+      ],
+      "exercises": [
+        "EX-N06-A：并行节点写同一字段，在非交换和可交换reducer下说明结果。",
+        "EX-N06-B：子图私有证据不泄漏给父图，只返回声明合同；暂停恢复后副作用不得盲重放。",
+        "EX-N06-C：消费重复/乱序/截断流并区分预览与终态；做去框架迁移能力清单。"
+      ],
+      "artifact": "W-N06：图/状态schema、字段合并与父子合同、框架版本锁定、流消费和手写对照",
+      "chapter_exists": true
+    },
+    {
+      "id": "n07-multiagent-a2a",
+      "capability": "何时分工产生净收益，以及跨角色和跨系统如何交接不失真",
+      "questions": [
+        30,
+        62,
+        65,
+        68,
+        70
+      ],
+      "exercises": [
+        "EX-N07-A：同一任务分别画三种控制权图并论证不选多Agent的条件。",
+        "EX-N07-B：关键子任务超时后重分派，迟到旧结果不得覆盖新任务状态；非关键项允许标缺交付。",
+        "EX-N07-C：用A2A合同追踪发现、提交、需要输入、取消与最终产物，列跨组织不能推定的保证。"
+      ],
+      "artifact": "W-N07：协作决策、最小交接包、超时迟到轨迹与A2A版本化时序",
+      "chapter_exists": true
+    },
+    {
+      "id": "n08-sandbox-security",
+      "capability": "为什么提示规则不能约束代码的系统能力，以及限制必须落在哪一层",
+      "questions": [
+        81,
+        86
+      ],
+      "exercises": [
+        "EX-N08-A：将同一注入放进用户输入与检索文档，标明可变数据和真正执行闸门。",
+        "EX-N08-B：为只读CSV分析工作定义最小文件/网络/CPU/输出合同，解释需要哪些OS强制。",
+        "EX-N08-C：设计正常读临时夹具与越界路径/网络/PID/输出限额的成对验证，并列无法在本机证明的隔离项。"
+      ],
+      "artifact": "W-N08：威胁模型、sandbox能力合同、执行层/策略层证据区分与攻击回归计划",
+      "chapter_exists": true
+    },
+    {
+      "id": "n09-runtime-delivery",
+      "capability": "失败、资源增长和未知效果出现时，怎样恢复服务而不虚报完成",
+      "questions": [
+        89,
+        93,
+        95,
+        98,
+        104,
+        113
+      ],
+      "exercises": [
+        "EX-N09-A：两个已成功步骤后失败，补偿中断再恢复，未知效果不双发。",
+        "EX-N09-B：熔断半开只放有限探测，服务恢复和持续故障两轨迹；取消研究任务后拒绝迟到最终完成。",
+        "EX-N09-C：构造无界cache/待办任务与峰值对照，收集多时点指标；写本地/托管和prefill/decode公平比较契约。"
+      ],
+      "artifact": "W-N09：效果补偿账本、长研究检查点、熔断与内存轨迹、部署和推理实验契约",
+      "chapter_exists": true
+    },
+    {
+      "id": "n10-evaluation-projects",
+      "capability": "怎样把已学组件用于新业务并把结果交给独立者复现",
+      "questions": [
+        10,
+        78,
+        91,
+        99,
+        111,
+        114
+      ],
+      "exercises": [
+        "EX-N10-A：客服知识任务与研究任务二选一，从业务合同做最小实现和分层消融，不能照搬退款工单。",
+        "EX-N10-B：对照中文/英文/混合语言失败轨迹定位第一处偏离并验证修正。",
+        "EX-N10-C：交付缩小版移交包让未参与实现的人复现；无真实接手者时标待验证，勿代答。"
+      ],
+      "artifact": "W-N10：跨场景项目合同、分层消融结果、跨语失败复验、交接包及独立接手证据待办",
+      "chapter_exists": true
+    }
+  ]
+}

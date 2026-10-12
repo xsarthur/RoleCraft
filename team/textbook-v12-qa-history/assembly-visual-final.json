@@ -1,0 +1,250 @@
+{
+  "at": "2026-10-11T23:09:59.540710+08:00",
+  "unit_comparisons": [
+    {
+      "unit": "00-learning-route",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "01-foundation",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "n01-python-model-foundations",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "p01-discovery",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "02-task-acceptance",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "03-trust-boundary",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "f01",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "f02",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "n02-context-memory-prompt",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "c01-selection",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "c01-control-primer",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "c02",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "c03",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "n04-tools-mcp",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "e01",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "c01-fixed-workflow",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "c01-control-loop",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "n03-planning-reflection",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "n05-retrieval-ingestion",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "n06-graph-orchestration",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "n07-multiagent-a2a",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "e02",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "n10-evaluation-projects",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "p01-mvp",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "e03",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "n08-sandbox-security",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "e04",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "e05",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "n09-runtime-delivery",
+      "same_after_reverse_heading_transform": true
+    },
+    {
+      "unit": "p02",
+      "same_after_reverse_heading_transform": true
+    }
+  ],
+  "diagram_numbered_labels": [
+    [
+      "04",
+      "问题发现"
+    ],
+    [
+      "05",
+      "任务验收"
+    ],
+    [
+      "06",
+      "信任边界"
+    ],
+    [
+      "10",
+      "方案选择"
+    ],
+    [
+      "24",
+      "MVP决定"
+    ],
+    [
+      "07",
+      "外部API"
+    ],
+    [
+      "08",
+      "模型候选"
+    ],
+    [
+      "09",
+      "上下文、记忆与提示"
+    ],
+    [
+      "11",
+      "动作身份"
+    ],
+    [
+      "12",
+      "检索证据"
+    ],
+    [
+      "13",
+      "写工具"
+    ],
+    [
+      "14",
+      "工具目录与MCP"
+    ],
+    [
+      "19",
+      "进阶检索与摄取"
+    ],
+    [
+      "15",
+      "持久恢复"
+    ],
+    [
+      "16",
+      "固定流程"
+    ],
+    [
+      "17",
+      "动态循环"
+    ],
+    [
+      "18",
+      "规划与反思"
+    ],
+    [
+      "20",
+      "图编排"
+    ],
+    [
+      "21",
+      "多Agent与A2A"
+    ],
+    [
+      "22",
+      "版本评价"
+    ],
+    [
+      "23",
+      "跨场景评价与移交"
+    ],
+    [
+      "25",
+      "强制安全"
+    ],
+    [
+      "26",
+      "代码沙箱"
+    ],
+    [
+      "27",
+      "发布回退"
+    ],
+    [
+      "28",
+      "性能成本"
+    ],
+    [
+      "29",
+      "运行交付"
+    ],
+    [
+      "30",
+      "独立作品与复盘"
+    ]
+  ],
+  "diagram_learning_support_numbers": [
+    1,
+    2,
+    3
+  ],
+  "visual_checks": {
+    "original_1120": "无裁切/重叠，字形可读，工程位置分组与30单元对应",
+    "resized_760": "无裁切/遮挡，完整标签/反馈箭头与图例可读",
+    "semantics": "运行闭环与工程全景分开；箭头标工程依赖和评价反馈，说明组件按需；不是必选组件链或先修图",
+    "not_checked": "浏览器CSS、读者理解、移动端交互"
+  },
+  "qa_harness_notes": [
+    "首选PIL缩放因未安装而未生成，改用系统sips离线缩放成功；教材图无更改",
+    "CA02初版QA脚本按首个}切schema被内部嵌套截断，误报已保留；改围栏边界后二次通过，非教材缺陷"
+  ]
+}

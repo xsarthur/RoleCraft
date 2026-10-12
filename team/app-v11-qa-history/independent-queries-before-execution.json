@@ -1,0 +1,69 @@
+{
+  "frozenAtUtc": "2026-10-11T07:53:12.867061+00:00",
+  "method": "QA independently wrote questions before candidate handoff/execution; not shared with implementers until actual results. Expected identities come from product-defined scenarios; this is functional testing, not industry or arbitrary-language accuracy threshold.",
+  "cases": [
+    {
+      "id": "H11-01",
+      "query": "电脑忽然断电，再打开时我要从原来的地方往下做；上次已经发出的工单别再新建一次。",
+      "expectedCoreUnits": [
+        "e01"
+      ],
+      "kind": "unshared_rephrase_recovery"
+    },
+    {
+      "id": "H11-02",
+      "query": "知识库里去年那份制度已经作废，不能拿它指导现在办事；财务材料也不能让隔壁部门随便搜到。",
+      "expectedCoreUnits": [
+        "c02"
+      ],
+      "kind": "unshared_rephrase_version_permissions"
+    },
+    {
+      "id": "H11-03",
+      "query": "给老板看两次上线实验，怎样证明后一次的表现更靠谱，而不是恰好抽到了容易的问题？",
+      "expectedCoreUnits": [
+        "e02"
+      ],
+      "kind": "unshared_rephrase_comparison"
+    },
+    {
+      "id": "H11-04",
+      "query": "它跑了半天还在换计划、继续尝试，我希望没希望做成时能及时收手，别无限耗下去。",
+      "expectedCoreUnits": [
+        "02-task-acceptance",
+        "c01-control-loop"
+      ],
+      "anyOf": true,
+      "kind": "unshared_rephrase_stopping"
+    },
+    {
+      "id": "H11-05",
+      "query": "暂时不讨论找资料；工单发出去没收到回应，我该怎样确认做成了没有，避免再创建一次？还想把这趟任务的全部支出算清楚。",
+      "expectedCoreUnits": [
+        "c01-control-primer",
+        "c03",
+        "e01",
+        "e05"
+      ],
+      "requiredAtLeast": [
+        "e05"
+      ],
+      "excludedPrimary": [
+        "c02"
+      ],
+      "kind": "mixed_negation_multiple_intents"
+    },
+    {
+      "id": "H11-06",
+      "query": "月球岩石中锆石的年代怎样测量？",
+      "expectedStatus": "no_match",
+      "kind": "out_of_scope"
+    },
+    {
+      "id": "H11-07",
+      "query": "我想让系统记住之前的东西，应该学哪里？",
+      "expectedStatus": "needs_clarification",
+      "kind": "ambiguous_memory"
+    }
+  ]
+}

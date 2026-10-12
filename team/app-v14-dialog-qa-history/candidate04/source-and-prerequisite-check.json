@@ -1,0 +1,320 @@
+{
+  "atUtc": "2026-10-12T01:36:13.832571+00:00",
+  "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+  "units": [
+    {
+      "unitId": "00-learning-route",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "01-foundation",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "00-learning-route"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "n01-python-model-foundations",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "01-foundation"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "p01-discovery",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "00-learning-route"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "02-task-acceptance",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "p01-discovery"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "03-trust-boundary",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "02-task-acceptance"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "f01",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "01-foundation",
+        "02-task-acceptance",
+        "03-trust-boundary"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "f02",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "f01"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "n02-context-memory-prompt",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "f02",
+        "03-trust-boundary"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "c01-selection",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "f02",
+        "02-task-acceptance"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "c01-control-primer",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "c01-selection",
+        "03-trust-boundary"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "c02",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "f02",
+        "03-trust-boundary"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "c03",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "f01",
+        "c01-selection",
+        "c01-control-primer"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "n04-tools-mcp",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "c03",
+        "f01",
+        "c01-control-primer"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "e01",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "c03",
+        "c01-control-primer"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "c01-fixed-workflow",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "f02",
+        "c02",
+        "c03",
+        "e01"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "c01-control-loop",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "c01-fixed-workflow",
+        "c03",
+        "e01"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "n03-planning-reflection",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "c01-control-loop",
+        "02-task-acceptance"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "n05-retrieval-ingestion",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "c02",
+        "n01-python-model-foundations",
+        "n03-planning-reflection"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "n06-graph-orchestration",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "e01",
+        "c01-control-loop",
+        "n03-planning-reflection"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "n07-multiagent-a2a",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "n06-graph-orchestration",
+        "n02-context-memory-prompt",
+        "n04-tools-mcp"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "e02",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "c02",
+        "c03",
+        "c01-control-loop"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "n10-evaluation-projects",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "e02",
+        "n05-retrieval-ingestion",
+        "n07-multiagent-a2a"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "p01-mvp",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "p01-discovery",
+        "c01-selection",
+        "e02"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "e03",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "c02",
+        "c03",
+        "e02",
+        "03-trust-boundary"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "n08-sandbox-security",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "e03",
+        "n01-python-model-foundations"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "e04",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "e01",
+        "e02",
+        "e03"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "e05",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "e02",
+        "e04"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "n09-runtime-delivery",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "e04",
+        "e05",
+        "n08-sandbox-security",
+        "e01"
+      ],
+      "allPrerequisitesCanonical": true
+    },
+    {
+      "unitId": "p02",
+      "bodyMatches": true,
+      "hashMatches": true,
+      "prerequisiteUnitIds": [
+        "e01",
+        "e03",
+        "e04",
+        "e05",
+        "p01-mvp"
+      ],
+      "allPrerequisitesCanonical": true
+    }
+  ],
+  "allMatch": true,
+  "wholeBookSha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+  "noOldExamplesRerun": true
+}

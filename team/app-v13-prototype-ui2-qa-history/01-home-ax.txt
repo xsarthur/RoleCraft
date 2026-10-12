@@ -1,0 +1,218 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4475/".
+1 AXWebArea 职造 · Agent 学习工作台, URL: 127.0.0.1:4475/
+	2 link Description: 跳到主要内容, Value: 127.0.0.1:4475/#main-content
+	3 container primary-sidebar
+		4 link Description: 职 职造 Agent 开发学习, Value: 127.0.0.1:4475/#home
+		5 container 主导航
+			6 button 首页
+			7 button 课程学习
+			8 button 题库浏览
+			9 button 学习记录
+			10 button 个人设置
+		11 text 当前学习方向
+		12 text Agent 开发者
+		13 link Description: 本机学习者 记录保存在此浏览器, Value: 127.0.0.1:4475/#settings
+	14 container main-content
+		15 container
+			16 text Agent 开发学习路线
+			17 text 从理解 Agent，到实现、验证与交付自己的产品
+		18 container app
+			19 heading Agent 开发学习路线, Value: 1
+				20 text Agent 开发学习路线
+			21 text 从理解 Agent，到实现、验证与交付自己的产品
+			22 container
+				23 text 从这里开始
+				24 heading 认识Agent工程, Value: 2
+					25 text 认识Agent工程
+				26 text 先了解 Agent 解决什么问题，再沿路线读懂、实现与验证。
+				27 link Description: 开始阅读 →, Value: 127.0.0.1:4475/#learn/agent/00-learning-route
+			28 checkbox 路线图, Value: 1
+			29 checkbox 目录, Value: 0
+			30 checkbox 全部, Value: 1
+			31 checkbox 已学习, Value: 0
+			32 checkbox 未掌握, Value: 0
+			33 checkbox 未学习, Value: 0
+			34 text 已学习只表示访问过；题目状态由你自记，不能代表专业能力。
+			35 container 路线图操作
+				36 checkbox 缩小, Value: 0
+				37 checkbox 放大, Value: 0
+				38 checkbox 恢复全图, Value: 0
+				39 text 100%
+				40 checkbox ← 移动, Value: 0
+				41 checkbox 移动 →, Value: 0
+				42 checkbox ↑, Value: 0
+				43 checkbox ↓, Value: 0
+			44 text 连线表示推荐阅读顺序。可拖动图中空白处；目录提供键盘可用的等价入口。
+			45 container Description: 学习路线图，可滚动, ID: v13-map-viewport
+				46 container v13-map-canvas
+					47 container
+						48 heading 01 起点与问题, Value: 2
+							49 text 01 起点与问题
+						50 link Description: 01 认识Agent工程, Value: 127.0.0.1:4475/#learn/agent/00-learning-route
+						51 text 尚无本版足迹
+						52 button (collapsed) 知识点 6, Secondary Actions: Expand
+							53 text 知识点 6
+						54 text →
+						55 link Description: 02 基础预备, Value: 127.0.0.1:4475/#learn/agent/01-foundation
+						56 text 尚无本版足迹
+						57 button (collapsed) 知识点 7, Secondary Actions: Expand
+							58 text 知识点 7
+						59 text →
+						60 link Description: 03 Python与模型基础, Value: 127.0.0.1:4475/#learn/agent/n01-python-model-foundations
+						61 text 尚无本版足迹
+						62 button (collapsed) 知识点 7, Secondary Actions: Expand
+							63 text 知识点 7
+						64 link Description: 04 问题发现, Value: 127.0.0.1:4475/#learn/agent/p01-discovery
+						65 text 尚无本版足迹
+						66 button (collapsed) 知识点 7, Secondary Actions: Expand
+							67 text 知识点 7
+						68 text →
+						69 link Description: 05 任务验收, Value: 127.0.0.1:4475/#learn/agent/02-task-acceptance
+						70 text 尚无本版足迹
+						71 button (collapsed) 知识点 6, Secondary Actions: Expand
+							72 text 知识点 6
+						73 text →
+						74 link Description: 06 信任边界, Value: 127.0.0.1:4475/#learn/agent/03-trust-boundary
+						75 text 尚无本版足迹
+						76 button (collapsed) 知识点 5, Secondary Actions: Expand
+							77 text 知识点 5
+						78 text ↓
+					79 container
+						80 heading 02 程序与模型边界, Value: 2
+							81 text 02 程序与模型边界
+						82 link Description: 07 外部API, Value: 127.0.0.1:4475/#learn/agent/f01
+						83 text 尚无本版足迹
+						84 button (collapsed) 知识点 7, Secondary Actions: Expand
+							85 text 知识点 7
+						86 text →
+						87 link Description: 08 模型候选, Value: 127.0.0.1:4475/#learn/agent/f02
+						88 text 尚无本版足迹
+						89 button (collapsed) 知识点 7, Secondary Actions: Expand
+							90 text 知识点 7
+						91 text →
+						92 link Description: 09 上下文、记忆与提示, Value: 127.0.0.1:4475/#learn/agent/n02-context-memory-prompt
+						93 text 尚无本版足迹
+						94 button (collapsed) 知识点 9, Secondary Actions: Expand
+							95 text 知识点 9
+						96 text ↓
+					97 container
+						98 heading 03 选型与组件, Value: 2
+							99 text 03 选型与组件
+						100 link Description: 10 方案选择, Value: 127.0.0.1:4475/#learn/agent/c01-selection
+						101 text 尚无本版足迹
+						102 button (collapsed) 知识点 8, Secondary Actions: Expand
+							103 text 知识点 8
+						104 text →
+						105 link Description: 11 动作身份, Value: 127.0.0.1:4475/#learn/agent/c01-control-primer
+						106 text 尚无本版足迹
+						107 button (collapsed) 知识点 6, Secondary Actions: Expand
+							108 text 知识点 6
+						109 text →
+						110 link Description: 12 检索证据, Value: 127.0.0.1:4475/#learn/agent/c02
+						111 text 尚无本版足迹
+						112 button (collapsed) 知识点 8, Secondary Actions: Expand
+							113 text 知识点 8
+						114 link Description: 13 写工具, Value: 127.0.0.1:4475/#learn/agent/c03
+						115 text 尚无本版足迹
+						116 button (collapsed) 知识点 8, Secondary Actions: Expand
+							117 text 知识点 8
+						118 text →
+						119 link Description: 14 工具目录与MCP, Value: 127.0.0.1:4475/#learn/agent/n04-tools-mcp
+						120 text 尚无本版足迹
+						121 button (collapsed) 知识点 9, Secondary Actions: Expand
+							122 text 知识点 9
+						123 text →
+						124 link Description: 15 持久恢复, Value: 127.0.0.1:4475/#learn/agent/e01
+						125 text 尚无本版足迹
+						126 button (collapsed) 知识点 8, Secondary Actions: Expand
+							127 text 知识点 8
+						128 text ↓
+					129 container
+						130 heading 04 固定与动态流程, Value: 2
+							131 text 04 固定与动态流程
+						132 link Description: 16 固定流程, Value: 127.0.0.1:4475/#learn/agent/c01-fixed-workflow
+						133 text 尚无本版足迹
+						134 button (collapsed) 知识点 4, Secondary Actions: Expand
+							135 text 知识点 4
+						136 text →
+						137 link Description: 17 动态循环, Value: 127.0.0.1:4475/#learn/agent/c01-control-loop
+						138 text 尚无本版足迹
+						139 button (collapsed) 知识点 16, Secondary Actions: Expand
+							140 text 知识点 16
+						141 text →
+						142 link Description: 18 规划与反思, Value: 127.0.0.1:4475/#learn/agent/n03-planning-reflection
+						143 text 尚无本版足迹
+						144 button (collapsed) 知识点 8, Secondary Actions: Expand
+							145 text 知识点 8
+						146 link Description: 19 进阶检索与摄取, Value: 127.0.0.1:4475/#learn/agent/n05-retrieval-ingestion
+						147 text 尚无本版足迹
+						148 button (collapsed) 知识点 10, Secondary Actions: Expand
+							149 text 知识点 10
+						150 text →
+						151 link Description: 20 图编排, Value: 127.0.0.1:4475/#learn/agent/n06-graph-orchestration
+						152 text 尚无本版足迹
+						153 button (collapsed) 知识点 7, Secondary Actions: Expand
+							154 text 知识点 7
+						155 text →
+						156 link Description: 21 多Agent与A2A, Value: 127.0.0.1:4475/#learn/agent/n07-multiagent-a2a
+						157 text 尚无本版足迹
+						158 button (collapsed) 知识点 7, Secondary Actions: Expand
+							159 text 知识点 7
+						160 text ↓
+					161 container
+						162 heading 05 评价与产品决定, Value: 2
+							163 text 05 评价与产品决定
+						164 link Description: 22 版本评价, Value: 127.0.0.1:4475/#learn/agent/e02
+						165 text 尚无本版足迹
+						166 button (collapsed) 知识点 11, Secondary Actions: Expand
+							167 text 知识点 11
+						168 text →
+						169 link Description: 23 跨场景评价与移交, Value: 127.0.0.1:4475/#learn/agent/n10-evaluation-projects
+						170 text 尚无本版足迹
+						171 button (collapsed) 知识点 7, Secondary Actions: Expand
+							172 text 知识点 7
+						173 text →
+						174 link Description: 24 MVP决定, Value: 127.0.0.1:4475/#learn/agent/p01-mvp
+						175 text 尚无本版足迹
+						176 button (collapsed) 知识点 8, Secondary Actions: Expand
+							177 text 知识点 8
+						178 link Description: 25 强制安全, Value: 127.0.0.1:4475/#learn/agent/e03
+						179 text 尚无本版足迹
+						180 button (collapsed) 知识点 10, Secondary Actions: Expand
+							181 text 知识点 10
+						182 text →
+						183 link Description: 26 代码沙箱, Value: 127.0.0.1:4475/#learn/agent/n08-sandbox-security
+						184 text 尚无本版足迹
+						185 button (collapsed) 知识点 7, Secondary Actions: Expand
+							186 text 知识点 7
+						187 text →
+						188 link Description: 27 发布回退, Value: 127.0.0.1:4475/#learn/agent/e04
+						189 text 尚无本版足迹
+						190 button (collapsed) 知识点 10, Secondary Actions: Expand
+							191 text 知识点 10
+						192 link Description: 28 性能成本, Value: 127.0.0.1:4475/#learn/agent/e05
+						193 text 尚无本版足迹
+						194 button (collapsed) 知识点 10, Secondary Actions: Expand
+							195 text 知识点 10
+						196 text →
+						197 link Description: 29 运行交付, Value: 127.0.0.1:4475/#learn/agent/n09-runtime-delivery
+						198 text 尚无本版足迹
+						199 button (collapsed) 知识点 7, Secondary Actions: Expand
+							200 text 知识点 7
+						201 text ↓
+					202 container
+						203 heading 06 交付与迭代, Value: 2
+							204 text 06 交付与迭代
+						205 link Description: 30 独立作品与复盘, Value: 127.0.0.1:4475/#learn/agent/p02
+						206 text 尚无本版足迹
+						207 button (collapsed) 知识点 10, Secondary Actions: Expand
+							208 text 知识点 10
+		209 container
+			210 text 职造 · Agent 开发学习 教材 v12 · 本浏览器保存
+	211 container lw-find-form
+		212 text 查教材
+		213 text entry area (settable) 查教材, ID: lw-query
+		214 button 查找
+		215 button (collapsed) Description: 展开检索结果, Secondary Actions: Expand
+
+The focused UI element is 1 AXWebArea 职造 · Agent 学习工作台, URL: 127.0.0.1:4475/

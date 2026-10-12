@@ -1,0 +1,596 @@
+{
+  "version": "app-v13-prototype-qa-4",
+  "date": "2026-10-12",
+  "timezone": "Asia/Shanghai",
+  "phase": "final_independent_merge_completed_with_limitations",
+  "artifactVersion": "local-workbench-0.13-learning",
+  "corpusVersion": "textbook-v12",
+  "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+  "bookSha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+  "frontendBindingVersion": "app-v13-prototype-frontend-binding-3",
+  "frontendBindingSha256": "73038957f7fe89cd3fcf7d50c419f2b0d8bd02b9c0a0020386059dd5f1978fa3",
+  "experienceSha256": "7fc778e5d85702688caebf76370308ddee435b74acee7665666387a4dc902b9e",
+  "limitedSourceHttpVmConclusion": "met_within_scope",
+  "allNecessaryLocalConditionsConclusion": "insufficient",
+  "productConditions": [
+    {
+      "id": "PV13-01",
+      "status": "pass",
+      "scope": "Final frozen v13 client assembly e731/87d only, not current/live",
+      "reason": "源合同及两专项实际主页面显示固定Agent/恰五入口，原资料转低频设置，题库114入口已真实可达。"
+    },
+    {
+      "id": "PV13-02",
+      "status": "pass",
+      "scope": "Final frozen v13 client assembly e731/87d only, not current/live",
+      "reason": "30篇/先修与点映射独立同源；UI1未改路径的缩放/恢复/空筛选与首篇键盘、UI2真实拖动/18及30篇键盘定位共同核有限入口，无总完成率。"
+    },
+    {
+      "id": "PV13-03",
+      "status": "insufficient",
+      "scope": "Final frozen v13 client assembly e731/87d only, not current/live",
+      "reason": "全文/图/原尺寸/Esc回焦/表和代码内滚及实际MD下载通过；必要.py资源阅读被官方IAB阻断，无真实阅读证据，不绕过。"
+    },
+    {
+      "id": "PV13-04",
+      "status": "pass",
+      "scope": "Final frozen v13 client assembly e731/87d only, not current/live",
+      "reason": "114题/327精确引文机械核、实际114列表及n03两题筛选/Q11↔正确节回链刷新后退、Q10/Q99真实经历提示；不冒称标准答案/行业认证。"
+    },
+    {
+      "id": "PV13-05",
+      "status": "pass",
+      "scope": "Final frozen v13 client assembly e731/87d only, not current/live",
+      "reason": "Q11列表弱→详情掌握→取消→重标与刷新，记录/目录精确点同步，Q12本人掌握；同章其他点仍未学习。源/VM核图目录同一状态映射，实际目录状态为已测UI，未扩授所有节点图截图。"
+    },
+    {
+      "id": "PV13-06",
+      "status": "pass",
+      "scope": "Final frozen v13 client assembly e731/87d only, not current/live",
+      "reason": "实际空/无题点、ReAct仅2题5/10/20不足说明、明确错题勾选与跳过、本次统计、两题复习及e731剩1/继续Q11/真空池对照通过；全112eligible及个人排除另有机械/VM证据。"
+    },
+    {
+      "id": "PV13-07",
+      "status": "insufficient",
+      "scope": "Final frozen v13 client assembly e731/87d only, not current/live",
+      "reason": "唯一辅助输入、真实语义卡、1800ms明确运输延迟收起切页/就绪不抢焦/原提交上下文、503与旧版本拒绝和收起回焦已真实核；两次查询迟到响应排序只有VM，未完成必要真实UI。"
+    },
+    {
+      "id": "PV13-08",
+      "status": "insufficient",
+      "scope": "Final frozen v13 client assembly e731/87d only, not current/live",
+      "reason": "实际设置无输入/本地身份/历史收纳、UI1 20px正文及起点选择有限证据；设置起点影响实际查询未真验，仅源/VM，不授完整偏好流程。"
+    },
+    {
+      "id": "PV13-09",
+      "status": "pass",
+      "scope": "Final frozen v13 client assembly e731/87d only, not current/live",
+      "reason": "真实可见隔离种子、三代原值与损坏原串两次实际JSON下载逐字保留，新项目六字段保存刷新/实际导出，显式v10/未知节版本及旧路由准确；仅自述不授作品认证。"
+    },
+    {
+      "id": "PV13-10",
+      "status": "insufficient",
+      "scope": "Final frozen v13 client assembly e731/87d only, not current/live",
+      "reason": "实际暖中性色/五导航/857原症状复验与e731/87d的390/857/1280有限几何通过，手机关闭44px可见；全部必要导航/图/输入键盘路径未实际完整执行。"
+    }
+  ],
+  "counts": {
+    "protectedCompared": 900,
+    "protectedUnchanged": 900,
+    "actualBgeQueries": 3,
+    "truthfulConceptClarifications": 1,
+    "initialVmCases": 25,
+    "initialVmPass": 23,
+    "initialVmFailures": 2,
+    "confirmedProductDefectsInInitialMainVm": 1,
+    "initialVmHarnessWordingError": 1,
+    "unknownTargetsNarrowChecks": 4,
+    "navRepairNarrowGroups": 7,
+    "navRepairHistoricalReproductionGroups": 1,
+    "mainActualBrowserActions": 0,
+    "mainActualDownloads": 0,
+    "ui2NamedEvidenceFilesIndependentlyVerified": 184,
+    "ui2ActualJsonDownloads": 2,
+    "ui2ActualMarkdownDownloads": 1
+  },
+  "mainEvidence": [
+    "team/app-v13-prototype-qa-history/candidate01/independent-mapping.json",
+    "team/app-v13-prototype-qa-history/candidate01/independent-http.json",
+    "team/app-v13-prototype-qa-history/candidate01/independent-client-vm.json",
+    "team/app-v13-prototype-qa-history/candidate01/unknown-targets-narrow.json",
+    "team/app-v13-prototype-qa-history/candidate02/independent-nav-repair.json",
+    "team/app-v13-prototype-qa-history/candidate02/served-repair-bytes.json",
+    "team/app-v13-prototype-qa-history/protected-end-main.json",
+    "team/app-v13-prototype-qa-history/cleanup-main.json",
+    "team/app-v13-prototype-qa-history/ui-current-availability.json",
+    "team/app-v13-prototype-qa-history/ui1-merged-preparation.json",
+    "team/app-v13-prototype-qa-history/ui2-independent-merge-check.json",
+    "team/app-v13-prototype-qa-history/current-workspace-final.json",
+    "team/app-v13-prototype-qa-history/current-repair-handoff-boundary.json",
+    "team/app-v13-prototype-qa-history/protected-end-final.json",
+    "team/app-v13-prototype-qa-history/cleanup-final.json"
+  ],
+  "uiEvidence": {
+    "ui1": {
+      "report": "team/app-v13-prototype-ui-qa.md",
+      "json": "team/app-v13-prototype-ui-qa.json",
+      "verification": "team/app-v13-prototype-qa-history/ui1-merged-preparation.json",
+      "actualExperienceSha256": "9af4d9aabe568eeff45a97a3307ad9e7ad1357fa3f86a5d16a4f57536d2afdbd",
+      "status": "insufficient",
+      "fullDomRecordsRead": 11,
+      "reportAndEvidenceFilesShaVerified": 10,
+      "allNecessarySceneStatus": "all 12 scenes remain insufficient in UI1 despite partial actual actions",
+      "unreturnedActions": "Original-size, Esc/focus and Markdown download batch returned no observations after 1456.2 seconds; none counted complete.",
+      "cleanup": "4474 exited 0/no listener; tab1 close and 857 viewport reset not confirmed after official inventory unavailable."
+    },
+    "ui2": {
+      "report": "team/app-v13-prototype-ui2-qa.md",
+      "json": "team/app-v13-prototype-ui2-qa.json",
+      "bindingSha256": "e19bcca95d321bf9a59fd4af8ad7d3259a8d46da52ff29b62809e43d2e4f5cf8",
+      "independentMainMerge": "team/app-v13-prototype-qa-history/ui2-independent-merge-check.json",
+      "namedFilesVerified": 184,
+      "actualJsonDownloadFiles": 2,
+      "actualMarkdownDownloadFiles": 1,
+      "recommendObservations": {
+        "uiRecommendSubmissionsObserved": 8,
+        "localSemanticResponseMode": 5,
+        "conceptClarificationResponseMode": 1,
+        "explicit503Fixture": 1,
+        "explicitWrongVersionFixture": 1,
+        "paidOrExternalProviderCalls": 0,
+        "timingFixtureDelayMs": 1800
+      },
+      "ports": [
+        4475,
+        4486
+      ],
+      "proposed4485ActuallyOccupiedAndNotOperated": true,
+      "cleanup": "team/app-v13-prototype-ui2-qa-history/cleanup.json",
+      "status": "completed_with_limitations",
+      "fullNecessaryUiComplete": false
+    }
+  },
+  "defects": [
+    {
+      "id": "QI13-NAV01",
+      "discoverer": "independent main QA",
+      "status": "closed_in_frozen_v13_original_and_actual_ui_scope",
+      "owner": "客户端软件工程师",
+      "evidence": "candidate02/independent-nav-repair.json",
+      "actualUiEvidence": "UI2 AX02..09 original Q11 roundtrip and114 bank"
+    },
+    {
+      "id": "QI13-BANK01",
+      "ownerOriginalId": "DEV13-BANK-01",
+      "discoverer": "client engineer first; main QA independently reproduced frozen former source after handoff",
+      "status": "closed_in_frozen_v13_original_and_actual_ui_scope",
+      "owner": "客户端软件工程师",
+      "evidence": "candidate02/independent-nav-repair.json",
+      "actualUiEvidence": "UI2 AX02..09 original Q11 roundtrip and114 bank"
+    },
+    {
+      "id": "DEV13-SHELL-01",
+      "discoverer": "PM actual display observation, not QA first discovery",
+      "status": "original857_symptom_absent_in_frozen_d190_and_directly_affected_frozen_repair_viewports; current_mixed_css_not_accepted",
+      "owner": "客户端软件工程师",
+      "actualUiEvidence": "UI1 actual857x1120, UI2 actual857x900/390/1280 geometry; not PM display"
+    },
+    {
+      "id": "UI2-REVIEW01",
+      "discoverer": "independent UI2 test engineer",
+      "status": "closed_in_e731_frozen_fixture_only; current_live_handoff_open",
+      "owner": "客户端软件工程师",
+      "reportedCase": "Q11 still weak after Q12 self-marked mastered; review/done falsely says none unmastered while record retains Q11.",
+      "evidence": "UI2 AX33/34/36 failure,64/65/66/67 repaired original and true-empty",
+      "scope": "New frozen repair artifact must not overwrite concurrent v14 workspace.",
+      "actualUiVerified": true
+    },
+    {
+      "id": "UI2-MOBILE01",
+      "discoverer": "independent UI2 test engineer",
+      "owner": "客户端软件工程师",
+      "status": "closed_in_87d7_frozen_fixture_only; current_live_handoff_open",
+      "evidence": "UI2 first71 docWidth563 vs390,103/104/105/106/107 original/real filter/n03/857/1280",
+      "actualUiVerified": true
+    }
+  ],
+  "fullProductAssessment": {
+    "standardPath": "team/product-gates.json",
+    "standardVersion": "product-creation-2026-10-10",
+    "scope": "formal_learning_product; assessed for frozen v13 current delivery, not ongoing v14",
+    "artifactVersion": "local-workbench-0.13-learning",
+    "conclusion": "not_met",
+    "gateResults": [
+      {
+        "id": "user_value",
+        "status": "insufficient",
+        "reason": "用户给出了模块难懂的真实反馈；尚无试验前冻结目标用户指标/阈值与改后真实使用结果。",
+        "owner": "产品经理 / 用户研究员",
+        "nextAction": "按原目标用户试点核新主流程理解与采用，不把QA访客当用户。"
+      },
+      {
+        "id": "teaching_quality",
+        "status": "insufficient",
+        "reason": "当前冻结v12/30篇、114题327引文的机械来源证据完整，已有AI文稿有限审校；没有新增真人专业复核与真实学习效果证据。",
+        "owner": "课程架构师 / 内容审校员",
+        "nextAction": "保持原稿身份，取得实际行业专家复核与学习证据；不以映射/引用数授职业胜任。"
+      },
+      {
+        "id": "real_generation",
+        "status": "fail",
+        "reason": "冻结v13主流程用既有v12正文与真实BGE检索，没有交付本轮依档案生成教材的流程/运行证据；QA隔离服务主动禁用生成，configured=false仅说明夹具，未读取用户配置，不能拿它判断用户服务配置。",
+        "owner": "软件工程师 / AI生成工程师",
+        "nextAction": "另按授权配置真实生成，留过程、来源/版本、失败与恢复证据；本轮不付费调用。"
+      },
+      {
+        "id": "comparative_advantage",
+        "status": "insufficient",
+        "reason": "原型视觉/流程对齐和题库回溯没有同任务、样本、资源、评分的行业实测。",
+        "owner": "产品经理 / 竞品研究员",
+        "nextAction": "按原公平比较条件取得可比行业产品/研究版本和实际指标/专业结果。"
+      },
+      {
+        "id": "learner_creation",
+        "status": "insufficient",
+        "reason": "QA虚构本地项目和本人自评只用于功能验证，没有真实学习者独立MVP、用户反馈与作品评审。",
+        "owner": "课程架构师 / 实训评估员",
+        "nextAction": "真实学习者产出可运行作品/未知任务，按原量规独立核作品和真实用户反馈。"
+      },
+      {
+        "id": "reliable_delivery",
+        "status": "fail",
+        "reason": "真实本地开发服务和历史账户后端保留，本轮未重新验收整个后端；尚不满足正式生产运行范围/跨端同步与可靠交付证据。",
+        "owner": "软件工程师 / 后端数据工程师",
+        "nextAction": "另定正式运行范围并取得账户隔离、持久化/异常恢复和生产版本QA证据。"
+      },
+      {
+        "id": "operating_economics",
+        "status": "insufficient",
+        "reason": "没有真实生成账单、维护质量与预定义运营预算结果；本地BGE不调用收费供应商不等于运营成本为零。",
+        "owner": "产品经理 / 运营分析员",
+        "nextAction": "按原预算记录真实成本、时间、质量和维护数据。"
+      },
+      {
+        "id": "iteration_trace",
+        "status": "pass",
+        "reason": "本轮900基线、候选/修稿身份、源与UI首反例、唯一责任人、原例与真空池/直接影响复验、版本漂移/未合入及缺证均独立可追溯；限定本轮改进轨迹pass，不把冻结修稿闭合当live或全部目标通过。",
+        "owner": "项目经理 / 测试工程师",
+        "nextAction": "PM按实际未合入/必要不足继续协调，后续新源须再独立绑定复验，不改已冻首失败证据。"
+      }
+    ],
+    "limitation": "Independent mechanical/HTTP/VM and finite actual frozen-source UI do not satisfy all necessary v13 UI. Current/live repairs remain unapplied. No user/real learner/expert/industry/generation/production/billing inference."
+  },
+  "domains": {
+    "qaAppWrites": false,
+    "realUserDbRead": false,
+    "realUserStorageRead": false,
+    "user4318Operated": false,
+    "providerCalled": false,
+    "uploaded": false,
+    "published": false
+  },
+  "notRepeated": [
+    "Initial25 VM cases not all rerun after narrow experience-only repair; original output kept.",
+    "Existing teaching code/100-question professional support scoring/ten teaching holdouts/whole accounts/model downloads not repeated.",
+    "Four real HTTP queries not reexecuted after frontend-only navigation repair.",
+    "Fault response/timing fixtures remain VM logic, not real model or UI evidence."
+  ],
+  "frontendBindingReceiptScope": "17/17 matched at historical main candidate02 receipt; current workspace endpoint separately differs, not a current full match claim",
+  "currentWorkspaceIdentity": {
+    "atUtc": "2026-10-12T01:38:05.372684+00:00",
+    "phase": "final_read_only_snapshot_of_ongoing_parallel_workspace_not_new_stable_candidate",
+    "bindingVersion": "app-v13-prototype-frontend-binding-3",
+    "bindingSha256": "73038957f7fe89cd3fcf7d50c419f2b0d8bd02b9c0a0020386059dd5f1978fa3",
+    "declarations": 17,
+    "matches": 13,
+    "rows": [
+      {
+        "path": "dist/index.html",
+        "frozenV13Sha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+        "currentWorkspaceSha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+        "currentBytes": 4362,
+        "match": true
+      },
+      {
+        "path": "dist/app.js",
+        "frozenV13Sha256": "05167ec7df6cea51d6e137aaa0ff53ea4cb949a66a4c813d6ce7167651b2f30e",
+        "currentWorkspaceSha256": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd",
+        "currentBytes": 92350,
+        "match": false
+      },
+      {
+        "path": "dist/learning-workbench.js",
+        "frozenV13Sha256": "55c6f5db634d1b723e863fe9a94f604fadcf895c15acbb984025d35be15c6266",
+        "currentWorkspaceSha256": "9099d3bbf6ea51816c01f422517ae5323fb0c1048854f4acc54caa88bff65cca",
+        "currentBytes": 63016,
+        "match": false
+      },
+      {
+        "path": "dist/learning-experience-v13.js",
+        "frozenV13Sha256": "7fc778e5d85702688caebf76370308ddee435b74acee7665666387a4dc902b9e",
+        "currentWorkspaceSha256": "d9664458d1e60c54d8235e160c4c229b1629c8b694d0f16d7136557b3374cd23",
+        "currentBytes": 35997,
+        "match": false
+      },
+      {
+        "path": "dist/learning-experience-v13.css",
+        "frozenV13Sha256": "d190bdc09f0fb9b3ae4eb308cd52b358c935f69d3b9b93ae16ea4418789654bd",
+        "currentWorkspaceSha256": "1f20aafb25a30842e660a18b2d51445efc6ab3527d359b95703131332fcb9aaf",
+        "currentBytes": 24198,
+        "match": false
+      },
+      {
+        "path": "dist/learning-v13-data.js",
+        "frozenV13Sha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+        "currentWorkspaceSha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+        "currentBytes": 841206,
+        "match": true
+      },
+      {
+        "path": "team/app-v13-prototype-learning-data.json",
+        "frozenV13Sha256": "2c0165b5013a88d5ae93fbe841901853cdf7d3cb184f576971e56ab2f572a394",
+        "currentWorkspaceSha256": "2c0165b5013a88d5ae93fbe841901853cdf7d3cb184f576971e56ab2f572a394",
+        "currentBytes": 841103,
+        "match": true
+      },
+      {
+        "path": "team/app-v13-prototype-frontend.md",
+        "frozenV13Sha256": "957dc5a2cec9e8c293603edf2c93856bc2b956609ebb77409590967fb2cea348",
+        "currentWorkspaceSha256": "957dc5a2cec9e8c293603edf2c93856bc2b956609ebb77409590967fb2cea348",
+        "currentBytes": 7593,
+        "match": true
+      },
+      {
+        "path": "team/app-v13-prototype-frontend-dev-check.mjs",
+        "frozenV13Sha256": "887ec4847cfe1cf62bff24602220db0cd6c1bef7de37959af41fa4b653750a45",
+        "currentWorkspaceSha256": "887ec4847cfe1cf62bff24602220db0cd6c1bef7de37959af41fa4b653750a45",
+        "currentBytes": 13618,
+        "match": true
+      },
+      {
+        "path": "team/app-v13-prototype-frontend-dev-check.json",
+        "frozenV13Sha256": "c5a72fbba16aaae18506cdde96b364e4fc937fda5290317342213e30cb853fa7",
+        "currentWorkspaceSha256": "c5a72fbba16aaae18506cdde96b364e4fc937fda5290317342213e30cb853fa7",
+        "currentBytes": 2970,
+        "match": true
+      },
+      {
+        "path": "team/app-v13-prototype-frontend-preview.json",
+        "frozenV13Sha256": "4a4d91eb1bf86d53a8a2a8eca3d0ac62dc1eefd9fc95eb9f5b3692fb1c084573",
+        "currentWorkspaceSha256": "4a4d91eb1bf86d53a8a2a8eca3d0ac62dc1eefd9fc95eb9f5b3692fb1c084573",
+        "currentBytes": 901,
+        "match": true
+      },
+      {
+        "path": "team/app-v13-prototype-frontend-history/shell-preview-repair.json",
+        "frozenV13Sha256": "80014f501f7c27af6c7a72df3bc9623321ff2592f263cc533518db9543272190",
+        "currentWorkspaceSha256": "80014f501f7c27af6c7a72df3bc9623321ff2592f263cc533518db9543272190",
+        "currentBytes": 952,
+        "match": true
+      },
+      {
+        "path": "team/app-v13-prototype-frontend-nav01-repair.md",
+        "frozenV13Sha256": "eb343ce683e0ad6f82206b00d133dcd278cc0da1a0bc156b74b67bcfc4653be2",
+        "currentWorkspaceSha256": "eb343ce683e0ad6f82206b00d133dcd278cc0da1a0bc156b74b67bcfc4653be2",
+        "currentBytes": 2950,
+        "match": true
+      },
+      {
+        "path": "team/app-v13-prototype-frontend-nav01-check.mjs",
+        "frozenV13Sha256": "38b3c9f603252a08ebc70c138f2ec1582fca09b2adcad12fe255c0676ca04c39",
+        "currentWorkspaceSha256": "38b3c9f603252a08ebc70c138f2ec1582fca09b2adcad12fe255c0676ca04c39",
+        "currentBytes": 7363,
+        "match": true
+      },
+      {
+        "path": "team/app-v13-prototype-frontend-nav01-check.json",
+        "frozenV13Sha256": "96f76a3be68a39c9beb2b4643b6b94da817a98b3d308599d2fa4045fcc41a1d7",
+        "currentWorkspaceSha256": "96f76a3be68a39c9beb2b4643b6b94da817a98b3d308599d2fa4045fcc41a1d7",
+        "currentBytes": 2186,
+        "match": true
+      },
+      {
+        "path": "team/app-v13-prototype-frontend-history/before-QI13-NAV01/manifest.json",
+        "frozenV13Sha256": "1b05b693ab55bc98c3783a7bac9f30ce689d2ec1aa604c3dc13ab955ef95acf5",
+        "currentWorkspaceSha256": "1b05b693ab55bc98c3783a7bac9f30ce689d2ec1aa604c3dc13ab955ef95acf5",
+        "currentBytes": 2699,
+        "match": true
+      },
+      {
+        "path": "team/app-v13-prototype-frontend-history/nav01-first-narrow-check-failure.json",
+        "frozenV13Sha256": "d52af841383a4ac9253d2e335728f7d727e2d9739789a7d1187cc228d2af8a1d",
+        "currentWorkspaceSha256": "d52af841383a4ac9253d2e335728f7d727e2d9739789a7d1187cc228d2af8a1d",
+        "currentBytes": 513,
+        "match": true
+      }
+    ],
+    "earlyAll17MatchingReceipt": "candidate02/received-binding.json",
+    "priorCurrentEndpoint": "current-workspace-drift.json",
+    "currentLiveRetested": false,
+    "user4318Operated": false,
+    "meaning": "Historical frozen v13 acceptance evidence only; current workspace/live not validated by frozen returned fixture. No restore or implication that concurrent writing is finished."
+  },
+  "atUtc": "2026-10-12T01:42:28.285712+00:00",
+  "limitedFrozenRepairUiConclusion": "met_within_observed_scope",
+  "currentWorkspaceAndUserServiceConclusion": "not_reverified_as_complete_frozen_v13; two repaired fixture changes not applied at final source endpoint",
+  "liveRepairsAppliedAndVerified": false,
+  "productScenarios": [
+    {
+      "id": "PT13-01",
+      "status": "pass",
+      "reason": "UI1空首页与设置、UI2当前题库/记录/课程/设置实际页面，五入口与无假身份。",
+      "scope": "Frozen candidate/repair finite original cases only"
+    },
+    {
+      "id": "PT13-02",
+      "status": "pass",
+      "reason": "同源30篇，UI1缩放/筛选/恢复与根点键盘、UI2拖动/18节及30篇Enter真实可达；只继承经源码确认未改路径的旧局部动作。",
+      "scope": "Frozen candidate/repair finite original cases only"
+    },
+    {
+      "id": "PT13-03",
+      "status": "insufficient",
+      "reason": "两图/关闭回焦/n03表围栏/MD下载有证据；.py例被官方阻断，未观察正文阅读。",
+      "scope": "Frozen candidate/repair finite original cases only"
+    },
+    {
+      "id": "PT13-04",
+      "status": "pass",
+      "reason": "Q11从两题筛选入详情、原文节、返原题及原两题列表，刷新/后退准确。",
+      "scope": "Frozen candidate/repair finite original cases only"
+    },
+    {
+      "id": "PT13-05",
+      "status": "pass",
+      "reason": "列表/详情/记录/目录弱掌握取消重标及刷新实际同步；图计算另源/VM核，UI只称目录观测。",
+      "scope": "Frozen candidate/repair finite original cases only"
+    },
+    {
+      "id": "PT13-06",
+      "status": "pass",
+      "reason": "真实Q11/Q12上/下、留Q11/掌握Q12；原done矛盾保存，e731原例剩1/继续Q11和真空池闭合。",
+      "scope": "Frozen candidate/repair finite original cases only"
+    },
+    {
+      "id": "PT13-07",
+      "status": "pass",
+      "reason": "空/真实无题点0；单ReAct点5/10/20仅11/12与不足提示；取消错题勾选不加、选中才加，跳过和统计为本次；个人排除机械/VM与详情边界另列。",
+      "scope": "Frozen candidate/repair finite original cases only"
+    },
+    {
+      "id": "PT13-08",
+      "status": "pass",
+      "reason": "react及重规划实际语义/精确节，明确1800ms夹具保留真实BGE等待并收起切页/轻提示/提交上下文；未伪生成。",
+      "scope": "Frozen candidate/repair finite original cases only"
+    },
+    {
+      "id": "PT13-09",
+      "status": "insufficient",
+      "reason": "歧义概念/厨房无匹配/503可读与重试/明确旧版本拒绝真实UI已核；实际双查询迟到排序未测，VM不代。",
+      "scope": "Frozen candidate/repair finite original cases only"
+    },
+    {
+      "id": "PT13-10",
+      "status": "pass",
+      "reason": "实际可见三代/损坏种子，原值身份展示、项目保存刷新、两实际JSON下载精确原串及新字段。",
+      "scope": "Frozen candidate/repair finite original cases only"
+    },
+    {
+      "id": "PT13-11",
+      "status": "pass",
+      "reason": "显式v10只读、未知节/版本诚实、book/reflections/projects-history兼容；新Q11详情链刷新后退实际准确。",
+      "scope": "Frozen candidate/repair finite original cases only"
+    },
+    {
+      "id": "PT13-12",
+      "status": "insufficient",
+      "reason": "390题库/n03/关闭、857与1280直接影响及20px、Enter和Esc局部真实过；未执行所有必要键盘路径。",
+      "scope": "Frozen candidate/repair finite original cases only"
+    }
+  ],
+  "conditionCounts": {
+    "pass": 6,
+    "fail": 0,
+    "insufficient": 4,
+    "necessaryCount": 10
+  },
+  "scenarioCounts": {
+    "pass": 9,
+    "fail": 0,
+    "insufficient": 3,
+    "necessaryCount": 12
+  },
+  "firstFailedCandidatesRetained": [
+    {
+      "assembly": "candidate02 7fc/d190",
+      "id": "UI2-REVIEW01",
+      "necessaryResultAffected": [
+        "PV13-06",
+        "PT13-06"
+      ],
+      "statusAtFirstObservation": "fail",
+      "fixAssembly": "e731/d190",
+      "repairActualUi": "original + remaining1 continuation + true empty control pass"
+    },
+    {
+      "assembly": "e731/d190 at390x844",
+      "id": "UI2-MOBILE01",
+      "necessaryResultAffected": [
+        "PV13-10",
+        "PT13-12"
+      ],
+      "statusAtFirstObservation": "fail",
+      "fixAssembly": "e731/87d7",
+      "repairActualUi": "original390 filters + real selection + n03 internal scroll +857/1280 pass"
+    }
+  ],
+  "currentRepairHandoff": {
+    "atUtc": "2026-10-12T01:39:08.465990+00:00",
+    "method": "Read-only current source fragment/patch presence, no new functional or UI test",
+    "currentReviewFunctionHasOldUnifiedEmptyMessage": true,
+    "reviewRemainingCountPhrasePresent": false,
+    "exactMobile01PatchPresent": false,
+    "experienceSha256": "d9664458d1e60c54d8235e160c4c229b1629c8b694d0f16d7136557b3374cd23",
+    "cssSha256": "1f20aafb25a30842e660a18b2d51445efc6ab3527d359b95703131332fcb9aaf",
+    "conclusion": "Frozen original fixes verified by UI2 do not close current/live application handoff; current fragment still contains first review defect and full mobile patch not present at this read-only endpoint. No assumption of stable newer candidate."
+  },
+  "finalFrozenRepairAssembly": {
+    "index.html": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+    "app.js": "05167ec7df6cea51d6e137aaa0ff53ea4cb949a66a4c813d6ce7167651b2f30e",
+    "learning-workbench.js": "55c6f5db634d1b723e863fe9a94f604fadcf895c15acbb984025d35be15c6266",
+    "learning-experience-v13.js": "e731f617891e8a08ea52e5f58267a47c3ff9c43d0ae12dd6c7d443576afdf42f",
+    "learning-experience-v13.css": "87d7c3207eb615022b8298e2fa955f72227672c71d7d8fab47c70cad40dd15fd",
+    "learning-v13-data.js": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb"
+  },
+  "ui1PartialEvidenceInheritanceRule": "Only source-identical or confirmed unchanged layout/map/preference paths contribute: 9af→7fc changes question-ID guard/safe return context; e731 changes review terminal text/links; 87d adds question-filter widths. No automatic inheritance of all old GUI or claim missing actions happened.",
+  "protection": {
+    "baseline": "team/app-v13-prototype-qa-history/received-baseline.json",
+    "finalEndpoint": "team/app-v13-prototype-qa-history/protected-end-final.json",
+    "compared": 900,
+    "unchanged": 900,
+    "administrativeAndCurrentV13ExcludedAsPlanned": true
+  },
+  "cleanup": {
+    "main": "team/app-v13-prototype-qa-history/cleanup-final.json",
+    "ui1": "team/app-v13-prototype-ui-qa-history/tool-and-cleanup.json",
+    "ui1TempCleanupAddendum": {
+      "path": "team/app-v13-prototype-ui-qa-history/cleanup-addendum.json",
+      "sha256": "9212e7a81e47f908f15d717da3d9fdd8dc71519e3187cca6c1fcc78de737007a",
+      "scope": "Original exact own temp runtime removed; original reports/GUI insufficiency/tab and viewport unconfirmed unchanged."
+    },
+    "ui2": "team/app-v13-prototype-ui2-qa-history/cleanup.json",
+    "main2ServicesExit0": true,
+    "ui1ServiceExit0": true,
+    "ui2EightPhasesExit0": true,
+    "finalListener4473_4474_4486None": true,
+    "ui1TabAndViewportConfirmed": false,
+    "ui2OwnTabAndViewportConfirmed": true,
+    "user4318Operated": false
+  },
+  "remainingActions": [
+    {
+      "item": ".py real browser reference reading",
+      "status": "insufficient",
+      "owner": "测试工程师 / 对应客户端与检索工程师",
+      "next": "在遵守官方浏览器资源策略的可用通道或经明确批准的安全只读呈现方案后独立复验，不绕过阻断，不以HTTP替代。"
+    },
+    {
+      "item": "late ordering and necessary keyboard/settings-query UI",
+      "status": "insufficient",
+      "owner": "测试工程师",
+      "next": "保留原有限计划，稳定源版本后仅补真实双查询迟到排序、未执行键盘路径和设置起点→真实查询。"
+    },
+    {
+      "item": "REVIEW01/MOBILE01 current owner handoff",
+      "status": "open_unapplied",
+      "owner": "项目经理 / 当前客户端唯一owner",
+      "next": "用户跨聊天交接授权/唯一稳定写入确认后只合入局部补丁，保留v14增量；由独立QA重新按新实际源/served原例与直接影响验收。"
+    },
+    {
+      "item": "UI1 browser resources",
+      "status": "unconfirmed",
+      "owner": "UI1测试工程师 / 项目经理",
+      "next": "保持官方不可用事实，不拿UI2同名tab或PM动作改写；原始tab/viewport待真正可用官方资源确认。"
+    }
+  ]
+}

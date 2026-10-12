@@ -1,0 +1,457 @@
+- link "跳到主要内容":
+  - /url: "#main-content"
+- complementary:
+  - link "职 职造 Agent 开发学习":
+    - /url: "#home"
+    - generic: 职
+    - strong:
+      - text: 职造
+      - generic: Agent 开发学习
+  - navigation "主导航":
+    - button "首页":
+      - generic: ⌂
+      - text: 首页
+    - button "课程学习":
+      - generic: ▤
+      - text: 课程学习
+    - button "题库浏览":
+      - generic: ◇
+      - text: 题库浏览
+    - button "学习记录":
+      - generic: ↻
+      - text: 学习记录
+    - button "个人设置":
+      - generic: ⚙
+      - text: 个人设置
+  - generic: 当前学习方向
+  - strong: Agent 开发者
+  - link "本机学习者 记录保存在此浏览器":
+    - /url: "#settings"
+    - generic: 本
+    - text: 本机学习者
+    - generic: 记录保存在此浏览器
+- main:
+  - strong: 课程学习
+  - paragraph: 读懂机制，再回到自己的问题
+  - link "← 返回课程":
+    - /url: "#learn"
+  - generic: 认识Agent工程
+  - complementary "需掌握的前置":
+    - heading "需掌握的前置" [level=2]
+    - paragraph: 无前置章节
+  - generic "本篇小节"
+  - article "认识 Agent 工程":
+    - heading "认识 Agent 工程" [level=1]
+    - paragraph: Agent 是一种围绕目标、依据新观察选择下一步，并通过工具与环境交互的软件系统。本书讨论基于大语言模型的 Agent：模型解释当前信息，提出下一步调查或候选结果；运行 Agent 的应用程序（下文称宿主程序）限定允许范围，决定能否执行，记录实际观察，再根据完成条件继续、等待或结束。它的价值来自把语言理解接到可核对的任务过程。
+    - paragraph: 例如，排查一次构建失败时，先读到的日志可能决定下一步该看依赖配置还是某个调用者；第一轮材料不足以写出整条路径。Agent 可以帮助选择下一处调查对象，但读取权限、调查预算和结果核对仍由应用掌握。模型提出“创建工单”，只是一项提议；准确批准和确认工单存在分别需要自己的依据。
+    - paragraph:
+      - text: “Agent”在不同产品中有不同用法。本书采用控制路径的区分：固定工作流由代码预列步骤与合法分支，动态 Agent 让模型根据新观察提议业务路径。这与 Anthropic 的架构定义一致；本文进一步采用宿主准入与事实记录的工程约束。这里仅以该文支持概念区分与最小足够方案原则。
+      - link "Building effective agents":
+        - /url: https://www.anthropic.com/engineering/building-effective-agents
+    - heading "哪些需求值得采用动态 Agent" [level=2]
+    - paragraph: 先看任务中哪些变化必须由新观察决定，再选能够满足同一目标的简单方案。下面是选型情境，不是实测效果或产品排名。
+    - region "教材表格，可横向滚动":
+      - table:
+        - rowgroup:
+          - row "需求与具体任务 可以从何种方案开始 何时需要重新判断":
+            - columnheader "需求与具体任务"
+            - columnheader "可以从何种方案开始"
+            - columnheader "何时需要重新判断"
+        - rowgroup:
+          - row "按已确认公式计算费用，或同步确定字段 普通程序；规则与输入校验由代码完成 合法路径仍能合理枚举时，自动化本身不要求增加模型":
+            - cell "按已确认公式计算费用，或同步确定字段"
+            - cell "普通程序；规则与输入校验由代码完成"
+            - cell "合法路径仍能合理枚举时，自动化本身不要求增加模型"
+          - row "从已经提供的报告抽取字段、生成一次有据说明 一次模型调用，加结构与业务校验；确定的缺项可按规则读取 输入齐全的一次归纳不需要自主调查；若下一个资料对象依赖刚读到的语义，才考虑动态路径":
+            - cell "从已经提供的报告抽取字段、生成一次有据说明"
+            - cell "一次模型调用，加结构与业务校验；确定的缺项可按规则读取"
+            - cell "输入齐全的一次归纳不需要自主调查；若下一个资料对象依赖刚读到的语义，才考虑动态路径"
+          - row "收集固定材料、生成草稿、校验、人工确认后交付 固定工作流；可以有分支、循环、多次模型调用和等待 多步骤不决定架构；只有预列分支难以覆盖目标内变化时，动态选择才可能有收益":
+            - cell "收集固定材料、生成草稿、校验、人工确认后交付"
+            - cell "固定工作流；可以有分支、循环、多次模型调用和等待"
+            - cell "多步骤不决定架构；只有预列分支难以覆盖目标内变化时，动态选择才可能有收益"
+          - row "依据失败现象追查相关文件，或依据来源矛盾改变检索问题 有资源范围、预算与停止条件的动态 Agent 需要环境反馈改变调查方向；能否提高合格结果仍要在相同条件下比较":
+            - cell "依据失败现象追查相关文件，或依据来源矛盾改变检索问题"
+            - cell "有资源范围、预算与停止条件的动态 Agent"
+            - cell "需要环境反馈改变调查方向；能否提高合格结果仍要在相同条件下比较"
+          - row "调查后创建工单，或核对一次发送是否已生效 最小足够的调查方案，加可信批准、写工具合同及回执核对 业务动作的权限与调查方式分别设计；有模型参与不会扩大允许范围":
+            - cell "调查后创建工单，或核对一次发送是否已生效"
+            - cell "最小足够的调查方案，加可信批准、写工具合同及回执核对"
+            - cell "业务动作的权限与调查方式分别设计；有模型参与不会扩大允许范围"
+    - paragraph:
+      - text: 动态选择也会增加错误路径、等待、调用费用和恢复负担。若固定流程已经满足要求，就保留固定流程；若阻碍是两份同级业务规则冲突，正确下一步是请求权威确认，追加模型不能取得裁决权。完整条件比较在
+      - link "方案选择":
+        - /url: "#learn/agent/c01-selection"
+      - text: 展开。
+    - paragraph: 多 Agent 是可选的组织方式。可独立调查的子问题可能适合分工，但要加总预算、统一资料版本、处理交接失败，并保留唯一写入所有者。把一项任务交给多个模型，不会自动产生独立事实或更高正确率。只读任务也无需为配齐组件而增加写工具；短时、可重做的任务未必需要长期持久平台。
+    - heading "一次任务怎样形成反馈闭环" [level=2]
+    - paragraph
+    - figure "放大查看":
+      - button "放大查看：Agent任务运行闭环：目标进入上下文，模型提议经宿主准入后才调用工具；观察进入记录和判定，新观察可反馈，完成等待或停止分别离开循环":
+        - img "Agent任务运行闭环：目标进入上下文，模型提议经宿主准入后才调用工具；观察进入记录和判定，新观察可反馈，完成等待或停止分别离开循环"
+      - button "放大查看"
+    - paragraph
+    - paragraph:
+      - link "放大SVG":
+        - /url: /api/content/assets/agent-runtime-loop.svg?version=textbook-v12
+      - text: ·
+      - link "可保存的DOT语义源":
+        - /url: /api/content/assets/agent-runtime-loop.dot?version=textbook-v12
+    - paragraph: 图中实线表达本次运行的信息与控制流，蓝线表示继续时把新观察反馈到上下文。虚线是可不调用工具的旁路：候选、拒绝或等待先进入记录，再按任务条件判定。它们不是已发生的业务效果。工具中的检索、读取或写入按任务采用；需要跨中断恢复时，再为权威记录选择持久机制。
+    - paragraph:
+      - text: 上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。
+      - link "ReAct":
+        - /url: https://arxiv.org/abs/2210.03629
+    - paragraph: 用一条构造轨迹读图：
+    - list:
+      - listitem: 维护者要求定位构建失败并形成有据说明；目标同时限定可读项目，只有准确批准后才可创建一条工单。
+      - listitem: 第一份日志显示依赖加载异常。模型提议读取依赖配置；宿主核资源范围和剩余预算，允许的读取结果进入事实记录。
+      - listitem: 新配置说明依赖由另一个模块注册，模型据此改查该模块。若路径可由稳定映射直接确定，固定流程也能完成这一步；这里要比较的是新观察是否需要语义判断，而不是读取次数。
+      - listitem: 说明仍缺关键版本时，记录缺项并等待。若证据齐全、准确批准后发送创建请求，却没有收到回执，则保留效果未知，核对原操作；不能为了闭环“继续”再创建第二条。只有对应效果已确认且验收条件满足，才声明完成。
+    - paragraph:
+      - text: “继续”还须有目标内理由与资源额度。没有新信息时应补来源、请求澄清或合理停止；循环不是用重复请求掩盖未知的许可。
+      - link "固定流程":
+        - /url: "#learn/agent/c01-fixed-workflow"
+      - text: 使用相同组件与边界，但合法路径由代码规定；
+      - link "完整动态循环":
+        - /url: "#learn/agent/c01-control-loop"
+      - text: 解释观察驱动的控制与恢复。版本评价和服务发布属于工程生命周期，不是每轮必须调用的工具。
+    - heading "一套可交付系统还需要哪些工程工作" [level=2]
+    - paragraph: 运行闭环回答一次任务如何推进，工程全景回答怎样设计、实现、评价和交付这种能力。本版以30个阅读单元补齐软件/模型先修、记忆、规划、协议、检索、图编排和协作，并连接安全、运营与独立项目。图中的组件按任务选择，箭头不表示每个产品都必须使用全部组件，也不是先修顺序。
+    - paragraph
+    - figure "放大查看":
+      - button "放大查看：Agent工程全景：30单元的位置，问题与方案连接模型资料工具及执行组织，评价边界贯穿，交付反馈问题":
+        - img "Agent工程全景：30单元的位置，问题与方案连接模型资料工具及执行组织，评价边界贯穿，交付反馈问题"
+      - button "放大查看"
+    - paragraph
+    - paragraph:
+      - link "查看全景SVG":
+        - /url: /api/content/assets/agent-engineering-landscape-v12.svg?version=textbook-v12
+      - text: 。运行闭环仍使用上图，工程全景已独立扩展为本版30单元；没有把旧20单元图冒充新版。
+    - paragraph: 学习支撑并非线上部件。先用问题发现、任务验收和信任边界确定目标，再以安全教学夹具实现组件；固定流程先于完整动态循环，规划/检索策略、图编排与协作在理解状态之后展开。评价随后支持MVP决定；安全并不是到后期才考虑，首次真实敏感读取/写入前须完成强制边界并取得实际授权，运行生成代码还须完成沙箱。独立项目要有真实问题、已有方案比较、差异假设、实现、实际反馈和迭代，不能只呈现面试答案。
+    - heading "章节在全景中的位置" [level=3]
+    - region "教材表格，可横向滚动":
+      - table:
+        - rowgroup:
+          - row "阅读位置 正文 工程环节":
+            - columnheader "阅读位置"
+            - columnheader "正文"
+            - columnheader "工程环节"
+        - rowgroup:
+          - row "1 认识 Agent 工程 Agent定义、适用需求与工程全貌":
+            - cell "1"
+            - cell "认识 Agent 工程":
+              - link "认识 Agent 工程":
+                - /url: "#learn/agent/00-learning-route"
+            - cell "Agent定义、适用需求与工程全貌"
+          - row "2 把文本输入变成可运行可判错的小程序 程序、异常、断言与基础诊断":
+            - cell "2"
+            - cell "把文本输入变成可运行可判错的小程序":
+              - link "把文本输入变成可运行可判错的小程序":
+                - /url: "#learn/agent/01-foundation"
+            - cell "程序、异常、断言与基础诊断"
+          - row "3 让 Agent 的语言运行时与模型输出具有可解释的边界 对象、并发、LRU与模型推理/输出契约":
+            - cell "3"
+            - cell "让 Agent 的语言运行时与模型输出具有可解释的边界":
+              - link "让 Agent 的语言运行时与模型输出具有可解释的边界":
+                - /url: "#learn/agent/n01-python-model-foundations"
+            - cell "对象、并发、LRU与模型推理/输出契约"
+          - row "4 从真实任务取得值得解决的问题证据 真实问题、现有方案与可证伪假设":
+            - cell "4"
+            - cell "从真实任务取得值得解决的问题证据":
+              - link "从真实任务取得值得解决的问题证据":
+                - /url: "#learn/agent/p01-discovery"
+            - cell "真实问题、现有方案与可证伪假设"
+          - row "5 动手前定义任务成功与合理停止 任务成功、停止和证据条件":
+            - cell "5"
+            - cell "动手前定义任务成功与合理停止":
+              - link "动手前定义任务成功与合理停止":
+                - /url: "#learn/agent/02-task-acceptance"
+            - cell "任务成功、停止和证据条件"
+          - row "6 分清事实资料与动作授权 事实与授权来源分离":
+            - cell "6"
+            - cell "分清事实资料与动作授权":
+              - link "分清事实资料与动作授权":
+                - /url: "#learn/agent/03-trust-boundary"
+            - cell "事实与授权来源分离"
+          - row "7 外部 API 请求的可判错边界 外部请求与受控错误边界":
+            - cell "7"
+            - cell "外部 API 请求的可判错边界":
+              - link "外部 API 请求的可判错边界":
+                - /url: "#learn/agent/f01"
+            - cell "外部请求与受控错误边界"
+          - row "8 把模型响应变成经校验的业务候选 模型候选结构与业务核验":
+            - cell "8"
+            - cell "把模型响应变成经校验的业务候选":
+              - link "把模型响应变成经校验的业务候选":
+                - /url: "#learn/agent/f02"
+            - cell "模型候选结构与业务核验"
+          - row "9 让跨轮上下文保留事实，让长期记忆可以被纠正 提示、记忆生命周期与任务切换":
+            - cell "9"
+            - cell "让跨轮上下文保留事实，让长期记忆可以被纠正":
+              - link "让跨轮上下文保留事实，让长期记忆可以被纠正":
+                - /url: "#learn/agent/n02-context-memory-prompt"
+            - cell "提示、记忆生命周期与任务切换"
+          - row "10 为一个任务选择最小可用方案 程序 单次模型 流程与动态 Agent 普通程序、单调用、流程与Agent选型":
+            - cell "10"
+            - cell "为一个任务选择最小可用方案 程序 单次模型 流程与动态 Agent":
+              - link "为一个任务选择最小可用方案 程序 单次模型 流程与动态 Agent":
+                - /url: "#learn/agent/c01-selection"
+            - cell "普通程序、单调用、流程与Agent选型"
+          - row "11 在重复提议和发送中识别同一个动作 提议、动作、发送与效果身份":
+            - cell "11"
+            - cell "在重复提议和发送中识别同一个动作":
+              - link "在重复提议和发送中识别同一个动作":
+                - /url: "#learn/agent/c01-control-primer"
+            - cell "提议、动作、发送与效果身份"
+          - row "12 构造符合版本和权限的证据包 权限和版本正确的证据包":
+            - cell "12"
+            - cell "构造符合版本和权限的证据包":
+              - link "构造符合版本和权限的证据包":
+                - /url: "#learn/agent/c02"
+            - cell "权限和版本正确的证据包"
+          - row "13 把模型提议变成可授权可去重的写工具 授权、去重与效果核对":
+            - cell "13"
+            - cell "把模型提议变成可授权可去重的写工具":
+              - link "把模型提议变成可授权可去重的写工具":
+                - /url: "#learn/agent/c03"
+            - cell "授权、去重与效果核对"
+          - row "14 工具增长到上百个时，怎样发现、选择并安全接入 工具目录、MCP与第三方接入":
+            - cell "14"
+            - cell "工具增长到上百个时，怎样发现、选择并安全接入":
+              - link "工具增长到上百个时，怎样发现、选择并安全接入":
+                - /url: "#learn/agent/n04-tools-mcp"
+            - cell "工具目录、MCP与第三方接入"
+          - row "15 用持久状态保存动作事实 持久账本、恢复和并发事实":
+            - cell "15"
+            - cell "用持久状态保存动作事实":
+              - link "用持久状态保存动作事实":
+                - /url: "#learn/agent/e01"
+            - cell "持久账本、恢复和并发事实"
+          - row "16 用固定路径完成同一受控任务 连接组件的固定路径":
+            - cell "16"
+            - cell "用固定路径完成同一受控任务":
+              - link "用固定路径完成同一受控任务":
+                - /url: "#learn/agent/c01-fixed-workflow"
+            - cell "连接组件的固定路径"
+          - row "17 Agent 控制循环 设计一个可恢复 受控并能验收的运行时 依据观察推进的受控完整循环":
+            - cell "17"
+            - cell "Agent 控制循环 设计一个可恢复 受控并能验收的运行时":
+              - link "Agent 控制循环 设计一个可恢复 受控并能验收的运行时":
+                - /url: "#learn/agent/c01-control-loop"
+            - cell "依据观察推进的受控完整循环"
+          - row "18 让计划依据观察前进，而不是在反复规划中空转 ReAct、计划、重规划与反思":
+            - cell "18"
+            - cell "让计划依据观察前进，而不是在反复规划中空转":
+              - link "让计划依据观察前进，而不是在反复规划中空转":
+                - /url: "#learn/agent/n03-planning-reflection"
+            - cell "ReAct、计划、重规划与反思"
+          - row "19 从原始文档到可比较的自适应检索链 摄取、向量/索引、重排与Agentic RAG":
+            - cell "19"
+            - cell "从原始文档到可比较的自适应检索链":
+              - link "从原始文档到可比较的自适应检索链":
+                - /url: "#learn/agent/n05-retrieval-ingestion"
+            - cell "摄取、向量/索引、重排与Agentic RAG"
+          - row "20 把控制循环映射为可恢复的状态图 LangGraph状态、子图与流消费":
+            - cell "20"
+            - cell "把控制循环映射为可恢复的状态图":
+              - link "把控制循环映射为可恢复的状态图":
+                - /url: "#learn/agent/n06-graph-orchestration"
+            - cell "LangGraph状态、子图与流消费"
+          - row "21 让多个 Agent 协作而不稀释任务责任 协作模式、交接和A2A":
+            - cell "21"
+            - cell "让多个 Agent 协作而不稀释任务责任":
+              - link "让多个 Agent 协作而不稀释任务责任":
+                - /url: "#learn/agent/n07-multiagent-a2a"
+            - cell "协作模式、交接和A2A"
+          - row "22 判断版本改动是否改善任务结果 版本结果、轨迹与回归评测":
+            - cell "22"
+            - cell "判断版本改动是否改善任务结果":
+              - link "判断版本改动是否改善任务结果":
+                - /url: "#learn/agent/e02"
+            - cell "版本结果、轨迹与回归评测"
+          - row "23 用新场景、分层实验和独立移交检验工程能力 客服/研究迁移、跨语排错、技术移交":
+            - cell "23"
+            - cell "用新场景、分层实验和独立移交检验工程能力":
+              - link "用新场景、分层实验和独立移交检验工程能力":
+                - /url: "#learn/agent/n10-evaluation-projects"
+            - cell "客服/研究迁移、跨语排错、技术移交"
+          - row "24 依据问题和评价证据冻结 MVP 决定 依据问题和评价冻结MVP":
+            - cell "24"
+            - cell "依据问题和评价证据冻结 MVP 决定":
+              - link "依据问题和评价证据冻结 MVP 决定":
+                - /url: "#learn/agent/p01-mvp"
+            - cell "依据问题和评价冻结MVP"
+          - row "25 在数据返回和动作发送前强制执行权限 数据与动作的强制权限":
+            - cell "25"
+            - cell "在数据返回和动作发送前强制执行权限":
+              - link "在数据返回和动作发送前强制执行权限":
+                - /url: "#learn/agent/e03"
+            - cell "数据与动作的强制权限"
+          - row "26 把模型生成代码限制在可验证的执行边界内 生成代码的隔离与准入":
+            - cell "26"
+            - cell "把模型生成代码限制在可验证的执行边界内":
+              - link "把模型生成代码限制在可验证的执行边界内":
+                - /url: "#learn/agent/n08-sandbox-security"
+            - cell "生成代码的隔离与准入"
+          - row "27 发布回退时保住在途任务事实 发布、迁移和回退":
+            - cell "27"
+            - cell "发布回退时保住在途任务事实":
+              - link "发布回退时保住在途任务事实":
+                - /url: "#learn/agent/e04"
+            - cell "发布、迁移和回退"
+          - row "28 在质量护栏下比较性能与成本 质量约束下的性能与成本":
+            - cell "28"
+            - cell "在质量护栏下比较性能与成本":
+              - link "在质量护栏下比较性能与成本":
+                - /url: "#learn/agent/e05"
+            - cell "质量约束下的性能与成本"
+          - row "29 让长任务在故障、容量和成本约束下交付 长任务、补偿、熔断、内存与推理服务":
+            - cell "29"
+            - cell "让长任务在故障、容量和成本约束下交付":
+              - link "让长任务在故障、容量和成本约束下交付":
+                - /url: "#learn/agent/n09-runtime-delivery"
+            - cell "长任务、补偿、熔断、内存与推理服务"
+          - row "30 用独立作品证据判定交付并复验改进 真实作品、独立复验和迭代":
+            - cell "30"
+            - cell "用独立作品证据判定交付并复验改进":
+              - link "用独立作品证据判定交付并复验改进":
+                - /url: "#learn/agent/p02"
+            - cell "真实作品、独立复验和迭代"
+    - heading "从哪个起点进入实作" [level=2]
+    - paragraph:
+      - text: 先做第2篇
+      - link "基础预备的入口诊断":
+        - /url: "#learn/agent/01-foundation/s-36b33d013882"
+      - text: 。能解释文本与对象、追踪函数返回，并在独立目录运行程序、定位断言失败的读者，可跳过本基础预备正文，保留诊断记录后，仍按
+      - link "Python与模型基础":
+        - /url: "#learn/agent/n01-python-model-foundations"
+      - text: 对应能力自检并补缺，再进入问题发现；缺哪项就补哪项，再做相同诊断。专业章需要阅读Python、接口类型和状态迁移，预备课不替代完整的软件工程训练。
+    - paragraph:
+      - text: 贯穿项目在这些工程环节之间保留同一任务：读取固定仓库修订与已有失败报告，形成有据的缺陷说明，经维护者批准后创建唯一工单并核对结果。教学源
+      - code: refund(days)
+      - text: 返回
+      - code: days < 7
+      - text: ，报告
+      - code: test_refund_day_7
+      - text: 输入7、expected=True、actual=False，修订为
+      - code: repo@8e12
+      - text: 、报告为
+      - code: test-report-71
+      - text: 。这些构造事实支持“实现行为与断言不同”，真实业务规则仍需确认，任务不授权修改代码。
+    - paragraph:
+      - text: 先交三份初始材料：在
+      - link "问题发现":
+        - /url: "#learn/agent/p01-discovery"
+      - text: 保存问题与替代证据；在
+      - link "任务验收":
+        - /url: "#learn/agent/02-task-acceptance"
+      - text: 区分完整资料、缺证与未知效果的允许结局；在
+      - link "信任边界":
+        - /url: "#learn/agent/03-trust-boundary"
+      - text: 列出资源与禁止动作。没有真实用户记录时，产品价值保持待验证，教学夹具仍可用于学习工程机制。
+    - region "教材表格，可横向滚动":
+      - table:
+        - rowgroup:
+          - row "学习阶段 应交出的产物 进入下一阶段前要能回答的问题":
+            - columnheader "学习阶段"
+            - columnheader "应交出的产物"
+            - columnheader "进入下一阶段前要能回答的问题"
+        - rowgroup:
+          - row "起点与问题 基础诊断、问题档案、允许结果和风险边界 能否分清真实观察、构造练习与自己的解释":
+            - cell "起点与问题"
+            - cell "基础诊断、问题档案、允许结果和风险边界"
+            - cell "能否分清真实观察、构造练习与自己的解释"
+          - row "程序与模型边界 可判错的读取适配器、经结构和业务校验的候选 HTTP成功或合法JSON为什么仍可能没有合格结果":
+            - cell "程序与模型边界"
+            - cell "可判错的读取适配器、经结构和业务校验的候选"
+            - cell "HTTP成功或合法JSON为什么仍可能没有合格结果"
+          - row "选型与组件 最小方案决定、证据包、写工具合同和持久账本 谁能提议、谁准入，超时后为什么仍可能有工单":
+            - cell "选型与组件"
+            - cell "最小方案决定、证据包、写工具合同和持久账本"
+            - cell "谁能提议、谁准入，超时后为什么仍可能有工单"
+          - row "固定与动态流程 完整固定流程，再按需要采用动态控制循环 新观察为什么要求换路径，复杂度是否带来目标内收益":
+            - cell "固定与动态流程"
+            - cell "完整固定流程，再按需要采用动态控制循环"
+            - cell "新观察为什么要求换路径，复杂度是否带来目标内收益"
+          - row "评价与产品决定 同条件版本比较、MVP契约、安全与运维设计、任务账目 质量或用户负担的变化由什么证据支持":
+            - cell "评价与产品决定"
+            - cell "同条件版本比较、MVP契约、安全与运维设计、任务账目"
+            - cell "质量或用户负担的变化由什么证据支持"
+          - row "交付与迭代 可复现作品、独立判定、原问题复验和未知任务 新版本是否真的关闭了失败，结论能适用到哪里":
+            - cell "交付与迭代"
+            - cell "可复现作品、独立判定、原问题复验和未知任务"
+            - cell "新版本是否真的关闭了失败，结论能适用到哪里"
+    - paragraph: 练习：团队每次都读取同样两份材料，生成草稿，等待批准后创建工单，却把它称为“必须用动态Agent解决的任务”。失败时通过增加三个模型角色继续生成。给出当前足够方案，以及什么新证据才支持升级。
+    - paragraph: 参考分析：稳定材料与可枚举分支可以先用固定流程；若只需生成候选，一次模型调用也可能足够。批准和工单核对的责任应保留。升级证据应是下一步调查对象确实依赖新观察、事前规则难以覆盖，并在同任务、权限和预算下改善合格结果；多个角色仍不能解决缺业务权威或回执未知。没有这些证据，先定位候选、材料或工具边界的实际失败。
+    - paragraph:
+      - text: 继续到
+      - link "基础预备":
+        - /url: "#learn/agent/01-foundation"
+      - text: ，已有基础并留诊断证据者先按
+      - link "Python与模型基础":
+        - /url: "#learn/agent/n01-python-model-foundations"
+      - text: 自检并补缺，再进入
+      - link "问题发现":
+        - /url: "#learn/agent/p01-discovery"
+      - text: 。
+      - link "分章目录":
+        - /url: /api/content/reference/textbook-README.md?version=textbook-v12
+      - text: 提供概要与深读入口，完整阶段交付方法见
+      - link "实作路径":
+        - /url: /api/content/reference/textbook-v12-curriculum.md?version=textbook-v12
+      - text: 。
+    - heading "v12新增训练如何接到原实作" [level=2]
+    - paragraph:
+      - link "Python与模型基础":
+        - /url: "#learn/agent/n01-python-model-foundations"
+      - text: 补对象/并发/输出边界；
+      - link "记忆与提示":
+        - /url: "#learn/agent/n02-context-memory-prompt"
+      - text: 使跨轮数据有生命周期；
+      - link "规划与反思":
+        - /url: "#learn/agent/n03-planning-reflection"
+      - text: 、
+      - link "工具与MCP":
+        - /url: "#learn/agent/n04-tools-mcp"
+      - text: 、
+      - link "进阶检索":
+        - /url: "#learn/agent/n05-retrieval-ingestion"
+      - text: 建立可检验组件；
+      - link "图编排":
+        - /url: "#learn/agent/n06-graph-orchestration"
+      - text: 和
+      - link "协作":
+        - /url: "#learn/agent/n07-multiagent-a2a"
+      - text: 按问题选择组织方式；
+      - link "沙箱":
+        - /url: "#learn/agent/n08-sandbox-security"
+      - text: 与
+      - link "运行交付":
+        - /url: "#learn/agent/n09-runtime-delivery"
+      - text: 限制代码和长任务风险；
+      - link "跨场景实训":
+        - /url: "#learn/agent/n10-evaluation-projects"
+      - text: 要求把这些机制迁移到客服或研究任务，并交给独立者复现。
+    - paragraph: 每个新增单元给出机制、失败路径、练习及作品。原19篇专业正文完整保留，末尾新增当前导航；旧代码历史验证不能当本版新运行。新例区分标准库策略、真实离线框架和外部服务：策略模型不证明真实LLM、MCP/A2A互操作、系统沙箱或GPU性能。正文能够支持解释，仍需学员实际实现、未知任务评估、真人反馈与求职证据，才可进一步判断岗位能力。
+  - button "收藏当前阅读位置"
+  - heading "我的阅读笔记" [level=2]
+  - paragraph: 只保存在此浏览器，记录本篇疑问与实际尝试。
+  - generic: 本篇笔记
+  - textbox "本篇笔记"
+  - button "保存笔记"
+  - navigation "相邻篇章":
+    - link "返回课程":
+      - /url: "#learn"
+    - link "下一篇 → 基础预备":
+      - /url: "#learn/agent/01-foundation"
+      - text: 下一篇 →
+      - strong: 基础预备
+  - generic: 职造 · Agent 开发学习
+- status
+- generic: 问教材
+- textbox "问教材":
+  - /placeholder: 描述 Agent 开发、学习或项目中的问题
+- button "发送"
+- button "展开学习问答": ⌃
+- status

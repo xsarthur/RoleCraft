@@ -1,0 +1,87 @@
+{
+  "version": "textbook-v10-opening",
+  "assessedAtUtc": "2026-10-11T02:37:24.706771+00:00",
+  "standard": {
+    "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/product-gates.json",
+    "sha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06",
+    "bytes": 8080
+  },
+  "method": "测试岗位依原八门槛核当前产物证据存在与规则执行；未改ID/门槛或代专业、市场判断。没有继承旧 iteration pass。",
+  "gateResults": [
+    {
+      "id": "user_value",
+      "status": "insufficient",
+      "owner": "产品经理",
+      "currentEvidence": "当前开篇含需求判断与构造情境；没有真实用户验证结果或用户阅读认可。",
+      "gap": "缺目标用户证据及预先阈值的实际结果",
+      "nextAction": "用户研究员交真实访谈/观察和试用记录，由产品经理按既定指标整合",
+      "retestConditions": "提供真实原始记录、预定义指标及实际结果，测试岗位独立核证据与规则执行"
+    },
+    {
+      "id": "teaching_quality",
+      "status": "insufficient",
+      "owner": "课程架构师",
+      "currentEvidence": "本轮开篇与图独立AI审校 reviewed_with_limitations；19篇正文/39围栏和原12/24/48映射保全。",
+      "gap": "未在本轮重启19篇完整专业技术审计；真人行业专家、用户认可及真实学习效果未确认",
+      "nextAction": "课程架构师整合当前内容审校和历史有限示例证据，并取得真人专业复核；问题交教材作者返修",
+      "retestConditions": "完整范围与版本对应的专业复核及示例证据齐备，再按原门槛独立复核；不由迁移计数推导教学达成"
+    },
+    {
+      "id": "real_generation",
+      "status": "fail",
+      "owner": "软件工程师",
+      "currentEvidence": "本轮是独立图文编写，没有真实供应商调用或档案驱动教材生成。",
+      "gap": "正式学习系统的真实生成、来源/档案关联及失败恢复仍未交当前证据",
+      "nextAction": "原责任人接收AI生成工程师的真实调用与版本来源交付，需在用户恢复程序范围及真实调用授权后开展",
+      "retestConditions": "当前系统真实生成/来源/失败恢复证据及独立适用验收齐备"
+    },
+    {
+      "id": "comparative_advantage",
+      "status": "insufficient",
+      "owner": "产品经理",
+      "currentEvidence": "概念来源与结构图只支持教学解释，没有同条件行业比较。",
+      "gap": "缺基线版本、任务、样本、资源、预定义指标及实测和专业评审",
+      "nextAction": "竞品研究员交可比方案与研究证据，由产品经理整合比较计划与真实结果",
+      "retestConditions": "同条件真实比较与专业评审可追溯；测试岗位核条件、数据与判定规则"
+    },
+    {
+      "id": "learner_creation",
+      "status": "insufficient",
+      "owner": "课程架构师",
+      "currentEvidence": "基础诊断和阶段产物路径保留；本轮没有真实学习者作品或运行评价。",
+      "gap": "缺真实MVP、目标用户验证、未知任务及独立作品评审",
+      "nextAction": "实训评估员按既定量规收集并独立评价真实学习者作品，交课程架构师整合",
+      "retestConditions": "真实作品版本/运行/用户证据与独立评分齐备，不能用作者解法或模拟学习者替代"
+    },
+    {
+      "id": "reliable_delivery",
+      "status": "fail",
+      "owner": "软件工程师",
+      "currentEvidence": "程序保持暂停，本轮没有网站/服务接入、数据库或正式生产运行验收。",
+      "gap": "当前独立教材交付不实现正式学习系统生产交付；旧本地研发验证不代替当前生产范围",
+      "nextAction": "用户恢复应用范围后，原责任人整合后端数据/AI生成等岗位真实系统交付",
+      "retestConditions": "明确当前生产范围，取得账户隔离、持久化、恢复、版本与独立运行验收证据"
+    },
+    {
+      "id": "operating_economics",
+      "status": "insufficient",
+      "owner": "产品经理",
+      "currentEvidence": "本轮只做静态图文交付与离线图示检查，没有真实调用/试用账目。",
+      "gap": "缺真实成本、耗时、质量和维护预算结果",
+      "nextAction": "运营分析员取得真实调用与交付记录，按预定预算分析并交产品经理整合",
+      "retestConditions": "真实账目、质量/耗时样本、预算及维护责任可追溯"
+    },
+    {
+      "id": "iteration_trace",
+      "status": "pass",
+      "owner": "项目经理",
+      "currentEvidence": "本轮2个实际布局反例留原图和3次返修证据，原作者负责修复，QA逐点复验关闭；规格/作者/审校/QA分别记录并绑定当前版本。",
+      "gap": "此通过仅限v10开篇文稿改进与复验轨迹；不授其余正式系统门槛",
+      "nextAction": "PM汇总本轮交付和完整目标缺口；以后每个新产物继续做当版复盘",
+      "retestConditions": "当前两项图反例均 closed_original_visual_recheck，当前绑定一致；后续变更重新核受影响处"
+    }
+  ],
+  "requiredFailureRuleApplied": true,
+  "fullProductStatus": "not_met",
+  "scope": "Current v10 opening manuscript and diagram delivery; complete formal learning-product criteria remain unchanged."
+}

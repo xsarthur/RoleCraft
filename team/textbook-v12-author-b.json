@@ -1,0 +1,312 @@
+{
+  "version": "v12-author-b-r3-assembly",
+  "role": "教材研发员B",
+  "date": "2026-10-11",
+  "status": "frozen_for_independent_review",
+  "files": {
+    "sites/rolecraft/textbooks/v12/00-learning-route.md": "452129591648ca6c146945fae000e3e905e87c2794315109c727592a7b16dced",
+    "sites/rolecraft/textbooks/v12/01-foundation.md": "3ca5c2391ccfba389cb16d7eac85034bcb50d0768f0e9e7374c92917044232d7",
+    "sites/rolecraft/textbooks/v12/02-task-acceptance.md": "2a15989e762cf659822a9ec3d0b37d881fb28ddcd2d8f1503957ad73d8343ec1",
+    "sites/rolecraft/textbooks/v12/03-trust-boundary.md": "8ff1050570a84ade4751619e28bb6e02bdd06d2b914d74e5192ea446b045272e",
+    "sites/rolecraft/textbooks/v12/README.md": "f6e8b37b318dd2a662c064f6681509fdf7873cbd7687a7b91a6f7ed3bf2683a6",
+    "sites/rolecraft/textbooks/v12/agent-engineering-textbook.md": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+    "sites/rolecraft/textbooks/v12/assembly-manifest.json": "16907987dcebb2195f9bae4df3f0648d566f597f49722e681fb589b87e32305e",
+    "sites/rolecraft/textbooks/v12/assets/agent-engineering-landscape-v12.png": "198bff0d7cbd597c3e284755aeb79d8867214d6114151fd2f504e6adbe8d523d",
+    "sites/rolecraft/textbooks/v12/assets/agent-engineering-landscape-v12.svg": "fad2379ad07797ad046ed507b63f4efc9bb2db24d1d1a6347ca1f062a5a6e718",
+    "sites/rolecraft/textbooks/v12/assets/agent-runtime-loop.dot": "7fcde3319a3f611f3909472530a29e73480ab5a8049b65313be53278e312ee5b",
+    "sites/rolecraft/textbooks/v12/assets/agent-runtime-loop.png": "9497f77fa43566eb621549175ee55870a02b50e8ebd3144405e820d0ac2c7106",
+    "sites/rolecraft/textbooks/v12/assets/agent-runtime-loop.svg": "c1929a8021f331df4452e949272028fcde05c037b996453e883d3f84a83e5a15",
+    "sites/rolecraft/textbooks/v12/build_textbook.py": "4f9982abfb89c09654f3aa76e43e9d9314bae05eb200f7b8b1915005fa75be9e",
+    "sites/rolecraft/textbooks/v12/c01-control-loop.md": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+    "sites/rolecraft/textbooks/v12/c01-control-primer.md": "ef50f49868351894e0b928eced4cfb2fdabb9cb28ca03eb9043b9cf42d5689b9",
+    "sites/rolecraft/textbooks/v12/c01-fixed-workflow.md": "5dd87adc743723c842ed22f80065fda6408d28aee369adf8dfe1206ac81c2fcf",
+    "sites/rolecraft/textbooks/v12/c01-selection.md": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+    "sites/rolecraft/textbooks/v12/c02.md": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+    "sites/rolecraft/textbooks/v12/c03.md": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+    "sites/rolecraft/textbooks/v12/e01.md": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+    "sites/rolecraft/textbooks/v12/e02.md": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+    "sites/rolecraft/textbooks/v12/e03.md": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+    "sites/rolecraft/textbooks/v12/e04.md": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8",
+    "sites/rolecraft/textbooks/v12/e05.md": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6",
+    "sites/rolecraft/textbooks/v12/examples/README.md": "855bfe68fe4873f4fdeb7c3f71527375a05e316d37945f1f36f7b08488b94b40",
+    "sites/rolecraft/textbooks/v12/examples/n06-graph-contracts.py": "d2ce027e04056fc598bf70f8dc7f3ecae5926f3848723ca85f167e959b0d9dc8",
+    "sites/rolecraft/textbooks/v12/examples/n06-graph.py": "51ed00eea1cb36983e1eac38efe6cb122fd80357688152002f383e23607bb866",
+    "sites/rolecraft/textbooks/v12/examples/n07-delegation.py": "c374265dd30165b99bee6512ce06c646ba7f4443e595ff358a7e4c1ccce84840",
+    "sites/rolecraft/textbooks/v12/examples/n08-sandbox-policy.py": "6157b8fb93f56e72db7614913baf379c2446a0860f9d3c97ff0381e3771fb7c3",
+    "sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py": "9d90ef1295ed3543b909f935ffeb60f17b9681396a0779e20ca8dd7a4b75980d",
+    "sites/rolecraft/textbooks/v12/examples/n09-runtime-recovery.py": "e984d32ffa7f6b02d40ee6be2ce633dd8692d688a11dbdf037275d2607574f32",
+    "sites/rolecraft/textbooks/v12/examples/n10-evaluation-matrix.py": "d30b8b8a3297203fa0be35a603bb8e19eea3332e79f73da2487e1cb55e09024b",
+    "sites/rolecraft/textbooks/v12/f01.md": "5fcb2bd1db423ca8e149b0803bafedeaf0e77ca2331312ff32f63a2087ba9d61",
+    "sites/rolecraft/textbooks/v12/f02.md": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8",
+    "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+    "sites/rolecraft/textbooks/v12/n07-multiagent-a2a.md": "24268cff6bfb435713458912750a5a958dd00d0aa935ef71b139e74c6dd23fb2",
+    "sites/rolecraft/textbooks/v12/n08-sandbox-security.md": "16b1fe631c244ec394965f9443bc680380997cf4427a7555184c26cf3ee064f2",
+    "sites/rolecraft/textbooks/v12/n09-runtime-delivery.md": "b621b838657aaa9915506a5bee6e25f7733b41085b08c50143e5965722157714",
+    "sites/rolecraft/textbooks/v12/n10-evaluation-projects.md": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+    "sites/rolecraft/textbooks/v12/p01-discovery.md": "2d0340f4e6e05129f423977a272b515c56bd37295a6b00f392f1d56fca25392e",
+    "sites/rolecraft/textbooks/v12/p01-mvp.md": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9",
+    "sites/rolecraft/textbooks/v12/p02.md": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8"
+  },
+  "authorExecution": {
+    "python": "3.14.5",
+    "results": [
+      {
+        "file": "sites/rolecraft/textbooks/v12/examples/n06-graph-contracts.py",
+        "returncode": 0,
+        "stdout": "n06 contracts PASS: preview, duplicate, gap, replay, final\n",
+        "stderr": ""
+      },
+      {
+        "file": "sites/rolecraft/textbooks/v12/examples/n06-graph.py",
+        "returncode": 0,
+        "stdout": "allow approved_candidate_only\ndeny stopped_without_write\nstale stopped_without_write\nn06 PASS: join, subgraph, interrupt/resume, deny, stale digest, conflict\n",
+        "stderr": ""
+      },
+      {
+        "file": "sites/rolecraft/textbooks/v12/examples/n07-delegation.py",
+        "returncode": 0,
+        "stdout": "n07 PASS: duplicate, conflict, terminal, identity, budget, partial outcome\n",
+        "stderr": ""
+      },
+      {
+        "file": "sites/rolecraft/textbooks/v12/examples/n08-sandbox-policy.py",
+        "returncode": 0,
+        "stdout": "n08 PASS: admission refusals, failed execution, output bound, untrusted export\n",
+        "stderr": ""
+      },
+      {
+        "file": "sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py",
+        "returncode": 0,
+        "stdout": "{\"mode\": \"retained\", \"samples\": [{\"batch\": 0, \"retained_items\": 32, \"traced_current\": 133152, \"traced_peak\": 133238}, {\"batch\": 1, \"retained_items\": 64, \"traced_current\": 266584, \"traced_peak\": 266886}, {\"batch\": 2, \"retained_items\": 96, \"traced_current\": 400080, \"traced_peak\": 400334}, {\"batch\": 3, \"retained_items\": 128, \"traced_current\": 533384, \"traced_peak\": 533638}], \"top_locations\": [\"/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py:14: size=519 KiB, count=256, average=2076 B\", \"/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py:16: size=1024 B, count=1, average=1024 B\"]}\n{\"mode\": \"bounded\", \"samples\": [{\"batch\": 0, \"retained_items\": 4, \"traced_current\": 17372, \"traced_peak\": 21613}, {\"batch\": 1, \"retained_items\": 4, \"traced_current\": 18180, \"traced_peak\": 22541}, {\"batch\": 2, \"retained_items\": 4, \"traced_current\": 18428, \"traced_peak\": 22789}, {\"batch\": 3, \"retained_items\": 4, \"traced_current\": 18676, \"traced_peak\": 23037}], \"top_locations\": [\"/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py:14: size=16.2 KiB, count=8, average=2076 B\", \"/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py:20: size=768 B, count=9, average=85 B\"]}\n{\"mode\": \"temporary\", \"samples\": [{\"batch\": 0, \"retained_items\": 0, \"traced_current\": 0, \"traced_peak\": 8394}, {\"batch\": 1, \"retained_items\": 0, \"traced_current\": 248, \"traced_peak\": 8762}, {\"batch\": 2, \"retained_items\": 0, \"traced_current\": 464, \"traced_peak\": 8978}, {\"batch\": 3, \"retained_items\": 0, \"traced_current\": 712, \"traced_peak\": 9226}], \"top_locations\": [\"/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py:20: size=768 B, count=9, average=85 B\", \"/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py:19: size=256 B, count=7, average=37 B\"]}\nn09 memory PASS: finite retention, bounded-cache and temporary-allocation evidence\n",
+        "stderr": ""
+      },
+      {
+        "file": "sites/rolecraft/textbooks/v12/examples/n09-runtime-recovery.py",
+        "returncode": 0,
+        "stdout": "n09 PASS: breaker probe, reopen, close; compensation unknown/reconcile; cancel fence\n",
+        "stderr": ""
+      },
+      {
+        "file": "sites/rolecraft/textbooks/v12/examples/n10-evaluation-matrix.py",
+        "returncode": 0,
+        "stdout": "n10 PASS: feasible matrix, language-layer divergence, missing handover items\n",
+        "stderr": ""
+      }
+    ]
+  },
+  "frameworkVersions": {
+    "langgraph": "1.2.4",
+    "langgraph-checkpoint": "4.1.1",
+    "langchain-core": "1.4.0"
+  },
+  "notValidated": [
+    "真实LLM/MCP/A2A互操作",
+    "OS沙箱及隔离",
+    "GPU推理性能",
+    "真实学习者与移交接收者",
+    "旧章代码重跑",
+    "生产部署"
+  ],
+  "reviewFixes": [
+    "CB-01 JSON规范事件去重",
+    "CB-02 上下文共享判定",
+    "CB-03 字节/额度与CPU契约",
+    "CB-04 重派worker epoch",
+    "CB-05 熔断generation令牌",
+    "入口01诊断与n01能力自检衔接"
+  ],
+  "ownership": "n06–n10与其示例，旧20迁移/导航/图/组装；A五篇只读组装",
+  "didNotReadHoldout": true,
+  "diagram": "SVG由build_textbook.py生成，bundled sharp离线生成PNG，作者目视，无浏览器CSS验证",
+  "history": [
+    {
+      "version": "v12-author-b-r2",
+      "role": "教材研发员B",
+      "date": "2026-10-11",
+      "status": "frozen_for_independent_review",
+      "files": {
+        "sites/rolecraft/textbooks/v12/00-learning-route.md": "452129591648ca6c146945fae000e3e905e87c2794315109c727592a7b16dced",
+        "sites/rolecraft/textbooks/v12/01-foundation.md": "3ca5c2391ccfba389cb16d7eac85034bcb50d0768f0e9e7374c92917044232d7",
+        "sites/rolecraft/textbooks/v12/02-task-acceptance.md": "2a15989e762cf659822a9ec3d0b37d881fb28ddcd2d8f1503957ad73d8343ec1",
+        "sites/rolecraft/textbooks/v12/03-trust-boundary.md": "8ff1050570a84ade4751619e28bb6e02bdd06d2b914d74e5192ea446b045272e",
+        "sites/rolecraft/textbooks/v12/README.md": "f6e8b37b318dd2a662c064f6681509fdf7873cbd7687a7b91a6f7ed3bf2683a6",
+        "sites/rolecraft/textbooks/v12/agent-engineering-textbook.md": "b21e855fa5b5c51e39e8025b4f179c1dc3fbd1d69f08acc2a9439c08b55be545",
+        "sites/rolecraft/textbooks/v12/assembly-manifest.json": "887c17c8948c7d05bdc8e9d1de56db436a64c1819cc96899e7ba54fae1c4c490",
+        "sites/rolecraft/textbooks/v12/assets/agent-engineering-landscape-v12.png": "198bff0d7cbd597c3e284755aeb79d8867214d6114151fd2f504e6adbe8d523d",
+        "sites/rolecraft/textbooks/v12/assets/agent-engineering-landscape-v12.svg": "fad2379ad07797ad046ed507b63f4efc9bb2db24d1d1a6347ca1f062a5a6e718",
+        "sites/rolecraft/textbooks/v12/assets/agent-runtime-loop.dot": "7fcde3319a3f611f3909472530a29e73480ab5a8049b65313be53278e312ee5b",
+        "sites/rolecraft/textbooks/v12/assets/agent-runtime-loop.png": "9497f77fa43566eb621549175ee55870a02b50e8ebd3144405e820d0ac2c7106",
+        "sites/rolecraft/textbooks/v12/assets/agent-runtime-loop.svg": "c1929a8021f331df4452e949272028fcde05c037b996453e883d3f84a83e5a15",
+        "sites/rolecraft/textbooks/v12/build_textbook.py": "4f9982abfb89c09654f3aa76e43e9d9314bae05eb200f7b8b1915005fa75be9e",
+        "sites/rolecraft/textbooks/v12/c01-control-loop.md": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+        "sites/rolecraft/textbooks/v12/c01-control-primer.md": "ef50f49868351894e0b928eced4cfb2fdabb9cb28ca03eb9043b9cf42d5689b9",
+        "sites/rolecraft/textbooks/v12/c01-fixed-workflow.md": "5dd87adc743723c842ed22f80065fda6408d28aee369adf8dfe1206ac81c2fcf",
+        "sites/rolecraft/textbooks/v12/c01-selection.md": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "sites/rolecraft/textbooks/v12/c02.md": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+        "sites/rolecraft/textbooks/v12/c03.md": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+        "sites/rolecraft/textbooks/v12/e01.md": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+        "sites/rolecraft/textbooks/v12/e02.md": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+        "sites/rolecraft/textbooks/v12/e03.md": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+        "sites/rolecraft/textbooks/v12/e04.md": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8",
+        "sites/rolecraft/textbooks/v12/e05.md": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6",
+        "sites/rolecraft/textbooks/v12/examples/README.md": "855bfe68fe4873f4fdeb7c3f71527375a05e316d37945f1f36f7b08488b94b40",
+        "sites/rolecraft/textbooks/v12/examples/n06-graph-contracts.py": "d2ce027e04056fc598bf70f8dc7f3ecae5926f3848723ca85f167e959b0d9dc8",
+        "sites/rolecraft/textbooks/v12/examples/n06-graph.py": "51ed00eea1cb36983e1eac38efe6cb122fd80357688152002f383e23607bb866",
+        "sites/rolecraft/textbooks/v12/examples/n07-delegation.py": "c374265dd30165b99bee6512ce06c646ba7f4443e595ff358a7e4c1ccce84840",
+        "sites/rolecraft/textbooks/v12/examples/n08-sandbox-policy.py": "6157b8fb93f56e72db7614913baf379c2446a0860f9d3c97ff0381e3771fb7c3",
+        "sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py": "9d90ef1295ed3543b909f935ffeb60f17b9681396a0779e20ca8dd7a4b75980d",
+        "sites/rolecraft/textbooks/v12/examples/n09-runtime-recovery.py": "e984d32ffa7f6b02d40ee6be2ce633dd8692d688a11dbdf037275d2607574f32",
+        "sites/rolecraft/textbooks/v12/examples/n10-evaluation-matrix.py": "d30b8b8a3297203fa0be35a603bb8e19eea3332e79f73da2487e1cb55e09024b",
+        "sites/rolecraft/textbooks/v12/f01.md": "5fcb2bd1db423ca8e149b0803bafedeaf0e77ca2331312ff32f63a2087ba9d61",
+        "sites/rolecraft/textbooks/v12/f02.md": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8",
+        "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+        "sites/rolecraft/textbooks/v12/n07-multiagent-a2a.md": "24268cff6bfb435713458912750a5a958dd00d0aa935ef71b139e74c6dd23fb2",
+        "sites/rolecraft/textbooks/v12/n08-sandbox-security.md": "16b1fe631c244ec394965f9443bc680380997cf4427a7555184c26cf3ee064f2",
+        "sites/rolecraft/textbooks/v12/n09-runtime-delivery.md": "b621b838657aaa9915506a5bee6e25f7733b41085b08c50143e5965722157714",
+        "sites/rolecraft/textbooks/v12/n10-evaluation-projects.md": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+        "sites/rolecraft/textbooks/v12/p01-discovery.md": "2d0340f4e6e05129f423977a272b515c56bd37295a6b00f392f1d56fca25392e",
+        "sites/rolecraft/textbooks/v12/p01-mvp.md": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9",
+        "sites/rolecraft/textbooks/v12/p02.md": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8"
+      },
+      "authorExecution": {
+        "python": "3.14.5",
+        "results": [
+          {
+            "file": "sites/rolecraft/textbooks/v12/examples/n06-graph-contracts.py",
+            "returncode": 0,
+            "stdout": "n06 contracts PASS: preview, duplicate, gap, replay, final\n",
+            "stderr": ""
+          },
+          {
+            "file": "sites/rolecraft/textbooks/v12/examples/n06-graph.py",
+            "returncode": 0,
+            "stdout": "allow approved_candidate_only\ndeny stopped_without_write\nstale stopped_without_write\nn06 PASS: join, subgraph, interrupt/resume, deny, stale digest, conflict\n",
+            "stderr": ""
+          },
+          {
+            "file": "sites/rolecraft/textbooks/v12/examples/n07-delegation.py",
+            "returncode": 0,
+            "stdout": "n07 PASS: duplicate, conflict, terminal, identity, budget, partial outcome\n",
+            "stderr": ""
+          },
+          {
+            "file": "sites/rolecraft/textbooks/v12/examples/n08-sandbox-policy.py",
+            "returncode": 0,
+            "stdout": "n08 PASS: admission refusals, failed execution, output bound, untrusted export\n",
+            "stderr": ""
+          },
+          {
+            "file": "sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py",
+            "returncode": 0,
+            "stdout": "{\"mode\": \"retained\", \"samples\": [{\"batch\": 0, \"retained_items\": 32, \"traced_current\": 133152, \"traced_peak\": 133238}, {\"batch\": 1, \"retained_items\": 64, \"traced_current\": 266584, \"traced_peak\": 266886}, {\"batch\": 2, \"retained_items\": 96, \"traced_current\": 400080, \"traced_peak\": 400334}, {\"batch\": 3, \"retained_items\": 128, \"traced_current\": 533384, \"traced_peak\": 533638}], \"top_locations\": [\"/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py:14: size=519 KiB, count=256, average=2076 B\", \"/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py:16: size=1024 B, count=1, average=1024 B\"]}\n{\"mode\": \"bounded\", \"samples\": [{\"batch\": 0, \"retained_items\": 4, \"traced_current\": 17372, \"traced_peak\": 21613}, {\"batch\": 1, \"retained_items\": 4, \"traced_current\": 18180, \"traced_peak\": 22541}, {\"batch\": 2, \"retained_items\": 4, \"traced_current\": 18428, \"traced_peak\": 22789}, {\"batch\": 3, \"retained_items\": 4, \"traced_current\": 18676, \"traced_peak\": 23037}], \"top_locations\": [\"/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py:14: size=16.2 KiB, count=8, average=2076 B\", \"/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py:20: size=768 B, count=9, average=85 B\"]}\n{\"mode\": \"temporary\", \"samples\": [{\"batch\": 0, \"retained_items\": 0, \"traced_current\": 0, \"traced_peak\": 8394}, {\"batch\": 1, \"retained_items\": 0, \"traced_current\": 248, \"traced_peak\": 8762}, {\"batch\": 2, \"retained_items\": 0, \"traced_current\": 464, \"traced_peak\": 8978}, {\"batch\": 3, \"retained_items\": 0, \"traced_current\": 712, \"traced_peak\": 9226}], \"top_locations\": [\"/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py:20: size=768 B, count=9, average=85 B\", \"/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py:19: size=256 B, count=7, average=37 B\"]}\nn09 memory PASS: finite retention, bounded-cache and temporary-allocation evidence\n",
+            "stderr": ""
+          },
+          {
+            "file": "sites/rolecraft/textbooks/v12/examples/n09-runtime-recovery.py",
+            "returncode": 0,
+            "stdout": "n09 PASS: breaker probe, reopen, close; compensation unknown/reconcile; cancel fence\n",
+            "stderr": ""
+          },
+          {
+            "file": "sites/rolecraft/textbooks/v12/examples/n10-evaluation-matrix.py",
+            "returncode": 0,
+            "stdout": "n10 PASS: feasible matrix, language-layer divergence, missing handover items\n",
+            "stderr": ""
+          }
+        ]
+      },
+      "frameworkVersions": {
+        "langgraph": "1.2.4",
+        "langgraph-checkpoint": "4.1.1",
+        "langchain-core": "1.4.0"
+      },
+      "notValidated": [
+        "真实LLM/MCP/A2A互操作",
+        "OS沙箱及隔离",
+        "GPU推理性能",
+        "真实学习者与移交接收者",
+        "旧章代码重跑",
+        "生产部署"
+      ],
+      "reviewFixes": [
+        "CB-01 JSON规范事件去重",
+        "CB-02 上下文共享判定",
+        "CB-03 字节/额度与CPU契约",
+        "CB-04 重派worker epoch",
+        "CB-05 熔断generation令牌",
+        "入口01诊断与n01能力自检衔接"
+      ],
+      "ownership": "n06–n10与其示例，旧20迁移/导航/图/组装；A五篇只读组装",
+      "didNotReadHoldout": true,
+      "diagram": "SVG由build_textbook.py生成，bundled sharp离线生成PNG，作者目视，无浏览器CSS验证"
+    }
+  ],
+  "assemblySourceAuthorA": {
+    "version": "textbook-v12-author-a-r2",
+    "files": [
+      {
+        "path": "sites/rolecraft/textbooks/v12/n01-python-model-foundations.md",
+        "sha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62",
+        "bytes": 16052
+      },
+      {
+        "path": "sites/rolecraft/textbooks/v12/n02-context-memory-prompt.md",
+        "sha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+        "bytes": 15254
+      },
+      {
+        "path": "sites/rolecraft/textbooks/v12/n03-planning-reflection.md",
+        "sha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+        "bytes": 13362
+      },
+      {
+        "path": "sites/rolecraft/textbooks/v12/n04-tools-mcp.md",
+        "sha256": "b3432424e61870ac250db2068423ed33e827c97cfc2f1440f3ae2987bfd4f39a",
+        "bytes": 15451
+      },
+      {
+        "path": "sites/rolecraft/textbooks/v12/n05-retrieval-ingestion.md",
+        "sha256": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16",
+        "bytes": 19699
+      },
+      {
+        "path": "sites/rolecraft/textbooks/v12/examples/n01-runtime-boundaries.py",
+        "sha256": "a156424a76bddc73cb831bda826ea676facce8191311bc0ca15f372f4deab75a",
+        "bytes": 8072
+      },
+      {
+        "path": "sites/rolecraft/textbooks/v12/examples/n02-memory-routing.py",
+        "sha256": "400452b186375011da69c0c58b3917bb0cdd9b54e2e14e7b0f2d09ed5b584249",
+        "bytes": 6275
+      },
+      {
+        "path": "sites/rolecraft/textbooks/v12/examples/n03-plan-execution.py",
+        "sha256": "211eabbd5fc5da020e8909742c0f7bf174e54478b07ea792f1daea0e1866db80",
+        "bytes": 6903
+      },
+      {
+        "path": "sites/rolecraft/textbooks/v12/examples/n04-tool-catalog.py",
+        "sha256": "194e7d3c033357e781069973090605f21831429ee1419d4ba40d0508f66bf2c3",
+        "bytes": 4340
+      },
+      {
+        "path": "sites/rolecraft/textbooks/v12/examples/n05-index-lifecycle.py",
+        "sha256": "a1364480c2d34b97208d75bd0358faeebf75d80f6f1f101faf0469654c44906b",
+        "bytes": 7482
+      }
+    ]
+  },
+  "assemblySelfCheck": {
+    "changedAuthorAChapters": [
+      "n02-context-memory-prompt.md",
+      "n03-planning-reflection.md",
+      "n05-retrieval-ingestion.md"
+    ],
+    "A_r2_binding_matches": true,
+    "unitCount": 30,
+    "missingLocalPaths": [],
+    "CB-NAV-02_preserved": true,
+    "old19SourceSubstringPreserved": 19,
+    "behaviorRerun": false
+  }
+}

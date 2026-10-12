@@ -1,0 +1,42 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4486/#review".
+1 AXWebArea 职造 · Agent 学习工作台, URL: 127.0.0.1:4486/#review
+	2 link Description: 跳到主要内容, Value: 127.0.0.1:4486/#main-content
+	3 container primary-sidebar
+		4 link Description: 职 职造 Agent 开发学习, Value: 127.0.0.1:4486/#home
+		5 container 主导航
+			6 button 首页
+			7 button 课程学习
+			8 button 题库浏览
+			9 button 学习记录
+			10 button 个人设置
+		11 text 当前学习方向
+		12 text Agent 开发者
+		13 link Description: 本机学习者 记录保存在此浏览器, Value: 127.0.0.1:4486/#settings
+	14 container main-content
+		15 container
+			34 text 复习
+			35 text 本人未掌握题，逐题回想与核对
+		18 container app
+			36 heading 复习 · 1 / 1, Value: 1
+				37 text 复习 · 1 / 1
+			38 text 先回想，再看教材参考；是否掌握由你自记
+			39 heading ReAct 如何组织推理、行动与观察？它与一次性生成计划有什么不同？, Value: 2
+				40 text ReAct 如何组织推理、行动与观察？它与一次性生成计划有什么不同？
+			41 button (collapsed) 查看教材参考分析, Secondary Actions: Expand
+				42 text 查看教材参考分析
+			43 checkbox 仍未掌握，下一题, Value: 0
+			44 checkbox 已掌握（自评），下一题, Value: 0
+			45 link Description: 学习：1 三种策略改变的是控制对象, Value: 127.0.0.1:4486/#learn/agent/n03-planning-reflection/s-da63f3dcff17
+			46 container
+				47 checkbox 上一题, Value: 0
+				48 checkbox 下一题, Value: 0
+			49 link Description: 返回学习记录, Value: 127.0.0.1:4486/#records
+		32 container
+			33 text 职造 · Agent 开发学习 教材 v12 · 本浏览器保存
+	50 container lw-find-form
+		51 text 查教材
+		52 text entry area (settable) 查教材, ID: lw-query
+		53 button 查找
+		54 button (collapsed) Description: 展开检索结果, Secondary Actions: Expand
+
+The focused UI element is 36 heading 复习 · 1 / 1, Value: 1

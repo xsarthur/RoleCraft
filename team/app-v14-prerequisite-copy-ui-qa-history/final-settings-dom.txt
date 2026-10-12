@@ -1,0 +1,62 @@
+- link "跳到主要内容":
+  - /url: "#main-content"
+- complementary:
+  - link "职 职造 Agent 开发学习":
+    - /url: "#home"
+    - generic: 职
+    - strong:
+      - text: 职造
+      - generic: Agent 开发学习
+  - navigation "主导航":
+    - button "首页":
+      - generic: ⌂
+      - text: 首页
+    - button "课程学习":
+      - generic: ▤
+      - text: 课程学习
+    - button "题库浏览":
+      - generic: ◇
+      - text: 题库浏览
+    - button "学习记录":
+      - generic: ↻
+      - text: 学习记录
+    - button "个人设置":
+      - generic: ⚙
+      - text: 个人设置
+  - generic: 当前学习方向
+  - strong: Agent 开发者
+  - link "本机学习者 记录保存在此浏览器":
+    - /url: "#settings"
+    - generic: 本
+    - text: 本机学习者
+    - generic: 记录保存在此浏览器
+- main:
+  - strong: 个人设置
+  - paragraph: 阅读偏好与本浏览器记录
+  - heading "个人设置" [active] [level=1]
+  - paragraph: 调整阅读偏好，管理本浏览器的记录
+  - heading "学习偏好" [level=2]
+  - generic: 我的起点
+  - combobox "我的起点":
+    - option "尚未选择" [selected]
+    - option "零基础"
+    - option "已有编程基础"
+    - option "已有 Agent 项目经验"
+  - generic: 正文字号
+  - combobox "正文字号":
+    - option "16px · 标准" [selected]
+    - option "18px"
+    - option "20px"
+  - paragraph: 起点用于本人偏好和查教材上下文，不是 AI 能力诊断。
+  - heading "记录与保存" [level=2]
+  - paragraph: 本机学习者 · 仅当前浏览器，未同步账户。
+  - button "导出当前与历史记录"
+  - paragraph: 没有接入短信、微信或跨设备同步，不需登录即可阅读、标记和保存。
+  - heading "教材说明" [level=2]
+  - paragraph: 当前教材 v12，30 篇；题库使用100固定题与14市场补充题的真实题面及教材摘录。
+  - generic "查看来源与能力范围"
+  - generic "历史资料与研发工具"
+  - text: 职造 · Agent 开发学习
+  - generic: 教材 v12 · 本浏览器保存
+- status
+- status

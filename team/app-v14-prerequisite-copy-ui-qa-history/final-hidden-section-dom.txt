@@ -1,0 +1,252 @@
+- link "跳到主要内容":
+  - /url: "#main-content"
+- complementary:
+  - link "职 职造 Agent 开发学习":
+    - /url: "#home"
+    - generic: 职
+    - strong:
+      - text: 职造
+      - generic: Agent 开发学习
+  - navigation "主导航":
+    - button "首页":
+      - generic: ⌂
+      - text: 首页
+    - button "课程学习":
+      - generic: ▤
+      - text: 课程学习
+    - button "题库浏览":
+      - generic: ◇
+      - text: 题库浏览
+    - button "学习记录":
+      - generic: ↻
+      - text: 学习记录
+    - button "个人设置":
+      - generic: ⚙
+      - text: 个人设置
+  - generic: 当前学习方向
+  - strong: Agent 开发者
+  - link "本机学习者 记录保存在此浏览器":
+    - /url: "#settings"
+    - generic: 本
+    - text: 本机学习者
+    - generic: 记录保存在此浏览器
+- main:
+  - strong: 课程学习
+  - paragraph: 读懂机制，再回到自己的问题
+  - link "← 返回课程":
+    - /url: "#learn"
+  - generic: 外部API
+  - paragraph: 此学习衔接区块已从阅读页隐藏
+  - link "打开本篇正文":
+    - /url: "#learn/agent/f01"
+  - link "返回课程":
+    - /url: "#learn"
+  - complementary "需掌握的前置":
+    - heading "需掌握的前置" [level=2]
+    - list:
+      - link "基础预备":
+        - /url: "#learn/agent/01-foundation"
+      - link "任务验收":
+        - /url: "#learn/agent/02-task-acceptance"
+      - link "信任边界":
+        - /url: "#learn/agent/03-trust-boundary"
+  - generic "本篇小节"
+  - article "外部 API 请求的可判错边界":
+    - heading "外部 API 请求的可判错边界" [level=1]
+    - paragraph:
+      - text: 把 HTTP 接口接进 Agent 前，应先建立一个确定性边界：输入符合契约且当前身份有权访问，才发请求；收到完整响应且对象、版本、内容一致，才产出可引用的结果；其余分支返回具体错误或未知状态。模型不能修补这个边界的事实缺口。这里选择一个只读接口实现它：读取
+      - code: repo@8e12
+      - text: 下的文件，为已有失败报告
+      - code: test-report-71
+      - text: 提供证据。
+    - paragraph:
+      - text: 先完成
+      - link "基础诊断":
+        - /url: "#learn/agent/01-foundation"
+      - text: 、
+      - link "任务验收":
+        - /url: "#learn/agent/02-task-acceptance"
+      - text: 和
+      - link "信任边界":
+        - /url: "#learn/agent/03-trust-boundary"
+      - text: 。这里假定读取服务提供固定修订及有界响应，可信身份由宿主确定。接口与夹具是教学设计，标准库示例用于检查边界，不包含生产认证、服务端ACL或整体Agent。
+    - heading "成功需要跨过四道边界" [level=2]
+    - paragraph:
+      - code: "{\"path\": [\"src/refund.py\"]}"
+      - text: 是合法 JSON，但不是本接口合法输入。
+      - code: str(path)
+      - text: 会把类型错误转为另一个资源名，随后得到“文件不存在”，把错误归因从调用者参数移到仓库。先检查类型，再检查范围；不要用自动转换掩盖输入错误。空字符串、缺字段和未知字段也分别处理，防止调用者悄悄塞入
+      - code: tenant
+      - text: 或任意地址。
+    - paragraph:
+      - text: 合法路径仍不代表授权。当前身份的租户、可读仓库和可读路径由运行时注入，模型只提交资源选择。本文用精确白名单代替通用路径规范化，因此不需要猜测
+      - code: ../
+      - text: 、符号链接或大小写别名是否等价。若改成目录级权限，必须在资源服务按规范资源身份再次授权；字符串前缀检查不足以定义文件系统边界。
+    - paragraph:
+      - text: 发出请求也不等于取得结果。HTTP 状态描述响应语义，响应正文还需满足业务合同；
+      - code: "200"
+      - text: 内含旧修订文件不是本任务成功。网络超时则没有提供成功正文：对本篇不可变、只读接口可以有界重读，但这仍是一次新尝试。这个结论不能迁移到创建工单。HTTP 对幂等方法的定义与自动重试限制见
+      - link "RFC 9110 §9.2.2":
+        - /url: https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2
+      - text: ，本文业务读接口还要求不存在会改变任务对象的副作用。
+    - paragraph: 最后，响应中的内容哈希只检查正文与响应自述是否一致，不能证明来源可信。来源可信依赖固定服务地址、TLS、身份和上游合同；若需要验证独立发布的签名或预先冻结的哈希，应另外比对可信清单。不要把“计算了 SHA256”写成“内容已经真实”。
+    - heading "一个完整的只读适配器" [level=2]
+    - paragraph:
+      - text: 对外输入只有
+      - code: repo
+      - text: 、
+      - code: revision
+      - text: 、
+      - code: path
+      - text: 。返回值用
+      - code: kind
+      - text: 表达控制含义：
+      - code: SUCCESS
+      - text: 可交给证据构建器，
+      - code: REJECTED
+      - text: 要修改输入或权限，
+      - code: UNAVAILABLE
+      - text: 是当前没有取到结果，
+      - code: INVALID_RESPONSE
+      - text: 是上游协议或业务错。响应错误不回传凭据或任意上游正文。
+    - paragraph:
+      - code: Transport.get
+      - text: 契约是一次 GET，返回完整的有界字节和状态，或抛出明确网络异常。实际 HTTP 类禁止重定向，不允许固定地址的凭据被自动带到另一主机。Python 的
+      - code: urlopen
+      - text: 超时针对阻塞操作，并不是端到端总期限；本文没有把
+      - code: timeout=5
+      - text: 称为整个任务最多五秒。
+      - link "Python 3.14 urllib.request":
+        - /url: https://docs.python.org/3.14/library/urllib.request.html
+    - paragraph:
+      - text: 以下完整代码可保存为
+      - code: f01_boundary.py
+      - text: ，依赖 Python 3.14 标准库；默认
+      - code: main
+      - text: 只使用无网络替身。
+    - generic: python · 网页不执行代码
+    - code: "import hashlib import json import socket import unittest from dataclasses import dataclass from urllib.error import HTTPError, URLError from urllib.parse import urlencode from urllib.request import HTTPRedirectHandler, Request, build_opener MAX_BYTES = 64 * 1024 @dataclass(frozen=True) class Principal: tenant_id: str allowed_resources: frozenset # (repo, revision, path) 精确资源集合 @dataclass(frozen=True) class Reply: status: int body: bytes class NoRedirect(HTTPRedirectHandler): def redirect_request(self, req, fp, code, msg, headers, newurl): return None class HttpTransport: # 配置来自维护者，不能来自模型或本次请求参数。 def __init__(self, base_url, token): if not base_url.startswith(\"https://\"): raise ValueError(\"HTTPS_REQUIRED\") self.base_url = base_url.rstrip(\"/\") self.token = token self.opener = build_opener(NoRedirect()) def get(self, fields): url = self.base_url + \"/source?\" + urlencode(fields) req = Request(url, method=\"GET\", headers={ \"Accept\": \"application/json\", \"Authorization\": \"Bearer \" + self.token, }) try: with self.opener.open(req, timeout=5) as response: body = response.read(MAX_BYTES + 1) return Reply(response.status, body) except HTTPError as error: # 错误正文不需要进入模型上下文。 error.close() return Reply(error.code, b\"\") def result(kind, code, **data): return {\"kind\": kind, \"code\": code, **data} def read_source(raw, principal, transport): if type(raw) is not dict: return result(\"REJECTED\", \"OBJECT_REQUIRED\") if set(raw) != {\"repo\", \"revision\", \"path\"}: return result(\"REJECTED\", \"FIELDS_INVALID\") for name in (\"repo\", \"revision\", \"path\"): value = raw[name] if type(value) is not str or not value or len(value) > 200: return result(\"REJECTED\", \"FIELD_INVALID\", field=name) resource = (raw[\"repo\"], raw[\"revision\"], raw[\"path\"]) if resource not in principal.allowed_resources: return result(\"REJECTED\", \"RESOURCE_DENIED\") try: reply = transport.get(raw) except (TimeoutError, socket.timeout, URLError): return result(\"UNAVAILABLE\", \"TRANSPORT_UNKNOWN\", retryable=True) if reply.status in (401, 403): return result(\"REJECTED\", \"REMOTE_DENIED\") if reply.status == 404: return result(\"UNAVAILABLE\", \"SOURCE_NOT_FOUND\", retryable=False) if reply.status == 429 or 500 <= reply.status <= 599: return result(\"UNAVAILABLE\", \"REMOTE_TEMPORARY\", retryable=True) if reply.status != 200: return result(\"INVALID_RESPONSE\", \"UNEXPECTED_STATUS\") if len(reply.body) > MAX_BYTES: return result(\"INVALID_RESPONSE\", \"BODY_TOO_LARGE\") try: value = json.loads(reply.body.decode(\"utf-8\")) except (UnicodeDecodeError, json.JSONDecodeError): return result(\"INVALID_RESPONSE\", \"INVALID_JSON\") fields = {\"repo\", \"revision\", \"path\", \"content\", \"sha256\"} if type(value) is not dict or set(value) != fields: return result(\"INVALID_RESPONSE\", \"RESPONSE_FIELDS\") if any(type(value[k]) is not str for k in fields): return result(\"INVALID_RESPONSE\", \"RESPONSE_TYPES\") if tuple(value[k] for k in (\"repo\", \"revision\", \"path\")) != resource: return result(\"INVALID_RESPONSE\", \"RESOURCE_MISMATCH\") try: content_bytes = value[\"content\"].encode(\"utf-8\") except UnicodeEncodeError: return result(\"INVALID_RESPONSE\", \"CONTENT_NOT_UTF8\") digest = hashlib.sha256(content_bytes).hexdigest() if value[\"sha256\"] != digest: return result(\"INVALID_RESPONSE\", \"CONTENT_MISMATCH\") return result(\"SUCCESS\", \"SOURCE_READ\", source=value) class StubTransport: def __init__(self, outcome): self.outcome = outcome self.calls = 0 def get(self, fields): self.calls += 1 if isinstance(self.outcome, Exception): raise self.outcome return self.outcome class BoundaryTests(unittest.TestCase): def setUp(self): self.raw = {\"repo\": \"repo\", \"revision\": \"8e12\", \"path\": \"src/refund.py\"} self.principal = Principal(\"tenant-dev\", frozenset({ (\"repo\", \"8e12\", \"src/refund.py\")})) content = \"def refund(days):\\n return days < 7\\n\" self.source = {**self.raw, \"content\": content, \"sha256\": hashlib.sha256(content.encode()).hexdigest()} def invoke(self, outcome, raw=None): stub = StubTransport(outcome) answer = read_source(self.raw if raw is None else raw, self.principal, stub) return answer, stub.calls def test_success(self): answer, calls = self.invoke(Reply(200, json.dumps(self.source).encode())) self.assertEqual(answer[\"kind\"], \"SUCCESS\") self.assertEqual(calls, 1) def test_invalid_type_never_calls_upstream(self): answer, calls = self.invoke(Reply(200, b\"{}\"), {**self.raw, \"path\": [\"src/refund.py\"]}) self.assertEqual(answer[\"code\"], \"FIELD_INVALID\") self.assertEqual(calls, 0) def test_denied_never_calls_upstream(self): answer, calls = self.invoke(Reply(200, b\"{}\"), {**self.raw, \"revision\": \"other\"}) self.assertEqual(answer[\"code\"], \"RESOURCE_DENIED\") self.assertEqual(calls, 0) def test_timeout_is_not_success(self): answer, _ = self.invoke(TimeoutError()) self.assertEqual(answer[\"kind\"], \"UNAVAILABLE\") def test_success_status_with_wrong_revision(self): wrong = {**self.source, \"revision\": \"old\"} answer, _ = self.invoke(Reply(200, json.dumps(wrong).encode())) self.assertEqual(answer[\"code\"], \"RESOURCE_MISMATCH\") if __name__ == \"__main__\": unittest.main()"
+    - paragraph:
+      - text: 这里最有价值的断言不是“返回了错误”，而是非法输入和越权资源的
+      - code: calls == 0
+      - text: 。它证明了边界在请求前起效。
+      - code: "200"
+      - text: 加错误修订测试则证明请求成功与业务成功分离。
+      - code: unittest
+      - text: 提供测试用例和断言机制；上面的预期属于本篇合同，不是 Python 替我们判定的业务正确性。
+      - link "Python 3.14 unittest":
+        - /url: https://docs.python.org/3.14/library/unittest.html
+    - paragraph:
+      - text: 还有两个边界没有实现：同名 JSON 键重复时，Python 默认解析保留最后值；如果接口合同禁止重复键，应以
+      - code: object_pairs_hook
+      - text: 拒绝，而不能把当前解析称为严格 JSON 协议验证。读响应也没有内容类型校验。这里有明确最大字节数和字段验证，所以可检出主要教学错例；增加生产适配时应按上游协议补齐。JSON 的解析转换与扩展处理见
+      - link "Python 3.14 json":
+        - /url: https://docs.python.org/3.14/library/json.html
+      - text: 。
+    - heading "让另一个开发者复现 而不是复制成功截图" [level=2]
+    - paragraph:
+      - text: 运行命令是
+      - code: python3 f01_boundary.py
+      - text: ；预期为五项测试通过，
+      - strong: 本稿没有实际输出记录
+      - text: 。读者须记录实际解释器完整版本、操作系统、代码哈希、输入夹具哈希、命令和输出。这里无第三方依赖；没有必要交一个虚构的包锁文件。如果扩展改用第三方 HTTP 客户端，就把版本锁定和安装方法纳入同一证据包，重新执行原断言。
+    - paragraph:
+      - text: Git 提交确定源文件快照，工作目录尚未提交的修改不在该快照中。
+      - code: git status
+      - text: 、
+      - code: git diff
+      - text: 、指定文件
+      - code: git add
+      - text: 后提交，以及
+      - code: git rev-parse HEAD
+      - text: 应一起交接；只有提交 ID 不能描述运行环境。Git 对修改、暂存、提交的区分见
+      - link "Git Book：Recording Changes":
+        - /url: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
+      - text: 。这些命令由读者在独立练习目录执行，本轮教材生成没有替读者创建提交。
+    - paragraph:
+      - text: 陌生环境失败时先保留错误，再比较解释器、命令、工作目录、依赖与夹具。若通过删除
+      - code: RESOURCE_MISMATCH
+      - text: 分支“解决”，只是改变了合同。若发现自己用的是另一个解释器，则在记录里更正环境并重跑，旧输出不能绑定新版本。
+    - heading "何时扩展这个边界" [level=2]
+    - paragraph:
+      - text: 对短小只读服务，标准库和一个明确适配层足够解释全部控制分支。若服务有流式正文、大规模并发、连接池或端到端期限，换用成熟客户端有现实价值，但应先确定其超时、重定向、自动重试与异常合同；不是用客户端名称替代这些判断。对当前修订不可变且读取便宜的接口，可由运行时有界重读。对服务端拒绝权限，不重复同样请求；对
+      - code: "200"
+      - text: 内对象错误，暂停该适配器并调查协议，不让模型编写“已取得正确文件”。
+    - paragraph:
+      - text: 观察记录至少应保留请求尝试 ID、可信资源身份、状态分类、耗时和响应哈希。错误正文可能有内部路径与凭据，不需要全部塞进日志或模型。成功证据中的原文能否进入后续上下文，要由
+      - link "证据包章节":
+        - /url: "#learn/agent/c02"
+      - text: 的权限、版本和引用规则继续约束。
+    - heading "三个推理与实作任务" [level=2]
+    - paragraph:
+      - strong: 补齐一个失败分支。
+      - text: 给上述测试添加空路径、未知
+      - code: tenant
+      - text: 字段、
+      - code: "403"
+      - text: 、
+      - code: "503"
+      - text: 、非法 JSON、错误哈希以及
+      - code: content
+      - text: 含转义孤立代理字符的 JSON。先写各自预期及请求次数，再写测试。参考判断：空路径与未知字段在本地拒绝且零请求；
+      - code: "403"
+      - text: 已取得拒绝响应且不自动重试；
+      - code: "503"
+      - text: 是没有取得本篇结果，可受限重读；非法 JSON 与错误哈希是响应不可信。JSON 能解析为字符串还不保证可编码为本合同的 UTF-8，孤立代理字符在编码处返回
+      - code: CONTENT_NOT_UTF8
+      - text: ，不能越过归约或产出证据。应保留本地拒绝与上游拒绝两种不同观察。
+    - paragraph:
+      - strong: 定位“同伴跑不起来”。
+      - text: 作者交来五项绿色截图和
+      - code: HEAD
+      - text: ，同伴报告缺少导入的第三方包，而教材声明仅标准库。参考分析：先核截图所用源文件与提交差异，极可能交付代码已扩展但环境说明未更新。补齐实际依赖版本和重建命令，让非作者重跑同样输入；没有非作者记录则复现仍未完成。不能从截图推导陌生环境可启动。
+    - paragraph:
+      - strong: 迁移到写接口。
+      - text: 把读取改成
+      - code: create_issue
+      - text: ，请求超时后应该怎样改变返回和重试？参考分析：
+      - code: UNAVAILABLE
+      - text: 的只读重读策略必须撤回，保存逻辑动作身份和可能已发状态；超时返回外部效果未知，按原操作身份核对，不换键创建。接口幂等、审批和结果归约分别在
+      - link "写工具章节":
+        - /url: "#learn/agent/c03"
+      - text: 与
+      - link "持久恢复章节":
+        - /url: "#learn/agent/e01"
+      - text: 展开。能够写出这项差异，比把五项原测试照搬成写接口测试更能证明理解。
+    - paragraph:
+      - text: 基础操作不足时回到
+      - link "短程序预备课":
+        - /url: "#learn/agent/01-foundation"
+      - text: 补对应诊断，不必先用本章完整适配器补语法。
+    - paragraph:
+      - text: 将本篇产物带到
+      - link "模型候选":
+        - /url: "#learn/agent/f02"
+      - text: 。示例代码与实际验证的适用范围见
+      - link "原版验证记录":
+        - /url: /api/content/reference/textbook-v09-qa.md?version=textbook-v12
+      - text: ；真实接口、用户与专业判断需要各自证据。
+    - separator
+  - button "收藏当前阅读位置"
+  - heading "我的阅读笔记" [level=2]
+  - paragraph: 只保存在此浏览器，记录本篇疑问与实际尝试。
+  - generic: 本篇笔记
+  - textbox "本篇笔记"
+  - button "保存笔记"
+  - navigation "相邻篇章":
+    - link "← 上一篇 信任边界":
+      - /url: "#learn/agent/03-trust-boundary"
+      - text: ← 上一篇
+      - strong: 信任边界
+    - link "下一篇 → 模型候选":
+      - /url: "#learn/agent/f02"
+      - text: 下一篇 →
+      - strong: 模型候选
+  - generic: 职造 · Agent 开发学习
+- status
+- generic: 问教材
+- textbox "问教材":
+  - /placeholder: 描述 Agent 开发、学习或项目中的问题
+- button "发送"
+- button "展开学习问答": ⌃
+- status

@@ -1,0 +1,52 @@
+{
+  "role_id": "EV12-01",
+  "role_name": "内容审校员",
+  "agent_name": "/root/employee_v12_content_review",
+  "date": "2026-10-11",
+  "status": "accepted_with_dependencies",
+  "domain": "技术内容审校",
+  "scope": "岗位接单与首任务前置条件确认",
+  "inputs": [
+    {"path": "AGENTS.md", "sha256": "55e190a02d9d64ba1a1622b815d3c8282373a8d5292b1518f68ce6f2a08449a1", "read_scope": "全文；当前组织与授权"},
+    {"path": "sites/rolecraft/team/employees/v12-evidence/COMMON.md", "sha256": "f2a8a5e935fd521030f0cc1a7445cb9a2138cc3b417c228cc9ab43cfacb67bf0", "read_scope": "全文"},
+    {"path": "sites/rolecraft/team/employees/v12-evidence/content-reviewer/prompt.md", "sha256": "429e058c480d439fad2e1ec749008e9494d698faa2713a6549ea8db7b25d4ac1", "read_scope": "全文"},
+    {"path": "sites/rolecraft/team/textbook-v12-product-assessment.md", "sha256": "2a7a0e08cf959a6ad490d46a98128eebd0e82722c9d4ff1c104ea3fbead285eb", "read_scope": "全文；final_evidence_assessed_with_limitations"},
+    {"path": "sites/rolecraft/team/textbook-v12-qa.md", "sha256": "c2d6e7aae31d750ccc04a6c058251be097b8e3114638c004a455a053d37444d3", "read_scope": "全文；met_with_limitations"},
+    {"path": "sites/rolecraft/textbooks/v12/README.md", "sha256": "f6e8b37b318dd2a662c064f6681509fdf7873cbd7687a7b91a6f7ed3bf2683a6", "read_scope": "30单元顺序、先修与版本证据入口"},
+    {"path": "sites/rolecraft/team/product-gates.json", "sha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06", "read_scope": "全文；product-creation-2026-10-10"},
+    {"path": "sites/rolecraft/team/TEXTBOOK_WRITING_STANDARD.md", "sha256": "46826414794822b5e2c836edad68ba6122f8e551d7669bcc8917bb315f5a6aa1", "read_scope": "全文"},
+    {"path": "sites/rolecraft/team/textbook-v12-content-a.md", "sha256": "49cb1133589e4f27325105f84d67cfa85fe853c853dba4ceef8538ce7284af60", "read_scope": "范围、CA返修、专题/五维、限制与领域自查；未逐题重评"},
+    {"path": "sites/rolecraft/team/textbook-v12-content-b.md", "sha256": "ff72f79112ee10f9e21b41f09e368bfff5b6854e993046dedb15403b1d9797c3", "read_scope": "范围/绑定、CB返修、深度/跨章、技术依据、交接限制"},
+    {"path": "sites/rolecraft/team/specialists/content-reviewer.md", "sha256": "d5851f8cd828ddba24296fefccdcdae5be43ded32490c0e0accde654d5d1810c", "read_scope": "全文，历史资料仅作交接参考"},
+    {"path": "sites/rolecraft/textbooks/v12/agent-engineering-textbook.md", "sha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e", "read_scope": "只计算收到哈希，未审校合订正文"}
+  ],
+  "first_task": {
+    "current": "确认v12审校输入、专业复核包范围与待真人验证项",
+    "current_result": "接单与依赖确认完成；专业执行尚未启动",
+    "next": "经PM派工编制v12真实专家复核包和待验证论断清单",
+    "planned_deliverables": ["冻结正文/目录及范围", "能力/正文/练习映射", "争议论断及版本定位", "来源与运行范围", "外部契约缺证", "真人意见记录与作者返修交接"],
+    "acceptance": "实际真人意见与冻结版本绑定；缺陷交作者返修，本岗核原问题，QA核独立证据；无真人保留待复核"
+  },
+  "dependencies": [
+    {"item": "当前教材入口、哈希、专业标准、审校和QA范围", "status": "received", "owner": "PM及原领域岗位"},
+    {"item": "复核包正式派工、唯一写入目录、日期", "status": "not_received", "owner": "项目经理"},
+    {"item": "读者/岗位范围和课程映射复核优先级", "status": "existing_scope_received_in_part_pending_handoff", "owner": "产品经理/课程架构师"},
+    {"item": "真实专家身份/资历/参与与原始意见", "status": "not_received", "owner": "实际专家，PM协调，本岗组织记录"},
+    {"item": "外部联系授权", "status": "not_authorized_this_round", "owner": "用户授权，PM协调"},
+    {"item": "追加外部契约及代码实测", "status": "current_gaps_retained", "owner": "相应工程岗/测试工程师"}
+  ],
+  "handoffs": [
+    {"to": "项目经理", "subject": "接单状态与正式专业派工/真人依赖"},
+    {"to": "课程架构师", "subject": "教学范围、能力映射与结构问题"},
+    {"to": "教材研发员", "subject": "经PM分派的正文缺陷与原问题返修"},
+    {"to": "相应工程岗", "subject": "外部契约与实现缺证"},
+    {"to": "测试工程师", "subject": "组织接单独立验收和后续实际执行复验"}
+  ],
+  "self_check": {
+    "completed": ["实际独立代理接单", "只读输入阅读范围和哈希记录", "唯一领域确认", "首任务依赖与交付确认", "只新增本岗onboarding.md/onboarding.json"],
+    "no_changes_to": ["教材", "程序", "数据库", "历史报告", "八门槛", "其他岗位资料"],
+    "not_executed": ["真人专家评审", "外部联系", "逐题重评", "代码执行", "新技术来源核查", "专业复核包编制"],
+    "independent_acceptance_owner": "测试工程师"
+  },
+  "limitations": ["AI岗位接单不能代替真人专家审核", "无实际专家身份、资历与原始意见", "当前专业复核包尚未制作", "未重新评定当前教材或产品门槛", "完整培养与行业先进目标仍not_met"]
+}

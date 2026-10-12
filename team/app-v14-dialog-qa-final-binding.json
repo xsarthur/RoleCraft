@@ -1,0 +1,973 @@
+{
+  "version": "app-v14-dialog-qa-final-binding-1",
+  "atUtc": "2026-10-12T01:51:32.299467+00:00",
+  "conclusion": "met_within_scope",
+  "fullProductConclusion": "not_met",
+  "files": [
+    {
+      "path": "sites/rolecraft/dist/app.js",
+      "bytes": 92350,
+      "sha256": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd"
+    },
+    {
+      "path": "sites/rolecraft/dist/index.html",
+      "bytes": 4362,
+      "sha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f"
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-experience-v13.css",
+      "bytes": 24198,
+      "sha256": "1f20aafb25a30842e660a18b2d51445efc6ab3527d359b95703131332fcb9aaf"
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-experience-v13.js",
+      "bytes": 35997,
+      "sha256": "d9664458d1e60c54d8235e160c4c229b1629c8b694d0f16d7136557b3374cd23"
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-v13-data.js",
+      "bytes": 841206,
+      "sha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb"
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-workbench.js",
+      "bytes": 63016,
+      "sha256": "9099d3bbf6ea51816c01f422517ae5323fb0c1048854f4acc54caa88bff65cca"
+    },
+    {
+      "path": "sites/rolecraft/server/index.mjs",
+      "bytes": 31772,
+      "sha256": "f8c24960d16bedf253baf903ff9ab3973b055c53030a80427e000565f5cdfceb"
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/dialog-clarification-check.mjs",
+      "bytes": 2031,
+      "sha256": "20fed063a319132e7bf734c17bdb0cee71087f10740b8dc88903ad8f18395a8c"
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/dialog.mjs",
+      "bytes": 30341,
+      "sha256": "db17b415b6d53c82ce933c064dc21c6d0ea00d2567e63b8fb0c20653f6dee4f1"
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/index.mjs",
+      "bytes": 8597,
+      "sha256": "c87dfde6c1ae60ee7594bf5f033ab4fc2a90554a55deabe8520f1045bfc43530"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-detail-design.md",
+      "bytes": 5957,
+      "sha256": "7cd90e6553281b735f6874c1a1b270213dd7279576a3637f2e26cf1eec51e165"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-detail-product-footer-clarification.md",
+      "bytes": 1321,
+      "sha256": "467bac4e6b141fc92cebfff60fb69feb54ca7bfc9115ed4d0dc96bee5b81b01f"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-detail-product-questions-deferred.md",
+      "bytes": 2011,
+      "sha256": "6e12c2c500206443ce2f12ab645272d44efb2258095ef95e771b7243d91ec672"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-detail-product.md",
+      "bytes": 4176,
+      "sha256": "bcccae952955822e60975d3317e682cef717b551bc59b890926a06d8c7352ce2"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-api.md",
+      "bytes": 4349,
+      "sha256": "8d347ab25a74c297d84303cc9a7228fb58340b901ee8bf4ab7ab1df464f863c5"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-design.md",
+      "bytes": 8459,
+      "sha256": "a41a749df216d3b4f0f0344765b63d5445c20613315fd0fe905369874485dcb6"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-frontend-DG06-dev-check.json",
+      "bytes": 1725,
+      "sha256": "41cf57d1ab2b7ee1b528300b3d79c7eb73c2c658def8529be58f7aa381f96551"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-frontend-DG06-dev-check.mjs",
+      "bytes": 9974,
+      "sha256": "3177971ebb7b334eea0b97cf836ceeec13d1f9032a5be39a38504665816b7105"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-frontend-DG06-repair.md",
+      "bytes": 2706,
+      "sha256": "06fbf6406f746616df0017c4e0721b9f5549d081891a1b92e8052698f1f6d35a"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-frontend-binding4.json",
+      "bytes": 3191,
+      "sha256": "cfdb717da36617c37045001e3c85703e76ae584bc7d4f83c6b8b3373d9644fa1"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-frontend-detail-repair.md",
+      "bytes": 4614,
+      "sha256": "825d05bfd6ef5a5910596b38183ed0051e0e4cb80eb363855b63399237b48be0"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-frontend-footer-dev-check.json",
+      "bytes": 2164,
+      "sha256": "8562c19327465336fc994c2b6c8cd2ef2f5d7ce40848c5a8612b1da1d1b52c39"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-frontend-footer-dev-check.mjs",
+      "bytes": 5825,
+      "sha256": "dd0ee637e299a8823fb25b9b8cb3d2626a6bb5e2c7468a8b6d0232448cd3b88f"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-frontend-footer-repair.md",
+      "bytes": 1770,
+      "sha256": "812a6c93694c061118e00dea97db0e147197e05a92c9668d79f8acd15ea253b9"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-frontend-history/candidate01/manifest.json",
+      "bytes": 1247,
+      "sha256": "5a1f66e7c0cf7eba2552854659a63984a29c439e43b1f5c062719f734c71bdb7"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-frontend-history/candidate02/manifest.json",
+      "bytes": 1271,
+      "sha256": "4ff942f91b57c98af5f912581a2c7a2ae5bf05f0bb3e5f3a3d4bf15126911a46"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-frontend-history/candidate03/manifest.json",
+      "bytes": 1255,
+      "sha256": "b47adc7e1fbadb0ed3ea7f29c760b5476f79101a74bc47c97b4ffee5396ee7a3"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-frontend-repair-dev-check.json",
+      "bytes": 3339,
+      "sha256": "4f659f3bd4a190557957f2a63630944cfd78ee8f9360800f36e4765127f7e784"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-frontend-repair-dev-check.mjs",
+      "bytes": 18514,
+      "sha256": "122762376fdcf10616316c7662a2a0ce0b13f7494d4dfea4df8017d3743ff590"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-product-clarification.md",
+      "bytes": 2296,
+      "sha256": "35ae1a7f5836d355a7918361282f49bd3cbce32dcdf6a4675a1d2f3b0dad5b0e"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-product.md",
+      "bytes": 7909,
+      "sha256": "0aa2a9e4a06ce59ef5c9e013e6b48820887ae951b6315c29299625ad591f4cb1"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate-server.mjs",
+      "bytes": 875,
+      "sha256": "943b3441c07ec4ae844ae1931ed3d083d752607c794019c8bf254c3f56ace5df"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/app-v14-dialog-frontend-binding.json",
+      "bytes": 1538,
+      "sha256": "b333a84f6bb4f11710a7b93586c3d25d1868fbf5b89471d8e5742cef44fe3a40"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/app-v14-dialog-retrieval-binding.json",
+      "bytes": 1229,
+      "sha256": "a653cec5ea400a06d881ec611a9cee6729c5a83a0a7e01f58e1e7ba74998cd66"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/cleanup.json",
+      "bytes": 200,
+      "sha256": "1dfb1ce70c31869246bbde28a5887360f7291a93ae514ed3a59d9c7d4e868d95"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/defect-DG14-04.json",
+      "bytes": 1357,
+      "sha256": "255a6418279abaf423ee90848e0237c5cc68b2106912bb2bbe33f0fabf7eba3a"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/independent-http.json",
+      "bytes": 329516,
+      "sha256": "fc6c2a2af0d263ffda1e844e84661bba1e470afb3547cfacbd03123f8009e83d"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/independent-ui-observations.json",
+      "bytes": 1586,
+      "sha256": "cbe27fbd27a70cca1f3e899e3d9d2ca1ff4f316985afe0aee545dedb9396690a"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/manual-query-matrix.json",
+      "bytes": 21574,
+      "sha256": "36a8972a4afa0a23a4ca05028e8dbeb4073b144ac3bbbf437d4090642dff5cc3"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/manual-semantic-review.json",
+      "bytes": 58075,
+      "sha256": "61ffdf00e8c2c0d12e2d615a56360e544906fd528d6a21fcfeed8e930afa555a"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/qa-preparation-errors.json",
+      "bytes": 408,
+      "sha256": "36356577d61e404a95af371dec2afdd4d352a47f8d949f48ad8460e100ff1214"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/received-binding.json",
+      "bytes": 6847,
+      "sha256": "101a5276e6e4009853dcffc859f04b81a708fa456a47449ee2e273e280e5ced3"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/snapshot/dist/app.js",
+      "bytes": 92343,
+      "sha256": "46b502c179e179b8fd7004bc4ced3888bb10249cba1d8b04659418d4b2bff663"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/snapshot/dist/index.html",
+      "bytes": 4362,
+      "sha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/snapshot/dist/learning-experience-v13.css",
+      "bytes": 20935,
+      "sha256": "0bcd6fd898e222bedc69f459fbe3f79fa49760023d1e68f1a619fd538b4d2e34"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/snapshot/dist/learning-experience-v13.js",
+      "bytes": 36392,
+      "sha256": "e8ffa56d832e72822ca6bb45567479d9abca539f8fceec292a66fe33602e385c"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/snapshot/dist/learning-v13-data.js",
+      "bytes": 841206,
+      "sha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/snapshot/dist/learning-workbench.js",
+      "bytes": 60346,
+      "sha256": "100404b410f970636908b785a816480f1a25375ed95898d98914702eecbb218f"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/snapshot/server/index.mjs",
+      "bytes": 31772,
+      "sha256": "f8c24960d16bedf253baf903ff9ab3973b055c53030a80427e000565f5cdfceb"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/snapshot/server/retrieval/dialog-dev-check.mjs",
+      "bytes": 4467,
+      "sha256": "df0f942c3d7ab2ef6627588c44dba31c9d80aef74b427928df3c400934966715"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/snapshot/server/retrieval/dialog.mjs",
+      "bytes": 22856,
+      "sha256": "5a04895fd075ef379b96ea23ef1fe51d529b085616282ee6ddd52e9f320661e9"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/snapshot/server/retrieval/index.mjs",
+      "bytes": 8597,
+      "sha256": "c87dfde6c1ae60ee7594bf5f033ab4fc2a90554a55deabe8520f1045bfc43530"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/snapshot/team/app-v14-dialog-api.md",
+      "bytes": 4349,
+      "sha256": "8d347ab25a74c297d84303cc9a7228fb58340b901ee8bf4ab7ab1df464f863c5"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/snapshot/team/app-v14-dialog-frontend-dev-check.json",
+      "bytes": 2652,
+      "sha256": "51dffdc39143c7c1fa692d3f96e697bf652c9ff6b08a5fa6a5ac092bf5b9d342"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/snapshot/team/app-v14-dialog-frontend-dev-check.mjs",
+      "bytes": 13656,
+      "sha256": "219893c062a0d9292f0076fa7e1ca696f338b1df13e03cf9378f5e506a028dda"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/snapshot/team/app-v14-dialog-frontend.md",
+      "bytes": 4996,
+      "sha256": "3798e50fcc5d18b59f309a93edca27cef5f98019939230b382d15699c62ee026"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate01/snapshot/team/app-v14-dialog-retrieval-dev-check.json",
+      "bytes": 147535,
+      "sha256": "f42912b76c8eef7ef87b7132e6457e8319011316d42ab4dc610caa1a3777bdb1"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/app-v14-dialog-frontend-binding2.json",
+      "bytes": 1860,
+      "sha256": "e08bafccf88d1f6e21c25a678fcab77456409b129706433065145a2d09992c5b"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/app-v14-dialog-retrieval-binding.json",
+      "bytes": 1619,
+      "sha256": "7c82f5fc40ec19a94399d55c8ec17c1e7e08b81d7532e3d84965ccb8dc7c15b1"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/cleanup.json",
+      "bytes": 171,
+      "sha256": "a6a41a0b6858cf7d558cffdb3cc51a85b59b67a4715addd520f4d06abb8fc378"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/defect-DG14-05.json",
+      "bytes": 1907,
+      "sha256": "dd57b69018b808b7b39c0798afebd77af3623d52484c5cfd4ef462ee491c13ee"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/independent-http.json",
+      "bytes": 346789,
+      "sha256": "2f00d70ce3aface450812cf68e6ce954ba4d41e23e6a769f329462d438ae6870"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/manual-query-matrix.json",
+      "bytes": 24734,
+      "sha256": "49ab6777aa663547b8b13897563519b10366bc14e43af0a100f549ba1def17f3"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/received-binding.json",
+      "bytes": 8377,
+      "sha256": "7f659a103dd3192ac99aecc4de8890512b59d2b0cc3d811de4dbd2f5dd28480b"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/served-transport-binding.json",
+      "bytes": 157407,
+      "sha256": "501e6e614c1f5209a24986317a9d9f26e5ba1818d1dd9988bf5caa643dc09338"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/snapshot/dist/app.js",
+      "bytes": 92350,
+      "sha256": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/snapshot/dist/index.html",
+      "bytes": 4362,
+      "sha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/snapshot/dist/learning-experience-v13.css",
+      "bytes": 24058,
+      "sha256": "fa64c8c55b7bf0bfe0d463641e7af27b9caf3ca418ba274af9b81114f3f6deee"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/snapshot/dist/learning-experience-v13.js",
+      "bytes": 35997,
+      "sha256": "d9664458d1e60c54d8235e160c4c229b1629c8b694d0f16d7136557b3374cd23"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/snapshot/dist/learning-v13-data.js",
+      "bytes": 841206,
+      "sha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/snapshot/dist/learning-workbench.js",
+      "bytes": 62265,
+      "sha256": "e6918f1afb322c79e6a966200dda42cfecbe48bf437711ac3e18b3ca5289aa1f"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/snapshot/server/index.mjs",
+      "bytes": 31772,
+      "sha256": "f8c24960d16bedf253baf903ff9ab3973b055c53030a80427e000565f5cdfceb"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/snapshot/server/retrieval/dialog-dev-check.mjs",
+      "bytes": 4467,
+      "sha256": "df0f942c3d7ab2ef6627588c44dba31c9d80aef74b427928df3c400934966715"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/snapshot/server/retrieval/dialog-repair-check.mjs",
+      "bytes": 2326,
+      "sha256": "adfde38be0bb6c5390120267f62fd66fc8606bb05f3f4b51c6db81a042ea5d4b"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/snapshot/server/retrieval/dialog.mjs",
+      "bytes": 30110,
+      "sha256": "f3acbc01a0973591cb0049bce26dbaf16ea96cf3e444b261c380f8ce9794008c"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/snapshot/server/retrieval/index.mjs",
+      "bytes": 8597,
+      "sha256": "c87dfde6c1ae60ee7594bf5f033ab4fc2a90554a55deabe8520f1045bfc43530"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/snapshot/team/app-v14-dialog-api.md",
+      "bytes": 4349,
+      "sha256": "8d347ab25a74c297d84303cc9a7228fb58340b901ee8bf4ab7ab1df464f863c5"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/snapshot/team/app-v14-dialog-frontend-detail-repair.md",
+      "bytes": 4614,
+      "sha256": "825d05bfd6ef5a5910596b38183ed0051e0e4cb80eb363855b63399237b48be0"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/snapshot/team/app-v14-dialog-frontend-history/candidate01/manifest.json",
+      "bytes": 1247,
+      "sha256": "5a1f66e7c0cf7eba2552854659a63984a29c439e43b1f5c062719f734c71bdb7"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/snapshot/team/app-v14-dialog-frontend-repair-dev-check.json",
+      "bytes": 3339,
+      "sha256": "4f659f3bd4a190557957f2a63630944cfd78ee8f9360800f36e4765127f7e784"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/snapshot/team/app-v14-dialog-frontend-repair-dev-check.mjs",
+      "bytes": 18514,
+      "sha256": "122762376fdcf10616316c7662a2a0ce0b13f7494d4dfea4df8017d3743ff590"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/snapshot/team/app-v14-dialog-retrieval-dev-check.json",
+      "bytes": 143296,
+      "sha256": "b7091f15a14659cab88a1df2540f5bd4519d5ba167f15480078407eb8b9e3995"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate02/snapshot/team/app-v14-dialog-retrieval-repair-check.json",
+      "bytes": 63058,
+      "sha256": "7e49c2f0002a40aa571faccf6abf4ab5e48520e102dfd1ee8f38a8dac146f94a"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/app-v14-dialog-frontend-binding3.json",
+      "bytes": 2639,
+      "sha256": "d7a3545a4fcc7102ef7feea11216721b3fa19c862697c422326083fbf3f5dbe1"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/app-v14-dialog-retrieval-binding.json",
+      "bytes": 1619,
+      "sha256": "7c82f5fc40ec19a94399d55c8ec17c1e7e08b81d7532e3d84965ccb8dc7c15b1"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/received-binding.json",
+      "bytes": 6337,
+      "sha256": "3ec7fdedde5347125cfc0b247da423b371c66ad0cc74374f8eb36b31cf96f4cf"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/served-transport-binding.json",
+      "bytes": 157407,
+      "sha256": "a5ab1c94109463115c921005af34da2936c9edeb7907f2b08dd03da7002b8e89"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/dist/app.js",
+      "bytes": 92350,
+      "sha256": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/dist/index.html",
+      "bytes": 4362,
+      "sha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/dist/learning-experience-v13.css",
+      "bytes": 24198,
+      "sha256": "1f20aafb25a30842e660a18b2d51445efc6ab3527d359b95703131332fcb9aaf"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/dist/learning-experience-v13.js",
+      "bytes": 35997,
+      "sha256": "d9664458d1e60c54d8235e160c4c229b1629c8b694d0f16d7136557b3374cd23"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/dist/learning-v13-data.js",
+      "bytes": 841206,
+      "sha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/dist/learning-workbench.js",
+      "bytes": 62265,
+      "sha256": "e6918f1afb322c79e6a966200dda42cfecbe48bf437711ac3e18b3ca5289aa1f"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/server/index.mjs",
+      "bytes": 31772,
+      "sha256": "f8c24960d16bedf253baf903ff9ab3973b055c53030a80427e000565f5cdfceb"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/server/retrieval/dialog-dev-check.mjs",
+      "bytes": 4467,
+      "sha256": "df0f942c3d7ab2ef6627588c44dba31c9d80aef74b427928df3c400934966715"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/server/retrieval/dialog-repair-check.mjs",
+      "bytes": 2326,
+      "sha256": "adfde38be0bb6c5390120267f62fd66fc8606bb05f3f4b51c6db81a042ea5d4b"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/server/retrieval/dialog.mjs",
+      "bytes": 30110,
+      "sha256": "f3acbc01a0973591cb0049bce26dbaf16ea96cf3e444b261c380f8ce9794008c"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/server/retrieval/index.mjs",
+      "bytes": 8597,
+      "sha256": "c87dfde6c1ae60ee7594bf5f033ab4fc2a90554a55deabe8520f1045bfc43530"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/team/app-v14-dialog-api.md",
+      "bytes": 4349,
+      "sha256": "8d347ab25a74c297d84303cc9a7228fb58340b901ee8bf4ab7ab1df464f863c5"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/team/app-v14-dialog-frontend-detail-repair.md",
+      "bytes": 4614,
+      "sha256": "825d05bfd6ef5a5910596b38183ed0051e0e4cb80eb363855b63399237b48be0"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/team/app-v14-dialog-frontend-footer-dev-check.json",
+      "bytes": 2164,
+      "sha256": "8562c19327465336fc994c2b6c8cd2ef2f5d7ce40848c5a8612b1da1d1b52c39"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/team/app-v14-dialog-frontend-footer-dev-check.mjs",
+      "bytes": 5825,
+      "sha256": "dd0ee637e299a8823fb25b9b8cb3d2626a6bb5e2c7468a8b6d0232448cd3b88f"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/team/app-v14-dialog-frontend-footer-repair.md",
+      "bytes": 1770,
+      "sha256": "812a6c93694c061118e00dea97db0e147197e05a92c9668d79f8acd15ea253b9"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/team/app-v14-dialog-frontend-history/candidate01/manifest.json",
+      "bytes": 1247,
+      "sha256": "5a1f66e7c0cf7eba2552854659a63984a29c439e43b1f5c062719f734c71bdb7"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/team/app-v14-dialog-frontend-history/candidate02/manifest.json",
+      "bytes": 1271,
+      "sha256": "4ff942f91b57c98af5f912581a2c7a2ae5bf05f0bb3e5f3a3d4bf15126911a46"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/team/app-v14-dialog-frontend-repair-dev-check.json",
+      "bytes": 3339,
+      "sha256": "4f659f3bd4a190557957f2a63630944cfd78ee8f9360800f36e4765127f7e784"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/team/app-v14-dialog-frontend-repair-dev-check.mjs",
+      "bytes": 18514,
+      "sha256": "122762376fdcf10616316c7662a2a0ce0b13f7494d4dfea4df8017d3743ff590"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/team/app-v14-dialog-retrieval-dev-check.json",
+      "bytes": 143296,
+      "sha256": "b7091f15a14659cab88a1df2540f5bd4519d5ba167f15480078407eb8b9e3995"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate03/snapshot/team/app-v14-dialog-retrieval-repair-check.json",
+      "bytes": 63058,
+      "sha256": "7e49c2f0002a40aa571faccf6abf4ab5e48520e102dfd1ee8f38a8dac146f94a"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/app-v14-dialog-frontend-binding3.json",
+      "bytes": 2639,
+      "sha256": "d7a3545a4fcc7102ef7feea11216721b3fa19c862697c422326083fbf3f5dbe1"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/app-v14-dialog-retrieval-binding.json",
+      "bytes": 1411,
+      "sha256": "4530323a796ce9ebfd5e2a025781fae9ec4d0e0da45d9de1fef6cfe90d869cc3"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/defect-DG14-06.json",
+      "bytes": 1055,
+      "sha256": "596fc878bb58bfaf6338fc761be50db3d457ada278fe6b3bb0fdf4dcb217c180"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/fault-events-before-cache-repair.json",
+      "bytes": 1932,
+      "sha256": "d9468cac08a4ea94d33ac9dbbf8cfea66a915e608ddb677e12a98b1d8209c4ca"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/protected-intermediate.json",
+      "bytes": 281441,
+      "sha256": "cacad4b5cec0b9b0bb8f7c7b6682dd4391dbbddb07347ffa3ee147eca8aff2f3"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/received-binding.json",
+      "bytes": 5771,
+      "sha256": "5e5739f2d481f0b9c1a6ba68832ece573fda4aeae5d104b8e0c17c59865a30dc"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/snapshot/dist/app.js",
+      "bytes": 92350,
+      "sha256": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/snapshot/dist/index.html",
+      "bytes": 4362,
+      "sha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/snapshot/dist/learning-experience-v13.css",
+      "bytes": 24198,
+      "sha256": "1f20aafb25a30842e660a18b2d51445efc6ab3527d359b95703131332fcb9aaf"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/snapshot/dist/learning-experience-v13.js",
+      "bytes": 35997,
+      "sha256": "d9664458d1e60c54d8235e160c4c229b1629c8b694d0f16d7136557b3374cd23"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/snapshot/dist/learning-v13-data.js",
+      "bytes": 841206,
+      "sha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/snapshot/dist/learning-workbench.js",
+      "bytes": 62265,
+      "sha256": "e6918f1afb322c79e6a966200dda42cfecbe48bf437711ac3e18b3ca5289aa1f"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/snapshot/server/index.mjs",
+      "bytes": 31772,
+      "sha256": "f8c24960d16bedf253baf903ff9ab3973b055c53030a80427e000565f5cdfceb"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/snapshot/server/retrieval/dialog-clarification-check.mjs",
+      "bytes": 2031,
+      "sha256": "20fed063a319132e7bf734c17bdb0cee71087f10740b8dc88903ad8f18395a8c"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/snapshot/server/retrieval/dialog.mjs",
+      "bytes": 30341,
+      "sha256": "db17b415b6d53c82ce933c064dc21c6d0ea00d2567e63b8fb0c20653f6dee4f1"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/snapshot/server/retrieval/index.mjs",
+      "bytes": 8597,
+      "sha256": "c87dfde6c1ae60ee7594bf5f033ab4fc2a90554a55deabe8520f1045bfc43530"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/snapshot/team/app-v14-dialog-api.md",
+      "bytes": 4349,
+      "sha256": "8d347ab25a74c297d84303cc9a7228fb58340b901ee8bf4ab7ab1df464f863c5"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/snapshot/team/app-v14-dialog-frontend-detail-repair.md",
+      "bytes": 4614,
+      "sha256": "825d05bfd6ef5a5910596b38183ed0051e0e4cb80eb363855b63399237b48be0"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/snapshot/team/app-v14-dialog-frontend-footer-dev-check.json",
+      "bytes": 2164,
+      "sha256": "8562c19327465336fc994c2b6c8cd2ef2f5d7ce40848c5a8612b1da1d1b52c39"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/snapshot/team/app-v14-dialog-frontend-footer-dev-check.mjs",
+      "bytes": 5825,
+      "sha256": "dd0ee637e299a8823fb25b9b8cb3d2626a6bb5e2c7468a8b6d0232448cd3b88f"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/snapshot/team/app-v14-dialog-frontend-footer-repair.md",
+      "bytes": 1770,
+      "sha256": "812a6c93694c061118e00dea97db0e147197e05a92c9668d79f8acd15ea253b9"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/snapshot/team/app-v14-dialog-frontend-history/candidate01/manifest.json",
+      "bytes": 1247,
+      "sha256": "5a1f66e7c0cf7eba2552854659a63984a29c439e43b1f5c062719f734c71bdb7"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/snapshot/team/app-v14-dialog-frontend-history/candidate02/manifest.json",
+      "bytes": 1271,
+      "sha256": "4ff942f91b57c98af5f912581a2c7a2ae5bf05f0bb3e5f3a3d4bf15126911a46"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/snapshot/team/app-v14-dialog-frontend-repair-dev-check.json",
+      "bytes": 3339,
+      "sha256": "4f659f3bd4a190557957f2a63630944cfd78ee8f9360800f36e4765127f7e784"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/snapshot/team/app-v14-dialog-frontend-repair-dev-check.mjs",
+      "bytes": 18514,
+      "sha256": "122762376fdcf10616316c7662a2a0ce0b13f7494d4dfea4df8017d3743ff590"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/snapshot/team/app-v14-dialog-retrieval-clarification-check.json",
+      "bytes": 19076,
+      "sha256": "1388878f42d356f76db7f2f2b79b8e30c7cb52fae002d9b103baa079536aea4c"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate04/source-and-prerequisite-check.json",
+      "bytes": 7265,
+      "sha256": "12f8debef20a235fa77dfbd9c41ff8a15a11c62724d83cacbd79edf67b7ce493"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/app-v14-dialog-frontend-binding4.json",
+      "bytes": 3191,
+      "sha256": "cfdb717da36617c37045001e3c85703e76ae584bc7d4f83c6b8b3373d9644fa1"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/app-v14-dialog-retrieval-binding.json",
+      "bytes": 1411,
+      "sha256": "4530323a796ce9ebfd5e2a025781fae9ec4d0e0da45d9de1fef6cfe90d869cc3"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/fault-events-final-cache.json",
+      "bytes": 78,
+      "sha256": "6c1bc95f637185b7d23f79fa95514db0867ed64443bcd23312e67213bef9b198"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/independent-clarification-http.json",
+      "bytes": 19317,
+      "sha256": "9b1b85f65a3c7a28952b57d9d924a4a993df59cabf9d76f1957175ae2c0c905d"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/independent-ui-final.json",
+      "bytes": 6233,
+      "sha256": "655a05301be051369116749cd77b98f9f9ff58edd7cfe6a51941c71178aa1260"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/old-cache-ui-seed-events.json",
+      "bytes": 251,
+      "sha256": "2390152ae8f13d86e7d526bd0b5b4c0632f57ff1e692777a7990ec3e2aa40d91"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/received-binding.json",
+      "bytes": 6937,
+      "sha256": "eec3ee8199cbe72f58833be819c755bb8aff8701ed4006e9e66a4c5196c8628c"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/served-transport-binding.json",
+      "bytes": 157407,
+      "sha256": "43fff2165de1b51500063e309b879ef613e2fb341ef69a22a46fb7e1d9c59c3b"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/dist/app.js",
+      "bytes": 92350,
+      "sha256": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/dist/index.html",
+      "bytes": 4362,
+      "sha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/dist/learning-experience-v13.css",
+      "bytes": 24198,
+      "sha256": "1f20aafb25a30842e660a18b2d51445efc6ab3527d359b95703131332fcb9aaf"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/dist/learning-experience-v13.js",
+      "bytes": 35997,
+      "sha256": "d9664458d1e60c54d8235e160c4c229b1629c8b694d0f16d7136557b3374cd23"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/dist/learning-v13-data.js",
+      "bytes": 841206,
+      "sha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/dist/learning-workbench.js",
+      "bytes": 63016,
+      "sha256": "9099d3bbf6ea51816c01f422517ae5323fb0c1048854f4acc54caa88bff65cca"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/server/index.mjs",
+      "bytes": 31772,
+      "sha256": "f8c24960d16bedf253baf903ff9ab3973b055c53030a80427e000565f5cdfceb"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/server/retrieval/dialog-clarification-check.mjs",
+      "bytes": 2031,
+      "sha256": "20fed063a319132e7bf734c17bdb0cee71087f10740b8dc88903ad8f18395a8c"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/server/retrieval/dialog.mjs",
+      "bytes": 30341,
+      "sha256": "db17b415b6d53c82ce933c064dc21c6d0ea00d2567e63b8fb0c20653f6dee4f1"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/server/retrieval/index.mjs",
+      "bytes": 8597,
+      "sha256": "c87dfde6c1ae60ee7594bf5f033ab4fc2a90554a55deabe8520f1045bfc43530"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/team/app-v14-dialog-api.md",
+      "bytes": 4349,
+      "sha256": "8d347ab25a74c297d84303cc9a7228fb58340b901ee8bf4ab7ab1df464f863c5"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/team/app-v14-dialog-frontend-DG06-dev-check.json",
+      "bytes": 1725,
+      "sha256": "41cf57d1ab2b7ee1b528300b3d79c7eb73c2c658def8529be58f7aa381f96551"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/team/app-v14-dialog-frontend-DG06-dev-check.mjs",
+      "bytes": 9974,
+      "sha256": "3177971ebb7b334eea0b97cf836ceeec13d1f9032a5be39a38504665816b7105"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/team/app-v14-dialog-frontend-DG06-repair.md",
+      "bytes": 2706,
+      "sha256": "06fbf6406f746616df0017c4e0721b9f5549d081891a1b92e8052698f1f6d35a"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/team/app-v14-dialog-frontend-detail-repair.md",
+      "bytes": 4614,
+      "sha256": "825d05bfd6ef5a5910596b38183ed0051e0e4cb80eb363855b63399237b48be0"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/team/app-v14-dialog-frontend-footer-dev-check.json",
+      "bytes": 2164,
+      "sha256": "8562c19327465336fc994c2b6c8cd2ef2f5d7ce40848c5a8612b1da1d1b52c39"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/team/app-v14-dialog-frontend-footer-dev-check.mjs",
+      "bytes": 5825,
+      "sha256": "dd0ee637e299a8823fb25b9b8cb3d2626a6bb5e2c7468a8b6d0232448cd3b88f"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/team/app-v14-dialog-frontend-footer-repair.md",
+      "bytes": 1770,
+      "sha256": "812a6c93694c061118e00dea97db0e147197e05a92c9668d79f8acd15ea253b9"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/team/app-v14-dialog-frontend-history/candidate01/manifest.json",
+      "bytes": 1247,
+      "sha256": "5a1f66e7c0cf7eba2552854659a63984a29c439e43b1f5c062719f734c71bdb7"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/team/app-v14-dialog-frontend-history/candidate02/manifest.json",
+      "bytes": 1271,
+      "sha256": "4ff942f91b57c98af5f912581a2c7a2ae5bf05f0bb3e5f3a3d4bf15126911a46"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/team/app-v14-dialog-frontend-history/candidate03/manifest.json",
+      "bytes": 1255,
+      "sha256": "b47adc7e1fbadb0ed3ea7f29c760b5476f79101a74bc47c97b4ffee5396ee7a3"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/team/app-v14-dialog-frontend-repair-dev-check.json",
+      "bytes": 3339,
+      "sha256": "4f659f3bd4a190557957f2a63630944cfd78ee8f9360800f36e4765127f7e784"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/team/app-v14-dialog-frontend-repair-dev-check.mjs",
+      "bytes": 18514,
+      "sha256": "122762376fdcf10616316c7662a2a0ce0b13f7494d4dfea4df8017d3743ff590"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/candidate05/snapshot/team/app-v14-dialog-retrieval-clarification-check.json",
+      "bytes": 19076,
+      "sha256": "1388878f42d356f76db7f2f2b79b8e30c7cb52fae002d9b103baa079536aea4c"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/cases-frozen.json",
+      "bytes": 14131,
+      "sha256": "ae18a2ec338d1b3204589607c6ff2693d183b7b96ab51bc242f55b4b307597fa"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/cases-product-clarification.json",
+      "bytes": 735,
+      "sha256": "d491b55b0d5a883ea5e5e7e22bac84fb5384a3f87e3416c407df8d9cd7efd677"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/check_clarification.mjs",
+      "bytes": 1873,
+      "sha256": "509e72c0e186387701ad8db06e59041ee74eb53617b1f77f9c43477d854663ec"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/check_http.mjs",
+      "bytes": 7785,
+      "sha256": "48a733a94e4761162e02b36c8a685fbac275e4e518d6c32274a93a05fb90c997"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/check_served.mjs",
+      "bytes": 1718,
+      "sha256": "ec91b92e49d0fd5278b3f63b0e98cf04a499a09559fd9d0229fbefe3e237728f"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/cleanup-final.json",
+      "bytes": 1427,
+      "sha256": "df3f8a334fd0bc09f3a5e9d78317eba5fd1923a967a7445a4e060adc9f399662"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/detail-DD14-07-cases-frozen.json",
+      "bytes": 1005,
+      "sha256": "b6152fab5ea731dea0cb302738d36d433a75a6d923ba0a6cf1b2011a975f9191"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/detail-cases-frozen.json",
+      "bytes": 2517,
+      "sha256": "d814b6b5964ea3afffabf131487204c600ef6f81800b7c861d2f613d17826728"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/fault-events.json",
+      "bytes": 78,
+      "sha256": "6c1bc95f637185b7d23f79fa95514db0867ed64443bcd23312e67213bef9b198"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/fault-server.mjs",
+      "bytes": 4060,
+      "sha256": "9430653d059f436872cdcaf49b3e7df98a935e25a11ae92b7880f27dffcfb900"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/protected-final.json",
+      "bytes": 279882,
+      "sha256": "6264966ed57dd7b2d5bc633469dc22e0171693aa9f3cfabf835f1eee500aba18"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/received-baseline.json",
+      "bytes": 219666,
+      "sha256": "4e5c57ac53245a98465d9394912bc033f0984f8e9b436e7427c20d30aac332ab"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/ui-cases-frozen.json",
+      "bytes": 2905,
+      "sha256": "7764f17d64c0dcbbcb15867340f1431bc72a3fa951199021ba36671ef0db0d70"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/v13-received-client/app.js",
+      "bytes": 92345,
+      "sha256": "05167ec7df6cea51d6e137aaa0ff53ea4cb949a66a4c813d6ce7167651b2f30e"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/v13-received-client/index.html",
+      "bytes": 4362,
+      "sha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/v13-received-client/learning-experience-v13.css",
+      "bytes": 18560,
+      "sha256": "d190bdc09f0fb9b3ae4eb308cd52b358c935f69d3b9b93ae16ea4418789654bd"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/v13-received-client/learning-experience-v13.js",
+      "bytes": 36794,
+      "sha256": "7fc778e5d85702688caebf76370308ddee435b74acee7665666387a4dc902b9e"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/v13-received-client/learning-v13-data.js",
+      "bytes": 841206,
+      "sha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-history/v13-received-client/learning-workbench.js",
+      "bytes": 55115,
+      "sha256": "55c6f5db634d1b723e863fe9a94f604fadcf895c15acbb984025d35be15c6266"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa-plan.json",
+      "bytes": 1608,
+      "sha256": "a585026bbbc08efd803fea079829c94d0086e31d40a7285c5e471bde61d17f76"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa.json",
+      "bytes": 11286,
+      "sha256": "b8e759bac78eef33e198428ff37c7f894e716738374fd2a382a3f166c751d8f3"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-qa.md",
+      "bytes": 4146,
+      "sha256": "4675e4d9950eaac062c81cba408d79ae8eda320bcd3aaa0c37558abe24d0ac1c"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-retrieval-binding.json",
+      "bytes": 1411,
+      "sha256": "4530323a796ce9ebfd5e2a025781fae9ec4d0e0da45d9de1fef6cfe90d869cc3"
+    },
+    {
+      "path": "sites/rolecraft/team/app-v14-dialog-retrieval-clarification-check.json",
+      "bytes": 19076,
+      "sha256": "1388878f42d356f76db7f2f2b79b8e30c7cb52fae002d9b103baa079536aea4c"
+    },
+    {
+      "path": "sites/rolecraft/team/product-gates.json",
+      "bytes": 8080,
+      "sha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06"
+    }
+  ]
+}

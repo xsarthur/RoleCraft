@@ -1,0 +1,67 @@
+{
+  "role_id": "practicum-evaluator",
+  "employee_id": "EV12-02",
+  "role_name": "实训评估员",
+  "agent_name": "/root/employee_v12_practicum",
+  "date": "2026-10-11",
+  "status": "accepted_with_dependencies",
+  "domain": "学习者实训评价",
+  "scope": "本轮仅岗位接单、既有量规定位和首任务依赖确认",
+  "inputs": [
+    {"path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/AGENTS.md", "sha256": "55e190a02d9d64ba1a1622b815d3c8282373a8d5292b1518f68ce6f2a08449a1", "read": "full_text", "locator": "岗位表、交接规则、v12授权与交付状态"},
+    {"path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/employees/v12-evidence/COMMON.md", "sha256": "f2a8a5e935fd521030f0cc1a7445cb9a2138cc3b417c228cc9ab43cfacb67bf0", "read": "full_text", "locator": "派工范围、唯一写入、组织验收"},
+    {"path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/employees/v12-evidence/practicum-evaluator/prompt.md", "sha256": "de54569b4bd40c3b5a81e2cf4648e85612f739cb299069aad81f62e2ca8506ba", "read": "full_text", "locator": "EV12-02首项派工"},
+    {"path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v12-product-assessment.md", "sha256": "2a7a0e08cf959a6ad490d46a98128eebd0e82722c9d4ff1c104ea3fbead285eb", "read": "full_text", "locator": "五维判断、learner_creation insufficient、完整目标not_met"},
+    {"path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v12-qa.md", "sha256": "c2d6e7aae31d750ccc04a6c058251be097b8e3114638c004a455a053d37444d3", "read": "full_text", "locator": "三组分别统计、保留变体边界、学习与求职缺证"},
+    {"path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/README.md", "sha256": "f6e8b37b318dd2a662c064f6681509fdf7873cbd7687a7b91a6f7ed3bf2683a6", "read": "full_text", "locator": "30单元、正式先修、版本练习与证据"},
+    {"path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/product-gates.json", "sha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06", "read": "full_text", "version": "product-creation-2026-10-10", "locator": "gates[learner_creation]、decisionRules"},
+    {"path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/curriculum-standard.md", "sha256": "07bd95fb6cc30ed26a48fa9c5cdf03b744634e9a9461fde50b4382567feb5053", "read": "full_text", "version": "教学草案v0.2", "locator": "证据与评价"},
+    {"path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/creation-path.json", "sha256": "c438c7b6a1a606cceef4df4ccc2c217dae9ed7c40b39e85682c5a7fb8898f99b", "read": "full_text", "version": "creation-path-draft-0.1", "locator": "stages、evaluationPolicy、retrospectiveTemplate；历史状态不推为当前结论"},
+    {"path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v12-curriculum.md", "sha256": "60629842d563df8a1906aa56cac40b0724bb38468ed3243de896e48c60153cd8", "read": "full_text", "locator": "n10、Q10/Q99、实作路线与双目标、审校与QA交接"},
+    {"path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/specialists/practicum-evaluator.md", "sha256": "1f372912e0a68cac8fb9fc5443986f19ad6a975347b120cf39d7d599564f00e1", "read": "full_text", "locator": "2026-10-10历史执行包；三层帮助、作品、复验"},
+    {"path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/agent-engineering-textbook.md", "sha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e", "read": "hash_only", "locator": "收到合订本文件；没有全文重新审校"}
+  ],
+  "rubric": {
+    "source": "curriculum-standard.md/证据与评价",
+    "dimensions": ["正确性", "可靠性", "安全", "评估证据", "运行维护", "沟通协作"],
+    "levels": {"0": "无证据或关键错误", "1": "依赖脚手架且证据不全", "2": "独立完成约定任务并可复现", "3": "未知任务和异常下复现、解释并改进"},
+    "received_draft_condition": "适用维度至少2分，安全关键检查不得失败",
+    "status": "existing_draft_scope_pending_confirmation",
+    "professional_calibration": "not_performed",
+    "changed": false
+  },
+  "first_task": {
+    "goal": "定位既有量规，列作品、帮助范围、陌生任务评价所需输入，完成岗位接单",
+    "status": "completed_with_dependencies_recorded",
+    "deliverables": ["onboarding.md", "onboarding.json"],
+    "next_professional_task": "PM另授路径后，按已确认条件准备真实作品评价流程与记录模板；输入齐备后开展真实评价",
+    "acceptance": "QA独立核身份、唯一职责、版本定位、真实依赖、权限及无虚构执行，PM收口"
+  },
+  "dependencies": [
+    {"id": "rubric_scope", "owner": "课程架构师", "received": "历史量规与v12课程规格已收到", "missing": "本轮目标层级、先修诊断、适用维度、不适用理由及任务域确认", "status": "scope_pending"},
+    {"id": "measurement_conditions", "owner": "产品经理", "received": "原八门槛已收到", "missing": "测量前任务验收、资源预算、允许资料/工具/AI帮助、样本与比较条件", "status": "pending"},
+    {"id": "real_participants", "owner": "用户研究员", "received": false, "missing": "获准真实参与者、匿名ID、同意范围、起始能力与观察安排", "status": "not_received"},
+    {"id": "real_artifacts", "owner": "学习者经获准渠道交付，用户研究员协调来源", "received": false, "missing": "作品/任务/课程版本、仓库哈希、本人贡献、实际与模拟边界、运行日志、帮助与Q10/Q99本人经历原证", "status": "not_received"},
+    {"id": "independent_reproduction", "owner": "PM协调课程架构师与QA", "received": "历史流程已收到", "missing": "本轮任务域、独立接收者、受控封存路径与复现条件", "status": "pending"}
+  ],
+  "handoffs": [
+    {"to": "课程架构师", "content": "量规适用范围确认；后续逐维实训证据整合", "gate_id": "learner_creation", "gate_owner_unchanged": true},
+    {"to": "用户研究员", "content": "真实参与者、许可、初始能力与真实反馈输入"},
+    {"to": "产品经理", "content": "测量前任务范围、标准、资源与帮助条件"},
+    {"to": "项目经理", "content": "依赖派工、路径授权、跨岗缺陷和后续独立复现协调"},
+    {"to": "测试工程师", "content": "本次组织验收与后续实际版本、运行及帮助记录独立核证"}
+  ],
+  "self_check": {
+    "completed": ["规定输入已读并定位", "收到合订本哈希与共同规则一致", "既有量规与当前范围待确认分开", "历史计划与当前v12实际状态分开", "仅新增本岗两份接单文件"],
+    "prohibited_actions_performed": false,
+    "learner_evaluations_performed": 0,
+    "artifacts_executed": 0,
+    "heldout_question_surfaces_read": false,
+    "outreach_performed": false,
+    "independent_acceptance": "pending_qa",
+    "evidence": ["inputs收到SHA256与阅读定位", "onboarding.md职责、依赖和未完成项"]
+  },
+  "limitations": ["未收到真实学习者与作品，待真实作品评价", "未执行陌生任务、非作者复现或真人专业校准", "共享工作区不能宣称强盲", "教材支持与AI答题不能推为学员掌握、岗位胜任或录用", "本次接单不关闭learner_creation及完整产品缺口"],
+  "current_gate_evidence_status": "learner_creation: insufficient（引用当前产品/QA，不是本次新增评估）",
+  "complete_product_goal_status": "not_met（引用当前产品/QA，不改变原门槛）"
+}

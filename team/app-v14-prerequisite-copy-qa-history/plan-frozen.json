@@ -1,0 +1,38 @@
+{
+  "version": "prerequisite-copy-frozen-plan-1",
+  "atUtc": "2026-10-12T03:13:22.994494+00:00",
+  "design": "team/app-v14-prerequisite-copy-design.md",
+  "examples": [
+    {
+      "unitId": "f01",
+      "label": "外部API",
+      "prerequisites": [
+        "01-foundation",
+        "02-task-acceptance",
+        "03-trust-boundary"
+      ],
+      "labels": [
+        "基础预备",
+        "任务验收",
+        "信任边界"
+      ],
+      "href": "#learn/agent/f01/s-6c7503f2c3ca"
+    },
+    {
+      "unitId": "00-learning-route",
+      "label": "认识Agent工程",
+      "prerequisites": [],
+      "href": "#learn/agent/00-learning-route"
+    }
+  ],
+  "checks": [
+    "one heading 需掌握的前置 and exact true links in current order",
+    "no 壳层开始前需要/正式先修/可直接阅读，也可先补这些内容",
+    "no relation only 无前置章节, no fake list",
+    "strip 有关系需掌握的前置 · N 篇/查看章节 aria; empty需掌握的前置：无 without button",
+    "aria-labelledby resolves unique heading; button targets current title; li border removed only",
+    "textbook/content relations hashes unchanged; actual own HTTP bytes match candidate"
+  ],
+  "officialBrowserInitialResult": "getState succeeded; browsers=[]; no alternate surface",
+  "noOld292OrCodeRun": true
+}

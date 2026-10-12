@@ -1,0 +1,39 @@
+{
+  "version": "app-v14-prerequisite-copy-frontend-binding-2",
+  "clientVersion": "local-workbench-0.14-dialog-detail",
+  "status": "combined_candidate_pending_independent_narrow_qa",
+  "changedApplicationFiles": [
+    "dist/learning-workbench.js",
+    "dist/learning-experience-v13.js",
+    "dist/learning-experience-v13.css"
+  ],
+  "files": {
+    "dist/learning-workbench.js": "9a30a208e9fae48589ab67f9262793d140607d8151d6d3f950382d5a5eba43f8",
+    "dist/learning-experience-v13.js": "903e6092132a979afff36e6201879b53a5aa17c59dcc3dff29be069ead74d376",
+    "dist/learning-experience-v13.css": "cdd014999bccee644072ac3c41fb389f50463e7e0dfcb5dff8976a8afe76aa60",
+    "dist/styles.css": "47850ba437e3598424846361bb10463fc83513a3eae4d5ff7f1abcd6ad404139",
+    "dist/learning-workbench.css": "c13ed2dbe5b68770e142ef9ec3962eb14f7ccdd745c99ff650c7b47def9c5ace",
+    "dist/index.html": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+    "dist/app.js": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd",
+    "dist/learning-v13-data.js": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+    "dist/content-v12-data.js": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224",
+    "team/app-v14-prerequisite-copy-design.md": "12bc72d936f5d5d74c7020ca61b1a4946c301fe8273db1dc6bf37f8b29db7314",
+    "team/app-v14-prerequisite-copy-product-addendum.md": "f1b71bd2cf5c5e3e73923d699d98b3914874b7b318229a0cc0cc62e75374bd54",
+    "team/app-v14-prerequisite-copy-product-course-controls.md": "092d9452e73d3228241ca1648fd60a07a510c18529c48c01889847fd5d39e239",
+    "team/app-v14-prerequisite-copy-resume-design.md": "6596dbd685525d0f6f931edca99d04689aefdec8abe3b7f5dc0780000109594f",
+    "team/app-v14-prerequisite-copy-frontend-combined.md": "33da890b771e7f84fbabb21fa6e6432c70c02226bb0ad2d461241abedca46235",
+    "team/app-v14-prerequisite-copy-frontend-history/received/manifest.json": "3300f522aa2051d7bee157e68cc477eaa302ee5aa5d67d173c5a53868b431649",
+    "team/app-v14-prerequisite-copy-frontend-history/received/course-expansion-manifest.json": "47c0c042ba51003ab1d1a4c6caf12b49c8f5a54bb7d2b0f716e68423b28856d8",
+    "team/app-v14-prerequisite-copy-frontend-history/candidate01/manifest.json": "72439f9a3a53a2e76c955006e1c8d801dd3c2b0d9efbd1deea305e4977c654f0",
+    "team/app-v14-prerequisite-copy-frontend-history/combined-source-change.diff": "48aedee0c139cb5e3aa990dc2b89c2ca3926d726c44d792bc1aaf7be07d94824",
+    "team/app-v14-prerequisite-copy-frontend-history/combined-public-static-receipt.json": "ed8d354ff299343a8a59542e5683d8cd641f9ec5d96dfd36c688f79b27c52581"
+  },
+  "priorBinding": "team/app-v14-prerequisite-copy-frontend-binding.json",
+  "preservedCandidate1": "team/app-v14-prerequisite-copy-frontend-history/candidate01/",
+  "qaBaseline": "team/app-v14-prerequisite-copy-qa-history/received-baseline-with-course.json",
+  "developerCheckScope": "Source diff/contract review + two Node24 JS syntax checks only; no mirror tests/old VM/292 HTTP/model/code or real browser",
+  "actualBrowserTested": false,
+  "actualPublicResourceReceived": false,
+  "privateUserRecordsRead": false,
+  "serviceOperated": false
+}

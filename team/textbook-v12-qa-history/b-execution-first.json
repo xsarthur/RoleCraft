@@ -1,0 +1,97 @@
+{
+  "at": "2026-10-11T23:06:09.982724+08:00",
+  "python": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "frameworks": {
+    "langgraph": "1.2.4",
+    "langgraph-checkpoint": "4.1.1",
+    "langchain-core": "1.4.0"
+  },
+  "safety": "先读全源码；固定有限夹具，无模型/网络/数据库/危险代码执行；临时工作目录；真实框架只内存checkpointer",
+  "runs": [
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "-B",
+        "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n06-graph.py"
+      ],
+      "cwd": "isolated temporary directory",
+      "sha256": "51ed00eea1cb36983e1eac38efe6cb122fd80357688152002f383e23607bb866",
+      "exit": 0,
+      "stdout": "allow approved_candidate_only\ndeny stopped_without_write\nstale stopped_without_write\nn06 PASS: join, subgraph, interrupt/resume, deny, stale digest, conflict\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "-B",
+        "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n06-graph-contracts.py"
+      ],
+      "cwd": "isolated temporary directory",
+      "sha256": "d2ce027e04056fc598bf70f8dc7f3ecae5926f3848723ca85f167e959b0d9dc8",
+      "exit": 0,
+      "stdout": "n06 contracts PASS: preview, duplicate, gap, replay, final\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "-B",
+        "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n07-delegation.py"
+      ],
+      "cwd": "isolated temporary directory",
+      "sha256": "c374265dd30165b99bee6512ce06c646ba7f4443e595ff358a7e4c1ccce84840",
+      "exit": 0,
+      "stdout": "n07 PASS: duplicate, conflict, terminal, identity, budget, partial outcome\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "-B",
+        "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n08-sandbox-policy.py"
+      ],
+      "cwd": "isolated temporary directory",
+      "sha256": "6157b8fb93f56e72db7614913baf379c2446a0860f9d3c97ff0381e3771fb7c3",
+      "exit": 0,
+      "stdout": "n08 PASS: admission refusals, failed execution, output bound, untrusted export\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "-B",
+        "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n09-runtime-recovery.py"
+      ],
+      "cwd": "isolated temporary directory",
+      "sha256": "e984d32ffa7f6b02d40ee6be2ce633dd8692d688a11dbdf037275d2607574f32",
+      "exit": 0,
+      "stdout": "n09 PASS: breaker probe, reopen, close; compensation unknown/reconcile; cancel fence\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "-B",
+        "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py"
+      ],
+      "cwd": "isolated temporary directory",
+      "sha256": "9d90ef1295ed3543b909f935ffeb60f17b9681396a0779e20ca8dd7a4b75980d",
+      "exit": 0,
+      "stdout": "{\"mode\": \"retained\", \"samples\": [{\"batch\": 0, \"retained_items\": 32, \"traced_current\": 133152, \"traced_peak\": 133238}, {\"batch\": 1, \"retained_items\": 64, \"traced_current\": 266584, \"traced_peak\": 266886}, {\"batch\": 2, \"retained_items\": 96, \"traced_current\": 400080, \"traced_peak\": 400334}, {\"batch\": 3, \"retained_items\": 128, \"traced_current\": 533384, \"traced_peak\": 533638}], \"top_locations\": [\"/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py:14: size=519 KiB, count=256, average=2076 B\", \"/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py:16: size=1024 B, count=1, average=1024 B\"]}\n{\"mode\": \"bounded\", \"samples\": [{\"batch\": 0, \"retained_items\": 4, \"traced_current\": 17372, \"traced_peak\": 21613}, {\"batch\": 1, \"retained_items\": 4, \"traced_current\": 18180, \"traced_peak\": 22541}, {\"batch\": 2, \"retained_items\": 4, \"traced_current\": 18428, \"traced_peak\": 22789}, {\"batch\": 3, \"retained_items\": 4, \"traced_current\": 18676, \"traced_peak\": 23037}], \"top_locations\": [\"/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py:14: size=16.2 KiB, count=8, average=2076 B\", \"/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py:20: size=768 B, count=9, average=85 B\"]}\n{\"mode\": \"temporary\", \"samples\": [{\"batch\": 0, \"retained_items\": 0, \"traced_current\": 0, \"traced_peak\": 8394}, {\"batch\": 1, \"retained_items\": 0, \"traced_current\": 248, \"traced_peak\": 8762}, {\"batch\": 2, \"retained_items\": 0, \"traced_current\": 464, \"traced_peak\": 8978}, {\"batch\": 3, \"retained_items\": 0, \"traced_current\": 712, \"traced_peak\": 9226}], \"top_locations\": [\"/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py:20: size=768 B, count=9, average=85 B\", \"/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py:19: size=256 B, count=7, average=37 B\"]}\nn09 memory PASS: finite retention, bounded-cache and temporary-allocation evidence\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "-B",
+        "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n10-evaluation-matrix.py"
+      ],
+      "cwd": "isolated temporary directory",
+      "sha256": "d30b8b8a3297203fa0be35a603bb8e19eea3332e79f73da2487e1cb55e09024b",
+      "exit": 0,
+      "stdout": "n10 PASS: feasible matrix, language-layer divergence, missing handover items\n",
+      "stderr": ""
+    }
+  ]
+}

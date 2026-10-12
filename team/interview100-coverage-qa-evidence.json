@@ -1,0 +1,176 @@
+{
+  "start_sources": {
+    "sites/rolecraft/textbooks/v10/00-learning-route.md": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+    "sites/rolecraft/textbooks/v10/01-foundation.md": "9e21a39ca80ea9045111885d33f8a60e0c5fc403a43e74b86f0f58a23347abad",
+    "sites/rolecraft/textbooks/v10/02-task-acceptance.md": "73d4157f1db7a146b7f84c7913be05dadbb91d2a256560531a7ae748932bc5fc",
+    "sites/rolecraft/textbooks/v10/03-trust-boundary.md": "ede8fbe33929ecceafe800fadcc20186c854f8b4bd4b8288e6b74d3690db1f53",
+    "sites/rolecraft/textbooks/v10/README.md": "6958afe2292ed024bf6fb7a526869a4ecce3c22bc124c9f8ae81ad8f8014a8cf",
+    "sites/rolecraft/textbooks/v10/agent-engineering-textbook.md": "6707a4f03b298a5b234ce56a88edcbd9d79af6d40cb978227461a9d9d522f76e",
+    "sites/rolecraft/textbooks/v10/assets/agent-engineering-landscape.dot": "7a280385d49ebefe9c4d82bd81630101f67692c8ea7ac5cfb61194b70f1c829b",
+    "sites/rolecraft/textbooks/v10/assets/agent-engineering-landscape.png": "7136b1c83c29f3ed357437e3c9885901b8b90238763e6263dead3fdd89249bd6",
+    "sites/rolecraft/textbooks/v10/assets/agent-engineering-landscape.svg": "fd235b6f248af4ada7556044a7c393810832cde838f0945c98a7a22b3bd0a8f9",
+    "sites/rolecraft/textbooks/v10/assets/agent-runtime-loop.dot": "7fcde3319a3f611f3909472530a29e73480ab5a8049b65313be53278e312ee5b",
+    "sites/rolecraft/textbooks/v10/assets/agent-runtime-loop.png": "9497f77fa43566eb621549175ee55870a02b50e8ebd3144405e820d0ac2c7106",
+    "sites/rolecraft/textbooks/v10/assets/agent-runtime-loop.svg": "c1929a8021f331df4452e949272028fcde05c037b996453e883d3f84a83e5a15",
+    "sites/rolecraft/textbooks/v10/c01-control-loop.md": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38",
+    "sites/rolecraft/textbooks/v10/c01-control-primer.md": "345dd67c5bd8165a9d77dc7de819133f50dfcf39f91f59dec05bf385aba3d8c8",
+    "sites/rolecraft/textbooks/v10/c01-fixed-workflow.md": "d4f8ea6dd8065d0afc2a4c2176964161a03e23463397b2518036b7e11530822e",
+    "sites/rolecraft/textbooks/v10/c01-selection.md": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f",
+    "sites/rolecraft/textbooks/v10/c02.md": "2614eaa7a00a00f54c484dc9cc36e8ed3bedcc144c5895947fcfe4094d47566d",
+    "sites/rolecraft/textbooks/v10/c03.md": "4f4c0750bce1fa8de15a5f6bc94bc972c66a3e877e4b161b41890b4af8771261",
+    "sites/rolecraft/textbooks/v10/e01.md": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5",
+    "sites/rolecraft/textbooks/v10/e02.md": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1",
+    "sites/rolecraft/textbooks/v10/e03.md": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a",
+    "sites/rolecraft/textbooks/v10/e04.md": "cc0fdfe84f772dc444a24fd89b4a8d67f1bad600ab6818cf58f6e9d37dace025",
+    "sites/rolecraft/textbooks/v10/e05.md": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d",
+    "sites/rolecraft/textbooks/v10/f01.md": "54fa66bf5d2072b69a033516602e6db3498cd9cfe9dffecf13622f7d86b39f4e",
+    "sites/rolecraft/textbooks/v10/f02.md": "7179f323186c9af9930532d0f6cb96c45aa64121c8bf6afd171a9b23531918cf",
+    "sites/rolecraft/textbooks/v10/p01-discovery.md": "dfbaf177deeba2bd4f71a633764533a65dce7d14d036e75400744e8c0aee111b",
+    "sites/rolecraft/textbooks/v10/p01-mvp.md": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5",
+    "sites/rolecraft/textbooks/v10/p02.md": "7a4ddb35b1a34d2a2ed99b4fa73124794b5220ed1498ef395e48817d5197c487"
+  },
+  "scope": "All files in textbooks/v10; baseline taken before coverage reports are delivered",
+  "defects": [
+    {
+      "id": "D1",
+      "owner": "内容审校B",
+      "question_ids": [
+        53
+      ],
+      "finding": "State与Context区分不能独自覆盖状态消息无限增长的治理；原充分过度",
+      "required_change": "降部分并明示生命周期缺口",
+      "status": "closed_after_author_revision",
+      "retest": "最终JSON/Markdown回读及原文段落核对；301条有效范围/引文校验无错误。Q53部分；Q30部分；空白/标题/括号定位替换；Q100增加e04:32/140/142实际发布条件。"
+    },
+    {
+      "id": "D2",
+      "owner": "内容审校B",
+      "question_ids": [
+        55,
+        59,
+        61,
+        62,
+        64,
+        67,
+        73,
+        78,
+        79,
+        88,
+        89,
+        90,
+        94,
+        99
+      ],
+      "finding": "多处引用为标题、空行或右括号，未直接支持主张",
+      "required_change": "逐项替换实际正文证据并重新核所有引用",
+      "status": "closed_after_author_revision",
+      "retest": "最终JSON/Markdown回读及原文段落核对；301条有效范围/引文校验无错误。Q53部分；Q30部分；空白/标题/括号定位替换；Q100增加e04:32/140/142实际发布条件。"
+    },
+    {
+      "id": "D3",
+      "owner": "内容审校B",
+      "question_ids": [
+        100
+      ],
+      "finding": "上线依据引用仅为e04标题",
+      "required_change": "增加实际发布条件正文段落",
+      "status": "closed_after_author_revision",
+      "retest": "最终JSON/Markdown回读及原文段落核对；301条有效范围/引文校验无错误。Q53部分；Q30部分；空白/标题/括号定位替换；Q100增加e04:32/140/142实际发布条件。"
+    },
+    {
+      "id": "D4",
+      "owner": "内容审校A",
+      "question_ids": [
+        30
+      ],
+      "finding": "Function Calling子问已有实质内容，不应把其他三机制缺失算为完全未覆盖",
+      "required_change": "改部分并保留三机制缺口",
+      "status": "closed_after_author_revision",
+      "retest": "最终JSON/Markdown回读及原文段落核对；301条有效范围/引文校验无错误。Q53部分；Q30部分；空白/标题/括号定位替换；Q100增加e04:32/140/142实际发布条件。"
+    }
+  ],
+  "independent_review": {
+    "question_scope": "全100原题逐题静态核对；全部初稿55项充分逐项复核，Q53返修后最终54项充分复验",
+    "method": "独立AI静态阅读题干、映射和v10对应正文；结构/引用验证脚本，不运行教材示例",
+    "keyword_check": {
+      "scope": "v10逐篇md，排除合订重复",
+      "query": "LangGraph|MCP|A2A|Few-shot|few-shot|沙箱|长期记忆|Supervisor|子图",
+      "matches": 0,
+      "limitation": "零字样仅辅助，未覆盖结论同时依相关正文机制检查"
+    },
+    "question_integrity": "人工对照本轮会话固定100题，未把题干改成较弱问题；随后脚本核1..100与无完全重复题",
+    "framework_boundary": "55/56/57为按原题通用路由/检查点/恢复问题支持，不计LangGraph API已教；51/58/60保留框架缺口",
+    "real_experience_boundary": "10/99仅方法支持，真实个人经历缺失"
+  },
+  "end_sources": {
+    "sites/rolecraft/textbooks/v10/00-learning-route.md": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+    "sites/rolecraft/textbooks/v10/01-foundation.md": "9e21a39ca80ea9045111885d33f8a60e0c5fc403a43e74b86f0f58a23347abad",
+    "sites/rolecraft/textbooks/v10/02-task-acceptance.md": "73d4157f1db7a146b7f84c7913be05dadbb91d2a256560531a7ae748932bc5fc",
+    "sites/rolecraft/textbooks/v10/03-trust-boundary.md": "ede8fbe33929ecceafe800fadcc20186c854f8b4bd4b8288e6b74d3690db1f53",
+    "sites/rolecraft/textbooks/v10/README.md": "6958afe2292ed024bf6fb7a526869a4ecce3c22bc124c9f8ae81ad8f8014a8cf",
+    "sites/rolecraft/textbooks/v10/agent-engineering-textbook.md": "6707a4f03b298a5b234ce56a88edcbd9d79af6d40cb978227461a9d9d522f76e",
+    "sites/rolecraft/textbooks/v10/assets/agent-engineering-landscape.dot": "7a280385d49ebefe9c4d82bd81630101f67692c8ea7ac5cfb61194b70f1c829b",
+    "sites/rolecraft/textbooks/v10/assets/agent-engineering-landscape.png": "7136b1c83c29f3ed357437e3c9885901b8b90238763e6263dead3fdd89249bd6",
+    "sites/rolecraft/textbooks/v10/assets/agent-engineering-landscape.svg": "fd235b6f248af4ada7556044a7c393810832cde838f0945c98a7a22b3bd0a8f9",
+    "sites/rolecraft/textbooks/v10/assets/agent-runtime-loop.dot": "7fcde3319a3f611f3909472530a29e73480ab5a8049b65313be53278e312ee5b",
+    "sites/rolecraft/textbooks/v10/assets/agent-runtime-loop.png": "9497f77fa43566eb621549175ee55870a02b50e8ebd3144405e820d0ac2c7106",
+    "sites/rolecraft/textbooks/v10/assets/agent-runtime-loop.svg": "c1929a8021f331df4452e949272028fcde05c037b996453e883d3f84a83e5a15",
+    "sites/rolecraft/textbooks/v10/c01-control-loop.md": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38",
+    "sites/rolecraft/textbooks/v10/c01-control-primer.md": "345dd67c5bd8165a9d77dc7de819133f50dfcf39f91f59dec05bf385aba3d8c8",
+    "sites/rolecraft/textbooks/v10/c01-fixed-workflow.md": "d4f8ea6dd8065d0afc2a4c2176964161a03e23463397b2518036b7e11530822e",
+    "sites/rolecraft/textbooks/v10/c01-selection.md": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f",
+    "sites/rolecraft/textbooks/v10/c02.md": "2614eaa7a00a00f54c484dc9cc36e8ed3bedcc144c5895947fcfe4094d47566d",
+    "sites/rolecraft/textbooks/v10/c03.md": "4f4c0750bce1fa8de15a5f6bc94bc972c66a3e877e4b161b41890b4af8771261",
+    "sites/rolecraft/textbooks/v10/e01.md": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5",
+    "sites/rolecraft/textbooks/v10/e02.md": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1",
+    "sites/rolecraft/textbooks/v10/e03.md": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a",
+    "sites/rolecraft/textbooks/v10/e04.md": "cc0fdfe84f772dc444a24fd89b4a8d67f1bad600ab6818cf58f6e9d37dace025",
+    "sites/rolecraft/textbooks/v10/e05.md": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d",
+    "sites/rolecraft/textbooks/v10/f01.md": "54fa66bf5d2072b69a033516602e6db3498cd9cfe9dffecf13622f7d86b39f4e",
+    "sites/rolecraft/textbooks/v10/f02.md": "7179f323186c9af9930532d0f6cb96c45aa64121c8bf6afd171a9b23531918cf",
+    "sites/rolecraft/textbooks/v10/p01-discovery.md": "dfbaf177deeba2bd4f71a633764533a65dce7d14d036e75400744e8c0aee111b",
+    "sites/rolecraft/textbooks/v10/p01-mvp.md": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5",
+    "sites/rolecraft/textbooks/v10/p02.md": "7a4ddb35b1a34d2a2ed99b4fa73124794b5220ed1498ef395e48817d5197c487"
+  },
+  "source_comparison": {
+    "count": 28,
+    "same": true,
+    "changed": []
+  },
+  "final_report_bindings": {
+    "sites/rolecraft/team/interview100-coverage-01-50.md": "afce41e2db128e751f10239ce70c76b66b467b8f54c7a1ccc01a78f995886dcb",
+    "sites/rolecraft/team/interview100-coverage-01-50.json": "fd582669e2bc735bb41f3d2a6fac3ed8454a669dc75e7cec526276c9d14c879a",
+    "sites/rolecraft/team/interview100-coverage-51-100.md": "fbf08c35edb558021cc11ea7cea5cfff1d3b71d034f51ce6bb54f7480fd0fbc3",
+    "sites/rolecraft/team/interview100-coverage-51-100.json": "14a053b82d13eff78f60c7a8dee32da38bd5c3814e0c0114e350bc2ff2a33267",
+    "sites/rolecraft/team/interview100-coverage-product.md": "c7eb618bf2cd906b59f83ad03aaec8953ff050ac0297ddc84e67fe78258f5d66"
+  },
+  "mechanical_checks": {
+    "ids_exact_1_to_100": true,
+    "unique_questions": 100,
+    "evidence_references_checked": 301,
+    "invalid_ranges_or_quotes": 0,
+    "source_file_count": 28,
+    "source_unchanged": true,
+    "textbook_examples_executed": 0
+  },
+  "curriculum_handoff_check": {
+    "file": "sites/rolecraft/team/interview100-coverage-curriculum.md",
+    "sha256": "18fcf6f19c38340d19f5b140e7d325674bf030907f20bc82270665807b9a64d1",
+    "scope": "仅核与最终缺题引用一致、54/36/10统计及规划未冒称完成；不审核尚未产出的新教学设计",
+    "uncovered_ids_present": [
+      24,
+      27,
+      28,
+      34,
+      39,
+      51,
+      58,
+      62,
+      70,
+      86
+    ],
+    "counts_match": true,
+    "does_not_claim_gap_closed": true,
+    "status": "consistent_with_final_audit"
+  }
+}

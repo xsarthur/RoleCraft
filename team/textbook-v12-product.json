@@ -1,0 +1,143 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-10-11",
+  "owner": "产品经理",
+  "status": "frozen_before_assessment",
+  "targetRole": "初中级 LLM Agent 应用工程师",
+  "prerequisites": "软件工程及大模型应用基础；基础补学另行入口",
+  "advancedTopics": "单列层级，不全部设初级必修",
+  "fixedSet": {
+    "count": 100,
+    "historicalCounts": {
+      "sufficient": 54,
+      "partial": 36,
+      "uncovered": 10
+    },
+    "reassessCurrentBaseline": true,
+    "personalExperienceCappedAtPartial": [
+      10,
+      99
+    ]
+  },
+  "supportLevels": [
+    "sufficient",
+    "partial",
+    "uncovered"
+  ],
+  "dimensions": [
+    "knowledge_breadth",
+    "teaching_depth",
+    "executability",
+    "transfer_and_project_training",
+    "real_learner_and_employment_evidence"
+  ],
+  "aggregateScore": null,
+  "holdoutPolicy": "作者冻结后QA首测，首测结果保留；题目暴露后不可再称未见",
+  "acceptance": [
+    "market_sources_and_deduplication",
+    "baseline_and_final_item_matrix",
+    "five_dimension_diagnosis",
+    "actual_integrated_textbook",
+    "capability_text_exercise_artifact_mapping",
+    "independent_content_review",
+    "independent_qa_and_safe_example_execution",
+    "defect_retest",
+    "remaining_gaps_and_original_gate_review"
+  ],
+  "matrixFields": [
+    "id",
+    "set",
+    "question",
+    "sourceRefs",
+    "sourceType",
+    "publishedDate",
+    "accessDate",
+    "dedupGroup",
+    "roleLevel",
+    "capabilities",
+    "baselineVersion",
+    "baselineEvidence",
+    "baselineSupport",
+    "missingSubquestions",
+    "finalVersion",
+    "finalEvidence",
+    "finalSupport",
+    "methodSupport",
+    "personalEvidenceStatus",
+    "owner",
+    "rationale",
+    "reviewer",
+    "dispute",
+    "retest"
+  ],
+  "originalProductGatesUnchanged": true,
+  "outOfScope": [
+    "website_changes",
+    "database_changes",
+    "publication",
+    "external_contact",
+    "paid_calls"
+  ],
+  "productConclusion": "not_assessed_by_this_specification",
+  "selfCheck": "产品范围与口径交付，不是教材/测试/就业结论",
+  "specificationSha256": "ded892bce12edc87b962b9661cf12f079a4e567a4cc12c85deeefc1ce9c318e3",
+  "marketProvisionalLayers": {
+    "prerequisite": [
+      "asyncio",
+      "Python可变对象/装饰器",
+      "LRU",
+      "内存泄漏基础",
+      "Transformer/推理必要基础"
+    ],
+    "core": [
+      "向量距离与ANN权衡",
+      "增量索引",
+      "PDF/OCR摄取",
+      "结构化输出验证",
+      "跨语言检索/话题切换",
+      "技术交付与运维交接"
+    ],
+    "advanced": [
+      "大规模推理服务优化",
+      "售前架构统筹"
+    ]
+  },
+  "confirmedMarketBatch": {
+    "source": "textbook-v12-market.json",
+    "sourceSha256": "9a7c1fbed8117960a2412091250f3e2545003a335f6cdec4d56956dc52ba12ed",
+    "ids": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114
+    ],
+    "denominator": 14,
+    "levels": {
+      "101": "prerequisite_application_required",
+      "102": "prerequisite",
+      "103": "prerequisite",
+      "104": "core_intermediate",
+      "105": "core",
+      "106": "core_method_advanced_detail",
+      "107": "core",
+      "108": "core",
+      "109": "prerequisite",
+      "110": "core",
+      "111": "core",
+      "112": "core",
+      "113": "advanced",
+      "114": "core_handoff_advanced_context"
+    },
+    "thresholdAdded": false
+  }
+}

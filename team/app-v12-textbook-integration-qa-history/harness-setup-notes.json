@@ -1,0 +1,31 @@
+{
+  "atUtc": "2026-10-11T16:41:01.232117+00:00",
+  "scope": "QA harness setup failures, not application defects; historical professional reports unchanged.",
+  "actualFailures": [
+    {
+      "command": "Node24 check-client-logic.mjs candidate",
+      "error": "ReferenceError: URLSearchParams is not defined",
+      "cause": "Disposable VM fixture omitted the browser-standard global",
+      "correction": "Exposed native URLSearchParams and URL subclass in fixture, no application edit."
+    },
+    {
+      "command": "Node24 check-client-logic.mjs candidate",
+      "error": "TypeError bodyMarkdown undefined in markdown",
+      "cause": "QA invoked the actual one-argument markdown(unit) API with two arguments, not an application bug",
+      "correction": "Read actual signature, invoked markdown(unit), no application edit."
+    },
+    {
+      "command": "Node24 run-query-cases.mjs repair empty-filter affected-retest-cases.json",
+      "error": "Selection returned count0, no test claimed",
+      "cause": "Empty positional filter was parsed as one empty ID in QA harness",
+      "correction": "Empty filter now means all rows in selected affected file; zero-case artifact retained separately."
+    },
+    {
+      "command": "Node24 client-logic extended synthetic historical forced input",
+      "error": "historical readonly view wrote learning facts (QA initial assertion)",
+      "cause": "QA initially equated creation of an empty v12 storage envelope with new learning facts. The synthetic note field is deliberately absent from real historical UI; source capture correctly ignores historical notes and creates no visit/bookmark/note/project facts.",
+      "correction": "Retained extended failure artifact, corrected assertion to require no actual learning facts and raw old key unchanged; current source unchanged. Final artifact includes actual empty historicalCurrentAfter envelope."
+    }
+  ],
+  "retest": "Final synthetic client logic pass after fixture/API/assertion corrections; no application edit, no real browser claim."
+}
