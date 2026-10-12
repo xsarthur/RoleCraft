@@ -187,8 +187,10 @@ export function createRolecraftServer(options={}) {
     const send=(status,payload)=>{res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(JSON.stringify(payload));};
     try {
       const host=req.headers.host || '';
-      if(!/^127\.0\.0\.1:\d+$/.test(host)) reject(400,'host_invalid','仅接受127.0.0.1本地地址');
-      const origin=`http://${host}`;
+      const publicDeployment=process.env.PUBLIC_DEPLOYMENT==='true';
+      if(!publicDeployment && !/^127\.0\.0\.1:\d+$/.test(host)) reject(400,'host_invalid','仅接受127.0.0.1本地地址');
+      const forwardedProto=String(req.headers['x-forwarded-proto']||'http').split(',')[0].trim();
+      const origin=`${forwardedProto==='https'?'https':'http'}://${host}`;
       if(req.headers.origin && req.headers.origin!==origin)reject(403,'origin_rejected','拒绝跨来源请求');
       if(req.headers['sec-fetch-site']==='cross-site')reject(403,'origin_rejected','拒绝跨站请求');
       const u=new URL(req.url,origin), pathname=u.pathname, method=req.method;
