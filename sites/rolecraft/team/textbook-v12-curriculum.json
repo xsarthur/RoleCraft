@@ -22,8 +22,8 @@
       "sha256": "e853833671767eebf547bcf28b6b289d98057fe3ef12250a3705a761edbec95b"
     },
     {
-      "path": "textbooks/v10/agent-engineering-textbook.md",
-      "sha256": "6707a4f03b298a5b234ce56a88edcbd9d79af6d40cb978227461a9d9d522f76e"
+      "path": "textbooks/v12/agent-engineering-textbook.md",
+      "sha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c280e1"
     }
   ],
   "scope": "仅课程规格；不写正文/应用，不读取保留变体题面",
@@ -65,7 +65,7 @@
     {
       "id": "00-learning-route",
       "path": "textbooks/v12/00-learning-route.md",
-      "source": "textbooks/v10/00-learning-route.md",
+      "source": "textbooks/v12/00-learning-route.md",
       "prerequisites": [],
       "migration": "开篇保留定义/双图语义并扩展30单元映射",
       "author": "B"
@@ -73,7 +73,7 @@
     {
       "id": "01-foundation",
       "path": "textbooks/v12/01-foundation.md",
-      "source": "textbooks/v10/01-foundation.md",
+      "source": "textbooks/v12/01-foundation.md",
       "prerequisites": [
         "00-learning-route"
       ],
@@ -83,7 +83,7 @@
     {
       "id": "p01-discovery",
       "path": "textbooks/v12/p01-discovery.md",
-      "source": "textbooks/v10/p01-discovery.md",
+      "source": "textbooks/v12/p01-discovery.md",
       "prerequisites": [
         "00-learning-route"
       ],
@@ -93,7 +93,7 @@
     {
       "id": "02-task-acceptance",
       "path": "textbooks/v12/02-task-acceptance.md",
-      "source": "textbooks/v10/02-task-acceptance.md",
+      "source": "textbooks/v12/02-task-acceptance.md",
       "prerequisites": [
         "p01-discovery"
       ],
@@ -103,7 +103,7 @@
     {
       "id": "03-trust-boundary",
       "path": "textbooks/v12/03-trust-boundary.md",
-      "source": "textbooks/v10/03-trust-boundary.md",
+      "source": "textbooks/v12/03-trust-boundary.md",
       "prerequisites": [
         "02-task-acceptance"
       ],
@@ -113,7 +113,7 @@
     {
       "id": "f01",
       "path": "textbooks/v12/f01.md",
-      "source": "textbooks/v10/f01.md",
+      "source": "textbooks/v12/f01.md",
       "prerequisites": [
         "01-foundation",
         "02-task-acceptance",
@@ -125,7 +125,7 @@
     {
       "id": "f02",
       "path": "textbooks/v12/f02.md",
-      "source": "textbooks/v10/f02.md",
+      "source": "textbooks/v12/f02.md",
       "prerequisites": [
         "f01"
       ],
@@ -135,7 +135,7 @@
     {
       "id": "c01-selection",
       "path": "textbooks/v12/c01-selection.md",
-      "source": "textbooks/v10/c01-selection.md",
+      "source": "textbooks/v12/c01-selection.md",
       "prerequisites": [
         "f02",
         "02-task-acceptance"
@@ -146,7 +146,7 @@
     {
       "id": "c01-control-primer",
       "path": "textbooks/v12/c01-control-primer.md",
-      "source": "textbooks/v10/c01-control-primer.md",
+      "source": "textbooks/v12/c01-control-primer.md",
       "prerequisites": [
         "c01-selection",
         "03-trust-boundary"
@@ -157,7 +157,7 @@
     {
       "id": "c02",
       "path": "textbooks/v12/c02.md",
-      "source": "textbooks/v10/c02.md",
+      "source": "textbooks/v12/c02.md",
       "prerequisites": [
         "f02",
         "03-trust-boundary"
@@ -168,7 +168,7 @@
     {
       "id": "c03",
       "path": "textbooks/v12/c03.md",
-      "source": "textbooks/v10/c03.md",
+      "source": "textbooks/v12/c03.md",
       "prerequisites": [
         "f01",
         "c01-selection",
@@ -180,7 +180,7 @@
     {
       "id": "e01",
       "path": "textbooks/v12/e01.md",
-      "source": "textbooks/v10/e01.md",
+      "source": "textbooks/v12/e01.md",
       "prerequisites": [
         "c03",
         "c01-control-primer"
@@ -191,7 +191,7 @@
     {
       "id": "c01-fixed-workflow",
       "path": "textbooks/v12/c01-fixed-workflow.md",
-      "source": "textbooks/v10/c01-fixed-workflow.md",
+      "source": "textbooks/v12/c01-fixed-workflow.md",
       "prerequisites": [
         "f02",
         "c02",
@@ -204,7 +204,7 @@
     {
       "id": "c01-control-loop",
       "path": "textbooks/v12/c01-control-loop.md",
-      "source": "textbooks/v10/c01-control-loop.md",
+      "source": "textbooks/v12/c01-control-loop.md",
       "prerequisites": [
         "c01-fixed-workflow",
         "c03",
@@ -216,7 +216,7 @@
     {
       "id": "e02",
       "path": "textbooks/v12/e02.md",
-      "source": "textbooks/v10/e02.md",
+      "source": "textbooks/v12/e02.md",
       "prerequisites": [
         "c02",
         "c03",
@@ -228,7 +228,7 @@
     {
       "id": "p01-mvp",
       "path": "textbooks/v12/p01-mvp.md",
-      "source": "textbooks/v10/p01-mvp.md",
+      "source": "textbooks/v12/p01-mvp.md",
       "prerequisites": [
         "p01-discovery",
         "c01-selection",
@@ -240,7 +240,7 @@
     {
       "id": "e03",
       "path": "textbooks/v12/e03.md",
-      "source": "textbooks/v10/e03.md",
+      "source": "textbooks/v12/e03.md",
       "prerequisites": [
         "c02",
         "c03",
@@ -253,7 +253,7 @@
     {
       "id": "e04",
       "path": "textbooks/v12/e04.md",
-      "source": "textbooks/v10/e04.md",
+      "source": "textbooks/v12/e04.md",
       "prerequisites": [
         "e01",
         "e02",
@@ -265,7 +265,7 @@
     {
       "id": "e05",
       "path": "textbooks/v12/e05.md",
-      "source": "textbooks/v10/e05.md",
+      "source": "textbooks/v12/e05.md",
       "prerequisites": [
         "e02",
         "e04"
@@ -276,7 +276,7 @@
     {
       "id": "p02",
       "path": "textbooks/v12/p02.md",
-      "source": "textbooks/v10/p02.md",
+      "source": "textbooks/v12/p02.md",
       "prerequisites": [
         "e01",
         "e03",

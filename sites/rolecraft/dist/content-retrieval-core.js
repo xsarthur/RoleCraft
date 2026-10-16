@@ -34,7 +34,7 @@ const v12Frames=[
  {id:'transfer_evaluation',label:'用跨场景实验与技术移交检验能力',units:['n10-evaluation-projects'],patterns:[/跨场景|客服知识|研究任务|跨语(?:排错|诊断)|技术移交|迁移.{0,8}(?:任务|评价)|(?:证据|轨迹).{0,8}(?:偏离|分歧)|(?:交给|移交).{0,16}(?:工程师|接收者).{0,8}复现/i]}
 ];
 const frameById=new Map([...frames,...v12Frames].map(f=>[f.id,f]));
-const expectedUnits={'textbook-v10':20,'textbook-v12':30};
+const expectedUnits={'textbook-v12':30};
 const norm=s=>s.normalize('NFKC').toLowerCase().replace(/\s+/g,' ').trim();
 function tokenize(s){const n=norm(s),out=n.match(/[a-z0-9_]{2,}/g)||[];for(const run of n.match(/[\p{Script=Han}]+/gu)||[])for(let i=0;i<run.length-1;i++)out.push(run.slice(i,i+2));return [...new Set(out)].filter(t=>!['怎么','怎样','一个','什么','我想','想学','可以','如何','不是','但是','知道','内容','详细','解法'].includes(t));}
 function clauses(query){return query.split(/[，,。；;！？!?\n]|(?:但是|但(?=不是|不想|不要|不看|不学)|而是|我只想|我只要|只想学|以及|同时|还有|还想|还得)/).map(text=>({text:text.trim(),excluded:/^(?:先|暂时|暂且|暂)?(?:不看|不学|不讨论|不谈|不要(?:学|看|讨论|推荐|介绍)|不推荐|别推荐|跳过|不想学|不是要学|不是想学|不是\s*(?:react\b|agent\b|智能体|前端)|不想看|不用看|不需要学|不需要看)/i.test(text.trim())})).filter(x=>x.text);}
@@ -51,7 +51,7 @@ function sourceTermIndex(corpus,sections){
 }
 function termRecall(corpus,sections,text,forbidden){const index=sourceTermIndex(corpus,sections),seen=new Set();return englishTerms(text).filter(t=>!seen.has(t.key)&&seen.add(t.key)).flatMap(t=>{const hits=(index.get(t.key)||[]).filter(c=>!forbidden.has(c.u.unitId));return hits.length?[{term:t.key,display:hits[0].display,hits}]:[];});}
 function interpret(input,options={}){
- const availableFrames=(options.corpusVersion||input.corpusVersion||'textbook-v12')==='textbook-v12'?[...frames,...v12Frames]:frames;
+ const availableFrames=[...frames,...v12Frames];
  const parts=clauses(input.query),positive=parts.filter(p=>!p.excluded),negative=parts.filter(p=>p.excluded);
  const collect=list=>availableFrames.flatMap(f=>{const evidence=list.flatMap(p=>f.patterns.flatMap(re=>{const m=p.text.match(re);return m?[m[0]]:[]}));return evidence.length?[{id:f.id,label:f.label,evidence:[...new Set(evidence)],unitIds:f.units}]:[];});
  const excludedIntents=collect(negative),excludedIds=new Set(excludedIntents.map(f=>f.id));

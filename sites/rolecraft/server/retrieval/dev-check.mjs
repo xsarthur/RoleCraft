@@ -3,17 +3,17 @@ import assert from 'node:assert/strict';
 import {readFileSync,writeFileSync,mkdtempSync,rmSync}from'node:fs';
 import path from'node:path';import os from'node:os';import {fileURLToPath}from'node:url';import {createHash}from'node:crypto';
 import {createRolecraftServer}from'../index.mjs';
-const here=path.dirname(fileURLToPath(import.meta.url)),dataDir=mkdtempSync(path.join(os.tmpdir(),'rolecraft-v11-engineer-'));
+const here=path.dirname(fileURLToPath(import.meta.url)),dataDir=mkdtempSync(path.join(os.tmpdir(),'rolecraft-v12-engineer-'));
 const realFetch=globalThis.fetch;let externalAttempts=0,app;const checks=[];
 const sha=raw=>createHash('sha256').update(raw).digest('hex');
 try{
  app=createRolecraftServer({dataDir});await new Promise(resolve=>app.server.listen(0,'127.0.0.1',resolve));const origin='http://127.0.0.1:'+app.server.address().port;
  globalThis.fetch=(url,opts)=>{if(!String(url).startsWith(origin+'/')){externalAttempts++;throw Error('External request prohibited');}return realFetch(url,opts);};
  const request=async(route,input)=>{const r=await fetch(origin+route,input===undefined?{}:{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(input)});return {status:r.status,data:await r.json()};};
- const catalog=await request('/api/content/catalog');assert.equal(catalog.status,200);assert.equal(catalog.data.units.length,20);
- const corpus=JSON.parse(readFileSync(path.join(here,'content-v10-index.json'),'utf8'));
+ const catalog=await request('/api/content/catalog');assert.equal(catalog.status,200);assert.equal(catalog.data.units.length,30);assert.equal(catalog.data.corpusVersion,'textbook-v12');
+ const corpus=JSON.parse(readFileSync(path.join(here,'content-v12-index.json'),'utf8'));
  for(const u of corpus.units){const response=await request('/api/content/chapter/'+u.unitId);assert.equal(response.status,200);assert.equal(response.data.unit.bodyMarkdown,u.bodyMarkdown);assert.equal(response.data.unit.sourceSha256,sha(u.bodyMarkdown));}
- checks.push({check:'catalog_and_all_20_current_chapters',passed:true});
+ checks.push({check:'catalog_and_all_30_current_chapters',passed:true});
  const cases=[
   ['程序崩了以后怎么接着干，又不把已经做过的事情再做一遍？',['e01']],
   ['中断后恢复任务时，怎样避免重复外部动作？',['e01']],

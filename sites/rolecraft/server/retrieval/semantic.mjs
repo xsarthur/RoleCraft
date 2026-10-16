@@ -42,11 +42,11 @@ const v12Descriptions={
 };
 const intentVectorsPromises=new Map();
 async function intentVectors(corpusVersion='textbook-v12'){
- if(!['textbook-v10','textbook-v12'].includes(corpusVersion))throw Error('Unsupported semantic corpus');
+ if(corpusVersion!=='textbook-v12')throw Error('Unsupported semantic corpus');
  if(!intentVectorsPromises.has(corpusVersion))intentVectorsPromises.set(corpusVersion,(async()=>{
-  const extractor=await getExtractor();const metadata=corpusVersion==='textbook-v12'?{...intentDescriptions,...v12Descriptions}:intentDescriptions;
-  const descriptions=Object.entries(metadata).flatMap(([id,list])=>list.map(text=>({id,text})));const key=sha(JSON.stringify(descriptions));const cachePath=path.join(here,corpusVersion==='textbook-v12'?'intent-vectors-v12.json':'intent-vectors-v10.json');
-  if(existsSync(cachePath)){const cache=JSON.parse(readFileSync(cachePath,'utf8'));if(cache.descriptionHash===key&&cache.revision===MODEL_REVISION&&cache.items.length===descriptions.length&&cache.items.every((x,i)=>x.id===descriptions[i].id&&x.vector.length===512&&x.vector.every(Number.isFinite))&&(corpusVersion==='textbook-v10'||cache.corpusVersion===corpusVersion))return cache.items;throw Error('Task vector identity differs; explicitly prepare current resources');}
+  const extractor=await getExtractor();const metadata={...intentDescriptions,...v12Descriptions};
+  const descriptions=Object.entries(metadata).flatMap(([id,list])=>list.map(text=>({id,text})));const key=sha(JSON.stringify(descriptions));const cachePath=path.join(here,'intent-vectors-v12.json');
+  if(existsSync(cachePath)){const cache=JSON.parse(readFileSync(cachePath,'utf8'));if(cache.descriptionHash===key&&cache.revision===MODEL_REVISION&&cache.items.length===descriptions.length&&cache.items.every((x,i)=>x.id===descriptions[i].id&&x.vector.length===512&&x.vector.every(Number.isFinite))&&cache.corpusVersion===corpusVersion)return cache.items;throw Error('Task vector identity differs; explicitly prepare current resources');}
   const vectors=await extractor(descriptions.map(x=>x.text));const items=descriptions.map((x,i)=>({id:x.id,vector:vectors[i]}));
   writeFileSync(cachePath,JSON.stringify({corpusVersion,descriptionHash:key,revision:MODEL_REVISION,items})+'\n');return items;
  })().catch(e=>{intentVectorsPromises.delete(corpusVersion);throw e;}));return intentVectorsPromises.get(corpusVersion);
@@ -93,12 +93,12 @@ function passages(corpus){return corpus.units.flatMap(u=>u.sections.flatMap(s=>{
  const chunks=[];for(let i=0;i<text.length;i+=340)chunks.push({key:u.unitId+'/'+s.sectionId,text:u.title+'。'+s.title+'。'+text.slice(i,i+450)});return chunks;
 }));}
 export async function prepareVectors(corpus,{persist=true,onProgress,rebuild=false}={}){
- if(!['textbook-v10','textbook-v12'].includes(corpus.corpusVersion))throw Error('Unsupported semantic corpus');
+ if(corpus.corpusVersion!=='textbook-v12')throw Error('Unsupported semantic corpus');
  const record=lock();const modelHash=record.files.find(f=>f.name==='onnx/model_int8.onnx').sha256;
- const chunks=passages(corpus),chunkHash=sha(JSON.stringify(chunks));const cachePath=path.join(here,corpus.corpusVersion==='textbook-v12'?'vectors-v12.json':'vectors-v10.json');
+ const chunks=passages(corpus),chunkHash=sha(JSON.stringify(chunks));const cachePath=path.join(here,'vectors-v12.json');
  if(existsSync(cachePath)){
   const cache=JSON.parse(readFileSync(cachePath,'utf8'));
-  if(cache.corpusHash===corpus.corpusHash&&cache.modelHash===modelHash&&cache.chunkHash===chunkHash&&cache.items.length===chunks.length&&cache.items.every((x,i)=>x.key===chunks[i].key&&x.vector.length===512&&x.vector.every(Number.isFinite))&&(corpus.corpusVersion==='textbook-v10'||cache.corpusVersion===corpus.corpusVersion))return cache;
+  if(cache.corpusHash===corpus.corpusHash&&cache.modelHash===modelHash&&cache.chunkHash===chunkHash&&cache.items.length===chunks.length&&cache.items.every((x,i)=>x.key===chunks[i].key&&x.vector.length===512&&x.vector.every(Number.isFinite))&&cache.corpusVersion===corpus.corpusVersion)return cache;
   if(!rebuild)throw Error('Passage vector identity differs; explicitly prepare current resources');
  }
  const extractor=await getExtractor();const items=[];

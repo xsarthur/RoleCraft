@@ -2,9 +2,9 @@
 (function () {
   'use strict';
   const VERSION = 'rolecraft-1.0';
-  const CURRENT = 'textbook-v12', HISTORICAL = 'textbook-v10';
-  const STORE = 'rolecraft-reading-v13', PREVIOUS_STORE = 'rolecraft-learning-v12', OLD_STORE = 'rolecraft-learning-v11';
-  const SESSION = 'rolecraft-content-dialog-v14', OLD_SESSION = 'rolecraft-content-query-v11';
+  const CURRENT = 'textbook-v12';
+  const STORE = 'rolecraft-reading-v13', PREVIOUS_STORE = 'rolecraft-learning-v12';
+  const SESSION = 'rolecraft-content-dialog-v14';
   const DIALOG_AGENT_VERSION = 'agent-system-v0.12';
   const WORKBENCH_VERSION = 'local-workbench-0.11';
   const P01 = Object.freeze({
@@ -59,9 +59,9 @@
   const CAREER_LOAD_TIMEOUT = 120000;
   let careerController = null, careerPhaseTimer = null;
   let careerState = { status: 'anonymous', phase: 'idle', active: false, careerId: '', career: null, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), error: '', requestId: 0, startedAt: 0, firstLoad: false, loadingChapterId: '' };
-  let historicalRaw = null, historical = null, oldQueryPresent = false, queryHistory = [];
+  let queryHistory = [];
   let contextEnabled = false, startingEnabled = true, composing = false, trigger = null, activeReadingUnitId = '', activeReadingVersion = '';
-  let dialogTopic = null, historicalResponse = false, assistantScroll = 0;
+  let dialogTopic = null, restoredResponse = false, assistantScroll = 0;
   const memoryScroll = new Map();
   function uuid() {
     if (globalThis.crypto?.randomUUID) return globalThis.crypto.randomUUID();
@@ -94,11 +94,9 @@
       }
     }
   } catch { storageError = '读取本浏览器学习记录失败。新输入仍可留在页面并导出。'; }
-  try { historicalRaw = localStorage.getItem(OLD_STORE); historical = historicalRaw ? JSON.parse(historicalRaw) : null; } catch { /* Original historical bytes remain available for export. */ }
-  try { oldQueryPresent = sessionStorage.getItem(OLD_SESSION) !== null || sessionStorage.getItem('rolecraft-content-query-v12') !== null; } catch { /* Old query cache is never imported. */ }
-  function staticCorpus(version = CURRENT) {
-    const c = version === CURRENT ? globalThis.RolecraftContentV12 : version === HISTORICAL ? globalThis.RolecraftContentV10 : null, count = version === CURRENT ? 30 : 20;
-    if (!c || c.corpusVersion !== version || !Array.isArray(c.units) || c.units.length !== count || new Set(c.units.map(u => u.unitId)).size !== count || c.units.some((u, i) => u.order !== i + 1 || !u.bodyMarkdown || !Array.isArray(u.sections))) return null;
+  function staticCorpus() {
+    const c = globalThis.RolecraftContentV12, count = 30;
+    if (!c || c.corpusVersion !== CURRENT || !Array.isArray(c.units) || c.units.length !== count || new Set(c.units.map(u => u.unitId)).size !== count || c.units.some((u, i) => u.order !== i + 1 || !u.bodyMarkdown || !Array.isArray(u.sections))) return null;
     return c;
   }
   function validCareerCatalog(c) {
@@ -116,23 +114,23 @@
       // Agent remains backed by the verified bundled corpus after its API catalog
       // has been checked. Other careers are assembled from their catalog plus any
       // full chapters fetched on demand.
-      if (!dynamicCareer()) return staticCorpus(version);
+      if (!dynamicCareer()) return version === CURRENT ? staticCorpus() : null;
       if (version !== CURRENT || careerState.career?.contentVersion !== CURRENT || !validCareerCatalog(careerState.catalog)) return null;
       const units = careerState.catalog.units.map(meta => careerState.chapters.get(meta.unitId)?.unit || meta);
       return { ...careerState.catalog, units };
     }
-    return staticCorpus(version);
+    return version === CURRENT ? staticCorpus() : null;
   }
   function unit(id, version = CURRENT) { return corpus(version)?.units.find(u => u.unitId === id); }
-  function unitVersion(u) { return u?.sourcePath?.startsWith('textbooks/v10/') ? HISTORICAL : CURRENT; }
+  function unitVersion() { return CURRENT; }
   function section(u, id) { return u?.sections.find(s => s.sectionId === id); }
   function currentRecord(v) { return v?.corpusVersion === CURRENT && v.corpusHash === corpus()?.corpusHash && unit(v.unitId)?.sourceSha256 === v.sourceSha256 && (!v.sectionId || section(unit(v.unitId), v.sectionId)); }
   function noteText(u) { const n = local.notes[u?.unitId]; return n?.corpusVersion === CURRENT && n.sourceSha256 === u?.sourceSha256 ? asText(n.text) : ''; }
   function loc() {
-    const [path, search = ''] = location.hash.slice(1).split('?'), p = path.split('/'), requestedVersion = new URLSearchParams(search).get('version');
-    return { unitId: p[0] === 'learn' && p[1] === 'agent' ? p[2] || '' : '', sectionId: p[0] === 'learn' && p[1] === 'agent' ? p[3] || '' : '', version: requestedVersion || CURRENT, resume: new URLSearchParams(search).get('resume') === '1' };
+    const [path, search = ''] = location.hash.slice(1).split('?'), p = path.split('/');
+    return { unitId: p[0] === 'learn' && p[1] === 'agent' ? p[2] || '' : '', sectionId: p[0] === 'learn' && p[1] === 'agent' ? p[3] || '' : '', version: CURRENT, resume: new URLSearchParams(search).get('resume') === '1' };
   }
-  function href(u, s = '') { return '#learn/agent/' + u.unitId + (s ? '/' + s : '') + (unitVersion(u) === HISTORICAL ? '?version=' + HISTORICAL : ''); }
+  function href(u, s = '') { return '#learn/agent/' + u.unitId + (s ? '/' + s : ''); }
   function save() {
     try { localStorage.setItem(STORE, JSON.stringify(local)); storageError = ''; return true; }
     catch { storageError = '浏览器无法保存。输入还在当前页面；关闭前可导出学习记录。'; return false; }
@@ -256,7 +254,7 @@
     const career = session?.activeCareer;
     const careerId = career?.careerId || '';
     const changedCareer = careerState.careerId !== careerId;
-    if (changedCareer) { query = ''; response = null; submission = null; dialogTopic = null; queryHistory = []; historicalResponse = false; assistantOpen = false; }
+    if (changedCareer) { query = ''; response = null; submission = null; dialogTopic = null; queryHistory = []; restoredResponse = false; assistantOpen = false; }
     careerController?.abort();
     careerController = null;
     clearTimeout(careerPhaseTimer);
@@ -561,7 +559,7 @@
   function homePage(routeOnly = false) {
     if (!corpus()) {
       if (careerState.active && careerState.status === 'loading') return loadingPage();
-      return errorPage(careerState.active ? (careerState.error || '当前职业教材没有完整加载；不会用 Agent 教材替代。') : '当前 v12 教材包没有完整加载；不会用历史教材替代。');
+      return errorPage(careerState.active ? (careerState.error || '当前职业教材没有完整加载；不会用 Agent 教材替代。') : '当前 v12 教材包没有完整加载；不会使用其他版本替代。');
     }
     const progress = learningProgress(), latest = progress.latest, first = progress.first;
     const graphSection = first.sections.find(s => s.title === '一套可交付系统还需要哪些工程工作');
@@ -576,7 +574,7 @@
     const location = loc(), c = corpus(location.version);
     if (!c) {
       if (careerState.active && careerState.status === 'loading') return loadingPage();
-      return errorPage('请求的教材版本没有完整加载。当前版本为 v12，历史版为 v10；不会替换为其他来源。');
+      return errorPage('当前 v12 教材没有完整加载；不会替换为其他来源。');
     }
     if (!location.unitId) return homePage(true);
     const u = unit(location.unitId, location.version); if (!u) return errorPage('请求的章节不属于所选教材版本。');
@@ -585,18 +583,17 @@
       if (!chapterError) requestCareerChapter(location.unitId);
       return chapterError ? errorPage(chapterError, 'chapter') : loadingPage('chapter');
     }
-    const historicalReading = location.version === HISTORICAL, s = section(u, location.sectionId), index = c.units.indexOf(u);
+    const s = section(u, location.sectionId), index = c.units.indexOf(u);
     const hiddenRanges = hiddenLearningContinuity(u), hiddenSection = id => hiddenRanges.some(range => range.sectionIds.includes(id));
     const hiddenNotice = hiddenSection(location.sectionId) ? '<div class="lw-message lw-hidden-section" id="lw-hidden-section" tabindex="-1"><p>此学习衔接区块已从阅读页隐藏</p><a href="' + href(u) + '">打开本篇正文</a> <a href="#learn">返回课程</a></div>' : '';
-    const bookmark = !historicalReading && local.bookmarks.some(b => currentRecord(b) && b.unitId === u.unitId && b.sectionId === (s?.sectionId || ''));
-    const oldUnit = unit(location.unitId, HISTORICAL), oldSection = section(oldUnit, location.sectionId), currentUnit = unit(location.unitId);
-    const missingLocation = location.sectionId && !s ? '<div class="lw-message" role="alert">这处教材位置在所选版本中不可用；不会换成另一小节。可<a href="' + href(u) + '">打开本章</a>' + (!historicalReading && oldSection ? '，或<a href="' + href(oldUnit, oldSection.sectionId) + '">查看 v10 的原位置：' + esc(oldSection.title) + '</a>' : '') + '。</div>' : '';
+    const bookmark = local.bookmarks.some(b => currentRecord(b) && b.unitId === u.unitId && b.sectionId === (s?.sectionId || ''));
+    const missingLocation = location.sectionId && !s ? '<div class="lw-message" role="alert">这处教材位置在当前版本中不可用。可<a href="' + href(u) + '">打开本章</a>。</div>' : '';
     const prerequisites = Array.isArray(u.prerequisiteUnitIds) ? u.prerequisiteUnitIds.map(id => unit(id, location.version)) : dynamicCareer() ? [] : null;
     if (!prerequisites || prerequisites.some(p => !p)) return errorPage('本篇前置章节来源无法核对，请重新加载教材。');
     const prereqLabel = prerequisites.length ? '需掌握的前置 · ' + prerequisites.length + ' 篇' : '需掌握的前置：无';
     const priorHTML = '<aside class="lw-prerequisites" id="lw-prerequisites" aria-labelledby="lw-prereq-title"><h2 id="lw-prereq-title" tabindex="-1">需掌握的前置</h2>' + (prerequisites.length ? '<ul>' + prerequisites.map(p => '<li><a href="' + esc(href(p)) + '">' + esc(p.navigationLabel) + '</a></li>').join('') + '</ul>' : '<p>无前置章节</p>') + '</aside>';
-    const noteArea = historicalReading ? '<section class="lw-note-area"><h2>历史阅读 · 教材 v10</h2><p>旧笔记和足迹保持原来源，当前只读，不写入 v12 学习记录。</p>' + (asText(historical?.notes?.[u.unitId]).trim() ? '<p class="lw-user-text">' + esc(asText(historical.notes[u.unitId])) + '</p>' : '<p>此篇没有保留的 v10 笔记。</p>') + '<a class="outline" href="#records">查看与导出历史记录</a>' + (currentUnit ? '<a class="primary" href="' + href(currentUnit) + '">阅读 v12 当前篇 →</a>' : '') + '</section>' : '<section class="lw-note-area"><h2>我的阅读笔记</h2><p>只保存在此浏览器，记录本篇疑问与实际尝试。</p><label for="lw-note">本篇笔记</label><textarea id="lw-note" rows="5" maxlength="12000">' + esc(noteText(u)) + '</textarea><button class="primary" data-lw-save-note>保存笔记</button></section>';
-    return '<div class="lw-reader-layout lw-detail"><div class="lw-reader-top" id="lw-reader-start" tabindex="-1"><a href="#learn">← 返回课程</a><span>' + esc(u.navigationLabel) + '</span></div>' + (historicalReading ? '<div class="lw-history-notice"><strong>历史教材 v10</strong><p>此页保留旧来源与位置，当前只读。</p>' + (currentUnit ? '<a href="' + href(currentUnit) + '">查看 v12 对应篇 →</a>' : '') + '</div>' : '') + missingLocation + hiddenNotice + '<div class="lw-prereq-strip" id="lw-prereq-strip"><span>' + esc(prereqLabel) + '</span>' + (prerequisites.length ? '<button type="button" data-lw-prereq-location aria-label="查看需掌握的前置章节">查看章节</button>' : '') + '</div><div class="lw-reader-columns">' + priorHTML + '<div class="lw-reading"><details class="lw-section-toc"><summary>本篇小节</summary><ul>' + u.sections.filter(s => s.level > 1 && !hiddenSection(s.sectionId)).map(s => '<li class="lw-level-' + s.level + '"><a href="' + href(u, s.sectionId) + '">' + esc(s.title) + '</a></li>').join('') + '</ul></details><article class="lw-prose" aria-label="' + esc(u.title) + '">' + markdown(u, true) + '</article><div class="lw-reader-tools">' + (!historicalReading ? '<button class="outline" data-lw-bookmark>' + (bookmark ? '已收藏此位置 · 取消' : '收藏当前阅读位置') + '</button><button class="outline" type="button" data-lw-interrupt>中断并保存位置</button>' : '') + '</div>' + noteArea + '<nav class="lw-pagination" aria-label="相邻篇章">' + (index > 0 ? '<a href="' + href(c.units[index - 1]) + '">← 上一篇<br><strong>' + esc(c.units[index - 1].navigationLabel) + '</strong></a>' : '<a href="#learn">返回课程</a>') + (index < c.units.length - 1 ? '<a href="' + href(c.units[index + 1]) + '">下一篇 →<br><strong>' + esc(c.units[index + 1].navigationLabel) + '</strong></a>' : '<a href="#projects">带着作品复盘 →</a>') + '</nav></div></div></div>';
+    const noteArea = '<section class="lw-note-area"><h2>我的阅读笔记</h2><p>只保存在此浏览器，记录本篇疑问与实际尝试。</p><label for="lw-note">本篇笔记</label><textarea id="lw-note" rows="5" maxlength="12000">' + esc(noteText(u)) + '</textarea><button class="primary" data-lw-save-note>保存笔记</button></section>';
+    return '<div class="lw-reader-layout lw-detail"><div class="lw-reader-top" id="lw-reader-start" tabindex="-1"><a href="#learn">← 返回课程</a><span>' + esc(u.navigationLabel) + '</span></div>' + missingLocation + hiddenNotice + '<div class="lw-prereq-strip" id="lw-prereq-strip"><span>' + esc(prereqLabel) + '</span>' + (prerequisites.length ? '<button type="button" data-lw-prereq-location aria-label="查看需掌握的前置章节">查看章节</button>' : '') + '</div><div class="lw-reader-columns">' + priorHTML + '<div class="lw-reading"><details class="lw-section-toc"><summary>本篇小节</summary><ul>' + u.sections.filter(s => s.level > 1 && !hiddenSection(s.sectionId)).map(s => '<li class="lw-level-' + s.level + '"><a href="' + href(u, s.sectionId) + '">' + esc(s.title) + '</a></li>').join('') + '</ul></details><article class="lw-prose" aria-label="' + esc(u.title) + '">' + markdown(u, true) + '</article><div class="lw-reader-tools"><button class="outline" data-lw-bookmark>' + (bookmark ? '已收藏此位置 · 取消' : '收藏当前阅读位置') + '</button><button class="outline" type="button" data-lw-interrupt>中断并保存位置</button></div>' + noteArea + '<nav class="lw-pagination" aria-label="相邻篇章">' + (index > 0 ? '<a href="' + href(c.units[index - 1]) + '">← 上一篇<br><strong>' + esc(c.units[index - 1].navigationLabel) + '</strong></a>' : '<a href="#learn">返回课程</a>') + (index < c.units.length - 1 ? '<a href="' + href(c.units[index + 1]) + '">下一篇 →<br><strong>' + esc(c.units[index + 1].navigationLabel) + '</strong></a>' : '<a href="#projects">带着作品复盘 →</a>') + '</nav></div></div></div>';
   }
   function projectsPage() {
     if (!corpus()) return careerState.active && careerState.status === 'loading' ? loadingPage() : errorPage('项目章节指引尚未加载。');
@@ -617,23 +614,12 @@
     const p01Form = '<section class="lw-p01-card" aria-labelledby="lw-p01-title"><div class="lw-p01-head"><div><span class="lw-kicker">V1-PILOT · P01-MVP</span><h2 id="lw-p01-title">最小可交付练习：缺陷契约</h2><p>固定构造输入只用于学习练习，不是真实客户问题、退款规则或用户反馈。先保存版本化草稿，再主动提交作品包。</p></div><a class="outline" href="' + esc(p.sourceHref) + '">回到教材来源 →</a></div><div class="lw-p01-identity" aria-label="P01来源身份"><span>练习：' + esc(P01.practiceId) + '</span><span>教材：' + esc(P01.textbookVersion) + '</span><span>来源：' + esc(P01.sourcePath) + '</span><span>fixture：' + esc(P01.fixtureId) + '</span><span class="lw-hash">sourceSha256：' + esc(p.sourceSha256) + '</span><span>submission_id：' + esc(currentSubmission?.submission_id || '未提交') + '</span><span>previous_submission_id：' + esc(currentSubmission?.previous_submission_id || '无') + '</span></div><div class="lw-p01-status-row"><span class="lw-p01-status status-' + esc(status) + '"><b>作品状态</b> · ' + esc(P01_STATUS_LABELS[status]) + '</span><span class="lw-p01-status-note">' + (practice.draftSaved ? '草稿已保存，提交后才进入独立复验队列。' : '尚无当前版本草稿。') + '</span></div><form id="lw-p01-form" class="lw-p01-form">' + P01_ITEMS.map(([id, label, hint]) => '<label for="lw-p01-' + id + '">' + esc(label) + '<small>' + esc(hint) + '</small><textarea id="lw-p01-' + id + '" name="' + id + '" rows="4" maxlength="12000">' + esc(values[id]) + '</textarea></label>').join('') + '<label for="lw-p01-claims">本人自述（目标、困难、未知）<small>只表示你的陈述，不转换为独立评价。</small><textarea id="lw-p01-claims" name="learnerClaims" rows="4" maxlength="12000">' + esc(values.learnerClaims) + '</textarea></label><label for="lw-p01-evidence">证据引用（每行一条路径、命令或 receipt ID）<small>未执行请写 not_run；不要补写预期输出。</small><textarea id="lw-p01-evidence" name="evidenceRefs" rows="3" maxlength="6000">' + esc(values.evidenceRefs) + '</textarea></label><div class="lw-p01-actions"><button class="outline" type="button" data-lw-p01-save>保存版本化草稿</button><button class="primary" type="button" data-lw-p01-submit>提交新作品版本</button><button class="outline" type="button" data-lw-export>导出记录</button></div><p id="lw-p01-feedback" class="lw-small" role="status" aria-live="polite">提交会生成新的 submission_id；不会覆盖旧提交、旧意见或首失败记录。</p></form><div class="lw-p01-layers" aria-label="五类记录层级">' + recordLayers.map(([id, label, value, klass]) => '<div class="lw-p01-layer ' + klass + '"><span aria-hidden="true">' + (klass === 'present' || klass === 'self' ? '●' : '○') + '</span><strong>' + esc(label) + '</strong><em>' + esc(value) + '</em><small>' + (id === 'ai_suggestion' ? '机器建议，不是审核' : id === 'professional_review' ? '独立课程/实训评阅' : id === 'human_review' ? '1.0暂无真人记录' : '事实记录') + '</small></div>').join('') + '</div><div class="lw-p01-review-control"><label for="lw-p01-status">记录当前工作流状态（本人记录，不是独立评审）</label><select id="lw-p01-status" data-lw-p01-status>' + statusOptions + '</select><button class="outline" type="button" data-lw-p01-status-save>保存状态记录</button></div>' + submissionHistory + '</section>';
     return heading('实作与作品', '项目工坊', '先从一个版本化练习开始，再把证据、反馈和下一步分开保存。') + p01Form + '<div class="lw-project-layout"><section class="lw-project-form"><h2>我的项目档案</h2><p>记录保存在此浏览器，链接不自动访问或运行。</p><div class="lw-evidence-status" aria-label="项目证据状态"><span class="lw-evidence-chip self">' + selfReport + '</span><span class="lw-evidence-chip ' + (runtimeEvidence.endsWith('已提供') ? 'present' : 'missing') + '">' + runtimeEvidence + '</span><span class="lw-evidence-chip pending">独立评价：未开始</span></div>' + Object.entries(labels).map(([id, label]) => '<label for="lw-project-' + id + '">' + label + '</label>' + (id === 'title' ? '<input id="lw-project-' + id + '" data-lw-project="' + id + '" maxlength="12000" value="' + esc(local.project[id]) + '">' : '<textarea id="lw-project-' + id + '" data-lw-project="' + id + '" rows="4" maxlength="12000">' + esc(local.project[id]) + '</textarea>')).join('') + '<button class="primary" data-lw-save-project>保存项目档案</button><button class="outline" data-lw-export>导出记录</button><p class="lw-small">自述资料与运行证据分别记录；独立评价和专业审核不会由本页面自动完成。</p></section><aside class="lw-project-guide"><h2>按教材推进实作</h2>' + STAGES.map(st => '<section><h3>' + st.title + '</h3><p>' + st.output + '</p>' + st.ids.map(id => unitLink(unit(id))).join('') + '</section>').join('') + '<a href="#product-review">进入产品达标复盘 →</a><a href="#projects-history">查看历史项目记录 →</a></aside></div>';
   }
-  function historicalRecordsHTML() {
-    if (!historicalRaw) return '<section class="lw-record-section"><h2>历史 v10 学习记录</h2><p>此浏览器没有保留的 v11 工作台记录。更早的档案、测验与项目可在更多工具查看。</p></section>';
-    const recordLink = v => {
-      const u = unit(v?.unitId, HISTORICAL), sec = section(u, v?.sectionId);
-      return u ? '<a href="' + href(u, sec?.sectionId || '') + '">' + esc(u.navigationLabel) + (sec ? ' · ' + esc(sec.title) : v?.sectionId ? ' · 原位置已失效，可看历史章首' : '') + '</a>' : esc(v?.unitId || '位置未知');
-    };
-    const visits = Array.isArray(historical?.visits) ? historical.visits : [], bookmarks = Array.isArray(historical?.bookmarks) ? historical.bookmarks : [];
-    const notes = historical?.notes && typeof historical.notes === 'object' && !Array.isArray(historical.notes) ? historical.notes : {};
-    const project = historical?.project && typeof historical.project === 'object' && !Array.isArray(historical.project) ? historical.project : {};
-    return '<section class="lw-record-section"><h2>历史 v10 学习记录 · 只读保留</h2><p>来源：原 v11 工作台。旧字段没有单独版本时，按原存储来源注明为 v10；不会转写成 v12 笔记、足迹或能力证据。导出包含原始记录。</p>' + (!historical ? '<p role="alert">历史记录无法解析，原始数据仍可导出。</p>' : '') + '<details><summary>旧收藏 · ' + bookmarks.length + ' 条</summary><ul>' + bookmarks.map(v => '<li>' + recordLink(v) + '</li>').join('') + '</ul></details><details><summary>旧阅读足迹 · ' + visits.length + ' 条</summary><ul>' + visits.slice(-20).reverse().map(v => '<li>' + recordLink(v) + ' · ' + esc(v?.at) + '</li>').join('') + '</ul></details><h3>旧阅读笔记</h3>' + Object.entries(notes).filter(([, text]) => asText(text).trim()).map(([id, text]) => '<details><summary>' + esc(unit(id, HISTORICAL)?.navigationLabel || id) + ' · v10</summary><p class="lw-user-text">' + esc(asText(text)) + '</p>' + (unit(id, HISTORICAL) ? '<a href="' + href(unit(id, HISTORICAL)) + '">查看历史正文 →</a>' : '') + '</details>').join('') + '<details><summary>旧项目自述 · 未独立评价</summary>' + Object.entries(project).map(([key, text]) => '<p><strong>' + esc(key) + '：</strong><span class="lw-user-text">' + esc(asText(text)) + '</span></p>').join('') + '</details></section>';
-  }
   function recordsPage() {
     if (!corpus()) return careerState.active && careerState.status === 'loading' ? loadingPage() : errorPage(careerState.active ? (careerState.error || '当前职业教材没有完整加载，暂时无法核对学习记录。') : '教材版本未加载，无法核对记录中的阅读位置。');
     const visits = local.visits.filter(currentRecord).slice(-20).reverse(), bookmarks = local.bookmarks.filter(currentRecord);
     const link = v => '<a href="' + href(unit(v.unitId), v.sectionId) + '">' + esc(unit(v.unitId).navigationLabel) + (v.sectionId ? ' · ' + esc(section(unit(v.unitId), v.sectionId)?.title) : '') + '</a>';
-    const history = dynamicCareer() ? '<p class="lw-small">当前职业记录按职业隔离；切换回原职业后再查看其他职业的历史记录。</p>' : historicalRecordsHTML();
-    return heading('本浏览器的足迹', '学习记录', dynamicCareer() ? '当前职业的阅读、收藏和笔记按职业保存。' : '当前教材 v12。阅读、收藏和笔记不换算成完成率或能力等级；历史记录保留原版身份。') + '<div class="lw-record-toolbar"><button class="outline" data-lw-export>导出当前与历史学习记录</button><a href="#reflections">打开学习与员工复盘 →</a></div><section class="lw-record-section"><h2>当前职业收藏的位置</h2>' + (bookmarks.length ? '<ul>' + bookmarks.map(v => '<li>' + link(v) + '</li>').join('') + '</ul>' : '<p>还没有收藏。阅读时可以收藏当前章或小节。</p>') + '</section><section class="lw-record-section"><h2>当前职业最近阅读</h2>' + (visits.length ? '<ul>' + visits.map(v => '<li>' + link(v) + '<time>' + esc(new Date(v.at).toLocaleString('zh-CN')) + '</time></li>').join('') + '</ul>' : '<p>还没有打开过当前职业教材正文。</p>') + '</section><section class="lw-record-section"><h2>当前职业阅读笔记</h2>' + corpus().units.filter(u => noteText(u).trim()).map(u => '<details><summary>' + esc(u.navigationLabel) + '</summary><p class="lw-user-text">' + esc(noteText(u)) + '</p><a href="' + href(u) + '">回到本篇</a></details>').join('') + '</section>' + history + '<p class="lw-small">保存范围：本浏览器、各自来源。记录不会换算成完成率或能力等级。</p>';
+    const history = dynamicCareer() ? '<p class="lw-small">当前职业记录按职业隔离；切换回原职业后再查看其他职业的记录。</p>' : '';
+    return heading('本浏览器的足迹', '学习记录', dynamicCareer() ? '当前职业的阅读、收藏和笔记按职业保存。' : '当前教材 v12。阅读、收藏和笔记不换算成完成率或能力等级。') + '<div class="lw-record-toolbar"><button class="outline" data-lw-export>导出当前学习记录</button><a href="#reflections">打开学习与员工复盘 →</a></div><section class="lw-record-section"><h2>当前职业收藏的位置</h2>' + (bookmarks.length ? '<ul>' + bookmarks.map(v => '<li>' + link(v) + '</li>').join('') + '</ul>' : '<p>还没有收藏。阅读时可以收藏当前章或小节。</p>') + '</section><section class="lw-record-section"><h2>当前职业最近阅读</h2>' + (visits.length ? '<ul>' + visits.map(v => '<li>' + link(v) + '<time>' + esc(new Date(v.at).toLocaleString('zh-CN')) + '</time></li>').join('') + '</ul>' : '<p>还没有打开过当前职业教材正文。</p>') + '</section><section class="lw-record-section"><h2>当前职业阅读笔记</h2>' + corpus().units.filter(u => noteText(u).trim()).map(u => '<details><summary>' + esc(u.navigationLabel) + '</summary><p class="lw-user-text">' + esc(noteText(u)) + '</p><a href="' + href(u) + '">回到本篇</a></details>').join('') + '</section>' + history + '<p class="lw-small">保存范围：本浏览器。记录不会换算成完成率或能力等级。</p>';
   }
   function canonicalTopic(value) {
     if (!value || value.corpusVersion !== CURRENT) return null;
@@ -665,7 +651,7 @@
     const d = response.dialog || {}, status = d.status || response.status;
     const identity = { contentVersion: response?.contentVersion || response?.corpusVersion || '', textbookVersionId: response?.textbookVersionId || '', indexVersion: response?.indexVersion || '', corpusHash: response?.corpusHash || '' };
     const identityValue = value => esc(value || '服务未提供');
-    const head = '<div class="lw-result-meta">' + (historicalResponse ? '<p class="lw-small">本会话此前问题' + (status === 'answered' ? ' · 已重新核对当前教材出处' : '') + '</p>' : '') + '<p><strong>已提交问题：</strong>' + esc(submission?.query || query) + '</p><span class="lw-mode">请求 ' + esc(response?.requestId || submission?.requestId || '未知') + ' · ' + esc(modeLabel(response)) + '</span><details class="lw-result-identity"><summary>查看本次版本身份</summary><p>教材版本：' + identityValue(identity.contentVersion) + '<br>教材身份：' + identityValue(identity.textbookVersionId) + '<br>索引版本：' + identityValue(identity.indexVersion) + '<br>语料 SHA256：' + identityValue(identity.corpusHash) + '</p></details></div>';
+    const head = '<div class="lw-result-meta">' + (restoredResponse ? '<p class="lw-small">本会话此前问题' + (status === 'answered' ? ' · 已重新核对当前教材出处' : '') + '</p>' : '') + '<p><strong>已提交问题：</strong>' + esc(submission?.query || query) + '</p><span class="lw-mode">请求 ' + esc(response?.requestId || submission?.requestId || '未知') + ' · ' + esc(modeLabel(response)) + '</span><details class="lw-result-identity"><summary>查看本次版本身份</summary><p>教材版本：' + identityValue(identity.contentVersion) + '<br>教材身份：' + identityValue(identity.textbookVersionId) + '<br>索引版本：' + identityValue(identity.indexVersion) + '<br>语料 SHA256：' + identityValue(identity.corpusHash) + '</p></details></div>';
     if (status === 'unavailable') return head + (isRuleFallback(response) ? '<div class="lw-fallback-notice" role="note"><strong>规则降级</strong><span>当前未调用外部模型；规则检索也未返回可核对结果。</span></div>' : '') + '<div class="lw-assistant-state lw-state-error" role="alert"><span class="lw-state-mark" aria-hidden="true">!</span><div><h3>检索暂时失败</h3><p>' + esc(d.message || response.message || response.error?.message || '教材问答资源没有就绪。你仍可通过目录阅读。') + '</p><div class="lw-state-actions"><button class="outline" data-lw-retry>重试本题</button><a href="#learn">打开课程目录</a></div></div></div>';
     if (status === 'invalid_input') return head + '<div class="lw-message"><h3>请检查输入</h3><p>' + esc(d.message || response.message || '请输入 1—1200 字的问题描述。') + '</p></div>';
     if (status === 'unrelated' || status === 'related_uncovered') return head + (isRuleFallback(response) ? '<div class="lw-fallback-notice" role="note"><strong>规则降级</strong><span>语义检索当前不可用，本次使用本地规则检查；没有匹配时不会编造教材答案。</span></div>' : '') + '<div class="lw-assistant-state lw-state-empty"><span class="lw-state-mark" aria-hidden="true">?</span><div><h3>没有找到匹配的教材内容</h3><p>' + esc(d.message || (status === 'unrelated' ? '这里只回答 Agent 职业学习相关问题。' : '当前教材没有足够依据回答这个问题。')) + '</p><p class="lw-small">可以换一种说法，或从课程目录确认教材覆盖范围。</p><div class="lw-examples"><button data-lw-example="ReAct是什么">换问：ReAct 是什么</button><button data-lw-example="如何验证 Agent 改动后的效果">换问：如何验证改动效果</button></div><a href="#learn">打开课程目录 →</a></div></div>';
@@ -731,11 +717,11 @@
   async function find(specificQuery, specificContext) {
     const expression = (specificQuery ?? query).trim(), context = specificContext || currentContext();
     if (pending && expression === submission?.query && JSON.stringify(context) === JSON.stringify(submission.context)) return;
-    if (!expression || expression.length > 1200) { ++requestId; controller?.abort(); pending = false; historicalResponse = false; submission = { query: specificQuery ?? query, context, requestId: uuid() }; response = { status: 'invalid_input', requestId: submission.requestId, message: !expression ? '先描述一个你想解决的问题。' : '请把问题控制在 1200 字以内，当前输入已保留。' }; assistantOpen = true; assistantScroll = 0; refreshAssistant(false); document.getElementById('lw-query')?.focus(); return; }
+    if (!expression || expression.length > 1200) { ++requestId; controller?.abort(); pending = false; restoredResponse = false; submission = { query: specificQuery ?? query, context, requestId: uuid() }; response = { status: 'invalid_input', requestId: submission.requestId, message: !expression ? '先描述一个你想解决的问题。' : '请把问题控制在 1200 字以内，当前输入已保留。' }; assistantOpen = true; assistantScroll = 0; refreshAssistant(false); document.getElementById('lw-query')?.focus(); return; }
     query = expression;
     const id = ++requestId; controller?.abort(); const activeController = new AbortController(); controller = activeController;
     const requestKey = uuid();
-    const submitted = { query: expression, context: JSON.parse(JSON.stringify(context)), requestId: requestKey }; submission = submitted; response = null; pending = true; historicalResponse = false; assistantOpen = true; assistantScroll = 0; refreshAssistant(false); document.getElementById('lw-query')?.focus({ preventScroll: true });
+    const submitted = { query: expression, context: JSON.parse(JSON.stringify(context)), requestId: requestKey }; submission = submitted; response = null; pending = true; restoredResponse = false; assistantOpen = true; assistantScroll = 0; refreshAssistant(false); document.getElementById('lw-query')?.focus({ preventScroll: true });
     try {
       if (!corpus()) throw Error('教材资源没有完整加载。');
       if (location.protocol === 'file:') throw Error('当前是静态阅读入口，语义问答暂不可用；请使用本地服务或课程目录。');
@@ -766,7 +752,7 @@
       if (id === requestId) { pending = false; queryHistory = [{query: submitted.query, context: submitted.context, response, at: new Date().toISOString()}, ...queryHistory].slice(0,5); refreshAssistant(); }
     }
   }
-  function sessionValue() { return { query, response: pending ? null : response, submission, assistantOpen, contextEnabled, startingEnabled, queryHistory, dialogTopic, historicalResponse }; }
+  function sessionValue() { return { query, response: pending ? null : response, submission, assistantOpen, contextEnabled, startingEnabled, queryHistory, dialogTopic, restoredResponse }; }
   function clarificationRetryResponse() {
     return {status:'unavailable',engineMode:'',providerCalled:false,results:[],clarification:null,dialog:{status:'unavailable',answerMode:'extractive',sentences:[],citations:[],scope:{relatedSegments:[],filteredSegments:[],contextUsed:null},message:'此前澄清需要向当前服务重新确认。请点击“重试本题”获取当前选项。',context:null}};
   }
@@ -791,8 +777,8 @@
   function download(text, name, type = 'text/markdown;charset=utf-8') { const blob = new Blob([text], { type }), url = URL.createObjectURL(blob), a = document.createElement('a'); a.href = url; a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); }
   function exportRecords() {
     captureNotes();
-    const data = { schemaVersion: '1', clientVersion: VERSION, exportedAt: new Date().toISOString(), scope: '本浏览器记录与本人自述，不是独立能力评价', current: { corpusVersion: CURRENT, corpusHash: corpus()?.corpusHash || null, storageKey: STORE, records: local }, historical: { corpusVersion: HISTORICAL, storageKey: OLD_STORE, records: historical, originalStorageValue: historicalRaw }, earlierRecords: 'rolecraft-v1 档案、测验与项目原值未改，可由更多工具原有导出入口取得' };
-    download(JSON.stringify(data, null, 2), '职造-学习记录-rolecraft-1.0与历史v10.json', 'application/json;charset=utf-8'); notify('已导出 rolecraft-1.0 当前记录与保留的 v10 原始记录；自述未独立评价。');
+    const data = { schemaVersion: '1', clientVersion: VERSION, exportedAt: new Date().toISOString(), scope: '本浏览器当前记录与本人自述，不是独立能力评价', current: { corpusVersion: CURRENT, corpusHash: corpus()?.corpusHash || null, storageKey: STORE, records: local } };
+    download(JSON.stringify(data, null, 2), '职造-学习记录-rolecraft-1.0-v12.json', 'application/json;charset=utf-8'); notify('已导出当前 v12 学习记录；自述未独立评价。');
   }
   let focusFrame = 0, readerObserver = null;
   function readerGeometry() {
@@ -812,7 +798,7 @@
     activeView = view;
     const isWorkbench = ['home', 'path', 'learn', 'records', 'projects'].includes(view);
     document.body.classList.toggle('lw-active', isWorkbench);
-    const banner = document.getElementById('save-status'); if (isWorkbench && banner) banner.textContent = storageError || '当前教材 v12；新记录独立保存于本浏览器，未同步账户。v10 记录可在学习记录查看与导出。';
+    const banner = document.getElementById('save-status'); if (isWorkbench && banner) banner.textContent = storageError || '当前教材 v12；新记录独立保存于本浏览器，未同步账户。';
     let host = document.getElementById('lw-assistant-host');
     if (!host) { host = document.createElement('div'); host.id = 'lw-assistant-host'; document.body.appendChild(host); }
     host.hidden = view === 'generation' || view === 'settings'; refreshAssistant();
@@ -868,14 +854,14 @@
     if (el.hasAttribute('data-lw-use-start')) { startingEnabled = true; refreshAssistant(); return; }
     if (el.hasAttribute('data-lw-clear-context')) { contextEnabled = false; refreshAssistant(); return; }
     if (el.hasAttribute('data-lw-use-context')) { contextEnabled = true; refreshAssistant(); return; }
-    if (el.hasAttribute('data-lw-clear-topic')) { ++requestId; controller?.abort(); pending = false; dialogTopic = null; response = null; submission = null; historicalResponse = false; assistantScroll = 0; refreshAssistant(false); return; }
+    if (el.hasAttribute('data-lw-clear-topic')) { ++requestId; controller?.abort(); pending = false; dialogTopic = null; response = null; submission = null; restoredResponse = false; assistantScroll = 0; refreshAssistant(false); return; }
     if (el.hasAttribute('data-lw-history')) {
       const h = queryHistory[Number(el.dataset.lwHistory)];
       if (h) {
         if (h.response?.dialog?.status === 'needs_clarification' || h.response?.status === 'needs_clarification') { find(h.query, h.context); return; }
         ++requestId; controller?.abort(); pending = false; query = h.query; submission = {query: h.query, context: h.context};
         try { response = validateResponse(h.response,submission); if (response.dialog.status === 'answered') dialogTopic = canonicalTopic(response.dialog.context); } catch(error) { response = {status:'unavailable',message:error.message}; }
-        historicalResponse = true; assistantOpen = true; assistantScroll = 0; refreshAssistant(false);
+        restoredResponse = true; assistantOpen = true; assistantScroll = 0; refreshAssistant(false);
       }
       return;
     }
@@ -923,14 +909,14 @@
       contextEnabled = received.contextEnabled === true; startingEnabled = received.startingEnabled !== false;
       submission = received.submission && typeof received.submission.query === 'string' && received.submission.context && typeof received.submission.context === 'object' ? received.submission : null;
       if (received.response && submission) {
-        try { response = validateResponse(received.response, submission); if (response.dialog.status === 'needs_clarification') response = clarificationRetryResponse(); historicalResponse = true; }
+        try { response = validateResponse(received.response, submission); if (response.dialog.status === 'needs_clarification') response = clarificationRetryResponse(); restoredResponse = true; }
         catch (error) { response = { status: 'unavailable', message: error.message, providerCalled: false }; }
       }
       const topic = canonicalTopic(received.dialogTopic);
       if (topic && queryHistory.some(h => h.response?.dialog?.status === 'answered' && JSON.stringify(canonicalTopic(h.response.dialog.context)) === JSON.stringify(topic))) dialogTopic = topic;
     }
   } catch { /* A damaged query cache is not used as a recommendation. */ }
-  globalThis.LearningWorkbench = { version: VERSION, agentVersion: DIALOG_AGENT_VERSION, workbenchVersion: WORKBENCH_VERSION, page, mount, beforeRender, markdown, validateResponse, currentContext, refreshAssistant, careerContentState, shouldDelegateView, currentTask, setTask, practice: () => local.practice, readingRecords: () => local, recordIsCurrent: currentRecord, recordsExportData: () => { captureNotes(); return { current: local, historical: { records: historical, originalStorageValue: historicalRaw } }; } };
+  globalThis.LearningWorkbench = { version: VERSION, agentVersion: DIALOG_AGENT_VERSION, workbenchVersion: WORKBENCH_VERSION, page, mount, beforeRender, markdown, validateResponse, currentContext, refreshAssistant, careerContentState, shouldDelegateView, currentTask, setTask, practice: () => local.practice, readingRecords: () => local, recordIsCurrent: currentRecord, recordsExportData: () => { captureNotes(); return { current: local }; } };
   globalThis.addEventListener?.('resize', readerGeometry);
   document.addEventListener('click', e => { if (assistantOpen && !e.target.closest('#lw-assistant-host,button,a,input,textarea,select,summary,dialog')) collapse(); });
 })();

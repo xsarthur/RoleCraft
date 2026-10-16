@@ -125,7 +125,6 @@ export function createRolecraftServer(options={}) {
     'previous_submission_id','practice_id','unit_id','textbook_version','textbook_version_id','source_sha','source_sha256','artifact_version','workflow_status','record_types','evidence_refs','review_scope'];
   const seededCareer={careerId:'agent-developer',slug:'agent-developer',title:'Agent 开发者',summary:'从需求、检索到可靠交付的 Agent 工程学习空间',status:'published',contentVersion:'textbook-v12',indexVersion:'content-retrieval-0.12-v12',textbookId:'agent-engineering',textbookVersionId:'agent-engineering-v12',corpusHash:'c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757',bookSha256:'25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c280e1',keywords:['agent','ai','智能体','大模型','模型','检索','工具','工作流'],semanticExamples:['设计和开发能使用工具完成任务的 Agent 应用','学习大模型、检索增强、工作流和智能体运行时工程','让模型根据新观察规划下一步并调用外部工具']};
   const verifiedContentIdentity={
-    'textbook-v10':{corpusHash:'436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5',bookSha256:'6707a4f03b298a5b234ce56a88edcbd9d79af6d40cb978227461a9d9d522f76e'},
     'textbook-v12':{corpusHash:seededCareer.corpusHash,bookSha256:seededCareer.bookSha256},
   };
   run(`INSERT INTO careers(career_id,slug,title,summary,status,content_version,index_version,textbook_id,textbook_version_id,corpus_hash,book_sha256,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(career_id) DO UPDATE SET title=excluded.title,summary=excluded.summary,status=excluded.status,content_version=excluded.content_version,index_version=excluded.index_version,textbook_id=excluded.textbook_id,textbook_version_id=excluded.textbook_version_id,corpus_hash=excluded.corpus_hash,book_sha256=excluded.book_sha256,updated_at=excluded.updated_at`,seededCareer.careerId,seededCareer.slug,seededCareer.title,seededCareer.summary,seededCareer.status,seededCareer.contentVersion,seededCareer.indexVersion,seededCareer.textbookId,seededCareer.textbookVersionId,seededCareer.corpusHash,seededCareer.bookSha256,now(),now());
@@ -158,7 +157,7 @@ export function createRolecraftServer(options={}) {
     if(!Array.isArray(items)||items.length>500)throw Error('ROLECRAFT_CAREERS_FILE 必须是最多500项职业数组');
     for(const item of items){
       if(!item||typeof item!=='object'||!/^[a-z0-9][a-z0-9-]{1,127}$/.test(String(item.careerId||''))||!String(item.title||'').trim())throw Error('ROLECRAFT_CAREERS_FILE 含有无效职业记录');
-      if(!['textbook-v10','textbook-v12'].includes(String(item.contentVersion||'')))throw Error('导入职业的 contentVersion 必须是已验证教材版本');
+      if(String(item.contentVersion||'')!=='textbook-v12')throw Error('导入职业的 contentVersion 必须是已验证的 textbook-v12');
       const identity=verifiedContentIdentity[String(item.contentVersion)];
       if((item.corpusHash&&String(item.corpusHash)!==identity.corpusHash)||(item.bookSha256&&String(item.bookSha256)!==identity.bookSha256))throw Error('导入职业的教材 hash 与已验证版本不一致');
       registerCareer({...item,careerId:String(item.careerId),slug:String(item.slug||item.careerId),title:String(item.title).trim().slice(0,200),summary:String(item.summary||'').trim().slice(0,2000),status:['preparing','published','retired'].includes(item.status)?item.status:'preparing',contentVersion:String(item.contentVersion),semanticExamples:Array.isArray(item.semanticExamples)?item.semanticExamples:[],keywords:Array.isArray(item.keywords)?item.keywords:[]});
@@ -487,9 +486,9 @@ export function createRolecraftServer(options={}) {
       if(pathname.startsWith('/api/')) {
         if(method==='GET' && pathname==='/api/health')return send(200,{productVersion:PRODUCT_VERSION,mode:'local-development',generation:await readiness(),contentRetrieval:getContentReadiness()});
         if(method==='GET' && pathname==='/api/curriculum')return send(200,curriculum());
-        // Public read-only current v12 and explicitly selected historical v10 content.
+        // Public read-only current v12 content.
         const contentVersion=u.searchParams.get('version')||'textbook-v12';
-        if(pathname.startsWith('/api/content/')&&!['textbook-v12','textbook-v10'].includes(contentVersion))reject(400,'content_version_invalid','请选择当前v12或明确历史v10教材');
+        if(pathname.startsWith('/api/content/')&&contentVersion!=='textbook-v12')reject(400,'content_version_invalid','请选择当前v12教材');
         if(method==='GET' && pathname==='/api/content/catalog')return send(200,getContentCatalog(contentVersion));
         const contentChapter=pathname.match(/^\/api\/content\/chapter\/([-a-z0-9]+)$/);
         if(method==='GET' && contentChapter){const found=getContentChapter(contentChapter[1],contentVersion);if(!found)reject(404,'not_found','所选教材没有这个章节');return send(200,found);}

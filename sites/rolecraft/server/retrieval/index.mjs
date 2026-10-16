@@ -6,11 +6,11 @@ import '../../dist/content-retrieval-core.js';
 const here=path.dirname(fileURLToPath(import.meta.url)),project=path.resolve(here,'../..');
 const sha=s=>createHash('sha256').update(s).digest('hex');
 const core=globalThis.RolecraftContentRetrieval;
-const CURRENT_VERSION='textbook-v12',versions={'textbook-v10':{folder:'v10',units:20},'textbook-v12':{folder:'v12',units:30}};
+const CURRENT_VERSION='textbook-v12',versions={'textbook-v12':{folder:'v12',units:30}};
 // Response identities are derived from the loaded corpus. They are metadata
 // for clients and do not replace source/hash verification in loadCorpus().
 const RETRIEVAL_VERSION='content-retrieval-0.12-v12';
-const TEXTBOOK_IDS={'textbook-v10':'agent-engineering-v10','textbook-v12':'agent-engineering-v12'};
+const TEXTBOOK_IDS={'textbook-v12':'agent-engineering-v12'};
 const cachedCorpora=new Map();let active=0,dialogActive=0;
 function loadCorpus(version=CURRENT_VERSION){
  const definition=versions[version];if(!definition)throw Error('Content version unsupported');

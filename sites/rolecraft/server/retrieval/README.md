@@ -25,15 +25,15 @@ node semantic.mjs
 
 ## 接口
 
-- `GET /api/content/catalog`：20 单元、正式顺序、先修和公开来源身份；无需登录。
+- `GET /api/content/catalog`：30 单元、正式顺序、先修和公开来源身份；无需登录。
 - `GET /api/content/chapter/:unitId`：当前实际正文、章节 hash 与稳定小节。只接受既有公开 unitId。
-- `POST /api/content/recommend`：`{query,startingPoint?,currentUnitId?,currentSectionId?,corpusVersion?}`；query 为 1–1200 字，startingPoint 为 `beginner|developer|practitioner|null`；版本只可为当前 `textbook-v10`。禁止自定文件、账号、owner 或旧版本字段。
+- `POST /api/content/recommend`：`{query,startingPoint?,currentUnitId?,currentSectionId?,corpusVersion?}`；query 为 1–1200 字，startingPoint 为 `beginner|developer|practitioner|null`；版本只可为当前 `textbook-v12`。禁止自定文件、账号、owner 或旧版本字段。
 - `GET /api/content/assets/:name`：6 项实际图 PNG/SVG/DOT 白名单。
 - `GET /api/content/reference/:name`：9 项教材已经引用的公开规范/审校文件白名单。未引用文件、私有目录、环境文件和脚本都不开放。
 
 推荐结果 `status` 分别为 `recommended|needs_clarification|no_match|invalid_input|unavailable`，同时含 `engineMode/providerCalled/corpusVersion/corpusHash/interpretedIntents/excludedIntents/results/clarification/limitations`。推荐卡给准确章节/小节、理由、逐字原文、源 path/hash 与 `#learn/agent/<unitId>/<sectionId>`。默认向量模式给 `semanticProvenance`，只描述实际本地模型与离线属性，不输出未经校准的匹配概率。最多 6 项，每意图最多 3 项。缺证或资源错误不能转换成无匹配。
 
-`dist/content-v10-data.js` 是固定原文的派生展示包，`globalThis.RolecraftContentV10` 包含全文及小节。图与参考文件的 `href` 指向 HTTP 白名单路由，`staticHref` 指向派生公开副本。任何派生索引不改正文和既有文稿审校身份。题库、真实生成、专家审核、学习效果与行业产品结论仍是各自未完成工作。
+`dist/content-v12-data.js` 是当前 v12 原文的派生展示包，`globalThis.RolecraftContentV12` 包含全文及小节。图与参考文件的 `href` 指向 HTTP 白名单路由，`staticHref` 指向派生公开副本。任何派生索引不改正文和既有文稿审校身份。题库、真实生成、专家审核、学习效果与行业产品结论仍是各自未完成工作。
 
 ## 证据与边界
 

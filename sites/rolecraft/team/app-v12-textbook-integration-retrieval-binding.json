@@ -1,15 +1,22 @@
 {
   "kind": "engineering_binding_not_independent_acceptance",
-  "builtAt": "2026-10-11T16:49:26.093Z",
+  "builtAt": "2026-10-16T10:41:37.649Z",
   "retrievalVersion": "content-retrieval-0.12-v12",
   "corpusVersion": "textbook-v12",
-  "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+  "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
   "bookSha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
   "units": 30,
   "sections": 273,
   "sourceBinding": {
     "assemblyManifestSha256": "16907987dcebb2195f9bae4df3f0648d566f597f49722e681fb589b87e32305e",
-    "curriculumSha256": "02dcab757b4e72f7fb28b39f648b30090b0e57b3725ca0af25e421e0fafad5ae"
+    "curriculumSha256": "5348721d128e89c3c68d594f63d8514b23e051b9627f47d10c8ede10f205eb76",
+    "currentSourceOverrides": {
+      "textbooks/v12/c01-selection.md": {
+        "previousAssemblySha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSourceSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "reason": "Approved current v12 source repaired from stale derived index; assembly manifest retained as historical freeze."
+      }
+    }
   },
   "model": {
     "modelId": "Xenova/bge-small-zh-v1.5",
@@ -21,9 +28,9 @@
   },
   "passageVectors": {
     "corpusVersion": "textbook-v12",
-    "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
-    "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
-    "count": 561
+    "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+    "chunkHash": "650101c27eb7db6bfe730fbc567fa08c3a1fcfb88cdf61acb91ee0b97b05014e",
+    "count": 562
   },
   "taskVectors": {
     "corpusVersion": "textbook-v12",
@@ -33,23 +40,23 @@
   "files": [
     {
       "path": "server/index.mjs",
-      "bytes": 31639,
-      "sha256": "63cee03519aaeb53257108227d17464bc3fb8942a7636ea87fddd13a76d2182b"
+      "bytes": 86298,
+      "sha256": "3f215f747e1d4710ae889e3117901a353b05633bef9559d74606c8c49a0eed97"
     },
     {
       "path": "server/retrieval/index.mjs",
-      "bytes": 7744,
-      "sha256": "acc8555c9b23603f04afa20ff7dd6eb2fc5429894b7474814d4b16114e1ded0d"
+      "bytes": 13101,
+      "sha256": "d4033af9a7720aa60a52d9d64417f4f1555461e96fc2b851f941b0b6c9b19157"
     },
     {
       "path": "server/retrieval/semantic.mjs",
-      "bytes": 16045,
-      "sha256": "d101163e0934cac93309265c4949fccbc9fe304120c5954ef9466a4fe68a4115"
+      "bytes": 15752,
+      "sha256": "6b3418ff779e3eecaab0ceaad021e201a8c388fb8db40423a6f2b7b7a78792ab"
     },
     {
       "path": "server/retrieval/build-content-v12.mjs",
-      "bytes": 6998,
-      "sha256": "9593c399b4b0b94f5bb34966f5aacaae679fd30c8dda28009dc51bc51cdb83f4"
+      "bytes": 7501,
+      "sha256": "064a6f4d6324ff16e95cd376b365539fd04559e40b4d313274bf40bd158b1862"
     },
     {
       "path": "server/retrieval/self-check-v12.mjs",
@@ -73,23 +80,23 @@
     },
     {
       "path": "dist/content-retrieval-core.js",
-      "bytes": 24073,
-      "sha256": "b3535b2249effdb0118713295ae9b86e117e0d86c86041aade3e8c33a0fc092d"
+      "bytes": 23970,
+      "sha256": "7afb30d0a9a981fa991bf2509d8bc86cb5cec0ead06a2cee2aa637139b3b610c"
     },
     {
       "path": "dist/content-v12-data.js",
-      "bytes": 1545912,
-      "sha256": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224"
+      "bytes": 1518046,
+      "sha256": "89ff9410acdb0ec48633b18bc492a60fa4e9cfc47ac12b128b2cd7fa4529c481"
     },
     {
       "path": "server/retrieval/content-v12-index.json",
-      "bytes": 1591766,
-      "sha256": "ac87bfa9c88f6e1709fc59c05fc3af1fcf98b7274aeb1be48a07e490578bdd6b"
+      "bytes": 1551276,
+      "sha256": "7a77588848b29c306a5506a068285d25605a257c36553499972622ff10f6b95f"
     },
     {
       "path": "server/retrieval/vectors-v12.json",
-      "bytes": 6084178,
-      "sha256": "c28e1e27e7185638aeecc4357498ae19e99f5277e5d271a7d529e57aa1754164"
+      "bytes": 6095646,
+      "sha256": "56b81378723d8cd915abb848bc8ec6c4a84eeac0a52fe548ca711ae183f49e47"
     },
     {
       "path": "server/retrieval/intent-vectors-v12.json",
@@ -108,8 +115,8 @@
     },
     {
       "path": "team/app-v12-textbook-integration-retrieval-self-check.json",
-      "bytes": 60006,
-      "sha256": "b28e4b045d27dea16958630dd105180ae00cdac62e7213074c356397a5abc7de"
+      "bytes": 75813,
+      "sha256": "4aa72c002876a9e52dce8e4c22d9cd44677bb58ef7c030f7f5a61175b6c3deca"
     },
     {
       "path": "team/app-v12-textbook-integration-retrieval-self-check-input-error.json",
@@ -128,8 +135,8 @@
     },
     {
       "path": "team/app-v12-textbook-integration-retrieval-repair-check.json",
-      "bytes": 51733,
-      "sha256": "f0cb22febb13c05c63d0b2375c9a0bc3fc93faafa407df56aced325533d0884f"
+      "bytes": 64402,
+      "sha256": "c8ca185779c8dae57823c5929b40e1424679d414c336726dd7896bc436928bc7"
     },
     {
       "path": "team/app-v12-textbook-integration-retrieval-preview.json",
@@ -179,7 +186,7 @@
     {
       "path": "team/textbook-v12-curriculum.json",
       "bytes": 144114,
-      "sha256": "02dcab757b4e72f7fb28b39f648b30090b0e57b3725ca0af25e421e0fafad5ae"
+      "sha256": "5348721d128e89c3c68d594f63d8514b23e051b9627f47d10c8ede10f205eb76"
     },
     {
       "path": "textbooks/v12/agent-engineering-textbook.md",
@@ -233,8 +240,8 @@
     },
     {
       "path": "textbooks/v12/c01-selection.md",
-      "bytes": 9444,
-      "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4"
+      "bytes": 9639,
+      "sha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982"
     },
     {
       "path": "textbooks/v12/c01-control-primer.md",
@@ -407,16 +414,6 @@
       "sha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06"
     },
     {
-      "path": "team/textbook-v09-qa.md",
-      "bytes": 6709,
-      "sha256": "c708997d143a5251e1e64af406d9846cac30572b14bf18a2fe219367baff05b3"
-    },
-    {
-      "path": "dist/content-v12-references/textbook-v09-qa.md",
-      "bytes": 6709,
-      "sha256": "c708997d143a5251e1e64af406d9846cac30572b14bf18a2fe219367baff05b3"
-    },
-    {
       "path": "team/textbook-v12-curriculum.md",
       "bytes": 42215,
       "sha256": "60629842d563df8a1906aa56cac40b0724bb38468ed3243de896e48c60153cd8"
@@ -429,7 +426,7 @@
     {
       "path": "dist/content-v12-references/textbook-v12-curriculum.json",
       "bytes": 144114,
-      "sha256": "02dcab757b4e72f7fb28b39f648b30090b0e57b3725ca0af25e421e0fafad5ae"
+      "sha256": "5348721d128e89c3c68d594f63d8514b23e051b9627f47d10c8ede10f205eb76"
     },
     {
       "path": "textbooks/v12/README.md",

@@ -112,8 +112,8 @@ export function loadCareerImports(importDir) {
         if (error?.code === 'career_import_invalid') throw error;
         throw invalid(`职业 ${meta.careerId} 教材无法读取`);
       }
-    } else if (!['textbook-v10', 'textbook-v12'].includes(meta.contentVersion)) {
-      throw invalid(`职业 ${meta.careerId} 缺少 corpusPath`);
+    } else if (meta.contentVersion !== 'textbook-v12') {
+      throw invalid(`职业 ${meta.careerId} 缺少当前 textbook-v12 的 corpusPath`);
     }
     entries.push({ ...meta, corpus, importFile: name });
     if(entries.length>500) throw invalid('职业导入记录不能超过500项');

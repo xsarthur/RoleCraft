@@ -5,7 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { recommendContent,closeContentRetrieval } from './index.mjs';
 const here=path.dirname(fileURLToPath(import.meta.url)),project=path.resolve(here,'../..');
-const corpus=JSON.parse(readFileSync(path.join(here,'content-v10-index.json'),'utf8'));
+const corpus=JSON.parse(readFileSync(path.join(here,'content-v12-index.json'),'utf8'));
 const target='00-learning-route/s-7547e5ce91f8';
 const cases=[
  ['original','react',{target}],['case-mixed','ReAct',{target}],['case-upper','REACT',{target}],
@@ -37,9 +37,9 @@ try{
   observations.push({id,query,expected,durationMs:Date.now()-started,passed:!failures.length,failures,result});
  }
 }finally{await closeContentRetrieval();}
-const files=['dist/content-retrieval-core.js','server/retrieval/index.mjs','server/retrieval/semantic.mjs','server/retrieval/content-v10-index.json','dist/content-v10-data.js'];
+const files=['dist/content-retrieval-core.js','server/retrieval/index.mjs','server/retrieval/semantic.mjs','server/retrieval/content-v12-index.json','dist/content-v12-data.js'];
 const binding=files.map(file=>({path:file,sha256:createHash('sha256').update(readFileSync(path.join(project,file))).digest('hex')}));
-const output={kind:'author_development_check',executedAt:new Date().toISOString(),runtime:process.version,execPath:process.execPath,retrievalVersion:'content-retrieval-0.11.1-source-terms',corpusVersion:corpus.corpusVersion,corpusHash:corpus.corpusHash,bookSha256:corpus.bookSha256,binding,passed:observations.every(o=>o.passed),observations};
+const output={kind:'author_development_check',executedAt:new Date().toISOString(),runtime:process.version,execPath:process.execPath,retrievalVersion:'content-retrieval-0.12-v12',corpusVersion:corpus.corpusVersion,corpusHash:corpus.corpusHash,bookSha256:corpus.bookSha256,binding,passed:observations.every(o=>o.passed),observations};
 writeFileSync(path.join(project,'team/app-v11-search-fix-retrieval-dev-check.json'),JSON.stringify(output,null,2)+'\n');
 console.log(JSON.stringify({passed:output.passed,cases:observations.length,failed:observations.filter(o=>!o.passed).map(o=>({id:o.id,failures:o.failures,status:o.result.status,units:o.result.results.map(r=>r.unitId)})),binding}));
 process.exitCode=output.passed?0:1;
