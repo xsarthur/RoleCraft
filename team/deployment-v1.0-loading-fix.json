@@ -1,0 +1,67 @@
+{
+  "reportId": "deployment-v1.0-loading-fix",
+  "timestampUtc": "2026-10-16T00:20:58Z",
+  "target": {
+    "host": "111.231.8.78",
+    "user": "ubuntu",
+    "root": "/opt/rolecraft",
+    "singleDevelopmentEnvironment": true
+  },
+  "scope": {
+    "files": [
+      {
+        "path": "sites/rolecraft/dist/learning-workbench.js",
+        "localSha256": "9aebdadaab45e47f6f6dcd4d8fa2168f167bdb802ed22e022b087abd039a74d3",
+        "remoteSha256": "9aebdadaab45e47f6f6dcd4d8fa2168f167bdb802ed22e022b087abd039a74d3",
+        "httpPath": "/learning-workbench.js",
+        "httpStatus": 200
+      },
+      {
+        "path": "sites/rolecraft/dist/learning-workbench.css",
+        "localSha256": "1a53e9fc115513b04404fa9656b626c9945efc483e36f5da30beb36e65b63c52",
+        "remoteSha256": "1a53e9fc115513b04404fa9656b626c9945efc483e36f5da30beb36e65b63c52",
+        "httpPath": "/learning-workbench.css",
+        "httpStatus": 200
+      }
+    ],
+    "excluded": ["database", "env", "backend", "textbook", "question-bank-data", "retrieval-model", "node_modules"]
+  },
+  "interactionMarkers": {
+    "lw-query-submit-spinner": true,
+    "disabled": true,
+    "aria-busy": true
+  },
+  "backup": {
+    "directory": "/opt/rolecraft/.runtime/backups/20261016T002058Z-loading-fix",
+    "database": {
+      "file": "rolecraft.sqlite",
+      "bytes": 180224,
+      "sha256": "bfb96708b34b3b44e8703479db7854d05f1ebd5c586dffade49b78fbd68d79f6",
+      "walPresentAtBackup": false,
+      "shmPresentAtBackup": false
+    },
+    "oldStatic": {
+      "learning-workbench.js": "2086c9ae26ee158e1bf4c89a296513b24b9173fb65a098bf03f9cd27c065668e",
+      "learning-workbench.css": "b35eaef44e73a56e2b1df0985fdfe8c960393ca086ffecaeba96b51bf798336c"
+    }
+  },
+  "runtime": {
+    "pm2Name": "rolecraft",
+    "pidAfterRestart": 2803971,
+    "nodeVersion": "v24.20.0",
+    "releaseVersion": "rolecraft-1.0",
+    "healthHttpStatus": 200,
+    "providerCalled": false,
+    "pm2Saved": true
+  },
+  "verification": {
+    "publicHealth": {"url": "http://111.231.8.78/api/health", "status": 200},
+    "publicJs": {"url": "http://111.231.8.78/learning-workbench.js", "status": 200, "sha256": "9aebdadaab45e47f6f6dcd4d8fa2168f167bdb802ed22e022b087abd039a74d3"},
+    "publicCss": {"url": "http://111.231.8.78/learning-workbench.css", "status": 200, "sha256": "1a53e9fc115513b04404fa9656b626c9945efc483e36f5da30beb36e65b63c52"}
+  },
+  "status": "deployed_and_transport_verified",
+  "limitations": [
+    "本记录验证部署、服务恢复和静态资源传输，不替代独立浏览器 UI/UX 验收。",
+    "停服备份时 WAL/SHM 已不存在；重启后运行目录重新生成 WAL/SHM。"
+  ]
+}

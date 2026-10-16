@@ -1,0 +1,231 @@
+{
+  "recordedAt": "2026-10-14T15:58:16.145743+08:00",
+  "channel": "Official CUA native Google Chrome accessibility tree and screenshots",
+  "environment": {
+    "browser": "Google Chrome on macOS, QA-created incognito window",
+    "applicationOrigin": "http://127.0.0.1:4464",
+    "fixtureOrigin": "http://127.0.0.1:4465",
+    "viewport": "Desktop plus DevTools Responsive width 390 CSS px, height 1055",
+    "storage": "New isolated origins in a QA-created incognito window; no actual user database or storage inspection"
+  },
+  "currentBindings": [
+    {
+      "path": "sites/rolecraft/dist/interview-answers-v1-data.js",
+      "bytes": 1661964,
+      "sha256": "4a9e3ce4f5067e77b26bdd551bed911a6efadb9fe905de206876f03c773dad7b"
+    },
+    {
+      "path": "sites/rolecraft/dist/interview-answer-renderer.js",
+      "bytes": 9099,
+      "sha256": "27c67c8ffa3e16249f96fea34880c405ee786424d0eec4a82f2f78f71c3e069a"
+    },
+    {
+      "path": "sites/rolecraft/dist/interview-answer-reader.css",
+      "bytes": 2578,
+      "sha256": "94a65d0e234357678da6d5d8dcce2ef9fee39f9004b3611764935e248e255bff"
+    },
+    {
+      "path": "sites/rolecraft/dist/index.html",
+      "bytes": 4530,
+      "sha256": "407983825552db7ea4da8b643e30ca9ef8b300622871e89be5610be0e9ed0eca"
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-experience-v13.js",
+      "bytes": 33235,
+      "sha256": "3cc08b26fbf11be0e6515f2e966eeaa728cff890ce1cd013a9b93e86c9f139b9"
+    },
+    {
+      "path": "sites/rolecraft/dist/interview-prep-v1-prototype.html",
+      "bytes": 43875,
+      "sha256": "1051cb0b1a97b3b7803f50ad0ec162c92cb19efae246d38a2c228cd433f54469"
+    }
+  ],
+  "prototypeItems": [
+    {
+      "id": "P01",
+      "question": "Agent 与普通模型调用有什么区别？",
+      "openedCurrentFullReference": true,
+      "referenceHeadingAndLastSourceVisibleInAX": true,
+      "collapseHidesFullReference": true,
+      "status": "pass"
+    },
+    {
+      "id": "P02",
+      "question": "工具调用超时，如何避免恢复时重复执行？",
+      "openedCurrentFullReference": true,
+      "referenceHeadingAndLastSourceVisibleInAX": true,
+      "collapseHidesFullReference": true,
+      "status": "pass"
+    },
+    {
+      "id": "P03",
+      "question": "如何组织 Agent 的上下文和长期记忆？",
+      "openedCurrentFullReference": true,
+      "referenceHeadingAndLastSourceVisibleInAX": true,
+      "collapseHidesFullReference": true,
+      "status": "pass"
+    },
+    {
+      "id": "P04",
+      "question": "如何说明你为什么选择 RAG，而不是微调？",
+      "openedCurrentFullReference": true,
+      "referenceHeadingAndLastSourceVisibleInAX": true,
+      "collapseHidesFullReference": true,
+      "status": "pass"
+    },
+    {
+      "id": "P05",
+      "question": "介绍一个你做过的 Agent 项目，如何证明它有效？",
+      "openedCurrentFullReference": true,
+      "referenceHeadingAndLastSourceVisibleInAX": true,
+      "collapseHidesFullReference": true,
+      "status": "pass"
+    },
+    {
+      "id": "P06",
+      "question": "模型返回的 JSON 合法，为什么还不能直接执行？",
+      "openedCurrentFullReference": true,
+      "referenceHeadingAndLastSourceVisibleInAX": true,
+      "collapseHidesFullReference": true,
+      "status": "pass"
+    },
+    {
+      "id": "P07",
+      "question": "如何评估一个 Agent 的改进是否真的有效？",
+      "openedCurrentFullReference": true,
+      "referenceHeadingAndLastSourceVisibleInAX": true,
+      "collapseHidesFullReference": true,
+      "status": "pass"
+    },
+    {
+      "id": "P08",
+      "question": "检索资料里出现要求执行工具的指令，你怎么处理？",
+      "openedCurrentFullReference": true,
+      "referenceHeadingAndLastSourceVisibleInAX": true,
+      "collapseHidesFullReference": true,
+      "status": "pass"
+    },
+    {
+      "id": "P09",
+      "question": "服务中断后，Agent 如何恢复到可靠的执行位置？",
+      "openedCurrentFullReference": true,
+      "referenceHeadingAndLastSourceVisibleInAX": true,
+      "collapseHidesFullReference": true,
+      "status": "pass"
+    },
+    {
+      "id": "P10",
+      "question": "项目成本增加时，你会如何定位并优化？",
+      "openedCurrentFullReference": true,
+      "referenceHeadingAndLastSourceVisibleInAX": true,
+      "collapseHidesFullReference": true,
+      "status": "pass"
+    }
+  ],
+  "prototypeMethod": "Hard reload current data/renderer. Current original prototype plan was used; temporary local 60-minute plan exposed P01-P09 on day1 and P10 on day2. Every question was opened, complete article and final source were read from AX, and collapsed. No answer, rating, account or database was saved. Refresh returns the prototype to its predefined initial example state, consistent with existing in-memory prototype.",
+  "sourceClicks": [
+    {
+      "answer": "P02",
+      "label": "10.3 最关键的崩溃窗口 工单创建成功 结果尚未提交",
+      "target": "#learn/agent/c01-control-loop/s-8261016926be",
+      "actualFocusedHeading": "10.3 最关键的崩溃窗口 工单创建成功 结果尚未提交",
+      "refreshRetainsHeading": true,
+      "status": "pass"
+    },
+    {
+      "answer": "P02",
+      "label": "三个提交点定义可恢复事实",
+      "target": "#learn/agent/e01/s-c2209725ec11",
+      "actualFocusedHeading": "三个提交点定义可恢复事实",
+      "status": "pass"
+    },
+    {
+      "answer": "P02",
+      "label": "2 控制权在运行时 聊天上下文只是一种投影",
+      "target": "#learn/agent/c01-control-loop/s-81f9aaeecb60",
+      "actualFocusedHeading": "2 控制权在运行时 聊天上下文只是一种投影",
+      "status": "pass"
+    }
+  ],
+  "visualSamples": [
+    {
+      "id": "P02",
+      "surface": "actual prototype",
+      "width": 390,
+      "observation": "Five-row recovery fact/action table visually fits and wraps within the reference card; surrounding mechanism, trace and sources remain readable. Screenshot inspected in CUA transcript.",
+      "status": "pass"
+    },
+    {
+      "id": "P06",
+      "surface": "actual prototype",
+      "width": 390,
+      "observation": "Reference article and JSON code block visibly render inside the mobile card; final followups and source section present.",
+      "status": "pass"
+    },
+    {
+      "id": "M101",
+      "surface": "static QA fixture of current internal evidenceHTML",
+      "width": 390,
+      "observation": "Current full Python block has preserved indentation and horizontal overflow contained in its focusable pre. Right arrow scrolling visibly moves the long code horizontally without widening the whole page; subsequent paragraph and old textbook excerpts remain present.",
+      "status": "pass"
+    },
+    {
+      "id": "M103",
+      "surface": "static QA fixture of current internal evidenceHTML",
+      "width": 390,
+      "observation": "LRU full Python block, sources and original textbook analysis are present in browser AX. This sample was not a separate full visual layout audit.",
+      "status": "pass"
+    },
+    {
+      "id": "Q99",
+      "surface": "static QA fixture of current internal evidenceHTML",
+      "observation": "Current v1.0.1 hash 5b98c7767017e76814c043904227829698d411af87070fce6123da8da8aed5a0 appears in expanded review details; constructed example and personal-experience warning remain; complete analysis precedes the original textbook excerpt.",
+      "status": "pass"
+    }
+  ],
+  "deferredRoutes": [
+    {
+      "url": "http://127.0.0.1:4464/index.html#questions",
+      "visible": "该模块将在后续开放",
+      "completeAnswerAbsent": true,
+      "status": "pass"
+    },
+    {
+      "url": "http://127.0.0.1:4464/index.html#review",
+      "visible": "该模块将在后续开放",
+      "completeAnswerAbsent": true,
+      "status": "pass"
+    },
+    {
+      "url": "http://127.0.0.1:4464/index.html#check",
+      "visible": "该模块将在后续开放",
+      "completeAnswerAbsent": true,
+      "status": "pass"
+    }
+  ],
+  "fixtureProvenance": "build-browser-fixture.cjs loads current public scripts in isolated Node VM, exposes evidenceHTML in memory only, and creates static snapshots. It is not a product route. 124 snapshots generated; actual browser samples Q99/M101/M103, not all 124.",
+  "cleanup": {
+    "incognitoWindowCloseIssued": true,
+    "servers": [
+      {
+        "port": 4464,
+        "session": 78179,
+        "stop": "SIGINT",
+        "exitCode": 0
+      },
+      {
+        "port": 4465,
+        "session": 85782,
+        "stop": "SIGINT",
+        "exitCode": 0
+      }
+    ]
+  },
+  "limitations": [
+    "No attached browser extension was available; official native CUA was used successfully.",
+    "Screenshots were inspected in the tool transcript, not saved as separate PNG files.",
+    "400 links were checked from rendered HTML in isolated VM; only the three documented P02 source links were actually clicked in the browser.",
+    "Static server API/auth configuration endpoints return 404, as expected for this isolated static-only test. No real backend/auth/model/service validation or production claim.",
+    "No real user learning, interview performance or human expert assessment."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "version": "professional-learning-resources-independent-qa-v01",
+  "auditor": "测试工程师 /root/resource_qa",
+  "completed_at": "2026-10-14",
+  "scope": "Static QA of the received professional resource catalog, source research, and training framework; no course execution, theory check, work-product review, unknown-task transfer, or live URL accessibility claim.",
+  "directory_configuration_conclusion": "not_met",
+  "learning_effect_conclusion": "not_assessed",
+  "received_catalog": {
+    "markdown_sha256": "7669ff2e307e3143993ae8e826619e532499f94333b7b6aa8a2caac56fed5b10",
+    "json_sha256": "5deeea6f6ce114a43d49edeedf8bbd5810a7b6534115c6e25b9d33c0d1709416",
+    "json_items": 34,
+    "json_role_counts": {"PM": 3, "null": 31},
+    "expected_role_ids": ["PM", "PROD", "CURR", "DES", "FE", "QA", "ED", "AI", "BE", "UR", "COMP", "PRACT", "OPS", "REV", "RETR"],
+    "non_empty_role_ids": ["PM"],
+    "source_a_items": 25,
+    "source_b_items": 31,
+    "pm_supplement_items": 3,
+    "source_a_items_present_in_catalog": 0,
+    "literal_duplicate_urls": 0,
+    "malformed_url_items": 0,
+    "accessed_at_values": ["2026-10-14"]
+  },
+  "checks": [
+    {"id":"PLR-QA-01","area":"role coverage","status":"fail_blocking","actual":"Only PM=3 is assigned; 31 records are null. Source A has 25 records omitted from the aggregate catalog.","required":"All 15 role_ids and at least 3 assigned records per role.","owner":"课程架构师/目录整合责任人"},
+    {"id":"PLR-QA-02","area":"field completeness","status":"fail","actual":"JSON contains role_id,title,provider,url,stage,limitations,accessed_at,batch only; framework resource-card fields and structured purpose/output are absent.","required":"Resource card contract fields or explicit insufficient_evidence markers.","owner":"课程架构师/资源研究"},
+    {"id":"PLR-QA-03","area":"Markdown/JSON parity","status":"fail","actual":"Markdown has theme and learning-output columns; JSON drops them. B rows use the generic output '岗位作品与陌生任务证据'.","required":"Index and human-readable catalog preserve role-specific purpose and learning output.","owner":"课程架构师/目录整合责任人"},
+    {"id":"PLR-QA-04","area":"URL/provenance","status":"partial","actual":"All 34 URL strings begin with http and no literal duplicates were found, but several entries contain multiple URLs separated by a Chinese semicolon and no canonical URL/list field.","required":"One canonical URL plus explicit supplementary links or a structured URL list; live availability requires a later recheck.","owner":"资源研究/目录整合"},
+    {"id":"PLR-QA-05","area":"provider/stage/limitations/access date","status":"pass_with_limitations","actual":"All 34 records have non-empty provider, stage, limitations, and accessed_at=2026-10-14.","required":"These fields remain traceable after repair; version/publication/maintenance dates are still missing.","owner":"资源研究"},
+    {"id":"PLR-QA-06","area":"staleness","status":"partial","actual":"Research notes disclose old materials (2002, 2006, 2008/09, 2010, 2012, 2014, 2016/17), but the index lacks structured publication/maintenance/recheck fields.","required":"Keep limits and add dates/recheck status; do not treat old theory as current product fact.","owner":"资源研究/课程架构"},
+    {"id":"PLR-QA-07","area":"Agentic AI/Andrew Ng","status":"partial","actual":"Andrew Ng/DeepLearning.AI Agentic AI is present but role_id is null, so AI-role assignment is unproven.","required":"AI assignment with source/provenance and role-specific output.","owner":"课程架构师"},
+    {"id":"PLR-QA-08","area":"PM resources","status":"partial","actual":"Three PM supplement entries are assigned to PM; A-batch PM resources do not exist, and other role assignments fail.","required":"PM and other roles use the same traceable contract.","owner":"课程架构师/目录整合责任人"},
+    {"id":"PLR-QA-09","area":"responsibility boundaries","status":"pass_with_limitations","actual":"Catalog separates research, curriculum, content review, QA, and PM coordination in prose; null IDs and generic outputs prevent executable handoff.","required":"Repair role ownership before distributing resources.","owner":"项目经理协调；各领域责任人整合"},
+    {"id":"PLR-QA-10","area":"reading versus capability","status":"pass_declaration_not_effect","actual":"Catalog explicitly says reading, certificates, demonstrations, or hits do not prove competence; no learning effect was executed.","required":"Keep not_assessed until theory checks, artifacts, transfer, independent review, and real evidence exist.","owner":"课程架构师/实训评估员/QA"}
+  ],
+  "defects": [
+    {"id":"PLR-QA-01","severity":"P0","status":"open","summary":"role_id null for 31 records and all 25 A-batch records omitted; 15-role coverage cannot be consumed or verified.","retest":"Rebuild MD/JSON; all 15 IDs present and each has >=3 records with stable provenance."},
+    {"id":"PLR-QA-02","severity":"P1","status":"open","summary":"Structured resource-card fields and role-specific purpose/output are missing or dropped from JSON.","retest":"Add fields or explicit insufficient_evidence markers; sample each role for parity."},
+    {"id":"PLR-QA-03","severity":"P1","status":"open","summary":"Multiple URLs are packed into one URL string and no canonical URL/list is provided.","retest":"Split primary/supplementary URLs and recheck format, duplicates, and later accessibility."},
+    {"id":"PLR-QA-04","severity":"P2","status":"open","summary":"Publication/maintenance/recheck dates are not structured for older or version-sensitive resources.","retest":"Add dates/status and preserve disclosed limitations."}
+  ],
+  "not_assessed": ["course execution", "theory checks", "role work products", "unknown-task transfer", "real learner outcomes", "human expert review", "real user value", "production economics", "industry advantage"],
+  "source_hashes": {
+    "resource-research-a.md": "ab5168eadd2a56b74391de35579e4dacc5d49ec961d75eeb5fea4f268b93c0c2",
+    "resource-research-b.md": "8114608fd79a86e6f7ba7170bcdd4e57db006ff0ce1fbacf9c50b8579d21cff5",
+    "role-training-framework-v01.md": "081ee0f07b1a9b0a18585ca1d1f8bce361d2452edf02340d0e98193d686cabb1"
+  },
+  "retest_rule": "After catalog repair, rerun this QA against new file hashes; do not inherit this received-version conclusion."
+}

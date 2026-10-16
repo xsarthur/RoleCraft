@@ -1,0 +1,32 @@
+{
+  "record_id": "AI-L0-SOURCE-001-QA-20261015-001",
+  "practice_id": "AI-PRACTICE-SOURCE-001",
+  "exercise_version": "v0.1",
+  "decision": "met_with_limitations",
+  "scope_decision": "met_within_scope",
+  "verification": {
+    "command": "python3 sites/rolecraft/team/ai-generation-l0-practice-source-001/replay_verify.py",
+    "replay": "pass",
+    "run_bytes": 975,
+    "run_sha256": "9a1ba7597364b5d19a019f1f31263bd9feef28926786cb7c90a133d3be614b7d",
+    "run_1_run_2_byte_equal": true
+  },
+  "hashes": {
+    "manifest_sha256": "ef09d2e2d83276b9efa6599c5001584228f81378bf0676a49879406fe44a3619",
+    "evidence_card_sha256": "377f16848f0ef36cc2449349014d75c146d065d32a8fc6ae032eefcc583c4e07",
+    "fixture_sha256": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+    "practice_pack_sha256": "b1cb993bfb6310f5f872c23980ad60a8d6dbc91c64462bbf253302328ffa0f1a",
+    "tool_receipts_sha256": "e836bef50d4b5a00009869bc24a0d04c417f43e1d783942015f403ed2cca7fb5"
+  },
+  "first_failures": [
+    {"case_id":"wrong_source_version","code":"SOURCE_VERSION_MISMATCH","stopped_before_draft":true},
+    {"case_id":"mutated_text_stale_hash","code":"SOURCE_HASH_MISMATCH","stopped_before_draft":true},
+    {"case_id":"unbound_claim","code":"UNBOUND_CLAIM","stopped_before_draft":true},
+    {"case_id":"tenant_scope_denied","code":"SOURCE_SCOPE_DENIED","stopped_before_draft":true}
+  ],
+  "holdout": {"id":"U-AI-SOURCE-001-H","changed_keys":["document_id","source_version","text"],"dynamic_binding_verified":true,"human_review_marker_preserved":true},
+  "handoff": {"recipient":"QA","status":"pending","self_signed":false},
+  "external_action": null,
+  "level_decisions": {"d0":"not_assessed","l1":"not_granted","l2":"not_granted"},
+  "unverified": ["真实供应商/API与模型引用忠实度","缓存/并发一致性","真实进程恢复/RPO/RTO","真人审批和接收方签收","非作者未知任务迁移","生产网络、云、外部动作和真实用户数据"]
+}

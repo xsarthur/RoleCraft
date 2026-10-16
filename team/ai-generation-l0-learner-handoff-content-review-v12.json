@@ -1,0 +1,44 @@
+{
+  "review_id": "AI-L0-LEARNER-HANDOFF-CONTENT-REVIEW-20261015-V12",
+  "reviewer_role": "内容审校员",
+  "target": "/private/tmp/ai-generation-l0-learner-handoff-v12",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "version": "v12",
+  "conclusion": "reviewed_with_limitations",
+  "scope_decision": "met_within_scope",
+  "scope": "独立核对真实stdout收据规范、D0-04恢复事件/工具/副作用语义、D0-05四状态矩阵映射、EvidenceCard绑定与限制边界；不执行代码、不授等级。",
+  "checks": {
+    "a_run_receipt": "met_with_limitations",
+    "d0_04_event_tool_side_effect": "met_with_limitations",
+    "d0_05_four_state_mapping": "met_with_limitations",
+    "evidencecard_binding": "met_with_limitations",
+    "limitations_and_role_boundaries": "met_within_scope"
+  },
+  "findings": [
+    "manifest列出的v12文件字节数与SHA-256均可复算；A-stdout实际含换行，A-receipt哈希覆盖原始stdout bytes，A-run-receipt哈希覆盖去换行文本，二者规范需显式区分。",
+    "D0-04新增文件覆盖故障、恢复、重放、checkpoint和幂等链；event-trace工具hash仍为不可复算占位标签，side_effect=null仅是本地夹具声明，未证明真实外部副作用或进程恢复。",
+    "D0-05四状态均有artifact、schema_version、source_refs、tenant、source_version和status，形成文件级映射；缺字段级断言、事件序号和实际陌生holdout执行。",
+    "EvidenceCards可读并带diagnostic_id，但D0-04/D0-05未逐题绑定A收据、event trace、工具I/O、恢复链和matrix，evidence_id仍为V10；卡片不能替代正文、QA或真人签收。",
+    "pending/not_assessed/not_granted及岗位边界措辞保持诚实，审校不授D0/L0等级。"
+  ],
+  "limitations": [
+    "未验证真实模型/API、供应商来源、租户权限、生产数据库/进程恢复、并发/RPO-RTO、外部工具副作用、未知任务迁移、真人签收、学习者能力或职业认证。",
+    "A-run-receipt未声明其去换行hash的原始字节规范；A-receipt与stdout虽可复算，不等于重新执行命令的独立证明。",
+    "D0-04工具hash不可复算，side_effect=null及recovery-event属于夹具语义；D0-05 holdout是记录状态而非未知任务结果。"
+  ],
+  "required_followup": [
+    "声明A收据每个hash的原始字节规范并保留stdout/命令/环境关系。",
+    "将D0-04工具hash改为实际文件可复算值，补逐事件输入输出、时间、重放边界和副作用观测。",
+    "补D0-05字段级断言、事件序号与真实holdout执行证据。",
+    "EvidenceCard逐题绑定A收据、event trace、工具I/O、恢复链、matrix并修正版本化evidence_id，补正文与接收签收关系。",
+    "保持human_receipt/qa_status pending，D0/L0 not_assessed，L1/L2 not_granted。"
+  ],
+  "self_signed": false,
+  "external_action": null,
+  "level_decisions": {
+    "d0": "not_assessed",
+    "l0": "not_assessed",
+    "l1": "not_granted",
+    "l2": "not_granted"
+  }
+}

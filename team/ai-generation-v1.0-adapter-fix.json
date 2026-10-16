@@ -1,0 +1,51 @@
+{
+  "report_id": "ai-generation-v1.0-adapter-fix-20261016",
+  "role": "ai_generation_engineer",
+  "status": "implemented_not_deployed",
+  "scope": "OpenAI-compatible Responses endpoint configuration and model alias adapter",
+  "real_provider_called": false,
+  "secret_values_in_artifacts": false,
+  "secret_values_written": false,
+  "database_changed": false,
+  "deployment_performed": false,
+  "changes": [
+    {
+      "path": "sites/rolecraft/server/generation/index.mjs",
+      "sha256": "9797e8053769a8bfa1f4ba6203933106fa28be649e44fedee323948f4a95477d",
+      "items": [
+        "OPENAI_BASE_URL optional with official HTTPS default",
+        "HTTPS/no-userinfo/no-query/no-hash validation",
+        "OPENAI_MODEL precedence with GENERATE_MODEL compatibility alias",
+        "Responses endpoint remains `${baseUrl}/responses`",
+        "strict JSON Schema, source checks, budgets, timeout and unknown-outcome mapping preserved"
+      ]
+    },
+    {
+      "path": "sites/rolecraft/server/generation/dev-check.mjs",
+      "sha256": "3cbc76b69f12b45887b36f1f54d012e9f8d8f7e0bbf79ae04b8a3fc42937da6b",
+      "items": ["custom HTTPS base URL accepted", "HTTP base URL rejected", "custom endpoint resolves only to /responses"]
+    }
+  ],
+  "verification": {
+    "command": "node sites/rolecraft/server/generation/dev-check.mjs",
+    "passed": 19,
+    "total": 19,
+    "simulation": true,
+    "realProviderCalled": false
+  },
+  "canonical_environment": {
+    "required": ["OPENAI_API_KEY", "OPENAI_MODEL", "OPENAI_MAX_OUTPUT_TOKENS", "ROLECRAFT_GENERATION_BUDGET_USD", "ROLECRAFT_ESTIMATED_MAX_COST_USD"],
+    "optional": ["OPENAI_BASE_URL", "OPENAI_TIMEOUT_MS"],
+    "model_alias": "GENERATE_MODEL",
+    "default_base_url": "https://api.openai.com/v1",
+    "endpoint_suffix": "/responses",
+    "secret_policy": "server environment only; never browser, logs, reports, PM2 command line, or request body outside Authorization header"
+  },
+  "open_items": [
+    {"id": "GEN-ADAPTER-001", "owner": "backend_data_engineer", "status": "open", "text": "确认远程端点实现 Responses API strict JSON Schema，并注入 canonical fields without exposing key."},
+    {"id": "GEN-ADAPTER-002", "owner": "backend_data_engineer", "status": "open", "text": "入队 generationConfig snapshot should preserve OPENAI_MODEL || GENERATE_MODEL and non-sensitive base URL reference."},
+    {"id": "GEN-ADAPTER-003", "owner": "qa_engineer", "status": "open", "text": "Run one isolated real request only after health configured=true; retain usage/request IDs and independent evidence."},
+    {"id": "GEN-ADAPTER-004", "owner": "operations_analyst", "status": "open", "text": "Reconcile actual bill with declared estimate; estimated cost is not a provider hard cap."}
+  ],
+  "handoff": "后端按最终字段部署并重启；AI 生成工程师不部署、不复制或输出密钥；测试工程师随后完成真实调用验收。"
+}

@@ -1,0 +1,41 @@
+{
+  "review_id": "AI-DURABLE-002-CONTENT-REVIEW-20261015-004",
+  "practice_id": "AI-PRACTICE-DURABLE-002",
+  "version": "v04",
+  "decision": "reviewed_with_limitations",
+  "scope": "local fixture-only content review",
+  "evidence": {
+    "artifact_dir": "sites/rolecraft/team/ai-generation-l0-practice-durable-002-v04",
+    "checkpoint_manifest_sha256": "10c62dea585228af90cdd88bf4842cf1cece28c35fcd7e9bf71820960d285b56",
+    "manifest_entries_rehashed": 12,
+    "manifest_hashes_match": true,
+    "final_outputs_checked": 8,
+    "all_final_status_local_draft_ready": true,
+    "all_final_outputs_fixture_scoped": true,
+    "first_failures_preserved": true,
+    "recovery_receipt_present": true,
+    "qa_status": "pending",
+    "self_signed": false
+  },
+  "findings": [
+    "v04 修复 final.json manifest bytes/SHA256 不一致，12 项 checkpoint 条目重算一致。",
+    "所有 final.json 与 final_output.json 均为 local_draft_ready；顶层 fixture-only 范围已明确，run 输出的 deterministic_local_fixture_only 语义一致。",
+    "本地确定性夹具支持幂等 callback、单 draft、checkpoint replay 与首失败保留叙述。",
+    "未有证据支持生产耐久性、RPO/RTO、真实崩溃恢复、LangGraph checkpoint、真人能力或认证。"
+  ],
+  "limitations": [
+    "未进行真实进程 kill、数据库/队列持久化、fsync/rename 故障注入、并发、跨节点或外部供应商重放测试。",
+    "去重、payload hash、单 draft 与恢复只在给定 fixture 和事件顺序内成立。",
+    "QA handoff 仍 pending，作者未自签收；真人专家、学习者与职业能力证据未提供。",
+    "scope 与 status_scope 并存的下游字段合同仍需 QA/工程确认，字段补齐不产生生产语义。"
+  ],
+  "decisions": {
+    "l1": "not_granted",
+    "l2": "not_granted",
+    "production_durability": "unverified",
+    "rpo_rto": "unverified",
+    "human_capability": "unverified"
+  },
+  "next_owner": "QA",
+  "recheck": "独立重跑 normal、holdout、四类 first-failure 及 manifest/hash 校验，记录实际环境并保持 fixture-only 措辞。"
+}

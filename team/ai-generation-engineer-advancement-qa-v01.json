@@ -1,0 +1,190 @@
+{
+  "qa_id": "AI-ADV-TRAINING-QA-20261015-01",
+  "schema": "rolecraft.ai_generation.advancement_training.qa",
+  "schema_version": "0.1",
+  "date": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "reviewer_role": "QA",
+  "target_role_id": "AI",
+  "target_role_title": "AI生成工程师",
+  "scope": "独立静态检查进阶方案与三项本地隔离实训合同；不代学员执行、不修改作者文件、不授予L1/L2。",
+  "received_inputs": {
+    "advancement_md": {
+      "path": "sites/rolecraft/team/ai-generation-engineer-advancement-v01.md",
+      "sha256": "5aa3d9b0598aa2bfc3eff5c448018c57782f61008fcfe82861b0ba8ce9b3842f"
+    },
+    "advancement_json": {
+      "path": "sites/rolecraft/team/ai-generation-engineer-advancement-v01.json",
+      "sha256": "ba460ad904e1b3e187cdf946868bd9af8397254fc155943eb1455ba469607c8c"
+    },
+    "practice_pack_md": {
+      "path": "sites/rolecraft/team/ai-generation-engineer-practice-pack-v01.md",
+      "sha256": "04ac9db9dc611882efc54457a7912bffbdf7a1b0711306fe4f758af79495e171"
+    },
+    "practice_pack_json": {
+      "path": "sites/rolecraft/team/ai-generation-engineer-practice-pack-v01.json",
+      "sha256": "7e679a5600e8be4de5787633859d4ed91afeaa396bce255e81e6e88aa77e07e0"
+    },
+    "environment": {
+      "python": "3.14.5",
+      "json_parse": true,
+      "network": "not_used",
+      "external_actions": false
+    }
+  },
+  "fixture_hash_checks": {
+    "rule": "UTF-8、排序键、无尾换行、紧凑JSON分隔符后SHA-256",
+    "AI-PRACTICE-SOURCE-001": {
+      "declared": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+      "recomputed": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+      "match": true
+    },
+    "AI-PRACTICE-DURABLE-002": {
+      "declared": "b186af6b08d2a5bf426a5529e19f4465452b620b98c802b8097b404e15d5efd2",
+      "recomputed": "b186af6b08d2a5bf426a5529e19f4465452b620b98c802b8097b404e15d5efd2",
+      "match": true
+    },
+    "AI-PRACTICE-GATE-003": {
+      "declared": "9002b8bcef99feaa63d88c4c4d8f3eb16d22107b0ceb61e3820240bf709fe364",
+      "recomputed": "9002b8bcef99feaa63d88c4c4d8f3eb16d22107b0ceb61e3820240bf709fe364",
+      "match": true
+    }
+  },
+  "assertions": {
+    "json_parse_and_top_level_contract": true,
+    "role_and_current_state_explicit": true,
+    "l0_gate_present": true,
+    "l1_gate_present": true,
+    "l2_gate_present": true,
+    "l0_gate_exact_mapping": false,
+    "l1_stage_transfer_is_distinct": false,
+    "l2_real_shape_boundary_explicit": true,
+    "evidence_card_has_42_unique_fields": true,
+    "source_ref_fields_complete": true,
+    "all_three_exercises_have_failure_stop_replay_holdout_handoff": true,
+    "all_three_exercises_have_evidence_card_submission": true,
+    "all_fixture_hashes_match": true,
+    "local_substitute_boundary_not_overclaimed": true,
+    "independent_review_roles_separated": true,
+    "cadence_d0_d90_present": true,
+    "practice_crosswalk_present": false,
+    "training_execution_performed": false
+  },
+  "check_results": {
+    "specification_conclusion": "met_with_limitations",
+    "training_execution": "not_assessed",
+    "current_level": "L0_guided",
+    "d0_decision": "not_assessed",
+    "l1_decision": "not_granted",
+    "l2_decision": "not_assessed"
+  },
+  "findings": [
+    {
+      "id": "QA-AI-ADV-P1-001",
+      "severity": "P1",
+      "title": "Stage A的D6产物未纳入L0到L1闸门",
+      "location": "advancement-v01.md阶段A练习与L0→L1准入；advancement-v01.json stages[0]",
+      "fact": "Stage A包含E-AI-L0-001、E-AI-L0-002、E-AI-L0-003，而闸门仍只写两个可重建沙箱/上述两个沙箱工件，没有明确E-AI-L0-003是否必交或D6最低证据。",
+      "impact": "独立复核者可能使用不同作品集合判定L1，D6可能被忽略。",
+      "repair_condition": "明确E-AI-L0-003为必交并补EvidenceCard、D6断言和复核人，或明确为可选补学并从阶段A交付集合移除；同步MD、JSON和30日闸门。",
+      "owner": "课程架构师",
+      "retest": "QA复核新版本哈希、门槛字段和交接记录"
+    },
+    {
+      "id": "QA-AI-ADV-P1-002",
+      "severity": "P1",
+      "title": "Stage B复用Stage A留出任务",
+      "location": "advancement-v01.json stages[1].transfer_tasks",
+      "fact": "Stage B的transfer_tasks仍为U-AI-L0-001，与Stage A相同，没有独立的L1留出任务或新卡片规则。",
+      "impact": "重复同一任务不能证明L1阶段新情境迁移；证据链无法区分D0/Stage A与Stage B的贡献。",
+      "repair_condition": "新建U-AI-L1-001并冻结非作者留出约束，或明确独立重冻结、新fixture hash、新EvidenceCard和提示/停止/未测范围记录；不得复用旧卡关闭。",
+      "owner": "课程架构师/AI生成工程师",
+      "retest": "QA执行跨文件ID、hash和门槛映射复核"
+    },
+    {
+      "id": "QA-AI-ADV-P1-003",
+      "severity": "P1",
+      "title": "方案与实训包缺少机器可读crosswalk",
+      "location": "advancement-v01 gaps/stages/promotion_rules 与 practice-pack-v01 exercises/progression_gate",
+      "fact": "三项AI-PRACTICE练习未声明分别关闭G-AI-04/05/06、属于哪个Stage A任务、哪些结果计入L1闸门。",
+      "impact": "执行者必须临场解释练习到能力维度和晋级闸门的关系，接收方无法由单一版本重建证据链。",
+      "repair_condition": "新增并冻结practice_crosswalk（MD表和JSON数组），至少包含practice_id、gap_id、stage_id、evidence_card_ids、capability_dims、required_for_gate、reviewers和limitations；不覆盖旧D0。",
+      "owner": "课程架构师；PM负责交接",
+      "retest": "QA核crosswalk完整性、ID唯一性和门槛引用"
+    }
+  ],
+  "exercise_contracts": [
+    {
+      "exercise_id": "AI-PRACTICE-SOURCE-001",
+      "local_checks": [
+        "source/version/hash claim binding",
+        "four first-failure injections",
+        "stop before draft/handoff",
+        "run-1/run-2 byte replay",
+        "source replacement holdout",
+        "evidence-card submission"
+      ],
+      "conclusion": "contract_present_not_executed"
+    },
+    {
+      "exercise_id": "AI-PRACTICE-DURABLE-002",
+      "local_checks": [
+        "callback_id dedupe",
+        "payload mismatch stop",
+        "checkpoint corruption/version stop",
+        "manual hold before replay",
+        "event-order-only holdout",
+        "evidence-card submission"
+      ],
+      "conclusion": "contract_present_not_executed"
+    },
+    {
+      "exercise_id": "AI-PRACTICE-GATE-003",
+      "local_checks": [
+        "schema before human gate",
+        "legacy_status to v3 status mapping",
+        "migration scope violation stop",
+        "explicit approval receipt",
+        "approval-only holdout",
+        "evidence-card submission"
+      ],
+      "conclusion": "contract_present_not_executed"
+    }
+  ],
+  "limitations": [
+    "没有学习者五项D0原始回答、原始作品、独立EvidenceCard或能力评分。",
+    "没有执行三项练习的正常/边界/故障、返修、原例回归或留出；未验证首失败是否实际保存。",
+    "没有真实LangGraph/API、模型、供应商失败、费用、延迟、限流、生产持久存储、进程重启或真人审批。",
+    "没有后端权限/持久性签收或接收岗位实际签收/拒收，也没有综合未知任务、真实用户/同行/专家/生产反馈。",
+    "fixture hash匹配只证明合同夹具未漂移，不证明实现、运行输出、模型质量或迁移能力。"
+  ],
+  "non_claims": [
+    "不把本地替身、静态方案、课程阅读或代理报告写成真实模型/LangGraph/API能力。",
+    "不把报告完成或一次成功演示写成员工L1/L2、岗位认证、生产权限或行业先进。",
+    "不覆盖旧D0、历史QA、账户数据、教材或其他岗位责任。"
+  ],
+  "next_actions": [
+    {
+      "owner": "课程架构师",
+      "action": "修复P1-001、P1-002、P1-003并生成新MD/JSON版本；保留旧版和本QA。",
+      "status": "pending"
+    },
+    {
+      "owner": "项目经理",
+      "action": "冻结crosswalk和阶段A/B任务版本，安排学习者D0和接收岗位。",
+      "status": "pending"
+    },
+    {
+      "owner": "AI生成工程师",
+      "action": "按三项合同提交隔离实现、EvidenceCard、首失败、回归、留出和复验命令。",
+      "status": "pending"
+    },
+    {
+      "owner": "QA/REV",
+      "action": "分开复核运行、失败、迁移、来源和边界；依据具体EvidenceCard再评估L1。",
+      "status": "pending"
+    }
+  ],
+  "final_conclusion": "met_with_limitations_spec_only_not_assessed_execution",
+  "l1_decision": "not_granted"
+}

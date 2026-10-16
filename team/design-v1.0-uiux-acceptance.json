@@ -1,0 +1,137 @@
+{
+  "schemaVersion": "design-v1.0-uiux-acceptance-1",
+  "role": "designer",
+  "date": "2026-10-16",
+  "target": {
+    "url": "http://111.231.8.78/#learn",
+    "environment": "remote-single-dev"
+  },
+  "method": {
+    "browser": "CUA remote browser",
+    "visualEvidence": true,
+    "viewports": [
+      {
+        "width": 1280,
+        "height": 720,
+        "status": "observed"
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "status": "observed"
+      },
+      {
+        "width": 320,
+        "height": 844,
+        "status": "observed"
+      }
+    ],
+    "codeChanged": false
+  },
+  "overall": {
+    "status": "insufficient",
+    "reason": "Core desktop and retrieval flow observed, but 320px header clipping and unavailable question/self-assessment data remain; accessibility/extreme states not fully verified."
+  },
+  "checks": [
+    {
+      "id": "DV1-IA-01",
+      "status": "pass",
+      "scope": "observed",
+      "evidence": "Desktop hierarchy shows sidebar, single current-task card and single primary CTA; secondary learning actions and assistant launcher are visually subordinate."
+    },
+    {
+      "id": "DV1-IA-02",
+      "status": "pass",
+      "scope": "observed",
+      "evidence": "Observed 未开始 state and after reading 进行中/继续学习 state with saved-position copy and one CTA; interrupted/submitted states not generated."
+    },
+    {
+      "id": "DV1-READ-01",
+      "status": "pass",
+      "scope": "observed",
+      "evidence": "Reader shows return link, prerequisites, full article, tables, diagrams, note save, interrupt/save position and adjacent chapters."
+    },
+    {
+      "id": "DV1-RET-01",
+      "status": "pass",
+      "scope": "observed",
+      "evidence": "Ask教材 expands with focus in query field; collapse returns focus to lw-assistant-launcher."
+    },
+    {
+      "id": "DV1-RET-02",
+      "status": "pass",
+      "scope": "observed",
+      "evidence": "ReAct query produced pending then sourced answer with unit/section, 阅读这一节 link, citation and version identity."
+    },
+    {
+      "id": "DV1-RET-03",
+      "status": "pass",
+      "scope": "observed",
+      "evidence": "Unrelated 火星烹饪证书 query produced explicit no-match/filter explanation, retained input and offered rewrite chips/course directory."
+    },
+    {
+      "id": "DV1-RWD-01",
+      "status": "pass",
+      "scope": "observed",
+      "evidence": "390px showed collapsed nav, single-column task card, full-width CTA, secondary actions and assistant capsule."
+    },
+    {
+      "id": "DV1-RWD-02",
+      "status": "fail",
+      "scope": "observed",
+      "evidence": "320px screenshot clipped top-right career/login controls; route cards are only partially visible in horizontally scrollable map.",
+      "owner": "software-engineer"
+    },
+    {
+      "id": "DV1-A11Y-01",
+      "status": "insufficient",
+      "scope": "partial_observed",
+      "evidence": "Skip link, headings, named controls and aria-expanded exposed; Escape closed mobile nav and preserved focus. Full keyboard, focus-ring, screen-reader and 200% checks not run.",
+      "owner": "qa-engineer"
+    },
+    {
+      "id": "DV1-STATE-01",
+      "status": "pass",
+      "scope": "visual_expression_only",
+      "evidence": "Question unavailable, review empty and self-assessment 0-question states are honest and do not fabricate results.",
+      "owner": "product/backend/curriculum"
+    },
+    {
+      "id": "DV1-SCOPE-01",
+      "status": "pass",
+      "scope": "observed",
+      "evidence": "rolecraft-1.0, local client, textbook v12 and browser-local persistence visible; no employment/certification promise observed."
+    }
+  ],
+  "gaps": [
+    {
+      "id": "GAP-UI-320-HEADER",
+      "priority": "P0",
+      "owner": "software-engineer",
+      "action": "Move career/account controls into mobile navigation or responsive row; verify 320/375/390 no clipping."
+    },
+    {
+      "id": "GAP-DATA-QUESTIONS",
+      "priority": "P0",
+      "owner": "product-manager/backend-data-engineer/curriculum-architect",
+      "action": "Provide version-bound question bank and self-assessment items; retain honest unavailable state until then."
+    },
+    {
+      "id": "GAP-A11Y-EVIDENCE",
+      "priority": "P1",
+      "owner": "qa-engineer",
+      "action": "Run full Tab/Shift+Tab, focus ring, screen reader, 200% zoom, grayscale/contrast, IME/soft-keyboard tests."
+    },
+    {
+      "id": "GAP-UNOBSERVED-STATES",
+      "priority": "P1",
+      "owner": "software-engineer/qa-engineer",
+      "action": "Exercise interrupted, submitted, service failure, stale version, clarification and late-response states in remote environment."
+    }
+  ],
+  "limitations": [
+    "No code changes made.",
+    "No real users, screen reader, 200% zoom, contrast tool, soft keyboard or delayed-response race tested.",
+    "Design evidence does not establish employment, certification, professional competence, expert approval or industry advantage."
+  ]
+}

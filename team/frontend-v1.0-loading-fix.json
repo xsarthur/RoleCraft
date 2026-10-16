@@ -1,0 +1,60 @@
+{
+  "version": "frontend-v1.0-loading-fix-1",
+  "createdAt": "2026-10-16",
+  "scope": "Client-only loading interaction repair for the textbook query drawer",
+  "trigger": "User reported that request waiting feedback was missing in the current version.",
+  "protectedDomains": [
+    "backend",
+    "database",
+    "textbook",
+    "historical reports",
+    "remote deployment"
+  ],
+  "changedFiles": {
+    "dist/learning-workbench.js": "9aebdadaab45e47f6f6dcd4d8fa2168f167bdb802ed22e022b087abd039a74d3",
+    "dist/learning-workbench.css": "1a53e9fc115513b04404fa9656b626c9945efc483e36f5da30beb36e65b63c52"
+  },
+  "stateMachine": {
+    "idle_to_pending": "Valid submit sets pending=true, clears stale response, renders status card and disables send control.",
+    "pending_duplicate": "Form submit and Enter are ignored while pending; no second fetch is created.",
+    "pending_to_settled": "Answered, no_match, clarification and invalid input clear pending and render the corresponding state.",
+    "pending_to_unavailable": "HTTP/error/timeout/source validation failure clears pending and renders retryable failure state.",
+    "pending_to_idle": "Clear topic aborts the active controller, invalidates requestId and returns to empty state."
+  },
+  "accessibility": {
+    "loadingRegion": [
+      "role=status",
+      "aria-live=polite",
+      "aria-atomic=true"
+    ],
+    "busyRegions": [
+      "#lw-find-results aria-busy",
+      "#lw-find-form aria-busy"
+    ],
+    "sendControl": [
+      "disabled while pending",
+      "aria-disabled=true",
+      "aria-busy=true",
+      "label changes to 正在查询…"
+    ],
+    "feedback": "#lw-query-feedback remains role=status aria-live=polite aria-atomic=true",
+    "focusRestore": "Input selection is preserved; send-button focus moves to the query field while pending and returns to the enabled send button after settlement."
+  },
+  "motion": "Indeterminate only; no countdown, percentage, or fabricated AI progress. Reduced-motion disables animation.",
+  "checks": {
+    "nodeCheckLearningWorkbench": "pass",
+    "nodeCheckApp": "pass",
+    "gitDiffCheck": "pass",
+    "isolatedVmChecks": {
+      "status": "pass",
+      "count": 11,
+      "script": "/private/tmp/rolecraft-loading-check.mjs",
+      "scope": "No browser, network, model, database or private records"
+    }
+  },
+  "independentAcceptance": {
+    "status": "pending",
+    "reason": "Browser/remote visual, keyboard, screen-reader, narrow viewport, slow request and reduced-motion evidence not yet collected."
+  },
+  "remoteDeployment": "not_performed_by_frontend_agent"
+}

@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "reviewId": "textbook-visual-v01-content-review",
+  "date": "2026-10-14",
+  "reviewerRole": "内容审校员",
+  "reviewerIdentity": "AI技术内容审校，非真人视觉设计专家、法务、真实学习者或就业评估",
+  "status": "reviewed_with_limitations",
+  "conclusion": "当前稿的AI视觉内容设计/AIGC课程边界、brief与责任、视觉交付链、版权风险意识和证据边界基本成立；但缺少实际视觉样例与综合实作输入，AI辅助流程不可复现，岗位样本与面试主张需分层收窄，商用权利表述有过宽的绝对句，练习和量规还不足以稳定暴露理解差异。VCD01、VCD02、VCD03、VCD04、VCD05、VCD07须作者返修后复核；完整教材、真人专业认可、真实学习效果和就业结果均未确认。",
+  "reviewScope": [
+    "完整静读当前ai-visual-content-design-textbook.md（12章、练习、失败模式、量规和结语）",
+    "读取visual-design-v01/README.md、sources.md和textbook-visual-v01-author.md",
+    "核对AI视觉内容设计与AIGC边界、视觉机制深度、岗位/JD/面试来源邻近性、版权/平台/商用表述、练习的理解差异暴露能力",
+    "公开抽查J02、J03、J04、J05、J09和I01、I04来源页面；不执行设计软件、模型、平台上传或商业条款核验"
+  ],
+  "sourceBindings": [
+    {
+      "path": "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/ai-visual-content-design-textbook.md",
+      "sha256": "ff2451a65bbbb8a22343d958d9e3d3c983e9c223230ee72b617c32b90e134cef"
+    },
+    {
+      "path": "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/README.md",
+      "sha256": "353aad58af991123a167deb50f2213c26373914966541547fc2334b00c321cfd"
+    },
+    {
+      "path": "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/sources.md",
+      "sha256": "ee3d34558cb53fe950952a6388292ae949a72e1e005b5a9d63db9d71270ea989"
+    },
+    {
+      "path": "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/team/textbook-visual-v01-author.md",
+      "sha256": "7ecc588d774443dbdbd2ed507a23ba01476013f1e2c186ce3f3b08a83a63fd56"
+    }
+  ],
+  "strengths": [
+    "AI视觉内容设计的教学边界和AIGC生产的排除范围在开篇、README和第6—7章重复说明；受众、事实、品牌、版权和最终交付责任留给设计师。",
+    "brief、信息层级、多比例重排、源文件/版本、素材登记、反馈返修和跨岗位交接形成连续责任链。",
+    "澄湾案例明确为教学虚构；正文没有把自查、量规、岗位样本或面试练习写成录用概率、职业认证或真实商业效果。",
+    "sources.md主动标注聚合页、面经、合同型AI trainer岗位和单企业样本的限制。"
+  ],
+  "issues": [
+    {
+      "id": "VCD01",
+      "severity": "P1",
+      "status": "open",
+      "subject": "核心视觉判断缺少实际视觉样例",
+      "locations": ["textbook:82-272", "textbook:444-456", "visual-design-v01 directory"],
+      "finding": "层级、焦点、安全区、灰阶、品牌一致性和AI错误诊断只以文字/表格表达；练习要求教学AI草图但当前目录没有图稿、标注图、案例资产或错误输出。",
+      "impact": "学习者和QA无法对照具体画面判断视觉差异，课程无法提供视觉岗位核心能力的可审阅证据。",
+      "repairOwner": "教材研发员；设计师提供视觉示意；测试工程师复验",
+      "repairRequired": true,
+      "reverification": "打开新增原稿、候选方案、错误输出和人工修订图，核正文标注与文件版本绑定。"
+    },
+    {
+      "id": "VCD02",
+      "severity": "P1",
+      "status": "open",
+      "subject": "综合实作输入和平台条件未交付",
+      "locations": ["textbook:32", "textbook:50-56", "textbook:442-456"],
+      "finding": "正文称会提供产品实拍、色卡、卖点和平台尺寸表，但当前目录无assets或对应附件；800x800、4:5和安全区没有指定平台/版本。",
+      "impact": "学习者无法复现同一交付，渠道检查没有共同条件。",
+      "repairOwner": "教材研发员；产品/设计定义案例；测试工程师核交付",
+      "repairRequired": true,
+      "reverification": "核输入文件、hash、章节引用、平台假设或官方规则链接。"
+    },
+    {
+      "id": "VCD03",
+      "severity": "P1",
+      "status": "open_needs_source_recheck",
+      "subject": "岗位样本被概括为助理岗位普遍任务",
+      "locations": ["textbook:13-17", "sources:8-17"],
+      "finding": "J01/J02/J03含经验或全链路要求，J06/J08为进阶岗位，只有部分J04/J05/J09接近入门；正文却概括为视觉设计助理经常跨越多触点。J09在2026-10-14公开访问返回404。",
+      "impact": "可能误导入门门槛和作品集范围，削弱市场驱动复刻的证据质量。",
+      "repairOwner": "教材研发员；竞品研究员复核来源分层与原页",
+      "repairRequired": true,
+      "reverification": "按入门/助理/进阶分组，改成样本主张并记录经验、地区、日期、链接状态。"
+    },
+    {
+      "id": "VCD04",
+      "severity": "P1",
+      "status": "open",
+      "subject": "AI辅助流程缺少可复现轨迹",
+      "locations": ["textbook:206-242", "textbook:248-272", "textbook:454"],
+      "finding": "有用途分类、四道门和六项检查，但没有输入资产、允许/禁止改动区域、操作记录、失败信号、人工修订和合层/导出契约；练习可只写叙述。",
+      "impact": "无法凭教材复建最小受控AI设计流程或独立判断AI记录是否真实完成。",
+      "repairOwner": "教材研发员；AI生成工程师/设计师核契约；测试工程师复验",
+      "repairRequired": true,
+      "reverification": "增加一条工具无关完整轨迹，并明确未运行示例与实际运行证据。"
+    },
+    {
+      "id": "VCD05",
+      "severity": "P1",
+      "status": "open",
+      "subject": "商用交付条件表述过宽",
+      "locations": ["textbook:248-252", "textbook:310-326", "textbook:424-432"],
+      "finding": "“可商用交付必须回到设计师能控制的层”把案例质量策略写成普遍前提；可编辑/可追溯不等于版权归属或平台商用许可。",
+      "impact": "学习者可能把内部风控策略误读成法律/平台硬规则，或误以为有源文件即可商用。",
+      "repairOwner": "教材研发员；法务/业务责任人按地区、工具版本和合同复核",
+      "repairRequired": true,
+      "reverification": "拆分质量可维护性、事实准确、许可核查、披露政策和法律/合同结论，删除无条件保证。"
+    },
+    {
+      "id": "VCD06",
+      "severity": "P2",
+      "status": "open",
+      "subject": "平台规格、安全区和对比条件未版本化",
+      "locations": ["textbook:50-56", "textbook:118-166", "textbook:442-456"],
+      "finding": "尺寸、安全区、禁用元素和对比检查没有绑定平台、地区、日期、官方规则或教学假设。",
+      "impact": "渠道练习无法复核，规则更新时无法追踪；无障碍部分停留在提醒。",
+      "repairOwner": "教材研发员；设计师标注；测试工程师核版本",
+      "repairRequired": true,
+      "reverification": "明确通用假设或指定平台，并给版本化规则和适用的无障碍标准。"
+    },
+    {
+      "id": "VCD07",
+      "severity": "P1",
+      "status": "open",
+      "subject": "练习和量规不足以稳定暴露理解差异",
+      "locations": ["textbook:70-76", "textbook:106-114", "textbook:146-150", "textbook:198", "textbook:240-242", "textbook:272", "textbook:304", "textbook:328", "textbook:359", "textbook:434-436", "textbook:460-483"],
+      "finding": "核心练习缺少画面/输入、反例答案、参考分析、评分锚点、固定反馈角色和独立复核方法；0—3文字描述没有各级观察实例。",
+      "impact": "学习者可背诵原则而不识别真实视觉错误，评阅者之间也难以复核。",
+      "repairOwner": "教材研发员；实训评估员定义观察证据；测试工程师复验",
+      "repairRequired": true,
+      "reverification": "每个核心能力提供输入、反例、参考分析和最小通过证据；量规各级给实例。"
+    },
+    {
+      "id": "VCD08",
+      "severity": "P2",
+      "status": "open",
+      "subject": "AI视觉内容设计/AIGC边界未明确为课程约定",
+      "locations": ["textbook:5-11", "README:版本边界", "textbook:206-214", "sources:36-39"],
+      "finding": "AIGC内容生产的定义式描述未声明是本书排除范围；实际岗位样本中AI视觉、AIGC、后期和运营重叠。",
+      "impact": "读者可能误把两条教学路线理解成互斥职业或稳定行业分类。",
+      "repairOwner": "教材研发员；产品经理/竞品研究员复核",
+      "repairRequired": true,
+      "reverification": "加课程边界声明和输入/输出/责任/自动化/岗位名对照表。"
+    },
+    {
+      "id": "VCD09",
+      "severity": "P2",
+      "status": "open",
+      "subject": "面试题型主张超过来源范围",
+      "locations": ["textbook:365-432", "sources:21-32"],
+      "finding": "“公开面经也反复追问”“面试官听的是”将公开整理、单个面经、UI进阶岗位和顾问建议合并成普遍规律；来源表明频率未实测。",
+      "impact": "学习者可能把题型当成高概率真题或通用评分标准。",
+      "repairOwner": "教材研发员；竞品研究员/产品经理分层复核",
+      "repairRequired": true,
+      "reverification": "改为所列样本出现的题型，按岗位层级分组，并把答题建议标成课程策略。"
+    },
+    {
+      "id": "VCD10",
+      "severity": "P2",
+      "status": "open",
+      "subject": "三位三秒检查是未标明依据的启发式",
+      "locations": ["textbook:106-108"],
+      "finding": "三人三秒可作低成本早期观察，但没有说明其为本书启发式，也无观看条件、记录模板或通过阈值。",
+      "impact": "可能被误作行业标准或替代真实用户研究/效果实验。",
+      "repairOwner": "教材研发员；用户研究员/实训评估员复核",
+      "repairRequired": true,
+      "reverification": "标记为教学启发式，提供记录条件，禁止外推转化、可用性或就业能力。"
+    },
+    {
+      "id": "VCD11",
+      "severity": "P2",
+      "status": "open",
+      "subject": "软件/文件交付的最小先修和操作依赖未说明",
+      "locations": ["textbook:19-32", "textbook:154-168", "textbook:278-306"],
+      "finding": "前置允许任意图片/排版工具，但交付要求图层、遮罩、矢量、链接、字体状态和多格式导出；没有跨工具最小操作契约或示例。",
+      "impact": "生成图能力与可编辑岗位交付之间脱节，初学者无法判断怎样满足证据。",
+      "repairOwner": "教材研发员；课程架构师定义先修；设计师提供最小动作",
+      "repairRequired": true,
+      "reverification": "明确工具无关最低动作和一个可选工具示例，标注版本/平台敏感字段。"
+    }
+  ],
+  "sourceVerification": [
+    {
+      "id": "J02",
+      "result": "accessible_and_adjacent",
+      "observation": "聚合页可看到网易严选全链路电商视觉、品牌体系、用户卖点、数据复盘和AIGC创意落地；只支持单岗位任务抽取。"
+    },
+    {
+      "id": "J03",
+      "result": "accessible_and_adjacent",
+      "observation": "页面可看到主图、详情页、活动Banner、社交素材、品牌规范、源文件和反馈修改；岗位含经验条件。"
+    },
+    {
+      "id": "J04",
+      "result": "accessible_and_adjacent_with_title_mismatch",
+      "observation": "当前智联页面标题为AIGC视觉设计师，页面写有经验不限、大专、AI图像/视频、PS精修合成和电商/社媒协作；来源清单称AI视觉设计师，应修正实际职位名。"
+    },
+    {
+      "id": "J05",
+      "result": "accessible_with_recruitment_risk_limit",
+      "observation": "页面可看到应届生可投、多格式素材、图生视频/动效和AI后期要求；页面自身含招聘收费风险提示，不能单独代表市场。"
+    },
+    {
+      "id": "J09",
+      "result": "not_accessible_currently",
+      "observation": "2026-10-14公开访问返回404，需存档或雇主原页复核。"
+    },
+    {
+      "id": "I01",
+      "result": "accessible_adjacent_ui_source",
+      "observation": "百度页面实际为UI设计师作品集文章，支持作品集说明设计思维/能力结构/业务价值的邻近主张，不是视觉内容岗位面试统计。"
+    },
+    {
+      "id": "I04",
+      "result": "accessible_advanced_ui_source",
+      "observation": "上海AI实验室页面支持复杂AI产品UI/交互、设计系统、数据界面和高保真原型要求，适合进阶边界样本，不应和入门商业视觉题型混用。"
+    }
+  ],
+  "limits": [
+    "未运行设计软件、模型、生成工具或平台上传；未执行商业许可、版权、肖像、商标、字体或工具条款核验。",
+    "当前目录没有正文称呼的产品实拍、色卡、平台尺寸表或错误AI草图，因此无法验证视觉布局和练习输出。",
+    "不能据本报告判断真人设计专家认可、真实学习效果、陌生任务能力、岗位空缺、录用概率或就业结果。"
+  ],
+  "reverificationPlan": [
+    "作者返修后提供新文件hash和修改清单；内容审校重新核VCD01、VCD02、VCD03、VCD04、VCD05、VCD07。",
+    "测试工程师实际打开新增视觉资产和输入夹具，核版本、正文引用和交付证据；产品/设计/竞品研究员分别核市场边界，必要时交法务/业务核条款。",
+    "用户研究员与实训评估员另行取得真实理解、陌生任务和作品证据，不由本审校结论继承。"
+  ]
+}

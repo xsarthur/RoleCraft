@@ -1,5 +1,11 @@
 # 职造数字团队
 
+当前跨职业编辑质量底线：[参考答案质量标准](ANSWER_QUALITY_STANDARD.md)。用户已明确要求其成为所有职业编辑的长期记忆，见 [共享偏好](employees/core/user-profile/approved-preferences.md) 与 [教材研发员记忆](employees/core/textbook-developer/MEMORY.md)。每次新职业/新项目编辑先读取并按本领域适配，不以短提纲代替完整解析；记忆建立不等于现有教材或题解已经改好。
+
+用户另已要求测试参与逐题内容验证并长期采用同一质量底线；[测试岗位记忆包](employees/core/qa-engineer/ROLE.md)纳入核心名册，不增加现有十五岗总数。本轮Agent全题检查见 `agent-interview-answer-audit-*` 记录；历史正文覆盖报告、作者自查与新答案独立QA分别保留。
+
+全部Agent面试答案返修的[124题阅读入口](../textbooks/interview-answers-v1/README.md)与[完整合订本](../textbooks/interview-answers-v1/agent-interview-answers.md)已交。当前内容、页面复验及缺陷状态见[返修任务](agent-interview-answer-revision-pm.md)与[产品评估](agent-interview-answer-revision-assessment.md)；旧检查记录保留，不用新稿覆盖。正文、有限运行和真实学习/职业效果分别判断。
+
 当前设计长期准则：[视觉表达优先](DESIGN_COMMUNICATION_STANDARD.md)。用户要求尽可能通过视觉让用户理解程序意图，文字仅作必要补充；后续设计交接先交可审阅视觉稿，产品明确可观察条件，测试独立复核。落实与当前界面只读复盘见 [UI-VIS 任务](TASKS.md)，旧报告继续保留各自范围。
 
 项目经理协调。原六岗承担产品、教学架构、设计、网站实现、独立测试与协调；此前增加八位专项员工，v0.11又增加内容检索工程师，目前共十五岗。名册与唯一责任边界见[SPECIALISTS.md](SPECIALISTS.md)及工作区AGENTS.md，实际启动及交付状态见[TASKS.md](TASKS.md)。网站内容检索Agent是应用功能，研发岗位代理按需执行，两者不是同一个常驻服务。以下六岗表为初次建队交接记录，各历史交付保留当时版本和范围。
@@ -92,3 +98,23 @@
 用户要求按八份岗位提示词生成对应员工。本轮配置现有的内容审校员、实训评估员、用户研究员、AI生成工程师、后端数据工程师、竞品研究员、运营分析员和测试工程师；团队仍十五岗。提示词、首任务、实际代理接单与独立配置验收统一位于[专项员工名册](employees/v12-evidence/README.md)。岗位按需运行，真人专家保留为真实外部参与者，不生成AI身份代替。
 
 组织配置不会关闭v12产品五维或原八门槛缺口；后续专业执行按产品/课程交接、有效授权与真实输入派工。当前完整培养目标仍not_met。
+
+## 当前员工配置：核心员工跨项目长期记忆
+
+用户授权为项目经理、产品经理、产品设计师、软件工程师，以及课程架构师、教材研发员、内容审校员和实训评估员建立独立、可跨项目复用的长期记忆包。稳定角色、已确认偏好、记忆条目格式和项目交接模板统一位于[核心员工长期记忆系统](employees/core/README.md)。
+
+2026-10-14后续增补：用户明确要求测试长期记住编辑质量标准，已增加下列测试记忆包；当前共九个核心记忆包，旧八岗配置QA保留其历史范围，团队职业岗位总数仍为十五。
+
+- [项目经理](employees/core/project-manager/ROLE.md)：范围、依赖、任务状态、交接、证据和复盘。
+- [产品经理](employees/core/product-manager/ROLE.md)：用户问题、范围、流程、验收条件和产品门槛。
+- [产品设计师](employees/core/product-designer/ROLE.md)：信息架构、交互、视觉、可访问性和响应式表达。
+- [软件工程师](employees/core/software-engineer/ROLE.md)：网站客户端、前端状态和前端接口消费。
+- [课程架构师](employees/core/curriculum-architect/ROLE.md)：能力矩阵、课程结构、教材规格和教学交接。
+- [教材研发员](employees/core/textbook-developer/ROLE.md)：教材正文、案例、练习和参考解法。
+- [内容审校员](employees/core/content-reviewer/ROLE.md)：技术论证、来源、机制、案例和代码的独立审校。
+- [测试工程师](employees/core/qa-engineer/ROLE.md)：按已确认标准独立逐题验证内容、反例、出处和实际执行证据，不代写作者正文。
+- [实训评估员](employees/core/practicum-evaluator/ROLE.md)：学习者作品和未知任务的量规评价。
+- [共享用户偏好](employees/core/user-profile/approved-preferences.md)：仅保存用户明确确认、允许跨项目复用的偏好。
+- [独立配置QA](employees/core/qa-memory-pm.md)：八岗配置范围 `met_within_configuration_scope`；实际跨项目运行时读取/写回和真实长期经验累积仍 `not_verified`。
+
+这些岗位按需启动，不是常驻后台服务或独立账号。新项目必须读取对应岗位资料并建立项目交接；任务结束先提交记忆候选，确认后才更新长期记忆。项目特例、未验证假设和独立验收结论不能自动升级为跨项目经验。

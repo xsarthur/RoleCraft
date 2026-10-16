@@ -1,0 +1,1025 @@
+{
+  "schemaVersion": 1,
+  "version": "agent-interview-answer-revision-data-1",
+  "owner": "内容检索工程师",
+  "answerSetVersion": "interview-answers-v1",
+  "buildMode": "final",
+  "answerSetSha256": "2cd40dcca5342944ab7c0c7836e759054dc3b5d4aaf992508f78d9172473b61a",
+  "counts": {
+    "met_within_reviewed_scope": 124,
+    "not_met": 0,
+    "insufficient": 0,
+    "pending": 0
+  },
+  "collections": [
+    {
+      "id": "fixed100",
+      "label": "固定题组",
+      "count": 100,
+      "ids": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5",
+        "Q6",
+        "Q7",
+        "Q8",
+        "Q9",
+        "Q10",
+        "Q11",
+        "Q12",
+        "Q13",
+        "Q14",
+        "Q15",
+        "Q16",
+        "Q17",
+        "Q18",
+        "Q19",
+        "Q20",
+        "Q21",
+        "Q22",
+        "Q23",
+        "Q24",
+        "Q25",
+        "Q26",
+        "Q27",
+        "Q28",
+        "Q29",
+        "Q30",
+        "Q31",
+        "Q32",
+        "Q33",
+        "Q34",
+        "Q35",
+        "Q36",
+        "Q37",
+        "Q38",
+        "Q39",
+        "Q40",
+        "Q41",
+        "Q42",
+        "Q43",
+        "Q44",
+        "Q45",
+        "Q46",
+        "Q47",
+        "Q48",
+        "Q49",
+        "Q50",
+        "Q51",
+        "Q52",
+        "Q53",
+        "Q54",
+        "Q55",
+        "Q56",
+        "Q57",
+        "Q58",
+        "Q59",
+        "Q60",
+        "Q61",
+        "Q62",
+        "Q63",
+        "Q64",
+        "Q65",
+        "Q66",
+        "Q67",
+        "Q68",
+        "Q69",
+        "Q70",
+        "Q71",
+        "Q72",
+        "Q73",
+        "Q74",
+        "Q75",
+        "Q76",
+        "Q77",
+        "Q78",
+        "Q79",
+        "Q80",
+        "Q81",
+        "Q82",
+        "Q83",
+        "Q84",
+        "Q85",
+        "Q86",
+        "Q87",
+        "Q88",
+        "Q89",
+        "Q90",
+        "Q91",
+        "Q92",
+        "Q93",
+        "Q94",
+        "Q95",
+        "Q96",
+        "Q97",
+        "Q98",
+        "Q99",
+        "Q100"
+      ],
+      "counts": {
+        "met_within_reviewed_scope": 100,
+        "not_met": 0,
+        "insufficient": 0,
+        "pending": 0
+      }
+    },
+    {
+      "id": "market14",
+      "label": "市场补充题组",
+      "count": 14,
+      "ids": [
+        "M101",
+        "M102",
+        "M103",
+        "M104",
+        "M105",
+        "M106",
+        "M107",
+        "M108",
+        "M109",
+        "M110",
+        "M111",
+        "M112",
+        "M113",
+        "M114"
+      ],
+      "counts": {
+        "met_within_reviewed_scope": 14,
+        "not_met": 0,
+        "insufficient": 0,
+        "pending": 0
+      }
+    },
+    {
+      "id": "prototype10",
+      "label": "原型题组",
+      "count": 10,
+      "ids": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10"
+      ],
+      "counts": {
+        "met_within_reviewed_scope": 10,
+        "not_met": 0,
+        "insufficient": 0,
+        "pending": 0
+      }
+    }
+  ],
+  "contentStatus": "met_within_reviewed_scope",
+  "completeProductStatus": "not_met",
+  "displayStatus": "pending_independent_integration_qa",
+  "inputBindings": [
+    {
+      "path": "sites/rolecraft/server/retrieval/build-interview-answers-v1.mjs",
+      "sha256": "acefef7680783e18acecfcb926633f5b006a90e8d2ae6e68c71f7f823acc7cf1",
+      "bytes": 17538
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-revision-product.json",
+      "sha256": "dc754bb79ba0f2cc7cd26553c5e8546c2019953d4bc7a237fb302df7baa35ab7",
+      "bytes": 105169
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-revision-curriculum.json",
+      "sha256": "f9a2744a7d9ad6cba5093a4d00e2dddeb3d26aa2bff3565bf150f691e50b9689",
+      "bytes": 410849
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/content-v12-index.json",
+      "sha256": "ac87bfa9c88f6e1709fc59c05fc3af1fcf98b7274aeb1be48a07e490578bdd6b",
+      "bytes": 1591766
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/author-a.json",
+      "sha256": "ce7f1581443ac5459d74780ab90ffe5bcf7f3354b1adc5edf0e77e8f7a11bfa9",
+      "bytes": 217629
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/author-b.json",
+      "sha256": "895dd78959e9d58447db2039cdf9ade93ffb178d2e649b83fd04425b9eb8a783",
+      "bytes": 229882
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/author-c.json",
+      "sha256": "14a7556573c2cb82836decf619af11bf07365a926dbb380108885c5629b45f2b",
+      "bytes": 256298
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-revision-content-a.json",
+      "sha256": "5e5751078c523ed30ce8cb0af45047fd947801b3078fcd5148ff3ad9af4b9472",
+      "bytes": 784884
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+      "sha256": "34cc6530fed6361f2654b27304a05ef9e801ce238d4b68e8e76e5956f750a4fb",
+      "bytes": 817051
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-revision-qa/content-round1.json",
+      "sha256": "3b967a1571604ce0b8abb9d595efd96311d4ee15914a3625596a70315efe372a",
+      "bytes": 905383
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-revision-content-b/retest-q99.json",
+      "sha256": "9d5e8de3b49af9ffb2c6b4d99b1936fe27975a1b75ea1c6a925dcc109368c584",
+      "bytes": 49594
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-revision-qa/retest-q99.json",
+      "sha256": "cffcb38cff40a01737f76c61464236280c60a93af34e14959a2087ad4cdcd56b",
+      "bytes": 9213
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q1.md",
+      "sha256": "599acec843c4890d4a80797faa08a103b100d8fc2553ed3133263aa4861373a1",
+      "bytes": 3224
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/00-learning-route.md",
+      "sha256": "452129591648ca6c146945fae000e3e905e87c2794315109c727592a7b16dced",
+      "bytes": 15717
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+      "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+      "bytes": 9444
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q2.md",
+      "sha256": "3fbd20b6f019b1ace60ec4b6f38338b17c30123e1f24f70d03ecad7a5df00aec",
+      "bytes": 3276
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q3.md",
+      "sha256": "db30d3d6ff6f338b99089ce1baadd6fd6a3e9c179e7cbcb2b9d882a7b6d6b342",
+      "bytes": 3663
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/p01-discovery.md",
+      "sha256": "2d0340f4e6e05129f423977a272b515c56bd37295a6b00f392f1d56fca25392e",
+      "bytes": 11246
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/02-task-acceptance.md",
+      "sha256": "2a15989e762cf659822a9ec3d0b37d881fb28ddcd2d8f1503957ad73d8343ec1",
+      "bytes": 5323
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q4.md",
+      "sha256": "a447cab0487a317e807ad0c3db3fc6b981660cfcabcf9cad92a93d1eb402abf5",
+      "bytes": 3337
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n02-context-memory-prompt.md",
+      "sha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+      "bytes": 15254
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n03-planning-reflection.md",
+      "sha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+      "bytes": 13362
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q5.md",
+      "sha256": "c6aedade49b09080a852b2a8dc95b2c46ca221a68c0d6d065a9b333fd4630321",
+      "bytes": 3333
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/p01-mvp.md",
+      "sha256": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9",
+      "bytes": 10723
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/e05.md",
+      "sha256": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6",
+      "bytes": 21001
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q6.md",
+      "sha256": "aa318536f348c3b832084ba74f3a86ddd11590d4384a8bb7f4fd6259e8b5d927",
+      "bytes": 3446
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q7.md",
+      "sha256": "c78a09ccf048dd0e6ffa1840a1ea99ce239234bacc1d38e5cc011ef87012f06a",
+      "bytes": 3297
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+      "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+      "bytes": 78547
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q8.md",
+      "sha256": "363a8d754ee66583fdc3ed5ed4158cbf439a2d5e07bea25fad835413420d6981",
+      "bytes": 3191
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+      "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+      "bytes": 11304
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/p02.md",
+      "sha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8",
+      "bytes": 20733
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/e04.md",
+      "sha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8",
+      "bytes": 20925
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q9.md",
+      "sha256": "f8d3811f0ecb4f8c199689edf1fe3adf5ec172d1c15196807fbec388429bcbfd",
+      "bytes": 3558
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q10.md",
+      "sha256": "62338164da7b91ed0cd85c4707b172e1fd410d7092634e195eea6af766c66a10",
+      "bytes": 3910
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n10-evaluation-projects.md",
+      "sha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+      "bytes": 10885
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q11.md",
+      "sha256": "ddf744e578a481732e5d9c40f339c8d61e12b9c4439b4773b24d268660ae4433",
+      "bytes": 3363
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q12.md",
+      "sha256": "5661e82d1eb21ab56a5e5ab66ffde2f2c23010fec354d8560e095798e6bc5cd5",
+      "bytes": 3490
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q13.md",
+      "sha256": "5b61ea99aa7f8238e097e027617d28dc4f4227398070e0034d812fccbfa6bc8d",
+      "bytes": 4223
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q14.md",
+      "sha256": "71b74101e62e9f4b895561727164c2b807362a6be0e6345e62aeedc851c48965",
+      "bytes": 3357
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q15.md",
+      "sha256": "1163479f47b9c6fd4201e932b198c28fb28985a00a97623151e582d39d1e4252",
+      "bytes": 3274
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q16.md",
+      "sha256": "89660e3c63f2fbd45fbfc71ea6bcf5d947d8ede539f8580020986dc03fed0739",
+      "bytes": 3173
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q17.md",
+      "sha256": "c2a0a17c8c57275d7c9bb9ce00e619fa49ded648691e326ee82043532a65302b",
+      "bytes": 2889
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q18.md",
+      "sha256": "6da5f957d27f353db11553be175777544a0ef47e822bf9dca113eec1995d42e5",
+      "bytes": 2894
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q19.md",
+      "sha256": "29aa1b7adec9b26507cad973a90f00fac8ee402a3b5e858dd3987a34a20ab352",
+      "bytes": 3355
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q20.md",
+      "sha256": "ff59b62f93c6ecb47e5ef361fb9c5d5dfb2d2045fa8363ab5cefd1ec6a4cdce4",
+      "bytes": 3288
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q21.md",
+      "sha256": "2ce4c9ec6c760f97f6840130a2bb0ac199c2c0c6f415b09528ba3e927d95e0f3",
+      "bytes": 3475
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c03.md",
+      "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+      "bytes": 22973
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q22.md",
+      "sha256": "3507647933396ddea8b9a4656d8b31062c8b849cead8f73a61a75ab313f6706a",
+      "bytes": 3153
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n04-tools-mcp.md",
+      "sha256": "b3432424e61870ac250db2068423ed33e827c97cfc2f1440f3ae2987bfd4f39a",
+      "bytes": 15451
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q23.md",
+      "sha256": "b625d3664e04b381ad402273115a69f62d38e0fed899eb2afc3272d20e411b1b",
+      "bytes": 3253
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/f02.md",
+      "sha256": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8",
+      "bytes": 16484
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/e03.md",
+      "sha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+      "bytes": 25367
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q24.md",
+      "sha256": "d33f87c1b138a7d500cb0c456169c3963e3d7193480ab381ee6ed9c999d0602f",
+      "bytes": 2877
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q25.md",
+      "sha256": "220f5e10992f951d47aa22b1413845bc6cf9a1c14c4c37197a82d745b62a3840",
+      "bytes": 3475
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n09-runtime-delivery.md",
+      "sha256": "b621b838657aaa9915506a5bee6e25f7733b41085b08c50143e5965722157714",
+      "bytes": 11664
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q26.md",
+      "sha256": "d07ee9bf51d693d46dc56fcd611013d1659ab4991d38caf8a481ae243a2f1548",
+      "bytes": 4107
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q27.md",
+      "sha256": "e658824c608be58776f6eecfb624416f2b52bedf5ade3f26f3cc7fc1b7876f0a",
+      "bytes": 3642
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q28.md",
+      "sha256": "96a7d420bec89a420bd1b5fa51bdba2696881620a6af3154279126315fe5b177",
+      "bytes": 3639
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q29.md",
+      "sha256": "db9bc701e3e3bcbc48dea1d4f3b00907ed7e264a14727627115a869705076986",
+      "bytes": 3546
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q30.md",
+      "sha256": "2042c5ebace4a36abc39ec881ecc173653f58720c0933cf734d51ad7c636aa2e",
+      "bytes": 3680
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n07-multiagent-a2a.md",
+      "sha256": "24268cff6bfb435713458912750a5a958dd00d0aa935ef71b139e74c6dd23fb2",
+      "bytes": 11599
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q31.md",
+      "sha256": "6eb01a35ff328a01717bc67dec6461799c9426c65be0f6f30d10b70d78a43710",
+      "bytes": 3356
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q32.md",
+      "sha256": "1a58397ae32a893271cb9e3a4d6d71f6edd9a0c394e09b5e10a7b0a0d9ea071a",
+      "bytes": 3041
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q33.md",
+      "sha256": "264f8475c432e2c2665d0d0fccf7099227de2c0dff4c261bb4a401a27ccdd57c",
+      "bytes": 3259
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q34.md",
+      "sha256": "5678cde7b12130926e26afa2f1ce17672085c1251a8ea8fa660ed62e633f3f48",
+      "bytes": 2996
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q35.md",
+      "sha256": "d7cf1df304bfe645d97cd58e02339adc8392ad45de70d71e564b860a9225aef1",
+      "bytes": 3127
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q36.md",
+      "sha256": "b489c066e70eed348875f020c522cc2149741b8287ebc917239becce6d15c61e",
+      "bytes": 3054
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q37.md",
+      "sha256": "03936a5178c9e2e1867ccbc9f6da60b3535ece38343ef68e85d117bf7e6498ba",
+      "bytes": 3255
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q38.md",
+      "sha256": "1cb94276dcf52c0e55b7396e0f57b7dbbed8d54ae9e135d29ceb89a3c6b2d29c",
+      "bytes": 3543
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q39.md",
+      "sha256": "6f17779b93fd09f436ab4bcbcd8be9ed9ff62e981e0602aed5ceeb63e3be4ba2",
+      "bytes": 3287
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/e02.md",
+      "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+      "bytes": 24838
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q40.md",
+      "sha256": "c06755fb630e942934e1d25a594d1ec4155cf67ed97bf03c4a478408ecc6fd49",
+      "bytes": 3254
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q41.md",
+      "sha256": "b44abd2d5f73f688ad2b365f503bab3ab0ba786b8b6994456fc108294c216ec4",
+      "bytes": 3324
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n05-retrieval-ingestion.md",
+      "sha256": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16",
+      "bytes": 19699
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q42.md",
+      "sha256": "d5fcca8f30cc5e04974bfcb302b85df1bbd81d5bada0d9fafe53ec4da38c8e85",
+      "bytes": 3496
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c02.md",
+      "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+      "bytes": 20689
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q43.md",
+      "sha256": "bce96408a69b649ed5f1f2ef8e5cee42d5c599d1288b798b3d646fe67684536c",
+      "bytes": 3250
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q44.md",
+      "sha256": "e40ea5ff24cd7a7c995d458728cb2133cc657b2ebbd38deb83dfb069402f2117",
+      "bytes": 3275
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q45.md",
+      "sha256": "7cf09de7520093168fc9be51da80522af1a630d3f17dc611d446733b6c1197ca",
+      "bytes": 2947
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q46.md",
+      "sha256": "ba9d511e4bd314f6c5bcd81550f6c8573e9262898466eb22a1fb413f6d98d899",
+      "bytes": 2870
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q47.md",
+      "sha256": "487ef53ba3ef73e27f3795796fd27ae043bcd0bb447f17d21087d765230aded8",
+      "bytes": 2917
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q48.md",
+      "sha256": "e9051a0848796bcf45af3d5dfde907f958d9283d681fbe31a11472751d4b3372",
+      "bytes": 3275
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q49.md",
+      "sha256": "a41b07fa680e4ec5cc6a1605865a124090f738cbb71d9b4c0f861ebe3f7db22b",
+      "bytes": 3678
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q50.md",
+      "sha256": "e2dc5404222a70f73abbe86ebc1a38e95d033998bb2ceb93f991fec2a79d842b",
+      "bytes": 3069
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q51.md",
+      "sha256": "d47988adc786ac79fdc244b7c82e63c12b46018df62d479c5e6557bcf69ca237",
+      "bytes": 4256
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/e01.md",
+      "sha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+      "bytes": 32432
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q52.md",
+      "sha256": "69a62213649126d88d981f4afd7bbb6314d7c182fbf770465feabefd778ad2c5",
+      "bytes": 2842
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q53.md",
+      "sha256": "e28d0af05c4532423a73e3c7d6a0458c9f7b1add805437865f8945accf0a94e5",
+      "bytes": 3981
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q54.md",
+      "sha256": "1cbb8eba11bdaf287f4fd3822e7c03fd810dc436193647d46385bb058f79dd59",
+      "bytes": 3126
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q55.md",
+      "sha256": "f6a434e601c7291a0cbfd9d9985c9635092207c3354d304684915b372d94a686",
+      "bytes": 3260
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q56.md",
+      "sha256": "433e4981263c87736bad190cbbd86dab94811578651e923785f3842bc9ada439",
+      "bytes": 4626
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q57.md",
+      "sha256": "e8eeb6b3d0c3c45f248615f44a0be2b4d2b14524cdd3e9c433868a87f608a0cf",
+      "bytes": 4296
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q58.md",
+      "sha256": "2d0931f49657ea640b143b32a18549accdeb892fce56c4a8094c397c6c9adc6f",
+      "bytes": 2885
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q59.md",
+      "sha256": "2d95f00f3fe51dcbc9e6c9851911947867537c898ce4d129e01076eded71a3cf",
+      "bytes": 2867
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q60.md",
+      "sha256": "3b66870dbabc4c41258972a406d5d06f84f99fe593910a6187cd804da885103c",
+      "bytes": 2889
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q61.md",
+      "sha256": "e39b013d69616e62e5f8f370a6fc1743c3111f9f9bee3e828c2a7dc0fbf48878",
+      "bytes": 2945
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q62.md",
+      "sha256": "3418239fcf787b46eb4c33c3479de64a60796ea541ae3e52de5fd0da3e206cde",
+      "bytes": 2793
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q63.md",
+      "sha256": "8b1437b6ca1cc2f501a09eaf8141c4614ac231afef87e3c900c9d5ae2d5dcf63",
+      "bytes": 2878
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q64.md",
+      "sha256": "d8f92b95b4c1969845e72e99bd8ba19f655e3ea11b8a82528553e5a4689fbed8",
+      "bytes": 2825
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q65.md",
+      "sha256": "fdc68f3e6a5d2e53c4caa8e8b0cebe9e0b30568ce2eb7cf483377632f4ad06d1",
+      "bytes": 2684
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q66.md",
+      "sha256": "a14914aaa62f588d91fa978ad78af9ca5f0aa79abf6800a3e4dd251e21d47d5d",
+      "bytes": 2995
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q67.md",
+      "sha256": "3f785ef208f087d6c37f28bb521de8fefb751804c9275e391aa866f936260413",
+      "bytes": 2874
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q68.md",
+      "sha256": "92e03cf84bdf9a1b41b61303c0308f5931a721ad89eac17953bbbff89bcf46ab",
+      "bytes": 2698
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q69.md",
+      "sha256": "fc5fbfe8d1e2a1c4cb0af4a584410573df0fcb3a4146691ac6272c543817bbf7",
+      "bytes": 3436
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q70.md",
+      "sha256": "6096aee43e2e85b0a66b20af952851025d0971c8c79249b30e6253d865eda0d3",
+      "bytes": 3106
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q71.md",
+      "sha256": "d2846b251b26ca3b88ead1be6cc75a4581e980e77b73f657adb5fe5e7969adc5",
+      "bytes": 3269
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q72.md",
+      "sha256": "a18e8e5b8d78451fd0baab30875214bfa979889132935856710c6b7c03176e72",
+      "bytes": 2955
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q73.md",
+      "sha256": "e335e98b4e24851a5c2c3d6ff66daf0020364edc7fb9f61223a2fd5f2cc7bca1",
+      "bytes": 3405
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q74.md",
+      "sha256": "5a0b9a07b10cd97ba26a3e3aabaa92e531be8ade14f9461fa7e1ddce7530036e",
+      "bytes": 3699
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q75.md",
+      "sha256": "25e0f5a246fe1d7f11bd7005e74029db8edd5406a4e767ae0328e85988470071",
+      "bytes": 2638
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q76.md",
+      "sha256": "1ccd4aef31bba5499f5dfc811c524101eacd271578dacc4dbe3ae05a43f3e670",
+      "bytes": 2759
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q77.md",
+      "sha256": "1042757570d216fd0f2e7374a568560c7231b87ad77b6e9416666bd43b113a13",
+      "bytes": 3241
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q78.md",
+      "sha256": "cdd2561cad3d88cbb9e80cdba3ba17caefb79b272bb0ca9c30022b2a0bfe6698",
+      "bytes": 2694
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q79.md",
+      "sha256": "a64c524f68a3d60ede2613a8ab8d097adc6a9c37aa60f8c64c4e40f8172c3513",
+      "bytes": 3269
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q80.md",
+      "sha256": "10ef503d27f7e13aaa4a4ed0dfe4554f035046eec31f6e58310899d34a723802",
+      "bytes": 3694
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q81.md",
+      "sha256": "356a317c53e9c5a1fec7c91fb1139276c766aa1c72e178d32059f1328effd2da",
+      "bytes": 2676
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n08-sandbox-security.md",
+      "sha256": "16b1fe631c244ec394965f9443bc680380997cf4427a7555184c26cf3ee064f2",
+      "bytes": 8648
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q82.md",
+      "sha256": "d13786973bd72a5c6d68ef080f8fd095c8aa435c35d35aa3557b2aaf48b56908",
+      "bytes": 2850
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q83.md",
+      "sha256": "5cda558f1009a174e0e5cc07e2ff329a2ae7f9ebcfb72bee4bf022fa560af686",
+      "bytes": 2741
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q84.md",
+      "sha256": "d6ec26aff83f2fac6e869d288006da2c13d9f1289afcc28aac99ac980d1b0f67",
+      "bytes": 2545
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q85.md",
+      "sha256": "c3fc0b7faee77b2d3f7d0c5d2f7fd1045dd2e5649a184cb1d94754131837a595",
+      "bytes": 2640
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q86.md",
+      "sha256": "75d67aac7167f4503a67f4749d75d0bc1c8760fbba2a432ea9a0dba5a20a824d",
+      "bytes": 2787
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q87.md",
+      "sha256": "b571713bbb2e05727024de1f8a8feca227609072e0943dd72bb42dfae6df00de",
+      "bytes": 2604
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q88.md",
+      "sha256": "704cff2a7b095d154e95e55cd5c8552acd161645db692df640a824c7337239af",
+      "bytes": 2745
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q89.md",
+      "sha256": "6d919c760fb990c50497fc7ce8b21cae8915f0449b5ef75d475c3830533dd8e5",
+      "bytes": 2413
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q90.md",
+      "sha256": "a28178dedd1a0fe26cf2b2da6f4c5502be3546c0a7dbe1d77282d857549192f4",
+      "bytes": 2943
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q91.md",
+      "sha256": "b87c1cc9b303d50373d4eaf0fb19bf672864b8e52bcb0adb09fd13c7e1a02b3b",
+      "bytes": 2798
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q92.md",
+      "sha256": "1d7425fb3ce1fda5a6cade522ab54a26e7212fd44854ff7f57d94dd9975de7c8",
+      "bytes": 3139
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q93.md",
+      "sha256": "dfedc6abc7b32f296d2705aa00891c92c82169600434e2f708d2364ce17930be",
+      "bytes": 3070
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q94.md",
+      "sha256": "44d47d37727cc03b8b70ec52cc8cc1de5f3987b9840c58264f465c451e1e3df8",
+      "bytes": 2780
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q95.md",
+      "sha256": "4761daa83485b7387c8aee5dec64a043f8c94e8daa1e6bd841d51daae71563e8",
+      "bytes": 2526
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q96.md",
+      "sha256": "501d24bbb660e4c54fd6b9e57630cb6c543c4f70280842d566ba465e11522976",
+      "bytes": 3217
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q97.md",
+      "sha256": "165661dc0bd9d7d35c8b517fe855c09114b01b3533479f7dde652624f60afba9",
+      "bytes": 3386
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q98.md",
+      "sha256": "a22a3af6da2ec2e6d8594f4a48b406f307997fb54ba9019f9569f40b152ca859",
+      "bytes": 3017
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q99.md",
+      "sha256": "5b98c7767017e76814c043904227829698d411af87070fce6123da8da8aed5a0",
+      "bytes": 6246
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q100.md",
+      "sha256": "fcb86c428f6bd70e87b518433d9d95dd7c25def5d1e028cd59a64dd90b04e7d7",
+      "bytes": 3633
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/M101.md",
+      "sha256": "71a1ecc92e7f9b4036cadc46b8e875f99589c90c6c1c8a76d1dcf3c705ee3602",
+      "bytes": 4570
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n01-python-model-foundations.md",
+      "sha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62",
+      "bytes": 16052
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/M102.md",
+      "sha256": "dcff1ccb33eb8578ae76d2a5a5ca49af69dafc8b2f611dbd1847e566285f9316",
+      "bytes": 3956
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/M103.md",
+      "sha256": "5110663ccc654402711e5620dfe408cb5ddd934a31e667941da57898a776b660",
+      "bytes": 4597
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/M104.md",
+      "sha256": "5178befc742f8234e0f68f681bea54f87e0c4c27e1ed7e4795651b61b34df72e",
+      "bytes": 2959
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/M105.md",
+      "sha256": "0e0b67a89c2e0466e0c1c972e4b0feab72474eaf83d7980321463b4e83889ac9",
+      "bytes": 3496
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/M106.md",
+      "sha256": "ec576e8221326da2fb435bdcff158fcdb1daf330f99dbb2a41d12f82de4d1c11",
+      "bytes": 3376
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/M107.md",
+      "sha256": "f1a00557a7868a6a907254a6716ba0eec9aa2c3c58e7c6de4d1e754a6dd68aaf",
+      "bytes": 2812
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/M108.md",
+      "sha256": "7a05671bf3e3e85fce4e3e55c572224878b0f9e2cbc723a3299667cfedd5dc6b",
+      "bytes": 2976
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/M109.md",
+      "sha256": "2ed6be76b386a26882734ffbb4de8d1ea5c10f523ac046484095891da517fa21",
+      "bytes": 3771
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/M110.md",
+      "sha256": "f34b76e2cb15c4888484cf85bf0cd0de753f702cd416b525344f8ce06c8df325",
+      "bytes": 3715
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/M111.md",
+      "sha256": "7e13e253721f66848137e902cda70920bddad15712eabb697b7efcc8a1b35062",
+      "bytes": 2598
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/M112.md",
+      "sha256": "ad8ae2e53b88f21c0e79424e215f0487687bc1a9d6e6460a87676f69bea88a42",
+      "bytes": 2642
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/M113.md",
+      "sha256": "446f20c9ac6b3c5920d7e74f17cb24cc03b709d74c634654183143758a4fc01b",
+      "bytes": 2954
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/M114.md",
+      "sha256": "117e425f7a6e6972ae6a34d4dd4620be4c0c16450c71b3552ca3b24a852522e4",
+      "bytes": 3314
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/P01.md",
+      "sha256": "4742093cd97288600daf5ddd1a9920e316e0160e7ba47122d4764e171f537456",
+      "bytes": 3426
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/P02.md",
+      "sha256": "3c4ab3ef0bf1c0339bedfc4bd0afd04a00fc0c7feda9906a20d40e7dd34de1ad",
+      "bytes": 6263
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/P03.md",
+      "sha256": "0d288beb2cce8a16e7b153b8a29a43fd0fa1a80c0d966d0ea2b47da4e554d331",
+      "bytes": 4126
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/P04.md",
+      "sha256": "eddc49f1b5716d952175b9c350c5d9264a0c206f1f79ac6aa6304f52949c342e",
+      "bytes": 3355
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/P05.md",
+      "sha256": "20c1d59d5f672953831ee8b6abd791e6210fb3fcccc2945845c133a3977cf105",
+      "bytes": 3824
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/P06.md",
+      "sha256": "f12d34e11658c7058f171f686efd8cc3e4e1b6ee93c41c085e689dc2cc666549",
+      "bytes": 3742
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/P07.md",
+      "sha256": "718bd9ed98f20510dc9f07a42c7f056188f8c5377a542f89c551fc3a05f34c02",
+      "bytes": 3953
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/P08.md",
+      "sha256": "4294ed50435c17d357bc9b4a1b72abe6a0064c55e468eac61a2c4db0e40beef9",
+      "bytes": 4230
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/P09.md",
+      "sha256": "f8d8397f54305061cdda6b2b579f2a8f253cb96b31824619e5c6052d9d5108d0",
+      "bytes": 4322
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/P10.md",
+      "sha256": "0a09acf54fdc68fcef2dbb9be7b28f4d386a501e0c450c1e550739888eb17348",
+      "bytes": 4123
+    }
+  ],
+  "outputBindings": [
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/README.md",
+      "sha256": "708284d914ab7282ad696fc4466f0c9ecf16442e876992117eeddd2f27bd3ee7",
+      "bytes": 19684
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/agent-interview-answers.md",
+      "sha256": "9ff887bb145f774a210517fc2ae9b02168e613da6f70b7341ee4e3041187a657",
+      "bytes": 428790
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/manifest.json",
+      "sha256": "1f4db7058eff0ac7dfc563a98b63f335f9435b1f3b38afb54bd443f9af49efda",
+      "bytes": 1458192
+    },
+    {
+      "path": "sites/rolecraft/dist/interview-answers-v1-data.js",
+      "sha256": "da904df28e346c15193df969cf79981c3eeb7c39eefd5065c264c96a2addb48d",
+      "bytes": 1522663
+    }
+  ],
+  "selfCheck": {
+    "exactMarkdownCount": 124,
+    "identityAndFollowupCount": 124,
+    "localSourceBindingCount": 366,
+    "currentDualApprovedCount": 124,
+    "allSourceHashAndLineChecks": true,
+    "allCurrentAnswerHashesMatchAuthors": true,
+    "oldEvidenceFilesWritten": 0,
+    "editorialFilesWritten": 0,
+    "clientFilesWritten": 0,
+    "modelCalls": 0,
+    "externalBusinessCalls": 0,
+    "note": "本岗构建自查，不是内容审校、独立QA、浏览器验证或实际教材代码运行。"
+  }
+}

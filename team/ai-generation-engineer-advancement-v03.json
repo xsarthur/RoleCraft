@@ -1,0 +1,622 @@
+{
+  "plan_id": "AI-ADV-20261015-003",
+  "schema": "rolecraft.ai_generation_engineer_advancement",
+  "schema_version": "v0.3",
+  "date": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "owner_role": "curriculum-architect",
+  "role_id": "AI",
+  "role_title": "AI生成工程师",
+  "status": "training_specification_ready_not_assessed",
+  "current_state": {
+    "level": "L0_guided",
+    "d0_decision": "not_assessed",
+    "l1_decision": "not_granted",
+    "production_permission": "not_granted"
+  },
+  "source_records": [
+    {
+      "path": "sites/rolecraft/team/ai-generation-d0-v04-p1-repair.md",
+      "status": "met_within_scope_local_fixture"
+    },
+    {
+      "path": "sites/rolecraft/team/ai-generation-d0-v04-qa.md",
+      "status": "not_assessed_capability"
+    },
+    {
+      "path": "sites/rolecraft/team/ai-generation-d0-v04-content-review.md",
+      "status": "reviewed_with_limitations"
+    },
+    {
+      "path": "sites/rolecraft/team/employee-growth-curriculum.md",
+      "status": "training_specification_ready_not_assessed"
+    },
+    {
+      "path": "sites/rolecraft/team/employee-growth-training-plan.md",
+      "status": "training_plan_ready_not_assessed"
+    },
+    {
+      "path": "sites/rolecraft/team/professional-learning-theory-check-v01.md",
+      "resource_id": "PLR-AI-006",
+      "status": "planned_not_executed"
+    },
+    {
+      "path": "sites/rolecraft/team/ai-generation-engineer-advancement-qa-v01.json",
+      "status": "reviewed_with_limitations"
+    }
+  ],
+  "capability_dimensions": [
+    {
+      "id": "D1",
+      "name": "职责、边界与判断",
+      "evidence": [
+        "任务合同",
+        "拒绝收据",
+        "升级记录"
+      ]
+    },
+    {
+      "id": "D2",
+      "name": "专业知识与机制",
+      "evidence": [
+        "来源绑定机制说明",
+        "版本化取舍",
+        "反例分析"
+      ]
+    },
+    {
+      "id": "D3",
+      "name": "受约束执行",
+      "evidence": [
+        "可重建产物",
+        "运行记录",
+        "输入输出哈希",
+        "成本/耗时"
+      ]
+    },
+    {
+      "id": "D4",
+      "name": "质量、风险与恢复",
+      "evidence": [
+        "首次失败",
+        "停止/恢复",
+        "回滚",
+        "受影响回归"
+      ]
+    },
+    {
+      "id": "D5",
+      "name": "协作、交接与可复现",
+      "evidence": [
+        "交接包",
+        "复验命令",
+        "签收或有据拒收"
+      ]
+    },
+    {
+      "id": "D6",
+      "name": "产品与行业创造",
+      "evidence": [
+        "问题—指标假设",
+        "方案比较",
+        "评估矩阵"
+      ]
+    },
+    {
+      "id": "D7",
+      "name": "复盘、迁移与教会他人",
+      "evidence": [
+        "复盘卡",
+        "未知任务",
+        "辅导复用记录"
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "id": "G-AI-01",
+      "title": "学习者D0原始证据缺失",
+      "severity": "P1",
+      "closure": "五项原始回答、作品、失败与独立评分绑定同一diagnostic_id"
+    },
+    {
+      "id": "G-AI-02",
+      "title": "第二个独立沙箱不足",
+      "severity": "P1",
+      "closure": "两个非同构沙箱原例/回归/留出可重建"
+    },
+    {
+      "id": "G-AI-03",
+      "title": "真实运行时/模型未验证",
+      "severity": "P1",
+      "closure": "实际受限运行或明确not_run；不得把替身写成真实"
+    },
+    {
+      "id": "G-AI-04",
+      "title": "外部claim逐条绑定不足",
+      "severity": "P1",
+      "closure": "claim_type、版本、定位、hash、复核日期齐全"
+    },
+    {
+      "id": "G-AI-05",
+      "title": "回调/checkpoint耐久语义不足",
+      "severity": "P1",
+      "closure": "独立进程/持久存储或明确局部替身；只产生一个持久结果"
+    },
+    {
+      "id": "G-AI-06",
+      "title": "schema检查过窄",
+      "severity": "P1",
+      "closure": "类型、枚举、版本、来源冲突和额外键在交接前校验"
+    },
+    {
+      "id": "G-AI-07",
+      "title": "真人审批/接收签收缺失",
+      "severity": "P1",
+      "closure": "一次拒绝或升级、一次接收签收且作者不代签"
+    },
+    {
+      "id": "G-AI-08",
+      "title": "质量/成本/延迟/限流未测",
+      "severity": "P1",
+      "closure": "评估矩阵和预算停止线可重建"
+    },
+    {
+      "id": "G-AI-09",
+      "title": "未知迁移不足",
+      "severity": "P1",
+      "closure": "非作者冻结留出任务，记录提示、停止判断和未测范围"
+    },
+    {
+      "id": "G-AI-10",
+      "title": "安全与外部副作用边界",
+      "severity": "P0",
+      "closure": "任何越权/密钥/外发/付费调用先停止并保留首失败"
+    }
+  ],
+  "stages": [
+    {
+      "id": "A",
+      "name": "D0收口与L0到L1准入",
+      "days": "0-14",
+      "target": "L1_candidate",
+      "themes": [
+        "共同基础",
+        "结构化输出与来源绑定",
+        "工具契约与人工gate",
+        "schema/空工具/重复/超时/旧checkpoint/权限拒绝"
+      ],
+      "exercises": [
+        "E-AI-L0-001",
+        "E-AI-L0-002",
+        "E-AI-L0-003"
+      ],
+      "artifacts": [
+        "W-AI-L1-001"
+      ],
+      "failure_experiments": [
+        "schema错误",
+        "来源冲突",
+        "空工具/超时",
+        "重复回调",
+        "部分输出/旧checkpoint",
+        "租户拒绝"
+      ],
+      "transfer_tasks": [
+        "U-AI-L0-001"
+      ],
+      "gate": {
+        "must": [
+          "五项学习者D0原始回答",
+          "D1-D5初步证据",
+          "原例/回归/留出",
+          "独立QA与内容复核",
+          "无未关闭P0/P1",
+          "两个可重建沙箱工件（E-AI-L0-002及其对应EvidenceCard）",
+          "E-AI-L0-003方案取舍卡及对应EvidenceCard：至少一条D6用户问题—质量/成本假设—停止线—方案取舍证据，并经内容审校与QA复核"
+        ],
+        "decision_if_met": "l1_reviewable",
+        "decision_if_not_met": "remain_L0_guided"
+      }
+    },
+    {
+      "id": "B",
+      "name": "L1受指导贡献",
+      "days": "15-30",
+      "target": "L1",
+      "themes": [
+        "固定工作流与图Agent选型",
+        "离线/批准模型适配",
+        "claim/version/许可绑定",
+        "跨岗交接与拒收"
+      ],
+      "exercises": [
+        "E-AI-L1-001",
+        "E-AI-L1-002"
+      ],
+      "artifacts": [
+        "W-AI-L1-002",
+        "H-AI-L1-001",
+        "U-AI-L1-001 EvidenceCard（新任务、新fixture hash、提示次数与停止决定独立计数）"
+      ],
+      "failure_experiments": [
+        "malformed payload",
+        "冲突来源",
+        "空答案",
+        "额外键",
+        "循环上限",
+        "人工拒收"
+      ],
+      "transfer_tasks": [
+        "U-AI-L1-001"
+      ],
+      "gate": {
+        "must": [
+          "两个不同沙箱持续通过",
+          "一次失败恢复",
+          "一次拒收/补件",
+          "外部claim字段完整",
+          "QA无P1",
+          "内容审校无来源/机制P1"
+        ],
+        "decision_if_met": "grant_L1_for_bounded_isolated_work",
+        "decision_if_not_met": "remain_L0_or_L1_with_limitations"
+      }
+    },
+    {
+      "id": "C",
+      "name": "L1到L2真实形状隔离任务",
+      "days": "31-60",
+      "target": "L2_candidate",
+      "themes": [
+        "最小权限与脱敏",
+        "真实进程恢复与幂等",
+        "质量/成本/延迟/限流",
+        "黄金集/反例/留出评估"
+      ],
+      "exercises": [
+        "E-AI-L2-001",
+        "E-AI-L2-002"
+      ],
+      "artifacts": [
+        "W-AI-L2-001",
+        "W-AI-L2-002",
+        "H-AI-L2-001"
+      ],
+      "failure_experiments": [
+        "进程结束/重启",
+        "重复回调竞态",
+        "来源冲突",
+        "模型超时/限流",
+        "预算超限",
+        "人工拒绝"
+      ],
+      "transfer_tasks": [
+        "U-AI-L2-001"
+      ],
+      "gate": {
+        "must": [
+          "隔离真实形状任务",
+          "留出变体",
+          "失败恢复",
+          "质量/成本/延迟记录",
+          "跨岗签收",
+          "QA原例+最差案例+未知",
+          "无未关闭P0/P1"
+        ],
+        "decision_if_met": "grant_L2_for_bounded_internal_delivery",
+        "decision_if_not_met": "remain_L1_or_insufficient_evidence"
+      }
+    },
+    {
+      "id": "D",
+      "name": "L2稳固与迁移",
+      "days": "61-90",
+      "target": "L2_stable",
+      "themes": [
+        "双约束变化",
+        "供应商/版本漂移",
+        "复盘与教会他人",
+        "反例夹具沉淀"
+      ],
+      "exercises": [
+        "U-AI-L2-002",
+        "E-AI-L2-003"
+      ],
+      "artifacts": [
+        "W-AI-L2-003",
+        "C-AI-L2-001"
+      ],
+      "failure_experiments": [
+        "版本冲突+工具不可用",
+        "成本超限",
+        "权限变更",
+        "模型升级"
+      ],
+      "transfer_tasks": [
+        "U-AI-L2-002"
+      ],
+      "gate": {
+        "must": [
+          "两个情境连续证据",
+          "最差案例复验",
+          "他人可复用",
+          "QA/内容审校/接收岗位独立记录",
+          "无未关闭P0/P1"
+        ],
+        "decision_if_met": "retain_L2_and_consider_l3_review_only",
+        "decision_if_not_met": "retain_current_level_or_pause"
+      }
+    }
+  ],
+  "evidence_card_required_fields": [
+    "card_id",
+    "card_version",
+    "created_at",
+    "updated_at",
+    "role_id",
+    "owner",
+    "reviewer",
+    "diagnostic_id",
+    "exercise_id",
+    "exercise_version",
+    "level_target",
+    "capability_dims",
+    "purpose",
+    "user_scenario",
+    "non_goals",
+    "prerequisites",
+    "resource_refs",
+    "contract_hash",
+    "fixtures_hash",
+    "environment",
+    "inputs",
+    "authorization",
+    "expected_normal",
+    "expected_boundary",
+    "expected_failure",
+    "output_schema",
+    "schema_version",
+    "source_refs",
+    "run_receipts",
+    "first_failure",
+    "stop_record",
+    "repair_diff",
+    "regression",
+    "transfer_case",
+    "handoff",
+    "signoff",
+    "independent_review",
+    "decision",
+    "limitations",
+    "next_action",
+    "external_action",
+    "learner_raw"
+  ],
+  "source_ref_fields": [
+    "document_id",
+    "source_version",
+    "location",
+    "hash",
+    "hash_type",
+    "claim_type",
+    "recheck_at",
+    "access"
+  ],
+  "independent_review": {
+    "content_reviewer": "概念、来源、版本、许可、适用边界和论证",
+    "qa_engineer": "环境、运行、失败、迁移、性能和可重建性",
+    "backend_data_engineer": "涉及账户/权限/持久存储时提供领域复核",
+    "receiving_role": "按交接合同签收或有据拒收",
+    "project_manager": "只协调范围、依赖、责任和最终汇总",
+    "author_self_review": "not_allowed_for_promotion"
+  },
+  "stop_conditions": [
+    "未授权租户/私有来源/真实密钥/真实用户数据",
+    "未批准模型、付费API、云服务、外部写入或发布",
+    "source_refs缺失、版本/位置/hash不明或来源冲突",
+    "schema类型/版本/枚举错误或回调/checkpoint完整性无法证明",
+    "敏感信息、提示注入、越权工具请求或危险输出",
+    "预算、费用、延迟、限流、重试或保留期限超合同",
+    "恢复后状态/hash/callback不一致",
+    "环境/夹具/包/模型版本未记录变更",
+    "学习者无法解释机制或未知任务只复现原题",
+    "QA/内容审校P0/P1或接收方有据拒收"
+  ],
+  "cadence": {
+    "D0_7": "学习者诊断、补学、D0 EvidenceCard",
+    "D8_14": "第二沙箱、失败实验、一约束迁移",
+    "D15_30": "L1受指导任务、方案比较、交接与拒收",
+    "D31_45": "真实形状任务预演、权限/脱敏/预算/回滚",
+    "D46_60": "L2候选任务、恢复和质量成本延迟评估",
+    "D61_75": "双约束未知任务、反例夹具和版本漂移",
+    "D76_90": "连续第二情境、辅导复用、能力快照"
+  },
+  "promotion_rules": {
+    "L0_to_L1": [
+      "学习者五项D0原始证据",
+      "两个不同sandbox",
+      "失败/迁移证据",
+      "独立QA与内容复核",
+      "无未关闭P1"
+    ],
+    "L1_to_L2": [
+      "隔离真实形状任务",
+      "留出变体",
+      "恢复证据",
+      "质量/成本/延迟记录",
+      "跨岗签收",
+      "无未关闭P0/P1"
+    ],
+    "L2_to_higher": [
+      "两个周期/情境连续证据",
+      "最差案例复验",
+      "他人可复用",
+      "额外真实用户/同行/专家/生产证据"
+    ],
+    "non_claims": [
+      "方案完成不等于训练完成",
+      "课程阅读不等于能力",
+      "本地替身不等于真实模型/LangGraph/API",
+      "L2不等于生产无监督权限",
+      "代理报告不等于学习者EvidenceCard"
+    ]
+  },
+  "decision": "not_assessed",
+  "limitations": [
+    "尚未执行学习者D0、练习、未知任务或独立晋级复核",
+    "真实LangGraph/API、模型、费用、限流、人工审批和生产持久性未验证",
+    "本方案不改变应用、教材、旧D0、账户数据或历史QA",
+    "v0.2仅修复闸门/迁移/crosswalk规格；训练执行仍not_assessed，L1不自动授予"
+  ],
+  "practice_crosswalk": [
+    {
+      "practice_id": "AI-PRACTICE-SOURCE-001",
+      "gap_id": "G-AI-04",
+      "stage_id": "A",
+      "task_ids": [
+        "E-AI-L0-001",
+        "E-AI-L0-002"
+      ],
+      "evidence_card_ids": [
+        "EC-AI-PRACTICE-SOURCE-001",
+        "EC-E-AI-L0-001",
+        "EC-E-AI-L0-002"
+      ],
+      "capability_dims": [
+        "D1",
+        "D2",
+        "D4",
+        "D5"
+      ],
+      "required_for_gate": true,
+      "gate": "L0→L1",
+      "reviewers": [
+        "内容审校员",
+        "测试工程师"
+      ],
+      "limitations": "仅本地来源夹具，不证明真实供应商来源API或模型忠实度"
+    },
+    {
+      "practice_id": "AI-PRACTICE-DURABLE-002",
+      "gap_id": "G-AI-05",
+      "stage_id": "A",
+      "task_ids": [
+        "E-AI-L0-002",
+        "U-AI-L0-001"
+      ],
+      "evidence_card_ids": [
+        "EC-AI-PRACTICE-DURABLE-002",
+        "EC-E-AI-L0-002",
+        "EC-U-AI-L0-001"
+      ],
+      "capability_dims": [
+        "D2",
+        "D3",
+        "D4",
+        "D7"
+      ],
+      "required_for_gate": true,
+      "gate": "L0→L1",
+      "reviewers": [
+        "内容审校员",
+        "测试工程师"
+      ],
+      "limitations": "本地原子JSON替身，不证明生产耐久性/RPO/RTO"
+    },
+    {
+      "practice_id": "AI-PRACTICE-GATE-003",
+      "gap_id": "G-AI-06",
+      "stage_id": "A",
+      "task_ids": [
+        "E-AI-L0-001",
+        "E-AI-L0-002"
+      ],
+      "evidence_card_ids": [
+        "EC-AI-PRACTICE-GATE-003",
+        "EC-E-AI-L0-001",
+        "EC-E-AI-L0-002"
+      ],
+      "capability_dims": [
+        "D1",
+        "D2",
+        "D4",
+        "D5"
+      ],
+      "required_for_gate": true,
+      "gate": "L0→L1",
+      "reviewers": [
+        "内容审校员",
+        "测试工程师"
+      ],
+      "limitations": "模拟人工gate，不是真人审批或生产认证"
+    },
+    {
+      "practice_id": "AI-PRACTICE-SOURCE-001",
+      "gap_id": "G-AI-09",
+      "stage_id": "B",
+      "task_ids": [
+        "U-AI-L1-001"
+      ],
+      "evidence_card_ids": [
+        "EC-U-AI-L1-001",
+        "EC-AI-PRACTICE-SOURCE-001"
+      ],
+      "capability_dims": [
+        "D3",
+        "D4",
+        "D6",
+        "D7"
+      ],
+      "required_for_gate": true,
+      "gate": "L1保持",
+      "reviewers": [
+        "测试工程师",
+        "接收岗位"
+      ],
+      "limitations": "留出迁移必须新建EvidenceCard，不能复用L0卡"
+    },
+    {
+      "practice_id": "AI-PRACTICE-DURABLE-002",
+      "gap_id": "G-AI-05",
+      "stage_id": "B",
+      "task_ids": [
+        "U-AI-L1-001"
+      ],
+      "evidence_card_ids": [
+        "EC-U-AI-L1-001"
+      ],
+      "capability_dims": [
+        "D3",
+        "D4",
+        "D7"
+      ],
+      "required_for_gate": true,
+      "gate": "L1保持",
+      "reviewers": [
+        "测试工程师",
+        "内容审校员"
+      ],
+      "limitations": "新约束至少改变恢复/回调或工具条件之一"
+    }
+  ],
+  "revision": {
+    "revision_id": "AI-ADV-20261015-SR-001",
+    "supersedes_plan_id": "AI-ADV-20261015-002",
+    "supersedes_files": [
+      "sites/rolecraft/team/ai-generation-engineer-advancement-v02.md",
+      "sites/rolecraft/team/ai-generation-engineer-advancement-v02.json"
+    ],
+    "repair_finding_id": "QA-AI-ADV-P2-001",
+    "change_scope": [
+      "normalize source_records entries to objects with path and status"
+    ],
+    "training_or_state_change": false,
+    "preserved_records": [
+      "sites/rolecraft/team/ai-generation-engineer-advancement-v02.md",
+      "sites/rolecraft/team/ai-generation-engineer-advancement-v02.json",
+      "sites/rolecraft/team/ai-generation-engineer-advancement-qa-v02.md",
+      "sites/rolecraft/team/ai-generation-engineer-advancement-qa-v02.json"
+    ]
+  }
+}

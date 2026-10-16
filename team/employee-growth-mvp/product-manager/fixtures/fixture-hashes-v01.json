@@ -1,0 +1,57 @@
+{
+  "manifest_id": "fixture-hashes-v01",
+  "manifest_version": "v0.1",
+  "status": "pending_freeze",
+  "fixture_id": "fixtures.product-recommendation-v01",
+  "fixture_version": "v0.1",
+  "canonical_path": "fixtures/fixtures.product-recommendation-v01.json",
+  "contract_fixture_basename": "fixtures.product-recommendation-v01.json",
+  "fixture_file_sha256": "e7d27f951cd32f0b1f3b758b3a0987dccab4578ab2562637b02c6187f81d5f7b",
+  "canonical_content_sha256": "pending_freeze",
+  "hash_policy": {
+    "canonicalization": "UTF-8 JSON with sorted keys after removing self-referential hash fields",
+    "excluded_fields": [
+      "fixture_sha256",
+      "canonical_content_sha256",
+      "fixture_file_sha256",
+      "hash_policy.canonical_content_sha256",
+      "hash_policy.fixture_file_sha256",
+      "hash_policy.status"
+    ],
+    "policy_source_snapshot_hashes": "pending_freeze",
+    "policy_source_snapshot_locations": "pending_freeze"
+  },
+  "policy_source_snapshots": [
+    {
+      "source_id": "ROLE-PM",
+      "source_version": "pending_freeze",
+      "source_sha256": "pending_freeze",
+      "source_location": "pending_freeze"
+    },
+    {
+      "source_id": "GROWTH-CURRICULUM",
+      "source_version": "pending_freeze",
+      "source_sha256": "pending_freeze",
+      "source_location": "pending_freeze"
+    },
+    {
+      "source_id": "PRODUCT-CREATION-CURRICULUM",
+      "source_version": "pending_freeze",
+      "source_sha256": "pending_freeze",
+      "source_location": "pending_freeze"
+    },
+    {
+      "source_id": "PRODUCT-CREATION-STANDARD",
+      "source_version": "pending_freeze",
+      "source_sha256": "pending_freeze",
+      "source_location": "pending_freeze"
+    },
+    {
+      "source_id": "PRODUCT-STANDARD",
+      "source_version": "pending_freeze",
+      "source_sha256": "pending_freeze",
+      "source_location": "pending_freeze"
+    }
+  ],
+  "reason": "来源版本与快照未完成；当前 fixture_file_sha256 仅记录现有文件，不代表规范化内容或政策来源已冻结。"
+}

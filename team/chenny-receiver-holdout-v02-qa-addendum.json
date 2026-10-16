@@ -1,0 +1,34 @@
+{
+  "artifact": "chenny-receiver-holdout-v02-qa-addendum",
+  "evidence_root": "/private/tmp/chenny-receiver-holdout-v02.fekHQb",
+  "role": "independent QA",
+  "scope": "holdout evidence bundle only",
+  "status": "met_within_scope",
+  "evidence_status": "pass_dynamic_binding",
+  "checks": {
+    "sha256sums_all_listed_files_ok": true,
+    "bytes_manifest_matches_wc": true,
+    "checks_json_status": "pass_dynamic_binding",
+    "checks_json_all_true": true,
+    "holdout_status_agrees": true,
+    "run_1_exit_zero": true,
+    "run_2_exit_zero": true,
+    "run_1_stderr_empty": true,
+    "run_2_stderr_empty": true,
+    "run_1_run_2_stdout_byte_equal": true,
+    "run_1_run_2_stderr_byte_equal": true,
+    "run_1_run_2_exit_code_byte_equal": true,
+    "variant_metadata_consistent": true,
+    "dynamic_claim_refs_bound": true,
+    "dynamic_receipt_refs_bound": true,
+    "not_project_manager_smoke": true
+  },
+  "command_note": "run-1.command and run-2.command differ only by expected run id; both invoke the recorded dynamic runner with the same holdout input and A-normal case.",
+  "limitations": [
+    "No Chenny signature is supplied or asserted.",
+    "No learner files or learner outcomes were modified or assessed.",
+    "Fixture-only offline evidence does not establish live model quality, human review, or production readiness."
+  ],
+  "qa_date": "2026-10-16",
+  "timezone": "Asia/Shanghai"
+}

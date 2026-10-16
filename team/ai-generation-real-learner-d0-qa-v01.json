@@ -1,0 +1,34 @@
+{
+  "report_id": "AI-REAL-LEARNER-D0-QA-20261016-V01",
+  "date": "2026-10-16",
+  "role": "测试工程师",
+  "scope": "独立核验真实学习者D0原始回答的身份/diagnostic绑定、D0-01..05覆盖、D0-03边界/未知/停止/QA交接及未评估状态；不补答、不评分、不授等级。",
+  "source": "ai-generation-real-learner-d0-20261016-v01.md/.json",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "decision": "met_within_scope",
+  "checks": {
+    "identity_and_diagnostic_binding": "pass",
+    "d0_01_to_d0_05_present": "pass_with_limitations",
+    "d0_03_boundary": "pass",
+    "d0_03_unknown_and_stop": "pass",
+    "d0_03_qa_handoff": "pass",
+    "not_assessed_preserved": "pass"
+  },
+  "limitations": [
+    "原始回答编号非连续，但五个语义区块可定位。",
+    "未验证本人签名、实际运行、真实权限/模型/API、生产数据或接收方签收。"
+  ],
+  "learner_state": {
+    "status": "not_assessed",
+    "training_status": "L0_guided",
+    "qa_status": "pending",
+    "self_signed": false,
+    "real_model_called": false,
+    "levels_granted": []
+  },
+  "next_verification": [
+    "独立复现A正常、B越权拒绝、来源缺失/冲突和首个失败停止并保存可重算收据。",
+    "验证未访问/未缓存/未入模型上下文及零外部动作。",
+    "取得本人签名与接收方签收或有据拒收；保持D0未评估直至能力证据齐备。"
+  ]
+}

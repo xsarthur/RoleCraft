@@ -1,0 +1,60 @@
+{
+  "qa_id": "uiux-design-textbook-visual-batch-b-qa-v01",
+  "role": "测试工程师",
+  "date": "2026-10-16",
+  "timezone": "Asia/Shanghai",
+  "scope": "v0.2第05–08章视觉优化、批次B四张SVG、Markdown图片路径、SVG可访问元数据、Mermaid/visual_downgrade边界及旧版本保护",
+  "conclusion": "met_with_limitations",
+  "scope_result": "met_within_static_file_scope",
+  "inputs": [
+    "sites/rolecraft/textbooks/uiux-design-v02/chapters/05-domain-information-architecture.md",
+    "sites/rolecraft/textbooks/uiux-design-v02/chapters/06-task-flows.md",
+    "sites/rolecraft/textbooks/uiux-design-v02/chapters/07-interaction-state-contracts.md",
+    "sites/rolecraft/textbooks/uiux-design-v02/chapters/08-wireframe-prototyping.md",
+    "sites/rolecraft/textbooks/uiux-design-v02/assets/v02-batch-b-05-domain-ia.svg",
+    "sites/rolecraft/textbooks/uiux-design-v02/assets/v02-batch-b-06-task-recovery.svg",
+    "sites/rolecraft/textbooks/uiux-design-v02/assets/v02-batch-b-07-state-contract.svg",
+    "sites/rolecraft/textbooks/uiux-design-v02/assets/v02-batch-b-08-fidelity-compare.svg"
+  ],
+  "checks": {
+    "chapter_count": {"status": "pass", "value": 4},
+    "markdown_image_syntax": {"status": "pass", "image_references": 15, "alt_text_present": true, "all_relative_targets_exist": true},
+    "svg_assets_exist": {"status": "pass", "asset_count": 4},
+    "xmllint": {"status": "pass", "asset_count": 4, "exit_codes": [0, 0, 0, 0]},
+    "svg_accessibility_metadata": {"status": "pass", "role_img": true, "aria_labelledby": "title desc", "title_desc_nonempty": true, "ids_resolve": true},
+    "svg_text": {"status": "pass", "text_nodes": 130, "characters_approx": 2583, "source_fields_present": true},
+    "educational_construct_and_boundary": {"status": "pass", "all_assets_marked_teaching_construct_and_unverified": true},
+    "mermaid_and_visual_downgrade": {"status": "pass_with_boundary", "mermaid_blocks": {"05": 3, "06": 2, "07": 0, "08": 0}, "visual_downgrade_occurrences": {"05": 9, "06": 9, "07": 4, "08": 4}, "nonempty_flowcharts": true, "visual_downgrade_recorded": true, "mermaid_renderer_run": false},
+    "old_version_protection": {"status": "pass", "manifest_sha256_match": true, "old_assets_checked": 14},
+    "assembly_integration": {"status": "insufficient", "source_index_lists_batch_b": false, "assembly_manifest_lists_batch_b": false, "assembled_book_contains_batch_b_refs": false}
+  },
+  "chapter_sha256": {
+    "05-domain-information-architecture.md": "bcf32939fbcf386d8c10be36f7dbf387769368a538ca3ee520d435ac77e36a2a",
+    "06-task-flows.md": "635823faac296f4ff88a4c61b940b211c5fc3c8c73ea15bc012644978ff2b606",
+    "07-interaction-state-contracts.md": "9cc809f28c5f0b4b19c6908c58965bad30b537529efce75be852b2065e256eae",
+    "08-wireframe-prototyping.md": "ad45b8ece80ddaca052146e1a078bdfcd76f4cec82367d26c8e436de8dd3b40c"
+  },
+  "asset_sha256": {
+    "v02-batch-b-05-domain-ia.svg": "ba0351dba39d7be3a4317fcf0ec003dfe02eb6b9376711265848584e7b0369bf",
+    "v02-batch-b-06-task-recovery.svg": "0f82521b45e30f2a1180c74ab917000b0eed7339f8bc49fad721e40647203f15",
+    "v02-batch-b-07-state-contract.svg": "145eb6317c7c52009422486b952cbae35aa6e2df9f46e10d1640021777301397",
+    "v02-batch-b-08-fidelity-compare.svg": "58605fd3af0a9cf9160941d8e4c79526f6176ceaa15ff9b7ac87afe295e4268c"
+  },
+  "not_verified": [
+    "browser_pixel_render_and_font_fallback",
+    "responsive_760px_narrow_gray_large_text_and_crop",
+    "keyboard_focus_and_screen_reader",
+    "mermaid_runtime_render",
+    "markdown_renderer_display",
+    "real_reader_or_learner_understanding",
+    "human_expert_review",
+    "real_service_or_business_effect"
+  ],
+  "limitations": [
+    "静态XML、ARIA属性与文本节点检查不等于视觉可读性或辅助技术读序。",
+    "source-index、assembly-manifest与合订本尚未接入批次B四图，需组装责任人更新后复验。",
+    "本QA不修改正文、SVG、旧资产、应用或数据库。"
+  ],
+  "overall_status": "not_met_for_full_product_or_learning_claims",
+  "retest": "批次B接入合订本或任何章节/资产返修后，重跑路径、xmllint、ARIA元数据、组装索引和旧版本哈希；随后在浏览器、键盘/读屏和真实读者场景分别取证。"
+}

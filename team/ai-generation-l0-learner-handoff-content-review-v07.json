@@ -1,0 +1,48 @@
+{
+  "review_id": "AI-L0-LEARNER-HANDOFF-CONTENT-REVIEW-20261015-V07",
+  "reviewer_role": "内容审校员",
+  "target": "sites/rolecraft/team/ai-generation-l0-learner-handoff-v07.md",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "version": "v07",
+  "conclusion": "reviewed_with_limitations",
+  "scope_decision": "met_within_scope",
+  "scope": "逐题核对D0-01..05语义绑定、证据字段匹配、来源/限制和岗位边界；不执行代码、不授等级。",
+  "checks": {
+    "d0_01_semantic_binding": "met_with_limitations",
+    "d0_02_semantic_binding": "met_with_limitations",
+    "d0_03_evidence_match": "not_met",
+    "d0_04_evidence_match": "not_met",
+    "d0_05_evidence_match": "met_with_limitations",
+    "role_and_level_boundaries": "met_within_scope"
+  },
+  "findings": [
+    "v07五卡具有不同evidence_id、learner_answer_hash和路径，改善v06统一模板问题，但source_refs仍通用，卡片缺少逐题正文和具体字段映射。",
+    "D0-01/02仅绑定两份极短local_only receipt，能证明主题标签，不能证明学习者已给出或正确解释对应机制。",
+    "D0-03同时列A/B输入但输出和回归只指向demo raw，B-denial output_sha256不可用，holdout为空，A/B闭环不可复核。",
+    "D0-04 holdout_artifact错误指向regression.json，实际holdout.json未绑定，需修正并复验。",
+    "D0-05的baseline/first_failure/regression/holdout路径主题匹配，但缺少断言到字段的逐项映射，只支持本地夹具范围。",
+    "self_signed=false、human_receipt=pending、qa_status=pending、D0/L0 not_assessed与L1/L2 not_granted及角色边界表述一致。"
+  ],
+  "limitations": [
+    "真实模型/API、供应商来源、真实租户权限与数据保密未验证。",
+    "本地JSON读取和固定夹具不证明真实进程恢复、并发一致性、生产RPO/RTO或统计泛化。",
+    "B-denial learner回执不可复核，不能用QA denied夹具替代学习者证据。",
+    "D0-04 holdout路径错误，D0-03 A/B证据不完整。",
+    "真人签收、真人专家审核、真实学习效果、职业认证和外部动作未验证。"
+  ],
+  "required_followup": [
+    "补充D0-01/02答案正文、机制字段、输入hash及具体来源绑定。",
+    "修正D0-03 A/B输出、B-denial回执和holdout绑定并独立复验。",
+    "修正D0-04 holdout_artifact并重算manifest/hash后复验。",
+    "为D0-05增加断言到四类执行工件的字段映射。",
+    "保持D0/L0 not_assessed与L1/L2 not_granted，不授等级。"
+  ],
+  "self_signed": false,
+  "external_action": null,
+  "level_decisions": {
+    "d0": "not_assessed",
+    "l0": "not_assessed",
+    "l1": "not_granted",
+    "l2": "not_granted"
+  }
+}

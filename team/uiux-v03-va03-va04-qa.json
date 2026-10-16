@@ -1,0 +1,25 @@
+{
+  "artifact": "uiux-v03-va03-va04",
+  "scope": [
+    "textbooks/uiux-design-v03/VA03-visual-language-system.md",
+    "textbooks/uiux-design-v03/VA04-polish-motion-delivery.md"
+  ],
+  "status": "met_with_limitations",
+  "checks": {
+    "files_exist": true,
+    "assets_invalid_paths": false,
+    "visual_downgrade_in_major_sections": true,
+    "structure_readable": true
+  },
+  "evidence": {
+    "VA03": {"bytes": 19352, "lines": 205, "markdown_headings": 25, "visual_downgrade_count": 10, "assets_refs": 0},
+    "VA04": {"bytes": 13815, "lines": 299, "markdown_headings": 23, "visual_downgrade_count": 4, "assets_refs": 0}
+  },
+  "not_verified": [
+    "browser rendering and responsive behavior",
+    "screen reader and assistive technology behavior",
+    "real learner comprehension or completion",
+    "independent human UI/UX expert review"
+  ],
+  "notes": "Static file inspection only; no正文修改。"
+}

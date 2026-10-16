@@ -1,0 +1,51 @@
+{
+  "review_id": "AI-PRACTICE-GATE-003-CONTENT-REVIEW-v02",
+  "practice_id": "AI-PRACTICE-GATE-003",
+  "review_version": "v02",
+  "decision": "fail",
+  "scope": "schema迁移、legacy_status删除、run-2独立性、状态轨迹、首失败、单约束holdout、manifest与限制措辞",
+  "inputs": [
+    "ai-generation-l0-practice-gate-003-v02.md",
+    "ai-generation-l0-practice-gate-003-v02.json",
+    "ai-generation-l0-practice-gate-003-v02/",
+    "ai-generation-l0-practice-gate-003-content-review-v01.md",
+    "ai-generation-engineer-practice-pack-v02.json"
+  ],
+  "checks": {
+    "schema_v3_forbids_legacy_status": "pass",
+    "migration_explicitly_deletes_legacy_status": "pass",
+    "run2_uses_frozen_v2_input_and_self_validator_path": "pass_with_limitations",
+    "first_failure_files_preserved": "pass",
+    "single_constraint_holdout": "pass",
+    "simulated_gate_limited_to_local_review_only": "pass",
+    "manifest_hash_consistency": "fail",
+    "run2_state_trace_complete": "insufficient_evidence"
+  },
+  "findings": [
+    {
+      "id": "CR-003-v02-001",
+      "severity": "P0",
+      "status": "open",
+      "finding": "manifest顶层run_1_migrated_hash与run_2_migrated_hash为3cbff8...67009a，但实际迁移文件及manifest逐项条目SHA-256为9eb142...d412dd，证据包内部冲突。",
+      "owner": "AI生成工程师",
+      "reverify": "修正manifest后由QA重算所有bytes/SHA256并重跑迁移/校验"
+    },
+    {
+      "id": "CR-003-v02-002",
+      "severity": "P1",
+      "status": "open",
+      "finding": "event-state-trace.json只列run-1；run-2独立迁移与自有validator路径有支持，但完整run-2状态轨迹未提供。",
+      "owner": "AI生成工程师",
+      "reverify": "补run-2轨迹或限定报告措辞"
+    }
+  ],
+  "limitations": [
+    "local simulated human gate不等于真人专家审批、生产审批、身份认证、岗位认证或发布授权",
+    "不证明真实数据库迁移、并发回滚、真实进程恢复、真实模型行为、接收方签收、学习效果或职业能力"
+  ],
+  "handoff_qa": "pending",
+  "self_signed": false,
+  "l1_decision": "not_granted",
+  "l2_decision": "not_granted",
+  "status": "open_pending_repair"
+}

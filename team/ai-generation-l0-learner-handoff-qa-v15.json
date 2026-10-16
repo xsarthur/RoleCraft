@@ -1,0 +1,13 @@
+{
+  "qa_id": "ai-generation-l0-learner-handoff-qa-v15",
+  "date": "2026-10-16",
+  "scope": "ai-generation-l0-learner-handoff-v15",
+  "conclusion": "fail",
+  "conclusion_scope": "D0-05 registered holdout evidence and handoff package integrity",
+  "not_a_level_grant": true,
+  "isolated_rerun": {"command": "python3 run_bundle.py", "copy": "/tmp/v15qa", "exit_code": 0, "runtime_holdout_and_first_failure_bytes_differ": true},
+  "checks": {"d0_05_registered_holdout_distinct": false, "d0_05_runtime_fixture_distinct": true, "d0_05_runtime_output_actual": true, "d0_05_registered_holdout_path": "d0-05/holdout.json", "d0_05_registered_holdout_equals_first_failure": true, "holdout_output_path": "d0-05/holdout-output.json", "manifest_artifact_bytes_sha_match_after_rerun": true, "manifest_self_reference_null": true, "five_evidence_cards_present": true, "evidence_card_path_bytes_sha_valid": true, "evidence_card_matrix_binding_consistent": false, "status_ungraded": true},
+  "evidence": {"registered_holdout_sha256": "f0c82d736c9896c0c6ca2c5a68be6f78bfd7c716761abb71724abb64adf4f1aa", "first_failure_sha256": "f0c82d736c9896c0c6ca2c5a68be6f78bfd7c716761abb71724abb64adf4f1aa", "registered_holdout_bytes": 172, "first_failure_bytes": 172, "manifest_bytes": null, "manifest_sha256": null},
+  "limitations": ["No real model/API invocation", "No real crash/recovery, permission, concurrency, browser, or human receipt validation", "D0-05 matrix/manifest bind holdout.json, which duplicates first_failure; generated holdout-output is not the registered holdout artifact"],
+  "repair_and_retest": "Write or rebind an independent d0-05/holdout.json, recompute affected EvidenceCards and manifest bytes/SHA, then repeat isolated run and QA."
+}

@@ -1,0 +1,2033 @@
+{
+  "research_id": "uiux-interview-questions-3m-20261014",
+  "role": "竞品研究员",
+  "scope": "UI/UX/产品设计/AI UX公开面试题与题型",
+  "window": {
+    "start": "2026-07-14",
+    "end": "2026-10-14",
+    "timezone": "Asia/Shanghai"
+  },
+  "accessed": "2026-10-14",
+  "method": {
+    "source_policy": "只纳入页面正文能直接核验且页面发布日期/更新日期落在时间窗内的公开来源；不使用搜索摘要替代正文。",
+    "dedupe_policy": "逐字去重：仅对完全相同的规范化问句去重；有明确场景、地区、尺度或岗位变化的题型保留。103条是逐字去重记录，存在语义相近的场景变体，不等于103条相互独立或同等热门的真题。",
+    "hotness_policy": "“热门”仅指来源将题目标为常见、most asked、sample 或公开题库题目；没有全国频率排名，不据此计算热度。Callebe补充样本提供一位候选人27场面试中的实际报告频次，单列，不并入103条。",
+    "evidence_policy": "公司JD只证明能力要求；指南/题库只证明作者公开列出的练习题；候选人面经才可支持“候选人报告遇到过”。本次可核验正文来源以公开指南/题库为主。"
+  },
+  "source_count": 5,
+  "item_count_raw": 103,
+  "item_count_deduped": 103,
+  "sources": {
+    "S01": {
+      "title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "published_or_updated": "2026-08-17",
+      "source_type": "公开面试指南/题库",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "evidence": "页面明确列出45题，按通用、初级、中级、技术、情境分组，并逐题给出示例答案和考察意图。",
+      "limits": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    "S02": {
+      "title": "UI/UX设计师面试全攻略",
+      "url": "https://offergo.site/articles/ui-ux-designer-interview-guide",
+      "published_or_updated": "2026-08-30",
+      "source_type": "中文公开面试指南",
+      "roles": [
+        "UI",
+        "UX",
+        "视觉"
+      ],
+      "evidence": "页面按作品集、常见设计问题、白板题/设计挑战、沟通协作组织内容，并给出明确示例问法。",
+      "limits": "文章是求职指导，不代表固定企业流程；部分问法来自举例场景，已标为“题型抽取”。"
+    },
+    "S03": {
+      "title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "published_or_updated": "2026-09-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "evidence": "页面明确列出30道题，分为设计流程、研究测试、UI视觉、工具/AI、无障碍、协作/业务影响六组。",
+      "limits": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    "S04": {
+      "title": "UI/UX Designer Interview Questions in India (2026)",
+      "url": "https://knok.work/blog/ui-ux-designer-interview-questions-india.html",
+      "published_or_updated": "2026-10-09",
+      "source_type": "行业研究/公开面试指南",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "evidence": "页面列出“Most Asked Questions”和按基础、情境、行为分类的公开题型，并说明来源为公开面试循环、招聘经理复盘及候选人报告。",
+      "limits": "样本聚焦印度岗位，不能直接代表中国市场；页面注明公司流程会变化，题目用于准备结构而非保证。"
+    },
+    "S05": {
+      "title": "UI UX interview questions: Complete 2026 Interview Guide",
+      "url": "https://www.octohires.com/blog/ui-ux-interview-questions",
+      "published_or_updated": "2026-10-07",
+      "source_type": "公开面试指南/样题",
+      "roles": [
+        "UI",
+        "UX"
+      ],
+      "evidence": "页面列出四个“Sample questions recruiters ask”并将研究、线框到高保真、可用性测试、设计系统作为面试角度。",
+      "limits": "样题数量少且页面部分措辞为泛化模板；不能证明招聘者在真实面试中按原句提问。"
+    }
+  },
+  "items": [
+    {
+      "source_id": "S01",
+      "question": "Walk me through your design process.",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-001",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "How do you handle feedback or criticism on your designs?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-002",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "Tell me about a project you are most proud of.",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-003",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "How do you prioritize multiple projects competing for your time?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-004",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "Describe a time you disagreed with a product decision.",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-005",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "How do you stay current with design trends and tools?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-006",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "What's your approach to collaborating with engineers?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-007",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "What is the purpose of the empathize stage in design thinking?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-008",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "Why is accessibility important in product design?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-009",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "How would you conduct a competitive analysis?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-010",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "What's the difference between UX and UI design?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-011",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "Walk me through how you'd approach a wireframing project.",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-012",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "What is a user persona and what makes one effective?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-013",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "How do you ensure your designs are user-centered?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-014",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "What's the most valuable feedback you've received on your work?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-015",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "How do you synthesize user research into insights teams can act on?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-016",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "Describe your experience working with cross-functional teams.",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-017",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "How do you measure the success of your designs?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-018",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "Tell me about presenting to stakeholders who weren't designers.",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-019",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "How do you handle user needs conflicting with business goals?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-020",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "What's your approach to building and maintaining design systems?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-021",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "How do you approach designing for different platforms?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-022",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "Describe a project where you changed direction based on user feedback.",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-023",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "How do you balance speed with quality?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-024",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "What does a high bounce rate indicate about a website’s design?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-025",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "When is a high-fidelity prototype most appropriate?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-026",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "What's the primary role of a workshop facilitator?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-027",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "Why is randomization critical in A/B testing?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-028",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "What is evolutionary prototyping?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-029",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "What can go wrong with biased research?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-030",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "How should teams handle an outdated but still-used API version?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-031",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "What makes user flows clear and intuitive?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-032",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "What is the goal of the diverge stage in diverge-and-converge workshops?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-033",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "What does ecosystem mapping help identify?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-034",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "Which metric assesses how quickly users complete a task?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-035",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "What is a strategic outcome of strong prototyping practice?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-036",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "How can CRM data support product decision-making?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-037",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "How do teams turn performance metrics into meaningful product decisions?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-038",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "What's a common mistake when localizing UI content?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-039",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "When implementing ML that affects user opportunities, what matters most?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-040",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "Your team struggles to stay aligned with the product vision. What is your approach?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-041",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "A feature you designed is usable but not accessible. What do you do?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-042",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "Your workshops lack structure and clear outcomes. What is happening?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-043",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "Your company wants more innovative features. What is the most effective approach?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-044",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S01",
+      "question": "You need to test a prototype with no time for dry runs. What type do you build?",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-045",
+      "source_url": "https://uxcel.com/blog/product-designer-interview-questions",
+      "source_title": "Top 45 Product Designer Interview Questions and Answers for 2026",
+      "published_or_updated": "2026-08-17",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/题库",
+      "evidence_limit": "作者整理的公开练习题，不是任一雇主的泄露真题，也没有提供跨公司出现频率统计。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you approach a new design project from start to finish?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-046",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "Walk me through a project where the first solution failed.",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-047",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you decide when a design is good enough to ship?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-048",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you handle conflicting feedback from stakeholders?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-049",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "Describe a design constraint that made your work better.",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-050",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you prioritize features when you cannot build everything?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-051",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you set goals for a research study?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-052",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you recruit the right users to test with?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-053",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you turn research findings into design decisions?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-054",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you incorporate user feedback into your designs?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-055",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "Tell me about a time research changed your mind.",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-056",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "What makes an interface easy to use?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-057",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you build and maintain a design system?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-058",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you handle responsive design across screen sizes?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-059",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you choose typography and color for a product?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-060",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "Show me a screen you are proud of and one you would redo.",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-061",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you use Figma for collaborative design work?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-062",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you use AI tools in your design process?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-063",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "Where does AI fall short in your workflow?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-064",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you keep your design files organized for handoff?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-065",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you stay current with design tools and trends?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-066",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you make sure your designs are accessible to all users?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-067",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you test a design for accessibility?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-068",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you balance accessibility with visual goals?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-069",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you work with engineers during a build?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-070",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you measure whether a design succeeded?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-071",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "Tell me about a design that moved a business number.",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-072",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you explain a design decision to a non-designer?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-073",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "How do you mentor or give feedback to other designers?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-074",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S03",
+      "question": "What impact did your best project have on users or the business?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-075",
+      "source_url": "https://testlify.com/interview-questions-for-ui-ux-designer/",
+      "source_title": "UI/UX Designer Interview Questions: 30 to Ask in 2026",
+      "published_or_updated": "2026-09-14",
+      "accessed": "2026-10-14",
+      "source_type": "招聘平台公开题库/面试指南",
+      "evidence_limit": "平台用于招聘评估的公开题库，不是对真实面试出现率的统计；同主题变体保留为不同工作场景题型。"
+    },
+    {
+      "source_id": "S04",
+      "question": "Walk me through a design project from research to shipped UI.",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-076",
+      "source_url": "https://knok.work/blog/ui-ux-designer-interview-questions-india.html",
+      "source_title": "UI/UX Designer Interview Questions in India (2026)",
+      "published_or_updated": "2026-10-09",
+      "accessed": "2026-10-14",
+      "source_type": "行业研究/公开面试指南",
+      "evidence_limit": "样本聚焦印度岗位，不能直接代表中国市场；页面注明公司流程会变化，题目用于准备结构而非保证。"
+    },
+    {
+      "source_id": "S04",
+      "question": "How do you balance business goals with user needs when they conflict?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-077",
+      "source_url": "https://knok.work/blog/ui-ux-designer-interview-questions-india.html",
+      "source_title": "UI/UX Designer Interview Questions in India (2026)",
+      "published_or_updated": "2026-10-09",
+      "accessed": "2026-10-14",
+      "source_type": "行业研究/公开面试指南",
+      "evidence_limit": "样本聚焦印度岗位，不能直接代表中国市场；页面注明公司流程会变化，题目用于准备结构而非保证。"
+    },
+    {
+      "source_id": "S04",
+      "question": "Show me how you tested a design hypothesis with users in India.",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-078",
+      "source_url": "https://knok.work/blog/ui-ux-designer-interview-questions-india.html",
+      "source_title": "UI/UX Designer Interview Questions in India (2026)",
+      "published_or_updated": "2026-10-09",
+      "accessed": "2026-10-14",
+      "source_type": "行业研究/公开面试指南",
+      "evidence_limit": "样本聚焦印度岗位，不能直接代表中国市场；页面注明公司流程会变化，题目用于准备结构而非保证。"
+    },
+    {
+      "source_id": "S04",
+      "question": "How do you hand off designs to engineering at a fast-moving startup?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-079",
+      "source_url": "https://knok.work/blog/ui-ux-designer-interview-questions-india.html",
+      "source_title": "UI/UX Designer Interview Questions in India (2026)",
+      "published_or_updated": "2026-10-09",
+      "accessed": "2026-10-14",
+      "source_type": "行业研究/公开面试指南",
+      "evidence_limit": "样本聚焦印度岗位，不能直接代表中国市场；页面注明公司流程会变化，题目用于准备结构而非保证。"
+    },
+    {
+      "source_id": "S04",
+      "question": "Critique this app screen; what would you improve for Indian users?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-080",
+      "source_url": "https://knok.work/blog/ui-ux-designer-interview-questions-india.html",
+      "source_title": "UI/UX Designer Interview Questions in India (2026)",
+      "published_or_updated": "2026-10-09",
+      "accessed": "2026-10-14",
+      "source_type": "行业研究/公开面试指南",
+      "evidence_limit": "样本聚焦印度岗位，不能直接代表中国市场；页面注明公司流程会变化，题目用于准备结构而非保证。"
+    },
+    {
+      "source_id": "S04",
+      "question": "Tell me about a time you killed a design direction. How did you decide?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-081",
+      "source_url": "https://knok.work/blog/ui-ux-designer-interview-questions-india.html",
+      "source_title": "UI/UX Designer Interview Questions in India (2026)",
+      "published_or_updated": "2026-10-09",
+      "accessed": "2026-10-14",
+      "source_type": "行业研究/公开面试指南",
+      "evidence_limit": "样本聚焦印度岗位，不能直接代表中国市场；页面注明公司流程会变化，题目用于准备结构而非保证。"
+    },
+    {
+      "source_id": "S04",
+      "question": "Walk me through your design process from the initial brief to the final handoff.",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-082",
+      "source_url": "https://knok.work/blog/ui-ux-designer-interview-questions-india.html",
+      "source_title": "UI/UX Designer Interview Questions in India (2026)",
+      "published_or_updated": "2026-10-09",
+      "accessed": "2026-10-14",
+      "source_type": "行业研究/公开面试指南",
+      "evidence_limit": "样本聚焦印度岗位，不能直接代表中国市场；页面注明公司流程会变化，题目用于准备结构而非保证。"
+    },
+    {
+      "source_id": "S04",
+      "question": "How do you distinguish between UX and UI, and how do both apply in your day-to-day work?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-083",
+      "source_url": "https://knok.work/blog/ui-ux-designer-interview-questions-india.html",
+      "source_title": "UI/UX Designer Interview Questions in India (2026)",
+      "published_or_updated": "2026-10-09",
+      "accessed": "2026-10-14",
+      "source_type": "行业研究/公开面试指南",
+      "evidence_limit": "样本聚焦印度岗位，不能直接代表中国市场；页面注明公司流程会变化，题目用于准备结构而非保证。"
+    },
+    {
+      "source_id": "S04",
+      "question": "What user research methods do you rely on in early-stage projects, and why?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-084",
+      "source_url": "https://knok.work/blog/ui-ux-designer-interview-questions-india.html",
+      "source_title": "UI/UX Designer Interview Questions in India (2026)",
+      "published_or_updated": "2026-10-09",
+      "accessed": "2026-10-14",
+      "source_type": "行业研究/公开面试指南",
+      "evidence_limit": "样本聚焦印度岗位，不能直接代表中国市场；页面注明公司流程会变化，题目用于准备结构而非保证。"
+    },
+    {
+      "source_id": "S04",
+      "question": "How do you approach information architecture for a product with many features?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-085",
+      "source_url": "https://knok.work/blog/ui-ux-designer-interview-questions-india.html",
+      "source_title": "UI/UX Designer Interview Questions in India (2026)",
+      "published_or_updated": "2026-10-09",
+      "accessed": "2026-10-14",
+      "source_type": "行业研究/公开面试指南",
+      "evidence_limit": "样本聚焦印度岗位，不能直接代表中国市场；页面注明公司流程会变化，题目用于准备结构而非保证。"
+    },
+    {
+      "source_id": "S04",
+      "question": "Pick one screen in our product and suggest one improvement. Walk us through your thinking.",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-086",
+      "source_url": "https://knok.work/blog/ui-ux-designer-interview-questions-india.html",
+      "source_title": "UI/UX Designer Interview Questions in India (2026)",
+      "published_or_updated": "2026-10-09",
+      "accessed": "2026-10-14",
+      "source_type": "行业研究/公开面试指南",
+      "evidence_limit": "样本聚焦印度岗位，不能直接代表中国市场；页面注明公司流程会变化，题目用于准备结构而非保证。"
+    },
+    {
+      "source_id": "S04",
+      "question": "You receive conflicting feedback from users and business stakeholders. How do you decide which direction to take?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-087",
+      "source_url": "https://knok.work/blog/ui-ux-designer-interview-questions-india.html",
+      "source_title": "UI/UX Designer Interview Questions in India (2026)",
+      "published_or_updated": "2026-10-09",
+      "accessed": "2026-10-14",
+      "source_type": "行业研究/公开面试指南",
+      "evidence_limit": "样本聚焦印度岗位，不能直接代表中国市场；页面注明公司流程会变化，题目用于准备结构而非保证。"
+    },
+    {
+      "source_id": "S04",
+      "question": "How would you design an onboarding flow for users who are not tech-savvy?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-088",
+      "source_url": "https://knok.work/blog/ui-ux-designer-interview-questions-india.html",
+      "source_title": "UI/UX Designer Interview Questions in India (2026)",
+      "published_or_updated": "2026-10-09",
+      "accessed": "2026-10-14",
+      "source_type": "行业研究/公开面试指南",
+      "evidence_limit": "样本聚焦印度岗位，不能直接代表中国市场；页面注明公司流程会变化，题目用于准备结构而非保证。"
+    },
+    {
+      "source_id": "S04",
+      "question": "A developer tells you your design cannot be built in the current sprint. What do you do?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-089",
+      "source_url": "https://knok.work/blog/ui-ux-designer-interview-questions-india.html",
+      "source_title": "UI/UX Designer Interview Questions in India (2026)",
+      "published_or_updated": "2026-10-09",
+      "accessed": "2026-10-14",
+      "source_type": "行业研究/公开面试指南",
+      "evidence_limit": "样本聚焦印度岗位，不能直接代表中国市场；页面注明公司流程会变化，题目用于准备结构而非保证。"
+    },
+    {
+      "source_id": "S04",
+      "question": "How do you ensure your designs are accessible to users with visual or motor impairments?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-090",
+      "source_url": "https://knok.work/blog/ui-ux-designer-interview-questions-india.html",
+      "source_title": "UI/UX Designer Interview Questions in India (2026)",
+      "published_or_updated": "2026-10-09",
+      "accessed": "2026-10-14",
+      "source_type": "行业研究/公开面试指南",
+      "evidence_limit": "样本聚焦印度岗位，不能直接代表中国市场；页面注明公司流程会变化，题目用于准备结构而非保证。"
+    },
+    {
+      "source_id": "S04",
+      "question": "Tell me about a time you had to defend a design decision to a sceptical stakeholder.",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-091",
+      "source_url": "https://knok.work/blog/ui-ux-designer-interview-questions-india.html",
+      "source_title": "UI/UX Designer Interview Questions in India (2026)",
+      "published_or_updated": "2026-10-09",
+      "accessed": "2026-10-14",
+      "source_type": "行业研究/公开面试指南",
+      "evidence_limit": "样本聚焦印度岗位，不能直接代表中国市场；页面注明公司流程会变化，题目用于准备结构而非保证。"
+    },
+    {
+      "source_id": "S04",
+      "question": "Describe a project where alignment broke down between design, product, and engineering. How did you fix it?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-092",
+      "source_url": "https://knok.work/blog/ui-ux-designer-interview-questions-india.html",
+      "source_title": "UI/UX Designer Interview Questions in India (2026)",
+      "published_or_updated": "2026-10-09",
+      "accessed": "2026-10-14",
+      "source_type": "行业研究/公开面试指南",
+      "evidence_limit": "样本聚焦印度岗位，不能直接代表中国市场；页面注明公司流程会变化，题目用于准备结构而非保证。"
+    },
+    {
+      "source_id": "S04",
+      "question": "Share a design that did not perform as expected after launch. What did you learn?",
+      "roles": [
+        "UI",
+        "UX",
+        "产品设计"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-093",
+      "source_url": "https://knok.work/blog/ui-ux-designer-interview-questions-india.html",
+      "source_title": "UI/UX Designer Interview Questions in India (2026)",
+      "published_or_updated": "2026-10-09",
+      "accessed": "2026-10-14",
+      "source_type": "行业研究/公开面试指南",
+      "evidence_limit": "样本聚焦印度岗位，不能直接代表中国市场；页面注明公司流程会变化，题目用于准备结构而非保证。"
+    },
+    {
+      "source_id": "S02",
+      "question": "你为什么这样设计？",
+      "roles": [
+        "UI",
+        "UX",
+        "视觉",
+        "产品设计"
+      ],
+      "extraction": "原文问法/示例题型抽取",
+      "item_id": "UIUX-3M-094",
+      "source_url": "https://offergo.site/articles/ui-ux-designer-interview-guide",
+      "source_title": "UI/UX设计师面试全攻略",
+      "published_or_updated": "2026-08-30",
+      "accessed": "2026-10-14",
+      "source_type": "中文公开面试指南",
+      "evidence_limit": "文章是求职指导，不代表固定企业流程；部分问法来自举例场景，已标为“题型抽取”。"
+    },
+    {
+      "source_id": "S02",
+      "question": "如果产品经理和你的意见冲突怎么办？",
+      "roles": [
+        "UI",
+        "UX",
+        "视觉",
+        "产品设计"
+      ],
+      "extraction": "原文问法/示例题型抽取",
+      "item_id": "UIUX-3M-095",
+      "source_url": "https://offergo.site/articles/ui-ux-designer-interview-guide",
+      "source_title": "UI/UX设计师面试全攻略",
+      "published_or_updated": "2026-08-30",
+      "accessed": "2026-10-14",
+      "source_type": "中文公开面试指南",
+      "evidence_limit": "文章是求职指导，不代表固定企业流程；部分问法来自举例场景，已标为“题型抽取”。"
+    },
+    {
+      "source_id": "S02",
+      "question": "你如何验证一个设计方案是否有效？",
+      "roles": [
+        "UI",
+        "UX",
+        "视觉",
+        "产品设计"
+      ],
+      "extraction": "原文问法/示例题型抽取",
+      "item_id": "UIUX-3M-096",
+      "source_url": "https://offergo.site/articles/ui-ux-designer-interview-guide",
+      "source_title": "UI/UX设计师面试全攻略",
+      "published_or_updated": "2026-08-30",
+      "accessed": "2026-10-14",
+      "source_type": "中文公开面试指南",
+      "evidence_limit": "文章是求职指导，不代表固定企业流程；部分问法来自举例场景，已标为“题型抽取”。"
+    },
+    {
+      "source_id": "S02",
+      "question": "为什么使用卡片式布局？",
+      "roles": [
+        "UI",
+        "UX",
+        "视觉",
+        "产品设计"
+      ],
+      "extraction": "原文问法/示例题型抽取",
+      "item_id": "UIUX-3M-097",
+      "source_url": "https://offergo.site/articles/ui-ux-designer-interview-guide",
+      "source_title": "UI/UX设计师面试全攻略",
+      "published_or_updated": "2026-08-30",
+      "accessed": "2026-10-14",
+      "source_type": "中文公开面试指南",
+      "evidence_limit": "文章是求职指导，不代表固定企业流程；部分问法来自举例场景，已标为“题型抽取”。"
+    },
+    {
+      "source_id": "S02",
+      "question": "请为一个60岁老人设计点外卖的流程。",
+      "roles": [
+        "UI",
+        "UX",
+        "视觉",
+        "产品设计"
+      ],
+      "extraction": "原文问法/示例题型抽取",
+      "item_id": "UIUX-3M-098",
+      "source_url": "https://offergo.site/articles/ui-ux-designer-interview-guide",
+      "source_title": "UI/UX设计师面试全攻略",
+      "published_or_updated": "2026-08-30",
+      "accessed": "2026-10-14",
+      "source_type": "中文公开面试指南",
+      "evidence_limit": "文章是求职指导，不代表固定企业流程；部分问法来自举例场景，已标为“题型抽取”。"
+    },
+    {
+      "source_id": "S02",
+      "question": "当你和开发争论一个交互细节时，如何通过证据达成决定？",
+      "roles": [
+        "UI",
+        "UX",
+        "视觉",
+        "产品设计"
+      ],
+      "extraction": "原文问法/示例题型抽取",
+      "item_id": "UIUX-3M-099",
+      "source_url": "https://offergo.site/articles/ui-ux-designer-interview-guide",
+      "source_title": "UI/UX设计师面试全攻略",
+      "published_or_updated": "2026-08-30",
+      "accessed": "2026-10-14",
+      "source_type": "中文公开面试指南",
+      "evidence_limit": "文章是求职指导，不代表固定企业流程；部分问法来自举例场景，已标为“题型抽取”。"
+    },
+    {
+      "source_id": "S05",
+      "question": "Walk me through user research methods — what breaks first at scale?",
+      "roles": [
+        "UI",
+        "UX"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-100",
+      "source_url": "https://www.octohires.com/blog/ui-ux-interview-questions",
+      "source_title": "UI UX interview questions: Complete 2026 Interview Guide",
+      "published_or_updated": "2026-10-07",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/样题",
+      "evidence_limit": "样题数量少且页面部分措辞为泛化模板；不能证明招聘者在真实面试中按原句提问。"
+    },
+    {
+      "source_id": "S05",
+      "question": "Walk me through wireframing to hi-fi — what breaks first at scale?",
+      "roles": [
+        "UI",
+        "UX"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-101",
+      "source_url": "https://www.octohires.com/blog/ui-ux-interview-questions",
+      "source_title": "UI UX interview questions: Complete 2026 Interview Guide",
+      "published_or_updated": "2026-10-07",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/样题",
+      "evidence_limit": "样题数量少且页面部分措辞为泛化模板；不能证明招聘者在真实面试中按原句提问。"
+    },
+    {
+      "source_id": "S05",
+      "question": "Walk me through usability testing — what breaks first at scale?",
+      "roles": [
+        "UI",
+        "UX"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-102",
+      "source_url": "https://www.octohires.com/blog/ui-ux-interview-questions",
+      "source_title": "UI UX interview questions: Complete 2026 Interview Guide",
+      "published_or_updated": "2026-10-07",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/样题",
+      "evidence_limit": "样题数量少且页面部分措辞为泛化模板；不能证明招聘者在真实面试中按原句提问。"
+    },
+    {
+      "source_id": "S05",
+      "question": "Walk me through design systems — what breaks first at scale?",
+      "roles": [
+        "UI",
+        "UX"
+      ],
+      "extraction": "原文问法",
+      "item_id": "UIUX-3M-103",
+      "source_url": "https://www.octohires.com/blog/ui-ux-interview-questions",
+      "source_title": "UI UX interview questions: Complete 2026 Interview Guide",
+      "published_or_updated": "2026-10-07",
+      "accessed": "2026-10-14",
+      "source_type": "公开面试指南/样题",
+      "evidence_limit": "样题数量少且页面部分措辞为泛化模板；不能证明招聘者在真实面试中按原句提问。"
+    }
+  ],
+  "limitations": [
+    "本轮未获得可核验的雇主内部题库，不能称为公司真题全集或全国热门排名。",
+    "103条是逐字去重记录，保留了平台、地区、规模和岗位场景变体；其中存在语义相近题目，不能把103条当作103条相互独立的热门真题。",
+    "来源地域以英文国际/印度指南和中文求职指南为主，不能直接推断中国企业的题目频率。",
+    "公开指南会把练习题、示例问法和候选人报告混合；本记录保留来源类型和抽取质量，未把它们混称。",
+    "严格真实面经证据只有Callebe个人27场面试样本（S06），其频次不能外推总体市场。",
+    "真实求职结果、真人设计专家复核、岗位数量与录用概率尚未由本记录验证。"
+  ],
+  "item_count_note": "103条公开题目/题型记录（逐字去重，保留场景变体）；存在语义重复，不等于103条相互独立热门真题。",
+  "total_sources_reviewed": 6,
+  "supplement_source_count": 1,
+  "supplement_sources": {
+    "S06": {
+      "title": "27 Interview Questions for Designers: Most Frequent Questions and Themes",
+      "url": "https://www.linkedin.com/posts/callebe_between-may-and-august-2026-i-sat-through-activity-7495472551247261696-m8lW",
+      "posted_date": "未公开精确日（页面显示“1w”，访问日2026-10-14）",
+      "interview_period": "2026-05—2026-08",
+      "source_type": "候选人LinkedIn面经（个人样本）",
+      "roles": [
+        "产品设计",
+        "UX",
+        "UI",
+        "AI设计"
+      ],
+      "evidence": "作者Callebe Silva明确写明在2026年5月至8月参加27场面试并按被问到的题目记录频次；页面正文给出主题频次及部分单题频次。",
+      "evidence_grade": "对该个人27场样本的实际报告频次为高证据；对整个市场的外推证据有限。",
+      "limits": "单一候选人、岗位与地域背景未知；LinkedIn页面未显示精确发布日期；只代表其经历，不能当作全国或单一公司的统计。"
+    }
+  },
+  "real_interview_supplement": {
+    "source_id": "S06",
+    "included_in_main_103": false,
+    "sample_n_interviews": 27,
+    "reported_interview_period": "2026-05—2026-08",
+    "reported_text_excerpt": "Between May and August 2026 I sat through 27 interviews and took notes of questions as I was asked.",
+    "frequency_definition": "括号中的x为作者报告的27场面试中出现次数；未标括号的问法按作者说明视为出现1次。主题括号为主题级汇总，题目括号为单题频次。",
+    "themes": [
+      {
+        "theme": "Opening and background",
+        "theme_frequency": 19,
+        "questions": [
+          {
+            "question": "Tell me about yourself, your background, and how you got to where you are today",
+            "frequency": 7
+          },
+          {
+            "question": "Are you still at your current company, or has that role ended?",
+            "frequency": 3
+          },
+          {
+            "question": "Tell me about what you were doing before that",
+            "frequency": 1
+          },
+          {
+            "question": "Who inspired you when you were a kid?",
+            "frequency": 1
+          },
+          {
+            "question": "What kind of person were you in high school?",
+            "frequency": 1
+          },
+          {
+            "question": "You studied something unrelated. How did you end up in design?",
+            "frequency": 1
+          }
+        ]
+      },
+      {
+        "theme": "Role and scope",
+        "theme_frequency": 9,
+        "questions": [
+          {
+            "question": "Tell me about your last company. What was the product, and what did you personally own?",
+            "frequency": 4
+          },
+          {
+            "question": "How big was the team, and what did your day to day actually look like?",
+            "frequency": 1
+          },
+          {
+            "question": "How many users were on the product?",
+            "frequency": 1
+          },
+          {
+            "question": "What was the hardest part of your day to day there?",
+            "frequency": 1
+          },
+          {
+            "question": "What is the most complex product you have worked on?",
+            "frequency": 1
+          }
+        ]
+      },
+      {
+        "theme": "Design process and craft",
+        "theme_frequency": 7,
+        "questions": [
+          {
+            "question": "Walk me through your process, from a problem landing on your desk to a shipped solution",
+            "frequency": 6
+          },
+          {
+            "question": "Tell me about a time the requirements were vague or unclear. How did you navigate it?",
+            "frequency": 5
+          },
+          {
+            "question": "What part of the design role comes most naturally to you, and what takes more effort?",
+            "frequency": 4
+          },
+          {
+            "question": "Walk me through the most data heavy or information dense interface you have designed. How did you build the hierarchy without oversimplifying?",
+            "frequency": 1
+          },
+          {
+            "question": "Someone tells you a feature is \"confusing\" and gives you nothing else. How do you go about it?",
+            "frequency": 1
+          }
+        ]
+      },
+      {
+        "theme": "AI and design",
+        "theme_frequency": 15,
+        "questions": [
+          {
+            "question": "How are you using AI in your design process? Give me a specific example",
+            "frequency": 5
+          },
+          {
+            "question": "Which AI tools do you use day to day?",
+            "frequency": 4
+          },
+          {
+            "question": "Are you still working in Figma, or is it all in code now?",
+            "frequency": null
+          },
+          {
+            "question": "Do you think AI takes away creativity?",
+            "frequency": null
+          },
+          {
+            "question": "How do you make sure your work does not look like everyone else’s?",
+            "frequency": null
+          }
+        ]
+      },
+      {
+        "theme": "Collaboration and conflict",
+        "theme_frequency": 12,
+        "questions": [
+          {
+            "question": "Do you have experience working directly with product managers and engineers? What does that collaboration look like?",
+            "frequency": 6
+          },
+          {
+            "question": "Tell me about a time you disagreed with a PM, an engineer or leadership. How did you handle it?",
+            "frequency": 5
+          },
+          {
+            "question": "Have you worked as part of a design team, or with other designers?",
+            "frequency": 3
+          },
+          {
+            "question": "What would your last manager say about working with you? What would they rate you out of ten?",
+            "frequency": 2
+          },
+          {
+            "question": "What does a strong partnership with a product manager look like for you?",
+            "frequency": 1
+          }
+        ]
+      },
+      {
+        "theme": "Miscellaneous",
+        "theme_frequency": 2,
+        "questions": [
+          {
+            "question": "What product do you really admire as a designer, and why?",
+            "frequency": 1
+          },
+          {
+            "question": "How would you approach an industry you know nothing about, where users are not technical and every page is dense with data?",
+            "frequency": 1
+          },
+          {
+            "question": "If I brought you a problem right now, walk me through how you would solve it and communicate it back to me and engineering",
+            "frequency": 1
+          }
+        ]
+      }
+    ],
+    "strict_real_interview_scope": "本轮严格可称为真实候选人面经的只有S06这一个人的27场样本；其余103条来自公开指南/题库/行业研究，不能称为真实面经。"
+  }
+}

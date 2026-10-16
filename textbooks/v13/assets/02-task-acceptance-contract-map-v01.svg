@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+<title id="title">任务合同：从目标到合理停止</title>
+<desc id="desc">任务合同视觉图。先固定目标和输入，再限制允许读取、写入和禁止行为，最后用产物、过程和效果证据判断完成；缺证、缺批准和效果未知时进入对应的停止状态。</desc>
+<defs>
+<style>
+.t{font:700 36px 'PingFang SC','Microsoft YaHei',sans-serif;fill:#182230}.h{font:700 24px 'PingFang SC','Microsoft YaHei',sans-serif;fill:#182230}.b{font:600 20px 'PingFang SC','Microsoft YaHei',sans-serif;fill:#182230}.s{font:500 17px 'PingFang SC','Microsoft YaHei',sans-serif;fill:#526174}.tiny{font:500 15px 'PingFang SC','Microsoft YaHei',sans-serif;fill:#526174}.line{stroke:#3c6e9e;stroke-width:4;fill:none;marker-end:url(#arr)}
+</style>
+<marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3c6e9e"/></marker>
+<filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#17324c" flood-opacity=".12"/></filter>
+</defs>
+<rect width="1400" height="900" fill="#f6f8fb"/><rect x="42" y="34" width="1316" height="832" rx="24" fill="#fff" stroke="#d5dee8" stroke-width="2"/>
+<text x="82" y="92" class="t">任务合同：先定义完成，再允许行动</text><text x="82" y="126" class="s">02-task-acceptance · 把“生成了文字”与“业务目标完成”分开</text>
+<rect x="1138" y="68" width="160" height="38" rx="19" fill="#eef3f8" stroke="#b7c7d8" stroke-width="2"/><text x="1218" y="93" text-anchor="middle" class="s">①→②→③</text>
+<!-- top contract -->
+<rect x="82" y="162" width="1236" height="118" rx="18" fill="#eaf3fb" stroke="#9dc1dd" stroke-width="2"/>
+<text x="116" y="205" class="h">① 目标与输入先固定</text><text x="116" y="242" class="b">目标结果　·　版本与报告　·　业务规则　·　时限与资源</text><text x="116" y="269" class="s">合同写出“要观察到什么”，不把模型的流畅表达当成目标完成。</text>
+<path d="M700 286V320" class="line"/>
+<!-- middle two columns -->
+<g filter="url(#shadow)">
+<rect x="82" y="320" width="590" height="220" rx="18" fill="#f1f5f8" stroke="#aebdca" stroke-width="2"/>
+<rect x="728" y="320" width="590" height="220" rx="18" fill="#fff8df" stroke="#e7c45d" stroke-width="2"/>
+</g>
+<text x="116" y="364" class="h">② 边界：能读什么、能写什么</text><text x="116" y="404" class="b">允许读取：指定修订的源文件与报告</text><text x="116" y="440" class="b">允许写入：一条准确批准的工单</text><text x="116" y="476" class="b">禁止：改代码、越范围读取、重复创建</text><text x="116" y="512" class="s">边界是运行时检查项，不靠提示语自觉。</text>
+<text x="762" y="364" class="h">③ 完成条件：三类证据同时成立</text><text x="762" y="404" class="b">产物：事实与推断分开，引用可回读</text><text x="762" y="440" class="b">过程：授权、准确批准和实际操作可核对</text><text x="762" y="476" class="b">效果：服务确认与原意图唯一对应</text><text x="762" y="512" class="s">HTTP 201 或一段好文字，不能独自证明整条链。</text>
+<path d="M700 546V580" class="line"/>
+<!-- bottom outcomes -->
+<rect x="82" y="580" width="1236" height="188" rx="18" fill="#f7fafc" stroke="#c6d2df" stroke-width="2"/>
+<text x="116" y="624" class="h">④ 证据决定结局</text>
+<g>
+<rect x="116" y="650" width="250" height="82" rx="14" fill="#e7f4ed" stroke="#9dcbb7" stroke-width="2"/><text x="241" y="681" text-anchor="middle" class="h">完成</text><text x="241" y="711" text-anchor="middle" class="s">产物、过程、效果齐全</text>
+<rect x="396" y="650" width="250" height="82" rx="14" fill="#fff3ec" stroke="#e8b28d" stroke-width="2"/><text x="521" y="681" text-anchor="middle" class="h">缺证停止</text><text x="521" y="711" text-anchor="middle" class="s">列出缺项，停止写入</text>
+<rect x="676" y="650" width="250" height="82" rx="14" fill="#f5f1fb" stroke="#c4b1df" stroke-width="2"/><text x="801" y="681" text-anchor="middle" class="h">缺批准等待</text><text x="801" y="711" text-anchor="middle" class="s">保留候选，不代替审批</text>
+<rect x="956" y="650" width="326" height="82" rx="14" fill="#fff0f0" stroke="#db9a9a" stroke-width="2"/><text x="1119" y="681" text-anchor="middle" class="h">效果未知</text><text x="1119" y="711" text-anchor="middle" class="s">核原操作，仍未知则等待</text>
+</g>
+<text x="82" y="818" class="tiny">来源：v12/02-task-acceptance.md　｜　状态：静态教学构造，未验证浏览器渲染、窄屏布局、真实服务回执与真人理解。</text>
+</svg>

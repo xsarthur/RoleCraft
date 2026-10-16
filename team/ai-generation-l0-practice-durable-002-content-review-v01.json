@@ -1,0 +1,51 @@
+{
+  "review_id": "AI-PRACTICE-DURABLE-002-CONTENT-REVIEW-v01",
+  "practice_id": "AI-PRACTICE-DURABLE-002",
+  "exercise_version": "v0.1",
+  "reviewer_role": "内容审校员",
+  "conclusion": "reviewed_with_limitations",
+  "scope": "只读核对学习者报告、JSON、隔离工件、practice pack v02对应练习、EvidenceCard与恢复收据",
+  "local_evidence": {
+    "normal_sequence": "supported_with_artifacts",
+    "idempotent_callback": "supported_with_artifacts",
+    "duplicate_payload_rejection": "supported_with_first_failure",
+    "single_draft": "supported_with_artifacts",
+    "four_first_failures_preserved": true,
+    "recovery_sequence": "reported_but_manifest_conflict",
+    "holdout_event_order": "supported_with_artifacts",
+    "self_signed": false,
+    "l1_l2_granted": false
+  },
+  "findings": [
+    {
+      "id": "DURABLE-CONTENT-001",
+      "severity": "high",
+      "status": "open",
+      "title": "checkpoint manifest is empty while receipt claims valid",
+      "evidence": [
+        "ai-generation-l0-practice-durable-002-v01/run-1/checkpoint_manifest.json is empty",
+        "run-1/manifest.json lists checkpoint hashes",
+        "recovery_receipts/recovery.json says checkpoint_manifest_valid=true"
+      ],
+      "impact": "Cannot independently verify per-checkpoint bytes/hash completeness required by the contract"
+    },
+    {
+      "id": "DURABLE-CONTENT-002",
+      "severity": "medium",
+      "status": "open",
+      "title": "status=final can overstate local review-only scope",
+      "impact": "Downstream readers could read local final snapshot as production finalization"
+    }
+  ],
+  "limitations": [
+    "local atomic JSON is not evidence of production durability, database guarantees, real process crash recovery, RPO/RTO, concurrency consistency, or LangGraph checkpoints",
+    "no real model/provider/API or external action",
+    "真人QA签收、真实接收方签收、真实学习效果未验证"
+  ],
+  "required_reverification": [
+    "AI generation engineer writes non-empty per-run checkpoint manifest with canonical bytes/hash/version/path",
+    "QA independently reruns original, affected regression, and event-order holdout",
+    "REV rechecks durability/RPO/RTO/production wording after repair"
+  ],
+  "does_not_grant": ["L1", "L2", "岗位认证", "生产验收"]
+}

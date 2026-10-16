@@ -1,0 +1,53 @@
+{
+  "review_id": "AI-L0-L1-GATE-CONTENT-20261015-01",
+  "date": "2026-10-15",
+  "role_id": "AI",
+  "reviewer_role": "content_reviewer",
+  "decision": "reviewed_with_limitations",
+  "l0_to_l1_review_readiness": "not_ready_hold_L0_guided",
+  "level_decision": "not_granted",
+  "inputs": [
+    "ai-generation-engineer-advancement-v03.md/.json",
+    "ai-generation-d0-v04-content-review.md/.json",
+    "ai-generation-l0-practice-source-001-content-review-v01.md/.json",
+    "ai-generation-l0-practice-durable-002-content-review-v04.md/.json",
+    "ai-generation-l0-practice-gate-003-content-review-v06.md/.json",
+    "SOURCE-001 EvidenceCard",
+    "DURABLE-002 v04 EvidenceCard/learner_raw",
+    "GATE-003 v06 EvidenceCard/learner_raw"
+  ],
+  "scope_findings": {
+    "mechanism": "met_within_local_fixture_scope",
+    "sources_versions": "reviewed_with_limitations",
+    "limits": "reviewed_within_declared_scope",
+    "learner_capability": "insufficient_evidence"
+  },
+  "gate_conditions": {
+    "five_d0_raw_answers_and_two_non_isomorphic_sandboxes": "fail",
+    "d1_d5_initial_evidence": "insufficient_evidence",
+    "e_ai_l0_003": "fail",
+    "u_ai_l0_001": "insufficient_evidence",
+    "rebuild_regression_holdout": "met_within_local_fixture_scope",
+    "no_open_p1": "not_satisfied_for_gate",
+    "human_gate_and_handoff_signoff": "fail"
+  },
+  "p1_ids": [
+    "P1-CONTENT-L1-001",
+    "P1-CONTENT-L1-002",
+    "P1-CONTENT-L1-003",
+    "P1-CONTENT-L1-004"
+  ],
+  "evidence_authenticity": {
+    "source_001": "learner_raw_missing; owner label only",
+    "durable_002_v04": "learner_raw is three observations under local-sandbox-learner; pending_QA",
+    "gate_003_v06": "learner_raw is one note; pending_QA; no human signoff"
+  },
+  "required_next_actions": [
+    "bind five D0 raw answers",
+    "submit two non-isomorphic learner sandboxes",
+    "submit E-AI-L0-003 and U-AI-L0-001",
+    "complete independent QA and receiver signoff",
+    "preserve local-only and not_granted labels"
+  ],
+  "artifact_sha256": "9bf7c38c16b6041691157244f7f817134cf3493d6426a38801b19a0f62a00ccc"
+}

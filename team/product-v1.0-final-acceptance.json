@@ -1,0 +1,67 @@
+{
+  "report": "product-v1.0-final-acceptance",
+  "checkedAt": "2026-10-16T03:35:00+08:00",
+  "environment": {
+    "url": "http://111.231.8.78/#learn",
+    "releaseVersion": "rolecraft-1.0",
+    "deploymentMode": "single-remote-development-environment"
+  },
+  "conclusion": {
+    "overall": "overall_not_met",
+    "limitedScope": "met_within_scope_for_learning_workbench_and_retrieval",
+    "qaFollowup": true,
+    "positioning": "industry knowledge and interview preparation support; no employment or certification claim"
+  },
+  "browserObserved": {
+    "desktop": {
+      "home": "current task card shows 未开始 and one 开始学习 CTA",
+      "mainNavigation": ["题库", "复习", "自评检验", "学习记录", "个人设置"],
+      "p01": "P01-MVP page exposes source identity, seven artifact fields, evidence refs, workflow status and return-to-source link",
+      "retrievalPositive": "answer card shows excerpt, source link, reading link; expanded identity shows textbook/index/corpus/source hashes",
+      "retrievalNoMatch": "no-match card shows rewrite and course-catalog recovery",
+      "careerAmbiguity": "React produces ReAct and frontend React clarification choices",
+      "careerConfirmationBoundary": "candidate shows version/hash and explicit confirm; unauthenticated confirm opens login dialog",
+      "questionBank": "FAIL: page visibly says 题库资料暂不可用；不会用演示题替代",
+      "unverified": ["interrupted/browsed task restoration", "logged-in career confirmation write", "P01 browser save/submit/refresh", "responsive 320/375/390/768/1280 CSS px", "keyboard", "screen reader", "200% zoom", "gray-scale"],
+      "visualEvidence": "Chrome accessibility tree and screenshot observed on the deployed page; no screenshot file was edited or substituted for independent QA"
+    }
+  },
+  "apiEvidence": {
+    "health": {"status": 200, "releaseVersion": "rolecraft-1.0", "mode": "local-development", "providerCalled": false},
+    "catalog": {"status": 200, "releaseVersion": "rolecraft-1.0", "contentVersion": "textbook-v12", "units": 30, "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"},
+    "learningPositive": {"status": "recommended", "resultType": "dialog_answer", "unitId": "c01-control-loop", "sectionId": "s-bcd387a0c196", "sourcePath": "textbooks/v12/c01-control-loop.md", "providerCalled": false},
+    "learningNoMatch": {"status": "no_match", "retrievalResultType": "related_uncovered", "resultCount": 0, "recovery": "改写/打开课程目录"},
+    "learningVersionMismatch": {"status": 409, "code": "content_version_mismatch"},
+    "learningContextGuard": {"status": 400, "code": "input_invalid"},
+    "progress": {"write": 200, "state": "in_progress", "unitId": "p01-mvp"},
+    "p01Submission": {"status": 201, "workflowStatus": "已提交", "evidenceStatus": "self_reported", "artifactVerification": "not_fetched_or_executed", "professionalStatus": "unreviewed", "humanStatus": "not_started"},
+    "p01SelfAssessment": {"status": 201, "type": "self_assessment", "independentStatus": "unreviewed"},
+    "clientVerdictGuard": {"status": 400, "code": "client_verdict_forbidden"}
+  },
+  "acceptance": {
+    "V1-01": {"status": "insufficient", "owner": ["客户端", "QA"], "reason": "仅观察未开始；四态恢复未完成"},
+    "V1-02": {"status": "insufficient", "owner": ["产品", "后端数据", "内容检索", "QA"], "reason": "澄清和登录门槛已观察；冲突/取消/登录后确认未复验"},
+    "V1-03": {"status": "met_within_scope", "owner": ["内容检索", "客户端", "QA"], "reason": "有出处的正向结果卡及 API 字段已绑定"},
+    "V1-04": {"status": "fail", "owner": ["客户端", "课程架构", "教材研发", "QA"], "reason": "题库页面明确资料暂不可用"},
+    "V1-05": {"status": "insufficient", "owner": ["客户端", "后端数据", "课程架构", "QA"], "reason": "API 隔离夹具链已通，浏览器提交流程和真实学习者证据未完成"},
+    "V1-06": {"status": "met_within_scope", "owner": ["后端数据", "内容检索", "客户端", "QA"], "reason": "页面和接口发布身份可核对"},
+    "V1-07": {"status": "insufficient", "owner": ["设计师", "客户端", "QA"], "reason": "仅观察桌面；响应式和可访问性矩阵未完成"},
+    "V1-08": {"status": "insufficient", "owner": ["内容检索", "后端数据", "客户端", "QA"], "reason": "歧义/无匹配/版本/上下文已测；来源失配、不可用和迟到响应未复验"},
+    "V1-09": {"status": "met_within_scope", "owner": ["项目经理", "QA"], "reason": "本地开发候选和 providerCalled=false 边界可见，无就业/认证承诺"}
+  },
+  "nextActions": [
+    {"action": "补齐题库数据与实际页面", "owner": ["客户端", "课程架构", "教材研发"], "retest": "V1-04 桌面/窄屏一次点击、刷新、后退和版本核对"},
+    {"action": "补做当前任务四态、P01 浏览器提交/修订/恢复", "owner": ["客户端", "后端数据", "QA"], "retest": "V1-01/V1-05 隔离账户证据"},
+    {"action": "完成职业确认、来源失配、不可用和迟到响应反例", "owner": ["后端数据", "内容检索", "客户端", "QA"], "retest": "V1-02/V1-08 固定请求响应和 UI 状态"},
+    {"action": "完成视口、键盘、读屏和 200% 缩放复验", "owner": ["设计师", "客户端", "QA"], "retest": "V1-07 五视口和可访问性收据"}
+  ],
+  "boundary": {
+    "employment": "not_claimed",
+    "certification": "not_claimed",
+    "realModelGeneration": "not_configured",
+    "humanExpertReview": "not_obtained",
+    "realLearnerOutcome": "not_obtained",
+    "productionReliability": "not_claimed",
+    "costEconomics": "not_measured"
+  }
+}

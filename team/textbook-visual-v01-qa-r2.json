@@ -1,0 +1,411 @@
+{
+  "schema": "rolecraft.textbook.qa.v2",
+  "artifact": "AI视觉内容设计入门",
+  "version": "v0.1-r1",
+  "at": "2026-10-14T00:00:00+08:00",
+  "role": "测试工程师",
+  "conclusion": "met_with_limitations",
+  "full_career_goal": "not_met",
+  "scope": [
+    "README",
+    "main textbook",
+    "sources",
+    "assets README",
+    "3 SVG assets",
+    "3 Markdown teaching fixtures"
+  ],
+  "baseline": {
+    "files": [
+      {
+        "path": "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/README.md",
+        "bytes": 3611,
+        "sha256": "09b39a4df6101705849a000a1c8a483a5819b47298659a9c5c433f329b7d1220"
+      },
+      {
+        "path": "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/ai-visual-content-design-textbook.md",
+        "bytes": 47518,
+        "sha256": "d105940e9b11f8c3ec0be24108ccfbca219d72525f8a536a2b8ad09e6bd2bbba"
+      },
+      {
+        "path": "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/sources.md",
+        "bytes": 9375,
+        "sha256": "4a07824a426a5da48f75e58d2e660f84ff7f7cad80209aab9c95c7588700b314"
+      },
+      {
+        "path": "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/assets/README.md",
+        "bytes": 1238,
+        "sha256": "e37cd06c788c81f97ff7cb34d9c2501d1e33cb8c6740d7447d9dbe0dbfdae884"
+      },
+      {
+        "path": "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/assets/brand-swatch-v01.svg",
+        "bytes": 1917,
+        "sha256": "4569de8dbcdcf2443b538ed88d8275a7cb4694d5ca5e2e372ef95b7a05d8acf7"
+      },
+      {
+        "path": "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/assets/case-board-v01.svg",
+        "bytes": 6373,
+        "sha256": "f9e080133c0247f3379fd3f59ee46cbaa1dc1204d7083de37462921320a21bea"
+      },
+      {
+        "path": "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/assets/channel-spec-v01.md",
+        "bytes": 1328,
+        "sha256": "c244f89089037a597538f8abb9a69fe86340d89cf15f420efbf22a50613a245e"
+      },
+      {
+        "path": "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/assets/claim-sheet-v01.md",
+        "bytes": 752,
+        "sha256": "54c5367b9d4983903c8882021b75c650ae91f3a91370a4744aac2599ce1b8e58"
+      },
+      {
+        "path": "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/assets/feedback-card-v01.md",
+        "bytes": 976,
+        "sha256": "231829c7d0b3f5e2e35fdfb136d1bce55fedbdb218a0dff22ff668b21465a8fc"
+      },
+      {
+        "path": "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/assets/product-pack-v01.svg",
+        "bytes": 1549,
+        "sha256": "5ba7120f0d98c95b46dd8b75430dbb58c0f3caab05e934012c74bcdaece86c68"
+      }
+    ],
+    "chapter_count": 12,
+    "local_link_count": 24,
+    "local_link_failures": [],
+    "source_id_sets": {
+      "J": {
+        "sources": [
+          "J01",
+          "J02",
+          "J03",
+          "J04",
+          "J05",
+          "J06",
+          "J07",
+          "J08",
+          "J09"
+        ],
+        "body": [
+          "J01",
+          "J02",
+          "J03",
+          "J04",
+          "J05",
+          "J06",
+          "J07",
+          "J08",
+          "J09"
+        ]
+      },
+      "I": {
+        "sources": [
+          "I01",
+          "I02",
+          "I03",
+          "I04",
+          "I05",
+          "I06",
+          "I07",
+          "I08",
+          "I09",
+          "I10"
+        ],
+        "body": [
+          "I01",
+          "I02",
+          "I03",
+          "I04",
+          "I05",
+          "I06",
+          "I07",
+          "I08",
+          "I09",
+          "I10"
+        ]
+      }
+    },
+    "asset_inventory": [
+      {
+        "name": "product-pack-v01.svg",
+        "exists": true,
+        "listed_in_assets_readme": true,
+        "referenced_in_main": true
+      },
+      {
+        "name": "brand-swatch-v01.svg",
+        "exists": true,
+        "listed_in_assets_readme": true,
+        "referenced_in_main": true
+      },
+      {
+        "name": "channel-spec-v01.md",
+        "exists": true,
+        "listed_in_assets_readme": true,
+        "referenced_in_main": true
+      },
+      {
+        "name": "claim-sheet-v01.md",
+        "exists": true,
+        "listed_in_assets_readme": true,
+        "referenced_in_main": true
+      },
+      {
+        "name": "feedback-card-v01.md",
+        "exists": true,
+        "listed_in_assets_readme": true,
+        "referenced_in_main": true
+      },
+      {
+        "name": "case-board-v01.svg",
+        "exists": true,
+        "listed_in_assets_readme": true,
+        "referenced_in_main": true
+      }
+    ],
+    "svg_xml": [
+      {
+        "name": "brand-swatch-v01.svg",
+        "root": "{http://www.w3.org/2000/svg}svg",
+        "viewBox": "0 0 980 360",
+        "has_title": true,
+        "has_desc": true
+      },
+      {
+        "name": "case-board-v01.svg",
+        "root": "{http://www.w3.org/2000/svg}svg",
+        "viewBox": "0 0 1600 1040",
+        "has_title": true,
+        "has_desc": true
+      },
+      {
+        "name": "product-pack-v01.svg",
+        "root": "{http://www.w3.org/2000/svg}svg",
+        "viewBox": "0 0 720 960",
+        "has_title": true,
+        "has_desc": true
+      }
+    ],
+    "teaching_fixture_checks": {
+      "channel_ids": [
+        "CH-45-01",
+        "CH-DETAIL-01",
+        "CH-SQ-01",
+        "CH-WIDE-01"
+      ],
+      "claim_ids": [
+        "CL-01",
+        "CL-02",
+        "CL-03",
+        "CL-04",
+        "CL-05"
+      ],
+      "feedback_role_rows": 4,
+      "feedback_intro_role_count": 3,
+      "feedback_table_role_count": 4,
+      "case_board_panels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "case_board_has_required_error_markers": true
+    }
+  },
+  "checks": [
+    {
+      "id": "R2-01",
+      "name": "chapter_navigation",
+      "status": "closed",
+      "chapter_count": 12,
+      "anchor_count": 12,
+      "path_and_anchor_failures": []
+    },
+    {
+      "id": "R2-02",
+      "name": "source_traceability",
+      "status": "closed_limited",
+      "jd_count": 9,
+      "interview_count": 10,
+      "ids_complete": true,
+      "chapter_level_mapping": "present",
+      "external_live_recheck": false
+    },
+    {
+      "id": "R2-03",
+      "name": "chapter_structure_and_practice",
+      "status": "pass",
+      "chapter_count": 12,
+      "capstone_stages": 6,
+      "has_minimum_evidence_section": true,
+      "has_ai_trace_section": true
+    },
+    {
+      "id": "R2-04",
+      "name": "teaching_assets_locatable",
+      "status": "pass",
+      "assets": [
+        {
+          "name": "product-pack-v01.svg",
+          "exists": true,
+          "listed_in_assets_readme": true,
+          "referenced_in_main": true
+        },
+        {
+          "name": "brand-swatch-v01.svg",
+          "exists": true,
+          "listed_in_assets_readme": true,
+          "referenced_in_main": true
+        },
+        {
+          "name": "channel-spec-v01.md",
+          "exists": true,
+          "listed_in_assets_readme": true,
+          "referenced_in_main": true
+        },
+        {
+          "name": "claim-sheet-v01.md",
+          "exists": true,
+          "listed_in_assets_readme": true,
+          "referenced_in_main": true
+        },
+        {
+          "name": "feedback-card-v01.md",
+          "exists": true,
+          "listed_in_assets_readme": true,
+          "referenced_in_main": true
+        },
+        {
+          "name": "case-board-v01.svg",
+          "exists": true,
+          "listed_in_assets_readme": true,
+          "referenced_in_main": true
+        }
+      ]
+    },
+    {
+      "id": "R2-05",
+      "name": "svg_and_markdown_integrity",
+      "status": "pass_static",
+      "svg_xml_parse": true,
+      "title_desc_present": true,
+      "channel_id_count": 4,
+      "claim_id_count": 5,
+      "case_board_panels": 5
+    },
+    {
+      "id": "R2-06",
+      "name": "local_links_and_anchors",
+      "status": "pass",
+      "link_count": 24,
+      "failures": []
+    },
+    {
+      "id": "R2-07",
+      "name": "ai_visual_vs_aigc_boundary",
+      "status": "pass",
+      "boundary_table_present": true,
+      "unrun_trace_labeled": true,
+      "contamination_found": false
+    },
+    {
+      "id": "R2-08",
+      "name": "fiction_rights_employment_boundary",
+      "status": "pass_limited",
+      "fictional_assets_labeled": true,
+      "legal_live_check": false,
+      "employment_proof_claim_found": false
+    },
+    {
+      "id": "R2-09",
+      "name": "source_stratification",
+      "status": "pass_limited",
+      "J04_actual_title_recorded": true,
+      "J09_404_recorded": true,
+      "I01_adjacent_UI_labeled": true,
+      "I04_advanced_UI_labeled": true
+    }
+  ],
+  "previous_findings": [
+    {
+      "id": "VD-F-01",
+      "status": "closed",
+      "evidence": "README now has 12 chapter links and prerequisite labels; all anchors resolve"
+    },
+    {
+      "id": "VD-F-02",
+      "status": "closed_limited",
+      "evidence": "正文 includes J01-J09 and I01-I10 labels; source IDs match sources table; external links not live rechecked"
+    }
+  ],
+  "counterexamples": [
+    {
+      "id": "CE-01",
+      "status": "closed",
+      "case": "AIGC/model training/node/batch workflow mixed in",
+      "evidence": "boundary table and exclusion language; no teaching steps"
+    },
+    {
+      "id": "CE-02",
+      "status": "closed",
+      "case": "sample JDs/interview questions presented as nationwide/fixed truth",
+      "evidence": "sample/limitation language and J09 invalidation"
+    },
+    {
+      "id": "CE-03",
+      "status": "closed",
+      "case": "fictional assets/claims/reviews/metrics presented as real",
+      "evidence": "assets and CL status labels"
+    },
+    {
+      "id": "CE-04",
+      "status": "closed",
+      "case": "portfolio/rubric presented as employment proof",
+      "evidence": "explicit boundary"
+    },
+    {
+      "id": "CE-05",
+      "status": "closed",
+      "case": "AI output treated as tested/final",
+      "evidence": "case board is human-arranged and trace says not_run"
+    },
+    {
+      "id": "CE-06",
+      "status": "closed",
+      "case": "case maintenance strategy presented as universal legal rule",
+      "evidence": "responsibility split in chapters 7/9"
+    }
+  ],
+  "findings": [
+    {
+      "id": "VD-R2-F-01",
+      "severity": "P2",
+      "status": "open",
+      "owner": "教材研发员",
+      "summary": "feedback-card-v01.md line 3 says 三位角色, but table has four roles and正文 uses 四个固定角色",
+      "evidence": {
+        "asset_line": 3,
+        "table_rows": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "main_lines": [
+          405,
+          504
+        ]
+      },
+      "retest": "change asset intro to 四位角色, recompute asset/author hashes, rerun role-count and reference consistency"
+    }
+  ],
+  "limitations": [
+    "sips could not rasterize SVG in this environment; XML/text/size checks passed but browser/design-software rendering was not validated",
+    "external URLs, platform rules and current copyright/tool terms not live rechecked",
+    "no model/design-software run, upload, paid call, learner, expert, employer or employment evidence"
+  ],
+  "retest_conditions": [
+    "fix feedback-card role-count mismatch",
+    "recompute hash bindings",
+    "rerun local links/anchors, asset inventory, role count and body references",
+    "then obtain visual render and real learner/portfolio evidence separately"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "review_id": "ai-generation-l0-learner-handoff-content-review-v18",
+  "review_status": "reviewed_with_limitations",
+  "scope_conclusion": "not_met",
+  "d0_05_execution_log": "partial",
+  "d0_05_independent_holdout": "partial",
+  "matrix_binding": "partial_static",
+  "evidence_card_d0_05_boundary": "partial",
+  "evidence_card_cross_question_boundary": "fail",
+  "script_assertions": "partial_unexecuted",
+  "version_status": "pass_declaration",
+  "level_decision": {"d0":"not_assessed","l0":"not_assessed","l1":"not_granted","l2":"not_granted"},
+  "findings": [
+    "execution-log 新增 expected/observed/pass/source_refs，但 source_hash 为 local-hash，缺时间、环境、命令、运行者和产出签名",
+    "D0-05 EvidenceCard 引用的 holdout-input.json 与 holdout-output.json 不存在且未登记 manifest",
+    "holdout 与 first_failure 文本不同并增加 outage_duration=7，但共享 doc-A-shipping-v3/shipping-v3 身份，未证明独立来源或未知任务",
+    "matrix 路径与内嵌字段静态对应，未覆盖 manifest 哈希、全量一一绑定及执行收据",
+    "d0-01、d0-02、d0-04 仍共享 d0-05/first_failure.json，跨题归属和隔离未说明",
+    "尝试运行 run_bundle.py 因只读权限写回工件失败，未完成断言执行"
+  ],
+  "method_limits": ["未完成脚本运行或故障重放","未调用真实模型/API/云/付费服务/生产环境","未验证未知迁移、持久性、并发、外部副作用、真人签收、学习效果或职业能力"],
+  "required_actions": ["补齐并登记 holdout-input.json 与 holdout-output.json","提供可核对 source hash、执行时间/环境/命令、观察值、通过条件和产出签名","修正跨题 EvidenceCard 引用或明确共享 fixture 的隔离与用途","由 QA 在可写隔离副本重新运行并复验 manifest、卡片和来源边界"]
+}

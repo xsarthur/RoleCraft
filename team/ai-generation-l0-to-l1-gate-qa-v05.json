@@ -1,0 +1,23 @@
+{
+  "report_id": "AI-GEN-L0-TO-L1-GATE-QA-v05",
+  "date": "2026-10-15",
+  "role": "测试工程师",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "decision": "remain_L0_guided",
+  "l1_review": "insufficient_evidence",
+  "level_granted": false,
+  "inputs": ["learner-evidence-v04", "learner-evidence-qa-v04", "learner-evidence-content-review-v04", "d0-learner-demo-v02-qa", "d0-learner-demo-v02-content-review", "B-denial QA/content", "SOURCE-001", "DURABLE-002", "GATE-003", "gate-qa-v04"],
+  "checks": {
+    "five_d0_same_diagnostic_learner_and_demo": {"status":"fail", "reason":"learner QA pending; no complete learner-to-demo EvidenceCard; B-denial QA cannot substitute"},
+    "d1_d5": {"status":"partial_fail", "reason":"local practice slices only; incomplete learner binding and no human receipt"},
+    "two_non_isomorphic_sandboxes": {"status":"partial_pass", "reason":"SOURCE/B-denial and DURABLE/GATE holdouts exist but are not complete learner-submitted dual sandboxes"},
+    "examples_regression_failure_migration": {"status":"partial_pass", "reason":"local fixture replays and holdouts; real runtime and unknown-task migration unverified"},
+    "qa_rev": {"status":"partial_pass", "reason":"independent QA/REV records exist with limitations; no level grant"},
+    "d6_tradeoff": {"status":"partial_fail", "reason":"fixture counts source/version/tenant/schema 1/1 and claim 0/1; no real-model control or overall quality claim"},
+    "p1_open_items": {"status":"fail", "reason":"learner binding, D6, migration, runtime scope and human receipt remain open"},
+    "human_receipt": {"status":"pending", "reason":"handoffs remain QA/pending and self_signed=false"}
+  },
+  "b_denial_boundary": {"qa_scope":"met_with_limitations", "learner_status":"unverified", "count_as_learner_pass":false},
+  "limitations": ["deterministic local fixtures", "no real model/provider/API/database/cloud", "no production crash recovery/RPO/RTO", "no unknown-task migration", "no human receipt or expert certification"],
+  "next_gate_requirements": ["complete same-diagnostic learner-to-demo binding and EvidenceCard", "learner-submitted two non-isomorphic sandboxes", "expand D6 field-level denominators/failures and state no real-model comparison", "human signoff or evidenced rejection after independent QA/REV", "re-run P1 and define verified runtime scope"]
+}

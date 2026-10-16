@@ -1,0 +1,423 @@
+{
+  "version": "app-v0.12-c01-card-fields-qa",
+  "generatedAt": "2026-10-15T15:30:02.660Z",
+  "scope": "c01-selection 索引重建后 Node24 双输入独立复验；职业卡与学习卡字段展示；旧 QA 与工程交接保留",
+  "previousQA": "app-v0.12-continuation-qa.md/.json (保留历史，不覆盖)",
+  "runtime": {
+    "node": "v24.16.0",
+    "nodeMajor": 24,
+    "http": "in_process_http_handler_with_temp_sqlite",
+    "tcp": {
+      "status": "insufficient",
+      "reason": "Node24 回环绑定返回 2; 未形成业务真实 TCP 证据。"
+    },
+    "browser": "not_run",
+    "externalProviderCalled": false,
+    "formalDatabase": "not_touched"
+  },
+  "sourceBinding": {
+    "c01SourceSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+    "c01IndexSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+    "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+    "indexSha256": "c005e8fd4071d14a8acc657a762e53359ea79cd785879bdbaceb52c4768b8142",
+    "contentDataSha256": "3eb094b460e0a1f545820232058d3b58b4c85d1353c87895709af3784d408b12",
+    "vectorsSha256": "56b81378723d8cd915abb848bc8ec6c4a84eeac0a52fe548ca711ae183f49e47",
+    "intentVectorsSha256": "cd0f1e55e25d9b275558baf1693f0721b6ae9eb896a7519c582e8e75a0b51431",
+    "dist/index.html": "de8647133091a34e767816c02cc47d2d792d88ff41b5e851a1b6002bf2dc817b",
+    "dist/auth-career-v15.js": "48f6b83354c89546cd884ab505e73653814f03cf323c20aad5d7561869be078c",
+    "dist/learning-workbench.js": "00164fb51872de3e91f61eca0730278495a29b22440e211690ba1826cbcd613d",
+    "dist/learning-workbench.css": "e158928612de4763a1d87434e770311556c7e043fa1b1ac9d0c501e8bab2a1b5",
+    "server/index.mjs": "53d0eabed6dc490f772ba94df3d6a6cba8056eaa55388bb79463feb3ca4a7c3e",
+    "server/retrieval/index.mjs": "c87dfde6c1ae60ee7594bf5f033ab4fc2a90554a55deabe8520f1045bfc43530",
+    "server/retrieval/dialog.mjs": "db17b415b6d53c82ce933c064dc21c6d0ea00d2567e63b8fb0c20653f6dee4f1",
+    "textbooks/v12/c01-selection.md": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+    "team/app-v0.12-c01-retrieval-repair.md": "27db0d4706750abc269b292a92d105051230ceeae177689367b155618579592d",
+    "team/app-v0.12-c01-backend-sync.md": "fa18799d2e3679b90c4c1ffa1573044bc9c6253714ae10e09d9aff44aa49f15f"
+  },
+  "checks": [
+    {
+      "id": "catalog-rebuild-c01-hash",
+      "status": "pass",
+      "evidence": {
+        "units": 30,
+        "c01IndexSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "c01SourceSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+        "recomputedCorpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "catalog-readiness-node24",
+      "status": "pass",
+      "evidence": {
+        "available": true,
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+        "units": 30,
+        "localSemanticPrepared": true,
+        "runtimeSupported": true,
+        "requiredNodeMajor": 24,
+        "nodeVersion": "v24.16.0",
+        "providerCalled": false
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "career-recommend-card-contract",
+      "status": "pass",
+      "evidence": {
+        "status": 200,
+        "requestId": "7a08c20d-0486-4931-80a0-c31bce0cd9ee",
+        "candidate": {
+          "careerId": "agent-developer",
+          "matchedSignals": [
+            "Agent"
+          ],
+          "gaps": [
+            "服务未提供差距说明"
+          ],
+          "actions": [
+            "confirm",
+            "compare",
+            "browse_content"
+          ],
+          "contentVersion": "textbook-v12",
+          "indexVersion": "content-retrieval-0.12-v12",
+          "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+        }
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "career-react-clarification",
+      "status": "pass",
+      "evidence": {
+        "status": 200,
+        "requestId": "58922890-8b64-499d-b82c-1a69e97d1fb9",
+        "options": [
+          "Agent 的 ReAct 方法",
+          "前端 React 框架"
+        ]
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "career-no-match",
+      "status": "pass",
+      "evidence": {
+        "status": 200,
+        "requestId": "1d5c397e-d271-4798-81eb-f8c6308bdcd3",
+        "statusValue": "no_match",
+        "candidateCount": 0
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "account-fixture",
+      "status": "pass",
+      "evidence": {
+        "status": 201,
+        "hasCookie": true,
+        "hasCsrf": true
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "career-confirm-write",
+      "status": "pass",
+      "evidence": {
+        "status": 200,
+        "body": {
+          "requestId": "e7f9faaf-582c-4990-ac28-57fb8dee545d",
+          "recommendationRequestId": "300f3715-c7f9-47cc-bac2-fe6298194141",
+          "status": "confirmed",
+          "agentVersion": "agent-system-v0.12",
+          "career": {
+            "careerId": "agent-developer",
+            "title": "Agent 开发者",
+            "status": "published",
+            "contentVersion": "textbook-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          },
+          "write": {
+            "target": "active_career",
+            "source": "agent_confirmed",
+            "idempotent": false,
+            "idempotencyKey": "qa-card-confirm-1792078201394"
+          },
+          "next": {
+            "open": "learning_home"
+          }
+        }
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "career-confirm-idempotent",
+      "status": "pass",
+      "evidence": {
+        "status": 200,
+        "idempotent": true
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "career-confirm-version-conflict",
+      "status": "pass",
+      "evidence": {
+        "status": 409,
+        "error": {
+          "code": "career_version_mismatch",
+          "message": "职业目录或教材版本已变化，请重新推荐",
+          "requestId": "c9e10253-60d1-4c86-92a4-e0d128582b41"
+        }
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "learning-react-clarification",
+      "status": "pass",
+      "evidence": {
+        "status": 200,
+        "statusValue": "needs_clarification",
+        "options": [
+          "Agent 的 ReAct 方法",
+          "前端 React 框架"
+        ],
+        "providerCalled": false
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "learning-unrelated-no-match",
+      "status": "pass",
+      "evidence": {
+        "status": 200,
+        "statusValue": "no_match",
+        "dialogStatus": "unrelated",
+        "resultCount": 0,
+        "citationCount": 0
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "learning-source-excerpt",
+      "status": "pass",
+      "evidence": {
+        "status": 200,
+        "statusValue": "recommended",
+        "result": {
+          "unitId": "e01",
+          "sectionId": "s-172c0d686372",
+          "sourcePath": "textbooks/v12/e01.md",
+          "sourceSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+          "href": "#learn/agent/e01/s-172c0d686372",
+          "version": "textbook-v12",
+          "indexVersion": "content-retrieval-0.12-v12",
+          "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+          "excerpt": "恢复不应从“上次聊天停在哪里”开始，而应从权威动作账本开始：哪些意图已固定，哪些尝试可能已发，哪个外部效果已确认，谁现在有权推进。"
+        }
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "learning-ordinary-query",
+      "status": "pass",
+      "evidence": {
+        "status": 200,
+        "statusValue": "recommended",
+        "providerCalled": false,
+        "resultType": "compare",
+        "resultCount": 2
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "learning-context-opt-in",
+      "status": "pass",
+      "evidence": {
+        "status": 200,
+        "statusValue": "recommended",
+        "contextUsed": {
+          "unitId": "c01-control-loop",
+          "sectionId": "s-81f9aaeecb60",
+          "corpusVersion": "textbook-v12",
+          "sourceSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8"
+        },
+        "resultCount": 2
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "learning-context-opt-in-enforced",
+      "status": "pass",
+      "evidence": {
+        "status": 400,
+        "error": {
+          "code": "input_invalid",
+          "message": "只有用户开启当前章节上下文时才可发送章节位置",
+          "requestId": "13c7c49f-9f61-41b8-b8b8-bd1be2477175"
+        }
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "learning-version-conflict",
+      "status": "pass",
+      "evidence": {
+        "status": 409,
+        "error": {
+          "code": "content_version_mismatch",
+          "message": "学习内容版本已变化，请刷新职业教材后重试",
+          "requestId": "c8210502-b6f8-4c78-aeca-c3bbcdae1eff"
+        }
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "learning-legacy-route",
+      "status": "pass",
+      "evidence": {
+        "status": 200,
+        "statusValue": "recommended",
+        "dialogStatus": "answered",
+        "corpusVersion": "textbook-v12"
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "dynamic-career-unavailable",
+      "status": "pass",
+      "evidence": {
+        "status": 200,
+        "statusValue": "unavailable",
+        "results": 0,
+        "providerCalled": false,
+        "contentVersion": "textbook-v12",
+        "textbookVersionId": "data-analytics-v1"
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "career-legacy-route",
+      "status": "pass",
+      "evidence": {
+        "status": 200,
+        "statusValue": "recommended",
+        "count": 1
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "client-node-check",
+      "status": "pass",
+      "evidence": {
+        "node": "v24.16.0",
+        "authStatus": 0,
+        "learningStatus": 0
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "career-card-field-template",
+      "status": "pass",
+      "evidence": {
+        "tokens": [
+          "匹配信号",
+          "待补能力",
+          "索引",
+          "浏览教材",
+          "可比较",
+          "服务未提供"
+        ],
+        "sha256": "48f6b83354c89546cd884ab505e73653814f03cf323c20aad5d7561869be078c"
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "learning-card-field-template",
+      "status": "pass",
+      "evidence": {
+        "tokens": [
+          "查看本次版本身份",
+          "教材身份",
+          "索引版本",
+          "语料 SHA256",
+          "查看出处与版本",
+          "稳定定位"
+        ],
+        "sha256": "00164fb51872de3e91f61eca0730278495a29b22440e211690ba1826cbcd613d"
+      },
+      "owner": "测试工程师"
+    },
+    {
+      "id": "client-protocol-version",
+      "status": "pass",
+      "evidence": {
+        "runtimeVersion": "local-workbench-0.15-p0",
+        "protocolVersion": "local-workbench-0.11"
+      },
+      "owner": "测试工程师"
+    }
+  ],
+  "counts": {
+    "total": 23,
+    "pass": 23,
+    "fail": 0,
+    "insufficient": 0
+  },
+  "overall": "met_with_limitations",
+  "limitations": [
+    "23项 Node24.16 进程内 HTTP handler 与隔离临时 SQLite/客户端模板检查全部通过；未触碰正式数据库或用户服务。",
+    "真实 TCP 业务请求因本地回环探针返回状态2未形成证据；浏览器、屏幕阅读器、键盘焦点、中文输入法、窄屏布局和迟到响应未运行，均保持 insufficient/not_run。",
+    "同进程职业确认幂等与版本冲突已复验；跨服务重启幂等仍未证明。",
+    "卡片字段以当前客户端模板静态绑定检查为证，未宣称真实浏览器布局或用户理解通过。",
+    "providerCalled=false；未调用外部模型、未上传、未发布、未修改教材正文、正式数据库或历史 QA。",
+    "当前工作区客户端字节须以 sourceBinding 中实际测试 SHA 为准；卡片工程交接的旧 SHA 与本轮实际 SHA 差异已单列。"
+  ],
+  "historicalEvidence": {
+    "previousQA": {
+      "path": "team/app-v0.12-continuation-qa.md/.json",
+      "sha256": "2ee8155e5abaea5cf94bdbde9fe018e7be93834616fdfa8385c67a36ffb21ff1",
+      "overall": "not_met",
+      "counts": {
+        "total": 17,
+        "pass": 10,
+        "fail": 4,
+        "insufficient": 3
+      }
+    },
+    "cardEngineeringHandoff": {
+      "path": "team/app-v0.12-card-fields-engineering.md",
+      "sha256": "925ba1e1a1c876ad9c5e65cf3473aada3910cffdf5d3a90732ed08d5367b1083",
+      "receivedClientShas": {
+        "auth-career-v15.js": "119ee8cacf91587065e52d23e476c0ceab05a3d30017a93212c859ebbfa03cf6",
+        "learning-workbench.js": "24d1963aa5737b825d4b718767960c359b7ef67050b2aba472dc0dee1a01e0d2"
+      },
+      "reportedModifiedClientShas": {
+        "auth-career-v15.js": "48f6b83354c89546cd884ab505e73653814f03cf323c20aad5d7561869be078c",
+        "learning-workbench.js": "160d267bb5684a41c5a7c18b27ce2c7e30c8ea448f7e793f010f0e100e579b81"
+      }
+    },
+    "retrievalRepair": {
+      "path": "team/app-v0.12-c01-retrieval-repair.md",
+      "sha256": "27db0d4706750abc269b292a92d105051230ceeae177689367b155618579592d",
+      "canonicalCorpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+      "c01SourceSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982"
+    },
+    "backendSync": {
+      "path": "team/app-v0.12-c01-backend-sync.md",
+      "sha256": "fa18799d2e3679b90c4c1ffa1573044bc9c6253714ae10e09d9aff44aa49f15f"
+    }
+  },
+  "postRunObservation": {
+    "learningWorkbenchShaAtReport": "00164fb51872de3e91f61eca0730278495a29b22440e211690ba1826cbcd613d",
+    "testedLearningWorkbenchSha": "00164fb51872de3e91f61eca0730278495a29b22440e211690ba1826cbcd613d",
+    "bindingMatchesTestedByte": true,
+    "note": "测试运行期间实际模板检查读取的 learning-workbench.js 为 00164fb…；此前 160d 交接与 ae677 中间观察均未被本次测试作为当前绑定，均保留为历史/中间版本。"
+  }
+}

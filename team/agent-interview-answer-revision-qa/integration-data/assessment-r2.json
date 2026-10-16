@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-14T07:53:26.049267+00:00",
+  "scope": "independent data/source/isolated VM only",
+  "status": "met_within_tested_scope",
+  "answerSetSha256": "2cd40dcca5342944ab7c0c7836e759054dc3b5d4aaf992508f78d9172473b61a",
+  "dataSha256": "4a9e3ce4f5067e77b26bdd551bed911a6efadb9fe905de206876f03c773dad7b",
+  "rendererSha256": "27c67c8ffa3e16249f96fea34880c405ee786424d0eec4a82f2f78f71c3e069a",
+  "contentStatus": "unchanged_124_approved_answers_not_reauthored",
+  "displayStatus": "met_within_data_vm_scope_browser_owned_by_parent",
+  "defectRetest": {
+    "id": "REV-QA-LINK-01",
+    "status": "passed_in_data_and_renderer_scope",
+    "originalFailures": 118,
+    "originalAffectedAnswers": 62,
+    "localLinksRetested": 372,
+    "localFailures": 0,
+    "externalLinksRetested": 28,
+    "allLinkOccurrences": 400,
+    "unresolved": 0
+  },
+  "checks": {
+    "base": 24,
+    "additional": 11,
+    "proseLines": 1899,
+    "codeBlocks": 13,
+    "tables": 22,
+    "oldEvidence": 327,
+    "prototypeFollowups": 20,
+    "bodyBytes": 412402
+  },
+  "checksAllPassed": true,
+  "receivedFilesEndCheck": [
+    {
+      "path": "sites/rolecraft/dist/interview-answers-v1-data.js",
+      "receivedSha256": "4a9e3ce4f5067e77b26bdd551bed911a6efadb9fe905de206876f03c773dad7b",
+      "endSha256": "4a9e3ce4f5067e77b26bdd551bed911a6efadb9fe905de206876f03c773dad7b",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/dist/interview-answer-renderer.js",
+      "receivedSha256": "27c67c8ffa3e16249f96fea34880c405ee786424d0eec4a82f2f78f71c3e069a",
+      "endSha256": "27c67c8ffa3e16249f96fea34880c405ee786424d0eec4a82f2f78f71c3e069a",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/dist/interview-answer-reader.css",
+      "receivedSha256": "94a65d0e234357678da6d5d8dcce2ef9fee39f9004b3611764935e248e255bff",
+      "endSha256": "94a65d0e234357678da6d5d8dcce2ef9fee39f9004b3611764935e248e255bff",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/dist/index.html",
+      "receivedSha256": "407983825552db7ea4da8b643e30ca9ef8b300622871e89be5610be0e9ed0eca",
+      "endSha256": "407983825552db7ea4da8b643e30ca9ef8b300622871e89be5610be0e9ed0eca",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-experience-v13.js",
+      "receivedSha256": "3cc08b26fbf11be0e6515f2e966eeaa728cff890ce1cd013a9b93e86c9f139b9",
+      "endSha256": "3cc08b26fbf11be0e6515f2e966eeaa728cff890ce1cd013a9b93e86c9f139b9",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/dist/interview-prep-v1-prototype.html",
+      "receivedSha256": "1051cb0b1a97b3b7803f50ad0ec162c92cb19efae246d38a2c228cd433f54469",
+      "endSha256": "1051cb0b1a97b3b7803f50ad0ec162c92cb19efae246d38a2c228cd433f54469",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-v13-data.js",
+      "receivedSha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "endSha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/dist/content-v12-data.js",
+      "receivedSha256": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224",
+      "endSha256": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/manifest.json",
+      "receivedSha256": "e3bb9ecf56c525b57019af129a96159d258a21a1768c382ef536eb4430614fe5",
+      "endSha256": "e3bb9ecf56c525b57019af129a96159d258a21a1768c382ef536eb4430614fe5",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/README.md",
+      "receivedSha256": "3455af3c61cb020913010d1c6ee122cfc28f3cf82296bca34234f9e5aa2ca939",
+      "endSha256": "3455af3c61cb020913010d1c6ee122cfc28f3cf82296bca34234f9e5aa2ca939",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/agent-interview-answers.md",
+      "receivedSha256": "9ff887bb145f774a210517fc2ae9b02168e613da6f70b7341ee4e3041187a657",
+      "endSha256": "9ff887bb145f774a210517fc2ae9b02168e613da6f70b7341ee4e3041187a657",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-revision-product.json",
+      "receivedSha256": "dc754bb79ba0f2cc7cd26553c5e8546c2019953d4bc7a237fb302df7baa35ab7",
+      "endSha256": "dc754bb79ba0f2cc7cd26553c5e8546c2019953d4bc7a237fb302df7baa35ab7",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-revision-qa/content-approval.json",
+      "receivedSha256": "35507f8383198f7ad988130fe5911b31b1013a35e082fa45f38ad9351288ff4a",
+      "endSha256": "35507f8383198f7ad988130fe5911b31b1013a35e082fa45f38ad9351288ff4a",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-revision-data.json",
+      "receivedSha256": "c6b1279dbf9cf7eeb69447e79be9fa90fea08c1a10a82c96a83a20f3250cab5f",
+      "endSha256": "c6b1279dbf9cf7eeb69447e79be9fa90fea08c1a10a82c96a83a20f3250cab5f",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-revision-frontend.json",
+      "receivedSha256": "314ef6a266c14dd53293210ffbcedff61255f79e6450cf2562933ee6cb6136e5",
+      "endSha256": "314ef6a266c14dd53293210ffbcedff61255f79e6450cf2562933ee6cb6136e5",
+      "unchanged": true
+    }
+  ],
+  "browser": "not_executed_by_this_agent",
+  "userStorageAccessed": false,
+  "appOrAnswersModified": false,
+  "fullProductStatus": "not_met",
+  "runtime": "v24.16.0",
+  "firstRoundRuntimeErratum": "Original result.json and result-initial-harness.json both recorded Node v24.16.0; the initial assessment.md prose saying v26.3.0 was incorrect and is corrected in assessment-r2.md."
+}

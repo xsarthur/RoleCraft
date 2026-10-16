@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+<title id="title">控制循环：从观察到效果或未知</title>
+<desc id="desc">控制循环图。运行时接收观察，模型提出候选，准入检查决定执行、拒绝或等待，执行器记录尝试，效果可能确认成功、确认无效果或保持未知；未知状态回到核对，不得直接重发。</desc>
+<defs><style>.t{font:700 36px 'PingFang SC','Microsoft YaHei',sans-serif;fill:#182230}.h{font:700 23px 'PingFang SC','Microsoft YaHei',sans-serif;fill:#182230}.b{font:600 18px 'PingFang SC','Microsoft YaHei',sans-serif;fill:#182230}.s{font:500 16px 'PingFang SC','Microsoft YaHei',sans-serif;fill:#526174}.line{stroke:#3c6e9e;stroke-width:4;fill:none;marker-end:url(#arr)}.loop{stroke:#7955a3;stroke-width:4;fill:none;stroke-dasharray:10 8;marker-end:url(#looparr)}.deny{stroke:#c55b5b;stroke-width:4;fill:none;marker-end:url(#denyarr)}</style><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3c6e9e"/></marker><marker id="looparr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#7955a3"/></marker><marker id="denyarr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#c55b5b"/></marker><filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#17324c" flood-opacity=".12"/></filter></defs>
+<rect width="1400" height="900" fill="#f6f8fb"/><rect x="42" y="34" width="1316" height="832" rx="24" fill="#fff" stroke="#d5dee8" stroke-width="2"/>
+<text x="82" y="92" class="t">控制循环：每次提议都要经过准入</text><text x="82" y="126" class="s">c01-control-loop · 模型负责提议，运行时负责身份、权限、批准、预算与停止</text>
+<rect x="82" y="162" width="1236" height="70" rx="16" fill="#eef8f4" stroke="#9dcbb7" stroke-width="2"/><text x="116" y="205" class="h">核心不变量：模型提议不是执行事实；发送超时不是无效果事实。</text>
+<!-- zones -->
+<rect x="82" y="270" width="410" height="390" rx="20" fill="#f5f1fb" stroke="#c4b1df" stroke-width="2"/><text x="112" y="314" class="h">模型区：提出候选</text><text x="112" y="344" class="s">只读上下文投影，不保存权威状态</text>
+<rect x="520" y="270" width="798" height="390" rx="20" fill="#f7fafc" stroke="#c6d2df" stroke-width="2"/><text x="550" y="314" class="h">运行时区：核对、发送、记录</text>
+<!-- nodes -->
+<g filter="url(#shadow)">
+<rect x="112" y="382" width="330" height="110" rx="16" fill="#fff" stroke="#c4b1df" stroke-width="2"/><text x="277" y="424" text-anchor="middle" class="h">观察</text><text x="277" y="458" text-anchor="middle" class="b">报告、回执或未知状态</text>
+<rect x="112" y="528" width="330" height="92" rx="16" fill="#fff8df" stroke="#e7c45d" stroke-width="2"/><text x="277" y="566" text-anchor="middle" class="h">提议</text><text x="277" y="597" text-anchor="middle" class="b">工具、参数与下一步候选</text>
+<rect x="568" y="382" width="300" height="110" rx="16" fill="#eaf3fb" stroke="#9dc1dd" stroke-width="2"/><text x="718" y="424" text-anchor="middle" class="h">准入</text><text x="718" y="458" text-anchor="middle" class="b">身份 · 权限 · 批准 · 预算</text>
+<rect x="930" y="382" width="330" height="110" rx="16" fill="#eef8f4" stroke="#9dcbb7" stroke-width="2"/><text x="1095" y="424" text-anchor="middle" class="h">动作</text><text x="1095" y="458" text-anchor="middle" class="b">固定 action_id，记录 attempt</text>
+<rect x="930" y="528" width="330" height="92" rx="16" fill="#fff3ec" stroke="#e8b28d" stroke-width="2"/><text x="1095" y="566" text-anchor="middle" class="h">效果 / 未知</text><text x="1095" y="597" text-anchor="middle" class="b">确认、无效果或 UNRESOLVED</text>
+</g>
+<!-- arrows clear gutters -->
+<path d="M277 492V520" class="line"/><path d="M442 574H548" class="line"/><path d="M868 437H918" class="line"/><path d="M1095 492V518" class="line"/>
+<!-- loop back outside boxes -->
+<path d="M930 574H870V708H500V574H452" class="loop"/><text x="685" y="694" text-anchor="middle" class="s">效果需要核对时，带着原 action / operation 回到观察；不要把未知改写成未发送。</text>
+<!-- deny branch -->
+<path d="M718 492V548H842" class="deny"/><rect x="562" y="548" width="270" height="56" rx="14" fill="#fff0f0" stroke="#db9a9a" stroke-width="2"/><text x="697" y="583" text-anchor="middle" class="b">拒绝或等待：不发送</text>
+<!-- ids strip -->
+<rect x="82" y="748" width="1236" height="64" rx="14" fill="#eef3f8" stroke="#b7c7d8" stroke-width="2"/><text x="112" y="788" class="b">记录链：tool_call_id（协议） → action_id（业务意图） → attempt_id（物理尝试） → operation_id（下游操作）</text>
+<text x="82" y="844" class="s">来源：v12/c01-control-primer.md 与 c01-control-loop.md　｜　状态：静态教学构造，未验证浏览器渲染、窄屏布局、真实外部回执与真人理解。</text>
+</svg>

@@ -1,0 +1,14 @@
+{
+  "errors": [
+    "unknown field: legacy_status"
+  ],
+  "external_action": null,
+  "first_failure": "SCHEMA_VALIDATION_ERROR",
+  "injection": "unknown field legacy_status present in v3 payload",
+  "input": "run-1/migrated_checkpoint-with-legacy_status.json",
+  "network": false,
+  "real_service": false,
+  "result": "rejected",
+  "stopped_before_human_gate": true,
+  "validator": "schema_validator"
+}

@@ -1,0 +1,22 @@
+{
+  "evidence_id": "EVID-D0-01-20261015-001",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "learner_answer_hash": "51d66f167f2da2874a4d67bef73700f7be93bd005ae87cdf610793c734726c28",
+  "exercise_input_artifacts": [
+    "learner_raw.json",
+    "mechanism-boundary-receipt.json"
+  ],
+  "output_artifact": "mechanism-boundary-receipt.json",
+  "stop_judgement": "stop on missing source/schema/tenant or failed persistence",
+  "regression_artifact": "mechanism receipt",
+  "holdout_artifact": null,
+  "source_refs": [
+    "ai-generation-d0-pm-v01.md",
+    "ai-generation-l0-practice-source-001-v01.json"
+  ],
+  "unverified": [
+    "real model/API",
+    "production recovery",
+    "human receipt"
+  ]
+}

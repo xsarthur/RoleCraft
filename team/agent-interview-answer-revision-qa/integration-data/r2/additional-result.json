@@ -1,0 +1,330 @@
+{
+  "version": "additional-probes-r2",
+  "status": "met_within_tested_scope",
+  "checks": [
+    {
+      "id": "CONTENT-UNCHANGED-SINCE-R1",
+      "status": "pass",
+      "evidence": {
+        "items": 124,
+        "answerSetSha256": "2cd40dcca5342944ab7c0c7836e759054dc3b5d4aaf992508f78d9172473b61a"
+      }
+    },
+    {
+      "id": "ORIGINAL-118-RETEST",
+      "status": "pass",
+      "evidence": {
+        "oldFailCount": 118,
+        "oldAffectedAnswerCount": 62,
+        "newFailCount": 0
+      }
+    },
+    {
+      "id": "EXTERNAL-28-ACTUAL-HTML",
+      "status": "pass",
+      "evidence": {
+        "count": 28,
+        "rows": [
+          {
+            "id": "Q11",
+            "label": "ReAct论文v3",
+            "original": "https://arxiv.org/abs/2210.03629v3",
+            "actual": "https://arxiv.org/abs/2210.03629v3",
+            "pass": true
+          },
+          {
+            "id": "Q27",
+            "label": "MCP生命周期",
+            "original": "https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle",
+            "actual": "https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle",
+            "pass": true
+          },
+          {
+            "id": "Q27",
+            "label": "MCP Tools",
+            "original": "https://modelcontextprotocol.io/specification/2025-11-25/server/tools",
+            "actual": "https://modelcontextprotocol.io/specification/2025-11-25/server/tools",
+            "pass": true
+          },
+          {
+            "id": "Q28",
+            "label": "MCP Tools",
+            "original": "https://modelcontextprotocol.io/specification/2025-11-25/server/tools",
+            "actual": "https://modelcontextprotocol.io/specification/2025-11-25/server/tools",
+            "pass": true
+          },
+          {
+            "id": "Q28",
+            "label": "MCP Resources",
+            "original": "https://modelcontextprotocol.io/specification/2025-11-25/server/resources",
+            "actual": "https://modelcontextprotocol.io/specification/2025-11-25/server/resources",
+            "pass": true
+          },
+          {
+            "id": "Q28",
+            "label": "MCP Prompts",
+            "original": "https://modelcontextprotocol.io/specification/2025-11-25/server/prompts",
+            "actual": "https://modelcontextprotocol.io/specification/2025-11-25/server/prompts",
+            "pass": true
+          },
+          {
+            "id": "Q29",
+            "label": "MCP生命周期",
+            "original": "https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle",
+            "actual": "https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle",
+            "pass": true
+          },
+          {
+            "id": "Q29",
+            "label": "MCP授权",
+            "original": "https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization",
+            "actual": "https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization",
+            "pass": true
+          },
+          {
+            "id": "Q30",
+            "label": "Agent Skills规范",
+            "original": "https://agentskills.io/specification",
+            "actual": "https://agentskills.io/specification",
+            "pass": true
+          },
+          {
+            "id": "Q30",
+            "label": "A2A规范",
+            "original": "https://a2a-protocol.org/v0.3.0/specification/",
+            "actual": "https://a2a-protocol.org/v0.3.0/specification/",
+            "pass": true
+          },
+          {
+            "id": "Q51",
+            "label": "官方LangChain v1说明",
+            "original": "https://docs.langchain.com/oss/python/releases/langchain-v1",
+            "actual": "https://docs.langchain.com/oss/python/releases/langchain-v1",
+            "pass": true
+          },
+          {
+            "id": "Q51",
+            "label": "LangChain v1官方职责说明",
+            "original": "https://docs.langchain.com/oss/python/releases/langchain-v1",
+            "actual": "https://docs.langchain.com/oss/python/releases/langchain-v1",
+            "pass": true
+          },
+          {
+            "id": "Q56",
+            "label": "官方持久化说明",
+            "original": "https://docs.langchain.com/oss/python/langgraph/persistence",
+            "actual": "https://docs.langchain.com/oss/python/langgraph/persistence",
+            "pass": true
+          },
+          {
+            "id": "Q56",
+            "label": "官方Interrupts说明",
+            "original": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+            "actual": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+            "pass": true
+          },
+          {
+            "id": "Q56",
+            "label": "LangGraph官方持久化",
+            "original": "https://docs.langchain.com/oss/python/langgraph/persistence",
+            "actual": "https://docs.langchain.com/oss/python/langgraph/persistence",
+            "pass": true
+          },
+          {
+            "id": "Q56",
+            "label": "LangGraph官方中断",
+            "original": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+            "actual": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+            "pass": true
+          },
+          {
+            "id": "Q70",
+            "label": "官方规范",
+            "original": "https://a2a-protocol.org/v0.3.0/specification/",
+            "actual": "https://a2a-protocol.org/v0.3.0/specification/",
+            "pass": true
+          },
+          {
+            "id": "Q70",
+            "label": "A2A 0.3.0规范",
+            "original": "https://a2a-protocol.org/v0.3.0/specification/",
+            "actual": "https://a2a-protocol.org/v0.3.0/specification/",
+            "pass": true
+          },
+          {
+            "id": "M101",
+            "label": "Python 3.14 asyncio文档",
+            "original": "https://docs.python.org/3.14/library/asyncio-task.html",
+            "actual": "https://docs.python.org/3.14/library/asyncio-task.html",
+            "pass": true
+          },
+          {
+            "id": "M102",
+            "label": "Python copy文档",
+            "original": "https://docs.python.org/3.14/library/copy.html",
+            "actual": "https://docs.python.org/3.14/library/copy.html",
+            "pass": true
+          },
+          {
+            "id": "M102",
+            "label": "functools.wraps",
+            "original": "https://docs.python.org/3.14/library/functools.html#functools.wraps",
+            "actual": "https://docs.python.org/3.14/library/functools.html#functools.wraps",
+            "pass": true
+          },
+          {
+            "id": "M103",
+            "label": "OrderedDict文档",
+            "original": "https://docs.python.org/3.14/library/collections.html#ordereddict-objects",
+            "actual": "https://docs.python.org/3.14/library/collections.html#ordereddict-objects",
+            "pass": true
+          },
+          {
+            "id": "M105",
+            "label": "Faiss度量文档",
+            "original": "https://github.com/facebookresearch/faiss/wiki/MetricType-and-distances",
+            "actual": "https://github.com/facebookresearch/faiss/wiki/MetricType-and-distances",
+            "pass": true
+          },
+          {
+            "id": "M106",
+            "label": "Faiss索引文档",
+            "original": "https://github.com/facebookresearch/faiss/wiki/Faiss-indexes",
+            "actual": "https://github.com/facebookresearch/faiss/wiki/Faiss-indexes",
+            "pass": true
+          },
+          {
+            "id": "M108",
+            "label": "pypdf文本提取说明",
+            "original": "https://pypdf.readthedocs.io/en/stable/user/extract-text.html",
+            "actual": "https://pypdf.readthedocs.io/en/stable/user/extract-text.html",
+            "pass": true
+          },
+          {
+            "id": "M109",
+            "label": "RoFormer论文",
+            "original": "https://arxiv.org/abs/2104.09864",
+            "actual": "https://arxiv.org/abs/2104.09864",
+            "pass": true
+          },
+          {
+            "id": "M109",
+            "label": "Attention Is All You Need",
+            "original": "https://arxiv.org/abs/1706.03762",
+            "actual": "https://arxiv.org/abs/1706.03762",
+            "pass": true
+          },
+          {
+            "id": "M110",
+            "label": "Claude结构化输出文档",
+            "original": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs",
+            "actual": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs",
+            "pass": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "DISTINCT-LABELS-SELECT-EXACT-TARGET",
+      "status": "pass",
+      "evidence": {
+        "case": "same file, two declared labels, two declared sections"
+      }
+    },
+    {
+      "id": "NO-LABEL-AMBIGUOUS-REJECTED",
+      "status": "pass",
+      "evidence": {
+        "case": "old URL-only lookup with multiple targets"
+      }
+    },
+    {
+      "id": "UNKNOWN-LABEL-REJECTED",
+      "status": "pass",
+      "evidence": {
+        "case": "missing exact label is not mapped to first target"
+      }
+    },
+    {
+      "id": "SAME-LABEL-DIFFERENT-SECTION-REJECTED",
+      "status": "pass",
+      "evidence": {
+        "case": "same label and raw URL cannot silently choose first differing target"
+      }
+    },
+    {
+      "id": "OCCURRENCE-DISAMBIGUATION",
+      "status": "pass",
+      "evidence": {
+        "case": "explicit declared occurrence identifies the exact tuple; undeclared occurrence rejected"
+      }
+    },
+    {
+      "id": "MALFORMED-MAPPING-REJECTED",
+      "status": "pass",
+      "evidence": {
+        "cases": [
+          {
+            "value": null,
+            "pass": true
+          },
+          {
+            "value": {},
+            "pass": true
+          },
+          {
+            "value": "invalid",
+            "pass": true
+          },
+          {
+            "value": [],
+            "pass": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "LABELLED-DANGEROUS-URLS-REJECTED",
+      "status": "pass",
+      "evidence": {
+        "cases": [
+          {
+            "href": "javascript:alert(1)",
+            "pass": true
+          },
+          {
+            "href": "data:text/html,Hi",
+            "pass": true
+          },
+          {
+            "href": "file:///tmp/a",
+            "pass": true
+          },
+          {
+            "href": "//evil.invalid/",
+            "pass": true
+          },
+          {
+            "href": "https://user:pass@evil.invalid/x",
+            "pass": true
+          },
+          {
+            "href": "https:\\evil.invalid\\x",
+            "pass": true
+          },
+          {
+            "href": "https://evil.invalid/\nx",
+            "pass": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "LABEL-HTML-ESCAPED",
+      "status": "pass",
+      "evidence": {
+        "output": "<p><a href=\"#learn/agent/c03/s-one\">&lt;img src=x onerror=alert(1)&gt;</a></p>"
+      }
+    }
+  ]
+}

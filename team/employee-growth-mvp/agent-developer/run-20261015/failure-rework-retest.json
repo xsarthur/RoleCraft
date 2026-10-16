@@ -1,0 +1,25 @@
+{
+  "entries": [
+    {
+      "id": "runner-path-encoding",
+      "stage": "runner",
+      "failure": {"exit_code": 1, "evidence": ["logs/runner.exit", "logs/runner.stderr"], "cause": "URL pathname encoded workspace space as %20"},
+      "rework": {"change": "use fileURLToPath(import.meta.url)", "file": "scripts/runner.mjs"},
+      "retest": {"exit_code": 0, "evidence": ["logs/runner-retest.exit", "logs/runner-retest.stdout"]}
+    },
+    {
+      "id": "t1-retry-limit",
+      "stage": "T1 fixture validation",
+      "failure": {"exit_code": 1, "fixture": "rework/t1-tool-failure-v0.json", "cause": "retry_limit=2 violates one-retry contract"},
+      "rework": {"fixture": "rework/t1-tool-failure-v1.json", "change": "retry_limit=1"},
+      "retest": {"exit_code": 0, "evidence": ["rework/v1.exit", "rework/v1.stdout"]}
+    },
+    {
+      "id": "python-checker-field-lookups",
+      "stage": "local evidence checker",
+      "failure": {"exit_codes": [1, 1], "evidence": ["logs/python-check.exit", "logs/python-check.stderr", "logs/python-check-retest.exit", "logs/python-check-retest.stderr"], "cause": "two checker field lookup bugs"},
+      "rework": {"file": "scripts/check_evidence.py", "change": "correct nested T2/T3 field lookups"},
+      "retest": {"exit_code": 0, "evidence": ["logs/python-check-retest2.exit", "logs/python-check-retest2.stdout"], "checks_passed": 11}
+    }
+  ]
+}

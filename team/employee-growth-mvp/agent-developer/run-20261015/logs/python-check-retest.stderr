@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/team/employee-growth-mvp/agent-developer/run-20261015/scripts/check_evidence.py", line 38, in <module>
+    require(t3["timeout"]["tool_attempts"] == 1 and t3["tool_calls_after_stop"] == 0, "T3 timeout stopped after one wait", t3["timeout"])
+                                                    ~~^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'tool_calls_after_stop'

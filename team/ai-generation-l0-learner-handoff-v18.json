@@ -1,0 +1,59 @@
+{
+  "version": "v18",
+  "artifacts": {
+    "d0-05/matrix.json": {
+      "path": "d0-05/matrix.json",
+      "bytes": 296,
+      "sha256": "6eaf7b0631ebbd48b73ab7dd9554f92cdf969daf5509999e44653ce3de3422ce"
+    },
+    "d0-05/execution-log.json": {
+      "path": "d0-05/execution-log.json",
+      "bytes": 177,
+      "sha256": "1d69f4d3a88b6893193f83287eff49587a51303dcc8516feab76ded715b8ae65"
+    },
+    "d0-05/first_failure.json": {
+      "path": "d0-05/first_failure.json",
+      "bytes": 145,
+      "sha256": "f97d5d546055db5b3ec021aeae269e029425fea43cd53b48e6d38acc36b38341"
+    },
+    "d0-05/holdout.json": {
+      "path": "d0-05/holdout.json",
+      "bytes": 175,
+      "sha256": "a45b0f606fc47c2ce44274eccd01c27cd21c9eb4fcd005db43a90bde13a7e9da"
+    },
+    "evidence_cards/d0-01.json": {
+      "path": "evidence_cards/d0-01.json",
+      "bytes": 111,
+      "sha256": "f2503629b2f16672435beab078c9de840222413bec688296c31c196ae17fead7"
+    },
+    "evidence_cards/d0-04.json": {
+      "path": "evidence_cards/d0-04.json",
+      "bytes": 111,
+      "sha256": "5fdc257a19aadfda2de69d0e27120822b53e98a40a206db6a43fb5eb707cf1b1"
+    },
+    "evidence_cards/d0-05.json": {
+      "path": "evidence_cards/d0-05.json",
+      "bytes": 201,
+      "sha256": "26ae7ee989c15b836f67e362f68c24195cd2e8c20a5e3fbf1d95ce8dd9511ac4"
+    },
+    "evidence_cards/d0-02.json": {
+      "path": "evidence_cards/d0-02.json",
+      "bytes": 111,
+      "sha256": "81b2faaa914a39e86a9acadc6c1f25b1b579a7ee0d08a69ad4ddaf292cabdca4"
+    },
+    "evidence_cards/d0-03.json": {
+      "path": "evidence_cards/d0-03.json",
+      "bytes": 105,
+      "sha256": "7cd8992671a23e6db1aacc45e6f973c9cc641f977a0a5551bd85e743f870ced1"
+    }
+  },
+  "self_reference_rule": "manifest self bytes/SHA null",
+  "manifest_bytes": null,
+  "manifest_sha256": null,
+  "qa_status": "pending",
+  "human_receipt": "pending",
+  "l0_status": "not_assessed",
+  "d0_status": "not_assessed",
+  "l1_decision": "not_granted",
+  "l2_decision": "not_granted"
+}

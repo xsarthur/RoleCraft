@@ -1,0 +1,87 @@
+{
+  "run_id": "agent-developer-mvp-20261015",
+  "agent_version": "agent-developer-mvp-v1.0",
+  "contracts": [
+    "T1-v1.0",
+    "T2-v1.0",
+    "T3-v1.0"
+  ],
+  "runtime": {
+    "node": "v24.16.0",
+    "python": "3.14.5",
+    "network": "off",
+    "model": "deterministic_stub_only"
+  },
+  "execution": {
+    "runner_exit_code_final": 0,
+    "python_checker_final_exit_code": 0,
+    "python_checks": {
+      "passed": 11,
+      "failed": 0
+    }
+  },
+  "delivery": {
+    "T1": "handoff",
+    "T2": "handoff",
+    "T3": "handoff",
+    "qa": "not_started"
+  },
+  "growth": {
+    "T1": "emerging",
+    "T2": "emerging",
+    "T3": "emerging"
+  },
+  "results": {
+    "t1": [
+      "completed",
+      "failed_after_one_controlled_retry"
+    ],
+    "t2": [
+      "recommended_source_verified",
+      "needs_clarification_no_match",
+      "needs_clarification_ambiguous",
+      "stopped_source_version_conflict"
+    ],
+    "t3": [
+      "stopped_timeout",
+      "stopped_evidence_missing",
+      "stopped_permission_conflict"
+    ]
+  },
+  "evidence": {
+    "summary": "run-results.json",
+    "logs": "logs/",
+    "fixture_hashes": "hashes/fixture-hashes.json",
+    "source_hashes": "hashes/source-hashes.json",
+    "log_hashes": "hashes/log-hashes.json",
+    "handoff": "handoff/",
+    "contract_and_code_hashes": "hashes/contract-and-code-hashes.json",
+    "failure_rework_retest": "failure-rework-retest.json"
+  },
+  "first_failures": [
+    {
+      "stage": "runner",
+      "exit_code": 1,
+      "cause": "encoded URL pathname generated %20 directory",
+      "retest": "runner-retest.exit"
+    },
+    {
+      "stage": "t1-fixture-validator",
+      "exit_code": 1,
+      "cause": "v0 retry_limit=2",
+      "retest": "rework/v1.exit"
+    },
+    {
+      "stage": "python-checker",
+      "exit_code": 1,
+      "cause": "checker field lookup bug",
+      "retest": "python-check-retest2.exit"
+    }
+  ],
+  "limitations": [
+    "independent QA not executed",
+    "no real model/network/external tool",
+    "no user/account/database writes",
+    "no production or occupational claim"
+  ]
+}

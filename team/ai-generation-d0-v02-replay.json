@@ -1,0 +1,138 @@
+{
+  "schema_version": "ai-generation-d0-v02-replay",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "date": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "role_id": "AI",
+  "role_title": "AI生成工程师",
+  "training_status": "in_progress",
+  "execution": "local_deterministic_stand_in_replay",
+  "replay_id": "D0-AI-20261015-001-R1",
+  "replay_kind": "在原始D0后追加的本地确定性替身重放证据",
+  "decision": "not_assessed",
+  "scope_note": "本记录补充原始D0，不覆盖原始输入，不构成能力认证；仅证明本地夹具的可复现行为。",
+  "source_records": {
+    "original_md": "sites/rolecraft/team/ai-generation-d0-v01.md",
+    "original_json": "sites/rolecraft/team/ai-generation-d0-v01.json",
+    "initial_copy_md": "sites/rolecraft/team/ai-generation-d0-v01-initial.md",
+    "initial_copy_json": "sites/rolecraft/team/ai-generation-d0-v01-initial.json",
+    "original_sha256": {
+      "ai-generation-d0-v01.md": "4a97347a91e96c07e2d84e37f22011be15890a5d955da950fd8b1a27c0aeef6d",
+      "ai-generation-d0-v01.json": "069cee385c47889cadcfa32e4605cd368eb089d62c529af629ad443d2f1ebebf"
+    },
+    "initial_copy_sha256": {
+      "ai-generation-d0-v01-initial.md": "4a97347a91e96c07e2d84e37f22011be15890a5d955da950fd8b1a27c0aeef6d",
+      "ai-generation-d0-v01-initial.json": "069cee385c47889cadcfa32e4605cd368eb089d62c529af629ad443d2f1ebebf"
+    },
+    "copies_match_original": true
+  },
+  "replay": {
+    "fixture_script": "/private/tmp/ai_generation_d0_fixture_v1.py",
+    "fixture_script_sha256": "fddcf6f9660b5c68079057ffb0fb170aa11e39e0c9379ff9ad95c32be7d39bde",
+    "fixture_id": "F-AI-D0-S1-v1",
+    "fixture_version": "ai-generation-d0-local-v1",
+    "fixture_sha256": "050e9dd30dcf55b680b5e8141dafd669f58ed271cc38e92fa011a1a975d3799f",
+    "run_output": "/private/tmp/ai_generation_d0_run_v2.json",
+    "run_output_sha256": "399797452164d129d1e733159545f757bf8ae665981a4728ef5ddda132bd268b",
+    "command": "python3 /private/tmp/ai_generation_d0_fixture_v1.py > /private/tmp/ai_generation_d0_run_v2.json",
+    "environment": {
+      "network": "disabled_by_task_constraint",
+      "paid_api": false,
+      "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+      "python": "3.14.5"
+    },
+    "network_or_paid_api": "未使用网络、真实模型、付费API、真实密钥、真实用户数据或外部写入"
+  },
+  "validation": {
+    "status": "passed_local_fixture",
+    "state_sequence": [
+      "start",
+      "tool_called",
+      "tool_returned",
+      "drafted",
+      "checked",
+      "handed_off"
+    ],
+    "expected_state_sequence": [
+      "start",
+      "tool_called",
+      "tool_returned",
+      "drafted",
+      "checked",
+      "handed_off"
+    ],
+    "state_sequence_match": true,
+    "tenant_boundary": {
+      "identity_tenant": "A",
+      "authorized_document": "doc-A-refund-v1",
+      "unauthorized_document": "doc-B-private-v1",
+      "unauthorized_document_in_result": false,
+      "private_marker_in_result": false,
+      "passed": true
+    },
+    "source_binding": {
+      "document_id": "doc-A-refund-v1",
+      "source_version": "fixture-source-v1",
+      "quote": "退款需复核。",
+      "citation_present": true,
+      "passed": true
+    },
+    "external_action": {
+      "value": null,
+      "is_null": true,
+      "passed": true
+    },
+    "handoff_status": "draft_ready_for_review",
+    "all_local_assertions_passed": true
+  },
+  "observed_output": {
+    "generated_text": "DEMO-42：退款需复核。",
+    "citations": [
+      {
+        "document_id": "doc-A-refund-v1",
+        "quote": "退款需复核。",
+        "source_version": "fixture-source-v1"
+      }
+    ],
+    "external_action": null
+  },
+  "unverified": [
+    "真实模型调用与模型输出质量、参数效果和费用",
+    "真实LangGraph安装、版本及API兼容性",
+    "真实外部工具副作用、发送/发布和生产存储恢复",
+    "未知迁移任务U-AI-D0-T1及留出变体",
+    "独立内容审校员与测试工程师复核",
+    "学习者迁移、用户价值、生产准备度和岗位能力认证"
+  ],
+  "review": {
+    "author_self_review": false,
+    "content_reviewer": {
+      "role": "内容审校员",
+      "status": "pending",
+      "scope": "机制、来源/版本和未验证边界"
+    },
+    "qa_engineer": {
+      "role": "测试工程师",
+      "status": "pending",
+      "scope": "重放哈希、状态序列、租户边界、引用、无外部动作"
+    },
+    "independent_review_required": true
+  },
+  "next_actions": [
+    {
+      "owner": "测试工程师",
+      "action": "独立核对本记录的重放哈希、状态序列、租户边界、来源引用和无外部动作",
+      "status": "pending"
+    },
+    {
+      "owner": "内容审校员",
+      "action": "核对本地替身证据与真实模型/LangGraph未验证边界，保留问题清单",
+      "status": "pending"
+    },
+    {
+      "owner": "AI生成工程师",
+      "action": "独立复核后再决定是否运行未知迁移任务；真实模型/API仍需单独授权和契约",
+      "status": "pending"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "fixture_id": "T1-normal-v1",
+  "task": "echo a bounded synthetic task",
+  "tool": "echo_stub",
+  "tool_input": {"message": "bounded-ok"},
+  "expected": {"tool_status": "ok", "final_status": "completed", "max_agent_steps": 3}
+}

@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "reviewId": "uiux-design-textbook-visual-batch-b-content-review",
+  "date": "2026-10-16",
+  "reviewerRole": "内容审校员",
+  "reviewerIdentity": "AI技术内容审校，非真人视觉设计专家、QA、辅助技术测试员或真实学习者",
+  "status": "reviewed_with_limitations",
+  "scope": {
+    "chapters": [
+      "textbooks/uiux-design-v02/chapters/05-domain-information-architecture.md",
+      "textbooks/uiux-design-v02/chapters/06-task-flows.md",
+      "textbooks/uiux-design-v02/chapters/07-interaction-state-contracts.md",
+      "textbooks/uiux-design-v02/chapters/08-wireframe-prototyping.md"
+    ],
+    "assets": [
+      "textbooks/uiux-design-v02/assets/v02-batch-b-05-domain-ia.svg",
+      "textbooks/uiux-design-v02/assets/v02-batch-b-06-task-recovery.svg",
+      "textbooks/uiux-design-v02/assets/v02-batch-b-07-state-contract.svg",
+      "textbooks/uiux-design-v02/assets/v02-batch-b-08-fidelity-compare.svg"
+    ]
+  },
+  "overallFinding": "第05–08章的四张Batch B SVG可解析，图文职责、教学构造、替代文本、未验证边界、先修和练习基本成立；但README/source-index/assembly-manifest漏列Batch B，05/06保留与新核心资产冲突的无专门资产降级句，第08图未完整呈现正文的五维保真度，且没有跨端/辅助技术/真人证据，因此仅作reviewed_with_limitations。",
+  "strengths": [
+    "四章均有独立核心视觉入口，正文补定义、条件、失败、恢复、责任和证据边界。",
+    "四个SVG均为1600x1000、role=img、aria-labelledby、title、desc的可编辑静态图，图内和章节有chapter_id、asset_id、source_type和verification。",
+    "对象、批次回执、状态契约、保真度与真实实现/用户效果分开，旧先修、分层练习、参考解法和基础补学保留。",
+    "本地章节链接与新增SVG均存在，复用旧图有局部职责与不混批次说明。"
+  ],
+  "issues": [
+    {
+      "id": "BATCH-B-SRC-001",
+      "severity": "P1",
+      "status": "open",
+      "subject": "README、source-index和assembly-manifest漏列Batch B四资产",
+      "finding": "入口仍只列批次A并写12幅图；来源索引、asset_bindings、计数和审校范围未纳入v02-batch-b-05至08，无法按asset_id、版本、来源和SHA256追溯全书绑定。",
+      "owner": "课程架构师/教材研发员/组装责任人/QA",
+      "retest": "补四条目录、来源和manifest绑定，含chapter_id、用途、版本、状态、路径与哈希，并核单章和合订本一致。"
+    },
+    {
+      "id": "BATCH-B-TEXT-002",
+      "severity": "P1",
+      "status": "open",
+      "subject": "05/06降级文字与新增核心资产相互矛盾",
+      "finding": "第05写没有专门对象关系资产，第06写没有标题级独立恢复流程资产，与本轮已插入的核心Batch B SVG冲突；07/08的补充降级应明确其仅缺少细分工件。",
+      "owner": "教材研发员/课程架构师",
+      "retest": "修正降级措辞，保留表格和文字降级但明确其与首要SVG的互补关系。"
+    },
+    {
+      "id": "BATCH-B-VIS-003",
+      "severity": "P2",
+      "status": "open",
+      "subject": "第08核心图未完整呈现五个独立保真度维度",
+      "finding": "正文/alt宣称五维对照，SVG可见内容主要是结构、状态、视觉/实现三个阶段，五维与三阶段映射不显式。",
+      "owner": "设计师/教材研发员/QA",
+      "retest": "补五维—三阶段映射，或收窄alt并说明正文五维表与首图互补。"
+    },
+    {
+      "id": "BATCH-B-VIS-004",
+      "severity": "P1",
+      "status": "insufficient",
+      "subject": "响应式和辅助技术无实际证据",
+      "finding": "四图为1600x1000密集横向静态板；无桌面/760px/窄屏、灰度、大字号、字体回退、浏览器、键盘、读屏或真人理解实测。",
+      "owner": "设计师/测试工程师",
+      "retest": "逐图提供多条件预览并独立记录浏览器、键盘、读屏；未运行项保持insufficient/not_verified。"
+    }
+  ],
+  "acceptance": {
+    "VO-P01": "insufficient",
+    "VO-P02": "pass",
+    "VO-P03": "pass",
+    "VO-P04": "pass",
+    "VO-P05": "insufficient",
+    "VO-P06": "insufficient",
+    "VO-P07": "insufficient",
+    "VO-P08": "pass",
+    "VO-P09": "insufficient",
+    "VO-P10": "pass",
+    "VO-P11": "pass",
+    "VO-P12": "insufficient"
+  },
+  "verification": {
+    "xmlParse": "passed_for_four_new_svgs",
+    "linkExistence": "passed_for_local_chapter_links",
+    "browserRendering": "not_run",
+    "responsive": "not_run",
+    "keyboard": "not_run",
+    "screenReader": "not_run",
+    "realUserResearch": "not_run",
+    "learningEffect": "not_run",
+    "assemblyAssetBinding": "not_verified"
+  },
+  "sha256": {
+    "chapters/05-domain-information-architecture.md": "bcf32939fbcf386d8c10be36f7dbf387769368a538ca3ee520d435ac77e36a2a",
+    "chapters/06-task-flows.md": "635823faac296f4ff88a4c61b940b211c5fc3c8c73ea15bc012644978ff2b606",
+    "chapters/07-interaction-state-contracts.md": "9cc809f28c5f0b4b19c6908c58965bad0b537529efce75be852b2065e256eae",
+    "chapters/08-wireframe-prototyping.md": "ad45b8ece80ddaca052146e1a078bdfcd76f4cec82367d26c8e436de8dd3b40c",
+    "assets/v02-batch-b-05-domain-ia.svg": "ba0351dba39d7be3a4317fcf0ec003dfe02eb6b9376711265848584e7b0369bf",
+    "assets/v02-batch-b-06-task-recovery.svg": "0f82521b45e30f2a1180c74ab917000b0eed7339f8bc49fad721e40647203f15",
+    "assets/v02-batch-b-07-state-contract.svg": "145eb6317c7c52009422486b952cbae35aa6e2df9f46e10d1640021777301397",
+    "assets/v02-batch-b-08-fidelity-compare.svg": "58605fd3af0a9cf9160941d8e4c79526f6176ceaa15ff9b7ac87afe295e4268c"
+  },
+  "nextAction": "课程架构/作者补Batch B索引、组装绑定和矛盾降级措辞；设计/作者明确第08五维映射；设计/QA补跨端和辅助技术证据；内容审校在修订后复验。"
+}

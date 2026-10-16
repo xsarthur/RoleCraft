@@ -1,0 +1,67 @@
+{
+  "reportVersion": "qa-v1.0-p0-reacceptance-2026-10-16",
+  "role": "qa-engineer",
+  "environment": {
+    "baseUrl": "http://111.231.8.78/",
+    "releaseVersion": "rolecraft-1.0",
+    "nodeVersion": "v24.20.0",
+    "corpusVersion": "textbook-v12",
+    "textbookVersionId": "agent-engineering-v12",
+    "indexVersion": "content-retrieval-0.12-v12",
+    "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+    "bookSha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e"
+  },
+  "overall": "met_within_scope_for_remote_http_and_p01_data_contract; browser_ui_and_accessibility_not_verified; overall_not_met",
+  "independence": {
+    "source": "fresh remote HTTP/API calls and downloaded asset hashes",
+    "didNotRun": ["source/client self-check as acceptance", "old QA receipt as current proof", "browser UI due subagent IAB limitation"],
+    "writeScope": "new QA report only plus disposable isolated QA account fixture"
+  },
+  "checks": [
+    {"id":"P0-01","area":"release_health","status":"pass","evidence":["GET /api/health 200","X-Rolecraft-Release-Version rolecraft-1.0","providerCalled false","local semantic prepared and Node 24.20"]},
+    {"id":"P0-02","area":"static_home","status":"pass_transport_only","evidence":["GET / and /#learn 200","index sha256 de8647133091a34e767816c02cc47d2d792d88ff41b5e851a1b6002bf2dc817b"]},
+    {"id":"P0-03","area":"static_assets","status":"pass_transport_only","evidence":"remote and workspace SHA-256 equal for selected CSS/data/client assets"},
+    {"id":"P0-04","area":"catalog","status":"pass","evidence":["GET /api/content/catalog 200","30 units","v12 corpus/book hashes present"]},
+    {"id":"P0-05","area":"chapters_sources","status":"pass","evidence":["00-learning-route 200","c01-selection 200","public textbook reference 200","unknown chapter 404"]},
+    {"id":"P0-06","area":"career_recommendation","status":"pass","evidence":["Agent/ReAct query recommended Agent developer","local_bge+catalog_keyword","providerCalled false","confirm_required"]},
+    {"id":"P0-07","area":"career_clarification_no_match","status":"pass","evidence":["react returns needs_clarification with ReAct/React options","unrelated career returns no_match"]},
+    {"id":"P0-08","area":"learning_query","status":"pass","evidence":["ReAct query 200 recommended","results include section href, excerpt, source path/hash, versions"]},
+    {"id":"P0-09","area":"learning_clarification","status":"pass","evidence":["react and unrelated topic return controlled clarification with empty results"]},
+    {"id":"P0-10","area":"learning_context_version_errors","status":"pass","evidence":["valid context 200","unknown unit 404","textbook-v0 409"]},
+    {"id":"P0-11","area":"auth_boundary","status":"pass","evidence":["protected collection/profile routes unauthenticated 401"]},
+    {"id":"P0-12","area":"isolated_account_confirm","status":"pass","evidence":["disposable account register/login/me","career confirm with CSRF","activeCareer persisted"]},
+    {"id":"P0-13","area":"p01_first_submission","status":"pass","evidence":["POST /api/submissions 201","P01 identity accepted","review statuses remain unreviewed/not_started"]},
+    {"id":"P0-14","area":"p01_duplicate_protection","status":"pass","evidence":["same artifactVersion returns 409 artifact_version_conflict"]},
+    {"id":"P0-15","area":"p01_revision_chain","status":"pass","evidence":["PUT revision 201","previousSubmissionId points to v1","GET retains v1 and v2"]},
+    {"id":"P0-16","area":"client_verdict_boundary","status":"pass","evidence":["professionalVerdict returns 400 client_verdict_forbidden"]},
+    {"id":"P0-17","area":"task_collections","status":"limited_pass","evidence":["isolated account chapters/jobs empty 200","does not prove UI task/quiz usability"]},
+    {"id":"P0-18","area":"browser_ui_accessibility","status":"not_verified","evidence":["subagent IAB creation unsupported; no screenshot/AX/click evidence"]}
+  ],
+  "assetHashes": {
+    "index.html":"de8647133091a34e767816c02cc47d2d792d88ff41b5e851a1b6002bf2dc817b",
+    "styles.css":"47850ba437e3598424846361bb10463fc83513a3eae4d5ff7f1abcd6ad404139",
+    "learning-workbench.css":"b35eaef44e73a56e2b1df0985fdfe8c960393ca086ffecaeba96b51bf798336c",
+    "learning-experience-v13.css":"bd29b71eed6e7742b1e39ac13dabc9ef07ac5dfd9bd018e2d16b82b4a55cf509",
+    "auth-career-v15.css":"1d5c799bb641056b051bf4a522d960f6863fee8ab6686e55fbd42f297f0fb13a",
+    "curriculum-data.js":"c3c93435d4417792182c1f98b450a1e1a5c23aa9a8136ddb03086570c03f1442",
+    "content-v12-data.js":"3eb094b460e0a1f545820232058d3b58b4c85d1353c87895709af3784d408b12",
+    "content-retrieval-core.js":"b3535b2249effdb0118713295ae9b86e117e0d86c86041aade3e8c33a0fc092d",
+    "learning-workbench.js":"2086c9ae26ee158e1bf4c89a296513b24b9173fb65a098bf03f9cd27c065668e",
+    "learning-v13-data.js":"6d27dabc1cedc15236de846c44dae8f66c4f82b77c2ede543941d3589e8772a4",
+    "app.js":"68415ce3c8e2695cbb7807fb4ddb02abf929c76ab9b22563e791081002817289"
+  },
+  "notVerified": [
+    "browser screenshots/DOM/AX at 320/375/390/768/1280",
+    "question/review/self-check click refresh back paths",
+    "four-state task resume in browser",
+    "keyboard focus, screen reader, 200 percent zoom, grayscale/contrast, soft keyboard",
+    "learning no_match specifically (unrelated query yielded controlled clarification)",
+    "real learner value, expert review, employment/certification, production generation"
+  ],
+  "isolatedFixture": {
+    "account": "example.invalid disposable QA account (redacted)",
+    "writes": ["one user/session fixture","P01 artifact qa-p0-v1","P01 revision qa-p0-v2"],
+    "secretsRetained": false,
+    "cleanupOwner": "backend data engineer under remote single-environment policy"
+  }
+}

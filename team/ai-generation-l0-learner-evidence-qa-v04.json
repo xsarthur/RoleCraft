@@ -1,0 +1,32 @@
+{
+  "qa_id": "AI-GEN-L0-LEARNER-EVIDENCE-QA-v04",
+  "date": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "reviewer_role": "测试工程师",
+  "scope": "独立只读复核 v04 learner evidence、D0/D6/U 绑定、demo-v02 与 B-denial QA、manifest 工件及角色状态；不授等级",
+  "decision": "met_with_limitations",
+  "advancement": "not_granted",
+  "diagnostic_id": {"value":"D0-AI-20261015-001","status":"met_within_scope"},
+  "role_separation": {"status":"met_within_scope","learner_self_signed":false,"qa_status":"pending","review_is_independent":true,"learner_execution_separate":true},
+  "manifest": {"status":"met_within_scope","declared_artifacts":9,"all_bytes_sha256_match":true,"fixture_hash_match":true},
+  "independent_bindings": {
+    "demo_v02": {"status":"met_with_limitations","conclusion":"met_with_limitations","level_decision":"not_assessed"},
+    "b_denial_v01": {"status":"met_with_limitations","denial_code":"SOURCE_SCOPE_DENIED","stopped_before_draft":true,"external_action":null,"handoff":"pending","learner_counts_as_pass":false}
+  },
+  "d6": {
+    "status":"met_with_limitations",
+    "counts": {"claim":{"numerator":0,"denominator":1,"errors":["claim absent in B denial negative sample"]},"source":{"numerator":1,"denominator":1},"version":{"numerator":1,"denominator":1},"tenant":{"numerator":1,"denominator":1},"schema":{"numerator":1,"denominator":1}},
+    "threshold":"all positive fields 100%; negative denial must be rejected",
+    "positive_fields_100":true,
+    "negative_claim_failure_preserved":true,
+    "real_model_control":false,
+    "p95_ms":1.89,
+    "p95_threshold_ms":2000,
+    "fixture_only":true
+  },
+  "u_ai_l0_001": {"status":"met_within_scope","baseline":true,"first_failure_recovery_required":true,"regression_recovered":true,"holdout_stop_after_retry_budget":true,"input_output_hashes_match":true,"external_action_all_null":true},
+  "controls": {"external_action":null,"human_receipt":"pending","l1_decision":"not_granted","l2_decision":"not_granted"},
+  "limitations": ["仅本地 deterministic fixture/JSON 回放；未验证真实模型/API。","真实进程崩溃恢复、生产 RPO/RTO、未知任务迁移、真人审批/签收未验证。","B-denial learner status 仍 unverified；D6 claim 负例 0/1 不得改写为全字段通过。"],
+  "replayed": false,
+  "files_modified": ["/private/tmp/ai-generation-l0-learner-evidence-qa-v04.md","/private/tmp/ai-generation-l0-learner-evidence-qa-v04.json"]
+}

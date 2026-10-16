@@ -1,0 +1,186 @@
+{
+  "qa_id": "PLR-QA-V02-FINAL",
+  "qa_date": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "role": "测试工程师",
+  "scope": "v0.2目录结构、v01保护、四项高时效资料元数据和正式训练准入",
+  "target_resource_ids": ["PLR-AI-006", "PLR-COMP-004", "PLR-BE-003", "PLR-BE-004"],
+  "inputs": {
+    "v01_json": {
+      "path": "sites/rolecraft/team/professional-learning-resources-v01.json",
+      "sha256": "40b087a59dbf24dc6ec75fa390984a460bf1110128e5600bd60534444433d259"
+    },
+    "v02_json": {
+      "path": "sites/rolecraft/team/professional-learning-resources-v02.json",
+      "sha256": "fe03b43087ac42d708e4db9bc8c5ec16aa3eec18d9e184defac29581f1295dc9"
+    },
+    "v02_markdown": {
+      "path": "sites/rolecraft/team/professional-learning-resources-v02.md",
+      "sha256": "127b7ece967838192db5c7020aca8a4b392d392a6293764df0e7f29f6dc31f41"
+    },
+    "change_record": "sites/rolecraft/team/professional-learning-resources-v02-change-record.md/.json"
+  },
+  "methods": [
+    "JSON parse and type checks",
+    "59-ID and 15-role count comparison against v01",
+    "Markdown main-table row and ID comparison",
+    "Four-resource field non-empty and state checks",
+    "Canonical/legacy and Google path/certification namespace checks",
+    "Read-only current-page checks for EUR-Lex, Google Skills, Google Cloud and O'Reilly; DeepLearning.AI direct fetch recorded as 403"
+  ],
+  "layer_results": {
+    "structure": {
+      "status": "met",
+      "evidence": {
+        "top_level_records": 59,
+        "unique_resource_ids": 59,
+        "role_count": 15,
+        "role_counts": {
+          "PM": 3,
+          "PROD": 3,
+          "CURR": 3,
+          "DES": 3,
+          "FE": 3,
+          "QA": 3,
+          "ED": 3,
+          "AI": 8,
+          "BE": 4,
+          "UR": 4,
+          "COMP": 4,
+          "PRACT": 4,
+          "OPS": 5,
+          "REV": 4,
+          "RETR": 5
+        },
+        "markdown_rows": 59,
+        "markdown_unique_ids": 59,
+        "v01_id_set_and_order_preserved": true,
+        "v01_sha_preserved": true,
+        "four_field_contract_complete": true
+      }
+    },
+    "source_metadata": {
+      "status": "met_with_limitations",
+      "evidence": {
+        "all_four_have": [
+          "source_version",
+          "language",
+          "cost_and_access",
+          "prerequisites",
+          "license_or_usage",
+          "maintenance_or_publication_date",
+          "recheck_at",
+          "reviewer",
+          "status"
+        ],
+        "all_four_theory_check": "pending",
+        "langgraph": {
+          "canonical_url": "https://www.deeplearning.ai/courses/ai-agents-in-langgraph",
+          "legacy_urls": [
+            "https://www.deeplearning.ai/alpha/short-courses/ai-agents-in-langgraph",
+            "https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/"
+          ],
+          "status": "verified_current_with_fetch_limitations",
+          "direct_fetch": "403_forbidden",
+          "limits": ["no published course release number", "no fixed publication date", "future price/region/language/license not fully evidenced"]
+        },
+        "eu_market_definition": {
+          "canonical_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024XC01645",
+          "celex": "52024XC01645",
+          "legacy_urls": ["https://competition-policy.ec.europa.eu/public-consultations/2020-market-definition-notice_en"],
+          "canonical_aliases": ["https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:C_202401645"],
+          "status": "verified_current",
+          "current_page_facts": ["C/2024/1645", "2024-02-22", "24 official-language versions"],
+          "oj_not_canonical": true
+        },
+        "google_cloud": {
+          "canonical_url": "https://www.skills.google/paths/16",
+          "legacy_urls": ["https://cloud.google.com/learn/certification/data-engineer"],
+          "status": "verified_current_split_required",
+          "path_facts": ["13 activities", "Managed by Google Cloud", "relative Last updated 5 months", "Sign in or join"],
+          "certification_nested": {
+            "resource_id": "PLR-BE-003-CERT",
+            "url": "https://cloud.google.com/learn/certification/data-engineer",
+            "standard_exam_fee": "USD 200 plus tax where applicable",
+            "renewal_exam_fee": "USD 100 plus tax where applicable",
+            "exam_languages": ["English", "Japanese"],
+            "standard_validity": "2 years",
+            "prerequisites": "None; recommended 3+ years industry experience including 1+ year designing/managing Google Cloud solutions"
+          },
+          "path_certification_fields_separated": true,
+          "limits": ["path total price not stable/published", "per-activity language and lab-region pricing insufficient_evidence"]
+        },
+        "ddia": {
+          "canonical_url": "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/",
+          "legacy_urls": ["https://dataintensive.net/?lang=en"],
+          "status": "verified_current_with_edition_note",
+          "edition_facts": ["second edition", "ISBN 9781098119058", "February 2026", "672 pages", "Intermediate to advanced", "21h56m", "English"],
+          "limits": ["regional/institutional price not stable", "specific code license not independently verified", "author bibliography and publisher month differ (February/March 2026)"]
+        }
+      }
+    },
+    "training_admission": {
+      "status": "not_met",
+      "gate": "not_ready_pending_final_qa_and_theory_check",
+      "blocking_reasons": [
+        "all four theory_check values remain pending",
+        "no linked learner artifact, isolated exercise, or failure/boundary counterexample has been independently verified",
+        "dynamic access, price, language, license, and publication-date limits remain",
+        "directory metadata cannot establish job competence, certification, expert review, real learner effect, or industry leadership"
+      ],
+      "allowed_state": "candidate_resources_only",
+      "required_before_formal_training": [
+        "generate a formal catalog version while preserving v01 and this mapping",
+        "complete theory mapping and observable artifact specifications",
+        "confirm learner-region access, cost, language, prerequisites and use rights",
+        "re-run independent QA and then change eligibility only with evidence"
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "PLRQA-V02-GATE",
+      "severity": "P1",
+      "status": "pending",
+      "owner": "课程架构师/内容审校员",
+      "retest": "理论核验、作品、隔离练习和反例完成后由测试工程师按新目录复验"
+    },
+    {
+      "id": "PLRQA-V02-LANGGRAPH",
+      "severity": "P2",
+      "status": "open_with_limitations",
+      "owner": "资源研究员",
+      "retest": "训练批次前重开第一方页面并记录访问/版本证据"
+    },
+    {
+      "id": "PLRQA-V02-GCLOUD",
+      "severity": "P2",
+      "status": "open_with_limitations",
+      "owner": "目录维护人",
+      "retest": "按学习者地区和具体活动复核价格、语言、实验室访问"
+    },
+    {
+      "id": "PLRQA-V02-DDIA",
+      "severity": "P2",
+      "status": "open_with_limitations",
+      "owner": "资源研究员/目录维护人",
+      "retest": "采购或再利用前重核地区价格、版权和第二版映射"
+    },
+    {
+      "id": "PLRQA-V02-REVIEWER",
+      "severity": "P2",
+      "status": "open_with_limitations",
+      "owner": "目录维护人",
+      "retest": "下一版本更新四条资料卡 reviewer 状态并重新计算哈希"
+    }
+  ],
+  "final_decision": "structure_met_source_metadata_met_with_limitations_formal_training_blocked",
+  "capability_statement": "目录是学习输入和来源元数据记录；不能由目录、阅读、证书或自评推断岗位胜任、认证、专家审核、真实学习效果或行业先进性。",
+  "external_sources": [
+    "https://www.deeplearning.ai/courses/ai-agents-in-langgraph",
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024XC01645",
+    "https://www.skills.google/paths/16",
+    "https://cloud.google.com/learn/certification/data-engineer",
+    "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/"
+  ]
+}

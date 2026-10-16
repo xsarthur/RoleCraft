@@ -1,0 +1,24 @@
+{
+  "qa_id":"AI-GEN-L0-LEARNER-EVIDENCE-QA-v01",
+  "date":"2026-10-15",
+  "timezone":"Asia/Shanghai",
+  "role":"测试工程师",
+  "scope":"L0 learner evidence to L1 gate; read-only independent QA",
+  "decision":"fail",
+  "advancement":"not_granted",
+  "checks":{
+    "five_d0_answers": {"status":"fail","same_diagnostic_id":false,"diagnostic_id_present":false,"mechanism_boundary_first_failure_stop_partial":true,"notes":"Five raw answer fields exist, but no diagnostic_id; D0-03 names source v1 while SOURCE card normal result is v2."},
+    "e_ai_l0_003": {"status":"fail","user_problem":false,"quality_cost_hypotheses":false,"at_least_two_options":false,"tradeoff":true,"stop_line":true,"validation":false,"external_action":null},
+    "u_ai_l0_001": {"status":"fail","single_constraint_declared":true,"baseline":false,"first_failure":false,"regression":false,"holdout":false,"execution_status":"planned_local_only","external_action":null},
+    "evidence_card_bindings": {"status":"met_within_scope","source":true,"durable":true,"gate":true,"cards_and_top_level_records_exist":true},
+    "raw_hash_environment_command": {"status":"met_with_limitations","learner_raw_sha256":"9a1e36bfe59d7b84f03b684d48d63af6a07ab61b1427877eeb488ef77e732281","environment_declared":"Python 3.12/Node 24; local, network disabled","commands_declared":["python3 -m json.tool sites/rolecraft/team/ai-generation-l0-learner-evidence-v01/learner_raw.json","sha256sum sites/rolecraft/team/ai-generation-l0-learner-evidence-v01/learner_raw.json"],"per_item_hashes":false},
+    "status_controls": {"status":"met_within_scope","qa_status":"pending","self_signed":false,"external_action":null,"training_status":"L0_guided","advancement":"not_granted"}
+  },
+  "artifacts":{
+    "source_evidence_card_sha256":"377f16848f0ef36cc2449349014d75c146d065d32a8fc6ae032eefcc583c4e07",
+    "durable_evidence_card_sha256":"126c997a1770dca54fedbd5c18bd9fe27b2b1b94dac2008178ffa4a15456a983",
+    "gate_evidence_card_sha256":"f3830aaaa07081ae651e93261c1ce3d7e36ceb7d5162fdfc08d9e7c15941671d"
+  },
+  "execution": {"replayed":false,"network":false,"paid_api":false,"files_modified":["ai-generation-l0-learner-evidence-qa-v01.md","ai-generation-l0-learner-evidence-qa-v01.json"]},
+  "next_review_requirements":["Bind all five D0 answers to one diagnostic_id and complete EvidenceCard","Provide E-AI-L0-003 user problem, quality/cost hypotheses, >=2 options, tradeoff, stop line, validation","Execute U-AI-L0-001 with baseline, first failure, regression, holdout, command and hashes"]
+}

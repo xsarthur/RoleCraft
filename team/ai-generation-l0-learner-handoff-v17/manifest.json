@@ -1,0 +1,54 @@
+{
+  "version": "v17",
+  "artifacts": {
+    "d0-05/matrix.json": {
+      "path": "d0-05/matrix.json",
+      "bytes": 296,
+      "sha256": "6eaf7b0631ebbd48b73ab7dd9554f92cdf969daf5509999e44653ce3de3422ce"
+    },
+    "d0-05/first_failure.json": {
+      "path": "d0-05/first_failure.json",
+      "bytes": 145,
+      "sha256": "f97d5d546055db5b3ec021aeae269e029425fea43cd53b48e6d38acc36b38341"
+    },
+    "d0-05/holdout.json": {
+      "path": "d0-05/holdout.json",
+      "bytes": 175,
+      "sha256": "a45b0f606fc47c2ce44274eccd01c27cd21c9eb4fcd005db43a90bde13a7e9da"
+    },
+    "evidence_cards/d0-01.json": {
+      "path": "evidence_cards/d0-01.json",
+      "bytes": 111,
+      "sha256": "45bfe63fb18795f6f744bce46095f1c2c221c4309669db3e36c40f14ec691729"
+    },
+    "evidence_cards/d0-04.json": {
+      "path": "evidence_cards/d0-04.json",
+      "bytes": 111,
+      "sha256": "4828d2195e08b3090b0062c9e43940aa6a3eae6510cae6d1975d58ff163696af"
+    },
+    "evidence_cards/d0-05.json": {
+      "path": "evidence_cards/d0-05.json",
+      "bytes": 130,
+      "sha256": "3a72499327d9bf77123e31d303a6f5c0b2d1278f7020b797e0fe9c83c7b05278"
+    },
+    "evidence_cards/d0-02.json": {
+      "path": "evidence_cards/d0-02.json",
+      "bytes": 111,
+      "sha256": "3ad0eef2a9ee3cf1a308b3a8246da86a39c20d80460ca12921a07b62aafd7fab"
+    },
+    "evidence_cards/d0-03.json": {
+      "path": "evidence_cards/d0-03.json",
+      "bytes": 111,
+      "sha256": "ead42acfea00f25eb7ab8f91449106f301fbef447c130ccf1578803e6847ab48"
+    }
+  },
+  "self_reference_rule": "manifest self bytes/SHA null",
+  "manifest_bytes": null,
+  "manifest_sha256": null,
+  "qa_status": "pending",
+  "human_receipt": "pending",
+  "l0_status": "not_assessed",
+  "d0_status": "not_assessed",
+  "l1_decision": "not_granted",
+  "l2_decision": "not_granted"
+}

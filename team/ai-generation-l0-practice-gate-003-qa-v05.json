@@ -1,0 +1,47 @@
+{
+  "artifact_dir": "ai-generation-l0-practice-gate-003-v05",
+  "qa_artifact": "ai-generation-l0-practice-gate-003-qa-v05",
+  "version": "v05",
+  "practice_id": "AI-PRACTICE-GATE-003",
+  "decision": "met_with_limitations",
+  "scope": "README patch and manifest/EvidenceCard binding",
+  "readme": {
+    "path": "ai-generation-l0-practice-gate-003-v05/README.md",
+    "exists": true,
+    "bytes": 790,
+    "sha256": "f542af36e1da1b2c17bc2943ff20aefa0dce4de88c79f6a6e7a23944b837d0e4",
+    "required_markers": {
+      "frozen_input": true,
+      "replay_command": true,
+      "local_only": true,
+      "handoff_pending": true
+    }
+  },
+  "manifest_binding": {
+    "path": true,
+    "bytes": true,
+    "sha256": true,
+    "matches_actual": true
+  },
+  "evidence_card_binding": {
+    "sha256": true,
+    "path": false,
+    "bytes": false,
+    "limitation": "EvidenceCard carries manifest_readme_hash only"
+  },
+  "state_unchanged": {
+    "external_action": null,
+    "handoff_qa": "pending",
+    "l1_decision": "not_granted",
+    "l2_decision": "not_granted",
+    "self_signed": false,
+    "historical_versions_preserved": true
+  },
+  "evidence": [
+    "README actual byte/hash check",
+    "manifest README path/bytes/hash check",
+    "v05 metadata and v04 status comparison"
+  ],
+  "not_granted": ["L1", "L2", "真人QA签收", "生产迁移认证"],
+  "external_action": null
+}

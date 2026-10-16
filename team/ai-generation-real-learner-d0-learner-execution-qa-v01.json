@@ -1,0 +1,28 @@
+{
+  "report_id": "ai-generation-real-learner-d0-learner-execution-qa-v01",
+  "role": "测试工程师",
+  "conclusion": "met_with_limitations",
+  "scope": {
+    "receipt_dir": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-learner-receipts/",
+    "signoff": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-learner-signoff-v01.txt",
+    "read_boundary": "仅读取上述收据目录和签收声明；未修改收据。"
+  },
+  "checks": [
+    {"id": "payload_integrity", "result": "pass", "evidence": "BYTES 与实际文件逐条匹配：29/29，无缺失、额外或字节数不一致。"},
+    {"id": "sha256_manifest", "result": "pass", "evidence": "SHA256SUMS 校验 29/29 OK。"},
+    {"id": "scenario_execution", "result": "pass", "evidence": "A-normal、B-tenant-denied、source-missing、source-conflict 四场景各运行两轮；每轮均有 stdout/stderr，8/8 退出码为 0。"},
+    {"id": "source_binding", "result": "pass", "evidence": "A-normal 两条声明均绑定 doc-A-refund-v2 的来源、版本与哈希，并保留未知项。"},
+    {"id": "tenant_boundary", "result": "pass", "evidence": "B-tenant-denied 首失败为 SOURCE_SCOPE_DENIED，stop_before_draft=true，无来源声明，B 正文列为未访问。"},
+    {"id": "missing_and_conflict_stop", "result": "pass", "evidence": "source-missing 首失败 SOURCE_MISSING；source-conflict 首失败 SOURCE_VERSION_MISMATCH；两者均 stop_before_draft=true 且 external_action=null。"},
+    {"id": "two_run_reproducibility", "result": "pass", "evidence": "四场景两轮 stdout/stderr 均逐字节一致。"}
+  ],
+  "learner_identity": {
+    "support": "签收声明确认学习者本人执行并提交收据。",
+    "name_or_internal_id": "未提供"
+  },
+  "limitations": [
+    "QA 未读取收据目录外的冻结输入、回放目标或其哈希依据，不能独立证明目录外输入/回放链 provenance。",
+    "本报告核对本地收据与签收声明，不等同于真实外部模型服务、生产运行或学习效果验证。"
+  ],
+  "next_step": "保留本报告与原收据；如需身份可追溯性，再补充姓名或内部标识并单独复核目录外 provenance。"
+}

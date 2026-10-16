@@ -578,3 +578,451 @@ QA独立原文/实际HTTP核对30正文、25资源、历史00/e01及561向量来
 候选3已完成源码交接；`node --check`通过，binding3记录与候选2来源/正式服务存续收据相符。独立测试员完成静态范围核对，并由官方IAB补做窄验：开/合书实际渲染、紧凑留白、章节/知识点点击及Tab/Enter四项通过；没有用镜像DOM、静态源码或候选2阶段证据代签。候选2此前七项真实UI证据保持原身份，不覆盖为候选3通过。
 
 本次四项窄验已由可用的官方测试上下文补齐并更新新版本QA/绑定；仍未覆盖完整响应式矩阵、深色/高对比模式或真实学习者理解。服务存续已由工程岗在代理会话结束后独立确认PID、项目路径、health和六项静态资源，属于运输证据，不代表生产可靠性。PM本轮不关闭完整培养、真实用户理解、专家、行业或生产门槛，整体仍`not_met`。
+
+## R25 参考答案质量底线（2026-10-14，规则交付限定完成）
+
+用户以“工具调用超时，如何避免恢复时重复执行？”的三条式示例指出：多角度、细致且真正有参考价值是给用户答案的最低要求。来源核查确认当前面试准备原型内置十题短提纲，展示时未检索生成；存在相关教材论证不等于题解已经完成逐题引用、作者交付与独立审校。
+
+本轮改进行动是把用户原话加入AGENTS，产品经理定义可观察条件，课程架构师交写作组织规格，测试工程师独立核规范与当前示例差距；各岗位只写自己的交付物。PM不代写答案或执行验收。根本差距是原型示例尚未经过正式答案生产流程，不能仅以页面能展开参考回答视为教学内容达标。
+
+实际交付：[产品最低标准](ANSWER_QUALITY_STANDARD.md)含8项可观察条件、摘要/完整解析分层及复验规则；[课程交接](answer-quality-standard-curriculum.md)给出因果组织方法、本题六类学习障碍和v12小节依据。多角度须解释相关因素之间的约束，不能只罗列关键词；细致不靠固定字数、统一三条或无关栏目。产品经理、课程架构师、测试工程师三位独立员工实际执行，PM只协调与维护行政记录。
+
+[独立QA](answer-quality-standard-qa.md)/[证据](answer-quality-standard-qa.json)结论为 `met_within_standard_scope`：9项静态规则/教学交接核对通过，7项指定既有保护文件起止一致；未执行应用或代码例，运行数0。未发现本轮规范需返修的缺陷，标准SHA256为 `e1f55b5a83ae73cd3b300d130ac557bc04031b3263da9642631c6c2af1fe2b97`。QA不为新答案签发内容审校通过。
+
+现有超时题仍为 `not_met_as_complete_reference_answer`；其余九题未逐题技术审校，不能统判全部合格或全部不合格。正文返修、逐题来源绑定和内容审校保持开放，由教材研发员与内容审校员承担，课程架构师交规格，应用更新后仍需当前版本独立QA。复验须检查新答案适用条件、原反例及受影响分支；有运行主张时须取新实际证据，真实理解与学习效果另由用户研究/实训评估取证。
+
+完整用户标准尚未达到，整体培养与行业先进目标仍not_met；本轮只完成质量底线及交接，新规范不能关闭真实用户、专家、学习效果、生成、行业比较、生产与经济性缺口。历史审核与原八门槛保持，专业定稿及QA绑定不因PM行政收口改变。
+
+## R26 编辑质量标准进入跨职业长期记忆（2026-10-14，配置限定完成）
+
+用户明确要求AQ25多角度、细致且实际帮助用户的质量标准成为编辑长期记忆，并伴随各职业编辑。本轮复用已有教材研发员跨项目记忆包，编辑只维护本岗位ROLE/MEMORY/CHANGELOG及交接；PM只维护共享已确认偏好、团队入口和行政状态；测试员独立核配置。无新增账号、常驻员工或后台自动学习承诺。
+
+改进行动针对“标准已有但岗位启动时可能没有读到”的交接缺口：共享偏好保存可迁移正文要点，编辑记忆保存用户原话/日期、范围、版本和确认状态，启动时在项目交接引用条目ID。应用到各职业的是解释与证据质量，不是把Agent例子、软件先修或工程形式统一移植。旧标准和历史QA不改写，真实跨项目执行须在对应任务另留读取记录。
+
+编辑已完成 `TEXT-MEM-0002`（1.0.0、user_confirmed/confirmed），正文保存完整可迁移要点、两条用户原话和来源；旧0001原文保留，旧“未确认具体写作偏好”总括句已限定，避免与新确认冲突。ROLE增加启动/迁移/自查读取协议，新增CHANGELOG及领域交接。PM完成共享偏好 `CORE-PREF-EDITOR-001` 和核心/团队入口，不将机器绝对路径设为跨项目唯一依赖。
+
+[独立配置QA](editor-quality-memory-qa.md)/[证据](editor-quality-memory-qa.json)为 `met_within_memory_configuration_scope`：10项配置核对通过、8指定保护起止一致、当前相对文件链接无缺失，未发现需返修配置缺陷。8个授权目标已绑定（6修改、2新增），PM此后只更新任务/复盘状态，不改写该定稿。实际调用教材研发员、测试工程师两位专业员工，PM只维护组织入口与协调。
+
+本轮完成的是长期记忆保存和读取约定，应用、代码例、真实跨项目加载运行数均0。后续新职业/新项目由PM与编辑记录实际读取的条目ID和本领域适配，再经原内容审校/测试流程验当前交付。现有题解补齐与真实用户效果仍未完成，完整目标继续not_met，不能用记忆配置通过关闭AQ25内容缺口或原八门槛。
+
+## R27 Agent面试答案全量质量检查（2026-10-14，检查完成，正文整改未完成）
+
+用户要求对当前Agent所有面试题答案逐题按AQ25标准检查，测试必须参与内容验证并长期记住同一标准。PM安排产品确定分母与判定口径、内容审校独立核论证、测试独立核内容/反例/版本；测试本岗新增长期记忆，由产品岗独立检查配置。
+
+初步范围为正式固定100+市场14与原型10共124工件，不以当前界面延期剔除114保留题，也不把历史快照重复计数。初步发现一些摘录在冒号前后截断，完整机制仍在教材中却未进入题目参考展示；这属于待逐题核的答案缺口，旧教材覆盖充分度不能代替。未审题目不得被总数或抽样预授通过。
+
+本轮实际调用产品经理、内容审校员、测试工程师三位专业员工，PM协调；三组分母保持100/14/10。两位独立检查者均核全部124题与992项AQS，分别保留语义依据、具体反例、来源与责任。产品完成[最终整合](agent-interview-answer-audit-assessment.md)：固定16满足/84未满足，市场3/11，原型0/10；合计19题满足当前静态内容要求，105题需整改，不能把结果推广到学习者或完整产品。
+
+初审与QA六题不同，产品按原AQS核当前原文，原审校员追加独立复核并改判Q54/Q69/Q79/Q87/Q95/M104。原因是部分初判把数字表、代码或统一事故故事设成固定要求，另Q87漏读已有E5；这些是评审问题，不是作者修过答案。509条初始缺陷中19条以评审纠正撤销，490有效缺口继续开放；初审文件/绑定保留，追加复核单列，不能用最终数字掩盖原差异。
+
+实际质量问题集中于题目参考材料截断/拼接遗漏及机制、路径、案例、边界、验证的组织不足；不能直接归因为教材缺少105项知识。327条原文匹配，65条只取所在行前缀，来源真不代表答案足够。测试在Python3.14.5实际运行8个冻结离线例和13组独立反例，44命名保护一致；不声称整服务、真实模型、外部协议、数据库、系统沙箱、GPU或学习效果已验。
+
+测试新增QA-MEM-0001、岗位启动协议和可迁移正文，PM注册第9核心记忆包并更新共享偏好；仍现有十五岗位。产品独立配置核对发现团队记忆列表漏测试链接，PM修复后原例复验关闭。配置通过仅指文件与约定，真实跨项目自动加载未被证明。
+
+当前未修改原答案、教材、应用或真实数据，不重开题库。责任编辑需按[逐题清单](agent-interview-answer-audit-assessment.json)返修105题，原审校员核论证与出处，测试按原反例和受影响范围复验；P02及相近可靠性/恢复题优先，必要数据提取/显示更改另交工程岗位。检查任务已完成，正文整改尚未完成，“每道题都满足”及完整培养/行业先进目标仍not_met，不以写报告关闭改进。
+
+## R28 全部Agent面试答案返修（2026-10-14，进行中）
+
+用户明确返修全部题目，本轮不只修105未通过题，124题全部进入新版本，保留19题原有正确内容但重新审校。产品交固定原题身份与作者/汇总合同，课程交逐题教学链和原缺口，QA先冻172命名文件与题意/追问；三位编辑按40/40/44分批并行写作，不同时写同一正文或总manifest。
+
+本轮目标是交付并接入完整参考解析，而不是只补报告或拉长摘录。新稿按题独立保存，原v12正文和前轮审计不改；后续内容审校、测试独立核每题和原反例，必要代码实跑明确范围，工程按通过版本构建与展示。缺陷须原作者修订后复验，当前尚无新版通过结论，完整目标仍not_met。
+
+三位作者已交齐124题候选、逐题来源与各批自查，原题面和原型20条追问保留。两位独立内容审校员各分62题，测试岗位另核全部124题；作者C七段Python代码目前仅作者语法检查，行为验证由测试独立进行。候选齐备不等于审校通过，后续缺陷、返修和复验将在当前版本逐项记录。
+
+## R29 全部Agent面试答案返修收口（2026-10-14）
+
+本轮完成Q1–Q100、M101–M114、P01–P10共124题的完整参考解析返修。正文按AQS-01–08逐题独立审校和测试，涵盖机制因果、实现判断路径、案例/失败分支、适用条件、取舍、验证与来源；不再使用原型三条式摘要作为完整答案。Q99初轮来源缺口经作者补充直接小节引用后由内容审校和QA复验关闭。
+
+内容审校与内容QA当前124/124在限定范围通过。7段Python代码、7组函数/算例和6组独立规格夹具实际执行通过；真实模型、外部协议、GPU/OCR/ANN、生产系统和学习效果不由此推导。原490个有效历史内容缺口均有本版复核依据，16个历史撤销项及QA重复视角不计为新增独立缺陷关闭。
+
+数据包、完整合订本和原型接入完成。首轮`REV-QA-LINK-01`发现372次本地来源引用中118次因同文件多小节去重而跳错，影响62题；数据与前端改为逐次标签/小节绑定并拒绝歧义。独立复验372本地、28外链全部正确，真实Chrome实际点击P02三个来源、刷新定位、P01–P10全文展开收起、390px表格、长代码横向阅读和三个延期路由均按当前范围通过。首轮失败包、修复前后hash、复验JSON均保留。
+
+当前独立QA结论为`met_within_tested_scope`，完整产品评估仍为`not_met`：真人学习理解、真实个人项目/面试效果、真人专家审核、行业对比优势、生产运行和经济性尚无相应证据。交付文件：[124题目录](../textbooks/interview-answers-v1/README.md)、[完整合订本](../textbooks/interview-answers-v1/agent-interview-answers.md)、[最终QA](agent-interview-answer-revision-qa/integration-report.md)、[最终绑定](agent-interview-answer-revision-qa/final-binding.json)。
+
+产品最终评估已收口为`finalized=true`：[最终评估](agent-interview-answer-revision-assessment-final.md)；内容为`met_within_reviewed_scope`，交付为`met_within_tested_scope`，完整产品/职业/行业目标为`not_met`。最终评估SHA256为`c0bea59c4dd803ed9e017ce474bf344abee05bbd1cf908c2771246a1e85921d5`，机器记录SHA256为`223e4e439977b08096024267bc485cab7265fb2e7d6d069d69b9221dc17efdcb`。最终数据、渲染器、manifest绑定分别为`4a9e3ce4f5067e77b26bdd551bed911a6efadb9fe905de206876f03c773dad7b`、`27c67c8ffa3e16249f96fea34880c405ee786424d0eec4a82f2f78f71c3e069a`、`e3bb9ecf56c525b57019af129a96159d258a21a1768c382ef536eb4430614fe5`。
+
+
+## UIUX-V02 专业正文与高级能力重写（2026-10-14）
+
+用户指出v01粗浅，原因在于既有Agent专业编辑标准没有落实为实际正文门槛，PM接受了概要和结构检查。此次24章均实际写出原理/设计工件/可行取舍/失败及分层解法，高级系统治理、复杂平台、研究与商业实验、策略协作均为正文；8张设计源实际渲染，独立内容初审揭露权限/来源状态/版本摘要/批次与标识混用，原作者和设计返修后最终原例复核闭合。
+
+当前全文69bec3d57047675471c67f08a67e0ecdfc72dc5a4345f60bccb87563fcf4e83c；内容reviewed_with_limitations，已执行QA范围met_within_qa_scope。两篇原论文全文、真实交互/辅助技术、真人学习与专家/行业证据仍有缺口，完整目标not_met。后续必须继续区分文稿深度、真实作品和职业任职，不用目录/篇幅/自动检查数代替成效。证据和责任见[本轮复盘](uiux-v02-pm.md)。
+
+## R30 十五岗位专业学习资料目录（2026-10-14，限定配置收口）
+
+用户要求在培养体系之外，为各岗位补充可核验的专业理论资料，并以吴恩达的 Agentic AI 课程作为 Agent 工程师示例。课程架构师先复用既有 `employee-growth-curriculum.md` 的共同基础、L0–L4、D0、练习合同和陌生迁移规则，再由两个资源研究批次搜集资料；项目经理协调，内容审校员和测试工程师独立检查。未修改应用、服务、数据库、冻结教材、用户记录、既有门槛或历史报告。
+
+首版目录只留下 PM 3 条，31 条 `role_id=null`，且 A 批 25 条漏入。测试工程师首检判定目录 `not_met`，首失败、输入哈希和返修责任保留。课程架构师返修后整合 PM 补充 3 + A 批 25 + B 批 31，共 59 条；15 个稳定岗位短码全部出现，每岗至少 3 条，59 个 ID 唯一，Markdown/JSON 关键字段一致。Andrew Ng/DeepLearning.AI `Agentic AI` 两条重复来源均绑定 `AI`，保留来源批次，不把重复记录当作两门课程。
+
+返修后的独立 QA 为 `met_with_limitations`（目录限定配置）；独立内容审校为 `reviewed_with_limitations`。仍开放的高优先级事项包括 LangGraph alpha 旧链接、欧盟 2020 咨询页、Google Cloud 认证页与学习路径错配、DDIA 版本页，以及 OpenStax LLM 摄入许可说明、Anthropic 日期化经验边界和资料卡版本/语言/费用/先修/复核字段。它们不阻断按岗位消费当前目录，但训练开始前必须重开链接、登记版本与许可并以新 hash 复验。
+
+当前学习效果为 `not_assessed`：没有执行课程、理论核验、岗位作品、陌生任务、真实学习者、真人专家、真实用户、生产成本或行业比较。资料、阅读、证书、演示和目录完整性都不能证明岗位胜任或行业先进。下一步由课程架构师冻结主/互补资料和先修，资源研究员完成版本/许可复核，教材研发员转成岗位练习，内容审校和测试按新版本复验，产品经理随后冻结首个隔离教学项目并启动 D0。
+
+证据：[专业资料目录](professional-learning-resources-v01.md)、[目录JSON](professional-learning-resources-v01.json)、[培养框架](role-training-framework-v01.md)、[QA首检](professional-learning-resources-qa-v01.md)、[QA返修复验](professional-learning-resources-qa-v02.md)、[内容首检](professional-learning-resources-content-review-v01.md)、[内容返修复核](professional-learning-resources-content-review-v02.md)、[项目经理记录](professional-learning-resources-pm-v01.md)。
+
+## R31 四项高时效资料复核与正式训练入口（2026-10-15）
+
+用户要求先复核 LangGraph、欧盟市场定义、Google Cloud 和 DDIA 的链接/版本，补齐费用、语言、先修和许可字段，再进入正式训练。本轮资源研究员联网复核官方来源，课程架构师生成 `professional-learning-resources-v02`，保留 v01 基线和 59 个稳定 ID；Google 学习路径与认证、欧盟 CELEX 与 OJ 别名、LangGraph legacy 链接、DDIA 第一/二版均分开记录。正式目录最终 QA 结论为结构 `met`、来源元数据 `met_with_limitations`。
+
+随后课程架构师生成四项理论核验包，每项含 4 个机制问题、1 个反例、1 个取舍题、岗位作品、隔离练习、失败/边界证据、迁移任务、先修和停止条件。测试工程师独立核验规格完整性、来源绑定与职责边界为 `met`；内容审校员结论 `reviewed_with_limitations`，要求补逐题 `source_refs/claim_type`，尤其是 LangGraph 当前 API、Google 批/流语义、欧盟零价格与后续案例、DDIA 重试/复制交互。
+
+正式训练仍为 `not_met`：四项 `theory_check` 仍为 `pending`，没有真实学习者原始回答、隔离练习、岗位作品、失败/边界或留出迁移证据。规则禁止代理替学习者作答，不能把目录、阅读、证书、题包或自动检查写成岗位能力。下一步由内容审校补逐题来源，项目经理指定实际学习者启动 D0，测试工程师冻结夹具并独立复验；完成第一轮证据后再重新评估训练准入。完整职业能力、真实学习效果、专家、用户和行业先进目标仍单列。
+
+证据：[v0.2目录](professional-learning-resources-v02.md)、[四项变更记录](professional-learning-resources-v02-change-record.md)、[最终目录QA](professional-learning-resources-v02-qa.md)、[理论核验包](professional-learning-theory-check-v01.md)、[理论QA](professional-learning-theory-check-qa-v01.md)、[理论内容审校](professional-learning-theory-check-content-review-v01.md)、[PM入口记录](professional-learning-training-entry-pm-v01.md)。
+
+## R32 AI生成工程师 D0 启动（2026-10-15，限定重放证据）
+
+用户明确要求从 AI 生成工程师开始 D0 正式训练。项目经理先校正岗位身份：工作区旧 D0 属于 `AGDEV` Agent 开发工程师，不能迁移给 `AI` AI生成工程师。本轮重新冻结 `role_id=AI`、资源 `PLR-AI-006`、本地确定性夹具和五项 D0。
+
+AI 学习者交付五项原始记录，随后保留 initial 版本并完成本地 replay。测试工程师独立重放确认状态序列、租户 A 边界、来源引用、租户 B 文档未进入结果、`external_action=null` 和哈希一致，重放证据在限定范围 `met_within_scope`。内容审校为 `reviewed_with_limitations`，指出 B 租户拒绝路径、持久化/崩溃恢复、课程/API版本绑定和异常迁移仍未验证。
+
+D0 整体保持 `insufficient_evidence / not_assessed`，L1 未授予，仍为 L0 受指导状态。原因是只有一个确定性本地夹具，D0-04 故障注入、D0-05 陌生任务、第二沙箱工件、EvidenceCard 和接收签收尚未完成；真实模型、LangGraph、外部协议、费用、生产和用户效果不由此推导。后续责任为 AI 生成工程师补异常与陌生任务，内容审校补逐题来源绑定，测试按原例/回归/留出变体复验，PM 再安排 L1 评估。
+
+证据：[AI D0原始记录](ai-generation-d0-v01.md)、[initial副本](ai-generation-d0-v01-initial.md)、[replay记录](ai-generation-d0-v02-replay.md)、[独立重放QA](ai-generation-d0-replay-qa-v01.md)、[内容审校](ai-generation-d0-replay-content-review-v01.md)、[PM收口](ai-generation-d0-pm-v01.md)。
+
+## R33 AI生成工程师 D0 故障与迁移复验（2026-10-15，限定范围通过）
+
+D0 在本地无网络确定性环境继续执行：覆盖空工具结果、重复回调、旧检查点、超时和一个未预告来源变体。测试工程师独立复验原例、四类故障回归和留出变体，结论为 `met_within_scope`。内容审校为 `reviewed_with_limitations`，保留 B 租户拒绝、耐久 checkpoint/崩溃恢复、逐条来源/版本、授权工具契约、人工介入和留出迁移等缺口。
+
+AI D0 总体仍 `not_assessed`，L1 未授予。真实模型、LangGraph、外部工具、生产存储、真实费用和用户效果未验证；本地替身局部通过不能授予生产能力。后续先补 P1 缺口，再由 QA 按原例、受影响回归和未知任务重新复验。
+
+## R34 AI生成工程师 D0 P1补证收口（2026-10-15，局部夹具通过）
+
+本轮继续补齐 D0 P1：租户 B 拒绝、授权工具契约、来源范围、checkpoint 崩溃/恢复、来源四元组、人工停止与留出迁移，以及 schema/空工具/重复回调首失败。测试工程师独立重放 v0.4，原例和未预告来源变体共58项检查通过且输出字节一致，局部证据 `met_within_scope`。
+
+内容审校结论 `reviewed_with_limitations`：外部来源/版本 claim 绑定、重复回调持久化措辞、通用 schema、真实进程恢复、真实人工审批和学习者能力证据仍开放。D0 整体 `not_assessed`，L1 `not_granted`，保持 `L0_guided`；真实 LangGraph、模型、生产存储和外部工具未运行。下一步先处理剩余内容与运行证据缺口，再按同一门槛重新评估 L1。
+
+证据：[v0.4修复](ai-generation-d0-v04-p1-repair.md)、[v0.4 QA](ai-generation-d0-v04-qa.md)、[v0.4内容审校](ai-generation-d0-v04-content-review.md)、[PM记录](ai-generation-d0-pm-v01.md)。
+
+
+## R35 AI生成工程师进阶包 P2 修复复验（2026-10-15）
+
+进阶方案 v0.2 的 `source_records` 最后一项是裸字符串，独立 QA 将其登记为 P2；课程架构师修复为 v0.3 的统一 `{path,status}` 对象，保留 v0.2、修复记录和哈希链。独立 QA 确认 7/7 对象均含非空 `path/status`、crosswalk 与 v0.2 一致、当前状态未变，结论 `P2_closed_with_training_not_assessed`。这只关闭数据结构缺陷，未执行训练或授予等级。
+
+## R36 AI生成工程师首个 L0 来源绑定实操（2026-10-15，限定范围）
+
+按 v0.2 practice pack 执行 `AI-PRACTICE-SOURCE-001`。学习者在隔离本地夹具中完成逐条来源四元组、版本/hash/租户边界、四类首失败停线、双次字节重放与动态 holdout，原始产物结论 `pass_with_limitations`。测试工程师独立运行 replay 并核对哈希、首失败、`external_action=null`、handoff pending，结论 `met_with_limitations`；内容审校员结论 `reviewed_with_limitations`。真实模型、供应商 API、LangGraph、生产并发/缓存、真实进程恢复、真人审批/接收签收和未知任务迁移仍未验证。D0 `not_assessed`、L1/L2 `not_granted`，下一项转入 durable checkpoint 实操。
+
+## R37 路线图建议的职责纠偏（2026-10-15）
+
+用户指出此前复盘把“学习路线状态图”列为首要编辑/设计交付，且预先规定要显示当前节点、先修、补学和多种状态，造成编辑越过产品与设计的范围决定。该建议撤回：路线图是否采用、信息密度、交互语义和状态集合由产品经理与设计师确认；课程架构师只提供先修与章节来源，教材研发员和内容审校员不替产品定义界面状态。
+
+已修订 `textbook-product-visual-review-v12.md`、`textbook-v12-content-review-r2.md`、`product-learning-review-v13.md` 和 `product-learning-optimization-scope-v2.md`。A1 改为待定的产品/设计决策，不进入当前编辑交付或实现门槛；编辑侧优先聚焦机制轨迹、章节导览、失败边界、方案对照和作品证据。后续所有跨岗位建议必须先标注“内容输入”“产品决策”“设计表达”“工程实现”和“独立验收”的边界，不能用编辑复盘直接冻结界面范围。
+
+
+## R37 AI生成工程师 Durable-002 实操及多轮缺陷复验（2026-10-15，限定范围收口）
+
+学习者完成重复回调、原子 checkpoint、崩溃后停线/重放和 event_order 留出。v01 独立审校发现空 checkpoint manifest；v02 补齐清单，但 holdout/final 仍有 `status=final`；v03 统一为 `local_draft_ready`，QA 又发现三份 final.json 的 manifest bytes/SHA 与实际文件不符且 final_output 缺顶层 `scope`；v04 重新计算并补齐。最终 QA 为 `met_with_limitations`，内容审校为 `reviewed_with_limitations`，全部仅限本地确定性 JSON 夹具。生产数据库、真实进程崩溃、并发/RPO/RTO、LangGraph、真人审批/接收签收和学习效果仍未验证。D0 `not_assessed`，L1/L2 未授；下一步进入 GATE-003。
+
+
+## R38 AI生成工程师 GATE-003 v01–v06 修复链（2026-10-15）
+
+GATE-003 首版的 schema/迁移字段矛盾、run-2 复验指向错误、状态轨迹缺失、哈希冲突、路径残留和 README 元数据缺口均保留在 v01–v06 链中。v06 独立 QA 为 `met_with_limitations`，内容审校为 `reviewed_with_limitations`：16项路径/bytes/SHA、unknown-field 停线、双 run 轨迹和单约束 holdout 在本地范围闭合；真实迁移器、DB 并发回滚、真人审批仍未验证。
+
+## R39 AI生成工程师 L0→L1 复核（2026-10-15，维持 L0）
+
+学习者证据 v03 修复了 diagnostic_id、fixture hash、D6 本地 CPU/p95、U-AI-L0-001 执行日志/哈希和 manifest 绑定，独立 QA 为 `met_with_limitations`、内容审校为 `reviewed_with_limitations`。门槛复核仍 `remain_L0_guided`：B 租户拒绝未验证，D6 仅本地 fixture 质量，U 不是真实故障迁移，两个 sandbox 与接收签收不足，D0 仍 not_assessed，L1/L2 未授。下一步补 B 拒绝收据和第二输入变体。
+
+
+## R40 AI生成工程师 B租户拒绝与第二输入变体补证（2026-10-15）
+
+学习者执行 A 基线、B 私有文档/错误租户拒绝和非同构 `doc-B-private-v9` 留出；首失败均在生成前停线，`draft/handoff/external_action` 为空，双次运行字节与哈希一致。独立 QA 为 `met_with_limitations`，内容审校为 `reviewed_with_limitations`。该补证只覆盖本地字典夹具，不证明真实权限系统、生产跨租户隔离、并发恢复、日志泄漏、真实模型或真人审批；L0→L1 门槛仍未授予。
+
+
+## R41 AI生成工程师 L0→L1 最终复核（2026-10-15，仍维持 L0）
+
+B-denial-transfer 独立补证闭合了本地租户拒绝/第二输入变体，但最终门槛 QA v03 仍判 `remain_L0_guided`、`l1_reviewable=insufficient_evidence`。逐项结论：五项D0 fail，D1-D5 partial_fail，U partial_fail，两sandbox partial_pass，QA/内容审校 partial_pass，D6 partial_fail，P1 fail，接收签收 pending。真实模型/API/LangGraph/DB/并发/RPO-RTO、学习者未知迁移和真人签收仍未验证；L1/L2 未授。
+
+
+## R42 AI生成工程师 D0 学习者实际演示与 L0→L1 复核（2026-10-15）
+
+D0 learner demo v02 修复了 manifest 工件计数、D0-05 regression 字段和逐文件 diagnostic_id；独立 QA `met_with_limitations`、内容审校 `reviewed_with_limitations`。v04 门槛 QA 仍判 `remain_L0_guided` / `l1_reviewable=insufficient_evidence`：五项 D0 仍未形成完整同一学习者能力闭环，B 拒绝与 demo 绑定不足，两 sandbox 仅本地 fixture 复放，D6缺逐字段失败样本/真实模型对照，接收签收 pending。下一步继续补学习者同一证据链和跨岗签收，不把局部演示写成 L1。
+
+
+## R43 AI生成工程师学习者证据 v04 与 L0→L1 复核 v05（2026-10-15）
+
+学习者证据 v04 绑定 D0 demo、B-denial范围证据和 D6 逐字段计数/失败样本；独立 QA `met_with_limitations`、内容审校 `reviewed_with_limitations`。门槛 QA v05 仍 `remain_L0_guided` / `insufficient_evidence`：B-denial 仅计独立 QA 范围证据，不计学习者 pass；五项 D0闭环、两个学习者 sandbox、真实未知迁移、D6真实对照、P1 和真人接收签收仍未闭合。
+
+
+## R44 AI生成工程师同诊断 B-denial 实作与门槛 v06（2026-10-15）
+
+同诊断学习者 B-denial 实作经独立 QA 本地 24/24 检查通过、内容审校 `reviewed_with_limitations`，补齐了学习者本人 A 基线、B 拒绝和非同构 holdout。最终门槛 QA v06 仍 `remain_L0_guided` / L1 `insufficient_evidence`：五项D0闭环、D6/真实对照、U真实迁移、完整学习者双 sandbox、真人接收签收和生产形状证据仍不足。
+
+
+## R45 AI生成工程师 consolidated learner handoff v05（2026-10-15）
+
+统一交接包将 D0 五答、demo、B-denial、SOURCE/DURABLE/GATE、D6/U 按同一 diagnostic_id 汇总，17项 manifest bytes/SHA 通过独立 QA，内容审校确认角色边界。门槛仍不授级：B-denial 学习者执行尚未被汇总 QA 计为已验证，D6 claim 负向样本 0/1，真人签收、真实模型/API、生产恢复和权限仍缺。
+
+
+## R46 AI生成工程师 handoff v10–v11 结构复验（2026-10-15）
+
+通过 v10/v11 重建，修复了相对路径、manifest自引用、A/B输出契约、D0-04链和D0-05四状态矩阵；两轮独立 QA/内容审校均在本地范围给出限定通过。但 v11仍保留 A hash规范、D0-04工具hash占位、声明性断言、EvidenceCard新增工件绑定和真实运行时/真人签收缺口；L0/D0仍 not_assessed，L1/L2未授。
+
+## R38 教材视觉色彩与布局缺陷规则（2026-10-15）
+
+用户认可 c01 视觉稿的方向，要求增加适度色彩以减少教材单调，同时指出必须防止箭头覆盖文字等视图缺陷。设计规则已补充有语义的色彩、非颜色唯一编码、箭头/连线避让文字和节点、图例、对比度、文字替代、目标尺寸、窄屏裁切及实际渲染复核；教材编辑规则索引已引用该门槛。
+
+独立 QA 发现 v01 存在 P1 箭头穿过说明文字，设计师生成 v02 修复并保留 v01 历史稿。v02 源码路径复验为 `met_with_limitations`，但 marker 延伸、真实字体、浏览器渲染、窄屏和真人理解仍待验证；未把源码解析或静态稿当作最终视觉通过。
+
+
+## R47 AI生成工程师 handoff v12 复验（2026-10-15）
+
+hand-off v12 补齐 A stdout 与 D0-04/D0-05 新工件，manifest 结构复核通过限定范围；但 QA/内容审校仍发现 A hash口径不明、D0-04工具 hash 占位、D0-05 holdout复用 recovery-event、EvidenceCard 未完整绑定新增工件。保留 D0/L0 not_assessed、L1/L2未授及真实模型/API、生产恢复、真人签收缺口。
+
+## R48 Agent 双输入 v0.12 延续交接（2026-10-15）
+
+原“ai产品经理”事项的主要产品合同已经存在，但项目级延续收口缺失。本轮按岗位调用产品经理、软件工程师、测试工程师子代理和内容检索工程师，围绕 `career_input` 与 `learning_input` 重新核对产品范围、交互状态、接口协议、实现边界、版本绑定和复验条件。产品经理交付 `agent-system-v0.12-continuation-product.md`，软件工程师交付 `agent-system-v0.12-continuation-engineering.md`，项目经理补齐 `agent-system-v0.12-pm.md`。
+
+本轮确认 v0.12 第二轮 QA 的 43/43 只覆盖 Node 24.16 进程内 HTTP handler、临时 SQLite 与已绑定版本；当前 `learning-workbench.js` SHA `24d1963a…` 已不同于 P0 QA 冻结的 `0f55ffd8…`，因此历史 `met_within_scope` 不能覆盖当前字节。续测独立 QA 对当前源码得到 `not_met`（17项中10通过、4失败、3证据不足）：职业推荐/确认边界通过，但 `textbook-v12` 的 `c01-selection` 正文与派生索引 hash 失配，导致目录、对话、推荐和普通学习查询安全失败；显式章节上下文返回 500。当前职业卡的 `gaps`、`matchedSignals`、只读比较/浏览动作，以及学习卡完整的 `indexVersion`/`corpusHash` 展示仍待产品—设计—客户端收口。跨重启幂等、动态职业教材能力矩阵、真实 TCP/浏览器、焦点/中文 IME/响应式与迟到响应也未验证。
+
+本轮保留双层版本身份：运行版 `local-workbench-0.15-p0`，v0.12 协议字段 `workbenchVersion=local-workbench-0.11`；未另行批准迁移前不自行改写。A1-00 路线图是否采用仍由产品经理与设计师决定，P0“继续学习”三态不等于路线图已冻结。当前产品合同为 `reconciled_with_open_dependencies`，项目整体继续 `not_met`。后续由对应责任岗位按 CONT-01..06 和续接任务重新验证；不以本轮交接关闭真实用户价值、职业能力、专家审核、行业先进性、生产交付或经济性缺口。
+
+## R49 设计教材视觉美与和谐专项交接（2026-10-15，限定静态范围通过）
+
+用户指出设计教材逻辑性内容较多，需要增加视觉美、和谐与完成度训练，并认为视觉质量是设计的核心竞争力。本轮由产品经理、设计师、课程架构师和测试工程师分岗交付：产品合同定义 VH-U01–U08 场景、E-VH-01–E-VH-08 作品证据和 VH-P01–P09 接收条件；设计交付六种可观察视觉关系、六阶练习、长期视觉质量标准和 A/B 对照板；课程交付 VA01–VA04 专项、八维 VQG 描述锚点、A1/A2/B1/B2 作者批次及与既有 UI/UX、AI视觉和 Agent 版本边界的映射。
+
+独立 QA 对当前产品/设计/课程文件、链接、SVG XML/基本几何和边界陈述核验，结论 `met_with_limitations`，静态范围 `met_within_scope`：xmllint 退出码0，SVG `role/title/desc/aria-labelledby`、唯一 ID、60个非空文本节点和基本 viewBox 几何通过；初读发现的“七维/八维”和能力映射差异已由责任岗修正并在最终检查确认一致。未运行浏览器像素渲染、字体回退、读屏/键盘、灰度/缩放/减少动效、真实用户/学习者、真人专家、应用实现、竞品或市场效果，不能据此声称教材正文完成、视觉竞争力验证或完整产品通过。
+
+当前新增物仍是规格与教学交接，不是 VA01–VA04 正文。下一步由产品经理确认首批单元和 VQG 是否作为教材评审卡，教材研发员写正文、案例、练习和参考分析，设计师交正式 A1/A2 视觉稿与渲染预览，内容审校与测试对新版本独立复验；真实审美接受、任务成功、学习效果和行业判断另由用户研究/实训/竞品岗位取证。原 UI/UX v0.2、Agent v10/v12/v13、旧视觉教材、历史 QA、应用和八项产品门槛均保留，整体产品仍 `not_met`。
+
+证据：[产品合同](uiux-visual-harmony-product-v01.md)、[设计交接](uiux-visual-aesthetic-design.md)、[长期视觉质量标准](DESIGN_VISUAL_QUALITY_STANDARD.md)、[课程规格](uiux-v03-visual-aesthetics-curriculum.md)、[项目经理记录](uiux-visual-harmony-pm-2026-10-15.md)、[独立 QA](uiux-visual-harmony-qa.md)、[QA JSON](uiux-visual-harmony-qa.json)、[教学对照板](uiux-visual-aesthetic-board.svg)。
+
+## R50 UI/UX 视觉专项 VA01/VA02 正文与资产复验（2026-10-16，限定范围通过）
+
+用户要求已从规格进入教材正文。教材研发员分别交付 VA01《视觉感知与审美判断》（返修后250行，SHA-256 `323088372fa879c4d242cc69b47708c78028339683eaeb8195a2ce3665d31b97`）和 VA02《构图、比例、节奏与空间和谐》（返修后393行，SHA-256 `f00b24bc30376dde263067a5a88a725c1482a40a69f26897b189c931e59ce682`），覆盖视觉机制、T-1042/R-81 合成案例、方案取舍、失败轨迹、分层练习、参考分析和未验证边界。内容审校初检保留两项 high 缺陷：两章缺少课程标准要求的可直接审阅视觉工件；正文本身未被审校员代写。
+
+设计师随后补交 `VA01-critique-board.svg` 与 `VA02-composition-study.svg`，作者又在正文中加入直接链接（VA01第168行、VA02第223行）及教学构造/未验证说明。前者表达同一任务的 A 不和谐、B 粗糙、C 修订，后者表达列表/详情/审批三屏的三种构图方向、放弃方案和响应式标注；两者均含 `title`、`desc`、`role=img`、`aria-labelledby` 以及教学构造/未验证说明。内容审校复验保留原始 high 缺陷记录，并确认 VA01-ART-001、VA02-ART-001 已因资产补交及正文链接关闭；仍保留 VA01 第二看点/组群标注粒度、VA02 网格/基线/折叠线与逐屏断点标注不足等中等限制。总体 `reviewed_with_limitations`。
+
+测试工程师独立复验当前正文、资产、链接和缺陷链，两个 SVG 的 xmllint 退出码均为0；`role/title/desc/aria-labelledby`、唯一 ID、非空文本节点和基本 viewBox 几何通过，JSON 绑定可解析，范围结论 `met_within_scope`，总体 `met_with_limitations`。浏览器像素渲染、字体回退、读屏/键盘/灰度/缩放/减少动效、真实用户/学习者、真人专家、应用实现和行业竞争力仍未验证；VA03/VA04 正文尚未写。
+
+本轮关闭的是 VA01/VA02 的正文与教学资产供给缺口，不关闭完整 UI/UX 教材、真实学习效果、职业能力、用户价值、行业先进或原八项产品门槛。下一步由教材研发员继续 VA03/VA04，设计师交相应视觉稿，内容审校与测试按新版本重新独立复验。
+
+证据：[VA01正文](../textbooks/uiux-design-v03/VA01-visual-perception.md)、[VA02正文](../textbooks/uiux-design-v03/VA02-composition-rhythm.md)、[VA01工件](../textbooks/uiux-design-v03/assets/VA01-critique-board.svg)、[VA02工件](../textbooks/uiux-design-v03/assets/VA02-composition-study.svg)、[内容审校](uiux-v03-visual-aesthetics-content-review.md)、[内容审校JSON](uiux-v03-visual-aesthetics-content-review.json)、[最终QA](uiux-v03-visual-aesthetics-qa.md)、[最终QA JSON](uiux-v03-visual-aesthetics-qa.json)。
+
+## R51 视觉教材段落级配图增量（2026-10-16，限定范围复验）
+
+用户进一步指出视觉教材的大部分段落都可以配图，仅用文字表现力太单薄。本轮由教材研发员返修 VA01/VA02：VA01 在焦点/扫描、四类判断段落加入 `VA01-critique-board.svg` 图链；VA02 在网格/基线、留白/边界/密度、响应式构图段落加入 `VA02-composition-study.svg` 图链，共 7 处直接正文图链。每处都说明教学任务和“教学构造/未验证”状态，文字保留因果、取舍、来源和边界职责。
+
+当前 QA 复验 VA01 254 行、3 处图链，VA02 399 行、4 处图链；所有目标存在，两 SVG XML 与 JSON 绑定通过，结论 `met_with_limitations`。内容审校确认五处段落级图链通过，关闭“正文没有直接入口/边界说明”的缺陷；仍保留比例、节奏/停顿、密度/张力、折叠线与逐屏断点等未单独配图的中等限制。
+
+此增量把“图文讲解优先”落实到当前两章，但不以图链数量证明真实读者理解、学习效果、浏览器/读屏可用性或完整教材达标。后续 VA03/VA04 和其他设计教材按同一原则安排机制图、对照图、状态图或响应式图，配图不能删除必要正文和无障碍文字。
+
+## R52 视觉教材重复图片修复（2026-10-16）
+
+用户指出不同段落反复使用同一张图片。复盘确认原因是把章节综合板临时复用为多个机制段落的插图，导致焦点/扫描、判断分类、网格、留白和响应式关系无法分别观察。该做法已撤回。
+
+设计师新增并交付五张独立教学图：`VA01-focus-scan.svg`、`VA01-judgment-taxonomy.svg`、`VA02-grid-baseline.svg`、`VA02-whitespace-density.svg`、`VA02-responsive-reflow.svg`。作者已将 VA01 焦点/扫描与判断分类、VA02 网格/基线、留白/密度、响应式段落分别改链到对应图；`VA01-critique-board.svg` 和 `VA02-composition-study.svg` 仅保留为章节综合总览。
+
+当前复验要求：每张图均需有 title/desc/role/aria-labelledby、教学构造/未验证说明；正文概念与图必须一一对应，不能以图数量代替真实理解。浏览器渲染、读屏、窄屏、真人学习效果和专家审阅仍需独立验证。
+
+## R53 用户确认图文规则推广到设计教材（2026-10-16）
+
+用户确认可以用本套规则推进设计教材。课程架构已正式写入：主要概念标题优先配独立概念图/对照图/状态图；图承担关系和比较，文字承担机制、取舍、来源和边界；章节综合图只作总览；没有图时必须标记 `visual_downgrade`、原因和补图条件。
+
+VA03《视觉语言与设计系统》已交 205 行正文，主要标题均标注图稿状态或 `visual_downgrade`，没有留下失效图片路径；VA04《视觉精修、动态与跨端交付》继续按同一规则编写。VA01/VA02 的标题级独立图和重复图片修复保持独立审校/QA记录，未验证的渲染器、浏览器、真人理解与专家证据不因用户认可规则而自动通过。
+
+VA04 随后交付 299 行正文。VA03/VA04 内容审校为 `reviewed_with_limitations`，独立 QA 为 `met_with_limitations`；VA03 保留10处、VA04保留4处 `visual_downgrade`，表示图稿尚未补齐而非隐藏缺口。两章均没有失效图片路径；浏览器渲染、读屏、真人学习者、真人专家和真实设计效果仍未验证。
+
+## R49 c01 索引修复、双输入复验与卡片字段补齐（2026-10-15）
+
+用户明确要求先修复 `c01-selection` 正文与索引失配、按 Node24 重建并重跑双输入 QA，同时补齐职业卡和学习卡字段。内容检索工程师采用当前批准正文 `4ee70a19…`，保留旧 index/vectors/派生包/manifest/QA 到 `app-v0.12-c01-retrieval-repair-history/received/`，重建 canonical corpus：30 单元、273 分节、corpus hash `c56def0f…`、562 条 passage vectors；Node24.16 检索自检 12/12 通过，未调用外部供应商。
+
+后端数据工程师将 `seededCareer` 与 v12 版本快照从旧 corpus hash `1a385b…` 同步至 `c56def0f…`，Node24 静态检查和临时 SQLite/进程内 handler 5/5 通过。软件工程师补齐职业卡的匹配信号、待补能力、完整教材身份和只读动作，以及学习卡的教材/索引/corpus/source hash 与稳定定位展示；客户端历史交接 hash 与本轮最终 QA 字节差异均保留并单列。
+
+测试工程师在当前版本独立复验 23/23 项，结论 `met_within_limitations`：c01 hash、readiness、职业推荐/澄清/无匹配/确认/幂等/版本冲突、学习查询状态、来源摘录、context opt-in、旧路由、动态职业 `unavailable` 和两类卡片字段均通过。最终绑定 auth `48f6b833…`、learning `00164fb5…`、server `53d0eab…`；真实 TCP `insufficient`，浏览器/IME/焦点/窄屏/迟到响应未运行。旧续测 10/17 `not_met` 保留为历史，不被本轮覆盖；完整产品仍 `not_met`。
+
+## R50 真实 TCP 与浏览器双输入补测（2026-10-15/16）
+
+用户要求继续补做真实 TCP 与浏览器 QA。测试岗位在 Node24.16 隔离临时服务上取得真实 socket 业务证据，覆盖首页、注册、职业推荐/澄清/确认/幂等、学习查询、章节上下文和版本快照；并通过 Codex IAB 实际操作职业推荐、React 澄清、确认前后边界、学习抽屉开收、launcher 焦点回收、普通 Enter、Shift+Enter、来源定位和题外无匹配。
+
+证据归档于 `app-v0.12-c01-tcp-browser-qa.md/.json`，并保留 R49 的 23/23 限定报告。本轮 24 项中 21 项通过、3 项证据不足：390/320px 窄屏已观察通过；原生中文 IME composition Enter、完整读屏顺序/播报和可控迟到网络响应仍未形成证据。不能把浏览器子集观察扩大为完整 UI 通过，完整产品仍 `not_met`。
+
+## R39 代码折叠改为跨端产品变更（2026-10-16）
+
+用户指出“超过10行代码默认收起”会改变教材阅读交互，不能只作为编辑层规则。项目经理据此补充产品、设计、开发、内容审校和测试的职责同步；产品、设计、QA分别交付代码折叠合同，项目经理建立跨端同步记录。当前 v13 Markdown 已标记长代码折叠，但客户端实现、真实渲染、键盘/读屏、窄屏和状态持久化尚未验证，变更状态保持 `planned`。
+
+
+## R48 AI生成工程师一次性运行 handoff v14（2026-10-16）
+
+从手工拼装改为一次性 `run_bundle.py` 实际生成并重跑全部收据，A stdout、D0-04 文件链、D0-05新 fixture、manifest和基础EvidenceCard绑定在本地范围通过独立 QA。内容审校仍保留两个关键缺口：D0-05 holdout 与 first_failure 相同，未知迁移未成立；五张卡重复同一工件列表，逐工件解释绑定不足。L0/D0 not_assessed，L1/L2未授。
+
+
+## R49 真实学习者证据阻塞登记（2026-10-16）
+
+用户暂时无法配合完成 AI 生成工程师 D0。根据角色分工，后续不再用代理补写 learner answer 或模拟真人签收；v19 仍保留为 `met_with_limitations`/`reviewed_with_limitations` 的本地交接质量证据，不能转为能力证据。真实学习者原始记录、本人运行、未知任务迁移和接收方签收仍是 L1 前置阻塞。
+
+
+## R50 真实学习者 D0 原始回答首次收录（2026-10-16）
+
+用户本人提交 AI 生成工程师 D0 原始回答；QA 结构范围 `met_within_scope`，内容审校 `reviewed_with_limitations`。回答清楚覆盖租户 A、只读、B拒绝、unknown/blocked/forbidden、停止和 QA交接，但真实运行收据、来源 hash/claim_type、故障恢复/幂等、模型建议与宿主校验边界、真人签收仍缺。D0/L0保持未评估，未授L1/L2。
+
+
+## R51 用户确认持续轮巡至 L2（2026-10-16）
+
+用户明确要求不中断员工成长训练，目标为 L2 独立交付门槛。项目继续保持未达 L2 岗位高优先级；达到 L2 后才降为周期复查。当前 AI 生成工程师仍 D0/L0 未评估，后续按真实学习者运行、独立 QA、接收签收和迁移证据推进。
+
+
+## R52 真实学习者 D0-03 QA 回放与门槛复核（2026-10-16）
+
+测试工程师独立回放 A/B、来源缺失和冲突场景，四场景/run1-run2/holdout与 stdout/stderr SHA 在限定范围通过；内容审校为 `reviewed_with_limitations`。但合同 fixture SHA 与 QA frozen input SHA 不一致，且 QA 回放不等于学习者本人执行。L0→L1 QA v08 仍 `remain_L0_guided` / `insufficient_evidence`，未授等级。
+
+
+## R53 D0-03 fixture hash 对象范围修复（2026-10-16）
+
+合同 `fixture_sha256` 与 QA `input_sha256` 经重算均正确，差异来自 `root.fixture` 子对象与完整根对象的范围不同。修复记录保留两条 hash、对象路径和 949/1388 bytes，不覆盖历史证据，也不推导学习者能力。
+
+## R40 整套 Agent 教材优化提前收口（2026-10-16）
+
+用户指出全套30单元要求下仅完成13篇。原因是项目经理把分批验证和并发交付误当作阶段性收口，完成规格、13篇正文和视觉资产后提前报告，没有继续完成剩余17篇。规格和参考经验不能替代正文交付。后续责任是按已冻结的全套规格继续完成剩余单元，并在全部正文、视觉交接和独立复核完成前保持整体未完成状态。
+
+## R54 D0-03 最新四场景收据与 L0→L1 独立复核（2026-10-16）
+
+用户提供的最新 D0-03 收据与冻结工件一致：A-normal 2211 bytes、B-tenant-denied 633 bytes、source-missing 559 bytes、source-conflict 1063 bytes；两次运行逐场景字节一致，stderr 为空，`external_action=null`。独立测试复核确认 A/v2 claim 的来源绑定、租户越权拒绝、缺失来源停线、版本/内容哈希冲突停线和 B 文档正文未进入工件；`SHA256SUMS` 40 项全部匹配。此前 `run_id` 非语义差异和清单滞后作为首失败保留，修复后回归通过。
+
+L0→L1 gate QA v0.9 的结论仍为 `remain_L0_guided`，L1 为 `insufficient_evidence`。本轮收据的执行角色仍是 AI 生成工程师/QA 本地夹具回放，记录明确 `learner_execution=false`、`self_signed=false`、`human_receipt_pending=true`；因此不能关闭真实学习者执行、真人接收、完整 D1–D5、第二非同构沙箱、未知任务迁移、D6 样本分母以及真实运行时/生产边界。下一步继续等待学习者本人提交可归属的四场景入口与原始收据，再由测试岗独立重跑和接收方记录；在此之前不授 D0、L1 或 L2。
+
+## R55 D0-03 学习者本人收据入口审计（2026-10-16）
+
+测试岗位审计确认现有合同和夹具足以执行，但尚未形成可归属的学习者本人收据。学习者必须自行填写入口并提交 `learner-receipt.json`、run-1/run-2 原始 stdout/stderr/退出码与输入快照、`manifest.sha256`、`bytes.txt`、本人执行声明和 `handoff-to-qa.json`；收据需包含匿名 `learner_id`、执行时间、命令、环境、合同/诊断/夹具 hash 和 `external_action=null`。禁止用代理回放、复制 run_id/哈希、截图、报告或 QA 声明把 `learner_execution` 改为 true。
+
+收到本人原始包后，测试岗位将用独立临时目录重跑四场景和未公开 holdout，逐项核对来源绑定、B 文本未读/未缓存/未入上下文、首失败、停止点、bytes/SHA 和差异；接收方再从交接包重建最小命令并填写接受或有据拒收。完成三类证据后才重新评估 L0→L1；D1–D5、第二沙箱、未知迁移和 D6 分母仍另行保留。
+
+## R56 D0-03 学习者收据包首次接收与独立 QA（2026-10-16）
+
+收到 `ai-generation-real-learner-d0-execution-learner-receipts/` 后，测试岗位完成独立完整性复核：`SHA256SUMS` 29 项全部匹配，`BYTES` 一致，四场景 run-1/run-2 逐字节一致，stderr 均为 0，退出码均为 0；A/v2 来源绑定、B 租户拒绝、缺失/冲突首失败及 B 正文未进入输出均在本地范围通过。
+
+但收据包仍缺 `learner-receipt.json`、`learner-statement.txt`、`handoff-to-qa.json`、`manifest.sha256`、匿名 `learner_id`、本人执行声明和接收方签收。目录名、脚本注释和命令记录不能单独证明执行者身份，因此 QA v01 结论为 `not_met`，L0→L1 继续 `remain_L0_guided`，不授 D0/L1/L2。下一步由学习者补齐身份绑定与本人声明，由接收方完成签收，再由 gate QA v10 重评；原始收据保持只读，不覆盖。
+
+## R57 D0-03 收据规范化与签收边界复核（2026-10-16）
+
+针对用户指出的名称和聚合文件缺口，测试岗位在不修改原始收据的前提下新增了归档规范化文件：每个 run 的 `aggregate.json`、派生 `learner-receipt.json`、由 `SHA256SUMS` 派生的 `manifest.sha256`、带 `source_alias` 的 `learner-statement.txt` 副本，以及未签收的 `handoff-to-qa.json` 模板。所有新增文件均标记 `derived_by=QA`，因此只改善可读性和接续，不冒充学习者原始文件或接收方签收。
+
+原 `learner-signoff-v01.txt` 已确认存在本人执行声明，但姓名/内部标识仍为“未提供”，`learner_id=unknown`，接收签收仍为 `pending`。规范化 QA 结论为 `met_with_limitations`（仅归档结构范围）；L0→L1 仍须独立 gate 复核，不能据此授予 D0、L1 或 L2。
+
+## R58 多岗位并行 D0 合同启动（2026-10-16）
+
+用户询问能否同步评估。项目经理确认可以并行启动岗位专属 D0，但每个岗位必须保留独立的学习者执行、岗位 EvidenceCard、QA、内容/专业复核和接收签收，不能互相替代或共享 AI 生成工程师的能力结论。
+
+本轮为产品经理和软件工程师分别冻结 D0 合同：`product-manager-d0-contract-v01.md/.json` 与 `software-engineer-d0-contract-v01.md/.json`。两项均为 `planned`/`not_assessed`，未代学习者作答、未修改应用，也未授予任何等级。AI 生成工程师继续处理既有 D0-03 归属和接收阻塞；其余岗位仍按批次建立自己的 D0 入口，不把 onboarding 或合同完成写成能力。
+
+## R58 D0-03 派生签收副本字节一致性修复（2026-10-16）
+
+独立 QA 发现 R57 新增的 `learner-statement.txt` 多了三行 QA 前缀，不能称为原签收文件的字节副本。QA 保留该 968 bytes 的错误包装为 `learner-statement-qa-wrapper-v01.txt`，并将 `learner-statement.txt` 修正为与原 `ai-generation-real-learner-d0-execution-learner-signoff-v01.txt` 完全相同的 766 bytes；两者 SHA-256 均为 `b8a4cafebf54c52d25ee3fb8f6df84c92979282d96e533df01c2625248f665c4`。`learner-statement.meta.json` 标记 `derived_by=QA` 并保存来源与历史包装哈希，规范化 QA v0.2 记录了逐字节复验。
+
+原 stdout/stderr、原 `SHA256SUMS`（SHA-256 `7768f8af1a89c2830ba3dca945320f3b46722008f8400e8120eba7293f4deae7`）和原学习者签收文件未修改；原清单 32 项仍全部通过校验。该修复只纠正派生归档表示，不改变学习者归属或门槛结论：`learner_id=unknown`、`human_receipt_pending=true`、接收方尚未签收，`remain_L0_guided`，不授 D0/L1/L2。下一步仍由真实学习者补匿名标识与本人原始 receipt/provenance，由独立接收方完成签收或有据拒收，再执行 holdout 复验并重评 L0→L1。
+
+## R59 D0-03 学习者提交包草稿（2026-10-16）
+
+按用户提供的匿名标识 `learner-7391842650`，项目经理准备了独立目录 `ai-generation-real-learner-d0-execution-learner-submission-v02/`，包括提交结构、收据字段、交接模板、声明草稿和包内哈希清单。包元数据明确 `learner_owned=false`、`signature_required=true`、`execution_required=true`，因此没有把项目经理生成的文本冒充学习者原始收据或签名。
+
+学习者仍需在新目录实际重跑冻结合同的四场景两轮，补齐真实执行时间、输入/脚本/输出哈希、原始 stdout/stderr 和本人签名；随后由独立接收方复跑四场景及未公开 holdout，并填写接受或有据拒收。当前 L0→L1 结论不变，不能授予 D0/L1/L2。
+
+## R60 D0-03 学习者安全运行入口（2026-10-16）
+
+为避免旧 `learner-run-v01.sh` 覆盖历史收据，项目经理在提交包中准备 `learner-run-v02.sh`。该入口只写入 `learner-submission-v02/raw-receipts/`，若目标目录已存在则拒绝运行；脚本语法检查通过，但尚未由项目经理代运行。用户需本人从项目根目录执行，随后再补本人声明和独立 QA 接收。
+
+## R61 D0-03 学习者入口参数错误与修正版（2026-10-16）
+
+学习者本人按指导运行 v02 入口后，底层 runner 因只接受 `run-1`/`run-2` 而收到长 run ID，四场景两轮均以参数错误退出（退出码 2）。这是项目经理准备入口的缺陷，不是学习者操作错误；失败 stdout/stderr 和哈希收据保留在 `raw-receipts/`，不作为成功执行证据。
+
+已准备 `learner-run-v02-retry-01.sh`，只写入新的 `raw-receipts-retry-01/`，使用底层 runner 支持的 `run-1`/`run-2`，不会覆盖第一次失败记录或历史收据。修正版语法和包内哈希清单已复验；成功执行仍需本人签名和独立 QA 重跑/holdout。
+
+## R62 D0-03 retry-01 场景通过与入口哈希修复（2026-10-16）
+
+独立 QA 复核 `raw-receipts-retry-01/`：36 项收据哈希/BYTES 全部通过，8/8 退出码为 0，四场景两轮 stdout 逐字节一致，16 个 stderr 均为 0；A 来源绑定、B 正文隔离、缺失/冲突首失败均满足本地夹具范围。QA 同时发现 retry-01 的 `learner-entrypoint.sha256` 指向原 v02 脚本而非实际 retry-01 入口，因此该目录保留为历史有限通过记录，不作为最终 provenance 包。
+
+已准备 `learner-run-v02-retry-02.sh`，从自身实际路径计算入口哈希，只写入新的 `raw-receipts-retry-02/`。用户需本人运行该最终入口；之后再填写声明并交独立 QA 复跑与 holdout。
+
+## R63 D0-03 retry-02 学习者收据独立复核（2026-10-16）
+
+测试工程师独立复核 `raw-receipts-retry-02/`：32 项 `SHA256SUMS` 与 `BYTES` 全部通过，8/8 退出码为 0，两轮四场景 stdout/stderr 逐文件一致；A 两条 claim 的来源、版本和内容哈希绑定通过，B 正文隔离并以 `SOURCE_SCOPE_DENIED` 停止，缺失/冲突分别以 `SOURCE_MISSING`、`SOURCE_VERSION_MISMATCH` 在草稿前停止。入口哈希 `83ac0091ab39bebaea166d028a42595182dd07601e65cffefc99b8ca09ed0dfa` 与实际 retry-02 脚本一致；旧收据和 retry-01 未修改。
+
+当前只关闭了学习者原始本地运行收据的限定范围证据，仍等待学习者本人签名声明、目录外 provenance、独立接收方复跑未公开 holdout 及签收；不授 D0/L1/L2。
+
+## R64 D0-03 学习者声明签署与 QA 交接准备（2026-10-16）
+
+学习者已在 `learner-statement.draft.txt` 填写实际提交时间、签名 `Larry` 和 `signed_by_learner`，并生成字节一致的正式 `learner-statement.txt`；SHA-256 为 `7a0f37da70c29d7e3f839bec32378868e455634eaebf85921339014a16fc015d`。收据索引已绑定 `raw-receipts-retry-02/`、该声明和 2026-10-16T11:09:25+08:00 提交时间，包内清单复验通过。
+
+独立接收方字段仍为空，未公开 holdout 尚未由接收方复跑，`human_receipt_pending=true` 保持不变。下一步只能由非学习者本人、可审计的接收方填写身份、实际重建命令、复跑结果、时间与签名；在此之前不授 D0/L1/L2。
+
+## R65 D0-03 独立接收方暂缺（2026-10-16）
+
+用户确认目前没有非学习者本人可执行接收签收的独立 QA/同事。因而第二项缺口不能由项目经理、学习者本人或 QA 代理文件代填；`handoff-to-qa-submission.json` 保持 `submitted_pending_receiver_acceptance`，接收方身份、时间、签名和 holdout 结果为空，`human_receipt_pending=true`。现有本地 QA 复验仍保留为限定范围证据，不扩大为真人接收或等级授予。
+
+## R66 D0-03 接收方 Chenny 登记（2026-10-16）
+
+用户指定 `chenny` 担任独立接收方。交接记录已登记其候选身份和角色，但 `accepted`、接收时间、重建命令、签名及 holdout 结果仍为空。测试岗位准备独立接收说明，接收方必须在全新临时目录复跑并自行填写结果；项目经理和学习者不得代填。`human_receipt_pending=true` 保持。
+
+## R67 D0-03 Chenny 接收记录模板（2026-10-16）
+
+按用户要求新增 `receiver-acceptance-v01.json`，预填 `chenny` 为独立接收方，`accepted`、复验命令、四场景、holdout、时间和签名均保持 `null`。模板已纳入提交包哈希清单，不代表接收方签收；只有 Chenny 本人独立复验并填写后才能更新接收状态。
+
+## R68 D0-03 Chenny 独立复验入口（2026-10-16）
+
+测试岗位准备 `receiver-replay-v01.sh`：在 `/private/tmp` 创建新的临时目录，仅复制输入快照，不复制学习者 stdout/stderr；运行前修正了项目路径空格的命令转义并完成语法/包内哈希复验。脚本未由项目经理运行，也未填写接收签名。Chenny 需本人运行脚本，把真实临时目录和实际命令填入接收记录，并另行保留未公开 holdout 证据。
+
+## R69 D0-03 动态 holdout 生成入口（2026-10-16）
+
+按用户要求，测试岗位准备 `receiver-holdout-v01.sh`，仅允许 `CHENNY_RECEIVER=true` 的独立接收会话运行。脚本在 `/private/tmp` 随机选择并修改一个来源字段，保存变体输入、命令、stdout/stderr、退出码、哈希和字节清单，不修改学习者文件。由于当前 `d0_03_runner.py` 将 A 来源固定在实现中，脚本会如实记录动态输入未被执行器采用的 `not_met_implementation_limitation`，不得伪造 holdout 通过。
+
+## R70 D0-03 holdout 入口变量错误修复（2026-10-16）
+
+Chenny 运行 `receiver-holdout-v01.sh` 时，脚本因使用 zsh 只读特殊变量 `status` 在状态写入处退出；该失败属于项目经理准备脚本的缺陷，不是接收方操作错误，临时目录和失败过程保留。脚本已改用 `holdout_status`，语法和提交包哈希清单复验通过；需要 Chenny 重新运行，结果仍须如实记录动态来源实现是否支持。
+
+## R71 D0-03 Chenny holdout 有据拒收草稿（2026-10-16）
+
+Chenny 运行动态 holdout 入口后生成 `/private/tmp/chenny-receiver-holdout-v01.i5zV85/`。holdout 输入改变了 `source_version`，但当前 `d0_03_runner.py` 仍返回原 `refund-policy-v2` 来源绑定，脚本如实记录 `not_met_implementation_limitation_dynamic_input_not_enforced`，未伪造通过。证据包含变体输入、命令、stdout/stderr、退出码、SHA256SUMS 和 BYTES。
+
+项目经理新增 `receiver-acceptance-v02-rejection.json` 有据拒收草稿，保留 v01 历史记录；Chenny 仍需确认拒收记录并签名。当前接收不能通过，动态来源绑定实现需修复后才能重新 holdout 和接收。
+
+## R72 D0-03 动态来源绑定 v0.2 修复交付（2026-10-16）
+
+软件工程师新增版本化 `d0_03_runner-v02-dynamic.py`，不修改冻结 v01 runner 或历史收据。新实现从输入 `authorized_source` 动态读取 document_id/source_version/location/text/hash，校验文本哈希，并将 A claims 的 source_refs 绑定实际输入；B 拒绝、缺失和冲突仍在草稿前停线。配套 3 项实现自检通过，`receiver-replay-v02.sh` smoke 复验 8/8 退出码为0、stderr为空、四场景两轮字节一致。
+
+独立 QA 结论为 `met_within_scope`，见 `ai-generation-real-learner-d0-execution-qa-v04-dynamic-v02.md/.json`；Chenny 的独立动态 holdout 尚未运行，不能据此更新接收签收或等级结论。下一步由 Chenny 运行 `receiver-holdout-v02.sh`，再以其新证据决定接受或拒收。
+
+## R73 D0-03 动态绑定修复后的 Chenny holdout 通过（2026-10-16）
+
+软件工程师交付的版本化动态 runner 已由 Chenny 在独立会话运行新版 replay 与 holdout。holdout 目录为 `/private/tmp/chenny-receiver-holdout-v02.fekHQb`，状态 `pass_dynamic_binding`：两轮 exit 0、stderr 为空、输出字节一致，动态 claims/tool receipt 与随机变体元数据一致。独立 QA addendum `chenny-receiver-holdout-v02-qa-addendum.md/.json` 校验了哈希、BYTES、checks 和动态来源绑定，结论 `met_within_scope`。
+
+新版接收记录 `receiver-acceptance-v03-dynamic-v02.json` 已绑定 Chenny 的 replay/holdout 证据，但 `accepted` 与签名仍为 `null`，等待 Chenny 本人确认签署；旧 v01 签名不自动迁移。签署前 `human_receipt_pending=true`，不授 D0/L1/L2。
+
+## R74 D0-03 Chenny 新版接收签署完成（2026-10-16）
+
+Chenny 已以 `2026-10-16T12:59:19+08:00` 签署 `receiver-acceptance-v03-dynamic-v02.json`。新版 replay 与 `pass_dynamic_binding` holdout 证据已绑定，交接记录同步为 `accepted_with_evidence`，`human_receipt_pending=false`。
+
+该接收结论只关闭本次收据的真人接收与动态 holdout 证据，不授予 D0/L1/L2，不等同生产能力、职业胜任或行业认证；`level_decision` 保持 `pending`，需另行完成 Gate QA 和其余能力门槛复核。
+
+## R75 D0-03 收据参数清理与声明修正版准备（2026-10-16）
+
+Gate QA v0.12 发现两项文档限定：声明首行仍写“待本人签署”，以及 receipt 的 `raw_manifest_entries=32` 与实际 34 项不一致。项目经理已将 `learner-receipt.json` 计数修正为 34，并补入原始 `SHA256SUMS` 内容哈希；旧 signed statement 保持不覆盖。
+
+同时新增 `learner-statement-correction-draft.txt`，只修正文案标题并保留待本人重新签署状态。完成本人重新签署后，测试岗位需复验声明哈希、包清单和 receipt，再生成新的 Gate QA；等级状态继续 pending。
+
+## R76 D0-03 修正版声明签署与 Gate v0.13 重审启动（2026-10-16）
+
+学习者已提交 `learner-statement-v02.txt`：标题不再含“待本人签署”，末尾为 `签名：Larry`、`声明状态：signed_by_learner`。receipt 已修正为实际 34 项清单并绑定原始 `SHA256SUMS` 哈希；旧 signed statement 保留。
+
+测试岗位需对修正版声明、计数和哈希重新独立复验并生成 Gate QA v0.13。动态 holdout、Chenny 接收和等级边界保持原结论；在新 QA 完成前，等级仍 pending。
+
+## R77 D0-03 Chenny 签收字段矛盾保守处理（2026-10-16）
+
+Gate v0.13 复核发现 `receiver-acceptance-v03-dynamic-v02.json` 同时出现 `accepted=true/signature=Chenny` 与顶层 `pending_chenny_confirmation/human_receipt_pending=true`，且 Chenny holdout QA addendum 明确不主张接收方签名。为保留证据边界，项目经理将汇总 receipt、handoff 和 package 状态恢复为 `pending_chenny_confirmation`；动态 holdout 仍为 `pass_dynamic_binding`，修正版学习者声明已通过文案/哈希修正。只有 Chenny 在受控接收记录中明确确认并签名后，才能再次关闭 human receipt。
+
+## R79 D0-03 Chenny 真人确认模板与 Gate v0.13 收口（2026-10-16）
+
+Gate QA v0.13 已确认修正版学习者声明和 34 项收据计数通过，动态 holdout 在限定范围通过；但拒绝从 `receiver-acceptance-v03-dynamic-v02.json` 的名字字段推断真人签名，因为其顶层状态仍为 pending，Chenny holdout addendum 也不主张签名。
+
+项目经理新增 `chenny-receiver-confirmation-v01.txt`，由 Chenny 在受控会话填写确认时间和签名。完成后再更新 receiver/handoff 摘要和 Gate；在此之前 human receipt 与等级状态保持 pending。
+
+## R80 D0-03 Chenny 受控确认完成（2026-10-16）
+
+Chenny 已提交 `chenny-receiver-confirmation-v01.txt`，确认时间 `2026-10-16T13:31:30+08:00`，签名 `Chenny`，状态 `confirmed_by_chenny`；文件 SHA-256 为 `8bab7b3848b53d87072f789ebf920cfee23c141fb643d92f74fdf4dd3a02ed40`。项目经理已将 receiver、handoff、learner receipt 和 package meta 同步为 `accepted_with_evidence`、`human_receipt_pending=false`；等级仍 pending，等待 Gate QA v0.14。
+
+## R81 D0 路线重置：停止收据循环，改为一次性聚合门槛（2026-10-16）
+
+用户反馈本轮耗时长、配合次数多，但仍未推进到下一步。项目经理确认这是路线设计缺陷：D0-03 被按文件和状态字段拆成多轮用户操作，脚本预检和状态同步没有在用户操作前完成，用户承担了本应由内部岗位消化的返工。
+
+Gate QA v0.14 仅确认 D0-03 的限定范围证据，不能证明 D0 aggregate 或 L1。现将 D0-03 现状冻结，不再要求用户重跑、重签或继续修补同一收据；下一轮改为内部先完成 D0-01/02/04/05 的单包预检，再安排用户一次性会话，之后由 Chenny 对同一包做一次 replay/holdout，最后生成 D0 aggregate QA。预检未满足路径、哈希、失败停线、EvidenceCard 和 handoff 一致性前，不再请求用户操作。
+
+路线重置方案见 `ai-generation-d0-route-reset-v01.md`。本记录不改变任何学习者原始文件、旧 QA、等级状态或门槛标准。

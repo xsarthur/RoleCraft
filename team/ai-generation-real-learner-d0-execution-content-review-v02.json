@@ -1,0 +1,43 @@
+{
+  "review_id": "AI-REAL-LEARNER-D0-EXEC-CONTENT-20261016-02",
+  "target_qa_record_id": "AI-REAL-LEARNER-D0-EXEC-QA-20261016-002",
+  "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+  "target_learner_record_id": "AI-REAL-LEARNER-D0-20261016-001",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "role_id": "AI",
+  "reviewer_role": "content_reviewer",
+  "date": "2026-10-16",
+  "decision": "reviewed_with_limitations",
+  "learner_status": "not_assessed",
+  "levels_granted": [],
+  "evidence": {
+    "qa_report": "ai-generation-real-learner-d0-execution-qa-v02.md/.json",
+    "contract": "ai-generation-real-learner-d0-execution-contract-v01.md/.json",
+    "artifacts": "ai-generation-real-learner-d0-execution-qa-v02-artifacts/",
+    "raw_learner_answer": "ai-generation-real-learner-d0-20261016-v01.md/.json",
+    "qa_replay_is_learner_execution": false,
+    "learner_receipts_available": false,
+    "human_receipt_pending": true
+  },
+  "verified_mechanisms": [
+    "A-normal 两条 A/v2 claim 均有 document/version/location/hash 绑定，订单状态和客户身份保持 unknown",
+    "B-tenant-denied 在 draft 前 SOURCE_SCOPE_DENIED，draft/handoff/external_action 均为空且 B 文本未进入 QA 输出/收据",
+    "source-missing 以 SOURCE_MISSING 首失败停止，不换源不猜测",
+    "source-conflict 以 SOURCE_VERSION_MISMATCH 首失败停止并保留冲突边界",
+    "四场景具有首失败、停止、交接与外部动作收据；run-1/run-2 回放结果逐字节一致",
+    "holdout 变更 document/version/text 后动态绑定新 hash 并保留人工复核标记",
+    "网络、真实模型/API、云、付费服务、真实用户数据和外部动作均关闭"
+  ],
+  "limitations": [
+    {"id":"L1","area":"learner_execution","finding":"无学习者本人入口、原始 receipts 或签收；QA replay 不等于本人执行","required_followup":"按合同补交四场景本人原始 stdout/stderr、实际命令、哈希、退出码和签收，QA 独立复验"},
+    {"id":"L2","area":"fixture_hash_chain","finding":"合同 fixture_sha256=5dc9f33...8db5e0，而 QA input-frozen.json 实际 sha256=f6cc25...f446；JSON 另保留 expected_sha256=5dc9f33...","required_followup":"QA/工程师解释夹具包哈希与输入快照哈希关系，重新冻结或记录可审计映射"},
+    {"id":"L3","area":"tenant_combinations","finding":"未验证混合 A/B 拆分、B 标识进入 prompt/cache/log、依赖不清时整单阻断","required_followup":"增加组合输入并检查上下文、缓存和日志"},
+    {"id":"L4","area":"runtime_failures","finding":"未覆盖真实来源 API、有效期、schema/超时/部分响应、重复回调、重试幂等、恢复和并发","required_followup":"扩展隔离状态迁移与首失败收据"},
+    {"id":"L5","area":"claim_semantics","finding":"夹具绑定不等于模型忠实度或事实/规则/推导分类；draft_ready_for_review 不是退款决定","required_followup":"补 claim 类型、模型边界及人工复核证据"},
+    {"id":"L6","area":"holdout_scope","finding":"holdout 仅证明 QA 等价变体，不证明未知任务迁移、真人专家、学习效果或生产安全","required_followup":"单列学习者、真人和生产证据"
+    }
+  ],
+  "unverified": ["学习者本人执行与签收","真实供应商来源 API 与模型引用忠实度","缓存/上下文隔离、并发、恢复与生产权限","混合租户及日志/提示词泄漏","schema/超时/部分响应/重试幂等","真人审批、学习迁移、职业能力和生产安全"],
+  "handoff": {"owner":"AI生成工程师学习者/课程责任人","qa_owner":"测试工程师","closure":"补齐本人收据、解释哈希差异并完成独立复跑；缺证据保持 insufficient_evidence，不授 D0/L1/L2"},
+  "notes": ["不修改原始回答或历史 QA","本审校只确认冻结夹具机制及证据边界","不替学习者补答、代签或授等级"]
+}

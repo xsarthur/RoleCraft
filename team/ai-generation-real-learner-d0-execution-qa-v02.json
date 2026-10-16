@@ -1,0 +1,575 @@
+{
+  "schema_version": "EvidenceCard-v0.3",
+  "qa_record_id": "AI-REAL-LEARNER-D0-EXEC-QA-20261016-002",
+  "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "role_id": "AI",
+  "status": "met_with_limitations",
+  "decision": "met_with_limitations",
+  "scope": "D0-03 local deterministic QA replay only",
+  "learner_execution": {
+    "available": false,
+    "reason": "Learner did not provide actual run entrypoint or learner-owned raw receipts; QA replay is explicitly not learner execution.",
+    "source_record": "ai-generation-real-learner-d0-20261016-v01.json"
+  },
+  "isolation": {
+    "network": "disabled",
+    "real_model": false,
+    "cloud": false,
+    "paid_api": false,
+    "real_user_data": false,
+    "external_action": null
+  },
+  "fixture": {
+    "path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/input-frozen.json",
+    "sha256": "f6cc25edad6403c052f66167adecf666d770f12b82170f2fc996119ef118f446",
+    "expected_sha256": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0"
+  },
+  "cases": [
+    {
+      "evidence_card_id": "EC-D0-03-A-normal-run-1",
+      "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+      "diagnostic_id": "D0-AI-20261015-001",
+      "case_id": "A-normal",
+      "run_id": "run-1",
+      "fixture_id": "F-AI-SOURCE-CLAIM-v1",
+      "fixture_sha256": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+      "input_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/input-frozen.json",
+      "input_sha256": "f6cc25edad6403c052f66167adecf666d770f12b82170f2fc996119ef118f446",
+      "command": "QA replay fixture renderer (learner command unavailable; not learner execution)",
+      "environment": {
+        "python": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "cwd": "/Users/shengxiong/Desktop/One People Company",
+        "network": "disabled",
+        "real_model": false,
+        "cloud": false,
+        "paid_api": false,
+        "real_user_data": false,
+        "external_action": null
+      },
+      "stdout_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/receipts/run-1.stdout",
+      "stdout_bytes": 199,
+      "stdout_sha256": "7f2a4be3f9c7a6cb84b8030ff12aa97fd5762fe65938df5c6e434e6cb5538e91",
+      "stderr_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/receipts/run-1.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "first_failure": null,
+      "stop_before_draft": false,
+      "draft_status": "draft_ready_for_review",
+      "claim_source_refs": [
+        {
+          "claim_id": "claim-001",
+          "claim_type": "fact",
+          "source_refs": [
+            {
+              "document_id": "doc-A-refund-v2",
+              "hash": "4a1fa4040c1c2840d176fc35da81c5df23984e68e44ed7e299e9cba2a6a1361d",
+              "location": "fixture://docs/doc-A-refund-v2#rules",
+              "source_version": "refund-policy-v2"
+            }
+          ],
+          "status": "bound",
+          "text": "退款超过14天需人工复核。"
+        },
+        {
+          "claim_id": "claim-002",
+          "claim_type": "fact",
+          "source_refs": [
+            {
+              "document_id": "doc-A-refund-v2",
+              "hash": "4a1fa4040c1c2840d176fc35da81c5df23984e68e44ed7e299e9cba2a6a1361d",
+              "location": "fixture://docs/doc-A-refund-v2#rules",
+              "source_version": "refund-policy-v2"
+            }
+          ],
+          "status": "bound",
+          "text": "重复退款必须拒绝。"
+        }
+      ],
+      "tool_receipt": {
+        "actor_tenant": "A",
+        "document_id": "doc-A-refund-v2",
+        "hash": "4a1fa4040c1c2840d176fc35da81c5df23984e68e44ed7e299e9cba2a6a1361d",
+        "location": "fixture://docs/doc-A-refund-v2#rules",
+        "requested_tenant": "A",
+        "side_effect": "none",
+        "source_version": "refund-policy-v2",
+        "status": "ok",
+        "text": "退款超过14天需人工复核；重复退款必须拒绝。",
+        "tool": "retrieve_authorized_doc"
+      },
+      "unknowns": [
+        "未提供退款订单状态与客户身份，不能据此判断个案是否应退款。"
+      ],
+      "external_action": null,
+      "unvisited_sources": [],
+      "cache_or_context_evidence": "QA fixture only; no model context",
+      "handoff_recipient": "QA",
+      "human_receipt_pending": true
+    },
+    {
+      "evidence_card_id": "EC-D0-03-B-tenant-denied-run-1",
+      "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+      "diagnostic_id": "D0-AI-20261015-001",
+      "case_id": "B-tenant-denied",
+      "run_id": "run-1",
+      "fixture_id": "F-AI-SOURCE-CLAIM-v1",
+      "fixture_sha256": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+      "input_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/input-frozen.json",
+      "input_sha256": "f6cc25edad6403c052f66167adecf666d770f12b82170f2fc996119ef118f446",
+      "command": "QA replay fixture renderer (learner command unavailable; not learner execution)",
+      "environment": {
+        "python": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "cwd": "/Users/shengxiong/Desktop/One People Company",
+        "network": "disabled",
+        "real_model": false,
+        "cloud": false,
+        "paid_api": false,
+        "real_user_data": false,
+        "external_action": null
+      },
+      "stdout_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/receipts/run-1.stdout",
+      "stdout_bytes": 199,
+      "stdout_sha256": "7f2a4be3f9c7a6cb84b8030ff12aa97fd5762fe65938df5c6e434e6cb5538e91",
+      "stderr_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/receipts/run-1.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "first_failure": "SOURCE_SCOPE_DENIED",
+      "stop_before_draft": true,
+      "draft_status": null,
+      "claim_source_refs": [],
+      "tool_receipt": {
+        "actor_tenant": "A",
+        "code": "SOURCE_SCOPE_DENIED",
+        "document_id": "doc-B-private-v1",
+        "location": "unavailable://permission-denied",
+        "requested_tenant": "A",
+        "side_effect": "none",
+        "status": "rejected",
+        "tool": "retrieve_authorized_doc"
+      },
+      "unknowns": [],
+      "external_action": null,
+      "unvisited_sources": [
+        "doc-B-private-v1 text"
+      ],
+      "cache_or_context_evidence": "no B text read/cached/context; denial receipt only",
+      "handoff_recipient": null,
+      "human_receipt_pending": true
+    },
+    {
+      "evidence_card_id": "EC-D0-03-source-missing-run-1",
+      "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+      "diagnostic_id": "D0-AI-20261015-001",
+      "case_id": "source-missing",
+      "run_id": "run-1",
+      "fixture_id": "F-AI-SOURCE-CLAIM-v1",
+      "fixture_sha256": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+      "input_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/input-frozen.json",
+      "input_sha256": "f6cc25edad6403c052f66167adecf666d770f12b82170f2fc996119ef118f446",
+      "command": "QA replay fixture renderer (learner command unavailable; not learner execution)",
+      "environment": {
+        "python": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "cwd": "/Users/shengxiong/Desktop/One People Company",
+        "network": "disabled",
+        "real_model": false,
+        "cloud": false,
+        "paid_api": false,
+        "real_user_data": false,
+        "external_action": null
+      },
+      "stdout_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/receipts/run-1.stdout",
+      "stdout_bytes": 199,
+      "stdout_sha256": "7f2a4be3f9c7a6cb84b8030ff12aa97fd5762fe65938df5c6e434e6cb5538e91",
+      "stderr_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/receipts/run-1.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "first_failure": "SOURCE_MISSING",
+      "stop_before_draft": true,
+      "draft_status": null,
+      "claim_source_refs": [],
+      "tool_receipt": {
+        "actor_tenant": "A",
+        "code": "SOURCE_MISSING",
+        "document_id": "doc-A-refund-v2",
+        "location": "unavailable://missing",
+        "requested_tenant": "A",
+        "side_effect": "none",
+        "status": "missing",
+        "tool": "retrieve_authorized_doc"
+      },
+      "unknowns": [
+        "required source unavailable"
+      ],
+      "external_action": null,
+      "unvisited_sources": [
+        "doc-A-refund-v2"
+      ],
+      "cache_or_context_evidence": "QA fixture only; no model context",
+      "handoff_recipient": null,
+      "human_receipt_pending": true
+    },
+    {
+      "evidence_card_id": "EC-D0-03-source-conflict-run-1",
+      "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+      "diagnostic_id": "D0-AI-20261015-001",
+      "case_id": "source-conflict",
+      "run_id": "run-1",
+      "fixture_id": "F-AI-SOURCE-CLAIM-v1",
+      "fixture_sha256": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+      "input_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/input-frozen.json",
+      "input_sha256": "f6cc25edad6403c052f66167adecf666d770f12b82170f2fc996119ef118f446",
+      "command": "QA replay fixture renderer (learner command unavailable; not learner execution)",
+      "environment": {
+        "python": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "cwd": "/Users/shengxiong/Desktop/One People Company",
+        "network": "disabled",
+        "real_model": false,
+        "cloud": false,
+        "paid_api": false,
+        "real_user_data": false,
+        "external_action": null
+      },
+      "stdout_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/receipts/run-1.stdout",
+      "stdout_bytes": 199,
+      "stdout_sha256": "7f2a4be3f9c7a6cb84b8030ff12aa97fd5762fe65938df5c6e434e6cb5538e91",
+      "stderr_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/receipts/run-1.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "first_failure": "SOURCE_VERSION_MISMATCH",
+      "stop_before_draft": true,
+      "draft_status": null,
+      "claim_source_refs": [],
+      "tool_receipt": {
+        "actor_tenant": "A",
+        "document_id": "doc-A-refund-v2",
+        "hash": "4a1fa4040c1c2840d176fc35da81c5df23984e68e44ed7e299e9cba2a6a1361d",
+        "location": "fixture://docs/doc-A-refund-v2#rules",
+        "requested_tenant": "A",
+        "side_effect": "none",
+        "source_version": "refund-policy-v2",
+        "status": "ok",
+        "text": "退款超过14天需人工复核；重复退款必须拒绝。",
+        "tool": "retrieve_authorized_doc"
+      },
+      "unknowns": [],
+      "external_action": null,
+      "unvisited_sources": [
+        "conflicting alternate version"
+      ],
+      "cache_or_context_evidence": "QA fixture only; no model context",
+      "handoff_recipient": null,
+      "human_receipt_pending": true
+    },
+    {
+      "evidence_card_id": "EC-D0-03-A-normal-run-2",
+      "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+      "diagnostic_id": "D0-AI-20261015-001",
+      "case_id": "A-normal",
+      "run_id": "run-2",
+      "fixture_id": "F-AI-SOURCE-CLAIM-v1",
+      "fixture_sha256": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+      "input_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/input-frozen.json",
+      "input_sha256": "f6cc25edad6403c052f66167adecf666d770f12b82170f2fc996119ef118f446",
+      "command": "QA replay fixture renderer (learner command unavailable; not learner execution)",
+      "environment": {
+        "python": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "cwd": "/Users/shengxiong/Desktop/One People Company",
+        "network": "disabled",
+        "real_model": false,
+        "cloud": false,
+        "paid_api": false,
+        "real_user_data": false,
+        "external_action": null
+      },
+      "stdout_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/receipts/run-2.stdout",
+      "stdout_bytes": 199,
+      "stdout_sha256": "b63d73b8f33d26027de36aa2d44ad2a1f9f6fe5ed7e5247fcbfc6a5217fdf204",
+      "stderr_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/receipts/run-2.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "first_failure": null,
+      "stop_before_draft": false,
+      "draft_status": "draft_ready_for_review",
+      "claim_source_refs": [
+        {
+          "claim_id": "claim-001",
+          "claim_type": "fact",
+          "source_refs": [
+            {
+              "document_id": "doc-A-refund-v2",
+              "hash": "4a1fa4040c1c2840d176fc35da81c5df23984e68e44ed7e299e9cba2a6a1361d",
+              "location": "fixture://docs/doc-A-refund-v2#rules",
+              "source_version": "refund-policy-v2"
+            }
+          ],
+          "status": "bound",
+          "text": "退款超过14天需人工复核。"
+        },
+        {
+          "claim_id": "claim-002",
+          "claim_type": "fact",
+          "source_refs": [
+            {
+              "document_id": "doc-A-refund-v2",
+              "hash": "4a1fa4040c1c2840d176fc35da81c5df23984e68e44ed7e299e9cba2a6a1361d",
+              "location": "fixture://docs/doc-A-refund-v2#rules",
+              "source_version": "refund-policy-v2"
+            }
+          ],
+          "status": "bound",
+          "text": "重复退款必须拒绝。"
+        }
+      ],
+      "tool_receipt": {
+        "actor_tenant": "A",
+        "document_id": "doc-A-refund-v2",
+        "hash": "4a1fa4040c1c2840d176fc35da81c5df23984e68e44ed7e299e9cba2a6a1361d",
+        "location": "fixture://docs/doc-A-refund-v2#rules",
+        "requested_tenant": "A",
+        "side_effect": "none",
+        "source_version": "refund-policy-v2",
+        "status": "ok",
+        "text": "退款超过14天需人工复核；重复退款必须拒绝。",
+        "tool": "retrieve_authorized_doc"
+      },
+      "unknowns": [
+        "未提供退款订单状态与客户身份，不能据此判断个案是否应退款。"
+      ],
+      "external_action": null,
+      "unvisited_sources": [],
+      "cache_or_context_evidence": "QA fixture only; no model context",
+      "handoff_recipient": "QA",
+      "human_receipt_pending": true
+    },
+    {
+      "evidence_card_id": "EC-D0-03-B-tenant-denied-run-2",
+      "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+      "diagnostic_id": "D0-AI-20261015-001",
+      "case_id": "B-tenant-denied",
+      "run_id": "run-2",
+      "fixture_id": "F-AI-SOURCE-CLAIM-v1",
+      "fixture_sha256": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+      "input_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/input-frozen.json",
+      "input_sha256": "f6cc25edad6403c052f66167adecf666d770f12b82170f2fc996119ef118f446",
+      "command": "QA replay fixture renderer (learner command unavailable; not learner execution)",
+      "environment": {
+        "python": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "cwd": "/Users/shengxiong/Desktop/One People Company",
+        "network": "disabled",
+        "real_model": false,
+        "cloud": false,
+        "paid_api": false,
+        "real_user_data": false,
+        "external_action": null
+      },
+      "stdout_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/receipts/run-2.stdout",
+      "stdout_bytes": 199,
+      "stdout_sha256": "b63d73b8f33d26027de36aa2d44ad2a1f9f6fe5ed7e5247fcbfc6a5217fdf204",
+      "stderr_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/receipts/run-2.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "first_failure": "SOURCE_SCOPE_DENIED",
+      "stop_before_draft": true,
+      "draft_status": null,
+      "claim_source_refs": [],
+      "tool_receipt": {
+        "actor_tenant": "A",
+        "code": "SOURCE_SCOPE_DENIED",
+        "document_id": "doc-B-private-v1",
+        "location": "unavailable://permission-denied",
+        "requested_tenant": "A",
+        "side_effect": "none",
+        "status": "rejected",
+        "tool": "retrieve_authorized_doc"
+      },
+      "unknowns": [],
+      "external_action": null,
+      "unvisited_sources": [
+        "doc-B-private-v1 text"
+      ],
+      "cache_or_context_evidence": "no B text read/cached/context; denial receipt only",
+      "handoff_recipient": null,
+      "human_receipt_pending": true
+    },
+    {
+      "evidence_card_id": "EC-D0-03-source-missing-run-2",
+      "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+      "diagnostic_id": "D0-AI-20261015-001",
+      "case_id": "source-missing",
+      "run_id": "run-2",
+      "fixture_id": "F-AI-SOURCE-CLAIM-v1",
+      "fixture_sha256": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+      "input_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/input-frozen.json",
+      "input_sha256": "f6cc25edad6403c052f66167adecf666d770f12b82170f2fc996119ef118f446",
+      "command": "QA replay fixture renderer (learner command unavailable; not learner execution)",
+      "environment": {
+        "python": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "cwd": "/Users/shengxiong/Desktop/One People Company",
+        "network": "disabled",
+        "real_model": false,
+        "cloud": false,
+        "paid_api": false,
+        "real_user_data": false,
+        "external_action": null
+      },
+      "stdout_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/receipts/run-2.stdout",
+      "stdout_bytes": 199,
+      "stdout_sha256": "b63d73b8f33d26027de36aa2d44ad2a1f9f6fe5ed7e5247fcbfc6a5217fdf204",
+      "stderr_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/receipts/run-2.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "first_failure": "SOURCE_MISSING",
+      "stop_before_draft": true,
+      "draft_status": null,
+      "claim_source_refs": [],
+      "tool_receipt": {
+        "actor_tenant": "A",
+        "code": "SOURCE_MISSING",
+        "document_id": "doc-A-refund-v2",
+        "location": "unavailable://missing",
+        "requested_tenant": "A",
+        "side_effect": "none",
+        "status": "missing",
+        "tool": "retrieve_authorized_doc"
+      },
+      "unknowns": [
+        "required source unavailable"
+      ],
+      "external_action": null,
+      "unvisited_sources": [
+        "doc-A-refund-v2"
+      ],
+      "cache_or_context_evidence": "QA fixture only; no model context",
+      "handoff_recipient": null,
+      "human_receipt_pending": true
+    },
+    {
+      "evidence_card_id": "EC-D0-03-source-conflict-run-2",
+      "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+      "diagnostic_id": "D0-AI-20261015-001",
+      "case_id": "source-conflict",
+      "run_id": "run-2",
+      "fixture_id": "F-AI-SOURCE-CLAIM-v1",
+      "fixture_sha256": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+      "input_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/input-frozen.json",
+      "input_sha256": "f6cc25edad6403c052f66167adecf666d770f12b82170f2fc996119ef118f446",
+      "command": "QA replay fixture renderer (learner command unavailable; not learner execution)",
+      "environment": {
+        "python": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "cwd": "/Users/shengxiong/Desktop/One People Company",
+        "network": "disabled",
+        "real_model": false,
+        "cloud": false,
+        "paid_api": false,
+        "real_user_data": false,
+        "external_action": null
+      },
+      "stdout_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/receipts/run-2.stdout",
+      "stdout_bytes": 199,
+      "stdout_sha256": "b63d73b8f33d26027de36aa2d44ad2a1f9f6fe5ed7e5247fcbfc6a5217fdf204",
+      "stderr_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/receipts/run-2.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "first_failure": "SOURCE_VERSION_MISMATCH",
+      "stop_before_draft": true,
+      "draft_status": null,
+      "claim_source_refs": [],
+      "tool_receipt": {
+        "actor_tenant": "A",
+        "document_id": "doc-A-refund-v2",
+        "hash": "4a1fa4040c1c2840d176fc35da81c5df23984e68e44ed7e299e9cba2a6a1361d",
+        "location": "fixture://docs/doc-A-refund-v2#rules",
+        "requested_tenant": "A",
+        "side_effect": "none",
+        "source_version": "refund-policy-v2",
+        "status": "ok",
+        "text": "退款超过14天需人工复核；重复退款必须拒绝。",
+        "tool": "retrieve_authorized_doc"
+      },
+      "unknowns": [],
+      "external_action": null,
+      "unvisited_sources": [
+        "conflicting alternate version"
+      ],
+      "cache_or_context_evidence": "QA fixture only; no model context",
+      "handoff_recipient": null,
+      "human_receipt_pending": true
+    }
+  ],
+  "run_comparison": {
+    "A-normal": {
+      "byte_equal": true,
+      "run1_sha256": "a310a0bb7f4926393456b0ddd9abbd1d1737f0ec02ded39782730bfe051b2183",
+      "run2_sha256": "a310a0bb7f4926393456b0ddd9abbd1d1737f0ec02ded39782730bfe051b2183"
+    },
+    "B-tenant-denied": {
+      "byte_equal": true,
+      "run1_sha256": "5f2365a4b9f348709b90daf7504c2ddf0fa7bbccc005165121ab776d2dc3c1f9",
+      "run2_sha256": "5f2365a4b9f348709b90daf7504c2ddf0fa7bbccc005165121ab776d2dc3c1f9"
+    },
+    "source-missing": {
+      "byte_equal": true,
+      "run1_sha256": "4a217cbb921688cef819c52e98f4bbc872ed9db72a7918d1069ab06ce2a80897",
+      "run2_sha256": "4a217cbb921688cef819c52e98f4bbc872ed9db72a7918d1069ab06ce2a80897"
+    },
+    "source-conflict": {
+      "byte_equal": true,
+      "run1_sha256": "988c9bcecf929f7ebe2ff03836cfd9ede87654450fd3cb4fde6a2df3ae881c09",
+      "run2_sha256": "988c9bcecf929f7ebe2ff03836cfd9ede87654450fd3cb4fde6a2df3ae881c09"
+    }
+  },
+  "unknown_holdout": {
+    "path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts/holdout/holdout-output.json",
+    "changed_keys": [
+      "document_id",
+      "source_version",
+      "text"
+    ],
+    "dynamic_binding_verified": true,
+    "human_review_marker_preserved": true
+  },
+  "checks": {
+    "replay_verify": "pass",
+    "B_text_absent_from_QA_outputs": "pass",
+    "external_actions": "none",
+    "network": "disabled",
+    "real_model": false,
+    "cloud": false,
+    "paid_api": false,
+    "real_user_data": false
+  },
+  "levels_granted": [],
+  "human_receipt_pending": true,
+  "unverified": [
+    "real supplier source API",
+    "real model fidelity",
+    "cache/concurrency/recovery",
+    "production permissions",
+    "human approval/signoff",
+    "learner transfer and occupational competence",
+    "learner-authored execution and learner receipt",
+    "real supplier/source API",
+    "model fidelity",
+    "cache/context isolation under real runtime",
+    "production permissions",
+    "learner transfer"
+  ],
+  "artifact_dir": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-qa-v02-artifacts"
+}

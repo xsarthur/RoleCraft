@@ -1,0 +1,41 @@
+{
+  "review_id": "AI-GATE-003-CONTENT-REVIEW-20261015-001",
+  "practice_id": "AI-PRACTICE-GATE-003",
+  "version": "v0.1",
+  "decision": "fail",
+  "scope": "local fixture-only content review",
+  "evidence": {
+    "artifact_dir": "sites/rolecraft/team/ai-generation-l0-practice-gate-003",
+    "practice_pack": "sites/rolecraft/team/ai-generation-engineer-practice-pack-v02.json",
+    "fixture_hash": "9002b8bcef99feaa63d88c4c4d8f3eb16d22107b0ceb61e3820240bf709fe364",
+    "practice_pack_sha256": "b1cb993bfb6310f5f872c23980ad60a8d6dbc91c64462bbf253302328ffa0f1a",
+    "run_hashes_equal": true,
+    "first_failure_count": 5,
+    "first_failures_preserved": true,
+    "qa_status": "pending",
+    "self_signed": false
+  },
+  "findings": [
+    "正常序列、来源/hash保留、租户与 external_action=null 由工件相互支持。",
+    "五类首失败均保留，单约束 holdout 只改 human_approval_required_for_handoff。",
+    "schema-v3 allowed/required 未包含 legacy_status，但两份迁移产物保留该字段；声明的 validator=valid 与 schema 合同矛盾。",
+    "run-2 validator input 指向 run-1/migrated_checkpoint.json，不能证明从冻结 v2 输入独立重放。",
+    "simulated_human_gate/local-reviewer 仅为本地状态机收据，不是真人专家或生产审批。"
+  ],
+  "limitations": [
+    "未证明真实数据库迁移、并发/回滚、真实进程恢复、真实模型行为或接收方签收。",
+    "schema unknown-field 行为尚未由独立 QA 按修正后的合同重跑。",
+    "两次迁移 hash 相等，但 run-2 输入 provenance 不足。",
+    "真人专家、身份认证、生产审批、岗位认证与发布授权均未提供。"
+  ],
+  "decisions": {
+    "content_contract": "fail",
+    "l1": "not_granted",
+    "l2": "not_granted",
+    "human_expert": "unverified",
+    "production_approval": "unverified",
+    "database_migration": "unverified"
+  },
+  "next_owner": "AI生成工程师；测试工程师独立复验",
+  "recheck": "修正 v3 schema 与 run-2 输入 provenance 后，重跑正常、五类首失败、两次原 v2 迁移及单约束 holdout；复验前保持 fail。"
+}

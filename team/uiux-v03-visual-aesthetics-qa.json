@@ -1,0 +1,51 @@
+{
+  "qa_id": "uiux-v03-visual-aesthetics-qa-v01",
+  "role": "测试工程师",
+  "date": "2026-10-16",
+  "timezone": "Asia/Shanghai",
+  "scope": "VA01/VA02正文、配套SVG资产、课程架构与产品合同的独立静态交付检查",
+  "conclusion": "met_with_limitations",
+  "scope_result": "met_within_scope",
+  "inputs": [
+    "sites/rolecraft/textbooks/uiux-design-v03/VA01-visual-perception.md",
+    "sites/rolecraft/textbooks/uiux-design-v03/VA02-composition-rhythm.md",
+    "sites/rolecraft/textbooks/uiux-design-v03/assets/VA01-critique-board.svg",
+    "sites/rolecraft/textbooks/uiux-design-v03/assets/VA02-composition-study.svg",
+    "sites/rolecraft/team/uiux-v03-visual-aesthetics-curriculum.md",
+    "sites/rolecraft/team/uiux-visual-harmony-product-v01.md",
+    "sites/rolecraft/team/uiux-v03-visual-aesthetics-content-review.md",
+    "sites/rolecraft/team/uiux-v03-visual-aesthetics-content-review.json"
+  ],
+  "checks": {
+    "va01_textbook_exists_and_readable": "pass",
+    "va02_textbook_exists_and_readable": "pass",
+    "va01_asset_exists_and_bound": {"status": "pass", "markdown_image_count": 6, "concept_assets": {"focus_scan": {"file": "assets/VA01-focus-scan.svg", "line": 21}, "proportion_scale": {"file": "assets/VA01-proportion-scale.svg", "line": 36}, "rhythm_pause": {"file": "assets/VA01-rhythm-pause.svg", "line": 51}, "density_tension": {"file": "assets/VA01-density-tension.svg", "line": 66}, "judgment_taxonomy": {"file": "assets/VA01-judgment-taxonomy.svg", "line": 80}, "overview": {"file": "assets/VA01-critique-board.svg", "line": 191}}, "textbook_lines": 273, "sha256": "e5e1e547f8cd74aa28fc1b6fce71f56577446a906195038e1f5f7e9dd938b0be"},
+    "va02_asset_exists_and_bound": {"status": "pass", "markdown_image_count": 9, "concept_assets": {"content_state": {"file": "assets/VA02-content-state.svg", "line": 27}, "grid_baseline": {"file": "assets/VA02-grid-baseline.svg", "line": 72}, "whitespace_density": {"file": "assets/VA02-whitespace-density.svg", "line": 92}, "proportion_conditions": {"file": "assets/VA02-proportion-conditions.svg", "line": 100}, "density_rhythm": {"file": "assets/VA02-density-rhythm.svg", "line": 121}, "fold_line": {"file": "assets/VA02-fold-line.svg", "line": 148}, "responsive_reflow": {"file": "assets/VA02-responsive-reflow.svg", "line": 167}, "balance_focus": {"file": "assets/VA02-balance-focus.svg", "line": 171}, "overview": {"file": "assets/VA02-composition-study.svg", "line": 254}}, "textbook_lines": 426, "sha256": "2010b2eed04db3b7d597c37e0490b122b8e28b55acb8c9b704c175ef5e12e367"},
+    "markdown_asset_paths_resolve": "pass",
+    "markdown_image_syntax": {"status": "pass", "concept_image_count": 15, "all_targets_exist": true, "alt_text_present": true, "boundary_labels_present": true},
+    "all_svg_assets_xmllint": {"status": "pass", "asset_count": 15, "all_exit_codes": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+    "va01_svg_xmllint": {"status": "pass", "command": "xmllint --noout sites/rolecraft/textbooks/uiux-design-v03/assets/VA01-critique-board.svg", "exit_code": 0},
+    "va02_svg_xmllint": {"status": "pass", "command": "xmllint --noout sites/rolecraft/textbooks/uiux-design-v03/assets/VA02-composition-study.svg", "exit_code": 0},
+    "svg_structure": {"status": "pass", "role_img": true, "aria_labelledby": true, "title_desc_present": true, "unique_ids": true, "nonempty_text_nodes": true},
+    "content_review_revision_defects": {"status": "closed", "items": ["VA01-ART-001", "VA02-ART-001"], "source": "uiux-v03-visual-aesthetics-content-review.md/.json"},
+    "browser_pixel_render": "not_verified",
+    "markdown_renderer_image_display": "not_verified",
+    "screen_reader_and_assistive_technology": "not_run",
+    "real_user_or_learner_evidence": "not_run",
+    "human_expert_review": "not_run",
+    "application_implementation": "not_run"
+  },
+  "assets": {
+    "VA01-critique-board.svg": {"viewBox": "0 0 1200 700", "sha256": "2d55abccc192e8e524141219a7c0e932633cbdcbe96c522be3c58a5ca6ad5d59"},
+    "VA02-composition-study.svg": {"viewBox": "0 0 1200 760", "sha256": "9fce742257977ebc021d090e95d8bc53d2ca0b52e6dfa95ae2dc38a383d3e04b"}
+  },
+  "limitations": [
+    "未产生浏览器像素、字体回退或真实响应式截图证据。",
+    "未运行读屏、键盘、灰度/色觉、大字号、减少动效或高对比检查。",
+    "未取得真实用户/学习者理解与学习效果证据。",
+    "未取得真人设计专家或行业专家评审。",
+    "未验证应用实现、动态行为、性能或生产交付。"
+  ],
+  "overall_status": "not_met; this limited QA does not close product, learning, or professional-competence gates",
+  "retest": "正文或资产返修后重跑文件/链接与xmllint检查，并在浏览器及辅助技术环境复验；真实理解和学习证据另由相应岗位取得。"
+}

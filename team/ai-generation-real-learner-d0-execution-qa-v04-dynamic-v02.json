@@ -1,0 +1,39 @@
+{
+  "record": "ai-generation-real-learner-d0-execution-qa-v04-dynamic-v02",
+  "date": "2026-10-16",
+  "scope": "D0-03 dynamic-source runner v0.2 and receiver helper replay/syntax only",
+  "status": "met_within_scope",
+  "independent_qa": true,
+  "implementation_self_check": {
+    "command": "python3 -m unittest -v sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/implementation/test_d0_03_runner_v02_dynamic.py",
+    "tests": 3,
+    "passed": 3,
+    "classification": "implementation_self_check_not_independent_acceptance"
+  },
+  "replay_smoke": {
+    "script": "receiver-replay-v02.sh",
+    "evidence": "/private/tmp/chenny-receiver-replay-v02.OtcDn4/raw-replay",
+    "invocations": 8,
+    "exit_zero": 8,
+    "stderr_empty": true,
+    "run_pairs_byte_identical": ["A-normal", "B-tenant-denied", "source-missing", "source-conflict"]
+  },
+  "shell_syntax": {
+    "receiver-replay-v02.sh": "pass",
+    "receiver-holdout-v02.sh": "pass"
+  },
+  "v01_protection": {
+    "old_runner_sha256": "1003adf0ed363093d03fefbb78602b9a88c9f41f326baeaf49ee94287e008b49",
+    "old_receipts_worktree_changes": false
+  },
+  "holdout": {
+    "chenny_holdout_run": false,
+    "reason": "restricted to independent Chenny receiver session",
+    "accepted": null,
+    "signed": null
+  },
+  "limitations": [
+    "No independent dynamic holdout evidence in this session.",
+    "No learner performance, production readiness, or acceptance conclusion."
+  ]
+}

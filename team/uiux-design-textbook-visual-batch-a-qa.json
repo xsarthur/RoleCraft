@@ -1,0 +1,56 @@
+{
+  "qa_id": "uiux-design-textbook-visual-batch-a-qa-v01",
+  "role": "测试工程师",
+  "date": "2026-10-16",
+  "timezone": "Asia/Shanghai",
+  "scope": "v0.2第01–04章视觉优化、批次A四张SVG、Markdown图片路径、Mermaid/visual_downgrade边界及旧版本保护",
+  "conclusion": "met_with_limitations",
+  "scope_result": "met_within_static_file_scope",
+  "inputs": [
+    "sites/rolecraft/textbooks/uiux-design-v02/chapters/01-role-and-evidence.md",
+    "sites/rolecraft/textbooks/uiux-design-v02/chapters/02-problem-framing.md",
+    "sites/rolecraft/textbooks/uiux-design-v02/chapters/03-research-design.md",
+    "sites/rolecraft/textbooks/uiux-design-v02/chapters/04-evidence-synthesis.md",
+    "sites/rolecraft/textbooks/uiux-design-v02/assets/v02-batch-a-01-role-evidence.svg",
+    "sites/rolecraft/textbooks/uiux-design-v02/assets/v02-batch-a-02-problem-causality.svg",
+    "sites/rolecraft/textbooks/uiux-design-v02/assets/v02-batch-a-03-research-methods.svg",
+    "sites/rolecraft/textbooks/uiux-design-v02/assets/v02-batch-a-04-evidence-synthesis.svg",
+    "sites/rolecraft/team/uiux-design-textbook-visual-optimization-product-v01.md",
+    "sites/rolecraft/team/uiux-design-textbook-visual-optimization-design-v01.md"
+  ],
+  "checks": {
+    "chapter_count": {"status": "pass", "value": 4},
+    "markdown_image_syntax": {"status": "pass", "image_references": 7, "alt_text_present": true, "all_relative_targets_exist": true},
+    "svg_assets_exist": {"status": "pass", "asset_count": 4},
+    "xmllint": {"status": "pass", "asset_count": 4, "exit_codes": [0, 0, 0, 0]},
+    "svg_accessibility_metadata": {"status": "pass", "role_img": true, "aria_labelledby": "title desc", "title_desc_nonempty": true, "ids_resolve": true},
+    "svg_text": {"status": "pass", "text_nodes": 129, "empty_nodes": 1, "empty_node_is_layout_placeholder": true, "source_fields_present": true},
+    "educational_construct_and_boundary": {"status": "pass", "all_assets_marked_teaching_construct_and_unverified": true},
+    "mermaid_and_visual_downgrade": {"status": "pass_with_boundary", "mermaid_blocks": {"01": 1, "02": 1, "03": 1, "04": 2}, "nonempty_flowcharts": true, "visual_downgrade_recorded": true, "mermaid_renderer_run": false},
+    "old_version_protection": {"status": "pass", "git_status_clean_for_scope": true, "old_manifest_assets_sha256_match": true, "old_asset_count_checked": 10},
+    "assembly_integration": {"status": "insufficient", "source_index_lists_batch_a": false, "assembly_manifest_lists_batch_a": false, "assembled_book_contains_batch_a_refs": false}
+  },
+  "asset_sha256": {
+    "v02-batch-a-01-role-evidence.svg": "87be8126f211d7a05c6811e82051e1c6b52211ae97ac6ec041b15603a88133b0",
+    "v02-batch-a-02-problem-causality.svg": "5676139256354bcb2ac771fea37f5376761424e10dd843756d7b8dbdd4a2146f",
+    "v02-batch-a-03-research-methods.svg": "b9523c5934ff1015d8880a02d5a5e6815ce0259078073433851cc7618a94f94c",
+    "v02-batch-a-04-evidence-synthesis.svg": "898e962ae31ec7eeb85cab6205290e9cb15dbe3d049194fae69f987b64609511"
+  },
+  "not_verified": [
+    "browser_pixel_render_and_font_fallback",
+    "responsive_390_320_gray_large_text_and_crop",
+    "keyboard_focus_and_screen_reader",
+    "mermaid_runtime_render",
+    "markdown_renderer_display",
+    "real_reader_or_learner_understanding",
+    "human_expert_review",
+    "real_product_or_research_effect"
+  ],
+  "limitations": [
+    "静态XML与文本节点检查不等于视觉可读性或辅助技术读序。",
+    "source-index、assembly-manifest与合订本尚未接入批次A四图，需组装责任人更新后复验。",
+    "本QA不修改正文、SVG、旧资产、应用或数据库。"
+  ],
+  "overall_status": "not_met_for_full_product_or_learning_claims",
+  "retest": "批次A接入合订本或任何章节/资产返修后，重跑路径、xmllint、元数据、组装索引和旧版本哈希；随后在浏览器、键盘/读屏和真实读者场景分别取证。"
+}

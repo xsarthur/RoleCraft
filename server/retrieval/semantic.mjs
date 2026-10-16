@@ -72,7 +72,7 @@ function lock(){
  return record;
 }
 export async function getExtractor(){
- if(Number(process.versions.node.split('.')[0])!==24){const error=new Error('Local semantic retrieval requires verified Node.js 24');error.code='runtime_unsupported';throw error;}
+ if(Number(process.versions.node.split('.')[0])<24){const error=new Error('Local semantic retrieval requires Node.js 24 or newer');error.code='runtime_unsupported';throw error;}
  if(!extractorPromise)extractorPromise=(async()=>{
   lock();const {pipeline,env}=await import('@huggingface/transformers');
   env.localModelPath=path.join(here,'models')+path.sep;

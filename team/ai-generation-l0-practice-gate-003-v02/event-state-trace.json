@@ -1,0 +1,44 @@
+[
+  {
+    "checkpoint": "migrated_checkpoint.json",
+    "run": "run-1",
+    "seq": 1,
+    "state": "old_version_detected"
+  },
+  {
+    "checkpoint": "migrated_checkpoint.json",
+    "run": "run-1",
+    "seq": 2,
+    "state": "migration_planned"
+  },
+  {
+    "checkpoint": "migrated_checkpoint.json",
+    "run": "run-1",
+    "seq": 3,
+    "state": "v3_migrated"
+  },
+  {
+    "checkpoint": "migrated_checkpoint.json",
+    "run": "run-1",
+    "seq": 4,
+    "state": "schema_checked"
+  },
+  {
+    "checkpoint": "migrated_checkpoint.json",
+    "run": "run-1",
+    "seq": 5,
+    "state": "awaiting_human_approval"
+  },
+  {
+    "checkpoint": "migrated_checkpoint.json",
+    "run": "run-1",
+    "seq": 6,
+    "state": "human_intervention"
+  },
+  {
+    "checkpoint": "migrated_checkpoint.json",
+    "run": "run-1",
+    "seq": 7,
+    "state": "handed_off"
+  }
+]

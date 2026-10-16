@@ -1,0 +1,66 @@
+{
+  "kind": "review_document_self_check_only",
+  "count": 124,
+  "uniqueIds": 124,
+  "criteriaCount": 992,
+  "sets": {
+    "fixed100": 100,
+    "market14": 14,
+    "prototype10": 10
+  },
+  "contentPass": [
+    "Q33",
+    "Q37",
+    "Q55",
+    "Q61",
+    "Q67",
+    "Q72",
+    "Q75",
+    "Q78",
+    "Q81",
+    "Q82",
+    "Q89",
+    "M111",
+    "M114"
+  ],
+  "notMet": 111,
+  "sourceChecks": [
+    {
+      "path": "sites/rolecraft/dist/learning-v13-data.js",
+      "receivedSha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "currentSha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-experience-v13.js",
+      "receivedSha256": "67fa8e0091d53192a1b5a022c33c0496288233e8ebfd07ebca0b8f729ddab93e",
+      "currentSha256": "67fa8e0091d53192a1b5a022c33c0496288233e8ebfd07ebca0b8f729ddab93e",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/dist/interview-prep-v1-prototype.html",
+      "receivedSha256": "bde8c588f9aab88f9e36bb1a365aa14037812de04892401d02bfcc0355f68b65",
+      "currentSha256": "bde8c588f9aab88f9e36bb1a365aa14037812de04892401d02bfcc0355f68b65",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/team/ANSWER_QUALITY_STANDARD.md",
+      "receivedSha256": "e1f55b5a83ae73cd3b300d130ac557bc04031b3263da9642631c6c2af1fe2b97",
+      "currentSha256": "e1f55b5a83ae73cd3b300d130ac557bc04031b3263da9642631c6c2af1fe2b97",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-product.md",
+      "receivedSha256": "053981e1692e47bf4f6839a2befbb419e045a6e5cd1532b03e581ec12315492c",
+      "currentSha256": "053981e1692e47bf4f6839a2befbb419e045a6e5cd1532b03e581ec12315492c",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-product.json",
+      "receivedSha256": "77195910048dd5903893794a71917097f518ed643e2d9ec90d233936c5945686",
+      "currentSha256": "77195910048dd5903893794a71917097f518ed643e2d9ec90d233936c5945686",
+      "unchanged": true
+    }
+  ],
+  "noApplicationOrTextbookExecution": true
+}

@@ -1,0 +1,143 @@
+{
+  "runtime": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "executable": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+  "sources": [
+    {
+      "source": "sites/rolecraft/textbooks/v12/examples/n01-runtime-boundaries.py",
+      "snapshot": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n01-runtime-boundaries.py",
+      "sha256": "a156424a76bddc73cb831bda826ea676facce8191311bc0ca15f372f4deab75a",
+      "bytes": 8072
+    },
+    {
+      "source": "sites/rolecraft/textbooks/v12/examples/n02-memory-routing.py",
+      "snapshot": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n02-memory-routing.py",
+      "sha256": "400452b186375011da69c0c58b3917bb0cdd9b54e2e14e7b0f2d09ed5b584249",
+      "bytes": 6275
+    },
+    {
+      "source": "sites/rolecraft/textbooks/v12/examples/n03-plan-execution.py",
+      "snapshot": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n03-plan-execution.py",
+      "sha256": "211eabbd5fc5da020e8909742c0f7bf174e54478b07ea792f1daea0e1866db80",
+      "bytes": 6903
+    },
+    {
+      "source": "sites/rolecraft/textbooks/v12/examples/n06-graph-contracts.py",
+      "snapshot": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n06-graph-contracts.py",
+      "sha256": "d2ce027e04056fc598bf70f8dc7f3ecae5926f3848723ca85f167e959b0d9dc8",
+      "bytes": 1868
+    },
+    {
+      "source": "sites/rolecraft/textbooks/v12/examples/n07-delegation.py",
+      "snapshot": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n07-delegation.py",
+      "sha256": "c374265dd30165b99bee6512ce06c646ba7f4443e595ff358a7e4c1ccce84840",
+      "bytes": 5493
+    },
+    {
+      "source": "sites/rolecraft/textbooks/v12/examples/n09-runtime-recovery.py",
+      "snapshot": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n09-runtime-recovery.py",
+      "sha256": "e984d32ffa7f6b02d40ee6be2ce633dd8692d688a11dbdf037275d2607574f32",
+      "bytes": 5047
+    },
+    {
+      "source": "sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py",
+      "snapshot": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n09-memory-diagnostic.py",
+      "sha256": "9d90ef1295ed3543b909f935ffeb60f17b9681396a0779e20ca8dd7a4b75980d",
+      "bytes": 1333
+    },
+    {
+      "source": "sites/rolecraft/textbooks/v12/examples/n10-evaluation-matrix.py",
+      "snapshot": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n10-evaluation-matrix.py",
+      "sha256": "d30b8b8a3297203fa0be35a603bb8e19eea3332e79f73da2487e1cb55e09024b",
+      "bytes": 2277
+    },
+    {
+      "source": "sites/rolecraft/textbooks/v12/examples/n06-graph.py",
+      "snapshot": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n06-graph.py",
+      "sha256": "51ed00eea1cb36983e1eac38efe6cb122fd80357688152002f383e23607bb866",
+      "bytes": 4218
+    }
+  ],
+  "results": [
+    {
+      "example": "n01-runtime-boundaries.py",
+      "startedAtUTC": "2026-10-14T07:11:48.275371+00:00",
+      "exitCode": 0,
+      "log": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n01-runtime-boundaries.py.log",
+      "stdout": "{\"async\": {\"active\": 0, \"cleaned\": [0, 1, 2], \"peak\": 2, \"results\": {\"0\": \"OK\", \"1\": \"OK\", \"2\": \"TIMEOUT\"}}, \"memory_fixture\": {\"after_clear_delta_bytes\": -269792, \"retained_bytes\": 271120}, \"status\": \"SELF_CHECK_OK\"}\n",
+      "stderr": "",
+      "scope": "frozen source example; local finite teaching fixture only"
+    },
+    {
+      "example": "n02-memory-routing.py",
+      "startedAtUTC": "2026-10-14T07:11:48.524687+00:00",
+      "exitCode": 0,
+      "log": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n02-memory-routing.py.log",
+      "stdout": "{\"invalid_outputs\": [\"o1\", \"o2\"], \"memory_statuses\": {\"m1\": \"superseded\", \"m2\": \"source_invalid\", \"m3\": \"expired\", \"m4\": \"deleted\"}, \"routing\": {\"approval\": \"RECHECK_REQUIRED\", \"epoch\": 2, \"revision\": 2, \"status\": \"ACTIVE\", \"task_id\": \"issue\"}, \"status\": \"SELF_CHECK_OK\"}\n",
+      "stderr": "",
+      "scope": "frozen source example; local finite teaching fixture only"
+    },
+    {
+      "example": "n03-plan-execution.py",
+      "startedAtUTC": "2026-10-14T07:11:48.564795+00:00",
+      "exitCode": 0,
+      "log": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n03-plan-execution.py.log",
+      "stdout": "{\"after_change\": {\"draft\": \"stale\", \"report\": \"done\", \"rule\": \"stale\"}, \"external_effect_after_change\": \"EFFECT_RECHECK\", \"inflight_unknown_recheck\": true, \"no_effect_can_stale\": true, \"order\": [\"report\", \"rule\", \"draft\"], \"status\": \"SELF_CHECK_OK\"}\n",
+      "stderr": "",
+      "scope": "frozen source example; local finite teaching fixture only"
+    },
+    {
+      "example": "n06-graph-contracts.py",
+      "startedAtUTC": "2026-10-14T07:11:48.603353+00:00",
+      "exitCode": 0,
+      "log": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n06-graph-contracts.py.log",
+      "stdout": "n06 contracts PASS: preview, duplicate, gap, replay, final\n",
+      "stderr": "",
+      "scope": "frozen source example; local finite teaching fixture only"
+    },
+    {
+      "example": "n07-delegation.py",
+      "startedAtUTC": "2026-10-14T07:11:48.637416+00:00",
+      "exitCode": 0,
+      "log": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n07-delegation.py.log",
+      "stdout": "n07 PASS: duplicate, conflict, terminal, identity, budget, partial outcome\n",
+      "stderr": "",
+      "scope": "frozen source example; local finite teaching fixture only"
+    },
+    {
+      "example": "n09-runtime-recovery.py",
+      "startedAtUTC": "2026-10-14T07:11:48.672073+00:00",
+      "exitCode": 0,
+      "log": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n09-runtime-recovery.py.log",
+      "stdout": "n09 PASS: breaker probe, reopen, close; compensation unknown/reconcile; cancel fence\n",
+      "stderr": "",
+      "scope": "frozen source example; local finite teaching fixture only"
+    },
+    {
+      "example": "n09-memory-diagnostic.py",
+      "startedAtUTC": "2026-10-14T07:11:48.706642+00:00",
+      "exitCode": 0,
+      "log": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n09-memory-diagnostic.py.log",
+      "stdout": "{\"mode\": \"retained\", \"samples\": [{\"batch\": 0, \"retained_items\": 32, \"traced_current\": 133152, \"traced_peak\": 133238}, {\"batch\": 1, \"retained_items\": 64, \"traced_current\": 266584, \"traced_peak\": 266886}, {\"batch\": 2, \"retained_items\": 96, \"traced_current\": 400080, \"traced_peak\": 400334}, {\"batch\": 3, \"retained_items\": 128, \"traced_current\": 533384, \"traced_peak\": 533638}], \"top_locations\": [\"/Users/shengxiong/Desktop/One People Company/sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n09-memory-diagnostic.py:14: size=519 KiB, count=256, average=2076 B\", \"/Users/shengxiong/Desktop/One People Company/sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n09-memory-diagnostic.py:16: size=1024 B, count=1, average=1024 B\"]}\n{\"mode\": \"bounded\", \"samples\": [{\"batch\": 0, \"retained_items\": 4, \"traced_current\": 17372, \"traced_peak\": 21613}, {\"batch\": 1, \"retained_items\": 4, \"traced_current\": 18180, \"traced_peak\": 22541}, {\"batch\": 2, \"retained_items\": 4, \"traced_current\": 18428, \"traced_peak\": 22789}, {\"batch\": 3, \"retained_items\": 4, \"traced_current\": 18676, \"traced_peak\": 23037}], \"top_locations\": [\"/Users/shengxiong/Desktop/One People Company/sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n09-memory-diagnostic.py:14: size=16.2 KiB, count=8, average=2076 B\", \"/Users/shengxiong/Desktop/One People Company/sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n09-memory-diagnostic.py:20: size=768 B, count=9, average=85 B\"]}\n{\"mode\": \"temporary\", \"samples\": [{\"batch\": 0, \"retained_items\": 0, \"traced_current\": 0, \"traced_peak\": 8394}, {\"batch\": 1, \"retained_items\": 0, \"traced_current\": 248, \"traced_peak\": 8762}, {\"batch\": 2, \"retained_items\": 0, \"traced_current\": 464, \"traced_peak\": 8978}, {\"batch\": 3, \"retained_items\": 0, \"traced_current\": 712, \"traced_peak\": 9226}], \"top_locations\": [\"/Users/shengxiong/Desktop/One People Company/sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n09-memory-diagnostic.py:20: size=768 B, count=9, average=85 B\", \"/Users/shengxiong/Desktop/One People Company/sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n09-memory-diagnostic.py:19: size=256 B, count=7, average=37 B\"]}\nn09 memory PASS: finite retention, bounded-cache and temporary-allocation evidence\n",
+      "stderr": "",
+      "scope": "frozen source example; local finite teaching fixture only"
+    },
+    {
+      "example": "n10-evaluation-matrix.py",
+      "startedAtUTC": "2026-10-14T07:11:48.740850+00:00",
+      "exitCode": 0,
+      "log": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n10-evaluation-matrix.py.log",
+      "stdout": "n10 PASS: feasible matrix, language-layer divergence, missing handover items\n",
+      "stderr": "",
+      "scope": "frozen source example; local finite teaching fixture only"
+    }
+  ],
+  "notCovered": [
+    "No real model or paid API",
+    "No real account database",
+    "No network transport or provider interoperation",
+    "No OS sandbox or GPU measurement",
+    "No real user/interview outcome",
+    "No full Agent control-loop pseudocode execution",
+    "n06-graph framework execution not performed; exact reducer may be exercised separately"
+  ]
+}

@@ -1,0 +1,920 @@
+{
+  "schemaVersion": "1.0",
+  "id": "agent-developer-textbook-v13-isolated-preview",
+  "version": "textbook-v13",
+  "updatedAt": "2026-10-16",
+  "status": "isolated_preview_only",
+  "purpose": "Readonly assembly manifest for v13 optimized Agent textbook; does not replace v12 runtime corpus.",
+  "sourceRoot": "sites/rolecraft/textbooks/v13/",
+  "baseVersion": "textbook-v12",
+  "baseManifestPath": "sites/rolecraft/textbooks/v12/assembly-manifest.json",
+  "chapterCount": 30,
+  "assetCount": 62,
+  "order": [
+    "00-learning-route",
+    "01-foundation",
+    "n01-python-model-foundations",
+    "p01-discovery",
+    "02-task-acceptance",
+    "03-trust-boundary",
+    "f01",
+    "f02",
+    "n02-context-memory-prompt",
+    "c01-selection",
+    "c01-control-primer",
+    "c02",
+    "c03",
+    "n04-tools-mcp",
+    "e01",
+    "c01-fixed-workflow",
+    "c01-control-loop",
+    "n03-planning-reflection",
+    "n05-retrieval-ingestion",
+    "n06-graph-orchestration",
+    "n07-multiagent-a2a",
+    "e02",
+    "n10-evaluation-projects",
+    "p01-mvp",
+    "e03",
+    "n08-sandbox-security",
+    "e04",
+    "e05",
+    "n09-runtime-delivery",
+    "p02"
+  ],
+  "chapters": [
+    {
+      "path": "sites/rolecraft/textbooks/v13/00-learning-route.md",
+      "sha256": "32b7312e4a15145d0fe17f542ae41753e4b7b4c1f897dc85cf758693a8b561ca",
+      "lineCount": 169,
+      "imageRefs": [
+        "assets/00-learning-route-demand-control-evidence-v01.svg",
+        "assets/agent-runtime-loop.png",
+        "assets/agent-engineering-landscape-v12.png"
+      ],
+      "detailsBlocks": 1,
+      "codeBlocks": 0,
+      "longCodeBlocks": 0,
+      "codeLineCounts": []
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/01-foundation.md",
+      "sha256": "4875c0ca7a8e7101f35d0674b4bd38aaca3151c1b3dcccb76dd0a9705b01df1d",
+      "lineCount": 168,
+      "imageRefs": [
+        "assets/01-foundation-input-failure-map-v01.svg"
+      ],
+      "detailsBlocks": 2,
+      "codeBlocks": 1,
+      "longCodeBlocks": 1,
+      "codeLineCounts": [
+        53
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/n01-python-model-foundations.md",
+      "sha256": "bfa703048bd63e6694ed60c6f3da85eb889bf8a5a0e92629ab7b00b3a6ac7a4d",
+      "lineCount": 211,
+      "imageRefs": [
+        "assets/n01-python-model-foundations-runtime-boundary-v01.svg"
+      ],
+      "detailsBlocks": 4,
+      "codeBlocks": 4,
+      "longCodeBlocks": 3,
+      "codeLineCounts": [
+        8,
+        15,
+        18,
+        18
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/p01-discovery.md",
+      "sha256": "61a01b4eb21142ff09da2fcda93abbc188092b89c7bec79560a2d59b8238e9c9",
+      "lineCount": 156,
+      "imageRefs": [
+        "assets/p01-discovery-evidence-chain-v01.svg"
+      ],
+      "detailsBlocks": 2,
+      "codeBlocks": 1,
+      "longCodeBlocks": 1,
+      "codeLineCounts": [
+        16
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/02-task-acceptance.md",
+      "sha256": "0ce1fda0c37b9aca0e84930c649fff000c9d59e9a7d45db1fc75387a41313dc4",
+      "lineCount": 161,
+      "imageRefs": [
+        "assets/02-task-acceptance-contract-map-v01.svg",
+        "assets/02-task-acceptance-evidence-stop-card-v01.svg"
+      ],
+      "detailsBlocks": 1,
+      "codeBlocks": 4,
+      "longCodeBlocks": 1,
+      "codeLineCounts": [
+        10,
+        12,
+        5,
+        2
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/03-trust-boundary.md",
+      "sha256": "192aa0e59c71d04b66af3541c04b07c5bca84fc89336bf53a3f96cb56b0e093f",
+      "lineCount": 131,
+      "imageRefs": [
+        "assets/03-trust-boundary-source-auth-map-v01.svg",
+        "assets/03-trust-boundary-evidence-to-write-card-v01.svg"
+      ],
+      "detailsBlocks": 0,
+      "codeBlocks": 4,
+      "longCodeBlocks": 1,
+      "codeLineCounts": [
+        9,
+        3,
+        14,
+        2
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/f01.md",
+      "sha256": "9715927d1c44f2e3c3b0938305f33f806200bc94f9237952e6fcd9748f1bd071",
+      "lineCount": 246,
+      "imageRefs": [
+        "assets/f01-api-boundary-map-v01.svg",
+        "assets/f01-retry-state-card-v01.svg"
+      ],
+      "detailsBlocks": 1,
+      "codeBlocks": 1,
+      "longCodeBlocks": 1,
+      "codeLineCounts": [
+        152
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/f02.md",
+      "sha256": "5303d8377cc3bc565b4c267c1eaace57da9f42a22c83f151364847bdbbd1a652",
+      "lineCount": 242,
+      "imageRefs": [
+        "assets/f02-candidate-gate-map-v01.svg",
+        "assets/f02-failure-routing-card-v01.svg"
+      ],
+      "detailsBlocks": 1,
+      "codeBlocks": 1,
+      "longCodeBlocks": 1,
+      "codeLineCounts": [
+        151
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/n02-context-memory-prompt.md",
+      "sha256": "a0594a4893e29bf6d195dca8e68e17c451fa23e25fdcf3ede8cd3a7af5bc86b3",
+      "lineCount": 147,
+      "imageRefs": [
+        "assets/n02-context-memory-layers-map-v01.svg",
+        "assets/n02-revocation-recheck-card-v01.svg"
+      ],
+      "detailsBlocks": 0,
+      "codeBlocks": 3,
+      "longCodeBlocks": 0,
+      "codeLineCounts": [
+        8,
+        10,
+        7
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/c01-selection.md",
+      "sha256": "8c855a17b829681e0db27ee95b54a949eb631e8ef9477cd34aee2a9307ca0998",
+      "lineCount": 179,
+      "imageRefs": [
+        "assets/c01-selection-control-map-v03.svg"
+      ],
+      "detailsBlocks": 0,
+      "codeBlocks": 2,
+      "longCodeBlocks": 0,
+      "codeLineCounts": [
+        10,
+        2
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/c01-control-primer.md",
+      "sha256": "466f55ac221c6b6a2e9b1e80d1b795558446d23bb70bdde968c09e2de23c35d8",
+      "lineCount": 82,
+      "imageRefs": [
+        "assets/c01-control-primer-overview-v01.svg"
+      ],
+      "detailsBlocks": 0,
+      "codeBlocks": 1,
+      "longCodeBlocks": 1,
+      "codeLineCounts": [
+        12
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/c02.md",
+      "sha256": "a7fb8c3649a3394f818527bf9f3ea73b6f873fc78a16a7a913e2eedaf4efde74",
+      "lineCount": 313,
+      "imageRefs": [
+        "assets/c02-evidence-package-chain-v01.svg"
+      ],
+      "detailsBlocks": 2,
+      "codeBlocks": 1,
+      "longCodeBlocks": 1,
+      "codeLineCounts": [
+        179
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/c03.md",
+      "sha256": "686c9cb56f4b2841ac403c718841468e399753363e3af8b61de7642047907565",
+      "lineCount": 367,
+      "imageRefs": [
+        "assets/c03-write-tool-authorization-ledger-v01.svg"
+      ],
+      "detailsBlocks": 5,
+      "codeBlocks": 5,
+      "longCodeBlocks": 4,
+      "codeLineCounts": [
+        1,
+        46,
+        76,
+        32,
+        45
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/n04-tools-mcp.md",
+      "sha256": "93dd0b05ee198470714cfe9734f94050eacdbe2255825c50904922588a010b7f",
+      "lineCount": 159,
+      "imageRefs": [
+        "assets/n04-tools-mcp-overview-v01.svg",
+        "assets/n04-tools-mcp-mid-card-v01.svg"
+      ],
+      "detailsBlocks": 0,
+      "codeBlocks": 5,
+      "longCodeBlocks": 0,
+      "codeLineCounts": [
+        8,
+        3,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/e01.md",
+      "sha256": "864ad89d03d524cce11e4148e1beae093af428ac8f6a0170ee67eca27fa898ff",
+      "lineCount": 443,
+      "imageRefs": [
+        "assets/e01-overview-v01.svg"
+      ],
+      "detailsBlocks": 1,
+      "codeBlocks": 3,
+      "longCodeBlocks": 3,
+      "codeLineCounts": [
+        12,
+        302,
+        18
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/c01-fixed-workflow.md",
+      "sha256": "9ca3f52939b3e9e8acbe0eb5b5f08f84db8463005365692717e9cfe63d9e33dd",
+      "lineCount": 226,
+      "imageRefs": [
+        "assets/c01-fixed-workflow-overview-v01.svg"
+      ],
+      "detailsBlocks": 1,
+      "codeBlocks": 4,
+      "longCodeBlocks": 4,
+      "codeLineCounts": [
+        14,
+        29,
+        64,
+        50
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/c01-control-loop.md",
+      "sha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+      "lineCount": 1027,
+      "imageRefs": [
+        "assets/c01-control-loop-observe-effect-map-v01.svg",
+        "assets/c01-control-loop-ledger-recovery-card-v01.svg"
+      ],
+      "detailsBlocks": 6,
+      "codeBlocks": 14,
+      "longCodeBlocks": 7,
+      "codeLineCounts": [
+        11,
+        3,
+        5,
+        96,
+        1,
+        11,
+        5,
+        32,
+        152,
+        64,
+        60,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/n03-planning-reflection.md",
+      "sha256": "23f9eb76d25748359ffc5e05c0cf23ed2572bb3ace8cafd33e049d741b4d0a7a",
+      "lineCount": 133,
+      "imageRefs": [
+        "assets/n03-planning-reflection-overview-v01.svg",
+        "assets/n03-planning-reflection-mid-card-v01.svg"
+      ],
+      "detailsBlocks": 0,
+      "codeBlocks": 2,
+      "longCodeBlocks": 0,
+      "codeLineCounts": [
+        6,
+        8
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/n05-retrieval-ingestion.md",
+      "sha256": "b5d0b5b08afd55a6bfe1d74b9a5ccf7feef2a97e4f5644db78ca425608a468fc",
+      "lineCount": 172,
+      "imageRefs": [
+        "assets/n05-retrieval-ingestion-overview-v01.svg",
+        "assets/n05-retrieval-ingestion-mid-card-v01.svg"
+      ],
+      "detailsBlocks": 1,
+      "codeBlocks": 2,
+      "longCodeBlocks": 1,
+      "codeLineCounts": [
+        7,
+        22
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/n06-graph-orchestration.md",
+      "sha256": "22086c9ed5e717c8ec97fe86ba8290c5d4a5777a8e72ea1d9fbfcac3277cd63a",
+      "lineCount": 109,
+      "imageRefs": [
+        "assets/n03-planning-reflection-map-v01.svg",
+        "assets/n06-graph-orchestration-parent-child-card-v01.svg"
+      ],
+      "detailsBlocks": 0,
+      "codeBlocks": 2,
+      "longCodeBlocks": 0,
+      "codeLineCounts": [
+        8,
+        9
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/n07-multiagent-a2a.md",
+      "sha256": "04b6538f1d626ffdc1d3b085c05ead9734d5909a5ed6bc6356ad1a08b5b9ac4e",
+      "lineCount": 116,
+      "imageRefs": [
+        "assets/n04-tools-mcp-overview-v01.svg",
+        "assets/n07-multiagent-a2a-handoff-card-v01.svg"
+      ],
+      "detailsBlocks": 2,
+      "codeBlocks": 2,
+      "longCodeBlocks": 1,
+      "codeLineCounts": [
+        11,
+        9
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/e02.md",
+      "sha256": "079df578a834a05f92c683f667b7fbc74176c74f50ce20c6b67638d06876d516",
+      "lineCount": 308,
+      "imageRefs": [
+        "assets/f02-candidate-gate-map-v01.svg",
+        "assets/e02-experiment-verdict-card-v01.svg"
+      ],
+      "detailsBlocks": 2,
+      "codeBlocks": 2,
+      "longCodeBlocks": 2,
+      "codeLineCounts": [
+        24,
+        111
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/n10-evaluation-projects.md",
+      "sha256": "6560a702e81e643ee0e66251911a5e539998167c9599f7129e7832f234132654",
+      "lineCount": 102,
+      "imageRefs": [
+        "assets/n10-evaluation-projects-visual-map-v01.svg"
+      ],
+      "detailsBlocks": 0,
+      "codeBlocks": 0,
+      "longCodeBlocks": 0,
+      "codeLineCounts": []
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/p01-mvp.md",
+      "sha256": "1462df664a2c3d31dc54957f47c3ddf3508ee0eb364f898c309171e3d520b916",
+      "lineCount": 122,
+      "imageRefs": [
+        "assets/p01-mvp-visual-map-v01.svg"
+      ],
+      "detailsBlocks": 1,
+      "codeBlocks": 1,
+      "longCodeBlocks": 1,
+      "codeLineCounts": [
+        23
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/e03.md",
+      "sha256": "07e89c7bdad3a161588c8df95e3cf69951812cdeb03f577279c8304b6ed82fde",
+      "lineCount": 354,
+      "imageRefs": [
+        "assets/e03-overview-v01.svg"
+      ],
+      "detailsBlocks": 1,
+      "codeBlocks": 3,
+      "longCodeBlocks": 2,
+      "codeLineCounts": [
+        12,
+        7,
+        193
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/n08-sandbox-security.md",
+      "sha256": "3cb77eb8e465a165ac5d303b0b3c2c2a6f0d18f042df96def6dc15ac37f6d52a",
+      "lineCount": 79,
+      "imageRefs": [
+        "assets/n08-sandbox-security-visual-map-v01.svg"
+      ],
+      "detailsBlocks": 0,
+      "codeBlocks": 0,
+      "longCodeBlocks": 0,
+      "codeLineCounts": []
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/e04.md",
+      "sha256": "cd63c856973e2d9a5b0662439baa28174e6fdf446389f9d0174a67c9bc3fed8a",
+      "lineCount": 257,
+      "imageRefs": [
+        "assets/e04-overview-v01.svg"
+      ],
+      "detailsBlocks": 1,
+      "codeBlocks": 3,
+      "longCodeBlocks": 3,
+      "codeLineCounts": [
+        12,
+        15,
+        73
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/e05.md",
+      "sha256": "40ff0baea16c9ba3575ef0752e807d2649882090dd4587e27d71aff6d59e99cc",
+      "lineCount": 266,
+      "imageRefs": [
+        "assets/e05-cost-performance-visual-map-v01.svg"
+      ],
+      "detailsBlocks": 2,
+      "codeBlocks": 3,
+      "longCodeBlocks": 2,
+      "codeLineCounts": [
+        3,
+        81,
+        25
+      ]
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/n09-runtime-delivery.md",
+      "sha256": "02ce067a57e3fb3e7f2a7468e586d574a73efeb24da20217a3bd602d32f3a84b",
+      "lineCount": 94,
+      "imageRefs": [
+        "assets/n09-runtime-delivery-visual-map-v01.svg"
+      ],
+      "detailsBlocks": 0,
+      "codeBlocks": 0,
+      "longCodeBlocks": 0,
+      "codeLineCounts": []
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/p02.md",
+      "sha256": "9308af07289f6bff79572cf21ffc57f0de86f4a0995e12cdc20031bb33786cc4",
+      "lineCount": 233,
+      "imageRefs": [
+        "assets/p02-delivery-evidence-visual-map-v01.svg"
+      ],
+      "detailsBlocks": 1,
+      "codeBlocks": 1,
+      "longCodeBlocks": 1,
+      "codeLineCounts": [
+        65
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/00-learning-route-demand-control-evidence-v01.svg",
+      "sha256": "66c449c243dda4081062a69a95564c41b9c8e1ebcafa937a35f5411ff1c4f4e7",
+      "bytes": 1731,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/00-learning-route-visual-map-v01.svg",
+      "sha256": "3bc221ad2f65d349f2e5e11c0a7d484db7a373a89d2bc291ca45b0f437c93c30",
+      "bytes": 3785,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/01-foundation-input-failure-map-v01.svg",
+      "sha256": "4ee9083580b572a39a4ccf2f5c223161c2307962fec967601bb961f3de290544",
+      "bytes": 2074,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/01-foundation-visual-map-v01.svg",
+      "sha256": "8ed173594f42d17672370ac86f7d622cb675fa4ac2f892fc3a2fa6a7c9e522cc",
+      "bytes": 3752,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/02-task-acceptance-contract-map-v01.svg",
+      "sha256": "f45dd1eafd61d58c13792b0f2285b8cb1daa891eae79a5fff04172a5f477e6bb",
+      "bytes": 4888,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/02-task-acceptance-evidence-stop-card-v01.svg",
+      "sha256": "f7330a24cd832e46705ff5330125c29270d7a86682e191e95eedee5ebf6f1f3d",
+      "bytes": 3555,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/03-trust-boundary-evidence-to-write-card-v01.svg",
+      "sha256": "9e648c3881267e43e72ef98c11ff21e839f8cb1e61376abbef397ad73a80ea73",
+      "bytes": 3666,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/03-trust-boundary-source-auth-map-v01.svg",
+      "sha256": "79b81bc53181da5ef8d10dd205a124c608cbdbc45a8f86d35146e296a03d281e",
+      "bytes": 4898,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/agent-engineering-landscape-v12.png",
+      "sha256": "198bff0d7cbd597c3e284755aeb79d8867214d6114151fd2f504e6adbe8d523d",
+      "bytes": 140489,
+      "extension": ".png"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/agent-engineering-landscape-v12.svg",
+      "sha256": "fad2379ad07797ad046ed507b63f4efc9bb2db24d1d1a6347ca1f062a5a6e718",
+      "bytes": 4601,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/agent-runtime-loop.dot",
+      "sha256": "7fcde3319a3f611f3909472530a29e73480ab5a8049b65313be53278e312ee5b",
+      "bytes": 2125,
+      "extension": ".dot"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/agent-runtime-loop.png",
+      "sha256": "9497f77fa43566eb621549175ee55870a02b50e8ebd3144405e820d0ac2c7106",
+      "bytes": 386511,
+      "extension": ".png"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/agent-runtime-loop.svg",
+      "sha256": "c1929a8021f331df4452e949272028fcde05c037b996453e883d3f84a83e5a15",
+      "bytes": 11151,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c01-control-loop-ledger-recovery-card-v01.svg",
+      "sha256": "02d15fe2fe7ad3291621fffb6dcaf144edb91b8bd41facdd84e8b9167755688a",
+      "bytes": 3409,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c01-control-loop-observe-effect-map-v01.svg",
+      "sha256": "877fd916de96e39322f48e5bf59adbf5c764a143ebcc429e16fab8c8f4ef4c0e",
+      "bytes": 5278,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c01-control-primer-overview-v01.svg",
+      "sha256": "cd7b1748161b0b986b998b3bd06ec97a24e38391aa8a8d790b3fd9769ba593fd",
+      "bytes": 2391,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c01-control-primer-visual-map-v01.svg",
+      "sha256": "4709303c4b815e36b16cfeeaf498bfb8133990ebbc3083c12dccd56ca937de76",
+      "bytes": 3755,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c01-fixed-workflow-overview-v01.svg",
+      "sha256": "83fb0262e1e234b432bcd476e518a0c4fdcd5cf7ec0797a3445934d106efb8a2",
+      "bytes": 2681,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c01-fixed-workflow-visual-map-v01.svg",
+      "sha256": "00dbb248ddf91a407ee758df0c0610e43ebbea07f29f0436efea3f081a4b5854",
+      "bytes": 3747,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c01-selection-control-map-v03.svg",
+      "sha256": "a0b303ec96da491b7dfd9d49c5a44163a861a3af70e2972f854546f4eb86ce6e",
+      "bytes": 8195,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c02-evidence-package-chain-v01.svg",
+      "sha256": "ef23436d8892c8bf9c2d66a9bdebf143b2c115e2e79dd2db1dac2eb94954bb21",
+      "bytes": 1762,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c02-evidence-package-visual-map-v01.svg",
+      "sha256": "c6d6c5692a33cfd367922370ff255902c72760d2ab8fd848cf80c168d5744fc6",
+      "bytes": 3743,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c03-tool-write-visual-map-v01.svg",
+      "sha256": "8610d545ddec7d2eb83c37c328e5315be7d2ca5a3c8f315ff1de25dfe3440cb9",
+      "bytes": 3761,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c03-write-tool-authorization-ledger-v01.svg",
+      "sha256": "56bf2e7fe097245013ae342b63096c29b03854d41cd6d866a8b524e7c2fe9bff",
+      "bytes": 2068,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/e01-overview-v01.svg",
+      "sha256": "2e46d8815040f5550f638f8bcae7e8e0a3ba1a86de59f76f021bb34cc4c99f21",
+      "bytes": 2409,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/e01-persistent-state-visual-map-v01.svg",
+      "sha256": "03c439d2a3c9d99328e3035a98a48f2d9fe5ab1f9a3f923c20429d93a85a58be",
+      "bytes": 3752,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/e02-experiment-verdict-card-v01.svg",
+      "sha256": "2176537effdc9973cdbcd9feaf34bfdd9192a3fb2283df6aabee6ac70ac396a0",
+      "bytes": 4423,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/e03-overview-v01.svg",
+      "sha256": "a97c7796e061996c376c4762d8a99c708f5f989dc9ab227f7cc5c45b5a9795cd",
+      "bytes": 2421,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/e03-permission-visual-map-v01.svg",
+      "sha256": "94d222ee7245766d3c73214ce5c7fab977097d5325cbfa7d8f0791341d1edfd2",
+      "bytes": 3776,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/e04-overview-v01.svg",
+      "sha256": "342afd07882049f9ae9e61838eba32acec87824c4b83de70f24c54860457942e",
+      "bytes": 2415,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/e04-release-rollback-visual-map-v01.svg",
+      "sha256": "1ec3477a6eb6ae798388d4a071bdb3037873f3c3ebfa4f1727c2f23e99e318da",
+      "bytes": 3762,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/e05-cost-performance-visual-map-v01.svg",
+      "sha256": "d98e03d67b9fbe5b1e375acaeb038faac195acf9cca08b491c8d631ca696f4ce",
+      "bytes": 3772,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/f01-api-boundary-map-v01.svg",
+      "sha256": "b86d9b17df74dab224b88161ca99a694d82bb66b5bc69fbe59f857049b742781",
+      "bytes": 2092,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/f01-retry-state-card-v01.svg",
+      "sha256": "8e0d6aea6e697277b8965029905ee87e0e2589c7cab23d3d7a62c6137fab8e39",
+      "bytes": 1603,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/f02-candidate-gate-map-v01.svg",
+      "sha256": "57793812789e1694a33f4d9437fe5da174830712fb2983f5a43d254b597201ff",
+      "bytes": 1684,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/f02-failure-routing-card-v01.svg",
+      "sha256": "3f034c3acac3dd82fd67c6123a40560852cabbf421ce7cf040b465983f4849e3",
+      "bytes": 1483,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n01-python-model-foundations-runtime-boundary-v01.svg",
+      "sha256": "c05c8452fdeab54e73a7b3465380b7a5ebd0b1213afb24d52c55351413521a49",
+      "bytes": 1773,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n01-python-model-foundations-visual-map-v01.svg",
+      "sha256": "b3fb5e776e8acb491ca88f7076646dac574bd7d5b137c7e63f39768127fc6f51",
+      "bytes": 3758,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n02-context-memory-layers-map-v01.svg",
+      "sha256": "770f031c48e275a43c51aa9a6e11d6c8741c0d92d4e40c453d0a6ccde85facdf",
+      "bytes": 1666,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n02-revocation-recheck-card-v01.svg",
+      "sha256": "05bb9b45c4fc2fffedb1ed600dbfed0d39c422d6fea22ea9285b562ef1cf8f2b",
+      "bytes": 1482,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n03-planning-reflection-failure-card-v01.svg",
+      "sha256": "fd5edd4ddc33b18a6e0a7d9ca8eca8e64630943a618d090daccb6e52de2bd514",
+      "bytes": 2332,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n03-planning-reflection-map-v01.svg",
+      "sha256": "9a599ea4305c4aeba5a895f7da712a67f8aeee04c21d72f6d54656be6c637c5f",
+      "bytes": 3838,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n03-planning-reflection-mid-card-v01.svg",
+      "sha256": "5405a3fe69adf65e72d167d037c793da6ce6b1653c0b2170068b0a9fd2258ddf",
+      "bytes": 1804,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n03-planning-reflection-overview-v01.svg",
+      "sha256": "e3fdded7f5fb52b705cd3884792df443660a780751d57a3c1d54f920946ed1ce",
+      "bytes": 1848,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n04-tools-mcp-failure-card-v01.svg",
+      "sha256": "809a293528e9ae7f3f4cb201fc18d4a99bd487a843bf615b9d69f4c6ffd179a2",
+      "bytes": 2020,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n04-tools-mcp-mid-card-v01.svg",
+      "sha256": "214b4eac2de287667517c78e028c1d28e3bc8a270c63930e5c6a09626ebf7b9d",
+      "bytes": 1819,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n04-tools-mcp-overview-v01.svg",
+      "sha256": "2c3961b7535f6a9a2d4c492266b2aef86c8387a4c7c48a0ee94a4c29265864dc",
+      "bytes": 1868,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n04-tools-mcp-permission-map-v01.svg",
+      "sha256": "abb124ecff4b1a2a19aa4a11ec3620acdc216d7d0fcf1932850312becf54b963",
+      "bytes": 3151,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n05-retrieval-ingestion-funnel-v01.svg",
+      "sha256": "44821c6c1440d593994822c94e9a6df75640892e2d72c7084a6659667fc7f1e4",
+      "bytes": 2285,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n05-retrieval-ingestion-mid-card-v01.svg",
+      "sha256": "63842d626ff8b201c750d44c9bb60f79426c6384e789040ed2679c5d28ce8b26",
+      "bytes": 1828,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n05-retrieval-ingestion-overview-v01.svg",
+      "sha256": "9fa394872c943831f86b6b55c2184d71b899dcde535c42df1b27bfe4b13f21e9",
+      "bytes": 1870,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n05-retrieval-ingestion-quality-card-v01.svg",
+      "sha256": "7bc6f9e5190a99fc97ca330574478b4025b621554b8abd447044ab39c37ae83f",
+      "bytes": 2015,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n06-graph-orchestration-parent-child-card-v01.svg",
+      "sha256": "feb8102a43b7fee26231b44239c0f5fe41286151771967af0366646d387530cc",
+      "bytes": 5072,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n07-multiagent-a2a-handoff-card-v01.svg",
+      "sha256": "00ff473645055ba824853bc2437431a25883fd603daec2ff7b3dc8015ef6ea92",
+      "bytes": 4297,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n08-sandbox-security-visual-map-v01.svg",
+      "sha256": "d896a5656290bd7e26ef7aa7c3d274e8d4ebffe1563e55632a725bd3b6c47024",
+      "bytes": 3769,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n09-runtime-delivery-visual-map-v01.svg",
+      "sha256": "f49a43e3d35272302385055f6e1eaeac4b504600573b8506114fe7d6160c9689",
+      "bytes": 3776,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/n10-evaluation-projects-visual-map-v01.svg",
+      "sha256": "857f73cd90bed524a68fb181f29b7c6e7c93b83bf02e4965dc3cbcff9d57a70e",
+      "bytes": 3755,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/p01-discovery-evidence-chain-v01.svg",
+      "sha256": "fcbf9eac310841386e406dc37ced3041d5bbb7c5110fb2ec29a5ac25c4de32cb",
+      "bytes": 1744,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/p01-discovery-visual-map-v01.svg",
+      "sha256": "cd618ae1403d5b9e78bbb3ecaf8b59a1ddafda3c8a28983e12259105bfbec701",
+      "bytes": 3761,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/p01-mvp-visual-map-v01.svg",
+      "sha256": "fb4ff2ad618566a8c959f7005c8a99aab4383969a90b89f22b9769e4805d6d18",
+      "bytes": 3750,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/p02-delivery-evidence-visual-map-v01.svg",
+      "sha256": "89aa760f5d6d6c0f213f2ee00a9c806622009993e1faab8266b9200b4a2cfb61",
+      "bytes": 3766,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/v13-visual-card-template-v01.svg",
+      "sha256": "9298c83df249d81c889191024fcc9d010c335e2ca9fc4b1309b4cc184adf2909",
+      "bytes": 2827,
+      "extension": ".svg"
+    }
+  ],
+  "validation": {
+    "missingChapterFiles": [],
+    "brokenImageRefs": [],
+    "allChapterFilesPresent": true,
+    "allImageRefsResolve": true,
+    "v12RuntimeMutated": false,
+    "accountDatabaseMutated": false,
+    "deploymentPerformed": false
+  },
+  "integrationPolicy": {
+    "runtimeCorpus": "v12 remains active; v13 is not wired into formal learning-workbench content endpoint",
+    "readOnly": "manifest and assets are descriptive build inputs only",
+    "nextOwner": "project-manager coordinates product/design/development/QA decision before any deployment",
+    "requiredBeforeDeployment": [
+      "product scope and acceptance",
+      "design responsive/accessibility review",
+      "developer renderer and details behavior",
+      "content review",
+      "independent QA",
+      "versioned rollback plan"
+    ]
+  },
+  "contentSetSha256": "8580eba3ee39132c83c3744792e6ea62a86f9f30df6916fdc83939601487b704",
+  "manifestRevision": "v02"
+}

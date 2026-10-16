@@ -1,0 +1,50 @@
+{
+  "practice_id": "AI-PRACTICE-GATE-003",
+  "version": "v05",
+  "review_version": "v0.5",
+  "reviewer_role": "content_reviewer",
+  "decision": "reviewed_with_limitations",
+  "scope": "static README, manifest/EvidenceCard references, and handoff boundary review of v05 package",
+  "basis": [
+    "ai-generation-l0-practice-gate-003-v05.md",
+    "ai-generation-l0-practice-gate-003-v05.json",
+    "ai-generation-l0-practice-gate-003-v05/README.md",
+    "ai-generation-l0-practice-gate-003-v05/manifest.json",
+    "ai-generation-l0-practice-gate-003-v05/evidence-card.json",
+    "ai-generation-l0-practice-gate-003-content-review-v04.md",
+    "ai-generation-l0-practice-gate-003-content-review-v04.json"
+  ],
+  "checks": {
+    "readme_scope_and_local_only_boundary": "pass_within_scope",
+    "readme_hash_bound_to_manifest_and_evidence_card": "pass_within_scope",
+    "manifest_paths_and_artifact_refs": "insufficient_evidence",
+    "schema_unknown_field_receipt_reference": "insufficient_evidence",
+    "handoff_and_level_boundary": "pass_within_scope",
+    "independent_runtime_replay": "not_run"
+  },
+  "evidence": {
+    "readme_sha256": "f542af36e1da1b2c17bc2943ff20aefa0dce4de88c79f6a6e7a23944b837d0e4",
+    "manifest_readme_hash_matches": true,
+    "evidence_card_manifest_readme_hash_matches": true,
+    "external_action": null,
+    "handoff_qa": "pending",
+    "self_signed": false,
+    "l1_decision": "not_granted",
+    "l2_decision": "not_granted",
+    "manifest_paths_point_to_v04": true,
+    "schema_unknown_field_receipt_present_in_v05": false
+  },
+  "limitations": [
+    "manifest 多项 path 仍指向 v04，未与 v05 目录统一",
+    "manifest/EvidenceCard 引用的 first_failure/schema_unknown_field/receipt.json 在 v05 目录缺失",
+    "未独立重放迁移、首失败或 holdout",
+    "local-only 模拟不证明真实模型、生产迁移、真人审批、身份认证、学习效果或职业/行业能力"
+  ],
+  "does_not_grant": ["L1", "L2", "岗位等级", "生产发布授权"],
+  "required_follow_up": [
+    "统一 v05 manifest/EvidenceCard/README 路径并重算哈希",
+    "补齐或移除 schema_unknown_field 收据引用后复验",
+    "由 QA/工程师重放运行时场景并记录证据"
+  ],
+  "historical_reports_preserved": true
+}

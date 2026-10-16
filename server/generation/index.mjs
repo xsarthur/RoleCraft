@@ -20,9 +20,13 @@ export class GenerationError extends Error {
 
 function loadConfig(config = {}) {
   const env=process.env;
+  const baseUrl = config.baseUrl ?? env.OPENAI_BASE_URL ?? 'https://api.openai.com/v1';
   return {
     apiKey: config.apiKey ?? env.OPENAI_API_KEY,
-    model: config.model ?? env.OPENAI_MODEL,
+    // Keep OPENAI_MODEL canonical while accepting the existing local alias for
+    // migration.  The alias is never sent to the provider as a separate field.
+    model: config.model ?? env.OPENAI_MODEL ?? env.GENERATE_MODEL,
+    baseUrl: typeof baseUrl === 'string' ? baseUrl.trim().replace(/\/+$/, '') : baseUrl,
     maxOutputTokens: Number(config.maxOutputTokens ?? env.OPENAI_MAX_OUTPUT_TOKENS),
     budgetUsd: Number(config.budgetUsd ?? env.ROLECRAFT_GENERATION_BUDGET_USD),
     estimatedMaxCostUsd: Number(config.estimatedMaxCostUsd ?? env.ROLECRAFT_ESTIMATED_MAX_COST_USD),
@@ -35,6 +39,12 @@ export function getGenerationReadiness(config = {}) {
   const c=loadConfig(config), missing=[];
   if(typeof c.apiKey!=='string'||!c.apiKey.trim()) missing.push('OPENAI_API_KEY');
   if(typeof c.model!=='string'||!/^[-a-zA-Z0-9_.:]{1,128}$/.test(c.model)) missing.push('OPENAI_MODEL');
+  let validBaseUrl=false;
+  try {
+    const url=new URL(c.baseUrl);
+    validBaseUrl=url.protocol==='https:'&&!url.username&&!url.password&&!url.search&&!url.hash&&!!url.hostname;
+  } catch {}
+  if(!validBaseUrl) missing.push('OPENAI_BASE_URL');
   if(!Number.isInteger(c.maxOutputTokens)||c.maxOutputTokens<256||c.maxOutputTokens>16000) missing.push('OPENAI_MAX_OUTPUT_TOKENS');
   if(!Number.isFinite(c.budgetUsd)||c.budgetUsd<=0) missing.push('ROLECRAFT_GENERATION_BUDGET_USD');
   if(!Number.isFinite(c.estimatedMaxCostUsd)||c.estimatedMaxCostUsd<=0) missing.push('ROLECRAFT_ESTIMATED_MAX_COST_USD');
@@ -157,7 +167,7 @@ export async function generateChapter(input, options = {}) {
     const requestHash=hash(body);
     await event('generating',{simulation,requestHash});
     dispatched=true;
-    const response=await abortable((options.transport??fetch)('https://api.openai.com/v1/responses',{method:'POST',headers:{Authorization:`Bearer ${c.apiKey}`,'Content-Type':'application/json'},body:JSON.stringify(body),signal:controller.signal}),controller.signal);
+    const response=await abortable((options.transport??fetch)(`${c.baseUrl}/responses`,{method:'POST',headers:{Authorization:`Bearer ${c.apiKey}`,'Content-Type':'application/json'},body:JSON.stringify(body),signal:controller.signal}),controller.signal);
     httpStatus=response.status;
     const requestId=response.headers?.get('x-request-id');
     providerRequestId=typeof requestId==='string'&&/^[-a-zA-Z0-9_]{1,200}$/.test(requestId)?requestId:null;

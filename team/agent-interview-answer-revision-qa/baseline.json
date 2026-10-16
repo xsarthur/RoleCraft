@@ -1,0 +1,2091 @@
+{
+  "version": "agent-interview-answer-revision-qa-baseline-1",
+  "capturedAt": "2026-10-14T15:27:58.825477+08:00",
+  "status": "baseline_only_not_acceptance",
+  "memoryApplied": [
+    "QA-MEM-0001",
+    "CORE-PREF-EDITOR-001",
+    "CORE-PREF-CONTENT-QA-001"
+  ],
+  "counts": {
+    "fixed100": 100,
+    "market14": 14,
+    "prototype10": 10
+  },
+  "files": [
+    {
+      "path": "sites/rolecraft/textbooks/v12/00-learning-route.md",
+      "category": "frozen_textbook",
+      "sha256": "452129591648ca6c146945fae000e3e905e87c2794315109c727592a7b16dced",
+      "bytes": 15717
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/01-foundation.md",
+      "category": "frozen_textbook",
+      "sha256": "3ca5c2391ccfba389cb16d7eac85034bcb50d0768f0e9e7374c92917044232d7",
+      "bytes": 9341
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/02-task-acceptance.md",
+      "category": "frozen_textbook",
+      "sha256": "2a15989e762cf659822a9ec3d0b37d881fb28ddcd2d8f1503957ad73d8343ec1",
+      "bytes": 5323
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/03-trust-boundary.md",
+      "category": "frozen_textbook",
+      "sha256": "8ff1050570a84ade4751619e28bb6e02bdd06d2b914d74e5192ea446b045272e",
+      "bytes": 4926
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/README.md",
+      "category": "frozen_textbook",
+      "sha256": "f6e8b37b318dd2a662c064f6681509fdf7873cbd7687a7b91a6f7ed3bf2683a6",
+      "bytes": 8920
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/agent-engineering-textbook.md",
+      "category": "frozen_textbook",
+      "sha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+      "bytes": 523145
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/assembly-manifest.json",
+      "category": "frozen_textbook",
+      "sha256": "16907987dcebb2195f9bae4df3f0648d566f597f49722e681fb589b87e32305e",
+      "bytes": 3749
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/assets/agent-engineering-landscape-v12.png",
+      "category": "frozen_textbook",
+      "sha256": "198bff0d7cbd597c3e284755aeb79d8867214d6114151fd2f504e6adbe8d523d",
+      "bytes": 140489
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/assets/agent-engineering-landscape-v12.svg",
+      "category": "frozen_textbook",
+      "sha256": "fad2379ad07797ad046ed507b63f4efc9bb2db24d1d1a6347ca1f062a5a6e718",
+      "bytes": 4601
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/assets/agent-runtime-loop.dot",
+      "category": "frozen_textbook",
+      "sha256": "7fcde3319a3f611f3909472530a29e73480ab5a8049b65313be53278e312ee5b",
+      "bytes": 2125
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/assets/agent-runtime-loop.png",
+      "category": "frozen_textbook",
+      "sha256": "9497f77fa43566eb621549175ee55870a02b50e8ebd3144405e820d0ac2c7106",
+      "bytes": 386511
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/assets/agent-runtime-loop.svg",
+      "category": "frozen_textbook",
+      "sha256": "c1929a8021f331df4452e949272028fcde05c037b996453e883d3f84a83e5a15",
+      "bytes": 11151
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/build_textbook.py",
+      "category": "frozen_textbook",
+      "sha256": "4f9982abfb89c09654f3aa76e43e9d9314bae05eb200f7b8b1915005fa75be9e",
+      "bytes": 16409
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+      "category": "frozen_textbook",
+      "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+      "bytes": 78547
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c01-control-primer.md",
+      "category": "frozen_textbook",
+      "sha256": "ef50f49868351894e0b928eced4cfb2fdabb9cb28ca03eb9043b9cf42d5689b9",
+      "bytes": 5660
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c01-fixed-workflow.md",
+      "category": "frozen_textbook",
+      "sha256": "5dd87adc743723c842ed22f80065fda6408d28aee369adf8dfe1206ac81c2fcf",
+      "bytes": 13845
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+      "category": "frozen_textbook",
+      "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+      "bytes": 9444
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c02.md",
+      "category": "frozen_textbook",
+      "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+      "bytes": 20689
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c03.md",
+      "category": "frozen_textbook",
+      "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+      "bytes": 22973
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/e01.md",
+      "category": "frozen_textbook",
+      "sha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+      "bytes": 32432
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/e02.md",
+      "category": "frozen_textbook",
+      "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+      "bytes": 24838
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/e03.md",
+      "category": "frozen_textbook",
+      "sha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+      "bytes": 25367
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/e04.md",
+      "category": "frozen_textbook",
+      "sha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8",
+      "bytes": 20925
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/e05.md",
+      "category": "frozen_textbook",
+      "sha256": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6",
+      "bytes": 21001
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/examples/README.md",
+      "category": "frozen_textbook",
+      "sha256": "855bfe68fe4873f4fdeb7c3f71527375a05e316d37945f1f36f7b08488b94b40",
+      "bytes": 2835
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/examples/n01-runtime-boundaries.py",
+      "category": "frozen_textbook",
+      "sha256": "a156424a76bddc73cb831bda826ea676facce8191311bc0ca15f372f4deab75a",
+      "bytes": 8072
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/examples/n02-memory-routing.py",
+      "category": "frozen_textbook",
+      "sha256": "400452b186375011da69c0c58b3917bb0cdd9b54e2e14e7b0f2d09ed5b584249",
+      "bytes": 6275
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/examples/n03-plan-execution.py",
+      "category": "frozen_textbook",
+      "sha256": "211eabbd5fc5da020e8909742c0f7bf174e54478b07ea792f1daea0e1866db80",
+      "bytes": 6903
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/examples/n04-tool-catalog.py",
+      "category": "frozen_textbook",
+      "sha256": "194e7d3c033357e781069973090605f21831429ee1419d4ba40d0508f66bf2c3",
+      "bytes": 4340
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/examples/n05-index-lifecycle.py",
+      "category": "frozen_textbook",
+      "sha256": "a1364480c2d34b97208d75bd0358faeebf75d80f6f1f101faf0469654c44906b",
+      "bytes": 7482
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/examples/n06-graph-contracts.py",
+      "category": "frozen_textbook",
+      "sha256": "d2ce027e04056fc598bf70f8dc7f3ecae5926f3848723ca85f167e959b0d9dc8",
+      "bytes": 1868
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/examples/n06-graph.py",
+      "category": "frozen_textbook",
+      "sha256": "51ed00eea1cb36983e1eac38efe6cb122fd80357688152002f383e23607bb866",
+      "bytes": 4218
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/examples/n07-delegation.py",
+      "category": "frozen_textbook",
+      "sha256": "c374265dd30165b99bee6512ce06c646ba7f4443e595ff358a7e4c1ccce84840",
+      "bytes": 5493
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/examples/n08-sandbox-policy.py",
+      "category": "frozen_textbook",
+      "sha256": "6157b8fb93f56e72db7614913baf379c2446a0860f9d3c97ff0381e3771fb7c3",
+      "bytes": 3012
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/examples/n09-memory-diagnostic.py",
+      "category": "frozen_textbook",
+      "sha256": "9d90ef1295ed3543b909f935ffeb60f17b9681396a0779e20ca8dd7a4b75980d",
+      "bytes": 1333
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/examples/n09-runtime-recovery.py",
+      "category": "frozen_textbook",
+      "sha256": "e984d32ffa7f6b02d40ee6be2ce633dd8692d688a11dbdf037275d2607574f32",
+      "bytes": 5047
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/examples/n10-evaluation-matrix.py",
+      "category": "frozen_textbook",
+      "sha256": "d30b8b8a3297203fa0be35a603bb8e19eea3332e79f73da2487e1cb55e09024b",
+      "bytes": 2277
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/f01.md",
+      "category": "frozen_textbook",
+      "sha256": "5fcb2bd1db423ca8e149b0803bafedeaf0e77ca2331312ff32f63a2087ba9d61",
+      "bytes": 15063
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/f02.md",
+      "category": "frozen_textbook",
+      "sha256": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8",
+      "bytes": 16484
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n01-python-model-foundations.md",
+      "category": "frozen_textbook",
+      "sha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62",
+      "bytes": 16052
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n02-context-memory-prompt.md",
+      "category": "frozen_textbook",
+      "sha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+      "bytes": 15254
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n03-planning-reflection.md",
+      "category": "frozen_textbook",
+      "sha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+      "bytes": 13362
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n04-tools-mcp.md",
+      "category": "frozen_textbook",
+      "sha256": "b3432424e61870ac250db2068423ed33e827c97cfc2f1440f3ae2987bfd4f39a",
+      "bytes": 15451
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n05-retrieval-ingestion.md",
+      "category": "frozen_textbook",
+      "sha256": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16",
+      "bytes": 19699
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+      "category": "frozen_textbook",
+      "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+      "bytes": 11304
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n07-multiagent-a2a.md",
+      "category": "frozen_textbook",
+      "sha256": "24268cff6bfb435713458912750a5a958dd00d0aa935ef71b139e74c6dd23fb2",
+      "bytes": 11599
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n08-sandbox-security.md",
+      "category": "frozen_textbook",
+      "sha256": "16b1fe631c244ec394965f9443bc680380997cf4427a7555184c26cf3ee064f2",
+      "bytes": 8648
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n09-runtime-delivery.md",
+      "category": "frozen_textbook",
+      "sha256": "b621b838657aaa9915506a5bee6e25f7733b41085b08c50143e5965722157714",
+      "bytes": 11664
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/n10-evaluation-projects.md",
+      "category": "frozen_textbook",
+      "sha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+      "bytes": 10885
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/p01-discovery.md",
+      "category": "frozen_textbook",
+      "sha256": "2d0340f4e6e05129f423977a272b515c56bd37295a6b00f392f1d56fca25392e",
+      "bytes": 11246
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/p01-mvp.md",
+      "category": "frozen_textbook",
+      "sha256": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9",
+      "bytes": 10723
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/p02.md",
+      "category": "frozen_textbook",
+      "sha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8",
+      "bytes": 20733
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-assessment.json",
+      "category": "historical_audit_read_only",
+      "sha256": "1cd070a455652ec109486bcd778a3dce4402fb1388782ce83426b1ac55e48c91",
+      "bytes": 175946
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-assessment.md",
+      "category": "historical_audit_read_only",
+      "sha256": "9e8fc64b58ebc9a16c86d5b69c89a151eaaa62d75e809d1a28ff0d8bf712eca9",
+      "bytes": 13657
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-pm.md",
+      "category": "historical_audit_read_only",
+      "sha256": "988dd9a2184275387287c249b423709e7f9ffe6651e39be61350adb073c2e6d7",
+      "bytes": 4908
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-product.json",
+      "category": "historical_audit_read_only",
+      "sha256": "77195910048dd5903893794a71917097f518ed643e2d9ec90d233936c5945686",
+      "bytes": 235806
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-product.md",
+      "category": "historical_audit_read_only",
+      "sha256": "053981e1692e47bf4f6839a2befbb419e045a6e5cd1532b03e581ec12315492c",
+      "bytes": 8731
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/baseline.json",
+      "category": "historical_audit_read_only",
+      "sha256": "779eaccdedc4c1ef36c2ac986e20276ee0fa02cbc2c8898bb9afafcd15d2fcc5",
+      "bytes": 581750
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/disagreements.json",
+      "category": "historical_audit_read_only",
+      "sha256": "35c46bbaadcbb04a7d84873e62fe6c81cb3f8b7effba6dd8edc8f19ce8535cf6",
+      "bytes": 8960
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/disagreements.md",
+      "category": "historical_audit_read_only",
+      "sha256": "442a1a1b509cfacffc4f3940bd42016d31996fae2c8831a08d67631109ae5126",
+      "bytes": 5216
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/end-check.json",
+      "category": "historical_audit_read_only",
+      "sha256": "fce65560c07ba18bf7615d9b3fc5e673ca8145e5a40cb843e00ccc4053c8619d",
+      "bytes": 12821
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/execution-record.json",
+      "category": "historical_audit_read_only",
+      "sha256": "92518ecd2ff34b16418ebce4787f91af358f9c24881041244d894df9b1f24c8c",
+      "bytes": 9749
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n01-runtime-boundaries.py",
+      "category": "historical_audit_read_only",
+      "sha256": "a156424a76bddc73cb831bda826ea676facce8191311bc0ca15f372f4deab75a",
+      "bytes": 8072
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n01-runtime-boundaries.py.log",
+      "category": "historical_audit_read_only",
+      "sha256": "c2a5f51727ada0f046ffe3b616557e25ad91804d1a82e5b3b8d4c687c881c18c",
+      "bytes": 218
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n02-memory-routing.py",
+      "category": "historical_audit_read_only",
+      "sha256": "400452b186375011da69c0c58b3917bb0cdd9b54e2e14e7b0f2d09ed5b584249",
+      "bytes": 6275
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n02-memory-routing.py.log",
+      "category": "historical_audit_read_only",
+      "sha256": "2f4f92b649cc1910a8d52561d52e886a7573daac4c9e3ba34acb7e8a9b21de4b",
+      "bytes": 272
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n03-plan-execution.py",
+      "category": "historical_audit_read_only",
+      "sha256": "211eabbd5fc5da020e8909742c0f7bf174e54478b07ea792f1daea0e1866db80",
+      "bytes": 6903
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n03-plan-execution.py.log",
+      "category": "historical_audit_read_only",
+      "sha256": "28fc972438a7cbb3b4dcfcd4e17bd00fe4021258eea61ee10cef9cfc201ec6dc",
+      "bytes": 250
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n06-graph-contracts.py",
+      "category": "historical_audit_read_only",
+      "sha256": "d2ce027e04056fc598bf70f8dc7f3ecae5926f3848723ca85f167e959b0d9dc8",
+      "bytes": 1868
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n06-graph-contracts.py.log",
+      "category": "historical_audit_read_only",
+      "sha256": "1fcc8682597030f76bdec3bbad9c780f2243a181bd37833e16372e480cf128b4",
+      "bytes": 59
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n06-graph.py",
+      "category": "historical_audit_read_only",
+      "sha256": "51ed00eea1cb36983e1eac38efe6cb122fd80357688152002f383e23607bb866",
+      "bytes": 4218
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n07-delegation.py",
+      "category": "historical_audit_read_only",
+      "sha256": "c374265dd30165b99bee6512ce06c646ba7f4443e595ff358a7e4c1ccce84840",
+      "bytes": 5493
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n07-delegation.py.log",
+      "category": "historical_audit_read_only",
+      "sha256": "9fbfd51089fa2bfcdebe722001becde4228c0704cdb68a97210a3948bc8b72a2",
+      "bytes": 75
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n09-memory-diagnostic.py",
+      "category": "historical_audit_read_only",
+      "sha256": "9d90ef1295ed3543b909f935ffeb60f17b9681396a0779e20ca8dd7a4b75980d",
+      "bytes": 1333
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n09-memory-diagnostic.py.log",
+      "category": "historical_audit_read_only",
+      "sha256": "5a095f81db255b7833b8810f23f1779bb33a81880033c38150044b26a2c20e22",
+      "bytes": 2283
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n09-runtime-recovery.py",
+      "category": "historical_audit_read_only",
+      "sha256": "e984d32ffa7f6b02d40ee6be2ce633dd8692d688a11dbdf037275d2607574f32",
+      "bytes": 5047
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n09-runtime-recovery.py.log",
+      "category": "historical_audit_read_only",
+      "sha256": "b205b11f22f7d2a574abc3cc262196b549b75c668d0981ceee98a7a7f014bd79",
+      "bytes": 85
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n10-evaluation-matrix.py",
+      "category": "historical_audit_read_only",
+      "sha256": "d30b8b8a3297203fa0be35a603bb8e19eea3332e79f73da2487e1cb55e09024b",
+      "bytes": 2277
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n10-evaluation-matrix.py.log",
+      "category": "historical_audit_read_only",
+      "sha256": "1473798c56ac8214f979eeba40e315e2a4f1a232ed1fc6713617df61e665ed23",
+      "bytes": 77
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/qa-independent-counterexamples.json",
+      "category": "historical_audit_read_only",
+      "sha256": "368dddebe95e62b4e13e31c0e3245028ffcf6bb44a26780e37ea6020c32406de",
+      "bytes": 3104
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/qa-independent-counterexamples.py",
+      "category": "historical_audit_read_only",
+      "sha256": "e49ccedcfe5960ab1ff947807cd696f95fa47d91cb54488afe1ba66815b8e095",
+      "bytes": 8217
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/final-binding-before-wording-revision.json",
+      "category": "historical_audit_read_only",
+      "sha256": "8c2f1bf3d5edeb656e2daa541484479dc7c48d954c0ca58cd353dc834c8cdbfd",
+      "bytes": 18049
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/final-binding.json",
+      "category": "historical_audit_read_only",
+      "sha256": "b07acdfe4095c8e777ba4256b5863a012f7be8d3afe0d8209f10b6e124892cf0",
+      "bytes": 18665
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/first-reading-matrix.json",
+      "category": "historical_audit_read_only",
+      "sha256": "cc4e66f163895ed4b937e6fc38f73235d01ada4cd3c12b0dc756607ef894b8b7",
+      "bytes": 867256
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/first-reading-matrix.md",
+      "category": "historical_audit_read_only",
+      "sha256": "c09f1a52f04f68eaa936b372260358a9a635334dee70e72506889beeba91edab",
+      "bytes": 26131
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/matrix-v2.json",
+      "category": "historical_audit_read_only",
+      "sha256": "62fcf20f98f31e7cbe5df82a746ef15369cd420fe63251da20f513709df50ed4",
+      "bytes": 1310229
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/matrix-v2.md",
+      "category": "historical_audit_read_only",
+      "sha256": "7ef9f2c4e51fc989d6bf57c92518d0ec7dd7e45452f276d66a6386d6754fb455",
+      "bytes": 26799
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/matrix.json",
+      "category": "historical_audit_read_only",
+      "sha256": "c2686e297f1add389e0b0a4872ac83acdf5d1dbe09e5396b4961d261ad1f6024",
+      "bytes": 1290027
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/matrix.md",
+      "category": "historical_audit_read_only",
+      "sha256": "a05356e9ecc35316e9e0fadd4c4a7409c1c4c7613a703552db16fc837f9119ef",
+      "bytes": 26974
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/primary-source-check.json",
+      "category": "historical_audit_read_only",
+      "sha256": "03cee960bd258e7b35a204ba8de2bbb9592512619436912a4085466318abde9e",
+      "bytes": 2716
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/dist/content-v12-data.js",
+      "category": "historical_audit_read_only",
+      "sha256": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224",
+      "bytes": 1545912
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/dist/interview-prep-v1-prototype.html",
+      "category": "historical_audit_read_only",
+      "sha256": "bde8c588f9aab88f9e36bb1a365aa14037812de04892401d02bfcc0355f68b65",
+      "bytes": 43336
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/dist/learning-experience-v13.js",
+      "category": "historical_audit_read_only",
+      "sha256": "67fa8e0091d53192a1b5a022c33c0496288233e8ebfd07ebca0b8f729ddab93e",
+      "bytes": 33103
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/dist/learning-v13-data.js",
+      "category": "historical_audit_read_only",
+      "sha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "bytes": 841206
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/server/retrieval/content-v12-index.json",
+      "category": "historical_audit_read_only",
+      "sha256": "ac87bfa9c88f6e1709fc59c05fc3af1fcf98b7274aeb1be48a07e490578bdd6b",
+      "bytes": 1591766
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/team/ANSWER_QUALITY_STANDARD.md",
+      "category": "historical_audit_read_only",
+      "sha256": "e1f55b5a83ae73cd3b300d130ac557bc04031b3263da9642631c6c2af1fe2b97",
+      "bytes": 8637
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/team/agent-interview-answer-audit-product.json",
+      "category": "historical_audit_read_only",
+      "sha256": "77195910048dd5903893794a71917097f518ed643e2d9ec90d233936c5945686",
+      "bytes": 235806
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/team/agent-interview-answer-audit-product.md",
+      "category": "historical_audit_read_only",
+      "sha256": "053981e1692e47bf4f6839a2befbb419e045a6e5cd1532b03e581ec12315492c",
+      "bytes": 8731
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/team/answer-quality-standard-curriculum.md",
+      "category": "historical_audit_read_only",
+      "sha256": "26ed0ac89eab39dce4a459946e587cc838034dfd5baa968522869eb8ea934c29",
+      "bytes": 8194
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/team/textbook-v12-curriculum.json",
+      "category": "historical_audit_read_only",
+      "sha256": "02dcab757b4e72f7fb28b39f648b30090b0e57b3725ca0af25e421e0fafad5ae",
+      "bytes": 144114
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/team/textbook-v12-qa-matrix.json",
+      "category": "historical_audit_read_only",
+      "sha256": "01485e3c9a4ea65ac25985b3907dc6b4ab70115139bcf0c74308f161965320cf",
+      "bytes": 770209
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/00-learning-route.md",
+      "category": "historical_audit_read_only",
+      "sha256": "452129591648ca6c146945fae000e3e905e87c2794315109c727592a7b16dced",
+      "bytes": 15717
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/01-foundation.md",
+      "category": "historical_audit_read_only",
+      "sha256": "3ca5c2391ccfba389cb16d7eac85034bcb50d0768f0e9e7374c92917044232d7",
+      "bytes": 9341
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/02-task-acceptance.md",
+      "category": "historical_audit_read_only",
+      "sha256": "2a15989e762cf659822a9ec3d0b37d881fb28ddcd2d8f1503957ad73d8343ec1",
+      "bytes": 5323
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/03-trust-boundary.md",
+      "category": "historical_audit_read_only",
+      "sha256": "8ff1050570a84ade4751619e28bb6e02bdd06d2b914d74e5192ea446b045272e",
+      "bytes": 4926
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/README.md",
+      "category": "historical_audit_read_only",
+      "sha256": "f6e8b37b318dd2a662c064f6681509fdf7873cbd7687a7b91a6f7ed3bf2683a6",
+      "bytes": 8920
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/agent-engineering-textbook.md",
+      "category": "historical_audit_read_only",
+      "sha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+      "bytes": 523145
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/assembly-manifest.json",
+      "category": "historical_audit_read_only",
+      "sha256": "16907987dcebb2195f9bae4df3f0648d566f597f49722e681fb589b87e32305e",
+      "bytes": 3749
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/c01-control-loop.md",
+      "category": "historical_audit_read_only",
+      "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+      "bytes": 78547
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/c01-control-primer.md",
+      "category": "historical_audit_read_only",
+      "sha256": "ef50f49868351894e0b928eced4cfb2fdabb9cb28ca03eb9043b9cf42d5689b9",
+      "bytes": 5660
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/c01-fixed-workflow.md",
+      "category": "historical_audit_read_only",
+      "sha256": "5dd87adc743723c842ed22f80065fda6408d28aee369adf8dfe1206ac81c2fcf",
+      "bytes": 13845
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/c01-selection.md",
+      "category": "historical_audit_read_only",
+      "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+      "bytes": 9444
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/c02.md",
+      "category": "historical_audit_read_only",
+      "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+      "bytes": 20689
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/c03.md",
+      "category": "historical_audit_read_only",
+      "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+      "bytes": 22973
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/e01.md",
+      "category": "historical_audit_read_only",
+      "sha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+      "bytes": 32432
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/e02.md",
+      "category": "historical_audit_read_only",
+      "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+      "bytes": 24838
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/e03.md",
+      "category": "historical_audit_read_only",
+      "sha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+      "bytes": 25367
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/e04.md",
+      "category": "historical_audit_read_only",
+      "sha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8",
+      "bytes": 20925
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/e05.md",
+      "category": "historical_audit_read_only",
+      "sha256": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6",
+      "bytes": 21001
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/f01.md",
+      "category": "historical_audit_read_only",
+      "sha256": "5fcb2bd1db423ca8e149b0803bafedeaf0e77ca2331312ff32f63a2087ba9d61",
+      "bytes": 15063
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/f02.md",
+      "category": "historical_audit_read_only",
+      "sha256": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8",
+      "bytes": 16484
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/n01-python-model-foundations.md",
+      "category": "historical_audit_read_only",
+      "sha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62",
+      "bytes": 16052
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/n02-context-memory-prompt.md",
+      "category": "historical_audit_read_only",
+      "sha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+      "bytes": 15254
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/n03-planning-reflection.md",
+      "category": "historical_audit_read_only",
+      "sha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+      "bytes": 13362
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/n04-tools-mcp.md",
+      "category": "historical_audit_read_only",
+      "sha256": "b3432424e61870ac250db2068423ed33e827c97cfc2f1440f3ae2987bfd4f39a",
+      "bytes": 15451
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/n05-retrieval-ingestion.md",
+      "category": "historical_audit_read_only",
+      "sha256": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16",
+      "bytes": 19699
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/n06-graph-orchestration.md",
+      "category": "historical_audit_read_only",
+      "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+      "bytes": 11304
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/n07-multiagent-a2a.md",
+      "category": "historical_audit_read_only",
+      "sha256": "24268cff6bfb435713458912750a5a958dd00d0aa935ef71b139e74c6dd23fb2",
+      "bytes": 11599
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/n08-sandbox-security.md",
+      "category": "historical_audit_read_only",
+      "sha256": "16b1fe631c244ec394965f9443bc680380997cf4427a7555184c26cf3ee064f2",
+      "bytes": 8648
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/n09-runtime-delivery.md",
+      "category": "historical_audit_read_only",
+      "sha256": "b621b838657aaa9915506a5bee6e25f7733b41085b08c50143e5965722157714",
+      "bytes": 11664
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/n10-evaluation-projects.md",
+      "category": "historical_audit_read_only",
+      "sha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+      "bytes": 10885
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/p01-discovery.md",
+      "category": "historical_audit_read_only",
+      "sha256": "2d0340f4e6e05129f423977a272b515c56bd37295a6b00f392f1d56fca25392e",
+      "bytes": 11246
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/p01-mvp.md",
+      "category": "historical_audit_read_only",
+      "sha256": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9",
+      "bytes": 10723
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/p02.md",
+      "category": "historical_audit_read_only",
+      "sha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8",
+      "bytes": 20733
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received-reading.md",
+      "category": "historical_audit_read_only",
+      "sha256": "fcd5605648ae1a54e96e7d1b7006bea71311d43bd1a6930cc553496a6a47a90d",
+      "bytes": 169779
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/source-check.json",
+      "category": "historical_audit_read_only",
+      "sha256": "b3ff060ed97f24169378c1330de3d6d5185cd1c347cee06ce81ece5c2794a022",
+      "bytes": 127776
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/unique-quotes.md",
+      "category": "historical_audit_read_only",
+      "sha256": "910838f65d779ded0a3004582a990a3c6c4d8a816cd4ec5257828b462aceafd7",
+      "bytes": 95969
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/wording-revision-2026-10-14.json",
+      "category": "historical_audit_read_only",
+      "sha256": "989ecda81734f6731a6a903fa3a30c77f07eaeb90dfca5bd318641766fe0e0e3",
+      "bytes": 633
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa.json",
+      "category": "historical_audit_read_only",
+      "sha256": "fe05e0f6f0d002465c2cf7666bb8f9724eb7dd7716e28c8b7e9b43aff3d61a36",
+      "bytes": 2847
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa.md",
+      "category": "historical_audit_read_only",
+      "sha256": "a13a87d80f72d7830370947f51cc31c132d903042bb56743fbec8fc2f70b4b8a",
+      "bytes": 4648
+    },
+    {
+      "path": "sites/rolecraft/team/ANSWER_QUALITY_STANDARD.md",
+      "category": "quality_contract_and_memory",
+      "sha256": "e1f55b5a83ae73cd3b300d130ac557bc04031b3263da9642631c6c2af1fe2b97",
+      "bytes": 8637
+    },
+    {
+      "path": "sites/rolecraft/team/answer-quality-standard-curriculum.md",
+      "category": "quality_contract_and_memory",
+      "sha256": "26ed0ac89eab39dce4a459946e587cc838034dfd5baa968522869eb8ea934c29",
+      "bytes": 8194
+    },
+    {
+      "path": "sites/rolecraft/team/employees/core/qa-engineer/ROLE.md",
+      "category": "quality_contract_and_memory",
+      "sha256": "3e772d38cd06e53d53f1a5efb8a3202cc778d0b2bbbf0205cf86b91669c92261",
+      "bytes": 2885
+    },
+    {
+      "path": "sites/rolecraft/team/employees/core/qa-engineer/MEMORY.md",
+      "category": "quality_contract_and_memory",
+      "sha256": "1d3740fb4e9828cd7376d2d29ecd5894039e3e8e81674192a65cea923b86f711",
+      "bytes": 4021
+    },
+    {
+      "path": "sites/rolecraft/team/employees/core/qa-engineer/MEMORY_SCHEMA.md",
+      "category": "quality_contract_and_memory",
+      "sha256": "69e759c2dd936c78c0f3b7903dc52fcbcade7b15b269b8bdeae3473ef736bb0f",
+      "bytes": 1280
+    },
+    {
+      "path": "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+      "category": "quality_contract_and_memory",
+      "sha256": "e80f7be22925b043f9071c800b8ba040531a06756b3c3120df479cd94071060b",
+      "bytes": 5705
+    },
+    {
+      "path": "sites/rolecraft/dist/app.js",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd",
+      "bytes": 92350
+    },
+    {
+      "path": "sites/rolecraft/dist/auth-career-v15.css",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "75605f10d696a433fa2c43e687db40f10658e84da53f949177f2549ef32e4f6f",
+      "bytes": 5241
+    },
+    {
+      "path": "sites/rolecraft/dist/auth-career-v15.js",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "c21e2c39eb1805d52d6159f9bb6c7efab33aacc9c6a2f6860f42fea9765a3dc6",
+      "bytes": 19412
+    },
+    {
+      "path": "sites/rolecraft/dist/content-retrieval-core.js",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "b3535b2249effdb0118713295ae9b86e117e0d86c86041aade3e8c33a0fc092d",
+      "bytes": 24073
+    },
+    {
+      "path": "sites/rolecraft/dist/content-v10-data.js",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "0a2537f32ea2ddc2c5a020cc7a72937f0bfb7813ee2b701a3bdeec9035d02d58",
+      "bytes": 1071365
+    },
+    {
+      "path": "sites/rolecraft/dist/content-v12-data.js",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224",
+      "bytes": 1545912
+    },
+    {
+      "path": "sites/rolecraft/dist/creation-path-data.js",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "24a814d9b098e23c698b924924f209dbf14bb5637d9b7cd0ccbe6200d721d2c4",
+      "bytes": 14153
+    },
+    {
+      "path": "sites/rolecraft/dist/curriculum-data.js",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "c3c93435d4417792182c1f98b450a1e1a5c23aa9a8136ddb03086570c03f1442",
+      "bytes": 26703
+    },
+    {
+      "path": "sites/rolecraft/dist/generation-curriculum-data.js",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "3864bf34d4f15e89a1e8c44b692272d3febb387a704371703886a7621ce1cdbc",
+      "bytes": 30004
+    },
+    {
+      "path": "sites/rolecraft/dist/generation.js",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "4729f5caad5b17638b73f2cb7744a7aff1015e6a8e97f05b0efd3c5146c09b40",
+      "bytes": 29319
+    },
+    {
+      "path": "sites/rolecraft/dist/index.html",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "c1846fbf28f65d2ccb6759784231b51b1e1df6698a874aa67972592d72036e8c",
+      "bytes": 4368
+    },
+    {
+      "path": "sites/rolecraft/dist/interview-prep-v1-prototype.html",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "bde8c588f9aab88f9e36bb1a365aa14037812de04892401d02bfcc0355f68b65",
+      "bytes": 43336
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-experience-v13.css",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "f9194cfed1dc382c0c8433c9ae71026c9306fee45f1f8440a822f111b439c5b7",
+      "bytes": 26399
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-experience-v13.js",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "67fa8e0091d53192a1b5a022c33c0496288233e8ebfd07ebca0b8f729ddab93e",
+      "bytes": 33103
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-v13-data.js",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "bytes": 841206
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-workbench.css",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "c13ed2dbe5b68770e142ef9ec3962eb14f7ccdd745c99ff650c7b47def9c5ace",
+      "bytes": 20490
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-workbench.js",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "e76cbbd127ea8fd43d37cdc76227bf4653b737bcc0aad56f7bf70c5ae03a5aea",
+      "bytes": 70471
+    },
+    {
+      "path": "sites/rolecraft/dist/product-audit-data.js",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "83f71b9865689c10efc350140c6ad63df344fc6606ef2e37511b39d16a539f0b",
+      "bytes": 79650
+    },
+    {
+      "path": "sites/rolecraft/dist/product-gates-data.js",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "a331ad6c46adc7d463e9b56d918a8f96765ebaecfa1ff6c07c2c5e6c19e09b0e",
+      "bytes": 8807
+    },
+    {
+      "path": "sites/rolecraft/dist/styles.css",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "47850ba437e3598424846361bb10463fc83513a3eae4d5ff7f1abcd6ad404139",
+      "bytes": 27190
+    },
+    {
+      "path": "sites/rolecraft/dist/textbook-content-review-data.js",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "cb2fb21a45ba527142d121d965230b972b769edd80bfd4b95aaa6dcea4477b76",
+      "bytes": 99
+    },
+    {
+      "path": "sites/rolecraft/dist/textbook-data.js",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "51a9a22a388fafd042af4dbe7410564b8874d4a360153e1325d0c7164b3f9902",
+      "bytes": 549978
+    },
+    {
+      "path": "sites/rolecraft/dist/textbook-pilot.js",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "c6d122bcbdd68ee0a3aa6e9f86a7af882f465f382ae297ef3c0d4c5d8d17a8f8",
+      "bytes": 8546
+    },
+    {
+      "path": "sites/rolecraft/dist/textbook-v05-content-review-data.js",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "9c061ad593af7d4c64e0f020a0c2a0f8d36811a621ece9cf8cd2c4db8a848d8c",
+      "bytes": 41371
+    },
+    {
+      "path": "sites/rolecraft/dist/textbook-v05-data.js",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "ed8a39e8e6bc5cb4a36184a702b4241b5864f3da68ebea18f26026b15beb2358",
+      "bytes": 523648
+    },
+    {
+      "path": "sites/rolecraft/dist/textbook.js",
+      "category": "active_app_observation_concurrent_changes_allowed",
+      "sha256": "0844889099d6a55475360a587964cb7c427e9fd1188be6e3e2810420f92f3a1c",
+      "bytes": 25782
+    }
+  ],
+  "items": [
+    {
+      "auditId": "Q1",
+      "sourceId": 1,
+      "question": "如何界定 LLM Agent？你会用哪些可观察行为区分它与普通聊天应用？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "94cc78efec9f85e468c46bd4d3fd7674b3ad3e3058c0948775aa9dc4c5793968"
+    },
+    {
+      "auditId": "Q2",
+      "sourceId": 2,
+      "question": "单次模型调用、固定 Workflow 和动态 Agent，分别适合什么业务条件？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "ac167c7d6d67a667dbe25da91c99fdceca7f0082e5a5d18625579a6dbe0f8661"
+    },
+    {
+      "auditId": "Q3",
+      "sourceId": 3,
+      "question": "用户说“帮我做一个 Agent”时，你先澄清哪些需求，才能决定实现方案？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "29730dfed357a85570d79e31e1051876d541197ae67f0db981144c6339da3158"
+    },
+    {
+      "auditId": "Q4",
+      "sourceId": 4,
+      "question": "工具调用、状态维护、规划和长期记忆，哪些取决于具体场景，并非每个 Agent 都需要？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "39304c55bdf74f2c63f519470a68f85c18d9a75189378cf675b533a7a24086c7"
+    },
+    {
+      "auditId": "Q5",
+      "sourceId": 5,
+      "question": "怎样判断增加自主决策带来的收益，足以抵消不确定性与运行成本？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "bf8ebb7438f70606c342254aa501d7d61f91e4121f2ea29527b05344c7d2f9a3"
+    },
+    {
+      "auditId": "Q6",
+      "sourceId": 6,
+      "question": "如果需求可以用 SQL、规则或传统搜索解决，你如何解释自己的技术选择？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "a37cf289e13b6ebce57e4ccf26d30bc2288245a91f21a635e4fbeec784dd59fe"
+    },
+    {
+      "auditId": "Q7",
+      "sourceId": 7,
+      "question": "单 Agent 多工具与多 Agent 协作，在架构上有什么区别？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "5a87cc6598149ac1dfd7bba487514d14161490254f2948b0e9147e2ed7ca8fc6"
+    },
+    {
+      "auditId": "Q8",
+      "sourceId": 8,
+      "question": "你会如何评估自研 Agent 运行时、开源框架和低代码平台？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "3ee6d678dac33e57e9281cbcf487db59dd4351a9523d85ca71dac0142e6a2396"
+    },
+    {
+      "auditId": "Q9",
+      "sourceId": 9,
+      "question": "从演示原型到可交付的 Agent 服务，需要补齐哪些工程能力？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "40459440c119c6f5e3f43055043e8f3a8bf952c0bbd01baa32260b03fd74cec7"
+    },
+    {
+      "auditId": "Q10",
+      "sourceId": 10,
+      "question": "请用一个真实项目说明：Agent 改善了谁的什么工作，你如何证明改善成立？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": true,
+      "metadataSha256": "7d2ca59d6d7fcf3d66097aa7aee0bec92655df6cb4345dadf889abe51b033d84"
+    },
+    {
+      "auditId": "Q11",
+      "sourceId": 11,
+      "question": "ReAct 如何组织推理、行动与观察？它与一次性生成计划有什么不同？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "0786d7bd6af2750323f7e5ee057b7e6cf9303b7834f5ca3406493d6180b41d53"
+    },
+    {
+      "auditId": "Q12",
+      "sourceId": 12,
+      "question": "ReAct、Plan-and-Execute 和固定状态机，你会如何按任务特征选择？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "9ae88185747860bf02178452ee90d3de337f7dd55100be16a7025df7618d9454"
+    },
+    {
+      "auditId": "Q13",
+      "sourceId": 13,
+      "question": "不依赖现成框架，手写一个最小 Agent 控制循环，需要哪些状态和分支？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "65a3ecdb61504a27c19269c2bf5c0f77880f430409af478ebb5fa081e649824f"
+    },
+    {
+      "auditId": "Q14",
+      "sourceId": 14,
+      "question": "如何区分“模型宣布完成”和“任务实际上完成”？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "5b74bd2767d5582d33e7c3c8c49393851b87bded46d6aacbab361242c114eefb"
+    },
+    {
+      "auditId": "Q15",
+      "sourceId": 15,
+      "question": "怎样设置最大步数、时间和费用限制，同时避免过早中止任务？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "c57abd40572a0fdf6f05a13974ef9b317da3438f1739d609c902e6db81e63bc8"
+    },
+    {
+      "auditId": "Q16",
+      "sourceId": 16,
+      "question": "面对带前置依赖的复杂任务，如何生成和验证可执行计划？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "8336f19500bdc9e8e1cc7f22c40c26f94336c5c33b427886b7bb7fae4ae4fc72"
+    },
+    {
+      "auditId": "Q17",
+      "sourceId": 17,
+      "question": "什么信号应触发 Replanning？如何避免反复改计划却没有实际进展？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "1089becd42a837af76ca86cce171f1bb0821c7f4f50559a6d3f5d3047ef61e49"
+    },
+    {
+      "auditId": "Q18",
+      "sourceId": 18,
+      "question": "Reflection 或自我纠错在哪些情况下有帮助，又可能怎样放大原始错误？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "32604906f01550529d4e63e3a8c3526f5fc2f0b286b860c8ae8c8d26663edfbe"
+    },
+    {
+      "auditId": "Q19",
+      "sourceId": 19,
+      "question": "工具结果与原计划冲突时，运行时应该如何更新状态和后续决策？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "65cfa3e386065b2ba699c3c8225b9ad91d1ca870ee04aadbd230b4ccf9311adf"
+    },
+    {
+      "auditId": "Q20",
+      "sourceId": 20,
+      "question": "如何识别和处理重复动作、无效搜索以及循环卡死？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "8248faafd4c94c79521a9bd5f8060557e5933c7b9237ad931d840e5992aea126"
+    },
+    {
+      "auditId": "Q21",
+      "sourceId": 21,
+      "question": "Function Calling 从模型输出到函数真正执行，中间经过哪些步骤？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "05f31572a07726793a50a413fef3bc6b43c170cce23131a654a62b2c21ffc04f"
+    },
+    {
+      "auditId": "Q22",
+      "sourceId": 22,
+      "question": "如何设计工具名称、描述和参数 Schema，减少错选工具与错误参数？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "1a0a8e16801ee3009fab8eaad66e430edb7ece579f968f0aea78e333cf03ad2a"
+    },
+    {
+      "auditId": "Q23",
+      "sourceId": 23,
+      "question": "工具参数的 JSON 格式正确，为什么不等于调用安全、业务合法？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "6eb192e5b7428d602f04ecf0d5e6a5bd330ec96f8c6c421a505b6010e77995b8"
+    },
+    {
+      "auditId": "Q24",
+      "sourceId": 24,
+      "question": "工具数量达到数百个时，怎样降低选择错误和上下文负担？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "ec142b8dc0042193b1157bb42cbd4e497a76bd06e12cb337ee26bda55d54da88"
+    },
+    {
+      "auditId": "Q25",
+      "sourceId": 25,
+      "question": "工具超时、限流、参数错误和业务拒绝，应采用同一种重试策略吗？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "f969a846e69fd36081f744eb8aeb7a0f25c52f6f7d0e5dc1a905294f75181fb2"
+    },
+    {
+      "auditId": "Q26",
+      "sourceId": 26,
+      "question": "对可能产生外部副作用的工具，如何防止重试导致重复执行？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "43fe36df4fdfc777f02ab14aee4279de0eb466a0d6020a13b4779a1171bdf35e"
+    },
+    {
+      "auditId": "Q27",
+      "sourceId": 27,
+      "question": "MCP 解决哪一层集成问题？它与模型的 Tool Calling 有什么关系？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "88c39a68cd39f029bbb034dc2c165222b7160371189fd860ac5406be0a1342d3"
+    },
+    {
+      "auditId": "Q28",
+      "sourceId": 28,
+      "question": "MCP 中的 Tools、Resources 和 Prompts，各自适合表达什么能力？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "b66e633ec8920ed0b5b68b8f4fcc0770754d54724a04f61a9ccb07263b0e59ee"
+    },
+    {
+      "auditId": "Q29",
+      "sourceId": 29,
+      "question": "接入第三方工具服务时，如何处理认证、权限、版本与错误契约？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "98603a7240f385d53187d0c5ec909c7fba136bf1709f30b793420d388e5d0f6c"
+    },
+    {
+      "auditId": "Q30",
+      "sourceId": 30,
+      "question": "Tool Calling、MCP、Agent Skills（可复用技能说明与资源包）和 A2A，分别解决什么问题？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "e186ccdfd59f63bd8c64bfc71330a25de8f2270ba8c0b3a3936c91a0165c77cc"
+    },
+    {
+      "auditId": "Q31",
+      "sourceId": 31,
+      "question": "会话历史、任务工作状态和长期记忆有什么不同？应分别存储什么？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "145aa777367b5ac4cb23cbf0b8ea047d647d3d77e8d818e1fd46fdc15dbc4fa3"
+    },
+    {
+      "auditId": "Q32",
+      "sourceId": 32,
+      "question": "上下文不足时，如何在截断、摘要、检索和外部状态之间选择？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "43cc9e9b0319c6897e821a6b22e05a8392eff6416536b6fdceb88bd7c5609915"
+    },
+    {
+      "auditId": "Q33",
+      "sourceId": 33,
+      "question": "摘要压缩如何避免丢失用户约束、未完成事项和关键事实？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "7837ed9f327a3d1cde61ea708274e12686fc09d5b4b27a5ceb16f2636e6d048d"
+    },
+    {
+      "auditId": "Q34",
+      "sourceId": 34,
+      "question": "长期记忆应该在什么条件下写入、更新、合并或删除？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "17d8bc1e80e318c2c48b2c6b22006bbc32015ac361756861128eab9200cad310"
+    },
+    {
+      "auditId": "Q35",
+      "sourceId": 35,
+      "question": "如何发现错误记忆对后续任务的持续污染，并修正受影响结果？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "e4e2828bac8774c09062d8d2fe023b9ac94b0823c37c46a153a5f124e9da4ae6"
+    },
+    {
+      "auditId": "Q36",
+      "sourceId": 36,
+      "question": "如何隔离不同用户、组织和会话的记忆？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "f2f8c170b90d0aad8d3a0e89045985840579bc694ee9de7421f96432dcab94fc"
+    },
+    {
+      "auditId": "Q37",
+      "sourceId": 37,
+      "question": "检索材料、历史记忆与当前用户要求相冲突时，应如何处理？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "7c50b961ec3231b0e8e162ffe78b5b42c8f4bc4e98fc425d2648bc1cb2059ed5"
+    },
+    {
+      "auditId": "Q38",
+      "sourceId": 38,
+      "question": "如何设计系统提示，使角色、工具使用规则和输出要求清晰而可测试？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "a11ba4bd1d52ff319f609025a8962cc2f139c8b2748117fceee48787e47d1b66"
+    },
+    {
+      "auditId": "Q39",
+      "sourceId": 39,
+      "question": "Few-shot 示例如何帮助工具选择？示例过多或失真会带来什么问题？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "f52ef4b8d21ae9a1354804cf86458732e8fd546afd9aa825414a66cdec2de011"
+    },
+    {
+      "auditId": "Q40",
+      "sourceId": 40,
+      "question": "如何验证一次提示或记忆策略调整确实改善了结果，而非只修好几个演示样例？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "b6f07ed612085035e083508ee2c532040783eca69fc0620d1e163e4bfdd99a3a"
+    },
+    {
+      "auditId": "Q41",
+      "sourceId": 41,
+      "question": "RAG、长上下文直接阅读和模型微调，分别适合解决哪些知识问题？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "d4ec18cea4a974d4a24eefdb34e3bf3981d20303b47a6cc21ac201a15be4fb56"
+    },
+    {
+      "auditId": "Q42",
+      "sourceId": 42,
+      "question": "一个完整 RAG 管线包含哪些环节？如何逐段定位回答错误？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "7bde53312d497039b62599b2f43b4640ea8676f621deef8f63b3b49261db84b3"
+    },
+    {
+      "auditId": "Q43",
+      "sourceId": 43,
+      "question": "如何根据文档结构、查询类型和引用需求设计切块策略？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "0562fc2ebecc42bd7dcfb6697842cc10293877115f37ec8eef879f554e542fae"
+    },
+    {
+      "auditId": "Q44",
+      "sourceId": 44,
+      "question": "如何选择 Embedding 模型，评估领域术语、中文与多语言查询效果？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "96683089c92de288c351a52704db96955723b1edba7da7b60868799309b4f682"
+    },
+    {
+      "auditId": "Q45",
+      "sourceId": 45,
+      "question": "关键词检索、向量检索和混合检索分别有什么优势与盲区？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "4dd12d8a0aa149baabb9c0e5c8f8d012a0233817d0837e4fbc0829bba4959524"
+    },
+    {
+      "auditId": "Q46",
+      "sourceId": 46,
+      "question": "Reranker 改善的是哪一阶段？怎样衡量它带来的质量与时延代价？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "02549cc2316dba9a27953681eba0ed1364383cf1cc40390d75cf3ef372a14c5a"
+    },
+    {
+      "auditId": "Q47",
+      "sourceId": 47,
+      "question": "查询改写、多查询和多跳检索什么时候有效，什么时候容易改变原意？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "feda8afd6bb796c80c082b2592f344c3d458eb3f7c4b695d6ab54ae2a03bfdd8"
+    },
+    {
+      "auditId": "Q48",
+      "sourceId": 48,
+      "question": "如何让答案引用与实际支持结论的原文、版本及位置对应？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "de099a22517b3ca7ad9b6a5aa1ca1453e780f5a9a0c9cdf20811437cd59b1cac"
+    },
+    {
+      "auditId": "Q49",
+      "sourceId": 49,
+      "question": "没有足够证据、资料互相矛盾或知识已经过期时，系统应怎样响应？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "b3020cfa112e350caab047c2e04c3e28bbec4a3a52d687a5ba91ab671cdbc901"
+    },
+    {
+      "auditId": "Q50",
+      "sourceId": 50,
+      "question": "Agentic RAG 相对固定 RAG 增加了什么决策能力？如何证明额外复杂度值得？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "a29d56a86092a7c8481793febbfdd482bea36c599bbd705015a8f994ba686b66"
+    },
+    {
+      "auditId": "Q51",
+      "sourceId": 51,
+      "question": "在你采用的版本中，LangChain 和 LangGraph 分别承担什么职责？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "14c966311b59e519308fbed45d272cc2b4f44f4fbbde3d10280a1964cc8329dd"
+    },
+    {
+      "auditId": "Q52",
+      "sourceId": 52,
+      "question": "用图表示 Agent 时，节点、边和共享状态分别应该包含什么？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "48c4876e45e08f5fbb0959d19af3eef6b238bbeac4928164ed59993e16c9dd1c"
+    },
+    {
+      "auditId": "Q53",
+      "sourceId": 53,
+      "question": "状态字段应如何建模，避免把全部消息和中间数据无限累积？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "a8d4abe2a6a6dc1cbf83aa1a749d00cb5d747a6656284e724d778515e4898c29"
+    },
+    {
+      "auditId": "Q54",
+      "sourceId": 54,
+      "question": "并行节点同时更新状态时，如何处理合并规则和写入冲突？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "59fbf2099d05b853a48b1741eeefe1f100c36a738fe1778ee7f9d499076d9be9"
+    },
+    {
+      "auditId": "Q55",
+      "sourceId": 55,
+      "question": "条件路由由规则决定还是由模型决定，各有什么适用场景？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "47bdb6e2ac1796945417de7437e8374355d4de59de22720aaa76381a1cd124ae"
+    },
+    {
+      "auditId": "Q56",
+      "sourceId": 56,
+      "question": "Checkpoint 应保存什么，才能支持失败恢复与人工介入？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "1fb47b53fd0cec0c87b1dfcc6926394141b0b9703cb5e7af9d06eb77d5837c7d"
+    },
+    {
+      "auditId": "Q57",
+      "sourceId": 57,
+      "question": "恢复执行时，如何保证已经完成的外部操作不会再次产生副作用？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "4565e1615e18c3e6b40fa2285c347418e70375305c5bfce9dd1c7f7c2be12a47"
+    },
+    {
+      "auditId": "Q58",
+      "sourceId": 58,
+      "question": "子图怎样封装独立任务？父图与子图之间如何交接状态？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "3e95f63ecb3a74f1a0c1b646ebd481fb57017000673fcba5a7db07ef7e52706d"
+    },
+    {
+      "auditId": "Q59",
+      "sourceId": 59,
+      "question": "流式输出怎样区分文本、工具进度、暂停、错误和最终结果？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "b25e3d2f5da552c32f0a9fe1f3a02e75c0e74bf49ed0680dbfdfe8713886f68e"
+    },
+    {
+      "auditId": "Q60",
+      "sourceId": 60,
+      "question": "如果去掉 LangGraph，你如何实现等价的状态机，并说明取舍？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "32202cdf220d245f1088fa96769bb234e7923c5d7cd4162c6e89be69963e3653"
+    },
+    {
+      "auditId": "Q61",
+      "sourceId": 61,
+      "question": "什么实验或业务证据会使你选择多 Agent，而不是给单 Agent 增加工具或步骤？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "ee15d2c6623b3d15d1293817563fb9cbfac9faa3745e2be6344f26c1391dab1e"
+    },
+    {
+      "auditId": "Q62",
+      "sourceId": 62,
+      "question": "Supervisor、交接式协作和共享讨论，分别适合什么任务？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "c0343aa0efb4263178879ee7ea6165ab95c335ca6134091f085b4a78ff754167"
+    },
+    {
+      "auditId": "Q63",
+      "sourceId": 63,
+      "question": "如何定义各 Agent 的输入、输出、职责边界和完成条件？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "891b9d33ef34a5a8e31f1562792400f4be8db571b882a767d94c0f83ce1ec463"
+    },
+    {
+      "auditId": "Q64",
+      "sourceId": 64,
+      "question": "如何把任务拆成可以并行的部分，并保留必要的依赖顺序？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "ef92eaa108c163e0bdbb693a8677a79890adb0f31026a2150bd4aec0898cb315"
+    },
+    {
+      "auditId": "Q65",
+      "sourceId": 65,
+      "question": "多 Agent 应共享完整上下文，还是只传递必要材料？怎样判断？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "d15146cf914a9b0cb95d9f70a3c6cddd3ce7f39d8513e05caaa17b9a66e249c2"
+    },
+    {
+      "auditId": "Q66",
+      "sourceId": 66,
+      "question": "子 Agent 返回互相矛盾的结果时，协调者应如何处理？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "06f93ffefccb77191ad6f8457d7acfd25ef4d553d21b762bc36b09e8206aa259"
+    },
+    {
+      "auditId": "Q67",
+      "sourceId": 67,
+      "question": "如何防止子 Agent 的错误结论在汇总过程中变成“已验证事实”？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "af3c396cefe64964c183b578704704f28732fec4d5fc0af5d328f7c5783501c0"
+    },
+    {
+      "auditId": "Q68",
+      "sourceId": 68,
+      "question": "某个子 Agent 超时或失败时，整体任务应等待、重分派还是部分交付？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "d01ce03261d4d269c86c4865d7fdd8ae2321ff0fc2b949d2ca55166d292df689"
+    },
+    {
+      "auditId": "Q69",
+      "sourceId": 69,
+      "question": "多 Agent 的通信次数、费用和时延怎样纳入统一预算？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "e61f3359077cf88782021ca1991b9068d68ab137348364862032ae5e43090600"
+    },
+    {
+      "auditId": "Q70",
+      "sourceId": 70,
+      "question": "A2A 与应用内部的多 Agent 编排有何区别？跨系统任务交接需要哪些契约？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "6f92f03073b37d107457eab1156fe5a3c1b6df7d0fbf6b80a227f35c996d35aa"
+    },
+    {
+      "auditId": "Q71",
+      "sourceId": 71,
+      "question": "如何定义 Agent 的任务成功率，避免把“生成了回答”当成任务成功？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "d3e8fe246431807a16591d10194bd4d426853d898e388081d63df8eea9b25b00"
+    },
+    {
+      "auditId": "Q72",
+      "sourceId": 72,
+      "question": "最终结果评测和执行轨迹评测分别能够发现什么问题？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "dc27af1cb4f90931706ac3f3fd9e9a61e52f5a16e2aa2eea4983fb99ad2deafe"
+    },
+    {
+      "auditId": "Q73",
+      "sourceId": 73,
+      "question": "如何构建包含正常、边界、歧义、失败和恶意输入的评测集？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "bec21a7b6e48f5fb2eacf73ee178948983b6b2d0ba627505de38075b905c4009"
+    },
+    {
+      "auditId": "Q74",
+      "sourceId": 74,
+      "question": "如何区分检索失败、规划失败、工具失败和最终表达失败？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "95c905301e6d54605bd1c484fb77ad21e1ff64b686f2cee04315342975378c6e"
+    },
+    {
+      "auditId": "Q75",
+      "sourceId": 75,
+      "question": "如何使用 LLM-as-a-Judge，并控制评判偏差及与人工结论的不一致？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "104a06610320e6977557a5beb19031ab9bc5a2e8c572f805945fe0c7b9e60c4e"
+    },
+    {
+      "auditId": "Q76",
+      "sourceId": 76,
+      "question": "同一个任务多次运行结果不同，应该怎样报告成功率与稳定性？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "19b97a84035759029e782795ce6861565d155e46897382f16316fa212b6c7e2f"
+    },
+    {
+      "auditId": "Q77",
+      "sourceId": 77,
+      "question": "一条 Agent Trace 应记录什么，才能定位问题且避免泄露敏感信息？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "72e052d98d0e1c8da17fd87fb67bebd957be8a3e0ad69a3263d0d5dc5ddb89c1"
+    },
+    {
+      "auditId": "Q78",
+      "sourceId": 78,
+      "question": "如何设计模型、工具和检索组件的消融实验？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "e93cb7c2d31341bb139cca54a56c8b4a8e8fe7ae08144ad8a15d5ecc59abada4"
+    },
+    {
+      "auditId": "Q79",
+      "sourceId": 79,
+      "question": "模型、提示、工具或知识库升级后，如何判断新版本能否发布？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "352df7e125b626d094ebd8ebec3db2ccde31b1a0f5c621f34b39f74dd7371b8e"
+    },
+    {
+      "auditId": "Q80",
+      "sourceId": 80,
+      "question": "用户报告一个偶发失败，但你本地无法复现，下一步怎么调查？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "cab61d5a0b9abc82d7f2643c4457fb49162bab162cace1bf09fbb476fdef0bf9"
+    },
+    {
+      "auditId": "Q81",
+      "sourceId": 81,
+      "question": "直接提示注入和来自网页、文档或工具结果的间接注入，有什么不同？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "656672a76c56f07123aa466e7a68d35adba4f5b4195221c00be566a876968730"
+    },
+    {
+      "auditId": "Q82",
+      "sourceId": 82,
+      "question": "Agent 为什么不能仅靠系统提示保证工具权限与数据安全？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "df73e19a37a41bca1d0d49013c2e926bcd7e967fc0ad4c1a4ba14d3f082c5181"
+    },
+    {
+      "auditId": "Q83",
+      "sourceId": 83,
+      "question": "如何让工具执行权限与当前用户身份、资源归属和操作范围一致？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "993f6183db374506daa37678384bc45d068c64577fa7658b91cfbdc101a9d0ae"
+    },
+    {
+      "auditId": "Q84",
+      "sourceId": 84,
+      "question": "高风险操作的人类确认应展示什么，才能构成有意义的批准？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "f5cb7aef5d2084d68aa8cf3e84e8026a28a3571db3be8edffbd06bc3fd373fe8"
+    },
+    {
+      "auditId": "Q85",
+      "sourceId": 85,
+      "question": "如何防止确认后参数被修改，或一次确认被用于后续不同操作？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "31f59f78fd997b920258cc4a9e630fe77aac492c14f39651134fa6babef82380"
+    },
+    {
+      "auditId": "Q86",
+      "sourceId": 86,
+      "question": "执行模型生成代码时，沙箱应限制哪些资源与外部访问？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "3cc0b479777b75f65481872e299332b844f6be45e04355938445f826ed45c19c"
+    },
+    {
+      "auditId": "Q87",
+      "sourceId": 87,
+      "question": "如何防止检索内容、日志和错误消息泄露跨租户资料或密钥？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "6ba508f1546dac741c9f198b1e84fc3c4c52134ece09d9486e97527a0db3cc7b"
+    },
+    {
+      "auditId": "Q88",
+      "sourceId": 88,
+      "question": "外部工具声称操作成功，你如何核实真实状态？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "d943ae7ae487d3da0ec3ec5cac155502eeecfb0e6b36e9cd969e8a5725b2b2ce"
+    },
+    {
+      "auditId": "Q89",
+      "sourceId": 89,
+      "question": "多步骤任务部分成功后失败，如何设计补偿、恢复和用户告知？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "b8beefa38e9ff71db62b29a39ff74edc89c7bc16bb48c46672bbeab53d65e773"
+    },
+    {
+      "auditId": "Q90",
+      "sourceId": 90,
+      "question": "如何把安全反例纳入自动化回归，并验证修复没有破坏正常任务？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "c94efe5f621fd08c6e21a9e23ca29823e64a57ead31848725af5a8c8a88e2a67"
+    },
+    {
+      "auditId": "Q91",
+      "sourceId": 91,
+      "question": "设计一个客服工单 Agent：如何确定自动处理范围、转人工条件及验收指标？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "a3d60a0fe18902fe61dcaa217b88b86e6db5ddbc7ebc9acfeae830564877ee3a"
+    },
+    {
+      "auditId": "Q92",
+      "sourceId": 92,
+      "question": "设计一个企业知识 Agent：如何同时保证检索质量、权限和更新时效？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "0c721617cb99aa230791cb1aec59932d5b54189b0ce034e6f615c9a36da25f65"
+    },
+    {
+      "auditId": "Q93",
+      "sourceId": 93,
+      "question": "设计一个长时间运行的研究 Agent：如何保存进度、取消任务和恢复执行？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "81973aac51e8138e240bf9b5a7602fc7d84e6702114f98eabf63a1e95a5248ac"
+    },
+    {
+      "auditId": "Q94",
+      "sourceId": 94,
+      "question": "请求量增长十倍时，如何识别模型、工具、队列或存储中的主要瓶颈？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "5c453277baa4c3e02cc54819900f4d7391a9af4a620151179688ef83a156a95d"
+    },
+    {
+      "auditId": "Q95",
+      "sourceId": 95,
+      "question": "如何设计并发限制、超时、退避和熔断，避免故障扩大？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "196fa4b46cbf95ec302d56f2dc7d2074099305c271b80af9aa1fdcfa8790008d"
+    },
+    {
+      "auditId": "Q96",
+      "sourceId": 96,
+      "question": "怎样分解一次任务的费用和时延，找到最值得优化的环节？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "866be53a5e40dbd0336c870ef0ee642d779de2e35884eb98b98a1171a66efce3"
+    },
+    {
+      "auditId": "Q97",
+      "sourceId": 97,
+      "question": "什么时候使用小模型路由、大模型升级或缓存？如何量化质量损失？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "2329d178a4c1ecc9931baa7ceeaf8acd72bef3c93ad63bf9f57468604ea1133e"
+    },
+    {
+      "auditId": "Q98",
+      "sourceId": 98,
+      "question": "从质量、成本和运维角度，怎样选择本地模型与托管 API？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "0e341cc8367e898c35510ea02ba8d0a9e30bc541e6a08ea19fe7af398e2ed992"
+    },
+    {
+      "auditId": "Q99",
+      "sourceId": 99,
+      "question": "请介绍一次实际 Agent 故障或失败案例：原因是什么，如何修复，怎样证明修复有效？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": true,
+      "metadataSha256": "d53c36e85c0d61384dff98f632412a502fb0d4a39c3470e1ac5cecf7cd8cb70f"
+    },
+    {
+      "auditId": "Q100",
+      "sourceId": 100,
+      "question": "如果必须在两周内交付一个可用 Agent，你会怎样确定最小范围、基线、风险与上线条件？",
+      "collection": "fixed100",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "2e752a0a9be5c6be9e0c3d062b57d6cc3416e5abc854c0e7c3fc532a2211eb83"
+    },
+    {
+      "auditId": "M101",
+      "sourceId": 101,
+      "question": "调用多个模型或工具API时，如何用Python asyncio组织并发？阻塞调用、无界任务创建和取消清理分别会导致什么问题，怎样用最小例定位？",
+      "collection": "market14",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "3560253fcd25dfd23515501f9704753ea45c31ea0990e1502627480b61a2bea6"
+    },
+    {
+      "auditId": "M102",
+      "sourceId": 102,
+      "question": "把请求状态放进Python列表或字典时，别名与浅拷贝会怎样污染另一个任务？请说明不可变容器的边界，并解释如何用装饰器封装工具日志而保持函数行为。",
+      "collection": "market14",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "6ac053914f00826458e1b07c056822bb46b593ecc8fbf5db81f3538fc313b866"
+    },
+    {
+      "auditId": "M103",
+      "sourceId": 103,
+      "question": "实现容量受限的LRU缓存，说明get/put复杂度，并给出容量为零、覆盖已有键和淘汰次序的测试。",
+      "collection": "market14",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "51f31f02943823c150b81751e175ff0f78e3cfcb7ff0937c1400f07feb7a4531"
+    },
+    {
+      "auditId": "M104",
+      "sourceId": 104,
+      "question": "Agent服务运行数小时后内存持续增长，但请求量平稳。如何区别对象仍被引用、缓存无界、待完成任务堆积与暂时内存峰值，并验证修复？",
+      "collection": "market14",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "a502be852eba7691437c368eca740b7368e470ad97c8ea49398fd540d4349d8d"
+    },
+    {
+      "auditId": "M105",
+      "sourceId": 105,
+      "question": "余弦相似度、点积和欧氏距离如何计算？向量归一化会怎样改变它们的排序关系，零向量和维度不符怎样处理？",
+      "collection": "market14",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "8177b70d798e86943f27f0c784e16048ee7fd3bf3955885cca490d42529a005f"
+    },
+    {
+      "auditId": "M106",
+      "sourceId": 106,
+      "question": "如何用精确向量检索建立基线，再比较HNSW与IVF的召回、内存、构建和查询代价？过滤条件加入后还需要怎样测量？",
+      "collection": "market14",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "63d47dfbe2702803547a0c2e30d4d143743a8d8fc992724a47b5d6cf5489a9d3"
+    },
+    {
+      "auditId": "M107",
+      "sourceId": 107,
+      "question": "文档局部修改、删除或权限变化时，怎样增量更新分块和向量索引？如何检测漏删、重复块及新旧版本混用？",
+      "collection": "market14",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "d351ba76cc8e387f2e7742ed7460135256862b73966dc4d836e3fe52492216a9"
+    },
+    {
+      "auditId": "M108",
+      "sourceId": 108,
+      "question": "包含扫描页、表格和跨页段落的PDF怎样进入RAG？如何保留页码与结构、测解析质量，并防止OCR错误被引用成原文事实？",
+      "collection": "market14",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "755cef596ce76d2cf8dce0b339a302fc7301c2f035032c8adc60a8b99ccad0a0"
+    },
+    {
+      "auditId": "M109",
+      "sourceId": 109,
+      "question": "解释decoder-only Transformer从token到下一token分布的基本推理过程：因果注意力、多头、位置、前馈层各起什么作用？这与检索外部事实有什么区别？",
+      "collection": "market14",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "9d0332d96d5b58f374b1889435831cbdc4fdaf64b4397ead414243f44ccb032c"
+    },
+    {
+      "auditId": "M110",
+      "sourceId": 110,
+      "question": "提示模型返回JSON、使用JSON模式和按Schema约束生成分别能保证什么？遇到拒绝、截断、类型合法但语义错误时，应用怎样处理？",
+      "collection": "market14",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "256384364ff39e4fcd006beece2bcab87caa892ac100019380ff1415b8c715c5"
+    },
+    {
+      "auditId": "M111",
+      "sourceId": 111,
+      "question": "同一Agent英语任务表现正常，中文或混合语言却失败，怎样分别检查分词/检索、提示、工具参数与评测样本，而不是直接换模型？",
+      "collection": "market14",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "451e5c8ff035ee96ccea94b4074df5af0a595373e3a8493d0bb10c06891e71a0"
+    },
+    {
+      "auditId": "M112",
+      "sourceId": 112,
+      "question": "用户在多轮任务中突然换话题，又用“继续刚才那个”返回，怎样识别任务切换、保存各自状态并澄清指代，防止旧任务动作误执行？",
+      "collection": "market14",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "1c615b133506c69e0a49bf3a9372fae0ecadbe04d664a476f27690fd90a5be05"
+    },
+    {
+      "auditId": "M113",
+      "sourceId": 113,
+      "question": "部署本地推理服务时，怎样区分prefill与decode瓶颈，解释KV cache与批处理对吞吐、首token和尾延迟的影响，并设计公平比较而非先认定某框架更快？",
+      "collection": "market14",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "89521d7944318e20b81c8160e9f15cce7954eb71bb7997c86b4efd78637256dc"
+    },
+    {
+      "auditId": "M114",
+      "sourceId": 114,
+      "question": "面对客户工程团队，怎样交付一份可复现的Agent技术移交包，使对方能重建环境、运行评测、理解架构决策并报告失败？如何证明接手成功？",
+      "collection": "market14",
+      "personalEvidenceRequired": false,
+      "metadataSha256": "4dcc12050ae0ccec4c769cb96bee45d7ab3d8cc18998351e958729fa309fb380"
+    },
+    {
+      "auditId": "P01",
+      "sourceId": "q1",
+      "question": "Agent 与普通模型调用有什么区别？",
+      "collection": "prototype10",
+      "personalEvidenceRequired": false,
+      "followups": [
+        "什么情况下不用 Agent 反而更合适？",
+        "如何判断 Agent 的任务已经完成？"
+      ],
+      "metadataSha256": "fca7e008b479e4e3b8310abc63dbe26ee04ec0ebc0823de7f2f74a03e9f2aca5"
+    },
+    {
+      "auditId": "P02",
+      "sourceId": "q2",
+      "question": "工具调用超时，如何避免恢复时重复执行？",
+      "collection": "prototype10",
+      "personalEvidenceRequired": false,
+      "followups": [
+        "如果下游不支持幂等键怎么办？",
+        "用户取消任务后还需要查外部结果吗？"
+      ],
+      "metadataSha256": "76161a17cf3ae1b7c0708a5b4c5c05a4792097dc2f8755a8585d03270761c4b2"
+    },
+    {
+      "auditId": "P03",
+      "sourceId": "q3",
+      "question": "如何组织 Agent 的上下文和长期记忆？",
+      "collection": "prototype10",
+      "personalEvidenceRequired": false,
+      "followups": [
+        "如何处理记忆中的过期信息？",
+        "为什么摘要也可能引入错误？"
+      ],
+      "metadataSha256": "b9a2f9a4888bcb6afa3fa2703fe4c9065e466ba3a4822e176ce5a65db44e1903"
+    },
+    {
+      "auditId": "P04",
+      "sourceId": "q4",
+      "question": "如何说明你为什么选择 RAG，而不是微调？",
+      "collection": "prototype10",
+      "personalEvidenceRequired": false,
+      "followups": [
+        "检索到了文档是否意味着可以直接用于回答？",
+        "如何发现资料更新后检索索引没有同步？"
+      ],
+      "metadataSha256": "5bf3359d713f144a9a370d9dc8ee51a7e3d28972747f6fd5c6f1c15fd117fde7"
+    },
+    {
+      "auditId": "P05",
+      "sourceId": "q5",
+      "question": "介绍一个你做过的 Agent 项目，如何证明它有效？",
+      "collection": "prototype10",
+      "personalEvidenceRequired": true,
+      "followups": [
+        "如果面试官要求复现一个失败案例，你会展示什么？",
+        "这个方案目前还存在什么限制？"
+      ],
+      "metadataSha256": "d86733e30893310e3b4f331d8364a0b433b6d043fdeb85fc2a18d2b35d55a085"
+    },
+    {
+      "auditId": "P06",
+      "sourceId": "q6",
+      "question": "模型返回的 JSON 合法，为什么还不能直接执行？",
+      "collection": "prototype10",
+      "personalEvidenceRequired": false,
+      "followups": [
+        "如何处理额外字段？",
+        "如何设计可以稳定判错的输出合同？"
+      ],
+      "metadataSha256": "e58754b099cd1316e7050bcb9b55d2d7ecf93a7dbe85fb4b42c259d41e3bdf52"
+    },
+    {
+      "auditId": "P07",
+      "sourceId": "q7",
+      "question": "如何评估一个 Agent 的改进是否真的有效？",
+      "collection": "prototype10",
+      "personalEvidenceRequired": false,
+      "followups": [
+        "如何排除模型随机性造成的差异？",
+        "你如何定义任务成功率？"
+      ],
+      "metadataSha256": "9c63fd90d385bef85010b2eba5e8c60b75ccaf1cf6ed3cfefc9ad760fda68c67"
+    },
+    {
+      "auditId": "P08",
+      "sourceId": "q8",
+      "question": "检索资料里出现要求执行工具的指令，你怎么处理？",
+      "collection": "prototype10",
+      "personalEvidenceRequired": false,
+      "followups": [
+        "读取权限和执行权限有什么不同？",
+        "如何验证恶意指令没有绕过工具限制？"
+      ],
+      "metadataSha256": "179197c7971b6a1daa1918a0db56cb122f85a0e23a33777e80c3310bacf0c0e0"
+    },
+    {
+      "auditId": "P09",
+      "sourceId": "q9",
+      "question": "服务中断后，Agent 如何恢复到可靠的执行位置？",
+      "collection": "prototype10",
+      "personalEvidenceRequired": false,
+      "followups": [
+        "哪些状态不能只放在内存中？",
+        "如何验证跨重启不重复产生外部效果？"
+      ],
+      "metadataSha256": "71e67615b7f3ca637faed8bf55c0909cc917205226b7c0612551d2901c7386be"
+    },
+    {
+      "auditId": "P10",
+      "sourceId": "q10",
+      "question": "项目成本增加时，你会如何定位并优化？",
+      "collection": "prototype10",
+      "personalEvidenceRequired": false,
+      "followups": [
+        "减少调用数会影响什么？",
+        "如何避免缓存复用到过期或越权内容？"
+      ],
+      "metadataSha256": "e447f939bd86a41bee866ed5d2173cf2042da53d79c2bfad8b473b810df94dba"
+    }
+  ],
+  "protectionPolicy": {
+    "frozen_textbook": "must remain byte-identical",
+    "historical_audit_read_only": "must remain byte-identical",
+    "quality_contract_and_memory": "read-only for this QA task; any authorized changes separately recorded",
+    "active_app_observation_concurrent_changes_allowed": "baseline for attribution only, not unconditional freeze; another thread may change public client files, compare/identify separately",
+    "user_database": "not read or modified"
+  },
+  "currentResult": "124 pending; no revised answers reviewed"
+}

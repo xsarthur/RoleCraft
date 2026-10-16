@@ -1,0 +1,107 @@
+{
+  "report_id": "qa-memory-2026-10-14",
+  "role": "测试工程师",
+  "executed_at": "2026-10-14",
+  "timezone": "Asia/Shanghai",
+  "scope": "独立核对 core 三岗跨项目长期记忆配置，不验证运行时长期记忆或真实用户效果",
+  "overall_status": "met_within_configuration_scope",
+  "configuration_status": "pass",
+  "runtime_cross_project_memory_status": "not_verified",
+  "real_user_preference_status": "not_verified",
+  "source_files_unchanged_by_this_qa": true,
+  "checks": [
+    {
+      "id": "CM-01",
+      "criterion": "manifest 中三个岗位文件都存在",
+      "status": "pass",
+      "evidence": [
+        "manifest.json 注册三个岗位及对应目录、MEMORY、SCHEMA",
+        "三个目录和三件档案均存在"
+      ]
+    },
+    {
+      "id": "CM-02",
+      "criterion": "每个 ROLE.md 有职责边界",
+      "status": "pass",
+      "evidence": [
+        "product-manager: 唯一责任领域/明确边界",
+        "product-designer: 身份与唯一责任/明确禁止",
+        "software-engineer: 唯一责任领域/明确边界"
+      ]
+    },
+    {
+      "id": "CM-03",
+      "criterion": "每个 ROLE.md 有跨项目读取与写入规则",
+      "status": "pass",
+      "evidence": [
+        "三份 ROLE 均规定读取共享偏好、岗位记忆和当前项目交接",
+        "三份 ROLE 均规定先提交候选、确认后更新 MEMORY并保留版本来源"
+      ]
+    },
+    {
+      "id": "CM-04",
+      "criterion": "MEMORY.md 不把未确认的产品/设计/编码偏好伪装成 confirmed",
+      "status": "pass",
+      "evidence": [
+        "PM唯一 confirmed 条目含用户原话和 user_confirmed",
+        "设计师条目含用户确认和共享档案依据",
+        "软件工程师明确无已确认编码偏好并保留待确认规则"
+      ]
+    },
+    {
+      "id": "CM-05",
+      "criterion": "MEMORY_SCHEMA.md 包含证据、范围、置信度、确认状态、版本",
+      "status": "pass",
+      "evidence": [
+        "三份 schema 都定义上述字段及候选升级/替代关系"
+      ]
+    },
+    {
+      "id": "CM-06",
+      "criterion": "共享用户偏好与三岗内容一致",
+      "status": "pass",
+      "evidence": [
+        "共享档案列出跨项目复用、视觉优先、证据边界",
+        "设计师条目引用视觉偏好；PM仅确认协作约定；工程师不推导编码风格",
+        "未发现已确认条目冲突"
+      ]
+    },
+    {
+      "id": "CM-07",
+      "criterion": "README/HANDOFF_TEMPLATE 说明新项目复用",
+      "status": "pass",
+      "evidence": [
+        "README定义读取、handoff、候选、确认回写流程",
+        "模板含目标、输入、特例、已确认偏好、限制及候选字段"
+      ]
+    },
+    {
+      "id": "CM-08",
+      "criterion": "不越过 AGENTS 岗位责任",
+      "status": "pass",
+      "evidence": [
+        "三份 ROLE 分别限定产品、设计、客户端实现职责并明确跨岗交接",
+        "记忆协议声明不改变门槛、授权或独立测试"
+      ]
+    }
+  ],
+  "confirmed_memory_inventory": {
+    "product_manager": "PM-MEM-0001: 岗位独立长期记忆和跨项目复用，user_confirmed；不推断视觉、编码或产品取舍",
+    "product_designer": "PD-MEM-001..003: 视觉优先、先交可审阅视觉稿、保留必要无障碍/错误文字，均 user_confirmed",
+    "software_engineer": "无已确认编码偏好；明确保持 awaiting_user/inferred 规则"
+  },
+  "limitations": [
+    "未执行跨项目运行时读取/写回测试",
+    "未取得多个项目的真实用户持续反馈",
+    "未验证 Codex 本地记忆或并发写入行为"
+  ],
+  "retest_conditions": [
+    "新项目中实际读取共享档案、ROLE、MEMORY、SCHEMA和handoff并留存日志",
+    "任务结束产生候选，确认后按版本更新且未确认观察不进入默认区",
+    "跨项目复验职责边界、来源定位、替代关系和真实用户反馈"
+  ],
+  "written_files": [
+    "sites/rolecraft/team/employees/core/qa-memory.md",
+    "sites/rolecraft/team/employees/core/qa-memory.json"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "reviewId": "uiux-textbook-content-review-v01",
+  "date": "2026-10-14",
+  "reviewerRole": "内容审校员",
+  "reviewerIdentity": "AI技术内容审校，非真人UI/UX设计专家、无障碍专家、法务、测试工程师、真实学习者、实训评估员或就业评估",
+  "sourceVersion": "uiux-design-v01",
+  "status": "reviewed_with_limitations",
+  "conclusion": "当前稿对证据边界、失败状态、AI候选/来源区分和工程协作方向基本成立，但仍是12章概要版，未满足26单元完整交付；AI状态/字段契约矛盾，规范引用不邻近，ATAG映射过宽，200%缩放练习覆盖不足，题型映射重复且输入哈希漂移，视觉教学证据缺失。",
+  "reviewScope": [
+    "读取README、author-handoff、sources-and-interview-map、主正文及产品范围/课程架构md和json",
+    "逐段核对UI/UX定义、AI交互与不确定性、状态/取消/恢复、可用性、设计系统、无障碍、工程交接、指标、面试题证据边界",
+    "核对W3C WCAG 2.2、WAI-ARIA 1.2、ATAG 2.0适用范围；未运行浏览器、Figma、读屏、模型、接口或真人研究",
+    "运行本地Markdown相对链接检查及JSON解析检查"
+  ],
+  "sourceBindings": [
+    {"path":"sites/rolecraft/textbooks/uiux-design-v01/README.md","sha256":"ff2b47e37cf6c3d2ff54f9ae5e0ccfdb172584c2cf043117d9818902be42a622"},
+    {"path":"sites/rolecraft/textbooks/uiux-design-v01/author-handoff.md","sha256":"d1e15d6b35ca01f6aee51b1897ee0eae78b55339e6df81ede81468a2d26612bd"},
+    {"path":"sites/rolecraft/textbooks/uiux-design-v01/sources-and-interview-map.md","sha256":"2b5b07265fd9a540beaa7eb025a0fea064d33758cc131508f6af2467662ecc0d"},
+    {"path":"sites/rolecraft/textbooks/uiux-design-v01/uiux-design-textbook.md","sha256":"80518da47d06fc7f58f42e879269a9e9df01a91dc3e089ebae2340208371dfd0"},
+    {"path":"sites/rolecraft/team/uiux-textbook-product-scope.md","sha256":"f4680194e0bd7a458f7320a375cc66bd57dbd83ec6c5ce5815353655e9c0633e"},
+    {"path":"sites/rolecraft/team/uiux-textbook-product-scope.json","sha256":"7af720642b07d23271b68c99265cd8b71470c29f012a521c1824379ccb9be09f"},
+    {"path":"sites/rolecraft/team/uiux-textbook-course-architecture.md","sha256":"d4efafb8c73ac1864c5befb459e61cee3d9f7a0528faa79ddb33997b1d093cc7"},
+    {"path":"sites/rolecraft/team/uiux-textbook-course-architecture.json","sha256":"00e75abf5b359cc79c90296cb725a54c65d9f09ff57b49def10f0c6c8386a26e"},
+    {"path":"sites/rolecraft/team/TEXTBOOK_WRITING_STANDARD.md","sha256":"46826414794822b5e2c836edad68ba6122f8e551d7669bcc8917bb315f5a6aa1"}
+  ],
+  "externalSourceChecks": [
+    {"id":"W3C-WCAG22","url":"https://www.w3.org/TR/WCAG22/","checked":"2026-10-14","use":"核对Reflow 1.4.10的320 CSS px/400%等价边界；不据此声称教材或产品合规"},
+    {"id":"W3C-ARIA12","url":"https://www.w3.org/TR/wai-aria-1.2/","checked":"2026-10-14","use":"核对ARIA规范来源存在；未测试具体实现"},
+    {"id":"W3C-ATAG20","url":"https://www.w3.org/TR/ATAG20/","checked":"2026-10-14","use":"核对ATAG对象为Web内容创作工具及其作者/产出支持，不是任意设计文件合规标准"}
+  ],
+  "confirmedStrengths": [
+    "教学假设、观察、推断、决定、未运行结果与真实用户/职业证据边界基本分开",
+    "主流程包含Results、Clarification、NoMatch、Unavailable、SourceMismatch并提醒本地取消不等于远端撤销",
+    "AI章节区分用户表达、系统候选、可核验来源并说明编辑、重试、撤销、人工接管边界",
+    "公开题型、S06单一候选人样本和市场频率限制已在README/来源表说明"
+  ],
+  "issues": [
+    {"id":"UIUX-C01","severity":"P1","status":"open","location":"README关系说明；author-handoff；course-architecture reading_order","subject":"12章概要不能满足26单元核心交付","impact":"无法把本稿章节覆盖解释为每单元已有机制、正常/失败证据、练习、来源和独立作品；多个AI进阶、生态、MVP和未知任务单元只有压缩段落。","owner":"教材研发员、课程架构师；QA复核","repair":"保留概要标签，另交26单元文件或阶段矩阵，逐单元绑定正文位置、正常/失败示例、练习、来源和未运行边界。","reverify":"按course-architecture reading_order逐项核对，不只数章节"},
+    {"id":"UIUX-C02","severity":"P1","status":"open","location":"textbook:84-88,110-145,166-176,226-249","subject":"AI状态、字段和组件契约互相矛盾","impact":"低置信、来源冲突、流式、取消、重试、人工接管和excerpt缺失无法从同一契约重建；ResultCard与RetrievalState状态集合不一致。","owner":"教材研发员；课程架构师确认单元覆盖；AI生成/检索工程师交接正式字段","repair":"建立单一状态机，统一Recommendation、ResultCard、RetrievalState字段，明确excerpt可选性、evidenceStatus/uncertaintyReason、queryId生命周期，并补cancelled/retrying/source_checking/low_confidence/handoff路径。","reverify":"状态图、表、伪代码和文案逐边对照；必要时QA运行确定性夹具"},
+    {"id":"UIUX-C03","severity":"P2","status":"open","location":"sources-and-interview-map:8-14；textbook:184-208,260-284","subject":"规范来源没有放在正文邻近主张处","impact":"读者无法区分WCAG/ARIA/启发式规范与作者建议，版本复核无法定位支持关系。","owner":"教材研发员；课程架构师维护来源规则；QA核链接和版本","repair":"在正文首次提出规范或外部框架时放邻近链接/成功准则，标注本篇建议与规范要求。","reverify":"抽查每项外部事实，确认链接直接支持邻近句"},
+    {"id":"UIUX-C04","severity":"P2","status":"open","location":"sources-and-interview-map:11","subject":"ATAG 2.0适用范围写宽","impact":"可能把设计文件/Figma交接误读为ATAG通用合规对象，混淆创作工具、最终Web内容和设计交接的责任。","owner":"教材研发员、课程架构师；设计师补边界","repair":"收窄为Web内容创作工具及其支持作者产出可访问内容的背景，最终界面按WCAG/ARIA与工程实测核对，或移除该映射。","reverify":"确认来源表不暗示任意设计文件自动适用ATAG"},
+    {"id":"UIUX-C05","severity":"P2","status":"open","location":"textbook:184-208；练习200%缩放","subject":"无障碍缩放覆盖不足且缺少最小语义示例","impact":"200%练习不足以覆盖WCAG 2.2 Reflow的320 CSS px/400%等价场景；完全把aria/键盘语义交给工程，学习者无法写出可观察交接条件。","owner":"教材研发员；设计师交语义规范；工程/QA实测","repair":"把200%标为早期版式练习，增加320 CSS px/400%等价重排、文字间距、焦点/动态通知验收，并给出不绑定框架的最小语义示例。","reverify":"由QA按目标浏览器/辅助技术实测，静态文案不计通过"},
+    {"id":"UIUX-C06","severity":"P2","status":"open","location":"sources-and-interview-map:31-39；course-architecture:8","subject":"面试题型映射重复且主次单元未声明","impact":"按行计数会重复计算题目，无法把能力簇交叉训练与26单元唯一主映射合并。","owner":"课程架构师、竞品研究员；教材作者引用冻结映射","repair":"为每个ID标primary_unit和secondary_units，删除同一行冗余token并附001-103展开计数。","reverify":"主映射唯一、交叉映射可解释，不能以总行数代替唯一ID数"},
+    {"id":"UIUX-C07","severity":"P2","status":"open","location":"course-architecture输入哈希；team/uiux-interview-questions-3m-research.json","subject":"面试研究JSON声明哈希与收到文件漂移","impact":"架构绑定的7aa79…版本与当前可解析的0f2df…版本不同，且架构仍称JSON有语法错误，题型证据无法按登记版本直接复现。","owner":"竞品研究员重新冻结；课程架构师更新hash/状态；QA核绑定","repair":"选择并登记唯一来源版本、哈希、解析状态和变更记录，重跑ID/来源/主次映射检查，不静默覆盖旧报告。","reverify":"新绑定文件可解析且与正文ID映射一致"},
+    {"id":"UIUX-C08","severity":"P2","status":"open","location":"textbook:84-88,166-176,222-237","subject":"来源完整性与语义支持没有分层","impact":"sourceHash/sourceVersion只能证明身份，不能证明理由由摘录支持；excerpt缺少范围/核验状态，checkedAt未进入结果状态。","owner":"教材研发员定义契约；AI生成/检索工程师交接字段；内容审校复核","repair":"分出identity/provenance与support/evidence两层，补无摘录、摘录不支持、版本变化和责任人未核验状态。","reverify":"用歧义、来源冲突和版本更新夹具核对文案不越界"},
+    {"id":"UIUX-C09","severity":"P2","status":"open","location":"README；author-handoff；textbook:110-141,157-188,202-208,408-440","subject":"视觉优先要求与当前教材证据不一致","impact":"当前仅有Markdown、ASCII流程、表格和代码块，没有可直接审阅的IA/状态/响应式静态视觉稿，读者需自行补图。","owner":"设计师提供视觉交接；教材研发员绑定图稿；QA渲染复核","repair":"至少附主流程/状态图、结果卡状态板、窄屏/焦点关系图，并标明教学假设、非运行截图和版本；概要版需保留未完成声明。","reverify":"视觉稿实际渲染并分别核浏览器、键盘、读屏和缩放"},
+    {"id":"UIUX-C10","severity":"P3","status":"advisory_open","location":"textbook:160-164","subject":"线性低/中/高保真序列需条件化","impact":"初学者可能误以为所有项目必须逐级升级，忽略低保真与可运行原型间的回退/跳过选择。","owner":"教材研发员；课程架构师确认迁移边界","repair":"标为一种路径，补回退或跳过中保真的反例和选择依据。","reverify":"在09和13单元扩写中核对"}
+  ],
+  "staticChecks": {
+    "relativeMarkdownLinks": "all existing for four textbook markdown files",
+    "productAndArchitectureJson": "valid",
+    "currentInterviewResearchJson": "valid but sha256 differs from architecture binding and architecture note",
+    "runtime": "not_run",
+    "browserFigmaScreenReader": "not_run",
+    "modelOrRetrieval": "not_run",
+    "realParticipants": "not_run"
+  },
+  "limits": [
+    "未运行TypeScript伪代码、AI/检索服务、浏览器、Figma、读屏、键盘、缩放或真实接口",
+    "未进行真人学习者、用户研究、可用性测试、真人专家、实训评估或求职结果验证",
+    "未把外部规范核对转写成产品合规结论"
+  ],
+  "reverificationPlan": [
+    "作者修正C02-C05后提供新hash，内容审校复读状态契约、规范邻近性和无障碍示例",
+    "竞品研究员/课程架构师冻结题型JSON与主次映射，QA运行001-103唯一ID和来源检查",
+    "设计师交视觉图并由QA实际渲染、键盘、读屏和缩放复验",
+    "26单元、真实学习效果、真人专家、真实产品和求职证据继续由对应岗位分别取证"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "gate_id": "EMP-GROWTH-L3-L4-QA-v1.1",
+  "version": "1.1",
+  "status": "specification_only_not_assessed",
+  "owner_role": "qa-engineer",
+  "scope": "all_roles_course_growth_assessment",
+  "level_granted": [],
+  "evidence_classes": ["training", "delivery", "user_or_peer", "production", "expert_review"],
+  "l3": {
+    "required": ["two_distinct_cycles", "constraint_transfer", "blind_holdout", "worst_case_recovery", "observation_and_questions", "portfolio_and_handoff", "p0_p1_clear", "teach_other_rebuild"],
+    "decision": "all_required_independently_verified",
+    "output": "course_level_L3_recommended"
+  },
+  "l4": {
+    "requires_l3": true,
+    "required": ["real_problem_and_user_evidence", "comparative_measurement", "feedback_iteration", "external_or_cross_team_feedback", "continuous_authorized_reliability", "domain_coaching", "reusable_asset_rebuild"],
+    "decision": "all_required_independently_verified",
+    "output": "course_level_L4_evidence_ready"
+  },
+  "hard_blocks": ["missing_learner_identity", "proxy_answer_or_execution", "author_self_review", "auto_signoff", "single_success_only", "missing_blind_holdout", "missing_failure_regression", "unauthorized_real_data_or_production", "pending_independent_review", "hash_or_provenance_mismatch", "open_p0_p1", "course_to_product_level_inference"],
+  "assessment_order": ["freeze_contract_hash", "identity_provenance", "anchor", "first_failure_stop", "repair", "anchor_regression", "affected_regression", "blind_holdout", "observation_questions", "portfolio_rebuild", "receiver_signoff", "domain_content_review", "decision"],
+  "sampling": {"minimum": "one_complete_chain_per_role_per_milestone", "high_risk_or_failed": "two_complete_chains", "unreviewed_scope_remains_unassessed": true},
+  "current_employee_decisions": [],
+  "limitations": ["this specification does not assess or promote any employee", "external/user/production evidence remains separately required", "course levels do not equal product levels or permanent certification"]
+}

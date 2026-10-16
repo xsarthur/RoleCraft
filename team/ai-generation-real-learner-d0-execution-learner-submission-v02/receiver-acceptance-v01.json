@@ -1,0 +1,30 @@
+{
+  "record_type": "independent_receiver_acceptance",
+  "status": "accepted_with_evidence",
+  "submission_package": "ai-generation-real-learner-d0-execution-learner-submission-v02",
+  "learner_id": "learner-7391842650",
+  "learner_statement": "learner-statement.txt",
+  "raw_receipts": "raw-receipts-retry-02/",
+  "raw_sha256sums_sha256": "dd3be1b30b614d41d4421c1d32be0ad4280dff21405552c2ffc8506ad52e5535",
+  "receiver": {
+    "role": "独立接收方/测试工程师",
+    "identity": "chenny",
+    "accepted": true,
+    "accepted_at": "2026-10-16T11:35:31+08:00",
+    "signature": "Chenny"
+  },
+  "replay": {
+    "fresh_temp_directory": "/private/tmp/chenny-receiver-replay-v01.EBNvUd",
+    "rebuild_command": "zsh /Users/shengxiong/Desktop/One People Company/sites/rolecraft/team/ai-generation-real-learner-d0-execution-learner-submission-v02/receiver-replay-v01.sh",
+    "four_case_replay": "pass",
+    "holdout": "pass",
+    "hashes_verified": true,
+    "bytes_verified": true,
+    "b_body_absent": true,
+    "first_failure_checks": true
+  },
+  "decision_reason": "实际复验结论",
+  "level_decision": "pending",
+  "human_receipt_pending": false,
+  "forbidden_inference": "本模板不是接收方签收，不授予 D0、L1 或 L2；只有 Chenny 完成独立复验并本人填写签名后才可更新接受状态。"
+}

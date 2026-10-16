@@ -1,0 +1,9 @@
+{
+  "contract": "T2-v1.0",
+  "run_ids": ["t2-hit-001", "t2-no_match-001", "t2-ambiguous-001", "t2-version_conflict-001"],
+  "developer_delivery": "handoff",
+  "qa_status": "not_started",
+  "growth": "emerging",
+  "evidence": ["logs/t2-hit-001.jsonl", "logs/t2-no_match-001.jsonl", "logs/t2-ambiguous-001.jsonl", "logs/t2-version_conflict-001.jsonl", "hashes/source-hashes.json", "run-results.json"],
+  "limits": ["retrieval interface is local deterministic stub", "no recall/ranking/user-effect claim", "independent QA not run"]
+}

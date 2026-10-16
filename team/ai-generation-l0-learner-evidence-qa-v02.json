@@ -1,0 +1,109 @@
+{
+  "qa_id": "AI-GEN-L0-LEARNER-EVIDENCE-QA-v02",
+  "date": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "role": "测试工程师",
+  "scope": "L0 learner evidence to L1 gate; independent read-only QA of v02 repair",
+  "decision": "met_with_limitations",
+  "advancement": "not_granted",
+  "checks": {
+    "diagnostic_id": {
+      "status": "met_within_scope",
+      "report": "D0-AI-20261015-001",
+      "raw": "D0-AI-20261015-001",
+      "manifest": "D0-AI-20261015-001",
+      "all_u_artifacts": true
+    },
+    "d0_03_source_binding": {
+      "status": "met_with_limitations",
+      "fixture_id": "F-AI-SOURCE-CLAIM-v1",
+      "version": "doc-A-refund-v1",
+      "manifest_hash": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+      "raw_hash": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+      "source_declared_hash": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+      "markdown_hash": "5dc9f33e3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+      "hashes_match_json_manifest_source": true,
+      "markdown_mismatch": true
+    },
+    "d6": {
+      "status": "met_with_limitations",
+      "user_problem": true,
+      "options": 2,
+      "stop_line": true,
+      "receipt_present": true,
+      "receipt_json_parse": "pass",
+      "cpu_time_value_present": false,
+      "p95_value_present": false,
+      "network": false,
+      "paid_api": false
+    },
+    "u_ai_l0_001": {
+      "status": "met_within_scope",
+      "single_constraint": "checkpoint temporarily unavailable",
+      "baseline": true,
+      "first_failure": true,
+      "regression": true,
+      "holdout": true,
+      "stop_decision_present": true,
+      "unmeasured": [
+        "real process crash recovery",
+        "real model quality",
+        "external API contract",
+        "production RPO/RTO"
+      ],
+      "external_actions_all_null": true
+    },
+    "controls": {
+      "status": "met_within_scope",
+      "qa_status": "pending",
+      "self_signed": false,
+      "external_action": null,
+      "l1_decision": "not_granted",
+      "l2_decision": "not_granted"
+    },
+    "bindings_hashes": {
+      "status": "met_with_limitations",
+      "source_record": "sites/rolecraft/team/ai-generation-l0-practice-source-001-v01.json",
+      "durable_card": "sites/rolecraft/team/ai-generation-l0-practice-durable-002-v04/evidence-card.json",
+      "gate_manifest": "sites/rolecraft/team/ai-generation-l0-practice-gate-003-v06/manifest.json",
+      "source_card_hash_declared": "377f16848f0ef36cc2449349014d75c146d065d32a8fc6ae032eefcc583c4e07",
+      "source_card_hash_actual": "6feca0a872dbe85867560284f0cbf947d220ca0ae416fdbc8370a812556c8b3b",
+      "durable_card_hash_actual": "126c997a1770dca54fedbd5c18bd9fe27b2b1b94dac2008178ffa4a15456a983",
+      "gate_manifest_hash_actual": "91993e51e1e24c618eeb6194f1e1bbac7f1a0fb57b13842f27696e632ee9560f",
+      "learner_raw_sha256": "dd450765f65121a8b75b20cdbf060b2138634d90cce5a0eb51f0794b14dab5f0",
+      "manifest_sha256": "edd2225997f2eca84d296781f620180742a1dcbe62d894f3e6949ef4c21ee4ae",
+      "u_artifact_hashes_recorded": false,
+      "readme_hash_check": "gate manifest contains README hash; not independently re-rendered"
+    }
+  },
+  "artifacts": {
+    "learner_raw_sha256": "dd450765f65121a8b75b20cdbf060b2138634d90cce5a0eb51f0794b14dab5f0",
+    "learner_manifest_sha256": "edd2225997f2eca84d296781f620180742a1dcbe62d894f3e6949ef4c21ee4ae",
+    "u_artifact_sha256": {
+      "baseline.json": "d333928a3cd1a8dae2c52677d54e6531994a43c65a38c9833bc14ec845a5df48",
+      "first_failure.json": "5a1fab1e704e898ae903ea49ebd6c0c97c31c36a18706298eac4683a43e9778c",
+      "holdout.json": "54fed271fbf9f09f809f90ad333192853c9f244bbb23eef5e2b5fe4de833f5f0",
+      "regression.json": "09a43d9de20fc28f49c4b40c35365b6153877311313cc777af04fcc0a46dfed2"
+    }
+  },
+  "execution": {
+    "replayed": false,
+    "network": false,
+    "paid_api": false,
+    "files_modified": [
+      "ai-generation-l0-learner-evidence-qa-v02.md",
+      "ai-generation-l0-learner-evidence-qa-v02.json"
+    ]
+  },
+  "limitations": [
+    "v02 Markdown D0-03 fixture hash differs from JSON/manifest/SOURCE canonical hash; canonical binding is the JSON/manifest value but prose must be corrected.",
+    "D6 receipt proves JSON syntax and closed network/paid API only; no numeric CPU time or p95 value is supplied despite metrics claim.",
+    "Learner manifest does not enumerate per-file learner_raw/U artifact hashes; gate README hash is declared in gate manifest but this QA did not treat declaration as rerun evidence.",
+    "U artifacts are local fixture evidence only; real process crash recovery, model quality, external API contract and production RPO/RTO remain unmeasured."
+  ],
+  "next_review_requirements": [
+    "Correct Markdown fixture hash to canonical 5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0.",
+    "Add numeric CPU time and p95 measurement with command/output receipt, or mark those metrics unmeasured.",
+    "Add manifest hashes for learner_raw and all four U artifacts and independently verify them."
+  ]
+}

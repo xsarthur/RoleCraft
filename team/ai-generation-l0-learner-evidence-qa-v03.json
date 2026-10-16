@@ -1,0 +1,69 @@
+{
+  "qa_id": "AI-GEN-L0-LEARNER-EVIDENCE-QA-v03",
+  "date": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "reviewer_role": "测试工程师",
+  "scope": "独立只读复核 v03 L0 learner evidence；不代执行训练，不授等级",
+  "decision": "met_with_limitations",
+  "advancement": "not_granted",
+  "checks": {
+    "json_parse": true,
+    "diagnostic_id": {"status": "met_within_scope", "value": "D0-AI-20261015-001"},
+    "canonical_fixture": {
+      "status": "met_within_scope",
+      "fixture_id": "F-AI-SOURCE-CLAIM-v1",
+      "fixture_hash_recomputed": "5dc9f33e3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+      "raw_manifest_source_match": true
+    },
+    "d6": {
+      "status": "met_with_limitations",
+      "fixture_only": true,
+      "cpu_ms": 1.84,
+      "runs_ms": [1.71, 1.84, 1.76, 1.89, 1.8],
+      "p95_ms": 1.89,
+      "p95_threshold_ms": 2000,
+      "quality_claim": "schema/source completeness = 100% on fixture",
+      "network": false,
+      "paid_api": false,
+      "receipt_parse": true
+    },
+    "u_ai_l0_001": {
+      "status": "met_within_scope",
+      "baseline": true,
+      "first_failure_recovery_required": true,
+      "regression_recovered": true,
+      "holdout_stop_after_retry_budget": true,
+      "execution_log_present": true,
+      "input_hash_match": true,
+      "output_hash_match": true,
+      "all_external_action_null": true
+    },
+    "b_tenant_rejection": {"status": "unverified", "counts_as_pass": false},
+    "controls": {
+      "qa_status": "pending",
+      "self_signed": false,
+      "external_action": null,
+      "l1_decision": "not_granted",
+      "l2_decision": "not_granted"
+    },
+    "manifest_artifacts": {
+      "learner_raw.json": {"bytes": 3492, "sha256": "9c16b5bafad2b7b8b8e5afd2e124c2a42e021ac4f3537c841e01a212a7b1676a", "match": true},
+      "u-ai-l0-001/execution_log.json": {"bytes": 572, "sha256": "f654ef05b7d02fb059581306c08a2d2d1dc881d1aa8d05f3ae21d6cebae4add2", "match": true},
+      "u-ai-l0-001/baseline.json": {"bytes": 145, "sha256": "d333928a3cd1a8dae2c52677d54e6531994a43c65a38c9833bc14ec845a5df48", "match": true},
+      "u-ai-l0-001/first_failure.json": {"bytes": 225, "sha256": "5a1fab1e704e898ae903ea49ebd6c0c97c31c36a18706298eac4683a43e9778c", "match": true},
+      "u-ai-l0-001/regression.json": {"bytes": 203, "sha256": "09a43d9de20fc28f49c4b40c35365b6153877311313cc777af04fcc0a46dfed2", "match": true},
+      "u-ai-l0-001/holdout.json": {"bytes": 170, "sha256": "54fed271fbf9f09f809f90ad333192853c9f244bbb23eef5e2b5fe4de833f5f0", "match": true}
+    },
+    "u_input_output_hashes": {
+      "input": "d333928a3cd1a8dae2c52677d54e6531994a43c65a38c9833bc14ec845a5df48",
+      "output": "09a43d9de20fc28f49c4b40c35365b6153877311313cc777af04fcc0a46dfed2",
+      "execution_log_match": true
+    }
+  },
+  "limitations": [
+    "B tenant rejection path is explicitly unverified and excluded from pass.",
+    "D6 quality and latency are local deterministic fixture evidence only; no real model quality or external API contract was tested.",
+    "Real process crash recovery, production RPO/RTO, human approval/recipient signoff, and unknown-task transfer remain unmeasured."
+  ],
+  "execution": {"replayed": false, "network": false, "paid_api": false, "files_modified": ["ai-generation-l0-learner-evidence-qa-v03.md", "ai-generation-l0-learner-evidence-qa-v03.json"]}
+}

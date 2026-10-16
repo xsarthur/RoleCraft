@@ -1,0 +1,91 @@
+{
+  "report_id": "AI-GEN-L0-TO-L1-GATE-QA-v10",
+  "date": "2026-10-16",
+  "role": "测试工程师",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "decision": "remain_L0_guided",
+  "l1_review": "insufficient_evidence",
+  "level_granted": {
+    "L0": false,
+    "L1": false,
+    "L2": false
+  },
+  "production_permission": false,
+  "inputs": [
+    "ai-generation-real-learner-d0-execution-learner-receipts/",
+    "ai-generation-real-learner-d0-execution-learner-receipts-qa-v01.md/.json"
+  ],
+  "checks": {
+    "sha256sums": {
+      "status": "pass",
+      "listed_files": 29
+    },
+    "bytes_manifest": {
+      "status": "pass"
+    },
+    "run1_run2_identical": {
+      "status": "pass",
+      "cases": [
+        "A-normal",
+        "B-tenant-denied",
+        "source-missing",
+        "source-conflict"
+      ]
+    },
+    "stderr_zero": {
+      "status": "pass",
+      "all_eight_case_runs_zero_bytes": true
+    },
+    "exit_codes": {
+      "status": "pass",
+      "all_eight_case_runs_zero": true
+    },
+    "first_failures": {
+      "status": "pass",
+      "values": {
+        "B-tenant-denied": "SOURCE_SCOPE_DENIED",
+        "source-missing": "SOURCE_MISSING",
+        "source-conflict": "SOURCE_VERSION_MISMATCH"
+      }
+    },
+    "A_source_binding": {
+      "status": "pass_within_receipt_scope",
+      "claims": 2,
+      "external_action": null
+    },
+    "B_body_absence": {
+      "status": "pass",
+      "body_in_output": false,
+      "denial_metadata_only": true
+    },
+    "learner_attribution": {
+      "status": "fail",
+      "learner_owned_execution": false,
+      "reason": "缺少归属与交接文件，raw receipts不能证明学习者本人执行"
+    }
+  },
+  "missing": [
+    "learner-receipt.json",
+    "learner-statement.txt",
+    "handoff-to-qa.json",
+    "manifest.sha256",
+    "anonymous learner_id",
+    "本人声明",
+    "本人执行确认",
+    "接收签收"
+  ],
+  "evidence_boundary": {
+    "receipt_integrity": true,
+    "learner_execution": false,
+    "human_receipt": false,
+    "level_certification": false,
+    "production_permission": false
+  },
+  "next_gate_requirements": [
+    "补齐learner-receipt.json并绑定目录/输入/脚本哈希、时间与匿名learner_id",
+    "补齐learner-statement.txt",
+    "补齐handoff-to-qa.json和manifest.sha256",
+    "QA独立复跑四场景及未公开holdout并由接收方签收或有据拒收"
+  ],
+  "preserved_boundary": "raw receipts及QA回放不等于学习者本人执行，不授任何等级。"
+}

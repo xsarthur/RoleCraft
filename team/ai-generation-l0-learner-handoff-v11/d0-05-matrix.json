@@ -1,0 +1,70 @@
+{
+  "baseline": {
+    "artifact": "d0-04/baseline.json",
+    "schema_version": "v1",
+    "source_refs": [
+      "doc-A-refund-v1"
+    ],
+    "tenant": "A",
+    "source_version": "v1",
+    "status": "source_checked",
+    "assertions": {
+      "schema_version": true,
+      "source_refs": true,
+      "tenant": true,
+      "source_version": true,
+      "status": true
+    }
+  },
+  "first_failure": {
+    "artifact": "d0-04/first_failure.json",
+    "schema_version": "v1",
+    "source_refs": [
+      "doc-A-refund-v1"
+    ],
+    "tenant": "A",
+    "source_version": "v1",
+    "status": "recovery_required",
+    "assertions": {
+      "schema_version": true,
+      "source_refs": true,
+      "tenant": true,
+      "source_version": true,
+      "status": true
+    }
+  },
+  "regression": {
+    "artifact": "d0-04/regression.json",
+    "schema_version": "v1",
+    "source_refs": [
+      "doc-A-refund-v1"
+    ],
+    "tenant": "A",
+    "source_version": "v1",
+    "status": "draft_ready",
+    "assertions": {
+      "schema_version": true,
+      "source_refs": true,
+      "tenant": true,
+      "source_version": true,
+      "status": true
+    }
+  },
+  "holdout": {
+    "artifact": "d0-04/holdout.json",
+    "schema_version": "v1",
+    "source_refs": [
+      "doc-A-refund-v1"
+    ],
+    "tenant": "A",
+    "source_version": "v1",
+    "status": "recovery_required",
+    "assertions": {
+      "schema_version": true,
+      "source_refs": true,
+      "tenant": true,
+      "source_version": true,
+      "status": true
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "contract_id": "PROD-D0-001",
+  "diagnostic_id": "PROD-D0-001",
+  "contract_version": "product-manager-d0-v01",
+  "role_id": "product-manager",
+  "status": "planned",
+  "assessment_status": "not_assessed",
+  "execution_gate": "blocked",
+  "learner_id": null,
+  "external_actions_allowed": false,
+  "learner_execution": false,
+  "artifact_scope": {
+    "diagnostic_spec": {
+      "path": "sites/rolecraft/team/employee-growth-mvp/product-manager/D0-diagnostic.md",
+      "sha256": "2f1d7e3481840686077263a4a516a413891d75a147fcb3075dde230cbbd4c7c5"
+    },
+    "diagnostic_schema": {
+      "path": "sites/rolecraft/team/employee-growth-mvp/product-manager/D0-diagnostic.json",
+      "sha256": "7f5e0a3f12b2ecc7986e5deadb540f9fd4afb4b6c778cfdb54a9ac3217a8ede4"
+    },
+    "fixture_draft": {
+      "path": "sites/rolecraft/team/employee-growth-mvp/product-manager/fixtures/fixtures.product-recommendation-v01.json",
+      "sha256": "e7d27f951cd32f0b1f3b758b3a0987dccab4578ab2562637b02c6187f81d5f7b",
+      "fixture_sha256_field": "pending_freeze",
+      "status": "draft_not_frozen"
+    },
+    "fixture_freeze_manifest": {
+      "path": "sites/rolecraft/team/employee-growth-mvp/product-manager/fixtures/fixture-hashes-v01.json",
+      "sha256": "5df3fc43c3c92cacb408e5d45fd63ca6b57d631fc9a626805047f9ab54a3d4d5",
+      "status": "pending_freeze",
+      "fixture_file_sha256_bound": true,
+      "canonical_content_sha256_bound": false,
+      "source_snapshot_hashes_bound": false
+    },
+    "independent_qa": {
+      "markdown_path": "sites/rolecraft/team/product-manager-d0-qa-v01.md",
+      "markdown_sha256": "592c119f47e61fe11b87e22911ddfe17fa04a9548da97618913daf0c7a4cdebf",
+      "json_path": "sites/rolecraft/team/product-manager-d0-qa-v01.json",
+      "json_sha256": "73f60f17d54c498ef5c169e504608066d40866df6c90d7c0e7f17fd4f9084a7a",
+      "overall": "not_met",
+      "learner_execution": false,
+      "derived_by": "QA",
+      "recheck_required_after_manifest": true,
+      "recheck_reason": "fixture-hashes-v01.json was added after this QA snapshot and remains pending_freeze"
+    }
+  },
+  "gates": {
+    "fixture_freeze": "blocked",
+    "source_version_freeze": "blocked",
+    "learner_provenance": "blocked",
+    "independent_review": "blocked",
+    "receiver_signature": "blocked"
+  },
+  "blocking_reasons": [
+    {
+      "id": "PM-D0-BR-01",
+      "severity": "P0",
+      "reason": "fixture_sha256 is pending_freeze; fixture execution cannot start",
+      "owner": "product-manager",
+      "next_action": "review and freeze the synthetic fixture without overwriting any first failure"
+    },
+    {
+      "id": "PM-D0-BR-02",
+      "severity": "P1",
+      "reason": "product-creation-standard.md has no explicit source version; ROLE-PM and product-standard are hash-bound only",
+      "owner": "curriculum-architect/content-reviewer",
+      "next_action": "bind an explicit version or record a documented source-version rejection"
+    },
+    {
+      "id": "PM-D0-BR-03",
+      "severity": "P0",
+      "reason": "no anonymous learner_id, learner raw submission, receipt, or signature",
+      "owner": "learner",
+      "next_action": "submit learner-owned evidence only after the fixture and source gates are frozen"
+    },
+    {
+      "id": "PM-D0-BR-04",
+      "severity": "P1",
+      "reason": "independent QA/content/product review and D0-03 receiver acceptance are pending",
+      "owner": "project-manager",
+      "next_action": "schedule independent review after learner evidence arrives"
+    }
+  ],
+  "allowed_conclusions": [
+    "not_assessed",
+    "insufficient_evidence",
+    "fail",
+    "limited_observation"
+  ],
+  "retest_order": [
+    "original_case",
+    "first_failure_or_stop",
+    "repair",
+    "original_regression",
+    "affected_regression",
+    "holdout"
+  ],
+  "prohibited_inferences": [
+    "learner_capability",
+    "real_user_value",
+    "professional_expertise",
+    "industry_advantage",
+    "production_readiness",
+    "L0_or_L1_or_L2_grant"
+  ]
+}

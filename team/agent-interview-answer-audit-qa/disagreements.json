@@ -1,0 +1,187 @@
+{
+  "date": "2026-10-14",
+  "count": 6,
+  "rule": "No majority vote; preserve both domain judgments, assess current text against original AQS.",
+  "items": [
+    {
+      "id": "Q54",
+      "qaStatus": "met_static_content",
+      "contentReviewStatus": "not_met",
+      "contentReviewGaps": [
+        {
+          "criterion": "AQS-03",
+          "reason": "未交代完整reducer输入/输出、冲突返回以及并发提交边界"
+        },
+        {
+          "criterion": "AQS-04",
+          "reason": "缺两个节点先后次序交换与重放的具体数据轨迹"
+        },
+        {
+          "criterion": "AQS-06",
+          "reason": "未给相同键不同内容、有序步骤和重复事件的验证预期。"
+        }
+      ],
+      "qaReason": "E1已经指定两个节点返回findings、最后写覆盖丢数据、追加重放重复、按不可变来源键合并且异内容中止；E2规定非冲突结合/交换/幂等、有序数据单独序号、批准单所有者。QA认为这是完整的文字算法与三类反例预期，无需强制追加一份代码或数字表才能满足本题；QA-CE01/02对原函数执行六排列/同键冲突和输入不变。但这些执行仅补证，不把没显示代码补到答案。",
+      "textEvidenceIds": [
+        "Q54-E1",
+        "Q54-E2"
+      ],
+      "counterexample": "同键同内容重复应同结果；同键不同内容拒绝；交换两输入结果一致；有序步骤不可直接集合化",
+      "decisionOwner": "产品经理按原AQS整合，必要时作者补齐；未整合前不称最终通过",
+      "status": "pending_product_reconciliation"
+    },
+    {
+      "id": "Q69",
+      "qaStatus": "met_static_content",
+      "contentReviewStatus": "not_met",
+      "contentReviewGaps": [
+        {
+          "criterion": "AQS-04",
+          "reason": "缺具体父额度、各子预留、部分返回/超时与结算的数字轨迹"
+        },
+        {
+          "criterion": "AQS-06",
+          "reason": "无并发预留竞态、重复结算和取消但仍消耗的测试输入及不变量预期。"
+        }
+      ],
+      "qaReason": "E3说明发送前同时检查任务/供应商/在途并预留，E4预留核对额度，E5给三个Agent各认为10造成30的具体反例与未结算不归还条件。QA认为父额度不超分配、未知不释放及通信计账已能形成实施与检验路径；完整数字结算表可改善而非本题一律必须。独立QA-CE13仅验证子任务预算/重派不补充额度，不宣称父预算并发实测。",
+      "textEvidenceIds": [
+        "Q69-E1",
+        "Q69-E2",
+        "Q69-E3",
+        "Q69-E4",
+        "Q69-E5"
+      ],
+      "counterexample": "父10次预算分给3子任务不能各得10；超时未结算不得全释放预算再花",
+      "decisionOwner": "产品经理按原AQS整合，必要时作者补齐；未整合前不称最终通过",
+      "status": "pending_product_reconciliation"
+    },
+    {
+      "id": "Q79",
+      "qaStatus": "met_static_content",
+      "contentReviewStatus": "not_met",
+      "contentReviewGaps": [
+        {
+          "criterion": "AQS-03",
+          "reason": "未将多类升级转为明确放行、暂停和回滚的连续决策"
+        },
+        {
+          "criterion": "AQS-04",
+          "reason": "无一次升级因关键边界退化而停止/回退的完整轨迹"
+        },
+        {
+          "criterion": "AQS-06",
+          "reason": "测试主题多但缺一组旧新样本结果如何判发布的具体示范"
+        },
+        {
+          "criterion": "AQS-08",
+          "reason": "灰度标准段以逗号中断，所指比较表未显示。"
+        }
+      ],
+      "qaReason": "E2给重复工单即使总分涨也阻断、缺两轨迹分母仍90；E4给reader/writer不兼容具体对象；E5/E6明确PRECHECK/STAGED/CANARY及停止新领取、查已发效果、按旧集合/暂停/移交选择。QA认为已有足够的发布/回退决策链，截断标点和缺对照表不消除这些现有信息；不允许由此推实际发布已验。",
+      "textEvidenceIds": [
+        "Q79-E1",
+        "Q79-E2",
+        "Q79-E3",
+        "Q79-E4",
+        "Q79-E5",
+        "Q79-E6"
+      ],
+      "counterexample": "新版本成功率高但一次重复写必须阻断；旧镜像读不了新状态不能直接回滚任务",
+      "decisionOwner": "产品经理按原AQS整合，必要时作者补齐；未整合前不称最终通过",
+      "status": "pending_product_reconciliation"
+    },
+    {
+      "id": "Q87",
+      "qaStatus": "met_static_content",
+      "contentReviewStatus": "not_met",
+      "contentReviewGaps": [
+        {
+          "criterion": "AQS-03",
+          "reason": "缺字段分类、最小化投影、敏感错误映射及审计访问的实施流程"
+        },
+        {
+          "criterion": "AQS-04",
+          "reason": "无一个含令牌报告经四通道处理的完整例子"
+        },
+        {
+          "criterion": "AQS-06",
+          "reason": "仅要求同时检查，未给种子秘密/跨租户输入的预期观测和漏检边界"
+        },
+        {
+          "criterion": "AQS-08",
+          "reason": "OWASP链接段被截断。"
+        }
+      ],
+      "qaReason": "E1/E2分别覆盖读对象与可再披露字段，E3明确上下文/输出/载荷/日志四通道；E5已说明用唯一夹具标记扫描、完整通道收集以及编码/分段/未知秘密的限制。QA认为测试输入类型、观察通道、预期和边界已明确，不必展示具体秘密字符串。当前OWASP日志一手页另核支持排除声明，非实测产品隐私保证。",
+      "textEvidenceIds": [
+        "Q87-E1",
+        "Q87-E2",
+        "Q87-E3",
+        "Q87-E4",
+        "Q87-E5"
+      ],
+      "counterexample": "UI已遮但token进入模型/工具日志仍失败；四标记不等于所有未知秘密均安全",
+      "decisionOwner": "产品经理按原AQS整合，必要时作者补齐；未整合前不称最终通过",
+      "status": "pending_product_reconciliation"
+    },
+    {
+      "id": "Q95",
+      "qaStatus": "met_static_content",
+      "contentReviewStatus": "not_met",
+      "contentReviewGaps": [
+        {
+          "criterion": "AQS-04",
+          "reason": "缺在故障扩散下限流、超时、退避与熔断共同作用的完整事件例"
+        },
+        {
+          "criterion": "AQS-06",
+          "reason": "无故障注入、半开仅一探测及旧代结果不得误关的可执行测试预期"
+        },
+        {
+          "criterion": "AQS-08",
+          "reason": "离线例链接句被截断。"
+        }
+      ],
+      "qaReason": "E1/E2已有有界队列/worker/下游额度与剩余deadline分类重试；E3直接给10单位两失败、冷却5、半开一探测以及成功/失败结果；E4明确旧代结果不得误关与故障域隔离。QA认为这些是可执行的事件规则与反例预期，不强求独立联合事故故事；QA-CE12真实执行旧代回执和半开竞争策略，未测试服务端多进程一致性。",
+      "textEvidenceIds": [
+        "Q95-E1",
+        "Q95-E2",
+        "Q95-E3",
+        "Q95-E4"
+      ],
+      "counterexample": "半开只允许一探针；旧代成功回执不得关闭新一轮熔断；写超时先核对",
+      "decisionOwner": "产品经理按原AQS整合，必要时作者补齐；未整合前不称最终通过",
+      "status": "pending_product_reconciliation"
+    },
+    {
+      "id": "M104",
+      "qaStatus": "met_static_content",
+      "contentReviewStatus": "not_met",
+      "contentReviewGaps": [
+        {
+          "criterion": "AQS-04",
+          "reason": "有限例只描述三类对象，没有把悬挂任务积压与暂时峰值按同一时间线对照出观察结果"
+        },
+        {
+          "criterion": "AQS-06",
+          "reason": "未完整展示修复前后读数或待完成任务不丢失的断言"
+        },
+        {
+          "criterion": "AQS-08",
+          "reason": "关键结尾“不能以丢结果换低内存”语句在“低”处中断，需补全而非改写所有已有机制。"
+        }
+      ],
+      "qaReason": "E1给到达100/完成80的积压反例与观测量；E2说明热身后多快照/停输入/按分配位置和持有者判断四种原因；E4给4批32个4KB的可运行例及长期斜率/持有对象/吞吐复验目标。QA认为足够支撑本题诊断，而不强制每种原因都以同一数字轨迹跑一遍。当前n09内存例在3.14.5实际执行；不能因此断言真实服务/GPU/RSS行为通过。",
+      "textEvidenceIds": [
+        "M104-E1",
+        "M104-E2",
+        "M104-E3",
+        "M104-E4"
+      ],
+      "counterexample": "停止输入后Python对象下降而RSS不降，不得直接判泄漏；吞吐不可因丢结果换低内存",
+      "decisionOwner": "产品经理按原AQS整合，必要时作者补齐；未整合前不称最终通过",
+      "status": "pending_product_reconciliation"
+    }
+  ]
+}

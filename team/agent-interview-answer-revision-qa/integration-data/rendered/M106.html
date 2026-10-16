@@ -1,0 +1,12 @@
+<section class="ia-answer" data-answer-id="M106" data-answer-version="interview-answers-v1.0.0" data-answer-sha256="ec576e8221326da2fb435bdcff158fcdb1daf330f99dbb2a41d12f82de4d1c11" data-content-status="met_within_reviewed_scope"><div class="ia-answer-meta"><span>M106 · interview-answers-v1.0.0</span><strong>内容与测试已限定范围复核</strong></div><article class="ia-prose" aria-label="M106 完整参考解析"><h3>M106｜如何用精确向量检索建立基线，再比较HNSW与IVF的召回、内存、构建和查询代价？过滤条件加入后还需要怎样测量？</h3><p>答案版本：interview-answers-v1.0.0。完整参考解析；示例及测试计划未由本稿执行。</p><p>先在完全相同的向量、度量和合法候选集合上计算精确top-k，才能知道ANN漏掉了哪些真正近邻。精确邻居不是语义相关性真值：向量可能表达错含义，因此还要用独立相关标签和最终任务结果评估。</p><p>建立基线时冻结文档/编码模型版本、归一化、浮点精度、距离方向和并列规则；拒绝维度错误及NaN。对每个查询扫描所有获准向量，按L2平方从小到大排序，固定ID打破并列。下面是未执行的教学基线核心，调用前须按M105的数值合同验证输入；小规模验证足够，大库应使用可信flat实现。</p><div class="ia-code"><span>python · 仅供阅读</span><pre tabindex="0"><code>def exact_l2(q, rows, allowed_ids, k):
+    if type(k) is not int or k &lt; 1:
+        raise ValueError(&quot;k&quot;)
+    scored = []
+    for doc_id, vector in rows:
+        if doc_id not in allowed_ids:
+            continue
+        if len(q) != len(vector):
+            raise ValueError(&quot;dimension&quot;)
+        distance2 = sum((a-b)**2 for a, b in zip(q, vector))
+        scored.append((distance2, doc_id))
+    return sorted(scored)[:k]</code></pre></div><p>HNSW以多层近邻图导航，上层快速靠近目标区域，底层扩展候选。M影响连接数量、内存与构建；efConstruction影响建图探索，efSearch影响查询探索。扩大搜索通常提高召回、增加计算，但时延还受缓存、分布和实现影响。IVF训练粗聚类中心，把向量放入倒排列表；nlist决定划分粒度，nprobe决定查询探测多少列表。边界附近真邻居可能在未探测列表。IVF-Flat保存完整向量；IVF-PQ另加压缩误差，不能把所有IVF都称压缩。<a href="https://github.com/facebookresearch/faiss/wiki/Faiss-indexes" target="_blank" rel="noopener noreferrer">Faiss索引文档</a>，核查于2026-10-14。</p><p>实验按预算扫参数，报告相对精确结果的邻居Recall@k：交集大小除以精确有效邻居数，合法库不足k则分母用其实际数量，空合法集单列。并列边界须用约定的tie规则或距离容差处理，避免不同但同距离邻居被误判。另报人工标签的相关召回/nDCG、完整任务成功、构建/训练/增量时间、索引大小、峰值与稳态内存、预热后单条/批量查询p50/p95及吞吐；硬件、库版本、线程和并发一致，保留全轮次。</p><p>加入过滤后必须重新计算“允许集合上的exact top-k”。例如全库前10名都是其他租户，合法集合中第1名却是全库第200名；先ANN取10再过滤会空返回，不能宣称合法集合没有近邻。按1%、10%、100%等教学选择率构造实验，分别测返回数量、过滤后召回、时延和权限泄漏；比较预过滤、检索中过滤、过采样后过滤或小集合flat，禁止正文不得先交模型。</p><p>当数据少或强过滤使合法集合很小时，flat可能更简单、更快；大库可依据质量/资源曲线选ANN。本文未安装或实跑HNSW/IVF，所有性能与具体参数选择仍待实际数据实验。</p><h4>参考出处</h4><ul><li><a href="#learn/agent/n05-retrieval-ingestion/s-1da4691e1206">4 ANN 的误差要相对精确基线测</a>，v12，原文件第63–74行：对应本题原理、案例与边界。</li></ul></article><details class="ia-binding"><summary>答案版本与审核范围</summary><p>全文按当前答案版本展示。文稿与有限测试不等于真人专家认可、个人经历证据或职业能力认证。</p><p>SHA256：<code>ec576e8221326da2fb435bdcff158fcdb1daf330f99dbb2a41d12f82de4d1c11</code></p></details></section>

@@ -1,0 +1,31 @@
+{
+  "schema_version": "EvidenceCard-v0.3",
+  "qa_record_id": "AI-REAL-LEARNER-D0-EXEC-QA-20261016-003",
+  "repair_id": "AI-REAL-LEARNER-D0-HASH-20261016-001",
+  "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "status": "met_with_limitations",
+  "scope": "D0-03 isolated deterministic QA replay and hash-chain repair verification",
+  "learner_execution": {"available": false, "reason": "QA replay is not learner execution; learner-owned entrypoint and raw receipts remain unavailable.", "source_record": "ai-generation-real-learner-d0-20261016-v01.json"},
+  "hash_scope": {
+    "normalization": "UTF-8, recursive sort_keys, compact separators, no trailing newline",
+    "contract_object_path": "root.fixture",
+    "contract_fixture_sha256": "5dc9f33e3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+    "qa_object_path": "root",
+    "qa_input_sha256": "f6cc25edad6403c052f66167adecf666d770f12b82170f2fc996119ef118f446",
+    "fixture_bytes": 949,
+    "root_bytes": 1388,
+    "consistent_with_repair": true
+  },
+  "cases": {
+    "A-normal": {"run1_run2_byte_equal": true, "run1_sha256": "a310a0bb7f4926393456b0ddd9abbd1d1737f0ec02ded39782730bfe051b2183", "run2_sha256": "a310a0bb7f4926393456b0ddd9abbd1d1737f0ec02ded39782730bfe051b2183", "result": "draft_ready_for_review", "claims_bound": 2, "unknowns_preserved": true, "external_action": null},
+    "B-tenant-denied": {"run1_run2_byte_equal": true, "run1_sha256": "5f2365a4b9f348709b90daf7504c2ddf0fa7bbccc005165121ab776d2dc3c1f9", "run2_sha256": "5f2365a4b9f348709b90daf7504c2ddf0fa7bbccc005165121ab776d2dc3c1f9", "first_failure": "SOURCE_SCOPE_DENIED", "stop_before_draft": true, "B_text_absent": true},
+    "source-missing": {"run1_run2_byte_equal": true, "run1_sha256": "4a217cbb921688cef819c52e98f4bbc872ed9db72a7918d1069ab06ce2a80897", "run2_sha256": "4a217cbb921688cef819c52e98f4bbc872ed9db72a7918d1069ab06ce2a80897", "first_failure": "SOURCE_MISSING", "stop_before_draft": true},
+    "source-conflict": {"run1_run2_byte_equal": true, "run1_sha256": "988c9bcecf929f7ebe2ff03836cfd9ede87654450fd3cb4fde6a2df3ae881c09", "run2_sha256": "988c9bcecf929f7ebe2ff03836cfd9ede87654450fd3cb4fde6a2df3ae881c09", "first_failure": "SOURCE_VERSION_MISMATCH", "stop_before_draft": true}
+  },
+  "receipts": {"run1_stdout_sha256": "7f2a4be3f9c7a6cb84b8030ff12aa97fd5762fe65938df5c6e434e6cb5538e91", "run1_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "run2_stdout_sha256": "b63d73b8f33d26027de36aa2d44ad2a1f9f6fe5ed7e5247fcbfc6a5217fdf204", "run2_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "sha256sums_match": true},
+  "holdout": {"changed_keys": ["document_id", "source_version", "text"], "sha256": "478d4459cd21254d384c2f56dfb17bf9106cd406c64ba65acc8e8fc684fcaccc", "dynamic_binding_verified": true, "human_review_marker_preserved": true},
+  "levels": {"D0": "not_assessed", "L0": "not_assessed", "L1": "not_granted", "L2": "not_granted"},
+  "external_action": null,
+  "unverified": ["learner-authored execution and learner receipt", "real supplier source API", "real model fidelity", "production permissions", "cache/concurrency/recovery", "human approval/signoff", "occupational competence"]
+}

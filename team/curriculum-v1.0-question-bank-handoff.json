@@ -1,0 +1,2667 @@
+{
+  "schemaVersion": 1,
+  "report": "curriculum-v1.0-question-bank-handoff",
+  "createdAt": "2026-10-16T00:00:00+08:00",
+  "ownerRole": "课程架构师",
+  "status": "handoff_ready_for_client_backend; independent_integration_qa_pending",
+  "productAcceptance": {
+    "path": "sites/rolecraft/team/product-v1.0-final-acceptance.json",
+    "sha256": "e6efce6d63349b5ae54e3b61d701dcee4f876432ab48c1a0c4839691d2221963",
+    "overall": "overall_not_met",
+    "blockedAcceptance": [
+      "V1-04"
+    ]
+  },
+  "designAcceptance": {
+    "path": "sites/rolecraft/team/design-v1.0-uiux-acceptance.json",
+    "sha256": "d85e7077630c24f158f089a1982f3eb74a6bdeb43a6dda55b680eb658181b811",
+    "status": "insufficient",
+    "relevantGap": "题库空态诚实但题库/自评数据不可用"
+  },
+  "contract": {
+    "productScope": "sites/rolecraft/team/product-v1.0-scope.md",
+    "version": "rolecraft-1.0",
+    "contentVersion": "textbook-v12",
+    "answerSetVersion": "interview-answers-v1",
+    "releaseIdentity": "rolecraft-1.0",
+    "positioning": "industry knowledge and interview preparation support; no employment or certification claim"
+  },
+  "rebindRequired": {
+    "reason": "package-level sourceBinding points at a prior product/corpus snapshot; do not publish it as current without rebuild",
+    "currentProductAcceptanceSha256": "e6efce6d63349b5ae54e3b61d701dcee4f876432ab48c1a0c4839691d2221963",
+    "currentCorpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+    "currentIndexFileSha256": "c005e8fd4071d14a8acc657a762e53359ea79cd785879bdbaceb52c4768b8142",
+    "sourceReferenceMismatches": [
+      {
+        "id": "Q1",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-e458cc35eeb7",
+        "section": "同一任务 四种控制权"
+      },
+      {
+        "id": "Q2",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-e458cc35eeb7",
+        "section": "同一任务 四种控制权"
+      },
+      {
+        "id": "Q2",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-636fdbf8979e",
+        "section": "怎样做一个公平且能定位原因的比较"
+      },
+      {
+        "id": "Q3",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-a2f4841df4e9",
+        "section": "先固定共同任务条件"
+      },
+      {
+        "id": "Q4",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-e458cc35eeb7",
+        "section": "同一任务 四种控制权"
+      },
+      {
+        "id": "Q5",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-636fdbf8979e",
+        "section": "怎样做一个公平且能定位原因的比较"
+      },
+      {
+        "id": "Q6",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-e458cc35eeb7",
+        "section": "同一任务 四种控制权"
+      },
+      {
+        "id": "Q6",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-8e723873671f",
+        "section": "用条件做选择的练习"
+      },
+      {
+        "id": "Q7",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-8368c310c8e2",
+        "section": "多 Agent 的升级点是可分工 而不是人数"
+      },
+      {
+        "id": "Q41",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-e458cc35eeb7",
+        "section": "同一任务 四种控制权"
+      },
+      {
+        "id": "Q49",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-13c081b3bf38",
+        "section": "三种输入暴露不同的必要性"
+      },
+      {
+        "id": "Q55",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-e458cc35eeb7",
+        "section": "同一任务 四种控制权"
+      },
+      {
+        "id": "Q55",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-13c081b3bf38",
+        "section": "三种输入暴露不同的必要性"
+      },
+      {
+        "id": "Q61",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-8368c310c8e2",
+        "section": "多 Agent 的升级点是可分工 而不是人数"
+      },
+      {
+        "id": "Q61",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-636fdbf8979e",
+        "section": "怎样做一个公平且能定位原因的比较"
+      },
+      {
+        "id": "Q63",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-8368c310c8e2",
+        "section": "多 Agent 的升级点是可分工 而不是人数"
+      },
+      {
+        "id": "Q64",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-8368c310c8e2",
+        "section": "多 Agent 的升级点是可分工 而不是人数"
+      },
+      {
+        "id": "Q66",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-13c081b3bf38",
+        "section": "三种输入暴露不同的必要性"
+      },
+      {
+        "id": "Q66",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-8368c310c8e2",
+        "section": "多 Agent 的升级点是可分工 而不是人数"
+      },
+      {
+        "id": "Q66",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-8e723873671f",
+        "section": "用条件做选择的练习"
+      },
+      {
+        "id": "Q67",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-8368c310c8e2",
+        "section": "多 Agent 的升级点是可分工 而不是人数"
+      },
+      {
+        "id": "Q69",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-8368c310c8e2",
+        "section": "多 Agent 的升级点是可分工 而不是人数"
+      },
+      {
+        "id": "Q96",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-8368c310c8e2",
+        "section": "多 Agent 的升级点是可分工 而不是人数"
+      },
+      {
+        "id": "Q97",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-636fdbf8979e",
+        "section": "怎样做一个公平且能定位原因的比较"
+      },
+      {
+        "id": "P01",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-e458cc35eeb7",
+        "section": "同一任务 四种控制权"
+      },
+      {
+        "id": "P10",
+        "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+        "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+        "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+        "sectionId": "s-8368c310c8e2",
+        "section": "多 Agent 的升级点是可分工 而不是人数"
+      }
+    ],
+    "action": "run build-interview-answers-v1.mjs --final after updating current product/curriculum/review bindings"
+  },
+  "existingPackage": {
+    "sourceBinding": {
+      "productPath": "sites/rolecraft/team/agent-interview-answer-revision-product.json",
+      "productSha256": "dc754bb79ba0f2cc7cd26553c5e8546c2019953d4bc7a237fb302df7baa35ab7",
+      "corpusPath": "sites/rolecraft/server/retrieval/content-v12-index.json",
+      "corpusSha256": "ac87bfa9c88f6e1709fc59c05fc3af1fcf98b7274aeb1be48a07e490578bdd6b"
+    },
+    "dataFile": "sites/rolecraft/dist/interview-answers-v1-data.js",
+    "dataFileSha256": "4a9e3ce4f5067e77b26bdd551bed911a6efadb9fe905de206876f03c773dad7b",
+    "manifest": "sites/rolecraft/textbooks/interview-answers-v1/manifest.json",
+    "manifestSha256": "e3bb9ecf56c525b57019af129a96159d258a21a1768c382ef536eb4430614fe5",
+    "answerSetSha256": "2cd40dcca5342944ab7c0c7836e759054dc3b5d4aaf992508f78d9172473b61a",
+    "buildMode": "final",
+    "contentStatus": "met_within_reviewed_scope",
+    "displayStatus": "pending_independent_integration_qa",
+    "counts": {
+      "met_within_reviewed_scope": 124,
+      "not_met": 0,
+      "insufficient": 0,
+      "pending": 0
+    },
+    "collections": [
+      {
+        "id": "fixed100",
+        "label": "固定题组",
+        "count": 100,
+        "ids": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4",
+          "Q5",
+          "Q6",
+          "Q7",
+          "Q8",
+          "Q9",
+          "Q10",
+          "Q11",
+          "Q12",
+          "Q13",
+          "Q14",
+          "Q15",
+          "Q16",
+          "Q17",
+          "Q18",
+          "Q19",
+          "Q20",
+          "Q21",
+          "Q22",
+          "Q23",
+          "Q24",
+          "Q25",
+          "Q26",
+          "Q27",
+          "Q28",
+          "Q29",
+          "Q30",
+          "Q31",
+          "Q32",
+          "Q33",
+          "Q34",
+          "Q35",
+          "Q36",
+          "Q37",
+          "Q38",
+          "Q39",
+          "Q40",
+          "Q41",
+          "Q42",
+          "Q43",
+          "Q44",
+          "Q45",
+          "Q46",
+          "Q47",
+          "Q48",
+          "Q49",
+          "Q50",
+          "Q51",
+          "Q52",
+          "Q53",
+          "Q54",
+          "Q55",
+          "Q56",
+          "Q57",
+          "Q58",
+          "Q59",
+          "Q60",
+          "Q61",
+          "Q62",
+          "Q63",
+          "Q64",
+          "Q65",
+          "Q66",
+          "Q67",
+          "Q68",
+          "Q69",
+          "Q70",
+          "Q71",
+          "Q72",
+          "Q73",
+          "Q74",
+          "Q75",
+          "Q76",
+          "Q77",
+          "Q78",
+          "Q79",
+          "Q80",
+          "Q81",
+          "Q82",
+          "Q83",
+          "Q84",
+          "Q85",
+          "Q86",
+          "Q87",
+          "Q88",
+          "Q89",
+          "Q90",
+          "Q91",
+          "Q92",
+          "Q93",
+          "Q94",
+          "Q95",
+          "Q96",
+          "Q97",
+          "Q98",
+          "Q99",
+          "Q100"
+        ]
+      },
+      {
+        "id": "market14",
+        "label": "市场补充题组",
+        "count": 14,
+        "ids": [
+          "M101",
+          "M102",
+          "M103",
+          "M104",
+          "M105",
+          "M106",
+          "M107",
+          "M108",
+          "M109",
+          "M110",
+          "M111",
+          "M112",
+          "M113",
+          "M114"
+        ]
+      },
+      {
+        "id": "prototype10",
+        "label": "原型题组",
+        "count": 10,
+        "ids": [
+          "P01",
+          "P02",
+          "P03",
+          "P04",
+          "P05",
+          "P06",
+          "P07",
+          "P08",
+          "P09",
+          "P10"
+        ]
+      }
+    ]
+  },
+  "minimumUsableSet": {
+    "setId": "mvp-15-v1",
+    "count": 15,
+    "ids": [
+      "Q1",
+      "Q2",
+      "Q11",
+      "Q21",
+      "Q31",
+      "Q41",
+      "Q51",
+      "Q61",
+      "Q71",
+      "Q81",
+      "Q91",
+      "M101",
+      "M104",
+      "M110",
+      "M114"
+    ],
+    "selectionRule": "覆盖固定100的11个主题锚点和市场14的4个工程交付问题；不新增题目、不改变100/14分母；原型P01-P10继续作为既有原型集单列。",
+    "questionBankMode": "visible_after_rebind",
+    "practiceMode": "P01 existing practice contract remains separate from question-bank MVP",
+    "selfAssessmentMode": "only_if_visited_and_not_personal_evidence_required",
+    "reviewMode": "only_items_marked_weak_by_user; preserve item/version history"
+  },
+  "answerQuality": {
+    "standardPath": "sites/rolecraft/team/ANSWER_QUALITY_STANDARD.md",
+    "standardSha256": "e1f55b5a83ae73cd3b300d130ac557bc04031b3263da9642631c6c2af1fe2b97",
+    "curriculumPath": "sites/rolecraft/team/answer-quality-standard-curriculum.md",
+    "curriculumSha256": "26ed0ac89eab39dce4a459946e587cc838034dfd5baa968522869eb8ea934c29",
+    "criteria": [
+      "AQS-01 direct answer",
+      "AQS-02 multi-angle mechanism",
+      "AQS-03 actionable path",
+      "AQS-04 concrete case and branches",
+      "AQS-05 conditions and trade-offs",
+      "AQS-06 verification method",
+      "AQS-07 sources and uncertainty",
+      "AQS-08 readable and usable"
+    ],
+    "minimumBody": "完整bodyMarkdown原文，不截断为三条，不按字数或固定角度判通过"
+  },
+  "sourceIdentity": {
+    "textbookVersion": "textbook-v12",
+    "textbookBookSha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+    "corpusVersion": "textbook-v12",
+    "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+    "indexPath": "sites/rolecraft/server/retrieval/content-v12-index.json",
+    "indexFileSha256": "c005e8fd4071d14a8acc657a762e53359ea79cd785879bdbaceb52c4768b8142",
+    "assemblyManifest": "sites/rolecraft/textbooks/v12/assembly-manifest.json",
+    "assemblyManifestSha256": "16907987dcebb2195f9bae4df3f0648d566f597f49722e681fb589b87e32305e"
+  },
+  "buildInputs": [
+    {
+      "path": "sites/rolecraft/server/retrieval/build-interview-answers-v1.mjs",
+      "role": "构建脚本"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/manifest.json",
+      "role": "124题集合/版本/报告绑定"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/author-manifest-{a,b,c}.json",
+      "role": "逐题答案与sourceBindings；必须按当前v12索引重绑"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/answers/",
+      "role": "逐题完整正文"
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-revision-product.json",
+      "role": "构建脚本当前产品合同；sourceBindings须更新"
+    },
+    {
+      "path": "sites/rolecraft/team/product-v1.0-final-acceptance.json",
+      "role": "当前1.0最终验收快照；用于重绑定证据"
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-revision-curriculum.json",
+      "role": "教学推理链/AQS交接"
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-revision-content-a.json",
+      "role": "内容审校A绑定"
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+      "role": "内容审校B绑定"
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-revision-qa/",
+      "role": "逐题集成QA夹具与历史证据（需当前复验）"
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/content-v12-index.json",
+      "role": "教材版本化章节索引"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/assembly-manifest.json",
+      "role": "章节顺序与源hash"
+    }
+  ],
+  "validation": {
+    "selectedIdsUnique": true,
+    "selectedCount": 15,
+    "sourceReferenceCount": 40,
+    "currentSourceHashMismatches": 26,
+    "sectionIdsCheckedAgainst": "sites/rolecraft/server/retrieval/content-v12-index.json",
+    "personalEvidenceInMvp": [],
+    "result": "current section IDs resolved; package/source hashes require rebind before build"
+  },
+  "items": [
+    {
+      "id": "Q1",
+      "collection": "fixed100",
+      "sourceId": 1,
+      "question": "如何界定 LLM Agent？你会用哪些可观察行为区分它与普通聊天应用？",
+      "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q1.md",
+      "answerVersion": "Q1-r1",
+      "answerSha256": "599acec843c4890d4a80797faa08a103b100d8fc2553ed3133263aa4861373a1",
+      "answerQualityStandard": "AQS-01..AQS-08",
+      "personalEvidenceRequired": false,
+      "modes": [
+        "question_bank",
+        "self_assessment"
+      ],
+      "reviewStatus": "met_within_reviewed_scope",
+      "qaStatus": "met_within_reviewed_scope",
+      "contentStatus": "met_within_reviewed_scope",
+      "sourceReferences": [
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/00-learning-route.md",
+          "corpusSourcePath": "textbooks/v12/00-learning-route.md",
+          "sha256": "452129591648ca6c146945fae000e3e905e87c2794315109c727592a7b16dced",
+          "section": "认识 Agent 工程",
+          "startLine": 3,
+          "endLine": 42,
+          "readingHref": "#learn/agent/00-learning-route/s-3b82fdeafaab",
+          "readingTargetKind": "matching_heading",
+          "unitId": "00-learning-route",
+          "sectionId": "s-3b82fdeafaab",
+          "receivedSha256": "452129591648ca6c146945fae000e3e905e87c2794315109c727592a7b16dced",
+          "currentSha256": "452129591648ca6c146945fae000e3e905e87c2794315109c727592a7b16dced"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "corpusSourcePath": "textbooks/v12/c01-selection.md",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "同一任务 四种控制权",
+          "startLine": 7,
+          "endLine": 20,
+          "readingHref": "#learn/agent/c01-selection/s-e458cc35eeb7",
+          "readingTargetKind": "matching_heading",
+          "unitId": "c01-selection",
+          "sectionId": "s-e458cc35eeb7",
+          "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982"
+        }
+      ],
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/00-learning-route.md",
+          "version": "textbook-v12 (received 2026-10-14)",
+          "sha256": "452129591648ca6c146945fae000e3e905e87c2794315109c727592a7b16dced",
+          "section": "认识 Agent 工程",
+          "startLine": 3,
+          "endLine": 42,
+          "supports": "目标—观察—行动反馈及合理停止的定义；原文构造轨迹"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "version": "textbook-v12 (received 2026-10-14)",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "同一任务 四种控制权",
+          "startLine": 7,
+          "endLine": 20,
+          "supports": "普通程序、单次模型、固定流程与动态路径的控制权差别"
+        }
+      ],
+      "sourceLinks": [
+        {
+          "label": "v12 · 00-learning-route.md · 认识 Agent 工程",
+          "originalHref": "../../v12/00-learning-route.md",
+          "occurrence": 1,
+          "sourceOffset": 998,
+          "sourceEndOffset": 1072,
+          "sourceLine": 27,
+          "localOccurrence": 1,
+          "kind": "local_textbook",
+          "href": "#learn/agent/00-learning-route/s-3b82fdeafaab",
+          "sourcePath": "sites/rolecraft/textbooks/v12/00-learning-route.md",
+          "sourceReferenceIndexes": [
+            0
+          ],
+          "section": "认识 Agent 工程",
+          "sectionId": "s-3b82fdeafaab",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "v12 · c01-selection.md · 同一任务 四种控制权",
+          "originalHref": "../../v12/c01-selection.md",
+          "occurrence": 2,
+          "sourceOffset": 1109,
+          "sourceEndOffset": 1174,
+          "sourceLine": 28,
+          "localOccurrence": 2,
+          "kind": "local_textbook",
+          "href": "#learn/agent/c01-selection/s-e458cc35eeb7",
+          "sourcePath": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "sourceReferenceIndexes": [
+            1
+          ],
+          "section": "同一任务 四种控制权",
+          "sectionId": "s-e458cc35eeb7",
+          "resolutionMethod": "full_heading"
+        }
+      ],
+      "practiceSpec": null
+    },
+    {
+      "id": "Q2",
+      "collection": "fixed100",
+      "sourceId": 2,
+      "question": "单次模型调用、固定 Workflow 和动态 Agent，分别适合什么业务条件？",
+      "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q2.md",
+      "answerVersion": "Q2-r1",
+      "answerSha256": "3fbd20b6f019b1ace60ec4b6f38338b17c30123e1f24f70d03ecad7a5df00aec",
+      "answerQualityStandard": "AQS-01..AQS-08",
+      "personalEvidenceRequired": false,
+      "modes": [
+        "question_bank",
+        "self_assessment"
+      ],
+      "reviewStatus": "met_within_reviewed_scope",
+      "qaStatus": "met_within_reviewed_scope",
+      "contentStatus": "met_within_reviewed_scope",
+      "sourceReferences": [
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "corpusSourcePath": "textbooks/v12/c01-selection.md",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "同一任务 四种控制权",
+          "startLine": 7,
+          "endLine": 31,
+          "readingHref": "#learn/agent/c01-selection/s-e458cc35eeb7",
+          "readingTargetKind": "matching_heading",
+          "unitId": "c01-selection",
+          "sectionId": "s-e458cc35eeb7",
+          "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "corpusSourcePath": "textbooks/v12/c01-selection.md",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "怎样做一个公平且能定位原因的比较",
+          "startLine": 43,
+          "endLine": 59,
+          "readingHref": "#learn/agent/c01-selection/s-636fdbf8979e",
+          "readingTargetKind": "matching_heading",
+          "unitId": "c01-selection",
+          "sectionId": "s-636fdbf8979e",
+          "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982"
+        }
+      ],
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "version": "textbook-v12 (received 2026-10-14)",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "同一任务 四种控制权",
+          "startLine": 7,
+          "endLine": 31,
+          "supports": "同任务四类控制方式、适用输入及规则冲突边界"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "version": "textbook-v12 (received 2026-10-14)",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "怎样做一个公平且能定位原因的比较",
+          "startLine": 43,
+          "endLine": 59,
+          "supports": "同条件比较与升级/退回的判断方法"
+        }
+      ],
+      "sourceLinks": [
+        {
+          "label": "v12 · c01-selection.md · 同一任务 四种控制权",
+          "originalHref": "../../v12/c01-selection.md",
+          "occurrence": 1,
+          "sourceOffset": 1011,
+          "sourceEndOffset": 1076,
+          "sourceLine": 25,
+          "localOccurrence": 1,
+          "kind": "local_textbook",
+          "href": "#learn/agent/c01-selection/s-e458cc35eeb7",
+          "sourcePath": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "sourceReferenceIndexes": [
+            0
+          ],
+          "section": "同一任务 四种控制权",
+          "sectionId": "s-e458cc35eeb7",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "v12 · c01-selection.md · 怎样做一个公平且能定位原因的比较",
+          "originalHref": "../../v12/c01-selection.md",
+          "occurrence": 2,
+          "sourceOffset": 1109,
+          "sourceEndOffset": 1180,
+          "sourceLine": 26,
+          "localOccurrence": 2,
+          "kind": "local_textbook",
+          "href": "#learn/agent/c01-selection/s-636fdbf8979e",
+          "sourcePath": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "sourceReferenceIndexes": [
+            1
+          ],
+          "section": "怎样做一个公平且能定位原因的比较",
+          "sectionId": "s-636fdbf8979e",
+          "resolutionMethod": "full_heading"
+        }
+      ],
+      "practiceSpec": null
+    },
+    {
+      "id": "Q11",
+      "collection": "fixed100",
+      "sourceId": 11,
+      "question": "ReAct 如何组织推理、行动与观察？它与一次性生成计划有什么不同？",
+      "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q11.md",
+      "answerVersion": "Q11-r1",
+      "answerSha256": "ddf744e578a481732e5d9c40f339c8d61e12b9c4439b4773b24d268660ae4433",
+      "answerQualityStandard": "AQS-01..AQS-08",
+      "personalEvidenceRequired": false,
+      "modes": [
+        "question_bank",
+        "self_assessment"
+      ],
+      "reviewStatus": "met_within_reviewed_scope",
+      "qaStatus": "met_within_reviewed_scope",
+      "contentStatus": "met_within_reviewed_scope",
+      "sourceReferences": [
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/n03-planning-reflection.md",
+          "corpusSourcePath": "textbooks/v12/n03-planning-reflection.md",
+          "sha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+          "section": "1 三种策略改变的是控制对象",
+          "startLine": 7,
+          "endLine": 25,
+          "readingHref": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
+          "readingTargetKind": "matching_heading",
+          "unitId": "n03-planning-reflection",
+          "sectionId": "s-da63f3dcff17",
+          "receivedSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+          "currentSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "corpusSourcePath": "textbooks/v12/c01-control-loop.md",
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "section": "2 控制权在运行时 聊天上下文只是一种投影",
+          "startLine": 36,
+          "endLine": 59,
+          "readingHref": "#learn/agent/c01-control-loop/s-81f9aaeecb60",
+          "readingTargetKind": "matching_heading",
+          "unitId": "c01-control-loop",
+          "sectionId": "s-81f9aaeecb60",
+          "receivedSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "currentSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8"
+        }
+      ],
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n03-planning-reflection.md",
+          "version": "textbook-v12 (received 2026-10-14)",
+          "sha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+          "section": "1 三种策略改变的是控制对象",
+          "startLine": 7,
+          "endLine": 25,
+          "supports": "ReAct交错推理行动观察及与预计划策略对照"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "version": "textbook-v12 (received 2026-10-14)",
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "section": "2 控制权在运行时 聊天上下文只是一种投影",
+          "startLine": 36,
+          "endLine": 59,
+          "supports": "宿主控制、模型上下文与权威状态边界"
+        }
+      ],
+      "sourceLinks": [
+        {
+          "label": "v12 · n03-planning-reflection.md · 1 三种策略改变的是控制对象",
+          "originalHref": "../../v12/n03-planning-reflection.md",
+          "occurrence": 1,
+          "sourceOffset": 980,
+          "sourceEndOffset": 1069,
+          "sourceLine": 27,
+          "localOccurrence": 1,
+          "kind": "local_textbook",
+          "href": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
+          "sourcePath": "sites/rolecraft/textbooks/v12/n03-planning-reflection.md",
+          "sourceReferenceIndexes": [
+            0
+          ],
+          "section": "1 三种策略改变的是控制对象",
+          "sectionId": "s-da63f3dcff17",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "v12 · c01-control-loop.md · 2 控制权在运行时 聊天上下文只是一种投影",
+          "originalHref": "../../v12/c01-control-loop.md",
+          "occurrence": 2,
+          "sourceOffset": 1103,
+          "sourceEndOffset": 1185,
+          "sourceLine": 28,
+          "localOccurrence": 2,
+          "kind": "local_textbook",
+          "href": "#learn/agent/c01-control-loop/s-81f9aaeecb60",
+          "sourcePath": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "sourceReferenceIndexes": [
+            1
+          ],
+          "section": "2 控制权在运行时 聊天上下文只是一种投影",
+          "sectionId": "s-81f9aaeecb60",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "ReAct论文v3",
+          "originalHref": "https://arxiv.org/abs/2210.03629v3",
+          "occurrence": 3,
+          "sourceOffset": 1215,
+          "sourceEndOffset": 1262,
+          "sourceLine": 29,
+          "kind": "external",
+          "href": "https://arxiv.org/abs/2210.03629v3"
+        }
+      ],
+      "practiceSpec": null
+    },
+    {
+      "id": "Q21",
+      "collection": "fixed100",
+      "sourceId": 21,
+      "question": "Function Calling 从模型输出到函数真正执行，中间经过哪些步骤？",
+      "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q21.md",
+      "answerVersion": "Q21-r1",
+      "answerSha256": "2ce4c9ec6c760f97f6840130a2bb0ac199c2c0c6f415b09528ba3e927d95e0f3",
+      "answerQualityStandard": "AQS-01..AQS-08",
+      "personalEvidenceRequired": false,
+      "modes": [
+        "question_bank",
+        "self_assessment"
+      ],
+      "reviewStatus": "met_within_reviewed_scope",
+      "qaStatus": "met_within_reviewed_scope",
+      "contentStatus": "met_within_reviewed_scope",
+      "sourceReferences": [
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/c03.md",
+          "corpusSourcePath": "textbooks/v12/c03.md",
+          "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+          "section": "工具名与合法 JSON 都不能授执行权",
+          "startLine": 8,
+          "endLine": 24,
+          "readingHref": "#learn/agent/c03/s-9267960e504a",
+          "readingTargetKind": "matching_heading",
+          "unitId": "c03",
+          "sectionId": "s-9267960e504a",
+          "receivedSha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+          "currentSha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "corpusSourcePath": "textbooks/v12/c01-control-loop.md",
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "section": "5 完整模型输出才有资格成为执行计划",
+          "startLine": 219,
+          "endLine": 239,
+          "readingHref": "#learn/agent/c01-control-loop/s-76263bf5db11",
+          "readingTargetKind": "matching_heading",
+          "unitId": "c01-control-loop",
+          "sectionId": "s-76263bf5db11",
+          "receivedSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "currentSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "corpusSourcePath": "textbooks/v12/c01-control-loop.md",
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "section": "3 用动作账本表达进度 不要只保存聊天文本",
+          "startLine": 169,
+          "endLine": 185,
+          "readingHref": "#learn/agent/c01-control-loop/s-d9d6abd6ff04",
+          "readingTargetKind": "matching_heading",
+          "unitId": "c01-control-loop",
+          "sectionId": "s-d9d6abd6ff04",
+          "receivedSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "currentSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8"
+        }
+      ],
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/c03.md",
+          "version": "textbook-v12 (received 2026-10-14)",
+          "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+          "section": "工具名与合法 JSON 都不能授执行权",
+          "startLine": 8,
+          "endLine": 24,
+          "supports": "提议/执行分离、输入和动作身份"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "version": "textbook-v12 (received 2026-10-14)",
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "section": "5 完整模型输出才有资格成为执行计划",
+          "startLine": 219,
+          "endLine": 239,
+          "supports": "完整响应、互斥分支、预检与逐动作准入"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "version": "textbook-v12 (received 2026-10-14)",
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "section": "3 用动作账本表达进度 不要只保存聊天文本",
+          "startLine": 169,
+          "endLine": 185,
+          "supports": "同一动作多协议绑定及结果回传"
+        }
+      ],
+      "sourceLinks": [
+        {
+          "label": "v12 · c03.md · 工具名与合法 JSON 都不能授执行权",
+          "originalHref": "../../v12/c03.md",
+          "occurrence": 1,
+          "sourceOffset": 1028,
+          "sourceEndOffset": 1082,
+          "sourceLine": 25,
+          "localOccurrence": 1,
+          "kind": "local_textbook",
+          "href": "#learn/agent/c03/s-9267960e504a",
+          "sourcePath": "sites/rolecraft/textbooks/v12/c03.md",
+          "sourceReferenceIndexes": [
+            0
+          ],
+          "section": "工具名与合法 JSON 都不能授执行权",
+          "sectionId": "s-9267960e504a",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "v12 · c01-control-loop.md · 5 完整模型输出才有资格成为执行计划",
+          "originalHref": "../../v12/c01-control-loop.md",
+          "occurrence": 2,
+          "sourceOffset": 1109,
+          "sourceEndOffset": 1188,
+          "sourceLine": 26,
+          "localOccurrence": 2,
+          "kind": "local_textbook",
+          "href": "#learn/agent/c01-control-loop/s-76263bf5db11",
+          "sourcePath": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "sourceReferenceIndexes": [
+            1
+          ],
+          "section": "5 完整模型输出才有资格成为执行计划",
+          "sectionId": "s-76263bf5db11",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "v12 · c01-control-loop.md · 3 用动作账本表达进度 不要只保存聊天文本",
+          "originalHref": "../../v12/c01-control-loop.md",
+          "occurrence": 3,
+          "sourceOffset": 1221,
+          "sourceEndOffset": 1303,
+          "sourceLine": 27,
+          "localOccurrence": 3,
+          "kind": "local_textbook",
+          "href": "#learn/agent/c01-control-loop/s-d9d6abd6ff04",
+          "sourcePath": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "sourceReferenceIndexes": [
+            2
+          ],
+          "section": "3 用动作账本表达进度 不要只保存聊天文本",
+          "sectionId": "s-d9d6abd6ff04",
+          "resolutionMethod": "full_heading"
+        }
+      ],
+      "practiceSpec": null
+    },
+    {
+      "id": "Q31",
+      "collection": "fixed100",
+      "sourceId": 31,
+      "question": "会话历史、任务工作状态和长期记忆有什么不同？应分别存储什么？",
+      "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q31.md",
+      "answerVersion": "Q31-r1",
+      "answerSha256": "6eb01a35ff328a01717bc67dec6461799c9426c65be0f6f30d10b70d78a43710",
+      "answerQualityStandard": "AQS-01..AQS-08",
+      "personalEvidenceRequired": false,
+      "modes": [
+        "question_bank",
+        "self_assessment"
+      ],
+      "reviewStatus": "met_within_reviewed_scope",
+      "qaStatus": "met_within_reviewed_scope",
+      "contentStatus": "met_within_reviewed_scope",
+      "sourceReferences": [
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/n02-context-memory-prompt.md",
+          "corpusSourcePath": "textbooks/v12/n02-context-memory-prompt.md",
+          "sha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+          "section": "1 四种保存对象，四种生命周期",
+          "startLine": 7,
+          "endLine": 21,
+          "readingHref": "#learn/agent/n02-context-memory-prompt/s-e3ca8acc970e",
+          "readingTargetKind": "matching_heading",
+          "unitId": "n02-context-memory-prompt",
+          "sectionId": "s-e3ca8acc970e",
+          "receivedSha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+          "currentSha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/n02-context-memory-prompt.md",
+          "corpusSourcePath": "textbooks/v12/n02-context-memory-prompt.md",
+          "sha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+          "section": "2 写入之前先确定这是什么信息",
+          "startLine": 22,
+          "endLine": 42,
+          "readingHref": "#learn/agent/n02-context-memory-prompt/s-e877a22d4ade",
+          "readingTargetKind": "matching_heading",
+          "unitId": "n02-context-memory-prompt",
+          "sectionId": "s-e877a22d4ade",
+          "receivedSha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+          "currentSha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/n02-context-memory-prompt.md",
+          "corpusSourcePath": "textbooks/v12/n02-context-memory-prompt.md",
+          "sha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+          "section": "4 先过滤作用域，再召回，读回时再核一次",
+          "startLine": 66,
+          "endLine": 81,
+          "readingHref": "#learn/agent/n02-context-memory-prompt/s-cf1a404cbb7d",
+          "readingTargetKind": "matching_heading",
+          "unitId": "n02-context-memory-prompt",
+          "sectionId": "s-cf1a404cbb7d",
+          "receivedSha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+          "currentSha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537"
+        }
+      ],
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n02-context-memory-prompt.md",
+          "version": "textbook-v12 (received 2026-10-14)",
+          "sha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+          "section": "1 四种保存对象，四种生命周期",
+          "startLine": 7,
+          "endLine": 21,
+          "supports": "四种对象的内容与生命周期"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n02-context-memory-prompt.md",
+          "version": "textbook-v12 (received 2026-10-14)",
+          "sha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+          "section": "2 写入之前先确定这是什么信息",
+          "startLine": 22,
+          "endLine": 42,
+          "supports": "稳定偏好、临时要求、来源和版本"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n02-context-memory-prompt.md",
+          "version": "textbook-v12 (received 2026-10-14)",
+          "sha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+          "section": "4 先过滤作用域，再召回，读回时再核一次",
+          "startLine": 66,
+          "endLine": 81,
+          "supports": "作用域、冲突和摘要不得改权威事实"
+        }
+      ],
+      "sourceLinks": [
+        {
+          "label": "v12 · n02-context-memory-prompt.md · 1 四种保存对象，四种生命周期",
+          "originalHref": "../../v12/n02-context-memory-prompt.md",
+          "occurrence": 1,
+          "sourceOffset": 955,
+          "sourceEndOffset": 1049,
+          "sourceLine": 26,
+          "localOccurrence": 1,
+          "kind": "local_textbook",
+          "href": "#learn/agent/n02-context-memory-prompt/s-e3ca8acc970e",
+          "sourcePath": "sites/rolecraft/textbooks/v12/n02-context-memory-prompt.md",
+          "sourceReferenceIndexes": [
+            0
+          ],
+          "section": "1 四种保存对象，四种生命周期",
+          "sectionId": "s-e3ca8acc970e",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "v12 · n02-context-memory-prompt.md · 2 写入之前先确定这是什么信息",
+          "originalHref": "../../v12/n02-context-memory-prompt.md",
+          "occurrence": 2,
+          "sourceOffset": 1073,
+          "sourceEndOffset": 1167,
+          "sourceLine": 27,
+          "localOccurrence": 2,
+          "kind": "local_textbook",
+          "href": "#learn/agent/n02-context-memory-prompt/s-e877a22d4ade",
+          "sourcePath": "sites/rolecraft/textbooks/v12/n02-context-memory-prompt.md",
+          "sourceReferenceIndexes": [
+            1
+          ],
+          "section": "2 写入之前先确定这是什么信息",
+          "sectionId": "s-e877a22d4ade",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "v12 · n02-context-memory-prompt.md · 4 先过滤作用域，再召回，读回时再核一次",
+          "originalHref": "../../v12/n02-context-memory-prompt.md",
+          "occurrence": 3,
+          "sourceOffset": 1195,
+          "sourceEndOffset": 1294,
+          "sourceLine": 28,
+          "localOccurrence": 3,
+          "kind": "local_textbook",
+          "href": "#learn/agent/n02-context-memory-prompt/s-cf1a404cbb7d",
+          "sourcePath": "sites/rolecraft/textbooks/v12/n02-context-memory-prompt.md",
+          "sourceReferenceIndexes": [
+            2
+          ],
+          "section": "4 先过滤作用域，再召回，读回时再核一次",
+          "sectionId": "s-cf1a404cbb7d",
+          "resolutionMethod": "full_heading"
+        }
+      ],
+      "practiceSpec": null
+    },
+    {
+      "id": "Q41",
+      "collection": "fixed100",
+      "sourceId": 41,
+      "question": "RAG、长上下文直接阅读和模型微调，分别适合解决哪些知识问题？",
+      "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q41.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "b44abd2d5f73f688ad2b365f503bab3ab0ba786b8b6994456fc108294c216ec4",
+      "answerQualityStandard": "AQS-01..AQS-08",
+      "personalEvidenceRequired": false,
+      "modes": [
+        "question_bank",
+        "self_assessment"
+      ],
+      "reviewStatus": "met_within_reviewed_scope",
+      "qaStatus": "met_within_reviewed_scope",
+      "contentStatus": "met_within_reviewed_scope",
+      "sourceReferences": [
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/n05-retrieval-ingestion.md",
+          "corpusSourcePath": "textbooks/v12/n05-retrieval-ingestion.md",
+          "sha256": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16",
+          "section": "8 RAG、长上下文与微调按缺失能力选择",
+          "startLine": 130,
+          "endLine": 135,
+          "readingHref": "#learn/agent/n05-retrieval-ingestion/s-fd35c6e4f233",
+          "readingTargetKind": "matching_heading",
+          "unitId": "n05-retrieval-ingestion",
+          "sectionId": "s-fd35c6e4f233",
+          "receivedSha256": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16",
+          "currentSha256": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "corpusSourcePath": "textbooks/v12/c01-selection.md",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "同一任务 四种控制权",
+          "startLine": 7,
+          "endLine": 21,
+          "readingHref": "#learn/agent/c01-selection/s-e458cc35eeb7",
+          "readingTargetKind": "matching_heading",
+          "unitId": "c01-selection",
+          "sectionId": "s-e458cc35eeb7",
+          "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982"
+        }
+      ],
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n05-retrieval-ingestion.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16",
+          "section": "8 RAG、长上下文与微调按缺失能力选择",
+          "startLine": 130,
+          "endLine": 135,
+          "supports": "RAG、长上下文与微调的信息路径、维护代价和组合边界。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "同一任务 四种控制权",
+          "startLine": 7,
+          "endLine": 21,
+          "supports": "按同一目标比较最小方案；固定流程和动态选择的控制权区别。"
+        }
+      ],
+      "sourceLinks": [
+        {
+          "label": "v12 · 8 RAG、长上下文与微调按缺失能力选择",
+          "originalHref": "../../v12/n05-retrieval-ingestion.md",
+          "occurrence": 1,
+          "sourceOffset": 977,
+          "sourceEndOffset": 1043,
+          "sourceLine": 21,
+          "localOccurrence": 1,
+          "kind": "local_textbook",
+          "href": "#learn/agent/n05-retrieval-ingestion/s-fd35c6e4f233",
+          "sourcePath": "sites/rolecraft/textbooks/v12/n05-retrieval-ingestion.md",
+          "sourceReferenceIndexes": [
+            0
+          ],
+          "section": "8 RAG、长上下文与微调按缺失能力选择",
+          "sectionId": "s-fd35c6e4f233",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "v12 · 同一任务 四种控制权",
+          "originalHref": "../../v12/c01-selection.md",
+          "occurrence": 2,
+          "sourceOffset": 1085,
+          "sourceEndOffset": 1131,
+          "sourceLine": 22,
+          "localOccurrence": 2,
+          "kind": "local_textbook",
+          "href": "#learn/agent/c01-selection/s-e458cc35eeb7",
+          "sourcePath": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "sourceReferenceIndexes": [
+            1
+          ],
+          "section": "同一任务 四种控制权",
+          "sectionId": "s-e458cc35eeb7",
+          "resolutionMethod": "full_heading"
+        }
+      ],
+      "practiceSpec": null
+    },
+    {
+      "id": "Q51",
+      "collection": "fixed100",
+      "sourceId": 51,
+      "question": "在你采用的版本中，LangChain 和 LangGraph 分别承担什么职责？",
+      "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q51.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "d47988adc786ac79fdc244b7c82e63c12b46018df62d479c5e6557bcf69ca237",
+      "answerQualityStandard": "AQS-01..AQS-08",
+      "personalEvidenceRequired": false,
+      "modes": [
+        "question_bank",
+        "self_assessment"
+      ],
+      "reviewStatus": "met_within_reviewed_scope",
+      "qaStatus": "met_within_reviewed_scope",
+      "contentStatus": "met_within_reviewed_scope",
+      "sourceReferences": [
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "corpusSourcePath": "textbooks/v12/n06-graph-orchestration.md",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "把控制循环映射为可恢复的状态图",
+          "startLine": 1,
+          "endLine": 23,
+          "readingHref": "#learn/agent/n06-graph-orchestration/s-e5c879245a21",
+          "readingTargetKind": "matching_heading",
+          "unitId": "n06-graph-orchestration",
+          "sectionId": "s-e5c879245a21",
+          "receivedSha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "currentSha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "corpusSourcePath": "textbooks/v12/n06-graph-orchestration.md",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "先定义状态的所有者，再画节点",
+          "startLine": 7,
+          "endLine": 23,
+          "readingHref": "#learn/agent/n06-graph-orchestration/s-ebef4d93c675",
+          "readingTargetKind": "matching_heading",
+          "unitId": "n06-graph-orchestration",
+          "sectionId": "s-ebef4d93c675",
+          "receivedSha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "currentSha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/e01.md",
+          "corpusSourcePath": "textbooks/v12/e01.md",
+          "sha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+          "section": "三个提交点定义可恢复事实",
+          "startLine": 8,
+          "endLine": 17,
+          "readingHref": "#learn/agent/e01/s-c2209725ec11",
+          "readingTargetKind": "matching_heading",
+          "unitId": "e01",
+          "sectionId": "s-c2209725ec11",
+          "receivedSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+          "currentSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "corpusSourcePath": "textbooks/v12/c01-control-loop.md",
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "section": "2 控制权在运行时 聊天上下文只是一种投影",
+          "startLine": 36,
+          "endLine": 59,
+          "readingHref": "#learn/agent/c01-control-loop/s-81f9aaeecb60",
+          "readingTargetKind": "matching_heading",
+          "unitId": "c01-control-loop",
+          "sectionId": "s-81f9aaeecb60",
+          "receivedSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "currentSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "corpusSourcePath": "textbooks/v12/n06-graph-orchestration.md",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "Checkpoint不是远端事务",
+          "startLine": 58,
+          "endLine": 65,
+          "readingHref": "#learn/agent/n06-graph-orchestration/s-e477eeb29ccf",
+          "readingTargetKind": "matching_heading",
+          "unitId": "n06-graph-orchestration",
+          "sectionId": "s-e477eeb29ccf",
+          "receivedSha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "currentSha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "corpusSourcePath": "textbooks/v12/n06-graph-orchestration.md",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "何时值得自研",
+          "startLine": 80,
+          "endLine": 90,
+          "readingHref": "#learn/agent/n06-graph-orchestration/s-f5b63c3363d8",
+          "readingTargetKind": "matching_heading",
+          "unitId": "n06-graph-orchestration",
+          "sectionId": "s-f5b63c3363d8",
+          "receivedSha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "currentSha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb"
+        }
+      ],
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "把控制循环映射为可恢复的状态图",
+          "startLine": 1,
+          "endLine": 23,
+          "supports": "教材固定框架版本与LangChain/LangGraph职责；状态所有权和并行合并。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "先定义状态的所有者，再画节点",
+          "startLine": 7,
+          "endLine": 23,
+          "supports": "共享字段写入责任、节点局部更新、findings合并与未核事实区分。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e01.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+          "section": "三个提交点定义可恢复事实",
+          "startLine": 8,
+          "endLine": 17,
+          "supports": "意图、发送前尝试、结果三个本地提交边界，不能原子包含远端。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "section": "2 控制权在运行时 聊天上下文只是一种投影",
+          "startLine": 36,
+          "endLine": 59,
+          "supports": "权威状态和模型投影分离；批准、未决效果不能靠摘要更改。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "Checkpoint不是远端事务",
+          "startLine": 58,
+          "endLine": 65,
+          "supports": "内存与持久checkpointer区别、interrupt重入、外部动作和版本迁移边界。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "何时值得自研",
+          "startLine": 80,
+          "endLine": 90,
+          "supports": "任务表、CAS/lease与自研状态机；框架代价和相同故障合同对照。"
+        }
+      ],
+      "sourceLinks": [
+        {
+          "label": "官方LangChain v1说明",
+          "originalHref": "https://docs.langchain.com/oss/python/releases/langchain-v1",
+          "occurrence": 1,
+          "sourceOffset": 513,
+          "sourceEndOffset": 592,
+          "sourceLine": 11,
+          "kind": "external",
+          "href": "https://docs.langchain.com/oss/python/releases/langchain-v1"
+        },
+        {
+          "label": "v12 · 把控制循环映射为可恢复的状态图",
+          "originalHref": "../../v12/n06-graph-orchestration.md",
+          "occurrence": 2,
+          "sourceOffset": 1163,
+          "sourceEndOffset": 1224,
+          "sourceLine": 23,
+          "localOccurrence": 1,
+          "kind": "local_textbook",
+          "href": "#learn/agent/n06-graph-orchestration/s-e5c879245a21",
+          "sourcePath": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "sourceReferenceIndexes": [
+            0
+          ],
+          "section": "把控制循环映射为可恢复的状态图",
+          "sectionId": "s-e5c879245a21",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "v12 · 先定义状态的所有者，再画节点",
+          "originalHref": "../../v12/n06-graph-orchestration.md",
+          "occurrence": 3,
+          "sourceOffset": 1278,
+          "sourceEndOffset": 1338,
+          "sourceLine": 24,
+          "localOccurrence": 2,
+          "kind": "local_textbook",
+          "href": "#learn/agent/n06-graph-orchestration/s-ebef4d93c675",
+          "sourcePath": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "sourceReferenceIndexes": [
+            1
+          ],
+          "section": "先定义状态的所有者，再画节点",
+          "sectionId": "s-ebef4d93c675",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "v12 · 三个提交点定义可恢复事实",
+          "originalHref": "../../v12/e01.md",
+          "occurrence": 4,
+          "sourceOffset": 1384,
+          "sourceEndOffset": 1422,
+          "sourceLine": 25,
+          "localOccurrence": 3,
+          "kind": "local_textbook",
+          "href": "#learn/agent/e01/s-c2209725ec11",
+          "sourcePath": "sites/rolecraft/textbooks/v12/e01.md",
+          "sourceReferenceIndexes": [
+            2
+          ],
+          "section": "三个提交点定义可恢复事实",
+          "sectionId": "s-c2209725ec11",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "v12 · 2 控制权在运行时 聊天上下文只是一种投影",
+          "originalHref": "../../v12/c01-control-loop.md",
+          "occurrence": 5,
+          "sourceOffset": 1463,
+          "sourceEndOffset": 1523,
+          "sourceLine": 26,
+          "localOccurrence": 4,
+          "kind": "local_textbook",
+          "href": "#learn/agent/c01-control-loop/s-81f9aaeecb60",
+          "sourcePath": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "sourceReferenceIndexes": [
+            3
+          ],
+          "section": "2 控制权在运行时 聊天上下文只是一种投影",
+          "sectionId": "s-81f9aaeecb60",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "v12 · Checkpoint不是远端事务",
+          "originalHref": "../../v12/n06-graph-orchestration.md",
+          "occurrence": 6,
+          "sourceOffset": 1563,
+          "sourceEndOffset": 1625,
+          "sourceLine": 27,
+          "localOccurrence": 5,
+          "kind": "local_textbook",
+          "href": "#learn/agent/n06-graph-orchestration/s-e477eeb29ccf",
+          "sourcePath": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "sourceReferenceIndexes": [
+            4
+          ],
+          "section": "Checkpoint不是远端事务",
+          "sectionId": "s-e477eeb29ccf",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "v12 · 何时值得自研",
+          "originalHref": "../../v12/n06-graph-orchestration.md",
+          "occurrence": 7,
+          "sourceOffset": 1682,
+          "sourceEndOffset": 1734,
+          "sourceLine": 28,
+          "localOccurrence": 6,
+          "kind": "local_textbook",
+          "href": "#learn/agent/n06-graph-orchestration/s-f5b63c3363d8",
+          "sourcePath": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "sourceReferenceIndexes": [
+            5
+          ],
+          "section": "何时值得自研",
+          "sectionId": "s-f5b63c3363d8",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "LangChain v1官方职责说明",
+          "originalHref": "https://docs.langchain.com/oss/python/releases/langchain-v1",
+          "occurrence": 8,
+          "sourceOffset": 1781,
+          "sourceEndOffset": 1862,
+          "sourceLine": 29,
+          "kind": "external",
+          "href": "https://docs.langchain.com/oss/python/releases/langchain-v1"
+        }
+      ],
+      "practiceSpec": null
+    },
+    {
+      "id": "Q61",
+      "collection": "fixed100",
+      "sourceId": 61,
+      "question": "什么实验或业务证据会使你选择多 Agent，而不是给单 Agent 增加工具或步骤？",
+      "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q61.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "e39b013d69616e62e5f8f370a6fc1743c3111f9f9bee3e828c2a7dc0fbf48878",
+      "answerQualityStandard": "AQS-01..AQS-08",
+      "personalEvidenceRequired": false,
+      "modes": [
+        "question_bank",
+        "self_assessment"
+      ],
+      "reviewStatus": "met_within_reviewed_scope",
+      "qaStatus": "met_within_reviewed_scope",
+      "contentStatus": "met_within_reviewed_scope",
+      "sourceReferences": [
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "corpusSourcePath": "textbooks/v12/c01-selection.md",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "多 Agent 的升级点是可分工 而不是人数",
+          "startLine": 33,
+          "endLine": 42,
+          "readingHref": "#learn/agent/c01-selection/s-8368c310c8e2",
+          "readingTargetKind": "matching_heading",
+          "unitId": "c01-selection",
+          "sectionId": "s-8368c310c8e2",
+          "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "corpusSourcePath": "textbooks/v12/c01-selection.md",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "怎样做一个公平且能定位原因的比较",
+          "startLine": 43,
+          "endLine": 50,
+          "readingHref": "#learn/agent/c01-selection/s-636fdbf8979e",
+          "readingTargetKind": "matching_heading",
+          "unitId": "c01-selection",
+          "sectionId": "s-636fdbf8979e",
+          "receivedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "currentSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982"
+        }
+      ],
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "多 Agent 的升级点是可分工 而不是人数",
+          "startLine": 33,
+          "endLine": 42,
+          "supports": "同预算分工、输入输出证据合同、唯一写者、交接成本与效益。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "怎样做一个公平且能定位原因的比较",
+          "startLine": 43,
+          "endLine": 50,
+          "supports": "同目标资料/权限/预算和重复比较，按失败原因而非平均数决策。"
+        }
+      ],
+      "sourceLinks": [
+        {
+          "label": "v12 · 多 Agent 的升级点是可分工 而不是人数",
+          "originalHref": "../../v12/c01-selection.md",
+          "occurrence": 1,
+          "sourceOffset": 868,
+          "sourceEndOffset": 926,
+          "sourceLine": 23,
+          "localOccurrence": 1,
+          "kind": "local_textbook",
+          "href": "#learn/agent/c01-selection/s-8368c310c8e2",
+          "sourcePath": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "sourceReferenceIndexes": [
+            0
+          ],
+          "section": "多 Agent 的升级点是可分工 而不是人数",
+          "sectionId": "s-8368c310c8e2",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "v12 · 怎样做一个公平且能定位原因的比较",
+          "originalHref": "../../v12/c01-selection.md",
+          "occurrence": 2,
+          "sourceOffset": 967,
+          "sourceEndOffset": 1019,
+          "sourceLine": 24,
+          "localOccurrence": 2,
+          "kind": "local_textbook",
+          "href": "#learn/agent/c01-selection/s-636fdbf8979e",
+          "sourcePath": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "sourceReferenceIndexes": [
+            1
+          ],
+          "section": "怎样做一个公平且能定位原因的比较",
+          "sectionId": "s-636fdbf8979e",
+          "resolutionMethod": "full_heading"
+        }
+      ],
+      "practiceSpec": null
+    },
+    {
+      "id": "Q71",
+      "collection": "fixed100",
+      "sourceId": 71,
+      "question": "如何定义 Agent 的任务成功率，避免把“生成了回答”当成任务成功？",
+      "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q71.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "d2846b251b26ca3b88ead1be6cc75a4581e980e77b73f657adb5fe5e7969adc5",
+      "answerQualityStandard": "AQS-01..AQS-08",
+      "personalEvidenceRequired": false,
+      "modes": [
+        "question_bank",
+        "self_assessment"
+      ],
+      "reviewStatus": "met_within_reviewed_scope",
+      "qaStatus": "met_within_reviewed_scope",
+      "contentStatus": "met_within_reviewed_scope",
+      "sourceReferences": [
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/e02.md",
+          "corpusSourcePath": "textbooks/v12/e02.md",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "把“好”拆成能被不同证据推翻的命题",
+          "startLine": 8,
+          "endLine": 23,
+          "readingHref": "#learn/agent/e02/s-7426c782eb02",
+          "readingTargetKind": "matching_heading",
+          "unitId": "e02",
+          "sectionId": "s-7426c782eb02",
+          "receivedSha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "currentSha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/e02.md",
+          "corpusSourcePath": "textbooks/v12/e02.md",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "先冻结比较 再运行所有被分配的任务",
+          "startLine": 73,
+          "endLine": 92,
+          "readingHref": "#learn/agent/e02/s-b0382f8ba4c6",
+          "readingTargetKind": "matching_heading",
+          "unitId": "e02",
+          "sectionId": "s-b0382f8ba4c6",
+          "receivedSha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "currentSha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/e02.md",
+          "corpusSourcePath": "textbooks/v12/e02.md",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "一个判定器怎样拒绝把缺证当通过",
+          "startLine": 93,
+          "endLine": 218,
+          "readingHref": "#learn/agent/e02/s-49c8acfd24ce",
+          "readingTargetKind": "matching_heading",
+          "unitId": "e02",
+          "sectionId": "s-49c8acfd24ce",
+          "receivedSha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "currentSha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f"
+        }
+      ],
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "把“好”拆成能被不同证据推翻的命题",
+          "startLine": 8,
+          "endLine": 23,
+          "supports": "结果/过程/资源与缺证分别判断，正确停止按任务合同计。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "先冻结比较 再运行所有被分配的任务",
+          "startLine": 73,
+          "endLine": 92,
+          "supports": "完整分配分母、重复配对、同源相关性、严重错误与小样本边界。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "一个判定器怎样拒绝把缺证当通过",
+          "startLine": 93,
+          "endLine": 218,
+          "supports": "PASS/FAIL/INSUFFICIENT/HARNESS_ERROR，反证与未知并存的判定。"
+        }
+      ],
+      "sourceLinks": [
+        {
+          "label": "v12 · 把“好”拆成能被不同证据推翻的命题",
+          "originalHref": "../../v12/e02.md",
+          "occurrence": 1,
+          "sourceOffset": 1055,
+          "sourceEndOffset": 1098,
+          "sourceLine": 33,
+          "localOccurrence": 1,
+          "kind": "local_textbook",
+          "href": "#learn/agent/e02/s-7426c782eb02",
+          "sourcePath": "sites/rolecraft/textbooks/v12/e02.md",
+          "sourceReferenceIndexes": [
+            0
+          ],
+          "section": "把“好”拆成能被不同证据推翻的命题",
+          "sectionId": "s-7426c782eb02",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "v12 · 先冻结比较 再运行所有被分配的任务",
+          "originalHref": "../../v12/e02.md",
+          "occurrence": 2,
+          "sourceOffset": 1137,
+          "sourceEndOffset": 1180,
+          "sourceLine": 34,
+          "localOccurrence": 2,
+          "kind": "local_textbook",
+          "href": "#learn/agent/e02/s-b0382f8ba4c6",
+          "sourcePath": "sites/rolecraft/textbooks/v12/e02.md",
+          "sourceReferenceIndexes": [
+            1
+          ],
+          "section": "先冻结比较 再运行所有被分配的任务",
+          "sectionId": "s-b0382f8ba4c6",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "v12 · 一个判定器怎样拒绝把缺证当通过",
+          "originalHref": "../../v12/e02.md",
+          "occurrence": 3,
+          "sourceOffset": 1222,
+          "sourceEndOffset": 1263,
+          "sourceLine": 35,
+          "localOccurrence": 3,
+          "kind": "local_textbook",
+          "href": "#learn/agent/e02/s-49c8acfd24ce",
+          "sourcePath": "sites/rolecraft/textbooks/v12/e02.md",
+          "sourceReferenceIndexes": [
+            2
+          ],
+          "section": "一个判定器怎样拒绝把缺证当通过",
+          "sectionId": "s-49c8acfd24ce",
+          "resolutionMethod": "full_heading"
+        }
+      ],
+      "practiceSpec": null
+    },
+    {
+      "id": "Q81",
+      "collection": "fixed100",
+      "sourceId": 81,
+      "question": "直接提示注入和来自网页、文档或工具结果的间接注入，有什么不同？",
+      "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q81.md",
+      "answerVersion": "interview-answers-v1.0.0",
+      "answerSha256": "356a317c53e9c5a1fec7c91fb1139276c766aa1c72e178d32059f1328effd2da",
+      "answerQualityStandard": "AQS-01..AQS-08",
+      "personalEvidenceRequired": false,
+      "modes": [
+        "question_bank",
+        "self_assessment"
+      ],
+      "reviewStatus": "met_within_reviewed_scope",
+      "qaStatus": "met_within_reviewed_scope",
+      "contentStatus": "met_within_reviewed_scope",
+      "sourceReferences": [
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/n08-sandbox-security.md",
+          "corpusSourcePath": "textbooks/v12/n08-sandbox-security.md",
+          "sha256": "16b1fe631c244ec394965f9443bc680380997cf4427a7555184c26cf3ee064f2",
+          "section": "直接与间接提示注入究竟跨越什么边界",
+          "startLine": 5,
+          "endLine": 10,
+          "readingHref": "#learn/agent/n08-sandbox-security/s-99f509e07cb8",
+          "readingTargetKind": "matching_heading",
+          "unitId": "n08-sandbox-security",
+          "sectionId": "s-99f509e07cb8",
+          "receivedSha256": "16b1fe631c244ec394965f9443bc680380997cf4427a7555184c26cf3ee064f2",
+          "currentSha256": "16b1fe631c244ec394965f9443bc680380997cf4427a7555184c26cf3ee064f2"
+        }
+      ],
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n08-sandbox-security.md",
+          "version": "v12",
+          "sha256": "16b1fe631c244ec394965f9443bc680380997cf4427a7555184c26cf3ee064f2",
+          "section": "直接与间接提示注入究竟跨越什么边界",
+          "startLine": 5,
+          "endLine": 10,
+          "supports": "本答案对“直接与间接提示注入究竟跨越什么边界”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        }
+      ],
+      "sourceLinks": [
+        {
+          "label": "直接与间接提示注入究竟跨越什么边界",
+          "originalHref": "../../v12/n08-sandbox-security.md",
+          "occurrence": 1,
+          "sourceOffset": 869,
+          "sourceEndOffset": 923,
+          "sourceLine": 17,
+          "localOccurrence": 1,
+          "kind": "local_textbook",
+          "href": "#learn/agent/n08-sandbox-security/s-99f509e07cb8",
+          "sourcePath": "sites/rolecraft/textbooks/v12/n08-sandbox-security.md",
+          "sourceReferenceIndexes": [
+            0
+          ],
+          "section": "直接与间接提示注入究竟跨越什么边界",
+          "sectionId": "s-99f509e07cb8",
+          "resolutionMethod": "full_heading"
+        }
+      ],
+      "practiceSpec": null
+    },
+    {
+      "id": "Q91",
+      "collection": "fixed100",
+      "sourceId": 91,
+      "question": "设计一个客服工单 Agent：如何确定自动处理范围、转人工条件及验收指标？",
+      "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q91.md",
+      "answerVersion": "interview-answers-v1.0.0",
+      "answerSha256": "b87c1cc9b303d50373d4eaf0fb19bf672864b8e52bcb0adb09fd13c7e1a02b3b",
+      "answerQualityStandard": "AQS-01..AQS-08",
+      "personalEvidenceRequired": false,
+      "modes": [
+        "question_bank",
+        "self_assessment"
+      ],
+      "reviewStatus": "met_within_reviewed_scope",
+      "qaStatus": "met_within_reviewed_scope",
+      "contentStatus": "met_within_reviewed_scope",
+      "sourceReferences": [
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/n10-evaluation-projects.md",
+          "corpusSourcePath": "textbooks/v12/n10-evaluation-projects.md",
+          "sha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+          "section": "客服系统先划业务责任，不先选Agent框架",
+          "startLine": 5,
+          "endLine": 16,
+          "readingHref": "#learn/agent/n10-evaluation-projects/s-e0fa3fd24686",
+          "readingTargetKind": "matching_heading",
+          "unitId": "n10-evaluation-projects",
+          "sectionId": "s-e0fa3fd24686",
+          "receivedSha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+          "currentSha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b"
+        }
+      ],
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n10-evaluation-projects.md",
+          "version": "v12",
+          "sha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+          "section": "客服系统先划业务责任，不先选Agent框架",
+          "startLine": 5,
+          "endLine": 16,
+          "supports": "本答案对“客服系统先划业务责任，不先选Agent框架”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        }
+      ],
+      "sourceLinks": [
+        {
+          "label": "客服系统先划业务责任，不先选Agent框架",
+          "originalHref": "../../v12/n10-evaluation-projects.md",
+          "occurrence": 1,
+          "sourceOffset": 930,
+          "sourceEndOffset": 991,
+          "sourceLine": 19,
+          "localOccurrence": 1,
+          "kind": "local_textbook",
+          "href": "#learn/agent/n10-evaluation-projects/s-e0fa3fd24686",
+          "sourcePath": "sites/rolecraft/textbooks/v12/n10-evaluation-projects.md",
+          "sourceReferenceIndexes": [
+            0
+          ],
+          "section": "客服系统先划业务责任，不先选Agent框架",
+          "sectionId": "s-e0fa3fd24686",
+          "resolutionMethod": "full_heading"
+        }
+      ],
+      "practiceSpec": null
+    },
+    {
+      "id": "M101",
+      "collection": "market14",
+      "sourceId": 101,
+      "question": "调用多个模型或工具API时，如何用Python asyncio组织并发？阻塞调用、无界任务创建和取消清理分别会导致什么问题，怎样用最小例定位？",
+      "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M101.md",
+      "answerVersion": "interview-answers-v1.0.0",
+      "answerSha256": "71a1ecc92e7f9b4036cadc46b8e875f99589c90c6c1c8a76d1dcf3c705ee3602",
+      "answerQualityStandard": "AQS-01..AQS-08",
+      "personalEvidenceRequired": false,
+      "modes": [
+        "question_bank",
+        "self_assessment"
+      ],
+      "reviewStatus": "met_within_reviewed_scope",
+      "qaStatus": "met_within_reviewed_scope",
+      "contentStatus": "met_within_reviewed_scope",
+      "sourceReferences": [
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/n01-python-model-foundations.md",
+          "corpusSourcePath": "textbooks/v12/n01-python-model-foundations.md",
+          "sha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62",
+          "section": "2 固定工作者解决的是在途工作上限",
+          "startLine": 48,
+          "endLine": 55,
+          "readingHref": "#learn/agent/n01-python-model-foundations/s-f0f01fbbe638",
+          "readingTargetKind": "matching_heading",
+          "unitId": "n01-python-model-foundations",
+          "sectionId": "s-f0f01fbbe638",
+          "receivedSha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62",
+          "currentSha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/n01-python-model-foundations.md",
+          "corpusSourcePath": "textbooks/v12/n01-python-model-foundations.md",
+          "sha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62",
+          "section": "6 可运行入口与迁移练习",
+          "startLine": 134,
+          "endLine": 144,
+          "readingHref": "#learn/agent/n01-python-model-foundations/s-580f3506ef08",
+          "readingTargetKind": "matching_heading",
+          "unitId": "n01-python-model-foundations",
+          "sectionId": "s-580f3506ef08",
+          "receivedSha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62",
+          "currentSha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/n09-runtime-delivery.md",
+          "corpusSourcePath": "textbooks/v12/n09-runtime-delivery.md",
+          "sha256": "b621b838657aaa9915506a5bee6e25f7733b41085b08c50143e5965722157714",
+          "section": "并发、超时和熔断限制不同的东西",
+          "startLine": 32,
+          "endLine": 43,
+          "readingHref": "#learn/agent/n09-runtime-delivery/s-f6ec8a4a378d",
+          "readingTargetKind": "matching_heading",
+          "unitId": "n09-runtime-delivery",
+          "sectionId": "s-f6ec8a4a378d",
+          "receivedSha256": "b621b838657aaa9915506a5bee6e25f7733b41085b08c50143e5965722157714",
+          "currentSha256": "b621b838657aaa9915506a5bee6e25f7733b41085b08c50143e5965722157714"
+        }
+      ],
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n01-python-model-foundations.md",
+          "version": "v12",
+          "sha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62",
+          "section": "2 固定工作者解决的是在途工作上限",
+          "startLine": 48,
+          "endLine": 55,
+          "supports": "本答案对“2 固定工作者解决的是在途工作上限”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n01-python-model-foundations.md",
+          "version": "v12",
+          "sha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62",
+          "section": "6 可运行入口与迁移练习",
+          "startLine": 134,
+          "endLine": 144,
+          "supports": "本答案对“6 可运行入口与迁移练习”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n09-runtime-delivery.md",
+          "version": "v12",
+          "sha256": "b621b838657aaa9915506a5bee6e25f7733b41085b08c50143e5965722157714",
+          "section": "并发、超时和熔断限制不同的东西",
+          "startLine": 32,
+          "endLine": 43,
+          "supports": "本答案对“并发、超时和熔断限制不同的东西”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        }
+      ],
+      "sourceLinks": [
+        {
+          "label": "Python 3.14 asyncio文档",
+          "originalHref": "https://docs.python.org/3.14/library/asyncio-task.html",
+          "occurrence": 1,
+          "sourceOffset": 238,
+          "sourceEndOffset": 317,
+          "sourceLine": 5,
+          "kind": "external",
+          "href": "https://docs.python.org/3.14/library/asyncio-task.html"
+        },
+        {
+          "label": "2 固定工作者解决的是在途工作上限",
+          "originalHref": "../../v12/n01-python-model-foundations.md",
+          "occurrence": 2,
+          "sourceOffset": 2839,
+          "sourceEndOffset": 2901,
+          "sourceLine": 84,
+          "localOccurrence": 1,
+          "kind": "local_textbook",
+          "href": "#learn/agent/n01-python-model-foundations/s-f0f01fbbe638",
+          "sourcePath": "sites/rolecraft/textbooks/v12/n01-python-model-foundations.md",
+          "sourceReferenceIndexes": [
+            0
+          ],
+          "section": "2 固定工作者解决的是在途工作上限",
+          "sectionId": "s-f0f01fbbe638",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "6 可运行入口与迁移练习",
+          "originalHref": "../../v12/n01-python-model-foundations.md",
+          "occurrence": 3,
+          "sourceOffset": 2933,
+          "sourceEndOffset": 2990,
+          "sourceLine": 85,
+          "localOccurrence": 2,
+          "kind": "local_textbook",
+          "href": "#learn/agent/n01-python-model-foundations/s-580f3506ef08",
+          "sourcePath": "sites/rolecraft/textbooks/v12/n01-python-model-foundations.md",
+          "sourceReferenceIndexes": [
+            1
+          ],
+          "section": "6 可运行入口与迁移练习",
+          "sectionId": "s-580f3506ef08",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "并发、超时和熔断限制不同的东西",
+          "originalHref": "../../v12/n09-runtime-delivery.md",
+          "occurrence": 4,
+          "sourceOffset": 3024,
+          "sourceEndOffset": 3076,
+          "sourceLine": 86,
+          "localOccurrence": 3,
+          "kind": "local_textbook",
+          "href": "#learn/agent/n09-runtime-delivery/s-f6ec8a4a378d",
+          "sourcePath": "sites/rolecraft/textbooks/v12/n09-runtime-delivery.md",
+          "sourceReferenceIndexes": [
+            2
+          ],
+          "section": "并发、超时和熔断限制不同的东西",
+          "sectionId": "s-f6ec8a4a378d",
+          "resolutionMethod": "full_heading"
+        }
+      ],
+      "practiceSpec": null
+    },
+    {
+      "id": "M104",
+      "collection": "market14",
+      "sourceId": 104,
+      "question": "Agent服务运行数小时后内存持续增长，但请求量平稳。如何区别对象仍被引用、缓存无界、待完成任务堆积与暂时内存峰值，并验证修复？",
+      "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M104.md",
+      "answerVersion": "interview-answers-v1.0.0",
+      "answerSha256": "5178befc742f8234e0f68f681bea54f87e0c4c27e1ed7e4795651b61b34df72e",
+      "answerQualityStandard": "AQS-01..AQS-08",
+      "personalEvidenceRequired": false,
+      "modes": [
+        "question_bank",
+        "self_assessment"
+      ],
+      "reviewStatus": "met_within_reviewed_scope",
+      "qaStatus": "met_within_reviewed_scope",
+      "contentStatus": "met_within_reviewed_scope",
+      "sourceReferences": [
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/n09-runtime-delivery.md",
+          "corpusSourcePath": "textbooks/v12/n09-runtime-delivery.md",
+          "sha256": "b621b838657aaa9915506a5bee6e25f7733b41085b08c50143e5965722157714",
+          "section": "内存持续增长应先找到持有者",
+          "startLine": 44,
+          "endLine": 53,
+          "readingHref": "#learn/agent/n09-runtime-delivery/s-d50a141d5bb7",
+          "readingTargetKind": "matching_heading",
+          "unitId": "n09-runtime-delivery",
+          "sectionId": "s-d50a141d5bb7",
+          "receivedSha256": "b621b838657aaa9915506a5bee6e25f7733b41085b08c50143e5965722157714",
+          "currentSha256": "b621b838657aaa9915506a5bee6e25f7733b41085b08c50143e5965722157714"
+        }
+      ],
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n09-runtime-delivery.md",
+          "version": "v12",
+          "sha256": "b621b838657aaa9915506a5bee6e25f7733b41085b08c50143e5965722157714",
+          "section": "内存持续增长应先找到持有者",
+          "startLine": 44,
+          "endLine": 53,
+          "supports": "本答案对“内存持续增长应先找到持有者”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        }
+      ],
+      "sourceLinks": [
+        {
+          "label": "内存持续增长应先找到持有者",
+          "originalHref": "../../v12/n09-runtime-delivery.md",
+          "occurrence": 1,
+          "sourceOffset": 1087,
+          "sourceEndOffset": 1137,
+          "sourceLine": 19,
+          "localOccurrence": 1,
+          "kind": "local_textbook",
+          "href": "#learn/agent/n09-runtime-delivery/s-d50a141d5bb7",
+          "sourcePath": "sites/rolecraft/textbooks/v12/n09-runtime-delivery.md",
+          "sourceReferenceIndexes": [
+            0
+          ],
+          "section": "内存持续增长应先找到持有者",
+          "sectionId": "s-d50a141d5bb7",
+          "resolutionMethod": "full_heading"
+        }
+      ],
+      "practiceSpec": null
+    },
+    {
+      "id": "M110",
+      "collection": "market14",
+      "sourceId": 110,
+      "question": "提示模型返回JSON、使用JSON模式和按Schema约束生成分别能保证什么？遇到拒绝、截断、类型合法但语义错误时，应用怎样处理？",
+      "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M110.md",
+      "answerVersion": "interview-answers-v1.0.0",
+      "answerSha256": "f34b76e2cb15c4888484cf85bf0cd0de753f702cd416b525344f8ce06c8df325",
+      "answerQualityStandard": "AQS-01..AQS-08",
+      "personalEvidenceRequired": false,
+      "modes": [
+        "question_bank",
+        "self_assessment"
+      ],
+      "reviewStatus": "met_within_reviewed_scope",
+      "qaStatus": "met_within_reviewed_scope",
+      "contentStatus": "met_within_reviewed_scope",
+      "sourceReferences": [
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/n01-python-model-foundations.md",
+          "corpusSourcePath": "textbooks/v12/n01-python-model-foundations.md",
+          "sha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62",
+          "section": "5 合法结构是消费起点",
+          "startLine": 126,
+          "endLine": 133,
+          "readingHref": "#learn/agent/n01-python-model-foundations/s-21d70f768e2b",
+          "readingTargetKind": "matching_heading",
+          "unitId": "n01-python-model-foundations",
+          "sectionId": "s-21d70f768e2b",
+          "receivedSha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62",
+          "currentSha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/c03.md",
+          "corpusSourcePath": "textbooks/v12/c03.md",
+          "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+          "section": "工具名与合法 JSON 都不能授执行权",
+          "startLine": 8,
+          "endLine": 15,
+          "readingHref": "#learn/agent/c03/s-9267960e504a",
+          "readingTargetKind": "matching_heading",
+          "unitId": "c03",
+          "sectionId": "s-9267960e504a",
+          "receivedSha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+          "currentSha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/f02.md",
+          "corpusSourcePath": "textbooks/v12/f02.md",
+          "sha256": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8",
+          "section": "先定义候选 而不是要求模型“给一个可靠答案”",
+          "startLine": 18,
+          "endLine": 25,
+          "readingHref": "#learn/agent/f02/s-91c983bf957f",
+          "readingTargetKind": "matching_heading",
+          "unitId": "f02",
+          "sectionId": "s-91c983bf957f",
+          "receivedSha256": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8",
+          "currentSha256": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/e03.md",
+          "corpusSourcePath": "textbooks/v12/e03.md",
+          "sha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+          "section": "读取边界比最终答案过滤更早",
+          "startLine": 22,
+          "endLine": 43,
+          "readingHref": "#learn/agent/e03/s-ddf2d7f3e96a",
+          "readingTargetKind": "matching_heading",
+          "unitId": "e03",
+          "sectionId": "s-ddf2d7f3e96a",
+          "receivedSha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+          "currentSha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70"
+        }
+      ],
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n01-python-model-foundations.md",
+          "version": "v12",
+          "sha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62",
+          "section": "5 合法结构是消费起点",
+          "startLine": 126,
+          "endLine": 133,
+          "supports": "本答案对“5 合法结构是消费起点”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c03.md",
+          "version": "v12",
+          "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+          "section": "工具名与合法 JSON 都不能授执行权",
+          "startLine": 8,
+          "endLine": 15,
+          "supports": "本答案对“工具名与合法 JSON 都不能授执行权”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/f02.md",
+          "version": "v12",
+          "sha256": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8",
+          "section": "先定义候选 而不是要求模型“给一个可靠答案”",
+          "startLine": 18,
+          "endLine": 25,
+          "supports": "本答案对“先定义候选 而不是要求模型“给一个可靠答案””涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e03.md",
+          "version": "v12",
+          "sha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+          "section": "读取边界比最终答案过滤更早",
+          "startLine": 22,
+          "endLine": 43,
+          "supports": "本答案对“读取边界比最终答案过滤更早”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        }
+      ],
+      "sourceLinks": [
+        {
+          "label": "Claude结构化输出文档",
+          "originalHref": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs",
+          "occurrence": 1,
+          "sourceOffset": 288,
+          "sourceEndOffset": 377,
+          "sourceLine": 5,
+          "kind": "external",
+          "href": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs"
+        },
+        {
+          "label": "5 合法结构是消费起点",
+          "originalHref": "../../v12/n01-python-model-foundations.md",
+          "occurrence": 2,
+          "sourceOffset": 1710,
+          "sourceEndOffset": 1766,
+          "sourceLine": 39,
+          "localOccurrence": 1,
+          "kind": "local_textbook",
+          "href": "#learn/agent/n01-python-model-foundations/s-21d70f768e2b",
+          "sourcePath": "sites/rolecraft/textbooks/v12/n01-python-model-foundations.md",
+          "sourceReferenceIndexes": [
+            0
+          ],
+          "section": "5 合法结构是消费起点",
+          "sectionId": "s-21d70f768e2b",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "工具名与合法 JSON 都不能授执行权",
+          "originalHref": "../../v12/c03.md",
+          "occurrence": 3,
+          "sourceOffset": 1800,
+          "sourceEndOffset": 1839,
+          "sourceLine": 40,
+          "localOccurrence": 2,
+          "kind": "local_textbook",
+          "href": "#learn/agent/c03/s-9267960e504a",
+          "sourcePath": "sites/rolecraft/textbooks/v12/c03.md",
+          "sourceReferenceIndexes": [
+            1
+          ],
+          "section": "工具名与合法 JSON 都不能授执行权",
+          "sectionId": "s-9267960e504a",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "先定义候选 而不是要求模型“给一个可靠答案”",
+          "originalHref": "../../v12/f02.md",
+          "occurrence": 4,
+          "sourceOffset": 1870,
+          "sourceEndOffset": 1912,
+          "sourceLine": 41,
+          "localOccurrence": 3,
+          "kind": "local_textbook",
+          "href": "#learn/agent/f02/s-91c983bf957f",
+          "sourcePath": "sites/rolecraft/textbooks/v12/f02.md",
+          "sourceReferenceIndexes": [
+            2
+          ],
+          "section": "先定义候选 而不是要求模型“给一个可靠答案”",
+          "sectionId": "s-91c983bf957f",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "读取边界比最终答案过滤更早",
+          "originalHref": "../../v12/e03.md",
+          "occurrence": 5,
+          "sourceOffset": 1944,
+          "sourceEndOffset": 1977,
+          "sourceLine": 42,
+          "localOccurrence": 4,
+          "kind": "local_textbook",
+          "href": "#learn/agent/e03/s-ddf2d7f3e96a",
+          "sourcePath": "sites/rolecraft/textbooks/v12/e03.md",
+          "sourceReferenceIndexes": [
+            3
+          ],
+          "section": "读取边界比最终答案过滤更早",
+          "sectionId": "s-ddf2d7f3e96a",
+          "resolutionMethod": "full_heading"
+        }
+      ],
+      "practiceSpec": null
+    },
+    {
+      "id": "M114",
+      "collection": "market14",
+      "sourceId": 114,
+      "question": "面对客户工程团队，怎样交付一份可复现的Agent技术移交包，使对方能重建环境、运行评测、理解架构决策并报告失败？如何证明接手成功？",
+      "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M114.md",
+      "answerVersion": "interview-answers-v1.0.0",
+      "answerSha256": "117e425f7a6e6972ae6a34d4dd4620be4c0c16450c71b3552ca3b24a852522e4",
+      "answerQualityStandard": "AQS-01..AQS-08",
+      "personalEvidenceRequired": false,
+      "modes": [
+        "question_bank",
+        "self_assessment"
+      ],
+      "reviewStatus": "met_within_reviewed_scope",
+      "qaStatus": "met_within_reviewed_scope",
+      "contentStatus": "met_within_reviewed_scope",
+      "sourceReferences": [
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/p02.md",
+          "corpusSourcePath": "textbooks/v12/p02.md",
+          "sha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8",
+          "section": "一个证据包应使独立者从入口走到结论",
+          "startLine": 8,
+          "endLine": 26,
+          "readingHref": "#learn/agent/p02/s-84f7fade412d",
+          "readingTargetKind": "matching_heading",
+          "unitId": "p02",
+          "sectionId": "s-84f7fade412d",
+          "receivedSha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8",
+          "currentSha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/p02.md",
+          "corpusSourcePath": "textbooks/v12/p02.md",
+          "sha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8",
+          "section": "独立评阅按一条实际任务走完全程",
+          "startLine": 119,
+          "endLine": 128,
+          "readingHref": "#learn/agent/p02/s-ebe4104b44cb",
+          "readingTargetKind": "matching_heading",
+          "unitId": "p02",
+          "sectionId": "s-ebe4104b44cb",
+          "receivedSha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8",
+          "currentSha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/p01-mvp.md",
+          "corpusSourcePath": "textbooks/v12/p01-mvp.md",
+          "sha256": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9",
+          "section": "架构决定要能解释放弃了什么",
+          "startLine": 49,
+          "endLine": 58,
+          "readingHref": "#learn/agent/p01-mvp/s-5613a99776a8",
+          "readingTargetKind": "matching_heading",
+          "unitId": "p01-mvp",
+          "sectionId": "s-5613a99776a8",
+          "receivedSha256": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9",
+          "currentSha256": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/e04.md",
+          "corpusSourcePath": "textbooks/v12/e04.md",
+          "sha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8",
+          "section": "让同伴复现发布和排空",
+          "startLine": 203,
+          "endLine": 208,
+          "readingHref": "#learn/agent/e04/s-2d6268cb00b2",
+          "readingTargetKind": "matching_heading",
+          "unitId": "e04",
+          "sectionId": "s-2d6268cb00b2",
+          "receivedSha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8",
+          "currentSha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8"
+        },
+        {
+          "sourcePath": "sites/rolecraft/textbooks/v12/n10-evaluation-projects.md",
+          "corpusSourcePath": "textbooks/v12/n10-evaluation-projects.md",
+          "sha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+          "section": "技术移交是一次接收方实验",
+          "startLine": 60,
+          "endLine": 73,
+          "readingHref": "#learn/agent/n10-evaluation-projects/s-5bcc0776075f",
+          "readingTargetKind": "matching_heading",
+          "unitId": "n10-evaluation-projects",
+          "sectionId": "s-5bcc0776075f",
+          "receivedSha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+          "currentSha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b"
+        }
+      ],
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/p02.md",
+          "version": "v12",
+          "sha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8",
+          "section": "一个证据包应使独立者从入口走到结论",
+          "startLine": 8,
+          "endLine": 26,
+          "supports": "本答案对“一个证据包应使独立者从入口走到结论”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/p02.md",
+          "version": "v12",
+          "sha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8",
+          "section": "独立评阅按一条实际任务走完全程",
+          "startLine": 119,
+          "endLine": 128,
+          "supports": "本答案对“独立评阅按一条实际任务走完全程”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/p01-mvp.md",
+          "version": "v12",
+          "sha256": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9",
+          "section": "架构决定要能解释放弃了什么",
+          "startLine": 49,
+          "endLine": 58,
+          "supports": "本答案对“架构决定要能解释放弃了什么”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e04.md",
+          "version": "v12",
+          "sha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8",
+          "section": "让同伴复现发布和排空",
+          "startLine": 203,
+          "endLine": 208,
+          "supports": "本答案对“让同伴复现发布和排空”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n10-evaluation-projects.md",
+          "version": "v12",
+          "sha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+          "section": "技术移交是一次接收方实验",
+          "startLine": 60,
+          "endLine": 73,
+          "supports": "本答案对“技术移交是一次接收方实验”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        }
+      ],
+      "sourceLinks": [
+        {
+          "label": "一个证据包应使独立者从入口走到结论",
+          "originalHref": "../../v12/p02.md",
+          "occurrence": 1,
+          "sourceOffset": 936,
+          "sourceEndOffset": 973,
+          "sourceLine": 19,
+          "localOccurrence": 1,
+          "kind": "local_textbook",
+          "href": "#learn/agent/p02/s-84f7fade412d",
+          "sourcePath": "sites/rolecraft/textbooks/v12/p02.md",
+          "sourceReferenceIndexes": [
+            0
+          ],
+          "section": "一个证据包应使独立者从入口走到结论",
+          "sectionId": "s-84f7fade412d",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "独立评阅按一条实际任务走完全程",
+          "originalHref": "../../v12/p02.md",
+          "occurrence": 2,
+          "sourceOffset": 1004,
+          "sourceEndOffset": 1039,
+          "sourceLine": 20,
+          "localOccurrence": 2,
+          "kind": "local_textbook",
+          "href": "#learn/agent/p02/s-ebe4104b44cb",
+          "sourcePath": "sites/rolecraft/textbooks/v12/p02.md",
+          "sourceReferenceIndexes": [
+            1
+          ],
+          "section": "独立评阅按一条实际任务走完全程",
+          "sectionId": "s-ebe4104b44cb",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "架构决定要能解释放弃了什么",
+          "originalHref": "../../v12/p01-mvp.md",
+          "occurrence": 3,
+          "sourceOffset": 1073,
+          "sourceEndOffset": 1110,
+          "sourceLine": 21,
+          "localOccurrence": 3,
+          "kind": "local_textbook",
+          "href": "#learn/agent/p01-mvp/s-5613a99776a8",
+          "sourcePath": "sites/rolecraft/textbooks/v12/p01-mvp.md",
+          "sourceReferenceIndexes": [
+            2
+          ],
+          "section": "架构决定要能解释放弃了什么",
+          "sectionId": "s-5613a99776a8",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "让同伴复现发布和排空",
+          "originalHref": "../../v12/e04.md",
+          "occurrence": 4,
+          "sourceOffset": 1142,
+          "sourceEndOffset": 1172,
+          "sourceLine": 22,
+          "localOccurrence": 4,
+          "kind": "local_textbook",
+          "href": "#learn/agent/e04/s-2d6268cb00b2",
+          "sourcePath": "sites/rolecraft/textbooks/v12/e04.md",
+          "sourceReferenceIndexes": [
+            3
+          ],
+          "section": "让同伴复现发布和排空",
+          "sectionId": "s-2d6268cb00b2",
+          "resolutionMethod": "full_heading"
+        },
+        {
+          "label": "技术移交是一次接收方实验",
+          "originalHref": "../../v12/n10-evaluation-projects.md",
+          "occurrence": 5,
+          "sourceOffset": 1206,
+          "sourceEndOffset": 1258,
+          "sourceLine": 23,
+          "localOccurrence": 5,
+          "kind": "local_textbook",
+          "href": "#learn/agent/n10-evaluation-projects/s-5bcc0776075f",
+          "sourcePath": "sites/rolecraft/textbooks/v12/n10-evaluation-projects.md",
+          "sourceReferenceIndexes": [
+            4
+          ],
+          "section": "技术移交是一次接收方实验",
+          "sectionId": "s-5bcc0776075f",
+          "resolutionMethod": "full_heading"
+        }
+      ],
+      "practiceSpec": null
+    }
+  ],
+  "missingAndFollowups": [
+    {
+      "id": "QB-GAP-01",
+      "gap": "题库页面当前仍显示“题库资料暂不可用”，浏览器未消费定版包",
+      "owner": [
+        "软件工程师",
+        "后端数据工程师"
+      ],
+      "authorTask": null,
+      "retest": "V1-04桌面/窄屏一次点击、刷新、后退、当前发布身份和版本核对"
+    },
+    {
+      "id": "QB-GAP-02",
+      "gap": "答案包有内容状态，但未完成当前远程 UI 的独立集成QA，displayStatus仍pending_independent_integration_qa",
+      "owner": [
+        "测试工程师",
+        "软件工程师"
+      ],
+      "authorTask": null,
+      "retest": "逐题打开、正文完整性、教材回链、来源/版本显示、历史集合身份"
+    },
+    {
+      "id": "QB-GAP-03",
+      "gap": "Q10、Q99、P05要求个人经历；教材不能替用户生成个人证据",
+      "owner": [
+        "产品经理",
+        "课程架构师",
+        "教材研发员"
+      ],
+      "authorTask": "保留原ID与题面，新增“方法支持/个人证据缺失”显示和真实作品提交入口；不得把构造示例改成经历。",
+      "retest": "自评池排除三题；练习模式显示个人证据未开始，不显示通过/胜任"
+    },
+    {
+      "id": "QB-GAP-04",
+      "gap": "20题MVP选择集需要每题挂载练习/自评模式与已访问知识点门槛，答案正文自身不包含用户状态",
+      "owner": [
+        "课程架构师",
+        "后端数据工程师",
+        "软件工程师"
+      ],
+      "authorTask": "不要求重写20题；若要扩充实践量，按AQS及P01作品合同补交题目对应练习规格、完成条件和证据字段。",
+      "retest": "隔离账户访问→自评仅出已访问且非个人题；P题可保存草稿/提交后回源"
+    },
+    {
+      "id": "QB-GAP-05",
+      "gap": "旧v10覆盖审计54充分/36部分/10未覆盖是历史基线，不能被v1答案包状态覆盖或解释为学习者成绩",
+      "owner": [
+        "项目经理",
+        "课程架构师"
+      ],
+      "authorTask": "对10道旧未覆盖题（24/27/28/34/39/51/58/62/70/86）如需教学补齐，另建作者任务与新版本，不修改本交接的124题身份。",
+      "retest": "报告同时展示历史基线与当前答案包状态，不合并分母"
+    }
+  ],
+  "acceptance": {
+    "QB01": "主路径一次点击可达题库/复习/自评，页面不显示占位“后续开放”或资料不可用",
+    "QB02": "题目ID/集合/题面/answerVersion/answerSha256保持与manifest一致",
+    "QB03": "每题展示至少一个当前v12章节/小节、sectionId、sourceSha256，并能回到阅读页",
+    "QB04": "完整答案按AQS-01..08呈现；不得三条截断；作者示例、伪代码、未执行证据有边界标记",
+    "QB05": "自评只抽取已访问知识点且不含Q10/Q99/P05，结果只称本次自评，不改变专业/真人状态",
+    "QB06": "复习读取当前版本本人weak标记，保留时间、题目版本和自评性质，不覆盖历史",
+    "QB07": "题库/练习/自评页面、接口和静态包统一rolecraft-1.0与textbook-v12身份；版本失配进入真实错误",
+    "QB08": "不存在就业、职业认证、岗位胜任或行业领先承诺；只表述行业知识与面试准备支持",
+    "QB09": "隔离账户浏览器完成访问、保存/提交或自评后，由QA独立复验；本交接自身不替代QA"
+  },
+  "boundaries": {
+    "employment": "not_claimed",
+    "certification": "not_claimed",
+    "jobCompetence": "not_claimed",
+    "humanExpertReview": "not_obtained",
+    "realLearnerOutcome": "not_obtained",
+    "fullProduct": "not_met"
+  }
+}

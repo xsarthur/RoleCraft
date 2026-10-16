@@ -1,0 +1,6 @@
+{
+  "fixture_id": "T3-timeout-v1",
+  "tool": "never_resolve_stub",
+  "timeout_ms": 25,
+  "expected": {"stop_reason": "timeout", "tool_attempts": 1, "tool_calls_after_stop": 0}
+}

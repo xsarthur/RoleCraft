@@ -1,0 +1,296 @@
+{
+  "report_id": "resource-link-reverification-qa-v02",
+  "version": "independent-qa-v02",
+  "auditor": "测试工程师 /root/current_link_qa",
+  "completed_at": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "scope": [
+    "PLR-AI-006",
+    "PLR-COMP-004",
+    "PLR-BE-003",
+    "PLR-BE-004"
+  ],
+  "inputs": {
+    "link_reverification_json": {
+      "path": "sites/rolecraft/team/resource-link-reverification-v02.json",
+      "sha256": "2db717c1e3b6762265467d7d5dd86117cf13ca4cf5dc77db7dfcb622715f0bd6"
+    },
+    "link_reverification_markdown": {
+      "path": "sites/rolecraft/team/resource-link-reverification-v02.md",
+      "sha256": "48c2460d61eafebea0be11cde89c83929183e83fbe74b88d69943aa1ef2576e1"
+    },
+    "metadata_patch_json": {
+      "path": "sites/rolecraft/team/professional-learning-resources-metadata-v02.json",
+      "sha256": "ffa11722d446717b1f397c7c4614176ce0da0e9848b030715b35bb2176ce63c1"
+    },
+    "base_catalog_json": {
+      "path": "sites/rolecraft/team/professional-learning-resources-v01.json",
+      "sha256": "40b087a59dbf24dc6ec75fa390984a460bf1110128e5600bd60534444433d259"
+    }
+  },
+  "method": {
+    "json_parse": true,
+    "record_scope_and_id_check": true,
+    "required_metadata_nonempty_check": true,
+    "role_binding_check": true,
+    "canonical_old_url_separation": true,
+    "cross_candidate_file_check": true,
+    "official_source_read_only_recheck": true,
+    "course_or_exam_execution": false,
+    "cloud_lab_execution": false,
+    "legal_application_review": false,
+    "learner_capability_assessment": false
+  },
+  "conclusion": {
+    "structure": "met",
+    "source_metadata": "met_with_limitations",
+    "formal_training_gate": "not_met_pending_integration",
+    "overall": "met_with_limitations_for_candidate_patch_not_ready_for_formal_training"
+  },
+  "checks": [
+    {
+      "id": "RLQA-01",
+      "area": "复核文件解析与范围",
+      "status": "pass",
+      "actual": "两个候选 JSON 均成功解析；每个正好 4 条，ID 集合完全为 AI-006、COMP-004、BE-003、BE-004。"
+    },
+    {
+      "id": "RLQA-02",
+      "area": "元数据字段非空",
+      "status": "pass",
+      "actual": "元数据补丁每条均有 source_version、language、cost_and_access、prerequisites、license_or_usage、maintenance_or_publication_date、recheck_at、reviewer、status、known_limits、estimated_effort、authority_reason、theory_check、required_artifact、transfer_case、source_evidence 和非空 legacy_urls；链接复核文件对应字段亦非空。未知项显式写为 insufficient_evidence 或访问限制。"
+    },
+    {
+      "id": "RLQA-03",
+      "area": "角色绑定",
+      "status": "pass",
+      "actual": {
+        "PLR-AI-006": "AI",
+        "PLR-COMP-004": "COMP",
+        "PLR-BE-003": "BE",
+        "PLR-BE-004": "BE"
+      },
+      "evidence": "四项 role_id 与冻结 59 条目录一致。"
+    },
+    {
+      "id": "RLQA-04",
+      "area": "canonical URL 与旧 URL 分离",
+      "status": "pass_with_mapping",
+      "actual": "四项都有 canonical_url、source_urls 和 old_urls，旧 URL 未与 canonical 重复。元数据补丁已显式声明 EU CELEX canonical、OJ 仅作等价 source alias；GCP 路径/认证拆分规则也已记录。"
+    },
+    {
+      "id": "RLQA-05",
+      "area": "LangGraph 当前入口与访问限制",
+      "status": "pass_with_limitations",
+      "actual": "当前入口为 https://www.deeplearning.ai/courses/ai-agents-in-langgraph；索引显示 Intermediate、1h32m、9 lessons、6 code examples 和 PRO 作业；直接抓取在复核日返回 403，因此不把索引当作固定发布日期或永久可访问证据。"
+    },
+    {
+      "id": "RLQA-06",
+      "area": "欧盟市场定义版本",
+      "status": "pass",
+      "actual": "EUR-Lex 的 52024XC01645 显示 C/2024/1645、2024-02-22、24 种官方语言，并标为 Commission Notice；2020 咨询 URL 已被候选文件标为历史评估背景。"
+    },
+    {
+      "id": "RLQA-07",
+      "area": "Google Cloud 学习路径与认证拆分",
+      "status": "pass_with_limitations",
+      "actual": "Google Skills https://www.skills.google/paths/16 显示 13 activities、Managed by Google Cloud、Sign in or join；认证页另显示 USD 200 标准考试、USD 100 续期、英语/日语、无硬性先修和推荐经验。路径与认证的费用和语言不应混用。"
+    },
+    {
+      "id": "RLQA-08",
+      "area": "DDIA 版本与许可边界",
+      "status": "pass_with_limitations",
+      "actual": "O'Reilly 第 2 版页显示 Martin Kleppmann 与 Chris Riccomini、February 2026、ISBN 9781098119058、672 页、English、Intermediate to advanced、21h56m；O'Reilly rights 页说明内容复用需经 Copyright Clearance Center；dataintensive.net 仅保留为第 1 版历史页。"
+    },
+    {
+      "id": "RLQA-09",
+      "area": "两个候选文件交叉一致",
+      "status": "pass_with_mapping",
+      "actual": "ID、角色、资源状态和主要入口一致；候选补丁新增 field_mapping（包括 license_or_use→license_or_usage）与 canonical_normalization（EU CELEX/OJ、GCP path/cert split），因此证据集合差异有明确映射。"
+    },
+    {
+      "id": "RLQA-10",
+      "area": "冻结目录保护",
+      "status": "pass",
+      "actual": "冻结目录 JSON SHA256 仍为 40b087a59dbf24dc6ec75fa390984a460bf1110128e5600bd60534444433d259；本 QA 未修改作者目录、教材或应用。"
+    },
+    {
+      "id": "RLQA-11",
+      "area": "正式训练闸门",
+      "status": "not_met",
+      "actual": "元数据补丁 integration_status=candidate_not_integrated、formal_training_gate=pending_independent_qa_and_catalog_integration；四项 theory_check=pending。正式训练前仍需新目录版本、字段规范化、学习者访问/许可核验和理论/作品交接。"
+    }
+  ],
+  "resource_results": [
+    {
+      "resource_id": "PLR-AI-006",
+      "role_id": "AI",
+      "source_metadata_status": "met_with_limitations",
+      "formal_training_status": "not_ready",
+      "canonical_url": "https://www.deeplearning.ai/courses/ai-agents-in-langgraph",
+      "old_urls": [
+        "https://www.deeplearning.ai/alpha/short-courses/ai-agents-in-langgraph",
+        "https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/"
+      ],
+      "verified": [
+        "当前 /courses/ 入口和课程标题由官方索引支持",
+        "Intermediate、1h32m、9 lessons、6 code examples、PRO 作业和中级 Python 先修可见",
+        "beta 限时免费与账号访问限制被保留"
+      ],
+      "limitations": [
+        "直接课程页抓取返回 HTTP 403",
+        "页面未显示固定版本、发布日期、其他语言或开放再分发许可",
+        "正式训练前需复核 LangGraph 依赖/API、模型凭据和运行环境"
+      ]
+    },
+    {
+      "resource_id": "PLR-COMP-004",
+      "role_id": "COMP",
+      "source_metadata_status": "met_with_limitations",
+      "formal_training_status": "not_ready",
+      "canonical_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024XC01645",
+      "link_report_alias": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:C_202401645",
+      "old_urls": [
+        "https://competition-policy.ec.europa.eu/public-consultations/2020-market-definition-notice_en"
+      ],
+      "verified": [
+        "OJ C/2024/1645、CELEX 52024XC01645、2024-02-22",
+        "24 种语言版本和 1997 Notice 更新关系",
+        "2020 URL 为历史评估/咨询背景"
+      ],
+      "limitations": [
+        "两个候选文件 canonical 字符串需统一",
+        "公告是竞争法执法指导，不是通用商业市场规模模板或法律意见",
+        "正式训练仍需案例、辖区与证据边界"
+      ]
+    },
+    {
+      "resource_id": "PLR-BE-003",
+      "role_id": "BE",
+      "source_metadata_status": "met_with_limitations",
+      "formal_training_status": "not_ready",
+      "canonical_url": "https://www.skills.google/paths/16",
+      "related_certification_url": "https://cloud.google.com/learn/certification/data-engineer",
+      "old_urls": [
+        "https://cloud.google.com/learn/certification/data-engineer"
+      ],
+      "verified": [
+        "学习路径 13 activities、Managed by Google Cloud、Sign in or join",
+        "认证页标准考试 USD 200、续期 USD 100、英语/日语、2 年有效期",
+        "认证页 Prerequisites: None，另列 3+ 年推荐经验"
+      ],
+      "limitations": [
+        "路径与认证必须拆分为两条目录记录",
+        "路径逐活动价格、实验室积分、地区和完整语言未固定",
+        "云学习或认证不等于本地 SQLite/Node 生产能力"
+      ]
+    },
+    {
+      "resource_id": "PLR-BE-004",
+      "role_id": "BE",
+      "source_metadata_status": "met_with_limitations",
+      "formal_training_status": "not_ready",
+      "canonical_url": "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/",
+      "old_urls": [
+        "https://dataintensive.net/?lang=en"
+      ],
+      "verified": [
+        "第 2 版、Kleppmann/Riccomini、2026-02、ISBN 9781098119058",
+        "672 页、English、Intermediate to advanced、21h56m",
+        "O'Reilly rights 页给出 Copyright Clearance Center 复用路径"
+      ],
+      "limitations": [
+        "全文需订阅或购买，价格随方案/地区变化",
+        "作者书目与出版商月份差异保留，不能混用第 1/2 版章节或命令",
+        "阅读不替代当前数据库、恢复或分布式行为实测"
+      ]
+    }
+  ],
+  "open_findings": [
+    {
+      "id": "RLQA-01",
+      "severity": "P1",
+      "status": "closed_by_mapping",
+      "finding": "候选补丁 canonical_normalization 已声明 EU CELEX canonical，OJ 查询串只作等价 source_urls。",
+      "owner": "内容检索/目录维护人",
+      "retest": "目录集成后检查主字段仍为 CELEX、别名未丢失。"
+    },
+    {
+      "id": "RLQA-02",
+      "severity": "P1",
+      "status": "closed_by_mapping",
+      "finding": "候选补丁 field_mapping 已声明 license_or_use→license_or_usage，资料卡正文使用 license_or_usage。",
+      "owner": "目录维护人",
+      "retest": "目录集成后检查字段统一且保留未知许可边界。"
+    },
+    {
+      "id": "RLQA-03",
+      "severity": "P1",
+      "status": "pending",
+      "finding": "四项补丁尚未接入 59 条冻结目录。",
+      "owner": "课程架构师/目录维护人",
+      "retest": "生成新目录版本，保留 v01，复验四项角色、入口、版本及元数据字段。"
+    },
+    {
+      "id": "RLQA-04",
+      "severity": "P2",
+      "status": "pending",
+      "finding": "LangGraph 直接访问受 403，Google 路径逐活动费用/语言和动态更新时间未完全暴露。",
+      "owner": "资源研究员",
+      "retest": "每个训练批次前重开页面；无法访问时记录原因，不用索引片段替代固定版本。"
+    },
+    {
+      "id": "RLQA-05",
+      "severity": "P2",
+      "status": "pending",
+      "finding": "四项 theory_check 均为 pending。",
+      "owner": "课程架构师/内容审校员",
+      "retest": "完成理论核对、岗位作品规格和隔离例后，由 QA 按新目录版本复验。"
+    }
+  ],
+  "not_assessed": [
+    "课程完成",
+    "认证考试通过",
+    "LangGraph 代码或 API 运行",
+    "Google Cloud 实验室可用性",
+    "法律意见或具体案件适用",
+    "DDIA 示例与当前系统运行一致性",
+    "岗位作品质量",
+    "真实学习者效果",
+    "岗位胜任、生产准备度或行业先进性"
+  ],
+  "formal_training_rule": "仅在目录集成（沿用已记录的字段/链接规范化映射）、访问/许可/费用复核、理论核对和 QA 复验完成后，才能将四项标为 training_eligible_with_limits；本报告不把阅读、证书、课程完成或目录命中当作岗位能力证据。",
+  "official_evidence": [
+    {
+      "resource_id": "PLR-AI-006",
+      "url": "https://www.deeplearning.ai/courses/ai-agents-in-langgraph",
+      "observation": "官方索引支持课程标题、讲师、时长、结构、beta 访问和 Intermediate Python；直接 fetch 403。"
+    },
+    {
+      "resource_id": "PLR-COMP-004",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024XC01645",
+      "observation": "官方页面显示 Document 52024XC01645、C/2024/1645、22.2.2024、24 个语言版本和 Notice 标题。"
+    },
+    {
+      "resource_id": "PLR-BE-003",
+      "url": "https://www.skills.google/paths/16",
+      "observation": "官方页面显示 Professional Data Engineer Certification、Managed by Google Cloud、13 activities、Last updated 5 months、Sign in or join。"
+    },
+    {
+      "resource_id": "PLR-BE-004",
+      "url": "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/",
+      "observation": "官方页面显示第 2 版作者、February 2026、672 pages、21h 56m、English、Intermediate to advanced 和付费访问入口。"
+    },
+    {
+      "resource_id": "PLR-BE-004",
+      "url": "https://www.oreilly.com/rights/",
+      "observation": "O'Reilly 权利页说明章节、配方、技巧和图片复用通过 Copyright Clearance Center 授权。"
+    }
+  ],
+  "normalization_retest": {
+    "status": "pass_with_mapping",
+    "canonical_normalization": "professional-learning-resources-metadata-v02.json canonical_normalization.PLR-COMP-004",
+    "field_mapping": "professional-learning-resources-metadata-v02.json field_mapping.license_or_use→license_or_usage",
+    "note": "The link report retains the OJ alias as source evidence; metadata patch fixes CELEX as canonical. Directory integration must preserve this mapping."
+  }
+}

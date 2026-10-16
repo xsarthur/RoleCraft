@@ -1,0 +1,200 @@
+{
+  "id": "Q99",
+  "answerVersion": "interview-answers-v1.0.1",
+  "answerSha256": "5b98c7767017e76814c043904227829698d411af87070fce6123da8da8aed5a0",
+  "status": "met_within_reviewed_scope",
+  "defectId": "REV-QA-Q99-01",
+  "defectStatus": "closed_by_original_counterexample_retest",
+  "firstFailedSha256": "e9e2dc8287531302300c8da1abaa9d3a3fadc88e7e7bf018920fc0fc123111ad",
+  "checks": [
+    {
+      "claim": "稳定逻辑意图与物理尝试区分",
+      "answerLines": [
+        9,
+        11
+      ],
+      "source": "c03.md:16-80",
+      "result": "直接引用与来源一致，正文未把参数相同当同一意图。"
+    },
+    {
+      "claim": "发送前持久化与事务边界",
+      "answerLines": [
+        11
+      ],
+      "source": "e01.md:8-17",
+      "result": "意图/尝试/结果分开，网络不在本地事务。"
+    },
+    {
+      "claim": "查询成功采纳、查询暂空保持未知",
+      "answerLines": [
+        11
+      ],
+      "source": "c01-control-loop.md:241-261",
+      "result": "原操作核对及保留未知可在直接来源查到。"
+    },
+    {
+      "claim": "并发代次仅保护本地，下游效果另靠去重",
+      "answerLines": [
+        11,
+        13
+      ],
+      "source": "c01-control-loop.md:690-707; c03.md:172-176",
+      "result": "范围区分正确，未用本地锁声称远端exactly-once。"
+    },
+    {
+      "claim": "成功丢回执后新键重复的故障轨迹",
+      "answerLines": [
+        9,
+        13
+      ],
+      "source": "c01-control-loop.md:747-767",
+      "result": "教学故障和证明步骤有直接依据；仍标虚构和未实跑。"
+    }
+  ],
+  "sourceBindings": [
+    {
+      "path": "sites/rolecraft/textbooks/v12/n10-evaluation-projects.md",
+      "version": "v12",
+      "sha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+      "section": "从实验走向一个独立作品",
+      "startLine": 52,
+      "endLine": 59,
+      "supports": "本答案对“从实验走向一个独立作品”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/e02.md",
+      "version": "v12",
+      "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+      "section": "从失败分类到一次能够关闭的回归",
+      "startLine": 241,
+      "endLine": 248,
+      "supports": "本答案对“从失败分类到一次能够关闭的回归”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/e02.md",
+      "version": "v12",
+      "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+      "section": "先冻结比较 再运行所有被分配的任务",
+      "startLine": 73,
+      "endLine": 92,
+      "supports": "本答案对“先冻结比较 再运行所有被分配的任务”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/e04.md",
+      "version": "v12",
+      "sha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8",
+      "section": "观测记录应回答哪一阶段首次偏离",
+      "startLine": 162,
+      "endLine": 178,
+      "supports": "本答案对“观测记录应回答哪一阶段首次偏离”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/p02.md",
+      "version": "v12",
+      "sha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8",
+      "section": "独立评阅按一条实际任务走完全程",
+      "startLine": 119,
+      "endLine": 128,
+      "supports": "本答案对“独立评阅按一条实际任务走完全程”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/p01-discovery.md",
+      "version": "v12",
+      "sha256": "2d0340f4e6e05129f423977a272b515c56bd37295a6b00f392f1d56fca25392e",
+      "section": "问题证据与方案意图分成两条链",
+      "startLine": 7,
+      "endLine": 24,
+      "supports": "本答案对“问题证据与方案意图分成两条链”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/p01-mvp.md",
+      "version": "v12",
+      "sha256": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9",
+      "section": "预定义公平实验 而不是挑一次演示",
+      "startLine": 7,
+      "endLine": 16,
+      "supports": "本答案对“预定义公平实验 而不是挑一次演示”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/p01-mvp.md",
+      "version": "v12",
+      "sha256": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9",
+      "section": "真实反馈改变假设 不能只变宣传",
+      "startLine": 67,
+      "endLine": 73,
+      "supports": "本答案对“真实反馈改变假设 不能只变宣传”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c03.md",
+      "version": "v12",
+      "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+      "section": "一个意图 多个协议调用与发送尝试",
+      "startLine": 16,
+      "endLine": 80,
+      "supports": "正文第11行：区分tool_call_id/action_id/attempt_id，稳定逻辑意图、参数指纹和唯一槽位；不是以正文相同自动判定同一用户意图。"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/e01.md",
+      "version": "v12",
+      "sha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+      "section": "三个提交点定义可恢复事实",
+      "startLine": 8,
+      "endLine": 17,
+      "supports": "正文第11行：发送前持久保存意图与尝试，外部成功本地未提交时核对原操作；本地事务不包含网络发送。"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+      "version": "v12",
+      "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+      "section": "6 先核对未决动作 再让模型继续",
+      "startLine": 241,
+      "endLine": 261,
+      "supports": "正文第11行：原操作查询、成功且指纹匹配时采纳、查询暂空仍未知，以及安全同键重试所依赖的合同。"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+      "version": "v12",
+      "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+      "section": "9 并发要分开处理工具依赖与运行推进权",
+      "startLine": 690,
+      "endLine": 707,
+      "supports": "正文第11行：租约epoch/CAS约束本地推进、旧worker观察的采纳，以及本地围栏不能自动阻止远端旧请求。"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c03.md",
+      "version": "v12",
+      "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+      "section": "本地事务和下游接口各承担哪一半（结果归约与下游合同）",
+      "startLine": 172,
+      "endLine": 176,
+      "supports": "正文第11、13行：去重记录和业务效果原子关联、同键同参数/异参、并发与保留期等下游合同；本地机制不等于生产exactly-once。"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+      "version": "v12",
+      "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+      "section": "10.3 最关键的崩溃窗口 工单创建成功 结果尚未提交",
+      "startLine": 747,
+      "endLine": 767,
+      "supports": "正文第9、13行：新键重发产生重复工单的故障轨迹，原key核对的修复路径，以及本地结果事件去重与远端效果去重的区别。"
+    }
+  ],
+  "all124CurrentCheck": {
+    "count": 124,
+    "changedAnswers": [
+      "Q99"
+    ],
+    "other123ByteIdentical": true,
+    "allQuestionsAndGroupsPreserved": true,
+    "allPersonalEvidenceFlagsPreserved": true,
+    "all20PrototypeFollowupsPresent": true,
+    "sourceHashAndRangeChecks": "all_match"
+  },
+  "newExecutionCount": 0,
+  "whyNoRerun": "本次仅Q99新增引用/来源解释，不改执行代码或恢复逻辑；此前有限恢复反例有效范围保持，不因此扩大。",
+  "limits": [
+    "current content scope only",
+    "display/integration QA pending",
+    "not real learner/expert/production certification"
+  ]
+}

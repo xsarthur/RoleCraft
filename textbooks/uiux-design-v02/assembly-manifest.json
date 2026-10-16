@@ -1,0 +1,602 @@
+{
+  "schema_version": "1.0",
+  "version": "uiux-v02-assembly-4",
+  "title": "UI/UX产品设计 从基础到高级实践",
+  "created_at": "2026-10-16T00:00:00+08:00",
+  "owner": "教材研发员B（组装）",
+  "status": "assembled_pending_independent_review",
+  "author_bindings": [
+    {
+      "path": "team/uiux-v02-author-a.md",
+      "sha256": "c7c1ee26fc19910ce8e1174f52bba7abd9d804c352dfea84896cb679d71edff4",
+      "declared_file_count": 14,
+      "status": "original_record_preserved"
+    },
+    {
+      "path": "team/uiux-v02-author-b.md",
+      "sha256": "c7131217a317ef5386f217c73f62f74e013fac7dcc4b687c4ff624b15b6a2ebd",
+      "declared_file_count": 15,
+      "status": "original_record_preserved"
+    },
+    {
+      "path": "team/uiux-v02-author-a-repair.md",
+      "sha256": "c61da2e437d1e8dfddcebfc89bf2985ae921a7e81688d0e1525ee89fc1113506",
+      "changed_files": [
+        "chapters/05-domain-information-architecture.md",
+        "chapters/06-task-flows.md",
+        "chapters/07-interaction-state-contracts.md",
+        "chapters/08-wireframe-prototyping.md"
+      ],
+      "status": "repair_binding"
+    },
+    {
+      "path": "team/uiux-v02-author-b-repair.md",
+      "sha256": "e5570c53cc1f37bae8b1a65092c783074b363498add514b5ea08e21aaa58feba",
+      "changed_files": [
+        "chapters/14-ai-task-experience.md",
+        "chapters/17-complex-platforms.md"
+      ],
+      "status": "repair_binding"
+    },
+    {
+      "path": "team/uiux-v02-author-a-v02-06-repair.md",
+      "sha256": "30cb46797c7aac3548517167a9b636f5c43ede70fe2078c7010f2b647e84da78",
+      "changed_files": [
+        "chapters/12-design-system-governance.md",
+        "exercises/12-governance-records.md"
+      ],
+      "status": "repair_binding"
+    },
+    {
+      "path": "team/uiux-v02-author-a-reason-repair.md",
+      "sha256": "cf7323cf82acad0600a0f8a625a3b8e99928a363396a6cbb208ef7d7b304a5c8",
+      "changed_files": [
+        "chapters/06-task-flows.md",
+        "chapters/11-component-system.md"
+      ],
+      "status": "repair_binding"
+    }
+  ],
+  "author_source_transitions": [
+    {
+      "path": "chapters/05-domain-information-architecture.md",
+      "before": "0bfb886da8c6217f70776abbcfc0cf28eff023f74b84e79bc38288e5d10cc1fc",
+      "after": "66253bef4a653d8eb57ba1af450d54ded9d05786e38a443ee4fe0b2c81f57d41",
+      "record": "uiux-v02-author-a-repair.md"
+    },
+    {
+      "path": "chapters/06-task-flows.md",
+      "before": "0b166d56211d921524bbd5f4283745e7ec068bd8e85650d7b2fc13139f422c7b",
+      "after": "51bd3862ff89157d819efede96ce701a2458e0b015320e1f66ccaee1e984f89f",
+      "record": "uiux-v02-author-a-repair.md"
+    },
+    {
+      "path": "chapters/07-interaction-state-contracts.md",
+      "before": "78f644aa34ac6fc44729c4b6b7544c53d5c8eda560b73f7144971ca2d0050020",
+      "after": "cd892fa5f51887f408bf33fcabb6e4048d046ff56a39e4d5aa6e799ac0a9f5a3",
+      "record": "uiux-v02-author-a-repair.md"
+    },
+    {
+      "path": "chapters/08-wireframe-prototyping.md",
+      "before": "a7c25c3a46e55d13bbf0b95c48c90fa88630a0d5cbb17b33773f3c72c08ba5c7",
+      "after": "26cd2c9e837733e5880a1810f6012c06bb2248857a0759b0bfb813ad7855c99a",
+      "record": "uiux-v02-author-a-repair.md"
+    },
+    {
+      "path": "chapters/14-ai-task-experience.md",
+      "before": "2dc59fcaeacb21e2e5b45463e796189ea1c747aa125035e23bf8070b4859fe41",
+      "after": "90ed6d7454454ae2d2ed7333adfeff0eee70fa35aab727f06b0cf3097e81bb92",
+      "record": "uiux-v02-author-b-repair.md"
+    },
+    {
+      "path": "chapters/17-complex-platforms.md",
+      "before": "c5cedaec689df05d31e9185c72f844cb0a3a5eb4fd3e8b5cd711e91e49c377e8",
+      "after": "ad8d5302cccdd828e9607dbed4c33f408ff39f27b05fb0f7d6cef990fda822e9",
+      "record": "uiux-v02-author-b-repair.md"
+    },
+    {
+      "path": "chapters/12-design-system-governance.md",
+      "before": "2a69b6fb0f0cd17d42eaf12720c086934c8ebd2967ea66ff0df1de590417114f",
+      "after": "52e9eacd776d2bbb398eec81e60a4ea7bbc0dc1afc0c55b2d9630611c7f27246",
+      "record": "uiux-v02-author-a-v02-06-repair.md"
+    },
+    {
+      "path": "exercises/12-governance-records.md",
+      "before": "cdc6c0549bca491f5a4f7c3985bb08d8ea9b149c269d199b226131fc50ab2b0a",
+      "after": "4733ac263f94f9211d6def29955ed90de9ca4c31f72c599f536f1be056c6be62",
+      "record": "uiux-v02-author-a-v02-06-repair.md"
+    },
+    {
+      "path": "chapters/06-task-flows.md",
+      "before": "51bd3862ff89157d819efede96ce701a2458e0b015320e1f66ccaee1e984f89f",
+      "after": "06465a8379b7f67755886be5366d282bb50ab9de5075ab513e995c7127afd562",
+      "record": "uiux-v02-author-a-reason-repair.md"
+    },
+    {
+      "path": "chapters/11-component-system.md",
+      "before": "e14b94ff24cbcb61f83e1ad0ea5e95d7e7876d7ad1327ba635c8b38f3e00ae11",
+      "after": "f0cd5f82df17a39156a42590798275fe436f772c02b79b74d32b82b9a7d92eee",
+      "record": "uiux-v02-author-a-reason-repair.md"
+    }
+  ],
+  "previous_assembly": {
+    "path": "history/assembly-2/assembly-manifest.json",
+    "sha256": "6e1ddaf699f283889783f2c2894d5592cdc6d11f8a03dff0b1f0a8fffae9481a"
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "source": "chapters/01-role-and-evidence.md",
+      "source_sha256": "265e373b72aec19be909eb5feef1202fc48dd165865c5a30ecc2a03130bd9c28",
+      "anchor": "chapter-01",
+      "included_body_sha256": "cd37ff5af202068ce92e1b5def4b265fc122e401b24ad10715bbb599efb7d176",
+      "prerequisites": []
+    },
+    {
+      "number": 2,
+      "source": "chapters/02-problem-framing.md",
+      "source_sha256": "e8619bbe481c0befa16b6f12e0dd16704eab1d6e659c79cce2e7544e14568366",
+      "anchor": "chapter-02",
+      "included_body_sha256": "799715a2ae8a03009bcca58ac8042f5d24560644007d5bbefa43c20e5a66bd8e",
+      "prerequisites": [
+        1
+      ]
+    },
+    {
+      "number": 3,
+      "source": "chapters/03-research-design.md",
+      "source_sha256": "0e2381811bff89bf57c14b85411dd650720191890c55e08c9e4673d6666f275a",
+      "anchor": "chapter-03",
+      "included_body_sha256": "ee8809deba56e62dd313691cfaeafce5e9e0695a7bda96f8adf1b7e456c99e62",
+      "prerequisites": [
+        2
+      ]
+    },
+    {
+      "number": 4,
+      "source": "chapters/04-evidence-synthesis.md",
+      "source_sha256": "c7bee98dae744e98469dd7b5c82cfc125ec6e065fea12cd2c3af6c476d97b0de",
+      "anchor": "chapter-04",
+      "included_body_sha256": "0d4bcd97ee83c937625ebaf5e245e7374dba12fecf5c1db8c146ad8f0de66720",
+      "prerequisites": [
+        3
+      ]
+    },
+    {
+      "number": 5,
+      "source": "chapters/05-domain-information-architecture.md",
+      "source_sha256": "66253bef4a653d8eb57ba1af450d54ded9d05786e38a443ee4fe0b2c81f57d41",
+      "anchor": "chapter-05",
+      "included_body_sha256": "5cfca8ffef9f730ed8868c3a4f25e556fed8a88dd2d534fa9a267dafaee546c5",
+      "prerequisites": [
+        4
+      ]
+    },
+    {
+      "number": 6,
+      "source": "chapters/06-task-flows.md",
+      "source_sha256": "06465a8379b7f67755886be5366d282bb50ab9de5075ab513e995c7127afd562",
+      "anchor": "chapter-06",
+      "included_body_sha256": "435e114af79824c078f7b4bc31c8716de4b3c1418fc1f7f3c311f329cbd0deb4",
+      "prerequisites": [
+        2,
+        5
+      ]
+    },
+    {
+      "number": 7,
+      "source": "chapters/07-interaction-state-contracts.md",
+      "source_sha256": "cd892fa5f51887f408bf33fcabb6e4048d046ff56a39e4d5aa6e799ac0a9f5a3",
+      "anchor": "chapter-07",
+      "included_body_sha256": "96957ffec4208e9fb4b203fd03276679682d0c3e16eaa9a39f3ba79e19b675dc",
+      "prerequisites": [
+        6
+      ]
+    },
+    {
+      "number": 8,
+      "source": "chapters/08-wireframe-prototyping.md",
+      "source_sha256": "26cd2c9e837733e5880a1810f6012c06bb2248857a0759b0bfb813ad7855c99a",
+      "anchor": "chapter-08",
+      "included_body_sha256": "95ef52c74597159e60a97a0da24c96ca60ced5d572360aa8741391f8f0afbd6b",
+      "prerequisites": [
+        6,
+        7
+      ]
+    },
+    {
+      "number": 9,
+      "source": "chapters/09-visual-hierarchy.md",
+      "source_sha256": "93672523e74084127807118fec2ed052d9fd9e64a0e9398ed84e8392e4ae17d7",
+      "anchor": "chapter-09",
+      "included_body_sha256": "d51e2e1df5d2ba65ac6e9cab97f5357743e59482dc403f92ab452e321943df3c",
+      "prerequisites": [
+        8
+      ]
+    },
+    {
+      "number": 10,
+      "source": "chapters/10-responsive-localization-accessibility.md",
+      "source_sha256": "88baca8f44c50cb554f07ef0befd974b5927e5c3d2e47239aff4f8dab17f3680",
+      "anchor": "chapter-10",
+      "included_body_sha256": "f01a31b00845c14530af39d71f5ea93d6e2d38f24fd9dff41f4143ff3ded00af",
+      "prerequisites": [
+        9
+      ]
+    },
+    {
+      "number": 11,
+      "source": "chapters/11-component-system.md",
+      "source_sha256": "f0cd5f82df17a39156a42590798275fe436f772c02b79b74d32b82b9a7d92eee",
+      "anchor": "chapter-11",
+      "included_body_sha256": "9ad8a99ed415b51eb2150b92740a9d2b1e61292bf7e0bef393731a18d776d405",
+      "prerequisites": [
+        9,
+        10
+      ]
+    },
+    {
+      "number": 12,
+      "source": "chapters/12-design-system-governance.md",
+      "source_sha256": "52e9eacd776d2bbb398eec81e60a4ea7bbc0dc1afc0c55b2d9630611c7f27246",
+      "anchor": "chapter-12",
+      "included_body_sha256": "bd19a18b1c7c21eaefcfdbc902fd0987467c77b2a35d52d6c78641583045851b",
+      "prerequisites": [
+        11
+      ]
+    },
+    {
+      "number": 13,
+      "source": "chapters/13-ai-assisted-design.md",
+      "source_sha256": "6c41855ff9db05ed5bfddd9c7059ed9a75a6a38558764972373c2524bb966eff",
+      "anchor": "chapter-13",
+      "included_body_sha256": "6c41855ff9db05ed5bfddd9c7059ed9a75a6a38558764972373c2524bb966eff",
+      "prerequisites": [
+        3,
+        4,
+        8
+      ]
+    },
+    {
+      "number": 14,
+      "source": "chapters/14-ai-task-experience.md",
+      "source_sha256": "90ed6d7454454ae2d2ed7333adfeff0eee70fa35aab727f06b0cf3097e81bb92",
+      "anchor": "chapter-14",
+      "included_body_sha256": "50f1802b0c46e9c1797ba671ab325437711d11f70735a6b914cb74cad3edee14",
+      "prerequisites": [
+        7,
+        11,
+        13
+      ]
+    },
+    {
+      "number": 15,
+      "source": "chapters/15-ai-control-recovery.md",
+      "source_sha256": "fa2b017230792f532a50ed701927ee0eeeafb46493b404a8a43026c395daaeaf",
+      "anchor": "chapter-15",
+      "included_body_sha256": "5ae165f7ca0dc02170b444e34fb30d95834b9a54b7c5faa40a677c868fd36c24",
+      "prerequisites": [
+        7,
+        14
+      ]
+    },
+    {
+      "number": 16,
+      "source": "chapters/16-agent-multimodal-experience.md",
+      "source_sha256": "52f4623419b0c76120da15af7aade268706dcc73ba2629d2fc4ecefbc3a7ffb1",
+      "anchor": "chapter-16",
+      "included_body_sha256": "f14ad9e2a355dab0d53084763b8a277a6a180d4b05f31720d1b5be73d51e747f",
+      "prerequisites": [
+        14,
+        15
+      ]
+    },
+    {
+      "number": 17,
+      "source": "chapters/17-complex-platforms.md",
+      "source_sha256": "ad8d5302cccdd828e9607dbed4c33f408ff39f27b05fb0f7d6cef990fda822e9",
+      "anchor": "chapter-17",
+      "included_body_sha256": "a9500a87f732b0882b1643fef8e05a41484f125d96fed7d354490d225708a7e5",
+      "prerequisites": [
+        5,
+        7,
+        12,
+        15
+      ]
+    },
+    {
+      "number": 18,
+      "source": "chapters/18-service-ecosystem.md",
+      "source_sha256": "086e25c2f76ef22d200ac266bfc980da8af7d43e92e1db99b2ca0b56860e316c",
+      "anchor": "chapter-18",
+      "included_body_sha256": "cbb33d94b19e1d7f08043e12d09157998825969bfdc42ff230e7850694493441",
+      "prerequisites": [
+        16,
+        17
+      ]
+    },
+    {
+      "number": 19,
+      "source": "chapters/19-usability-evaluation.md",
+      "source_sha256": "295e55c225fd8f23c2128cba7ef472c6f9368e74a884310d93b75692ae7104ba",
+      "anchor": "chapter-19",
+      "included_body_sha256": "e3a9b2071ffdc537d7aec1cc98482966911db6c7691a9ab30d428c4a902b6225",
+      "prerequisites": [
+        8,
+        10,
+        14,
+        17
+      ]
+    },
+    {
+      "number": 20,
+      "source": "chapters/20-metrics-experiments.md",
+      "source_sha256": "621dd39089e7c306e13f533c78c7bb35fcf578d2328a6d4956d35e8f7a5c19d6",
+      "anchor": "chapter-20",
+      "included_body_sha256": "28633171b46a594e376068e435f9e5cce8c02bfe3c380944d6c961e228f2b6bf",
+      "prerequisites": [
+        2,
+        19
+      ]
+    },
+    {
+      "number": 21,
+      "source": "chapters/21-engineering-handoff.md",
+      "source_sha256": "d58e4193d94cefcafa8e36ef71a1e7a4abca1c9f872b060b3b536aacfc5fd689",
+      "anchor": "chapter-21",
+      "included_body_sha256": "38908da8bfb6a5735a2bc3121e16c030f8e13ed4cabdb418d56a9888e24ec4c0",
+      "prerequisites": [
+        11,
+        12,
+        15,
+        17,
+        19
+      ]
+    },
+    {
+      "number": 22,
+      "source": "chapters/22-collaboration-product-strategy.md",
+      "source_sha256": "1f40bc0f66fc6b7b31548177844a5c9ae0037f5563a007c1b716a43f5c1a86b9",
+      "anchor": "chapter-22",
+      "included_body_sha256": "1f40bc0f66fc6b7b31548177844a5c9ae0037f5563a007c1b716a43f5c1a86b9",
+      "prerequisites": [
+        2,
+        4,
+        18,
+        20,
+        21
+      ]
+    },
+    {
+      "number": 23,
+      "source": "chapters/23-portfolio-critique.md",
+      "source_sha256": "c46a0da2c2c3909233ef905c364a96f176e27214b3b5b9fc0497b23c5908d619",
+      "anchor": "chapter-23",
+      "included_body_sha256": "772729a01ce204f467cdaa4fb152ec1b53579a8f0e21d6934522a0cb4006323a",
+      "prerequisites": [
+        9,
+        19,
+        20,
+        21,
+        22
+      ]
+    },
+    {
+      "number": 24,
+      "source": "chapters/24-unknown-capstone.md",
+      "source_sha256": "55319c722491917d9642317b9a8d88c05a3212abd0aab2d021911da0f2b7d3d6",
+      "anchor": "chapter-24",
+      "included_body_sha256": "b7b7ae42ed3fb2fe6d7b4258d5725afe2f8954620266c824e021fbee2dd57d3c",
+      "prerequisites": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ]
+    }
+  ],
+  "assembly_rule": {
+    "order": "curriculum.chapters 1–24",
+    "chapter_source_mutation": "none",
+    "body_transforms": [
+      "Markdown link destinations ../assets/ -> assets/",
+      "Markdown link destinations ../exercises/ -> exercises/",
+      "trim trailing blank lines, append one newline"
+    ],
+    "wrapper": "explicit chapter-NN anchor plus separator; original chapter content otherwise retained"
+  },
+  "inputs": [
+    {
+      "path": "team/uiux-v02-curriculum.json",
+      "sha256": "77a5b858978c0e6f6966546cb0f21849534927ad7b0c4217a61e279cbf3b079b"
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/01-workbench-before-after.svg",
+      "sha256": "0ff91038544a8affcce4215978fa283a2844b2fdd5ee22829bee8bec6761fb87"
+    },
+    {
+      "path": "assets/02-ticket-ai-evidence.svg",
+      "sha256": "e3f6905d750fa076924b5a833dae3b7f0b283603af8c3f3102ebcb628ac85e4a"
+    },
+    {
+      "path": "assets/03-refund-state-board.svg",
+      "sha256": "4cee65265697b97b84b38362cd50e3c116b85596f1ef489205659d4a97de0bf3"
+    },
+    {
+      "path": "assets/04-responsive-390-320.svg",
+      "sha256": "77805298736698209b6e083106430c3b00c1a07f5bca7fcd393da8c33669d45b"
+    },
+    {
+      "path": "assets/05-components-tokens-focus.svg",
+      "sha256": "d575caf1b62663bc20b9cc64091dcc2aebd0ba31a8f0c0a402123334ef447c69"
+    },
+    {
+      "path": "assets/06-role-state-swimlanes.svg",
+      "sha256": "3c32afaaf067b00d1fa08defc634902b9a2e01a250d434bc03907b3bc8705c86"
+    },
+    {
+      "path": "assets/07-edge-state-board.svg",
+      "sha256": "57d471f5c55af6adc5d8d4845105925c3ba7507e1a5d48240856d752e7387a58"
+    },
+    {
+      "path": "assets/08-approval-component-migration.svg",
+      "sha256": "1213a0dca7c3141c3564a394dc2492e0d21ecddd1965f4ec75b8577bfcfa7836"
+    },
+    {
+      "path": "assets/design-source-selfcheck.json",
+      "sha256": "c4987c1aeb7c80b4ff29ff49acbf7b69e8f4e14182dfcd6d6ab413998ffb3c41"
+    },
+    {
+      "path": "assets/tokens.json",
+      "sha256": "5a3e19fafdffa29be3c079266381bed476d5b22ba5b985181390175a6b1466e1"
+    },
+    {
+      "asset_id": "v02-batch-a-01-role-evidence.svg",
+      "path": "assets/v02-batch-a-01-role-evidence.svg",
+      "sha256": "87be8126f211d7a05c6811e82051e1c6b52211ae97ac6ec041b15603a88133b0",
+      "source": "设计师批次A可编辑SVG",
+      "version": "uiux-v02-batch-a",
+      "chapter_id": "01",
+      "purpose": "角色—决定—证据链",
+      "evidence_status": "教学构造 / 未验证"
+    },
+    {
+      "asset_id": "v02-batch-a-02-problem-causality.svg",
+      "path": "assets/v02-batch-a-02-problem-causality.svg",
+      "sha256": "5676139256354bcb2ac771fea37f5376761424e10dd843756d7b8dbdd4a2146f",
+      "source": "设计师批次A可编辑SVG",
+      "version": "uiux-v02-batch-a",
+      "chapter_id": "02",
+      "purpose": "问题—摩擦—指标—护栏链",
+      "evidence_status": "教学构造 / 未验证"
+    },
+    {
+      "asset_id": "v02-batch-a-03-research-methods.svg",
+      "path": "assets/v02-batch-a-03-research-methods.svg",
+      "sha256": "b9523c5934ff1015d8880a02d5a5e6815ce0259078073433851cc7618a94f94c",
+      "source": "设计师批次A可编辑SVG",
+      "version": "uiux-v02-batch-a",
+      "chapter_id": "03",
+      "purpose": "决定—未知—方法—样本—输出",
+      "evidence_status": "教学构造 / 未验证"
+    },
+    {
+      "asset_id": "v02-batch-a-04-evidence-synthesis.svg",
+      "path": "assets/v02-batch-a-04-evidence-synthesis.svg",
+      "sha256": "898e962ae31ec7eeb85cab6205290e9cb15dbe3d049194fae69f987b64609511",
+      "source": "设计师批次A可编辑SVG",
+      "version": "uiux-v02-batch-a",
+      "chapter_id": "04",
+      "purpose": "片段—编码—竞争解释—区分性检查",
+      "evidence_status": "教学构造 / 未验证"
+    }
+  ],
+  "exercises": [
+    {
+      "path": "exercises/03-04-research-evidence.md",
+      "sha256": "6bc83e2b1ce53acb234ec07c827542ed4509191c97d2d15dae7b3cf83de92041"
+    },
+    {
+      "path": "exercises/12-governance-records.md",
+      "sha256": "4733ac263f94f9211d6def29955ed90de9ca4c31f72c599f536f1be056c6be62"
+    },
+    {
+      "path": "exercises/13-24/analyze_experiment.py",
+      "sha256": "fe2cd58151f517e6ccdf008698f8b18638a76b354ad5ee0152dded8abd8252cf"
+    },
+    {
+      "path": "exercises/13-24/calculation-output.json",
+      "sha256": "a13f21b9d82cfab07f80a2d2f0c5aad6624bd379fe62e69aa52e99eff6a6bda4"
+    },
+    {
+      "path": "exercises/13-24/synthetic-experiment.csv",
+      "sha256": "3a069e4253606738a54727a4bd03fbb34876bc33acfebfa00fa4e6027f7626a2"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "README.md",
+      "sha256": "56c418d1853b280b23b26cac0fc3abc96ef9a916ffc3c29802e310dfd94e99a0",
+      "bytes": 7745
+    },
+    {
+      "path": "uiux-design-textbook.md",
+      "sha256": "d5c2339a54361e6d7755c83e98df78b44771f45b6d5cbc41ea51bb0ac5c5ba72",
+      "bytes": 223102
+    },
+    {
+      "path": "source-index.md",
+      "sha256": "d2e07c04602f6f36bb16eb1764329c565abbf55ca245fb37392d355164aeb995",
+      "bytes": 12173
+    }
+  ],
+  "author_assembly_checks": {
+    "chapters": 24,
+    "external_sources": 22,
+    "book_chapter_anchors": 24,
+    "all_source_bodies_present": true,
+    "chapter_sources_unchanged": true,
+    "local_link_errors": [],
+    "resource_snapshot_unchanged_during_assembly": true,
+    "current_author_bindings_verified": 29,
+    "batch_a_assets_bound": 4,
+    "book_batch_a_asset_refs": 4
+  },
+  "limitations": [
+    "Author assembly checks are not independent content review or QA",
+    "Static SVGs are not interactive prototypes",
+    "Synthetic data and calculation are not user/production/causal evidence",
+    "External links indexed from chapter sources; no new access or validity claim during assembly"
+  ],
+  "asset_bindings": [
+    {
+      "chapter_id": "01",
+      "asset_id": "v02-batch-a-01-role-evidence.svg",
+      "path": "assets/v02-batch-a-01-role-evidence.svg",
+      "source": "设计师批次A可编辑SVG",
+      "teaching_status": "教学构造",
+      "verification": "未验证",
+      "version": "uiux-v02-batch-a",
+      "sha256": "87be8126f211d7a05c6811e82051e1c6b52211ae97ac6ec041b15603a88133b0"
+    },
+    {
+      "chapter_id": "02",
+      "asset_id": "v02-batch-a-02-problem-causality.svg",
+      "path": "assets/v02-batch-a-02-problem-causality.svg",
+      "source": "设计师批次A可编辑SVG",
+      "teaching_status": "教学构造",
+      "verification": "未验证",
+      "version": "uiux-v02-batch-a",
+      "sha256": "5676139256354bcb2ac771fea37f5376761424e10dd843756d7b8dbdd4a2146f"
+    },
+    {
+      "chapter_id": "03",
+      "asset_id": "v02-batch-a-03-research-methods.svg",
+      "path": "assets/v02-batch-a-03-research-methods.svg",
+      "source": "设计师批次A可编辑SVG",
+      "teaching_status": "教学构造",
+      "verification": "未验证",
+      "version": "uiux-v02-batch-a",
+      "sha256": "b9523c5934ff1015d8880a02d5a5e6815ce0259078073433851cc7618a94f94c"
+    },
+    {
+      "chapter_id": "04",
+      "asset_id": "v02-batch-a-04-evidence-synthesis.svg",
+      "path": "assets/v02-batch-a-04-evidence-synthesis.svg",
+      "source": "设计师批次A可编辑SVG",
+      "teaching_status": "教学构造",
+      "verification": "未验证",
+      "version": "uiux-v02-batch-a",
+      "sha256": "898e962ae31ec7eeb85cab6205290e9cb15dbe3d049194fae69f987b64609511"
+    }
+  ],
+  "assembly_reviews": {
+    "content_review": "team/uiux-design-textbook-visual-batch-a-content-review.md",
+    "qa": "team/uiux-design-textbook-visual-batch-a-qa.md",
+    "scope": "第01—04章新增视觉资产绑定；不替代浏览器、辅助技术或真人证据"
+  }
+}

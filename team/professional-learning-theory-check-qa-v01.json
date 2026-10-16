@@ -1,0 +1,146 @@
+{
+  "schema_version": "professional-learning-theory-check-qa-v01",
+  "qa_id": "PLR-THEORY-QA-V01",
+  "qa_date": "2026-10-15",
+  "role": "测试工程师",
+  "scope": "独立核对四项理论核验规格的字段、版本绑定、评审职责和正式训练准入；不执行课程或代答。",
+  "inputs": {
+    "theory_check_md": {
+      "path": "sites/rolecraft/team/professional-learning-theory-check-v01.md",
+      "sha256": "175b31a81ad4bc0692d7e1db22c57cec138b4b33ab509876a7e7138629b28749"
+    },
+    "theory_check_json": {
+      "path": "sites/rolecraft/team/professional-learning-theory-check-v01.json",
+      "sha256": "881a3a7cc11ca48010d8c84613d4ca93752aa1cdb3da39e5c0af2436a087eac0"
+    },
+    "resource_catalog_v02": {
+      "path": "sites/rolecraft/team/professional-learning-resources-v02.json",
+      "sha256": "fe03b43087ac42d708e4db9bc8c5ec16aa3eec18d9e184defac29581f1295dc9"
+    }
+  },
+  "tests": [
+    {
+      "id": "PLR-TQA-V01-STRUCTURE",
+      "name": "四项集合与题目/证据字段",
+      "status": "pass",
+      "evidence": {
+        "resource_ids": ["PLR-AI-006", "PLR-COMP-004", "PLR-BE-003", "PLR-BE-004"],
+        "unique_resource_ids": true,
+        "each_mechanism_questions": 4,
+        "each_counterexamples": 1,
+        "each_tradeoff_questions": 1,
+        "required_nonempty_fields": [
+          "required_artifact",
+          "sandbox_exercise",
+          "failure_boundary_evidence",
+          "transfer_task",
+          "prerequisites",
+          "stop_conditions"
+        ],
+        "evidence_requirements_count_per_check": 8,
+        "stage": "L0→L1 theory_and_boundary"
+      }
+    },
+    {
+      "id": "PLR-TQA-V01-SOURCE-BINDING",
+      "name": "来源、版本、费用、语言、先修与许可绑定",
+      "status": "pass",
+      "evidence": {
+        "catalog_path": "professional-learning-resources-v02.json",
+        "stable_id_binding": true,
+        "per_check_source_binding": true,
+        "nonempty_catalog_fields": [
+          "source_version",
+          "language",
+          "cost_and_access",
+          "prerequisites",
+          "license_or_usage",
+          "maintenance_or_publication_date",
+          "recheck_at"
+        ],
+        "version_boundaries_in_markdown": {
+          "PLR-AI-006": "课程页无发行号；框架许可与课程许可分离",
+          "PLR-COMP-004": "CELEX 52024XC01645；2020 咨询页为历史背景",
+          "PLR-BE-003": "Google Skills path 与认证页分离",
+          "PLR-BE-004": "ISBN 9781098119058；保留 2026-02/2026-03 月份差异"
+        },
+        "limitations": [
+          "PLR-COMP-004 与 PLR-BE-003 使用可读简称而非目录完整标题；不影响 resource_id/canonical_url/source_version 绑定"
+        ]
+      }
+    },
+    {
+      "id": "PLR-TQA-V01-REVIEWERS",
+      "name": "独立评审角色与范围",
+      "status": "pass",
+      "evidence": {
+        "reviewers_per_check": ["内容审校员", "测试工程师"],
+        "content_reviewer_scope": "核概念、来源、版本、许可与论证边界",
+        "qa_engineer_scope": "核夹具、环境、运行证据、反例、迁移和可复验性",
+        "no_answer_substitution": true,
+        "pm_scope": "仅协调批次和状态"
+      }
+    },
+    {
+      "id": "PLR-TQA-V01-PLANNED-GATE",
+      "name": "执行前 planned 与正式训练准入",
+      "status": "not_met_blocking",
+      "evidence": {
+        "theory_package_status": "planned",
+        "each_check_status": "planned",
+        "catalog_theory_check": "pending",
+        "catalog_training_eligibility": "not_ready_pending_final_qa_and_theory_check",
+        "external_side_effects": false,
+        "execution_evidence_present": false,
+        "missing_execution_evidence": [
+          "逐题原始回答与引用位置",
+          "隔离练习运行/观察记录",
+          "首次失败与返修记录",
+          "留出迁移结果",
+          "停止/拒绝/升级记录"
+        ]
+      }
+    }
+  ],
+  "resource_results": [
+    {"resource_id": "PLR-AI-006", "spec_completeness": "pass", "source_binding": "pass", "training_admission": "not_met"},
+    {"resource_id": "PLR-COMP-004", "spec_completeness": "pass", "source_binding": "pass", "training_admission": "not_met"},
+    {"resource_id": "PLR-BE-003", "spec_completeness": "pass", "source_binding": "pass", "training_admission": "not_met"},
+    {"resource_id": "PLR-BE-004", "spec_completeness": "pass", "source_binding": "pass", "training_admission": "not_met"}
+  ],
+  "findings": [
+    {
+      "id": "PLR-TQA-V01-GATE",
+      "severity": "P1",
+      "status": "open_blocking",
+      "owner": "课程架构师组织训练；内容审校员与测试工程师独立复核",
+      "condition": "四项仍为 planned/pending，尚无学习者执行证据",
+      "retest": "完成隔离训练与留出迁移，按新版本重新复核"
+    },
+    {
+      "id": "PLR-TQA-V01-TITLE",
+      "severity": "P2",
+      "status": "open_with_limitations",
+      "owner": "课程架构师/资料维护人",
+      "condition": "两项 check title 使用可读简称，与目录完整标题不同；逐项 source_binding 已与目录一致",
+      "retest": "对齐规范标题或增加 title_alias 后复核"
+    },
+    {
+      "id": "PLR-TQA-V01-FORMAT",
+      "severity": "P2",
+      "status": "open_with_limitations",
+      "owner": "课程架构师",
+      "condition": "role_artifact 字符串保留 Markdown 装饰符，解析为机器字段时不够干净",
+      "retest": "下一版将作品 ID、说明拆为结构化字段后复核"
+    }
+  ],
+  "conclusion": {
+    "spec_completeness": "met",
+    "source_version_binding": "met",
+    "reviewer_independence": "met",
+    "formal_training_admission": "not_met",
+    "overall": "not_met_training_gate",
+    "execution_started": false,
+    "not_inferred": ["岗位能力", "真实学习效果", "用户价值", "行业先进性", "认证等价"]
+  }
+}

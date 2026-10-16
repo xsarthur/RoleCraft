@@ -1,0 +1,48 @@
+{
+  "record_id": "AI-L0-SOURCE-001-CONTENT-REVIEW-20261015-001",
+  "practice_id": "AI-PRACTICE-SOURCE-001",
+  "exercise_version": "v0.1",
+  "review_role": "内容审校员",
+  "review_date": "2026-10-15",
+  "decision": "reviewed_with_limitations",
+  "scope": [
+    "ai-generation-l0-practice-source-001-v01.md",
+    "ai-generation-l0-practice-source-001-v01.json",
+    "ai-generation-engineer-practice-pack-v02.json",
+    "ai-generation-l0-practice-source-001/"
+  ],
+  "checks": {
+    "source_quadruplet_and_tenant_boundary": "pass_local_scope",
+    "version_hash_and_dynamic_holdout_binding": "pass_local_scope",
+    "mechanism_argument": "pass_local_scope",
+    "evidence_card_completeness": "pass_pending_QA",
+    "limitation_wording": "pass"
+  },
+  "evidence": {
+    "normal_claims_bound": 2,
+    "first_failure_codes": [
+      "SOURCE_VERSION_MISMATCH",
+      "SOURCE_HASH_MISMATCH",
+      "UNBOUND_CLAIM",
+      "SOURCE_SCOPE_DENIED"
+    ],
+    "replay_command": "python3 sites/rolecraft/team/ai-generation-l0-practice-source-001/replay_verify.py",
+    "replay_result": "pass",
+    "run_1_run_2_byte_equal": true,
+    "holdout_changed_keys": ["document_id", "source_version", "text"],
+    "handoff_status": "pending",
+    "self_signoff": false
+  },
+  "unverified": [
+    "真实供应商来源API",
+    "真实模型生成与引用忠实度",
+    "生产缓存/并发一致性",
+    "真实进程恢复与RPO/RTO",
+    "真人审批与接收方签收",
+    "真实数据库/队列/LangGraph集成",
+    "非作者未知任务迁移能力"
+  ],
+  "level_or_grade_awarded": false,
+  "author_revision_required": false,
+  "notes": "本地确定性夹具中的来源绑定、失败停线、动态替换与限制表述一致；不等同于QA独立通过、岗位等级或生产能力证据。"
+}

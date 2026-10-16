@@ -1,0 +1,295 @@
+{
+  "schema": "rolecraft.employee-growth-mvp.qa-final",
+  "schema_version": "0.1",
+  "qa_id": "QA-FINAL-AGDEV-20261015-LOCAL-01",
+  "role_id": "AGDEV",
+  "role_name": "Agent开发工程师",
+  "evaluator_role": "qa-engineer",
+  "owner_role": "agent-developer",
+  "reviewed_at": "2026-10-15T01:51:13+08:00",
+  "contracts": [
+    "T1-v1.0",
+    "T2-v1.0",
+    "T3-v1.0"
+  ],
+  "agent_version": "agent-developer-mvp-v1.0",
+  "independence": {
+    "fresh_temp_workspace": true,
+    "implementation_modified": false,
+    "contracts_modified": false,
+    "source_modified": false,
+    "application_or_database_modified": false,
+    "network": "off",
+    "paid_model_calls": 0,
+    "real_model_calls": 0,
+    "external_tool_calls": 0,
+    "account_or_database_writes": 0,
+    "external_messages": 0
+  },
+  "runtime": {
+    "node": "v24.16.0",
+    "python": "3.14.5",
+    "model": "deterministic_stub_only"
+  },
+  "received_freeze": {
+    "key_hashes": {
+      "T1-contract.md": "071785c103fe1ce4f75ae023867747dfd4e6cc070556811bf1ca588227d076ca",
+      "T2-contract.md": "2129504b860193cb6d0913e849266a7682b5bc8d92d200ab19ae52f264f9b55d",
+      "T3-contract.md": "310215fb0c9ce7a63452dfc1421e5b5aeddc037c0fb0b7fc60f6cf0a798ee819",
+      "run-20261015/scripts/runner.mjs": "a21b12a413f0bede18e6bdd9b87f28540f4fa5c61cd30bb0c54c4876816d2fa7",
+      "run-20261015/scripts/validate-t1-fixture.mjs": "fdd406115347c5853b713ecbd0b68b1dd1514ba90797b8bd4c2a32accec22087",
+      "run-20261015/scripts/check_evidence.py": "da9c69a270fff2b3c496a245443ad2619e7270ed848c54f2bb102e74d24ebb9c",
+      "sites/rolecraft/textbooks/v12/c01-control-loop.md": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+      "sites/rolecraft/textbooks/v12/e01.md": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+      "run-20261015/run-results.json": "fd625a559c53ece418ae205da0920e42985584b6c5427c95c9391052e87c3e8f"
+    },
+    "fixture_manifest_matches": true,
+    "log_manifest_matches": true,
+    "source_manifest_matches": true,
+    "contract_code_manifest_matches": true,
+    "reviewed_input_hashes": {
+      "D0-evaluation.md": "e61cf30e02a764a5f123705f7d2c4310d4241a7af9fbd5c9584ea847ded6baf3",
+      "D0-evaluation.json": "407088bf4221a3c168fd513b4508723e610339f808d8d1b0860c0164dbdc850d",
+      "run-20261015/RUN-REPORT.md": "776564880f8d920b3cf44c5352a4f77dc306ee180d92aa99215d2c8aa7fb71a6",
+      "run-20261015/RUN-REPORT.json": "60db5c46d684292c531374dd6ab854f2391958f4beb78580fde1e94fd0a61301",
+      "run-20261015/handoff/T1-HANDOFF.md": "35e6fb4f05c2fd957ae6b94e56271e16f6dccf3f660e490df5179f2cb8089149",
+      "run-20261015/handoff/T2-HANDOFF.md": "7094fd29954bdc2590f82710312cc776387dd9d4f32dc87354983f27e81a7260",
+      "run-20261015/handoff/T3-HANDOFF.md": "b0c0c28cc9b1c52ad8bd6a5370a35071d3ed27bbee856bde489c0a8cbf6de0b3",
+      "run-20261015/handoff/T1-HANDOFF.json": "e762fbd6f64e6f3d1acd67dbb74b18fffafac8e521009745293b09fc903350b0",
+      "run-20261015/handoff/T2-HANDOFF.json": "4639755d253cd10c63be0b6ef088a2d6e79142833808ccb2df9dee3b5e8fa3f7",
+      "run-20261015/handoff/T3-HANDOFF.json": "4cb9a2e0ebb3f8838af7e8eecb5f81ed774024311d3d690d74eb35bfb1652306",
+      "run-20261015/handoff/QA-REPLAY.md": "db1ae83bf6c7f34a6eee45af01086a5d29121b7e5cdd3de43a1cda3b8598d6e8"
+    }
+  },
+  "replay": {
+    "original_runner_exit_code": 0,
+    "normalized_results_match_received": true,
+    "original_jsonl_hashes_match_received": true,
+    "python_checker_first_exit_code": 1,
+    "python_checker_first_failure": "fresh copy lacked hashes/ output directory",
+    "python_checker_retest_exit_code": 0,
+    "python_checker_retest_checks": {
+      "passed": 11,
+      "failed": 0
+    },
+    "evidence_path": "run-20261015/qa-replay/"
+  },
+  "delivery": {
+    "T1": {
+      "status": "passed",
+      "acceptance": {
+        "AC-T1-D1": "passed",
+        "AC-T1-D2": "passed",
+        "AC-T1-D3": "passed",
+        "AC-T1-D4": "passed",
+        "AC-T1-D5": "passed"
+      },
+      "original_cases": {
+        "normal": {
+          "run_id": "t1-normal-001",
+          "status": "completed",
+          "agent_steps": 3,
+          "tool_attempts": 1,
+          "events": 6
+        },
+        "tool_failure": {
+          "run_id": "t1-tool-failure-001",
+          "status": "failed",
+          "stop_reason": "tool_error_after_one_retry",
+          "tool_attempts": 2,
+          "retry_count": 1,
+          "events": 8
+        }
+      },
+      "holdout": {
+        "input_and_tool_error_variant": "passed",
+        "runner_exit_code": 0,
+        "attempts": 2,
+        "retry_count": 1,
+        "stop_reason": "tool_error_after_one_retry"
+      },
+      "evidence": [
+        "qa-replay/original/logs/t1-normal-001.jsonl",
+        "qa-replay/original/logs/t1-tool-failure-001.jsonl",
+        "qa-replay/t1-variant-input-only/logs/t1-tool-failure-001.jsonl"
+      ]
+    },
+    "T2": {
+      "status": "passed",
+      "acceptance": {
+        "AC-T2-D1": "passed",
+        "AC-T2-D2": "passed",
+        "AC-T2-D3": "passed",
+        "AC-T2-D4": "passed",
+        "AC-T2-D5": "passed"
+      },
+      "original_cases": {
+        "hit": {
+          "status": "recommended",
+          "stop_reason": "source_verified",
+          "section_id": "c01-control-loop",
+          "source_sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8"
+        },
+        "no_match": {
+          "status": "needs_clarification",
+          "stop_reason": "no_match",
+          "recommendation_emitted": false
+        },
+        "ambiguous": {
+          "status": "needs_clarification",
+          "stop_reason": "ambiguous_candidates",
+          "recommendation_emitted": false
+        },
+        "version_conflict": {
+          "status": "stopped",
+          "stop_reason": "source_version_conflict",
+          "recommendation_emitted": false
+        }
+      },
+      "holdout": {
+        "synonym_candidate_order_variant": {
+          "status": "recommended",
+          "section_id": "e01",
+          "source_sha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+          "excerpt_verified": true,
+          "runner_exit_code": 0
+        },
+        "invalid_excerpt_guard": {
+          "status": "stopped",
+          "stop_reason": "excerpt_not_found",
+          "recommendation_emitted": false,
+          "runner_exit_code": 0
+        },
+        "path_traversal_guard": {
+          "status": "stopped",
+          "stop_reason": "path_outside_allowed_root",
+          "recommendation_emitted": false,
+          "runner_exit_code": 0,
+          "evidence": "qa-replay/t2-path-variant/logs/t2-hit-001.jsonl"
+        }
+      },
+      "evidence": [
+        "qa-replay/original/logs/t2-hit-001.jsonl",
+        "qa-replay/original/logs/t2-no_match-001.jsonl",
+        "qa-replay/original/logs/t2-ambiguous-001.jsonl",
+        "qa-replay/original/logs/t2-version_conflict-001.jsonl",
+        "qa-replay/t2-variant-valid/logs/t2-hit-001.jsonl",
+        "qa-replay/t2-variant-invalid/logs/t2-hit-001.jsonl"
+      ],
+      "observations": [
+        "Ambiguous-stop events log candidate_count rather than duplicating each candidate; full candidate fields remain in the frozen fixture and its response hash. Delivery passes because no ambiguous candidate is recommended and the input is traceable, but standalone-log reconstruction of every candidate is a follow-up observability improvement."
+      ]
+    },
+    "T3": {
+      "status": "passed",
+      "acceptance": {
+        "AC-T3-D1": "passed",
+        "AC-T3-D2": "passed",
+        "AC-T3-D3": "passed",
+        "AC-T3-D4": "passed",
+        "AC-T3-D5": "passed"
+      },
+      "original_cases": {
+        "timeout": {
+          "status": "stopped",
+          "stop_reason": "timeout",
+          "timeout_ms": 25,
+          "tool_attempts": 1,
+          "tool_calls_after_stop": 0
+        },
+        "evidence_missing": {
+          "status": "stopped",
+          "stop_reason": "evidence_missing",
+          "missing_fields": [
+            "excerpt"
+          ],
+          "recommendation_emitted": false
+        },
+        "permission_conflict": {
+          "status": "stopped",
+          "stop_reason": "permission_conflict",
+          "tool_calls": 0
+        }
+      },
+      "holdout": {
+        "changed_missing_field": {
+          "missing_fields": [
+            "source_path"
+          ],
+          "status": "stopped",
+          "stop_reason": "evidence_missing",
+          "recommendation_emitted": false,
+          "runner_exit_code": 0
+        },
+        "changed_permission_name": {
+          "required_permission": "identity.write",
+          "status": "stopped",
+          "stop_reason": "permission_conflict",
+          "tool_calls": 0,
+          "runner_exit_code": 0
+        }
+      },
+      "evidence": [
+        "qa-replay/original/logs/t3-timeout-001.jsonl",
+        "qa-replay/original/logs/t3-evidence-missing-001.jsonl",
+        "qa-replay/original/logs/t3-permission-conflict-001.jsonl",
+        "qa-replay/t3-variant/logs/t3-evidence-missing-001.jsonl",
+        "qa-replay/t3-variant/logs/t3-permission-conflict-001.jsonl"
+      ]
+    }
+  },
+  "growth": {
+    "T1": "emerging",
+    "T2": "emerging",
+    "T3": "emerging",
+    "reason": "independent original replay plus holdout evidence in this local cycle; no cross-cycle or real-world evidence"
+  },
+  "first_failures_and_rework": {
+    "runner_first_exit": 1,
+    "runner_retest_exit": 0,
+    "t1_validator_v0_exit": 1,
+    "t1_validator_v1_exit": 0,
+    "python_checker_first_exit": 1,
+    "python_checker_second_exit": 1,
+    "python_checker_final_exit": 0,
+    "retained": true,
+    "paths": [
+      "logs/runner.exit",
+      "logs/runner-retest.exit",
+      "rework/t1-tool-failure-v0.json",
+      "rework/t1-tool-failure-v1.json",
+      "rework/v0.exit",
+      "rework/v1.exit",
+      "logs/python-check.exit",
+      "logs/python-check-retest.exit",
+      "logs/python-check-retest2.exit"
+    ]
+  },
+  "overall_mvp": {
+    "conclusion": "met_within_mvp_delivery_scope",
+    "delivery_statuses": {
+      "T1": "passed",
+      "T2": "passed",
+      "T3": "passed"
+    },
+    "growth_statuses": {
+      "T1": "emerging",
+      "T2": "emerging",
+      "T3": "emerging"
+    },
+    "full_occupational_or_product_claim": "unverified_not_met",
+    "why": "Only deterministic local stubs and read-only v12 sources were exercised; the MVP process exposed retained failures and evidence gaps but did not test real-world value or production."
+  },
+  "limitations": [
+    "real model or supplier behavior not tested",
+    "real external tool side effects not tested",
+    "production deployment, persistence, load, and cost not tested",
+    "retrieval recall/ranking/content correctness not established",
+    "real user comprehension/value and learning outcomes not tested",
+    "human expert/industry review not obtained",
+    "cross-cycle transfer, occupational qualification, and industry advantage not established",
+    "fresh handoff copy requires a hashes output directory before the checker can write manifests"
+  ],
+  "next_action_owner": "project-manager coordinates; agent-developer owns replay packaging; product manager approves any contract/version change; QA rechecks after any change",
+  "qa_report": "run-20261015/QA-FINAL.md"
+}

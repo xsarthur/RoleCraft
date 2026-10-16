@@ -1,0 +1,21 @@
+{
+  "derived_by": "QA",
+  "derivation": "index of raw receipt files; does not assert learner identity",
+  "receipt_status": "pending_learner_attribution",
+  "learner_id": "unknown",
+  "source_signoff_alias": "../ai-generation-real-learner-d0-execution-learner-signoff-v01.txt",
+  "original_sha256sums_sha256": "7768f8af1a89c2830ba3dca945320f3b46722008f8400e8120eba7293f4deae7",
+  "runs": [
+    "run-1",
+    "run-2"
+  ],
+  "scenarios": [
+    "A-normal",
+    "B-tenant-denied",
+    "source-missing",
+    "source-conflict"
+  ],
+  "human_receipt_pending": true,
+  "receiver_acceptance": null,
+  "level_granted": null
+}

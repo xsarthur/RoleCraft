@@ -1,0 +1,347 @@
+{
+  "version": "agent-interview-answer-qa-memory-review-1",
+  "date": "2026-10-14",
+  "owner": "产品经理（独立于QA记忆作者）",
+  "kind": "independent_product_requirements_configuration_review",
+  "decision": "met_within_memory_configuration_scope",
+  "scope": "只读核QA记忆包、当前核心注册、共享偏好及用户原话语义，不检查124题答案质量、不运行程序或教材例。",
+  "requirementsSource": [
+    "用户本轮原话",
+    "team/ANSWER_QUALITY_STANDARD.md AQS-01–08",
+    "team/agent-interview-answer-audit-product.json AUD-07"
+  ],
+  "checks": [
+    {
+      "id": "MEM-USER",
+      "requirement": "测试长期采用编辑同一质量标准；依据来自用户原话",
+      "decision": "met",
+      "evidence": [
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/MEMORY.md",
+          "line": 17,
+          "anchor": "用户先明确"
+        },
+        {
+          "path": "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+          "line": 49,
+          "anchor": "用户原话"
+        }
+      ],
+      "rationale": "QA-MEM-0001完整保留编辑底线、跨职业确认和本轮测试要求三段用户原话，日期/聊天来源明确；shared v3以CORE-PREF-CONTENT-QA-001引用既有CORE-PREF-EDITOR-001。"
+    },
+    {
+      "id": "MEM-AQS01",
+      "requirement": "直接回答与必要前提",
+      "decision": "met",
+      "evidence": [
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/MEMORY.md",
+          "line": 10,
+          "anchor": "核对是否直接回答核心问题"
+        }
+      ],
+      "rationale": "要求直接解答、定义及成立前提，与AQS-01语义一致。"
+    },
+    {
+      "id": "MEM-AQS02",
+      "requirement": "相关多角度与因果",
+      "decision": "met",
+      "evidence": [
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/MEMORY.md",
+          "line": 11,
+          "anchor": "阅读真正相关的角度"
+        }
+      ],
+      "rationale": "核因果依赖和约束，禁止罗列术语、同义换词及无关扩写；不新增角度数。"
+    },
+    {
+      "id": "MEM-AQS0304",
+      "requirement": "可实施步骤、完整案例与关键分支",
+      "decision": "met",
+      "evidence": [
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/MEMORY.md",
+          "line": 12,
+          "anchor": "验证关键步骤"
+        },
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/MEMORY.md",
+          "line": 13,
+          "anchor": "核对决定结论的异常"
+        }
+      ],
+      "rationale": "核对象/输入输出/判断条件，跟随案例与事件过程检验能否走通；覆盖异常、停止和条件变化，不要求所有题强塞代码。"
+    },
+    {
+      "id": "MEM-AQS05",
+      "requirement": "条件与取舍",
+      "decision": "met",
+      "evidence": [
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/MEMORY.md",
+          "line": 13,
+          "anchor": "核对决定结论的异常"
+        }
+      ],
+      "rationale": "核替代方案、取舍、条件变化，明确不要求无实际作用的比较，与AQS-05相符。"
+    },
+    {
+      "id": "MEM-AQS06",
+      "requirement": "反例、验证方法与实际证据",
+      "decision": "met",
+      "evidence": [
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/MEMORY.md",
+          "line": 14,
+          "anchor": "构造能区分正确与错误解释的反例"
+        },
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/ROLE.md",
+          "line": 20,
+          "anchor": "无必要运行的概念题"
+        }
+      ],
+      "rationale": "独立核对象/预期/失败信号，需要时安全隔离运行，分别记录计划与执行，概念题允许推理反例；不把所有题都改成程序测试。"
+    },
+    {
+      "id": "MEM-AQS07",
+      "requirement": "来源、版本与未验证边界",
+      "decision": "met",
+      "evidence": [
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/MEMORY.md",
+          "line": 15,
+          "anchor": "核对关键主张与具体来源"
+        },
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/MEMORY.md",
+          "line": 20,
+          "anchor": "独立验证要求"
+        }
+      ],
+      "rationale": "要求主张-具体来源-版本-实际证据关联，保留事实/建议/伪代码/模拟/未验证与真人结果区别，旧结论不自动继承。"
+    },
+    {
+      "id": "MEM-AQS08",
+      "requirement": "可读性及禁止形式验收",
+      "decision": "met",
+      "evidence": [
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/MEMORY.md",
+          "line": 16,
+          "anchor": "检查层次和术语"
+        }
+      ],
+      "rationale": "按推理可跟随程度核表达，不用字数、关键词、段数、栏目或链接存在性替代；没有增设字数门槛。"
+    },
+    {
+      "id": "MEM-SCOPE",
+      "requirement": "所有职业适配和简答例外",
+      "decision": "met",
+      "evidence": [
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/MEMORY.md",
+          "line": 18,
+          "anchor": "范围"
+        },
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/MEMORY.md",
+          "line": 19,
+          "anchor": "限制"
+        },
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/ROLE.md",
+          "line": 26,
+          "anchor": "不能机械套用Agent术语"
+        }
+      ],
+      "rationale": "延续用户各职业的长期要求，按读者、任务、实践和证据适配，明确简答例外，不复制Agent工单/术语。"
+    },
+    {
+      "id": "MEM-INDEPENDENT",
+      "requirement": "测试独立参与内容，禁止越界与自签",
+      "decision": "met",
+      "evidence": [
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/ROLE.md",
+          "line": 7,
+          "anchor": "不改写答案"
+        },
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/ROLE.md",
+          "line": 7,
+          "anchor": "不能审计自己编写的记忆包配置"
+        },
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/MEMORY.md",
+          "line": 20,
+          "anchor": "独立验证要求"
+        }
+      ],
+      "rationale": "QA实际读内容、原反例/受影响范围复验，缺陷交作者；不代写、不降门槛、不照搬作者结论；此次配置由产品岗位另行核对。"
+    },
+    {
+      "id": "MEM-REGISTRATION",
+      "requirement": "核心注册、共享偏好和启动读取",
+      "decision": "met",
+      "evidence": [
+        {
+          "path": "sites/rolecraft/team/employees/core/manifest.json",
+          "line": 63,
+          "anchor": "core-qa-engineer"
+        },
+        {
+          "path": "sites/rolecraft/team/employees/core/README.md",
+          "line": 3,
+          "anchor": "九类核心岗位"
+        },
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/ROLE.md",
+          "line": 9,
+          "anchor": "每次启动读取"
+        },
+        {
+          "path": "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+          "line": 47,
+          "anchor": "CORE-PREF-CONTENT-QA-001"
+        }
+      ],
+      "rationale": "manifest v2有9个唯一岗位包且qa条目指向存在的MEMORY/SCHEMA，core README列九包且包含测试；ROLE启动读取记忆/共享/项目条件。"
+    },
+    {
+      "id": "MEM-PERSISTENCE",
+      "requirement": "条目元数据和真实效果边界",
+      "decision": "met",
+      "evidence": [
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/MEMORY_SCHEMA.md",
+          "line": 3,
+          "anchor": "每条记忆须有稳定ID"
+        },
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/MEMORY.md",
+          "line": 21,
+          "anchor": "记忆落盘不代表平台自动全局加载"
+        },
+        {
+          "path": "sites/rolecraft/team/employees/core/qa-engineer/MEMORY.md",
+          "line": 22,
+          "anchor": "替代关系"
+        }
+      ],
+      "rationale": "稳定ID、用户证据、范围、限制、置信度、确认状态、版本/日期、替代关系齐备；不把记忆配置当平台全局加载或124题通过。"
+    }
+  ],
+  "registration": {
+    "version": "core-employees-memory-2",
+    "employeeCount": 9,
+    "employeeIdsUnique": true,
+    "qaEntry": {
+      "id": "core-qa-engineer",
+      "name": "测试工程师",
+      "role": "quality_verification",
+      "directory": "qa-engineer",
+      "memory_source": "qa-engineer/MEMORY.md",
+      "schema": "qa-engineer/MEMORY_SCHEMA.md"
+    },
+    "memoryPathExists": true,
+    "schemaPathExists": true
+  },
+  "agEntrypoint": {
+    "path": "AGENTS.md",
+    "line": 56,
+    "present": true
+  },
+  "reviewedBindings": [
+    {
+      "path": "sites/rolecraft/team/employees/core/qa-engineer/ROLE.md",
+      "sha256": "3e772d38cd06e53d53f1a5efb8a3202cc778d0b2bbbf0205cf86b91669c92261",
+      "bytes": 2885
+    },
+    {
+      "path": "sites/rolecraft/team/employees/core/qa-engineer/MEMORY.md",
+      "sha256": "1d3740fb4e9828cd7376d2d29ecd5894039e3e8e81674192a65cea923b86f711",
+      "bytes": 4021
+    },
+    {
+      "path": "sites/rolecraft/team/employees/core/qa-engineer/MEMORY_SCHEMA.md",
+      "sha256": "69e759c2dd936c78c0f3b7903dc52fcbcade7b15b269b8bdeae3473ef736bb0f",
+      "bytes": 1280
+    },
+    {
+      "path": "sites/rolecraft/team/employees/core/qa-engineer/CHANGELOG.md",
+      "sha256": "e9e162acc06272764fdae012d3cf81c1ca25af16975aebef29b2edcfc56638b2",
+      "bytes": 844
+    },
+    {
+      "path": "sites/rolecraft/team/employees/core/manifest.json",
+      "sha256": "28227bf1a6c4ac584e28b2a419614368ee539433e929dce60206b8571283aef2",
+      "bytes": 2736
+    },
+    {
+      "path": "sites/rolecraft/team/employees/core/README.md",
+      "sha256": "90572c46efdda8333abeaf3458a01774430aa51076220621f384857f71af7a7e",
+      "bytes": 4577
+    },
+    {
+      "path": "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+      "sha256": "e80f7be22925b043f9071c800b8ba040531a06756b3c3120df479cd94071060b",
+      "bytes": 5705
+    },
+    {
+      "path": "sites/rolecraft/team/employees/core/textbook-developer/MEMORY.md",
+      "sha256": "726bd0f60d12b36e7ddd55faccbf4d04636a13ca48c4745a01e3e93f47478fcb",
+      "bytes": 6276
+    },
+    {
+      "path": "sites/rolecraft/team/ANSWER_QUALITY_STANDARD.md",
+      "sha256": "e1f55b5a83ae73cd3b300d130ac557bc04031b3263da9642631c6c2af1fe2b97",
+      "bytes": 8637
+    },
+    {
+      "path": "sites/rolecraft/team/README.md",
+      "sha256": "c1e77bad959ea18c7ba0d453849f30b79559c770b516ac3dede06d53e18a1c06",
+      "bytes": 14368
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "760c35107dd318cb57f243e81c60ad1b5e231306a4745d7c59a5ee93ec2e7235",
+      "bytes": 46180
+    }
+  ],
+  "nonblockingObservation": {
+    "id": "MEM-NAV-01",
+    "owner": "项目经理",
+    "path": "sites/rolecraft/team/README.md",
+    "finding": "顶部已新增测试记忆入口，但“当前员工配置：核心员工跨项目长期记忆”旧八岗列表仍缺测试；其历史八岗QA结论须保留。",
+    "action": "在旧列表附近补记第九记忆包或标明后续扩展，保留旧八岗配置QA的原范围。",
+    "blocksCoreRegistration": false,
+    "status": "closed_after_pm_revision",
+    "originalBinding": {
+      "path": "sites/rolecraft/team/README.md",
+      "sha256": "c1e77bad959ea18c7ba0d453849f30b79559c770b516ac3dede06d53e18a1c06",
+      "bytes": 14368
+    },
+    "retest": {
+      "path": "sites/rolecraft/team/README.md",
+      "sha256": "c1e77bad959ea18c7ba0d453849f30b79559c770b516ac3dede06d53e18a1c06",
+      "line": 104,
+      "result": "实际列入测试链接并说明第九包和旧八岗历史QA范围；原例关闭。"
+    }
+  },
+  "limitations": [
+    "未验证平台自动全局注入",
+    "未验证其他职业真实任务中的读取/执行",
+    "未完成或判定124题内容全量通过",
+    "不是QA作者自签独立结论",
+    "未改写任何QA包或共同文件"
+  ],
+  "selfCheck": {
+    "onlyNewReviewMdJsonWritten": true,
+    "qaFilesChanged": false,
+    "appOrTextbookChanged": false,
+    "testRuntimePerformed": false,
+    "newThresholdCreated": false
+  }
+}

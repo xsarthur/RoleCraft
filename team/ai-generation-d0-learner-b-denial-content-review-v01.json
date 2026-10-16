@@ -1,0 +1,35 @@
+{
+  "review_id": "AI-D0-LEARNER-B-DENIAL-CONTENT-REVIEW-20261015-01",
+  "date": "2026-10-15",
+  "target_role_id": "AI",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "scope": "独立内容审校学习者 B-denial 实作及其 learner/QA 边界、tenant/source scope、first failure、holdout 与限制措辞",
+  "conclusion": "reviewed_with_limitations",
+  "learner_state": "L0_guided",
+  "decision": "not_assessed",
+  "level_granted": false,
+  "checks": {
+    "learner_qa_boundary": {"status": "adequate_with_limitations", "finding": "learner 包 qa_status=pending/self_signed=false；独立 QA 不替代学习者五项 D0 证据"},
+    "tenant_source_scope": {"status": "pass_within_local_fixture", "finding": "A baseline carries tenant/source tuple; B private and wrong-tenant deny before generation; fixture is not production ACL"},
+    "first_failure": {"status": "pass_within_local_fixture", "finding": "B-private recorded as first failure with downstream generation false; preserve original"},
+    "holdout": {"status": "pass_within_local_fixture", "finding": "non-isomorphic document_id/source_version/text holdout dynamically denied; mixed request enters recovery_required/hold_for_human_review"},
+    "limitation_wording": {"status": "pass_with_required_boundary", "finding": "local deterministic/no real model or permission system/no level grant stated; production security and capability remain unverified"}
+  },
+  "required_followups": [
+    "Bind B-denial outputs item-by-item to the same learner five D0 answers and a complete EvidenceCard; re-run independent QA/REV.",
+    "Keep production ACL, provider source API, concurrency, crash recovery/RPO-RTO, leakage, human receipt and unknown-task transfer unverified.",
+    "Version state contract distinguishing SOURCE_SCOPE_DENIED from recovery_required/hold_for_human_review."
+  ],
+  "non_claims": [
+    "B-denial QA is not learner pass or certification.",
+    "Local dictionary/JSON fixture is not a real authorization system or production security proof.",
+    "No L1/L2, production permission, model quality, or career capability is granted."
+  ],
+  "inputs": [
+    "sites/rolecraft/team/ai-generation-d0-learner-b-denial-v01/ai-generation-b-denial-v01.md",
+    "sites/rolecraft/team/ai-generation-d0-learner-b-denial-v01/learner_raw.json",
+    "sites/rolecraft/team/ai-generation-l0-b-denial-transfer-qa-v01.md",
+    "sites/rolecraft/team/ai-generation-l0-to-l1-gate-qa-v04.md",
+    "sites/rolecraft/team/ai-generation-l0-to-l1-gate-qa-v05.md"
+  ]
+}

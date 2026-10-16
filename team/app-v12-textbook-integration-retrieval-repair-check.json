@@ -3,13 +3,13 @@
   "scope": "three_independent_defects_and_four_adjacent_controls",
   "nodeVersion": "v24.16.0",
   "corpusVersion": "textbook-v12",
-  "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+  "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
   "sourceBinding": {
     "dist/content-retrieval-core.js": "b3535b2249effdb0118713295ae9b86e117e0d86c86041aade3e8c33a0fc092d",
-    "server/retrieval/index.mjs": "acc8555c9b23603f04afa20ff7dd6eb2fc5429894b7474814d4b16114e1ded0d",
-    "server/retrieval/semantic.mjs": "d101163e0934cac93309265c4949fccbc9fe304120c5954ef9466a4fe68a4115",
-    "server/retrieval/content-v12-index.json": "ac87bfa9c88f6e1709fc59c05fc3af1fcf98b7274aeb1be48a07e490578bdd6b",
-    "server/retrieval/vectors-v12.json": "c28e1e27e7185638aeecc4357498ae19e99f5277e5d271a7d529e57aa1754164",
+    "server/retrieval/index.mjs": "1757f0bfc782cfec078839c394d9d8763bcdbbe9dfc118e70933ade4c6aedc9f",
+    "server/retrieval/semantic.mjs": "97b53560731c6238bcabb7d6e1f44597cdc7c03c24b1599f231d4ade73b7bfc8",
+    "server/retrieval/content-v12-index.json": "c005e8fd4071d14a8acc657a762e53359ea79cd785879bdbaceb52c4768b8142",
+    "server/retrieval/vectors-v12.json": "56b81378723d8cd915abb848bc8ec6c4a84eeac0a52fe548ca711ae183f49e47",
     "server/retrieval/intent-vectors-v12.json": "cd0f1e55e25d9b275558baf1693f0721b6ae9eb896a7519c582e8e75a0b51431"
   },
   "runs": [
@@ -30,7 +30,7 @@
         ],
         "providerCalled": false,
         "corpusVersion": "textbook-v12",
-        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
         "interpretedIntents": [
           {
             "id": "context_memory",
@@ -75,7 +75,14 @@
             "prerequisiteUnitIds": [
               "f02",
               "03-trust-boundary"
-            ]
+            ],
+            "intent": "context_memory",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           },
           {
             "unitId": "n02-context-memory-prompt",
@@ -96,7 +103,14 @@
             "prerequisiteUnitIds": [
               "f02",
               "03-trust-boundary"
-            ]
+            ],
+            "intent": "context_memory",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           },
           {
             "unitId": "n03-planning-reflection",
@@ -117,28 +131,42 @@
             "prerequisiteUnitIds": [
               "c01-control-loop",
               "02-task-acceptance"
-            ]
+            ],
+            "intent": "replanning",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           },
           {
             "unitId": "n03-planning-reflection",
-            "sectionId": "s-da63f3dcff17",
+            "sectionId": "s-5550f8a20c44",
             "order": 18,
             "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
-            "sectionTitle": "1 三种策略改变的是控制对象",
-            "title": "1 三种策略改变的是控制对象",
+            "sectionTitle": "6 Reflection 必须提出可以失败的修正",
+            "title": "6 Reflection 必须提出可以失败的修正",
             "reason": "你表达了“保存的偏好后来被证明是错的，依赖这条记忆的结果应该怎样撤回”；这一小节说明重规划时保留事实并失效依赖假设的具体机制。",
-            "evidenceExcerpt": "Plan-and-Execute 先产出可执行依赖图，再由执行器推进；新观察使计划失效时回到规划器。它适合已知产物和依赖、需要并行安排或资源估计的任务。一次性计划可能基于错误假设，例如假设报告内有规则版本，结果只包含测试名；若执行器盲从清单，后续步骤会逐层捏造输入。先计划的思想可参考 [Plan-and-Solve v3](https://arxiv.org/abs/2305.04091v3)，但该论文的推理提示实验不是持久工具运行时；下面的 DAG、授权与重规划是本篇工程设计。",
+            "evidenceExcerpt": "[Reflexion v4](https://arxiv.org/abs/2303.11366v4)通过语言反馈与经验缓冲改进后续尝试，不依赖每轮修改模型权重。这给工程实践的启发是把失败信息带入下一轮；论文实验不是对任意业务自动自纠错的保证。自主生成的反思也可能错误，例如同一个模型先误解政策，随后用更肯定的语言强化误解；如果判定器奖励格式或“我已经验证”，系统还会学会迎合判定。",
             "sourcePath": "textbooks/v12/n03-planning-reflection.md",
             "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
             "version": "textbook-v12",
-            "href": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
+            "href": "#learn/agent/n03-planning-reflection/s-5550f8a20c44",
             "intentId": "replanning",
             "matchingBasis": "task_intent",
             "matchedSourceTerms": [],
             "prerequisiteUnitIds": [
               "c01-control-loop",
               "02-task-acceptance"
-            ]
+            ],
+            "intent": "replanning",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           }
         ],
         "clarification": null,
@@ -153,12 +181,25 @@
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
           "corpusVersion": "textbook-v12",
-          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
-          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
-          "passages": 561,
+          "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+          "chunkHash": "650101c27eb7db6bfe730fbc567fa08c3a1fcfb88cdf61acb91ee0b97b05014e",
+          "passages": 562,
           "remoteModelsAllowed": false,
           "querySentExternally": false
-        }
+        },
+        "resultType": "recommendation",
+        "intent": "context_memory",
+        "intents": [
+          "context_memory",
+          "replanning"
+        ],
+        "contentVersion": "textbook-v12",
+        "textbookVersionId": "agent-engineering-v12",
+        "indexVersion": "content-retrieval-0.12-v12",
+        "sourcePath": "textbooks/v12/n02-context-memory-prompt.md",
+        "sourceSha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+        "reason": "匹配当前已核验教材原文。",
+        "uncertainty": "medium"
       }
     },
     {
@@ -178,7 +219,7 @@
         ],
         "providerCalled": false,
         "corpusVersion": "textbook-v12",
-        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
         "interpretedIntents": [
           {
             "id": "tool_catalog",
@@ -293,7 +334,14 @@
               "c03",
               "f01",
               "c01-control-primer"
-            ]
+            ],
+            "intent": "tool_catalog",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           },
           {
             "unitId": "n04-tools-mcp",
@@ -317,7 +365,14 @@
               "c03",
               "f01",
               "c01-control-primer"
-            ]
+            ],
+            "intent": "tool_catalog",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           },
           {
             "unitId": "n07-multiagent-a2a",
@@ -342,7 +397,14 @@
               "n06-graph-orchestration",
               "n02-context-memory-prompt",
               "n04-tools-mcp"
-            ]
+            ],
+            "intent": "delegation",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           },
           {
             "unitId": "n07-multiagent-a2a",
@@ -366,28 +428,14 @@
               "n06-graph-orchestration",
               "n02-context-memory-prompt",
               "n04-tools-mcp"
-            ]
-          },
-          {
-            "unitId": "c01-selection",
-            "sectionId": "s-8368c310c8e2",
-            "order": 10,
-            "unitTitle": "为一个任务选择最小可用方案 程序 单次模型 流程与动态 Agent",
-            "sectionTitle": "多 Agent 的升级点是可分工 而不是人数",
-            "title": "多 Agent 的升级点是可分工 而不是人数",
-            "reason": "你表达了“A2A 和 MCP 的交接边界有什么区别，多个 Agent 怎样保留控制责任”；这一小节说明选择最小可用方案的具体机制。",
-            "evidenceExcerpt": "一个可检查的交接至少包含 `subtask_id`、目标修订、输入证据清单与哈希、允许资源、输出主张与逐项引用、缺项、实际消耗、状态。整合者先查版本与权限，再整合结论；超时或 `INCOMPLETE` 不能当作“没有问题”。两位调查者对同一事实冲突时保留冲突，不按最后到达的答案覆盖。",
-            "sourcePath": "textbooks/v12/c01-selection.md",
-            "sourceSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
-            "version": "textbook-v12",
-            "href": "#learn/agent/c01-selection/s-8368c310c8e2",
-            "intentId": "selection",
-            "matchingBasis": "task_intent",
-            "matchedSourceTerms": [],
-            "prerequisiteUnitIds": [
-              "f02",
-              "02-task-acceptance"
-            ]
+            ],
+            "intent": "delegation",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           },
           {
             "unitId": "c01-selection",
@@ -399,7 +447,7 @@
             "reason": "你表达了“A2A 和 MCP 的交接边界有什么区别，多个 Agent 怎样保留控制责任”；这一小节说明选择最小可用方案的具体机制。",
             "evidenceExcerpt": "这个 workflow/agent 控制权区分与 Anthropic 2024 年文章一致；该文章已注明生态发生变化，因此这里引用架构定义，不把它作为当前框架排名或性能基准。",
             "sourcePath": "textbooks/v12/c01-selection.md",
-            "sourceSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+            "sourceSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
             "version": "textbook-v12",
             "href": "#learn/agent/c01-selection/s-e458cc35eeb7",
             "intentId": "selection",
@@ -408,7 +456,42 @@
             "prerequisiteUnitIds": [
               "f02",
               "02-task-acceptance"
-            ]
+            ],
+            "intent": "selection",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          },
+          {
+            "unitId": "c01-selection",
+            "sectionId": "s-8368c310c8e2",
+            "order": 10,
+            "unitTitle": "为一个任务选择最小可用方案 程序 单次模型 流程与动态 Agent",
+            "sectionTitle": "多 Agent 的升级点是可分工 而不是人数",
+            "title": "多 Agent 的升级点是可分工 而不是人数",
+            "reason": "你表达了“A2A 和 MCP 的交接边界有什么区别，多个 Agent 怎样保留控制责任”；这一小节说明选择最小可用方案的具体机制。",
+            "evidenceExcerpt": "一个可检查的交接至少包含 `subtask_id`、目标修订、输入证据清单与哈希、允许资源、输出主张与逐项引用、缺项、实际消耗、状态。整合者先查版本与权限，再整合结论；超时或 `INCOMPLETE` 不能当作“没有问题”。两位调查者对同一事实冲突时保留冲突，不按最后到达的答案覆盖。",
+            "sourcePath": "textbooks/v12/c01-selection.md",
+            "sourceSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+            "version": "textbook-v12",
+            "href": "#learn/agent/c01-selection/s-8368c310c8e2",
+            "intentId": "selection",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "f02",
+              "02-task-acceptance"
+            ],
+            "intent": "selection",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           }
         ],
         "clarification": null,
@@ -423,12 +506,29 @@
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
           "corpusVersion": "textbook-v12",
-          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
-          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
-          "passages": 561,
+          "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+          "chunkHash": "650101c27eb7db6bfe730fbc567fa08c3a1fcfb88cdf61acb91ee0b97b05014e",
+          "passages": 562,
           "remoteModelsAllowed": false,
           "querySentExternally": false
-        }
+        },
+        "resultType": "recommendation",
+        "intent": "tool_catalog",
+        "intents": [
+          "tool_catalog",
+          "delegation",
+          "selection",
+          "python_foundations",
+          "source_term_0",
+          "source_term_1"
+        ],
+        "contentVersion": "textbook-v12",
+        "textbookVersionId": "agent-engineering-v12",
+        "indexVersion": "content-retrieval-0.12-v12",
+        "sourcePath": "textbooks/v12/n04-tools-mcp.md",
+        "sourceSha256": "b3432424e61870ac250db2068423ed33e827c97cfc2f1440f3ae2987bfd4f39a",
+        "reason": "匹配当前已核验教材原文。",
+        "uncertainty": "medium"
       }
     },
     {
@@ -448,7 +548,7 @@
         ],
         "providerCalled": false,
         "corpusVersion": "textbook-v12",
-        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
         "interpretedIntents": [
           {
             "id": "transfer_evaluation",
@@ -504,7 +604,14 @@
               "e02",
               "n05-retrieval-ingestion",
               "n07-multiagent-a2a"
-            ]
+            ],
+            "intent": "transfer_evaluation",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           },
           {
             "unitId": "n10-evaluation-projects",
@@ -526,7 +633,14 @@
               "e02",
               "n05-retrieval-ingestion",
               "n07-multiagent-a2a"
-            ]
+            ],
+            "intent": "transfer_evaluation",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           },
           {
             "unitId": "e01",
@@ -547,7 +661,14 @@
             "prerequisiteUnitIds": [
               "c03",
               "c01-control-primer"
-            ]
+            ],
+            "intent": "recovery",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           },
           {
             "unitId": "c01-control-primer",
@@ -568,7 +689,14 @@
             "prerequisiteUnitIds": [
               "c01-selection",
               "03-trust-boundary"
-            ]
+            ],
+            "intent": "recovery",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           },
           {
             "unitId": "n06-graph-orchestration",
@@ -590,7 +718,14 @@
               "e01",
               "c01-control-loop",
               "n03-planning-reflection"
-            ]
+            ],
+            "intent": "graph_orchestration",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           },
           {
             "unitId": "n06-graph-orchestration",
@@ -612,7 +747,14 @@
               "e01",
               "c01-control-loop",
               "n03-planning-reflection"
-            ]
+            ],
+            "intent": "graph_orchestration",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           }
         ],
         "clarification": null,
@@ -627,12 +769,26 @@
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
           "corpusVersion": "textbook-v12",
-          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
-          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
-          "passages": 561,
+          "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+          "chunkHash": "650101c27eb7db6bfe730fbc567fa08c3a1fcfb88cdf61acb91ee0b97b05014e",
+          "passages": 562,
           "remoteModelsAllowed": false,
           "querySentExternally": false
-        }
+        },
+        "resultType": "recommendation",
+        "intent": "transfer_evaluation",
+        "intents": [
+          "transfer_evaluation",
+          "recovery",
+          "graph_orchestration"
+        ],
+        "contentVersion": "textbook-v12",
+        "textbookVersionId": "agent-engineering-v12",
+        "indexVersion": "content-retrieval-0.12-v12",
+        "sourcePath": "textbooks/v12/n10-evaluation-projects.md",
+        "sourceSha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+        "reason": "匹配当前已核验教材原文。",
+        "uncertainty": "medium"
       }
     },
     {
@@ -651,7 +807,7 @@
         ],
         "providerCalled": false,
         "corpusVersion": "textbook-v12",
-        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
         "interpretedIntents": [],
         "excludedIntents": [],
         "results": [],
@@ -670,7 +826,17 @@
         },
         "limitations": [
           "本地任务概念规则与原文术语查找只覆盖所选 Agent 教材；没有调用大模型。"
-        ]
+        ],
+        "resultType": "clarification",
+        "intent": null,
+        "intents": [],
+        "contentVersion": "textbook-v12",
+        "textbookVersionId": "agent-engineering-v12",
+        "indexVersion": "content-retrieval-0.12-v12",
+        "sourcePath": null,
+        "sourceSha256": null,
+        "reason": "本地任务概念规则与原文术语查找只覆盖所选 Agent 教材；没有调用大模型。",
+        "uncertainty": "medium"
       }
     },
     {
@@ -690,7 +856,7 @@
         ],
         "providerCalled": false,
         "corpusVersion": "textbook-v12",
-        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
         "interpretedIntents": [
           {
             "id": "recovery",
@@ -727,7 +893,14 @@
             "prerequisiteUnitIds": [
               "c03",
               "c01-control-primer"
-            ]
+            ],
+            "intent": "recovery",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           },
           {
             "unitId": "c01-control-primer",
@@ -748,7 +921,14 @@
             "prerequisiteUnitIds": [
               "c01-selection",
               "03-trust-boundary"
-            ]
+            ],
+            "intent": "recovery",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           }
         ],
         "clarification": null,
@@ -763,12 +943,24 @@
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
           "corpusVersion": "textbook-v12",
-          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
-          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
-          "passages": 561,
+          "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+          "chunkHash": "650101c27eb7db6bfe730fbc567fa08c3a1fcfb88cdf61acb91ee0b97b05014e",
+          "passages": 562,
           "remoteModelsAllowed": false,
           "querySentExternally": false
-        }
+        },
+        "resultType": "recommendation",
+        "intent": "recovery",
+        "intents": [
+          "recovery"
+        ],
+        "contentVersion": "textbook-v12",
+        "textbookVersionId": "agent-engineering-v12",
+        "indexVersion": "content-retrieval-0.12-v12",
+        "sourcePath": "textbooks/v12/e01.md",
+        "sourceSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+        "reason": "匹配当前已核验教材原文。",
+        "uncertainty": "medium"
       }
     },
     {
@@ -788,7 +980,7 @@
         ],
         "providerCalled": false,
         "corpusVersion": "textbook-v12",
-        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
         "interpretedIntents": [
           {
             "id": "recovery",
@@ -833,7 +1025,14 @@
             "prerequisiteUnitIds": [
               "c03",
               "c01-control-primer"
-            ]
+            ],
+            "intent": "recovery",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           },
           {
             "unitId": "c01-control-primer",
@@ -854,7 +1053,14 @@
             "prerequisiteUnitIds": [
               "c01-selection",
               "03-trust-boundary"
-            ]
+            ],
+            "intent": "recovery",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           },
           {
             "unitId": "e05",
@@ -875,7 +1081,14 @@
             "prerequisiteUnitIds": [
               "e02",
               "e04"
-            ]
+            ],
+            "intent": "cost",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           },
           {
             "unitId": "e05",
@@ -896,7 +1109,14 @@
             "prerequisiteUnitIds": [
               "e02",
               "e04"
-            ]
+            ],
+            "intent": "cost",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           }
         ],
         "clarification": null,
@@ -911,12 +1131,25 @@
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
           "corpusVersion": "textbook-v12",
-          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
-          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
-          "passages": 561,
+          "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+          "chunkHash": "650101c27eb7db6bfe730fbc567fa08c3a1fcfb88cdf61acb91ee0b97b05014e",
+          "passages": 562,
           "remoteModelsAllowed": false,
           "querySentExternally": false
-        }
+        },
+        "resultType": "recommendation",
+        "intent": "recovery",
+        "intents": [
+          "recovery",
+          "cost"
+        ],
+        "contentVersion": "textbook-v12",
+        "textbookVersionId": "agent-engineering-v12",
+        "indexVersion": "content-retrieval-0.12-v12",
+        "sourcePath": "textbooks/v12/e01.md",
+        "sourceSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+        "reason": "匹配当前已核验教材原文。",
+        "uncertainty": "medium"
       }
     },
     {
@@ -936,7 +1169,7 @@
         ],
         "providerCalled": false,
         "corpusVersion": "textbook-v12",
-        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
         "interpretedIntents": [
           {
             "id": "recovery",
@@ -982,7 +1215,14 @@
             "prerequisiteUnitIds": [
               "c03",
               "c01-control-primer"
-            ]
+            ],
+            "intent": "recovery",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           },
           {
             "unitId": "c01-control-primer",
@@ -1003,7 +1243,14 @@
             "prerequisiteUnitIds": [
               "c01-selection",
               "03-trust-boundary"
-            ]
+            ],
+            "intent": "recovery",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
           }
         ],
         "clarification": null,
@@ -1018,12 +1265,24 @@
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
           "corpusVersion": "textbook-v12",
-          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
-          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
-          "passages": 561,
+          "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+          "chunkHash": "650101c27eb7db6bfe730fbc567fa08c3a1fcfb88cdf61acb91ee0b97b05014e",
+          "passages": 562,
           "remoteModelsAllowed": false,
           "querySentExternally": false
-        }
+        },
+        "resultType": "recommendation",
+        "intent": "recovery",
+        "intents": [
+          "recovery"
+        ],
+        "contentVersion": "textbook-v12",
+        "textbookVersionId": "agent-engineering-v12",
+        "indexVersion": "content-retrieval-0.12-v12",
+        "sourcePath": "textbooks/v12/e01.md",
+        "sourceSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+        "reason": "匹配当前已核验教材原文。",
+        "uncertainty": "medium"
       }
     }
   ],

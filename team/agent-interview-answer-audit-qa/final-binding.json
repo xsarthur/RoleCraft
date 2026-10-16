@@ -1,0 +1,419 @@
+{
+  "date": "2026-10-14",
+  "version": "qa-1-wording-clarification",
+  "files": [
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/baseline.json",
+      "sha256": "779eaccdedc4c1ef36c2ac986e20276ee0fa02cbc2c8898bb9afafcd15d2fcc5",
+      "bytes": 581750
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/disagreements.json",
+      "sha256": "35c46bbaadcbb04a7d84873e62fe6c81cb3f8b7effba6dd8edc8f19ce8535cf6",
+      "bytes": 8960
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/disagreements.md",
+      "sha256": "442a1a1b509cfacffc4f3940bd42016d31996fae2c8831a08d67631109ae5126",
+      "bytes": 5216
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/end-check.json",
+      "sha256": "fce65560c07ba18bf7615d9b3fc5e673ca8145e5a40cb843e00ccc4053c8619d",
+      "bytes": 12821
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/execution-record.json",
+      "sha256": "92518ecd2ff34b16418ebce4787f91af358f9c24881041244d894df9b1f24c8c",
+      "bytes": 9749
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n01-runtime-boundaries.py",
+      "sha256": "a156424a76bddc73cb831bda826ea676facce8191311bc0ca15f372f4deab75a",
+      "bytes": 8072
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n01-runtime-boundaries.py.log",
+      "sha256": "c2a5f51727ada0f046ffe3b616557e25ad91804d1a82e5b3b8d4c687c881c18c",
+      "bytes": 218
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n02-memory-routing.py",
+      "sha256": "400452b186375011da69c0c58b3917bb0cdd9b54e2e14e7b0f2d09ed5b584249",
+      "bytes": 6275
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n02-memory-routing.py.log",
+      "sha256": "2f4f92b649cc1910a8d52561d52e886a7573daac4c9e3ba34acb7e8a9b21de4b",
+      "bytes": 272
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n03-plan-execution.py",
+      "sha256": "211eabbd5fc5da020e8909742c0f7bf174e54478b07ea792f1daea0e1866db80",
+      "bytes": 6903
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n03-plan-execution.py.log",
+      "sha256": "28fc972438a7cbb3b4dcfcd4e17bd00fe4021258eea61ee10cef9cfc201ec6dc",
+      "bytes": 250
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n06-graph-contracts.py",
+      "sha256": "d2ce027e04056fc598bf70f8dc7f3ecae5926f3848723ca85f167e959b0d9dc8",
+      "bytes": 1868
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n06-graph-contracts.py.log",
+      "sha256": "1fcc8682597030f76bdec3bbad9c780f2243a181bd37833e16372e480cf128b4",
+      "bytes": 59
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n06-graph.py",
+      "sha256": "51ed00eea1cb36983e1eac38efe6cb122fd80357688152002f383e23607bb866",
+      "bytes": 4218
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n07-delegation.py",
+      "sha256": "c374265dd30165b99bee6512ce06c646ba7f4443e595ff358a7e4c1ccce84840",
+      "bytes": 5493
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n07-delegation.py.log",
+      "sha256": "9fbfd51089fa2bfcdebe722001becde4228c0704cdb68a97210a3948bc8b72a2",
+      "bytes": 75
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n09-memory-diagnostic.py",
+      "sha256": "9d90ef1295ed3543b909f935ffeb60f17b9681396a0779e20ca8dd7a4b75980d",
+      "bytes": 1333
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n09-memory-diagnostic.py.log",
+      "sha256": "5a095f81db255b7833b8810f23f1779bb33a81880033c38150044b26a2c20e22",
+      "bytes": 2283
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n09-runtime-recovery.py",
+      "sha256": "e984d32ffa7f6b02d40ee6be2ce633dd8692d688a11dbdf037275d2607574f32",
+      "bytes": 5047
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n09-runtime-recovery.py.log",
+      "sha256": "b205b11f22f7d2a574abc3cc262196b549b75c668d0981ceee98a7a7f014bd79",
+      "bytes": 85
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n10-evaluation-matrix.py",
+      "sha256": "d30b8b8a3297203fa0be35a603bb8e19eea3332e79f73da2487e1cb55e09024b",
+      "bytes": 2277
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/n10-evaluation-matrix.py.log",
+      "sha256": "1473798c56ac8214f979eeba40e315e2a4f1a232ed1fc6713617df61e665ed23",
+      "bytes": 77
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/qa-independent-counterexamples.json",
+      "sha256": "368dddebe95e62b4e13e31c0e3245028ffcf6bb44a26780e37ea6020c32406de",
+      "bytes": 3104
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/execution/qa-independent-counterexamples.py",
+      "sha256": "e49ccedcfe5960ab1ff947807cd696f95fa47d91cb54488afe1ba66815b8e095",
+      "bytes": 8217
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/first-reading-matrix.json",
+      "sha256": "cc4e66f163895ed4b937e6fc38f73235d01ada4cd3c12b0dc756607ef894b8b7",
+      "bytes": 867256
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/first-reading-matrix.md",
+      "sha256": "c09f1a52f04f68eaa936b372260358a9a635334dee70e72506889beeba91edab",
+      "bytes": 26131
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/matrix-v2.json",
+      "sha256": "62fcf20f98f31e7cbe5df82a746ef15369cd420fe63251da20f513709df50ed4",
+      "bytes": 1310229
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/matrix-v2.md",
+      "sha256": "7ef9f2c4e51fc989d6bf57c92518d0ec7dd7e45452f276d66a6386d6754fb455",
+      "bytes": 26799
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/matrix.json",
+      "sha256": "c2686e297f1add389e0b0a4872ac83acdf5d1dbe09e5396b4961d261ad1f6024",
+      "bytes": 1290027
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/matrix.md",
+      "sha256": "a05356e9ecc35316e9e0fadd4c4a7409c1c4c7613a703552db16fc837f9119ef",
+      "bytes": 26974
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/primary-source-check.json",
+      "sha256": "03cee960bd258e7b35a204ba8de2bbb9592512619436912a4085466318abde9e",
+      "bytes": 2716
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/dist/content-v12-data.js",
+      "sha256": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224",
+      "bytes": 1545912
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/dist/interview-prep-v1-prototype.html",
+      "sha256": "bde8c588f9aab88f9e36bb1a365aa14037812de04892401d02bfcc0355f68b65",
+      "bytes": 43336
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/dist/learning-experience-v13.js",
+      "sha256": "67fa8e0091d53192a1b5a022c33c0496288233e8ebfd07ebca0b8f729ddab93e",
+      "bytes": 33103
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/dist/learning-v13-data.js",
+      "sha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "bytes": 841206
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/server/retrieval/content-v12-index.json",
+      "sha256": "ac87bfa9c88f6e1709fc59c05fc3af1fcf98b7274aeb1be48a07e490578bdd6b",
+      "bytes": 1591766
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/team/ANSWER_QUALITY_STANDARD.md",
+      "sha256": "e1f55b5a83ae73cd3b300d130ac557bc04031b3263da9642631c6c2af1fe2b97",
+      "bytes": 8637
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/team/agent-interview-answer-audit-product.json",
+      "sha256": "77195910048dd5903893794a71917097f518ed643e2d9ec90d233936c5945686",
+      "bytes": 235806
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/team/agent-interview-answer-audit-product.md",
+      "sha256": "053981e1692e47bf4f6839a2befbb419e045a6e5cd1532b03e581ec12315492c",
+      "bytes": 8731
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/team/answer-quality-standard-curriculum.md",
+      "sha256": "26ed0ac89eab39dce4a459946e587cc838034dfd5baa968522869eb8ea934c29",
+      "bytes": 8194
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/team/textbook-v12-curriculum.json",
+      "sha256": "02dcab757b4e72f7fb28b39f648b30090b0e57b3725ca0af25e421e0fafad5ae",
+      "bytes": 144114
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/team/textbook-v12-qa-matrix.json",
+      "sha256": "01485e3c9a4ea65ac25985b3907dc6b4ab70115139bcf0c74308f161965320cf",
+      "bytes": 770209
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/00-learning-route.md",
+      "sha256": "452129591648ca6c146945fae000e3e905e87c2794315109c727592a7b16dced",
+      "bytes": 15717
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/01-foundation.md",
+      "sha256": "3ca5c2391ccfba389cb16d7eac85034bcb50d0768f0e9e7374c92917044232d7",
+      "bytes": 9341
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/02-task-acceptance.md",
+      "sha256": "2a15989e762cf659822a9ec3d0b37d881fb28ddcd2d8f1503957ad73d8343ec1",
+      "bytes": 5323
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/03-trust-boundary.md",
+      "sha256": "8ff1050570a84ade4751619e28bb6e02bdd06d2b914d74e5192ea446b045272e",
+      "bytes": 4926
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/README.md",
+      "sha256": "f6e8b37b318dd2a662c064f6681509fdf7873cbd7687a7b91a6f7ed3bf2683a6",
+      "bytes": 8920
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/agent-engineering-textbook.md",
+      "sha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+      "bytes": 523145
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/assembly-manifest.json",
+      "sha256": "16907987dcebb2195f9bae4df3f0648d566f597f49722e681fb589b87e32305e",
+      "bytes": 3749
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/c01-control-loop.md",
+      "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+      "bytes": 78547
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/c01-control-primer.md",
+      "sha256": "ef50f49868351894e0b928eced4cfb2fdabb9cb28ca03eb9043b9cf42d5689b9",
+      "bytes": 5660
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/c01-fixed-workflow.md",
+      "sha256": "5dd87adc743723c842ed22f80065fda6408d28aee369adf8dfe1206ac81c2fcf",
+      "bytes": 13845
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/c01-selection.md",
+      "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+      "bytes": 9444
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/c02.md",
+      "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+      "bytes": 20689
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/c03.md",
+      "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+      "bytes": 22973
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/e01.md",
+      "sha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+      "bytes": 32432
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/e02.md",
+      "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+      "bytes": 24838
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/e03.md",
+      "sha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+      "bytes": 25367
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/e04.md",
+      "sha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8",
+      "bytes": 20925
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/e05.md",
+      "sha256": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6",
+      "bytes": 21001
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/f01.md",
+      "sha256": "5fcb2bd1db423ca8e149b0803bafedeaf0e77ca2331312ff32f63a2087ba9d61",
+      "bytes": 15063
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/f02.md",
+      "sha256": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8",
+      "bytes": 16484
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/n01-python-model-foundations.md",
+      "sha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62",
+      "bytes": 16052
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/n02-context-memory-prompt.md",
+      "sha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+      "bytes": 15254
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/n03-planning-reflection.md",
+      "sha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+      "bytes": 13362
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/n04-tools-mcp.md",
+      "sha256": "b3432424e61870ac250db2068423ed33e827c97cfc2f1440f3ae2987bfd4f39a",
+      "bytes": 15451
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/n05-retrieval-ingestion.md",
+      "sha256": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16",
+      "bytes": 19699
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/n06-graph-orchestration.md",
+      "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+      "bytes": 11304
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/n07-multiagent-a2a.md",
+      "sha256": "24268cff6bfb435713458912750a5a958dd00d0aa935ef71b139e74c6dd23fb2",
+      "bytes": 11599
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/n08-sandbox-security.md",
+      "sha256": "16b1fe631c244ec394965f9443bc680380997cf4427a7555184c26cf3ee064f2",
+      "bytes": 8648
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/n09-runtime-delivery.md",
+      "sha256": "b621b838657aaa9915506a5bee6e25f7733b41085b08c50143e5965722157714",
+      "bytes": 11664
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/n10-evaluation-projects.md",
+      "sha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+      "bytes": 10885
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/p01-discovery.md",
+      "sha256": "2d0340f4e6e05129f423977a272b515c56bd37295a6b00f392f1d56fca25392e",
+      "bytes": 11246
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/p01-mvp.md",
+      "sha256": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9",
+      "bytes": 10723
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received/textbooks/v12/p02.md",
+      "sha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8",
+      "bytes": 20733
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/received-reading.md",
+      "sha256": "fcd5605648ae1a54e96e7d1b7006bea71311d43bd1a6930cc553496a6a47a90d",
+      "bytes": 169779
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/source-check.json",
+      "sha256": "b3ff060ed97f24169378c1330de3d6d5185cd1c347cee06ce81ece5c2794a022",
+      "bytes": 127776
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/unique-quotes.md",
+      "sha256": "910838f65d779ded0a3004582a990a3c6c4d8a816cd4ec5257828b462aceafd7",
+      "bytes": 95969
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa.json",
+      "sha256": "fe05e0f6f0d002465c2cf7666bb8f9724eb7dd7716e28c8b7e9b43aff3d61a36",
+      "bytes": 2847
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa.md",
+      "sha256": "a13a87d80f72d7830370947f51cc31c132d903042bb56743fbec8fc2f70b4b8a",
+      "bytes": 4648
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/wording-revision-2026-10-14.json",
+      "sha256": "989ecda81734f6731a6a903fa3a30c77f07eaeb90dfca5bd318641766fe0e0e3",
+      "bytes": 633
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-qa/final-binding-before-wording-revision.json",
+      "sha256": "8c2f1bf3d5edeb656e2daa541484479dc7c48d954c0ca58cd353dc834c8cdbfd",
+      "bytes": 18049
+    }
+  ],
+  "count": 82,
+  "note": "Binds this QA source snapshots, findings, execution and summary; new author answers require new checks. Memory config separately independently reviewed.",
+  "revisionNote": "Only summary opening wording clarified; previous binding and revision record retained. Matrix and actual checks unchanged."
+}

@@ -1,0 +1,72 @@
+{
+  "report_id": "AI-GEN-L0-TO-L1-GATE-QA-v08",
+  "date": "2026-10-16",
+  "role": "测试工程师",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "decision": "remain_L0_guided",
+  "l1_review": "insufficient_evidence",
+  "level_granted": false,
+  "production_permission": false,
+  "inputs": [
+    "ai-generation-l0-learner-handoff-v08/learner_raw.json",
+    "ai-generation-l0-learner-handoff-v08/ai-generation-d0-learner-demo-qa-v02.json",
+    "ai-generation-real-learner-d0-execution-qa-v02.json",
+    "ai-generation-l0-learner-handoff-v08/quality/demo-v02-qa.json",
+    "ai-generation-l0-learner-handoff-v08/quality/b-denial-qa.json",
+    "ai-generation-l0-learner-handoff-v08/quality/d6-failure-sample.json",
+    "ai-generation-l0-learner-handoff-v19.md",
+    "ai-generation-l0-learner-handoff-v19.json"
+  ],
+  "checks": {
+    "five_d0_same_diagnostic_learner_and_d0_03": {
+      "status": "fail",
+      "reason": "Learner raw has five D0 answers but self_signed=false and QA/handoff pending; D0-03 QA states learner_execution.available=false, so replay cannot substitute learner execution."
+    },
+    "d1_d5": {
+      "status": "partial_fail",
+      "reason": "Only local SOURCE/DURABLE/GATE mechanism slices; no complete learner-bound D1-D5 cards, unknown-task explanation, or human receipt."
+    },
+    "two_non_isomorphic_sandboxes": {
+      "status": "partial_pass_local_only",
+      "reason": "Normal/denial and changed-key/source/text holdouts exist locally; no learner-submitted dual sandboxes or migration explanation."
+    },
+    "failure_regression_holdout_migration": {
+      "status": "partial_pass_local_only",
+      "reason": "D0-03 denial, D0-04 recovery and D0-05/GATE failure-regression-holdout receipts exist; real runtime, production persistence and unknown migration unverified."
+    },
+    "qa_rev": {
+      "status": "partial_pass",
+      "reason": "Independent QA/content review records exist with explicit scope limits; no human receiver signoff."
+    },
+    "d6_tradeoff": {
+      "status": "partial_fail",
+      "reason": "Source/version/tenant/schema are 1/1 and claim denial is 0/1; insufficient denominator and no real-model control."
+    },
+    "p1_open_items": {
+      "status": "fail",
+      "reason": "Learner binding, full D1-D5, D6 denominator, runtime/migration scope and human receipt remain open."
+    },
+    "human_receipt": {
+      "status": "pending",
+      "reason": "handoff v0.19 human_receipt=pending; no evidenced acceptance or rejection."
+    }
+  },
+  "evidence_boundary": {
+    "local_fixture_mechanism": true,
+    "real_model_quality": false,
+    "provider_api": false,
+    "database_queue_persistence": false,
+    "process_crash_rpo_rto": false,
+    "unknown_task_migration": false,
+    "human_expert_or_receipt": false,
+    "career_or_level_certification": false
+  },
+  "next_gate_requirements": [
+    "learner-owned five-question EvidenceCards bound to same diagnostic",
+    "learner-submitted two non-isomorphic sandboxes with failure/regression/holdout/migration explanation",
+    "expand D6 denominators and preserve no-real-model-control statement",
+    "independent QA/REV then human acceptance or rejection receipt",
+    "rerun P1 and declare verified runtime scope"
+  ],
+  "preserved_boundary": "QA replay and local deterministic fixtures do not grant any level or production permission."
+}

@@ -1,0 +1,44 @@
+{
+  "review_id": "AI-L0-LEARNER-HANDOFF-CONTENT-REVIEW-20261015-V11",
+  "reviewer_role": "内容审校员",
+  "target": "sites/rolecraft/team/ai-generation-l0-learner-handoff-v11",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "version": "v11",
+  "conclusion": "reviewed_with_limitations",
+  "scope_decision": "met_within_scope",
+  "scope": "核对A运行收据真实性边界、D0-04 event/工具/副作用语义、D0-05四状态映射、限制措辞、EvidenceCard绑定和岗位边界；不执行代码、不授等级。",
+  "checks": {
+    "a_run_receipt": "met_with_limitations",
+    "d0_04_event_tool_side_effect": "met_with_limitations",
+    "d0_05_four_state_mapping": "met_with_limitations",
+    "limitations_and_role_boundaries": "met_within_scope"
+  },
+  "findings": [
+    "v11补充了独立A收据、D0-04事件与hash字段、D0-05四状态矩阵，较v07改善。",
+    "A收据hash覆盖字节规范未声明；值对应无换行文本，不能单凭receipt证明命令原始stdout。",
+    "D0-04事件序列和side_effect=null只支持本地夹具语义；tool hashes为占位字符串，缺逐事件输入输出、时间和重放边界。",
+    "D0-05四状态路径和字段布尔断言主题连贯，但assertions为声明性结果，缺字段到执行事件的可复核映射；holdout不等于统计未知样本。",
+    "EvidenceCards仍未逐题绑定新增A收据、event trace和matrix，不能替代学习者答案正文或独立验证。",
+    "pending/not_assessed/not_granted及角色边界措辞保持诚实。"
+  ],
+  "limitations": [
+    "本地固定JSON/命令不证明真实模型/API、供应商来源、真实租户权限、生产恢复、并发一致性或RPO/RTO。",
+    "工具hash不可复算且事件轨迹缺逐事件证据；side_effect=null是夹具声明。",
+    "真人签收、真人专家审核、真实学习效果、职业认证、L1/L2与行业先进性未验证。"
+  ],
+  "required_followup": [
+    "明确A收据hash原始字节规范并保留stdout/环境证据。",
+    "将D0-04工具hash改为可复算值，补逐事件输入输出、时间、重放边界和副作用判定。",
+    "为D0-05补充四状态字段级断言与执行事件映射。",
+    "EvidenceCard逐题绑定A收据、event trace、matrix并补学习者答案正文。",
+    "保持D0/L0 not_assessed、L1/L2 not_granted。"
+  ],
+  "self_signed": false,
+  "external_action": null,
+  "level_decisions": {
+    "d0": "not_assessed",
+    "l0": "not_assessed",
+    "l1": "not_granted",
+    "l2": "not_granted"
+  }
+}

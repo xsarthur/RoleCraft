@@ -1,0 +1,12 @@
+{
+  "qa_id": "ai-generation-l0-learner-handoff-qa-v19",
+  "date": "2026-10-16",
+  "scope": "ai-generation-l0-learner-handoff-v19",
+  "conclusion": "met_with_limitations",
+  "not_a_level_grant": true,
+  "isolated_rerun": {"command": "python3 run_bundle.py", "copy": "/tmp/handoff-v19-qa", "exit_code": 0},
+  "checks": {"evidence_cards_present": true, "evidence_card_paths_exist_nonempty": true, "evidence_card_ids_all_v19": true, "cross_topic_old_references_absent": true, "manifest_artifact_count": 11, "manifest_artifact_bytes_sha_match_after_rerun": true, "manifest_self_reference_null": true, "d0_05_holdout_input_output_distinct": true, "d0_05_holdout_distinct_from_first_failure": true, "d0_05_matrix_paths_closed": true, "execution_log_has_command_time_environment_source_hash": true, "status_ungraded": true, "version_identity_consistent": false},
+  "evidence": {"holdout_input_bytes": 106, "holdout_output_bytes": 175, "first_failure_bytes": 145, "holdout_output_sha256": "a45b0f606fc47c2ce44274eccd01c27cd21c9eb4fcd005db43a90bde13a7e9da", "first_failure_sha256": "f97d5d546055db5b3ec021aeae269e029425fea43cd53b48e6d38acc36b38341", "manifest_bytes": null, "manifest_sha256": null},
+  "limitations": ["Directory and EvidenceCard IDs identify v19, but manifest, EvidenceCard version fields, and run_bundle.py write v18.", "No real model/API invocation or crash/recovery, permission, concurrency, browser, human receipt, or learning-effect validation.", "execution-log time is local and environment is only python3; full reproducibility is not established.", "qa_status and human_receipt remain pending."],
+  "repair_and_retest": "Unify all version fields to v19, rerun run_bundle.py, recompute manifest/EvidenceCard bindings, and repeat independent QA."
+}

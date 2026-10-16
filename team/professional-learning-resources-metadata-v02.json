@@ -1,0 +1,252 @@
+{
+  "patch_id": "professional-learning-resources-metadata-v02",
+  "patch_type": "candidate_metadata_patch",
+  "base_catalog": "team/professional-learning-resources-v01.json",
+  "generated_at": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "scope": [
+    "PLR-AI-006",
+    "PLR-COMP-004",
+    "PLR-BE-003",
+    "PLR-BE-004"
+  ],
+  "integration_status": "candidate_not_integrated",
+  "formal_training_gate": "pending_independent_qa_and_catalog_integration",
+  "records": [
+    {
+      "resource_id": "PLR-AI-006",
+      "role_id": "AI",
+      "title": "AI Agents in LangGraph",
+      "provider": "DeepLearning.AI; instructors Harrison Chase and Rotem Weiss",
+      "url": "https://www.deeplearning.ai/courses/ai-agents-in-langgraph",
+      "canonical_url": "https://www.deeplearning.ai/courses/ai-agents-in-langgraph",
+      "source_urls": [
+        "https://www.deeplearning.ai/courses/ai-agents-in-langgraph"
+      ],
+      "source_version": "Current DeepLearning.AI course-page snapshot at recheck; page lists Intermediate, 1h32m, 9 video lessons, 6 code examples, and 1 graded assignment marked PRO. No course release/version number is published on the page.",
+      "language": "English page/course content observed; a separate localization list for this course is not published (insufficient_evidence for other languages).",
+      "cost_and_access": "Course page says access is free for a limited time during the DeepLearning.AI platform beta; account enrollment is used. The graded assignment and accomplishment are marked PRO. The page does not state a post-beta price or regional availability (insufficient_evidence).",
+      "prerequisites": "Intermediate Python knowledge is stated under 'Who should join?'. No additional formal prerequisite is listed; model/API credentials needed to execute code examples are not specified on the page (insufficient_evidence).",
+      "license_or_usage": "No course-content, video, or code-example reuse licence is stated on the course page. Treat the course material as provider-controlled and link to it; do not redistribute lessons or copy code into the curriculum without a separate permission check (insufficient_evidence for a specific licence). LangGraph framework licensing is a separate matter and is not inferred from this course page.",
+      "maintenance_or_publication_date": "The course page exposes no publication or last-updated date. The page describes LangGraph as a recently introduced extension and the framework/API is fast-moving; recheck before each training cohort.",
+      "recheck_at": "2026-10-15",
+      "reviewer": "资源研究员（联网复核）；内容审校员（来源边界复核）；测试工程师待独立复验",
+      "status": "verified_current_with_fetch_limitations",
+      "known_limits": "The course teaches one provider's framework and examples; it is a learning input, not evidence of general Agent architecture competence or production readiness. Beta access, PRO gating, language, and licence details may change. Direct page fetch returned HTTP 403 during the recheck; indexed page evidence was retained and no publication date was asserted.",
+      "estimated_effort": "1h32m video/course duration shown by the page; practice and setup time are not stated (insufficient_evidence).",
+      "authority_reason": "First-party DeepLearning.AI course page with named instructors and a concrete outline; framework-specific claims remain vendor/context bound.",
+      "theory_check": "pending",
+      "required_artifact": "隔离的 LangGraph 小任务、状态/失败矩阵、来源关联和评估记录；需另行核实课程代码与当前 API 的兼容性。",
+      "transfer_case": "把课程中的显式状态、持久化、流式和 human-in-the-loop 模式迁移到一个不含真实用户数据的本地夹具，并记录何时不应使用该框架。",
+      "source_evidence": [
+        {
+          "url": "https://www.deeplearning.ai/courses/ai-agents-in-langgraph",
+          "observed": "Course page lists 1h32m, 9 video lessons, 6 code examples, 1 graded assignment PRO, limited-time beta access, and intermediate Python knowledge.",
+          "observed_at": "2026-10-15"
+        }
+      ],
+      "legacy_urls": [
+        "https://www.deeplearning.ai/alpha/short-courses/ai-agents-in-langgraph",
+        "https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/"
+      ],
+      "old_link_handling": "Mark old alpha/short-courses paths legacy_superseded; use /courses/ path as canonical and retain old paths only for migration checks."
+    },
+    {
+      "resource_id": "PLR-COMP-004",
+      "role_id": "COMP",
+      "title": "Commission Notice on the definition of the relevant market for the purposes of Union competition law (C/2024/1645)",
+      "provider": "European Commission, Directorate-General for Competition",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024XC01645",
+      "canonical_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024XC01645",
+      "source_urls": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024XC01645",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:C_202401645",
+        "https://eur-lex.europa.eu/content/legal-notice/legal-notice.html?locale=en"
+      ],
+      "source_version": "Commission Notice C/2024/1645, CELEX:52024XC01645, Official Journal C 1645, published 2024-02-22. This is the 2024 Notice used for Union competition-law market definition; the 2020 consultation page is historical evaluation context, not the current Notice. Paragraph 116 states that the 2024 Notice supersedes the 1997 Notice 97/C 372/03.",
+      "language": "EUR-Lex lists official-language versions: BG, ES, CS, DA, DE, ET, EL, EN, FR, GA, HR, IT, LV, LT, HU, MT, NL, PT, RO, SK, SL, FI, SV. The training record uses English; learner-language support beyond these source versions is not evidenced.",
+      "cost_and_access": "EUR-Lex provides open web access and a downloadable document; no reading or download fee is indicated at recheck. Account or regional access requirements were not observed (not independently tested).",
+      "prerequisites": "The Notice lists no formal learner prerequisites. Basic EU competition-law and market-definition vocabulary is a recommended training preparation, not a source-stated requirement.",
+      "license_or_usage": "EUR-Lex legal notice states that legal documents may generally be reused for commercial or non-commercial purposes unless a document-specific exception applies; attribution and indication of changes are required under the Commission reuse policy. CC BY 4.0 explicitly covers EU-owned editorial content, summaries, and consolidated texts; third-party works, logos, and document-specific exceptions remain excluded and must be checked.",
+      "maintenance_or_publication_date": "Published 2024-02-22. The Notice says the Commission will continue developing its interpretation through case practice, market developments, best practices, and Union-court case law; monitor later Notices and case materials.",
+      "recheck_at": "2026-10-15",
+      "reviewer": "资源研究员（联网复核）；内容审校员（竞争法语境复核）；测试工程师待独立复验",
+      "status": "verified_current",
+      "known_limits": "This is guidance for Union competition-law enforcement, not a general product-strategy or universal market-sizing method. It does not by itself establish a market, market power, or a current commercial conclusion for this project. The 2024 Notice supersedes the 1997 Notice for the stated Union competition-law guidance, but it remains case-specific guidance rather than a universal market-sizing method.",
+      "estimated_effort": "Official page exposes the Notice and contents but no learner time estimate (insufficient_evidence).",
+      "authority_reason": "Primary European Commission Notice published in the Official Journal and identified by CELEX; legal interpretation remains case-specific.",
+      "theory_check": "pending",
+      "required_artifact": "注明辖区、版本和证据来源的产品/地域市场定义矩阵，包含替代品与反例，并区分法律指导与项目推断。",
+      "transfer_case": "用同一产品在两个辖区的公开证据做边界比较，记录哪些结论来自 Notice、哪些是项目假设，不能把矩阵当作法律意见。",
+      "source_evidence": [
+        {
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024XC01645",
+          "observed": "Document title, CELEX 52024XC01645, C/2024/1645, OJ C 1645, 22.2.2024, official-language list, and the Notice's product/geographic market scope are shown.",
+          "observed_at": "2026-10-15"
+        },
+        {
+          "url": "https://eur-lex.europa.eu/content/legal-notice/legal-notice.html?locale=en",
+          "observed": "EUR-Lex reuse policy, attribution/change conditions, CC BY 4.0 scope, and third-party/logo exclusions are stated.",
+          "observed_at": "2026-10-15"
+        }
+      ],
+      "legacy_urls": [
+        "https://competition-policy.ec.europa.eu/public-consultations/2020-market-definition-notice_en"
+      ],
+      "old_link_handling": "Mark 2020 consultation/evaluation page historical_evaluation_context; use 2024 CELEX Notice as canonical.",
+      "canonical_aliases": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:C_202401645"
+      ],
+      "field_name": "license_or_usage"
+    },
+    {
+      "resource_id": "PLR-BE-003",
+      "role_id": "BE",
+      "title": "Professional Data Engineer Certification Learning Path — Google Cloud",
+      "provider": "Google Cloud / Google Skills",
+      "url": "https://www.skills.google/paths/16",
+      "canonical_url": "https://www.skills.google/paths/16",
+      "related_learning_path_url": "https://www.skills.google/paths/16",
+      "source_urls": [
+        "https://www.skills.google/paths/16",
+        "https://www.cloudskillsboost.google/paths/16",
+        "https://cloud.google.com/learn/certification/data-engineer",
+        "https://www.cloudskillsboost.google/paths/16/course_templates/72?locale=en"
+      ],
+      "source_version": "Google Skills path 16 snapshot at recheck; managed by Google Cloud, 13 activities. The path page displays a relative “Last updated 5 months” label without a fixed publication/update date. The related certification page is kept separately for exam facts.",
+      "language": "The aggregate learning-path language is not exposed. A linked official preparation-course page lists English, Japanese, Spanish (Latin America), and Portuguese (Brazil); exact language coverage per activity is insufficient_evidence. Certification exam language is kept in related_certification.",
+      "cost_and_access": "Path requires sign in or joining Google Skills and includes courses, labs, and skill badges. Official preparation guidance says videos/documents are usually free while labs may require a subscription or credits; no stable total-path price is published (insufficient_evidence). Certification exam fees, exam languages, and validity are kept in related_certification and are not attributes of this path record.",
+      "prerequisites": "The learning path is presented as advanced. The related certification page states no hard prerequisites and recommends 3+ years of industry experience, including 1+ year designing and managing Google Cloud solutions.",
+      "license_or_usage": "Google Skills/Google Cloud terms govern courses, labs, and badges; no public redistribution licence is stated. Link and quote minimally, do not republish lab or exam content, and keep account/lab data out of the repository (specific terms not independently extracted; insufficient_evidence).",
+      "maintenance_or_publication_date": "Learning-path page shows “Last updated 5 months” at recheck (exact date not exposed); certification page has no publication date. Related standard certification validity is 2 years, but that is not a learning-path version.",
+      "recheck_at": "2026-10-15",
+      "reviewer": "资源研究员（联网复核）；内容审校员（认证页/学习路径区分复核）；测试工程师待独立复验",
+      "status": "verified_current_split_required",
+      "known_limits": "The prior catalog title/URL pointed to the certification page, not the learning path. This patch makes the Google Skills path canonical and keeps the certification page as a nested optional related record; formal catalog integration may materialize the nested record as a separate row if the directory schema requires row-level certification tracking. Fee/language/validity fields must not be copied into the learning-path row. Cloud training does not prove production cloud competence in the project’s SQLite/Node environment.",
+      "estimated_effort": "Learning path page lists 13 activities but no total duration; exam page lists a 2-hour standard exam. Study and lab effort is not stated (insufficient_evidence).",
+      "authority_reason": "First-party Google Skills learning path and first-party Google Cloud certification page; path content, labs, prices, and access conditions are provider-controlled and time-sensitive.",
+      "theory_check": "pending",
+      "required_artifact": "云数据处理系统设计、摄取/存储/恢复取舍、版本化任务和可重建验证记录；不得把证书登记当作品证据。",
+      "transfer_case": "将云平台的数据处理/治理原则映射到隔离的本地 SQLite/Node 任务，明确哪些云服务行为仍需真实云环境验证。",
+      "source_evidence": [
+        {
+          "url": "https://www.skills.google/paths/16",
+          "observed": "Path title, Google Cloud management, 13 activities, sign-in/join requirement, and relative “Last updated 5 months” label.",
+          "observed_at": "2026-10-15"
+        },
+        {
+          "url": "https://cloud.google.com/learn/certification/data-engineer",
+          "observed": "Related certification page lists standard/renewal fees, exam languages, no hard prerequisites, recommended experience, validity, and link to the learning path.",
+          "observed_at": "2026-10-15"
+        },
+        {
+          "url": "https://www.cloudskillsboost.google/paths/16/course_templates/72?locale=en",
+          "observed": "Linked preparation-course page is the evidence for the distinction between usually-free videos/documents and labs that may require subscription or credits; exact path-wide cost remains unpublished.",
+          "observed_at": "2026-10-15"
+        }
+      ],
+      "related_certification_url": "https://cloud.google.com/learn/certification/data-engineer",
+      "legacy_urls": [
+        "https://cloud.google.com/learn/certification/data-engineer"
+      ],
+      "old_link_handling": "Existing cloud.google.com URL is a valid certification page but not the learning path; keep it as related_certification_url and split formal records.",
+      "related_certification": {
+        "resource_id": "PLR-BE-003-CERT",
+        "title": "Professional Data Engineer Certification — Google Cloud",
+        "url": "https://cloud.google.com/learn/certification/data-engineer",
+        "source_version": "Certification page snapshot at recheck; standard exam 2 hours, 40–50 questions; renewal exam 1 hour, 20 questions.",
+        "language": "English, Japanese (exam page).",
+        "cost_and_access": "Standard exam USD 200 plus tax where applicable; renewal exam USD 100 plus tax where applicable; online or onsite proctoring.",
+        "prerequisites": "No hard prerequisites; recommended 3+ years industry experience including 1+ year designing and managing Google Cloud solutions.",
+        "validity": "Standard and renewal certification validity 2 years; renewal via Google Skills has separate eligibility conditions.",
+        "license_or_usage": "Certification exams, content and marks are provider-controlled; no open redistribution licence stated (insufficient_evidence for detailed reuse terms).",
+        "maintenance_or_publication_date": "Certification page has no publication date; recheck before each cohort.",
+        "recheck_at": "2026-10-15",
+        "status": "verified_current_with_limitations",
+        "relation_type": "optional_related_certification",
+        "source_evidence": [
+          "https://cloud.google.com/learn/certification/data-engineer"
+        ]
+      }
+    },
+    {
+      "resource_id": "PLR-BE-004",
+      "role_id": "BE",
+      "title": "Designing Data-Intensive Applications, 2nd Edition",
+      "provider": "O'Reilly Media; authors Martin Kleppmann and Chris Riccomini",
+      "url": "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/",
+      "canonical_url": "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/",
+      "source_urls": [
+        "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/",
+        "https://martin.kleppmann.com/",
+        "https://dataintensive.net/?lang=en",
+        "https://www.oreilly.com/rights/"
+      ],
+      "source_version": "Second edition, ISBN 9781098119058, February 2026, 672 pages, authors Martin Kleppmann and Chris Riccomini. The O'Reilly page lists 14 chapters and the second-edition contents; the older dataintensive.net page is retained only as first-edition author context. The author bibliography separately shows an O’Reilly March 2026 entry; the publisher page says February 2026, so the month discrepancy is retained rather than normalized.",
+      "language": "English (explicitly stated on the O'Reilly title page).",
+      "cost_and_access": "O'Reilly page offers 'Read now' with membership and 'Buy online'; full access is paid or institutionally licensed. The page does not expose a stable public price/currency at recheck; exact regional and institutional pricing is insufficient_evidence.",
+      "prerequisites": "Publisher classifies the book as intermediate to advanced. No formal prerequisite list is published on the title page; database, distributed-systems, and systems-design foundations are recommended preparation for this role mapping, not a publisher requirement.",
+      "license_or_usage": "Copyrighted O'Reilly title; no open-content licence is stated. O'Reilly's rights page directs reuse licensing through the Copyright Clearance Center. Link to the title or assign lawful access; do not copy chapters, figures, or substantial excerpts into the curriculum without permission. Code/example reuse requires checking the book's own notices and applicable law (specific code licence not verified). The author website may carry a CC BY 3.0 notice for its own materials, but that does not cover the O’Reilly book text.",
+      "maintenance_or_publication_date": "Second edition published February 2026. O'Reilly page is the edition-specific source; first-edition examples, chapter numbering, and commands must not be mixed with this edition without an explicit mapping.",
+      "recheck_at": "2026-10-15",
+      "reviewer": "资源研究员（联网复核）；内容审校员（版本/作者/许可边界复核）；测试工程师待独立复验",
+      "status": "verified_current_with_edition_note",
+      "known_limits": "The book is a theory and design reference, not evidence that this project's database, recovery, or distributed behavior has been tested. O'Reilly access, price, and rights conditions can vary by region and institution. The author bibliography and publisher page show a February/March 2026 month discrepancy; both observations are retained and the edition is identified by ISBN rather than an invented single month.",
+      "estimated_effort": "O'Reilly page displays 21h56m for the title; practice, labs, and transfer work are additional and not stated.",
+      "authority_reason": "Edition-specific publisher page with ISBN, authors, publication month, contents, and reading level; it is a reference book, not a certification standard.",
+      "theory_check": "pending",
+      "required_artifact": "数据模型、迁移/恢复方案、任务版本和可重建验证记录，并标出书中原则与当前实现证据的边界。",
+      "transfer_case": "选择一个本地持久任务，比较单节点、复制、分区或流处理取舍，先写可验证假设，再以隔离实验记录实际结果，不以读书替代运行证据。",
+      "source_evidence": [
+        {
+          "url": "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/",
+          "observed": "O’Reilly page confirms title, authors, February 2026, ISBN 9781098119058, English, intermediate-to-advanced level, 672 pages, 21h56m, and access options.",
+          "observed_at": "2026-10-15"
+        },
+        {
+          "url": "https://martin.kleppmann.com/",
+          "observed": "Author bibliography records an O’Reilly March 2026 entry; month discrepancy retained.",
+          "observed_at": "2026-10-15"
+        },
+        {
+          "url": "https://www.oreilly.com/rights/",
+          "observed": "O’Reilly states that content reuse is licensed through the Copyright Clearance Center.",
+          "observed_at": "2026-10-15"
+        }
+      ],
+      "legacy_urls": [
+        "https://dataintensive.net/?lang=en"
+      ],
+      "old_link_handling": "Keep dataintensive.net as first-edition historical overview; use O'Reilly second-edition page as canonical and do not mix edition claims."
+    }
+  ],
+  "integration_notes": [
+    "This is a candidate patch only; the v01 catalog remains unchanged until curriculum owner review and independent QA.",
+    "The four statuses indicate source recheck with limitations, not learner completion, role competence, certification, or formal-training readiness.",
+    "Fields explicitly marked insufficient_evidence require a separate access, licence, regional-pricing, or account check before being represented as exact facts in a mandatory training plan.",
+    "Before merge, map legacy license_or_use to formal license_or_usage and use CELEX as the sole EU canonical; keep OJ query as source_urls alias. Keep Google path and optional certification metadata in separate namespaces/rows."
+  ],
+  "normalization_version": "v02-normalized-for-integration",
+  "field_mapping": {
+    "license_or_use": "license_or_usage",
+    "version_or_publication": "source_version",
+    "provider_or_author": "provider",
+    "accessed_at": "recheck_at",
+    "old_urls": "legacy_urls",
+    "related_certification_url": "related_certification.url"
+  },
+  "canonical_normalization": {
+    "PLR-COMP-004": {
+      "canonical_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024XC01645",
+      "equivalent_aliases": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:C_202401645"
+      ],
+      "alias_role": "source_urls_only"
+    },
+    "PLR-BE-003": {
+      "canonical_url": "https://www.skills.google/paths/16",
+      "related_certification_url": "https://cloud.google.com/learn/certification/data-engineer",
+      "split_rule": "learning-path cost/language/access fields remain separate from certification fee/language/validity fields"
+    }
+  }
+}

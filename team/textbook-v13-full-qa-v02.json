@@ -1,0 +1,53 @@
+{
+  "report": "textbook-v13-full-qa-v02",
+  "date": "2026-10-16",
+  "role": "qa-engineer",
+  "version": "v13",
+  "scope_count": 30,
+  "source_report": "textbook-v13-full-qa-v01.md/.json",
+  "conclusion": "met_within_scope",
+  "overall_product_status": "not_met",
+  "checks": {
+    "chapters_exist": {"status": "pass", "count": 30},
+    "v01_broken_reference_groups": {"status": "pass", "groups": 11, "unreachable": []},
+    "v01_long_code_details": {
+      "status": "pass",
+      "blocks": 7,
+      "targets": [
+        {"file": "c01-control-loop.md", "count": 6, "line_counts": [96, 11, 32, 152, 64, 60], "details_depth": 1},
+        {"file": "e03.md", "count": 1, "line_counts": [193], "details_depth": 1}
+      ]
+    },
+    "v01_mermaid_fallback_units": {
+      "status": "pass",
+      "units": 9,
+      "mermaid_fences": 11,
+      "files": ["02-task-acceptance.md", "03-trust-boundary.md", "c01-selection.md", "c01-control-primer.md", "e01.md", "c01-fixed-workflow.md", "c01-control-loop.md", "e03.md", "e04.md"]
+    },
+    "image_assets": {"status": "pass", "image_references": 50, "missing": [], "asset_files_current": 63},
+    "v12_unchanged": {"status": "pass", "snapshot_files": 32, "mismatches": []},
+    "v13_manifest_binding": {
+      "status": "not_met",
+      "chapter_mismatches": 9,
+      "asset_count_manifest": 62,
+      "asset_count_current": 63,
+      "action": "regenerate or explicitly update manifest, preserve diff, then recheck"
+    }
+  },
+  "not_verified": [
+    "browser_rendering",
+    "narrow_screen_layout",
+    "keyboard_accessibility",
+    "screen_reader_behavior",
+    "script_disabled_behavior",
+    "mermaid_runtime_rendering",
+    "code_execution",
+    "external_contracts",
+    "model_calls",
+    "real_reader_understanding",
+    "expert_review",
+    "learning_transfer",
+    "industry_advantage"
+  ],
+  "evidence_boundary": "Static source and filesystem checks only; no claim of v13 application integration, deployment, content correctness, or professional competence."
+}

@@ -1,0 +1,9 @@
+{
+  "fixture_id": "T1-tool-failure-v1",
+  "task": "echo a bounded synthetic task with deterministic tool failure",
+  "tool": "echo_stub",
+  "tool_input": {"message": "bounded-failure"},
+  "tool_error": {"code": "deterministic_tool_error", "message": "synthetic stub failure"},
+  "retry_limit": 1,
+  "expected": {"final_status": "failed", "stop_reason": "tool_error_after_one_retry", "max_tool_attempts": 2}
+}

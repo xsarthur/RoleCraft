@@ -1,0 +1,76 @@
+{
+  "report_id": "backend-v1.0-provider-diagnosis-20261016",
+  "role": "backend_data_engineer",
+  "status": "reachable_auth_gated_contract_unverified",
+  "target": {
+    "host": "www.9898.ai",
+    "base_path": "/v1",
+    "configured_model": "gpt-5.5"
+  },
+  "secret_values_emitted": false,
+  "deployed_code": {
+    "generation_adapter_sha256": "9797e8053769a8bfa1f4ba6203933106fa28be649e44fedee323948f4a95477d",
+    "server_sha256": "23fe1071d490e8042cd408ad1b3b7bd445529ac432ab5b6327f5d8047de4a6a7",
+    "pm2_online": true,
+    "listener": "127.0.0.1:4318",
+    "health_configured": true,
+    "health_missing": [],
+    "pm2_error_log_bytes": 0,
+    "pm2_out_log_contains_provider_response": false
+  },
+  "unauthenticated_probes": [
+    {
+      "method": "GET",
+      "path": "/v1/models",
+      "status": 401,
+      "result": "authentication_gate_reached"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/responses",
+      "body": "{}",
+      "status": 401,
+      "result": "authentication_gate_reached"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/",
+      "status": 301,
+      "result": "base_route_reachable"
+    },
+    {
+      "method": "OPTIONS",
+      "path": "/v1/responses",
+      "status": 404,
+      "result": "not_sufficient_to_assess_post_route"
+    }
+  ],
+  "authenticated_diagnostic": {
+    "attempted": true,
+    "allowed": false,
+    "reason": "auto_review_rejected_sensitive_credential_to_third_party_read_only_probe",
+    "bypassed": false,
+    "provider_request_sent": false
+  },
+  "prior_real_call": {
+    "simulation": false,
+    "provider_called": true,
+    "http_status": 503,
+    "error_code": "provider_unavailable",
+    "provider_outcome_unknown": true,
+    "retry_issued": false,
+    "usage_present": false,
+    "request_id_present": false,
+    "response_id_present": false,
+    "successful_draft_saved": false
+  },
+  "contract_assessment": {
+    "dns_tls_http_reachable": "pass",
+    "responses_auth_layer_reachable": "pass_with_limitations",
+    "model_id_available": "unverified",
+    "responses_strict_schema": "unverified",
+    "usage_output_shape": "unverified",
+    "503_root_cause": "unknown"
+  },
+  "next_gate": "Obtain explicit provider/account confirmation, then QA performs one minimum-cost authenticated structured-output probe; no full-generation retry before it passes."
+}

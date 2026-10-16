@@ -1,0 +1,42 @@
+{
+  "baseline": {
+    "artifact": "d0-04/checkpoint-before.json",
+    "schema_version": "v1",
+    "source_refs": [
+      "doc-A-refund-v1"
+    ],
+    "tenant": "A",
+    "source_version": "v1",
+    "status": "tool_returned"
+  },
+  "first_failure": {
+    "artifact": "d0-04/failure-event.json",
+    "schema_version": "v1",
+    "source_refs": [
+      "doc-A-refund-v1"
+    ],
+    "tenant": "A",
+    "source_version": "v1",
+    "status": "recovery_required"
+  },
+  "regression": {
+    "artifact": "d0-04/checkpoint-after.json",
+    "schema_version": "v1",
+    "source_refs": [
+      "doc-A-refund-v1"
+    ],
+    "tenant": "A",
+    "source_version": "v1",
+    "status": "draft_ready"
+  },
+  "holdout": {
+    "artifact": "d0-04/recovery-event.json",
+    "schema_version": "v1",
+    "source_refs": [
+      "doc-A-refund-v1"
+    ],
+    "tenant": "A",
+    "source_version": "v1",
+    "status": "draft_ready"
+  }
+}

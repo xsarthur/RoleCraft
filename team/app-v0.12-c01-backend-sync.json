@@ -1,0 +1,85 @@
+{
+  "version": "app-v0.12-c01-backend-sync",
+  "generatedAt": "2026-10-15T15:29:21.679Z",
+  "role": "后端数据工程师",
+  "scope": "同步内置 Agent 职业快照与 canonical textbook-v12 corpus 身份",
+  "historicalCorpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b284e0",
+  "canonicalCorpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+  "canonical": {
+    "corpusVersion": "textbook-v12",
+    "units": 30,
+    "indexVersion": "content-retrieval-0.12-v12",
+    "bookSha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c280e1",
+    "c01SourceSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982"
+  },
+  "files": {
+    "server/index.mjs": "53d0eabed6dc490f772ba94df3d6a6cba8056eaa55388bb79463feb3ca4a7c3e",
+    "server/retrieval/index.mjs": "c87dfde6c1ae60ee7594bf5f033ab4fc2a90554a55deabe8520f1045bfc43530",
+    "server/retrieval/content-v12-index.json": "c005e8fd4071d14a8acc657a762e53359ea79cd785879bdbaceb52c4768b8142",
+    "textbooks/v12/c01-selection.md": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982"
+  },
+  "runtime": {
+    "node": "v24.16.0",
+    "providerCalled": false,
+    "syntax": {
+      "server/index.mjs": "pass",
+      "server/retrieval/index.mjs": "pass",
+      "server/retrieval/build-content-v12-c01-repair.mjs": "pass"
+    }
+  },
+  "checks": [
+    {
+      "id": "catalog-corpus-binding",
+      "status": "pass",
+      "evidence": {
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+        "units": 30
+      }
+    },
+    {
+      "id": "career-recommend-snapshot",
+      "status": "pass",
+      "evidence": {
+        "status": 200,
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+        "contentVersion": "textbook-v12",
+        "indexVersion": "content-retrieval-0.12-v12",
+        "textbookVersionId": "agent-engineering-v12"
+      }
+    },
+    {
+      "id": "career-confirm-current-version",
+      "status": "pass",
+      "evidence": {
+        "status": 200,
+        "statusValue": "confirmed",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+      }
+    },
+    {
+      "id": "career-confirm-stale-version-rejected",
+      "status": "pass",
+      "evidence": {
+        "status": 409,
+        "errorCode": "career_version_mismatch"
+      }
+    },
+    {
+      "id": "learning-snapshot-binding",
+      "status": "pass",
+      "evidence": {
+        "status": 200,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+        "resultCount": 1
+      }
+    }
+  ],
+  "overall": "pass",
+  "limitations": [
+    "仅临时 SQLite 与进程内 HTTP handler；未验证真实 TCP、浏览器交互、跨重启幂等。",
+    "职业卡/学习卡字段视觉展示由客户端岗位实现和测试岗位独立复验。",
+    "c01 正文与索引的重建由内容检索岗位负责；本报告保留当前只读 source SHA，不修改正文或索引。"
+  ]
+}

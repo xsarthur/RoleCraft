@@ -1,0 +1,939 @@
+{
+  "schemaVersion": 1,
+  "version": "agent-interview-answer-revision-content-b-retest-q99-1",
+  "date": "2026-10-14 Asia/Shanghai",
+  "reviewer": "原独立内容审校员B，未参与作者返修",
+  "scope": "RCB-Q99-07 / REV-QA-Q99-01来源缺口的原例和受影响全文静态复验；合并其余61题不变绑定",
+  "status": "met_within_reviewed_scope",
+  "id": "Q99",
+  "question": "请介绍一次实际 Agent 故障或失败案例：原因是什么，如何修复，怎样证明修复有效？",
+  "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q99.md",
+  "answerVersion": "interview-answers-v1.0.1",
+  "answerSha256": "5b98c7767017e76814c043904227829698d411af87070fce6123da8da8aed5a0",
+  "prior": {
+    "answerVersion": "interview-answers-v1.0.0",
+    "answerSha256": "e9e2dc8287531302300c8da1abaa9d3a3fadc88e7e7bf018920fc0fc123111ad",
+    "status": "not_met",
+    "report": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+    "reportSha256": "34cc6530fed6361f2654b27304a05ef9e801ce238d4b68e8e76e5956f750a4fb",
+    "defectId": "RCB-Q99-07",
+    "historyPreserved": true
+  },
+  "defectRetest": {
+    "id": "RCB-Q99-07",
+    "relatedQaId": "REV-QA-Q99-01",
+    "originalFinding": "核心恢复机制仅引用作品/评测/观测/问题发现，缺直接机制来源。",
+    "authorChange": "第9行补故障窗口引用，第11行补稳定身份、提交点、查询、lease及下游去重直接引用；原八项来源保留并新增六项sourceBindings。",
+    "independentResult": "closed_in_content_review_scope",
+    "why": "六项实际来源均直接说明当前相应机制，读者可从邻近引用追溯；旧事实/虚构边界及实际运行限制不变。",
+    "behaviorClaim": "未因此断言任何真实下游或代码已执行；本轮是文稿来源复验。"
+  },
+  "criteria": [
+    {
+      "id": "AQS-01",
+      "applicable": true,
+      "status": "pass",
+      "reason": "必须真实经历，没事故可诚实演练",
+      "evidenceLocation": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q99.md",
+      "evidenceLineRange": [
+        5,
+        5
+      ],
+      "method": "逐题全文人工静态审读；理由指向具体对象/时序/公式/反例。代码与数字仅静态推演，未执行。"
+    },
+    {
+      "id": "AQS-02",
+      "applicable": true,
+      "status": "pass",
+      "reason": "新键重发导致重复而非笼统幻觉",
+      "evidenceLocation": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q99.md",
+      "evidenceLineRange": [
+        9,
+        11
+      ],
+      "method": "逐题全文人工静态审读；理由指向具体对象/时序/公式/反例。代码与数字仅静态推演，未执行。"
+    },
+    {
+      "id": "AQS-03",
+      "applicable": true,
+      "status": "pass",
+      "reason": "原始证据串影响/根因/本人修复/复验",
+      "evidenceLocation": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q99.md",
+      "evidenceLineRange": [
+        7,
+        13
+      ],
+      "method": "逐题全文人工静态审读；理由指向具体对象/时序/公式/反例。代码与数字仅静态推演，未执行。"
+    },
+    {
+      "id": "AQS-04",
+      "applicable": true,
+      "status": "pass",
+      "reason": "明确虚构两工单时间线、排除假设与修法",
+      "evidenceLocation": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q99.md",
+      "evidenceLineRange": [
+        9,
+        13
+      ],
+      "method": "逐题全文人工静态审读；理由指向具体对象/时序/公式/反例。代码与数字仅静态推演，未执行。"
+    },
+    {
+      "id": "AQS-05",
+      "applicable": true,
+      "status": "pass",
+      "reason": "只有替身不声称生产exactly-once",
+      "evidenceLocation": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q99.md",
+      "evidenceLineRange": [
+        5,
+        15
+      ],
+      "method": "逐题全文人工静态审读；理由指向具体对象/时序/公式/反例。代码与数字仅静态推演，未执行。"
+    },
+    {
+      "id": "AQS-06",
+      "applicable": true,
+      "status": "pass",
+      "reason": "旧窗口对新版、相邻正常、双worker与查询延迟",
+      "evidenceLocation": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q99.md",
+      "evidenceLineRange": [
+        7,
+        13
+      ],
+      "method": "逐题全文人工静态审读；理由指向具体对象/时序/公式/反例。代码与数字仅静态推演，未执行。"
+    },
+    {
+      "id": "AQS-07",
+      "applicable": true,
+      "status": "pass",
+      "reason": "新增六项直接机制来源与正文第9/11行紧邻引用逐条匹配；原八项来源保留，来源哈希/行范围和作者manifest一致。未把教材自引扩张成真实下游合同已验。",
+      "evidenceLocation": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q99.md",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n10-evaluation-projects.md",
+          "version": "v12",
+          "sha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+          "section": "从实验走向一个独立作品",
+          "startLine": 52,
+          "endLine": 59,
+          "supports": "本答案对“从实验走向一个独立作品”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "v12",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "从失败分类到一次能够关闭的回归",
+          "startLine": 241,
+          "endLine": 248,
+          "supports": "本答案对“从失败分类到一次能够关闭的回归”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "v12",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "先冻结比较 再运行所有被分配的任务",
+          "startLine": 73,
+          "endLine": 92,
+          "supports": "本答案对“先冻结比较 再运行所有被分配的任务”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e04.md",
+          "version": "v12",
+          "sha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8",
+          "section": "观测记录应回答哪一阶段首次偏离",
+          "startLine": 162,
+          "endLine": 178,
+          "supports": "本答案对“观测记录应回答哪一阶段首次偏离”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/p02.md",
+          "version": "v12",
+          "sha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8",
+          "section": "独立评阅按一条实际任务走完全程",
+          "startLine": 119,
+          "endLine": 128,
+          "supports": "本答案对“独立评阅按一条实际任务走完全程”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/p01-discovery.md",
+          "version": "v12",
+          "sha256": "2d0340f4e6e05129f423977a272b515c56bd37295a6b00f392f1d56fca25392e",
+          "section": "问题证据与方案意图分成两条链",
+          "startLine": 7,
+          "endLine": 24,
+          "supports": "本答案对“问题证据与方案意图分成两条链”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/p01-mvp.md",
+          "version": "v12",
+          "sha256": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9",
+          "section": "预定义公平实验 而不是挑一次演示",
+          "startLine": 7,
+          "endLine": 16,
+          "supports": "本答案对“预定义公平实验 而不是挑一次演示”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/p01-mvp.md",
+          "version": "v12",
+          "sha256": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9",
+          "section": "真实反馈改变假设 不能只变宣传",
+          "startLine": 67,
+          "endLine": 73,
+          "supports": "本答案对“真实反馈改变假设 不能只变宣传”涉及机制、状态/条件和边界的教学重组；来源仅支持文稿论证，不充作本稿代码执行或独立通过证据。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c03.md",
+          "version": "v12",
+          "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+          "section": "一个意图 多个协议调用与发送尝试",
+          "startLine": 16,
+          "endLine": 80,
+          "supports": "正文第11行：区分tool_call_id/action_id/attempt_id，稳定逻辑意图、参数指纹和唯一槽位；不是以正文相同自动判定同一用户意图。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e01.md",
+          "version": "v12",
+          "sha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+          "section": "三个提交点定义可恢复事实",
+          "startLine": 8,
+          "endLine": 17,
+          "supports": "正文第11行：发送前持久保存意图与尝试，外部成功本地未提交时核对原操作；本地事务不包含网络发送。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "version": "v12",
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "section": "6 先核对未决动作 再让模型继续",
+          "startLine": 241,
+          "endLine": 261,
+          "supports": "正文第11行：原操作查询、成功且指纹匹配时采纳、查询暂空仍未知，以及安全同键重试所依赖的合同。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "version": "v12",
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "section": "9 并发要分开处理工具依赖与运行推进权",
+          "startLine": 690,
+          "endLine": 707,
+          "supports": "正文第11行：租约epoch/CAS约束本地推进、旧worker观察的采纳，以及本地围栏不能自动阻止远端旧请求。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c03.md",
+          "version": "v12",
+          "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+          "section": "本地事务和下游接口各承担哪一半（结果归约与下游合同）",
+          "startLine": 172,
+          "endLine": 176,
+          "supports": "正文第11、13行：去重记录和业务效果原子关联、同键同参数/异参、并发与保留期等下游合同；本地机制不等于生产exactly-once。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "version": "v12",
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "section": "10.3 最关键的崩溃窗口 工单创建成功 结果尚未提交",
+          "startLine": 747,
+          "endLine": 767,
+          "supports": "正文第9、13行：新键重发产生重复工单的故障轨迹，原key核对的修复路径，以及本地结果事件去重与远端效果去重的区别。"
+        }
+      ],
+      "evidenceLineRange": [
+        9,
+        38
+      ]
+    },
+    {
+      "id": "AQS-08",
+      "applicable": true,
+      "status": "pass",
+      "reason": "保留完整题面、真实经历/教学虚构边界、时间线、修复与验证顺序；新增引用服务于邻近论证，未遮盖原例或删掉限制。",
+      "evidenceLocation": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q99.md",
+      "evidenceLineRange": [
+        1,
+        38
+      ]
+    }
+  ],
+  "sourceChecks": [
+    {
+      "path": "sites/rolecraft/textbooks/v12/c03.md",
+      "version": "v12",
+      "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+      "section": "一个意图 多个协议调用与发送尝试",
+      "startLine": 16,
+      "endLine": 80,
+      "supports": "正文第11行：区分tool_call_id/action_id/attempt_id，稳定逻辑意图、参数指纹和唯一槽位；不是以正文相同自动判定同一用户意图。",
+      "actualSha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+      "status": "supports_current_claim",
+      "reviewReason": "c03第18/24/77/79行直接支持逻辑意图、物理尝试与模型调用关联分离、唯一槽位、稳定参数指纹和并发唯一约束。",
+      "method": "实际完整读取给定行范围，静态判断其是否支持当前第9/11/13行主张"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/e01.md",
+      "version": "v12",
+      "sha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+      "section": "三个提交点定义可恢复事实",
+      "startLine": 8,
+      "endLine": 17,
+      "supports": "正文第11行：发送前持久保存意图与尝试，外部成功本地未提交时核对原操作；本地事务不包含网络发送。",
+      "actualSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+      "status": "supports_current_claim",
+      "reviewReason": "e01第10–14行分别定义意图、发送前尝试和结果提交；第16行明确本地事务不包含网络发送。",
+      "method": "实际完整读取给定行范围，静态判断其是否支持当前第9/11/13行主张"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+      "version": "v12",
+      "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+      "section": "6 先核对未决动作 再让模型继续",
+      "startLine": 241,
+      "endLine": 261,
+      "supports": "正文第11行：原操作查询、成功且指纹匹配时采纳、查询暂空仍未知，以及安全同键重试所依赖的合同。",
+      "actualSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+      "status": "supports_current_claim",
+      "reviewReason": "控制循环第247–254行支持成功且指纹一致才采纳、处理中等待、暂空/超时仍未知与无效果证明要求。",
+      "method": "实际完整读取给定行范围，静态判断其是否支持当前第9/11/13行主张"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+      "version": "v12",
+      "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+      "section": "9 并发要分开处理工具依赖与运行推进权",
+      "startLine": 690,
+      "endLine": 707,
+      "supports": "正文第11行：租约epoch/CAS约束本地推进、旧worker观察的采纳，以及本地围栏不能自动阻止远端旧请求。",
+      "actualSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+      "status": "supports_current_claim",
+      "reviewReason": "控制循环第700–706行支持lease_epoch限制本地提交、旧回执由当前者核对、远端旧请求须另受下游合同约束。",
+      "method": "实际完整读取给定行范围，静态判断其是否支持当前第9/11/13行主张"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c03.md",
+      "version": "v12",
+      "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+      "section": "本地事务和下游接口各承担哪一半（结果归约与下游合同）",
+      "startLine": 172,
+      "endLine": 176,
+      "supports": "正文第11、13行：去重记录和业务效果原子关联、同键同参数/异参、并发与保留期等下游合同；本地机制不等于生产exactly-once。",
+      "actualSha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+      "status": "supports_current_claim",
+      "reviewReason": "c03第172–176行支持结果归约、同键同参/异参、下游去重与实际效果原子关联，以及保留期和错误语义限制。",
+      "method": "实际完整读取给定行范围，静态判断其是否支持当前第9/11/13行主张"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+      "version": "v12",
+      "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+      "section": "10.3 最关键的崩溃窗口 工单创建成功 结果尚未提交",
+      "startLine": 747,
+      "endLine": 767,
+      "supports": "正文第9、13行：新键重发产生重复工单的故障轨迹，原key核对的修复路径，以及本地结果事件去重与远端效果去重的区别。",
+      "actualSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+      "status": "supports_current_claim",
+      "reviewReason": "控制循环第753–766行展开外部已成功本地未存、新键重放风险、原键核对及本地事件去重和外部效果去重的区别。",
+      "method": "实际完整读取给定行范围，静态判断其是否支持当前第9/11/13行主张"
+    }
+  ],
+  "integrity": {
+    "currentAuthorManifestPath": "sites/rolecraft/textbooks/interview-answers-v1/author-c.json",
+    "currentAuthorManifestSha256": "14a7556573c2cb82836decf619af11bf07365a926dbb380108885c5629b45f2b",
+    "answerAndManifestHashMatch": true,
+    "originalEightSourceBindingsPreserved": true,
+    "other61AnswersUnchanged": true,
+    "other61ChangedIds": [],
+    "initialReportUnchanged": true
+  },
+  "finalScope": {
+    "total": 62,
+    "counts": {
+      "metWithinReviewedScope": 62,
+      "notMet": 0,
+      "insufficient": 0
+    },
+    "collections": {
+      "fixed100": {
+        "total": 38,
+        "metWithinReviewedScope": 38
+      },
+      "market14": {
+        "total": 14,
+        "metWithinReviewedScope": 14
+      },
+      "prototype10": {
+        "total": 10,
+        "metWithinReviewedScope": 10
+      }
+    },
+    "basis": "61题采用已独立审读且字节/版本不变的原结论，Q99采用本次新版本全文及来源复验；不继承历史教材或旧19题状态。",
+    "bindings": [
+      {
+        "id": "Q63",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q63.md",
+        "answerVersion": "1.0.0",
+        "answerSha256": "8b1437b6ca1cc2f501a09eaf8141c4614ac231afef87e3c900c9d5ae2d5dcf63",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q64",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q64.md",
+        "answerVersion": "1.0.0",
+        "answerSha256": "d8f92b95b4c1969845e72e99bd8ba19f655e3ea11b8a82528553e5a4689fbed8",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q65",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q65.md",
+        "answerVersion": "1.0.0",
+        "answerSha256": "fdc68f3e6a5d2e53c4caa8e8b0cebe9e0b30568ce2eb7cf483377632f4ad06d1",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q66",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q66.md",
+        "answerVersion": "1.0.0",
+        "answerSha256": "a14914aaa62f588d91fa978ad78af9ca5f0aa79abf6800a3e4dd251e21d47d5d",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q67",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q67.md",
+        "answerVersion": "1.0.0",
+        "answerSha256": "3f785ef208f087d6c37f28bb521de8fefb751804c9275e391aa866f936260413",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q68",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q68.md",
+        "answerVersion": "1.0.0",
+        "answerSha256": "92e03cf84bdf9a1b41b61303c0308f5931a721ad89eac17953bbbff89bcf46ab",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q69",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q69.md",
+        "answerVersion": "1.0.0",
+        "answerSha256": "fc5fbfe8d1e2a1c4cb0af4a584410573df0fcb3a4146691ac6272c543817bbf7",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q70",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q70.md",
+        "answerVersion": "1.0.0",
+        "answerSha256": "6096aee43e2e85b0a66b20af952851025d0971c8c79249b30e6253d865eda0d3",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q71",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q71.md",
+        "answerVersion": "1.0.0",
+        "answerSha256": "d2846b251b26ca3b88ead1be6cc75a4581e980e77b73f657adb5fe5e7969adc5",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q72",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q72.md",
+        "answerVersion": "1.0.0",
+        "answerSha256": "a18e8e5b8d78451fd0baab30875214bfa979889132935856710c6b7c03176e72",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q73",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q73.md",
+        "answerVersion": "1.0.0",
+        "answerSha256": "e335e98b4e24851a5c2c3d6ff66daf0020364edc7fb9f61223a2fd5f2cc7bca1",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q74",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q74.md",
+        "answerVersion": "1.0.0",
+        "answerSha256": "5a0b9a07b10cd97ba26a3e3aabaa92e531be8ade14f9461fa7e1ddce7530036e",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q75",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q75.md",
+        "answerVersion": "1.0.0",
+        "answerSha256": "25e0f5a246fe1d7f11bd7005e74029db8edd5406a4e767ae0328e85988470071",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q76",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q76.md",
+        "answerVersion": "1.0.0",
+        "answerSha256": "1ccd4aef31bba5499f5dfc811c524101eacd271578dacc4dbe3ae05a43f3e670",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q77",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q77.md",
+        "answerVersion": "1.0.0",
+        "answerSha256": "1042757570d216fd0f2e7374a568560c7231b87ad77b6e9416666bd43b113a13",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q78",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q78.md",
+        "answerVersion": "1.0.0",
+        "answerSha256": "cdd2561cad3d88cbb9e80cdba3ba17caefb79b272bb0ca9c30022b2a0bfe6698",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q79",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q79.md",
+        "answerVersion": "1.0.0",
+        "answerSha256": "a64c524f68a3d60ede2613a8ab8d097adc6a9c37aa60f8c64c4e40f8172c3513",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q80",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q80.md",
+        "answerVersion": "1.0.0",
+        "answerSha256": "10ef503d27f7e13aaa4a4ed0dfe4554f035046eec31f6e58310899d34a723802",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q81",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q81.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "356a317c53e9c5a1fec7c91fb1139276c766aa1c72e178d32059f1328effd2da",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q82",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q82.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "d13786973bd72a5c6d68ef080f8fd095c8aa435c35d35aa3557b2aaf48b56908",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q83",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q83.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "5cda558f1009a174e0e5cc07e2ff329a2ae7f9ebcfb72bee4bf022fa560af686",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q84",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q84.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "d6ec26aff83f2fac6e869d288006da2c13d9f1289afcc28aac99ac980d1b0f67",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q85",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q85.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "c3fc0b7faee77b2d3f7d0c5d2f7fd1045dd2e5649a184cb1d94754131837a595",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q86",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q86.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "75d67aac7167f4503a67f4749d75d0bc1c8760fbba2a432ea9a0dba5a20a824d",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q87",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q87.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "b571713bbb2e05727024de1f8a8feca227609072e0943dd72bb42dfae6df00de",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q88",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q88.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "704cff2a7b095d154e95e55cd5c8552acd161645db692df640a824c7337239af",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q89",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q89.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "6d919c760fb990c50497fc7ce8b21cae8915f0449b5ef75d475c3830533dd8e5",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q90",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q90.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "a28178dedd1a0fe26cf2b2da6f4c5502be3546c0a7dbe1d77282d857549192f4",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q91",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q91.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "b87c1cc9b303d50373d4eaf0fb19bf672864b8e52bcb0adb09fd13c7e1a02b3b",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q92",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q92.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "1d7425fb3ce1fda5a6cade522ab54a26e7212fd44854ff7f57d94dd9975de7c8",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q93",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q93.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "dfedc6abc7b32f296d2705aa00891c92c82169600434e2f708d2364ce17930be",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q94",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q94.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "44d47d37727cc03b8b70ec52cc8cc1de5f3987b9840c58264f465c451e1e3df8",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q95",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q95.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "4761daa83485b7387c8aee5dec64a043f8c94e8daa1e6bd841d51daae71563e8",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q96",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q96.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "501d24bbb660e4c54fd6b9e57630cb6c543c4f70280842d566ba465e11522976",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q97",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q97.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "165661dc0bd9d7d35c8b517fe855c09114b01b3533479f7dde652624f60afba9",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q98",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q98.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "a22a3af6da2ec2e6d8594f4a48b406f307997fb54ba9019f9569f40b152ca859",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "Q99",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q99.md",
+        "answerVersion": "interview-answers-v1.0.1",
+        "answerSha256": "5b98c7767017e76814c043904227829698d411af87070fce6123da8da8aed5a0",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b/retest-q99.json"
+      },
+      {
+        "id": "Q100",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q100.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "fcb86c428f6bd70e87b518433d9d95dd7c25def5d1e028cd59a64dd90b04e7d7",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "M101",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M101.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "71a1ecc92e7f9b4036cadc46b8e875f99589c90c6c1c8a76d1dcf3c705ee3602",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "M102",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M102.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "dcff1ccb33eb8578ae76d2a5a5ca49af69dafc8b2f611dbd1847e566285f9316",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "M103",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M103.md",
+        "answerVersion": "interview-answers-v1.0.1",
+        "answerSha256": "5110663ccc654402711e5620dfe408cb5ddd934a31e667941da57898a776b660",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "M104",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M104.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "5178befc742f8234e0f68f681bea54f87e0c4c27e1ed7e4795651b61b34df72e",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "M105",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M105.md",
+        "answerVersion": "interview-answers-v1.0.1",
+        "answerSha256": "0e0b67a89c2e0466e0c1c972e4b0feab72474eaf83d7980321463b4e83889ac9",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "M106",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M106.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "ec576e8221326da2fb435bdcff158fcdb1daf330f99dbb2a41d12f82de4d1c11",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "M107",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M107.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "f1a00557a7868a6a907254a6716ba0eec9aa2c3c58e7c6de4d1e754a6dd68aaf",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "M108",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M108.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "7a05671bf3e3e85fce4e3e55c572224878b0f9e2cbc723a3299667cfedd5dc6b",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "M109",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M109.md",
+        "answerVersion": "interview-answers-v1.0.1",
+        "answerSha256": "2ed6be76b386a26882734ffbb4de8d1ea5c10f523ac046484095891da517fa21",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "M110",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M110.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "f34b76e2cb15c4888484cf85bf0cd0de753f702cd416b525344f8ce06c8df325",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "M111",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M111.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "7e13e253721f66848137e902cda70920bddad15712eabb697b7efcc8a1b35062",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "M112",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M112.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "ad8ae2e53b88f21c0e79424e215f0487687bc1a9d6e6460a87676f69bea88a42",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "M113",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M113.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "446f20c9ac6b3c5920d7e74f17cb24cc03b709d74c634654183143758a4fc01b",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "M114",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M114.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "117e425f7a6e6972ae6a34d4dd4620be4c0c16450c71b3552ca3b24a852522e4",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "P01",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/P01.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "4742093cd97288600daf5ddd1a9920e316e0160e7ba47122d4764e171f537456",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "P02",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/P02.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "3c4ab3ef0bf1c0339bedfc4bd0afd04a00fc0c7feda9906a20d40e7dd34de1ad",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "P03",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/P03.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "0d288beb2cce8a16e7b153b8a29a43fd0fa1a80c0d966d0ea2b47da4e554d331",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "P04",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/P04.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "eddc49f1b5716d952175b9c350c5d9264a0c206f1f79ac6aa6304f52949c342e",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "P05",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/P05.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "20c1d59d5f672953831ee8b6abd791e6210fb3fcccc2945845c133a3977cf105",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "P06",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/P06.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "f12d34e11658c7058f171f686efd8cc3e4e1b6ee93c41c085e689dc2cc666549",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "P07",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/P07.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "718bd9ed98f20510dc9f07a42c7f056188f8c5377a542f89c551fc3a05f34c02",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "P08",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/P08.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "4294ed50435c17d357bc9b4a1b72abe6a0064c55e468eac61a2c4db0e40beef9",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "P09",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/P09.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "f8d8397f54305061cdda6b2b579f2a8f253cb96b31824619e5c6052d9d5108d0",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      },
+      {
+        "id": "P10",
+        "answerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/P10.md",
+        "answerVersion": "interview-answers-v1.0.0",
+        "answerSha256": "0a09acf54fdc68fcef2dbb9be7b28f4d386a501e0c450c1e550739888eb17348",
+        "status": "met_within_reviewed_scope",
+        "reviewReference": "sites/rolecraft/team/agent-interview-answer-revision-content-b.json",
+        "bindingRechecked": "unchanged_since_independent_first_review"
+      }
+    ]
+  },
+  "execution": {
+    "applicationRuns": 0,
+    "textbookExampleRuns": 0,
+    "codeRuns": 0,
+    "modelCalls": 0,
+    "externalBusinessCalls": 0
+  },
+  "limits": [
+    "仅本岗当前静态内容审查范围；独立QA、代码有限执行、界面完整呈现须由测试岗位判断。",
+    "Q99为真实经历答题框架及明确虚构示例，真实个人经历由学习者提供。",
+    "真人专家、真实学习/用户效果、职业胜任、行业先进与生产证据未由本报告获得，完整产品仍not_met。"
+  ],
+  "writes": "仅本岗原前缀下复验报告和当前收到稿快照；初审与旧received不改。"
+}

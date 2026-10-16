@@ -1,0 +1,64 @@
+<section class="ia-answer" data-answer-id="M101" data-answer-version="interview-answers-v1.0.0" data-answer-sha256="71a1ecc92e7f9b4036cadc46b8e875f99589c90c6c1c8a76d1dcf3c705ee3602" data-content-status="met_within_reviewed_scope"><div class="ia-answer-meta"><span>M101 · interview-answers-v1.0.0</span><strong>内容与测试已限定范围复核</strong></div><article class="ia-prose" aria-label="M101 完整参考解析"><h3>M101｜调用多个模型或工具API时，如何用Python asyncio组织并发？阻塞调用、无界任务创建和取消清理分别会导致什么问题，怎样用最小例定位？</h3><p>答案版本：interview-answers-v1.0.0。完整参考解析；示例及测试计划未由本稿执行。</p><p><code>asyncio</code>适合让多个I/O等待重叠：协程在可挂起的await让出事件循环。它不会把阻塞代码自动变成并行，也不会自动控制排队内存。工程上同时限制输入积压、在途调用和每项截止时间，并规定异常传播与取消清理。<a href="https://docs.python.org/3.14/library/asyncio-task.html" target="_blank" rel="noopener noreferrer">Python 3.14 asyncio文档</a>支持这些调度/取消语义；核查于2026-10-14。</p><p>下面是完整安全本地示例，目标Python 3.14，只有有限sleep，不调用网络。<strong>本稿未执行</strong>；读者可保存为脚本运行。它用固定worker和有界队列，不先创建与输入量相同的Task；结果按输入编号保存。每项超时是已知业务结果，意外错误交TaskGroup取消其他任务并向上报告。</p><div class="ia-code"><span>python · 仅供阅读</span><pre tabindex="0"><code>import asyncio
+
+async def bounded_map(items, call, workers=2, timeout_s=0.1):
+    if type(workers) is not int or workers &lt; 1:
+        raise ValueError(&quot;workers must be positive int&quot;)
+    queue = asyncio.Queue(maxsize=workers)
+    results = {}
+    sentinel = object()
+
+    async def produce():
+        for i, item in enumerate(items):
+            await queue.put((i, item))
+        for _ in range(workers):
+            await queue.put(sentinel)
+
+    async def consume():
+        while True:
+            entry = await queue.get()
+            try:
+                if entry is sentinel:
+                    return
+                i, item = entry
+                try:
+                    async with asyncio.timeout(timeout_s):
+                        results[i] = (&quot;ok&quot;, await call(item))
+                except TimeoutError:
+                    results[i] = (&quot;timeout&quot;, None)
+            finally:
+                queue.task_done()
+
+    async with asyncio.TaskGroup() as group:
+        group.create_task(produce())
+        for _ in range(workers):
+            group.create_task(consume())
+    return [results[i] for i in range(len(results))]
+
+active = 0
+peak = 0
+async def fake_call(delay):
+    global active, peak
+    active += 1
+    peak = max(peak, active)
+    try:
+        await asyncio.sleep(delay)
+        return delay
+    finally:
+        active -= 1
+
+async def main():
+    result = await bounded_map([0.01, 0.02, 0.3], fake_call)
+    assert [x[0] for x in result] == [&quot;ok&quot;, &quot;ok&quot;, &quot;timeout&quot;]
+    assert active == 0 and peak &lt;= 2
+    task = asyncio.create_task(fake_call(1))
+    await asyncio.sleep(0)  # 让替身进入try
+    task.cancel()
+    try:
+        await task
+    except asyncio.CancelledError:
+        pass
+    assert active == 0
+    print(result, &quot;peak&quot;, peak, &quot;active&quot;, active)
+
+if __name__ == &quot;__main__&quot;:
+    asyncio.run(main())</code></pre></div><p>这里的0.1秒是教学限时，不是生产推荐值，极忙机器可能让短项也超时。生产采用任务绝对deadline并在调用时扣除排队耗时，SDK还需连接/读超时。results仍随总结果量增长，真实大流需写有界结果通道或持久化，不能因为Task有界就声称总内存有界。</p><p>阻塞定位可以加一个每20ms记录时间的有限心跳，同时将替身的异步sleep临时改为同步<code>time.sleep(0.1)</code>；若心跳出现同量级空洞，说明事件循环被阻塞。同步I/O可评估<code>to_thread</code>，CPU重计算考虑进程池/独立服务；取消等待线程不保证线程内动作停止。</p><p>无界任务定位则记录Task数量、queue.qsize、活动数及内存，比较“为全部输入create_task再等信号量”和上面固定worker方案。取消清理检查finally执行、连接/流关闭及无残留Task；别吞掉CancelledError。TaskGroup会在普通子异常后取消同组并等待清理，gather默认首异常传播却不自动取消其他子任务，两者不可混用。对远端写入，本地timeout/cancel仅表示不再等待，效果仍需独立核对。</p><h4>参考出处</h4><ul><li><a href="#learn/agent/n01-python-model-foundations/s-f0f01fbbe638">2 固定工作者解决的是在途工作上限</a>，v12，原文件第48–55行：对应本题原理、案例与边界。</li><li><a href="#learn/agent/n01-python-model-foundations/s-580f3506ef08">6 可运行入口与迁移练习</a>，v12，原文件第134–144行：对应本题原理、案例与边界。</li><li><a href="#learn/agent/n09-runtime-delivery/s-f6ec8a4a378d">并发、超时和熔断限制不同的东西</a>，v12，原文件第32–43行：对应本题原理、案例与边界。</li></ul></article><details class="ia-binding"><summary>答案版本与审核范围</summary><p>全文按当前答案版本展示。文稿与有限测试不等于真人专家认可、个人经历证据或职业能力认证。</p><p>SHA256：<code>71a1ecc92e7f9b4036cadc46b8e875f99589c90c6c1c8a76d1dcf3c705ee3602</code></p></details></section>

@@ -1,0 +1,18 @@
+node:fs:1350
+  const result = binding.mkdir(
+                         ^
+
+Error: EPERM: operation not permitted, mkdir '/Users/shengxiong/Desktop/One%20People%20Company/sites/rolecraft/team/employee-growth-mvp/agent-developer/run-20261015/logs'
+    at Object.mkdirSync (node:fs:1350:26)
+    at main (file:///Users/shengxiong/Desktop/One%20People%20Company/sites/rolecraft/team/employee-growth-mvp/agent-developer/run-20261015/scripts/runner.mjs:169:6)
+    at file:///Users/shengxiong/Desktop/One%20People%20Company/sites/rolecraft/team/employee-growth-mvp/agent-developer/run-20261015/scripts/runner.mjs:181:7
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:633:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  errno: -1,
+  code: 'EPERM',
+  syscall: 'mkdir',
+  path: '/Users/shengxiong/Desktop/One%20People%20Company/sites/rolecraft/team/employee-growth-mvp/agent-developer/run-20261015/logs'
+}
+
+Node.js v24.16.0

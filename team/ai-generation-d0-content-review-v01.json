@@ -1,0 +1,92 @@
+{
+  "schema": "rolecraft.ai-generation.d0-content-review",
+  "schema_version": "0.1",
+  "review_id": "AI-D0-CONTENT-REVIEW-20261015-01",
+  "role_id": "AI",
+  "role_name": "AI生成工程师",
+  "reviewer_role": "content-reviewer",
+  "reviewed_at": "2026-10-15T00:00:00+08:00",
+  "overall_result": "not_assessed",
+  "source_status": {
+    "expected": [
+      "sites/rolecraft/team/ai-generation-d0-v01.md",
+      "sites/rolecraft/team/ai-generation-d0-v01.json"
+    ],
+    "found": false,
+    "reason": "No AI-role-specific learner D0 source or equivalent training artifact was present at review time."
+  },
+  "role_identity_check": {
+    "target_role_id": "AI",
+    "available_d0_files": [
+      "sites/rolecraft/team/employee-growth-mvp/agent-developer/D0-learner-responses.md",
+      "sites/rolecraft/team/employee-growth-mvp/agent-developer/D0-learner-responses.json",
+      "sites/rolecraft/team/employee-growth-mvp/agent-developer/D0-evaluation.md",
+      "sites/rolecraft/team/employee-growth-mvp/agent-developer/D0-evaluation.json"
+    ],
+    "available_role_id": "AGDEV",
+    "identity_match": false,
+    "inheritance_allowed": false,
+    "note": "AGDEV evidence is not AI evidence and is not re-evaluated here."
+  },
+  "ai_resource_input": {
+    "resource_ids_seen": [
+      "PLR-AI-001",
+      "PLR-AI-002",
+      "PLR-AI-003",
+      "PLR-AI-004",
+      "PLR-AI-005",
+      "PLR-AI-006",
+      "PLR-AI-007",
+      "PLR-AI-008"
+    ],
+    "is_learning_input_only": true,
+    "does_not_prove_learner_competence": true
+  },
+  "checks": {
+    "mechanism_explanation": {"status": "not_assessed", "reason": "No AI learner answer."},
+    "source_and_version_binding": {"status": "not_assessed", "reason": "No AI D0 claims bound to sources."},
+    "state_tool_permission_boundaries": {"status": "not_assessed", "reason": "No AI-specific run or fixture."},
+    "failure_recovery": {"status": "not_assessed", "reason": "No AI-specific original failure or replay."},
+    "learning_vs_pass_claim": {"status": "not_assessed", "reason": "No AI D0; course/catalog evidence cannot establish a pass."}
+  },
+  "blocking_issues": [
+    {
+      "id": "AI-D0-BR-01",
+      "severity": "P1",
+      "issue": "AI-specific D0 source is missing.",
+      "owner": "AI-generation-engineer learner",
+      "next_action": "Produce and freeze role_id=AI learner D0 source, retaining first failures and unknowns."
+    },
+    {
+      "id": "AI-D0-BR-02",
+      "severity": "P1",
+      "issue": "Available D0 files belong to AGDEV and cannot be inherited.",
+      "owner": "project-manager",
+      "next_action": "Keep role binding explicit and route the AI D0 source to content review and QA separately."
+    },
+    {
+      "id": "AI-D0-BR-03",
+      "severity": "P1",
+      "issue": "No evidence for model/provider status, source binding, failure recovery, cost or actual calls.",
+      "owner": "AI-generation-engineer learner",
+      "next_action": "Record isolated fixture or real-call status honestly; do not represent simulated output as provider execution."
+    }
+  ],
+  "non_claims": [
+    "Does not assess AI learner mechanism knowledge.",
+    "Does not grant a training level or D0 pass.",
+    "Does not treat course completion, resource metadata, AGDEV answers, or historical product gates as AI learner evidence.",
+    "Does not claim real model calls, production reliability, user value, expert approval, or industry readiness."
+  ],
+  "next_review": {
+    "required_inputs": [
+      "AI-role learner D0 markdown and JSON",
+      "source/version and resource bindings",
+      "original failures and unknowns",
+      "isolated execution artifacts if any",
+      "QA independent replay status"
+    ],
+    "preserve_this_review": true,
+    "status": "blocked_on_ai_d0_source"
+  }
+}

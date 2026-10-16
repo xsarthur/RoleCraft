@@ -1,0 +1,46 @@
+{
+  "qa_id":"AI-L0-LEARNER-HANDOFF-QA-20261015-V07",
+  "date":"2026-10-15",
+  "reviewer_role":"测试工程师",
+  "diagnostic_id":"D0-AI-20261015-001",
+  "conclusion":"met_with_limitations",
+  "scope_decision":"met_within_scope",
+  "level_decision":"not_assessed",
+  "l1_decision":"not_granted",
+  "l2_decision":"not_granted",
+  "checks":{
+    "d0_01_to_05_evidence_ids_unique":true,
+    "d0_answer_hashes_distinct":true,
+    "manifest_declared_bytes_sha_match":true,
+    "card_declared_bytes_sha_match":true,
+    "input_output_source_stop_fields_present":true,
+    "regression_holdout_each_distinct":false,
+    "b_denial_replayable_output":false,
+    "d6_positive_threshold":true,
+    "d6_negative_denial_threshold":false,
+    "u_first_failure_regression_holdout_present":true,
+    "status_boundary_consistent":true,
+    "gate_qa_alignment":true
+  },
+  "findings":[
+    "D0-01..03 holdout_artifact=null; D0-04 uses regression.json for both regression and holdout; only D0-05 has distinct regression/holdout.",
+    "B-denial learner output_sha256 is unavailable-local-receipt and remains unverified.",
+    "D6 negative_claim is 0/1; real_model_control=false.",
+    "fixture_hash does not equal learner_raw file SHA; this is a preserved binding limitation.",
+    "All status fields conservatively remain pending/not_assessed/not_granted and external_action=null."
+  ],
+  "required_followup":[
+    "Add independently recomputable per-question answer/input/output bindings and distinct regression/holdout artifacts for D0-01..05.",
+    "Provide replayable B-denial learner output receipt with bytes/SHA.",
+    "Expand D1-D5, D6 denominators/negative samples, dual non-isomorphic learner sandboxes, migration/runtime evidence and human receipt before any level decision."
+  ],
+  "evidence_boundary":{
+    "local_deterministic_fixture":true,
+    "real_model_or_provider_api":false,
+    "production_rpo_rto":false,
+    "human_receipt":false,
+    "career_or_level_certification":false
+  },
+  "self_signed":false,
+  "external_action":null
+}

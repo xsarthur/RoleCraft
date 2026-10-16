@@ -1,0 +1,50 @@
+<section class="ia-answer" data-answer-id="M102" data-answer-version="interview-answers-v1.0.0" data-answer-sha256="dcff1ccb33eb8578ae76d2a5a5ca49af69dafc8b2f611dbd1847e566285f9316" data-content-status="met_within_reviewed_scope"><div class="ia-answer-meta"><span>M102 · interview-answers-v1.0.0</span><strong>内容与测试已限定范围复核</strong></div><article class="ia-prose" aria-label="M102 完整参考解析"><h3>M102｜把请求状态放进Python列表或字典时，别名与浅拷贝会怎样污染另一个任务？请说明不可变容器的边界，并解释如何用装饰器封装工具日志而保持函数行为。</h3><p>答案版本：interview-answers-v1.0.0。完整参考解析；示例及测试计划未由本稿执行。</p><p>Python赋值共享对象，浅拷贝只复制外层容器。若两个请求共享内层messages，某请求追加结果会污染另一个请求；这与是否多线程无关。不可变外层也不递归冻结成员，因此“tuple里放list”仍可变。</p><p>下面是未执行的完整小例，可在Python 3.14离线运行：</p><div class="ia-code"><span>python · 仅供阅读</span><pre tabindex="0"><code>from copy import deepcopy
+
+a = {&quot;messages&quot;: [{&quot;tags&quot;: []}]}
+b = a.copy()
+assert a is not b
+assert a[&quot;messages&quot;] is b[&quot;messages&quot;]
+b[&quot;messages&quot;][0][&quot;tags&quot;].append(&quot;B&quot;)
+assert a[&quot;messages&quot;][0][&quot;tags&quot;] == [&quot;B&quot;]
+c = deepcopy(a)
+c[&quot;messages&quot;][0][&quot;tags&quot;].append(&quot;C&quot;)
+assert a[&quot;messages&quot;][0][&quot;tags&quot;] == [&quot;B&quot;]
+t = ([],)
+t[0].append(&quot;still mutable&quot;)
+assert t[0] == [&quot;still mutable&quot;]</code></pre></div><p>设计上每任务创建独立可变状态，共享不可变资料快照；不要使用可变默认参数如<code>messages=[]</code>。deepcopy适合明确的纯数据树，不适合复制连接、锁或身份上下文；持久化的并发覆盖还需revision/事务，深拷贝不能解决。上述对象边界与<a href="https://docs.python.org/3.14/library/copy.html" target="_blank" rel="noopener noreferrer">Python copy文档</a>一致，核查于2026-10-14。</p><p>日志装饰器应观察调用，不改变参数、返回值和异常，也不暗中重试。同步函数包装真正调用，异步函数包装真正await；否则记录到的只是coroutine对象创建。下面是未执行的同步/异步实现，日志只写函数名和状态，不写敏感参数，普通日志故障采用尽力忽略策略（生产应有独立丢日志计数）。</p><div class="ia-code"><span>python · 仅供阅读</span><pre tabindex="0"><code>import asyncio
+import inspect
+from functools import wraps
+
+def logged(emit):
+    def safe_emit(event):
+        try:
+            emit(event)
+        except Exception:
+            pass  # 教学策略：日志错误不覆盖业务返回或异常
+
+    def decorate(fn):
+        if inspect.iscoroutinefunction(fn):
+            @wraps(fn)
+            async def async_wrapper(*args, **kwargs):
+                status = &quot;raised&quot;
+                try:
+                    value = await fn(*args, **kwargs)
+                    status = &quot;returned&quot;
+                    return value
+                except asyncio.CancelledError:
+                    status = &quot;cancelled&quot;
+                    raise
+                finally:
+                    safe_emit((fn.__name__, status))
+            return async_wrapper
+        @wraps(fn)
+        def sync_wrapper(*args, **kwargs):
+            status = &quot;raised&quot;
+            try:
+                value = fn(*args, **kwargs)
+                status = &quot;returned&quot;
+                return value
+            finally:
+                safe_emit((fn.__name__, status))
+        return sync_wrapper
+    return decorate</code></pre></div><p><code>wraps</code>保留常用元数据与<code>__wrapped__</code>，不自动保证业务语义；本装饰器不处理异步生成器、生成器或同步函数返回awaitable的特殊接口，应另定义合同。<a href="https://docs.python.org/3.14/library/functools.html#functools.wraps" target="_blank" rel="noopener noreferrer">functools.wraps</a>，核查于2026-10-14。</p><p>验证时给原函数一个唯一返回对象，要求包装后仍是同一对象；让它抛预先创建的异常，要求异常对象不被换成None；取消异步任务后核finally事件和CancelledError继续传播；检查名称/文档和默认参数调用不变。再让emit抛普通异常，业务结果仍保留。别名测试必须真正修改最深层成员并核另一任务不变，只比较初始值相等发现不了共享。代码和这些验证步骤尚未在本稿实际执行。</p><h4>参考出处</h4><ul><li><a href="#learn/agent/n01-python-model-foundations/s-962e8b2a495c">1 对象共享必须是设计选择</a>，v12，原文件第7–47行：对应本题原理、案例与边界。</li></ul></article><details class="ia-binding"><summary>答案版本与审核范围</summary><p>全文按当前答案版本展示。文稿与有限测试不等于真人专家认可、个人经历证据或职业能力认证。</p><p>SHA256：<code>dcff1ccb33eb8578ae76d2a5a5ca49af69dafc8b2f611dbd1847e566285f9316</code></p></details></section>

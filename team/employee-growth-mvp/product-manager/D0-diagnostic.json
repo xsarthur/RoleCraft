@@ -1,0 +1,477 @@
+{
+  "diagnostic_id": "PROD-D0-001",
+  "diagnostic_version": "product-manager-d0-v01",
+  "role_id": "product-manager",
+  "owner": "learner",
+  "learner_id": "required_anonymous_pending",
+  "mode": "sandbox_scaffold",
+  "status": "not_assessed",
+  "assessment_status": "not_assessed",
+  "fixture": {
+    "fixture_id": "fixtures.product-recommendation-v01",
+    "fixture_version": "v0.1",
+    "path": "fixtures/fixtures.product-recommendation-v01.json",
+    "sha256": "pending_freeze",
+    "data_classification": "synthetic_only"
+  },
+  "proxy_answering_allowed": false,
+  "external_actions_allowed": false,
+  "scope": {
+    "responsibility": [
+      "user_scenario_and_problem",
+      "value_hypothesis",
+      "scope_priority_and_version",
+      "observable_acceptance_and_failure_states",
+      "cross_role_handoff"
+    ],
+    "out_of_scope": [
+      "interface_or_visual_implementation",
+      "textbook_or_lesson_authoring",
+      "model_service_or_prompt_implementation",
+      "database_or_account_implementation",
+      "retrieval_implementation",
+      "independent_qa_execution"
+    ],
+    "learner_required_decisions": [
+      "own_judgment",
+      "non_owned_implementation_or_acceptance",
+      "receiving_role",
+      "stop_or_escalate_on_missing_evidence"
+    ]
+  },
+  "diagnostics": [
+    {
+      "exercise_id": "D0-01",
+      "exercise_version": "product-manager-d0-v01",
+      "type": "boundary_restatement",
+      "prompt": "为自然语言教材小节推荐功能提交一页产品岗位合同，包含目标用户、问题、产品经理范围、非目标、设计/检索/工程/QA交接、未验证假设、越权拒绝和升级条件。",
+      "required_artifact": "learner_raw_role_contract",
+      "expected_observations": [
+        "scope_vs_implementation",
+        "product_acceptance_vs_independent_test",
+        "prototype_vs_real_user_evidence",
+        "stop_or_escalate_when_authorization_or_user_value_is_missing",
+        "no_engineering_or_qa_substitution"
+      ],
+      "status": "not_assessed"
+    },
+    {
+      "exercise_id": "D0-02",
+      "exercise_version": "product-manager-d0-v01",
+      "type": "mechanism_and_professional_judgment",
+      "prompt": "解释价值假设、指标/护栏、实验和结论的因果链；给出正常、失败和未知结果，区分用户原话、观察事实、作者假设和推断。",
+      "required_artifact": "learner_raw_mechanism_explanation",
+      "source_bindings_required": [
+        "PRODUCT-CREATION-CURRICULUM",
+        "PRODUCT-CREATION-STANDARD",
+        "PRODUCT-STANDARD",
+        "ROLE-PM"
+      ],
+      "expected_observations": [
+        "reproducible_reasoning",
+        "applicability_boundary",
+        "evidence_denominator",
+        "unknown_is_explicit",
+        "synthetic_or_marketing_material_is_not_current_product_measurement"
+      ],
+      "status": "not_assessed",
+      "claim_source_requirements": {
+        "required_for_each_main_claim": [
+          "source_id",
+          "source_location",
+          "source_sha256",
+          "document_version",
+          "source_version_status"
+        ],
+        "source_location_format": "document title + stable heading/anchor + snapshot line range",
+        "source_sha256_must_match_bound_source": true
+      },
+      "required_result_classes": [
+        {
+          "result_class": "normal",
+          "expected": "predeclared metric and guardrail satisfy the product hypothesis within the stated scope",
+          "actual": "learner_observed_result_required",
+          "evidence": [
+            "metric_snapshot",
+            "guardrail_snapshot",
+            "experiment_version",
+            "source_location"
+          ],
+          "next_action": "record_conclusion_with_scope_and_retest_condition"
+        },
+        {
+          "result_class": "failure",
+          "expected": "metric misses the predeclared condition or a guardrail is breached",
+          "actual": "learner_observed_result_required",
+          "evidence": [
+            "failure_snapshot",
+            "guardrail_breach",
+            "first_failure_timestamp",
+            "source_location"
+          ],
+          "next_action": "stop_or_rollback_then_preserve_first_failure_and_retest"
+        },
+        {
+          "result_class": "unknown",
+          "expected": "causal conclusion cannot be made because user-value evidence, version, source, or denominator is missing",
+          "actual": "learner_observed_result_required",
+          "evidence": [
+            "missing_evidence_record",
+            "unknown_reason",
+            "source_location_or_missing_source_record"
+          ],
+          "next_action": "mark_unknown_or_insufficient_evidence_and_escalate"
+        }
+      ],
+      "source_version_blockers": [
+        "PRODUCT-CREATION-STANDARD has no declared document_version in the current source; source_version_status must be missing_document_version_blocking until the owner supplies a version.",
+        "A hash-bound snapshot alone cannot close this blocker."
+      ]
+    },
+    {
+      "exercise_id": "D0-03",
+      "exercise_version": "product-manager-d0-v01",
+      "type": "familiar_scaffold_task",
+      "prompt": "在隔离夹具中写 W-PROD-D0-001 版本化产品合同，不写代码或教材正文。",
+      "required_artifact": "W-PROD-D0-001-product-contract",
+      "required_fields": [
+        "user_and_problem",
+        "scenario",
+        "product_goal",
+        "non_goals",
+        "version_scope",
+        "dependencies",
+        "inputs_outputs",
+        "normal_boundary_failure_expected",
+        "acceptance_conditions",
+        "sources_and_versions",
+        "unverified_items",
+        "cross_role_handoff",
+        "rollback_or_stop_line"
+      ],
+      "execution_receipt_fields": [
+        "actual_command_or_steps",
+        "input_snapshot_sha256",
+        "output_path_and_sha256",
+        "environment",
+        "started_at",
+        "ended_at",
+        "stdout",
+        "stderr",
+        "exit_code",
+        "first_failure"
+      ],
+      "expected_observations": [
+        "receiver_can_reconstruct_contract",
+        "version_source_failure_and_stop_are_observable",
+        "product_goal_is_not_implementation_detail"
+      ],
+      "status": "not_assessed",
+      "execution_scope": {
+        "fixture_capability": "product_judgment_only",
+        "recommendation_execution": "not_executed",
+        "source_reconstruction_claim_allowed": false,
+        "required_catalog_reference": "synthetic section catalog in fixture; recommendation output remains not_executed"
+      }
+    },
+    {
+      "exercise_id": "D0-04",
+      "exercise_version": "product-manager-d0-v01",
+      "type": "failure_identification",
+      "prompt": "审阅故意缺陷包，定位预期/实际差异、缺陷等级、受影响门槛、立即停止动作、责任岗位、返修和复验顺序。",
+      "required_artifact": "learner_raw_defect_review",
+      "expected_observations": [
+        "feature_count_or_marketing_is_not_value_evidence",
+        "product_manager_cannot_announce_qa_pass",
+        "missing_version_or_source_is_unknown_or_insufficient_evidence",
+        "first_failure_is_preserved",
+        "owner_and_retest_order_are_explicit"
+      ],
+      "status": "not_assessed",
+      "severity_policy": {
+        "required_output": "severity_unclassified",
+        "alternative": "product_owner_confirmed_severity",
+        "qa_cannot_define_threshold": true,
+        "status": "pending_product_owner_confirmation"
+      },
+      "required_fields": [
+        "expected_actual_difference",
+        "severity_unclassified_or_product_owner_confirmed_severity",
+        "affected_gate",
+        "immediate_stop_action",
+        "responsible_role",
+        "retest_order"
+      ]
+    },
+    {
+      "exercise_id": "D0-05",
+      "exercise_version": "product-manager-d0-v01",
+      "type": "transfer_preview",
+      "prompt": "仅提交计划：目标改为新岗位补学路径，并加入来源版本冲突或预算上限约束；说明确认项、范围冻结、指标/护栏、停止/升级、接收岗位和证据。",
+      "required_artifact": "learner_raw_transfer_plan",
+      "expected_observations": [
+        "changed_user_goal_and_constraint_are_confirmed",
+        "scope_is_frozen_before_execution",
+        "metrics_guardrails_and_evidence_denominator_are_defined",
+        "stop_or_escalate_is_explicit",
+        "cross_role_receivers_and_unknowns_are_explicit",
+        "no_hidden_answer_or_pre_tuning"
+      ],
+      "status": "not_assessed",
+      "holdout_variant_schema": {
+        "variant_id": "required",
+        "version": "required",
+        "frozen_by": "non_author_reviewer_required",
+        "frozen_at": "required",
+        "input_hash": "required",
+        "change_dimension": "required",
+        "independence_proof": "required",
+        "execution_mode": "plan_only",
+        "qa_structure_check_separate_from_execution": true
+      },
+      "execution_boundary": "plan_only; QA may inspect schema separately but may not supply the plan"
+    }
+  ],
+  "raw_submission_fields": [
+    "diagnostic_id",
+    "exercise_id",
+    "exercise_version",
+    "role_id",
+    "learner_id",
+    "raw_answer_or_artifact",
+    "fixture_id",
+    "fixture_version",
+    "fixture_sha256",
+    "input_snapshot_path_and_sha256",
+    "output_path_and_sha256",
+    "environment",
+    "command_or_steps",
+    "started_at",
+    "ended_at",
+    "stdout",
+    "stderr",
+    "exit_code",
+    "facts",
+    "sources",
+    "assumptions",
+    "inferences",
+    "unknowns",
+    "stop_or_escalate_decision",
+    "first_failure",
+    "repair_version",
+    "original_regression",
+    "affected_regression",
+    "holdout_variant",
+    "learner_execution",
+    "learner_declaration",
+    "signature",
+    "timestamp",
+    "derived_by"
+  ],
+  "evidence_card_required_fields": [
+    "diagnostic_id",
+    "exercise_id",
+    "exercise_version",
+    "role_id",
+    "learner_id",
+    "fixture_id",
+    "fixture_version",
+    "fixture_sha256",
+    "learner_execution",
+    "derived_by",
+    "card_id",
+    "claim",
+    "evidence_level",
+    "source_id",
+    "source_version",
+    "source_location",
+    "source_sha256",
+    "document_version",
+    "source_version_status",
+    "artifact_path",
+    "artifact_sha256",
+    "environment",
+    "observed_result",
+    "expected_result",
+    "failure_first_seen",
+    "reviewer",
+    "review_status",
+    "unknowns",
+    "next_action"
+  ],
+  "independent_review_plan": {
+    "qa_engineer": {
+      "checks": [
+        "fixture_and_input_hash",
+        "raw_receipt",
+        "failure_identification",
+        "stop_action",
+        "reproducibility",
+        "non_author_transfer_variant"
+      ],
+      "status": "pending"
+    },
+    "curriculum_architect_or_content_reviewer": {
+      "checks": [
+        "mechanism",
+        "source_version",
+        "fact_assumption_inference_classification"
+      ],
+      "status": "pending"
+    },
+    "product_or_project_reviewer": {
+      "checks": [
+        "scope",
+        "acceptance_fields",
+        "handoff_completeness"
+      ],
+      "status": "pending"
+    }
+  },
+  "handoff_requirements": {
+    "package_fields": [
+      "input_paths",
+      "output_paths",
+      "versions_and_hashes",
+      "acceptance_status",
+      "open_gaps",
+      "owner",
+      "receiver",
+      "stop_line",
+      "retest_order",
+      "acceptance_timestamp",
+      "diagnostic_id",
+      "exercise_id",
+      "exercise_version",
+      "role_id",
+      "learner_id",
+      "fixture_id",
+      "fixture_version",
+      "fixture_sha256",
+      "learner_execution",
+      "derived_by",
+      "receiver_signature",
+      "dependencies",
+      "verified_items",
+      "unverified_items",
+      "risks",
+      "retest_commands"
+    ],
+    "retest_order": [
+      "original_case",
+      "first_failure_or_stop",
+      "repair",
+      "original_regression",
+      "affected_regression",
+      "holdout"
+    ],
+    "receiver_signature": "pending",
+    "status": "pending",
+    "schema_status": "pending_learner_submission_and_receiver_signature"
+  },
+  "stop_conditions": [
+    "missing_user_goal",
+    "missing_learner_provenance",
+    "unknown_fixture_hash",
+    "scope_or_authorization_uncertainty",
+    "missing_source_version",
+    "unknown_permission_or_data_boundary",
+    "real_external_action",
+    "fabricated_user_evidence",
+    "proxy_answer_presented_as_learner_evidence",
+    "first_failure_overwritten",
+    "missing_independent_review_or_receipt"
+  ],
+  "allowed_conclusions": [
+    "not_assessed",
+    "insufficient_evidence",
+    "fail",
+    "limited_observation"
+  ],
+  "source_bindings": [
+    {
+      "source_id": "ROLE-PM",
+      "path": "sites/rolecraft/team/employees/core/product-manager/ROLE.md",
+      "source_version": "hash-bound-2026-10-16",
+      "sha256": "56f932f3621b64469b3136ff3d1cafa3af900608f5c82947e33e0012ffd614c7",
+      "source_sha256": "56f932f3621b64469b3136ff3d1cafa3af900608f5c82947e33e0012ffd614c7",
+      "document_version": "not_declared",
+      "source_version_status": "hash_bound_only"
+    },
+    {
+      "source_id": "GROWTH-CURRICULUM",
+      "path": "sites/rolecraft/team/employee-growth-curriculum.md",
+      "source_version": "hash-bound-2026-10-16",
+      "sha256": "d9d56934223ea7e63be768c9f0eb765761ea7da18d81267c3e74fa7defc1c5aa",
+      "source_sha256": "d9d56934223ea7e63be768c9f0eb765761ea7da18d81267c3e74fa7defc1c5aa",
+      "document_version": "employee-growth-v1.0",
+      "source_version_status": "declared"
+    },
+    {
+      "source_id": "PRODUCT-CREATION-CURRICULUM",
+      "path": "sites/rolecraft/team/product-creation-curriculum.md",
+      "source_version": "hash-bound-2026-10-16",
+      "sha256": "495520a042239de9ed3ec7544c496f42052d9e0eaff53b2f8e9450e09e74b9fd",
+      "source_sha256": "495520a042239de9ed3ec7544c496f42052d9e0eaff53b2f8e9450e09e74b9fd",
+      "document_version": "教学草案 v0.1",
+      "source_version_status": "declared"
+    },
+    {
+      "source_id": "PRODUCT-CREATION-STANDARD",
+      "path": "sites/rolecraft/team/product-creation-standard.md",
+      "source_version": "hash-bound-2026-10-16",
+      "sha256": "b57e4ee78b58773377c73088068e6b036c8c52d53a48382424de5bdbcfd609ff",
+      "source_sha256": "b57e4ee78b58773377c73088068e6b036c8c52d53a48382424de5bdbcfd609ff",
+      "document_version": "not_declared",
+      "source_version_status": "missing_document_version_blocking"
+    },
+    {
+      "source_id": "PRODUCT-STANDARD",
+      "path": "sites/rolecraft/team/product-standard.md",
+      "source_version": "hash-bound-2026-10-16",
+      "sha256": "76d0aac23a5573112967a01061b0ee97db3877ced58ec41f758d96ee439f4eb6",
+      "source_sha256": "76d0aac23a5573112967a01061b0ee97db3877ced58ec41f758d96ee439f4eb6",
+      "document_version": "not_declared",
+      "source_version_status": "hash_bound_only"
+    }
+  ],
+  "contract_id": "PROD-D0-001",
+  "contract_version": "product-manager-d0-v01",
+  "contract_status": "planned",
+  "diagnostic_status": "not_assessed",
+  "environment_constraints": {
+    "network_disabled": true,
+    "real_model": false,
+    "paid_api": false,
+    "real_user_data": false,
+    "external_action": null
+  },
+  "handoff_submission_fields": [
+    "diagnostic_id",
+    "exercise_id",
+    "exercise_version",
+    "role_id",
+    "learner_id",
+    "fixture_id",
+    "fixture_version",
+    "fixture_sha256",
+    "learner_execution",
+    "derived_by",
+    "input_paths",
+    "output_paths",
+    "versions_and_hashes",
+    "acceptance_status",
+    "open_gaps",
+    "owner",
+    "receiver",
+    "stop_line",
+    "retest_order",
+    "acceptance_timestamp",
+    "receiver_signature",
+    "dependencies",
+    "verified_items",
+    "unverified_items",
+    "risks",
+    "retest_commands"
+  ]
+}

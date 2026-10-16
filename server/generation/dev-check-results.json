@@ -2,10 +2,18 @@
   "type": "engineering_self_check",
   "simulation": true,
   "realProviderCalled": false,
-  "checkedAt": "2026-10-10T07:45:16.328Z",
+  "checkedAt": "2026-10-16T00:57:16.172Z",
   "results": [
     {
       "name": "readiness fails closed without key",
+      "status": "passed"
+    },
+    {
+      "name": "custom HTTPS-compatible base URL is accepted",
+      "status": "passed"
+    },
+    {
+      "name": "insecure base URL fails closed",
       "status": "passed"
     },
     {
@@ -18,6 +26,10 @@
     },
     {
       "name": "valid simulated chapter retains all audit separations",
+      "status": "passed"
+    },
+    {
+      "name": "custom endpoint is used only for Responses path",
       "status": "passed"
     },
     {

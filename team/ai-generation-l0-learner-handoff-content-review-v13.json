@@ -1,0 +1,44 @@
+{
+  "review_id": "AI-L0-LEARNER-HANDOFF-CONTENT-REVIEW-20261015-V13",
+  "reviewer_role": "内容审校员",
+  "target": "sites/rolecraft/team/ai-generation-l0-learner-handoff-v13",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "version": "v13",
+  "conclusion": "reviewed_with_limitations",
+  "scope_decision": "met_within_scope",
+  "scope": "静态核对hash scope、D0-04事件/工具/副作用语义、D0-05独立留出、EvidenceCard绑定、限制与等级边界；不执行代码、不授等级。",
+  "checks": {
+    "hash_scope_manifest": "met_within_scope",
+    "d0_04_event_tool_side_effect": "met_with_limitations",
+    "d0_05_independent_holdout": "met_with_limitations",
+    "evidence_card_binding": "met_with_limitations",
+    "limitations_and_level_boundaries": "met_within_scope"
+  },
+  "findings": [
+    "manifest bytes/SHA explicitly null for self-reference; all listed artifact byte counts and SHA-256 values recompute against the v13 directory.",
+    "A-receipt defines raw stdout byte scope and matches A-stdout (16 bytes); A-run-receipt output_hash is a separate field and does not substitute for captured stdout.",
+    "D0-04 carries event sequence, JSON tool input/output hashes, event sequence numbers, deterministic timestamps, checkpoint/idempotency links, and side_effect=null; this remains local fixture evidence without external observation.",
+    "D0-05 separates baseline, first_failure, regression and holdout; holdout changes outage_duration only, but uses the same document/tenant/version and is not an unknown-task generalization sample.",
+    "EvidenceCards cover D0-01 through D0-05 but D0-04 directly lists only regression.json; event/tool/checkpoint/idempotency/holdout artifacts are not individually bound. Evidence IDs retain V10, a traceability limitation.",
+    "State remains pending/not_assessed/not_granted with self_signed=false and external_action=null."
+  ],
+  "limitations": [
+    "No runtime replay, fault injection, real model/API, supplier provenance, tenant authorization, production durability, concurrency/RPO/RTO, unknown-task transfer, human receipt, learner execution or competence evidence was verified.",
+    "side_effect=null and local-deterministic timestamps are fixture declarations, not observations of external systems.",
+    "Holdout is a changed constraint within the same fixture, not statistical evidence of independent generalization."
+  ],
+  "required_followup": [
+    "Preserve raw stdout and environment evidence if runtime equivalence is required.",
+    "Bind D0-04 EvidenceCard to event trace, tool input/output, checkpoint, idempotency and holdout artifacts with recomputable hashes and observed timestamps where available.",
+    "Use a genuinely independent unknown-task holdout for any generalization claim and correct V10 EvidenceCard identifiers.",
+    "Keep D0/L0 not_assessed and L1/L2 not_granted."
+  ],
+  "self_signed": false,
+  "external_action": null,
+  "level_decisions": {
+    "d0": "not_assessed",
+    "l0": "not_assessed",
+    "l1": "not_granted",
+    "l2": "not_granted"
+  }
+}

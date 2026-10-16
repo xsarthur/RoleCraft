@@ -1,0 +1,66 @@
+{
+  "reportVersion": "deployment-v1.0-current",
+  "recordedAt": "2026-10-15T19:10:55Z",
+  "environment": "remote-single-development",
+  "target": {
+    "host": "111.231.8.78",
+    "sshUser": "ubuntu",
+    "projectRoot": "/opt/rolecraft",
+    "proxy": "nginx:80",
+    "backendBind": "127.0.0.1:4318",
+    "node": "v24.20.0",
+    "pm2": "7.0.4"
+  },
+  "status": "deployed_and_smoke_verified",
+  "releaseVersion": "rolecraft-1.0",
+  "compatibilityFields": {
+    "productVersion": "local-mvp-0.4",
+    "workbenchVersion": "local-workbench-0.11",
+    "agentVersion": "agent-system-v0.12"
+  },
+  "backup": {
+    "directory": "/opt/rolecraft/.runtime/backups/20261015T190023Z",
+    "sqlite": {
+      "path": "/opt/rolecraft/.runtime/backups/20261015T190023Z/rolecraft.sqlite",
+      "sha256": "8c594babbf87f3dcf59ded346a32b9f7a4f6ee508c4081dfb18af7df7ad7dd89"
+    },
+    "environmentCopy": "deploy.env",
+    "codeArchive": {
+      "path": "/opt/rolecraft/.runtime/backups/20261015T190023Z/app-before.tar.gz",
+      "sha256": "258b85deee343bf0f110a7f151ffc3e6e500912e6ad51a1e4d8bf22c2a601e94"
+    }
+  },
+  "sync": {
+    "included": ["sites/rolecraft app/client/server", "server/retrieval indexes", "textbooks/v12 current source", "deploy", "scripts/start-local.mjs"],
+    "preserved": [".runtime", "deploy/.env", "retrieval/node_modules", "retrieval/models", "historical team/docs/textbooks"],
+    "secretsOutput": false,
+    "paidProviderCalled": false
+  },
+  "hashes": {
+    "server/index.mjs": "7011f6eb4bae4f9082b7a1c3506a83cb33f410bf88354691052b7c71a2ba4ef0",
+    "server/retrieval/index.mjs": "cda0aae5d8ee6bee8eacba9ae5402392a8fc45e3cff0f36d5551ec2932e976c2",
+    "dist/index.html": "de8647133091a34e767816c02cc47d2d792d88ff41b5e851a1b6002bf2dc817b",
+    "v12/c01-selection.md": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+    "bge/model_int8.onnx": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5"
+  },
+  "checks": [
+    {"name": "localhost_health", "status": "pass", "http": 200, "retrievalAvailable": true, "units": 30, "providerCalled": false},
+    {"name": "public_health", "status": "pass", "http": 200, "retrievalAvailable": true, "providerCalled": false},
+    {"name": "public_catalog", "status": "pass", "http": 200, "bytes": 93470},
+    {"name": "public_recommend", "status": "pass", "http": 200, "result": "recommended", "engineMode": "local_semantic_retrieval"},
+    {"name": "public_learning_query", "status": "pass", "http": 200, "result": "recommended", "sourceBound": true},
+    {"name": "retrieval_self_check_v12", "status": "pass", "cases": 12, "passed": 12}
+  ],
+  "limitations": [
+    "单一远程开发环境，没有 staging/production 隔离",
+    "生成服务缺少供应商配置，未调用付费模型",
+    "本记录不替代测试工程师独立浏览器验收、真实用户或专家证据",
+    "部署期间的模型缺失与 v12 源失配已修复；PM2 当前在线，重启计数为 3"
+  ],
+  "rollback": {
+    "requiresCurrentDatabaseBackup": true,
+    "codeArchive": "/opt/rolecraft/.runtime/backups/20261015T190023Z/app-before.tar.gz",
+    "sqlite": "/opt/rolecraft/.runtime/backups/20261015T190023Z/rolecraft.sqlite",
+    "restart": "PATH=/home/ubuntu/.nvm/versions/node/v24.20.0/bin:$PATH pm2 restart rolecraft"
+  }
+}

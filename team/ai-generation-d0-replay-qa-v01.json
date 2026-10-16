@@ -1,0 +1,143 @@
+{
+  "schema": "rolecraft.ai-generation.d0.replay.qa",
+  "schema_version": "0.1",
+  "qa_id": "AI-D0-REPLAY-QA-20261015-01",
+  "date": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "reviewer_role": "QA",
+  "target_role_id": "AI",
+  "target_role_name": "AI生成工程师",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "replay_id": "D0-AI-20261015-001-R1",
+  "conclusion": "insufficient_evidence",
+  "replay_evidence": "met_within_scope",
+  "d0_integrity": "insufficient_evidence",
+  "l1_decision": "not_granted",
+  "provisional_level": "L0",
+  "capability_conclusion": "not_assessed",
+  "scope_statement": "独立复核AI D0 v02本地确定性替身重放及D0五项/L1门槛；不修改作者文件、不代写学习者答案、不把本地替身或历史AGDEV证据转移为AI能力证据。",
+  "review_method": {
+    "command": "python3 /private/tmp/ai_generation_d0_fixture_v1.py > /private/tmp/ai_generation_d0_qa_rerun.json",
+    "qa_rerun_sha256": "399797452164d129d1e733159545f757bf8ae665981a4728ef5ddda132bd268b",
+    "matches_v2_bytes": true,
+    "matches_v2_json": true,
+    "environment": {
+      "python": "3.14.5",
+      "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+      "network": "no_network_observed; fixture is local-only",
+      "paid_api": false,
+      "external_writes": false
+    }
+  },
+  "hash_checks": [
+    {"path": "sites/rolecraft/team/ai-generation-d0-v01.md", "sha256": "4a97347a91e96c07e2d84e37f22011be15890a5d955da950fd8b1a27c0aeef6d", "status": "match"},
+    {"path": "sites/rolecraft/team/ai-generation-d0-v01-initial.md", "sha256": "4a97347a91e96c07e2d84e37f22011be15890a5d955da950fd8b1a27c0aeef6d", "status": "match_original"},
+    {"path": "sites/rolecraft/team/ai-generation-d0-v01.json", "sha256": "069cee385c47889cadcfa32e4605cd368eb089d62c529af629ad443d2f1ebebf", "status": "match"},
+    {"path": "sites/rolecraft/team/ai-generation-d0-v01-initial.json", "sha256": "069cee385c47889cadcfa32e4605cd368eb089d62c529af629ad443d2f1ebebf", "status": "match_original"},
+    {"path": "/private/tmp/ai_generation_d0_fixture_v1.py", "sha256": "fddcf6f9660b5c68079057ffb0fb170aa11e39e0c9379ff9ad95c32be7d39bde", "status": "match_replay"},
+    {"path": "/private/tmp/ai_generation_d0_run_v2.json", "sha256": "399797452164d129d1e733159545f757bf8ae665981a4728ef5ddda132bd268b", "status": "match_replay"},
+    {"path": "/private/tmp/ai_generation_d0_qa_rerun.json", "sha256": "399797452164d129d1e733159545f757bf8ae665981a4728ef5ddda132bd268b", "status": "independent_match"}
+  ],
+  "identity_and_preservation": {
+    "initial_role_id": "AI",
+    "replay_role_id": "AI",
+    "identity_match": true,
+    "diagnostic_id_match": true,
+    "initial_copies_match_original": true,
+    "author_files_modified_by_qa": false
+  },
+  "replay_checks": {
+    "actual_states": ["start", "tool_called", "tool_returned", "drafted", "checked", "handed_off"],
+    "expected_states_in_replay_v02": ["start", "tool_called", "tool_returned", "drafted", "checked", "handed_off"],
+    "state_sequence_match_replay_v02": true,
+    "original_plan_states": ["start", "tool_called", "tool_returned", "drafted", "source_checked", "handed_off"],
+    "state_name_drift": {
+      "status": "partial",
+      "defect_id": "AI-D0-REPLAY-QA-P2-STATE-NAME-DRIFT",
+      "severity": "P2",
+      "reason": "原始D0规划使用source_checked，v02/fixture使用checked，缺少合同迁移说明。"
+    },
+    "tenant_boundary": {
+      "identity_tenant": "A",
+      "authorized_document": "doc-A-refund-v1",
+      "unauthorized_document": "doc-B-private-v1",
+      "unauthorized_document_in_result": false,
+      "private_marker_in_result": false,
+      "status": "pass"
+    },
+    "source_binding": {
+      "document_id": "doc-A-refund-v1",
+      "source_version": "fixture-source-v1",
+      "quote": "退款需复核。",
+      "citation_present": true,
+      "status": "pass"
+    },
+    "structured_result": {
+      "text": "DEMO-42：退款需复核。",
+      "external_action": null,
+      "handoff_status": "draft_ready_for_review",
+      "status": "pass_local_fixture_only"
+    },
+    "no_external_actions": {
+      "model_calls": 0,
+      "network_calls": 0,
+      "paid_calls": 0,
+      "external_write_calls": 0,
+      "account_or_database_changes": 0,
+      "status": "pass_local_scope"
+    }
+  },
+  "d0_five_items": [
+    {"id": "D0-AI-01", "name": "职责边界", "evidence_status": "partial_static", "reason": "AI role_id及书面边界存在，但无独立learner session、EvidenceCard或留出反例。"},
+    {"id": "D0-AI-02", "name": "机制解释", "evidence_status": "partial_static", "reason": "有状态/工具/来源/恢复解释，真实LangGraph、模型和生产存储未验证。"},
+    {"id": "D0-AI-03", "name": "熟悉任务", "evidence_status": "passed_local_fixture_only", "reason": "一个确定性本地夹具经独立重放通过；无第二不同夹具。"},
+    {"id": "D0-AI-04", "name": "失败识别", "evidence_status": "insufficient_evidence", "reason": "只有书面故障识别，没有故障注入、首失败和恢复重放。"},
+    {"id": "D0-AI-05", "name": "迁移预告", "evidence_status": "insufficient_evidence", "reason": "未知任务为计划未运行，无留出变体或交接签收。"}
+  ],
+  "l1_gate": {
+    "requirements": [
+      "两个不同可重建沙箱工件",
+      "每个工件完整EvidenceCard",
+      "相邻岗位签收或有据拒收",
+      "关键维度有证据且无P0/P1"
+    ],
+    "observed": {
+      "distinct_fixtures": 1,
+      "evidence_cards": 0,
+      "receiver_signoffs": 0,
+      "unknown_task_run": false,
+      "failure_or_degradation_artifact": false
+    },
+    "decision": "not_granted",
+    "reason": "当前只有一个正常确定性替身重放，D0-04/D0-05未运行且无完整EvidenceCard/相邻岗位交接。"
+  },
+  "unverified": [
+    "真实模型调用、输出质量、参数效果与费用",
+    "真实LangGraph安装、版本与API兼容性",
+    "外部工具副作用、发送/发布、生产存储与恢复",
+    "U-AI-D0-T1陌生任务及留出变体",
+    "内容审校员和测试工程师之外的专业交接签收",
+    "学习者迁移、用户价值、生产准备度和岗位能力认证"
+  ],
+  "defects": [
+    {
+      "defect_id": "AI-D0-REPLAY-QA-P2-STATE-NAME-DRIFT",
+      "severity": "P2",
+      "task": "D0-AI-20261015-001-R1",
+      "expected": "原始计划阶段名source_checked持续可追踪或有合同迁移记录",
+      "actual": "v02/fixture阶段名为checked，无迁移说明",
+      "direct_cause": "重放版本调整阶段名但未绑定合同变更",
+      "system_cause": "D0状态词没有单一版本化枚举或别名表",
+      "escaped_gate": "状态合同/版本冻结",
+      "owner": "AI + CURR",
+      "status": "open",
+      "retest": "下一版固定枚举或记录source_checked=checked别名，QA重放原例并核版本差异"
+    }
+  ],
+  "non_claims": [
+    "不授予L1或更高等级",
+    "不把本地确定性替身当真实模型调用",
+    "不证明真实LangGraph或生产恢复安全",
+    "不把本报告替代内容审校、学习者迁移或真人专家证据"
+  ]
+}

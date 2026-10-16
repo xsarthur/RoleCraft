@@ -1,0 +1,19 @@
+<section class="ia-answer" data-answer-id="M110" data-answer-version="interview-answers-v1.0.0" data-answer-sha256="f34b76e2cb15c4888484cf85bf0cd0de753f702cd416b525344f8ce06c8df325" data-content-status="met_within_reviewed_scope"><div class="ia-answer-meta"><span>M110 · interview-answers-v1.0.0</span><strong>内容与测试已限定范围复核</strong></div><article class="ia-prose" aria-label="M110 完整参考解析"><h3>M110｜提示模型返回JSON、使用JSON模式和按Schema约束生成分别能保证什么？遇到拒绝、截断、类型合法但语义错误时，应用怎样处理？</h3><p>答案版本：interview-answers-v1.0.0。完整参考解析；示例及测试计划未由本稿执行。</p><p>三种方式约束的层不同。“请返回JSON”只是提示，模型仍可能输出解释、代码围栏或残缺文本；JSON模式通常约束可解析JSON，但未必约束字段和类型；按Schema约束生成可进一步限制服务所支持的结构。三者都不能证明字段指向正确业务对象，也不能授权工具执行。具体服务支持的Schema子集、拒绝和截断语义必须读当前接口合同。<a href="https://platform.claude.com/docs/en/build-with-claude/structured-outputs" target="_blank" rel="noopener noreferrer">Claude结构化输出文档</a>为一种服务示例，核查于2026-10-14；以下内部信封不是其SDK格式。</p><p>消费顺序是传输/完成状态→拒绝或截断→解析→结构→语义/证据→当前授权→业务候选。拒绝是明确状态，不是坏JSON；截断时即使前缀可解析也不能当完整业务结果；流式预览只能显示进度，完整验证前不能触发副作用。重试是受限策略，保留原错误与用量，不能用补括号把不完整动作悄悄变成可执行。</p><p>下面是未执行的纯本地合同示例，任务只询问r1是否失败。输入envelope为应用适配器形成的内部对象，完成标记必须来自可信协议处理，不能由模型自己填写。</p><div class="ia-code"><span>python · 仅供阅读</span><pre tabindex="0"><code>import json
+
+def consume(envelope, expected_id):
+    status = envelope[&quot;status&quot;]
+    if status == &quot;refused&quot;:
+        return &quot;REFUSED&quot;, None
+    if status != &quot;complete&quot;:
+        return &quot;INCOMPLETE&quot;, None
+    try:
+        obj = json.loads(envelope[&quot;text&quot;])
+    except (ValueError, TypeError):
+        return &quot;INVALID_JSON&quot;, None
+    if type(obj) is not dict or set(obj) != {&quot;report_id&quot;, &quot;failed&quot;}:
+        return &quot;INVALID_FIELDS&quot;, None
+    if type(obj[&quot;report_id&quot;]) is not str or type(obj[&quot;failed&quot;]) is not bool:
+        return &quot;INVALID_TYPES&quot;, None
+    if obj[&quot;report_id&quot;] != expected_id:
+        return &quot;SEMANTIC_MISMATCH&quot;, None
+    return &quot;CANDIDATE_REQUIRES_EVIDENCE&quot;, obj</code></pre></div><p><code>{&quot;report_id&quot;:&quot;r2&quot;,&quot;failed&quot;:true}</code>结构合法却属于另一报告，应返回SEMANTIC_MISMATCH；<code>failed:1</code>不能因为Python的bool/int关系被误当布尔值；多出的<code>admin:true</code>字段要拒绝而不是合并进身份。即使是r1/true，也只是候选，必须核r1实际报告和来源支持，不能把Schema成功当事实已核。</p><p>处理策略按原因区分：格式失败可在剩余预算内带明确格式错误重试；资料缺失要补证或等待；语义错对象要重建正确上下文，不能强改ID掩盖问题；权限失败要拒绝，不向模型讨一个新说法；服务拒绝须按拒绝原因处理，不无限重试绕过。测试分别输入拒绝、截断、无效JSON、额外字段、错类型、错ID、无证据和完整合法对照，断言验证前无写调用，并保留每次尝试。本文未执行供应商结构化输出或该本地例。</p><h4>参考出处</h4><ul><li><a href="#learn/agent/n01-python-model-foundations/s-21d70f768e2b">5 合法结构是消费起点</a>，v12，原文件第126–133行：对应本题原理、案例与边界。</li><li><a href="#learn/agent/c03/s-9267960e504a">工具名与合法 JSON 都不能授执行权</a>，v12，原文件第8–15行：对应本题原理、案例与边界。</li><li><a href="#learn/agent/f02/s-91c983bf957f">先定义候选 而不是要求模型“给一个可靠答案”</a>，v12，原文件第18–25行：对应本题原理、案例与边界。</li><li><a href="#learn/agent/e03/s-ddf2d7f3e96a">读取边界比最终答案过滤更早</a>，v12，原文件第22–43行：对应本题原理、案例与边界。</li></ul></article><details class="ia-binding"><summary>答案版本与审核范围</summary><p>全文按当前答案版本展示。文稿与有限测试不等于真人专家认可、个人经历证据或职业能力认证。</p><p>SHA256：<code>f34b76e2cb15c4888484cf85bf0cd0de753f702cd416b525344f8ce06c8df325</code></p></details></section>

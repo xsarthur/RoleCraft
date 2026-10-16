@@ -1,0 +1,24 @@
+{
+  "record": "ai-generation-real-learner-d0-execution-learner-submission-v02-qa-v01",
+  "date": "2026-10-16",
+  "scope": "raw-receipts-retry-02 read-only independent verification",
+  "status": "met_within_submission_scope",
+  "evidence": {
+    "sha256sums_all_entries_ok": true,
+    "bytes_match": true,
+    "exit_codes": {"run-1": {"A-normal": 0, "B-tenant-denied": 0, "source-missing": 0, "source-conflict": 0}, "run-2": {"A-normal": 0, "B-tenant-denied": 0, "source-missing": 0, "source-conflict": 0}},
+    "two_round_outputs_identical": true,
+    "entrypoint_sha256": "83ac0091ab39bebaea166d028a42595182dd07601e65cffefc99b8ca09ed0dfa",
+    "sha256sums_sha256": "dd3be1b30b614d41d4421c1d32be0ad4280dff21405552c2ffc8506ad52e5535",
+    "bytes_sha256": "e2781d7f882b9dc95ace2fc7e8e2d83c9f598fbb3db5896f38a4552e248df50f",
+    "a_source_bound": true,
+    "b_body_isolated": true,
+    "first_failures": {"B-tenant-denied": "SOURCE_SCOPE_DENIED", "source-missing": "SOURCE_MISSING", "source-conflict": "SOURCE_VERSION_MISMATCH"},
+    "old_receipts_unchanged": true
+  },
+  "learner_statement": {"status": "signed_by_learner", "signer": "Larry", "path": "ai-generation-real-learner-d0-execution-learner-submission-v02/learner-statement.txt"},
+  "receiver_status": "pending",
+  "holdout_status": "pending",
+  "learner_files_modified": false,
+  "limitations": ["No claim about human capability, external service behavior, or production effect."]
+}

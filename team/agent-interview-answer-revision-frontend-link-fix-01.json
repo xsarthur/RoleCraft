@@ -1,0 +1,67 @@
+{
+  "owner": "软件工程师 / revision_frontend",
+  "defect": "REV-QA-LINK-01",
+  "rendererVersion": "interview-answer-renderer-1.0.1",
+  "status": "fix_and_developer_retest_complete_independent_qa_pending",
+  "before": {
+    "checked": 372,
+    "failed": 118,
+    "affectedIds": 62
+  },
+  "afterDeveloperRetest": {
+    "checked": 372,
+    "failed": 0
+  },
+  "files": [
+    {
+      "path": "dist/interview-answer-renderer.js",
+      "sha256": "27c67c8ffa3e16249f96fea34880c405ee786424d0eec4a82f2f78f71c3e069a"
+    },
+    {
+      "path": "dist/interview-answers-v1-data.js",
+      "sha256": "4a9e3ce4f5067e77b26bdd551bed911a6efadb9fe905de206876f03c773dad7b"
+    },
+    {
+      "path": "dist/index.html",
+      "sha256": "407983825552db7ea4da8b643e30ca9ef8b300622871e89be5610be0e9ed0eca"
+    },
+    {
+      "path": "dist/learning-experience-v13.js",
+      "sha256": "3cc08b26fbf11be0e6515f2e966eeaa728cff890ce1cd013a9b93e86c9f139b9"
+    },
+    {
+      "path": "dist/interview-prep-v1-prototype.html",
+      "sha256": "1051cb0b1a97b3b7803f50ad0ec162c92cb19efae246d38a2c228cd433f54469"
+    },
+    {
+      "path": "dist/interview-answer-reader.css",
+      "sha256": "94a65d0e234357678da6d5d8dcce2ef9fee39f9004b3611764935e248e255bff"
+    },
+    {
+      "path": "team/agent-interview-answer-revision-frontend-link-fix-01.md",
+      "sha256": "1423b1c52358c2d3e0b0333e3cf52e8aaaedf23cacc9e3de828b94ac11d1629a"
+    },
+    {
+      "path": "team/agent-interview-answer-revision-frontend/link-fix-01/link-selfcheck.cjs",
+      "sha256": "b8b309abc210cb599cf050038f3422b5c5ef89e1dbcb52532377a771712e59c0"
+    },
+    {
+      "path": "team/agent-interview-answer-revision-frontend/link-fix-01/before-renderer-links.json",
+      "sha256": "5240f6d5fa16a20c4d80da8021213a9dbdb931a08438a0deb7ca07e1a5ba41e9"
+    },
+    {
+      "path": "team/agent-interview-answer-revision-frontend/link-fix-01/after-renderer-links.json",
+      "sha256": "dde2ab5d37bda89c296519129d5cd9187f4ab8992c0bdbad59f38b194723f6dc"
+    },
+    {
+      "path": "team/agent-interview-answer-revision-frontend/link-fix-01/selfcheck-r2.cjs",
+      "sha256": "def4e43e52ee4e868b946b238fbd0babfcbaaefdddd0d669e2d775b8b6f650cf"
+    },
+    {
+      "path": "team/agent-interview-answer-revision-frontend/link-fix-01/selfcheck-r2-result.json",
+      "sha256": "12c023253181462c1dedc5a8cf4b1bed9fc2f4f5813ca48ec49374f48eebc0e6"
+    }
+  ],
+  "priorEvidenceRetained": true,
+  "browserAcceptancePerformedByFrontend": false
+}

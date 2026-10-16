@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Agent 系统 v0.12 两处输入交互状态示意</title>
+  <desc id="desc">左侧为职业选择候选和确认状态，右侧为学习内容推荐、澄清和无匹配状态。两者共享绿色主操作和白底卡片。</desc>
+  <defs>
+    <style>
+      .ink{fill:#1d2d2a;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+      .muted{fill:#53675e;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+      .green{fill:#21734e}.paper{fill:#f7f6f0}.surface{fill:#fff}.line{stroke:#d6e0da;stroke-width:2}.soft{fill:#eaf3ee}.warn{fill:#fff8e9}.error{fill:#fff1ef}.amber{fill:#a36b16}.red{fill:#a0443d}
+      .label{font-size:18px;font-weight:700}.body{font-size:16px}.small{font-size:13px}.title{font-size:28px;font-weight:700}
+    </style>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#1d2d2a" flood-opacity=".08"/></filter>
+  </defs>
+  <rect width="1440" height="900" class="paper"/>
+  <text x="64" y="62" class="ink title">Agent 系统 v0.12 · 两处输入状态</text>
+  <text x="64" y="94" class="muted body">静态交互示意：候选必须确认；学习推荐必须有真实教材出处。</text>
+
+  <g transform="translate(64,132)">
+    <rect width="640" height="700" rx="18" class="surface line" filter="url(#shadow)"/>
+    <rect width="640" height="72" rx="18" class="soft"/>
+    <circle cx="35" cy="36" r="8" class="green"/>
+    <text x="56" y="42" class="ink label">选择职业</text>
+    <text x="526" y="42" class="muted body">关闭 ×</text>
+    <text x="28" y="112" class="muted small">已导入职业 · 用一句话说明你想做的工作</text>
+    <rect x="28" y="128" width="476" height="48" rx="8" fill="#fff" class="line"/>
+    <text x="44" y="158" class="muted body">我会 Python，想做能调用工具的应用</text>
+    <rect x="516" y="128" width="96" height="48" rx="8" class="green"/>
+    <text x="544" y="159" fill="#fff" class="ink body">查找</text>
+    <text x="28" y="203" class="muted small">当前职业：尚未选择　示例只会填入，不会自动提交</text>
+    <rect x="28" y="230" width="584" height="224" rx="12" fill="#fff" class="line"/>
+    <rect x="48" y="250" width="56" height="28" rx="14" class="soft"/>
+    <text x="61" y="270" class="green small">候选</text>
+    <text x="48" y="309" class="ink label">Agent 开发者</text>
+    <text x="48" y="340" class="muted body">为什么匹配：目标涉及工具调用与可靠交付。</text>
+    <text x="48" y="367" class="muted body">需要确认的差距：还未知道你的工程实践范围。</text>
+    <text x="48" y="400" class="amber small">教材 v0.12 · 建议从“认识 Agent 工程”开始</text>
+    <rect x="48" y="414" width="120" height="28" rx="6" fill="#fff" class="line"/>
+    <text x="71" y="434" class="green small">查看路径</text>
+    <rect x="484" y="404" width="108" height="40" rx="8" class="green"/>
+    <text x="503" y="429" fill="#fff" class="ink small">确认选择</text>
+    <rect x="28" y="478" width="584" height="92" rx="12" class="warn"/>
+    <text x="48" y="510" class="ink body">确认将当前学习职业切换为“Agent 开发者”？</text>
+    <text x="48" y="536" class="muted small">确认后加载该职业已发布教材；未确认不会写入当前会话。</text>
+    <rect x="430" y="550" width="82" height="34" rx="7" fill="#fff" class="line"/>
+    <text x="449" y="572" class="green small">返回</text>
+    <rect x="522" y="550" width="70" height="34" rx="7" class="green"/>
+    <text x="535" y="572" fill="#fff" class="ink small">确认</text>
+    <text x="28" y="630" class="muted small">状态：推荐 → 确认中 → 已确认；没有直接写入或能力判断。</text>
+  </g>
+
+  <g transform="translate(736,132)">
+    <rect width="640" height="700" rx="18" class="surface line" filter="url(#shadow)"/>
+    <rect width="640" height="72" rx="18" class="soft"/>
+    <text x="28" y="42" class="ink label">找对应教材</text>
+    <text x="566" y="42" class="muted body">收起</text>
+    <rect x="28" y="92" width="198" height="30" rx="15" class="soft"/>
+    <text x="43" y="112" class="green small">当前职业：Agent 开发者</text>
+    <rect x="236" y="92" width="208" height="30" rx="15" class="soft"/>
+    <text x="249" y="112" class="green small">当前章：持久恢复 ×</text>
+    <rect x="28" y="140" width="476" height="48" rx="8" fill="#fff" class="line"/>
+    <text x="44" y="170" class="muted body">工具超时后怎样避免重复创建工单？</text>
+    <rect x="516" y="140" width="96" height="48" rx="8" class="green"/>
+    <text x="544" y="171" fill="#fff" class="ink body">查找</text>
+    <text x="28" y="215" class="muted small">正在当前教材中查找…（阅读仍可继续）</text>
+    <text x="28" y="255" class="ink label">推荐阅读</text>
+    <text x="28" y="281" class="muted small">检索判断：你想解决“结果未知与恢复”</text>
+    <rect x="28" y="304" width="584" height="176" rx="12" fill="#fff" class="line"/>
+    <text x="48" y="336" class="green small">第 12 篇 · 持久恢复</text>
+    <text x="48" y="365" class="ink label">工具超时、幂等与未知结果</text>
+    <text x="48" y="395" class="muted body">推荐理由：该节区分失败与未知结果，并说明按原 key 核对回执。</text>
+    <rect x="48" y="414" width="180" height="30" rx="6" class="soft"/>
+    <text x="63" y="434" class="green small">教材原文 · 展开</text>
+    <text x="410" y="434" class="amber small">查看出处</text>
+    <rect x="470" y="442" width="122" height="38" rx="8" class="green"/>
+    <text x="487" y="466" fill="#fff" class="ink small">阅读这一节</text>
+    <rect x="28" y="500" width="584" height="106" rx="12" class="warn"/>
+    <text x="48" y="532" class="ink body">需要补充：你要查的是资料查找，还是工具执行后的结果核对？</text>
+    <rect x="48" y="552" width="176" height="34" rx="7" fill="#fff" class="line"/>
+    <text x="64" y="574" class="green small">资料查找</text>
+    <rect x="236" y="552" width="220" height="34" rx="7" fill="#fff" class="line"/>
+    <text x="253" y="574" class="green small">结果核对</text>
+    <rect x="28" y="626" width="584" height="52" rx="12" class="error"/>
+    <text x="48" y="657" class="red body">当前教材没有足够对应内容 · 修改表达或打开课程目录</text>
+  </g>
+</svg>

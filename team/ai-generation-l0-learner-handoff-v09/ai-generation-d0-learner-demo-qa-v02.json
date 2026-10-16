@@ -1,0 +1,56 @@
+{
+  "schema": "rolecraft.ai-generation.d0.learner-demo.qa",
+  "schema_version": "0.2",
+  "qa_id": "AI-D0-LEARNER-DEMO-QA-20261015-V02",
+  "date": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "reviewer_role": "QA",
+  "target_role_id": "AI",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "conclusion": "met_with_limitations",
+  "level_decision": "not_assessed",
+  "scope_statement": "独立复验 v02 learner demo 的清单绑定、D0-03/D0-04/D0-05 结构证据、外部动作与交接状态；不授等级，不把确定性夹具证据扩展为真实模型、生产可靠性或职业能力结论。",
+  "inputs": [
+    {"path":"sites/rolecraft/team/ai-generation-d0-learner-demo-v02/ai-generation-d0-learner-demo-v02.md","sha256":"RECOMPUTE_AT_REVIEW"},
+    {"path":"sites/rolecraft/team/ai-generation-d0-learner-demo-v02/manifest.json","sha256":"5cb3a7385445df3790faba50e34606131cf047d197d278f9252ca4d418fd9f1d"},
+    {"path":"sites/rolecraft/team/ai-generation-d0-learner-demo-v01/ai-generation-d0-learner-demo-v01.md","sha256":"RECOMPUTE_AT_REVIEW"}
+  ],
+  "manifest_check": {
+    "artifact_count_declared": 15,
+    "artifact_count_observed_json": 15,
+    "artifact_count_match": true,
+    "self_reference_rule": "manifest.json has sha256=null, bytes=null, self_hash=intentionally_unset_due_to_self_reference",
+    "self_reference_valid": true,
+    "non_manifest_files": 14,
+    "non_manifest_hash_and_bytes_match": true,
+    "all_non_manifest_diagnostic_id_match": true,
+    "manifest_diagnostic_id": "D0-AI-20261015-001",
+    "manifest_sha256_observed": "5cb3a7385445df3790faba50e34606131cf047d197d278f9252ca4d418fd9f1d",
+    "file_records": [
+      {"path":"D0-03-A-normal.json","bytes":445,"sha256":"7e54db32b4fb2284fe5aebb1259897f9eeb2b36e0f939dc3a33d5b7ac8d63c13","diagnostic_id":"D0-AI-20261015-001"},
+      {"path":"D0-03-B-denial.json","bytes":234,"sha256":"4c4572f5a6fbf418b11da9562302e34a329582dfae56c8ef97e09e79bba2a8db","diagnostic_id":"D0-AI-20261015-001"},
+      {"path":"DURABLE-002-v04-final.json","bytes":412,"sha256":"c104af453fb8d893634fe04618b46eeb5a8d13b8f481471bf72997235f71ab07","diagnostic_id":"D0-AI-20261015-001"},
+      {"path":"DURABLE-002-v04-first-failure.json","bytes":178,"sha256":"535edb9f51982b17b59470e0990d92f441bbacde875875394854d58186a542d4","diagnostic_id":"D0-AI-20261015-001"},
+      {"path":"DURABLE-002-v04-recovery.json","bytes":538,"sha256":"1be969f6eb8a66a141703bb821bde2dbdff450d306a666a786451f446aaeb56e","diagnostic_id":"D0-AI-20261015-001"},
+      {"path":"DURABLE-002-v04-tool.json","bytes":365,"sha256":"bd5f4d8ac6fea76c70ce1bdcc52d4586a02bbf68035b01c21553e026eae70c15","diagnostic_id":"D0-AI-20261015-001"},
+      {"path":"EvidenceCard.json","bytes":215,"sha256":"ae791e3644e44937d248e69dd2d24154c1df0a7e158d7e37750824d3fba250b1","diagnostic_id":"D0-AI-20261015-001"},
+      {"path":"GATE-003-v06-baseline.json","bytes":161,"sha256":"c290eec30aab675c23ed839570e8238bc166c11f2c21447484bc9f3a635a80f3","diagnostic_id":"D0-AI-20261015-001"},
+      {"path":"GATE-003-v06-first-failure.json","bytes":223,"sha256":"e8049f165840433ed5ad18dc304a552c18c0bcb1c9d19cde40b8016a092c685d","diagnostic_id":"D0-AI-20261015-001"},
+      {"path":"GATE-003-v06-holdout.json","bytes":199,"sha256":"5661506023a5b327ba10189c5da1fc7e419b06987396f30a0cd097a5ed6b5e0f","diagnostic_id":"D0-AI-20261015-001"},
+      {"path":"GATE-003-v06-regression.json","bytes":472,"sha256":"e90e349065f6bc62e639d3a9ecec00f3f19178be148245870f02553e44cdfb44","diagnostic_id":"D0-AI-20261015-001"},
+      {"path":"SOURCE-001.json","bytes":414,"sha256":"9700daf23c5ec2ae21ebb7c974cf239db0f66eb46a749aa7e4cf3bfa4364a542","diagnostic_id":"D0-AI-20261015-001"},
+      {"path":"learner_raw.json","bytes":249,"sha256":"b90f51cc23081745265a173ef89c178ad80104fa765cb707ba32298416718cdc","diagnostic_id":"D0-AI-20261015-001"},
+      {"path":"repair_record.json","bytes":274,"sha256":"4e13889975bbc0b504a6e304a0121f985b97830d91711371db35101c0df7f28b","diagnostic_id":"D0-AI-20261015-001"},
+      {"path":"manifest.json","bytes":null,"sha256":null,"diagnostic_id":"D0-AI-20261015-001","self_hash":"intentionally_unset_due_to_self_reference"}
+    ]
+  },
+  "scenario_checks": {
+    "D0-03": {"status":"met_within_scope","A_normal": {"source":"doc-A-refund-v1","source_refs":true,"external_action":null,"state":"draft_ready_for_review"},"B_denial":{"reason":"tenant_scope_denied","answer":null,"source_refs":[],"denied_before_generation":true}},
+    "D0-04": {"status":"met_within_scope","first_failure":"checkpoint_write_failed","recovery":"replayed_from DURABLE-002-v04-tool.json","idempotency_key":"D0-04:tool:1","final_state":"draft_ready_for_review","external_action":null},
+    "D0-05": {"status":"met_within_scope","baseline":true,"single_constraint_failure":"checkpoint_available:false (only change)","stop_decision":"stop downstream generation","holdout_stop":"stop after retry budget","regression":{"recovered":true,"schema_version":"ai-generation-d0-output-v3","source_refs":true,"tenant":"A","source_version":"fixture-source-v1"},"external_action":null}
+  },
+  "safety_and_handoff": {"external_action_all_null":true,"self_signed":false,"qa_status":"pending","handoff":"pending","levels_granted":[],"training_status":"L0_guided","decision":"not_assessed"},
+  "limitations": ["本地确定性 JSON 夹具，未调用真实模型、LangGraph、外部 API、数据库、云或付费服务。","未证明真实进程崩溃恢复、生产数据库耐久性、RPO/RTO、供应商兼容性或生产成本。","未进行真人专家审核、用户学习迁移或职业能力认证；v01历史限制仍适用。"],
+  "defects": [],
+  "retest": "若接入应用或更换 schema/source 版本，需重新生成 manifest 并按 D0-03 原例、D0-04 首失败/恢复、D0-05 回归/留出独立复验。"
+}

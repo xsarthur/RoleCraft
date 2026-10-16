@@ -1,0 +1,31 @@
+{
+  "artifact_id": "AI-REAL-LEARNER-D0-EXEC-RUN-20261016-001",
+  "cases": [
+    "A-normal",
+    "B-tenant-denied",
+    "source-missing",
+    "source-conflict"
+  ],
+  "cloud": false,
+  "comparison_path": "run-comparison.json",
+  "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "execution_role": "AI-generation-engineer local isolated execution",
+  "external_action": null,
+  "fixture_file_sha256": "f6cc25edad6403c052f66167adecf666d770f12b82170f2fc996119ef118f446",
+  "fixture_id": "F-AI-SOURCE-CLAIM-v1",
+  "fixture_sha256": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+  "human_receipt_pending": true,
+  "input_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/input-snapshot.json",
+  "input_sha256": "33be9e47edd1c9652b59d1bdac0e1fbe33a5f288f110eda1ff114c175f881939",
+  "learner_execution": false,
+  "network": "disabled",
+  "paid_api": false,
+  "real_model": false,
+  "real_user_data": false,
+  "runner": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/implementation/d0_03_runner.py",
+  "runs": [
+    "run-1",
+    "run-2"
+  ]
+}

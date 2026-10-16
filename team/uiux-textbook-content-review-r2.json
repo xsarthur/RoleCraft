@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "reviewId": "uiux-textbook-content-review-r2",
+  "date": "2026-10-14",
+  "reviewerRole": "内容审校员",
+  "reviewerIdentity": "AI技术内容审校，非真人UI/UX设计专家、无障碍专家、测试工程师、真实学习者、真人专家或就业评估",
+  "sourceVersion": "uiux-design-v01-v2-author-revision",
+  "status": "reviewed_with_limitations",
+  "conclusion": "C01范围诚实性、C03规范邻近引用、C04 ATAG边界和C10保真度条件已静态关闭；C02状态契约、C05缩放/语义、C06题型主次映射、C07来源哈希、C08来源语义分层和C09 SVG状态粒度/渲染仍保留限制。",
+  "reviewScope": [
+    "读取v2正文、README、sources-and-interview-map、author-handoff-v2和uiux-state-map-v01.svg",
+    "仅复核原C01-C10涉及的26单元诚实映射、AI状态契约、规范引用/ATAG/缩放、题型重复/来源分类、SVG视觉稿和保真度条件",
+    "运行相对Markdown链接检查、SVG XML解析和研究JSON解析；未运行浏览器、Figma、读屏、模型、接口或真人研究"
+  ],
+  "sourceBindings": [
+    {"path":"sites/rolecraft/textbooks/uiux-design-v01/uiux-design-textbook.md","sha256":"a5406a6db125c3174af7d6228d0fcd57c9030131c4bc321325abf483278ccbd4"},
+    {"path":"sites/rolecraft/textbooks/uiux-design-v01/README.md","sha256":"d58bd229fe2c6a89064a9eb3d44502e4ba94ac320f006207fc44cd3a60d93ff7"},
+    {"path":"sites/rolecraft/textbooks/uiux-design-v01/sources-and-interview-map.md","sha256":"5bf979843e2e97e743afad840becca1cd9dca44f828c7f25d00d3a57428c1229"},
+    {"path":"sites/rolecraft/textbooks/uiux-design-v01/author-handoff-v2.md","sha256":"ebb98b401e4a9df3008e7ae262683d9e67d91fb51a96676c3bda1d09c063fa43"},
+    {"path":"sites/rolecraft/textbooks/uiux-design-v01/assets/uiux-state-map-v01.svg","sha256":"97ea6a67ed5ac29ba5f244ff9e35b1392a38486c13d1986c436230fd343b1254"}
+  ],
+  "issueResults": [
+    {"id":"C01","status":"closed_static_with_scope_limit","severity":"P1","evidence":["README:36-73","author-handoff-v2:17-31"],"finding":"00-25映射、先修、产物和概要/主线状态已显式列出，解决12章被误读为26单元完成的问题；完整26单元深读/实作仍未交付。","owner":"课程架构师、教材研发员；QA复核"},
+    {"id":"C02","status":"open","severity":"P2","evidence":["textbook:120-145","textbook:177-186","textbook:235-247","SVG:40-43"],"finding":"取消、低置信、重试和迟到响应已加入，但ResultCard仍与RetrievalState不一致，excerpt可选性冲突，source-checking/handoff缺少统一状态，SVG合并NoMatch/Unavailable且未画Cancelled/Ignored。","owner":"教材研发员；课程架构师确认；QA夹具复验"},
+    {"id":"C03","status":"closed_static_with_runtime_limit","severity":"P2","evidence":["textbook:212-214","sources:7-14"],"finding":"正文已直接链接WCAG2.2、WAI-ARIA1.2、ATAG2.0并说明不构成合规；运行行为仍未测。","owner":"教材研发员；工程/QA运行"},
+    {"id":"C04","status":"closed_static_with_runtime_limit","severity":"P2","evidence":["textbook:214","sources:11"],"finding":"ATAG已收窄为作者工具背景，不宣称Figma或案例符合。","owner":"课程架构师、设计师；QA边界复核"},
+    {"id":"C05","status":"open","severity":"P2","evidence":["textbook:212,218","author-handoff-v2:20-22"],"finding":"200%缩放和语义边界补充，但没有320 CSS px/400%等价重排、文字间距和不绑定框架的最小语义交接例。","owner":"教材研发员；设计师、工程/QA"},
+    {"id":"C06","status":"partially_closed_open","severity":"P2","evidence":["sources:29-39","course-architecture:203"],"finding":"视觉簇内059/060重复已移除并分类，但047-050、061、073、100-103等跨能力重复仍无primary_unit/secondary_unit标注。","owner":"课程架构师、竞品研究员；QA唯一ID复核"},
+    {"id":"C07","status":"open","severity":"P2","evidence":["course-architecture:20-22,29-30","current hash 0f2df0d9b0c9e179fc5a60de169c6ff2dc6ce837928cc0812038719f416443f8","architecture hash 7aa79f20e39ffe27ff21bb21daf8e3bc1eb2cc985dd33a586bd27a9db7d59da6b4"],"finding":"当前研究JSON可解析但仍与课程架构绑定哈希不一致，架构仍记录语法错误；v2交接未重绑。","owner":"竞品研究员、课程架构师；QA"},
+    {"id":"C08","status":"open","severity":"P2","evidence":["textbook:84-88","textbook:232-247"],"finding":"sourceVersion/sectionId/excerpt仍未分成身份完整性与语义支持，缺摘录范围、support状态、责任人核验和版本变化。","owner":"教材研发员；AI生成/检索工程师交接"},
+    {"id":"C09","status":"partially_closed_open","severity":"P2","evidence":["README:73","SVG:1-75"],"finding":"新增可审阅SVG且XML有效，但NoMatch/Unavailable被合并，Cancelled/Ignored未独立呈现；未做浏览器/设备渲染，不能判断字体、裁切和小字可读性。","owner":"设计师、教材研发员；QA渲染/无障碍复核"},
+    {"id":"C10","status":"closed_static","severity":"P3","evidence":["textbook:163-165"],"finding":"保真度已按任务/内容/视觉工程未知条件选择，并提供退回低保真反例。","owner":"教材研发员、课程架构师"}
+  ],
+  "staticChecks": {
+    "relativeMarkdownLinks":"all existing",
+    "svgXml":"valid; title and desc present; no visual render",
+    "productAndArchitectureJson":"valid",
+    "currentInterviewResearchJson":"valid but hash differs from architecture binding",
+    "typescriptRuntime":"not_run",
+    "browserFigmaScreenReaderKeyboardZoom":"not_run",
+    "modelRetrievalAPI":"not_run",
+    "realParticipants":"not_run"
+  },
+  "reverificationPlan": [
+    "作者统一C02状态机/字段、C05缩放和语义、C08来源分层，设计师同步SVG状态粒度后提交新hash；内容审校复读",
+    "课程架构师/竞品研究员冻结C06/C07题型版本、主次映射和hash；QA运行唯一ID/来源/章节检查",
+    "设计师与QA实际渲染SVG并做键盘、读屏、缩放和窄屏检查；用户研究员取真人理解证据",
+    "C01完整26单元深读/实作及真实学习、专家、生产、求职证据仍由对应岗位分别取证"
+  ],
+  "limits": [
+    "本轮只复核C01-C10返修范围",
+    "SVG静态XML有效不等于视觉可读或无障碍通过",
+    "未运行伪代码、AI/检索服务、浏览器、Figma、读屏、真实用户或真实模型"
+  ]
+}

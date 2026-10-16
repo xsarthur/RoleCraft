@@ -1,0 +1,173 @@
+{
+  "kind": "content_retrieval_repair",
+  "version": "app-v0.12-c01-retrieval-repair",
+  "generatedAt": "2026-10-15T15:24:38.718Z",
+  "role": "内容检索工程师",
+  "status": "ready_for_independent_dual_input_qa",
+  "approvedSource": {
+    "path": "textbooks/v12/c01-selection.md",
+    "sha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+    "previousIndexedSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+    "decision": "采用当前正文；旧assembly-manifest哈希保留为历史冻结证据"
+  },
+  "historicalArtifacts": {
+    "path": "team/app-v0.12-c01-retrieval-repair-history/received",
+    "sha256": {
+      "index": "ac87bfa9c88f6e1709fc59c05fc3af1fcf98b7274aeb1be48a07e490578bdd6b",
+      "vectors": "c28e1e27e7185638aeecc4357498ae19e99f5277e5d271a7d529e57aa1754164",
+      "intentVectors": "cd0f1e55e25d9b275558baf1693f0721b6ae9eb896a7519c582e8e75a0b51431",
+      "data": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224",
+      "manifest": "16907987dcebb2195f9bae4df3f0648d566f597f49722e681fb589b87e32305e"
+    }
+  },
+  "canonicalArtifacts": {
+    "sha256": {
+      "source": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+      "index": "c005e8fd4071d14a8acc657a762e53359ea79cd785879bdbaceb52c4768b8142",
+      "vectors": "56b81378723d8cd915abb848bc8ec6c4a84eeac0a52fe548ca711ae183f49e47",
+      "intentVectors": "cd0f1e55e25d9b275558baf1693f0721b6ae9eb896a7519c582e8e75a0b51431",
+      "data": "3eb094b460e0a1f545820232058d3b58b4c85d1353c87895709af3784d408b12",
+      "manifest": "16907987dcebb2195f9bae4df3f0648d566f597f49722e681fb589b87e32305e"
+    }
+  },
+  "corpus": {
+    "version": "textbook-v12",
+    "hash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+    "bookSha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+    "units": 30,
+    "sections": 273,
+    "c01": {
+      "sourceSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+      "characters": 3857,
+      "sections": 8
+    },
+    "allUnitSourceHashesMatch": true,
+    "sourceBinding": {
+      "assemblyManifestSha256": "16907987dcebb2195f9bae4df3f0648d566f597f49722e681fb589b87e32305e",
+      "curriculumSha256": "02dcab757b4e72f7fb28b39f648b30090b0e57b3725ca0af25e421e0fafad5ae",
+      "currentSourceOverrides": {
+        "textbooks/v12/c01-selection.md": {
+          "previousAssemblySha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "currentSourceSha256": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+          "reason": "Approved current v12 source repaired from stale derived index; assembly manifest retained as historical freeze."
+        }
+      }
+    }
+  },
+  "vectors": {
+    "corpusVersion": "textbook-v12",
+    "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+    "chunkHash": "650101c27eb7db6bfe730fbc567fa08c3a1fcfb88cdf61acb91ee0b97b05014e",
+    "count": 562,
+    "dimensions": 512,
+    "modelId": "Xenova/bge-small-zh-v1.5",
+    "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+    "dtype": "int8",
+    "intentVectors": {
+      "corpusVersion": "textbook-v12",
+      "descriptionHash": "5e91a8aa2de5ae4db25821c73a0945ce43dbd10a6a2c373808afa90603582213",
+      "count": 56,
+      "sha256": "cd0f1e55e25d9b275558baf1693f0721b6ae9eb896a7519c582e8e75a0b51431"
+    }
+  },
+  "runtime": {
+    "node": "v24.16.0",
+    "modelLocalOnly": true,
+    "remoteModelsAllowed": false,
+    "providerCalled": false,
+    "externalNetwork": false
+  },
+  "selfCheck": {
+    "path": "team/app-v12-textbook-integration-retrieval-self-check.json",
+    "nodeVersion": "v24.16.0",
+    "providerCalled": false,
+    "pass": true,
+    "runCount": 12,
+    "allRunsPassed": true,
+    "cases": [
+      {
+        "id": "react",
+        "pass": true,
+        "status": "recommended"
+      },
+      {
+        "id": "react-mechanism",
+        "pass": true,
+        "status": "recommended"
+      },
+      {
+        "id": "planning-term",
+        "pass": true,
+        "status": "recommended"
+      },
+      {
+        "id": "planning-meaning",
+        "pass": true,
+        "status": "recommended"
+      },
+      {
+        "id": "replanning-term",
+        "pass": true,
+        "status": "recommended"
+      },
+      {
+        "id": "replanning-meaning",
+        "pass": true,
+        "status": "recommended"
+      },
+      {
+        "id": "recovery",
+        "pass": true,
+        "status": "recommended"
+      },
+      {
+        "id": "multi",
+        "pass": true,
+        "status": "recommended"
+      },
+      {
+        "id": "negation",
+        "pass": true,
+        "status": "recommended"
+      },
+      {
+        "id": "frontend",
+        "pass": true,
+        "status": "no_match"
+      },
+      {
+        "id": "ambiguity",
+        "pass": true,
+        "status": "needs_clarification"
+      },
+      {
+        "id": "no-match",
+        "pass": true,
+        "status": "no_match"
+      }
+    ]
+  },
+  "qaHandoff": {
+    "owner": "测试工程师",
+    "entry": "/Users/shengxiong/.nvm/versions/node/v24.16.0/bin/node team/agent-system-v0.12-qa-check.mjs",
+    "cwd": "sites/rolecraft",
+    "requiredNodeMajor": 24,
+    "scope": [
+      "career_input",
+      "learning_input"
+    ],
+    "mustCheck": [
+      "catalog 30 units and c01 source hash",
+      "career recommend/clarification/no_match/confirm and idempotency",
+      "learning dialog/recommend/source envelope/context opt-in/version conflict/legacy route",
+      "providerCalled=false",
+      "dynamic career unavailable boundary"
+    ],
+    "note": "该独立修复记录不替代测试岗位结论；请以当前 canonical artifacts 为输入，并保留旧 app-v0.12-continuation-qa.json。"
+  },
+  "limitations": [
+    "未修改正文、assembly-manifest、账户/数据库、客户端、产品合同或历史报告。",
+    "aggregate textbook bookSha256 仍为原 v12 合订本；本修复只更新按单元派生的检索 index/data 与受影响向量。",
+    "真实 TCP、浏览器、IME、窄屏与真实用户价值仍需测试岗位按当前版本独立复验。"
+  ]
+}

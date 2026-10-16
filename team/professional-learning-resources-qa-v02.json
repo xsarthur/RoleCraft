@@ -1,0 +1,465 @@
+{
+  "report_id": "professional-learning-resources-qa-v02",
+  "version": "professional-learning-resources-independent-qa-v02",
+  "auditor": "测试工程师 /root/resource_qa_retest",
+  "completed_at": "2026-10-14",
+  "scope": "独立复验返修后的岗位专业学习资料目录；仅做静态结构、来源回溯、Markdown/JSON一致性和边界声明核验，并交叉读取内容审校 v0.2 对高时效条目的独立复核；本QA不执行课程、理论考试、岗位作品、陌生任务、真人专家评审或在线链接可访问性验证。",
+  "method": {
+    "json_parse": true,
+    "markdown_table_parse": true,
+    "role_and_batch_counts": true,
+    "md_json_key_parity": true,
+    "source_traceability": true,
+    "live_url_reopen": false,
+    "course_or_theory_execution": false,
+    "capability_assessment": false
+  },
+  "catalog_configuration_conclusion": "met_with_limitations",
+  "learning_effect_conclusion": "not_assessed",
+  "overall_status": "met_with_limitations",
+  "blocking_for_limited_catalog_configuration": false,
+  "received_catalog": {
+    "markdown_path": "sites/rolecraft/team/professional-learning-resources-v01.md",
+    "markdown_sha256": "3c1506ab5c77f0c547078d3acd522848e0553ebb2a23fadcf785c0c57bbc058d",
+    "json_path": "sites/rolecraft/team/professional-learning-resources-v01.json",
+    "json_sha256": "40b087a59dbf24dc6ec75fa390984a460bf1110128e5600bd60534444433d259",
+    "json_items": 59,
+    "markdown_rows": 59,
+    "expected_role_ids": [
+      "PM",
+      "PROD",
+      "CURR",
+      "DES",
+      "FE",
+      "QA",
+      "ED",
+      "AI",
+      "BE",
+      "UR",
+      "COMP",
+      "PRACT",
+      "OPS",
+      "REV",
+      "RETR"
+    ],
+    "role_counts": {
+      "AI": 8,
+      "BE": 4,
+      "COMP": 4,
+      "CURR": 3,
+      "DES": 3,
+      "ED": 3,
+      "FE": 3,
+      "OPS": 5,
+      "PM": 3,
+      "PRACT": 4,
+      "PROD": 3,
+      "QA": 3,
+      "RETR": 5,
+      "REV": 4,
+      "UR": 4
+    },
+    "batch_counts": {
+      "A": 25,
+      "B": 31,
+      "PM补充": 3
+    },
+    "required_field_empty_cells": {
+      "resource_id": [],
+      "role_id": [],
+      "title": [],
+      "provider": [],
+      "url": [],
+      "canonical_url": [],
+      "resource_type": [],
+      "accessed_at": [],
+      "stage": [],
+      "theme": [],
+      "theory_domains": [],
+      "learning_output": [],
+      "limitations": [],
+      "batch": []
+    },
+    "required_field_empty_count": 0,
+    "framework_required_fields_missing_from_json": [
+      "authority_reason",
+      "cost_and_access",
+      "disputed_or_version_sensitive_claims",
+      "estimated_effort",
+      "known_limits",
+      "language",
+      "learning_objectives",
+      "maintenance_or_publication_date",
+      "prerequisites",
+      "required_artifact",
+      "reviewer",
+      "source_version",
+      "status",
+      "textbook_or_task_mapping",
+      "theory_check",
+      "transfer_case"
+    ]
+  },
+  "checks": [
+    {
+      "id": "PLR-QA-V02-01",
+      "area": "JSON可解析",
+      "status": "pass",
+      "actual": "JSON解析成功，顶层数组 59 条。",
+      "evidence": "Python JSON parser; no exception."
+    },
+    {
+      "id": "PLR-QA-V02-02",
+      "area": "15个稳定role_id与每岗>=3",
+      "status": "pass",
+      "actual": {
+        "AI": 8,
+        "BE": 4,
+        "COMP": 4,
+        "CURR": 3,
+        "DES": 3,
+        "ED": 3,
+        "FE": 3,
+        "OPS": 5,
+        "PM": 3,
+        "PRACT": 4,
+        "PROD": 3,
+        "QA": 3,
+        "RETR": 5,
+        "REV": 4,
+        "UR": 4
+      },
+      "required": "PM, PROD, CURR, DES, FE, QA, ED, AI, BE, UR, COMP, PRACT, OPS, REV, RETR；每岗至少3条。"
+    },
+    {
+      "id": "PLR-QA-V02-03",
+      "area": "Markdown/JSON 59条记录与字段一致",
+      "status": "pass",
+      "actual": "Markdown rows=59, JSON rows=59, parity_failures=0",
+      "parity_scope": [
+        "resource_id",
+        "role_id",
+        "title",
+        "provider",
+        "resource_type",
+        "stage",
+        "theme/theory_domains",
+        "learning_output",
+        "canonical_url",
+        "limitations",
+        "batch",
+        "accessed_at"
+      ],
+      "note": "JSON额外保留 source_relevance/source_urls；未作为Markdown表格必列字段，且未发现冲突。"
+    },
+    {
+      "id": "PLR-QA-V02-04",
+      "area": "字段非空",
+      "status": "pass",
+      "actual": "14项合同字段在59条记录中均非空；空值总数为0。",
+      "fields_checked": [
+        "resource_id",
+        "role_id",
+        "title",
+        "provider",
+        "url",
+        "canonical_url",
+        "resource_type",
+        "accessed_at",
+        "stage",
+        "theme",
+        "theory_domains",
+        "learning_output",
+        "limitations",
+        "batch"
+      ]
+    },
+    {
+      "id": "PLR-QA-V02-05",
+      "area": "来源可追溯",
+      "status": "pass",
+      "actual": {
+        "A_matched": 25,
+        "A_expected": 25,
+        "B_matched": 31,
+        "B_expected": 31,
+        "PM_rows": 3,
+        "PM_ids": [
+          "PLR-PM-001",
+          "PLR-PM-002",
+          "PLR-PM-003"
+        ]
+      },
+      "note": "A/B逐条以研究文件标题和URL回溯；PM 3 项以当前目录明确 batch=PM补充、稳定ID、canonical_url 回溯，未找到独立PM研究源文件，因此保留追溯限制。"
+    },
+    {
+      "id": "PLR-QA-V02-06",
+      "area": "Andrew Ng Agentic AI岗位绑定",
+      "status": "pass",
+      "actual": [
+        {
+          "resource_id": "PLR-AI-001",
+          "title": "Agentic AI — Andrew Ng / DeepLearning.AI",
+          "provider": "Andrew Ng, DeepLearning.AI",
+          "role_id": "AI",
+          "batch": "A",
+          "canonical_url": "https://www.deeplearning.ai/courses/agentic-ai"
+        },
+        {
+          "resource_id": "PLR-AI-004",
+          "title": "Agentic AI",
+          "provider": "Andrew Ng；DeepLearning.AI",
+          "role_id": "AI",
+          "batch": "B",
+          "canonical_url": "https://www.deeplearning.ai/courses/agentic-ai"
+        }
+      ],
+      "required": "相关 Andrew Ng/DeepLearning.AI Agentic AI 条目 role_id=AI。"
+    },
+    {
+      "id": "PLR-QA-V02-07",
+      "area": "阅读与能力边界",
+      "status": "pass",
+      "actual": "目录用途、limitations 与交接段均将资料/阅读/证书/示范与岗位胜任、项目通过、真人专家、真实用户和行业先进性分开；能力效果未执行。",
+      "positive_competence_patterns_found": []
+    },
+    {
+      "id": "PLR-QA-V02-08",
+      "area": "高时效资源在线复开",
+      "status": "not_retested",
+      "actual": "本复验未重新打开外部链接；以下条目的当前字符串与v01首检指出的待修复路径/版本问题仍一致或未有结构化版本字段。",
+      "blocking_for_catalog_configuration": false
+    }
+  ],
+  "v01_defect_retest": [
+    {
+      "id": "PLR-QA-01",
+      "severity": "P0",
+      "status": "closed",
+      "finding": "15个role_id均出现，每岗至少3条；A/B/PM条目已进入目录。"
+    },
+    {
+      "id": "PLR-QA-02",
+      "severity": "P1",
+      "status": "partial",
+      "finding": "用户本轮要求的theme/theory_domains、learning_output等字段已进入JSON且与MD一致；role-training-framework-v01要求的 source_version/language/cost_and_access/prerequisites/estimated_effort/learning_objectives/textbook_or_task_mapping/authority_reason/maintenance_or_publication_date 等仍未结构化。",
+      "blocking_for_limited_catalog_configuration": false
+    },
+    {
+      "id": "PLR-QA-03",
+      "severity": "P1",
+      "status": "closed",
+      "finding": "59条记录的Markdown/JSON关键字段与岗位化学习产出一致；不再使用B批统一泛化产出。"
+    },
+    {
+      "id": "PLR-QA-04",
+      "severity": "P1",
+      "status": "partial",
+      "finding": "所有记录均有canonical_url；AI-008/OPS-004/RETR-004额外保留source_urls数组，但url原字段仍为复合字符串；在线可访问性未复验。",
+      "blocking_for_limited_catalog_configuration": false
+    },
+    {
+      "id": "PLR-QA-05",
+      "severity": "P2",
+      "status": "closed_with_limitations",
+      "finding": "59条均有provider、stage、limitations、accessed_at；发布日期/维护日期仍不结构化。"
+    },
+    {
+      "id": "PLR-QA-06",
+      "severity": "P2",
+      "status": "open_not_retested",
+      "finding": "旧课程/版本敏感资源的结构化 publication/maintenance/recheck 字段仍缺失；未在线复开。",
+      "blocking_for_limited_catalog_configuration": false
+    },
+    {
+      "id": "PLR-QA-07",
+      "severity": "P1",
+      "status": "closed",
+      "finding": "Andrew Ng/DeepLearning.AI Agentic AI 的A、B重复来源均绑定role_id=AI，并保留batch与稳定ID。"
+    },
+    {
+      "id": "PLR-QA-08",
+      "severity": "P1",
+      "status": "closed_with_limitations",
+      "finding": "PM补充3项均有PM role_id、batch、canonical_url及产出；独立PM研究文件未提供，保留来源限制。"
+    },
+    {
+      "id": "PLR-QA-09",
+      "severity": "P2",
+      "status": "closed_with_limitations",
+      "finding": "岗位绑定和岗位化产出已可交接；未执行真实学习、作品或独立领域适用性判断。"
+    },
+    {
+      "id": "PLR-QA-10",
+      "severity": "P2",
+      "status": "pass_declaration_only",
+      "finding": "未发现把阅读写成能力的正向断言；课程/证书/示范仍不能替代能力证据。"
+    }
+  ],
+  "high_timeliness_rechecks": [
+    {
+      "id": "PLR-TIME-01",
+      "resource_id": "PLR-AI-006",
+      "severity": "P1",
+      "status": "open_not_retested",
+      "blocking_for_catalog_configuration": false,
+      "current_canonical_url": "https://www.deeplearning.ai/alpha/short-courses/ai-agents-in-langgraph",
+      "v01_followup": "应优先复核 https://www.deeplearning.ai/courses/ai-agents-in-langgraph 并记录当前时长/访问状态。",
+      "evidence": "当前JSON仍使用首检标出的alpha/short-courses路径；未在线打开。",
+      "priority_label": "high"
+    },
+    {
+      "id": "PLR-TIME-02",
+      "resource_id": "PLR-COMP-004",
+      "severity": "P1",
+      "status": "open_not_retested",
+      "blocking_for_catalog_configuration": false,
+      "current_canonical_url": "https://competition-policy.ec.europa.eu/public-consultations/2020-market-definition-notice_en",
+      "v01_followup": "应改用或并列记录2024欧盟Notice（CELEX:52024XC01645），旧咨询页只能标历史背景。",
+      "evidence": "当前JSON仍为2020 consultation URL；未在线打开。",
+      "priority_label": "high"
+    },
+    {
+      "id": "PLR-TIME-03",
+      "resource_id": "PLR-BE-004",
+      "severity": "P1",
+      "status": "open_not_retested",
+      "blocking_for_catalog_configuration": false,
+      "current_canonical_url": "https://dataintensive.net/?lang=en",
+      "v01_followup": "需绑定明确版本/出版社或作者页；第2版合著者与旧版示例不能混用。",
+      "evidence": "当前title仍为Martin Kleppmann单作者且无source_version字段；未在线打开。",
+      "priority_label": "high"
+    },
+    {
+      "id": "PLR-TIME-04",
+      "resource_id": "PLR-BE-003",
+      "severity": "P2",
+      "status": "open_not_retested",
+      "blocking_for_catalog_configuration": false,
+      "current_canonical_url": "https://cloud.google.com/learn/certification/data-engineer",
+      "v01_followup": "标题为Learning Path但链接是Certification页，应拆分学习路径/认证页并记录费用、语言、有效期和经验要求。",
+      "evidence": "当前title/URL仍未拆分；未在线打开。",
+      "priority_label": "medium"
+    },
+    {
+      "id": "PLR-TIME-05",
+      "resource_id": "PLR-AI-002",
+      "severity": "P2",
+      "status": "open_not_retested",
+      "blocking_for_catalog_configuration": false,
+      "current_canonical_url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "v01_followup": "保留日期化厂商经验的时效说明并添加当前跟进链接/复核日期。",
+      "evidence": "当前limitations未结构化记录发布日期/复核日期；未在线打开。",
+      "priority_label": "medium"
+    },
+    {
+      "id": "PLR-TIME-06",
+      "resource_id": "PLR-RETR-003",
+      "severity": "P2",
+      "status": "open_not_retested",
+      "blocking_for_catalog_configuration": false,
+      "current_canonical_url": "https://www.elastic.co/docs/solutions/search/ranking",
+      "v01_followup": "绑定当前Elastic文档版本（首检记录为v9.0+）并在项目中文查询集上实测。",
+      "evidence": "当前JSON无source_version字段；未在线打开。",
+      "priority_label": "medium"
+    },
+    {
+      "id": "PLR-TIME-07",
+      "resource_id": "ALL",
+      "severity": "P2",
+      "status": "open_not_retested",
+      "blocking_for_catalog_configuration": false,
+      "current_canonical_url": "N/A",
+      "v01_followup": "对旧课程/标准/动态供应商资源补source_version、language、cost_and_access、maintenance_or_publication_date和recheck状态。",
+      "evidence": "框架合同字段仍缺失，当前只有accessed_at与limitations；未执行在线复开。",
+      "priority_label": "medium"
+    },
+    {
+      "id": "PLR-TIME-08",
+      "resource_id": "PLR-AI-008;PLR-OPS-004;PLR-RETR-004",
+      "severity": "P2",
+      "status": "partial_not_retested",
+      "blocking_for_catalog_configuration": false,
+      "current_canonical_url": "每条均有canonical_url且source_urls数组",
+      "v01_followup": "保留主链接/补充链接的结构化列表；不要让url单字段继续承载复合字符串。",
+      "evidence": "source_urls已出现，但url字段仍保留中文分隔复合串；未在线打开。",
+      "priority_label": "medium"
+    },
+    {
+      "id": "PLR-TIME-09",
+      "resource_id": "ALL",
+      "severity": "P2",
+      "status": "open_not_retested",
+      "blocking_for_catalog_configuration": false,
+      "current_canonical_url": "N/A",
+      "v01_followup": "将“可支撑/直接对应本项目”改为明确学习输入映射，并把来源主张与项目证据分开。",
+      "evidence": "JSON source_relevance仍含“可支撑”“直接对应”措辞；未做内容返修。",
+      "priority_label": "medium"
+    }
+  ],
+  "source_traceability": {
+    "A": {
+      "expected_items": 25,
+      "catalog_batch_count": 25,
+      "title_url_matches": 25,
+      "status": "pass",
+      "source_file": "sites/rolecraft/team/resource-research-a.md",
+      "unmatched_titles": []
+    },
+    "B": {
+      "expected_items": 31,
+      "catalog_batch_count": 31,
+      "title_url_matches": 31,
+      "status": "pass",
+      "source_file": "sites/rolecraft/team/resource-research-b.md",
+      "unmatched_titles": []
+    },
+    "PM补充": {
+      "expected_items": 3,
+      "catalog_batch_count": 3,
+      "resource_ids": [
+        "PLR-PM-001",
+        "PLR-PM-002",
+        "PLR-PM-003"
+      ],
+      "status": "pass_with_limitations",
+      "source_file": "sites/rolecraft/team/professional-learning-resources-v01.md",
+      "limitation": "项目经理补充未另存为resource-research-pm.md；本目录的batch、稳定ID、title、provider和canonical_url可回溯。"
+    }
+  },
+  "not_assessed": [
+    "课程完成",
+    "理论核验",
+    "岗位作品",
+    "陌生任务迁移",
+    "真实学习者效果",
+    "真人专家复核",
+    "真实用户价值",
+    "生产经济性",
+    "行业先进性",
+    "外部链接当前可访问性",
+    "许可证/地区/费用实时状态"
+  ],
+  "input_hashes": {
+    "professional-learning-resources-v01.md": "3c1506ab5c77f0c547078d3acd522848e0553ebb2a23fadcf785c0c57bbc058d",
+    "professional-learning-resources-v01.json": "40b087a59dbf24dc6ec75fa390984a460bf1110128e5600bd60534444433d259",
+    "resource-research-a.md": "ab5168eadd2a56b74391de35579e4dacc5d49ec961d75eeb5fea4f268b93c0c2",
+    "resource-research-b.md": "8114608fd79a86e6f7ba7170bcdd4e57db006ff0ce1fbacf9c50b8579d21cff5",
+    "role-training-framework-v01.md": "081ee0f07b1a9b0a18585ca1d1f8bce361d2452edf02340d0e98193d686cabb1",
+    "professional-learning-resources-qa-v01.md": "9b267ed3ccb1988d05e5a265336e6430e82d913b03b54c3e4d879e882de86a85",
+    "professional-learning-resources-qa-v01.json": "3ef7468a602c8a46533b623d049dbb0f5ffb3c3dce20bd78b3566d1790756b57",
+    "professional-learning-resources-content-review-v01.md": "7e72d14fb2820e34458b39ba3cc4271164fd9442b815a01a4283effa57190e0c",
+    "professional-learning-resources-content-review-v01.json": "548f6abe30b80295d82f837ec24f03bf2530c7adf888401de71885d7849fd6b8",
+    "professional-learning-resources-content-review-v02.md": "a60aecf068fa911fa8a7ea65f972bbc4c7341f26ac92088635d00028ed162102",
+    "professional-learning-resources-content-review-v02.json": "32318f89fa9cfbb01045d35976ca58cc07f8657c761cdb88046d8156b54acbee"
+  },
+  "retest_rule": "本报告仅关闭或分开记录当前收到版本的静态缺陷；高时效链接/版本项目标记open_not_retested或partial_not_retested，训练前必须重新打开并记录版本/访问/费用/许可，不能自动继承通过。",
+  "parity_failures": [],
+  "cross_references": {
+    "content_review_v02": {
+      "markdown_sha256": "a60aecf068fa911fa8a7ea65f972bbc4c7341f26ac92088635d00028ed162102",
+      "json_sha256": "32318f89fa9cfbb01045d35976ca58cc07f8657c761cdb88046d8156b54acbee",
+      "use": "仅作为内容审校员已重新打开部分高时效页面的交叉记录；不替代本QA的独立在线复验。"
+    }
+  }
+}

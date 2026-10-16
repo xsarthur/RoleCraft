@@ -1,0 +1,24 @@
+{
+  "record_type": "json_syntax_fix",
+  "role": "竞品研究员",
+  "date": "2026-10-14",
+  "target": "sites/rolecraft/team/uiux-interview-questions-3m-research.json",
+  "original_sha256": "7aa79f20e39ffe27ffbb21daf8e3bc1eb2cc985dd33a586bd27a9db7d59da6b4",
+  "fixed_sha256": "0f2df0d9b0c9e179fc5a60de169c6ff2dc6ce837928cc0812038719f416443f8",
+  "change": {
+    "line": 73,
+    "before": "bu\"S05\"",
+    "after": "\"S05\"",
+    "scope": "syntax_only"
+  },
+  "content_preserved": true,
+  "markdown_research_modified": false,
+  "validation": {
+    "python_json_tool": "passed",
+    "json_loads": "passed",
+    "source_count": 5,
+    "item_count": 103,
+    "s05_resolvable": true
+  },
+  "limitations": "This record verifies JSON syntax and structural loading only; it does not re-evaluate source claims or research conclusions."
+}

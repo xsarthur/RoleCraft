@@ -1,0 +1,78 @@
+{
+  "python": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "sqlite": "3.50.4",
+  "scope": "independent QA specification fixtures; never production code, user DB or remote APIs",
+  "cases": [
+    {
+      "name": "persistent_crash_recovery_with_negative_control",
+      "status": "pass",
+      "result": {
+        "child_exit_after_remote_commit": 23,
+        "after_safe_recovery_effects": 1,
+        "same_key_concurrent_results": [
+          "issue-k1",
+          "issue-k1"
+        ],
+        "old_epoch_update_count": 0,
+        "naive_new_key_negative_control_effects": 2,
+        "durability_scope": "two independent temporary SQLite files; process restart only; not arbitrary power loss or real downstream"
+      }
+    },
+    {
+      "name": "reconciliation_decision_branches",
+      "status": "pass",
+      "result": {
+        "cases": 10,
+        "assumptions": "NO_EFFECT_FINAL covers all late sends; safe_replay is externally verified contract not inferred from absence; this is QA specification model"
+      }
+    },
+    {
+      "name": "merge_and_stream_contracts",
+      "status": "pass",
+      "result": {
+        "merge_permutations": 6,
+        "replay_idempotent": true,
+        "conflict_rejected": true,
+        "stream_gap_replay_conflict": true,
+        "scope": "QA model of described contract; not LangGraph or network implementation"
+      }
+    },
+    {
+      "name": "authorization_and_projection_contract",
+      "status": "pass",
+      "result": {
+        "legitimate_admitted": true,
+        "tamper_new_intent_expiry_revocation_rejected": 5,
+        "allowlist_projection": true,
+        "scope": "policy fixture only; no actual identity/downstream service"
+      }
+    },
+    {
+      "name": "memory_plan_budget_contract",
+      "status": "pass",
+      "result": {
+        "cyclic_dependency_invalidation_terminates": true,
+        "all_four_impacted": [
+          "m1",
+          "m2",
+          "out1",
+          "out2"
+        ],
+        "plan_join_waits_both": true,
+        "unknown_budget_not_released": true,
+        "parallel_latency_vs_sum": true
+      }
+    },
+    {
+      "name": "async_blocking_and_unbounded_tasks_counterexamples",
+      "status": "pass",
+      "result": {
+        "blocking_heartbeat_max_gap": 0.09136620900244452,
+        "async_heartbeat_max_gap": 0.006303832997218706,
+        "semaphore_only_pending_tasks": 40,
+        "concurrency_limit": 2
+      }
+    }
+  ],
+  "allPassed": true
+}

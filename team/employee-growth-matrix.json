@@ -1,0 +1,277 @@
+{
+  "schemaVersion": "1.0",
+  "id": "employee-growth-curriculum",
+  "version": "employee-growth-v1.0",
+  "date": "2026-10-14",
+  "ownerRole": "curriculum-architect",
+  "status": "training_specification_ready_not_assessed",
+  "scope": "共同职业培养规格；不授予员工能力、职业认证、真人专家意见、用户效果或行业先进性结论",
+  "boundaries": {
+    "writesAllowed": [
+      "sites/rolecraft/team/employee-growth-curriculum.md",
+      "sites/rolecraft/team/employee-growth-matrix.json"
+    ],
+    "writesDisallowed": [
+      "应用、服务、数据库、用户记录",
+      "旧教材、历史QA和产品需求",
+      "其他岗位授权路径"
+    ],
+    "evidenceRule": "学习完成、自评、模型评分、字数、调用次数和任务结束不能单独证明能力；真实用户、真人专家和生产证据必须分别标注。"
+  },
+  "roles": [
+    "project-manager",
+    "product-manager",
+    "curriculum-architect",
+    "designer",
+    "software-engineer",
+    "qa-engineer",
+    "textbook-developer",
+    "ai-generation-engineer",
+    "backend-data-engineer",
+    "user-researcher",
+    "competitor-researcher",
+    "practical-assessor",
+    "operations-analyst",
+    "content-reviewer",
+    "content-retrieval-engineer"
+  ],
+  "resultLedgers": [
+    {
+      "id": "delivery",
+      "label": "交付账本",
+      "question": "本次任务合同和岗位门槛是否完成？",
+      "cannotBeReplacedBy": ["growth", "阅读完成率", "自评"]
+    },
+    {
+      "id": "growth",
+      "label": "成长账本",
+      "question": "是否有独立证据证明能力在新情境中提高？",
+      "cannotBeReplacedBy": ["delivery", "提交文件数", "模型评分"]
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "D1",
+      "title": "职责、边界与判断",
+      "observableBehaviors": ["说明唯一责任、权限、禁止越界和升级条件", "缺证时暂停、拒收或升级"],
+      "evidence": ["任务合同", "范围变更记录", "拒收或升级轨迹"],
+      "nonEvidence": ["口头宣称知道边界", "未记录的意图"]
+    },
+    {
+      "id": "D2",
+      "title": "专业知识与机制",
+      "observableBehaviors": ["解释本领域机制、版本、假设、取舍和适用边界", "明确未知和待核来源"],
+      "evidence": ["带来源机制解释", "版本绑定决策", "反例分析"],
+      "nonEvidence": ["术语清单", "背诵答案", "未核来源"]
+    },
+    {
+      "id": "D3",
+      "title": "受约束的任务执行",
+      "observableBehaviors": ["在给定输入、工具、时间和预算内完成可复现产物", "保存环境与失败"],
+      "evidence": ["产物", "运行或观察记录", "输入输出哈希", "成本和耗时"],
+      "nonEvidence": ["单次截图", "一次成功演示", "未运行伪代码"]
+    },
+    {
+      "id": "D4",
+      "title": "质量、风险与恢复",
+      "observableBehaviors": ["覆盖正常、边界和失败", "保护数据、权限、版本和副作用", "按证据恢复或停止"],
+      "evidence": ["独立反例", "缺陷与复验", "回滚或恢复", "拒绝和升级轨迹"],
+      "nonEvidence": ["看起来正常", "删除首次失败", "把模拟写成真实"]
+    },
+    {
+      "id": "D5",
+      "title": "协作、交接与可复现",
+      "observableBehaviors": ["交付目标、依赖、接口、来源、已验证/未验证、风险和复验步骤", "能签收或有据拒收"],
+      "evidence": ["版本化交接包", "接收确认", "复验路径", "跨岗反馈"],
+      "nonEvidence": ["仅转发文件", "含糊的请查看"]
+    },
+    {
+      "id": "D6",
+      "title": "产品与行业创造",
+      "observableBehaviors": ["从真实问题、用户或行业证据提出可证伪假设", "在可比条件下比较并迭代"],
+      "evidence": ["问题证据", "竞品矩阵", "实验设计", "作品/反馈/迭代链"],
+      "nonEvidence": ["营销声称", "合成材料冒充用户研究", "功能数量"]
+    },
+    {
+      "id": "D7",
+      "title": "复盘、迁移与教会他人",
+      "observableBehaviors": ["从失败找根因并提出可验证改进", "在留出或未知任务迁移", "让另一人复用"],
+      "evidence": ["复盘卡", "原例和留出变体", "返修差异", "辅导记录"],
+      "nonEvidence": ["自我总结", "只在原题调参", "训练天数"]
+    }
+  ],
+  "levels": [
+    {
+      "id": "L0",
+      "title": "准备与边界",
+      "goal": "理解岗位章程、共同基础、资料/工具边界和停止条件",
+      "minimumEvidence": ["入组诊断", "岗位边界复述", "至少一项失败识别"],
+      "allowedModes": ["reading", "guided_observation", "sandbox_scaffold"],
+      "blockers": ["关键权限或安全边界错误", "无法识别缺证"],
+      "promotion": "补共同基础和边界训练后重新诊断"
+    },
+    {
+      "id": "L1",
+      "title": "受指导贡献",
+      "goal": "按脚手架完成小任务并正确交接",
+      "minimumEvidence": ["两个不同夹具的沙箱工件", "D1-D7初步证据", "独立复核无P1"],
+      "allowedModes": ["sandbox_scaffold", "sandbox_independent"],
+      "blockers": ["未记录首次失败", "交接不可复现", "pass_with_limitations未解决"],
+      "promotion": "补证后由独立复核人确认，不由提交自动升级"
+    },
+    {
+      "id": "L2",
+      "title": "独立交付",
+      "goal": "在真实形状的受控任务中独立完成并处理已知反例",
+      "minimumEvidence": ["隔离真实形状任务", "非作者冻结的留出变体", "失败恢复", "完整交接", "无未关闭P0/P1"],
+      "allowedModes": ["isolated_real_shape", "internal_real"],
+      "blockers": ["只在原题成功", "越权或数据隔离失败", "证据不可复现"],
+      "promotion": "复验原例、回归和留出变体均满足后方可建议L3"
+    },
+    {
+      "id": "L3",
+      "title": "稳健负责",
+      "goal": "在版本冲突、资源变化、权限边界和多方交接下稳定交付",
+      "minimumEvidence": ["两个周期的连续证据", "两个情境", "最差案例复验", "系统性缺陷改进", "他人复用"],
+      "allowedModes": ["internal_real", "unknown_transfer"],
+      "blockers": ["重复缺陷无行动", "只依赖作者自审", "未处理残余风险"],
+      "promotion": "由项目经理汇总，专业责任人和独立复核人共同确认"
+    },
+    {
+      "id": "L4",
+      "title": "产品创造与领域带教",
+      "goal": "用真实问题和外部可比证据创造/验证新方案，并沉淀可迁移方法",
+      "minimumEvidence": ["真实用户、同行、真人专家或生产反馈链", "可比测量", "迭代结果", "带教或标准沉淀"],
+      "allowedModes": ["internal_real", "unknown_transfer", "external_validated"],
+      "blockers": ["无外部证据", "把构造材料写成真实效果", "营销比较不可比"],
+      "promotion": "另行建立领域门槛；90日训练不会自动授予L4"
+    }
+  ],
+  "learningRoute": [
+    {"id": "D0", "title": "入组诊断", "requiredOutputs": ["诊断卡", "起点层级", "补学路径"], "evidenceStatus": "not_assessed_until_run"},
+    {"id": "C0", "title": "共同基础", "topics": ["任务合同", "证据与版本", "正常/边界/失败", "权限与副作用", "交接", "复盘与迁移"]},
+    {"id": "R1", "title": "岗位专属学习", "requiredOutputs": ["机制解释", "岗位作品W-role", "来源与未知标记"]},
+    {"id": "S1", "title": "沙箱脚手架", "mode": "sandbox_scaffold", "purpose": "低风险练习机制和停止条件"},
+    {"id": "S2", "title": "沙箱独立实现", "mode": "sandbox_independent", "purpose": "独立选择方案并保留失败"},
+    {"id": "R2", "title": "真实形状隔离任务", "mode": "isolated_real_shape", "purpose": "在临时数据和可回滚条件下迁移"},
+    {"id": "R3", "title": "内部真实任务", "mode": "internal_real", "purpose": "取得授权后按合同交付"},
+    {"id": "U1", "title": "未知任务", "mode": "unknown_transfer", "purpose": "非作者留出变体，验证迁移和停止判断"},
+    {"id": "V1", "title": "独立复核与复盘", "requiredOutputs": ["原例复验", "受影响回归", "复盘卡", "下一目标"]}
+  ],
+  "diagnostic": {
+    "id": "employee-growth-d0",
+    "steps": [
+      {"id": "boundary", "tests": "责任、权限、不做项和升级条件"},
+      {"id": "mechanism", "tests": "一个岗位核心机制、版本、假设和未知"},
+      {"id": "familiar_task", "tests": "脚手架下完成低风险任务和交接"},
+      {"id": "failure_identification", "tests": "含已知缺陷的预期/实际、风险和停止"},
+      {"id": "transfer_plan", "tests": "未见同能力任务的计划、停止条件和证据要求"}
+    ],
+    "recordFields": ["diagnostic_id", "role_id", "role_version", "fixture_hash", "environment", "raw_output", "dimension_observations", "blockers", "remediation", "reviewer", "status"],
+    "resultRule": "诊断只给L0/L1起点，不授职业能力；关键边界错误阻断独立交付。"
+  },
+  "exerciseContract": {
+    "requiredFields": [
+      {"name": "exercise_id", "type": "stable_id", "required": true},
+      {"name": "exercise_version", "type": "semver_or_revision", "required": true},
+      {"name": "role_id", "type": "enum", "required": true},
+      {"name": "owner", "type": "actor_id", "required": true},
+      {"name": "reviewer", "type": "independent_actor_id", "required": true},
+      {"name": "level_target", "type": "L0-L4", "required": true},
+      {"name": "purpose", "type": "text", "required": true},
+      {"name": "user_scenario", "type": "text", "required": true},
+      {"name": "prerequisites", "type": "course_ids_and_evidence", "required": true},
+      {"name": "mode", "type": "sandbox_scaffold|sandbox_independent|isolated_real_shape|internal_real|unknown_transfer", "required": true},
+      {"name": "inputs", "type": "fixtures_and_identity", "required": true},
+      {"name": "fixtures_hash", "type": "sha256", "required": true},
+      {"name": "constraints", "type": "time_budget_permissions_network_side_effects", "required": true},
+      {"name": "expected", "type": "normal_boundary_failure", "required": true},
+      {"name": "acceptance", "type": "observable_conditions", "required": true},
+      {"name": "submission", "type": "artifact_paths", "required": true},
+      {"name": "evidence", "type": "version_environment_command_source_feedback", "required": true},
+      {"name": "failure_and_rework", "type": "first_failure_defect_repair_retest", "required": true},
+      {"name": "transfer_case", "type": "held_out_change_and_result", "required": true},
+      {"name": "decision", "type": "pass|pass_with_limitations|fail|insufficient_evidence", "required": true},
+      {"name": "next_action", "type": "owner_due_date_retest", "required": true}
+    ],
+    "mandatoryBehavior": "至少包含一条停止、拒绝或升级行为；外部副作用先用替身，获得明确授权后才可进入内部真实任务。"
+  },
+  "roleTracks": [
+    {"roleId": "project-manager", "anchors": ["任务拆解", "依赖", "版本", "交接", "风险台账", "复盘"], "work": "合同拆解→隔离协调→内部项目→缺依赖未知", "artifact": "W-project-state-and-evidence", "boundary": "不代写产品、教材、设计、代码或测试结论"},
+    {"roleId": "product-manager", "anchors": ["用户场景", "范围", "验收", "价值假设", "可比基线"], "work": "合成定界→隔离需求评审→真实反馈→需求变化未知", "artifact": "W-product-contract", "boundary": "不改专业实现或代测试宣布通过"},
+    {"roleId": "curriculum-architect", "anchors": ["能力矩阵", "先修", "教学结构", "练习量规", "证据映射"], "work": "课程规格→作者交接→课程反馈→陌生目标迁移", "artifact": "W-curriculum-map", "boundary": "不代写作者正文或审校自己的产物"},
+    {"roleId": "designer", "anchors": ["信息架构", "状态", "视觉优先", "可访问性", "响应式", "交接"], "work": "状态板→可操作原型→真实切片→设备/异常未知", "artifact": "W-state-and-visual-contract", "boundary": "不写应用代码或改变产品范围"},
+    {"roleId": "software-engineer", "anchors": ["客户端状态", "接口消费", "错误恢复", "版本回退", "可复现自检"], "work": "替身接口→隔离切片→真实内部→延迟/旧版本/空响应未知", "artifact": "W-client-delivery", "boundary": "不重定义需求或代替独立验收"},
+    {"roleId": "qa-engineer", "anchors": ["测试设计", "夹具冻结", "独立性", "缺陷", "复验", "证据边界"], "work": "已知缺陷→隔离回归→真实验收→未知边界", "artifact": "W-independent-qa", "boundary": "不修代码、降门槛或代写正文"},
+    {"roleId": "textbook-developer", "anchors": ["机制解释", "来源", "案例", "分层练习", "参考分析", "返修"], "work": "合成案例→独立章节→反馈→新职业迁移", "artifact": "W-complete-textbook-unit", "boundary": "不改产品门槛、不自审、不把伪代码写成实测"},
+    {"roleId": "ai-generation-engineer", "anchors": ["模型/规则模式", "结构化输出", "来源绑定", "超时重试", "失败诚实性"], "work": "确定性替身→隔离适配→授权内部调用→部分输出/来源冲突未知", "artifact": "W-generation-contract", "boundary": "不负责账户、教材审校或独立测试"},
+    {"roleId": "backend-data-engineer", "anchors": ["账户权限", "数据模型", "幂等", "迁移", "恢复", "版本"], "work": "临时库→双账户→内部恢复→重复请求/回滚未知", "artifact": "W-data-and-recovery-contract", "boundary": "不实现模型推理、不删除真实记录"},
+    {"roleId": "user-researcher", "anchors": ["用户问题", "同意", "任务脚本", "观察/解释分离", "隐私"], "work": "合成观察→研究材料→授权真实研究→相反反馈未知", "artifact": "W-research-kit", "boundary": "不伪造访谈、不替用户作答"},
+    {"roleId": "competitor-researcher", "anchors": ["样本版本", "场景/价格口径", "实测与营销区分", "可比条件"], "work": "合成矩阵→离线对比→授权实测→缺版本未知", "artifact": "W-competitive-evidence", "boundary": "不以营销声明代替实测、不自定门槛"},
+    {"roleId": "practical-assessor", "anchors": ["量规", "作品证据", "未知任务", "一致性", "反馈"], "work": "合成作品→盲评→真实作品→同能力变体", "artifact": "W-practical-assessment", "boundary": "不代学员完成、不授伪认证"},
+    {"roleId": "operations-analyst", "anchors": ["成本/耗时/质量口径", "失败计入", "预算", "敏感性", "未知"], "work": "构造账本→隔离计算→内部账单→缺价格/重试未知", "artifact": "W-operations-analysis", "boundary": "不虚构账单、不改产品门槛"},
+    {"roleId": "content-reviewer", "anchors": ["论断核对", "来源/版本", "边界", "严重级别", "返修复验"], "work": "错误短文→独立审校→真实章节→版本漂移未知", "artifact": "W-content-review-and-retest", "boundary": "不改作者正文、不冒充真人专家"},
+    {"roleId": "content-retrieval-engineer", "anchors": ["分节索引", "意图/术语召回", "排序", "引用", "歧义", "无匹配"], "work": "合成语料→隔离索引→当前教材→术语/否定/多意图/未知查询", "artifact": "W-versioned-retrieval", "boundary": "不编教材、不改账户/标准、不自审检索"}
+  ],
+  "reviewAndTransfer": {
+    "reviewOrder": ["same_fixture_retest", "affected_regression", "held_out_variant"],
+    "retrospectiveFields": ["facts", "expected_vs_actual", "first_failure", "root_cause_hypothesis", "decision", "knowledge_to_add", "action_owner", "due_date", "evidence", "retest", "status"],
+    "transferRule": "由非作者冻结，至少改变用户目标、数据形状、权限/版本、工具错误、资源限制或协作对象之一；只在原题调参不算迁移。",
+    "closeRule": "保留首次失败和返修版本；只有独立复验通过、无未处理P0/P1且残余限制已登记才可关闭。"
+  },
+  "checkpoints": [
+    {"id": "D0", "name": "基线", "tasks": ["冻结合同、夹具、环境和历史缺陷", "五项诊断"], "target": "L0/L1起点", "status": "not_assessed"},
+    {"id": "D30", "name": "基础门", "tasks": ["共同基础", "两个沙箱夹具", "一次拒收/补件", "锚点与留出复验"], "target": "L1", "status": "not_assessed"},
+    {"id": "D60", "name": "独立交付门", "tasks": ["隔离真实形状项目", "陌生变体", "失败恢复", "跨岗交接"], "target": "L2", "status": "not_assessed"},
+    {"id": "D90", "name": "复杂协作门", "tasks": ["至少两个约束变化", "返修回归", "帮助他人复盘"], "target": "L3建议", "status": "not_assessed"}
+  ],
+  "sourceRelations": {
+    "v10": {
+      "path": "sites/rolecraft/textbooks/v10/",
+      "units": 20,
+      "role": "共同基础与Agent开发机制深读",
+      "use": ["定义/适用需求", "运行闭环", "任务验收", "信任边界", "检索/工具/持久恢复", "评价/安全/成本", "独立交付与复盘"],
+      "rule": "阅读或旧例存在不等于本轮能力通过；保留原文和历史验证状态。"
+    },
+    "v12": {
+      "path": "sites/rolecraft/textbooks/v12/",
+      "units": 30,
+      "curriculumSpec": "sites/rolecraft/team/textbook-v12-curriculum.json",
+      "role": "Agent开发岗位主干；其他岗位按任务借用并重新取得领域证据",
+      "use": ["正式先修", "问题驱动专题", "组件到集成实作", "未知任务和作品"],
+      "rule": "保留v12作者/审校/QA限制；合订本或导航不自动授予运行结论。"
+    },
+    "contentRetrievalAgent": {
+      "implementation": "sites/rolecraft/server/retrieval/",
+      "role": "根据用户表达推荐当前公开教材的小节、原文和来源定位",
+      "allowed": ["版本化分节索引", "本地语义/术语召回", "排序与引用核验", "无匹配/歧义澄清"],
+      "disallowed": ["编写教材", "回答教材之外业务问题", "确认职业能力", "读取个人教材或执行工具"],
+      "trainingUse": ["学习入口", "定位补学材料", "记录查询/候选/来源哈希", "由课程或岗位责任人判断适用性"],
+      "evidenceLimit": "检索命中不等于理解、迁移或L1-L4证据；规则降级、本地语义和真实外部模型调用必须分开记录。",
+      "failureSemantics": ["unavailable", "needs_clarification", "no_match", "invalid_input"],
+      "versionRule": "来源、索引、教材版本和哈希失配时保持未验证/不可用，不编造章节。"
+    }
+  },
+  "statusVocabulary": [
+    "planned",
+    "in_progress",
+    "pass",
+    "pass_with_limitations",
+    "fail",
+    "insufficient_evidence",
+    "not_assessed"
+  ],
+  "selfCheck": {
+    "result": "met_within_spec_scope",
+    "checks": [
+      {"id": "SC-01", "claim": "七维矩阵含行为、证据和反证", "result": "met_within_spec_scope", "limit": "未观察真实员工"},
+      {"id": "SC-02", "claim": "L0-L4含门槛、阻断和不自动晋级", "result": "met_within_spec_scope", "limit": "无实际晋级记录"},
+      {"id": "SC-03", "claim": "含入组诊断、共同基础、岗位专属和梯度", "result": "met_within_spec_scope", "limit": "未执行D0"},
+      {"id": "SC-04", "claim": "练习字段绑定版本、反例、返修和迁移", "result": "met_within_spec_scope", "limit": "无实际证据卡"},
+      {"id": "SC-05", "claim": "含复盘、30/60/90和状态分类", "result": "met_within_spec_scope", "limit": "无运行结论"},
+      {"id": "SC-06", "claim": "明确v10/v12与内容检索Agent关系", "result": "met_within_spec_scope", "limit": "未改变教材或应用"},
+      {"id": "SC-07", "claim": "本轮未越界写入其他领域", "result": "met_within_spec_scope", "limit": "仅新增本矩阵和配套课程文档"}
+    ],
+    "overallLimit": "员工和培养项目保持not_assessed；下一步需由项目经理协调隔离教学项目、产品经理冻结合同、测试工程师执行D0。"
+  }
+}

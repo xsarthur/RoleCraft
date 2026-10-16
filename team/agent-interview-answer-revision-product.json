@@ -1,0 +1,2596 @@
+{
+  "schemaVersion": "1",
+  "contractVersion": "1.0",
+  "date": "2026-10-14",
+  "timezone": "Asia/Shanghai",
+  "owner": "产品经理",
+  "answerSetVersion": "interview-answers-v1",
+  "userAuthorization": "将所有题进行返修；范围包括当前124题，正确内容可保留但当前新版本须独立复核。",
+  "scope": {
+    "counts": {
+      "fixed100": 100,
+      "market14": 14,
+      "prototype10": 10,
+      "total": 124
+    },
+    "questionIdentity": "preserve exact original id, namespace, question and prototype followups",
+    "priorCounts": {
+      "met": 19,
+      "not_met": 105
+    },
+    "priorPassesInherited": false
+  },
+  "paths": {
+    "root": "sites/rolecraft/textbooks/interview-answers-v1",
+    "availabilityAtReceipt": "not_present",
+    "answers": "answers/{ID}.md",
+    "authorManifests": [
+      "author-a.json",
+      "author-b.json",
+      "author-c.json"
+    ],
+    "aggregateManifest": "manifest.json",
+    "readme": "README.md"
+  },
+  "ownership": {
+    "answerFiles": "教材研发员；按PM分配题号独占",
+    "authorManifests": "各对应作者独占",
+    "aggregateManifest": "数据工程整合岗唯一写入；不是PM或三作者共写",
+    "curriculum": "课程架构师",
+    "contentReview": "内容审校员独立报告",
+    "qa": "测试工程师独立报告",
+    "applicationConsumption": "软件工程师"
+  },
+  "markdownContract": {
+    "required": [
+      "完整原题面",
+      "完整参考解析，按问题自然组织",
+      "参考出处与对应主张/位置"
+    ],
+    "optional": [
+      "面试口述提纲；明确为摘要"
+    ],
+    "forbidden": [
+      "机械八栏或字数配额",
+      "用整章链接替代完整解析",
+      "未经标注把虚构案例当真实经历",
+      "作者自称独立审校或QA通过"
+    ]
+  },
+  "authorManifestContract": {
+    "topLevelRequired": {
+      "schemaVersion": "1",
+      "answerSetVersion": "interview-answers-v1",
+      "author": "角色/代理标识",
+      "assignedIds": "PM明确分配的ID数组",
+      "items": "完整条目数组"
+    },
+    "itemRequired": [
+      "id",
+      "collection",
+      "sourceId",
+      "question",
+      "answerPath",
+      "answerVersion",
+      "answerSha256",
+      "sourceBindings",
+      "personalEvidenceRequired",
+      "authorSelfCheck",
+      "priorDefectReferences"
+    ],
+    "itemConditional": {
+      "followups": "prototype10原追问必须保留",
+      "externalSources": "新增版本敏感/原教材未覆盖事实须绑定一手资料url、checkedAt及必要version"
+    },
+    "answerPathBase": "relative to paths.root, e.g. answers/Q1.md",
+    "sourcePathBase": "repository root, e.g. sites/rolecraft/textbooks/v12/c01-control-loop.md",
+    "answerVersion": "per-answer revision string, update when editorial content changes; hash over exact UTF-8 file bytes",
+    "sourceBindingsRequiredLocal": [
+      "path",
+      "version",
+      "sha256",
+      "section",
+      "startLine",
+      "endLine",
+      "supports"
+    ],
+    "authorSelfCheck": "object keyed AQS-01 through AQS-08; each contains applicable(boolean), locations(array), rationale(string), status(author_checked or not_applicable); not_applicable requires question-specific rationale",
+    "priorDefectReferences": "preserve references to old defect IDs and original counterexamples; remediation details may be in adjacent author note",
+    "independentStatus": "reviewReferences/qaReferences filled only from independent records; authors do not declare independent approval"
+  },
+  "standard": {
+    "path": "sites/rolecraft/team/ANSWER_QUALITY_STANDARD.md",
+    "criteria": [
+      "AQS-01",
+      "AQS-02",
+      "AQS-03",
+      "AQS-04",
+      "AQS-05",
+      "AQS-06",
+      "AQS-07",
+      "AQS-08"
+    ],
+    "unchanged": true,
+    "noMechanicalThresholds": true
+  },
+  "acceptanceLayers": [
+    {
+      "id": "content",
+      "required": "Both content reviewer and QA read all 124 current questions and complete answers; semantic AQS checking, original defects/counterexamples and relevant affected coverage; no key defect or required evidence gap",
+      "statusAtReceipt": "pending"
+    },
+    {
+      "id": "execution",
+      "required": "QA selects necessary safe isolated examples according to actual claims; distinguish static analysis, plans, actual executions, external effects and human outcomes",
+      "statusAtReceipt": "pending"
+    },
+    {
+      "id": "delivery",
+      "required": "Current identity/version/full text/source/links/rendering match accepted answers; no three-bullet or fixed-length truncation; actual tested surface recorded",
+      "statusAtReceipt": "pending"
+    },
+    {
+      "id": "human_and_full_product",
+      "required": "Human understanding, personal experience, employment, expert, production and industry-advanced claims require their own evidence; original eight gates unchanged",
+      "statusAtReceipt": "not_met"
+    }
+  ],
+  "perItemFinalStates": [
+    "met_within_reviewed_scope",
+    "not_met",
+    "insufficient"
+  ],
+  "allAnswersPassRule": "All 124 current answer versions individually satisfy applicable AQS conditions, independent content/QA necessary checks and no open critical content defect or required evidence gap; display acceptance reported separately; no inherited old 19 pass results.",
+  "applicationBoundary": {
+    "allowed": "minimal consumption of approved new answer content by current formal data and prototype reference display",
+    "preserve": [
+      "original327_evidence_quotes",
+      "frozen_v12",
+      "original_question_ids_and_wording",
+      "historical_reports",
+      "user_data_and_learning_state",
+      "deferred_questions_review_check_routes"
+    ],
+    "forbidden": [
+      "reopen_deferred_module",
+      "paid_model_calls",
+      "upload_or_publish",
+      "external_contact",
+      "actual_user_database_test_or_migration"
+    ],
+    "safety": "Complete unapproved/draft answers must not appear as independently approved; full answers are separate from textbook quote evidence."
+  },
+  "items": [
+    {
+      "id": "Q1",
+      "collection": "fixed100",
+      "sourceId": 1,
+      "question": "如何界定 LLM Agent？你会用哪些可观察行为区分它与普通聊天应用？",
+      "answerPath": "answers/Q1.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "1fe4206d933a2aed33552ec28ed1ec71b31889e3bd8b14cd7cdb2e055083c79c",
+      "priorDefectReferences": [
+        "CR-Q1-03",
+        "CR-Q1-04",
+        "CR-Q1-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q1]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q1]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q2",
+      "collection": "fixed100",
+      "sourceId": 2,
+      "question": "单次模型调用、固定 Workflow 和动态 Agent，分别适合什么业务条件？",
+      "answerPath": "answers/Q2.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "309016dc257af7423a5cb5ea17464b653a76042d033292393d6eaf11516a46d7",
+      "priorDefectReferences": [
+        "CR-Q2-01",
+        "CR-Q2-02",
+        "CR-Q2-03",
+        "CR-Q2-04",
+        "CR-Q2-05",
+        "CR-Q2-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q2]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q2]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q3",
+      "collection": "fixed100",
+      "sourceId": 3,
+      "question": "用户说“帮我做一个 Agent”时，你先澄清哪些需求，才能决定实现方案？",
+      "answerPath": "answers/Q3.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "febb6ae0cdb3a1dfe42e117fa4eabde8e41ee1008f24768aa92c678395f6c4ba",
+      "priorDefectReferences": [
+        "CR-Q3-02",
+        "CR-Q3-03",
+        "CR-Q3-04",
+        "CR-Q3-05",
+        "CR-Q3-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q3]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q3]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q4",
+      "collection": "fixed100",
+      "sourceId": 4,
+      "question": "工具调用、状态维护、规划和长期记忆，哪些取决于具体场景，并非每个 Agent 都需要？",
+      "answerPath": "answers/Q4.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "adc23d1ea6444207eb5cd5bac2a889adbb5e4be9bceee2b0f2bfed7682b636e4",
+      "priorDefectReferences": [
+        "CR-Q4-01",
+        "CR-Q4-02",
+        "CR-Q4-03",
+        "CR-Q4-04",
+        "CR-Q4-05",
+        "CR-Q4-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q4]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q4]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q5",
+      "collection": "fixed100",
+      "sourceId": 5,
+      "question": "怎样判断增加自主决策带来的收益，足以抵消不确定性与运行成本？",
+      "answerPath": "answers/Q5.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "c3af750fa8fad60cb48febf774ab49a6775b9aae5edccf65ce27c620b14720ea",
+      "priorDefectReferences": [
+        "CR-Q5-01",
+        "CR-Q5-03",
+        "CR-Q5-04",
+        "CR-Q5-05"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q5]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q5]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q6",
+      "collection": "fixed100",
+      "sourceId": 6,
+      "question": "如果需求可以用 SQL、规则或传统搜索解决，你如何解释自己的技术选择？",
+      "answerPath": "answers/Q6.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "bd455a902cedbcd1dcda18f443e69e21a9ebae371b5cbf1d721b2aef36d1f907",
+      "priorDefectReferences": [
+        "CR-Q6-02",
+        "CR-Q6-03",
+        "CR-Q6-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q6]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q6]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q7",
+      "collection": "fixed100",
+      "sourceId": 7,
+      "question": "单 Agent 多工具与多 Agent 协作，在架构上有什么区别？",
+      "answerPath": "answers/Q7.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "189b3408d12d08d56ab17122d4e87944d6ef9af55e11f848c5162f7706fb308f",
+      "priorDefectReferences": [
+        "CR-Q7-01",
+        "CR-Q7-02",
+        "CR-Q7-03",
+        "CR-Q7-04",
+        "CR-Q7-05",
+        "CR-Q7-06",
+        "CR-Q7-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q7]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q7]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q8",
+      "collection": "fixed100",
+      "sourceId": 8,
+      "question": "你会如何评估自研 Agent 运行时、开源框架和低代码平台？",
+      "answerPath": "answers/Q8.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "381815e294aab06720078911c0cd2333f5dd0c63f8f94245bcb266c7ea1c555a",
+      "priorDefectReferences": [
+        "CR-Q8-01",
+        "CR-Q8-02",
+        "CR-Q8-03",
+        "CR-Q8-04",
+        "CR-Q8-05",
+        "CR-Q8-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q8]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q8]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q9",
+      "collection": "fixed100",
+      "sourceId": 9,
+      "question": "从演示原型到可交付的 Agent 服务，需要补齐哪些工程能力？",
+      "answerPath": "answers/Q9.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "15dab019a99b4ddcef342a3c0fdef9bed7f97830ae703570a3be9f431671e522",
+      "priorDefectReferences": [
+        "CR-Q9-02",
+        "CR-Q9-03",
+        "CR-Q9-04",
+        "CR-Q9-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q9]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q9]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q10",
+      "collection": "fixed100",
+      "sourceId": 10,
+      "question": "请用一个真实项目说明：Agent 改善了谁的什么工作，你如何证明改善成立？",
+      "answerPath": "answers/Q10.md",
+      "personalEvidenceRequired": true,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "fe98268faa59abc292cf333acdb49b9985ffc6f667e6f8fa084fd0ca887f8e00",
+      "priorDefectReferences": [
+        "CR-Q10-03",
+        "CR-Q10-04"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q10]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q10]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q11",
+      "collection": "fixed100",
+      "sourceId": 11,
+      "question": "ReAct 如何组织推理、行动与观察？它与一次性生成计划有什么不同？",
+      "answerPath": "answers/Q11.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "89772ee2aefbea688483825b3fded00b27e5a37063dd7dcd0941b988c24d681c",
+      "priorDefectReferences": [
+        "CR-Q11-01",
+        "CR-Q11-02",
+        "CR-Q11-03",
+        "CR-Q11-04",
+        "CR-Q11-05",
+        "CR-Q11-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q11]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q11]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q12",
+      "collection": "fixed100",
+      "sourceId": 12,
+      "question": "ReAct、Plan-and-Execute 和固定状态机，你会如何按任务特征选择？",
+      "answerPath": "answers/Q12.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "89772ee2aefbea688483825b3fded00b27e5a37063dd7dcd0941b988c24d681c",
+      "priorDefectReferences": [
+        "CR-Q12-01",
+        "CR-Q12-02",
+        "CR-Q12-03",
+        "CR-Q12-04",
+        "CR-Q12-05",
+        "CR-Q12-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q12]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q12]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q13",
+      "collection": "fixed100",
+      "sourceId": 13,
+      "question": "不依赖现成框架，手写一个最小 Agent 控制循环，需要哪些状态和分支？",
+      "answerPath": "answers/Q13.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "b0d9c7a625c036e89b81faf6477f8e4fc359831c88a8d6566779053cce1bdd4b",
+      "priorDefectReferences": [
+        "CR-Q13-01",
+        "CR-Q13-02",
+        "CR-Q13-03",
+        "CR-Q13-04",
+        "CR-Q13-06",
+        "CR-Q13-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q13]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q13]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q14",
+      "collection": "fixed100",
+      "sourceId": 14,
+      "question": "如何区分“模型宣布完成”和“任务实际上完成”？",
+      "answerPath": "answers/Q14.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "98a63e2372d8c3cf043e4b23c0b8e99fa9d59820f3ac6eee998c7109da61921d",
+      "priorDefectReferences": [
+        "CR-Q14-02",
+        "CR-Q14-03",
+        "CR-Q14-04",
+        "CR-Q14-06",
+        "CR-Q14-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q14]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q14]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q15",
+      "collection": "fixed100",
+      "sourceId": 15,
+      "question": "怎样设置最大步数、时间和费用限制，同时避免过早中止任务？",
+      "answerPath": "answers/Q15.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "d8a362ccbfdd3564fc1c74305a119f619b6c65e037c3aba4a4eb73727aee6e6e",
+      "priorDefectReferences": [
+        "CR-Q15-01",
+        "CR-Q15-02",
+        "CR-Q15-03",
+        "CR-Q15-04",
+        "CR-Q15-05",
+        "CR-Q15-06",
+        "CR-Q15-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q15]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q15]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q16",
+      "collection": "fixed100",
+      "sourceId": 16,
+      "question": "面对带前置依赖的复杂任务，如何生成和验证可执行计划？",
+      "answerPath": "answers/Q16.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "6378f8e32569ffda4924d799c2f340cc7533d187f9329b0c36142ce453f711cc",
+      "priorDefectReferences": [
+        "CR-Q16-02",
+        "CR-Q16-03",
+        "CR-Q16-04",
+        "CR-Q16-05",
+        "CR-Q16-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q16]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q16]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q17",
+      "collection": "fixed100",
+      "sourceId": 17,
+      "question": "什么信号应触发 Replanning？如何避免反复改计划却没有实际进展？",
+      "answerPath": "answers/Q17.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "5e765209c0c49d6453ed57714333d4115e5752ef323c5b34a921316a3fafa7cb",
+      "priorDefectReferences": [
+        "CR-Q17-02",
+        "CR-Q17-03",
+        "CR-Q17-04",
+        "CR-Q17-05",
+        "CR-Q17-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q17]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q17]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q18",
+      "collection": "fixed100",
+      "sourceId": 18,
+      "question": "Reflection 或自我纠错在哪些情况下有帮助，又可能怎样放大原始错误？",
+      "answerPath": "answers/Q18.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "136e0bfebc0eb0f0b5ebfd82b898d30cd5332c87c916177ffdbd928565823f2d",
+      "priorDefectReferences": [
+        "CR-Q18-02",
+        "CR-Q18-03",
+        "CR-Q18-05",
+        "CR-Q18-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q18]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q18]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q19",
+      "collection": "fixed100",
+      "sourceId": 19,
+      "question": "工具结果与原计划冲突时，运行时应该如何更新状态和后续决策？",
+      "answerPath": "answers/Q19.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "0be0946843016703ef0ef8e5e37c47bbbe0095935e3a63d5981ec9cc7e4c557d",
+      "priorDefectReferences": [
+        "CR-Q19-02",
+        "CR-Q19-03",
+        "CR-Q19-04",
+        "CR-Q19-06",
+        "CR-Q19-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q19]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q19]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q20",
+      "collection": "fixed100",
+      "sourceId": 20,
+      "question": "如何识别和处理重复动作、无效搜索以及循环卡死？",
+      "answerPath": "answers/Q20.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "2cb8d95d7a10bacd656972c585c353b1c0fa0586e676dbebc5458db1b96a309f",
+      "priorDefectReferences": [
+        "CR-Q20-02",
+        "CR-Q20-03",
+        "CR-Q20-04",
+        "CR-Q20-06",
+        "CR-Q20-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q20]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q20]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q21",
+      "collection": "fixed100",
+      "sourceId": 21,
+      "question": "Function Calling 从模型输出到函数真正执行，中间经过哪些步骤？",
+      "answerPath": "answers/Q21.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "9a598adf27ad25011a7d899d72333dcabc606c2df4377c2040db64fe7ddfcbea",
+      "priorDefectReferences": [
+        "CR-Q21-02",
+        "CR-Q21-03",
+        "CR-Q21-04",
+        "CR-Q21-06",
+        "CR-Q21-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q21]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q21]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q22",
+      "collection": "fixed100",
+      "sourceId": 22,
+      "question": "如何设计工具名称、描述和参数 Schema，减少错选工具与错误参数？",
+      "answerPath": "answers/Q22.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "1af3b55f9040ec34e7d7b9dd6c98817660358eb3e92dce989ed46e68498ce047",
+      "priorDefectReferences": [
+        "CR-Q22-01",
+        "CR-Q22-02",
+        "CR-Q22-03",
+        "CR-Q22-04",
+        "CR-Q22-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q22]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q22]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q23",
+      "collection": "fixed100",
+      "sourceId": 23,
+      "question": "工具参数的 JSON 格式正确，为什么不等于调用安全、业务合法？",
+      "answerPath": "answers/Q23.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "e2091a3eea2ce7e9926a0a91784d043c425ecb1fe47e08445c71aebf9b19021e",
+      "priorDefectReferences": [
+        "CR-Q23-02",
+        "CR-Q23-03",
+        "CR-Q23-04",
+        "CR-Q23-06",
+        "CR-Q23-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q23]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q23]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q24",
+      "collection": "fixed100",
+      "sourceId": 24,
+      "question": "工具数量达到数百个时，怎样降低选择错误和上下文负担？",
+      "answerPath": "answers/Q24.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "a97d3090cf7dffb3b4d75c1857ca18c6e7866f9a8cdc1d540d24c1e057d07761",
+      "priorDefectReferences": [
+        "CR-Q24-03",
+        "CR-Q24-04",
+        "CR-Q24-05",
+        "CR-Q24-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q24]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q24]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q25",
+      "collection": "fixed100",
+      "sourceId": 25,
+      "question": "工具超时、限流、参数错误和业务拒绝，应采用同一种重试策略吗？",
+      "answerPath": "answers/Q25.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "5ed9e2cbd15aafc40bb66ff0d79d3707a0b53ea44aa6213b6dd54843482c62b0",
+      "priorDefectReferences": [
+        "CR-Q25-01",
+        "CR-Q25-02",
+        "CR-Q25-03",
+        "CR-Q25-04",
+        "CR-Q25-06",
+        "CR-Q25-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q25]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q25]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q26",
+      "collection": "fixed100",
+      "sourceId": 26,
+      "question": "对可能产生外部副作用的工具，如何防止重试导致重复执行？",
+      "answerPath": "answers/Q26.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "1ba963fefbf148c280421f474adbcdae0ec45761a81ff67f576d03a33775fcff",
+      "priorDefectReferences": [
+        "CR-Q26-02",
+        "CR-Q26-03",
+        "CR-Q26-04",
+        "CR-Q26-05",
+        "CR-Q26-06",
+        "CR-Q26-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q26]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q26]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q27",
+      "collection": "fixed100",
+      "sourceId": 27,
+      "question": "MCP 解决哪一层集成问题？它与模型的 Tool Calling 有什么关系？",
+      "answerPath": "answers/Q27.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "ebdd9a5a5f354787f8eba68851f82eebc79e6df50a8a0576dc819446dade9fb7",
+      "priorDefectReferences": [
+        "CR-Q27-02",
+        "CR-Q27-03",
+        "CR-Q27-04",
+        "CR-Q27-05",
+        "CR-Q27-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q27]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q27]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q28",
+      "collection": "fixed100",
+      "sourceId": 28,
+      "question": "MCP 中的 Tools、Resources 和 Prompts，各自适合表达什么能力？",
+      "answerPath": "answers/Q28.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "3572827d6fa91af1fcd86bedf74ea55f90f8b494876b7685777cf0fe11fb6d84",
+      "priorDefectReferences": [
+        "CR-Q28-03",
+        "CR-Q28-04",
+        "CR-Q28-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q28]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q28]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q29",
+      "collection": "fixed100",
+      "sourceId": 29,
+      "question": "接入第三方工具服务时，如何处理认证、权限、版本与错误契约？",
+      "answerPath": "answers/Q29.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "d1bbc2a5aed452c8d0aa6a5c795e6504b09ab864160805d80626c6f7c9428984",
+      "priorDefectReferences": [
+        "CR-Q29-01",
+        "CR-Q29-02",
+        "CR-Q29-03",
+        "CR-Q29-04",
+        "CR-Q29-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q29]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q29]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q30",
+      "collection": "fixed100",
+      "sourceId": 30,
+      "question": "Tool Calling、MCP、Agent Skills（可复用技能说明与资源包）和 A2A，分别解决什么问题？",
+      "answerPath": "answers/Q30.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "786c3dbccb1a8f9d9d9a1160cdde33b43c6b1efdc45fa675bd0a00557631e752",
+      "priorDefectReferences": [
+        "CR-Q30-01",
+        "CR-Q30-02",
+        "CR-Q30-03",
+        "CR-Q30-04",
+        "CR-Q30-05",
+        "CR-Q30-06",
+        "CR-Q30-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q30]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q30]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q31",
+      "collection": "fixed100",
+      "sourceId": 31,
+      "question": "会话历史、任务工作状态和长期记忆有什么不同？应分别存储什么？",
+      "answerPath": "answers/Q31.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "adc23d1ea6444207eb5cd5bac2a889adbb5e4be9bceee2b0f2bfed7682b636e4",
+      "priorDefectReferences": [
+        "CR-Q31-02",
+        "CR-Q31-03",
+        "CR-Q31-04",
+        "CR-Q31-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q31]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q31]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q32",
+      "collection": "fixed100",
+      "sourceId": 32,
+      "question": "上下文不足时，如何在截断、摘要、检索和外部状态之间选择？",
+      "answerPath": "answers/Q32.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "71ace3039d52c6709cafe1967addd9282f4cc3c1402ffa076ec7e57c08f32316",
+      "priorDefectReferences": [
+        "CR-Q32-01",
+        "CR-Q32-02",
+        "CR-Q32-03",
+        "CR-Q32-04",
+        "CR-Q32-05",
+        "CR-Q32-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q32]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q32]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q33",
+      "collection": "fixed100",
+      "sourceId": 33,
+      "question": "摘要压缩如何避免丢失用户约束、未完成事项和关键事实？",
+      "answerPath": "answers/Q33.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "met_within_current_static_content_scope",
+      "priorAnswerSha256": "c61d91c21ee6ab5f53164ea41e0a0ad8ceadf8531d8306becc116c621481fd7e",
+      "priorDefectReferences": [],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q33]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q33]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q34",
+      "collection": "fixed100",
+      "sourceId": 34,
+      "question": "长期记忆应该在什么条件下写入、更新、合并或删除？",
+      "answerPath": "answers/Q34.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "ba71e2c10dfcc5bbe73b5bf7e21b5ad02f86ae31a193a52b162155d46be43f50",
+      "priorDefectReferences": [
+        "CR-Q34-02",
+        "CR-Q34-03",
+        "CR-Q34-04",
+        "CR-Q34-06",
+        "CR-Q34-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q34]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q34]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q35",
+      "collection": "fixed100",
+      "sourceId": 35,
+      "question": "如何发现错误记忆对后续任务的持续污染，并修正受影响结果？",
+      "answerPath": "answers/Q35.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "4fbbb7baffc910beca40fbe50840ea273804e11c3eb83e898b116bd5fdcf9d79",
+      "priorDefectReferences": [
+        "CR-Q35-01",
+        "CR-Q35-02",
+        "CR-Q35-03",
+        "CR-Q35-04",
+        "CR-Q35-05",
+        "CR-Q35-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q35]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q35]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q36",
+      "collection": "fixed100",
+      "sourceId": 36,
+      "question": "如何隔离不同用户、组织和会话的记忆？",
+      "answerPath": "answers/Q36.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "d67629c6dce3a016520aedb9d0c43645bb7eb3b4a8c5cceb1407cc12f032c984",
+      "priorDefectReferences": [
+        "CR-Q36-02",
+        "CR-Q36-03",
+        "CR-Q36-04",
+        "CR-Q36-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q36]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q36]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q37",
+      "collection": "fixed100",
+      "sourceId": 37,
+      "question": "检索材料、历史记忆与当前用户要求相冲突时，应如何处理？",
+      "answerPath": "answers/Q37.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "met_within_current_static_content_scope",
+      "priorAnswerSha256": "a7d12934382ec055f2a9c78caf8b7853a62836c992dcbe3fdf036d88f4ec1659",
+      "priorDefectReferences": [],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q37]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q37]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q38",
+      "collection": "fixed100",
+      "sourceId": 38,
+      "question": "如何设计系统提示，使角色、工具使用规则和输出要求清晰而可测试？",
+      "answerPath": "answers/Q38.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "34fa4d7885c744976ee8ef15204b71cd3793385f720fc6272f18cc3512794d4c",
+      "priorDefectReferences": [
+        "CR-Q38-01",
+        "CR-Q38-02",
+        "CR-Q38-03",
+        "CR-Q38-04",
+        "CR-Q38-06",
+        "CR-Q38-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q38]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q38]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q39",
+      "collection": "fixed100",
+      "sourceId": 39,
+      "question": "Few-shot 示例如何帮助工具选择？示例过多或失真会带来什么问题？",
+      "answerPath": "answers/Q39.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "28a08c900fda7b4c610cc902e24da5c56a102f1da4564b5caeeb3fdd4e1981d2",
+      "priorDefectReferences": [
+        "CR-Q39-01",
+        "CR-Q39-02",
+        "CR-Q39-03",
+        "CR-Q39-04",
+        "CR-Q39-05",
+        "CR-Q39-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q39]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q39]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q40",
+      "collection": "fixed100",
+      "sourceId": 40,
+      "question": "如何验证一次提示或记忆策略调整确实改善了结果，而非只修好几个演示样例？",
+      "answerPath": "answers/Q40.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "7b72e60297851c8f712ac7cd766c83450904ca0656422d8a983612419ff9792f",
+      "priorDefectReferences": [
+        "CR-Q40-02",
+        "CR-Q40-03",
+        "CR-Q40-04",
+        "CR-Q40-05",
+        "CR-Q40-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q40]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q40]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q41",
+      "collection": "fixed100",
+      "sourceId": 41,
+      "question": "RAG、长上下文直接阅读和模型微调，分别适合解决哪些知识问题？",
+      "answerPath": "answers/Q41.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "04d0b9ace4a1d52a81a640b3f8118cb6b9425a05fa4f2eb7da3a8bb53927010a",
+      "priorDefectReferences": [
+        "CR-Q41-03",
+        "CR-Q41-04",
+        "CR-Q41-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q41]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q41]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q42",
+      "collection": "fixed100",
+      "sourceId": 42,
+      "question": "一个完整 RAG 管线包含哪些环节？如何逐段定位回答错误？",
+      "answerPath": "answers/Q42.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "9a8588632f8b6d148673d25ed06e0186b18c632276e61840d7722bef45e6a201",
+      "priorDefectReferences": [
+        "CR-Q42-02",
+        "CR-Q42-03",
+        "CR-Q42-04",
+        "CR-Q42-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q42]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q42]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q43",
+      "collection": "fixed100",
+      "sourceId": 43,
+      "question": "如何根据文档结构、查询类型和引用需求设计切块策略？",
+      "answerPath": "answers/Q43.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "011a51367dd16220eedf9b4de5110a5ff194dd06b14ace73979b9aee073f3d05",
+      "priorDefectReferences": [
+        "CR-Q43-01",
+        "CR-Q43-02",
+        "CR-Q43-03",
+        "CR-Q43-04",
+        "CR-Q43-05",
+        "CR-Q43-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q43]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q43]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q44",
+      "collection": "fixed100",
+      "sourceId": 44,
+      "question": "如何选择 Embedding 模型，评估领域术语、中文与多语言查询效果？",
+      "answerPath": "answers/Q44.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "f2f39ac35339cb871360c7f8ff73b3a1801823fa69b2a89aa4af613b26a8f03c",
+      "priorDefectReferences": [
+        "CR-Q44-01",
+        "CR-Q44-02",
+        "CR-Q44-03",
+        "CR-Q44-04",
+        "CR-Q44-05",
+        "CR-Q44-06",
+        "CR-Q44-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q44]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q44]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q45",
+      "collection": "fixed100",
+      "sourceId": 45,
+      "question": "关键词检索、向量检索和混合检索分别有什么优势与盲区？",
+      "answerPath": "answers/Q45.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "775e9be8acfb4aa000f5a0d57fe6cc9951b24a74f309446ca12008c9424bcb09",
+      "priorDefectReferences": [
+        "CR-Q45-02",
+        "CR-Q45-03",
+        "CR-Q45-04",
+        "CR-Q45-05",
+        "CR-Q45-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q45]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q45]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q46",
+      "collection": "fixed100",
+      "sourceId": 46,
+      "question": "Reranker 改善的是哪一阶段？怎样衡量它带来的质量与时延代价？",
+      "answerPath": "answers/Q46.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "4392f3479b80bf039af433d9a89762a94e53dcb18f3050415a9fa75ed28d4132",
+      "priorDefectReferences": [
+        "CR-Q46-01",
+        "CR-Q46-03",
+        "CR-Q46-04",
+        "CR-Q46-05",
+        "CR-Q46-06",
+        "CR-Q46-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q46]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q46]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q47",
+      "collection": "fixed100",
+      "sourceId": 47,
+      "question": "查询改写、多查询和多跳检索什么时候有效，什么时候容易改变原意？",
+      "answerPath": "answers/Q47.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "4dfe0b27c78538224f4f34a126e2c3870a7bebe7100bb730022a0ab0ba0d2cf3",
+      "priorDefectReferences": [
+        "CR-Q47-01",
+        "CR-Q47-02",
+        "CR-Q47-03",
+        "CR-Q47-04",
+        "CR-Q47-05",
+        "CR-Q47-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q47]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q47]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q48",
+      "collection": "fixed100",
+      "sourceId": 48,
+      "question": "如何让答案引用与实际支持结论的原文、版本及位置对应？",
+      "answerPath": "answers/Q48.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "e9f2b52dbdae651de3643924d4365d4b7033ce7706fd78b0d7d7d56bb8bf3a93",
+      "priorDefectReferences": [
+        "CR-Q48-02",
+        "CR-Q48-03",
+        "CR-Q48-04",
+        "CR-Q48-06",
+        "CR-Q48-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q48]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q48]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q49",
+      "collection": "fixed100",
+      "sourceId": 49,
+      "question": "没有足够证据、资料互相矛盾或知识已经过期时，系统应怎样响应？",
+      "answerPath": "answers/Q49.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "56c5da61a167a1f43a88b23414f49cce9809875398372ebeafad2978207e4471",
+      "priorDefectReferences": [
+        "CR-Q49-02",
+        "CR-Q49-03",
+        "CR-Q49-04",
+        "CR-Q49-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q49]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q49]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q50",
+      "collection": "fixed100",
+      "sourceId": 50,
+      "question": "Agentic RAG 相对固定 RAG 增加了什么决策能力？如何证明额外复杂度值得？",
+      "answerPath": "answers/Q50.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "b36275a556f0b7f67973b2e9713ce8faa87cb6d8c77352dc7c636f1324b4473e",
+      "priorDefectReferences": [
+        "CR-Q50-01",
+        "CR-Q50-02",
+        "CR-Q50-03",
+        "CR-Q50-04",
+        "CR-Q50-05",
+        "CR-Q50-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q50]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q50]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q51",
+      "collection": "fixed100",
+      "sourceId": 51,
+      "question": "在你采用的版本中，LangChain 和 LangGraph 分别承担什么职责？",
+      "answerPath": "answers/Q51.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "05390349194860170adee0cb1079741976f30103d751eddcd42f672834b528d1",
+      "priorDefectReferences": [
+        "CR-Q51-01",
+        "CR-Q51-02",
+        "CR-Q51-03",
+        "CR-Q51-04",
+        "CR-Q51-05",
+        "CR-Q51-06",
+        "CR-Q51-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q51]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q51]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q52",
+      "collection": "fixed100",
+      "sourceId": 52,
+      "question": "用图表示 Agent 时，节点、边和共享状态分别应该包含什么？",
+      "answerPath": "answers/Q52.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "e89f047b216a883a2f8c1dac695700acd503e59ac418a9847cf059e679e69e6f",
+      "priorDefectReferences": [
+        "CR-Q52-02",
+        "CR-Q52-03",
+        "CR-Q52-04",
+        "CR-Q52-06",
+        "CR-Q52-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q52]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q52]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q53",
+      "collection": "fixed100",
+      "sourceId": 53,
+      "question": "状态字段应如何建模，避免把全部消息和中间数据无限累积？",
+      "answerPath": "answers/Q53.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "7cb2705754f67a19a5362d483a3dd822330b168059dfcbc91f432fbed16621d5",
+      "priorDefectReferences": [
+        "CR-Q53-03",
+        "CR-Q53-04",
+        "CR-Q53-05",
+        "CR-Q53-06",
+        "CR-Q53-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q53]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q53]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q54",
+      "collection": "fixed100",
+      "sourceId": 54,
+      "question": "并行节点同时更新状态时，如何处理合并规则和写入冲突？",
+      "answerPath": "answers/Q54.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "met_within_current_static_content_scope",
+      "priorAnswerSha256": "f52b3bf4ac078993af02168918108807bec9fd566ebb62e036284a0b66fa9808",
+      "priorDefectReferences": [],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q54]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q54]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q55",
+      "collection": "fixed100",
+      "sourceId": 55,
+      "question": "条件路由由规则决定还是由模型决定，各有什么适用场景？",
+      "answerPath": "answers/Q55.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "met_within_current_static_content_scope",
+      "priorAnswerSha256": "ebb3ef565a309697a928cede9499da5e0d96cdd26124dd38cba80068cc811845",
+      "priorDefectReferences": [],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q55]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q55]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q56",
+      "collection": "fixed100",
+      "sourceId": 56,
+      "question": "Checkpoint 应保存什么，才能支持失败恢复与人工介入？",
+      "answerPath": "answers/Q56.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "647c1602ec9c5aad35e555128992d5fbe256cacba6106e91b5a910f5b7c4ac99",
+      "priorDefectReferences": [
+        "CR-Q56-02",
+        "CR-Q56-03",
+        "CR-Q56-04",
+        "CR-Q56-06",
+        "CR-Q56-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q56]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q56]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q57",
+      "collection": "fixed100",
+      "sourceId": 57,
+      "question": "恢复执行时，如何保证已经完成的外部操作不会再次产生副作用？",
+      "answerPath": "answers/Q57.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "31afe106ecff0697b11a98e063fd89871fa08576ce885639a821b28ecf0550b0",
+      "priorDefectReferences": [
+        "CR-Q57-03",
+        "CR-Q57-04",
+        "CR-Q57-06",
+        "CR-Q57-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q57]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q57]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q58",
+      "collection": "fixed100",
+      "sourceId": 58,
+      "question": "子图怎样封装独立任务？父图与子图之间如何交接状态？",
+      "answerPath": "answers/Q58.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "f8a50e74b0a9e29ae2bc1311249f5ec0248adbbae928cde7b20bb58bff2ab980",
+      "priorDefectReferences": [
+        "CR-Q58-03",
+        "CR-Q58-04",
+        "CR-Q58-06",
+        "CR-Q58-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q58]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q58]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q59",
+      "collection": "fixed100",
+      "sourceId": 59,
+      "question": "流式输出怎样区分文本、工具进度、暂停、错误和最终结果？",
+      "answerPath": "answers/Q59.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "b42a4c18010fcd19493444a3ec9d04cfa1032be9ff72039e485019370ac9ee33",
+      "priorDefectReferences": [
+        "CR-Q59-03",
+        "CR-Q59-04",
+        "CR-Q59-06",
+        "CR-Q59-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q59]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q59]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q60",
+      "collection": "fixed100",
+      "sourceId": 60,
+      "question": "如果去掉 LangGraph，你如何实现等价的状态机，并说明取舍？",
+      "answerPath": "answers/Q60.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "23bea06a93a7b5420fa07e34c25a6786eb7f105a48cc7219a79e5dbeddfbe8b4",
+      "priorDefectReferences": [
+        "CR-Q60-03",
+        "CR-Q60-04",
+        "CR-Q60-06",
+        "CR-Q60-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q60]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q60]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q61",
+      "collection": "fixed100",
+      "sourceId": 61,
+      "question": "什么实验或业务证据会使你选择多 Agent，而不是给单 Agent 增加工具或步骤？",
+      "answerPath": "answers/Q61.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "met_within_current_static_content_scope",
+      "priorAnswerSha256": "9ee9f7a02fff72fdb77a09d67a0c3f60d89203c0193d59982534ff4dc8d35aac",
+      "priorDefectReferences": [],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q61]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q61]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q62",
+      "collection": "fixed100",
+      "sourceId": 62,
+      "question": "Supervisor、交接式协作和共享讨论，分别适合什么任务？",
+      "answerPath": "answers/Q62.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "dbeea4feb06030894efebed5eca79f2b39f6b18d7077288d7fba44360e6be209",
+      "priorDefectReferences": [
+        "CR-Q62-03",
+        "CR-Q62-04",
+        "CR-Q62-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q62]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q62]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q63",
+      "collection": "fixed100",
+      "sourceId": 63,
+      "question": "如何定义各 Agent 的输入、输出、职责边界和完成条件？",
+      "answerPath": "answers/Q63.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "c85354af28ee71e7825520b56fc12df22de74f9f1f65379bac96d5e1c3f8ab38",
+      "priorDefectReferences": [
+        "CR-Q63-04",
+        "CR-Q63-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q63]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q63]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q64",
+      "collection": "fixed100",
+      "sourceId": 64,
+      "question": "如何把任务拆成可以并行的部分，并保留必要的依赖顺序？",
+      "answerPath": "answers/Q64.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "1f4e6d5780dca8737793202d9e157816ba314343dcb0d56c336382089bda6127",
+      "priorDefectReferences": [
+        "CR-Q64-03",
+        "CR-Q64-04",
+        "CR-Q64-06",
+        "CR-Q64-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q64]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q64]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q65",
+      "collection": "fixed100",
+      "sourceId": 65,
+      "question": "多 Agent 应共享完整上下文，还是只传递必要材料？怎样判断？",
+      "answerPath": "answers/Q65.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "685b8922392166cab7230b908844be3db0c9887efa14360857d2871a2d2e06cc",
+      "priorDefectReferences": [
+        "CR-Q65-03",
+        "CR-Q65-04",
+        "CR-Q65-06",
+        "CR-Q65-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q65]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q65]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q66",
+      "collection": "fixed100",
+      "sourceId": 66,
+      "question": "子 Agent 返回互相矛盾的结果时，协调者应如何处理？",
+      "answerPath": "answers/Q66.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "3fb3b247f43eb37e602af51924b8b4e3be945ceb7bec9f4a88ed8bf2c29e3b67",
+      "priorDefectReferences": [
+        "CR-Q66-02",
+        "CR-Q66-03",
+        "CR-Q66-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q66]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q66]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q67",
+      "collection": "fixed100",
+      "sourceId": 67,
+      "question": "如何防止子 Agent 的错误结论在汇总过程中变成“已验证事实”？",
+      "answerPath": "answers/Q67.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "met_within_current_static_content_scope",
+      "priorAnswerSha256": "d12d0670667eec51c4de7f5119ad48f42e1a76cd0aad51a856c3a8087643db95",
+      "priorDefectReferences": [],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q67]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q67]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q68",
+      "collection": "fixed100",
+      "sourceId": 68,
+      "question": "某个子 Agent 超时或失败时，整体任务应等待、重分派还是部分交付？",
+      "answerPath": "answers/Q68.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "90465409ac0be0616cffc79e34ee1135120c726781b5a7643bdf275783ebd52d",
+      "priorDefectReferences": [
+        "CR-Q68-03",
+        "CR-Q68-04",
+        "CR-Q68-06",
+        "CR-Q68-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q68]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q68]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q69",
+      "collection": "fixed100",
+      "sourceId": 69,
+      "question": "多 Agent 的通信次数、费用和时延怎样纳入统一预算？",
+      "answerPath": "answers/Q69.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "met_within_current_static_content_scope",
+      "priorAnswerSha256": "8ac7cfaa1ab8ced51ca74b1fd2a700a2f03476d7a3f7d9d4aceb3d40a3f2ad8f",
+      "priorDefectReferences": [],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q69]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q69]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q70",
+      "collection": "fixed100",
+      "sourceId": 70,
+      "question": "A2A 与应用内部的多 Agent 编排有何区别？跨系统任务交接需要哪些契约？",
+      "answerPath": "answers/Q70.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "610c2e9e2a982da0e93e8afca032a5d059355cbebf0bea7e2b8571f0ee60a3c2",
+      "priorDefectReferences": [
+        "CR-Q70-03",
+        "CR-Q70-04",
+        "CR-Q70-06",
+        "CR-Q70-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q70]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q70]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q71",
+      "collection": "fixed100",
+      "sourceId": 71,
+      "question": "如何定义 Agent 的任务成功率，避免把“生成了回答”当成任务成功？",
+      "answerPath": "answers/Q71.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "2a402b59cb8bf38bd5ef3eac84317308b58f11eac9e59de6530cb0fc70a98fdf",
+      "priorDefectReferences": [
+        "CR-Q71-01",
+        "CR-Q71-03",
+        "CR-Q71-04",
+        "CR-Q71-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q71]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q71]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q72",
+      "collection": "fixed100",
+      "sourceId": 72,
+      "question": "最终结果评测和执行轨迹评测分别能够发现什么问题？",
+      "answerPath": "answers/Q72.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "met_within_current_static_content_scope",
+      "priorAnswerSha256": "bbd4d71097a5ae0343fa7e8c07780cefd1f1021fc920db2fc60cc604be18ac27",
+      "priorDefectReferences": [],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q72]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q72]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q73",
+      "collection": "fixed100",
+      "sourceId": 73,
+      "question": "如何构建包含正常、边界、歧义、失败和恶意输入的评测集？",
+      "answerPath": "answers/Q73.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "02c1bc8a85eb661a7413d5582b6452c064d6ec3a6205ad6a34a26848a6136b68",
+      "priorDefectReferences": [
+        "CR-Q73-03",
+        "CR-Q73-04"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q73]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q73]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q74",
+      "collection": "fixed100",
+      "sourceId": 74,
+      "question": "如何区分检索失败、规划失败、工具失败和最终表达失败？",
+      "answerPath": "answers/Q74.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "d1469836df8810b0c66f3f1eb572ea5f15ef2ca92041d122b69ff3be03bce87f",
+      "priorDefectReferences": [
+        "CR-Q74-02",
+        "CR-Q74-04",
+        "CR-Q74-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q74]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q74]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q75",
+      "collection": "fixed100",
+      "sourceId": 75,
+      "question": "如何使用 LLM-as-a-Judge，并控制评判偏差及与人工结论的不一致？",
+      "answerPath": "answers/Q75.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "met_within_current_static_content_scope",
+      "priorAnswerSha256": "6d3983e5ef063f022694c655d4aff263524c2b06f72c0c4bfbbd74a3aac1a4c7",
+      "priorDefectReferences": [],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q75]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q75]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q76",
+      "collection": "fixed100",
+      "sourceId": 76,
+      "question": "同一个任务多次运行结果不同，应该怎样报告成功率与稳定性？",
+      "answerPath": "answers/Q76.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "3f84356be9fd11ddf6fcda53494a9ecaa2158d4e3e3f0ee14099b4734c07d58c",
+      "priorDefectReferences": [
+        "CR-Q76-04",
+        "CR-Q76-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q76]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q76]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q77",
+      "collection": "fixed100",
+      "sourceId": 77,
+      "question": "一条 Agent Trace 应记录什么，才能定位问题且避免泄露敏感信息？",
+      "answerPath": "answers/Q77.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "8b40ef428f5b9f42dd19b5ec6068ec243cd46547f16e68f491ae4554a57aa8db",
+      "priorDefectReferences": [
+        "CR-Q77-03",
+        "CR-Q77-04",
+        "CR-Q77-06",
+        "CR-Q77-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q77]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q77]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q78",
+      "collection": "fixed100",
+      "sourceId": 78,
+      "question": "如何设计模型、工具和检索组件的消融实验？",
+      "answerPath": "answers/Q78.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "met_within_current_static_content_scope",
+      "priorAnswerSha256": "faa30c1d6539986c52254992877588cd31af1205ae464c494fd4c54dea48894d",
+      "priorDefectReferences": [],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q78]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q78]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q79",
+      "collection": "fixed100",
+      "sourceId": 79,
+      "question": "模型、提示、工具或知识库升级后，如何判断新版本能否发布？",
+      "answerPath": "answers/Q79.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "met_within_current_static_content_scope",
+      "priorAnswerSha256": "d48b3e694532a04a85e8c7e40eb117531c4b81e043e71b6b2e425b5149f20fa2",
+      "priorDefectReferences": [],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q79]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q79]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q80",
+      "collection": "fixed100",
+      "sourceId": 80,
+      "question": "用户报告一个偶发失败，但你本地无法复现，下一步怎么调查？",
+      "answerPath": "answers/Q80.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "f81a02e0d48226ac355791a8bd52c59cc9b058c04ecff508c8f851d550e442d1",
+      "priorDefectReferences": [
+        "CR-Q80-02",
+        "CR-Q80-03",
+        "CR-Q80-04",
+        "CR-Q80-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q80]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q80]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q81",
+      "collection": "fixed100",
+      "sourceId": 81,
+      "question": "直接提示注入和来自网页、文档或工具结果的间接注入，有什么不同？",
+      "answerPath": "answers/Q81.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "met_within_current_static_content_scope",
+      "priorAnswerSha256": "4a64eb2a9a5941cf9a396e5eba62d32103513c27a62ddf9149ca83612b15af6a",
+      "priorDefectReferences": [],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q81]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q81]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q82",
+      "collection": "fixed100",
+      "sourceId": 82,
+      "question": "Agent 为什么不能仅靠系统提示保证工具权限与数据安全？",
+      "answerPath": "answers/Q82.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "met_within_current_static_content_scope",
+      "priorAnswerSha256": "6bfee001bd4f154ab14b9e7aeb39e6b49a513c2ab4bea6e9d7daa849b050555a",
+      "priorDefectReferences": [],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q82]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q82]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q83",
+      "collection": "fixed100",
+      "sourceId": 83,
+      "question": "如何让工具执行权限与当前用户身份、资源归属和操作范围一致？",
+      "answerPath": "answers/Q83.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "07e6f47b617a3176e44d826ab398c6e408637af185dee5cc9e575efe747adfa0",
+      "priorDefectReferences": [
+        "CR-Q83-03",
+        "CR-Q83-04",
+        "CR-Q83-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q83]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q83]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q84",
+      "collection": "fixed100",
+      "sourceId": 84,
+      "question": "高风险操作的人类确认应展示什么，才能构成有意义的批准？",
+      "answerPath": "answers/Q84.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "4acf752bf6f2fde65a97a28bb8b205cc85b2fbd98d05a717a95bd0f7f6778372",
+      "priorDefectReferences": [
+        "CR-Q84-02",
+        "CR-Q84-03",
+        "CR-Q84-04",
+        "CR-Q84-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q84]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q84]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q85",
+      "collection": "fixed100",
+      "sourceId": 85,
+      "question": "如何防止确认后参数被修改，或一次确认被用于后续不同操作？",
+      "answerPath": "answers/Q85.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "6182ca639f0ac29eef8519c16e507359978ab40a0a458470e1e97df8be1c0f32",
+      "priorDefectReferences": [
+        "CR-Q85-02",
+        "CR-Q85-03",
+        "CR-Q85-04",
+        "CR-Q85-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q85]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q85]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q86",
+      "collection": "fixed100",
+      "sourceId": 86,
+      "question": "执行模型生成代码时，沙箱应限制哪些资源与外部访问？",
+      "answerPath": "answers/Q86.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "d3b7040e661b58572b5a2ed639d318342afe6c18cf7a58359856a0aa7e9c1d19",
+      "priorDefectReferences": [
+        "CR-Q86-03",
+        "CR-Q86-04",
+        "CR-Q86-06",
+        "CR-Q86-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q86]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q86]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q87",
+      "collection": "fixed100",
+      "sourceId": 87,
+      "question": "如何防止检索内容、日志和错误消息泄露跨租户资料或密钥？",
+      "answerPath": "answers/Q87.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "met_within_current_static_content_scope",
+      "priorAnswerSha256": "3bdd53492726fab035c3b53129f89390798e2b2f6b5f28a2c1de2f98c9d81ca8",
+      "priorDefectReferences": [],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q87]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q87]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q88",
+      "collection": "fixed100",
+      "sourceId": 88,
+      "question": "外部工具声称操作成功，你如何核实真实状态？",
+      "answerPath": "answers/Q88.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "edb3bb91bea340b15aa8a0bc7b57cb3581ce864db4f9a300f7f34a9328c4d0dc",
+      "priorDefectReferences": [
+        "CR-Q88-02",
+        "CR-Q88-03",
+        "CR-Q88-04",
+        "CR-Q88-06",
+        "CR-Q88-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q88]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q88]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q89",
+      "collection": "fixed100",
+      "sourceId": 89,
+      "question": "多步骤任务部分成功后失败，如何设计补偿、恢复和用户告知？",
+      "answerPath": "answers/Q89.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "met_within_current_static_content_scope",
+      "priorAnswerSha256": "ef4842e75e3dd3478e833e4e9d0bde610a1948fcc452b96737121c215e198b9c",
+      "priorDefectReferences": [],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q89]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q89]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q90",
+      "collection": "fixed100",
+      "sourceId": 90,
+      "question": "如何把安全反例纳入自动化回归，并验证修复没有破坏正常任务？",
+      "answerPath": "answers/Q90.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "c11181bc4abac37ca15849f50861de7755ad3ff34fa8de0268e19d69caa05c25",
+      "priorDefectReferences": [
+        "CR-Q90-03",
+        "CR-Q90-04",
+        "CR-Q90-06",
+        "CR-Q90-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q90]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q90]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q91",
+      "collection": "fixed100",
+      "sourceId": 91,
+      "question": "设计一个客服工单 Agent：如何确定自动处理范围、转人工条件及验收指标？",
+      "answerPath": "answers/Q91.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "102a9cb4dba3fb945b9a131e4d7ac969685c5911e854e3fb7481d0cdcca30ff5",
+      "priorDefectReferences": [
+        "CR-Q91-04",
+        "CR-Q91-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q91]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q91]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q92",
+      "collection": "fixed100",
+      "sourceId": 92,
+      "question": "设计一个企业知识 Agent：如何同时保证检索质量、权限和更新时效？",
+      "answerPath": "answers/Q92.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "1e500f5073f26e9b73441878653882c750fc9efec8927f7b85aaba4ff1d757bd",
+      "priorDefectReferences": [
+        "CR-Q92-03",
+        "CR-Q92-04",
+        "CR-Q92-06",
+        "CR-Q92-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q92]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q92]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q93",
+      "collection": "fixed100",
+      "sourceId": 93,
+      "question": "设计一个长时间运行的研究 Agent：如何保存进度、取消任务和恢复执行？",
+      "answerPath": "answers/Q93.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "69ef7520bfeb2440fd79aae9404721092094478255fc46e9ecc88ab52fc815d7",
+      "priorDefectReferences": [
+        "CR-Q93-02",
+        "CR-Q93-03",
+        "CR-Q93-04",
+        "CR-Q93-06",
+        "CR-Q93-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q93]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q93]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q94",
+      "collection": "fixed100",
+      "sourceId": 94,
+      "question": "请求量增长十倍时，如何识别模型、工具、队列或存储中的主要瓶颈？",
+      "answerPath": "answers/Q94.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "b19fd1cdef3ee231c899665707a10da847c1b1da38a181e9a37678979acae156",
+      "priorDefectReferences": [
+        "CR-Q94-02",
+        "CR-Q94-03",
+        "CR-Q94-04",
+        "CR-Q94-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q94]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q94]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q95",
+      "collection": "fixed100",
+      "sourceId": 95,
+      "question": "如何设计并发限制、超时、退避和熔断，避免故障扩大？",
+      "answerPath": "answers/Q95.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "met_within_current_static_content_scope",
+      "priorAnswerSha256": "e6c43776a915fb8963c6ae1d4ab5793328253f02c39942b0a865c03bbb00d91c",
+      "priorDefectReferences": [],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q95]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q95]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q96",
+      "collection": "fixed100",
+      "sourceId": 96,
+      "question": "怎样分解一次任务的费用和时延，找到最值得优化的环节？",
+      "answerPath": "answers/Q96.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "47208aa49f906074e6832e912b14ed03da911bfddf92a899d113a05a4ec0e4f2",
+      "priorDefectReferences": [
+        "CR-Q96-03",
+        "CR-Q96-04",
+        "CR-Q96-06",
+        "CR-Q96-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q96]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q96]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q97",
+      "collection": "fixed100",
+      "sourceId": 97,
+      "question": "什么时候使用小模型路由、大模型升级或缓存？如何量化质量损失？",
+      "answerPath": "answers/Q97.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "eb9047f500314aa54144b2cf9dec49c0b2968aee530f0d442656d0f95144c9c9",
+      "priorDefectReferences": [
+        "CR-Q97-04",
+        "CR-Q97-06",
+        "CR-Q97-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q97]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q97]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q98",
+      "collection": "fixed100",
+      "sourceId": 98,
+      "question": "从质量、成本和运维角度，怎样选择本地模型与托管 API？",
+      "answerPath": "answers/Q98.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "b62d7ca51e736e81cd5b97edeb0b6f8555dfae2ac27e489c983ba2ec043b945e",
+      "priorDefectReferences": [
+        "CR-Q98-03",
+        "CR-Q98-04",
+        "CR-Q98-06",
+        "CR-Q98-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q98]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q98]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q99",
+      "collection": "fixed100",
+      "sourceId": 99,
+      "question": "请介绍一次实际 Agent 故障或失败案例：原因是什么，如何修复，怎样证明修复有效？",
+      "answerPath": "answers/Q99.md",
+      "personalEvidenceRequired": true,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "dca76dc4d41f8919d2b58f397899b03a23b27205cc9a748b0547a40e1245f0d7",
+      "priorDefectReferences": [
+        "CR-Q99-03",
+        "CR-Q99-04",
+        "CR-Q99-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q99]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q99]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "Q100",
+      "collection": "fixed100",
+      "sourceId": 100,
+      "question": "如果必须在两周内交付一个可用 Agent，你会怎样确定最小范围、基线、风险与上线条件？",
+      "answerPath": "answers/Q100.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "c829773c405c949cc4cf157a4a0b3a30c9ff0c16d297838fda12b9eca9f7fd33",
+      "priorDefectReferences": [
+        "CR-Q100-03",
+        "CR-Q100-04",
+        "CR-Q100-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=Q100]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=Q100]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "M101",
+      "collection": "market14",
+      "sourceId": 101,
+      "question": "调用多个模型或工具API时，如何用Python asyncio组织并发？阻塞调用、无界任务创建和取消清理分别会导致什么问题，怎样用最小例定位？",
+      "answerPath": "answers/M101.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "d6993d7d0c74a5c5b7097efa68d8315840a4ccf185fc0db74c4a2b87a916d5ea",
+      "priorDefectReferences": [
+        "CR-M101-02",
+        "CR-M101-03",
+        "CR-M101-04",
+        "CR-M101-06",
+        "CR-M101-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=M101]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=M101]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "M102",
+      "collection": "market14",
+      "sourceId": 102,
+      "question": "把请求状态放进Python列表或字典时，别名与浅拷贝会怎样污染另一个任务？请说明不可变容器的边界，并解释如何用装饰器封装工具日志而保持函数行为。",
+      "answerPath": "answers/M102.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "32dd562dcfd6aeeb71efb123b1afcca2a94a41c1d09a122c5dfb45ec30e19c62",
+      "priorDefectReferences": [
+        "CR-M102-01",
+        "CR-M102-02",
+        "CR-M102-03",
+        "CR-M102-04",
+        "CR-M102-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=M102]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=M102]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "M103",
+      "collection": "market14",
+      "sourceId": 103,
+      "question": "实现容量受限的LRU缓存，说明get/put复杂度，并给出容量为零、覆盖已有键和淘汰次序的测试。",
+      "answerPath": "answers/M103.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "25945105b8fb8bcd02aa1d6fed6fb945606c0751948fd00b4b8bd3bcf107a0a1",
+      "priorDefectReferences": [
+        "CR-M103-03",
+        "CR-M103-04",
+        "CR-M103-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=M103]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=M103]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "M104",
+      "collection": "market14",
+      "sourceId": 104,
+      "question": "Agent服务运行数小时后内存持续增长，但请求量平稳。如何区别对象仍被引用、缓存无界、待完成任务堆积与暂时内存峰值，并验证修复？",
+      "answerPath": "answers/M104.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "met_within_current_static_content_scope",
+      "priorAnswerSha256": "a01ef128c4ef8d842a270495ee951769dcad804f7ca766f374ec339eaf917037",
+      "priorDefectReferences": [],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=M104]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=M104]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "M105",
+      "collection": "market14",
+      "sourceId": 105,
+      "question": "余弦相似度、点积和欧氏距离如何计算？向量归一化会怎样改变它们的排序关系，零向量和维度不符怎样处理？",
+      "answerPath": "answers/M105.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "cd848c9cdaffcd9f195383f3911a6f2c57187660146f0b9645a0818956f42643",
+      "priorDefectReferences": [
+        "CR-M105-01",
+        "CR-M105-02",
+        "CR-M105-04",
+        "CR-M105-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=M105]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=M105]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "M106",
+      "collection": "market14",
+      "sourceId": 106,
+      "question": "如何用精确向量检索建立基线，再比较HNSW与IVF的召回、内存、构建和查询代价？过滤条件加入后还需要怎样测量？",
+      "answerPath": "answers/M106.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "9ca47c6a45313c6d2e05e0cdfd7ed77f7c9ac03613716b8899ab249086568d88",
+      "priorDefectReferences": [
+        "CR-M106-01",
+        "CR-M106-02",
+        "CR-M106-03",
+        "CR-M106-04",
+        "CR-M106-05",
+        "CR-M106-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=M106]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=M106]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "M107",
+      "collection": "market14",
+      "sourceId": 107,
+      "question": "文档局部修改、删除或权限变化时，怎样增量更新分块和向量索引？如何检测漏删、重复块及新旧版本混用？",
+      "answerPath": "answers/M107.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "b75629ee24d6207379add362a5078127b56755351676df7362de8ca8ba2aa938",
+      "priorDefectReferences": [
+        "CR-M107-01",
+        "CR-M107-02",
+        "CR-M107-03",
+        "CR-M107-04",
+        "CR-M107-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=M107]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=M107]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "M108",
+      "collection": "market14",
+      "sourceId": 108,
+      "question": "包含扫描页、表格和跨页段落的PDF怎样进入RAG？如何保留页码与结构、测解析质量，并防止OCR错误被引用成原文事实？",
+      "answerPath": "answers/M108.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "9b74eca68227cec0d53aa0f584cba12ccdfd35c10c8da597f385a17b0515767d",
+      "priorDefectReferences": [
+        "CR-M108-01",
+        "CR-M108-02",
+        "CR-M108-03",
+        "CR-M108-04",
+        "CR-M108-06",
+        "CR-M108-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=M108]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=M108]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "M109",
+      "collection": "market14",
+      "sourceId": 109,
+      "question": "解释decoder-only Transformer从token到下一token分布的基本推理过程：因果注意力、多头、位置、前馈层各起什么作用？这与检索外部事实有什么区别？",
+      "answerPath": "answers/M109.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "53fb91543a4f9ae33ab2ff6aab724bf24c219b518547ec7b4f617be1229670b6",
+      "priorDefectReferences": [
+        "CR-M109-01",
+        "CR-M109-02",
+        "CR-M109-03",
+        "CR-M109-04",
+        "CR-M109-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=M109]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=M109]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "M110",
+      "collection": "market14",
+      "sourceId": 110,
+      "question": "提示模型返回JSON、使用JSON模式和按Schema约束生成分别能保证什么？遇到拒绝、截断、类型合法但语义错误时，应用怎样处理？",
+      "answerPath": "answers/M110.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "3c5cc67c8d2699a5689310fd8a1073684189c999b40c234b47609d3eef3c8173",
+      "priorDefectReferences": [
+        "CR-M110-01",
+        "CR-M110-02",
+        "CR-M110-03",
+        "CR-M110-04",
+        "CR-M110-06",
+        "CR-M110-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=M110]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=M110]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "M111",
+      "collection": "market14",
+      "sourceId": 111,
+      "question": "同一Agent英语任务表现正常，中文或混合语言却失败，怎样分别检查分词/检索、提示、工具参数与评测样本，而不是直接换模型？",
+      "answerPath": "answers/M111.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "met_within_current_static_content_scope",
+      "priorAnswerSha256": "6f55d148c5670bfe8a813436c466aca42b41ffc67278e3fd705ff9a8d962a7a6",
+      "priorDefectReferences": [],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=M111]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=M111]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "M112",
+      "collection": "market14",
+      "sourceId": 112,
+      "question": "用户在多轮任务中突然换话题，又用“继续刚才那个”返回，怎样识别任务切换、保存各自状态并澄清指代，防止旧任务动作误执行？",
+      "answerPath": "answers/M112.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "1097e8c7b4f4a3034767f1fe2d64334064073f8afb3189f100d7f46ec12f2d61",
+      "priorDefectReferences": [
+        "CR-M112-02",
+        "CR-M112-03",
+        "CR-M112-04",
+        "CR-M112-06"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=M112]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=M112]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "M113",
+      "collection": "market14",
+      "sourceId": 113,
+      "question": "部署本地推理服务时，怎样区分prefill与decode瓶颈，解释KV cache与批处理对吞吐、首token和尾延迟的影响，并设计公平比较而非先认定某框架更快？",
+      "answerPath": "answers/M113.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "3e64e242a4ddfcd17b4bd6ff64d01814a654f4f25b51403b50be3549eb569b93",
+      "priorDefectReferences": [
+        "CR-M113-03",
+        "CR-M113-04",
+        "CR-M113-06",
+        "CR-M113-08"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=M113]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=M113]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "M114",
+      "collection": "market14",
+      "sourceId": 114,
+      "question": "面对客户工程团队，怎样交付一份可复现的Agent技术移交包，使对方能重建环境、运行评测、理解架构决策并报告失败？如何证明接手成功？",
+      "answerPath": "answers/M114.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "met_within_current_static_content_scope",
+      "priorAnswerSha256": "e69f023afd004af2eadff1c756bc3973259c6d88e0a8fb3baeaab91c166f2d8c",
+      "priorDefectReferences": [],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=M114]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=M114]",
+      "currentRevisionStatus": "pending"
+    },
+    {
+      "id": "P01",
+      "collection": "prototype10",
+      "sourceId": "q1",
+      "question": "Agent 与普通模型调用有什么区别？",
+      "answerPath": "answers/P01.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "203cd16f1524d7cb46a1645828dae7171916e2792a263a057a2b0fa32ad3e730",
+      "priorDefectReferences": [
+        "CR-P01-02",
+        "CR-P01-03",
+        "CR-P01-04",
+        "CR-P01-06",
+        "CR-P01-07"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=P01]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=P01]",
+      "currentRevisionStatus": "pending",
+      "followups": [
+        "什么情况下不用 Agent 反而更合适？",
+        "如何判断 Agent 的任务已经完成？"
+      ]
+    },
+    {
+      "id": "P02",
+      "collection": "prototype10",
+      "sourceId": "q2",
+      "question": "工具调用超时，如何避免恢复时重复执行？",
+      "answerPath": "answers/P02.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "663a9b167ce56f5b0cbec6fd7ce88be23acdfff17b1fe1002d23afd30f9e9a44",
+      "priorDefectReferences": [
+        "CR-P02-02",
+        "CR-P02-03",
+        "CR-P02-04",
+        "CR-P02-05",
+        "CR-P02-06",
+        "CR-P02-07"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=P02]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=P02]",
+      "currentRevisionStatus": "pending",
+      "followups": [
+        "如果下游不支持幂等键怎么办？",
+        "用户取消任务后还需要查外部结果吗？"
+      ]
+    },
+    {
+      "id": "P03",
+      "collection": "prototype10",
+      "sourceId": "q3",
+      "question": "如何组织 Agent 的上下文和长期记忆？",
+      "answerPath": "answers/P03.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "1e01c0774b0c7b45f9d3f9b993b51cbf53461210c768d5bdfdc2d0ad8c87d6d9",
+      "priorDefectReferences": [
+        "CR-P03-02",
+        "CR-P03-03",
+        "CR-P03-04",
+        "CR-P03-05",
+        "CR-P03-06",
+        "CR-P03-07"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=P03]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=P03]",
+      "currentRevisionStatus": "pending",
+      "followups": [
+        "如何处理记忆中的过期信息？",
+        "为什么摘要也可能引入错误？"
+      ]
+    },
+    {
+      "id": "P04",
+      "collection": "prototype10",
+      "sourceId": "q4",
+      "question": "如何说明你为什么选择 RAG，而不是微调？",
+      "answerPath": "answers/P04.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "972591386799ed5aaad74c6bb7b6128a7ac42b4e4f392bf49771fa3427023f21",
+      "priorDefectReferences": [
+        "CR-P04-02",
+        "CR-P04-03",
+        "CR-P04-04",
+        "CR-P04-05",
+        "CR-P04-06",
+        "CR-P04-07"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=P04]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=P04]",
+      "currentRevisionStatus": "pending",
+      "followups": [
+        "检索到了文档是否意味着可以直接用于回答？",
+        "如何发现资料更新后检索索引没有同步？"
+      ]
+    },
+    {
+      "id": "P05",
+      "collection": "prototype10",
+      "sourceId": "q5",
+      "question": "介绍一个你做过的 Agent 项目，如何证明它有效？",
+      "answerPath": "answers/P05.md",
+      "personalEvidenceRequired": true,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "dbd3f0ed23d2b12cac91a6b2a24fe07918aac05acfc06e7052d5d71a85ab4896",
+      "priorDefectReferences": [
+        "CR-P05-03",
+        "CR-P05-04",
+        "CR-P05-06",
+        "CR-P05-07"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=P05]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=P05]",
+      "currentRevisionStatus": "pending",
+      "followups": [
+        "如果面试官要求复现一个失败案例，你会展示什么？",
+        "这个方案目前还存在什么限制？"
+      ]
+    },
+    {
+      "id": "P06",
+      "collection": "prototype10",
+      "sourceId": "q6",
+      "question": "模型返回的 JSON 合法，为什么还不能直接执行？",
+      "answerPath": "answers/P06.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "67fa1136a63379ae3d23b49dbb331dcec6ea5508bd965dc251eda9fbbbb0d1fe",
+      "priorDefectReferences": [
+        "CR-P06-02",
+        "CR-P06-03",
+        "CR-P06-04",
+        "CR-P06-06",
+        "CR-P06-07"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=P06]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=P06]",
+      "currentRevisionStatus": "pending",
+      "followups": [
+        "如何处理额外字段？",
+        "如何设计可以稳定判错的输出合同？"
+      ]
+    },
+    {
+      "id": "P07",
+      "collection": "prototype10",
+      "sourceId": "q7",
+      "question": "如何评估一个 Agent 的改进是否真的有效？",
+      "answerPath": "answers/P07.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "d9fff35ef38ba60cc0d9404a7be94dbf4a4ccded3ac642c900673175741dc164",
+      "priorDefectReferences": [
+        "CR-P07-02",
+        "CR-P07-03",
+        "CR-P07-04",
+        "CR-P07-05",
+        "CR-P07-06",
+        "CR-P07-07"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=P07]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=P07]",
+      "currentRevisionStatus": "pending",
+      "followups": [
+        "如何排除模型随机性造成的差异？",
+        "你如何定义任务成功率？"
+      ]
+    },
+    {
+      "id": "P08",
+      "collection": "prototype10",
+      "sourceId": "q8",
+      "question": "检索资料里出现要求执行工具的指令，你怎么处理？",
+      "answerPath": "answers/P08.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "c67a7abe3cf21ed1c19c116e1c77816ac6e08e07d4bf775d9edb267955547baf",
+      "priorDefectReferences": [
+        "CR-P08-02",
+        "CR-P08-03",
+        "CR-P08-04",
+        "CR-P08-06",
+        "CR-P08-07"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=P08]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=P08]",
+      "currentRevisionStatus": "pending",
+      "followups": [
+        "读取权限和执行权限有什么不同？",
+        "如何验证恶意指令没有绕过工具限制？"
+      ]
+    },
+    {
+      "id": "P09",
+      "collection": "prototype10",
+      "sourceId": "q9",
+      "question": "服务中断后，Agent 如何恢复到可靠的执行位置？",
+      "answerPath": "answers/P09.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "e0b7c4b8264c52eb8547d0b11f8acbe183005b6d27aa6b9ba13eda60239b2b22",
+      "priorDefectReferences": [
+        "CR-P09-02",
+        "CR-P09-03",
+        "CR-P09-04",
+        "CR-P09-05",
+        "CR-P09-06",
+        "CR-P09-07"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=P09]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=P09]",
+      "currentRevisionStatus": "pending",
+      "followups": [
+        "哪些状态不能只放在内存中？",
+        "如何验证跨重启不重复产生外部效果？"
+      ]
+    },
+    {
+      "id": "P10",
+      "collection": "prototype10",
+      "sourceId": "q10",
+      "question": "项目成本增加时，你会如何定位并优化？",
+      "answerPath": "answers/P10.md",
+      "personalEvidenceRequired": false,
+      "priorDecision": "not_met",
+      "priorAnswerSha256": "86d644cb6eccab1c432daa3d62d10a1d1917fa2a5f758e842d803fd92b67a5a6",
+      "priorDefectReferences": [
+        "CR-P10-02",
+        "CR-P10-03",
+        "CR-P10-04",
+        "CR-P10-05",
+        "CR-P10-06",
+        "CR-P10-07"
+      ],
+      "priorContentReviewPointer": "team/agent-interview-answer-content-review.json#/items[id=P10]",
+      "priorQaPointer": "team/agent-interview-answer-audit-qa/matrix.json#/items[id=P10]",
+      "currentRevisionStatus": "pending",
+      "followups": [
+        "减少调用数会影响什么？",
+        "如何避免缓存复用到过期或越权内容？"
+      ]
+    }
+  ],
+  "overallAssessment": {
+    "currentRevision": "pending",
+    "allAnswersMeetStandard": false,
+    "fullUserProductGoal": "not_met",
+    "reason": "New complete-answer artifacts and independent current-version checks have not yet been delivered; no prior pass is inherited."
+  },
+  "selfCheck": {
+    "readApprovedPreferences": true,
+    "writesOnlyProductReportAndJson": true,
+    "authoredAnswerOrApplicationCode": false,
+    "executedTests": false,
+    "inspectedHeldoutQuestionText": false
+  },
+  "inputBindings": [
+    {
+      "path": "sites/rolecraft/team/ANSWER_QUALITY_STANDARD.md",
+      "sha256": "e1f55b5a83ae73cd3b300d130ac557bc04031b3263da9642631c6c2af1fe2b97",
+      "bytes": 8637
+    },
+    {
+      "path": "sites/rolecraft/team/answer-quality-standard-curriculum.md",
+      "sha256": "26ed0ac89eab39dce4a459946e587cc838034dfd5baa968522869eb8ea934c29",
+      "bytes": 8194
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-product.json",
+      "sha256": "77195910048dd5903893794a71917097f518ed643e2d9ec90d233936c5945686",
+      "bytes": 235806
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-audit-assessment.json",
+      "sha256": "1cd070a455652ec109486bcd778a3dce4402fb1388782ce83426b1ac55e48c91",
+      "bytes": 175946
+    },
+    {
+      "path": "sites/rolecraft/team/agent-interview-answer-content-review/reconciliation.md",
+      "sha256": "01bdce94862e022ff34456d6eda3522c12114eef94a48e7cc6cfd0ced17b034c",
+      "bytes": 13398
+    },
+    {
+      "path": "sites/rolecraft/team/employees/core/product-manager/MEMORY.md",
+      "sha256": "d992070fba035c1d3a5fb6f5734ed0922f011321c717cfb578b9b2e8209e38fe",
+      "bytes": 1297
+    },
+    {
+      "path": "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+      "sha256": "e80f7be22925b043f9071c800b8ba040531a06756b3c3120df479cd94071060b",
+      "bytes": 5705
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-v13-data.js",
+      "sha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "bytes": 841206
+    },
+    {
+      "path": "sites/rolecraft/dist/interview-prep-v1-prototype.html",
+      "sha256": "bde8c588f9aab88f9e36bb1a365aa14037812de04892401d02bfcc0355f68b65",
+      "bytes": 43336
+    }
+  ]
+}

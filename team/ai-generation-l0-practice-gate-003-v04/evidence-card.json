@@ -1,0 +1,49 @@
+{
+  "event_state_trace": "event-state-trace.json",
+  "evidence_card_id": "EC-AI-PRACTICE-GATE-003",
+  "exercise_version": "v0.1",
+  "external_action": null,
+  "fixture_hash": "9002b8bcef99feaa63d88c4c4d8f3eb16d22107b0ceb61e3820240bf709fe364",
+  "fixture_id": "F-AI-GATE-MIGRATION-v1",
+  "handoff_qa": "pending",
+  "inputs": [
+    "v2_checkpoint",
+    "schema-v2",
+    "schema-v3"
+  ],
+  "l1_decision": "not_granted",
+  "l2_decision": "not_granted",
+  "learner_id": "local-sandbox-learner",
+  "limitations": [
+    "本地工具不证明真实数据库迁移、真人专家审批、身份认证、生产审批或真实模型行为"
+  ],
+  "objective": "schema、人工审批与单约束迁移",
+  "outputs": [
+    "manifest.json",
+    "validator-output.json",
+    "first_failure/",
+    "approval-or-hold-receipts/",
+    "run-1/",
+    "run-2/",
+    "holdout.json"
+  ],
+  "practice_id": "AI-PRACTICE-GATE-003",
+  "practice_pack_sha256": "b1cb993bfb6310f5f872c23980ad60a8d6dbc91c64462bbf253302328ffa0f1a",
+  "repair_record": "repair_record.json",
+  "residual_unknowns": [
+    "真实并发迁移与回滚未验证",
+    "真人QA签收待完成"
+  ],
+  "results": {
+    "failures": "pass",
+    "holdout": "pass",
+    "normal": "pass",
+    "replay": "pass"
+  },
+  "review_status": "pending_QA",
+  "run_1_migrated_hash": "9eb142631b1117394cfa0cf083fb992630b46a89dd73795ff523852b36d412dd",
+  "run_2_migrated_hash": "9eb142631b1117394cfa0cf083fb992630b46a89dd73795ff523852b36d412dd",
+  "schema_unknown_field_negative": "first_failure/schema_unknown_field/receipt.json",
+  "self_signed": false,
+  "version": "v04"
+}

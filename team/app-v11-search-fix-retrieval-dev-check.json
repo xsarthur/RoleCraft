@@ -1,6 +1,6 @@
 {
   "kind": "author_development_check",
-  "executedAt": "2026-10-11T14:31:30.883Z",
+  "executedAt": "2026-10-15T04:29:18.965Z",
   "runtime": "v24.16.0",
   "execPath": "/Users/shengxiong/.nvm/versions/node/v24.16.0/bin/node",
   "retrievalVersion": "content-retrieval-0.11.1-source-terms",
@@ -10,15 +10,15 @@
   "binding": [
     {
       "path": "dist/content-retrieval-core.js",
-      "sha256": "b259d08e3537dbf05175ce5bb1724e458a6a8e97d7b818e408cff5562348ca28"
+      "sha256": "b3535b2249effdb0118713295ae9b86e117e0d86c86041aade3e8c33a0fc092d"
     },
     {
       "path": "server/retrieval/index.mjs",
-      "sha256": "1d16d453dd96a88dc8627a702363a33d8e73b6b84b8991dd9f190bc5f2de817f"
+      "sha256": "c87dfde6c1ae60ee7594bf5f033ab4fc2a90554a55deabe8520f1045bfc43530"
     },
     {
       "path": "server/retrieval/semantic.mjs",
-      "sha256": "ef62b852a4e93314c5a2c178a84d8c4cd9a00d9e766568f78bbd94ab77c65fdf"
+      "sha256": "97b53560731c6238bcabb7d6e1f44597cdc7c03c24b1599f231d4ade73b7bfc8"
     },
     {
       "path": "server/retrieval/content-v10-index.json",
@@ -29,7 +29,7 @@
       "sha256": "0a2537f32ea2ddc2c5a020cc7a72937f0bfb7813ee2b701a3bdeec9035d02d58"
     }
   ],
-  "passed": true,
+  "passed": false,
   "observations": [
     {
       "id": "original",
@@ -37,12 +37,16 @@
       "expected": {
         "target": "00-learning-route/s-7547e5ce91f8"
       },
-      "durationMs": 254,
-      "passed": true,
-      "failures": [],
+      "durationMs": 513,
+      "passed": false,
+      "failures": [
+        "target/excerpt",
+        "source binding",
+        "source binding"
+      ],
       "result": {
         "status": "recommended",
-        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "retrievalVersion": "content-retrieval-0.12-v12",
         "engineMode": "local_semantic_retrieval",
         "matchingMethods": [
           "local_semantic_vectors",
@@ -50,8 +54,8 @@
           "source_term_recall"
         ],
         "providerCalled": false,
-        "corpusVersion": "textbook-v10",
-        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
         "interpretedIntents": [
           {
             "id": "source_term_0",
@@ -60,35 +64,78 @@
               "ReAct"
             ],
             "unitIds": [
-              "00-learning-route"
+              "n03-planning-reflection",
+              "00-learning-route",
+              "n05-retrieval-ingestion"
             ],
             "sectionKeys": [
-              "00-learning-route/s-7547e5ce91f8"
+              "00-learning-route/s-7547e5ce91f8",
+              "00-learning-route/s-810a87808157",
+              "n03-planning-reflection/s-da63f3dcff17",
+              "n03-planning-reflection/s-dc2e15b8cffc",
+              "n05-retrieval-ingestion/s-ec5a23388832"
             ],
-            "term": "react"
+            "term": "react",
+            "preferredUnit": "n03-planning-reflection"
+          },
+          {
+            "id": "react_strategy",
+            "label": "比较推理行动交错与先计划的策略",
+            "evidence": [
+              "react"
+            ],
+            "unitIds": [
+              "n03-planning-reflection"
+            ]
           }
         ],
         "excludedIntents": [],
         "results": [
           {
-            "unitId": "00-learning-route",
-            "sectionId": "s-7547e5ce91f8",
-            "order": 1,
-            "unitTitle": "认识 Agent 工程",
-            "sectionTitle": "一次任务怎样形成反馈闭环",
-            "title": "一次任务怎样形成反馈闭环",
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-dc2e15b8cffc",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "7 从演算到作品",
+            "title": "7 从演算到作品",
             "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
-            "evidenceExcerpt": "上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。[ReAct](https://arxiv.org/abs/2210.03629)",
-            "sourcePath": "textbooks/v10/00-learning-route.md",
-            "sourceSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
-            "version": "textbook-v10",
-            "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
+            "evidenceExcerpt": "EX-N03-C：写出同一任务的固定、ReAct、先计划三条正常轨迹及各一条失败轨迹，做受限反思实验设计。参考分析应给事件、可观察证据、修正和停止条件，不以“采用更先进模式”代替选择依据。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-dc2e15b8cffc",
             "intentId": "source_term_0",
             "matchingBasis": "source_term",
             "matchedSourceTerms": [
               "react"
             ],
-            "prerequisiteUnitIds": []
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ]
+          },
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-da63f3dcff17",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "1 三种策略改变的是控制对象",
+            "title": "1 三种策略改变的是控制对象",
+            "reason": "你表达了“react”；这一小节说明比较推理行动交错与先计划的策略的具体机制。",
+            "evidenceExcerpt": "ReAct 将任务解释、下一行动与新观察交错。根据 report-71 发现 `refund(7)` 失败，选择读取退款函数；观察实际实现是 `<7` 后再查生效规则。每轮仅承诺一个或少数下一步，适合证据逐步揭示、路径难以先列全的调查。其成本是轮次增加、上下文污染与短视；下一步看似相关，不保证最终证据完整。[ReAct 原论文 v3](https://arxiv.org/abs/2210.03629v3)研究推理轨迹与行动交错。本教材记录可审查的短决策依据、行动参数和观察，不要求取得或展示模型隐藏的内部思维。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
+            "intentId": "react_strategy",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ]
           }
         ],
         "clarification": null,
@@ -102,6 +149,10 @@
           "pooling": "cls",
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
           "remoteModelsAllowed": false,
           "querySentExternally": false
         }
@@ -113,12 +164,16 @@
       "expected": {
         "target": "00-learning-route/s-7547e5ce91f8"
       },
-      "durationMs": 42,
-      "passed": true,
-      "failures": [],
+      "durationMs": 68,
+      "passed": false,
+      "failures": [
+        "target/excerpt",
+        "source binding",
+        "source binding"
+      ],
       "result": {
         "status": "recommended",
-        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "retrievalVersion": "content-retrieval-0.12-v12",
         "engineMode": "local_semantic_retrieval",
         "matchingMethods": [
           "local_semantic_vectors",
@@ -126,8 +181,8 @@
           "source_term_recall"
         ],
         "providerCalled": false,
-        "corpusVersion": "textbook-v10",
-        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
         "interpretedIntents": [
           {
             "id": "source_term_0",
@@ -136,35 +191,78 @@
               "ReAct"
             ],
             "unitIds": [
-              "00-learning-route"
+              "n03-planning-reflection",
+              "00-learning-route",
+              "n05-retrieval-ingestion"
             ],
             "sectionKeys": [
-              "00-learning-route/s-7547e5ce91f8"
+              "00-learning-route/s-7547e5ce91f8",
+              "00-learning-route/s-810a87808157",
+              "n03-planning-reflection/s-da63f3dcff17",
+              "n03-planning-reflection/s-dc2e15b8cffc",
+              "n05-retrieval-ingestion/s-ec5a23388832"
             ],
-            "term": "react"
+            "term": "react",
+            "preferredUnit": "n03-planning-reflection"
+          },
+          {
+            "id": "react_strategy",
+            "label": "比较推理行动交错与先计划的策略",
+            "evidence": [
+              "ReAct"
+            ],
+            "unitIds": [
+              "n03-planning-reflection"
+            ]
           }
         ],
         "excludedIntents": [],
         "results": [
           {
-            "unitId": "00-learning-route",
-            "sectionId": "s-7547e5ce91f8",
-            "order": 1,
-            "unitTitle": "认识 Agent 工程",
-            "sectionTitle": "一次任务怎样形成反馈闭环",
-            "title": "一次任务怎样形成反馈闭环",
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-da63f3dcff17",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "1 三种策略改变的是控制对象",
+            "title": "1 三种策略改变的是控制对象",
             "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
-            "evidenceExcerpt": "上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。[ReAct](https://arxiv.org/abs/2210.03629)",
-            "sourcePath": "textbooks/v10/00-learning-route.md",
-            "sourceSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
-            "version": "textbook-v10",
-            "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
+            "evidenceExcerpt": "ReAct 将任务解释、下一行动与新观察交错。根据 report-71 发现 `refund(7)` 失败，选择读取退款函数；观察实际实现是 `<7` 后再查生效规则。每轮仅承诺一个或少数下一步，适合证据逐步揭示、路径难以先列全的调查。其成本是轮次增加、上下文污染与短视；下一步看似相关，不保证最终证据完整。[ReAct 原论文 v3](https://arxiv.org/abs/2210.03629v3)研究推理轨迹与行动交错。本教材记录可审查的短决策依据、行动参数和观察，不要求取得或展示模型隐藏的内部思维。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
             "intentId": "source_term_0",
             "matchingBasis": "source_term",
             "matchedSourceTerms": [
               "react"
             ],
-            "prerequisiteUnitIds": []
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ]
+          },
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-dc2e15b8cffc",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "7 从演算到作品",
+            "title": "7 从演算到作品",
+            "reason": "你表达了“ReAct”；这一小节说明比较推理行动交错与先计划的策略的具体机制。",
+            "evidenceExcerpt": "EX-N03-C：写出同一任务的固定、ReAct、先计划三条正常轨迹及各一条失败轨迹，做受限反思实验设计。参考分析应给事件、可观察证据、修正和停止条件，不以“采用更先进模式”代替选择依据。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-dc2e15b8cffc",
+            "intentId": "react_strategy",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ]
           }
         ],
         "clarification": null,
@@ -178,6 +276,10 @@
           "pooling": "cls",
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
           "remoteModelsAllowed": false,
           "querySentExternally": false
         }
@@ -189,12 +291,16 @@
       "expected": {
         "target": "00-learning-route/s-7547e5ce91f8"
       },
-      "durationMs": 35,
-      "passed": true,
-      "failures": [],
+      "durationMs": 54,
+      "passed": false,
+      "failures": [
+        "target/excerpt",
+        "source binding",
+        "source binding"
+      ],
       "result": {
         "status": "recommended",
-        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "retrievalVersion": "content-retrieval-0.12-v12",
         "engineMode": "local_semantic_retrieval",
         "matchingMethods": [
           "local_semantic_vectors",
@@ -202,8 +308,8 @@
           "source_term_recall"
         ],
         "providerCalled": false,
-        "corpusVersion": "textbook-v10",
-        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
         "interpretedIntents": [
           {
             "id": "source_term_0",
@@ -212,35 +318,78 @@
               "ReAct"
             ],
             "unitIds": [
-              "00-learning-route"
+              "n03-planning-reflection",
+              "00-learning-route",
+              "n05-retrieval-ingestion"
             ],
             "sectionKeys": [
-              "00-learning-route/s-7547e5ce91f8"
+              "00-learning-route/s-7547e5ce91f8",
+              "00-learning-route/s-810a87808157",
+              "n03-planning-reflection/s-da63f3dcff17",
+              "n03-planning-reflection/s-dc2e15b8cffc",
+              "n05-retrieval-ingestion/s-ec5a23388832"
             ],
-            "term": "react"
+            "term": "react",
+            "preferredUnit": "n03-planning-reflection"
+          },
+          {
+            "id": "react_strategy",
+            "label": "比较推理行动交错与先计划的策略",
+            "evidence": [
+              "REACT"
+            ],
+            "unitIds": [
+              "n03-planning-reflection"
+            ]
           }
         ],
         "excludedIntents": [],
         "results": [
           {
-            "unitId": "00-learning-route",
-            "sectionId": "s-7547e5ce91f8",
-            "order": 1,
-            "unitTitle": "认识 Agent 工程",
-            "sectionTitle": "一次任务怎样形成反馈闭环",
-            "title": "一次任务怎样形成反馈闭环",
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-da63f3dcff17",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "1 三种策略改变的是控制对象",
+            "title": "1 三种策略改变的是控制对象",
             "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
-            "evidenceExcerpt": "上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。[ReAct](https://arxiv.org/abs/2210.03629)",
-            "sourcePath": "textbooks/v10/00-learning-route.md",
-            "sourceSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
-            "version": "textbook-v10",
-            "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
+            "evidenceExcerpt": "ReAct 将任务解释、下一行动与新观察交错。根据 report-71 发现 `refund(7)` 失败，选择读取退款函数；观察实际实现是 `<7` 后再查生效规则。每轮仅承诺一个或少数下一步，适合证据逐步揭示、路径难以先列全的调查。其成本是轮次增加、上下文污染与短视；下一步看似相关，不保证最终证据完整。[ReAct 原论文 v3](https://arxiv.org/abs/2210.03629v3)研究推理轨迹与行动交错。本教材记录可审查的短决策依据、行动参数和观察，不要求取得或展示模型隐藏的内部思维。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
             "intentId": "source_term_0",
             "matchingBasis": "source_term",
             "matchedSourceTerms": [
               "react"
             ],
-            "prerequisiteUnitIds": []
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ]
+          },
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-dc2e15b8cffc",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "7 从演算到作品",
+            "title": "7 从演算到作品",
+            "reason": "你表达了“REACT”；这一小节说明比较推理行动交错与先计划的策略的具体机制。",
+            "evidenceExcerpt": "EX-N03-C：写出同一任务的固定、ReAct、先计划三条正常轨迹及各一条失败轨迹，做受限反思实验设计。参考分析应给事件、可观察证据、修正和停止条件，不以“采用更先进模式”代替选择依据。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-dc2e15b8cffc",
+            "intentId": "react_strategy",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ]
           }
         ],
         "clarification": null,
@@ -254,6 +403,10 @@
           "pooling": "cls",
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
           "remoteModelsAllowed": false,
           "querySentExternally": false
         }
@@ -265,12 +418,16 @@
       "expected": {
         "target": "00-learning-route/s-7547e5ce91f8"
       },
-      "durationMs": 57,
-      "passed": true,
-      "failures": [],
+      "durationMs": 53,
+      "passed": false,
+      "failures": [
+        "target/excerpt",
+        "source binding",
+        "source binding"
+      ],
       "result": {
         "status": "recommended",
-        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "retrievalVersion": "content-retrieval-0.12-v12",
         "engineMode": "local_semantic_retrieval",
         "matchingMethods": [
           "local_semantic_vectors",
@@ -278,8 +435,8 @@
           "source_term_recall"
         ],
         "providerCalled": false,
-        "corpusVersion": "textbook-v10",
-        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
         "interpretedIntents": [
           {
             "id": "source_term_0",
@@ -288,35 +445,78 @@
               "ReAct"
             ],
             "unitIds": [
-              "00-learning-route"
+              "n03-planning-reflection",
+              "00-learning-route",
+              "n05-retrieval-ingestion"
             ],
             "sectionKeys": [
-              "00-learning-route/s-7547e5ce91f8"
+              "00-learning-route/s-7547e5ce91f8",
+              "00-learning-route/s-810a87808157",
+              "n03-planning-reflection/s-da63f3dcff17",
+              "n03-planning-reflection/s-dc2e15b8cffc",
+              "n05-retrieval-ingestion/s-ec5a23388832"
             ],
-            "term": "react"
+            "term": "react",
+            "preferredUnit": "n03-planning-reflection"
+          },
+          {
+            "id": "react_strategy",
+            "label": "比较推理行动交错与先计划的策略",
+            "evidence": [
+              "ReAct 的推理和行动是怎样交错的"
+            ],
+            "unitIds": [
+              "n03-planning-reflection"
+            ]
           }
         ],
         "excludedIntents": [],
         "results": [
           {
-            "unitId": "00-learning-route",
-            "sectionId": "s-7547e5ce91f8",
-            "order": 1,
-            "unitTitle": "认识 Agent 工程",
-            "sectionTitle": "一次任务怎样形成反馈闭环",
-            "title": "一次任务怎样形成反馈闭环",
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-da63f3dcff17",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "1 三种策略改变的是控制对象",
+            "title": "1 三种策略改变的是控制对象",
             "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
-            "evidenceExcerpt": "上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。[ReAct](https://arxiv.org/abs/2210.03629)",
-            "sourcePath": "textbooks/v10/00-learning-route.md",
-            "sourceSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
-            "version": "textbook-v10",
-            "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
+            "evidenceExcerpt": "ReAct 将任务解释、下一行动与新观察交错。根据 report-71 发现 `refund(7)` 失败，选择读取退款函数；观察实际实现是 `<7` 后再查生效规则。每轮仅承诺一个或少数下一步，适合证据逐步揭示、路径难以先列全的调查。其成本是轮次增加、上下文污染与短视；下一步看似相关，不保证最终证据完整。[ReAct 原论文 v3](https://arxiv.org/abs/2210.03629v3)研究推理轨迹与行动交错。本教材记录可审查的短决策依据、行动参数和观察，不要求取得或展示模型隐藏的内部思维。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
             "intentId": "source_term_0",
             "matchingBasis": "source_term",
             "matchedSourceTerms": [
               "react"
             ],
-            "prerequisiteUnitIds": []
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ]
+          },
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-dc2e15b8cffc",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "7 从演算到作品",
+            "title": "7 从演算到作品",
+            "reason": "你表达了“ReAct 的推理和行动是怎样交错的”；这一小节说明比较推理行动交错与先计划的策略的具体机制。",
+            "evidenceExcerpt": "EX-N03-C：写出同一任务的固定、ReAct、先计划三条正常轨迹及各一条失败轨迹，做受限反思实验设计。参考分析应给事件、可观察证据、修正和停止条件，不以“采用更先进模式”代替选择依据。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-dc2e15b8cffc",
+            "intentId": "react_strategy",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ]
           }
         ],
         "clarification": null,
@@ -330,6 +530,10 @@
           "pooling": "cls",
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
           "remoteModelsAllowed": false,
           "querySentExternally": false
         }
@@ -341,12 +545,12 @@
       "expected": {
         "status": "no_match"
       },
-      "durationMs": 39,
+      "durationMs": 47,
       "passed": true,
       "failures": [],
       "result": {
         "status": "no_match",
-        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "retrievalVersion": "content-retrieval-0.12-v12",
         "engineMode": "local_semantic_retrieval",
         "matchingMethods": [
           "local_semantic_vectors",
@@ -354,8 +558,8 @@
           "source_term_recall"
         ],
         "providerCalled": false,
-        "corpusVersion": "textbook-v10",
-        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
         "interpretedIntents": [],
         "excludedIntents": [],
         "results": [],
@@ -370,6 +574,10 @@
           "pooling": "cls",
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
           "remoteModelsAllowed": false,
           "querySentExternally": false
         }
@@ -381,12 +589,12 @@
       "expected": {
         "status": "no_match"
       },
-      "durationMs": 34,
+      "durationMs": 52,
       "passed": true,
       "failures": [],
       "result": {
         "status": "no_match",
-        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "retrievalVersion": "content-retrieval-0.12-v12",
         "engineMode": "local_semantic_retrieval",
         "matchingMethods": [
           "local_semantic_vectors",
@@ -394,8 +602,8 @@
           "source_term_recall"
         ],
         "providerCalled": false,
-        "corpusVersion": "textbook-v10",
-        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
         "interpretedIntents": [],
         "excludedIntents": [],
         "results": [],
@@ -410,6 +618,10 @@
           "pooling": "cls",
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
           "remoteModelsAllowed": false,
           "querySentExternally": false
         }
@@ -421,25 +633,36 @@
       "expected": {
         "status": "needs_clarification"
       },
-      "durationMs": 4,
+      "durationMs": 7,
       "passed": true,
       "failures": [],
       "result": {
         "status": "needs_clarification",
-        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "retrievalVersion": "content-retrieval-0.12-v12",
         "engineMode": "local_concept_retrieval",
         "matchingMethods": [
           "local_task_concepts",
           "source_term_recall"
         ],
         "providerCalled": false,
-        "corpusVersion": "textbook-v10",
-        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
-        "interpretedIntents": [],
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "interpretedIntents": [
+          {
+            "id": "react_strategy",
+            "label": "比较推理行动交错与先计划的策略",
+            "evidence": [
+              "React"
+            ],
+            "unitIds": [
+              "n03-planning-reflection"
+            ]
+          }
+        ],
         "excludedIntents": [],
         "results": [],
         "clarification": {
-          "question": "你想找哪个方向的内容？当前教材只包含 Agent ReAct 的有限提及。",
+          "question": "你想找哪个方向的内容？当前教材讲解 Agent ReAct，不提供前端 React 教程。",
           "options": [
             {
               "label": "Agent 的 ReAct 方法",
@@ -452,7 +675,7 @@
           ]
         },
         "limitations": [
-          "本地任务概念规则与原文术语查找只覆盖当前 Agent 教材；没有调用大模型。"
+          "本地任务概念规则与原文术语查找只覆盖所选 Agent 教材；没有调用大模型。"
         ]
       }
     },
@@ -463,12 +686,15 @@
         "unit": "e01",
         "notTarget": true
       },
-      "durationMs": 40,
-      "passed": true,
-      "failures": [],
+      "durationMs": 59,
+      "passed": false,
+      "failures": [
+        "source binding",
+        "source binding"
+      ],
       "result": {
         "status": "recommended",
-        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "retrievalVersion": "content-retrieval-0.12-v12",
         "engineMode": "local_semantic_retrieval",
         "matchingMethods": [
           "local_semantic_vectors",
@@ -476,8 +702,8 @@
           "source_term_recall"
         ],
         "providerCalled": false,
-        "corpusVersion": "textbook-v10",
-        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
         "interpretedIntents": [
           {
             "id": "recovery",
@@ -492,20 +718,31 @@
             ]
           }
         ],
-        "excludedIntents": [],
+        "excludedIntents": [
+          {
+            "id": "react_strategy",
+            "label": "比较推理行动交错与先计划的策略",
+            "evidence": [
+              "ReAct"
+            ],
+            "unitIds": [
+              "n03-planning-reflection"
+            ]
+          }
+        ],
         "results": [
           {
             "unitId": "e01",
             "sectionId": "s-2cd345377707",
-            "order": 12,
+            "order": 15,
             "unitTitle": "用持久状态保存动作事实",
             "sectionTitle": "用一次恢复轨迹读懂提交边界",
             "title": "用一次恢复轨迹读懂提交边界",
             "reason": "你表达了“崩、接着干”；这一小节说明中断后恢复任务的具体机制。",
             "evidenceExcerpt": "先创建run和意图，把意图事务返回的 `action_id/intent_hash`交给可信审批入口；批准必须回送这个入库指纹，不在审批端对显示JSON另算。",
-            "sourcePath": "textbooks/v10/e01.md",
-            "sourceSha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5",
-            "version": "textbook-v10",
+            "sourcePath": "textbooks/v12/e01.md",
+            "sourceSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+            "version": "textbook-v12",
             "href": "#learn/agent/e01/s-2cd345377707",
             "intentId": "recovery",
             "matchingBasis": "task_intent",
@@ -518,15 +755,15 @@
           {
             "unitId": "c01-control-primer",
             "sectionId": "s-13bbf9fcf319",
-            "order": 9,
+            "order": 11,
             "unitTitle": "在重复提议和发送中识别同一个动作",
             "sectionTitle": "调度与效果分别判断",
             "title": "调度与效果分别判断",
             "reason": "你表达了“崩、接着干”；这一小节说明中断后恢复任务的具体机制。",
             "evidenceExcerpt": "`status`表达接下来可怎样推进，`effect_resolution`表达业务效果是否确定。发送前是NOT_SENT，可能已发后是UNRESOLVED；操作级证据才能确认成功、无效果或冲突。具备合法同键重发许可时，动作可能可调度为READY而效果仍未决；“现在可以发送”不能推导“上一次没发生”。",
-            "sourcePath": "textbooks/v10/c01-control-primer.md",
-            "sourceSha256": "345dd67c5bd8165a9d77dc7de819133f50dfcf39f91f59dec05bf385aba3d8c8",
-            "version": "textbook-v10",
+            "sourcePath": "textbooks/v12/c01-control-primer.md",
+            "sourceSha256": "ef50f49868351894e0b928eced4cfb2fdabb9cb28ca03eb9043b9cf42d5689b9",
+            "version": "textbook-v12",
             "href": "#learn/agent/c01-control-primer/s-13bbf9fcf319",
             "intentId": "recovery",
             "matchingBasis": "task_intent",
@@ -548,6 +785,10 @@
           "pooling": "cls",
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
           "remoteModelsAllowed": false,
           "querySentExternally": false
         }
@@ -559,12 +800,12 @@
       "expected": {
         "status": "no_match"
       },
-      "durationMs": 34,
+      "durationMs": 49,
       "passed": true,
       "failures": [],
       "result": {
         "status": "no_match",
-        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "retrievalVersion": "content-retrieval-0.12-v12",
         "engineMode": "local_semantic_retrieval",
         "matchingMethods": [
           "local_semantic_vectors",
@@ -572,10 +813,20 @@
           "source_term_recall"
         ],
         "providerCalled": false,
-        "corpusVersion": "textbook-v10",
-        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
         "interpretedIntents": [],
         "excludedIntents": [
+          {
+            "id": "react_strategy",
+            "label": "比较推理行动交错与先计划的策略",
+            "evidence": [
+              "react"
+            ],
+            "unitIds": [
+              "n03-planning-reflection"
+            ]
+          },
           {
             "id": "selection",
             "label": "选择最小可用方案",
@@ -599,6 +850,10 @@
           "pooling": "cls",
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
           "remoteModelsAllowed": false,
           "querySentExternally": false
         }
@@ -610,12 +865,15 @@
       "expected": {
         "unit": "e01"
       },
-      "durationMs": 40,
-      "passed": true,
-      "failures": [],
+      "durationMs": 74,
+      "passed": false,
+      "failures": [
+        "source binding",
+        "source binding"
+      ],
       "result": {
         "status": "recommended",
-        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "retrievalVersion": "content-retrieval-0.12-v12",
         "engineMode": "local_semantic_retrieval",
         "matchingMethods": [
           "local_semantic_vectors",
@@ -623,8 +881,8 @@
           "source_term_recall"
         ],
         "providerCalled": false,
-        "corpusVersion": "textbook-v10",
-        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
         "interpretedIntents": [
           {
             "id": "recovery",
@@ -645,15 +903,15 @@
           {
             "unitId": "e01",
             "sectionId": "s-2cd345377707",
-            "order": 12,
+            "order": 15,
             "unitTitle": "用持久状态保存动作事实",
             "sectionTitle": "用一次恢复轨迹读懂提交边界",
             "title": "用一次恢复轨迹读懂提交边界",
             "reason": "你表达了“崩、接着干、做过的事情再做”；这一小节说明中断后恢复任务的具体机制。",
             "evidenceExcerpt": "先创建run和意图，把意图事务返回的 `action_id/intent_hash`交给可信审批入口；批准必须回送这个入库指纹，不在审批端对显示JSON另算。",
-            "sourcePath": "textbooks/v10/e01.md",
-            "sourceSha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5",
-            "version": "textbook-v10",
+            "sourcePath": "textbooks/v12/e01.md",
+            "sourceSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+            "version": "textbook-v12",
             "href": "#learn/agent/e01/s-2cd345377707",
             "intentId": "recovery",
             "matchingBasis": "task_intent",
@@ -666,15 +924,15 @@
           {
             "unitId": "c01-control-primer",
             "sectionId": "s-13bbf9fcf319",
-            "order": 9,
+            "order": 11,
             "unitTitle": "在重复提议和发送中识别同一个动作",
             "sectionTitle": "调度与效果分别判断",
             "title": "调度与效果分别判断",
             "reason": "你表达了“崩、接着干、做过的事情再做”；这一小节说明中断后恢复任务的具体机制。",
             "evidenceExcerpt": "成功、等待和停止也不同。无批准是等待批准；效果未知是等待核对；取消禁止未来发送，但不撤销已发生工单。取消后核对出成功，仍保存该效果并完成停止，不把用户已取消的任务改成正常完成。这里先学判断语言，存储章再把它们落到提交事件。",
-            "sourcePath": "textbooks/v10/c01-control-primer.md",
-            "sourceSha256": "345dd67c5bd8165a9d77dc7de819133f50dfcf39f91f59dec05bf385aba3d8c8",
-            "version": "textbook-v10",
+            "sourcePath": "textbooks/v12/c01-control-primer.md",
+            "sourceSha256": "ef50f49868351894e0b928eced4cfb2fdabb9cb28ca03eb9043b9cf42d5689b9",
+            "version": "textbook-v12",
             "href": "#learn/agent/c01-control-primer/s-13bbf9fcf319",
             "intentId": "recovery",
             "matchingBasis": "task_intent",
@@ -696,6 +954,10 @@
           "pooling": "cls",
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
           "remoteModelsAllowed": false,
           "querySentExternally": false
         }
@@ -710,12 +972,17 @@
           "e05"
         ]
       },
-      "durationMs": 44,
-      "passed": true,
-      "failures": [],
+      "durationMs": 63,
+      "passed": false,
+      "failures": [
+        "source binding",
+        "source binding",
+        "source binding",
+        "source binding"
+      ],
       "result": {
         "status": "recommended",
-        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "retrievalVersion": "content-retrieval-0.12-v12",
         "engineMode": "local_semantic_retrieval",
         "matchingMethods": [
           "local_semantic_vectors",
@@ -723,14 +990,14 @@
           "source_term_recall"
         ],
         "providerCalled": false,
-        "corpusVersion": "textbook-v10",
-        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
         "interpretedIntents": [
           {
             "id": "recovery",
             "label": "中断后恢复任务",
             "evidence": [
-              "想知道中断后不重复做事，整个任务一共花了多少钱"
+              "想知道中断后不重复做事"
             ],
             "unitIds": [
               "e01",
@@ -753,15 +1020,15 @@
           {
             "unitId": "e01",
             "sectionId": "s-2cd345377707",
-            "order": 12,
+            "order": 15,
             "unitTitle": "用持久状态保存动作事实",
             "sectionTitle": "用一次恢复轨迹读懂提交边界",
             "title": "用一次恢复轨迹读懂提交边界",
-            "reason": "你表达了“想知道中断后不重复做事，整个任务一共花了多少钱”；这一小节说明中断后恢复任务的具体机制。",
+            "reason": "你表达了“想知道中断后不重复做事”；这一小节说明中断后恢复任务的具体机制。",
             "evidenceExcerpt": "桥接的 `allow_replay=False`使重复begin事件在事务内拒绝，不能从旧DISPATCH再次发送。",
-            "sourcePath": "textbooks/v10/e01.md",
-            "sourceSha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5",
-            "version": "textbook-v10",
+            "sourcePath": "textbooks/v12/e01.md",
+            "sourceSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+            "version": "textbook-v12",
             "href": "#learn/agent/e01/s-2cd345377707",
             "intentId": "recovery",
             "matchingBasis": "task_intent",
@@ -774,15 +1041,15 @@
           {
             "unitId": "c01-control-primer",
             "sectionId": "s-954a9e8d4527",
-            "order": 9,
+            "order": 11,
             "unitTitle": "在重复提议和发送中识别同一个动作",
             "sectionTitle": "一次创建后的超时轨迹",
             "title": "一次创建后的超时轨迹",
-            "reason": "你表达了“想知道中断后不重复做事，整个任务一共花了多少钱”；这一小节说明中断后恢复任务的具体机制。",
+            "reason": "你表达了“想知道中断后不重复做事”；这一小节说明中断后恢复任务的具体机制。",
             "evidenceExcerpt": "3. 新一轮call-create-12重复同槽位同参数。",
-            "sourcePath": "textbooks/v10/c01-control-primer.md",
-            "sourceSha256": "345dd67c5bd8165a9d77dc7de819133f50dfcf39f91f59dec05bf385aba3d8c8",
-            "version": "textbook-v10",
+            "sourcePath": "textbooks/v12/c01-control-primer.md",
+            "sourceSha256": "ef50f49868351894e0b928eced4cfb2fdabb9cb28ca03eb9043b9cf42d5689b9",
+            "version": "textbook-v12",
             "href": "#learn/agent/c01-control-primer/s-954a9e8d4527",
             "intentId": "recovery",
             "matchingBasis": "task_intent",
@@ -795,15 +1062,15 @@
           {
             "unitId": "e05",
             "sectionId": "s-ae0b34dc0191",
-            "order": 19,
+            "order": 28,
             "unitTitle": "在质量护栏下比较性能与成本",
             "sectionTitle": "成本归到逻辑任务 才能看见失败代价",
             "title": "成本归到逻辑任务 才能看见失败代价",
             "reason": "你表达了“整个任务一共花了多少钱”；这一小节说明核算任务性能与费用的具体机制。",
             "evidenceExcerpt": "一次逻辑任务可能有三次模型请求、两次读取、一次写后核对和十分钟人工确认。账本应把这些尝试归到同一 `run_id`，每次物理请求单独记录 `attempt_id`、配置/价格版本、用量、费用确认状态和时间。不能只计成功返回那次模型请求；超时请求可能已经计费，未决费用不能填零。",
-            "sourcePath": "textbooks/v10/e05.md",
-            "sourceSha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d",
-            "version": "textbook-v10",
+            "sourcePath": "textbooks/v12/e05.md",
+            "sourceSha256": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6",
+            "version": "textbook-v12",
             "href": "#learn/agent/e05/s-ae0b34dc0191",
             "intentId": "cost",
             "matchingBasis": "task_intent",
@@ -816,15 +1083,15 @@
           {
             "unitId": "e05",
             "sectionId": "s-e1d15049880a",
-            "order": 19,
+            "order": 28,
             "unitTitle": "在质量护栏下比较性能与成本",
             "sectionTitle": "一个不把失败和未知费用丢掉的汇总器",
             "title": "一个不把失败和未知费用丢掉的汇总器",
             "reason": "你表达了“整个任务一共花了多少钱”；这一小节说明核算任务性能与费用的具体机制。",
             "evidenceExcerpt": "“所有支出都已归账”是该汇总器的外部输入契约，不由四个字段证明。实际导入时按任务查所有模型/工具尝试，验证事件序列、账单或供应商用量记录、价格版本与费用确认；丢了一次超时尝试会让结果偏低。代码只拒绝重复逻辑任务和非法数值，不伪称连接过账单服务。",
-            "sourcePath": "textbooks/v10/e05.md",
-            "sourceSha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d",
-            "version": "textbook-v10",
+            "sourcePath": "textbooks/v12/e05.md",
+            "sourceSha256": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6",
+            "version": "textbook-v12",
             "href": "#learn/agent/e05/s-e1d15049880a",
             "intentId": "cost",
             "matchingBasis": "task_intent",
@@ -846,6 +1113,10 @@
           "pooling": "cls",
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
           "remoteModelsAllowed": false,
           "querySentExternally": false
         }
@@ -857,12 +1128,15 @@
       "expected": {
         "term": "opentelemetry"
       },
-      "durationMs": 36,
-      "passed": true,
-      "failures": [],
+      "durationMs": 50,
+      "passed": false,
+      "failures": [
+        "source binding",
+        "source binding"
+      ],
       "result": {
         "status": "recommended",
-        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "retrievalVersion": "content-retrieval-0.12-v12",
         "engineMode": "local_semantic_retrieval",
         "matchingMethods": [
           "local_semantic_vectors",
@@ -870,8 +1144,8 @@
           "source_term_recall"
         ],
         "providerCalled": false,
-        "corpusVersion": "textbook-v10",
-        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
         "interpretedIntents": [
           {
             "id": "source_term_0",
@@ -897,15 +1171,15 @@
           {
             "unitId": "c01-control-loop",
             "sectionId": "s-9b659b4dbfe6",
-            "order": 14,
+            "order": 17,
             "unitTitle": "Agent 控制循环 设计一个可恢复 受控并能验收的运行时",
             "sectionTitle": "13 观测要能重建决定 评估要有分母",
             "title": "13 观测要能重建决定 评估要有分母",
             "reason": "本节正文实际提及“OpenTelemetry”；这里只定位已有论述，内容范围请以原文为准。",
             "evidenceExcerpt": "运行事件账本负责恢复事实；tracing 负责定位延迟与执行关系。trace 可以采样、导出失败或丢失，不能成为唯一的动作账本。OpenTelemetry 的 span、事件和 link 可以表达操作关系；本文所用运行/动作字段是应用自定义字段，不声称属于统一 Agent 语义标准。[OpenTelemetry：Tracing API](https://opentelemetry.io/docs/specs/otel/trace/api/)",
-            "sourcePath": "textbooks/v10/c01-control-loop.md",
-            "sourceSha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38",
-            "version": "textbook-v10",
+            "sourcePath": "textbooks/v12/c01-control-loop.md",
+            "sourceSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+            "version": "textbook-v12",
             "href": "#learn/agent/c01-control-loop/s-9b659b4dbfe6",
             "intentId": "source_term_0",
             "matchingBasis": "source_term",
@@ -921,15 +1195,15 @@
           {
             "unitId": "e02",
             "sectionId": "s-ab95bf6195dd",
-            "order": 15,
+            "order": 22,
             "unitTitle": "判断版本改动是否改善任务结果",
             "sectionTitle": "Trace 用来定位因果 不能当事实数据库",
             "title": "Trace 用来定位因果 不能当事实数据库",
             "reason": "本节正文实际提及“OpenTelemetry”；这里只定位已有论述，内容范围请以原文为准。",
             "evidenceExcerpt": "OpenTelemetry 的 trace 由 span 组织操作，span 可保存父关联、时间、属性、事件、链接和状态；上下文传播用于跨组件关联。这支持构造调查视图，但不保证业务账本完整或外部操作成功。[OpenTelemetry：Traces，滚动文档，访问于 2026-10-11](https://opentelemetry.io/docs/concepts/signals/traces/)",
-            "sourcePath": "textbooks/v10/e02.md",
-            "sourceSha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1",
-            "version": "textbook-v10",
+            "sourcePath": "textbooks/v12/e02.md",
+            "sourceSha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+            "version": "textbook-v12",
             "href": "#learn/agent/e02/s-ab95bf6195dd",
             "intentId": "source_term_0",
             "matchingBasis": "source_term",
@@ -954,6 +1228,10 @@
           "pooling": "cls",
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
           "remoteModelsAllowed": false,
           "querySentExternally": false
         }
@@ -965,12 +1243,15 @@
       "expected": {
         "term": "opentelemetry"
       },
-      "durationMs": 35,
-      "passed": true,
-      "failures": [],
+      "durationMs": 46,
+      "passed": false,
+      "failures": [
+        "source binding",
+        "source binding"
+      ],
       "result": {
         "status": "recommended",
-        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "retrievalVersion": "content-retrieval-0.12-v12",
         "engineMode": "local_semantic_retrieval",
         "matchingMethods": [
           "local_semantic_vectors",
@@ -978,8 +1259,8 @@
           "source_term_recall"
         ],
         "providerCalled": false,
-        "corpusVersion": "textbook-v10",
-        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
         "interpretedIntents": [
           {
             "id": "source_term_0",
@@ -1005,15 +1286,15 @@
           {
             "unitId": "c01-control-loop",
             "sectionId": "s-9b659b4dbfe6",
-            "order": 14,
+            "order": 17,
             "unitTitle": "Agent 控制循环 设计一个可恢复 受控并能验收的运行时",
             "sectionTitle": "13 观测要能重建决定 评估要有分母",
             "title": "13 观测要能重建决定 评估要有分母",
             "reason": "本节正文实际提及“OpenTelemetry”；这里只定位已有论述，内容范围请以原文为准。",
             "evidenceExcerpt": "运行事件账本负责恢复事实；tracing 负责定位延迟与执行关系。trace 可以采样、导出失败或丢失，不能成为唯一的动作账本。OpenTelemetry 的 span、事件和 link 可以表达操作关系；本文所用运行/动作字段是应用自定义字段，不声称属于统一 Agent 语义标准。[OpenTelemetry：Tracing API](https://opentelemetry.io/docs/specs/otel/trace/api/)",
-            "sourcePath": "textbooks/v10/c01-control-loop.md",
-            "sourceSha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38",
-            "version": "textbook-v10",
+            "sourcePath": "textbooks/v12/c01-control-loop.md",
+            "sourceSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+            "version": "textbook-v12",
             "href": "#learn/agent/c01-control-loop/s-9b659b4dbfe6",
             "intentId": "source_term_0",
             "matchingBasis": "source_term",
@@ -1029,15 +1310,15 @@
           {
             "unitId": "e02",
             "sectionId": "s-ab95bf6195dd",
-            "order": 15,
+            "order": 22,
             "unitTitle": "判断版本改动是否改善任务结果",
             "sectionTitle": "Trace 用来定位因果 不能当事实数据库",
             "title": "Trace 用来定位因果 不能当事实数据库",
             "reason": "本节正文实际提及“OpenTelemetry”；这里只定位已有论述，内容范围请以原文为准。",
             "evidenceExcerpt": "OpenTelemetry 的 trace 由 span 组织操作，span 可保存父关联、时间、属性、事件、链接和状态；上下文传播用于跨组件关联。这支持构造调查视图，但不保证业务账本完整或外部操作成功。[OpenTelemetry：Traces，滚动文档，访问于 2026-10-11](https://opentelemetry.io/docs/concepts/signals/traces/)",
-            "sourcePath": "textbooks/v10/e02.md",
-            "sourceSha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1",
-            "version": "textbook-v10",
+            "sourcePath": "textbooks/v12/e02.md",
+            "sourceSha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+            "version": "textbook-v12",
             "href": "#learn/agent/e02/s-ab95bf6195dd",
             "intentId": "source_term_0",
             "matchingBasis": "source_term",
@@ -1062,6 +1343,10 @@
           "pooling": "cls",
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
           "remoteModelsAllowed": false,
           "querySentExternally": false
         }
@@ -1073,12 +1358,15 @@
       "expected": {
         "term": "opentelemetry"
       },
-      "durationMs": 40,
-      "passed": true,
-      "failures": [],
+      "durationMs": 47,
+      "passed": false,
+      "failures": [
+        "source binding",
+        "source binding"
+      ],
       "result": {
         "status": "recommended",
-        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "retrievalVersion": "content-retrieval-0.12-v12",
         "engineMode": "local_semantic_retrieval",
         "matchingMethods": [
           "local_semantic_vectors",
@@ -1086,8 +1374,8 @@
           "source_term_recall"
         ],
         "providerCalled": false,
-        "corpusVersion": "textbook-v10",
-        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
         "interpretedIntents": [
           {
             "id": "source_term_0",
@@ -1113,15 +1401,15 @@
           {
             "unitId": "c01-control-loop",
             "sectionId": "s-9b659b4dbfe6",
-            "order": 14,
+            "order": 17,
             "unitTitle": "Agent 控制循环 设计一个可恢复 受控并能验收的运行时",
             "sectionTitle": "13 观测要能重建决定 评估要有分母",
             "title": "13 观测要能重建决定 评估要有分母",
             "reason": "本节正文实际提及“OpenTelemetry”；这里只定位已有论述，内容范围请以原文为准。",
             "evidenceExcerpt": "运行事件账本负责恢复事实；tracing 负责定位延迟与执行关系。trace 可以采样、导出失败或丢失，不能成为唯一的动作账本。OpenTelemetry 的 span、事件和 link 可以表达操作关系；本文所用运行/动作字段是应用自定义字段，不声称属于统一 Agent 语义标准。[OpenTelemetry：Tracing API](https://opentelemetry.io/docs/specs/otel/trace/api/)",
-            "sourcePath": "textbooks/v10/c01-control-loop.md",
-            "sourceSha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38",
-            "version": "textbook-v10",
+            "sourcePath": "textbooks/v12/c01-control-loop.md",
+            "sourceSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+            "version": "textbook-v12",
             "href": "#learn/agent/c01-control-loop/s-9b659b4dbfe6",
             "intentId": "source_term_0",
             "matchingBasis": "source_term",
@@ -1137,15 +1425,15 @@
           {
             "unitId": "e02",
             "sectionId": "s-ab95bf6195dd",
-            "order": 15,
+            "order": 22,
             "unitTitle": "判断版本改动是否改善任务结果",
             "sectionTitle": "Trace 用来定位因果 不能当事实数据库",
             "title": "Trace 用来定位因果 不能当事实数据库",
             "reason": "本节正文实际提及“OpenTelemetry”；这里只定位已有论述，内容范围请以原文为准。",
             "evidenceExcerpt": "OpenTelemetry 的 trace 由 span 组织操作，span 可保存父关联、时间、属性、事件、链接和状态；上下文传播用于跨组件关联。这支持构造调查视图，但不保证业务账本完整或外部操作成功。[OpenTelemetry：Traces，滚动文档，访问于 2026-10-11](https://opentelemetry.io/docs/concepts/signals/traces/)",
-            "sourcePath": "textbooks/v10/e02.md",
-            "sourceSha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1",
-            "version": "textbook-v10",
+            "sourcePath": "textbooks/v12/e02.md",
+            "sourceSha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+            "version": "textbook-v12",
             "href": "#learn/agent/e02/s-ab95bf6195dd",
             "intentId": "source_term_0",
             "matchingBasis": "source_term",
@@ -1170,6 +1458,10 @@
           "pooling": "cls",
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
           "remoteModelsAllowed": false,
           "querySentExternally": false
         }
@@ -1181,12 +1473,15 @@
       "expected": {
         "term": "sqlite"
       },
-      "durationMs": 34,
-      "passed": true,
-      "failures": [],
+      "durationMs": 49,
+      "passed": false,
+      "failures": [
+        "source binding",
+        "source binding"
+      ],
       "result": {
         "status": "recommended",
-        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "retrievalVersion": "content-retrieval-0.12-v12",
         "engineMode": "local_semantic_retrieval",
         "matchingMethods": [
           "local_semantic_vectors",
@@ -1194,8 +1489,8 @@
           "source_term_recall"
         ],
         "providerCalled": false,
-        "corpusVersion": "textbook-v10",
-        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
         "interpretedIntents": [
           {
             "id": "source_term_0",
@@ -1220,15 +1515,15 @@
           {
             "unitId": "e01",
             "sectionId": "s-c2209725ec11",
-            "order": 12,
+            "order": 15,
             "unitTitle": "用持久状态保存动作事实",
             "sectionTitle": "三个提交点定义可恢复事实",
             "title": "三个提交点定义可恢复事实",
             "reason": "本节正文实际提及“SQLite”；这里只定位已有论述，内容范围请以原文为准。",
             "evidenceExcerpt": "SQLite 提供本地事务机制，`BEGIN IMMEDIATE`提前请求写事务，可能因已有写者返回 busy；它不会把网络发送纳入事务。[SQLite Transactions](https://www.sqlite.org/lang_transaction.html) 原子提交的持久性也依赖日志、同步及文件系统假设，不能把一个 `commit`调用推广成任意断电与硬件下都不丢数据。[SQLite Atomic Commit](https://www.sqlite.org/atomiccommit.html)",
-            "sourcePath": "textbooks/v10/e01.md",
-            "sourceSha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5",
-            "version": "textbook-v10",
+            "sourcePath": "textbooks/v12/e01.md",
+            "sourceSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+            "version": "textbook-v12",
             "href": "#learn/agent/e01/s-c2209725ec11",
             "intentId": "source_term_0",
             "matchingBasis": "source_term",
@@ -1243,15 +1538,15 @@
           {
             "unitId": "c01-control-loop",
             "sectionId": "s-3fc2cc4e8f7e",
-            "order": 14,
+            "order": 17,
             "unitTitle": "Agent 控制循环 设计一个可恢复 受控并能验收的运行时",
             "sectionTitle": "4 提交边界决定哪些事情可以在崩溃后重做",
             "title": "4 提交边界决定哪些事情可以在崩溃后重做",
             "reason": "本节正文实际提及“SQLite”；这里只定位已有论述，内容范围请以原文为准。",
             "evidenceExcerpt": "如果以 SQLite 实现这些事务，需要明确持久化设置、底层文件系统和故障模型。SQLite 的原子提交说明依赖日志、刷盘及存储系统假设；“调用了 commit”与“在任意磁盘或断电模型下都不丢数据”不是同一承诺。[SQLite：Atomic Commit](https://www.sqlite.org/atomiccommit.html)",
-            "sourcePath": "textbooks/v10/c01-control-loop.md",
-            "sourceSha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38",
-            "version": "textbook-v10",
+            "sourcePath": "textbooks/v12/c01-control-loop.md",
+            "sourceSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+            "version": "textbook-v12",
             "href": "#learn/agent/c01-control-loop/s-3fc2cc4e8f7e",
             "intentId": "source_term_0",
             "matchingBasis": "source_term",
@@ -1276,6 +1571,10 @@
           "pooling": "cls",
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
           "remoteModelsAllowed": false,
           "querySentExternally": false
         }
@@ -1287,12 +1586,12 @@
       "expected": {
         "status": "no_match"
       },
-      "durationMs": 39,
+      "durationMs": 47,
       "passed": true,
       "failures": [],
       "result": {
         "status": "no_match",
-        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "retrievalVersion": "content-retrieval-0.12-v12",
         "engineMode": "local_semantic_retrieval",
         "matchingMethods": [
           "local_semantic_vectors",
@@ -1300,8 +1599,8 @@
           "source_term_recall"
         ],
         "providerCalled": false,
-        "corpusVersion": "textbook-v10",
-        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
         "interpretedIntents": [],
         "excludedIntents": [],
         "results": [],
@@ -1316,6 +1615,10 @@
           "pooling": "cls",
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
           "remoteModelsAllowed": false,
           "querySentExternally": false
         }
@@ -1327,12 +1630,12 @@
       "expected": {
         "status": "no_match"
       },
-      "durationMs": 35,
+      "durationMs": 43,
       "passed": true,
       "failures": [],
       "result": {
         "status": "no_match",
-        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "retrievalVersion": "content-retrieval-0.12-v12",
         "engineMode": "local_semantic_retrieval",
         "matchingMethods": [
           "local_semantic_vectors",
@@ -1340,8 +1643,8 @@
           "source_term_recall"
         ],
         "providerCalled": false,
-        "corpusVersion": "textbook-v10",
-        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
         "interpretedIntents": [],
         "excludedIntents": [],
         "results": [],
@@ -1356,6 +1659,10 @@
           "pooling": "cls",
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
           "remoteModelsAllowed": false,
           "querySentExternally": false
         }
@@ -1367,12 +1674,12 @@
       "expected": {
         "status": "no_match"
       },
-      "durationMs": 35,
+      "durationMs": 51,
       "passed": true,
       "failures": [],
       "result": {
         "status": "no_match",
-        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "retrievalVersion": "content-retrieval-0.12-v12",
         "engineMode": "local_semantic_retrieval",
         "matchingMethods": [
           "local_semantic_vectors",
@@ -1380,8 +1687,8 @@
           "source_term_recall"
         ],
         "providerCalled": false,
-        "corpusVersion": "textbook-v10",
-        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
         "interpretedIntents": [],
         "excludedIntents": [],
         "results": [],
@@ -1396,6 +1703,10 @@
           "pooling": "cls",
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
           "remoteModelsAllowed": false,
           "querySentExternally": false
         }
@@ -1408,12 +1719,18 @@
         "target": "00-learning-route/s-7547e5ce91f8",
         "unit": "e01"
       },
-      "durationMs": 40,
-      "passed": true,
-      "failures": [],
+      "durationMs": 66,
+      "passed": false,
+      "failures": [
+        "source binding",
+        "source binding",
+        "source binding",
+        "source binding",
+        "source binding"
+      ],
       "result": {
         "status": "recommended",
-        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "retrievalVersion": "content-retrieval-0.12-v12",
         "engineMode": "local_semantic_retrieval",
         "matchingMethods": [
           "local_semantic_vectors",
@@ -1421,9 +1738,19 @@
           "source_term_recall"
         ],
         "providerCalled": false,
-        "corpusVersion": "textbook-v10",
-        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
         "interpretedIntents": [
+          {
+            "id": "react_strategy",
+            "label": "比较推理行动交错与先计划的策略",
+            "evidence": [
+              "想看 ReAct 的推理行动交错"
+            ],
+            "unitIds": [
+              "n03-planning-reflection"
+            ]
+          },
           {
             "id": "recovery",
             "label": "中断后恢复任务",
@@ -1443,28 +1770,81 @@
               "ReAct"
             ],
             "unitIds": [
-              "00-learning-route"
+              "n03-planning-reflection",
+              "00-learning-route",
+              "n05-retrieval-ingestion"
             ],
             "sectionKeys": [
-              "00-learning-route/s-7547e5ce91f8"
+              "00-learning-route/s-7547e5ce91f8",
+              "00-learning-route/s-810a87808157",
+              "n03-planning-reflection/s-da63f3dcff17",
+              "n03-planning-reflection/s-dc2e15b8cffc",
+              "n05-retrieval-ingestion/s-ec5a23388832"
             ],
-            "term": "react"
+            "term": "react",
+            "preferredUnit": "n03-planning-reflection"
           }
         ],
         "excludedIntents": [],
         "results": [
           {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-da63f3dcff17",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "1 三种策略改变的是控制对象",
+            "title": "1 三种策略改变的是控制对象",
+            "reason": "你表达了“想看 ReAct 的推理行动交错”；这一小节说明比较推理行动交错与先计划的策略的具体机制。",
+            "evidenceExcerpt": "ReAct 将任务解释、下一行动与新观察交错。根据 report-71 发现 `refund(7)` 失败，选择读取退款函数；观察实际实现是 `<7` 后再查生效规则。每轮仅承诺一个或少数下一步，适合证据逐步揭示、路径难以先列全的调查。其成本是轮次增加、上下文污染与短视；下一步看似相关，不保证最终证据完整。[ReAct 原论文 v3](https://arxiv.org/abs/2210.03629v3)研究推理轨迹与行动交错。本教材记录可审查的短决策依据、行动参数和观察，不要求取得或展示模型隐藏的内部思维。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
+            "intentId": "react_strategy",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ]
+          },
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-dc2e15b8cffc",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "7 从演算到作品",
+            "title": "7 从演算到作品",
+            "reason": "你表达了“想看 ReAct 的推理行动交错”；这一小节说明比较推理行动交错与先计划的策略的具体机制。",
+            "evidenceExcerpt": "EX-N03-C：写出同一任务的固定、ReAct、先计划三条正常轨迹及各一条失败轨迹，做受限反思实验设计。参考分析应给事件、可观察证据、修正和停止条件，不以“采用更先进模式”代替选择依据。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-dc2e15b8cffc",
+            "intentId": "react_strategy",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ]
+          },
+          {
             "unitId": "e01",
             "sectionId": "s-2cd345377707",
-            "order": 12,
+            "order": 15,
             "unitTitle": "用持久状态保存动作事实",
             "sectionTitle": "用一次恢复轨迹读懂提交边界",
             "title": "用一次恢复轨迹读懂提交边界",
             "reason": "你表达了“崩、继续任务”；这一小节说明中断后恢复任务的具体机制。",
             "evidenceExcerpt": "单次 `KNOWN_NO_EFFECT`也保存原proof/code并结算该观察，但动作仍未决，继续查原操作，不自动重发。",
-            "sourcePath": "textbooks/v10/e01.md",
-            "sourceSha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5",
-            "version": "textbook-v10",
+            "sourcePath": "textbooks/v12/e01.md",
+            "sourceSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+            "version": "textbook-v12",
             "href": "#learn/agent/e01/s-2cd345377707",
             "intentId": "recovery",
             "matchingBasis": "task_intent",
@@ -1477,15 +1857,15 @@
           {
             "unitId": "c01-control-primer",
             "sectionId": "s-13bbf9fcf319",
-            "order": 9,
+            "order": 11,
             "unitTitle": "在重复提议和发送中识别同一个动作",
             "sectionTitle": "调度与效果分别判断",
             "title": "调度与效果分别判断",
             "reason": "你表达了“崩、继续任务”；这一小节说明中断后恢复任务的具体机制。",
             "evidenceExcerpt": "成功、等待和停止也不同。无批准是等待批准；效果未知是等待核对；取消禁止未来发送，但不撤销已发生工单。取消后核对出成功，仍保存该效果并完成停止，不把用户已取消的任务改成正常完成。这里先学判断语言，存储章再把它们落到提交事件。",
-            "sourcePath": "textbooks/v10/c01-control-primer.md",
-            "sourceSha256": "345dd67c5bd8165a9d77dc7de819133f50dfcf39f91f59dec05bf385aba3d8c8",
-            "version": "textbook-v10",
+            "sourcePath": "textbooks/v12/c01-control-primer.md",
+            "sourceSha256": "ef50f49868351894e0b928eced4cfb2fdabb9cb28ca03eb9043b9cf42d5689b9",
+            "version": "textbook-v12",
             "href": "#learn/agent/c01-control-primer/s-13bbf9fcf319",
             "intentId": "recovery",
             "matchingBasis": "task_intent",
@@ -1504,9 +1884,9 @@
             "title": "一次任务怎样形成反馈闭环",
             "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
             "evidenceExcerpt": "上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。[ReAct](https://arxiv.org/abs/2210.03629)",
-            "sourcePath": "textbooks/v10/00-learning-route.md",
-            "sourceSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
-            "version": "textbook-v10",
+            "sourcePath": "textbooks/v12/00-learning-route.md",
+            "sourceSha256": "452129591648ca6c146945fae000e3e905e87c2794315109c727592a7b16dced",
+            "version": "textbook-v12",
             "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
             "intentId": "source_term_0",
             "matchingBasis": "source_term",
@@ -1527,6 +1907,10 @@
           "pooling": "cls",
           "dimensions": 512,
           "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+          "chunkHash": "28dee66a4473f780ebd60b4773a25c84e24e3518949f9fa8afbbdca38d4522ae",
+          "passages": 561,
           "remoteModelsAllowed": false,
           "querySentExternally": false
         }

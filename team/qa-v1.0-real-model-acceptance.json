@@ -1,0 +1,78 @@
+{
+  "reportVersion": "qa-v1.0-real-model-acceptance-20261016",
+  "role": "qa-engineer",
+  "status": "not_met_provider_unavailable",
+  "target": {
+    "base": "http://111.231.8.78",
+    "releaseVersion": "rolecraft-1.0"
+  },
+  "isolation": {
+    "temporaryAccount": true,
+    "personalData": false,
+    "profile": {
+      "startingPoint": "beginner",
+      "goal": "固定测试画像：理解受控Agent工程闭环并准备面试"
+    },
+    "moduleId": "e03",
+    "singleAttempt": true,
+    "retryIssued": false
+  },
+  "health": {
+    "httpStatus": 200,
+    "configured": true,
+    "missing": [],
+    "providerCalled": false
+  },
+  "acceptedConfig": {
+    "maxOutputTokens": 1200,
+    "budgetUsd": 1,
+    "estimatedMaxCostUsd": 0.05,
+    "timeoutMs": 30000
+  },
+  "job": {
+    "id": "b8502cef-edc3-4860-a1e2-249ce738a780",
+    "moduleId": "e03",
+    "status": "failed",
+    "inputHash": "eee901f52299752c9ec55a9161b5649376b899966cd4ba6b50f1daa5e801d30d",
+    "createdAt": "2026-10-16T01:18:29.463Z",
+    "updatedAt": "2026-10-16T01:18:31.558Z",
+    "versions": {
+      "product": "local-mvp-0.4",
+      "curriculum": "curriculum-draft-0.2",
+      "template": "uniform-v1",
+      "rubric": "curriculum-draft-0.2",
+      "sourceBundle": "generation-curriculum-draft-0.4"
+    }
+  },
+  "lifecycle": {
+    "events": [
+      "queued",
+      "running",
+      "sources_validating",
+      "generating",
+      "failed"
+    ],
+    "simulation": false,
+    "providerCalled": true,
+    "structureValidating": false,
+    "draftReady": false
+  },
+  "provider": {
+    "httpStatus": 503,
+    "errorCode": "provider_unavailable",
+    "providerOutcomeUnknown": true,
+    "usage": null,
+    "providerRequestId": null,
+    "providerResponseId": null
+  },
+  "persistence": {
+    "chapterCount": 0,
+    "successfulDraftSaved": false
+  },
+  "sourceBinding": {
+    "frozenVersions": true,
+    "inputHashRetained": true,
+    "positiveClaimBindingNotRunBecauseNoDraft": true
+  },
+  "nextAction": "Do not retry until AI generation/backend engineers confirm provider 503 and API contract; then issue one explicit retry with a new idempotency key."
+}

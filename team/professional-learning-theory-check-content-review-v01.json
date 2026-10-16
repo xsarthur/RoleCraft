@@ -1,0 +1,242 @@
+{
+  "review_id": "professional-learning-theory-check-content-review-v01",
+  "reviewed_at": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "reviewer_role": "内容审校员",
+  "status": "reviewed_with_limitations",
+  "scope": [
+    "PLR-AI-006",
+    "PLR-COMP-004",
+    "PLR-BE-003",
+    "PLR-BE-004"
+  ],
+  "inputs": {
+    "catalog_json": {
+      "path": "team/professional-learning-resources-v02.json",
+      "sha256": "fe03b43087ac42d708e4db9bc8c5ec16aa3eec18d9e184defac29581f1295dc9"
+    },
+    "catalog_markdown": {
+      "path": "team/professional-learning-resources-v02.md",
+      "sha256": "127b7ece967838192db5c7020aca8a4b392d392a6293764df0e7f29f6dc31f41"
+    },
+    "link_reverification_json": {
+      "path": "team/resource-link-reverification-v02.json",
+      "sha256": "2db717c1e3b6762265467d7d5dd86117cf13ca4cf5dc77db7dfcb622715f0bd6"
+    },
+    "theory_package_json": {
+      "path": "team/professional-learning-theory-check-v01.json",
+      "sha256": "881a3a7cc11ca48010d8c84613d4ca93752aa1cdb3da39e5c0af2436a087eac0"
+    },
+    "theory_package_markdown": {
+      "path": "team/professional-learning-theory-check-v01.md",
+      "sha256": "175b31a81ad4bc0692d7e1db22c57cec138b4b33ab509876a7e7138629b28749"
+    }
+  },
+  "method": {
+    "checks": [
+      "每项4个机制问题是否由第一方来源直接支持或明确标为项目推断",
+      "反例和取舍是否作为学习者推理任务而非来源事实",
+      "费用、语言、先修、许可和访问限制是否在题包中保持边界",
+      "是否把阅读、课程完成、认证或自评写成能力证据",
+      "是否保留隔离、失败/边界、迁移和停止条件"
+    ],
+    "support_status_values": [
+      "source_supported",
+      "source_supported_with_binding",
+      "project_inference",
+      "not_supported_as_written"
+    ],
+    "execution_status_note": "本报告只审题包规格；四项 theory_check 仍为 planned，未执行学习者核验。"
+  },
+  "resources": [
+    {
+      "resource_id": "PLR-AI-006",
+      "title": "AI Agents in LangGraph",
+      "support_status": "source_supported_with_binding",
+      "source_claims_supported": [
+        "课程覆盖从Python手写Agent迁移到LangGraph、组件、Agentic Search、持久化/流式、人机协同和示例工作流",
+        "课程页显示Intermediate、1h32m、9 lessons、6 code examples和PRO graded assignment",
+        "中级Python为课程明确先修"
+      ],
+      "question_reviews": [
+        {"question": 1, "status": "source_supported_with_binding", "reason": "课程支持组件和图式重建；状态更新、reducer、节点/边具体行为需当前LangGraph API绑定。"},
+        {"question": 2, "status": "source_supported_with_binding", "reason": "持久化/HITL有课程锚点；幂等键、副作用重放与补偿是工程推理。"},
+        {"question": 3, "status": "source_supported_with_binding", "reason": "课程有持久化/流式主题；部分token、旧检查点与最终结果隔离是项目输出契约。"},
+        {"question": 4, "status": "source_supported_with_binding", "reason": "Agentic Search有课程锚点；固定工作流边界、循环风险和指标是项目设计推断。"}
+      ],
+      "counterexample_status": "project_inference",
+      "tradeoff_status": "project_inference",
+      "restriction_audit": {
+        "cost": "beta期间限时免费；PRO作业/成就可能受限；未来价格和地区未证实",
+        "language": "英文；其他语言不足证据",
+        "prerequisites": "中级Python为来源先修；HTTP、序列化、任务合同是项目补充先修",
+        "license": "课程无开放再分发许可；不得复制视频、讲义或代码包；框架许可与课程内容分开",
+        "access": "复核日直接抓取403；执行前需重开第一方页面或保留访问限制"
+      },
+      "required_actions": [
+        "逐题增加当前官方LangGraph文档的source_refs和版本",
+        "题解显式区分课程事实、API事实和项目假设",
+        "保留固定工作流基线、失败日志和未运行项"
+      ]
+    },
+    {
+      "resource_id": "PLR-COMP-004",
+      "title": "Commission Notice C/2024/1645",
+      "support_status": "source_supported_with_binding",
+      "source_claims_supported": [
+        "2024 Notice、CELEX 52024XC01645、C/2024/1645和2024-02-22",
+        "第6–8、12–19段关于市场定义、替代、事实依赖、竞争参数和中间工具",
+        "第116段取代1997 Notice；EUR-Lex列出24种官方语言"
+      ],
+      "question_reviews": [
+        {"question": 1, "status": "source_supported", "reason": "产品/地域市场与需求/供给替代、事实依赖可由Notice段落直接支持。"},
+        {"question": 2, "status": "source_supported_with_binding", "reason": "数字化、多边平台、质量/隐私有主题锚点；零价格、数据交换和不可越过的法律推断需段落或后续官方来源。"},
+        {"question": 3, "status": "source_supported", "reason": "市场定义与竞争评估、市场份额和进入壁垒不是同一结论的边界由Notice支持。"},
+        {"question": 4, "status": "source_supported_with_binding", "reason": "版本替代关系有来源；后续案件/法院实践须另列版本化来源。"}
+      ],
+      "counterexample_status": "project_inference",
+      "tradeoff_status": "project_inference",
+      "restriction_audit": {
+        "cost": "EUR-Lex正文/PDF公开访问；账号或地区要求未独立测试",
+        "language": "24种官方语言；本训练使用英文，需确认学习者规范文本阅读能力",
+        "prerequisites": "公告无正式学习先修；竞争法和市场定义术语为项目补充",
+        "license": "遵守EUR-Lex/欧盟复用政策、署名和变更说明；第三方作品、标志和文件例外另核",
+        "boundary": "不得写成法律意见、普适市场规模算法或当前项目市场结论"
+      },
+      "required_actions": [
+        "为零价格/多边平台题补具体段落",
+        "将后续案件/法院实践作为独立来源，不由公告推断",
+        "保留官方事实、项目观察、假设和未知四列"
+      ]
+    },
+    {
+      "resource_id": "PLR-BE-003",
+      "title": "Professional Data Engineer Learning Path — Google Cloud",
+      "support_status": "source_supported_with_binding",
+      "source_claims_supported": [
+        "认证页列出设计数据处理系统、摄取/处理、存储、分析准备与使用、维护与自动化",
+        "认证考试费用、语言、有效期、无硬性先修和推荐经验只属于关联认证记录",
+        "Google训练目录列出批处理、流式、Dataflow等学习活动主题"
+      ],
+      "question_reviews": [
+        {"question": 1, "status": "source_supported_with_binding", "reason": "摄取、存储、分析准备和维护有认证页锚点；编排、治理和重建链需活动级来源。"},
+        {"question": 2, "status": "source_supported_with_binding", "reason": "训练目录有批/流主题；至少一次/至多一次/有效一次需官方语义文档和合成事件实验。"},
+        {"question": 3, "status": "source_supported_with_binding", "reason": "安全与复杂工作负载有认证范围；质量门、血缘和恢复条件需活动/项目合同绑定。"},
+        {"question": 4, "status": "project_inference", "reason": "云到本地的原则映射和云上重验边界是项目迁移设计。"}
+      ],
+      "counterexample_status": "project_inference",
+      "tradeoff_status": "project_inference",
+      "restriction_audit": {
+        "cost": "路径需登录；视频/文档通常免费，实验室可能需订阅或credits；总价、地区和活动费用不足证据",
+        "language": "聚合路径语言未完整暴露；活动级语言需逐项确认；认证语言独立记录",
+        "prerequisites": "认证无硬性先修；推荐3+年/1+年经验不是路径硬门槛；SQL/事务/权限是项目补充先修",
+        "license": "Google Skills/Cloud条款控制课程、实验和徽章；不得复制实验/考试内容或账号数据",
+        "capability_boundary": "路径完成和认证报名/通过不等于云生产能力"
+      },
+      "required_actions": [
+        "绑定具体路径活动、考试指南或官方语义文档",
+        "使用本地合成事件/临时项目验证重复、恢复和质量门",
+        "保持路径、认证、云实验和生产证据分账"
+      ]
+    },
+    {
+      "resource_id": "PLR-BE-004",
+      "title": "Designing Data-Intensive Applications, 2nd Edition",
+      "support_status": "source_supported_with_binding",
+      "source_claims_supported": [
+        "O'Reilly第二版、ISBN 9781098119058、2026、672页、14章、英文、中高级和21h56m",
+        "目录覆盖数据模型、复制、分区、事务、分布式故障、一致性、批处理和流处理",
+        "出版商月份与作者书目月份差异被保留，不混用第一版"
+      ],
+      "question_reviews": [
+        {"question": 1, "status": "source_supported", "reason": "主题与第二版目录直接对应；组合强化/冲突是学习者推理。"},
+        {"question": 2, "status": "source_supported_with_binding", "reason": "简介支持质量属性和权衡；RPO/RTO与观测证据需项目实验绑定。"},
+        {"question": 3, "status": "source_supported_with_binding", "reason": "复制、分区、事务和故障在书中有范围；重试跨机制交互需章节与实验支持。"},
+        {"question": 4, "status": "source_supported", "reason": "第二版/第一版和书本原则/项目实测区分是有效边界。"}
+      ],
+      "counterexample_status": "project_inference",
+      "tradeoff_status": "project_inference",
+      "restriction_audit": {
+        "cost": "O'Reilly会员或购买/机构授权；地区和机构价格未稳定公开",
+        "language": "英文",
+        "prerequisites": "出版商标注Intermediate to advanced；SQL、并发、故障和SQLite是项目补充先修",
+        "license": "版权内容，无开放教材许可；只链接/合法访问，不复制章节、图表或大段文本；代码许可需另核",
+        "version": "以第二版ISBN为锚；dataintensive.net仅第一版历史背景"
+      },
+      "required_actions": [
+        "为重试/复制/分区题绑定第二版章节",
+        "对具体数据库命令按当前官方文档另核",
+        "用本地夹具记录单节点与未模拟分布式行为的差异"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "PLR-TCR-V01-01",
+      "severity": "P1",
+      "status": "open",
+      "finding": "各机制题尚未逐题写出章节/段落/API source_refs和claim_type，来源事实与项目推断可能混写。",
+      "owner": "课程架构师/资源研究员",
+      "retest": "补齐source_refs、claim_type和project_assumption后由内容审校员复核、测试工程师检查版本链接"
+    },
+    {
+      "id": "PLR-TCR-V01-02",
+      "severity": "P1",
+      "status": "open",
+      "finding": "LangGraph课程直接抓取403，幂等、副作用恢复和状态更新细节不能由课程页概述单独支持。",
+      "owner": "资源研究员/AI生成工程师",
+      "retest": "绑定当前LangGraph官方文档或保留访问限制并把细节改为项目实验问题"
+    },
+    {
+      "id": "PLR-TCR-V01-03",
+      "severity": "P1",
+      "status": "open",
+      "finding": "Google路径题2/题3涉及的批流语义、质量/血缘和恢复不完全由路径总页或认证摘要支持。",
+      "owner": "课程架构师/后端数据工程师",
+      "retest": "补活动、考试指南或官方文档绑定；否则将其明确为项目推演"
+    },
+    {
+      "id": "PLR-TCR-V01-04",
+      "severity": "P2",
+      "status": "open",
+      "finding": "欧盟题2零价格/数据交换和题4后续案例需要更精确的段落或后续官方来源。",
+      "owner": "竞品研究员/内容审校员",
+      "retest": "补段落、案例版本和日期，不将项目解释写成委员会结论"
+    },
+    {
+      "id": "PLR-TCR-V01-05",
+      "severity": "P2",
+      "status": "open",
+      "finding": "DDIA题3的重试—复制—分区组合需要第二版章节/实验映射。",
+      "owner": "后端数据工程师/内容审校员",
+      "retest": "补章节和本地实验假设，保留版权边界"
+    },
+    {
+      "id": "PLR-TCR-V01-06",
+      "severity": "P1",
+      "status": "planned",
+      "finding": "理论核验包尚未执行，暂无学习者回答、作品、失败/边界、迁移或QA运行证据。",
+      "owner": "课程架构师/内容审校员/测试工程师",
+      "retest": "完成隔离执行并保留首次失败、返修和回归记录后再更新theory_check"
+    }
+  ],
+  "status_by_scope": {
+    "source_theory_alignment": "reviewed_with_limitations",
+    "question_structure": "met_within_specification_scope",
+    "cost_language_prerequisite_license_boundaries": "met_with_limitations",
+    "learner_theory_mastery": "not_assessed",
+    "role_competence": "not_assessed",
+    "production_or_industry_advantage": "not_assessed"
+  },
+  "formal_training_gate": "not_ready_pending_final_qa_and_theory_check",
+  "capability_boundary": "理论题、阅读、课程完成、认证报名/通过、会员访问、自评和目录完整性都不能单独证明岗位胜任、云生产能力、通用Agent能力、法律意见、专家审核、真实学习效果或行业先进性。",
+  "recommended_official_supplementary_sources": [
+    "https://langchain-ai.github.io/langgraph/",
+    "https://langchain-ai.github.io/langgraph/concepts/durable_execution/",
+    "https://langchain-ai.github.io/langgraph/concepts/breakpoints/",
+    "https://cloud.google.com/learn/training/data-engineering-and-analytics",
+    "https://cloud.google.com/learn/certification/data-engineer",
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024XC01645",
+    "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/"
+  ]
+}

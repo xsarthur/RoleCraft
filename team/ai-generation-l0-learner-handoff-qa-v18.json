@@ -1,0 +1,30 @@
+{
+  "qa_id": "ai-generation-l0-learner-handoff-qa-v18",
+  "date": "2026-10-16",
+  "scope": "ai-generation-l0-learner-handoff-v18",
+  "conclusion": "met_with_limitations",
+  "not_a_level_grant": true,
+  "isolated_rerun": {"command": "python3 run_bundle.py", "copy": "/tmp/ai-v18-qa", "exit_code": 0},
+  "checks": {
+    "holdout_distinct_from_first_failure_bytes": true,
+    "holdout_distinct_from_first_failure_sha": true,
+    "execution_log_expected_observed_pass_source_refs_hash": true,
+    "five_evidence_cards_all_v18": true,
+    "evidence_card_declared_paths_all_exist": false,
+    "d0_05_dangling_paths": ["d0-05/holdout-input.json", "d0-05/holdout-output.json"],
+    "manifest_artifact_bytes_sha_match": true,
+    "manifest_self_reference_null": true,
+    "status_ungraded": true
+  },
+  "evidence": {
+    "holdout_bytes": 175,
+    "holdout_sha256": "a45b0f606fc47c2ce44274eccd01c27cd21c9eb4fcd005db43a90bde13a7e9da",
+    "first_failure_bytes": 145,
+    "first_failure_sha256": "f97d5d546055db5b3ec021aeae269e029425fea43cd53b48e6d38acc36b38341",
+    "execution_log": {"expected": "holdout rejected on outage", "observed": "recovery_required", "pass": true, "source_refs": ["doc-A-shipping-v3"], "source_hash": "local-hash"},
+    "manifest_bytes": null,
+    "manifest_sha256": null
+  },
+  "limitations": ["D0-05 references two missing artifacts", "No real model/API or recovery/permission/concurrency/browser/human/learning validation", "source_hash is not independently verified"],
+  "repair_and_retest": "Add or remove dangling paths, rerun run_bundle.py, recompute bindings, and repeat QA."
+}

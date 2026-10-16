@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0",
+  "reportId": "agent-developer-mvp-retrospective-20261015",
+  "cycle": "agent-developer-mvp-20261015",
+  "date": "2026-10-15",
+  "ownerRole": "project-manager",
+  "qaReport": "QA-FINAL-AGDEV-20261015-LOCAL-01",
+  "scopeConclusion": "met_within_mvp_delivery_scope",
+  "tracks": {
+    "T1": {"delivery": "passed", "growth": "emerging"},
+    "T2": {"delivery": "passed", "growth": "emerging"},
+    "T3": {"delivery": "passed", "growth": "emerging"}
+  },
+  "d0": {
+    "status": "insufficient_evidence",
+    "startLevel": "L0",
+    "l1": "candidate_pending",
+    "permittedMode": "supervised_local_no_side_effects"
+  },
+  "firstFailures": [
+    {"id": "runner-url-path", "exit": 1, "repair": "path-encoding", "retestExit": 0},
+    {"id": "t1-retry-limit-v0", "exit": 1, "repair": "retry_limit_1", "retestExit": 0},
+    {"id": "python-checker-fields", "exit": 1, "repair": "checker-field-fix", "retestExit": 0},
+    {"id": "qa-copy-missing-hashes-dir", "exit": 1, "repair": "create-output-dir-only", "retestExit": 0}
+  ],
+  "openActions": [
+    {"id": "RET-01", "owner": "agent-developer/product-manager", "status": "open", "next": "make hashes output directory part of a fresh-copy replay"},
+    {"id": "RET-02", "owner": "curriculum-architect/agent-developer", "status": "open", "next": "rerun D0-03 and align Markdown/JSON receipts"},
+    {"id": "RET-03", "owner": "product-manager/curriculum-architect", "status": "planned", "next": "run a second-cycle unknown task before Growth promotion"}
+  ],
+  "limitations": [
+    "No real model, external tool, network, account or database writes",
+    "No real user, expert, production or industry evidence",
+    "No cross-cycle stable capability evidence",
+    "Actions remain open until independent recheck"
+  ],
+  "status": "delivery_closed_within_local_mvp_growth_open"
+}

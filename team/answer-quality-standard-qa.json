@@ -1,0 +1,231 @@
+{
+  "status": "met_within_standard_scope",
+  "role": "测试工程师",
+  "date": "2026-10-14",
+  "scope": "独立规则与教学交接静态核对；不包含正式答案返修、全量内容审校、应用行为或示例执行",
+  "protected_baseline": [
+    {
+      "path": "sites/rolecraft/dist/interview-prep-v1-prototype.html",
+      "bytes": 43336,
+      "sha256": "bde8c588f9aab88f9e36bb1a365aa14037812de04892401d02bfcc0355f68b65"
+    },
+    {
+      "path": "sites/rolecraft/team/interview-prep-v1-product-design.md",
+      "bytes": 7296,
+      "sha256": "d5e0910f0f344d6b00035227f0d37eed47b0fcaed37bfe297f92fbaa91e5d688"
+    },
+    {
+      "path": "sites/rolecraft/team/TEXTBOOK_WRITING_STANDARD.md",
+      "bytes": 11455,
+      "sha256": "46826414794822b5e2c836edad68ba6122f8e551d7669bcc8917bb315f5a6aa1"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+      "bytes": 78547,
+      "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c03.md",
+      "bytes": 22973,
+      "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3"
+    },
+    {
+      "path": "sites/rolecraft/team/textbook-v12-product-assessment.md",
+      "bytes": 5585,
+      "sha256": "2a7a0e08cf959a6ad490d46a98128eebd0e82722c9d4ff1c104ea3fbead285eb"
+    },
+    {
+      "path": "sites/rolecraft/team/textbook-v12-product-assessment.json",
+      "bytes": 3301,
+      "sha256": "cf5bd1e77fead2f51bbfe0ef836ea27d9aa39fac792e64957026797f18143811"
+    }
+  ],
+  "reviewed_deliverables": [
+    {
+      "path": "sites/rolecraft/team/ANSWER_QUALITY_STANDARD.md",
+      "bytes": 8637,
+      "sha256": "e1f55b5a83ae73cd3b300d130ac557bc04031b3263da9642631c6c2af1fe2b97"
+    },
+    {
+      "path": "sites/rolecraft/team/answer-quality-standard-product.md",
+      "bytes": 4343,
+      "sha256": "f6999f71d0b02fb16e2c57b8c1bc2c719643c662e92fcf8889ddecaaef40a7c4"
+    },
+    {
+      "path": "sites/rolecraft/team/answer-quality-standard-curriculum.md",
+      "bytes": 8194,
+      "sha256": "26ed0ac89eab39dce4a459946e587cc838034dfd5baa968522869eb8ea934c29"
+    }
+  ],
+  "checks": [
+    {
+      "id": "AQQ-01",
+      "result": "pass",
+      "subject": "用户原话与适用范围",
+      "evidence": "标准“用户要求与范围”；AGENTS 46–50 行",
+      "finding": "原话完整保留，面向解释型教学问答和面试参考；未将用户简答要求强制扩展。"
+    },
+    {
+      "id": "AQQ-02",
+      "result": "pass",
+      "subject": "可观察而非机械模板",
+      "evidence": "标准 AQS-01 至 AQS-08、表前适用性规则",
+      "finding": "交付证据可核对，不以字数/固定角度/固定栏目判达标；不适用说明不能跳过核心机制。"
+    },
+    {
+      "id": "AQQ-03",
+      "result": "pass",
+      "subject": "摘要与完整解析区别",
+      "evidence": "标准“简答、摘要与完整解析”；课程同名部分",
+      "finding": "口述/摘要允许精简，但不能替代用于理解和复盘的完整解释。"
+    },
+    {
+      "id": "AQQ-04",
+      "result": "pass",
+      "subject": "机制、操作、案例、取舍与验证",
+      "evidence": "标准 AQS-02 至 AQS-06；课程“作者应组织怎样的解释”",
+      "finding": "要求因果关系、输入输出、事件轨迹、相关分支及可观察验证，不把术语清单当答案。"
+    },
+    {
+      "id": "AQQ-05",
+      "result": "pass",
+      "subject": "来源、版本与未验证边界",
+      "evidence": "标准 AQS-07、审校与复验；课程“来源、事实与教学示例”",
+      "finding": "新答案绑定当前版本和具体位置；事实/教学设计/伪代码/实跑/真人证据分开，不继承旧审校。"
+    },
+    {
+      "id": "AQQ-06",
+      "result": "pass",
+      "subject": "超时题教学展开与既有来源对应",
+      "evidence": "课程六项学习障碍表；v12 c01 §6、§10.3、§10.4；c03 意图与审批小节",
+      "finding": "独立读到所引用段落，指定展开点与其语义一致；本次仅核交接对应性，没有重验外部接口或代码保证。"
+    },
+    {
+      "id": "AQQ-07",
+      "result": "pass",
+      "subject": "当前短提纲差距和题集范围",
+      "evidence": "原型43–54行、103行；标准“当前内容状态”",
+      "finding": "静态确认10题均3条answer、2条follow；q2仍缺完整过程与契约展开；其余9题未获全量技术内容审校，不判全部合格或全部不合格。"
+    },
+    {
+      "id": "AQQ-08",
+      "result": "pass",
+      "subject": "岗位分离与返修复验",
+      "evidence": "标准“交付、审校与复验”；产品/课程交接末段",
+      "finding": "产品定义条件，课程交教学规格，作者编写返修，内容审校独立核技术，QA核证据，PM协调；无作者自审或PM代验。"
+    },
+    {
+      "id": "AQQ-09",
+      "result": "pass",
+      "subject": "限定结论与保护",
+      "evidence": "三份新交付；七项保护起止记录；AGENTS/AQ25/R25",
+      "finding": "规范不关闭正式答案或完整目标缺口；7个指定保护文件起止一致，PM行政增补单列。"
+    }
+  ],
+  "protected_final": [
+    {
+      "path": "sites/rolecraft/dist/interview-prep-v1-prototype.html",
+      "bytes": 43336,
+      "sha256": "bde8c588f9aab88f9e36bb1a365aa14037812de04892401d02bfcc0355f68b65",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/team/interview-prep-v1-product-design.md",
+      "bytes": 7296,
+      "sha256": "d5e0910f0f344d6b00035227f0d37eed47b0fcaed37bfe297f92fbaa91e5d688",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/team/TEXTBOOK_WRITING_STANDARD.md",
+      "bytes": 11455,
+      "sha256": "46826414794822b5e2c836edad68ba6122f8e551d7669bcc8917bb315f5a6aa1",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+      "bytes": 78547,
+      "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v12/c03.md",
+      "bytes": 22973,
+      "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/team/textbook-v12-product-assessment.md",
+      "bytes": 5585,
+      "sha256": "2a7a0e08cf959a6ad490d46a98128eebd0e82722c9d4ff1c104ea3fbead285eb",
+      "unchanged": true
+    },
+    {
+      "path": "sites/rolecraft/team/textbook-v12-product-assessment.json",
+      "bytes": 3301,
+      "sha256": "cf5bd1e77fead2f51bbfe0ef836ea27d9aa39fac792e64957026797f18143811",
+      "unchanged": true
+    }
+  ],
+  "protected_result": {
+    "total": 7,
+    "unchanged": 7,
+    "changed": 0
+  },
+  "source_structure": {
+    "method": "static_source_parse_no_js_execution",
+    "question_count": 10,
+    "answer_items_per_question": 3,
+    "followups_per_question": 2,
+    "source_lines": "43-54",
+    "render_line": 103,
+    "q2_line": 45,
+    "generation_provenance": "源码仅证明当前内嵌内容与直接渲染；不证明当时生成过程"
+  },
+  "local_links": {
+    "checked": 6,
+    "resolved": 6,
+    "method": "file_exists_only_no_external_fetch"
+  },
+  "runtime_execution_count": 0,
+  "application_behavior_checks": 0,
+  "content_review_of_all_10_answers": false,
+  "conclusions": {
+    "rules_and_handoff": "met_within_standard_scope",
+    "timeout_answer_q2": "not_met_as_complete_reference_answer",
+    "other_9_answers": "not_individually_reviewed",
+    "full_product": "not_met_no_new_completion_evidence"
+  },
+  "administrative_changes": [
+    "AGENTS.md 用户原话及规则增补",
+    "sites/rolecraft/team/TASKS.md AQ25",
+    "sites/rolecraft/team/RETROSPECTIVES.md R25"
+  ],
+  "open_gaps": [
+    {
+      "id": "AQ25-GAP-01",
+      "issue": "正式题解展开与逐题来源绑定未完成",
+      "owner": "教材研发员；课程架构师交接；内容审校员独立复核",
+      "verification": "逐题核当前答案AQS位置、事实与关键分支，原反例及受影响范围复验"
+    },
+    {
+      "id": "AQ25-GAP-02",
+      "issue": "当前规范没有产生真实读者理解或学习效果证据",
+      "owner": "用户研究员、实训评估员",
+      "verification": "真实读者/真实作品与既定评价条件，不以字数或AI自查代替"
+    },
+    {
+      "id": "AQ25-GAP-03",
+      "issue": "完整产品八门槛没有因规范交付关闭",
+      "owner": "原门槛领域负责人及产品经理",
+      "verification": "按原门槛补当前版本领域证据并交独立QA，不修改原门槛"
+    }
+  ],
+  "defects_within_standard_scope": [],
+  "limitations": [
+    "本次独立QA为静态规则与交接检查，不是对全部题解的技术内容审校。",
+    "未执行应用、伪代码、代码示例、付费模型或外部接口。",
+    "本地链接只核存在，不重验旧外部事实或旧代码。",
+    "七项保护为明确指定范围，不声称全工作区无变化。",
+    "既有八门槛评估仅作为未变范围依据，不当作本轮新产品验收。"
+  ]
+}

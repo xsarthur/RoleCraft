@@ -1,0 +1,18 @@
+{
+  "first_failure": {
+    "state": "recovery_required",
+    "hash": "first_failure"
+  },
+  "checkpoint_before": "baseline.json",
+  "checkpoint_after": "regression.json",
+  "idempotency_key": "U-AI-L0-001",
+  "recovery_input": "first_failure.json",
+  "recovery_output": "regression.json",
+  "schema_assertion": true,
+  "source_assertion": true,
+  "chain": [
+    "recovery_required",
+    "replayed",
+    "draft_ready"
+  ]
+}

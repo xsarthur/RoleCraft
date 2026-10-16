@@ -1,0 +1,677 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-10-14",
+  "role": "课程架构师",
+  "version": "uiux-textbook-course-architecture-v0.1-r2",
+  "status": "superseded_historical_specification_use_canonical_v0.1-r3",
+  "scope": "仅UI/UX产品设计课程规格；不写正文、不改应用、不替代真实用户/专家/求职证据",
+  "inputs": [
+    {
+      "path": "textbooks/v12/agent-engineering-textbook.md",
+      "sha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c280e1",
+      "use": "借鉴结构与实践分层"
+    },
+    {
+      "path": "team/uiux-interview-questions-3m-research.md",
+      "sha256": "a78c8bf2f574bb2869493d0e37d3b995879ad40f0bfd0b6264f59702d1fee175",
+      "use": "103条公开题型映射"
+    },
+    {
+      "path": "team/uiux-interview-questions-3m-research.json",
+      "sha256": "0f2df0d9b0c9e179fc5a60de169c6ff2dc6ce837928cc0812038719f416443f8",
+      "use": "修复绑定：team/uiux-interview-questions-3m-research-fix；当前JSON已可解析，103条记录"
+    },
+    {
+      "path": "team/TEXTBOOK_WRITING_STANDARD.md",
+      "use": "正文质量标准"
+    },
+    {
+      "path": "team/ui-visual-first-product.md",
+      "sha256": "a5c0223018ce3ee41b04490a746436cef21e2cc879928c2fd5233d0ba8a0d390",
+      "use": "视觉表达、状态和无障碍边界参考"
+    }
+  ],
+  "market_evidence": {
+    "window": "2026-07-14/2026-10-14",
+    "records": 103,
+    "sources": {
+      "S01": "Uxcel 45",
+      "S02": "OfferGo 6",
+      "S03": "Testlify 30",
+      "S04": "Knok India 18",
+      "S05": "OctoHires 4"
+    },
+    "interpretation": "逐字去重公开记录，含语义重复和样题；不代表103条独立真题、全国频率或录用概率",
+    "separate_candidate_report": "一位候选人报告27场面试，单列不并入103"
+  },
+  "role_boundary": {
+    "includes": [
+      "UI/UX产品设计",
+      "AI产品体验",
+      "交互状态和不确定性",
+      "研究/评估/设计系统/工程协作"
+    ],
+    "advanced": [
+      "多模态/Agent体验",
+      "服务蓝图/生态",
+      "基础HTML/CSS/埋点"
+    ],
+    "excluded_first_stage": [
+      "AI视觉内容生产",
+      "AIGC批量工作流",
+      "模型训练",
+      "复杂前端/算法",
+      "付费模型调用"
+    ]
+  },
+  "capability_matrix": [
+    {
+      "id": "C01",
+      "name": "问题定义与产品判断",
+      "L1": "brief、问题档案、成功指标、不做清单",
+      "L3": "真实证据修订问题、取舍并说明未知"
+    },
+    {
+      "id": "C02",
+      "name": "用户研究与综合",
+      "L1": "研究计划、原始记录、洞察链",
+      "L3": "处理偏差/冲突证据并改变方案"
+    },
+    {
+      "id": "C03",
+      "name": "信息架构与任务流",
+      "L1": "站点图、内容模型、主/异常流",
+      "L3": "多角色、多端、新约束下保持可理解"
+    },
+    {
+      "id": "C04",
+      "name": "交互与状态设计",
+      "L1": "交互原型、状态矩阵、恢复分支",
+      "L3": "处理AI不确定、失败、权限和人工接管"
+    },
+    {
+      "id": "C05",
+      "name": "UI视觉与可访问性",
+      "L1": "高保真页、响应式、a11y检查",
+      "L3": "多端/包容约束下保持任务清晰"
+    },
+    {
+      "id": "C06",
+      "name": "设计系统与跨端",
+      "L1": "组件、Token、变体、治理说明",
+      "L3": "处理规模化变更和不抽象决定"
+    },
+    {
+      "id": "C07",
+      "name": "AI产品交互",
+      "L1": "AI任务契约、引用、澄清、拒答和控制原型",
+      "L3": "以任务/信任证据改善体验而非宣传确定性"
+    },
+    {
+      "id": "C08",
+      "name": "原型与评估",
+      "L1": "测试计划、观察、问题分级、版本对照",
+      "L3": "同条件比较并说明不确定性"
+    },
+    {
+      "id": "C09",
+      "name": "数据、业务与迭代",
+      "L1": "指标字典、实验假设、复盘",
+      "L3": "处理指标冲突并决定MVP/回退"
+    },
+    {
+      "id": "C10",
+      "name": "工程交付与协作",
+      "L1": "标注、状态、数据、交接包和QA",
+      "L3": "技术约束下保目标并记录决定"
+    },
+    {
+      "id": "C11",
+      "name": "信任、隐私、伦理和包容",
+      "L1": "风险矩阵、披露、申诉和降级方案",
+      "L3": "高风险场景中保留人类控制与可追责"
+    },
+    {
+      "id": "C12",
+      "name": "作品表达与持续学习",
+      "L1": "案例、贡献边界、现场练习",
+      "L3": "未知题先澄清、取证、验证并承认未知"
+    },
+    {
+      "id": "C13",
+      "name": "0到1产品创造",
+      "L1": "问题、已有方案、差异假设、MVP",
+      "L3": "真实反馈、比较评估和迭代后判断继续"
+    }
+  ],
+  "reading_order": [
+    {
+      "order": 1,
+      "id": "00-learning-route",
+      "title": "认识UI/UX与AI产品体验",
+      "layer": "开篇",
+      "prerequisites": [],
+      "core": "UI/UX、产品设计、AI视觉内容设计和AIGC的边界；产品体验闭环与全景；证据边界。"
+    },
+    {
+      "order": 2,
+      "id": "01-foundation-diagnostic",
+      "title": "入口诊断：视觉、交互、工具与可访问性",
+      "layer": "入口诊断",
+      "prerequisites": [
+        "00-learning-route"
+      ],
+      "core": "诊断视觉层级、交互、Figma、研究、可访问性和基础工程词汇，决定补学路径。"
+    },
+    {
+      "order": 3,
+      "id": "02-problem-discovery",
+      "title": "从真实情境取得设计问题证据",
+      "layer": "核心",
+      "prerequisites": [
+        "00-learning-route"
+      ],
+      "core": "用户目标、业务约束、替代方案、问题档案与不做清单。"
+    },
+    {
+      "order": 4,
+      "id": "03-task-acceptance",
+      "title": "定义任务成功、停止与未知效果",
+      "layer": "核心",
+      "prerequisites": [
+        "02-problem-discovery"
+      ],
+      "core": "成功矩阵、范围、假设、停止和失败条件。"
+    },
+    {
+      "order": 5,
+      "id": "04-trust-accessibility",
+      "title": "信任、隐私、AI披露与包容设计",
+      "layer": "核心",
+      "prerequisites": [
+        "03-task-acceptance"
+      ],
+      "core": "权限、个人数据、AI披露、无障碍、公平与风险矩阵。"
+    },
+    {
+      "order": 6,
+      "id": "05-research-methods",
+      "title": "研究方法、招募、竞品与工作坊",
+      "layer": "核心",
+      "prerequisites": [
+        "02-problem-discovery",
+        "03-task-acceptance"
+      ],
+      "core": "研究目标、访谈/观察/问卷/竞品、样本、偏差和工作坊。"
+    },
+    {
+      "order": 7,
+      "id": "06-synthesis-prioritization",
+      "title": "从原始记录到洞察与优先级",
+      "layer": "核心",
+      "prerequisites": [
+        "05-research-methods"
+      ],
+      "core": "编码、主题、Persona/JTBD、旅程、机会和优先级理由。"
+    },
+    {
+      "order": 8,
+      "id": "07-information-architecture",
+      "title": "信息架构、内容模型与生态地图",
+      "layer": "核心",
+      "prerequisites": [
+        "06-synthesis-prioritization"
+      ],
+      "core": "分类、导航、搜索、权限和复杂产品生态关系。"
+    },
+    {
+      "order": 9,
+      "id": "08-task-flows-edge-cases",
+      "title": "任务流、新手引导与边界分支",
+      "layer": "核心",
+      "prerequisites": [
+        "03-task-acceptance",
+        "07-information-architecture"
+      ],
+      "core": "主/异常流、首次使用、返回、取消、空态和跨角色边界。"
+    },
+    {
+      "order": 10,
+      "id": "09-wireframes-interaction",
+      "title": "线框、控件、反馈与设计批评",
+      "layer": "核心",
+      "prerequisites": [
+        "08-task-flows-edge-cases"
+      ],
+      "core": "低保真、控件、交互优先级、批评和限时白板。"
+    },
+    {
+      "order": 11,
+      "id": "10-visual-interface",
+      "title": "界面视觉层级与可读性",
+      "layer": "核心",
+      "prerequisites": [
+        "01-foundation-diagnostic",
+        "09-wireframes-interaction"
+      ],
+      "core": "版式、栅格、字体、色彩、层级、动效节制和视觉决策。"
+    },
+    {
+      "order": 12,
+      "id": "11-responsive-localized",
+      "title": "响应式、多端与本地化",
+      "layer": "核心",
+      "prerequisites": [
+        "10-visual-interface"
+      ],
+      "core": "移动/Web/平板、断点、文本长度、国际化、RTL和弱网。"
+    },
+    {
+      "order": 13,
+      "id": "12-design-system",
+      "title": "组件、Token、变量与设计系统治理",
+      "layer": "核心",
+      "prerequisites": [
+        "10-visual-interface",
+        "11-responsive-localized"
+      ],
+      "core": "组件、变体、Token、命名、文档、治理、Figma协作和迁移。"
+    },
+    {
+      "order": 14,
+      "id": "13-prototyping-fidelity",
+      "title": "原型保真度、演化与测试准备",
+      "layer": "核心",
+      "prerequisites": [
+        "09-wireframes-interaction",
+        "10-visual-interface",
+        "12-design-system"
+      ],
+      "core": "低/高保真选择、演化式原型、Figma交互、数据占位和局限。"
+    },
+    {
+      "order": 15,
+      "id": "14-ai-mental-models",
+      "title": "AI能力边界、意图、上下文与任务契约",
+      "layer": "AI专题",
+      "prerequisites": [
+        "03-task-acceptance",
+        "08-task-flows-edge-cases",
+        "09-wireframes-interaction"
+      ],
+      "core": "规则、固定流程、模型和人工的选择；用户预期和产品责任。"
+    },
+    {
+      "order": 16,
+      "id": "15-ai-uncertainty-states",
+      "title": "AI不确定性、流式状态与失败恢复",
+      "layer": "AI专题",
+      "prerequisites": [
+        "04-trust-accessibility",
+        "08-task-flows-edge-cases",
+        "14-ai-mental-models"
+      ],
+      "core": "等待、流式、低置信、无结果、冲突、拒答、重试、降级和恢复。"
+    },
+    {
+      "order": 17,
+      "id": "16-ai-control-explainability",
+      "title": "纠正、引用、解释、反馈与人工控制",
+      "layer": "AI专题",
+      "prerequisites": [
+        "04-trust-accessibility",
+        "15-ai-uncertainty-states"
+      ],
+      "core": "编辑、重生成、撤销、范围、引用、解释、审批、反馈和退出。"
+    },
+    {
+      "order": 18,
+      "id": "17-multimodal-agent-experience",
+      "title": "多模态、主动式与Agent任务体验",
+      "layer": "AI进阶",
+      "prerequisites": [
+        "14-ai-mental-models",
+        "15-ai-uncertainty-states",
+        "16-ai-control-explainability"
+      ],
+      "core": "对话、文件、图片、语音、主动建议、任务进度、权限和人工接管。"
+    },
+    {
+      "order": 19,
+      "id": "18-usability-accessibility-evaluation",
+      "title": "可用性、可访问性与研究评估",
+      "layer": "评估核心",
+      "prerequisites": [
+        "09-wireframes-interaction",
+        "13-prototyping-fidelity",
+        "15-ai-uncertainty-states"
+      ],
+      "core": "测试任务、招募、观察、成功率、时间、错误、SUS/定性反馈和复验。"
+    },
+    {
+      "order": 20,
+      "id": "19-metrics-experiments-iteration",
+      "title": "指标、实验、业务结果与迭代",
+      "layer": "评估核心",
+      "prerequisites": [
+        "03-task-acceptance",
+        "18-usability-accessibility-evaluation"
+      ],
+      "core": "漏斗、任务指标、AI结果接受率、A/B、非实验比较和迭代决策。"
+    },
+    {
+      "order": 21,
+      "id": "20-engineering-handoff-qa",
+      "title": "工程交接、状态规格与设计QA",
+      "layer": "交付核心",
+      "prerequisites": [
+        "12-design-system",
+        "13-prototyping-fidelity",
+        "15-ai-uncertainty-states"
+      ],
+      "core": "状态、数据/接口占位、响应式、版本、实现后QA和可行性协商。"
+    },
+    {
+      "order": 22,
+      "id": "21-collaboration-constraints",
+      "title": "跨职能协作、反馈与约束取舍",
+      "layer": "交付核心",
+      "prerequisites": [
+        "03-task-acceptance",
+        "18-usability-accessibility-evaluation",
+        "20-engineering-handoff-qa"
+      ],
+      "core": "冲突、时间、范围、不可实现约束、证据表达和利益相关者演示。"
+    },
+    {
+      "order": 23,
+      "id": "22-service-ecosystem",
+      "title": "服务蓝图、生态与跨系统一致性",
+      "layer": "进阶",
+      "prerequisites": [
+        "07-information-architecture",
+        "11-responsive-localized",
+        "17-multimodal-agent-experience",
+        "20-engineering-handoff-qa"
+      ],
+      "core": "跨端、跨团队、版本兼容、生态地图和责任边界。"
+    },
+    {
+      "order": 24,
+      "id": "23-mvp-product-decision",
+      "title": "MVP、优先级与产品决定",
+      "layer": "产品核心",
+      "prerequisites": [
+        "02-problem-discovery",
+        "03-task-acceptance",
+        "18-usability-accessibility-evaluation",
+        "19-metrics-experiments-iteration",
+        "21-collaboration-constraints"
+      ],
+      "core": "从问题、替代方案和证据决定最小可行体验及继续/放弃。"
+    },
+    {
+      "order": 25,
+      "id": "24-portfolio-interview",
+      "title": "作品集、案例叙事与现场题",
+      "layer": "求职实作",
+      "prerequisites": [
+        "10-visual-interface",
+        "13-prototyping-fidelity",
+        "18-usability-accessibility-evaluation",
+        "20-engineering-handoff-qa",
+        "21-collaboration-constraints",
+        "23-mvp-product-decision"
+      ],
+      "core": "问题—证据—方案—迭代—结果的案例、视觉解释、白板和AI边界。"
+    },
+    {
+      "order": 26,
+      "id": "25-capstone-independent-evaluation",
+      "title": "0到1综合项目与未知任务复验",
+      "layer": "综合实作",
+      "prerequisites": [
+        "23-mvp-product-decision",
+        "24-portfolio-interview"
+      ],
+      "core": "未知任务、真实/可核验问题、原型、测试、返修、独立复验和限制。"
+    }
+  ],
+  "practice_case": {
+    "name": "澄湾客服知识助手",
+    "states": [
+      "输入/澄清",
+      "检索/生成中",
+      "候选结果",
+      "来源冲突/低置信",
+      "拒答/无结果",
+      "确认/提交",
+      "断线/重试"
+    ],
+    "boundary": "教学夹具，不证明真实模型、用户、转化率或生产兼容性"
+  },
+  "practice_stages": [
+    {
+      "id": "A",
+      "name": "入口诊断",
+      "deliverable": "基础页面、批评记录、补学清单",
+      "gate": "能否说出用户目标、层级、主要状态和一个可验证问题？"
+    },
+    {
+      "id": "B",
+      "name": "问题与用户证据",
+      "deliverable": "brief、研究计划、原始记录、洞察链",
+      "gate": "结论来自什么证据，哪些仍是假设？"
+    },
+    {
+      "id": "C",
+      "name": "架构与任务",
+      "deliverable": "信息架构、主/异常流、成功矩阵",
+      "gate": "每个关键步骤、权限、取消和异常是否可见？"
+    },
+    {
+      "id": "D",
+      "name": "UI与系统",
+      "deliverable": "高保真页面、响应式、可访问性、组件库",
+      "gate": "视觉规则能否复用，状态是否不依赖颜色/悬停？"
+    },
+    {
+      "id": "E",
+      "name": "AI体验",
+      "deliverable": "AI任务契约、状态机、控制和引用原型",
+      "gate": "用户能否知道系统在做什么、能否纠正、何时转人工？"
+    },
+    {
+      "id": "F",
+      "name": "测试与迭代",
+      "deliverable": "测试记录、问题分级、版本对照、指标假设",
+      "gate": "设计变化由什么观察支持？测试是否真的覆盖任务？"
+    },
+    {
+      "id": "G",
+      "name": "工程交付",
+      "deliverable": "标注、数据/接口状态、设计QA、决策记录",
+      "gate": "工程能否复现各状态，无法实现处如何保住目标？"
+    },
+    {
+      "id": "H",
+      "name": "综合项目与求职",
+      "deliverable": "作品集、未知任务、演示、复盘",
+      "gate": "能否区分个人贡献、构造结果、真实结果和未知？"
+    }
+  ],
+  "question_mapping": {
+    "UIUX-3M-001": "unit-24",
+    "UIUX-3M-002": "unit-21",
+    "UIUX-3M-003": "unit-24",
+    "UIUX-3M-004": "unit-23",
+    "UIUX-3M-005": "unit-21",
+    "UIUX-3M-006": "unit-24",
+    "UIUX-3M-007": "unit-20",
+    "UIUX-3M-008": "unit-05",
+    "UIUX-3M-009": "unit-04",
+    "UIUX-3M-010": "unit-05",
+    "UIUX-3M-011": "unit-00",
+    "UIUX-3M-012": "unit-09",
+    "UIUX-3M-013": "unit-06",
+    "UIUX-3M-014": "unit-02",
+    "UIUX-3M-015": "unit-21",
+    "UIUX-3M-016": "unit-06",
+    "UIUX-3M-017": "unit-21",
+    "UIUX-3M-018": "unit-19",
+    "UIUX-3M-019": "unit-21",
+    "UIUX-3M-020": "unit-23",
+    "UIUX-3M-021": "unit-12",
+    "UIUX-3M-022": "unit-11",
+    "UIUX-3M-023": "unit-18",
+    "UIUX-3M-024": "unit-23",
+    "UIUX-3M-025": "unit-19",
+    "UIUX-3M-026": "unit-13",
+    "UIUX-3M-027": "unit-05",
+    "UIUX-3M-028": "unit-19",
+    "UIUX-3M-029": "unit-13",
+    "UIUX-3M-030": "unit-05",
+    "UIUX-3M-031": "unit-20",
+    "UIUX-3M-032": "unit-08",
+    "UIUX-3M-033": "unit-05",
+    "UIUX-3M-034": "unit-22",
+    "UIUX-3M-035": "unit-19",
+    "UIUX-3M-036": "unit-13",
+    "UIUX-3M-037": "unit-19",
+    "UIUX-3M-038": "unit-19",
+    "UIUX-3M-039": "unit-11",
+    "UIUX-3M-040": "unit-04",
+    "UIUX-3M-041": "unit-21",
+    "UIUX-3M-042": "unit-04",
+    "UIUX-3M-043": "unit-05",
+    "UIUX-3M-044": "unit-02",
+    "UIUX-3M-045": "unit-18",
+    "UIUX-3M-046": "unit-24",
+    "UIUX-3M-047": "unit-18",
+    "UIUX-3M-048": "unit-03",
+    "UIUX-3M-049": "unit-21",
+    "UIUX-3M-050": "unit-03",
+    "UIUX-3M-051": "unit-23",
+    "UIUX-3M-052": "unit-05",
+    "UIUX-3M-053": "unit-05",
+    "UIUX-3M-054": "unit-06",
+    "UIUX-3M-055": "unit-18",
+    "UIUX-3M-056": "unit-06",
+    "UIUX-3M-057": "unit-10",
+    "UIUX-3M-058": "unit-12",
+    "UIUX-3M-059": "unit-11",
+    "UIUX-3M-060": "unit-10",
+    "UIUX-3M-061": "unit-24",
+    "UIUX-3M-062": "unit-20",
+    "UIUX-3M-063": "unit-14",
+    "UIUX-3M-064": "unit-15",
+    "UIUX-3M-065": "unit-20",
+    "UIUX-3M-066": "unit-24",
+    "UIUX-3M-067": "unit-04",
+    "UIUX-3M-068": "unit-04",
+    "UIUX-3M-069": "unit-04",
+    "UIUX-3M-070": "unit-20",
+    "UIUX-3M-071": "unit-19",
+    "UIUX-3M-072": "unit-19",
+    "UIUX-3M-073": "unit-21",
+    "UIUX-3M-074": "unit-21",
+    "UIUX-3M-075": "unit-19",
+    "UIUX-3M-076": "unit-24",
+    "UIUX-3M-077": "unit-23",
+    "UIUX-3M-078": "unit-18",
+    "UIUX-3M-079": "unit-20",
+    "UIUX-3M-080": "unit-09",
+    "UIUX-3M-081": "unit-18",
+    "UIUX-3M-082": "unit-24",
+    "UIUX-3M-083": "unit-00",
+    "UIUX-3M-084": "unit-05",
+    "UIUX-3M-085": "unit-07",
+    "UIUX-3M-086": "unit-09",
+    "UIUX-3M-087": "unit-21",
+    "UIUX-3M-088": "unit-08",
+    "UIUX-3M-089": "unit-20",
+    "UIUX-3M-090": "unit-04",
+    "UIUX-3M-091": "unit-21",
+    "UIUX-3M-092": "unit-21",
+    "UIUX-3M-093": "unit-19",
+    "UIUX-3M-094": "unit-10",
+    "UIUX-3M-095": "unit-21",
+    "UIUX-3M-096": "unit-18",
+    "UIUX-3M-097": "unit-10",
+    "UIUX-3M-098": "unit-08",
+    "UIUX-3M-099": "unit-20",
+    "UIUX-3M-100": "unit-05",
+    "UIUX-3M-101": "unit-13",
+    "UIUX-3M-102": "unit-18",
+    "UIUX-3M-103": "unit-12"
+  },
+  "question_mapping_counts": {
+    "unit-00": 2,
+    "unit-02": 2,
+    "unit-03": 2,
+    "unit-04": 7,
+    "unit-05": 10,
+    "unit-06": 4,
+    "unit-07": 1,
+    "unit-08": 3,
+    "unit-09": 3,
+    "unit-10": 4,
+    "unit-11": 3,
+    "unit-12": 3,
+    "unit-13": 4,
+    "unit-14": 1,
+    "unit-15": 1,
+    "unit-18": 8,
+    "unit-19": 10,
+    "unit-20": 8,
+    "unit-21": 13,
+    "unit-22": 1,
+    "unit-23": 5,
+    "unit-24": 8
+  },
+  "rubric": {
+    "levels": {
+      "0": "缺失/误导",
+      "1": "模板复现",
+      "2": "受约束可交付",
+      "3": "未知任务可验证"
+    },
+    "dimensions": [
+      "问题证据",
+      "研究与综合",
+      "架构与流程",
+      "UI与可访问性",
+      "设计系统",
+      "AI状态与控制",
+      "原型与评估",
+      "数据与产品判断",
+      "工程交付与协作",
+      "作品表达"
+    ],
+    "rule": "量规用于课程诊断，不是录用评分；安全、隐私、无障碍或AI虚假确定性严重缺陷不能由其他项平均抵消"
+  },
+  "authoring_rules": [
+    "面试题用于暴露能力，不按题库顺序拼接正文",
+    "每单元概要/深读/实作分层，先给结论与条件，再讲机制、取舍、失败和验证",
+    "固定任务流程先于动态AI体验；动态体验必须表达状态、控制、证据、失败与人工接管",
+    "未运行的原型/代码/外部契约不得称已验证；AI生成内容不得替代用户证据",
+    "所有完成结论必须限定范围；真实用户、真人专家、求职和行业先进性另取证"
+  ],
+  "binding_revision": {
+    "current_record": "team/uiux-interview-questions-3m-research-fix",
+    "current_input": {
+      "path": "team/uiux-interview-questions-3m-research.json",
+      "sha256": "0f2df0d9b0c9e179fc5a60de169c6ff2dc6ce837928cc0812038719f416443f8",
+      "parse": "verified",
+      "items": 103,
+      "sources": 5
+    },
+    "previous_received": {
+      "path": "team/uiux-interview-questions-3m-research.json",
+      "sha256": "7aa79f20e39ffe27ffbb21daf8e3bc1eb2cc985dd33a586bd27a9db7d59da6b4",
+      "issue": "第73行存在bu\"S05\"语法错误"
+    },
+    "scope": "仅更新课程规格输入绑定和行政记录；26单元、能力矩阵、8阶段、题型映射不变；教材正文及QA/审校报告未修改"
+  },
+  "superseded_by": "sites/rolecraft/team/uiux-textbook-course-architecture.json"
+}

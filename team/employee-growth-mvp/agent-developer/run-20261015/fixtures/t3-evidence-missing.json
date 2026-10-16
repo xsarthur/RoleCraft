@@ -1,0 +1,6 @@
+{
+  "fixture_id": "T3-evidence-missing-v1",
+  "retrieval_response": "evidence_missing",
+  "missing_fields": ["excerpt"],
+  "expected": {"stop_reason": "evidence_missing", "recommendation": false}
+}
