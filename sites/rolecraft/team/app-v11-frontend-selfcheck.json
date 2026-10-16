@@ -1,0 +1,39 @@
+{
+  "kind": "frontend_developer_selfcheck",
+  "version": "local-workbench-0.11",
+  "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+  "actualUnits": 20,
+  "actualHeadingNodes": 174,
+  "retainedFences": 39,
+  "checks": [
+    {
+      "name": "all 20 original bodies: headings, fenced code and data byte binding",
+      "status": "pass"
+    },
+    {
+      "name": "original two figures, local references and internal section links render",
+      "status": "pass"
+    },
+    {
+      "name": "all supplied actual links available or explicitly identified",
+      "status": "pass"
+    },
+    {
+      "name": "HTML, executable links and unapproved images never execute",
+      "status": "pass"
+    },
+    {
+      "name": "cached/new recommendation rejects changed version, invented excerpt, fake section and source hash",
+      "status": "pass"
+    },
+    {
+      "name": "native project and history pages escape user values, no old storage mutations",
+      "status": "pass"
+    }
+  ],
+  "limits": [
+    "Not independent QA",
+    "Browser rendering, async interaction and local service verified separately",
+    "No textbook teaching code, provider API, private user storage or business action executed"
+  ]
+}

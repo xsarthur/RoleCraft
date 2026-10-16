@@ -1,0 +1,167 @@
+{
+  "schemaVersion": "1.0",
+  "productVersion": "prototype-0.2",
+  "standardVersion": "product-creation-2026-10-10",
+  "auditedAt": "2026-10-10",
+  "reviewer": "测试工程师独立代理 /root/qa_engineer",
+  "assessmentScope": "formal_learning_product",
+  "assessmentScopeLabel": "以正式职业学习系统八项必需门槛审计当前静态原型",
+  "overall": "not_met",
+  "overallLabel": "未达标",
+  "decisionBasis": "八项均为必需项；teaching_quality、real_generation、reliable_delivery 存在本地材料可确认的缺失。其余五项证据不足。静态逻辑通过不能抵消必需失败。",
+  "statusMeaning": {
+    "fail": "已确认未满足要求",
+    "insufficient": "未知或证据不足；未观察到有效结果，不推定成功或失败",
+    "pass": "仅在规定范围及证据支持下通过"
+  },
+  "method": "只读核对门槛、README、应用源码、课程数据及既有独立执行报告；本轮没有新增功能运行、专业、用户或生产实测。未采用产品经理 initialStatus 作为独立判定证据。",
+  "inputHashes": {
+    "dist/app.js": "d2a68798542c493dc4ae1991e6e9d66eda6311df87c29352aa4f423e13a2bd3a",
+    "team/product-gates.json": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06",
+    "team/curriculum-data.json": "8eb4730321916a7b12f154f06b31444116657a59941e66c1d6fb34b19cf16609"
+  },
+  "staticVerification": {
+    "scope": "隔离VM指定逻辑与课程JSON结构",
+    "evidence": "team/qa-v02-review.md 修复后独立复验章节",
+    "checks": {"legacyLogic": 22, "curriculumStructure": 20, "addedLogic": 26, "passed": 68},
+    "limits": "这些既有实际执行结果不是本轮重新运行结果；不证明完整教材、实际浏览器、专业能力、用户价值或生产运行。"
+  },
+  "criteria": [
+    {
+      "id": "user_value",
+      "required": true,
+      "status": "insufficient",
+      "evidence": [
+        {"reference": "team/product-review.md 用户目标与现状", "observation": "描述目标人群与问题，未附真实用户访谈或观察结果。"},
+        {"reference": "team/TASKS.md C05", "observation": "真实学习者试点及需求反馈仍是未执行后续任务。"}
+      ],
+      "limits": "用户提出产品目标不等于目标用户试验；本岗位未观察真实用户及预定义指标结果。",
+      "gap": "缺实际用户记录、试验前指标及阈值、对应结果；无法判定达到用户价值门槛。",
+      "owner": "产品经理",
+      "nextAction": "定义目标用户、问题及试验前指标阈值，实施试点并交付原始记录。",
+      "retest": {"status": "待补证据", "method": "核对预定义阈值与真实试点记录、样本及实际结果；不以演示或表单替代。"}
+    },
+    {
+      "id": "teaching_quality",
+      "required": true,
+      "status": "fail",
+      "evidence": [
+        {"reference": "team/curriculum-validation.md 覆盖证据及待完成项", "observation": "20项结构检查通过，但e03、e05、p01、p02没有现有教材章节；其他八章仍为短示例，未证明满足九项结构与深度。"},
+        {"reference": "team/curriculum-data.json fullTextbookStatus/modules/expertReview", "observation": "明确不包含完整教材，四模块existingChapterIds为空，专家审核未完成。"},
+        {"reference": "dist/app.js curriculumPage/教材常量", "observation": "实际显示完整教材待编写，正文为八章固定短样例，示例测试和教学审核标未实施。"}
+      ],
+      "limits": "失败依据是标准要求的内容关联与覆盖未完整，而不是断言已存在内容专业事实错误；专业正确性、审核及教学效果仍未知。",
+      "gap": "规划12模块没有完整教材、分层练习及对应验证证据；运行型示例和专业内容复核未完成。",
+      "owner": "课程架构师",
+      "nextAction": "按已确认范围补齐教材与练习、来源主张关联，组织示例执行与专业复核；工程提供受控执行证据。",
+      "retest": {"status": "待改进及复核", "method": "逐模块对照已定覆盖和深度标准核对正文、练习、产物、来源及运行记录；由实际专业评审者提供审核结论。"}
+    },
+    {
+      "id": "real_generation",
+      "required": true,
+      "status": "fail",
+      "evidence": [
+        {"reference": "dist/app.js modules/route/存储与导出函数", "observation": "教材为固定常量，路线按预设规则组合；没有模型请求、真实生成任务或资料收集实现。"},
+        {"reference": "README.md 实际边界及本地加载说明", "observation": "明确没有真实模型或自动网页检索，静态JS读取课程数据。"}
+      ],
+      "limits": "源码与README证实本项目未接入生成，未对任何外部未提交服务作判断；固定内容生成HTML不是模型生成。",
+      "gap": "没有真实模型按档案生成教材、任务/来源/版本链路或实际生成失败恢复证据。",
+      "owner": "软件工程师",
+      "nextAction": "接收产品、课程与设计交接后实现受控真实生成及过程持久化，提交实际调用、产物和失败记录。",
+      "retest": {"status": "待实现", "method": "独立验证真实服务调用、档案与产物关联、来源及版本、故障恢复；示例验证另需真实执行。"}
+    },
+    {
+      "id": "comparative_advantage",
+      "required": true,
+      "status": "insufficient",
+      "evidence": [
+        {"reference": "team/curriculum-data.json benchmark/sources", "observation": "一份招聘描述和三份技术参考为职业与教学能力方向，未包含行业产品同条件对照结果。"},
+        {"reference": "team/product-gates.json benchmarkFields", "observation": "规定比较条件字段；本地交付未见对应产品、样本、资源和实际比较结果。"}
+      ],
+      "limits": "没有比较实证不能判存在优势，也不能推定产品一定劣于同行；本轮不联网核验行业基线。",
+      "gap": "缺预定义差异化指标、行业产品及研究基线版本、公平比较条件、实测与专业评审。",
+      "owner": "产品经理",
+      "nextAction": "明确可比任务与领先产品/研究基线，在试验前冻结条件和阈值，收集实测及专业复核。",
+      "retest": {"status": "待补比较证据", "method": "检查样本、资源、任务、评分条件一致性和原始实测，复核指标是否支持限定范围优势。"}
+    },
+    {
+      "id": "learner_creation",
+      "required": true,
+      "status": "insufficient",
+      "evidence": [
+        {"reference": "dist/app.js projectsPage/standardsPage", "observation": "两个项目保存自查与文字备注，作品证据标用户自查；没有真实学习者MVP提交及独立评分结果。"},
+        {"reference": "team/TASKS.md C05/C06", "observation": "真实学习者试点、未知任务和教学效果评价尚未执行。"}
+      ],
+      "limits": "未有学员成果不说明学员必然不能创造产品；项目目录及作者制作平台原型不能替代真实学习者证据。",
+      "gap": "缺学习者作品版本、运行测试、目标用户验证、独立作品评审及适用评分记录。",
+      "owner": "课程架构师",
+      "nextAction": "按既定量规组织学习者MVP与未知任务，结合真实用户验证和独立作品评审保存原始证据。",
+      "retest": {"status": "待真实学习证据", "method": "对照任务量规复现作品，核对用户验证和评审来源、评分、版本；不使用自查替代。"}
+    },
+    {
+      "id": "reliable_delivery",
+      "required": true,
+      "status": "fail",
+      "evidence": [
+        {"reference": "dist/app.js storageKey/normalizeState/save", "observation": "持久化只有当前浏览器localStorage；无账户身份、权限隔离API及数据库。"},
+        {"reference": "README.md 保存与故障边界/实际边界", "observation": "明确不跨设备同步且无账户数据库；保存失败内存不能抵抗关闭。"},
+        {"reference": "team/qa-v02-review.md 修复后独立复验", "observation": "指定保存/恢复和版本字段逻辑通过，但报告明确不覆盖生产系统与浏览器。"}
+      ],
+      "limits": "原型本地存储功能改善确有证据；fail针对正式门槛中未实现账户隔离、系统持久化和运行体系，不是认定68项功能再次失败。",
+      "gap": "正式运行范围、账户及隔离、服务端持久任务/恢复及生产版本追踪未建立。",
+      "owner": "软件工程师",
+      "nextAction": "明确运行范围后实现账户隔离、数据库、持久任务、失败恢复与版本记录，交独立验证。",
+      "retest": {"status": "待实现", "method": "使用独立账户、故障注入和服务重启检验隔离、持久化、恢复及版本；补浏览器和真实运行证据。"}
+    },
+    {
+      "id": "operating_economics",
+      "required": true,
+      "status": "insufficient",
+      "evidence": [
+        {"reference": "dist/app.js plannedHours/home/exportPlan", "observation": "时间取章节固定参考小时，未记录真实模型调用、交付耗时或维护成本。"},
+        {"reference": "team/curriculum-review.md 工时限制", "observation": "参考时长没有真实学习耗时测量，不能充当运营指标。"}
+      ],
+      "limits": "没有运营数据不推定超预算；团队任务安排不是实际产品运营质量与经济性结果。",
+      "gap": "缺试验前资源预算、真实成本/耗时/质量数据及已运行维护机制。",
+      "owner": "产品经理",
+      "nextAction": "明确预算和维护责任，与工程一起记录真实生成及服务交付的成本、耗时和质量。",
+      "retest": {"status": "待真实运营证据", "method": "核对实际调用和交付日志与预算、运行范围和质量结果，不用课程时长或虚构数据。"}
+    },
+    {
+      "id": "iteration_trace",
+      "required": true,
+      "status": "insufficient",
+      "evidence": [
+        {"reference": "team/RETROSPECTIVES.md R01/R02/R03与本轮复验结论", "observation": "实际保留目标、版本哈希、失败、原因、责任与修复复验，两类P2已有独立闭环；完整培养目标继续保留未验证。"},
+        {"reference": "team/qa-v02-review.md 首次失败与复验", "observation": "旧/新原型逻辑缺陷确有首次与后续独立结果；不是只有一份完成声明。"},
+        {"reference": "dist/app.js reflectionFields/reflectionsPage", "observation": "复盘保存版本和责任，但未记录新标准逐门槛ID/版本/实测结论；状态为自述与未独立审核。"},
+        {"reference": "team/TASKS.md P01—P07", "observation": "新一轮正式门槛与版本达标复盘仍在交接，未形成每次产出的完整门槛证据链。"}
+      ],
+      "limits": "承认已执行的原型缺陷复盘，不把新增标准缺口倒算为既有复验失败；本基线是一次独立审计，不足证明所有产出均持续达标复盘。",
+      "gap": "尚缺逐次产物与完整门槛版本、独立产品审计和专业审核的持续关联及复验记录。",
+      "owner": "项目经理",
+      "nextAction": "每次发布产物冻结版本，登记八门槛及证据、范围、责任与复验；保留自评/QA/专业审核身份分离。",
+      "retest": {"status": "待持续追踪证据", "method": "逐产物抽核版本、门槛、原始结果、缺口、责任和复验；新版审计重做，不自动继承本基线。"}
+    }
+  ],
+  "counts": {"required": 8, "fail": 3, "insufficient": 5, "pass": 0},
+  "remainingItems": [
+    "真实用户验证及预定义阈值",
+    "完整教材覆盖与深度、运行型示例证据、专业审核",
+    "真实模型生成及来源/任务/版本追踪",
+    "可比行业产品/研究基线、同条件实测和专业评审",
+    "真实学习者MVP、目标用户验证及独立作品评审",
+    "账户隔离、服务端持久化、故障恢复和生产运行范围",
+    "真实预算、成本、耗时、质量与维护证据",
+    "每次产出的完整标准关联、独立审计及复验",
+    "实际浏览器交互、视觉、读屏与可访问性"
+  ],
+  "professionalReviewStatus": "未专业审核",
+  "advancedStatus": "无可比实证，不能认定行业先进",
+  "limits": [
+    "本结论基于当前本地材料及既有独立逻辑执行报告，不是行业专业、用户或生产验证。",
+    "本次使用product-gates状态insufficient表示unknown/证据不足，保持门槛数据词汇一致。",
+    "网站静态接口已测不能替代正式职业学习产品标准。",
+    "下一版须对应新产物哈希与版本再次审计，本结论不自动继承。"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "qa_id": "AI-D0-03-LEARNER-RECEIPTS-QA-20261016-001",
+  "artifact_dir": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-learner-receipts",
+  "status": "not_met",
+  "decision": "remain_L0_guided",
+  "level_granted": null,
+  "learner_owned_execution": false,
+  "human_receipt_present": false,
+  "checks": {
+    "sha256sums": {
+      "status": "pass",
+      "scope": "29 listed files"
+    },
+    "bytes_manifest": {
+      "status": "pass"
+    },
+    "run1_run2_identical": {
+      "status": "pass",
+      "cases": [
+        "A-normal",
+        "B-tenant-denied",
+        "source-missing",
+        "source-conflict"
+      ]
+    },
+    "stderr_zero": {
+      "status": "pass"
+    },
+    "exit_codes": {
+      "status": "pass",
+      "all_zero": true
+    },
+    "first_failures": {
+      "status": "pass",
+      "values": {
+        "B-tenant-denied": "SOURCE_SCOPE_DENIED",
+        "source-missing": "SOURCE_MISSING",
+        "source-conflict": "SOURCE_VERSION_MISMATCH"
+      }
+    },
+    "b_body_not_present": {
+      "status": "pass",
+      "scope": "B output contains denial metadata only"
+    },
+    "frozen_input_and_replay_hash_pointers": {
+      "status": "pass"
+    }
+  },
+  "missing": [
+    "learner-receipt.json",
+    "learner-statement.txt",
+    "handoff-to-qa.json",
+    "manifest.sha256"
+  ],
+  "reason": "Integrity and scenario outputs are reproducible, but learner-owned attribution and handoff evidence are absent; directory contents cannot establish that the learner personally executed the runs.",
+  "next_steps": [
+    "Collect learner-owned receipt and statement bound to hashes and timestamps",
+    "Collect handoff-to-qa.json",
+    "Then perform independent QA replay and receiver reconstruction/signoff"
+  ]
+}

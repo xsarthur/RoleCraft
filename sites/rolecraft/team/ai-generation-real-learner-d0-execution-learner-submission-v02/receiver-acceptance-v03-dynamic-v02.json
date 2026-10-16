@@ -1,0 +1,47 @@
+{
+  "record_type": "independent_receiver_acceptance",
+  "status": "accepted_with_evidence",
+  "prior_records": [
+    "receiver-acceptance-v01.json",
+    "receiver-acceptance-v02-rejection.json"
+  ],
+  "runner_version": "d0_03_runner-v02-dynamic.py",
+  "submission_package": "ai-generation-real-learner-d0-execution-learner-submission-v02",
+  "learner_id": "learner-7391842650",
+  "receiver": {
+    "role": "独立接收方/测试工程师",
+    "identity": "chenny",
+    "accepted": true,
+    "accepted_at": "2026-10-16T13:31:30+08:00",
+    "signature": "Chenny"
+  },
+  "replay": {
+    "fresh_temp_directory": "/private/tmp/chenny-receiver-replay-v02.eL7CGW",
+    "replay_outputs": "/private/tmp/chenny-receiver-replay-v02.eL7CGW/raw-replay",
+    "rebuild_command": "zsh \"/Users/shengxiong/Desktop/One People Company/sites/rolecraft/team/ai-generation-real-learner-d0-execution-learner-submission-v02/receiver-replay-v02.sh\"",
+    "four_case_replay": "pass",
+    "sha256sums_sha256": "4446b5fe879a1579eb9db61ee578eddb3ecf8b55b2a2d8a55d8b1588fb60e0c7",
+    "bytes_sha256": "6b3308bb4a2f616897c11a8659c10f706f282fc8191885a6cd24a6f121a93307"
+  },
+  "holdout": {
+    "status": "pass_dynamic_binding",
+    "holdout_directory": "/private/tmp/chenny-receiver-holdout-v02.fekHQb",
+    "evidence_directory": "/private/tmp/chenny-receiver-holdout-v02.fekHQb/evidence",
+    "checks_path": "/private/tmp/chenny-receiver-holdout-v02.fekHQb/evidence/checks.json",
+    "checks_sha256": "b6ebf7fd10a7a387a0b07092a24369d990b6a646f24c9b073cbad090d694192c",
+    "sha256sums_sha256": "55e4a61b9bd0c4cbe63e4124eb225da05409a0912ee385321599ad1026a320d0",
+    "run_1_run_2_byte_equal": true,
+    "dynamic_claim_refs": true,
+    "exit_codes_zero": true,
+    "stderr_empty": true
+  },
+  "decision_reason": "Chenny 已在受控确认声明中确认独立复验和动态 holdout。",
+  "level_decision": "pending",
+  "human_receipt_pending": false,
+  "forbidden_inference": "接收方签名只证明本次证据包已接收，不等于 D0、L1 或 L2 等级授予。",
+  "receiver_confirmation": {
+    "path": "chenny-receiver-confirmation-v01.txt",
+    "sha256": "8bab7b3848b53d87072f789ebf920cfee23c141fb643d92f74fdf4dd3a02ed40",
+    "status": "confirmed_by_chenny"
+  }
+}

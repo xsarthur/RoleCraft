@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-10T18:29:52.860756+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "sqliteVersion": "3.53.1",
+  "units": [
+    {
+      "unit": "c03",
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md",
+      "sourceSha256": "a2ffd0854b3ca757ac6597cbd1b89a242248c8d227ad9f6595260a18c5fb9180",
+      "executedBlocks": [
+        {
+          "number": 2,
+          "language": "python",
+          "startLine": 28,
+          "sha256": "8c81ee75d239cec9bcbd7b34197773194f3fd9a7ad46c72deba37a75522f63b0"
+        },
+        {
+          "number": 4,
+          "language": "python",
+          "startLine": 182,
+          "sha256": "ea658bc65911ab8f2533b61895557c1557658630197a2a0789a3d5b53be27811"
+        },
+        {
+          "number": 5,
+          "language": "python",
+          "startLine": 219,
+          "sha256": "5f139d4228384516da804a710d47fbf02ec27ebc64ca93606eb3a04f945f63b9"
+        }
+      ],
+      "notExecuted": "runtime protocol pseudocode"
+    },
+    {
+      "unit": "e01",
+      "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e01.md",
+      "sourceSha256": "481401334bc735b28e9cee78715c6222da5bf524085179653d2d53a2440d0757",
+      "executedBlocks": [
+        {
+          "number": 1,
+          "language": "python",
+          "startLine": 32,
+          "sha256": "43c671bb5d2c222cd1999bc4d6c195ea92982f78f21d06ebd16ac5b2e8cd671b"
+        },
+        {
+          "number": 2,
+          "language": "python",
+          "startLine": 345,
+          "sha256": "d7a9bb033d6842998c10ea7eff3e204f64b4032abd7f67158fa3283b55e8eb35"
+        }
+      ],
+      "notExecuted": "real external services/hardware/model ledger"
+    }
+  ],
+  "assembly": {
+    "issue_contract.py": "8c81ee75d239cec9bcbd7b34197773194f3fd9a7ad46c72deba37a75522f63b0",
+    "c03_issue.py": "8a7398c0784e2d76f817177e2cd556a01972be0a5b362ea21f794060faaa869e",
+    "e01.py": "203e2ba565b7266c7ac18325345dbbd848147a09fbf7147bbce850c7b3506892"
+  },
+  "safetyRead": "full both current manuscripts/all code/imports read; c03 notified final two pseudocode dict-access changes read; only stdlib/teaching-module definitions and constrained SQLite IO; no main/network/credentials"
+}

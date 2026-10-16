@@ -1,0 +1,260 @@
+{
+  "qa_id": "employee-growth-qa-20261014",
+  "date": "2026-10-14",
+  "auditor_role": "qa-engineer",
+  "scope": "静态配置 QA：JSON/JSONL 解析、关键字段、职责分离、状态限制、相对链接和输入文件保护范围",
+  "overall": "met_within_configuration_scope",
+  "input_path_note": {
+    "requested": "sites/rolecraft/team/employee-growth-product.md",
+    "requested_exists": false,
+    "canonical_present": "sites/rolecraft/team/employee-professional-growth-product.md",
+    "canonical_used": true,
+    "impact": "path_alias_advisory"
+  },
+  "checks": [
+    {
+      "id": "CFG-JSON-01",
+      "result": "pass",
+      "claim": "employee-growth-matrix.json parses as JSON and has required top-level sections",
+      "evidence": {
+        "top_level_keys": [
+          "schemaVersion", "id", "version", "date", "ownerRole", "status", "scope", "boundaries", "roles", "resultLedgers", "dimensions", "levels", "learningRoute", "diagnostic", "exerciseContract", "roleTracks", "reviewAndTransfer", "checkpoints", "sourceRelations", "statusVocabulary", "selfCheck"
+        ],
+        "role_count": 15,
+        "dimension_ids": ["D1", "D2", "D3", "D4", "D5", "D6", "D7"],
+        "level_ids": ["L0", "L1", "L2", "L3", "L4"]
+      }
+    },
+    {
+      "id": "CFG-JSONL-01",
+      "result": "pass",
+      "claim": "evidence-ledger-template.jsonl has three valid records with stable required keys",
+      "evidence": {
+        "line_count": 3,
+        "task_ids": ["T1", "T2", "T3"],
+        "tracks": ["Delivery", "Growth", "Growth"],
+        "evidence_types": ["artifact", "unknown_task", "independent_review"],
+        "all_lines_parse": true,
+        "key_sets_equal": true
+      }
+    },
+    {
+      "id": "CFG-COVERAGE-01",
+      "result": "pass",
+      "claim": "all listed roles have one unique role track",
+      "evidence": {
+        "roles": 15,
+        "unique_roles": 15,
+        "role_tracks": 15,
+        "unique_role_tracks": 15,
+        "missing_tracks": [],
+        "extra_tracks": []
+      }
+    },
+    {
+      "id": "CFG-FIELDS-01",
+      "result": "pass",
+      "claim": "exercise contract required fields are unique and templates expose evidence/retest fields",
+      "evidence": {
+        "exercise_required_field_count": 21,
+        "exercise_required_field_names_unique": true,
+        "mvp_templates_checked": [
+          "task-contract-template.md",
+          "handoff-template.md",
+          "retrospective-template.md"
+        ],
+        "required_concepts": [
+          "version", "single owner", "independent reviewer", "environment/source", "first failure", "retest", "limitation", "next action"
+        ]
+      }
+    },
+    {
+      "id": "CFG-SEPARATION-01",
+      "result": "pass",
+      "claim": "static responsibility separation is stated",
+      "evidence": {
+        "single_owner_rule": true,
+        "independent_review_separate_from_owner": true,
+        "qa_does_not_repair_or_lower_gate": true,
+        "pm_does_not_declare_professional_competence": true,
+        "curriculum_role_tracks_have_boundaries": true
+      }
+    },
+    {
+      "id": "CFG-STATUS-01",
+      "result": "pass_with_advisory",
+      "claim": "lifecycle and no-skip/independent-review constraints are documented",
+      "evidence": {
+        "lifecycle": ["draft", "scoped", "in_progress", "handoff", "independent_review", "rework", "retested", "closed"],
+        "closed_means_version_gate_only": true,
+        "delivery_growth_separate": true,
+        "runtime_transition_executed": false
+      },
+      "advisory": "Product/MVP use passed/failed/insufficient while matrix vocabulary uses pass/fail/insufficient_evidence; field-level mapping is needed before automated aggregation."
+    },
+    {
+      "id": "CFG-LINK-01",
+      "result": "pass",
+      "claim": "MVP README relative links resolve",
+      "evidence": {
+        "links_checked": [
+          "task-contract-template.md",
+          "handoff-template.md",
+          "evidence-ledger-template.jsonl",
+          "retrospective-template.md"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "id": "CFG-PROTECTION-01",
+      "result": "pass_with_limitations",
+      "claim": "protected input files unchanged during this QA",
+      "evidence": {
+        "all_start_end_sha256_equal": false,
+        "unchanged_file_count": 8,
+        "changed_file_count": 1,
+        "protected_file_count": 9,
+        "qa_wrote_to_input_files": false,
+        "changed_path": "sites/rolecraft/team/employee-growth-pm.md",
+        "change_note": "PM coordination record received an administrative append after the initial snapshot; final content was read for status context."
+      },
+      "advisory": "The PM file remains in the protection binding with both hashes; this is not treated as a QA edit or a capability result."
+    }
+  ],
+  "advisories": [
+    {
+      "id": "CFG-PATH-01",
+      "severity": "low",
+      "status": "open",
+      "owner": "project-manager",
+      "finding": "Requested product filename is absent; canonical file uses employee-professional-growth-product.md.",
+      "retest": "Normalize the path in future task contracts and rerun link/path check."
+    },
+    {
+      "id": "CFG-STATUS-02",
+      "severity": "medium",
+      "status": "open",
+      "owner": "product-manager/curriculum-architect",
+      "finding": "Status labels differ between product/MVP review fields and matrix statusVocabulary.",
+      "retest": "Approve a field-level status mapping and verify an example state transition."
+    },
+    {
+      "id": "CFG-LEVEL-01",
+      "severity": "low",
+      "status": "open",
+      "owner": "product-manager/curriculum-architect",
+      "finding": "Product summary lists L1-L3 while curriculum defines L0-L4 without a formal crosswalk.",
+      "retest": "Freeze and inspect a three-to-five-level crosswalk before the pilot."
+    }
+  ],
+  "protected_files": [
+    {"path": "sites/rolecraft/team/employee-growth-pm.md", "sha256_start": "977e67c15701b1a0b3b412cfe783117765f695bc2dc2b15b1191ef83565242a7", "sha256_end": "bca31410ba4e457c3fca1d1901996c68f38d295d148891139be268bc88394035", "change_note": "Concurrent PM administrative append observed after initial snapshot; not written by QA."},
+    {"path": "sites/rolecraft/team/employee-professional-growth-product.md", "sha256_start": "c2a27c13c850e8f302e973e50b9f1bf30479049a95d84cfd97c856c0740c24eb", "sha256_end": "c2a27c13c850e8f302e973e50b9f1bf30479049a95d84cfd97c856c0740c24eb"},
+    {"path": "sites/rolecraft/team/employee-growth-curriculum.md", "sha256_start": "d9d56934223ea7e63be768c9f0eb765761ea7da18d81267c3e74fa7defc1c5aa", "sha256_end": "d9d56934223ea7e63be768c9f0eb765761ea7da18d81267c3e74fa7defc1c5aa"},
+    {"path": "sites/rolecraft/team/employee-growth-matrix.json", "sha256_start": "fffcb806db007af34778e2475de817e551fde8c5d00bcec8dd76841baa0069f8", "sha256_end": "fffcb806db007af34778e2475de817e551fde8c5d00bcec8dd76841baa0069f8"},
+    {"path": "sites/rolecraft/team/employee-growth-mvp/README.md", "sha256_start": "3e6981239e2afca11e7d3faa23e3cde7636365d48b312cb5c08f25176b6f4e3f", "sha256_end": "3e6981239e2afca11e7d3faa23e3cde7636365d48b312cb5c08f25176b6f4e3f"},
+    {"path": "sites/rolecraft/team/employee-growth-mvp/evidence-ledger-template.jsonl", "sha256_start": "b0459b32a209cd838f11c5f4fdbb1ea81bcb345106c8e6350c3715154e59aa18", "sha256_end": "b0459b32a209cd838f11c5f4fdbb1ea81bcb345106c8e6350c3715154e59aa18"},
+    {"path": "sites/rolecraft/team/employee-growth-mvp/handoff-template.md", "sha256_start": "ec76486a1b9e178ccbeacb9b0212b80b6b420d42aaee625c6c681e5a740d91b9", "sha256_end": "ec76486a1b9e178ccbeacb9b0212b80b6b420d42aaee625c6c681e5a740d91b9"},
+    {"path": "sites/rolecraft/team/employee-growth-mvp/retrospective-template.md", "sha256_start": "bfbb6e66e7209d6f375d0d977c57b769fc90f47b4b47e31e00fa83a111868fcd", "sha256_end": "bfbb6e66e7209d6f375d0d977c57b769fc90f47b4b47e31e00fa83a111868fcd"},
+    {"path": "sites/rolecraft/team/employee-growth-mvp/task-contract-template.md", "sha256_start": "6cb4289d857df5c4086625f918ae5df25ac00dd8b972812cd33683c5b72f0d0c", "sha256_end": "6cb4289d857df5c4086625f918ae5df25ac00dd8b972812cd33683c5b72f0d0c"}
+  ],
+  "incremental_review": {
+    "id": "CFG-CROSSWALK-01",
+    "date": "2026-10-14",
+    "file": "sites/rolecraft/team/employee-growth-mvp/status-crosswalk.md",
+    "file_sha256": "085829b34bbbe7e2a7ec96aa17b8cb7941fc883b0562b7e0597b7027a109448a",
+    "file_sha256_initial_snapshot": "bafc705debdef5d2e161575b13063d6fb161998406437591b3a934b996633a1f",
+    "file_changed_after_initial_read": true,
+    "qa_wrote_to_crosswalk": false,
+    "result": "met_within_crosswalk_scope",
+    "checks": {
+      "four_state_categories": {
+        "result": "pass",
+        "categories": ["task_lifecycle", "delivery", "growth", "curriculum_checkpoint"]
+      },
+      "default_mapping": {
+        "result": "pass",
+        "lifecycle_states": ["draft", "scoped", "in_progress", "handoff", "independent_review", "rework", "retested", "closed"],
+        "mapping_table_present": true,
+        "not_automatic_assignment": true
+      },
+      "closed_rule": {
+        "result": "pass",
+        "requires_independent_review": true,
+        "requires_retest_or_registered_next_step": true,
+        "does_not_claim_professional_or_production_success": true
+      },
+      "independent_review_rule": {
+        "result": "pass",
+        "reviewer_must_differ_from_owner": true,
+        "links_contract_acceptance_counterexample_or_unknown_and_evidence": true
+      },
+      "limitations_rule": {
+        "result": "pass",
+        "protected_states": ["pass_with_limitations", "insufficient_evidence", "not_assessed"],
+        "no_silent_conversion_to_pass": true,
+        "real_capability_user_expert_and_production_results_separate": true
+      }
+    },
+    "resolves_within_scope": ["CFG-STATUS-02"],
+    "advisory_resolution": [
+      {
+        "id": "CFG-STATUS-02",
+        "prior_status": "open_in_initial_static_qa",
+        "current_status": "resolved_within_crosswalk_scope",
+        "remaining_limit": "runtime state transitions and pilot execution remain unverified"
+      }
+    ],
+    "does_not_change": ["employee capability evidence", "promotion evidence", "pilot effect", "user/expert/production conclusions"],
+    "old_qa_preservation": {
+      "qa_md_pre_incremental_sha256": "6ca2e7fa565cb9cf894e269cf94472b59da1a7adb25da3d9e3115fc88291cb78",
+      "qa_json_pre_incremental_sha256": "d9a68ab550dd38d24ebd85253c9ce02bb201ac9f45172ac6acec3f2e164ace8e",
+      "update_mode": "append_incremental_section_and_machine_readable_record",
+      "old_conclusion_and_limitations_retained": true
+    }
+  },
+  "level_crosswalk_review": {
+    "id": "CFG-LEVEL-CROSSWALK-01",
+    "date": "2026-10-15",
+    "file": "sites/rolecraft/team/employee-growth-mvp/status-crosswalk.md",
+    "file_sha256": "9c198c696dc9cdca0e709d0af3a64f5dc10c3af0141864f24aa2fc4a243cdedf",
+    "result": "met_within_level-crosswalk_scope",
+    "checks": {
+      "five_course_levels_present": {
+        "result": "pass",
+        "levels": ["L0", "L1", "L2", "L3", "L4"]
+      },
+      "product_to_course_mapping": {
+        "result": "pass",
+        "mapping": {
+          "product_L1": "course_L1",
+          "product_L2": "course_L2",
+          "product_L3": "course_L3",
+          "course_L0": "pre_entry_preparation_no_product_level",
+          "course_L4": "product_creation_extension_requires_separate_external_evidence"
+        }
+      },
+      "no_automatic_promotion": {
+        "result": "pass",
+        "mapping_is_not_promotion": true,
+        "course_completion_or_checkpoint_alone_insufficient": true,
+        "product_contract_and_independent_review_required": true
+      },
+      "external_evidence_boundary": {
+        "result": "pass",
+        "course_L4_requires_real_problem_comparable_industry_evidence_and_external_feedback": true,
+        "course_L4_does_not_auto_grant_product_L1_to_L3": true,
+        "real_capability_user_expert_production_results_remain_separate": true
+      }
+    },
+    "old_qa_and_employee_limits_retained": true,
+    "no_d0_t1_t2_t3_or_pilot_execution": true
+  },
+  "limitations": [
+    "No D0 diagnosis or T1/T2/T3 execution",
+    "No runtime state-machine enforcement test",
+    "No employee capability, promotion, user value, expert, production or industry conclusion",
+    "Configuration pass is limited to the inspected files and checks"
+  ]
+}

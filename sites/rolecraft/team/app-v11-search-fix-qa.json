@@ -1,0 +1,364 @@
+{
+  "version": "app-v11-search-fix-independent-qa-final",
+  "auditor": "测试工程师 /root/qa_app_retrieval_v11",
+  "completedAtUtc": "2026-10-11T14:46:31.049316+00:00",
+  "scope": "Existingtextbooktermsearch/meaningretention andactualpublicsourceidentity only. No fullapp/教材behavior/production tests.",
+  "serviceAndSourceConclusion": "met_within_scope",
+  "fullSearchFixConclusion": "insufficient",
+  "missingRequiredCondition": "SF11-11 actualbrowser query→card→target/reload/copy unavailable inQAcontext",
+  "formalLearningProduct": "not_met",
+  "appVersion": "local-workbench-0.11",
+  "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+  "runtime": "v24.16.0",
+  "corpusVersion": "textbook-v10",
+  "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+  "bookSha256": "6707a4f03b298a5b234ce56a88edcbd9d79af6d40cb978227461a9d9d522f76e",
+  "standardVersion": "product-creation-2026-10-10",
+  "criteria": [
+    {
+      "id": "SF11-01",
+      "status": "pass_within_service_scope",
+      "actual": "Finalrepair2 originalreact→actual00-learning-route/s-7547e5ce91f8, exactsource target/quote/title/hash; no completecourseclaim.",
+      "evidence": "http-repair2.json,target-prose-http-final.json"
+    },
+    {
+      "id": "SF11-02",
+      "status": "pass_within_service_scope",
+      "actual": "Firstcandidate actual ReAct/REACT sameexistingtarget; laterrepairs limitedcontextpolarity, casefold/source-index path unchanged; finalrawreactpointpass.",
+      "evidence": "http-candidate.json"
+    },
+    {
+      "id": "SF11-03",
+      "status": "pass_within_service_scope",
+      "actual": "Firstcandidate explicitinterleavingquery actualprose; finalS07 explicitlyAgentaffirmative afterfrontendnegative also returnsReAct target.",
+      "evidence": "http-candidate.json,http-repair2.json"
+    },
+    {
+      "id": "SF11-04",
+      "status": "pass_within_service_scope",
+      "actual": "Finalfrontendframework/JSXHooks/splitwebcomponents produce no_match ratherthanAgentprose.",
+      "evidence": "http-repair2.json"
+    },
+    {
+      "id": "SF11-05",
+      "status": "pass_within_service_scope",
+      "actual": "FinaltrueReactfrontend-or-Agentcomparison needsclarification with distinctdirections.",
+      "evidence": "http-repair2.json"
+    },
+    {
+      "id": "SF11-06",
+      "status": "pass_within_service_scope",
+      "actual": "FinalnegativeReAct/recovery positivee01; firstcostnegativeReActe05only. No excludedReActprimary.",
+      "evidence": "http-repair2.json,http-candidate.json"
+    },
+    {
+      "id": "SF11-07",
+      "status": "pass_within_service_scope",
+      "actual": "Finalonlyexclude no falsepositive; cannotinfer topic fromnegatedterm.",
+      "evidence": "http-repair2.json"
+    },
+    {
+      "id": "SF11-08",
+      "status": "pass_within_service_scope",
+      "actual": "Finaloldnaturalrecovery withoutprofessionalterm returnse01 coverage/realquote.",
+      "evidence": "http-repair2.json"
+    },
+    {
+      "id": "SF11-09",
+      "status": "pass_within_service_scope",
+      "actual": "Finalrestoration+costoftask remains separatee01/e05 groups and max6 originalcontract.",
+      "evidence": "http-repair2.json"
+    },
+    {
+      "id": "SF11-10",
+      "status": "pass_within_service_scope",
+      "actual": "Firstcandidate actualJSON Schema prose/f02 line24 found acrosscasevariants; knownkitchen no_match; originalRAG c02/e03also retained. Genericprose vocabulary reviewed, nothardcodedsecondtestterm.",
+      "evidence": "http-candidate.json,independent-candidate-review.json"
+    },
+    {
+      "id": "SF11-11",
+      "status": "insufficient",
+      "actual": "ActualHTTPtarget→fullchapter shows exactheading/quote/paper/source; QA browser unavailable, no realclick/reload/clipboard. PMdisplay orpriorv11UI is notnew independentexecution.",
+      "evidence": "target-prose-http-final.json,ui-first-availability.json,ui-recovery-attempt.json"
+    }
+  ],
+  "issues": [
+    {
+      "id": "QSF11-01",
+      "owner": "内容检索工程师",
+      "original": "react returned HTTP200/no_match in realNode24 receivedapplication mirror.",
+      "cause": "Taskframe/semantic threshold alone lost actual prose term outsidepredefinedintent categories.",
+      "repair": "GenericEnglish source-prose invertedrecall withNFKC/casefold/wordboundary/codepathURL exclusion, retainsBGE taskmeaning.",
+      "retest": "Firstcandidateactualtermcase/phrase plusfinalrawreact/proof.",
+      "status": "closed_within_service_and_source_scope",
+      "evidence": [
+        "react-http-first.json",
+        "http-candidate.json",
+        "http-repair2.json",
+        "target-prose-http-final.json"
+      ]
+    },
+    {
+      "id": "QSF11-02",
+      "owner": "内容检索工程师",
+      "original": "FrozenS09 explicitlynegatedAgentmeaning andwantedwebcomponents butfirstcandidatecertainlyreturnedAgentReAct.",
+      "cause": "FrontendandAgentcontext evaluatedsingletermclause, missedaffirmative/negativecomparison acrossadjacentclauses.",
+      "repair": "AggregateReactsubjectcontextwithpolarity/frontendwebcomponent cues.",
+      "retest": "OriginalS09no_match inrepair1 andfinalrepair2, plusfinitefixedcontrols.",
+      "status": "closed_within_tested_service_scope",
+      "evidence": [
+        "independent-inputs-before-repair.json",
+        "http-candidate.json",
+        "independent-candidate-review.json",
+        "http-repair.json",
+        "http-repair2.json"
+      ]
+    },
+    {
+      "id": "QSF11-03",
+      "owner": "内容检索工程师",
+      "original": "FrozenS07 negativefrontendbutaffirmativeAgent returnedactualReAct infirstcandidate thenno_match afterrepair1.",
+      "cause": "Frontendcue fromnegativeclause treatedas affirmative and blockedlaterpositiveAgentsense.",
+      "repair": "Distinguish negatedReact topicclause withsamepolarity rule; lateraffirmativeReAct remainsavailable.",
+      "retest": "SameS07 returnsactualReAct infinalrepair2; all10affectedfixed/originalinputs checks pass.",
+      "status": "closed_within_tested_service_scope",
+      "evidence": [
+        "http-candidate.json",
+        "http-repair.json",
+        "independent-repair-review.json",
+        "http-repair2.json"
+      ]
+    }
+  ],
+  "currentEightGates": [
+    {
+      "id": "user_value",
+      "required": true,
+      "unchangedCriterion": "目标人群、问题和验证指标在试验前定义，有真实用户证据且达到预定阈值。",
+      "ownerFromStandard": "产品经理",
+      "status": "insufficient",
+      "currentReason": "This round contains real human bug feedback:react undiscoverable. It is usefulactualfeedback, but not complete targetpopulation/problem/metric pilot results defined beforetrial.",
+      "responsibleRoles": "产品经理 / 用户研究员",
+      "nextAction": "Retain this feedback and run definedtargetuserpilot with actual outcomes; do not turn one fixed bug into broad satisfaction.",
+      "retest": "Actual newevidence onfrozenversion inthatdomain; oldpass notinherited."
+    },
+    {
+      "id": "teaching_quality",
+      "required": true,
+      "unchangedCriterion": "能力、章节、练习和作品建立关联；内容覆盖、深度、来源与案例通过内容核对和专业复核。",
+      "ownerFromStandard": "课程架构师",
+      "status": "insufficient",
+      "currentReason": "Actualv10 professionaltermparagraph is discoverable andsource preserved; ReAct is finite conceptmention, no new completecourse/humanindustryexpert/depthorlearningevidence.",
+      "responsibleRoles": "课程架构师 / 教材研发员 / 内容审校员",
+      "nextAction": "Review requiredsystematicteaching scope and obtain realprofessionalvalidation; separate content from this search repair.",
+      "retest": "Actual newevidence onfrozenversion inthatdomain; oldpass notinherited."
+    },
+    {
+      "id": "real_generation",
+      "required": true,
+      "unchangedCriterion": "真实模型依学习档案生成教材，保存生成过程、来源及版本，示例验证与失败状态真实。",
+      "ownerFromStandard": "软件工程师",
+      "status": "fail",
+      "currentReason": "Current work indexes existing教材. It does not deliver learner-profile real教材generation/sourcevalidation/runtimeevidence; engineering finalstartup saysgenerationstillconfigured:false. No generationcall byQA.",
+      "responsibleRoles": "软件工程师（原门槛owner）/ AI生成工程师",
+      "nextAction": "Afterconfiguration/budget authorization, actualprofilelinkedgeneration/source/version/failure tests thenindependentQA.",
+      "retest": "Actual newevidence onfrozenversion inthatdomain; oldpass notinherited."
+    },
+    {
+      "id": "comparative_advantage",
+      "required": true,
+      "unchangedCriterion": "选定行业产品及研究基线，在同任务、样本、资源与评分条件下验证差异化指标，并记录专业评审。",
+      "ownerFromStandard": "产品经理",
+      "status": "insufficient",
+      "currentReason": "No new frozen same-taskindustry/researchbaseline comparison orprofessionaladvantageevidence.",
+      "responsibleRoles": "产品经理 / 竞品研究员",
+      "nextAction": "Define comparabletasks/versions/resources/metrics thenactualmeasurement.",
+      "retest": "Actual newevidence onfrozenversion inthatdomain; oldpass notinherited."
+    },
+    {
+      "id": "learner_creation",
+      "required": true,
+      "unchangedCriterion": "学习者产出可运行 MVP，具备测试、目标用户验证和独立作品评审，并满足预定评分条件。",
+      "ownerFromStandard": "课程架构师",
+      "status": "insufficient",
+      "currentReason": "No reallearnerMVP/unknown-task independentwork/user validation/independent作品review submitted in this repair.",
+      "responsibleRoles": "课程架构师 / 实训评估员",
+      "nextAction": "Obtain realartifact/unknown-task/independentreview evidence againstexisting量规.",
+      "retest": "Actual newevidence onfrozenversion inthatdomain; oldpass notinherited."
+    },
+    {
+      "id": "reliable_delivery",
+      "required": true,
+      "unchangedCriterion": "真实系统的持久化、账户权限隔离、异常恢复及版本追踪经独立验证，满足明确运行范围。",
+      "ownerFromStandard": "软件工程师",
+      "status": "fail",
+      "currentReason": "Currentrepair is supportedNode24 localreadonly contentservice, andnewinput browserflow stillunverified; notformalproduction accountlearning persistence/recovery/certifiedoperatingscope. Oldbackend code remained butfullproductionpassnotinherited.",
+      "responsibleRoles": "软件工程师 / 后端数据工程师 / 内容检索工程师（只检索）",
+      "nextAction": "FirstindependentlycompleteSF11-11 whenbrowseravailable; separatelyfreezeformalproduction scope andvalidate currentfullsystem.",
+      "retest": "Actual newevidence onfrozenversion inthatdomain; oldpass notinherited."
+    },
+    {
+      "id": "operating_economics",
+      "required": true,
+      "unchangedCriterion": "真实调用与交付记录包含成本、耗时、质量及维护机制，达到预定资源预算。",
+      "ownerFromStandard": "产品经理",
+      "status": "insufficient",
+      "currentReason": "No new actualgenerationbilling/fulloperatingbudget-quality-maintenance evidence. Localquerymilliseconds arenoteconomic certification.",
+      "responsibleRoles": "产品经理 / 运营分析员",
+      "nextAction": "Predefinebudget thencollectrealcost/time/quality/maintenance evidence.",
+      "retest": "Actual newevidence onfrozenversion inthatdomain; oldpass notinherited."
+    },
+    {
+      "id": "iteration_trace",
+      "required": true,
+      "unchangedCriterion": "每次产出记录版本、门槛、实际证据、差距、原因、责任人、下一步及复验条件与结果；自评、QA、专业审核分别记录。",
+      "ownerFromStandard": "项目经理",
+      "status": "pass",
+      "currentReason": "Limitedcurrentservicefixtrace:before-editbaseline,originalactualfailure,frozenindependentcases,two related regressions,ownermechanism repairs,actualoriginal/affectedtests,sourcehashes,125protectedfiles andcleanup. UIinsufficient explicitlyopen.",
+      "responsibleRoles": "项目经理 / 测试工程师",
+      "nextAction": "PM integrate newretrospective andleaveUIopen; newUI/artifactgetsitsownactualindependenttest.",
+      "retest": "Actual newevidence onfrozenversion inthatdomain; oldpass notinherited."
+    }
+  ],
+  "protection": "125/125 named receivedpublicfiles byte/SHA endpoint unchanged;44 receivedimplementationfiles onlycore/retrievalindex changed;oldv11reports/standards,textbookbody,frontend retained. Notcontinuoustamperforensics.",
+  "executionPoints": [
+    {
+      "phase": "receivedoriginal",
+      "runtime": "v24.16.0",
+      "evidence": "react-http-first.json"
+    },
+    {
+      "phase": "firstcandidate23HTTP/fixed15+8independent",
+      "coreSha256": "b259d08e3537dbf05175ce5bb1724e458a6a8e97d7b818e408cff5562348ca28",
+      "evidence": "http-candidate.json",
+      "important": "S09failedindependentreview despitefixed15pass."
+    },
+    {
+      "phase": "firstrepair10affected",
+      "coreSha256": "f75e67eb51f43a2f64f1ca68cf8d32a948b00dde443f4237dabb88ded01f88e4",
+      "evidence": "http-repair.json",
+      "important": "S09closed butS07regressed."
+    },
+    {
+      "phase": "secondrepair10affected",
+      "coreSha256": "e5d178306c992fb2f8143b67fc714ab73519eedb65a66c09c42caec9b5e31889",
+      "evidence": "http-repair2.json",
+      "important": "All10actualchecks pass; notclaim23allrepeated onfinalcore."
+    }
+  ],
+  "harnessNotes": "Originalindependentexpectations humanreview firsttwo phases thenoperationalized infinalselector. Originalmax6contract retained; firstharnessconservative4limitcorrected to6 withoutchangingfirstoutcomes(allactual<=4). Firstoutputsnotrewritten.",
+  "modeFacts": "HTTP default runs realBGE CPU and includeslocal_semantic_retrieval provenance. Clarification returnsbeforemodel inlocal_concept_retrieval. Rule/filemode remains honest; noexternalAPI calls. Source-term indexing itself deterministic, notgenerative教材.",
+  "cleanup": {
+    "checkedAtUtc": "2026-10-11T14:43:01.203389+00:00",
+    "onlyQaOwned": true,
+    "port": 4452,
+    "sessions": [
+      {
+        "id": 60678,
+        "role": "original received service",
+        "stop": "SIGINT",
+        "exitCode": 0
+      },
+      {
+        "id": 30469,
+        "role": "firstcandidate",
+        "stop": "SIGINT",
+        "exitCode": 0
+      },
+      {
+        "id": 68684,
+        "role": "repair1",
+        "stop": "SIGINT",
+        "exitCode": 0
+      },
+      {
+        "id": 18905,
+        "role": "repair2 final",
+        "stop": "SIGINT",
+        "exitCode": 0
+      }
+    ],
+    "finalLsof": {
+      "command": "lsof -nP -iTCP:4452 -sTCP:LISTEN",
+      "exitCode": 1,
+      "output": "",
+      "result": "no listener"
+    },
+    "browser": "No new page created: unavailable IAB, one documentedID2 recovery also unavailable. No user tabs changed.",
+    "userService": "QA did not signal/read/migrate user4318DB. PM reports engineer restoring4318 after no listener and historicalPID83835 absent; not replacement of active oldserver."
+  },
+  "userPreviewFacts": "PM/engineer reportedno4318listener andoldPID83835absent, thennewNode24PID95893/session81687 restoredusing existing.runtime DB; no activeunknownprocess stopped ordata migrated. This is engineering/PMdeliverycontext, not independentQAUI.",
+  "evidence": [
+    {
+      "path": "team/app-v11-search-fix-qa-history/cleanup-final.json",
+      "sha256": "e7171eab536756d40b881f8076d8713d324688a109705c952e6c9a59142c5f43"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/final-version-binding.json",
+      "sha256": "1af327365c9af297f3964236c0d18de2ff610079ed081ec0fcd19cf04bcbdd77"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/http-candidate.json",
+      "sha256": "6d226863192a94f07971ac1a72af7d4524e0d87887d9f4afc3b0556b6a85204e"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/http-repair.json",
+      "sha256": "f58d3478865dfc76c9bbc7afbc9a546631534b091e3f57773a02e448ec9135ca"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/http-repair2.json",
+      "sha256": "182c9df7d44069cdd67df965b84bc951c14102b4748d17399fea974791b5fb1c"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/independent-candidate-review.json",
+      "sha256": "98ba4ce8f863967079f26388d0e440c95378582e4c264fe7ba2a3e72ddce7cc7"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/independent-inputs-before-repair.json",
+      "sha256": "21bba8f54daaeb91f132a643a402adcc0f8ff5425b7d34d64bdd35209ba73745"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/independent-repair-review.json",
+      "sha256": "3d698ecdea833b2f95b1d9faf44506f3186ea0b40ef35074d2e0ceea6ac872f3"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/protected-final.json",
+      "sha256": "01137cee24564b94adaeee45e6ad312fbf6465a2de95e029eb70ec7ea854eec2"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/react-http-first.json",
+      "sha256": "f297fa20729f0d4fb334129db3121cc6b035658b4a3d9cfc21037b2540a777cd"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/received-baseline.json",
+      "sha256": "6c5738ec9b9335a453ef2e082c16e332df2ef43c40065fd37380b4d6f8172d0d"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/sf-cases-frozen.json",
+      "sha256": "b4eb36f4694ce1e452626b92052ee28dda303cbafe066168b338f896998eea0b"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/target-prose-http-final.json",
+      "sha256": "6d215a0219c86a321dc3527445c5b711193c22134bc8b951d9910fc1cde99ca5"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/target-prose-http.json",
+      "sha256": "639786e94eff7789cabc96f27893054e26ffcbdb10432960f0faadf2d5709e09"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/ui-first-availability.json",
+      "sha256": "6590b0637e77125e90e6be0e51fd52cde33089057d1827f4e3fc71cdd4e16b6c"
+    },
+    {
+      "path": "team/app-v11-search-fix-qa-history/ui-recovery-attempt.json",
+      "sha256": "939660672c54e53e3c04e9c40a121b88adea971f08e1301d67d42c8c0fb8f1ab"
+    }
+  ],
+  "limits": [
+    "Onlyfinitecase/polarity/examples, notarbitraryEnglish/Chineseunderstanding.",
+    "SF11-11 trueUI notexecuted; PMpreview,sourceproof andoldUIpass never substitute.",
+    "No actual userDB/account/privatebrowserrecords/providerkeys/paidAPI/publication/教材codeexecution.",
+    "No completeReAct/Replanningcourseclaimed; actualv10onlyfiniteReActmention.",
+    "No fulloldR11/APP11suite orfullproduction/newlearningeffectreview inherited."
+  ]
+}

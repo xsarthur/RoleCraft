@@ -1,0 +1,50 @@
+{
+  "atUtc": "2026-10-12T03:19:13.422283+00:00",
+  "phase": "received",
+  "port": 4498,
+  "node": "24.16.0",
+  "initialSandboxListen": "EPERM; own listener retry approved require_escalated",
+  "officialMainBrowser": "getState success apps-only,browsers=[]; no alternative surface",
+  "rows": [
+    {
+      "path": "learning-workbench.js",
+      "status": 200,
+      "sha256": "9099d3bbf6ea51816c01f422517ae5323fb0c1048854f4acc54caa88bff65cca",
+      "matchesSource": true
+    },
+    {
+      "path": "learning-experience-v13.js",
+      "status": 200,
+      "sha256": "d9664458d1e60c54d8235e160c4c229b1629c8b694d0f16d7136557b3374cd23",
+      "matchesSource": true
+    },
+    {
+      "path": "learning-experience-v13.css",
+      "status": 200,
+      "sha256": "227e24bfc9c12a6c8254c4fbebfba65f3ddcb4d183a5405e803d5042c9ebe592",
+      "matchesSource": true
+    },
+    {
+      "path": "content-v12-data.js",
+      "status": 200,
+      "sha256": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224",
+      "matchesSource": true
+    },
+    {
+      "path": "learning-v13-data.js",
+      "status": 200,
+      "sha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "matchesSource": true
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+      "matchesSource": true
+    }
+  ],
+  "taskTempDirsObserved": [
+    "/var/folders/v5/yy0xf3tx1gddnb0qz7skr8wr0000gn/T/rolecraft-qa-prerequisite-uLVjfO",
+    "/var/folders/v5/yy0xf3tx1gddnb0qz7skr8wr0000gn/T/rolecraft-qa-prerequisite-Gy15fz"
+  ]
+}

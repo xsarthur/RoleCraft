@@ -1,0 +1,44 @@
+{
+  "schema": "official-cua-computed-style-1",
+  "phase": "received",
+  "observed_at": "2026-10-12T02:21:33.732Z",
+  "browser": "Codex In-app Browser",
+  "browser_id": "2",
+  "tab_id": "1",
+  "url": "http://127.0.0.1:4497/#learn/agent/01-foundation/s-cdf0ad611ebb",
+  "navigation": ["home actual UI link: 02 基础预备", "本篇小节 expanded", "完整短程序 actual UI link"],
+  "viewport": {"width": 1280, "height": 720, "devicePixelRatio": 2},
+  "source_stylesheets": ["http://127.0.0.1:4497/styles.css", "http://127.0.0.1:4497/learning-workbench.css", "http://127.0.0.1:4497/learning-experience-v13.css"],
+  "encoding_note": "Verbatim browser-computed values; ancestor paths compacted to arrays; no contrast ratio inferred here. Ancestor uniform properties were tested on every element through HTML.",
+  "all_observed_ancestor_properties": {"opacity": "1", "backgroundImage": "none", "filter": "none", "mixBlendMode": "normal"},
+  "samples": [
+    {
+      "kind": "block_code", "selector": ".lw-code pre code containing def refund(days)",
+      "text": "import json\nimport sys\n\ndef refund(days):\n    return days < 7\n\ndef che",
+      "color": "rgb(231, 238, 231)", "backgroundColor": "rgba(0, 0, 0, 0)", "opacity": "1", "fontSize": "13px", "fontWeight": "400", "textShadow": "none",
+      "background_ancestors": [["CODE", "", "rgba(0, 0, 0, 0)"], ["PRE", "", "rgba(0, 0, 0, 0)"], ["DIV", "lw-code", "rgb(243, 240, 234)"], ["ARTICLE", "lw-prose", "rgba(0, 0, 0, 0)"], ["DIV", "lw-reading", "rgba(0, 0, 0, 0)"], ["DIV", "lw-reader-columns", "rgba(0, 0, 0, 0)"], ["DIV", "lw-reader-layout lw-detail lw-prereq-two-columns", "rgba(0, 0, 0, 0)"], ["DIV", "#app content", "rgba(0, 0, 0, 0)"], ["MAIN", "#main-content", "rgba(0, 0, 0, 0)"], ["BODY", "lw-active v13-active", "rgb(249, 247, 243)"], ["HTML", "", "rgba(0, 0, 0, 0)"]]
+    },
+    {
+      "kind": "block_pre", "selector": ".lw-code pre containing def refund(days)",
+      "text": "import json\nimport sys\n\ndef refund(days):\n    return days < 7\n\ndef che",
+      "color": "rgb(231, 238, 231)", "backgroundColor": "rgba(0, 0, 0, 0)", "opacity": "1", "fontSize": "13px", "fontWeight": "400", "textShadow": "none",
+      "background_ancestors": [["PRE", "", "rgba(0, 0, 0, 0)"], ["DIV", "lw-code", "rgb(243, 240, 234)"], ["ARTICLE", "lw-prose", "rgba(0, 0, 0, 0)"], ["DIV", "lw-reading", "rgba(0, 0, 0, 0)"], ["DIV", "lw-reader-columns", "rgba(0, 0, 0, 0)"], ["DIV", "lw-reader-layout lw-detail lw-prereq-two-columns", "rgba(0, 0, 0, 0)"], ["DIV", "#app content", "rgba(0, 0, 0, 0)"], ["MAIN", "#main-content", "rgba(0, 0, 0, 0)"], ["BODY", "lw-active v13-active", "rgb(249, 247, 243)"], ["HTML", "", "rgba(0, 0, 0, 0)"]]
+    },
+    {
+      "kind": "language_label", "selector": ".lw-code > span before the target pre", "text": "python · 网页不执行代码",
+      "color": "rgb(187, 204, 189)", "backgroundColor": "rgba(0, 0, 0, 0)", "opacity": "1", "fontSize": "12px", "fontWeight": "400", "textShadow": "none",
+      "background_ancestors": [["SPAN", "", "rgba(0, 0, 0, 0)"], ["DIV", "lw-code", "rgb(243, 240, 234)"], ["ARTICLE", "lw-prose", "rgba(0, 0, 0, 0)"], ["DIV", "lw-reading", "rgba(0, 0, 0, 0)"], ["DIV", "lw-reader-columns", "rgba(0, 0, 0, 0)"], ["DIV", "lw-reader-layout lw-detail lw-prereq-two-columns", "rgba(0, 0, 0, 0)"], ["DIV", "#app content", "rgba(0, 0, 0, 0)"], ["MAIN", "#main-content", "rgba(0, 0, 0, 0)"], ["BODY", "lw-active v13-active", "rgb(249, 247, 243)"], ["HTML", "", "rgba(0, 0, 0, 0)"]]
+    },
+    {
+      "kind": "inline_code", "selector": ".lw-prose p code:first matched", "text": "foundation.py",
+      "color": "rgb(38, 60, 49)", "backgroundColor": "rgb(238, 242, 235)", "opacity": "1", "fontSize": "14.08px", "fontWeight": "400", "textShadow": "none",
+      "background_ancestors": [["CODE", "", "rgb(238, 242, 235)"], ["P", "", "rgba(0, 0, 0, 0)"], ["ARTICLE", "lw-prose", "rgba(0, 0, 0, 0)"], ["DIV", "lw-reading", "rgba(0, 0, 0, 0)"], ["DIV", "lw-reader-columns", "rgba(0, 0, 0, 0)"], ["DIV", "lw-reader-layout lw-detail lw-prereq-two-columns", "rgba(0, 0, 0, 0)"], ["DIV", "#app content", "rgba(0, 0, 0, 0)"], ["MAIN", "#main-content", "rgba(0, 0, 0, 0)"], ["BODY", "lw-active v13-active", "rgb(249, 247, 243)"], ["HTML", "", "rgba(0, 0, 0, 0)"]]
+    },
+    {
+      "kind": "body_paragraph", "selector": ".lw-prose > p:first matched",
+      "text": "先把输入解析成对象，再校验对象的形状和业务类型，最后计算并返回可检查的结果。语法正确、进程正常结束和任务结果符合预期是不同条件。读者只需一个",
+      "color": "rgb(38, 60, 49)", "backgroundColor": "rgba(0, 0, 0, 0)", "opacity": "1", "fontSize": "16px", "fontWeight": "400", "textShadow": "none",
+      "background_ancestors": [["P", "", "rgba(0, 0, 0, 0)"], ["ARTICLE", "lw-prose", "rgba(0, 0, 0, 0)"], ["DIV", "lw-reading", "rgba(0, 0, 0, 0)"], ["DIV", "lw-reader-columns", "rgba(0, 0, 0, 0)"], ["DIV", "lw-reader-layout lw-detail lw-prereq-two-columns", "rgba(0, 0, 0, 0)"], ["DIV", "#app content", "rgba(0, 0, 0, 0)"], ["MAIN", "#main-content", "rgba(0, 0, 0, 0)"], ["BODY", "lw-active v13-active", "rgb(249, 247, 243)"], ["HTML", "", "rgba(0, 0, 0, 0)"]]
+    }
+  ]
+}

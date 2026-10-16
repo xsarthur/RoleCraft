@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="360" viewBox="0 0 1080 360" role="img" aria-labelledby="title desc">
+  <title id="title">多 Agent 责任交接与缺席传播</title>
+  <desc id="desc">协调者把带有目标、禁止动作、对象版本和证据要求的子任务交给两个 Agent；每个 Agent返回带来源、版本和限制的主张，协调者检查后再汇总。缺失或冲突不会被包装成已完成。</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#64748B"/></marker></defs>
+  <rect width="1080" height="360" fill="#FAFAF9"/>
+  <text x="40" y="38" font-size="25" font-weight="700" fill="#1F2937">交接的是可验收契约，不是“已审核”四个字</text>
+  <text x="40" y="66" font-size="15" fill="#475569">协调者保留控制令牌；子 Agent 只对自己交付的范围负责。</text>
+  <rect x="40" y="96" width="220" height="120" rx="16" fill="#E8F1FF" stroke="#2563EB" stroke-width="2"/><text x="150" y="125" text-anchor="middle" font-size="17" font-weight="700" fill="#1E3A8A">协调者</text><text x="150" y="151" text-anchor="middle" font-size="13" fill="#334155">目标 / 禁止动作</text><text x="150" y="172" text-anchor="middle" font-size="13" fill="#334155">对象 + 版本</text><text x="150" y="193" text-anchor="middle" font-size="13" fill="#334155">证据与预算</text>
+  <path d="M260 137 H326" stroke="#64748B" stroke-width="3" marker-end="url(#arrow)"/><path d="M260 178 H326" stroke="#64748B" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="330" y="96" width="205" height="120" rx="16" fill="#FFFFFF" stroke="#64748B" stroke-width="2"/><text x="432" y="125" text-anchor="middle" font-size="16" font-weight="700" fill="#334155">政策 Agent</text><text x="432" y="151" text-anchor="middle" font-size="13" fill="#475569">claim + source/version</text><text x="432" y="174" text-anchor="middle" font-size="13" fill="#475569">适用条件 + limitations</text><text x="432" y="197" text-anchor="middle" font-size="13" fill="#475569">completed ≠ 父任务通过</text>
+  <rect x="330" y="236" width="205" height="88" rx="16" fill="#FFFFFF" stroke="#64748B" stroke-width="2"/><text x="432" y="265" text-anchor="middle" font-size="16" font-weight="700" fill="#334155">源码 Agent</text><text x="432" y="289" text-anchor="middle" font-size="13" fill="#475569">同样返回可定位证据</text><text x="432" y="309" text-anchor="middle" font-size="13" fill="#475569">不扩大权限或范围</text>
+  <path d="M535 156 H600" stroke="#64748B" stroke-width="3" marker-end="url(#arrow)"/><path d="M535 280 C580 280 580 190 600 190" fill="none" stroke="#64748B" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="604" y="128" width="185" height="96" rx="16" fill="#FFF7DB" stroke="#D97706" stroke-width="2"/><text x="696" y="157" text-anchor="middle" font-size="16" font-weight="700" fill="#7A4100">对齐 / 汇总</text><text x="696" y="181" text-anchor="middle" font-size="13" fill="#7A4100">版本、对象、冲突</text><text x="696" y="202" text-anchor="middle" font-size="13" fill="#7A4100">只纳入 completed</text>
+  <path d="M789 162 H850" stroke="#64748B" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="854" y="110" width="170" height="62" rx="14" fill="#E9F8EF" stroke="#15803D" stroke-width="2"/><text x="939" y="137" text-anchor="middle" font-size="15" font-weight="700" fill="#14532D">可验收结果</text><text x="939" y="158" text-anchor="middle" font-size="12" fill="#14532D">来源一致且证据齐</text>
+  <path d="M789 202 C830 226 842 260 854 266" fill="none" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+  <rect x="854" y="238" width="170" height="62" rx="14" fill="#FDECEC" stroke="#DC2626" stroke-width="2"/><text x="939" y="265" text-anchor="middle" font-size="15" font-weight="700" fill="#7F1D1D">need_input / conflict</text><text x="939" y="286" text-anchor="middle" font-size="12" fill="#7F1D1D">缺席向上传播，不能伪完成</text>
+  <text x="40" y="346" font-size="12" fill="#64748B">颜色：蓝=控制者；灰=受限交付；黄=核对；绿=可验收；红=缺证/冲突。示意，不代表远端 A2A 已实测。</text>
+</svg>

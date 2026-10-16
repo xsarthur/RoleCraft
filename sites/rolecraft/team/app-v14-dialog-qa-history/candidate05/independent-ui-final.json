@@ -1,0 +1,119 @@
+{
+  "version": "app-v14-final-observed-ui-1",
+  "atUtc": "2026-10-12T01:47:37.260353+00:00",
+  "surface": "official CUA IAB2 ownedtab1; all actions real; no hidden storage read/write",
+  "normalService": "own4485 Node24 actual BGE; own4496 QA transport proxy",
+  "stageBindings": {
+    "c1": "received engineering service1/client1; sourceclick/refresh/back passed; DG04 failed",
+    "c2": "service2/client2 loaded exact bytes; DG04 actual original passed;1440/1024/375geometry actual",
+    "c3": "service2/client3 CSS only; footer actual pass; fault503/late/tamper stages use earlier loadedJS2 or CSS3 explicitly",
+    "c4": "service3/client3; nakedReact/two buttons/planning pass; old history still DG06 failed",
+    "c5": "service3/client4; old received JS3+frozen c2response replay via UIseed then current refresh/history/retry pass; source affected cache fault unavailable current pass"
+  },
+  "dialogObservations": [
+    {
+      "id": "UI14-01",
+      "status": "pass",
+      "actual": "ReAct1–2原句与1来源、折叠原文/出处；混合答ReAct明示过滤红烧肉"
+    },
+    {
+      "id": "UI14-02",
+      "status": "pass",
+      "actual": "引用点击焦点card不改变路由；原文连续片段；来源入口n03/s-da63f3dcff17 focus，刷新/回退保留实际位置"
+    },
+    {
+      "id": "UI14-03",
+      "status": "pass_after_repair",
+      "actual": "ReAct→有什么失败模式答ReAct轮次/污染/短视；清主题→它有什么缺点澄清；职业上文下纯红烧肉仍过滤"
+    },
+    {
+      "id": "UI14-04",
+      "status": "pass",
+      "actual": "无关/职业具体芯片未覆盖/裸React澄清/混合状态清楚；服务3两按钮提交完整query，前端React未覆盖无ReAct强配"
+    },
+    {
+      "id": "UI14-05",
+      "status": "pass",
+      "actual": "延迟5.5秒任务→收起→读00；完成后panel.hidden=true、focus=lw-reader-start、readerTop82保持"
+    },
+    {
+      "id": "UI14-06",
+      "status": "pass_in_observed_transport",
+      "actual": "延迟旧ReAct后新重规划，新答/主题保持，6.2秒后未被旧答覆盖；正常AbortController参与，未禁用浏览器abort另模拟"
+    },
+    {
+      "id": "UI14-07",
+      "status": "pass",
+      "actual": "一回503不显示旧答、冻结重试显示上游真实ReAct；末次当前JS4历史重查在上游已关闭时暂不可用且无旧选项"
+    },
+    {
+      "id": "UI14-08",
+      "status": "pass",
+      "actual": "hash/section/citationIds/quote/version五类response篡改真实拒显知识答和入口，错误文字可理解；均QA运输夹具非真实模型失败"
+    },
+    {
+      "id": "UI14-09",
+      "status": "pass_with_limits",
+      "actual": "Enter发规划、ShiftEnter保留换行不提交；375与760实际控件/无页横溢；真实中文IME候选及手机OS软键盘未测"
+    },
+    {
+      "id": "UI14-10",
+      "status": "pass_within_affected_scope",
+      "actual": "五导航/30目录与独立114题库仍可进；实际Q11→n03source→回Q11；详情不含配套题；p02独立项目链接与正文练习存在；不算v13全量复验"
+    }
+  ],
+  "detailObservations": [
+    {
+      "id": "DD14-01",
+      "status": "pass_after_footer_repair",
+      "actual": "详情无全书重复目录/版本行/研发说明块，保留返回课程；公共footer详情仅品牌，课程页版本span实际visible保留"
+    },
+    {
+      "id": "DD14-02",
+      "status": "pass",
+      "actual": "00无正式先修；n03动态循环/任务验收；n09发布回退/性能成本/代码沙箱/持久恢复进章先见；30源正式关系机械核"
+    },
+    {
+      "id": "DD14-03",
+      "status": "pass_in_browser_viewports",
+      "actual": "1440正文740/右栏220间距32、无全页横溢；1024正文740一列；375正文343/root375scroll375；760root760scroll760；不是实机手机"
+    },
+    {
+      "id": "DD14-04",
+      "status": "pass",
+      "actual": "先修任务验收真实点击/back；新导航375小节y128.164深链和reload同位置；先修strip70并实际查看全部先修；点击先修后手动滚位刷新可能保留浏览器滚位，不误称坏锚点"
+    },
+    {
+      "id": "DD14-05",
+      "status": "pass_within_affected_scope",
+      "actual": "30body/源hash/正式先修与数据未改，旧下载/图/笔记/收藏代码不因布局获得新全面操作结论；真Q11source回链/项目入口保留；教材39旧围栏不重跑"
+    },
+    {
+      "id": "DD14-06",
+      "status": "pass",
+      "actual": "历史v10明确只读/版本链接保留，unknown section显示原位置不可用不替换另一节；当前引用版本真实核"
+    },
+    {
+      "id": "DD14-07",
+      "status": "pass_within_visible_scope",
+      "actual": "有题n03/无题00/多先修n09不显示详情配套题/空态；独立题库114可进入，Q11双向source回链实点；p02项目入口保留，正文练习未删"
+    }
+  ],
+  "cacheRepair": {
+    "id": "DG14-06",
+    "status": "closed_in_original_and_affected_scope",
+    "oldSeed": "own same-origin official page input with received client3 JS and exact captured candidate2 React response replay, no storage mutation API",
+    "freshCurrent": "client4 reload1 and reload2 show controlled retry only; retrycurrentReact directions; historical old row data-lw-history1 originallyseeded old response reasked current; last serviceclosed fault no old choices"
+  },
+  "screenshots": "official tool emitted actual ReAct/1440reader/375deep screenshots; no local screenshot file/hash claimed",
+  "toolPreparationErrors": [
+    "AX checkbox mapped to DOMbutton; rolecheckbox selector unmatched, switched fresh AX21 actual",
+    "directory runtime label belongsheading notlink; role name unmatched; long offscreen locator action failed; known actualhref navigation used for n09, not claimed click",
+    "history same-text three matches; selected actual diagnostic data-lw-history1 to target seeded old row"
+  ],
+  "notTested": [
+    "real mobile keyboard/Chinese IME composition candidate UI",
+    "all previous v13 workflows/user historical record/export/both diagrams interaction not rerun",
+    "model resource corruption/paid/external model/production/learners/experts/market"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "artifacts": [
+    "event_log.json",
+    "checkpoint_manifest.json",
+    "recovery_receipts",
+    "first_failure",
+    "final_output.json",
+    "dedupe_table.json"
+  ],
+  "checkpoint_manifest_sha256": "7a8447a8a4354f00225718a791a815246628cee6a5752317c5e90dbab5926312",
+  "exercise_version": "v0.1",
+  "fixture_id": "F-AI-DURABLE-v1",
+  "holdout_event_order_only": true,
+  "input_fixture_hash_computed": "b186af6b08d2a5bf426a5529e19f4465452b620b98c802b8097b404e15d5efd2",
+  "input_fixture_hash_declared": "b186af6b08d2a5bf426a5529e19f4465452b620b98c802b8097b404e15d5efd2",
+  "practice_id": "AI-PRACTICE-DURABLE-002",
+  "practice_pack_sha256": "b1cb993bfb6310f5f872c23980ad60a8d6dbc91c64462bbf253302328ffa0f1a",
+  "repair_record": "repair_record.json",
+  "run_byte_replay_equal": true,
+  "runs": [
+    "run-1",
+    "run-2",
+    "run-3"
+  ],
+  "version": "v03"
+}

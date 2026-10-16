@@ -1,0 +1,493 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4486/#learn/agent/00-learning-route".
+1 AXWebArea 职造 · Agent 学习工作台, URL: 127.0.0.1:4486/#learn/agent/00-learning-route
+	2 link Description: 跳到主要内容, Value: 127.0.0.1:4486/#main-content
+	34 container primary-sidebar
+		35 link Description: 职 职造 Agent 开发学习, Value: 127.0.0.1:4486/#home
+		36 container 主导航
+			37 button 首页
+			38 button 课程学习
+			39 button 题库浏览
+			40 button 学习记录
+			41 button 个人设置
+		42 text 当前学习方向
+		43 text Agent 开发者
+		44 link Description: 本机学习者 记录保存在此浏览器, Value: 127.0.0.1:4486/#settings
+	14 container main-content
+		15 container
+			45 text 课程学习
+			46 text 读懂机制，再回到自己的问题
+		18 container app
+			47 button (collapsed) 课程目录 v12 30 篇, Secondary Actions: Expand
+				48 text 课程目录 v12 
+				49 text 30 篇
+			50 link Description: ← 当前 v12 课程目录, Value: 127.0.0.1:4486/#learn
+			51 text 第 01 篇 / 30
+			52 text 教材 v12
+			53 button (collapsed) 本章小节, Secondary Actions: Expand
+				54 text 本章小节
+			55 container 认识 Agent 工程
+				56 heading 认识 Agent 工程, Value: 1, ID: s-3b82fdeafaab
+					57 text 认识 Agent 工程
+				58 text Agent 是一种围绕目标、依据新观察选择下一步，并通过工具与环境交互的软件系统。本书讨论基于大语言模型的 Agent：模型解释当前信息，提出下一步调查或候选结果；运行 Agent 的应用程序（下文称宿主程序）限定允许范围，决定能否执行，记录实际观察，再根据完成条件继续、等待或结束。它的价值来自把语言理解接到可核对的任务过程。
+				59 text 例如，排查一次构建失败时，先读到的日志可能决定下一步该看依赖配置还是某个调用者；第一轮材料不足以写出整条路径。Agent 可以帮助选择下一处调查对象，但读取权限、调查预算和结果核对仍由应用掌握。模型提出“创建工单”，只是一项提议；准确批准和确认工单存在分别需要自己的依据。
+				60 container
+					61 text “Agent”在不同产品中有不同用法。本书采用控制路径的区分：固定工作流由代码预列步骤与合法分支，动态 Agent 让模型根据新观察提议业务路径。这与 Anthropic 的架构定义一致；本文进一步采用宿主准入与事实记录的工程约束。这里仅以该文支持概念区分与最小足够方案原则。
+					62 link Description: Building effective agents, Value: anthropic.com/engineering/building-effective-agents
+				63 heading 哪些需求值得采用动态 Agent, Value: 2, ID: s-f8fb3240438f
+					64 text 哪些需求值得采用动态 Agent
+				65 text 先看任务中哪些变化必须由新观察决定，再选能够满足同一目标的简单方案。下面是选型情境，不是实测效果或产品排名。
+				66 container 教材表格，可横向滚动
+					67 table
+						68 row
+							69 cell
+								70 text 需求与具体任务
+							71 cell
+								72 text 可以从何种方案开始
+							73 cell
+								74 text 何时需要重新判断
+						75 row
+							76 cell
+								77 text 按已确认公式计算费用，或同步确定字段
+							78 cell
+								79 text 普通程序；规则与输入校验由代码完成
+							80 cell
+								81 text 合法路径仍能合理枚举时，自动化本身不要求增加模型
+						82 row
+							83 cell
+								84 text 从已经提供的报告抽取字段、生成一次有据说明
+							85 cell
+								86 text 一次模型调用，加结构与业务校验；确定的缺项可按规则读取
+							87 cell
+								88 text 输入齐全的一次归纳不需要自主调查；若下一个资料对象依赖刚读到的语义，才考虑动态路径
+						89 row
+							90 cell
+								91 text 收集固定材料、生成草稿、校验、人工确认后交付
+							92 cell
+								93 text 固定工作流；可以有分支、循环、多次模型调用和等待
+							94 cell
+								95 text 多步骤不决定架构；只有预列分支难以覆盖目标内变化时，动态选择才可能有收益
+						96 row
+							97 cell
+								98 text 依据失败现象追查相关文件，或依据来源矛盾改变检索问题
+							99 cell
+								100 text 有资源范围、预算与停止条件的动态 Agent
+							101 cell
+								102 text 需要环境反馈改变调查方向；能否提高合格结果仍要在相同条件下比较
+						103 row
+							104 cell
+								105 text 调查后创建工单，或核对一次发送是否已生效
+							106 cell
+								107 text 最小足够的调查方案，加可信批准、写工具合同及回执核对
+							108 cell
+								109 text 业务动作的权限与调查方式分别设计；有模型参与不会扩大允许范围
+				110 container
+					111 text 动态选择也会增加错误路径、等待、调用费用和恢复负担。若固定流程已经满足要求，就保留固定流程；若阻碍是两份同级业务规则冲突，正确下一步是请求权威确认，追加模型不能取得裁决权。完整条件比较在
+					112 link Description: 方案选择, Value: 127.0.0.1:4486/#learn/agent/c01-selection
+					113 text 展开。
+				114 text 多 Agent 是可选的组织方式。可独立调查的子问题可能适合分工，但要加总预算、统一资料版本、处理交接失败，并保留唯一写入所有者。把一项任务交给多个模型，不会自动产生独立事实或更高正确率。只读任务也无需为配齐组件而增加写工具；短时、可重做的任务未必需要长期持久平台。
+				115 heading 一次任务怎样形成反馈闭环, Value: 2, ID: s-7547e5ce91f8
+					116 text 一次任务怎样形成反馈闭环
+				117 container
+					118 button 放大查看：Agent任务运行闭环：目标进入上下文，模型提议经宿主准入后才调用工具；观察进入记录和判定，新观察可反馈，完成等待或停止分别离开循环
+						119 image Agent任务运行闭环：目标进入上下文，模型提议经宿主准入后才调用工具；观察进入记录和判定，新观察可反馈，完成等待或停止分别离开循环
+					120 button 放大查看
+				121 container
+					122 link Description: 放大SVG, Value: 127.0.0.1:4486/api/content/assets/agent-runtime-loop.svg?version=textbook-v12
+					123 text  · 
+					124 link Description: 可保存的DOT语义源, Value: 127.0.0.1:4486/api/content/assets/agent-runtime-loop.dot?version=textbook-v12
+				125 text 图中实线表达本次运行的信息与控制流，蓝线表示继续时把新观察反馈到上下文。虚线是可不调用工具的旁路：候选、拒绝或等待先进入记录，再按任务条件判定。它们不是已发生的业务效果。工具中的检索、读取或写入按任务采用；需要跨中断恢复时，再为权威记录选择持久机制。
+				126 container
+					127 text 上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。
+					128 link Description: ReAct, Value: arxiv.org/abs/2210.03629
+				129 text 用一条构造轨迹读图：
+				130 content list
+					131 container
+						132 AXListMarker 1. 
+						133 text 维护者要求定位构建失败并形成有据说明；目标同时限定可读项目，只有准确批准后才可创建一条工单。
+					134 container
+						135 AXListMarker 2. 
+						136 text 第一份日志显示依赖加载异常。模型提议读取依赖配置；宿主核资源范围和剩余预算，允许的读取结果进入事实记录。
+					137 container
+						138 AXListMarker 3. 
+						139 text 新配置说明依赖由另一个模块注册，模型据此改查该模块。若路径可由稳定映射直接确定，固定流程也能完成这一步；这里要比较的是新观察是否需要语义判断，而不是读取次数。
+					140 container
+						141 AXListMarker 4. 
+						142 text 说明仍缺关键版本时，记录缺项并等待。若证据齐全、准确批准后发送创建请求，却没有收到回执，则保留效果未知，核对原操作；不能为了闭环“继续”再创建第二条。只有对应效果已确认且验收条件满足，才声明完成。
+				143 container
+					144 text “继续”还须有目标内理由与资源额度。没有新信息时应补来源、请求澄清或合理停止；循环不是用重复请求掩盖未知的许可。
+					145 link Description: 固定流程, Value: 127.0.0.1:4486/#learn/agent/c01-fixed-workflow
+					146 text 使用相同组件与边界，但合法路径由代码规定；
+					147 link Description: 完整动态循环, Value: 127.0.0.1:4486/#learn/agent/c01-control-loop
+					148 text 解释观察驱动的控制与恢复。版本评价和服务发布属于工程生命周期，不是每轮必须调用的工具。
+				149 heading 一套可交付系统还需要哪些工程工作, Value: 2, ID: s-eff1d4393846
+					150 text 一套可交付系统还需要哪些工程工作
+				151 text 运行闭环回答一次任务如何推进，工程全景回答怎样设计、实现、评价和交付这种能力。本版以30个阅读单元补齐软件/模型先修、记忆、规划、协议、检索、图编排和协作，并连接安全、运营与独立项目。图中的组件按任务选择，箭头不表示每个产品都必须使用全部组件，也不是先修顺序。
+				152 container
+					153 button 放大查看：Agent工程全景：30单元的位置，问题与方案连接模型资料工具及执行组织，评价边界贯穿，交付反馈问题
+						154 image Agent工程全景：30单元的位置，问题与方案连接模型资料工具及执行组织，评价边界贯穿，交付反馈问题
+					155 button 放大查看
+				156 container
+					157 link Description: 查看全景SVG, Value: 127.0.0.1:4486/api/content/assets/agent-engineering-landscape-v12.svg?version=textbook-v12
+					158 text 。运行闭环仍使用上图，工程全景已独立扩展为本版30单元；没有把旧20单元图冒充新版。
+				159 text 学习支撑并非线上部件。先用问题发现、任务验收和信任边界确定目标，再以安全教学夹具实现组件；固定流程先于完整动态循环，规划/检索策略、图编排与协作在理解状态之后展开。评价随后支持MVP决定；安全并不是到后期才考虑，首次真实敏感读取/写入前须完成强制边界并取得实际授权，运行生成代码还须完成沙箱。独立项目要有真实问题、已有方案比较、差异假设、实现、实际反馈和迭代，不能只呈现面试答案。
+				160 heading 章节在全景中的位置, Value: 3, ID: s-810a87808157
+					161 text 章节在全景中的位置
+				162 container 教材表格，可横向滚动
+					163 table
+						164 row
+							165 cell
+								166 text 阅读位置
+							167 cell
+								168 text 正文
+							169 cell
+								170 text 工程环节
+						171 row
+							172 cell
+								173 text 1
+							174 cell
+								175 link Description: 认识 Agent 工程, Value: 127.0.0.1:4486/#learn/agent/00-learning-route
+							176 cell
+								177 text Agent定义、适用需求与工程全貌
+						178 row
+							179 cell
+								180 text 2
+							181 cell
+								182 link Description: 把文本输入变成可运行可判错的小程序, Value: 127.0.0.1:4486/#learn/agent/01-foundation
+							183 cell
+								184 text 程序、异常、断言与基础诊断
+						185 row
+							186 cell
+								187 text 3
+							188 cell
+								189 link Description: 让 Agent 的语言运行时与模型输出具有可解释的边界, Value: 127.0.0.1:4486/#learn/agent/n01-python-model-foundations
+							190 cell
+								191 text 对象、并发、LRU与模型推理/输出契约
+						192 row
+							193 cell
+								194 text 4
+							195 cell
+								196 link Description: 从真实任务取得值得解决的问题证据, Value: 127.0.0.1:4486/#learn/agent/p01-discovery
+							197 cell
+								198 text 真实问题、现有方案与可证伪假设
+						199 row
+							200 cell
+								201 text 5
+							202 cell
+								203 link Description: 动手前定义任务成功与合理停止, Value: 127.0.0.1:4486/#learn/agent/02-task-acceptance
+							204 cell
+								205 text 任务成功、停止和证据条件
+						206 row
+							207 cell
+								208 text 6
+							209 cell
+								210 link Description: 分清事实资料与动作授权, Value: 127.0.0.1:4486/#learn/agent/03-trust-boundary
+							211 cell
+								212 text 事实与授权来源分离
+						213 row
+							214 cell
+								215 text 7
+							216 cell
+								217 link Description: 外部 API 请求的可判错边界, Value: 127.0.0.1:4486/#learn/agent/f01
+							218 cell
+								219 text 外部请求与受控错误边界
+						220 row
+							221 cell
+								222 text 8
+							223 cell
+								224 link Description: 把模型响应变成经校验的业务候选, Value: 127.0.0.1:4486/#learn/agent/f02
+							225 cell
+								226 text 模型候选结构与业务核验
+						227 row
+							228 cell
+								229 text 9
+							230 cell
+								231 link Description: 让跨轮上下文保留事实，让长期记忆可以被纠正, Value: 127.0.0.1:4486/#learn/agent/n02-context-memory-prompt
+							232 cell
+								233 text 提示、记忆生命周期与任务切换
+						234 row
+							235 cell
+								236 text 10
+							237 cell
+								238 link Description: 为一个任务选择最小可用方案 程序 单次模型 流程与动态 Agent, Value: 127.0.0.1:4486/#learn/agent/c01-selection
+							239 cell
+								240 text 普通程序、单调用、流程与Agent选型
+						241 row
+							242 cell
+								243 text 11
+							244 cell
+								245 link Description: 在重复提议和发送中识别同一个动作, Value: 127.0.0.1:4486/#learn/agent/c01-control-primer
+							246 cell
+								247 text 提议、动作、发送与效果身份
+						248 row
+							249 cell
+								250 text 12
+							251 cell
+								252 link Description: 构造符合版本和权限的证据包, Value: 127.0.0.1:4486/#learn/agent/c02
+							253 cell
+								254 text 权限和版本正确的证据包
+						255 row
+							256 cell
+								257 text 13
+							258 cell
+								259 link Description: 把模型提议变成可授权可去重的写工具, Value: 127.0.0.1:4486/#learn/agent/c03
+							260 cell
+								261 text 授权、去重与效果核对
+						262 row
+							263 cell
+								264 text 14
+							265 cell
+								266 link Description: 工具增长到上百个时，怎样发现、选择并安全接入, Value: 127.0.0.1:4486/#learn/agent/n04-tools-mcp
+							267 cell
+								268 text 工具目录、MCP与第三方接入
+						269 row
+							270 cell
+								271 text 15
+							272 cell
+								273 link Description: 用持久状态保存动作事实, Value: 127.0.0.1:4486/#learn/agent/e01
+							274 cell
+								275 text 持久账本、恢复和并发事实
+						276 row
+							277 cell
+								278 text 16
+							279 cell
+								280 link Description: 用固定路径完成同一受控任务, Value: 127.0.0.1:4486/#learn/agent/c01-fixed-workflow
+							281 cell
+								282 text 连接组件的固定路径
+						283 row
+							284 cell
+								285 text 17
+							286 cell
+								287 link Description: Agent 控制循环 设计一个可恢复 受控并能验收的运行时, Value: 127.0.0.1:4486/#learn/agent/c01-control-loop
+							288 cell
+								289 text 依据观察推进的受控完整循环
+						290 row
+							291 cell
+								292 text 18
+							293 cell
+								294 link Description: 让计划依据观察前进，而不是在反复规划中空转, Value: 127.0.0.1:4486/#learn/agent/n03-planning-reflection
+							295 cell
+								296 text ReAct、计划、重规划与反思
+						297 row
+							298 cell
+								299 text 19
+							300 cell
+								301 link Description: 从原始文档到可比较的自适应检索链, Value: 127.0.0.1:4486/#learn/agent/n05-retrieval-ingestion
+							302 cell
+								303 text 摄取、向量/索引、重排与Agentic RAG
+						304 row
+							305 cell
+								306 text 20
+							307 cell
+								308 link Description: 把控制循环映射为可恢复的状态图, Value: 127.0.0.1:4486/#learn/agent/n06-graph-orchestration
+							309 cell
+								310 text LangGraph状态、子图与流消费
+						311 row
+							312 cell
+								313 text 21
+							314 cell
+								315 link Description: 让多个 Agent 协作而不稀释任务责任, Value: 127.0.0.1:4486/#learn/agent/n07-multiagent-a2a
+							316 cell
+								317 text 协作模式、交接和A2A
+						318 row
+							319 cell
+								320 text 22
+							321 cell
+								322 link Description: 判断版本改动是否改善任务结果, Value: 127.0.0.1:4486/#learn/agent/e02
+							323 cell
+								324 text 版本结果、轨迹与回归评测
+						325 row
+							326 cell
+								327 text 23
+							328 cell
+								329 link Description: 用新场景、分层实验和独立移交检验工程能力, Value: 127.0.0.1:4486/#learn/agent/n10-evaluation-projects
+							330 cell
+								331 text 客服/研究迁移、跨语排错、技术移交
+						332 row
+							333 cell
+								334 text 24
+							335 cell
+								336 link Description: 依据问题和评价证据冻结 MVP 决定, Value: 127.0.0.1:4486/#learn/agent/p01-mvp
+							337 cell
+								338 text 依据问题和评价冻结MVP
+						339 row
+							340 cell
+								341 text 25
+							342 cell
+								343 link Description: 在数据返回和动作发送前强制执行权限, Value: 127.0.0.1:4486/#learn/agent/e03
+							344 cell
+								345 text 数据与动作的强制权限
+						346 row
+							347 cell
+								348 text 26
+							349 cell
+								350 link Description: 把模型生成代码限制在可验证的执行边界内, Value: 127.0.0.1:4486/#learn/agent/n08-sandbox-security
+							351 cell
+								352 text 生成代码的隔离与准入
+						353 row
+							354 cell
+								355 text 27
+							356 cell
+								357 link Description: 发布回退时保住在途任务事实, Value: 127.0.0.1:4486/#learn/agent/e04
+							358 cell
+								359 text 发布、迁移和回退
+						360 row
+							361 cell
+								362 text 28
+							363 cell
+								364 link Description: 在质量护栏下比较性能与成本, Value: 127.0.0.1:4486/#learn/agent/e05
+							365 cell
+								366 text 质量约束下的性能与成本
+						367 row
+							368 cell
+								369 text 29
+							370 cell
+								371 link Description: 让长任务在故障、容量和成本约束下交付, Value: 127.0.0.1:4486/#learn/agent/n09-runtime-delivery
+							372 cell
+								373 text 长任务、补偿、熔断、内存与推理服务
+						374 row
+							375 cell
+								376 text 30
+							377 cell
+								378 link Description: 用独立作品证据判定交付并复验改进, Value: 127.0.0.1:4486/#learn/agent/p02
+							379 cell
+								380 text 真实作品、独立复验和迭代
+				381 heading 从哪个起点进入实作, Value: 2, ID: s-39f96e054e8b
+					382 text 从哪个起点进入实作
+				383 container
+					384 text 先做第2篇 
+					385 link Description: 基础预备的入口诊断, Value: 127.0.0.1:4486/#learn/agent/01-foundation/s-36b33d013882
+					386 text 。能解释文本与对象、追踪函数返回，并在独立目录运行程序、定位断言失败的读者，可跳过本基础预备正文，保留诊断记录后，仍按
+					387 link Description: Python与模型基础, Value: 127.0.0.1:4486/#learn/agent/n01-python-model-foundations
+					388 text 对应能力自检并补缺，再进入问题发现；缺哪项就补哪项，再做相同诊断。专业章需要阅读Python、接口类型和状态迁移，预备课不替代完整的软件工程训练。
+				389 container
+					390 text 贯穿项目在这些工程环节之间保留同一任务：读取固定仓库修订与已有失败报告，形成有据的缺陷说明，经维护者批准后创建唯一工单并核对结果。教学源  refund(days)  返回  days < 7 ，报告  test_refund_day_7  输入7、expected=True、actual=False，修订为  repo@8e12 、报告为  test-report-71 。这些构造事实支持“实现行为与断言不同”，真实业务规则仍需确认，任务不授权修改代码。
+				391 container
+					392 text 先交三份初始材料：在 
+					393 link Description: 问题发现, Value: 127.0.0.1:4486/#learn/agent/p01-discovery
+					394 text 保存问题与替代证据；在 
+					395 link Description: 任务验收, Value: 127.0.0.1:4486/#learn/agent/02-task-acceptance
+					396 text 区分完整资料、缺证与未知效果的允许结局；在 
+					397 link Description: 信任边界, Value: 127.0.0.1:4486/#learn/agent/03-trust-boundary
+					398 text 列出资源与禁止动作。没有真实用户记录时，产品价值保持待验证，教学夹具仍可用于学习工程机制。
+				399 container 教材表格，可横向滚动
+					400 table
+						401 row
+							402 cell
+								403 text 学习阶段
+							404 cell
+								405 text 应交出的产物
+							406 cell
+								407 text 进入下一阶段前要能回答的问题
+						408 row
+							409 cell
+								410 text 起点与问题
+							411 cell
+								412 text 基础诊断、问题档案、允许结果和风险边界
+							413 cell
+								414 text 能否分清真实观察、构造练习与自己的解释
+						415 row
+							416 cell
+								417 text 程序与模型边界
+							418 cell
+								419 text 可判错的读取适配器、经结构和业务校验的候选
+							420 cell
+								421 text HTTP成功或合法JSON为什么仍可能没有合格结果
+						422 row
+							423 cell
+								424 text 选型与组件
+							425 cell
+								426 text 最小方案决定、证据包、写工具合同和持久账本
+							427 cell
+								428 text 谁能提议、谁准入，超时后为什么仍可能有工单
+						429 row
+							430 cell
+								431 text 固定与动态流程
+							432 cell
+								433 text 完整固定流程，再按需要采用动态控制循环
+							434 cell
+								435 text 新观察为什么要求换路径，复杂度是否带来目标内收益
+						436 row
+							437 cell
+								438 text 评价与产品决定
+							439 cell
+								440 text 同条件版本比较、MVP契约、安全与运维设计、任务账目
+							441 cell
+								442 text 质量或用户负担的变化由什么证据支持
+						443 row
+							444 cell
+								445 text 交付与迭代
+							446 cell
+								447 text 可复现作品、独立判定、原问题复验和未知任务
+							448 cell
+								449 text 新版本是否真的关闭了失败，结论能适用到哪里
+				450 text 练习：团队每次都读取同样两份材料，生成草稿，等待批准后创建工单，却把它称为“必须用动态Agent解决的任务”。失败时通过增加三个模型角色继续生成。给出当前足够方案，以及什么新证据才支持升级。
+				451 text 参考分析：稳定材料与可枚举分支可以先用固定流程；若只需生成候选，一次模型调用也可能足够。批准和工单核对的责任应保留。升级证据应是下一步调查对象确实依赖新观察、事前规则难以覆盖，并在同任务、权限和预算下改善合格结果；多个角色仍不能解决缺业务权威或回执未知。没有这些证据，先定位候选、材料或工具边界的实际失败。
+				452 container
+					453 text 继续到 
+					454 link Description: 基础预备, Value: 127.0.0.1:4486/#learn/agent/01-foundation
+					455 text ，已有基础并留诊断证据者先按
+					456 link Description: Python与模型基础, Value: 127.0.0.1:4486/#learn/agent/n01-python-model-foundations
+					457 text 自检并补缺，再进入
+					458 link Description: 问题发现, Value: 127.0.0.1:4486/#learn/agent/p01-discovery
+					459 text 。
+					460 link Description: 分章目录, Value: 127.0.0.1:4486/api/content/reference/textbook-README.md?version=textbook-v12
+					461 text 提供概要与深读入口，完整阶段交付方法见 
+					462 link Description: 实作路径, Value: 127.0.0.1:4486/api/content/reference/textbook-v12-curriculum.md?version=textbook-v12
+					463 text 。
+				464 heading v12新增训练如何接到原实作, Value: 2, ID: s-7be19d9ebfa3
+					465 text v12新增训练如何接到原实作
+				466 container
+					467 link Description: Python与模型基础, Value: 127.0.0.1:4486/#learn/agent/n01-python-model-foundations
+					468 text 补对象/并发/输出边界；
+					469 link Description: 记忆与提示, Value: 127.0.0.1:4486/#learn/agent/n02-context-memory-prompt
+					470 text 使跨轮数据有生命周期；
+					471 link Description: 规划与反思, Value: 127.0.0.1:4486/#learn/agent/n03-planning-reflection
+					472 text 、
+					473 link Description: 工具与MCP, Value: 127.0.0.1:4486/#learn/agent/n04-tools-mcp
+					474 text 、
+					475 link Description: 进阶检索, Value: 127.0.0.1:4486/#learn/agent/n05-retrieval-ingestion
+					476 text 建立可检验组件；
+					477 link Description: 图编排, Value: 127.0.0.1:4486/#learn/agent/n06-graph-orchestration
+					478 text 和
+					479 link Description: 协作, Value: 127.0.0.1:4486/#learn/agent/n07-multiagent-a2a
+					480 text 按问题选择组织方式；
+					481 link Description: 沙箱, Value: 127.0.0.1:4486/#learn/agent/n08-sandbox-security
+					482 text 与
+					483 link Description: 运行交付, Value: 127.0.0.1:4486/#learn/agent/n09-runtime-delivery
+					484 text 限制代码和长任务风险；
+					485 link Description: 跨场景实训, Value: 127.0.0.1:4486/#learn/agent/n10-evaluation-projects
+					486 text 要求把这些机制迁移到客服或研究任务，并交给独立者复现。
+				487 text 每个新增单元给出机制、失败路径、练习及作品。原19篇专业正文完整保留，末尾新增当前导航；旧代码历史验证不能当本版新运行。新例区分标准库策略、真实离线框架和外部服务：策略模型不证明真实LLM、MCP/A2A互操作、系统沙箱或GPU性能。正文能够支持解释，仍需学员实际实现、未知任务评估、真人反馈与求职证据，才可进一步判断岗位能力。
+			488 button 收藏当前阅读位置
+			489 button 复制定位链接
+			490 button 下载本篇 Markdown
+			491 button (collapsed) 教材说明与先修, Secondary Actions: Expand
+				492 text 教材说明与先修
+			493 container
+				494 heading 配套题目 · 认识 Agent 工程, Value: 2
+					495 text 配套题目 · 认识 Agent 工程
+				496 text 1 道真实关联题。
+				497 link Description: 做配套题目 →, Value: 127.0.0.1:4486/#questions?unit=00-learning-route&kp=00-learning-route%3As-3b82fdeafaab
+				498 text Q1 · 固定题组
+				499 link Description: 如何界定 LLM Agent？你会用哪些可观察行为区分它与普通聊天应用？, Value: 127.0.0.1:4486/#questions/Q1?unit=00-learning-route&kp=00-learning-route%3As-3b82fdeafaab
+				500 link Description: 认识 Agent 工程, Value: 127.0.0.1:4486/#learn/agent/00-learning-route/s-3b82fdeafaab?from=Q1
+				501 link Description: 同一任务 四种控制权, Value: 127.0.0.1:4486/#learn/agent/c01-selection/s-e458cc35eeb7?from=Q1
+				502 checkbox 未掌握, Value: 0
+			503 container
+				504 heading 我的阅读笔记 · 教材 v12, Value: 2
+					505 text 我的阅读笔记 · 教材 v12
+				506 text 只保存在此浏览器，按当前原稿记录。疑问或实际尝试不自动评价能力。 本篇笔记
+				507 text entry area (settable) 本篇笔记, ID: lw-note
+				508 button 保存笔记
+			509 container 相邻篇章
+				510 link Description: 返回当前目录, Value: 127.0.0.1:4486/#learn
+				511 link Description: 下一篇 → 基础预备, Value: 127.0.0.1:4486/#learn/agent/01-foundation
+		32 container
+			33 text 职造 · Agent 开发学习 教材 v12 · 本浏览器保存
+	512 container lw-find-form
+		513 text 查教材
+		514 text entry area (settable) 查教材, ID: lw-query
+		515 button 查找
+		516 button (collapsed) Description: 展开检索结果, Secondary Actions: Expand
+
+The focused UI element is 56 heading 认识 Agent 工程, Value: 1, ID: s-3b82fdeafaab

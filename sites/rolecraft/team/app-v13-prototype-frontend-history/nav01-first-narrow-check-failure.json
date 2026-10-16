@@ -1,0 +1,8 @@
+{
+  "issueId": "QI13-NAV01",
+  "directlyAffectedFinding": "No-id #questions reference return must be list; compatibility q.questionId===undefined found Q1 unexpectedly",
+  "check": "NAV01 original reference->question->filtered bank; expected unit/kp selected list",
+  "observed": "selected-list assertion failed because bank branch rendered Q1 detail",
+  "scope": "developer narrow VM failed observation, not independent QA",
+  "sourceSha256": "1ccd00caa734bceb913f583ddbe93569a964d22279b83c47f511c95af588cf8b"
+}

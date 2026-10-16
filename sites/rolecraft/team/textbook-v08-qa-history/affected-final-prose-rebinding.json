@@ -1,0 +1,21 @@
+{
+  "status": "rebinding_same_executed_blocks_to_final_prose",
+  "records": [
+    {
+      "unit": "c03",
+      "executedWholeSha256": "a2ffd0854b3ca757ac6597cbd1b89a242248c8d227ad9f6595260a18c5fb9180",
+      "finalWholeSha256": "83f22cddfc2e6958e71a1ae9464f1342d3744f995985c75870c9630e2e884cfe",
+      "allFencedBlocksByteIdentical": true,
+      "proseDiff": "--- /Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-author-core-history/c03-pre-stage06-sync.md\n+++ /Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md\n@@ -2,7 +2,7 @@\n \n 一个可靠的写工具应把三件事分开：模型提议、运行时准许的逻辑动作、下游实际发生的效果。提议通过结构校验还不够；当前身份须有对象权限，准确内容须获批准，逻辑身份和参数须持久固定。请求超时之后，先核对原动作，不能换一个请求 ID 再写。这个结论适用于重复效果有业务代价、操作不参与本地数据库事务的接口。\n \n-本篇只设计 `create_issue`：把 `repo@8e12/test-report-71` 的缺陷说明创建到 `refund-maintenance` 项目，可信租户 `tenant-dev`，每个目标修订只允许唯一缺陷工单。工具、回执和事件均为原创教学合同；作者编写时未执行。独立 QA 此前在 Python 3.12.14 检查了无网络替身与适配器，当前共享规范/适配返修待受影响复验，版本和具体范围见 [QA 记录](../../team/textbook-v08-qa.md)。接口级运行时伪代码、真实工单和 Python 3.14 目标环境未测。先修为 [方案选择](c01-solution-selection.md)、[API 边界](f01.md) 及 [控制循环](../agent-control-loop-v07.md) 的动作身份。\n+本篇只设计 `create_issue`：把 `repo@8e12/test-report-71` 的缺陷说明创建到 `refund-maintenance` 项目，可信租户 `tenant-dev`，每个目标修订只允许唯一缺陷工单。工具、回执和事件均为原创教学合同；作者编写时未执行。本轮独立 QA 在 Python 3.12.14 仅检查无网络替身、适配器、共享规范及与 e01 桥接的所列离线路径，版本和具体范围见 [QA 记录](../../team/textbook-v08-qa.md)。接口级运行时伪代码、真实工单和 Python 3.14 目标环境未测。先修为 [方案选择](c01-solution-selection.md)、[API 边界](f01.md) 及 [控制循环](../agent-control-loop-v07.md) 的动作身份。\n \n ## 工具名与合法 JSON 都不能授执行权\n \n",
+      "repeatedRun": false
+    },
+    {
+      "unit": "e01",
+      "executedWholeSha256": "481401334bc735b28e9cee78715c6222da5bf524085179653d2d53a2440d0757",
+      "finalWholeSha256": "a9c6b72345f35acea039fce140908876bed095edcc517ded3acec701bec99e60",
+      "allFencedBlocksByteIdentical": true,
+      "proseDiff": "--- /Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-author-core-history/e01-pre-stage06-sync.md\n+++ /Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e01.md\n@@ -2,7 +2,7 @@\n \n 恢复不应从“上次聊天停在哪里”开始，而应从权威动作账本开始：哪些意图已固定，哪些尝试可能已发，哪个外部效果已确认，谁现在有权推进。数据库事务解决本地记录一致，外部查询解决远端效果不确定；两者没有共同原子点。进程重启时先核对未决动作，再允许模型产生新计划。\n \n-本篇把 [控制循环](../agent-control-loop-v07.md) 的存储语义落到一个最小 SQLite 实现，重点是 `create_issue` 生命周期：意图、批准、发送前尝试、结果、取消与核对。其目标仍为 `repo@8e12/test-report-71` 的唯一缺陷工单。作者编写时未执行原创 Python 3.14 示例；独立 QA 此前在 Python 3.12.14/SQLite 3.53.1 仅检查隔离教学库的 Store、实际解释器退出后跨进程恢复及事件/代次/取消/verdict分支。当前规范指纹与桥接代码返修待受影响复验，版本和具体范围见 [QA 记录](../../team/textbook-v08-qa.md)；真实工单、硬件故障、供应商协议及 Python 3.14 目标环境未测。它没有实现全套模型/计划账本、队列、长期租约续期或自动重发，不冒充整体生产运行时。\n+本篇把 [控制循环](../agent-control-loop-v07.md) 的存储语义落到一个最小 SQLite 实现，重点是 `create_issue` 生命周期：意图、批准、发送前尝试、结果、取消与核对。其目标仍为 `repo@8e12/test-report-71` 的唯一缺陷工单。作者编写时未执行原创 Python 3.14 示例；本轮独立 QA 在 Python 3.12.14/SQLite 3.53.1 仅检查共享规范、隔离教学库的 Store 与桥接、实际解释器退出后跨进程恢复及事件/代次/取消/verdict的所列有限路径，版本和具体范围见 [QA 记录](../../team/textbook-v08-qa.md)；真实工单、硬件故障、供应商协议及 Python 3.14 目标环境未测。它没有实现全套模型/计划账本、队列、长期租约续期或自动重发，不冒充整体生产运行时。\n \n ## 三个提交点定义可恢复事实\n \n",
+      "repeatedRun": false
+    }
+  ]
+}

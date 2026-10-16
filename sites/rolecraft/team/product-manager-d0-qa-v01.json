@@ -1,0 +1,705 @@
+{
+  "qa_id": "PRODUCT-MANAGER-D0-QA-20261016-001",
+  "date": "2026-10-16",
+  "reviewer_role": "qa-engineer",
+  "scope": "Read-only specification and synthetic-fixture gate review for product-manager D0; no learner answer, execution, external action or product-file mutation.",
+  "decision": "not_met",
+  "overall": "not_met",
+  "assessment_boundary": "This is a specification/fixture gate. It is not a learner failure and does not grant or revoke L0/L1/L2.",
+  "learner_execution": false,
+  "derived_by": "QA",
+  "environment": {
+    "cwd": "/Users/shengxiong/Desktop/One People Company",
+    "python": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "network_disabled": true,
+    "real_model": false,
+    "paid_api": false,
+    "real_user_data": false,
+    "external_action": null,
+    "timezone": "Asia/Shanghai"
+  },
+  "execution": {
+    "started_at": "2026-10-16T11:19:47.878072+08:00",
+    "ended_at": "2026-10-16T11:19:47.881070+08:00",
+    "commands": [
+      "python3 - <<'PY' (JSON parse, coverage, fixture counts/injections, source SHA/version, receipt/card mappings, security and input protection) PY",
+      "shasum -a 256 sites/rolecraft/team/employee-growth-mvp/product-manager/{D0-diagnostic.md,D0-diagnostic.json,fixtures/fixtures.product-recommendation-v01.json}",
+      "test -f sites/rolecraft/team/employee-growth-mvp/product-manager/fixtures/fixture-hashes-v01.json"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout_summary": "Final product snapshot rechecked; declared source versions corrected for GROWTH-CURRICULUM and PRODUCT-CREATION-CURRICULUM; pending hash, missing source document versions, and no learner evidence remain blockers."
+  },
+  "inputs": {
+    "files": [
+      {
+        "path": "sites/rolecraft/team/employee-growth-mvp/product-manager/D0-diagnostic.md",
+        "bytes": 11934,
+        "sha256": "2f1d7e3481840686077263a4a516a413891d75a147fcb3075dde230cbbd4c7c5"
+      },
+      {
+        "path": "sites/rolecraft/team/employee-growth-mvp/product-manager/D0-diagnostic.json",
+        "bytes": 15753,
+        "sha256": "7f5e0a3f12b2ecc7986e5deadb540f9fd4afb4b6c778cfdb54a9ac3217a8ede4"
+      },
+      {
+        "path": "sites/rolecraft/team/employee-growth-mvp/product-manager/fixtures/fixtures.product-recommendation-v01.json",
+        "bytes": 13190,
+        "sha256": "e7d27f951cd32f0b1f3b758b3a0987dccab4578ab2562637b02c6187f81d5f7b"
+      },
+      {
+        "path": "sites/rolecraft/team/employee-growth-mvp/product-manager/fixtures/fixture-hashes-v01.json",
+        "bytes": 2026,
+        "sha256": "5df3fc43c3c92cacb408e5d45fd63ca6b57d631fc9a626805047f9ab54a3d4d5"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "id": "COV-00",
+      "status": "met",
+      "claim": "JSON parse and file availability",
+      "evidence": {
+        "paths": {
+          "sites/rolecraft/team/employee-growth-mvp/product-manager/D0-diagnostic.md": {
+            "bytes": 11934,
+            "sha256": "2f1d7e3481840686077263a4a516a413891d75a147fcb3075dde230cbbd4c7c5"
+          },
+          "sites/rolecraft/team/employee-growth-mvp/product-manager/D0-diagnostic.json": {
+            "bytes": 15753,
+            "sha256": "7f5e0a3f12b2ecc7986e5deadb540f9fd4afb4b6c778cfdb54a9ac3217a8ede4"
+          },
+          "sites/rolecraft/team/employee-growth-mvp/product-manager/fixtures/fixtures.product-recommendation-v01.json": {
+            "bytes": 13190,
+            "sha256": "e7d27f951cd32f0b1f3b758b3a0987dccab4578ab2562637b02c6187f81d5f7b"
+          },
+          "sites/rolecraft/team/employee-growth-mvp/product-manager/fixtures/fixture-hashes-v01.json": {
+            "bytes": 2026,
+            "sha256": "5df3fc43c3c92cacb408e5d45fd63ca6b57d631fc9a626805047f9ab54a3d4d5"
+          }
+        },
+        "parse_errors": []
+      },
+      "gaps": []
+    },
+    {
+      "id": "SRC-01",
+      "status": "met",
+      "claim": "Bound source paths exist and declared SHA-256 matches current bytes",
+      "evidence": {
+        "sources": [
+          {
+            "source_id": "ROLE-PM",
+            "path": "sites/rolecraft/team/employees/core/product-manager/ROLE.md",
+            "exists": true,
+            "declared_sha256": "56f932f3621b64469b3136ff3d1cafa3af900608f5c82947e33e0012ffd614c7",
+            "actual_sha256": "56f932f3621b64469b3136ff3d1cafa3af900608f5c82947e33e0012ffd614c7",
+            "sha_match": true
+          },
+          {
+            "source_id": "GROWTH-CURRICULUM",
+            "path": "sites/rolecraft/team/employee-growth-curriculum.md",
+            "exists": true,
+            "declared_sha256": "d9d56934223ea7e63be768c9f0eb765761ea7da18d81267c3e74fa7defc1c5aa",
+            "actual_sha256": "d9d56934223ea7e63be768c9f0eb765761ea7da18d81267c3e74fa7defc1c5aa",
+            "sha_match": true
+          },
+          {
+            "source_id": "PRODUCT-CREATION-CURRICULUM",
+            "path": "sites/rolecraft/team/product-creation-curriculum.md",
+            "exists": true,
+            "declared_sha256": "495520a042239de9ed3ec7544c496f42052d9e0eaff53b2f8e9450e09e74b9fd",
+            "actual_sha256": "495520a042239de9ed3ec7544c496f42052d9e0eaff53b2f8e9450e09e74b9fd",
+            "sha_match": true
+          },
+          {
+            "source_id": "PRODUCT-CREATION-STANDARD",
+            "path": "sites/rolecraft/team/product-creation-standard.md",
+            "exists": true,
+            "declared_sha256": "b57e4ee78b58773377c73088068e6b036c8c52d53a48382424de5bdbcfd609ff",
+            "actual_sha256": "b57e4ee78b58773377c73088068e6b036c8c52d53a48382424de5bdbcfd609ff",
+            "sha_match": true
+          },
+          {
+            "source_id": "PRODUCT-STANDARD",
+            "path": "sites/rolecraft/team/product-standard.md",
+            "exists": true,
+            "declared_sha256": "76d0aac23a5573112967a01061b0ee97db3877ced58ec41f758d96ee439f4eb6",
+            "actual_sha256": "76d0aac23a5573112967a01061b0ee97db3877ced58ec41f758d96ee439f4eb6",
+            "sha_match": true
+          }
+        ]
+      },
+      "gaps": []
+    },
+    {
+      "id": "COV-01",
+      "status": "met",
+      "claim": "Exactly five D0 exercises with one bound exercise version",
+      "evidence": {
+        "exercise_ids": [
+          "D0-01",
+          "D0-02",
+          "D0-03",
+          "D0-04",
+          "D0-05"
+        ],
+        "expected_ids": [
+          "D0-01",
+          "D0-02",
+          "D0-03",
+          "D0-04",
+          "D0-05"
+        ],
+        "exercise_versions": [
+          "product-manager-d0-v01"
+        ],
+        "diagnostic_id": "PROD-D0-001",
+        "role_id": "product-manager"
+      },
+      "gaps": []
+    },
+    {
+      "id": "COV-02",
+      "status": "met",
+      "claim": "Each D0 exercise carries its required specification structures",
+      "evidence": {
+        "missing_fields": {
+          "D0-01": [],
+          "D0-02": [],
+          "D0-03": [],
+          "D0-04": [],
+          "D0-05": []
+        }
+      },
+      "gaps": []
+    },
+    {
+      "id": "FIX-01",
+      "status": "met",
+      "claim": "Fixture has required normal/boundary/failure distribution",
+      "evidence": {
+        "case_count": 6,
+        "kinds": {
+          "normal": 1,
+          "boundary": 2,
+          "failure": 3
+        },
+        "required": {
+          "normal_cases": 1,
+          "boundary_cases": 2,
+          "failure_cases": 3,
+          "missing_source_or_version_conflict": true,
+          "unknown_user_value": true,
+          "cross_role_responsibility_confusion": true
+        }
+      },
+      "gaps": []
+    },
+    {
+      "id": "FIX-02",
+      "status": "met",
+      "claim": "Fixture contains required defect and boundary injections",
+      "evidence": {
+        "actual": {
+          "missing_source_or_version_conflict": true,
+          "unknown_user_value": true,
+          "cross_role_responsibility_confusion": true
+        },
+        "required": {
+          "missing_source_or_version_conflict": true,
+          "unknown_user_value": true,
+          "cross_role_responsibility_confusion": true
+        },
+        "case_ids": [
+          "normal-01",
+          "boundary-01",
+          "failure-01",
+          "handoff-confusion-01",
+          "version-conflict-01",
+          "budget-constraint-01"
+        ]
+      },
+      "gaps": []
+    },
+    {
+      "id": "CASE-01",
+      "status": "met",
+      "claim": "Every fixture case has machine-assertable expected result, stop, first failure, external action and receivers",
+      "evidence": {
+        "missing_by_case": {
+          "normal-01": [],
+          "boundary-01": [],
+          "failure-01": [],
+          "handoff-confusion-01": [],
+          "version-conflict-01": [],
+          "budget-constraint-01": []
+        },
+        "expected_external_action_values": [
+          "none"
+        ],
+        "null_first_failure_rule": true,
+        "assertion_schema": {
+          "required_case_keys": [
+            "expected_result",
+            "expected_stop_or_escalate",
+            "expected_first_failure",
+            "expected_external_action",
+            "expected_receivers"
+          ],
+          "allowed_expected_external_action": [
+            "none"
+          ],
+          "expected_first_failure_may_be_null_only_for": [
+            "normal"
+          ],
+          "machine_assertion_status": "schema_only_not_qa_result"
+        }
+      },
+      "gaps": []
+    },
+    {
+      "id": "FIX-03",
+      "status": "insufficient_evidence",
+      "claim": "Synthetic source/section catalog can support reproducible source and version-conflict checks",
+      "evidence": {
+        "catalog_count": 2,
+        "catalog_missing_fields": {
+          "0": [],
+          "1": []
+        },
+        "pending_source_evidence": true,
+        "version_conflict_records": 2,
+        "version_conflict_records_complete": true
+      },
+      "gaps": []
+    },
+    {
+      "id": "SEC-01",
+      "status": "met",
+      "claim": "Static synthetic-only and external-action security boundary is explicit",
+      "evidence": {
+        "diagnostic_environment": {
+          "network_disabled": true,
+          "real_model": false,
+          "paid_api": false,
+          "real_user_data": false,
+          "external_action": null
+        },
+        "fixture_environment": {
+          "network_disabled": true,
+          "real_model": false,
+          "paid_api": false,
+          "real_user_data": false,
+          "external_action": null
+        },
+        "prohibited_access": [
+          "上传或发布",
+          "付费模型",
+          "外部服务",
+          "正式数据库",
+          "生产系统",
+          "真实用户联系",
+          "真实用户记录"
+        ],
+        "missing_prohibitions": [],
+        "execution_scope": {
+          "purpose": "product_judgment_only",
+          "recommendation_execution": "not_executed",
+          "candidate_output_status": "not_executed",
+          "source_reconstruction_claim_allowed": false
+        }
+      },
+      "gaps": [
+        "Static declarations do not prove runtime isolation; no learner execution was performed."
+      ]
+    },
+    {
+      "id": "SRC-02",
+      "status": "not_met",
+      "claim": "D0-02 claim binding requires location/version/status; current source declaration still has version blockers",
+      "evidence": {
+        "result_classes": [
+          "normal",
+          "failure",
+          "unknown"
+        ],
+        "required_claim_source_fields": [
+          "source_id",
+          "source_location",
+          "source_sha256",
+          "document_version",
+          "source_version_status"
+        ],
+        "source_bindings": [
+          {
+            "source_id": "ROLE-PM",
+            "document_version": "not_declared",
+            "source_version_status": "hash_bound_only"
+          },
+          {
+            "source_id": "GROWTH-CURRICULUM",
+            "document_version": "employee-growth-v1.0",
+            "source_version_status": "declared"
+          },
+          {
+            "source_id": "PRODUCT-CREATION-CURRICULUM",
+            "document_version": "教学草案 v0.1",
+            "source_version_status": "declared"
+          },
+          {
+            "source_id": "PRODUCT-CREATION-STANDARD",
+            "document_version": "not_declared",
+            "source_version_status": "missing_document_version_blocking"
+          },
+          {
+            "source_id": "PRODUCT-STANDARD",
+            "document_version": "not_declared",
+            "source_version_status": "hash_bound_only"
+          }
+        ],
+        "declared_document_version_sources": [
+          "GROWTH-CURRICULUM",
+          "PRODUCT-CREATION-CURRICULUM"
+        ],
+        "source_document_version_blockers": [
+          "ROLE-PM",
+          "PRODUCT-CREATION-STANDARD",
+          "PRODUCT-STANDARD"
+        ]
+      },
+      "gaps": [
+        "ROLE-PM and PRODUCT-STANDARD have document_version=not_declared; PRODUCT-CREATION-STANDARD is explicitly missing_document_version_blocking. Hash-bound snapshot labels do not replace declared document versions."
+      ]
+    },
+    {
+      "id": "CASE-02",
+      "status": "met",
+      "claim": "D0-02 specifies normal/failure/unknown result records and per-claim source fields",
+      "evidence": {
+        "result_classes": [
+          "normal",
+          "failure",
+          "unknown"
+        ],
+        "source_fields_ok": true
+      },
+      "gaps": []
+    },
+    {
+      "id": "CARD-01",
+      "status": "met",
+      "claim": "Raw submission schema contains the contract-semantic execution receipt fields",
+      "evidence": {
+        "raw_required_semantic_fields": [
+          "command_or_steps",
+          "ended_at",
+          "environment",
+          "exit_code",
+          "first_failure",
+          "input_snapshot_path_and_sha256",
+          "output_path_and_sha256",
+          "started_at",
+          "stderr",
+          "stdout"
+        ],
+        "raw_fields_present": [
+          "command_or_steps",
+          "ended_at",
+          "environment",
+          "exit_code",
+          "first_failure",
+          "input_snapshot_path_and_sha256",
+          "output_path_and_sha256",
+          "started_at",
+          "stderr",
+          "stdout"
+        ],
+        "raw_fields_missing": [],
+        "d03_declared_receipt_field_names": [
+          "actual_command_or_steps",
+          "input_snapshot_sha256",
+          "output_path_and_sha256",
+          "environment",
+          "started_at",
+          "ended_at",
+          "stdout",
+          "stderr",
+          "exit_code",
+          "first_failure"
+        ],
+        "field_mapping": {
+          "actual_command_or_steps": "command_or_steps",
+          "input_snapshot_sha256": "input_snapshot_path_and_sha256",
+          "output_path_and_sha256": "output_path_and_sha256",
+          "environment": "environment",
+          "started_at": "started_at",
+          "ended_at": "ended_at",
+          "stdout": "stdout",
+          "stderr": "stderr",
+          "exit_code": "exit_code",
+          "first_failure": "first_failure"
+        },
+        "alias_gap": false
+      },
+      "gaps": [
+        "The D0-03 labels use semantic names different from raw_submission_fields; the contract does not require exact key aliases, and the mapping above is explicit."
+      ]
+    },
+    {
+      "id": "RECEIPT-01",
+      "status": "met",
+      "claim": "D0-03 declares all execution receipt concepts required by the contract",
+      "evidence": {
+        "declared_fields": [
+          "actual_command_or_steps",
+          "input_snapshot_sha256",
+          "output_path_and_sha256",
+          "environment",
+          "started_at",
+          "ended_at",
+          "stdout",
+          "stderr",
+          "exit_code",
+          "first_failure"
+        ],
+        "required_semantic_fields": [
+          "command_or_steps",
+          "ended_at",
+          "environment",
+          "exit_code",
+          "first_failure",
+          "input_snapshot_path_and_sha256",
+          "output_path_and_sha256",
+          "started_at",
+          "stderr",
+          "stdout"
+        ],
+        "missing_semantic_fields": []
+      },
+      "gaps": []
+    },
+    {
+      "id": "CARD-02",
+      "status": "met",
+      "claim": "EvidenceCard required schema includes diagnostic, fixture, provenance, source and review bindings",
+      "evidence": {
+        "declared_count": 29,
+        "expected_count": 29,
+        "missing": [],
+        "extra": []
+      },
+      "gaps": []
+    },
+    {
+      "id": "STOP-01",
+      "status": "met",
+      "claim": "Stop conditions include missing goal, provenance, hash, source, authorization, external action and evidence-integrity blockers",
+      "evidence": {
+        "missing": [],
+        "stop_conditions": [
+          "fabricated_user_evidence",
+          "first_failure_overwritten",
+          "missing_independent_review_or_receipt",
+          "missing_learner_provenance",
+          "missing_source_version",
+          "missing_user_goal",
+          "proxy_answer_presented_as_learner_evidence",
+          "real_external_action",
+          "scope_or_authorization_uncertainty",
+          "unknown_fixture_hash",
+          "unknown_permission_or_data_boundary"
+        ]
+      },
+      "gaps": []
+    },
+    {
+      "id": "CONTRACT-02",
+      "status": "met",
+      "claim": "Handoff package and retest order include all required fields",
+      "evidence": {
+        "missing": [],
+        "extra": [],
+        "retest_order": [
+          "original_case",
+          "first_failure_or_stop",
+          "repair",
+          "original_regression",
+          "affected_regression",
+          "holdout"
+        ],
+        "expected_retest_order": [
+          "original_case",
+          "first_failure_or_stop",
+          "repair",
+          "original_regression",
+          "affected_regression",
+          "holdout"
+        ]
+      },
+      "gaps": []
+    },
+    {
+      "id": "CONTRACT-01",
+      "status": "met",
+      "claim": "Contract/diagnostic/fixture IDs, versions and planned/not-assessed statuses are explicit and internally consistent",
+      "evidence": {
+        "contract_id": "PROD-D0-001",
+        "contract_version": "product-manager-d0-v01",
+        "contract_status": "planned",
+        "diagnostic_id": "PROD-D0-001",
+        "diagnostic_version": "product-manager-d0-v01",
+        "diagnostic_status": "not_assessed",
+        "fixture_id": "fixtures.product-recommendation-v01",
+        "fixture_version": "v0.1",
+        "fixture_contract_id": "PROD-D0-001",
+        "status_fields": {
+          "json_status": "not_assessed",
+          "assessment_status": "not_assessed"
+        }
+      },
+      "gaps": []
+    },
+    {
+      "id": "FREEZE-01",
+      "status": "not_met",
+      "claim": "Fixture canonical/file hashes and external freeze manifest are not yet complete",
+      "evidence": {
+        "pending_or_missing": [
+          "D0 fixture.sha256",
+          "fixture.fixture_sha256",
+          "hash_policy.canonical_content_sha256",
+          "hash_policy.fixture_file_sha256",
+          "external_freeze_manifest_pending_values"
+        ],
+        "fixture_file_sha256_actual": "e7d27f951cd32f0b1f3b758b3a0987dccab4578ab2562637b02c6187f81d5f7b",
+        "hash_policy": {
+          "canonicalization": "UTF-8 JSON with sorted keys after removing all self-referential hash fields",
+          "hash_excluded_fields": [
+            "fixture_sha256",
+            "canonical_content_sha256",
+            "fixture_file_sha256",
+            "hash_policy.canonical_content_sha256",
+            "hash_policy.fixture_file_sha256",
+            "hash_policy.status"
+          ],
+          "canonical_content_sha256": "pending_freeze",
+          "fixture_file_sha256": "pending_freeze",
+          "fixture_sha256_binding": "external_freeze_manifest_only",
+          "external_freeze_manifest_path": "team/employee-growth-mvp/product-manager/fixtures/fixture-hashes-v01.json",
+          "status": "pending_freeze",
+          "canonical_path": "fixtures/fixtures.product-recommendation-v01.json",
+          "contract_fixture_basename": "fixtures.product-recommendation-v01.json"
+        },
+        "manifest_path": "team/employee-growth-mvp/product-manager/fixtures/fixture-hashes-v01.json",
+        "manifest_sha256": "5df3fc43c3c92cacb408e5d45fd63ca6b57d631fc9a626805047f9ab54a3d4d5",
+        "manifest_bytes": 2026,
+        "manifest_exists": true,
+        "manifest_status": "pending_freeze"
+      },
+      "gaps": [
+        "No freeze claim is allowed while pending hash fields or manifest status remains pending_freeze."
+      ]
+    },
+    {
+      "id": "LEARNER-01",
+      "status": "insufficient_evidence",
+      "claim": "Learner-owned execution and independent review evidence are not present",
+      "evidence": {
+        "learner_id": "required_anonymous_pending",
+        "diagnostic_status": "not_assessed",
+        "status": "not_assessed",
+        "assessment_status": "not_assessed",
+        "learner_execution": false,
+        "derived_by": "QA"
+      },
+      "gaps": [
+        "No learner raw answers, learner receipts, signatures, independent review or receiver signature are present in this specification/fixture package."
+      ]
+    },
+    {
+      "id": "PROTECT-01",
+      "status": "met",
+      "claim": "QA did not modify the three product inputs during review",
+      "evidence": {
+        "start_sha256": {
+          "sites/rolecraft/team/employee-growth-mvp/product-manager/D0-diagnostic.md": "2f1d7e3481840686077263a4a516a413891d75a147fcb3075dde230cbbd4c7c5",
+          "sites/rolecraft/team/employee-growth-mvp/product-manager/D0-diagnostic.json": "7f5e0a3f12b2ecc7986e5deadb540f9fd4afb4b6c778cfdb54a9ac3217a8ede4",
+          "sites/rolecraft/team/employee-growth-mvp/product-manager/fixtures/fixtures.product-recommendation-v01.json": "e7d27f951cd32f0b1f3b758b3a0987dccab4578ab2562637b02c6187f81d5f7b"
+        },
+        "end_sha256": {
+          "sites/rolecraft/team/employee-growth-mvp/product-manager/D0-diagnostic.md": "2f1d7e3481840686077263a4a516a413891d75a147fcb3075dde230cbbd4c7c5",
+          "sites/rolecraft/team/employee-growth-mvp/product-manager/D0-diagnostic.json": "7f5e0a3f12b2ecc7986e5deadb540f9fd4afb4b6c778cfdb54a9ac3217a8ede4",
+          "sites/rolecraft/team/employee-growth-mvp/product-manager/fixtures/fixtures.product-recommendation-v01.json": "e7d27f951cd32f0b1f3b758b3a0987dccab4578ab2562637b02c6187f81d5f7b"
+        },
+        "unchanged": true
+      },
+      "gaps": []
+    }
+  ],
+  "first_blocking_gap": {
+    "id": "FREEZE-01",
+    "reason": "fixture_sha256/canonical_content_sha256/fixture_file_sha256 remain pending_freeze and external freeze manifest exists but is pending_freeze; execution must stop before learner run."
+  },
+  "blocking_checks": [
+    "FREEZE-01",
+    "FIX-03",
+    "SRC-02",
+    "LEARNER-01"
+  ],
+  "open_gaps": [
+    {
+      "id": "FIX-03",
+      "status": "insufficient_evidence",
+      "gaps": []
+    },
+    {
+      "id": "SRC-02",
+      "status": "not_met",
+      "gaps": [
+        "ROLE-PM and PRODUCT-STANDARD have document_version=not_declared; PRODUCT-CREATION-STANDARD is explicitly missing_document_version_blocking. Hash-bound snapshot labels do not replace declared document versions."
+      ]
+    },
+    {
+      "id": "FREEZE-01",
+      "status": "not_met",
+      "gaps": [
+        "No freeze claim is allowed while pending hash fields or manifest remain."
+      ]
+    },
+    {
+      "id": "LEARNER-01",
+      "status": "insufficient_evidence",
+      "gaps": [
+        "No learner raw answers, learner receipts, signatures, independent review or receiver signature are present in this specification/fixture package."
+      ]
+    }
+  ],
+  "required_retest_order": [
+    "original_case",
+    "first_failure_or_stop",
+    "repair",
+    "original_regression",
+    "affected_regression",
+    "holdout"
+  ],
+  "learner_status": {
+    "learner_execution": false,
+    "derived_by": "QA",
+    "assessment_status": "not_assessed",
+    "allowed_conclusion": "not_assessed until learner-owned raw answers, receipts, independent reviews and receiver signature exist"
+  },
+  "next_actions": [
+    "Product owner supplies declared document_version for product-creation-standard.md and updates source binding; recheck source hash/location.",
+    "Complete freeze values in existing fixture-hashes-v01.json and bind canonical content/file hashes without self-referential hashing; write identical values to contract receipt and EvidenceCards at execution time.",
+    "Keep fixture status draft_not_frozen until hash manifest and source snapshot hashes/locations are frozen.",
+    "After freeze, QA independently executes only isolated synthetic checks; D0-05 remains plan_only and gets a non-author holdout structural review.",
+    "Only then collect learner-owned raw answers, signatures, independent reviews and receiver acceptance; preserve not_assessed until complete."
+  ],
+  "limitations": [
+    "No learner submission or execution was present.",
+    "No runtime behavior or real recommendation was executed.",
+    "This report does not validate user value, professional capability, production readiness or industry advantage."
+  ]
+}

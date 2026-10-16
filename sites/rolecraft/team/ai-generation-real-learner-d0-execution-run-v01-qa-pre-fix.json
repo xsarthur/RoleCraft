@@ -1,0 +1,16 @@
+{
+  "qa_record_id": "AI-REAL-LEARNER-D0-EXEC-RUN-QA-20261016-PRE-FIX-001",
+  "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+  "artifact_root": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts",
+  "record_type": "first_failure_record",
+  "scope": "修复前独立复核记录；不代表最终结果",
+  "finding": "run-1/run-2 每场景原始 stdout/output 因输出包含 run_id 而 byte_equal=false；去掉 run_id 后语义相等。四场景停止、来源映射、逐场景收据和 external_action=null 仍可复核。",
+  "first_failure": "raw_byte_replay_mismatch_due_to_run_id",
+  "repair_required": "让确定性输出不包含 run_id，随后从同一冻结输入重新执行四场景并复验 bytes/SHA。",
+  "superseded_by": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-qa-final.json",
+  "raw_artifact_paths": [
+    "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/run-comparison.json",
+    "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/receipts/run-1/",
+    "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/receipts/run-2/"
+  ]
+}

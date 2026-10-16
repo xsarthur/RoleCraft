@@ -1,0 +1,39 @@
+{
+  "status": "historical_defects_reproduced_as_expected",
+  "records": [
+    {
+      "name": "CR08-01:archived_counterexample_raises",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "detail": "Historical defect reproduced; current stage01 returns CONTENT_NOT_UTF8."
+    },
+    {
+      "name": "CR08-02:archived_wrapper_array_crash",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "detail": "No original urlopen or main called; fake document only."
+    },
+    {
+      "name": "CR08-04:archived_known_failure_masked",
+      "actual": "INSUFFICIENT",
+      "expected": "INSUFFICIENT",
+      "pass": true,
+      "detail": "Known wrong outcome is masked; current stage01 gives FAIL and retains unknown."
+    },
+    {
+      "name": "CR08-05:archived_special_marker_payload_leaks",
+      "actual": [
+        "CREATED",
+        1
+      ],
+      "expected": [
+        "CREATED",
+        1
+      ],
+      "pass": true,
+      "detail": "Marker is synthetic; current stage01 denies SENSITIVE_PAYLOAD before an effect."
+    }
+  ]
+}

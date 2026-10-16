@@ -1,0 +1,79 @@
+{
+  "reviewId": "DESIGN-V1-LOADING-2026-10-16",
+  "role": "设计师",
+  "at": "2026-10-16T08:16:00+08:00",
+  "scope": "问教材请求等待状态的视觉、交互、可访问性和当前远程资源绑定",
+  "status": "not_met_remote_binding",
+  "userReportedIssue": "用户反馈本次版本没有体现请求等待时的加载交互。",
+  "designContract": [
+    "DV1-RET 检索中：进度形状+正在查找教材依据；保留阅读；可收起；不夺焦点；防同请求重复提交。",
+    "DV1-A11Y-02 问教材入口可理解、打开/收起语义、迟到结果不抢焦点。",
+    "DV1-A11Y-03 等待、无匹配、澄清、失败分别以 status/alert 和短文本播报。",
+    "DV1-RWD-03/05 窄屏与软键盘下输入、发送、收起和恢复动作可见可用。"
+  ],
+  "evidence": {
+    "local": {
+      "js": {
+        "path": "sites/rolecraft/dist/learning-workbench.js",
+        "sha256": "8f3c434d9c6ab0daf02d2de69660922d1f04422dd5917528f8cc6bce0c34ceb9",
+        "lines": [663, 689, 693, 694, 733, 736, 738],
+        "observations": [
+          "pending 渲染 role=status/aria-live、正在查找教材依据、spinner 和 indeterminate track",
+          "发送按钮等待态 disabled、aria-disabled=true、aria-busy=true，表单和结果容器标 busy",
+          "相同 query+context 的未完成请求短路；请求 ID 和 AbortController 防迟到结果污染"
+        ]
+      },
+      "css": {
+        "path": "sites/rolecraft/dist/learning-workbench.css",
+        "sha256": "1a53e9fc115513b04404fa9656b626c9945efc483e36f5da30beb36e65b63c52",
+        "tokens": ["lw-query-spinner", "lw-query-indeterminate", "lw-query-submit-spinner", "prefers-reduced-motion"]
+      }
+    },
+    "remote": {
+      "baseUrl": "http://111.231.8.78",
+      "jsSha256": "2086c9ae26ee158e1bf4c89a296513b24b9173fb65a098bf03f9cd27c065668e",
+      "cssSha256": "b35eaef44e73a56e2b1df0985fdfe8c960393ca086ffecaeba96b51bf798336c",
+      "jsObservation": "旧 pending 分支只有静态省略号和旧文案，不含新 spinner/indeterminate/disabled 查询按钮",
+      "cssObservation": "含旧 lw-state-loading/lw-state-mark，不含新 spinner/进度条/查询按钮样式",
+      "cacheControl": "public, max-age=3600",
+      "browserEvidence": "本轮未取得可复核的公网真实浏览器截图、AX 树和键盘操作记录"
+    },
+    "staticFileLimitation": "file: 入口在 pending 设置后立即转为静态入口不可用错误；快速失败可能没有可见绘制帧，因此 file: 入口不能证明真实 HTTP 等待态。"
+  },
+  "checks": [
+    {"id": "DV1-RET-LOCAL", "status": "pass_static", "scope": "工作区候选源码和 CSS"},
+    {"id": "DV1-RET-REMOTE", "status": "fail", "scope": "公网资源 hash 与候选不一致，等待视觉缺失"},
+    {"id": "DV1-A11Y-03", "status": "insufficient", "scope": "远程旧资源仅有部分 status 语义，未做真实读屏/键盘复验"},
+    {"id": "DV1-RWD-03", "status": "insufficient", "scope": "未取得 320/375/390px 浏览器证据"},
+    {"id": "DV1-RWD-05", "status": "insufficient", "scope": "未取得软键盘与安全区证据"}
+  ],
+  "defects": [
+    {
+      "id": "DVL-01",
+      "severity": "P0",
+      "title": "远程静态资源未绑定工作区加载交互候选",
+      "owner": "客户端软件工程师+部署协调/项目经理",
+      "retest": "同步 JS/CSS 后核对 hash、缓存重新验证，再用真实公网 HTTP 提交请求确认 spinner、进度条和禁用发送按钮可见。"
+    },
+    {
+      "id": "DVL-02",
+      "severity": "P1",
+      "title": "file: 入口快速失败可能吞掉等待态绘制",
+      "owner": "产品经理+客户端软件工程师",
+      "retest": "明确静态入口不可用文案；在 HTTP 测试请求中使用受控延迟复验真正 pending 状态，不以 file: 入口做交互验收。"
+    },
+    {
+      "id": "DVL-03",
+      "severity": "P1",
+      "title": "远程等待态尚无独立浏览器视觉/可访问性证据",
+      "owner": "测试工程师",
+      "retest": "按 1280/390/375/320px、键盘、读屏、reduced-motion 和收起/恢复路径形成截图、AX 和操作记录。"
+    }
+  ],
+  "handoff": {
+    "client": "使用工作区候选版本，不自行改产品范围；提交具体 JS/CSS hash 和发布清单。",
+    "deployment": "更新远程同名资源的缓存策略或版本 URL；不得以用户清缓存代替发布验证。",
+    "qa": "独立验证公网真实版本，不能继承本地源码或旧 VM 结果。",
+    "pm": "协调上述交接并在 QA 证据绑定后更新整体 1.0 状态。"
+  }
+}

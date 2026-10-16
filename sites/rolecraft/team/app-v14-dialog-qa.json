@@ -1,0 +1,239 @@
+{
+  "version": "app-v14-dialog-qa-final-1",
+  "date": "2026-10-12",
+  "timezone": "Asia/Shanghai",
+  "auditor": "independent QA agent",
+  "conclusion": "met_within_scope",
+  "scope": "finite local dialog + authorized detail shell increment, real Node24/BGE and official desktop IAB viewport operations; not whole v13/production or arbitrary Chinese",
+  "clientVersion": "local-workbench-0.14-dialog-detail",
+  "dialogVersion": "content-dialog-0.14-extractive",
+  "finalEngineeringBindings": [
+    "app-v14-dialog-retrieval-binding.json v3 db17b415…",
+    "app-v14-dialog-frontend-binding4.json workbench9099d3… CSS1f20aafb…"
+  ],
+  "finalCandidate": "app-v14-dialog-qa-history/candidate05/received-binding.json",
+  "actualChecks": {
+    "candidate1HTTP": {
+      "requests": 44,
+      "checks": 268,
+      "mechanicalFailed": 5,
+      "manualOriginal": {
+        "pass": 19,
+        "fail": 1
+      },
+      "manualIndependentVariants": {
+        "pass": 5,
+        "fail": 7
+      }
+    },
+    "candidate2HTTP": {
+      "requests": 44,
+      "checks": 292,
+      "pass": 292,
+      "originalInputs": 20,
+      "independentVariants": 12,
+      "boundaryInputs": 8,
+      "legacyInputs": 3,
+      "contextSetup": 1,
+      "manualOriginal": {
+        "pass": 20,
+        "fail": 0
+      },
+      "manualVariants": {
+        "pass": 12,
+        "fail": 0
+      },
+      "runtime": "v24.16.0",
+      "engineModeCounts": {
+        "local_semantic_retrieval": 21,
+        "local_semantic_extractive_dialog": 9,
+        "local_dialog_rules": 14
+      }
+    },
+    "service3ClarificationNarrowHTTP": {
+      "requests": 5,
+      "checks": 5,
+      "passed": 5
+    },
+    "realUI": "10 finite observation groups+DD14-01..07 with stage identities retained; official CUA available",
+    "normalGenerationCalls": 0,
+    "oldTextbookExampleRuns": 0
+  },
+  "defects": [
+    {
+      "id": "DG14-01",
+      "status": "closed_within_original_and_affected_scope",
+      "owner": "内容检索工程师",
+      "evidence": "candidate02/manual-query-matrix.json"
+    },
+    {
+      "id": "DG14-02",
+      "status": "closed_within_original_and_affected_scope",
+      "owner": "内容检索工程师",
+      "evidence": "candidate02/manual-query-matrix.json"
+    },
+    {
+      "id": "DG14-03",
+      "status": "closed_within_original_and_affected_scope",
+      "owner": "内容检索工程师",
+      "evidence": "candidate02/manual-query-matrix.json"
+    },
+    {
+      "id": "DG14-04",
+      "status": "closed_real_original_UI",
+      "owner": "软件工程师",
+      "evidence": "candidate05/independent-ui-final.json"
+    },
+    {
+      "id": "DG14-05",
+      "status": "closed_real_prompt_two_options_and_narrow_HTTP",
+      "owner": "内容检索工程师",
+      "evidence": "candidate05/independent-clarification-http.json + independent-ui-final.json"
+    },
+    {
+      "id": "DG14-06",
+      "status": "closed_real_old_cache_refresh_history_retry_and_failure",
+      "owner": "软件工程师",
+      "evidence": "candidate05/old-cache-ui-seed-events.json + independent-ui-final.json"
+    }
+  ],
+  "footerObservation": "current normal detail footer current-version span actually hidden; non-detail remains; historical identity/error retained",
+  "publicProtection": {
+    "namedProtectedCount": 916,
+    "allMatch": true,
+    "programReceivedCount": 97,
+    "parallelActiveV13Received": 61,
+    "meaning": "administrative exclusions/current increment new records separate; no blanket claim every workspace file frozen"
+  },
+  "cleanup": "app-v14-dialog-qa-history/cleanup-final.json, all3 owned candidate/3 proxy processes exit0; final4485/4496 no listener; official owntab closed + viewport reset; known3 temporary QA DB dirs removed; no4318 operation",
+  "limits": [
+    "32 finite questions do not prove arbitrary semantics; exposed failed variants after author repair are not all unseen holdout",
+    "source-byte checks plus AI question/topic review are not human professional content review",
+    "actual browser viewports1440/1024/375/760, Enter/ShiftEnter; real phone OS soft keyboard and Chinese IME candidate untested",
+    "fault503/5tamper/5.5s late are isolated transport fixtures; model resource corruption and paid/external generation untested",
+    "old v13 allUI/real user records/whole diagrams/downloads/bookmark/note operations not repeated; source/affected finite preservation only",
+    "old v12 39 fences not run; no changed textbook assertions/content audit",
+    "engineMode统计来自响应标签，不作为逐次向量推理调用次数或性能测量"
+  ],
+  "fullProductAssessment": {
+    "standardVersion": "product-creation-2026-10-10",
+    "originalGateFileSha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06",
+    "gates": [
+      {
+        "id": "user_value",
+        "label": "用户价值",
+        "required": true,
+        "owner": "产品经理",
+        "criterion": "目标人群、问题和验证指标在试验前定义，有真实用户证据且达到预定阈值。",
+        "status": "insufficient",
+        "evidenceGap": "没有本轮真实目标用户实验/事前指标实际结果",
+        "nextEvidenceOwner": "用户研究员/产品经理",
+        "nextAction": "定义试点与事前指标，收真实反馈后独立核",
+        "retestCondition": "真实所需领域证据对应明确新版本，独立QA按原门槛核"
+      },
+      {
+        "id": "teaching_quality",
+        "label": "教学覆盖与深度",
+        "required": true,
+        "owner": "课程架构师",
+        "criterion": "能力、章节、练习和作品建立关联；内容覆盖、深度、来源与案例通过内容核对和专业复核。",
+        "status": "insufficient",
+        "evidenceGap": "v12源/有限问答支持核不能替代真人专业内容复核",
+        "nextEvidenceOwner": "课程架构师/内容审校员",
+        "nextAction": "交真人专家及真实教学样本证据再评",
+        "retestCondition": "真实所需领域证据对应明确新版本，独立QA按原门槛核"
+      },
+      {
+        "id": "real_generation",
+        "label": "真实教材生成",
+        "required": true,
+        "owner": "软件工程师",
+        "criterion": "真实模型依学习档案生成教材，保存生成过程、来源及版本，示例验证与失败状态真实。",
+        "status": "fail",
+        "evidenceGap": "此功能是固定教材提取，未按真实学习档案执行生成式模型",
+        "nextEvidenceOwner": "AI生成工程师",
+        "nextAction": "在另行配置/预算授权后取得真实生成和失败来源证据",
+        "retestCondition": "真实所需领域证据对应明确新版本，独立QA按原门槛核"
+      },
+      {
+        "id": "comparative_advantage",
+        "label": "可比差异化优势",
+        "required": true,
+        "owner": "产品经理",
+        "criterion": "选定行业产品及研究基线，在同任务、样本、资源与评分条件下验证差异化指标，并记录专业评审。",
+        "status": "insufficient",
+        "evidenceGap": "没有同任务同条件行业实测与专业判断",
+        "nextEvidenceOwner": "竞品研究员/产品经理",
+        "nextAction": "冻结基线/比较条件并取得实测证据",
+        "retestCondition": "真实所需领域证据对应明确新版本，独立QA按原门槛核"
+      },
+      {
+        "id": "learner_creation",
+        "label": "学习者创造产品能力",
+        "required": true,
+        "owner": "课程架构师",
+        "criterion": "学习者产出可运行 MVP，具备测试、目标用户验证和独立作品评审，并满足预定评分条件。",
+        "status": "insufficient",
+        "evidenceGap": "测试代理问题和自记不是学员真实作品能力",
+        "nextEvidenceOwner": "实训评估员/课程架构师",
+        "nextAction": "核真实独立MVP、用户验证与作品评审",
+        "retestCondition": "真实所需领域证据对应明确新版本，独立QA按原门槛核"
+      },
+      {
+        "id": "reliable_delivery",
+        "label": "生产可靠交付",
+        "required": true,
+        "owner": "软件工程师",
+        "criterion": "真实系统的持久化、账户权限隔离、异常恢复及版本追踪经独立验证，满足明确运行范围。",
+        "status": "fail",
+        "evidenceGap": "本地4318读取交付不等于正式生产范围及新版本权限/恢复运行验收",
+        "nextEvidenceOwner": "后端数据工程师/软件工程师",
+        "nextAction": "定义正式运行范围并做独立权限/持久化/恢复验",
+        "retestCondition": "真实所需领域证据对应明确新版本，独立QA按原门槛核"
+      },
+      {
+        "id": "operating_economics",
+        "label": "成本与运营",
+        "required": true,
+        "owner": "产品经理",
+        "criterion": "真实调用与交付记录包含成本、耗时、质量及维护机制，达到预定资源预算。",
+        "status": "insufficient",
+        "evidenceGap": "无真实生成运营账单/耗时质量/预算比较",
+        "nextEvidenceOwner": "运营分析员/产品经理",
+        "nextAction": "取得真实成本与耗时质量数据再评",
+        "retestCondition": "真实所需领域证据对应明确新版本，独立QA按原门槛核"
+      },
+      {
+        "id": "iteration_trace",
+        "label": "产出复盘与复验",
+        "required": true,
+        "owner": "项目经理",
+        "criterion": "每次产出记录版本、门槛、实际证据、差距、原因、责任人、下一步及复验条件与结果；自评、QA、专业审核分别记录。",
+        "status": "pass",
+        "evidenceGap": "仅本轮6组原反例及受影响复验、分阶段版本/保护/清理闭合",
+        "nextEvidenceOwner": "项目经理",
+        "nextAction": "未来新产物重新独立评审，保持本轮限定",
+        "retestCondition": "真实所需领域证据对应明确新版本，独立QA按原门槛核"
+      }
+    ],
+    "conclusion": "not_met",
+    "decision": "原八必需门槛真实生成/生产fail且其余真人/行业/学习/运营缺证，不用本轮通过抵消",
+    "followUp": "由原唯一领域按新证据/新版本执行，不付费/外联/发布扩大授权"
+  },
+  "evidence": [
+    "app-v14-dialog-qa-history/received-baseline.json",
+    "app-v14-dialog-qa-history/cases-frozen.json",
+    "app-v14-dialog-qa-history/cases-product-clarification.json",
+    "app-v14-dialog-qa-history/candidate01/independent-http.json",
+    "app-v14-dialog-qa-history/candidate01/manual-semantic-review.json",
+    "app-v14-dialog-qa-history/candidate02/independent-http.json",
+    "app-v14-dialog-qa-history/candidate02/manual-query-matrix.json",
+    "app-v14-dialog-qa-history/candidate02/defect-DG14-05.json",
+    "app-v14-dialog-qa-history/candidate04/defect-DG14-06.json",
+    "app-v14-dialog-qa-history/candidate05/independent-clarification-http.json",
+    "app-v14-dialog-qa-history/candidate05/independent-ui-final.json",
+    "app-v14-dialog-qa-history/candidate05/served-transport-binding.json",
+    "app-v14-dialog-qa-history/protected-final.json",
+    "app-v14-dialog-qa-history/cleanup-final.json"
+  ]
+}

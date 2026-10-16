@@ -1,0 +1,834 @@
+{
+  "scope": "editor_long_term_memory_configuration_only",
+  "status": "met_within_memory_configuration_scope",
+  "baseline_recorded_at": "2026-10-14T07:06:36.307192+00:00",
+  "baseline": {
+    "authorized_targets": [
+      {
+        "path": "AGENTS.md",
+        "exists": true,
+        "bytes": 43841,
+        "sha256": "866c87d4be7d1f9a20930ab538a1e0ba5cc17ae313e75f63b3a6a05b5970610c"
+      },
+      {
+        "path": "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+        "exists": true,
+        "bytes": 1769,
+        "sha256": "a3c9740587879e9777a92753f36e7db36d94844872d5da0aa2504a49d9823cf5"
+      },
+      {
+        "path": "sites/rolecraft/team/employees/core/README.md",
+        "exists": true,
+        "bytes": 2682,
+        "sha256": "68130e4f96dd99af978552f105c074f5ca6afefd460500a2367837e2be04c1e4"
+      },
+      {
+        "path": "sites/rolecraft/team/README.md",
+        "exists": true,
+        "bytes": 13164,
+        "sha256": "0af47558ee10a783220e46b6bc1dccf204b9b16795d2f5bd82adfca790fc44c2"
+      },
+      {
+        "path": "sites/rolecraft/team/employees/core/textbook-developer/ROLE.md",
+        "exists": true,
+        "bytes": 5096,
+        "sha256": "30dc5c7f39c3ad3a37ff55bd583c99e19002ee13a2a266004276d9d866c5bc7d"
+      },
+      {
+        "path": "sites/rolecraft/team/employees/core/textbook-developer/MEMORY.md",
+        "exists": true,
+        "bytes": 2043,
+        "sha256": "27f07d092fcf75692bd464a4e80e96254f54421c93e8097f4efe88516a3ee420"
+      },
+      {
+        "path": "sites/rolecraft/team/employees/core/textbook-developer/CHANGELOG.md",
+        "exists": false
+      },
+      {
+        "path": "sites/rolecraft/team/editor-quality-memory-handoff.md",
+        "exists": false
+      }
+    ],
+    "protected": [
+      {
+        "path": "sites/rolecraft/team/ANSWER_QUALITY_STANDARD.md",
+        "exists": true,
+        "bytes": 8637,
+        "sha256": "e1f55b5a83ae73cd3b300d130ac557bc04031b3263da9642631c6c2af1fe2b97"
+      },
+      {
+        "path": "sites/rolecraft/team/answer-quality-standard-curriculum.md",
+        "exists": true,
+        "bytes": 8194,
+        "sha256": "26ed0ac89eab39dce4a459946e587cc838034dfd5baa968522869eb8ea934c29"
+      },
+      {
+        "path": "sites/rolecraft/team/answer-quality-standard-qa.md",
+        "exists": true,
+        "bytes": 8167,
+        "sha256": "a348cab183c6ac30b55b95d8cc103ba3210b0f82500a6050e7d607951b25239b"
+      },
+      {
+        "path": "sites/rolecraft/team/answer-quality-standard-qa.json",
+        "exists": true,
+        "bytes": 9202,
+        "sha256": "a3661b339a774c42500d62fff10b89e56f23576df862058185da38afc2f74d1d"
+      },
+      {
+        "path": "sites/rolecraft/team/TEXTBOOK_WRITING_STANDARD.md",
+        "exists": true,
+        "bytes": 11455,
+        "sha256": "46826414794822b5e2c836edad68ba6122f8e551d7669bcc8917bb315f5a6aa1"
+      },
+      {
+        "path": "sites/rolecraft/dist/interview-prep-v1-prototype.html",
+        "exists": true,
+        "bytes": 43336,
+        "sha256": "bde8c588f9aab88f9e36bb1a365aa14037812de04892401d02bfcc0355f68b65"
+      },
+      {
+        "path": "sites/rolecraft/team/employees/core/manifest.json",
+        "exists": true,
+        "bytes": 2491,
+        "sha256": "42a9a92a50670b5add71f37b1a71e44375929d93965d2c4895eec27e2d7bdee1"
+      },
+      {
+        "path": "sites/rolecraft/team/employees/core/textbook-developer/MEMORY_SCHEMA.md",
+        "exists": true,
+        "bytes": 4130,
+        "sha256": "759bb9f8ee4564d1a4976aaedee371c987e8f0c181abb8c2afe6f198291e49a5"
+      }
+    ]
+  },
+  "limitations": [
+    "Baseline and final document/configuration review only. No application or textbook execution.",
+    "Existing answer quality and full product status not upgraded by this configuration work."
+  ],
+  "final_recorded_at": "2026-10-14T07:07:22.667017+00:00",
+  "final_snapshot": {
+    "authorized_targets": [
+      {
+        "path": "AGENTS.md",
+        "exists": true,
+        "bytes": 44671,
+        "sha256": "38d67d74844885b9496ad706d67c87e18fa92ac6b3f12dc18e959efac6bd8048",
+        "change": "modified"
+      },
+      {
+        "path": "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+        "exists": true,
+        "bytes": 4035,
+        "sha256": "e7d489a67e0badf7c9f365d30b8b6545915c7605be82dc80ca557283ea01976a",
+        "change": "modified"
+      },
+      {
+        "path": "sites/rolecraft/team/employees/core/README.md",
+        "exists": true,
+        "bytes": 3718,
+        "sha256": "d912f74e6cf6c53cdeffcbdd1bfb34c3efc882c0de208f902488536d3c03f1da",
+        "change": "modified"
+      },
+      {
+        "path": "sites/rolecraft/team/README.md",
+        "exists": true,
+        "bytes": 13629,
+        "sha256": "883e35b6a31812479ae41c135fc4166786b97e3b92078fa9c7048efbc0054ca6",
+        "change": "modified"
+      },
+      {
+        "path": "sites/rolecraft/team/employees/core/textbook-developer/ROLE.md",
+        "exists": true,
+        "bytes": 6751,
+        "sha256": "0b75ef51280a511446edace72782e3f56bcef4650e068964d5386c1ae7d1b784",
+        "change": "modified"
+      },
+      {
+        "path": "sites/rolecraft/team/employees/core/textbook-developer/MEMORY.md",
+        "exists": true,
+        "bytes": 6276,
+        "sha256": "726bd0f60d12b36e7ddd55faccbf4d04636a13ca48c4745a01e3e93f47478fcb",
+        "change": "modified"
+      },
+      {
+        "path": "sites/rolecraft/team/employees/core/textbook-developer/CHANGELOG.md",
+        "exists": true,
+        "bytes": 1325,
+        "sha256": "67bea92e0a75ad33936345c4f80cf0d7c17d56dc1fc7b31278f231e36c0427b5",
+        "change": "created"
+      },
+      {
+        "path": "sites/rolecraft/team/editor-quality-memory-handoff.md",
+        "exists": true,
+        "bytes": 3982,
+        "sha256": "e1bb59f2349848d2e18f34cab8139b0d18d899316a036124d3e47979b703fb49",
+        "change": "created"
+      }
+    ],
+    "protected": [
+      {
+        "path": "sites/rolecraft/team/ANSWER_QUALITY_STANDARD.md",
+        "exists": true,
+        "bytes": 8637,
+        "sha256": "e1f55b5a83ae73cd3b300d130ac557bc04031b3263da9642631c6c2af1fe2b97",
+        "matches_baseline": true
+      },
+      {
+        "path": "sites/rolecraft/team/answer-quality-standard-curriculum.md",
+        "exists": true,
+        "bytes": 8194,
+        "sha256": "26ed0ac89eab39dce4a459946e587cc838034dfd5baa968522869eb8ea934c29",
+        "matches_baseline": true
+      },
+      {
+        "path": "sites/rolecraft/team/answer-quality-standard-qa.md",
+        "exists": true,
+        "bytes": 8167,
+        "sha256": "a348cab183c6ac30b55b95d8cc103ba3210b0f82500a6050e7d607951b25239b",
+        "matches_baseline": true
+      },
+      {
+        "path": "sites/rolecraft/team/answer-quality-standard-qa.json",
+        "exists": true,
+        "bytes": 9202,
+        "sha256": "a3661b339a774c42500d62fff10b89e56f23576df862058185da38afc2f74d1d",
+        "matches_baseline": true
+      },
+      {
+        "path": "sites/rolecraft/team/TEXTBOOK_WRITING_STANDARD.md",
+        "exists": true,
+        "bytes": 11455,
+        "sha256": "46826414794822b5e2c836edad68ba6122f8e551d7669bcc8917bb315f5a6aa1",
+        "matches_baseline": true
+      },
+      {
+        "path": "sites/rolecraft/dist/interview-prep-v1-prototype.html",
+        "exists": true,
+        "bytes": 43336,
+        "sha256": "bde8c588f9aab88f9e36bb1a365aa14037812de04892401d02bfcc0355f68b65",
+        "matches_baseline": true
+      },
+      {
+        "path": "sites/rolecraft/team/employees/core/manifest.json",
+        "exists": true,
+        "bytes": 2491,
+        "sha256": "42a9a92a50670b5add71f37b1a71e44375929d93965d2c4895eec27e2d7bdee1",
+        "matches_baseline": true
+      },
+      {
+        "path": "sites/rolecraft/team/employees/core/textbook-developer/MEMORY_SCHEMA.md",
+        "exists": true,
+        "bytes": 4130,
+        "sha256": "759bb9f8ee4564d1a4976aaedee371c987e8f0c181abb8c2afe6f198291e49a5",
+        "matches_baseline": true
+      }
+    ]
+  },
+  "relative_link_checks": [
+    {
+      "source": "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+      "label": "参考答案最低质量标准",
+      "target": "sites/rolecraft/team/ANSWER_QUALITY_STANDARD.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+      "label": "教学交接",
+      "target": "sites/rolecraft/team/answer-quality-standard-curriculum.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/employees/core/README.md",
+      "label": "共享偏好 CORE-PREF-EDITOR-001",
+      "target": "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/employees/core/README.md",
+      "label": "教材研发员记忆 TEXT-MEM-0002",
+      "target": "sites/rolecraft/team/employees/core/textbook-developer/MEMORY.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/employees/core/README.md",
+      "label": "答案质量标准",
+      "target": "sites/rolecraft/team/ANSWER_QUALITY_STANDARD.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "参考答案质量标准",
+      "target": "sites/rolecraft/team/ANSWER_QUALITY_STANDARD.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "共享偏好",
+      "target": "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "教材研发员记忆",
+      "target": "sites/rolecraft/team/employees/core/textbook-developer/MEMORY.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "视觉表达优先",
+      "target": "sites/rolecraft/team/DESIGN_COMMUNICATION_STANDARD.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "UI-VIS 任务",
+      "target": "sites/rolecraft/team/TASKS.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "SPECIALISTS.md",
+      "target": "sites/rolecraft/team/SPECIALISTS.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "TASKS.md",
+      "target": "sites/rolecraft/team/TASKS.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "独立QA",
+      "target": "sites/rolecraft/team/app-v11-qa.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "本轮复盘",
+      "target": "sites/rolecraft/team/RETROSPECTIVES.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "本文件",
+      "target": "sites/rolecraft/team/README.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "任务记录",
+      "target": "sites/rolecraft/team/TASKS.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "product-review.md",
+      "target": "sites/rolecraft/team/product-review.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "curriculum-review.md",
+      "target": "sites/rolecraft/team/curriculum-review.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "design-review.md",
+      "target": "sites/rolecraft/team/design-review.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "engineering-review.md",
+      "target": "sites/rolecraft/team/engineering-review.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "qa-review.md",
+      "target": "sites/rolecraft/team/qa-review.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "任务记录",
+      "target": "sites/rolecraft/team/TASKS.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "产品标准",
+      "target": "sites/rolecraft/team/product-standard.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "教材标准",
+      "target": "sites/rolecraft/team/curriculum-standard.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "课程数据",
+      "target": "sites/rolecraft/team/curriculum-data.json",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "设计规范",
+      "target": "sites/rolecraft/team/design-standard.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "质量标准",
+      "target": "sites/rolecraft/team/quality-standard.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "课程结构验证",
+      "target": "sites/rolecraft/team/curriculum-validation.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "工程交付",
+      "target": "sites/rolecraft/team/engineering-delivery.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "独立复验",
+      "target": "sites/rolecraft/team/qa-v02-review.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "产出复盘",
+      "target": "sites/rolecraft/team/RETROSPECTIVES.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "任务记录",
+      "target": "sites/rolecraft/team/TASKS.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "完整产品门槛",
+      "target": "sites/rolecraft/team/product-creation-standard.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "八项门槛数据",
+      "target": "sites/rolecraft/team/product-gates.json",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "产品创造教学路线",
+      "target": "sites/rolecraft/team/product-creation-curriculum.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "七阶段路线数据",
+      "target": "sites/rolecraft/team/creation-path.json",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "路线与达标复盘交互",
+      "target": "sites/rolecraft/team/product-creation-design.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "独立产品审计方法",
+      "target": "sites/rolecraft/team/product-audit-method.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "v0.3实现与数据交接",
+      "target": "sites/rolecraft/team/engineering-v03-delivery.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "v0.3逻辑检查与失败复验",
+      "target": "sites/rolecraft/team/qa-v03-review.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "当前产品八门槛审计",
+      "target": "sites/rolecraft/team/product-audit-v03.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "结构化证据",
+      "target": "sites/rolecraft/team/product-audit-v03.json",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "本地交付记录",
+      "target": "sites/rolecraft/team/LOCAL_MVP_DELIVERY.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "独立验收",
+      "target": "sites/rolecraft/team/qa-v04-review.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "当前完整产品审计",
+      "target": "sites/rolecraft/team/product-audit-v04.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "Markdown全文",
+      "target": "sites/rolecraft/team/textbook-v05.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "结构化原稿",
+      "target": "sites/rolecraft/team/textbook-v05.json",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "作者返修记录",
+      "target": "sites/rolecraft/team/textbook-v05-author.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "独立AI文稿审校",
+      "target": "sites/rolecraft/team/textbook-v05-content-review.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "独立QA",
+      "target": "sites/rolecraft/team/qa-v05-review.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "本版八门槛审计",
+      "target": "sites/rolecraft/team/product-audit-v05.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "专业正文写作与审校标准",
+      "target": "sites/rolecraft/team/TEXTBOOK_WRITING_STANDARD.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "单篇规格",
+      "target": "sites/rolecraft/team/textbook-v07-spec.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "TASKS.md",
+      "target": "sites/rolecraft/team/TASKS.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "复盘",
+      "target": "sites/rolecraft/team/RETROSPECTIVES.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "完整控制循环试读",
+      "target": "sites/rolecraft/textbooks/agent-control-loop-v07.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "作者交接",
+      "target": "sites/rolecraft/team/textbook-v07-author.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "独立AI内容审校",
+      "target": "sites/rolecraft/team/textbook-v07-content-review.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "文稿交付QA",
+      "target": "sites/rolecraft/team/textbook-v07-qa.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "专项员工名册",
+      "target": "sites/rolecraft/team/employees/v12-evidence/README.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "核心员工长期记忆系统",
+      "target": "sites/rolecraft/team/employees/core/README.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "项目经理",
+      "target": "sites/rolecraft/team/employees/core/project-manager/ROLE.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "产品经理",
+      "target": "sites/rolecraft/team/employees/core/product-manager/ROLE.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "产品设计师",
+      "target": "sites/rolecraft/team/employees/core/product-designer/ROLE.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "软件工程师",
+      "target": "sites/rolecraft/team/employees/core/software-engineer/ROLE.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "课程架构师",
+      "target": "sites/rolecraft/team/employees/core/curriculum-architect/ROLE.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "教材研发员",
+      "target": "sites/rolecraft/team/employees/core/textbook-developer/ROLE.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "内容审校员",
+      "target": "sites/rolecraft/team/employees/core/content-reviewer/ROLE.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "实训评估员",
+      "target": "sites/rolecraft/team/employees/core/practicum-evaluator/ROLE.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "共享用户偏好",
+      "target": "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/README.md",
+      "label": "独立配置QA",
+      "target": "sites/rolecraft/team/employees/core/qa-memory-pm.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/employees/core/textbook-developer/MEMORY.md",
+      "label": "参考答案最低质量标准",
+      "target": "sites/rolecraft/team/ANSWER_QUALITY_STANDARD.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/employees/core/textbook-developer/MEMORY.md",
+      "label": "教学组织与作者交接",
+      "target": "sites/rolecraft/team/answer-quality-standard-curriculum.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/editor-quality-memory-handoff.md",
+      "label": "长期记忆",
+      "target": "sites/rolecraft/team/employees/core/textbook-developer/MEMORY.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/editor-quality-memory-handoff.md",
+      "label": "角色档案",
+      "target": "sites/rolecraft/team/employees/core/textbook-developer/ROLE.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/editor-quality-memory-handoff.md",
+      "label": "变更记录",
+      "target": "sites/rolecraft/team/employees/core/textbook-developer/CHANGELOG.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/editor-quality-memory-handoff.md",
+      "label": "产品质量标准",
+      "target": "sites/rolecraft/team/ANSWER_QUALITY_STANDARD.md",
+      "exists": true
+    },
+    {
+      "source": "sites/rolecraft/team/editor-quality-memory-handoff.md",
+      "label": "课程交接",
+      "target": "sites/rolecraft/team/answer-quality-standard-curriculum.md",
+      "exists": true
+    }
+  ],
+  "conclusion": "用户确认的编辑质量底线已持久化为带来源和版本的跨职业长期记忆，并有读取与迁移交接。结论仅限本次文档/配置；不证明现有题解已补齐或完整产品达标。",
+  "checks": [
+    {
+      "id": "EM-01",
+      "criterion": "用户原话和已确认依据",
+      "status": "pass",
+      "evidence": "共享偏好和 TEXT-MEM-0002 保留关于多角度细致回答及编辑长期、各职业适用的两条用户原话，记录 2026-10-14；标为 user_confirmed / confirmed，不以代理自查替代用户确认。",
+      "locations": [
+        "AGENTS.md:48-50",
+        "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md:29-38",
+        "sites/rolecraft/team/employees/core/textbook-developer/MEMORY.md:24"
+      ]
+    },
+    {
+      "id": "EM-02",
+      "criterion": "跨职业范围及适配",
+      "status": "pass",
+      "evidence": "标准适用于各职业编辑及后续适用项目；按对应职业读者、实践和证据适配，不移植 Agent 术语、代码要求或先修。",
+      "locations": [
+        "sites/rolecraft/team/employees/core/textbook-developer/MEMORY.md",
+        "sites/rolecraft/team/employees/core/textbook-developer/ROLE.md"
+      ]
+    },
+    {
+      "id": "EM-03",
+      "criterion": "可独立读取的记忆正文",
+      "status": "pass",
+      "evidence": "TEXT-MEM-0002 和 CORE-PREF-EDITOR-001 均保存执行要点；不是仅记录标准名称或旧项目链接，迁移要求保留正文。",
+      "locations": [
+        "sites/rolecraft/team/employees/core/textbook-developer/MEMORY.md",
+        "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md"
+      ]
+    },
+    {
+      "id": "EM-04",
+      "criterion": "启动入口与交接",
+      "status": "pass",
+      "evidence": "AGENTS、两层 README、ROLE 均给出读取/交接入口，ROLE 明确两个条目 ID 及当前项目标准；明确不声称平台自动全局加载。",
+      "locations": [
+        "AGENTS.md",
+        "sites/rolecraft/team/README.md",
+        "sites/rolecraft/team/employees/core/README.md",
+        "sites/rolecraft/team/employees/core/textbook-developer/ROLE.md"
+      ]
+    },
+    {
+      "id": "EM-05",
+      "criterion": "适用例外与未确认偏好",
+      "status": "pass",
+      "evidence": "保留用户明确简答/摘要需求；不以短提纲冒充完整解析，不新增固定字数、栏目数、统一代码、技术先修或未经确认的文风要求。",
+      "locations": [
+        "sites/rolecraft/team/employees/core/textbook-developer/MEMORY.md",
+        "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md"
+      ]
+    },
+    {
+      "id": "EM-06",
+      "criterion": "旧记忆与声明一致",
+      "status": "pass",
+      "evidence": "收到时读取的 TEXT-MEM-0001 与最终逐段核对一致；顶部未确认偏好声明现明确排除已确认条目，未与 TEXT-MEM-0002 冲突。该项为全文人工核对，不宣称存在独立旧条哈希基线。",
+      "locations": [
+        "sites/rolecraft/team/employees/core/textbook-developer/MEMORY.md"
+      ]
+    },
+    {
+      "id": "EM-07",
+      "criterion": "格式、版本与变更来源",
+      "status": "pass",
+      "evidence": "新条目含既有 schema 必填信息及限制、非推断、替代关系、复核日期；版本 1.0.0，替代 none；shared profile 从 core-user-profile-1 更新为 2 并记变更，CHANGELOG 从不存在新增。",
+      "locations": [
+        "sites/rolecraft/team/employees/core/textbook-developer/MEMORY_SCHEMA.md",
+        "sites/rolecraft/team/employees/core/textbook-developer/MEMORY.md",
+        "sites/rolecraft/team/employees/core/textbook-developer/CHANGELOG.md",
+        "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md"
+      ]
+    },
+    {
+      "id": "EM-08",
+      "criterion": "职责与真实证据边界",
+      "status": "pass",
+      "evidence": "编辑仍由教材研发员负责，课程/产品/独立审校/QA 未合并；明确不借此次记录授权批量改稿，也不声称现有题解、读者效果或完整目标已达标。",
+      "locations": [
+        "sites/rolecraft/team/employees/core/textbook-developer/ROLE.md",
+        "sites/rolecraft/team/editor-quality-memory-handoff.md"
+      ]
+    },
+    {
+      "id": "EM-09",
+      "criterion": "指定保护文件",
+      "status": "pass",
+      "evidence": "8 个指定文件起止字节数与 SHA256 全部一致：质量标准、课程交接、旧 QA 两文件、正文标准、原型、manifest 和记忆 schema。仅对该命名列表作结论，不扩张为全工作区不变。",
+      "locations": [
+        "baseline.protected",
+        "final_snapshot.protected"
+      ]
+    },
+    {
+      "id": "EM-10",
+      "criterion": "相对链接可达",
+      "status": "pass",
+      "evidence": "对 7 个非 AGENTS 目标 Markdown 文件的 78 处相对 Markdown 链接核文件存在，缺失 0；不包含浏览器、锚点语义、HTTP 或跨项目真实加载验证。",
+      "locations": [
+        "relative_link_checks"
+      ]
+    }
+  ],
+  "defects": [],
+  "verification": {
+    "document_reading": "independent manual review of final authorized targets against user instructions and existing schema/standards",
+    "hash_comparison": {
+      "protected_count": 8,
+      "identical_count": 8
+    },
+    "relative_links": {
+      "checked": 78,
+      "missing": 0
+    },
+    "application_runs": 0,
+    "code_example_runs": 0,
+    "real_cross_project_load_runs": 0
+  },
+  "limits_and_next_actions": [
+    {
+      "item": "现有十题内容未修改；超时题完整解析、其余九题逐题审校尚未由本轮完成",
+      "owner": "教材研发员、内容审校员、测试工程师",
+      "next": "在对应正文任务中完成内容生产、审校和当版 QA，不继承本次配置通过。"
+    },
+    {
+      "item": "跨项目真实读取/长期使用效果未执行验证；此轮只核文件与启动约定",
+      "owner": "后续项目经理与教材研发员",
+      "next": "在首次新职业/新项目任务中记录实际读取的记忆 ID、职业适配、交接与产物证据。"
+    },
+    {
+      "item": "完整培养与行业先进产品目标未获本轮重新评估或通过",
+      "owner": "原八门槛各责任岗位",
+      "next": "保持原 not_met；按原门槛补齐独立真实证据。"
+    }
+  ]
+}

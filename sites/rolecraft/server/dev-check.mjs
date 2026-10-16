@@ -1,0 +1,80 @@
+// Developer checks only; isolated temporary SQLite and synthetic accounts, no model or user data.
+import { mkdtempSync, rmSync } from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import { DatabaseSync } from 'node:sqlite';
+import { createRolecraftServer } from './index.mjs';
+const dir=mkdtempSync(path.join(os.tmpdir(),'rolecraft-backend-dev-'));
+let app=createRolecraftServer({dataDir:dir});
+let count=0;
+const check=(v,label)=>{assert.ok(v,label);count++;};
+async function start(){await new Promise(r=>app.server.listen(0,'127.0.0.1',r));return `http://127.0.0.1:${app.server.address().port}`;}
+let url=await start();
+async function request(endpoint,{method='GET',data,cookie='',csrf,headers={}}={}) {
+  const r=await fetch(url+endpoint,{method,headers:{...(data?{'content-type':'application/json'}:{}),...(cookie?{cookie}:{}),...(csrf?{'X-CSRF-Token':csrf}:{}),...headers},body:data?JSON.stringify(data):undefined});
+  const text=await r.text();let b;try{b=JSON.parse(text);}catch{b=text;}return {status:r.status,b,cookie:r.headers.get('set-cookie')?.split(';')[0]};
+}
+try {
+  check((await request('/api/auth/me')).status===401,'private unauthenticated denied');
+  const a=await request('/api/auth/register',{method:'POST',data:{email:'a@dev.invalid',password:'isolated-development-password-a'}});
+  const b=await request('/api/auth/register',{method:'POST',data:{email:'b@dev.invalid',password:'isolated-development-password-b'}});
+  check(a.status===201&&b.status===201,'two actual server development accounts');
+  check(a.b.user.id!==b.b.user.id,'unique identities');
+  const options={cookie:a.cookie,csrf:a.b.csrfToken};
+  check((await request('/api/profile',{method:'PUT',cookie:a.cookie,data:{startingPoint:'beginner',goal:'开发自查'}})).status===403,'CSRF required');
+  check((await request('/api/profile',{method:'PUT',...options,data:{startingPoint:'experienced'}})).status===400,'invalid learning level denied');
+  const p=await request('/api/profile',{method:'PUT',...options,data:{startingPoint:'beginner',goal:'开发自查'}});
+  check(p.status===200&&p.b.profile.version===1,'profile persistent revision');
+  check((await request('/api/profile',{cookie:b.cookie})).b.profile===null,'profiles isolated');
+  check((await request('/api/profile',{method:'PUT',...options,data:{startingPoint:'beginner'},headers:{Origin:'https://evil.example'}})).status===403,'foreign origin blocked');
+  const blocked=await request('/api/generation-jobs',{method:'POST',...options,data:{moduleId:'e03',idempotencyKey:'dev_missing_config'}});
+  check(blocked.status===409&&['config_missing','budget_missing'].includes(blocked.b.error.code),'missing generation honest blocking');
+  check((await request('/api/generation-jobs',{cookie:a.cookie})).b.jobs.length===0,'blocked generation no mock job or chapter');
+  check((await request('/api/generation-jobs',{method:'POST',...options,data:{moduleId:'e05',idempotencyKey:'not_allowed'}})).status===400,'invalid module rejected');
+  const sub=await request('/api/submissions',{method:'POST',...options,data:{moduleId:'e03',chapterId:null,productTitle:'开发夹具',productVersion:'test-1'}});
+  check(sub.status===201&&sub.b.submission.evidenceStatus==='incomplete','partial evidence saved honestly');
+  check((await request(`/api/submissions/${sub.b.submission.id}`,{cookie:b.cookie})).status===404,'foreign submission hidden');
+  check((await request('/api/reviews',{method:'POST',cookie:b.cookie,csrf:b.b.csrfToken,data:{submissionId:sub.b.submission.id}})).status===404,'foreign review association rejected');
+  check((await request('/api/reviews',{method:'POST',...options,data:{submissionId:sub.b.submission.id,type:'independent',verdict:'pass'}})).status===400,'forged independent review rejected');
+  const review=await request('/api/reviews',{method:'POST',...options,data:{submissionId:sub.b.submission.id,result:'未运行',gap:'缺证',nextAction:'实际执行',evidence:[]}});
+  check(review.status===201&&review.b.review.type==='self_assessment'&&review.b.review.independentStatus==='unreviewed','self assessment cannot certify');
+  const ex=await request('/api/export',{cookie:b.cookie});check(ex.b.submissions.length===0&&ex.b.reviews.length===0,'export account isolation');
+  check(!JSON.stringify(ex.b).includes('password_hash'),'exports exclude credentials');
+  check((await request('/api/submissions',{method:'POST',...options,data:{moduleId:'e03',productTitle:'fixture',productVersion:'1',artifactUrl:'javascript:alert(1)'}})).status===400,'unsafe URL rejected');
+  check((await request('/api/profile',{method:'PUT',...options,data:{startingPoint:'beginner',goal:'x'.repeat(140000)}})).status===413,'request size bound');
+  check((await request('/api/auth/me',{cookie:'rolecraftSession='+a.b.user.id})).status===401,'client identity not authentication');
+  // Explicit synthetic database fixtures only, never model success evidence.
+  const fixtureDb=new DatabaseSync(path.join(dir,'rolecraft.sqlite'));
+  const fixtureInput=JSON.stringify({moduleId:'e03',profileSnapshot:{startingPoint:'beginner'},versions:{product:'developer-fixture'}});
+  const fixtureTime=new Date().toISOString();
+  const insertJob=fixtureDb.prepare('INSERT INTO jobs(id,user_id,idem,input_hash,input,status,created_at,updated_at,lease_token,lease_until,worker_id) VALUES(?,?,?,?,?,?,?,?,?,?,?)');
+  insertJob.run('dev-queued-cancel',a.b.user.id,'dev_cancel_fixture','fixture-hash',fixtureInput,'queued',fixtureTime,fixtureTime,0,null,null);
+  check((await request('/api/generation-jobs/dev-queued-cancel',{cookie:b.cookie})).status===404,'foreign task denied');
+  const cancelled=await request('/api/generation-jobs/dev-queued-cancel/cancel',{method:'POST',...options,data:{}});
+  check(cancelled.b.job.status==='cancelled','queued task cancellation persisted');
+  const cancelAgain=await request('/api/generation-jobs/dev-queued-cancel/cancel',{method:'POST',...options,data:{}});
+  check(cancelAgain.b.job.status==='cancelled','repeat cancellation idempotent');
+  insertJob.run('dev-expired-running',a.b.user.id,'dev_interrupted_fixture','fixture-hash',fixtureInput,'running',fixtureTime,fixtureTime,4,Date.now()-1000,'dead-worker');
+  fixtureDb.prepare('INSERT INTO attempts(id,job_id,number,status,lease_token,started_at) VALUES(?,?,?,?,?,?)').run('dev-attempt','dev-expired-running',1,'running',4,fixtureTime);
+  insertJob.run('dev-queued-missing',a.b.user.id,'dev_missing_fixture','fixture-hash',fixtureInput,'queued',fixtureTime,fixtureTime,0,null,null);
+  await new Promise(r=>setTimeout(r,1200));
+  const recovered=await request('/api/generation-jobs/dev-expired-running',{cookie:a.cookie});
+  check(recovered.b.job.status==='failed'&&recovered.b.job.error.code==='interrupted','expired running fails rather than reissues');
+  check(recovered.b.attempts[0].providerOutcomeUnknown===true,'uncertain provider outcome retained');
+  check(recovered.b.attempts[0].leaseToken===4,'old attempt lease history retained');
+  check(fixtureDb.prepare('SELECT lease_token FROM jobs WHERE id=?').get('dev-expired-running').lease_token===5,'expired worker fenced by new token');
+  const failed=await request('/api/generation-jobs/dev-queued-missing',{cookie:a.cookie});
+  check(failed.b.job.status==='failed'&&failed.b.job.error.code==='config_missing','queued attempt real service fails honestly without config');
+  check(failed.b.attempts.length===1&&failed.b.events.map(e=>e.type).includes('failed'),'attempt and ordered terminal event persisted');
+  check((await request('/api/generation-jobs/dev-expired-running/retry',{method:'POST',...options,data:{idempotencyKey:'retry_no_config'}})).status===409,'explicit retry requires config');
+  check((await request('/api/chapters',{cookie:a.cookie})).b.chapters.length===0,'failed/cancelled fixture no success chapter');
+  fixtureDb.close();
+  await app.close();app=createRolecraftServer({dataDir:dir});url=await start();
+  check((await request('/api/profile',{cookie:a.cookie})).b.profile.version===1,'SQLite profile survives restart');
+  check((await request('/api/submissions',{cookie:a.cookie})).b.submissions.length===1,'SQLite artifacts survive restart');
+  check((await request('/api/reviews',{cookie:a.cookie})).b.reviews.length===1,'SQLite reflection survives restart');
+  check((await request('/api/auth/logout',{method:'POST',...options,data:{}})).status===200,'logout');
+  check((await request('/api/auth/me',{cookie:a.cookie})).status===401,'session revoked server side');
+  console.log(`Backend developer checks: ${count}/${count} passed; real SQLite + loopback HTTP; no provider call.`);
+} finally {await app.close();rmSync(dir,{recursive:true,force:true});}

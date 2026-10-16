@@ -1,0 +1,48 @@
+{
+  "defectId": "REV-QA-LINK-01",
+  "discoveryStatus": "not_met",
+  "immutableDiscoveryRecord": true,
+  "sourceBindings": [
+    {
+      "path": "sites/rolecraft/dist/interview-answers-v1-data.js",
+      "bytes": 1522663,
+      "sha256": "da904df28e346c15193df969cf79981c3eeb7c39eefd5065c264c96a2addb48d"
+    },
+    {
+      "path": "sites/rolecraft/dist/interview-answer-renderer.js",
+      "bytes": 8610,
+      "sha256": "dc74721e24110d1b932f687e5090d9457b5cbc720150d0ab566b7c10df7147b7"
+    }
+  ],
+  "actual": "Different labels for separate sections of the same textbook file all selected the first file-level sourceLinks entry.",
+  "impact": {
+    "localOccurrences": 372,
+    "wrongTargets": 118,
+    "affectedAnswers": 62
+  },
+  "browserOriginal": {
+    "page": "http://127.0.0.1:4464/interview-prep-v1-prototype.html",
+    "answer": "P02",
+    "label": "10.3 最关键的崩溃窗口 工单创建成功 结果尚未提交",
+    "expected": "index.html#learn/agent/c01-control-loop/s-8261016926be",
+    "actual": "index.html#learn/agent/c01-control-loop/s-717cb810447d",
+    "observedFocus": "6 先核对未决动作 再让模型继续"
+  },
+  "additionalOriginals": [
+    {
+      "label": "2 控制权在运行时 聊天上下文只是一种投影",
+      "expectedSection": "s-81f9aaeecb60",
+      "actualSection": "s-717cb810447d"
+    },
+    {
+      "label": "三个提交点定义可恢复事实",
+      "expectedSection": "s-c2209725ec11",
+      "actualSection": "s-2cd345377707"
+    }
+  ],
+  "evidence": [
+    "integration-data/assessment.md",
+    "integration-data/link-label-result.json"
+  ],
+  "laterStatusLocation": "integration-report.json#/defects"
+}

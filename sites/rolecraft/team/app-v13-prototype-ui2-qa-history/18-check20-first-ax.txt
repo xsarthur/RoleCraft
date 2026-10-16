@@ -1,0 +1,43 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4475/#check".
+1 AXWebArea 职造 · Agent 学习工作台, URL: 127.0.0.1:4475/#check
+	2 link Description: 跳到主要内容, Value: 127.0.0.1:4475/#main-content
+	3 container primary-sidebar
+		4 link Description: 职 职造 Agent 开发学习, Value: 127.0.0.1:4475/#home
+		5 container 主导航
+			6 button 首页
+			7 button 课程学习
+			8 button 题库浏览
+			9 button 学习记录
+			10 button 个人设置
+		11 text 当前学习方向
+		12 text Agent 开发者
+		13 link Description: 本机学习者 记录保存在此浏览器, Value: 127.0.0.1:4475/#settings
+	14 container main-content
+		15 container
+			100 text 检验学习结果
+			101 text 从看过的知识点出题，只作本人自评
+		18 container app
+			102 heading 本次自评 · 1 / 2, Value: 1
+				103 text 本次自评 · 1 / 2
+			104 text 先作答或默答，再看教材原文，最后由你自评
+			105 text 适用题不足 20 道，本次使用全部 2 道，不重复补足。
+			106 heading ReAct 如何组织推理、行动与观察？它与一次性生成计划有什么不同？, Value: 2
+				107 text ReAct 如何组织推理、行动与观察？它与一次性生成计划有什么不同？
+			108 text 我的回答（可默答后直接核对）
+			109 text entry area (settable) 我的回答（可默答后直接核对）, ID: v13-own-answer
+			110 button (collapsed) 查看教材参考分析, Secondary Actions: Expand
+				111 text 查看教材参考分析
+			112 checkbox (settable, integer) Description: 如果我自评答错，加入未掌握列表, Value: 1, ID: v13-add-wrong
+			113 checkbox 我答对了（自评）, Value: 0
+			114 checkbox 我答错了（自评）, Value: 0
+			115 checkbox 跳过, Value: 0
+			116 text 答对不会自动把题目标为已掌握；题状态仍由你明确标注。
+		98 container
+			99 text 职造 · Agent 开发学习 教材 v12 · 本浏览器保存
+	117 container lw-find-form
+		118 text 查教材
+		119 text entry area (settable) 查教材, ID: lw-query
+		120 button 查找
+		121 button (collapsed) Description: 展开检索结果, Secondary Actions: Expand
+
+The focused UI element is 1 AXWebArea 职造 · Agent 学习工作台, URL: 127.0.0.1:4475/#check

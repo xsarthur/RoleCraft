@@ -1,0 +1,89 @@
+{
+  "version": "app-v14-dialog-frontend-repair-dev-check-2",
+  "createdAt": "2026-10-12T01:15:47.817Z",
+  "runtime": "v24.16.0",
+  "clientVersion": "local-workbench-0.14-dialog-detail",
+  "scope": "Client developer isolated VM fixtures; not browser, actual HTTP/BGE, independent QA or user acceptance",
+  "corpusVersion": "textbook-v12",
+  "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+  "files": {
+    "dist/learning-workbench.js": {
+      "sha256": "e6918f1afb322c79e6a966200dda42cfecbe48bf437711ac3e18b3ca5289aa1f"
+    },
+    "dist/learning-experience-v13.js": {
+      "sha256": "d9664458d1e60c54d8235e160c4c229b1629c8b694d0f16d7136557b3374cd23"
+    },
+    "dist/learning-experience-v13.css": {
+      "sha256": "fa64c8c55b7bf0bfe0d463641e7af27b9caf3ca418ba274af9b81114f3f6deee"
+    },
+    "dist/app.js": {
+      "sha256": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd"
+    }
+  },
+  "tests": [
+    {
+      "name": "Five statuses remain distinct and invalid input stays editable with no network",
+      "status": "pass"
+    },
+    {
+      "name": "Every short sentence, source hash/path/title/href/quote offset and context must match public corpus",
+      "status": "pass"
+    },
+    {
+      "name": "Uses anonymous same-origin dialogue endpoint, plain text question/message and collapsed quoted sources",
+      "status": "pass"
+    },
+    {
+      "name": "Verified canonical topic only, related/filtered scope and explicit context origin are shown",
+      "status": "pass"
+    },
+    {
+      "name": "Pending same expression prevents duplicates; newer question suppresses old late answer/error/finally",
+      "status": "pass"
+    },
+    {
+      "name": "Collapse while waiting and page navigation remain; completion cannot reopen or steal reading focus",
+      "status": "pass"
+    },
+    {
+      "name": "Retry uses frozen submitted text and context despite changed draft or page",
+      "status": "pass"
+    },
+    {
+      "name": "Clear topic invalidates pending identity; old late answer cannot restore theme",
+      "status": "pass"
+    },
+    {
+      "name": "History and refresh recheck source; old query key and seeded user records remain untouched",
+      "status": "pass"
+    },
+    {
+      "name": "IME confirmation and Shift+Enter do not send; normal Enter does; clarified option sends full server expression",
+      "status": "pass"
+    },
+    {
+      "name": "Static file mode honestly unavailable and source failure clears answer/cards",
+      "status": "pass"
+    },
+    {
+      "name": "DG14-04 canonical focus survives answered/cache/currentContext; invalid and absent-source focus rejected",
+      "status": "pass"
+    },
+    {
+      "name": "All 30 full reader bodies unchanged, all formal prerequisite lists exact; repeated shell/tied question module removed",
+      "status": "pass"
+    },
+    {
+      "name": "Explicit historical full body/links and missing section identity remain; narrow prerequisite location preserves route",
+      "status": "pass"
+    },
+    {
+      "name": "Responsive geometry activates right column only at viewport >=1280 AND actual width >=932; short windows disable sticky",
+      "status": "pass"
+    }
+  ],
+  "realBrowserTested": false,
+  "actualHttpTested": false,
+  "modelInvoked": false,
+  "privateRecordsAccessed": false
+}

@@ -1,0 +1,106 @@
+{
+  "status": "pre_final_rebinding",
+  "records": [
+    {
+      "unit": "e02",
+      "previousSource": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-author-engineering-history/e02-revision-02.md",
+      "previousSha256": "c9ebc30ef5761deb327481c0a4793327a51b41d5536b5a9ceb141371b8c2e9b3",
+      "currentSource": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e02.md",
+      "currentSha256": "6f9be813e460401ef0b25bae7d56a722ba53c53fb22adc23e713fd3ffd047333",
+      "allFencedBlocksByteIdentical": true,
+      "blocks": [
+        {
+          "number": 1,
+          "language": "yaml",
+          "sha256": "1efc07115978f900f82f07f7451a64b1f3903352f5ebe1c9117cb91060e8d0fd"
+        },
+        {
+          "number": 2,
+          "language": "python",
+          "sha256": "08d16adf43923b8cc122c97a4e1caf169f14626bd711fe8c421c4e65e24e7ef5"
+        }
+      ],
+      "proseDiff": "--- sites/rolecraft/team/textbook-v08-author-engineering-history/e02-revision-02.md\n+++ sites/rolecraft/textbooks/v08/e02.md\n@@ -2,7 +2,7 @@\n \n Agent 版本的质量提升，必须表现为：在事前固定的任务、资料、权限、资源和判据下，新版本更经常完成正确任务，同时没有突破关键过程约束。最终答案更像专家、十道熟题全对、另一个模型给高分，都不能单独支持这个结论。评估器应先判定结果和过程是否成立，再比较成本与等待；不能用较低费用抵消越权，也不能把缺少轨迹解释成没有越权。\n \n-本章解决“版本改动是否真提升任务质量”，不设计新的业务门槛。默认你能读懂工具调用和运行状态，先修为 c02、c03。沿用[控制循环正文](../agent-control-loop-v07.md)：读取 `repo@8e12` 和 `test-report-71`，形成缺陷说明，经批准向指定项目创建唯一缺陷工单。`action_id` 是逻辑动作，`attempt_id` 是一次发送，`tool_call_id` 是模型协议关联。以下数据集、判定器及演算是本章原创设计；代码未运行，数字是题定数据，没有真实模型或生产成绩。\n+本章解决“版本改动是否真提升任务质量”，不设计新的业务门槛。默认你能读懂工具调用和运行状态，先修为 c02、c03。沿用[控制循环正文](../agent-control-loop-v07.md)：读取 `repo@8e12` 和 `test-report-71`，形成缺陷说明，经批准向指定项目创建唯一缺陷工单。`action_id` 是逻辑动作，`attempt_id` 是一次发送，`tool_call_id` 是模型协议关联。以下数据集、判定器及演算是本章原创设计；作者未执行代码；本轮独立 QA 已在 Python 3.12.14 检查所列离线夹具，范围见[QA记录](../../team/textbook-v08-qa.md)。数字是题定数据，没有真实模型或生产成绩。\n \n ## 把“好”拆成能被不同证据推翻的命题\n \n@@ -93,7 +93,7 @@\n \n 判定链分三层：运行记录能否核验；确定性规则是否满足；语义判断是否有独立记录。最终状态采用 `PASS`、`FAIL`、`INSUFFICIENT`、`HARNESS_ERROR`。`FAIL` 表示已有反证；`INSUFFICIENT` 表示必要事实未知；`HARNESS_ERROR` 表示评估基础设施未完成预定观察。后两者都不能进入通过分子。不能把评估器崩溃当产品失败率，也不能静默删除它。\n \n-下面是 Python 3.10+ 标准库最小代码。它只消费已经形成的受控证据，没有模型调用、外部工单调用和真实身份验证。`semantic_verdict` 必须来自评估宿主验证过身份、案例和版本的独立判断记录；不能让候选模型在自己的输出里填这个字段。把代码单独保存后执行 `python3 evaluation_contract.py`，题定输出依次为 `PASS`、`FAIL`、`INSUFFICIENT`；本版未实际执行。\n+下面是 Python 3.10+ 标准库最小代码。它只消费已经形成的受控证据，没有模型调用、外部工单调用和真实身份验证。`semantic_verdict` 必须来自评估宿主验证过身份、案例和版本的独立判断记录；不能让候选模型在自己的输出里填这个字段。把代码单独保存后执行 `python3 evaluation_contract.py`，题定输出依次为 `PASS`、`FAIL`、`INSUFFICIENT`；作者未执行；对应离线行为已由上述 QA 核对，真实语义评阅未执行。\n \n ```python\n from dataclasses import dataclass, replace\n@@ -257,7 +257,7 @@\n \n 在上面的代码基础上增加 `STOP_MISSING_EVIDENCE` 案例。夹具规定报告中缺少运行环境，因此允许指出缺证并保持零写效果；另外保留完整资料、正常批准案例。提交案例契约、判定代码、正常/边界/失败输入以及每条判定对应的原始证据。任务不是让真实服务创建工单，可以使用无网络替身。\n \n-参考方案：缺证案例的 `required_evidence` 应只要求实际存在的失败断言，语义量规要求明确缺失环境且不声称可复现；确定性规则检查零未审批效果和无未决写动作。正常案例仍要求对应项目的已确认回执，因此“两个都拒绝”只能使缺证案例通过，不能使创建案例通过。添加引用未观察证据、语义评阅缺失、轨迹缺口、越权后拒答和回执指纹不匹配输入，分别得到失败或缺证。运行前预期和实际输出分别保存；作者当前未运行这段代码。\n+参考方案：缺证案例的 `required_evidence` 应只要求实际存在的失败断言，语义量规要求明确缺失环境且不声称可复现；确定性规则检查零未审批效果和无未决写动作。正常案例仍要求对应项目的已确认回执，因此“两个都拒绝”只能使缺证案例通过，不能使创建案例通过。添加引用未观察证据、语义评阅缺失、轨迹缺口、越权后拒答和回执指纹不匹配输入，分别得到失败或缺证。运行前预期和实际输出分别保存；这项扩展作业未由作者执行；现有示例 QA 不替代学习者提交。\n \n ### 用干预诊断一个新的失败\n \n",
+      "decision": "preserve prior execution; prose only rebind pending final content review; no repeated run",
+      "previousWholeSourceMatchesExecutedRead": true,
+      "executedBlocksMatch": true
+    },
+    {
+      "unit": "e03",
+      "previousSource": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-author-engineering-history/e03-revision-02.md",
+      "previousSha256": "c8294e7b67599d43902913f432b4181364c001eaf05b91c9bd7dfdaf4cd3c990",
+      "currentSource": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e03.md",
+      "currentSha256": "8cfd5fe6e8ee73258ce83d3baa347b693ff632fcc1f670fecb9b275892e02761",
+      "allFencedBlocksByteIdentical": true,
+      "blocks": [
+        {
+          "number": 1,
+          "language": "text",
+          "sha256": "6f0a4411b0abe4b53dd57609867e3d5a85bb7338f0f0af79e2cf7c64aab84e7c"
+        },
+        {
+          "number": 2,
+          "language": "python",
+          "sha256": "b78fed543c0838abd419f1377a4207d1603e92f907f5952b1cee044947da068f"
+        }
+      ],
+      "proseDiff": "--- sites/rolecraft/team/textbook-v08-author-engineering-history/e03-revision-02.md\n+++ sites/rolecraft/textbooks/v08/e03.md\n@@ -2,7 +2,7 @@\n \n 外部资料可以提供事实，模型可以提出动作；两者都不能产生授权。要让这个原则在提示注入、跨项目访问和批准被篡改时仍成立，权限检查必须发生在数据返回前和动作发送前，由可信宿主确定身份、对象范围及批准内容。给文本贴上“不可信”标签有助于模型解释资料，却没有能力阻止读取服务返回秘密，也没有能力撤销已经发送的写请求。\n \n-本章只解决数据与动作权限的边界，先修为 c02、c03、[e02](e02.md)。贯穿任务仍是分析 `repo@8e12` 的失败报告 `test-report-71`，经维护者批准后在 `refund-maintenance` 创建唯一缺陷工单。示例组织为 `tenant-dev`，另一个不可访问组织为 `harbor-labs`；身份从受控宿主取得，不由模型参数决定。威胁夹具、代码和预期均为教学构造，代码未运行，无真实外发或模型调用。\n+本章只解决数据与动作权限的边界，先修为 c02、c03、[e02](e02.md)。贯穿任务仍是分析 `repo@8e12` 的失败报告 `test-report-71`，经维护者批准后在 `refund-maintenance` 创建唯一缺陷工单。示例组织为 `tenant-dev`，另一个不可访问组织为 `harbor-labs`；身份从受控宿主取得，不由模型参数决定。威胁夹具、代码和预期均为教学构造，作者未执行代码；本轮独立 QA 已在 Python 3.12.14 检查所列离线夹具，范围见[QA记录](../../team/textbook-v08-qa.md)；无真实外发或模型调用。\n \n ## 威胁模型先确定攻击者能够改变哪一段数据\n \n@@ -64,7 +64,7 @@\n \n ## 无网络替身把局部保证做完整\n \n-下面的 Python 3.10+ 标准库例子同时表达 CR03 的有限结构投影和 CR04 的批准消费。所有“创建”只向进程内字典增加教学回执。它不是真实工单 SDK，没有磁盘持久化，没有真实模型。将整个代码保存为 `boundary_demo.py` 后运行 `python3 boundary_demo.py`，题定输出为 `CREATED`、`OBSERVED`、`DENIED:APPROVAL_EXPIRED`、`DENIED:PROJECT_DENIED`；本版未执行。\n+下面的 Python 3.10+ 标准库例子同时表达 CR03 的有限结构投影和 CR04 的批准消费。所有“创建”只向进程内字典增加教学回执。它不是真实工单 SDK，没有磁盘持久化，没有真实模型。将整个代码保存为 `boundary_demo.py` 后运行 `python3 boundary_demo.py`，题定输出为 `CREATED`、`OBSERVED`、`DENIED:APPROVAL_EXPIRED`、`DENIED:PROJECT_DENIED`；作者未执行；对应替身夹具已有上述独立 QA，不覆盖远端发送或未知秘密。\n \n `Principal`、`Goal` 和 `grant` 只由可信宿主构造；不向模型暴露 `grant`。`Intent` 才是模型可以提出并经结构解析的参数。代码用单进程锁串行化检查和内存状态替换：先构造新批准、回执和槽位字典，再一次替换状态引用，避免把普通 `dict` 更新序列说成数据库事务。断电后全部丢失，因此不承诺跨重启恢复。\n \n",
+      "decision": "preserve prior execution; prose only rebind pending final content review; no repeated run",
+      "previousWholeSourceMatchesExecutedRead": true,
+      "executedBlocksMatch": true
+    },
+    {
+      "unit": "e04",
+      "previousSource": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-author-engineering-history/e04-initial.md",
+      "previousSha256": "2f46975ad2cebe8a7b0f22369f5e53771bdc96824fcb836ba49e52218d2b3819",
+      "currentSource": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e04.md",
+      "currentSha256": "a4d966da379b5e2c2bacb5db662beb040f9004ec12a0c020100a9bad3d17106c",
+      "allFencedBlocksByteIdentical": true,
+      "blocks": [
+        {
+          "number": 1,
+          "language": "yaml",
+          "sha256": "28cdba5068825589b940332e3f583688356a7bbbdb32af150109189f4f8844d7"
+        },
+        {
+          "number": 2,
+          "language": "python",
+          "sha256": "75646367a6215a7db4fd9f998c1492b671ec3af387eda5bd71b4b7800c4c8a9c"
+        }
+      ],
+      "proseDiff": "--- sites/rolecraft/team/textbook-v08-author-engineering-history/e04-initial.md\n+++ sites/rolecraft/textbooks/v08/e04.md\n@@ -2,7 +2,7 @@\n \n Agent 服务的发布成功，不能只看新进程是否启动。还要证明：新版本只领取自己能够解释的任务；旧工作者退出后，新的所有者能从持久记录恢复；回退不会把已发动作当成未执行；故障记录能解释卡在哪个阶段。程序版本可以回退，已经发生的工单效果和已经写入的新状态不能靠换镜像撤销。\n \n-本章解决可部署、可观测、可回退的服务交付，先修为 e01、[e02](e02.md)、[e03](e03.md)。任务仍读取 `repo@8e12`、`test-report-71`，经批准向 `refund-maintenance` 创建唯一缺陷工单。状态、动作、尝试和恢复依据沿用[控制循环正文](../agent-control-loop-v07.md)，本章把它们放入版本交付边界。以下发布控制器和配置是原创接口设计；兼容规划代码未运行，没有执行部署或故障演示。\n+本章解决可部署、可观测、可回退的服务交付，先修为 e01、[e02](e02.md)、[e03](e03.md)。任务仍读取 `repo@8e12`、`test-report-71`，经批准向 `refund-maintenance` 创建唯一缺陷工单。状态、动作、尝试和恢复依据沿用[控制循环正文](../agent-control-loop-v07.md)，本章把它们放入版本交付边界。以下发布控制器和配置是原创接口设计；作者未执行代码；本轮独立 QA 已在 Python 3.12.14 检查所列离线夹具，范围见[QA记录](../../team/textbook-v08-qa.md)；没有执行部署或故障演示。\n \n ## 发布对象是一组相互兼容的版本\n \n@@ -50,7 +50,7 @@\n \n 本方案把任务兼容检查放在领取前和取得推进权后的加载阶段：状态可读；已存在动作的工具版本可执行或核对；恢复语义受任务明确许可；该工作者持有当前租约代次。读不懂状态的工作者应隔离任务并留下错误，不可清空未知字段后继续。\n \n-下面是 Python 3.10+ 标准库的纯规划示例。它不操作队列、数据库或镜像，只根据受控库存决定目标版本能否接管所有待处理任务。库存必须来自暂停领取后的权威快照；若发布过程中继续产生新状态，规划结论要在生效前重新校验。保存为 `rollback_plan.py` 后运行 `python3 rollback_plan.py`，题定输出为 `HOLD ('run-18:STATE_SCHEMA',)` 和 `READY`；本版未运行。\n+下面是 Python 3.10+ 标准库的纯规划示例。它不操作队列、数据库或镜像，只根据受控库存决定目标版本能否接管所有待处理任务。库存必须来自暂停领取后的权威快照；若发布过程中继续产生新状态，规划结论要在生效前重新校验。保存为 `rollback_plan.py` 后运行 `python3 rollback_plan.py`，题定输出为 `HOLD ('run-18:STATE_SCHEMA',)` 和 `READY`；作者未执行；上述独立 QA 只覆盖规划函数及有限夹具，不执行发布。\n \n ```python\n from dataclasses import dataclass\n",
+      "decision": "preserve prior execution; prose only rebind pending final content review; no repeated run",
+      "previousWholeSourceMatchesExecutedRead": true,
+      "executedBlocksMatch": true
+    },
+    {
+      "unit": "e05",
+      "previousSource": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-author-engineering-history/e05-initial.md",
+      "previousSha256": "59b76db9ee8a2fcc315aea30b1b7a600462a25e6db30e7a870bf488a5716c4ae",
+      "currentSource": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e05.md",
+      "currentSha256": "3d3fa17284a018cfed61d2c8b40e9b52b60eace5afb04544849fd19c69a8f03b",
+      "allFencedBlocksByteIdentical": true,
+      "blocks": [
+        {
+          "number": 1,
+          "language": "text",
+          "sha256": "dff05a2d6cf1d316bed75ffc0bfdd79e0c3a7af5a48aa94dc840aea0f7c7922a"
+        },
+        {
+          "number": 2,
+          "language": "python",
+          "sha256": "c5183c348030a4cc5a1d2d28f76a33a7f142a09b2eff66866e7489d521f29832"
+        },
+        {
+          "number": 3,
+          "language": "text",
+          "sha256": "a096d5edde490d4c2d1f66c12144c0d3d305bcb3113bdf1c7ce516d768743e06"
+        }
+      ],
+      "proseDiff": "--- sites/rolecraft/team/textbook-v08-author-engineering-history/e05-initial.md\n+++ sites/rolecraft/textbooks/v08/e05.md\n@@ -2,7 +2,7 @@\n \n 缓存、便宜模型和更高并发是否值得采用，应在相同任务分布、负载、权限与质量条件下比较完整任务。模型单价只是成本输入，单次响应时长只是延迟的一段；失败、重试、排队、人工返工和未决效果都会改变结果。先确认正确性与安全护栏，再比较单位任务成本和吞吐，才能避免把少做事、删慢样本或复用错误资料误称为优化。\n \n-本章解决工程经济性的比较，先修为 [e02](e02.md)、[e04](e04.md)。任务仍是核 `repo@8e12` 和 `test-report-71`，经批准在 `refund-maintenance` 创建唯一工单。本章所有数值都是虚构演算，计费单位 `credit` 是练习货币，不是供应商报价或实际账单。Python 最小计算代码未运行；没有实测模型、负载和优化收益。\n+本章解决工程经济性的比较，先修为 [e02](e02.md)、[e04](e04.md)。任务仍是核 `repo@8e12` 和 `test-report-71`，经批准在 `refund-maintenance` 创建唯一工单。本章所有数值都是虚构演算，计费单位 `credit` 是练习货币，不是供应商报价或实际账单。作者未执行代码；本轮独立 QA 已在 Python 3.12.14 检查所列离线夹具，范围见[QA记录](../../team/textbook-v08-qa.md)；没有实测模型、负载和优化收益。\n \n ## 成本归到逻辑任务，才能看见失败代价\n \n@@ -38,7 +38,7 @@\n \n 下面是 Python 3.10+ 标准库代码。`TaskAccounting` 是一次分配的逻辑任务账目；输入已经按尝试账本去重汇总，并覆盖该任务所有已发生支出。`cost_confirmed=False` 表示还有未知收费，不表示已知支出是估计值。`elapsed_ms` 是从提交到观察终止或截止观察时刻的等待，不能拿超时值冒充真实业务完成时间。\n \n-保存为 `task_accounting.py` 后执行 `python3 task_accounting.py`，题定输出为：`4 2`，`1000 7000 10000`，`None 5 3`。`None` 表示最终每接受任务成本尚不能确认；5 为已确认非负支出的下界口径，3 为待确认项的预留总额，二者不能自动组成费用区间。本版未实际运行。\n+保存为 `task_accounting.py` 后执行 `python3 task_accounting.py`，题定输出为：`4 2`，`1000 7000 10000`，`None 5 3`。`None` 表示最终每接受任务成本尚不能确认；5 为已确认非负支出的下界口径，3 为待确认项的预留总额，二者不能自动组成费用区间。作者未执行；上述独立 QA 已核对汇总器的有限夹具，真实费用与负载未测。\n \n ```python\n from collections import Counter\n",
+      "decision": "preserve prior execution; prose only rebind pending final content review; no repeated run",
+      "previousWholeSourceMatchesExecutedRead": true,
+      "executedBlocksMatch": true
+    }
+  ]
+}

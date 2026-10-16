@@ -1,0 +1,189 @@
+{
+  "atUtc": "2026-10-12T00:27:04.660Z",
+  "runtime": "v24.16.0",
+  "scope": "Independent finite client logic executed in isolated VM with fabricated storage/DOM and declared response fixtures; no real browser geometry, clicks, focus, browser persistence or actual downloads. Saved real HTTP result and synthetic timing/failure kept separate.",
+  "status": "fail",
+  "tests": [
+    {
+      "name": "PT13-01/07: empty actual client state has no learned points or eligible self-test and real empty text",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-07 frozen exact point n03-planning-reflection:s-8daaf4201d23",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-07 frozen exact point n03-planning-reflection:s-da63f3dcff17",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-07 frozen exact point n03-planning-reflection:s-7b6b3d9e9b99",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-07 frozen exact point n03-planning-reflection:s-7ee14c15626d",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-07 frozen exact point 00-learning-route:s-7be19d9ebfa3",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-07 frozen exact point n10-evaluation-projects:s-caf1ec2e47ac",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-07 frozen exact point 00-learning-route:s-3b82fdeafaab",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-02/07 sibling point not upgraded by full chapter rendering",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-07 real count 5 stays two unique eligible questions",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-07 real count 10 stays two unique eligible questions",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-07 real count 20 stays two unique eligible questions",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-07 unchecked wrong-mark choice and current self counts",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-05 persistent self-status reload and exact associated branch state",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-06 finite two-question review retains weak and removes known only",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-04 question-source roundtrip preserves original question and filter",
+      "status": "fail",
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ '#questions/Q11'\n- '#questions/Q11?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17'\n"
+    },
+    {
+      "name": "PT13-10 original legacy string identities preserved and current VM export separated",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-10 corrupted historical original string stays exportable in VM",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-11 explicit old version identity and unknown target controlled output",
+      "status": "fail",
+      "error": "The expression evaluated to a falsy value:\n\n  assert(compatible.ex.page('learn').includes('旧位置'))\n"
+    },
+    {
+      "name": "PT13-08/12 settings context preference/style and hidden assistant from actual client logic",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-09 forced quota failure keeps current in-memory input honest",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-08 actual client accepts saved real response without reopening and keeps submitted exact context",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-09 declared delayed-response fixture cannot overwrite newer request",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-09 stale source direct contract rejection",
+      "status": "pass"
+    },
+    {
+      "name": "PT13-09 declared service failure is unavailable not no_match/success",
+      "status": "pass"
+    }
+  ],
+  "details": [
+    {
+      "style": "--reader-font",
+      "value": "16px"
+    },
+    {
+      "style": "--reader-font",
+      "value": "16px"
+    },
+    {
+      "style": "--reader-font",
+      "value": "16px"
+    },
+    {
+      "style": "--reader-font",
+      "value": "16px"
+    },
+    {
+      "style": "--reader-font",
+      "value": "16px"
+    },
+    {
+      "style": "--reader-font",
+      "value": "16px"
+    },
+    {
+      "style": "--reader-font",
+      "value": "16px"
+    },
+    {
+      "style": "--reader-font",
+      "value": "16px"
+    },
+    {
+      "style": "--reader-font",
+      "value": "16px"
+    },
+    {
+      "style": "--reader-font",
+      "value": "16px"
+    },
+    {
+      "style": "--reader-font",
+      "value": "16px"
+    },
+    {
+      "style": "--reader-font",
+      "value": "16px"
+    },
+    {
+      "case": "PT13-04 exact roundtrip filter",
+      "originalQuestionHref": "#questions/Q11?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17",
+      "renderedSourceHref": "#learn/agent/n03-planning-reflection/s-da63f3dcff17?from=Q11",
+      "renderedReturnHref": "#questions/Q11"
+    },
+    {
+      "style": "--reader-font",
+      "value": "16px"
+    },
+    {
+      "style": "--reader-font",
+      "value": "20px"
+    },
+    {
+      "style": "--reader-font",
+      "value": "16px"
+    },
+    {
+      "style": "--reader-font",
+      "value": "16px"
+    },
+    {
+      "style": "--reader-font",
+      "value": "16px"
+    }
+  ],
+  "realBrowserTested": false,
+  "actualDownloadPerformed": false,
+  "privateUserStorageRead": false
+}

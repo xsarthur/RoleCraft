@@ -1,0 +1,298 @@
+{
+  "version": "textbook-draft-0.8",
+  "role": "测试工程师",
+  "date": "2026-10-11",
+  "status": "in_progress",
+  "scope": "partial manuscript artifact/evidence and safe offline example QA; final full-book review pending",
+  "fullProductStatus": "not_met",
+  "writingStandardSha256": "cc6da2dd518815a1d65f3a953b8a36577a441cc224fda8b680224f681dc4f901",
+  "specSha256": "bbaa65200bf25e9edb9900129f8eb3ba0485147da887a7783a1f1c73ad50d397",
+  "manifestSha256": "a78e6d857a8bfcd24f27420133357f45ac2afdc87b57ee1a374e96a1c694c122",
+  "productGatesSha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06",
+  "productGateIdsPreserved": [
+    "user_value",
+    "teaching_quality",
+    "real_generation",
+    "comparative_advantage",
+    "learner_creation",
+    "reliable_delivery",
+    "operating_economics",
+    "iteration_trace"
+  ],
+  "runtime": {
+    "executable": "/Users/shengxiong/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "pythonVersion": "3.12.14",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "notPython314Verification": true
+  },
+  "safeExecution": {
+    "currentAssertionRecords": 79,
+    "archivedDefectReproductions": 4,
+    "result": "all expected behaviors observed within the listed scope",
+    "evidence": [
+      "team/textbook-v08-qa-history/stage01/source-and-baseline.json",
+      "team/textbook-v08-qa-history/stage01/execution.json",
+      "team/textbook-v08-qa-history/stage01/stdout.json",
+      "team/textbook-v08-qa-history/stage01/historical-sources.json",
+      "team/textbook-v08-qa-history/stage01/historical-execution.json",
+      "team/textbook-v08-qa-history/stage01/historical-stdout.json",
+      "team/textbook-v08-qa-history/stage02/source.json",
+      "team/textbook-v08-qa-history/stage02/execution.json",
+      "team/textbook-v08-qa-history/stage02/stdout.json"
+    ],
+    "sources": [
+      {
+        "unit": "f01",
+        "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f01.md",
+        "sourceSha256": "9ef1dafa015b497519ce9cca967d473f38ffbc302a1a5b49f48361eca41d5f15",
+        "blocks": [
+          {
+            "number": 1,
+            "startLine": 25,
+            "sha256": "f2d76df1c6504ad7069f4e5ac1ca60fe32a971207dc70c690885c82823a7bb88",
+            "saved": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-qa-history/stage01/f01-block1.py"
+          }
+        ]
+      },
+      {
+        "unit": "f02",
+        "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f02.md",
+        "sourceSha256": "3897fe951ee6d7a00e2d07b72de31444cb24bb7db8f7756f3b3c0fdf4092bf9a",
+        "blocks": [
+          {
+            "number": 1,
+            "startLine": 29,
+            "sha256": "973a2d8ea717ab55a4d88c7feb2274decb7c217b35b1bf0a17bb28257bed071e",
+            "saved": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-qa-history/stage01/f02-block1.py"
+          }
+        ]
+      },
+      {
+        "unit": "c02",
+        "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c02.md",
+        "sourceSha256": "6062341a3757f43770db7bdcb4512f8ff85f27de24f7cd0afa791a79147cb087",
+        "blocks": [
+          {
+            "number": 1,
+            "startLine": 39,
+            "sha256": "0fb5c1be61a9427205ef6fd4bb161c36685bfac70fa4ec070b0841be9e29fdb1",
+            "saved": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-qa-history/stage01/c02-block1.py"
+          }
+        ]
+      },
+      {
+        "unit": "c03",
+        "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md",
+        "sourceSha256": "2a74d2de01c4cac036fbbdbd181f7956a507e1f45b34f36194cd18b602257cef",
+        "blocks": [
+          {
+            "number": 3,
+            "startLine": 131,
+            "sha256": "ea658bc65911ab8f2533b61895557c1557658630197a2a0789a3d5b53be27811",
+            "saved": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-qa-history/stage01/c03-block3.py"
+          },
+          {
+            "number": 4,
+            "startLine": 168,
+            "sha256": "7f9e8c6498800a74ff0f0d5925362ade6f6917ddbe38200f00d8eab9484111da",
+            "saved": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-qa-history/stage01/c03-block4.py"
+          }
+        ]
+      },
+      {
+        "unit": "e02",
+        "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e02.md",
+        "sourceSha256": "c9ebc30ef5761deb327481c0a4793327a51b41d5536b5a9ceb141371b8c2e9b3",
+        "blocks": [
+          {
+            "number": 2,
+            "startLine": 98,
+            "sha256": "08d16adf43923b8cc122c97a4e1caf169f14626bd711fe8c421c4e65e24e7ef5",
+            "saved": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-qa-history/stage01/e02-block2.py"
+          }
+        ]
+      },
+      {
+        "unit": "e03",
+        "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e03.md",
+        "sourceSha256": "c8294e7b67599d43902913f432b4181364c001eaf05b91c9bd7dfdaf4cd3c990",
+        "blocks": [
+          {
+            "number": 2,
+            "startLine": 71,
+            "sha256": "b78fed543c0838abd419f1377a4207d1603e92f907f5952b1cee044947da068f",
+            "saved": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-qa-history/stage01/e03-block2.py"
+          }
+        ]
+      },
+      {
+        "unit": "e04",
+        "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e04.md",
+        "sourceSha256": "2f46975ad2cebe8a7b0f22369f5e53771bdc96824fcb836ba49e52218d2b3819",
+        "blocks": [
+          {
+            "number": 2,
+            "startLine": 55,
+            "sha256": "75646367a6215a7db4fd9f998c1492b671ec3af387eda5bd71b4b7800c4c8a9c",
+            "saved": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-qa-history/stage01/e04-block2.py"
+          }
+        ]
+      },
+      {
+        "unit": "e05",
+        "source": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e05.md",
+        "sourceSha256": "59b76db9ee8a2fcc315aea30b1b7a600462a25e6db30e7a870bf488a5716c4ae",
+        "blockSha256": "c5183c348030a4cc5a1d2d28f76a33a7f142a09b2eff66866e7489d521f29832",
+        "startLine": 43,
+        "safetyRead": "full prose and full Python block; no side effects, imports only standard libs; cache pseudocode not run"
+      }
+    ],
+    "boundaries": [
+      "No model/provider main executed; f02 non-main import plus fixture-only consume_response/request_once with dummy parameters. No environment key read.",
+      "No real embeddings, issue service, deployment, website test, business request or production operation.",
+      "c03 only IssueStub and IssueAdapter code run; runtime/store pseudocode not run.",
+      "e04 only planner run; configuration/runbook/deployment not executed.",
+      "e05 only Decimal accounting run; cache/scheduler pseudocode and economic comparison not run.",
+      "Python audit and callable blocks guard network/process entry points; this is not an OS network sandbox proof.",
+      "Source code blocks saved byte-for-byte; final prose changes may rebind these results only if blocks match."
+    ]
+  },
+  "archivedCounterexamples": [
+    "CR08-01: unpaired surrogate raises UnicodeEncodeError in archived f01; current returns CONTENT_NOT_UTF8.",
+    "CR08-02: wrapper [] raises AttributeError in archived f02; current returns PROVIDER_PROTOCOL_OBJECT.",
+    "CR08-04: known wrong outcome masked by incomplete trace in archived e02; current FAIL retains missing reasons.",
+    "CR08-05: serialized special-character marker reaches effect in archived e03; current payload gate denies before effect."
+  ],
+  "partialActualCoverage": {
+    "f01": [
+      "输入/权限边界及完整适配器",
+      "HTTP/解析/业务错误归约",
+      "环境与Git复现交接",
+      "断言/变更及独立基础诊断"
+    ],
+    "f02": [
+      "REST请求与响应接收",
+      "结构及事实/引用双闸",
+      "可信状态与投影/角色边界",
+      "压缩不变量与缺信息等待"
+    ],
+    "c01": [
+      "程序/单调用/workflow/动态及多Agent选择；控制循环目标仍待本次全文交叉核"
+    ],
+    "c02": [
+      "源/快照/授权版本",
+      "出处/读回及规范事实支持",
+      "词法/语义/RRF比较条件",
+      "冲突/无命中/未摄取边界"
+    ],
+    "c03": [
+      "协议调用与实际执行",
+      "参数/对象权限/精确批准",
+      "意图/槽位/去重窗口",
+      "丢回执未知及操作身份核对"
+    ],
+    "e02": [
+      "开发/回归/保留用途与污染",
+      "固定版本/配对重复/相关性",
+      "结果/轨迹/资源分开判定",
+      "grader校准与受控归因"
+    ],
+    "e03": [
+      "威胁模型与三类资料入口",
+      "模型外对象边界",
+      "四通道允许字段及标记局限",
+      "精确批准/期限/消费/同槽并发"
+    ],
+    "e04": [
+      "环境配置/秘密隔离",
+      "兼容/发布路由与安全回退",
+      "阶段事件及运行事实",
+      "runbook与非作者复现要求"
+    ],
+    "e05": [
+      "逻辑任务/尝试成本",
+      "状态分母/删失及量纲",
+      "权限/资料版本缓存与模型路由",
+      "开放/闭环负载/预算/并发权衡"
+    ]
+  },
+  "coverageStatus": "not_complete; locations will be bound to final file SHA after full read and content review; manifest alone not proof",
+  "applicationBaseline": {
+    "evidence": "team/textbook-v08-qa-history/stage01/source-and-baseline.json",
+    "fileCount": 22,
+    "finalComparison": "pending",
+    "limitation": "Only this record point plus later final comparison; excludes runtime/private/config/env/cache/databases; no service executed."
+  },
+  "frozenV07": {
+    "expectedSha256": "996e5aeb084b66405a0dd1023a375743d2e359c335b29517ac923f9f6a033c5c",
+    "observedSha256": "996e5aeb084b66405a0dd1023a375743d2e359c335b29517ac923f9f6a033c5c",
+    "reviewNotInherited": true,
+    "currentFullCrossRead": "pending"
+  },
+  "finalChecksPending": [
+    "final e01 safety read/extraction and necessary isolated SQLite checks",
+    "p01/p02 full manuscripts",
+    "latest c01 workflow additions reread",
+    "all 24 original objectives / 48 knowledge points actual body positions",
+    "final author and content reviewer SHA alignment and original issue rechecks",
+    "README all local links and byte-exact combined-book source binding once generated",
+    "final two-point baseline comparison",
+    "current-version full product retrospective"
+  ],
+  "productGateAssessment": [
+    {
+      "id": "user_value",
+      "criterionOwner": "产品经理",
+      "status": "insufficient",
+      "reason": "本轮没有新增真实用户验证结果。"
+    },
+    {
+      "id": "teaching_quality",
+      "criterionOwner": "课程架构师",
+      "status": "insufficient",
+      "reason": "未齐最终新稿/全套当前独立审校与最终冻结QA；真人专业复核未完成。"
+    },
+    {
+      "id": "real_generation",
+      "criterionOwner": "软件工程师",
+      "status": "fail",
+      "reason": "本轮独立Markdown由作者生成，没有网站依账户档案的真实供应商执行记录；原目标未降低。"
+    },
+    {
+      "id": "comparative_advantage",
+      "criterionOwner": "产品经理",
+      "status": "insufficient",
+      "reason": "本轮没有行业产品及研究基线同条件实測。"
+    },
+    {
+      "id": "learner_creation",
+      "criterionOwner": "课程架构师",
+      "status": "insufficient",
+      "reason": "没有真实学习者MVP/迁移作品和独立专业评价。"
+    },
+    {
+      "id": "reliable_delivery",
+      "criterionOwner": "软件工程师",
+      "status": "fail",
+      "reason": "本轮不修改或执行应用，没有正式生产范围/真实外部依赖及持久可靠交付证据。"
+    },
+    {
+      "id": "operating_economics",
+      "criterionOwner": "产品经理",
+      "status": "insufficient",
+      "reason": "credit为教学构造，无真实收费与交付经济结果。"
+    },
+    {
+      "id": "iteration_trace",
+      "criterionOwner": "项目经理",
+      "status": "insufficient",
+      "reason": "本轮原反例及修复局部复核留证；全书完成/最终复验尚未结束。"
+    }
+  ],
+  "humanExpertReview": false,
+  "userReadingAcceptance": "not_claimed",
+  "realLearnerResults": false,
+  "industryComparison": false,
+  "productionValidation": false,
+  "recordedAt": "2026-10-10T18:08:54.054480+00:00"
+}

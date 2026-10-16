@@ -1,0 +1,36 @@
+{
+  "startedAtUtc": "2026-10-11T14:24:51.449Z",
+  "completedAtUtc": "2026-10-11T14:24:51.791Z",
+  "runtime": "v24.16.0",
+  "url": "http://127.0.0.1:4452",
+  "request": {
+    "query": "react"
+  },
+  "httpStatus": 200,
+  "output": {
+    "status": "no_match",
+    "engineMode": "local_semantic_retrieval",
+    "providerCalled": false,
+    "corpusVersion": "textbook-v10",
+    "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+    "interpretedIntents": [],
+    "excludedIntents": [],
+    "results": [],
+    "clarification": null,
+    "limitations": [
+      "使用本机中文向量模型结合任务概念与否定规则检索；没有调用外部大模型。未知或复杂表达可能需要澄清。"
+    ],
+    "semanticProvenance": {
+      "modelId": "Xenova/bge-small-zh-v1.5",
+      "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+      "dtype": "int8",
+      "pooling": "cls",
+      "dimensions": 512,
+      "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+      "remoteModelsAllowed": false,
+      "querySentExternally": false
+    }
+  },
+  "semanticSourceSha256": "ef62b852a4e93314c5a2c178a84d8c4cd9a00d9e766568f78bbd94ab77c65fdf",
+  "coreSourceSha256": "9657fa6260a1b20c1ca2f4f0c1111114d5515ddbe58cac8345d22a68844feaff"
+}

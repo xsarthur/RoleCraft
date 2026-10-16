@@ -1,0 +1,33 @@
+{
+  "record_id": "AI-D0-PREFLIGHT-INVENTORY-20261016-001",
+  "role": "AI",
+  "scope": ["D0-01", "D0-02", "D0-04", "D0-05"],
+  "mode": "read_only_inventory",
+  "decision": "preflight_only_not_assessed",
+  "source_records": [
+    "ai-generation-engineer-practice-pack-v01.json",
+    "ai-generation-l0-practice-source-001-qa-v01.md",
+    "ai-generation-l0-practice-durable-002-qa-v04.md",
+    "ai-generation-l0-practice-gate-003-qa-v06.md",
+    "ai-generation-l0-learner-handoff-v19/",
+    "ai-generation-l0-learner-handoff-qa-v19.md",
+    "ai-generation-real-learner-d0-20261016-v01.md"
+  ],
+  "findings": {
+    "learner_original_actions_complete": false,
+    "independent_qa_complete_per_item": false,
+    "receiver_receipts_complete": false,
+    "reusable_local_scaffolds": true,
+    "single_user_session_possible": true,
+    "single_evidence_card_per_four_items_allowed": false,
+    "status": "D0_not_assessed_L1_not_granted"
+  },
+  "known_limits": [
+    "v19 internal version fields remain v18",
+    "D0-01/02/04 cards point only to D0-05 first_failure",
+    "no real learner execution receipts for these four items",
+    "no receiver acceptance receipts",
+    "local fixture QA does not prove production/runtime/model capability"
+  ],
+  "report": "ai-generation-d0-preflight-inventory-v01.md"
+}

@@ -1,0 +1,39 @@
+{
+  "checkedAtUtc": "2026-10-11T08:28:01.582704+00:00",
+  "qaService4421": {
+    "sessionId": 72399,
+    "signal": "SIGINT",
+    "exitCode": 0,
+    "output": "",
+    "postStopLsof": {
+      "command": "lsof -nP -iTCP:4421 -sTCP:LISTEN",
+      "exitCode": 1,
+      "output": "",
+      "interpretation": "no listener"
+    }
+  },
+  "qaTimingProxy4434": {
+    "sessionId": 24351,
+    "signal": "SIGINT",
+    "exitCode": 0,
+    "postStopLsof": {
+      "command": "lsof -nP -iTCP:4434 -sTCP:LISTEN",
+      "exitCode": 1,
+      "output": "",
+      "interpretation": "no listener"
+    }
+  },
+  "temporaryTabs": [
+    {
+      "id": "1",
+      "operation": "qaTab.close",
+      "result": "completed without error"
+    },
+    {
+      "id": "2",
+      "operation": "raceTab.close",
+      "result": "completed without error"
+    }
+  ],
+  "scope": "Only QA-owned temporary processes/tabs closed; user4318 PID83835 and PMdeliverabletab6 untouched. Isolated temp data left as evidence; no user/DB deletion."
+}

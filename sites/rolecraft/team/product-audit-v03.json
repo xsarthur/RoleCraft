@@ -1,0 +1,312 @@
+{
+  "schemaVersion": "1.0",
+  "productVersion": "prototype-0.3",
+  "standardVersion": "product-creation-2026-10-10",
+  "auditedAt": "2026-10-10",
+  "reviewer": "测试工程师独立代理 /root/qa_engineer",
+  "assessmentScope": "formal_learning_product",
+  "assessmentScopeLabel": "按正式职业学习系统八门槛评估当前冻结静态原型",
+  "overall": "not_met",
+  "overallLabel": "未达标",
+  "decisionBasis": "八项必需门槛：3项确认失败、4项证据不足、1项仅本次产出追踪通过。任一必需失败即整体未达标；静态逻辑通过不能抵消。",
+  "method": "测试工程师重新只读核对当前0.3源码、专业JSON、README与本轮独立运行报告；未继承0.2结果或产品经理initialStatus。没有真实专业、用户、市场或生产实验。",
+  "criteria": [
+    {
+      "id": "user_value",
+      "required": true,
+      "status": "insufficient",
+      "evidence": [
+        {
+          "reference": "team/product-creation-standard.md 与 team/product-review.md",
+          "observation": "有目标人群与用户问题要求，未附目标用户访谈、观察和阈值验证结果。"
+        },
+        {
+          "reference": "team/TASKS.md C05；dist/app.js productReviewForm",
+          "observation": "真实学习者试点仍为后续任务；当前字段仅用户自述，不构成用户试验。"
+        }
+      ],
+      "limits": "未观察真实用户结果；不从缺结果推定用户价值必然失败。",
+      "gap": "缺试验前用户、指标与阈值及真实记录。",
+      "owner": "产品经理",
+      "nextAction": "产品经理定义并冻结试点指标，组织用户验证，交付原始记录。",
+      "retest": {
+        "status": "待真实用户证据",
+        "method": "核对样本、预定义阈值与实际用户结果，另行独立复核。"
+      }
+    },
+    {
+      "id": "teaching_quality",
+      "required": true,
+      "status": "fail",
+      "evidence": [
+        {
+          "reference": "team/curriculum-data.json modules/fullTextbookStatus/expertReview",
+          "observation": "四模块e03/e05/p01/p02无existingChapterIds；八章仍为短样例，数据明确不包含完整教材，专家审核未完成。"
+        },
+        {
+          "reference": "team/creation-path.json formalLessonStatus；dist/app.js modules/creationPage",
+          "observation": "七阶段均为正文待完成；网站展示规划、方法和固定短章，没有补齐完整教材。"
+        },
+        {
+          "reference": "team/curriculum-validation.md 与本轮 curriculum-check.mjs",
+          "observation": "20/20只确认结构与映射，不能确认章节教学深度、可执行示例或专业质量。"
+        }
+      ],
+      "limits": "fail依据可确认的完整教学覆盖缺失；不声称现有内容事实错误。专业正确性、示例运行与学习效果仍未知。",
+      "gap": "缺完整模块正文、分层练习、来源主张关联、运行验证和专业内容复核。",
+      "owner": "课程架构师",
+      "nextAction": "课程架构师补齐正文和练习、来源及验证记录，组织实际专业复核。",
+      "retest": {
+        "status": "待内容完善与专业复核",
+        "method": "逐模块核对九项结构、覆盖、深度、案例运行及专业复核记录。"
+      }
+    },
+    {
+      "id": "real_generation",
+      "required": true,
+      "status": "fail",
+      "evidence": [
+        {
+          "reference": "dist/app.js modules/route/exportPlan",
+          "observation": "固定八章常量和规则路线，导出明确预设模板非实时AI生成；没有真实模型执行链。"
+        },
+        {
+          "reference": "README.md 实际边界；team/engineering-v03-delivery.md",
+          "observation": "明确未接入模型、资料抓取与代码沙箱；新增两页仍静态交互。"
+        }
+      ],
+      "limits": "不评价未提交的外部系统；HTML渲染和表单不能视为真实教材生成。",
+      "gap": "未实现真实模型依学习档案生成及来源、任务、版本与失败恢复。",
+      "owner": "软件工程师",
+      "nextAction": "软件工程师按专业交接实现受控真实生成及持久过程，提交调用与故障证据。",
+      "retest": {
+        "status": "待实现",
+        "method": "独立观察真实调用、档案和产物关联、来源、版本、失败恢复；案例另须真实执行。"
+      }
+    },
+    {
+      "id": "comparative_advantage",
+      "required": true,
+      "status": "insufficient",
+      "evidence": [
+        {
+          "reference": "team/curriculum-data.json sources/benchmark 与 team/creation-path.json sources",
+          "observation": "公开岗位和官方技术、研究方法用于教学方向；没有同行产品同条件比较结果。"
+        },
+        {
+          "reference": "dist/app.js productDecision/productReviewForm；team/qa-v03-review.md P08/P30",
+          "observation": "11比较字段和缺证判定已测，但用户填写未核实内容；合成通过测试不是真实比较实验。"
+        }
+      ],
+      "limits": "没有实证不能判优势，也不能推定必然落后；本轮没有联网核验行业动态。",
+      "gap": "缺行业产品及研究基线版本、公平样本资源条件、预定义阈值、实测与专业评审。",
+      "owner": "产品经理",
+      "nextAction": "产品经理组织同条件比较，在实验前冻结任务、条件和指标，保存原始结果。",
+      "retest": {
+        "status": "待比较实证",
+        "method": "检查比较公平性、基线可追踪性及原始实测和专业复核，仅认定证据支持范围。"
+      }
+    },
+    {
+      "id": "learner_creation",
+      "required": true,
+      "status": "insufficient",
+      "evidence": [
+        {
+          "reference": "dist/app.js projectsPage/creationPage/productReviewForm",
+          "observation": "项目自查、七阶段要求和产品自述已实现，没有真实学习者可运行MVP及独立作品评分。"
+        },
+        {
+          "reference": "team/TASKS.md C05/C06",
+          "observation": "学习者试点、未知任务和教学效果评价仍待执行。"
+        }
+      ],
+      "limits": "作者制作网站不是学习者成果，完成率、自查和合成测试不认证职业能力。",
+      "gap": "缺学习者MVP版本、运行测试、用户验证、预定评分与独立作品评审。",
+      "owner": "课程架构师",
+      "nextAction": "课程架构师按量规组织真实学习者作品、未知任务和独立评审，配合产品用户验证。",
+      "retest": {
+        "status": "待学习者实证",
+        "method": "复现作品、核对真实用户结果与评分标准、评审者及产物版本。"
+      }
+    },
+    {
+      "id": "reliable_delivery",
+      "required": true,
+      "status": "fail",
+      "evidence": [
+        {
+          "reference": "dist/app.js storageKey/normalizeState/save",
+          "observation": "持久化为rolecraft-v1本地存储，没有服务端账户、权限隔离、数据库及生产任务体系。"
+        },
+        {
+          "reference": "README.md 保存与故障边界；team/qa-v03-review.md P24",
+          "observation": "内存输入与导出恢复逻辑已测，关闭仍不能保持未落盘内存；没有正式生产隔离与持续运行验证。"
+        }
+      ],
+      "limits": "承认静态故障保护改善；fail针对正式账户及持久运行体系缺失，VM配额模拟不是生产可靠性。",
+      "gap": "缺正式运行范围、账户权限、持久任务与服务端恢复、真实生产版本追踪。",
+      "owner": "软件工程师",
+      "nextAction": "软件工程师依确认范围实现服务端运行体系，提交账户、故障与版本证据。",
+      "retest": {
+        "status": "待正式体系实现",
+        "method": "真实独立账户、服务重启、故障注入验证隔离和恢复，并补浏览器验收。"
+      }
+    },
+    {
+      "id": "operating_economics",
+      "required": true,
+      "status": "insufficient",
+      "evidence": [
+        {
+          "reference": "dist/app.js plannedHours/exportPlan/productReviewForm",
+          "observation": "时长为固定教学估算，基线成本仅文字字段；没有真实模型调用成本或交付运营数据。"
+        },
+        {
+          "reference": "README.md 实际边界；team/engineering-v03-delivery.md",
+          "observation": "尚未运行真实生成服务，未提交实际成本、耗时、质量及维护结果。"
+        }
+      ],
+      "limits": "不能因无运营数据认定超预算；课程参考小时和开发任务安排不是运营经济实测。",
+      "gap": "缺预先预算、实际成本耗时质量及已执行维护证据。",
+      "owner": "产品经理",
+      "nextAction": "产品经理冻结资源预算和维护指标，与工程收集实际运行账目与结果。",
+      "retest": {
+        "status": "待真实运营证据",
+        "method": "核对原始日志、预算、质量和维护责任及执行结果。"
+      }
+    },
+    {
+      "id": "iteration_trace",
+      "required": true,
+      "status": "pass",
+      "evidence": [
+        {
+          "reference": "team/RETROSPECTIVES.md R04/R05；team/engineering-v03-delivery.md 修复轮1",
+          "observation": "本产物目标、版本、八门槛、首轮P11/P17差距、原因、责任、改进与复验条件均有记录；工程记录其漏检原因，未以自检关闭。"
+        },
+        {
+          "reference": "team/qa-v03-review.md 首轮及修复冻结独立复验",
+          "observation": "首次28/30及P2证据保留；修复冻结hash对应原30项独立通过，旧V09版本冲突保留，其他正式缺口未关闭。"
+        },
+        {
+          "reference": "dist/app.js productReviewMarkdown/normalizeProductReview；team/qa-v03-check.mjs P18/P22/P26/P28",
+          "observation": "逐产物标准/版本/门槛/差距/责任/复验字段刷新和导出通过；自评与只读QA隔离，专业审核仍未审核，0.2历史不继承。"
+        }
+      ],
+      "limits": "仅当前prototype-0.3本轮产出的可追踪复盘闭环通过；不证明未来每次学习者使用已复盘、正式缺口完成或专业能力。最终报告打包仍待专项验证。",
+      "gap": "本轮逻辑改进已验证；正式七项失败或缺证继续开放。未来产出须重新独立审计。",
+      "owner": "项目经理",
+      "nextAction": "项目经理登记本版限定闭环与未完成项；每次新产出冻结版本、证据和责任，不继承本结论。",
+      "retest": {
+        "status": "当前逻辑改进已独立验证；包装待专项验证",
+        "method": "下一产物逐项检查门槛/版本/原因/责任/复验；当前报告打包后再专项核对一致性及两范围显示。"
+      }
+    }
+  ],
+  "counts": {
+    "required": 8,
+    "fail": 3,
+    "insufficient": 4,
+    "pass": 1
+  },
+  "inputHashes": {
+    "dist/app.js": "a17d6db7aa11effe914c8b3c7a4f3e5989819550a60ec1e375fc111713bf8ed8",
+    "dist/index.html": "5dc1e2070c0e74ce582f0948bd50a8482d2651e7d76063ca016b1f8efb13ed05",
+    "dist/curriculum-data.js": "c3c93435d4417792182c1f98b450a1e1a5c23aa9a8136ddb03086570c03f1442",
+    "dist/product-gates-data.js": "a331ad6c46adc7d463e9b56d918a8f96765ebaecfa1ff6c07c2c5e6c19e09b0e",
+    "dist/creation-path-data.js": "24a814d9b098e23c698b924924f209dbf14bb5637d9b7cd0ccbe6200d721d2c4",
+    "dist/product-audit-data.js": "0bbfa29213396404401baae81d38be134f5794919c71d284984d85c8a6042285",
+    "team/product-gates.json": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06",
+    "team/curriculum-data.json": "8eb4730321916a7b12f154f06b31444116657a59941e66c1d6fb34b19cf16609"
+  },
+  "staticVerification": {
+    "productVersion": "prototype-0.3",
+    "scope": "static_prototype",
+    "conclusion": "met_within_scope",
+    "standardVersion": "product-creation-2026-10-10",
+    "reviewer": "测试工程师独立代理 /root/qa_engineer",
+    "auditedAt": "2026-10-10",
+    "appSha256": "a17d6db7aa11effe914c8b3c7a4f3e5989819550a60ec1e375fc111713bf8ed8",
+    "evidence": [
+      {
+        "reference": "team/qa-v03-check.mjs 与 team/qa-v03-review.md",
+        "observation": "测试工程师实际运行新30/30，P11/P17原断言复验通过；两页、七阶段/12模块、八门槛、范围/版本、CRUD、保存及错误数据逻辑通过。"
+      },
+      {
+        "reference": "team/qa-check.mjs、team/curriculum-check.mjs、team/qa-v02-check.mjs",
+        "observation": "分别22/22、20/20、25/26；V09旧版预期冲突保留，V23—25通过，P28补新版预填和旧版历史。"
+      }
+    ],
+    "limits": "仅冻结版隔离Node VM逻辑、数据契约及结构。stub不模拟浏览器布局、原生表单、下载、焦点、读屏、历史栈和真实存储配额；未实测file页或用户存储。静态通过不证明完整教材、专业水平、行业先进、真实生成、用户价值、生产或运营。旧V09失败未抹去，最终报告包装尚未验证。",
+    "tests": [
+      {
+        "command": "node sites/rolecraft/team/qa-check.mjs",
+        "total": 22,
+        "pass": 22,
+        "fail": 0,
+        "exitCode": 0
+      },
+      {
+        "command": "node sites/rolecraft/team/curriculum-check.mjs",
+        "total": 20,
+        "pass": 20,
+        "fail": 0,
+        "exitCode": 0
+      },
+      {
+        "command": "node sites/rolecraft/team/qa-v02-check.mjs",
+        "total": 26,
+        "pass": 25,
+        "fail": 1,
+        "exitCode": 1,
+        "exception": "V09保留expected prototype-0.2/actual prototype-0.3；新版P28确认需求版本变化及历史保留"
+      },
+      {
+        "command": "node sites/rolecraft/team/qa-v03-check.mjs",
+        "total": 30,
+        "pass": 30,
+        "fail": 0,
+        "exitCode": 0
+      }
+    ],
+    "firstRound": {
+      "appSha256": "562dc5f36e39f6e5fde132526f951c619ec1af7d8d8624c07c0b642cf1e9c13b",
+      "newChecks": {
+        "total": 30,
+        "pass": 28,
+        "fail": 2
+      },
+      "conclusion": "not_met",
+      "failures": [
+        "V03-01/P11",
+        "V03-02/P17"
+      ],
+      "reference": "team/qa-v03-review.md"
+    },
+    "references": [
+      "team/qa-v03-plan.md",
+      "team/qa-v03-review.md",
+      "team/curriculum-validation.md"
+    ]
+  },
+  "remainingItems": [
+    "真实用户验证及试验前阈值",
+    "完整教材与分层练习、可运行案例及专业复核",
+    "真实模型生成、来源任务版本及恢复",
+    "同条件行业产品与研究基线比较和专业评审",
+    "学习者MVP、实际用户验证和独立作品评审",
+    "账户隔离、服务端持久化、异常恢复及正式运行范围",
+    "真实预算、成本、耗时、质量和维护结果",
+    "真实浏览器、视觉、键盘读屏和下载",
+    "当前报告原样包装后的专项验证；未来每次产出重新审计"
+  ],
+  "professionalReviewStatus": "未专业审核",
+  "advancedStatus": "无可比实证，不能认定行业先进",
+  "limits": [
+    "此结论基于本地材料和本轮已执行隔离逻辑，不是行业专业、用户或生产验证。",
+    "insufficient表示未知/证据不足，缺结果不可改为通过；没有认定所有学习者必然失败。",
+    "本版报告不自动继承到新版；静态与正式结论各自携带范围和版本。",
+    "本报告交付阶段dist仅0.2历史报告；工程打包后另作专项复验。"
+  ]
+}

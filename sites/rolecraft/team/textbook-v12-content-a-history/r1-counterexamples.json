@@ -1,0 +1,46 @@
+{
+  "version": "v12-content-a-r1-counterexamples",
+  "date": "2026-10-11",
+  "role": "独立内容审校员A",
+  "method": "独立读n01–n05及五例代码，未执行示例、未读QA保留题。",
+  "issues": [
+    {
+      "id": "CA-01",
+      "severity": "major",
+      "file": "n05-retrieval-ingestion.md",
+      "reason": "Agentic RAG先判calls_left=0再判unresolved为空；最后一次检索补齐证据仍返回INSUFFICIENT；无效planner提议拒绝也缺明确预算消耗/停止。",
+      "counterexample": "calls_left=1, unresolved={policy};检索取得有效policy后更新为空，回顶先被0预算拒绝。",
+      "owner": "教材研发员A",
+      "status": "open",
+      "review": "static only"
+    },
+    {
+      "id": "CA-02",
+      "severity": "minor_contract",
+      "file": "n02-context-memory-prompt.md",
+      "reason": "MemoryRecord状态枚举无requires_recheck，失效传播伪代码却对memory/output赋该状态；状态合同不一致。",
+      "counterexample": "m2依赖m1；撤回m1来源后m2被写成未声明枚举值，读者不能依据声明穷举消费状态。",
+      "owner": "教材研发员A",
+      "status": "open",
+      "review": "static only"
+    },
+    {
+      "id": "CA-03",
+      "severity": "major",
+      "file": "n03-planning-reflection.md",
+      "code": "examples/n03-plan-execution.py",
+      "reason": "invalidate仅write且status=done转EFFECT_RECHECK，write in_flight/unknown会变stale；未知效果可能被当作单纯重规划节点。",
+      "counterexample": "issue依赖draft，issue=unknown；rule失效传播至issue，函数输出stale。",
+      "owner": "教材研发员A",
+      "status": "open",
+      "review": "static only"
+    }
+  ],
+  "bindings": {
+    "sites/rolecraft/textbooks/v12/n02-context-memory-prompt.md": "8cad50c60dcc2463648c28578cc233491c5e25b448f2174b38e22736027dd0a9",
+    "sites/rolecraft/textbooks/v12/n01-python-model-foundations.md": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62",
+    "sites/rolecraft/textbooks/v12/n04-tools-mcp.md": "b3432424e61870ac250db2068423ed33e827c97cfc2f1440f3ae2987bfd4f39a",
+    "sites/rolecraft/textbooks/v12/n03-planning-reflection.md": "4cb4024406c8cc2267e304e05e383f3778b00af43eae5e730d28ea67424c3c37",
+    "sites/rolecraft/textbooks/v12/n05-retrieval-ingestion.md": "504a631cab9b71ac45e5b964e6bf830b4fd8bddf07554bfd3a2fec25cf877f47"
+  }
+}

@@ -1,0 +1,12 @@
+--- renderer-before (first failing implementation)
++++ renderer-after (repaired deterministic renderer)
+@@
+- emit_draft(claims)
++ for claim in claims:
++     require claim.claim_id and claim.source_refs
++     require each source_ref.document_id/source_version/location/hash == read_receipt
++     require hash(read_receipt.text) == read_receipt.hash
++     require tenant_scope == actor_tenant and read_receipt.status == "ok"
++ if any_requirement_fails:
++     stop(code, draft=None, handoff=None, external_action=None)
++ emit_draft(claims, status="draft_ready_for_review")

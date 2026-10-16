@@ -1,0 +1,240 @@
+{
+  "qa_id": "AI-L0-LEARNER-HANDOFF-QA-20261015-V06",
+  "date": "2026-10-15",
+  "reviewer_role": "QA",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "conclusion": "met_with_limitations",
+  "level_decision": "not_assessed",
+  "scope": "Independent structural/evidence review of consolidated v06 learner handoff; local deterministic fixtures only.",
+  "manifest_check": {
+    "artifact_count": 18,
+    "all_declared_records_match": true,
+    "fixture_hash_matches_raw": false,
+    "records": [
+      {
+        "path": "learner_raw.json",
+        "bytes_observed": 3840,
+        "bytes_declared": 3840,
+        "sha256_observed": "787ada15df215a31ab91b1f2125c9c07e42e1165c302a2df3b48fc7adc8b5372",
+        "sha256_declared": "787ada15df215a31ab91b1f2125c9c07e42e1165c302a2df3b48fc7adc8b5372",
+        "match": true
+      },
+      {
+        "path": "u-ai-l0-001/execution_log.json",
+        "bytes_observed": 572,
+        "bytes_declared": 572,
+        "sha256_observed": "f654ef05b7d02fb059581306c08a2d2d1dc881d1aa8d05f3ae21d6cebae4add2",
+        "sha256_declared": "f654ef05b7d02fb059581306c08a2d2d1dc881d1aa8d05f3ae21d6cebae4add2",
+        "match": true
+      },
+      {
+        "path": "u-ai-l0-001/baseline.json",
+        "bytes_observed": 145,
+        "bytes_declared": 145,
+        "sha256_observed": "d333928a3cd1a8dae2c52677d54e6531994a43c65a38c9833bc14ec845a5df48",
+        "sha256_declared": "d333928a3cd1a8dae2c52677d54e6531994a43c65a38c9833bc14ec845a5df48",
+        "match": true
+      },
+      {
+        "path": "u-ai-l0-001/first_failure.json",
+        "bytes_observed": 225,
+        "bytes_declared": 225,
+        "sha256_observed": "5a1fab1e704e898ae903ea49ebd6c0c97c31c36a18706298eac4683a43e9778c",
+        "sha256_declared": "5a1fab1e704e898ae903ea49ebd6c0c97c31c36a18706298eac4683a43e9778c",
+        "match": true
+      },
+      {
+        "path": "u-ai-l0-001/regression.json",
+        "bytes_observed": 203,
+        "bytes_declared": 203,
+        "sha256_observed": "09a43d9de20fc28f49c4b40c35365b6153877311313cc777af04fcc0a46dfed2",
+        "sha256_declared": "09a43d9de20fc28f49c4b40c35365b6153877311313cc777af04fcc0a46dfed2",
+        "match": true
+      },
+      {
+        "path": "u-ai-l0-001/holdout.json",
+        "bytes_observed": 170,
+        "bytes_declared": 170,
+        "sha256_observed": "54fed271fbf9f09f809f90ad333192853c9f244bbb23eef5e2b5fe4de833f5f0",
+        "sha256_declared": "54fed271fbf9f09f809f90ad333192853c9f244bbb23eef5e2b5fe4de833f5f0",
+        "match": true
+      },
+      {
+        "path": "quality/demo-v02-qa.json",
+        "bytes_observed": 5803,
+        "bytes_declared": 5803,
+        "sha256_observed": "1bdab3d604227b9665f1e61b09082ea08f28172545da2649fd4df376ebee4180",
+        "sha256_declared": "1bdab3d604227b9665f1e61b09082ea08f28172545da2649fd4df376ebee4180",
+        "match": true
+      },
+      {
+        "path": "quality/b-denial-qa.json",
+        "bytes_observed": 1864,
+        "bytes_declared": 1864,
+        "sha256_observed": "dcc6ea4a4b831888c73751b7551736c00e88dfc453d3ce9d7c7148f7c08e2a2c",
+        "sha256_declared": "dcc6ea4a4b831888c73751b7551736c00e88dfc453d3ce9d7c7148f7c08e2a2c",
+        "match": true
+      },
+      {
+        "path": "quality/d6-failure-sample.json",
+        "bytes_observed": 657,
+        "bytes_declared": 657,
+        "sha256_observed": "7291299ca3aa1bf8e6fc6ebdd97d9b4504c99d73527451fc524adbf22a85a533",
+        "sha256_declared": "7291299ca3aa1bf8e6fc6ebdd97d9b4504c99d73527451fc524adbf22a85a533",
+        "match": true
+      },
+      {
+        "path": "ai-generation-d0-learner-demo-v02__learner_raw.json",
+        "bytes_observed": 249,
+        "bytes_declared": 249,
+        "sha256_observed": "b90f51cc23081745265a173ef89c178ad80104fa765cb707ba32298416718cdc",
+        "sha256_declared": "b90f51cc23081745265a173ef89c178ad80104fa765cb707ba32298416718cdc",
+        "match": true
+      },
+      {
+        "path": "ai-generation-d0-learner-demo-qa-v02.json",
+        "bytes_observed": 5803,
+        "bytes_declared": 5803,
+        "sha256_observed": "1bdab3d604227b9665f1e61b09082ea08f28172545da2649fd4df376ebee4180",
+        "sha256_declared": "1bdab3d604227b9665f1e61b09082ea08f28172545da2649fd4df376ebee4180",
+        "match": true
+      },
+      {
+        "path": "ai-generation-l0-b-denial-transfer-v01.json",
+        "bytes_observed": 1638,
+        "bytes_declared": 1638,
+        "sha256_observed": "ea0d55cab665894471ee37fcf53292bee7cedf138f1bb400e296d8c01e3210d1",
+        "sha256_declared": "ea0d55cab665894471ee37fcf53292bee7cedf138f1bb400e296d8c01e3210d1",
+        "match": true
+      },
+      {
+        "path": "ai-generation-l0-b-denial-transfer-qa-v01.json",
+        "bytes_observed": 1864,
+        "bytes_declared": 1864,
+        "sha256_observed": "dcc6ea4a4b831888c73751b7551736c00e88dfc453d3ce9d7c7148f7c08e2a2c",
+        "sha256_declared": "dcc6ea4a4b831888c73751b7551736c00e88dfc453d3ce9d7c7148f7c08e2a2c",
+        "match": true
+      },
+      {
+        "path": "ai-generation-l0-practice-source-001-v01.json",
+        "bytes_observed": 1424,
+        "bytes_declared": 1424,
+        "sha256_observed": "6feca0a872dbe85867560284f0cbf947d220ca0ae416fdbc8370a812556c8b3b",
+        "sha256_declared": "6feca0a872dbe85867560284f0cbf947d220ca0ae416fdbc8370a812556c8b3b",
+        "match": true
+      },
+      {
+        "path": "ai-generation-l0-practice-durable-002-v04__evidence-card.json",
+        "bytes_observed": 1490,
+        "bytes_declared": 1490,
+        "sha256_observed": "126c997a1770dca54fedbd5c18bd9fe27b2b1b94dac2008178ffa4a15456a983",
+        "sha256_declared": "126c997a1770dca54fedbd5c18bd9fe27b2b1b94dac2008178ffa4a15456a983",
+        "match": true
+      },
+      {
+        "path": "ai-generation-l0-practice-gate-003-v06__manifest.json",
+        "bytes_observed": 5836,
+        "bytes_declared": 5836,
+        "sha256_observed": "91993e51e1e24c618eeb6194f1e1bbac7f1a0fb57b13842f27696e632ee9560f",
+        "sha256_declared": "91993e51e1e24c618eeb6194f1e1bbac7f1a0fb57b13842f27696e632ee9560f",
+        "match": true
+      },
+      {
+        "path": "d6-quality.json",
+        "bytes_observed": 478,
+        "bytes_declared": 478,
+        "sha256_observed": "44ce5058a1880b5baff66acc3ead086786e4d555080a12cff6bd89a7127a40fa",
+        "sha256_declared": "44ce5058a1880b5baff66acc3ead086786e4d555080a12cff6bd89a7127a40fa",
+        "match": true
+      },
+      {
+        "path": "b-denial-learner-execution.json",
+        "bytes_observed": 283,
+        "bytes_declared": 283,
+        "sha256_observed": "8fddf4f7013608bc7efe91ea5e334070ae3e587755d9c9da7f8e81f9f2ad0c60",
+        "sha256_declared": "8fddf4f7013608bc7efe91ea5e334070ae3e587755d9c9da7f8e81f9f2ad0c60",
+        "match": true
+      }
+    ]
+  },
+  "d0_cards": {
+    "ids": [
+      "CARD-D0-01",
+      "CARD-D0-02",
+      "CARD-D0-03",
+      "CARD-D0-04",
+      "CARD-D0-05"
+    ],
+    "all_present": true,
+    "all_diagnostic_ids_match": true,
+    "all_learner_execution": true,
+    "required_bindings": [
+      "raw_answer_ref",
+      "demo_output_ref",
+      "first_failures",
+      "stop_decision",
+      "regression",
+      "holdout",
+      "unverified"
+    ]
+  },
+  "b_denial": {
+    "learner_execution_separate_from_independent_qa": true,
+    "result": "denied",
+    "output_sha256": "unavailable-local-receipt",
+    "self_signed": false,
+    "qa_status": "pending",
+    "external_action": null
+  },
+  "d6": {
+    "positive": {
+      "claim": [
+        1,
+        1
+      ],
+      "source": [
+        1,
+        1
+      ],
+      "version": [
+        1,
+        1
+      ],
+      "tenant": [
+        1,
+        1
+      ],
+      "schema": [
+        1,
+        1
+      ]
+    },
+    "negative_claim": [
+      0,
+      1
+    ],
+    "negative_failure_retained": true
+  },
+  "u_and_sandbox": {
+    "baseline_first_failure_regression_holdout_present": true,
+    "network_disabled": true,
+    "cloud": false,
+    "paid_api": false,
+    "real_model": false,
+    "real_user_data": false,
+    "stop_decisions_present": true
+  },
+  "status_checks": {
+    "qa_status": "pending",
+    "human_receipt": "pending",
+    "external_action": null,
+    "l1_decision": "not_granted",
+    "l2_decision": "not_granted"
+  },
+  "limitations": [
+    "No real model/API or production RPO/RTO evidence",
+    "No human receipt or real tenant/source authorization evidence",
+    "B-denial output receipt hash unavailable locally",
+    "D6 negative claim omission remains a failure sample"
+  ]
+}

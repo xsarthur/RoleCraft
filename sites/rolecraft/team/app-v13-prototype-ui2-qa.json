@@ -1,0 +1,245 @@
+{
+  "version": "app-v13-prototype-ui2-qa-1",
+  "at": "2026-10-12T09:31:33.878686",
+  "role": "independent QA",
+  "status": "completed_with_limitations",
+  "scope": "Remaining official browser UI against frozen v13 candidates; no current/live full acceptance",
+  "clientVersion": "local-workbench-0.13-learning",
+  "corpusVersion": "textbook-v12",
+  "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+  "initialExperienceSha256": "7fc778e5d85702688caebf76370308ddee435b74acee7665666387a4dc902b9e",
+  "initialCssSha256": "d190bdc09f0fb9b3ae4eb308cd52b358c935f69d3b9b93ae16ea4418789654bd",
+  "finalExperienceSha256": "e731f617891e8a08ea52e5f58267a47c3ff9c43d0ae12dd6c7d443576afdf42f",
+  "finalCssSha256": "87d7c3207eb615022b8298e2fa955f72227672c71d7d8fab47c70cad40dd15fd",
+  "officialBrowser": {
+    "id": "2",
+    "type": "iab",
+    "ownedTab": "1",
+    "visible": false,
+    "viewports": [
+      [
+        1280,
+        720
+      ],
+      [
+        857,
+        900
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        1280,
+        900
+      ]
+    ],
+    "reset": true,
+    "ownedTabClosed": true
+  },
+  "ports": [
+    4475,
+    4486
+  ],
+  "other4485NotOperated": true,
+  "currentLiveAcceptance": false,
+  "necessaryUIComplete": false,
+  "fullGoal": "not_met",
+  "overallAssessmentOwner": "main QA + PM",
+  "checks": [
+    {
+      "id": "UI2-Q11-NAV",
+      "status": "pass_within_observed_scope",
+      "evidence": [
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/02-Q11-detail-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/04-Q11-reader-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/06-Q11-return-filter-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/07-filter-refresh-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/08-filter-browser-back-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/09-bank114-ax.txt"
+      ]
+    },
+    {
+      "id": "UI2-POINT-POOL",
+      "status": "pass_within_observed_scope",
+      "evidence": [
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/12-check5-first-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/13-check5-second-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/15-check10-first-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/16-check10-second-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/18-check20-first-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/19-check20-second-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/58-empty-check4486-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/59-real-no-question-point-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/60-learned-no-question-pool-ax.txt"
+      ]
+    },
+    {
+      "id": "UI2-MARKS-SELF-ASSESSMENT",
+      "status": "pass_within_observed_scope",
+      "evidence": [
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/20-check20-result-dom.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/21-records-wrong-selected-only-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/24-Q11-mastered-refresh-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/25-Q11-cancel-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/26-Q11-unmastered-refresh-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/37-records-mastered-Q12-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/39-directory-n03-point-state-ax.txt"
+      ]
+    },
+    {
+      "id": "UI2-REVIEW01",
+      "status": "closed_in_frozen_repair_only",
+      "evidence": [
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/33-review-mastered-result-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/34-review-records-one-unmastered-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/36-review-done-false-empty-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/64-review01-original-retest-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/65-review01-continue-Q11-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/66-review01-true-empty-retest-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/67-review01-true-empty-records-ax.txt"
+      ]
+    },
+    {
+      "id": "UI2-PERSONAL-BOUNDARY",
+      "status": "pass_within_observed_scope",
+      "evidence": [
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/61-Q10-personal-evidence-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/62-Q99-personal-evidence-ax.txt"
+      ]
+    },
+    {
+      "id": "UI2-RECOMMEND-UI",
+      "status": "pass_within_observed_scope",
+      "evidence": [
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/41-react-results-dom.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/42-react-card-reader-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/49-wait-context-results-dom.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/50-ambiguity-dom.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/51-unrelated-dom.txt"
+      ]
+    },
+    {
+      "id": "UI2-WAITING-FOCUS",
+      "status": "pass_within_explicit_timing_fixture",
+      "evidence": [
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/46-waiting-collapsed-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/47-waiting-page-switch-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/48-ready-no-auto-open-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/49-wait-context-results-dom.txt"
+      ]
+    },
+    {
+      "id": "UI2-TRANSPORT",
+      "status": "pass_within_explicit_transport_fixtures",
+      "evidence": [
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/53-fixture503-dom.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/54-fixture503-reading-continues-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/55-fixture503-retry-real-dom.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/56-explicit-stale-version-dom.txt"
+      ]
+    },
+    {
+      "id": "UI2-HISTORY-DOWNLOAD",
+      "status": "pass_within_fabricated_seed_scope",
+      "evidence": [
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/91-valid-notes-versioned-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/94-new-project-save-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/95-project-refresh-values-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/100-corrupt-history-honest-state-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/valid-download-original-raw-check.json",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/corrupt-project-download-check.json"
+      ]
+    },
+    {
+      "id": "UI2-VERSIONS-ROUTES",
+      "status": "pass_within_observed_scope",
+      "evidence": [
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/96-explicit-v10-readonly-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/97-unknown-section-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/98-unknown-version-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/108-old-book-route-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/109-old-reflections-route-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/110-old-projects-history-route-ax.txt"
+      ]
+    },
+    {
+      "id": "UI2-MOBILE01",
+      "status": "closed_in_frozen_repair_only",
+      "evidence": [
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/71-mobile-bank-overflow-metrics.json",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/103-mobile01-retest-bank-metrics.json",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/104-mobile01-real-select-filter-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/105-mobile01-n03-retest-metrics.json",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/106-mobile01-desktop-retest-metrics.json",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/107-mobile01-857-filter-retest.json"
+      ]
+    },
+    {
+      "id": "UI2-GRAPH-MAP-KEYBOARD",
+      "status": "pass_within_observed_scope",
+      "evidence": [
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/74-image-original-metrics.json",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/75-image-focus.json",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/78-map-drag-positive-scroll.json",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/80-directory30-keyboard-expand-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/81-directory30-keyboard-reader-ax.txt"
+      ]
+    },
+    {
+      "id": "UI2-HELPER-CLOSE",
+      "status": "pass_within_observed_scope",
+      "evidence": [
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/52-escape-assistant-focus-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/113-mobile-helper-close-metrics.json",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/114-mobile-helper-close-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/115-helper-outside-blank-close-ax.txt"
+      ]
+    },
+    {
+      "id": "UI2-MARKDOWN-DOWNLOAD",
+      "status": "pass_within_observed_scope",
+      "evidence": [
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/markdown-download-check.json"
+      ]
+    },
+    {
+      "id": "UI2-EXAMPLE-PLAINTEXT",
+      "status": "insufficient",
+      "evidence": [
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/83-example-plaintext-ax.txt",
+        "sites/rolecraft/team/app-v13-prototype-ui2-qa-history/86-example-browser-block-state-ax.txt"
+      ]
+    }
+  ],
+  "limitations": [
+    "Official IAB blocked .py resource; no bypass and no plaintext UI proof.",
+    "No arbitrary-Chinese, all keyboard, full old backend, old textbook behavior, real learner/expert/market or live shared-source whole acceptance.",
+    "Actual dual-query late ordering not separately browser-tested in UI2; main VM evidence remains a different type.",
+    "Current shared workspace has parallel v14 changes. Frozen repairs do not imply current dist/live applied."
+  ],
+  "requests": {
+    "uiRecommendSubmissionsObserved": 8,
+    "localSemanticResponseMode": 5,
+    "conceptClarificationResponseMode": 1,
+    "explicit503Fixture": 1,
+    "explicitWrongVersionFixture": 1,
+    "paidOrExternalProviderCalls": 0,
+    "timingFixtureDelayMs": 1800
+  },
+  "bindings": {
+    "served": "app-v13-prototype-ui2-qa-history/served-final-check.json",
+    "received": "app-v13-prototype-ui2-qa-history/frozen-served-source.json",
+    "sharedBoundary": "app-v13-prototype-ui2-qa-history/final-shared-source-boundary.json",
+    "cleanup": "app-v13-prototype-ui2-qa-history/cleanup.json"
+  },
+  "selfCheck": {
+    "onlyAuthorizedUi2FilesWritten": true,
+    "applicationCodeEdited": false,
+    "textbookEdited": false,
+    "otherQaReportsEdited": false,
+    "userRecordsReadOrModified": false,
+    "ownServicesClosedExit0": true,
+    "final4486NoListener": true
+  }
+}

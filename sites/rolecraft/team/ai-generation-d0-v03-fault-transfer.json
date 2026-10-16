@@ -1,0 +1,519 @@
+{
+  "append_record_id": "D0-AI-20261015-001-R2",
+  "assertions": {
+    "all_local_assertions_passed": true,
+    "fault_scenarios_have_first_failure": true,
+    "fault_scenarios_no_external_action": true,
+    "fault_scenarios_stopped": true,
+    "transfer_changes_only_checkpoint_availability": true,
+    "transfer_plan_executed": true
+  },
+  "date": "2026-10-15",
+  "decision": "not_assessed",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "execution": {
+    "command": "python3 /private/tmp/ai_generation_d0_fault_transfer_v1.py > /private/tmp/ai_generation_d0_fault_transfer_run_v3.json",
+    "environment": {
+      "external_writes": false,
+      "langgraph_imported": false,
+      "network": "disabled_by_task_constraint",
+      "paid_api": false,
+      "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+      "python": "3.14.5",
+      "real_model": false
+    },
+    "fixture_id": "F-AI-D0-S1-v2-fault-transfer",
+    "fixture_script": "/private/tmp/ai_generation_d0_fault_transfer_v1.py",
+    "fixture_script_sha256": "37c18726cc2391bc7997b93e0bafa1bf626367d0d5686956316101e3f3f9ee34",
+    "fixture_sha256": "c8f7884042d59e714d82f266a34ff17fe33faa7291160abb8647695e2db62239",
+    "network_or_paid_api": "未使用网络、真实模型、真实LangGraph、付费API、真实密钥、真实用户数据、云服务或外部写入",
+    "run_output": "/private/tmp/ai_generation_d0_fault_transfer_run_v3.json",
+    "run_output_sha256": "6a74928b13d8fc28499b1d591d2ad5c0679852c4e9c52d9571e7f9a09d13c062"
+  },
+  "fault_injection": {
+    "all_required_faults_executed": true,
+    "interpretation": "每项均保留first_failure、stopped和recovery状态；恢复是确定性状态机演示，不是真实耐久存储或进程崩溃恢复。",
+    "required_faults": [
+      "empty_tool_result",
+      "duplicate_callback",
+      "old_checkpoint",
+      "timeout"
+    ],
+    "scenarios": [
+      {
+        "fault": "empty_tool_result",
+        "first_failure": {
+          "attempt": 1,
+          "code": "EMPTY_TOOL_RESULT",
+          "tool_result_ref": null
+        },
+        "recovery_evidence": {
+          "final_status": "draft_ready_for_review",
+          "reason": "fixture tool side_effect=none",
+          "retry_safe": true
+        },
+        "scenario_id": "FI-AI-EMPTY-001",
+        "states": [
+          {
+            "payload_hash": "c8f7884042d59e714d82f266a34ff17fe33faa7291160abb8647695e2db62239",
+            "reason": "accepted low-risk request",
+            "state": "start"
+          },
+          {
+            "payload_hash": "b5665b370b74c9783365dc82c7561a55aa516a211f3a389301bc3f169abc8cb9",
+            "reason": "authorized read-only call",
+            "state": "tool_called"
+          },
+          {
+            "payload_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "reason": "tool returned empty object",
+            "state": "tool_returned_empty"
+          },
+          {
+            "payload_hash": "ccad3f88cb3ddd29069605cfa56027b35f3cefce03dc7a567f6676f203bd19da",
+            "reason": "EMPTY_TOOL_RESULT",
+            "state": "failed"
+          },
+          {
+            "payload_hash": "53d80d185d5a14372bbe8e8a3c663e5acd4e895d67a44c273762820d8eac9920",
+            "reason": "no draft or external action allowed",
+            "state": "stopped"
+          },
+          {
+            "payload_hash": "24633a7ba789a11719214830cbd18f061fa652b13e37d3de7e396ef1f8721049",
+            "reason": "preserved first failure and scheduled bounded retry",
+            "state": "recovery_required"
+          },
+          {
+            "payload_hash": "2170203d88ba5392338858265a9602e2c5adfa5468e2fcdced6bbd117eb123e7",
+            "reason": "same contract, bounded retry",
+            "state": "tool_retried"
+          },
+          {
+            "payload_hash": "695dc1752afdcd23a4c6091aea87eb7738ff4c23b98e53342d5e3c9e3cf5bdb2",
+            "reason": "authorized source recovered",
+            "state": "tool_returned"
+          },
+          {
+            "payload_hash": "e44051bb79d687d683abfb167f5ef6278bcd3f87d9942563a94ab984ffc4ad68",
+            "reason": "deterministic stand-in composed cited draft",
+            "state": "drafted"
+          },
+          {
+            "payload_hash": "e44051bb79d687d683abfb167f5ef6278bcd3f87d9942563a94ab984ffc4ad68",
+            "reason": "schema, source and no-send checks passed",
+            "state": "checked"
+          },
+          {
+            "payload_hash": "6786e806fc5653c7237c4f5054e340005a0e5fcf5cc002e380409cfbc7368235",
+            "reason": "draft ready for review",
+            "state": "handed_off"
+          }
+        ],
+        "stop_evidence": {
+          "downstream_generation_before_recovery": false,
+          "external_action": null
+        }
+      },
+      {
+        "fault": "duplicate_callback",
+        "first_failure": {
+          "action": "ignore_duplicate",
+          "callback_id": "cb-001",
+          "code": "DUPLICATE_CALLBACK"
+        },
+        "recovery_evidence": {
+          "dedupe_key": "callback_id",
+          "durable_result_reused": true,
+          "final_status": "draft_ready_for_review"
+        },
+        "scenario_id": "FI-AI-DUP-001",
+        "states": [
+          {
+            "payload_hash": "c8f7884042d59e714d82f266a34ff17fe33faa7291160abb8647695e2db62239",
+            "reason": "accepted low-risk request",
+            "state": "start"
+          },
+          {
+            "payload_hash": "2e39c7ad6e84eb7a949efa754de45b4ad21814fac34f40d0c21b83b236aa4a44",
+            "reason": "authorized read-only call",
+            "state": "tool_called"
+          },
+          {
+            "payload_hash": "96e3dcc1dea4121911bdecfeb0ffae9b79268f2ef45686d3e07063cf8b269481",
+            "reason": "first callback persisted",
+            "state": "tool_returned"
+          },
+          {
+            "payload_hash": "91ee2abe241814b72aa0d2d2fcd57d1d7be83af70b4717efcc89fb6177758dec",
+            "reason": "first callback id recorded",
+            "state": "callback_accepted"
+          },
+          {
+            "payload_hash": "2e39c7ad6e84eb7a949efa754de45b4ad21814fac34f40d0c21b83b236aa4a44",
+            "reason": "same callback_id and result ref received again",
+            "state": "duplicate_callback_detected"
+          },
+          {
+            "payload_hash": "8b9808508b528cd29a49d9dbbd28d676be7eb4dad0562758f44da4f497f109b1",
+            "reason": "duplicate ignored; no second draft or side effect",
+            "state": "stopped"
+          },
+          {
+            "payload_hash": "e44051bb79d687d683abfb167f5ef6278bcd3f87d9942563a94ab984ffc4ad68",
+            "reason": "resumed from durable first callback",
+            "state": "recovered"
+          },
+          {
+            "payload_hash": "e44051bb79d687d683abfb167f5ef6278bcd3f87d9942563a94ab984ffc4ad68",
+            "reason": "one logical result, schema/source/no-send checks passed",
+            "state": "checked"
+          },
+          {
+            "payload_hash": "6786e806fc5653c7237c4f5054e340005a0e5fcf5cc002e380409cfbc7368235",
+            "reason": "draft ready for review",
+            "state": "handed_off"
+          }
+        ],
+        "stop_evidence": {
+          "duplicate_downstream_effect": false,
+          "external_action": null,
+          "second_draft_created": false
+        }
+      },
+      {
+        "fault": "old_checkpoint",
+        "first_failure": {
+          "checkpoint_version": "v0",
+          "code": "CHECKPOINT_INCONSISTENT",
+          "missing": [
+            "tool_result_ref",
+            "source_refs"
+          ]
+        },
+        "recovery_evidence": {
+          "durable_result_used": true,
+          "final_status": "draft_ready_for_review",
+          "old_checkpoint_preserved": true
+        },
+        "scenario_id": "FI-AI-OLD-001",
+        "states": [
+          {
+            "payload_hash": "c31772ab312b61b26ff9f1c1bdf80ef7b7cad418e3f4c852eb32a1931d1e16d8",
+            "reason": "loaded checkpoint",
+            "state": "start"
+          },
+          {
+            "payload_hash": "c31772ab312b61b26ff9f1c1bdf80ef7b7cad418e3f4c852eb32a1931d1e16d8",
+            "reason": "checkpoint says completed but has no durable result",
+            "state": "old_checkpoint_loaded"
+          },
+          {
+            "payload_hash": "78a00b93a4381366de23bd308819a288c72aa208f9a51ff1c1929d6cee7cda5d",
+            "reason": "CHECKPOINT_INCONSISTENT",
+            "state": "failed"
+          },
+          {
+            "payload_hash": "53d80d185d5a14372bbe8e8a3c663e5acd4e895d67a44c273762820d8eac9920",
+            "reason": "refused to trust completed flag; no draft or external action",
+            "state": "stopped"
+          },
+          {
+            "payload_hash": "f766bc01546b81afca03248846edc3105456a7dd85d90dec215d70f542eaa8bd",
+            "reason": "preserved old checkpoint and searched durable tool result",
+            "state": "recovery_required"
+          },
+          {
+            "payload_hash": "695dc1752afdcd23a4c6091aea87eb7738ff4c23b98e53342d5e3c9e3cf5bdb2",
+            "reason": "durable result found and source version checked",
+            "state": "tool_result_recovered"
+          },
+          {
+            "payload_hash": "e44051bb79d687d683abfb167f5ef6278bcd3f87d9942563a94ab984ffc4ad68",
+            "reason": "reconstructed from durable result",
+            "state": "drafted"
+          },
+          {
+            "payload_hash": "e44051bb79d687d683abfb167f5ef6278bcd3f87d9942563a94ab984ffc4ad68",
+            "reason": "schema/source/no-send checks passed",
+            "state": "checked"
+          },
+          {
+            "payload_hash": "6786e806fc5653c7237c4f5054e340005a0e5fcf5cc002e380409cfbc7368235",
+            "reason": "draft ready for review",
+            "state": "handed_off"
+          }
+        ],
+        "stop_evidence": {
+          "completed_flag_trusted": false,
+          "draft_before_recovery": false,
+          "external_action": null
+        }
+      },
+      {
+        "fault": "timeout",
+        "first_failure": {
+          "attempt": 1,
+          "code": "TOOL_TIMEOUT",
+          "timeout_ms": 50
+        },
+        "recovery_evidence": {
+          "final_status": "draft_ready_for_review",
+          "retry_budget_used": 1,
+          "retry_safe": true
+        },
+        "scenario_id": "FI-AI-TIMEOUT-001",
+        "states": [
+          {
+            "payload_hash": "c8f7884042d59e714d82f266a34ff17fe33faa7291160abb8647695e2db62239",
+            "reason": "accepted low-risk request",
+            "state": "start"
+          },
+          {
+            "payload_hash": "a2b10026a34a3cc3b54f35f59226f37da8207a0d1a09e96e8191ad8dff791449",
+            "reason": "authorized read-only call",
+            "state": "tool_called"
+          },
+          {
+            "payload_hash": "a2b10026a34a3cc3b54f35f59226f37da8207a0d1a09e96e8191ad8dff791449",
+            "reason": "tool exceeded deterministic 50ms budget",
+            "state": "timeout"
+          },
+          {
+            "payload_hash": "53d80d185d5a14372bbe8e8a3c663e5acd4e895d67a44c273762820d8eac9920",
+            "reason": "bounded retry only; no partial draft or external action",
+            "state": "stopped"
+          },
+          {
+            "payload_hash": "8577d257e24b8f54f7b93b59860f31837c90315e6735b68711f44ab0247acc78",
+            "reason": "retry budget available and tool declared read-only",
+            "state": "recovery_required"
+          },
+          {
+            "payload_hash": "e0f1187249029ffdcf94ee815429ce36d5217fcc6ddd3b1a95fc416a1c8792a1",
+            "reason": "one bounded retry",
+            "state": "tool_retried"
+          },
+          {
+            "payload_hash": "695dc1752afdcd23a4c6091aea87eb7738ff4c23b98e53342d5e3c9e3cf5bdb2",
+            "reason": "retry returned authorized source",
+            "state": "tool_returned"
+          },
+          {
+            "payload_hash": "e44051bb79d687d683abfb167f5ef6278bcd3f87d9942563a94ab984ffc4ad68",
+            "reason": "deterministic stand-in composed cited draft",
+            "state": "drafted"
+          },
+          {
+            "payload_hash": "e44051bb79d687d683abfb167f5ef6278bcd3f87d9942563a94ab984ffc4ad68",
+            "reason": "schema/source/no-send checks passed",
+            "state": "checked"
+          },
+          {
+            "payload_hash": "6786e806fc5653c7237c4f5054e340005a0e5fcf5cc002e380409cfbc7368235",
+            "reason": "draft ready for review",
+            "state": "handed_off"
+          }
+        ],
+        "stop_evidence": {
+          "external_action": null,
+          "partial_output_discarded": true
+        }
+      }
+    ]
+  },
+  "fixture_payload": {
+    "documents": [
+      {
+        "allow_read": true,
+        "id": "doc-A-refund-v1",
+        "tenant": "A",
+        "text": "退款需复核。"
+      }
+    ],
+    "fixture_id": "F-AI-D0-S1-v2-fault-transfer",
+    "fixture_version": "ai-generation-d0-local-v2",
+    "identity": {
+      "actor": "training-fixture-user",
+      "tenant": "A"
+    },
+    "output_schema_version": "draft.v1",
+    "request": "为 DEMO-42 生成一条内部草稿，必须带来源，不发送。",
+    "tool_contract": {
+      "idempotency_key": "run_id:tool_attempt",
+      "input": {
+        "document_id": "string",
+        "tenant": "string"
+      },
+      "name": "retrieve_authorized_doc",
+      "output": {
+        "document_id": "string",
+        "source_version": "string",
+        "text": "string"
+      },
+      "side_effect": "none"
+    }
+  },
+  "l1_decision": "not_granted",
+  "local_fixture_decision": "passed_local_fixture_with_limitations",
+  "next_actions": [
+    {
+      "action": "核对四类故障机制、状态语义和本地夹具不能外推真实LangGraph/生产的边界",
+      "owner": "内容审校员",
+      "status": "pending"
+    },
+    {
+      "action": "独立复验v03脚本/输出hash、原例、受影响回归和一个未预告变体",
+      "owner": "测试工程师",
+      "status": "rerun_complete_record_pending"
+    },
+    {
+      "action": "保留v03结果；真实模型、真实LangGraph或外部动作若需训练必须另建授权和契约",
+      "owner": "AI生成工程师",
+      "status": "pending"
+    }
+  ],
+  "review": {
+    "author_self_review": false,
+    "content_reviewer": {
+      "role": "内容审校员",
+      "scope": "故障机制、LangGraph边界、迁移假设与证据措辞",
+      "status": "pending"
+    },
+    "independent_review_required": true,
+    "qa_engineer": {
+      "role": "测试工程师",
+      "scope": "脚本/输出hash、四类故障首失败/停止/恢复、迁移约束与计划",
+      "status": "independent_rerun_complete_pending_record"
+    }
+  },
+  "role_id": "AI",
+  "role_title": "AI生成工程师",
+  "schema_version": "ai-generation-d0-v03-fault-transfer",
+  "scope_note": "追加v0.1原始输入和v0.2正常路径重放的本地确定性故障/迁移证据；不覆盖旧记录，不构成能力认证。",
+  "source_records": {
+    "prior_hashes": {
+      "ai-generation-d0-v02-replay.json": "5475f74922ae12bbe7f07f690bd1ed61bb2cbf7075ce2074e02e2a9d2bd50d4b",
+      "ai-generation-d0-v02-replay.md": "45d626847c22845c9f11f7777df094600336134e111d2f993f50de1f3eef070d",
+      "professional-learning-theory-check-v01.json": "881a3a7cc11ca48010d8c84613d4ca93752aa1cdb3da39e5c0af2436a087eac0",
+      "professional-learning-theory-check-v01.md": "175b31a81ad4bc0692d7e1db22c57cec138b4b33ab509876a7e7138629b28749"
+    },
+    "prior_replay_json": "sites/rolecraft/team/ai-generation-d0-v02-replay.json",
+    "prior_replay_md": "sites/rolecraft/team/ai-generation-d0-v02-replay.md",
+    "theory_check_json": "sites/rolecraft/team/professional-learning-theory-check-v01.json",
+    "theory_check_md": "sites/rolecraft/team/professional-learning-theory-check-v01.md"
+  },
+  "timezone": "Asia/Shanghai",
+  "training_status": "in_progress",
+  "transfer": {
+    "constraint_change": "checkpoint storage is temporarily unavailable; no other input, identity, tool, schema or model change",
+    "first_failure": {
+      "attempt": 1,
+      "code": "CHECKPOINT_STORE_TRANSIENT_UNAVAILABLE",
+      "retry_after_ms": 20
+    },
+    "migration_plan": [
+      {
+        "evidence": "BASE hash retained",
+        "executed": true,
+        "step": "freeze_contract"
+      },
+      {
+        "evidence": "CHECKPOINT_STORE_TRANSIENT_UNAVAILABLE",
+        "executed": true,
+        "step": "record_first_failure"
+      },
+      {
+        "evidence": "stopped before draft publish",
+        "executed": true,
+        "step": "hold_downstream_and_external_actions"
+      },
+      {
+        "evidence": "checkpoint_write_recovered",
+        "executed": true,
+        "step": "bounded_retry_when_checkpoint_recovers"
+      },
+      {
+        "evidence": "checked",
+        "executed": true,
+        "step": "revalidate_schema_source_and_no_send"
+      },
+      {
+        "evidence": "no real queue/model/API",
+        "executed": true,
+        "step": "preserve_unknown_task_as_local_only"
+      }
+    ],
+    "plan_executed": true,
+    "recovery_evidence": {
+      "checkpoint_version": "v2",
+      "final_status": "draft_ready_for_review"
+    },
+    "scenario_id": "U-AI-006-T1",
+    "states": [
+      {
+        "payload_hash": "c8f7884042d59e714d82f266a34ff17fe33faa7291160abb8647695e2db62239",
+        "reason": "unknown local queue task accepted",
+        "state": "start"
+      },
+      {
+        "payload_hash": "6e7450f248d9f924ac97cae9fe82bc8f4ed1b4fa3d532079a2b11d7dcb90d805",
+        "reason": "same authorized read-only contract",
+        "state": "tool_called"
+      },
+      {
+        "payload_hash": "695dc1752afdcd23a4c6091aea87eb7738ff4c23b98e53342d5e3c9e3cf5bdb2",
+        "reason": "same authorized source returned",
+        "state": "tool_returned"
+      },
+      {
+        "payload_hash": "71b3391bcf16eacec3aa21144d5f82b2a435b82748cd8c6151fdd514e549dc41",
+        "reason": "CHECKPOINT_STORE_TRANSIENT_UNAVAILABLE",
+        "state": "checkpoint_write_failed"
+      },
+      {
+        "payload_hash": "3efe278cef806699453122fd044bc5344e40d66fb126ca52f56adf20a98d50e9",
+        "reason": "held draft and external action while checkpoint unavailable",
+        "state": "stopped"
+      },
+      {
+        "payload_hash": "8418921bfb9174c1e3d858ad2eb5561107b2e9d9e15a069b403fcf503791ad50",
+        "reason": "bounded wait and retry; no contract changes",
+        "state": "recovery_required"
+      },
+      {
+        "payload_hash": "d2906f2a7bc8ebc49a18e447c86bfe1db591a1e4f54058d94fce74cdd8fdb0aa",
+        "reason": "temporary store restored on retry 2",
+        "state": "checkpoint_write_recovered"
+      },
+      {
+        "payload_hash": "e44051bb79d687d683abfb167f5ef6278bcd3f87d9942563a94ab984ffc4ad68",
+        "reason": "drafted only after durable checkpoint",
+        "state": "drafted"
+      },
+      {
+        "payload_hash": "e44051bb79d687d683abfb167f5ef6278bcd3f87d9942563a94ab984ffc4ad68",
+        "reason": "schema/source/no-send checks passed",
+        "state": "checked"
+      },
+      {
+        "payload_hash": "6786e806fc5653c7237c4f5054e340005a0e5fcf5cc002e380409cfbc7368235",
+        "reason": "draft ready for review",
+        "state": "handed_off"
+      }
+    ],
+    "stop_evidence": {
+      "draft_published_before_checkpoint": false,
+      "external_action": null
+    },
+    "task": "将状态/持久化/人工介入迁移到无真实数据的本地任务队列"
+  },
+  "unverified": [
+    "真实LangGraph安装、版本及API兼容性",
+    "真实模型调用、输出质量、参数效果、费用和限流",
+    "真实工具副作用、生产持久化、进程崩溃、RPO/RTO和并发恢复",
+    "真实用户数据、云服务、外部发送/发布",
+    "学习者原始回答、岗位作品、迁移能力、用户价值和能力认证",
+    "浏览器/生产环境复验"
+  ]
+}

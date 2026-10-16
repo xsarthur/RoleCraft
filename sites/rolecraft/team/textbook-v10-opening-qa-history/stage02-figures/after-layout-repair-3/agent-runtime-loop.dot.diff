@@ -1,0 +1,17 @@
+--- repair2/agent-runtime-loop.dot
++++ repair3/agent-runtime-loop.dot
+@@ -17,7 +17,7 @@
+  tools:w -> facts:e;
+  facts:n -> judge:s ;
+  judge:n -> context:s [color="#1873A8", fontcolor="#1873A8", penwidth=2.4];
+- runtime:sw -> facts:ne [label="不发工具", style=dashed];
++ runtime:sw -> facts:ne [style=dashed];
+  judge:w -> exit:e;
+ 
+  // Detached captions are layout annotations, not runtime components.
+@@ -27,4 +27,5 @@
+  caption_send [pos="3.1,-0.25!", label="准入后发送"];
+  caption_check [pos="-3.1,-0.25!", label="核对"];
+  caption_continue [pos="-3.1,1.8!", label="继续", fontcolor="#1873A8"];
++ caption_bypass [pos="-1,-0.25!", label="不发工具"];
+ }

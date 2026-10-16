@@ -1,0 +1,58 @@
+{
+  "report_id": "ai-generation-d0-learner-demo-content-review-v02",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "scope": "D0 learner demo v02 independent content review",
+  "conclusion": "reviewed_with_limitations",
+  "grade_awarded": false,
+  "self_signed": false,
+  "external_action": null,
+  "checks": {
+    "manifest_self_contained": {
+      "status": "pass_with_self_reference_rule",
+      "artifact_count": 15,
+      "listed_files": 15,
+      "manifest_self_hash": "intentionally_unset_due_to_self_reference"
+    },
+    "file_hash_and_bytes": {
+      "status": "pass",
+      "checked_non_manifest_files": 14
+    },
+    "per_artifact_diagnostic_binding": {
+      "status": "pass",
+      "diagnostic_id": "D0-AI-20261015-001",
+      "checked_non_manifest_json": 14
+    },
+    "D0-04_recovery_semantics": {
+      "status": "pass_within_local_fixture",
+      "first_failure": "recovery_required",
+      "recovery": "recovered",
+      "final": "draft_ready_for_review",
+      "idempotency_key": "D0-04:tool:1"
+    },
+    "D0-05_schema_source_regression": {
+      "status": "pass_within_fixture",
+      "schema_checked": true,
+      "schema_version": "ai-generation-d0-output-v3",
+      "source_refs_fields": [
+        "document_id",
+        "hash",
+        "location",
+        "source_version"
+      ],
+      "tenant": "A"
+    },
+    "limitation_wording": {
+      "status": "pass",
+      "qa_status": "pending",
+      "training_status": "L0_guided",
+      "decision": "not_assessed"
+    }
+  },
+  "limitations": [
+    "manifest self-entry has no self-hash/bytes by explicit rule",
+    "SOURCE-001 has no independent source-content hash",
+    "local deterministic JSON fixture; no real model/API/DB/cloud/crash/RPO-RTO/expert/learning validation",
+    "qa_status remains pending; this review does not replace independent QA"
+  ],
+  "artifact_path": "/private/tmp/ai-demo-v02"
+}

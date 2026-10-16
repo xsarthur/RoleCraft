@@ -1,0 +1,20 @@
+{
+  "unit": "p02",
+  "previousSource": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-author-engineering-history/p02-before-qa-description.md",
+  "previousSha256": "143d114a9f394002f72546e2e76d9974e552c720003579fb72bf26f5df14af43",
+  "currentSource": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p02.md",
+  "currentSha256": "05aff19b4ff1a33c72ffa854626b528a62cecba74cf25b281f18bf2572c5eee7",
+  "allFencedBlocksByteIdentical": true,
+  "executedBlockSha256": "e68eab651b60fcfb76c7d5a947c0becca97d68e6cb4b7cb03c5b6f4b33930242",
+  "blocks": [
+    {
+      "number": 1,
+      "language": "python",
+      "sha256": "e68eab651b60fcfb76c7d5a947c0becca97d68e6cb4b7cb03c5b6f4b33930242"
+    }
+  ],
+  "proseDiff": "--- sites/rolecraft/team/textbook-v08-author-engineering-history/p02-before-qa-description.md\n+++ sites/rolecraft/textbooks/v08/p02.md\n@@ -2,7 +2,7 @@\n \n 交付判定应由独立评阅者根据冻结版本、可复现任务和可追溯结果作出。能启动、作者演示成功、自动检查全过，分别只支持相应范围；它们不能合并推导职业胜任或行业先进。修订后要重查当前版本，原失败只有在原例、相关回归及必要新条件中复验，才有关闭依据。\n \n-本章解决证据包、独立评阅与失败改进的交接，先修为 e01、e03、e04、e05、p01。仍用 `repo@8e12`、`test-report-71` 与批准后创建唯一缺陷工单的任务；正常事实是 `src/refund.py` 返回 `days < 7`，报告 `test_refund_day_7` 的输入 7、expected=True、actual=False。以下交付包、故障复盘和结果表都是教学构造，没有真实使用、真人评审、毕业成绩或行业领先结论。最小文件校验代码未运行。\n+本章解决证据包、独立评阅与失败改进的交接，先修为 e01、e03、e04、e05、p01。仍用 `repo@8e12`、`test-report-71` 与批准后创建唯一缺陷工单的任务；正常事实是 `src/refund.py` 返回 `days < 7`，报告 `test_refund_day_7` 的输入 7、expected=True、actual=False。以下交付包、故障复盘和结果表都是教学构造，没有真实使用、真人评审、毕业成绩或行业领先结论。作者编写时未执行代码；本轮独立 QA 仅在 Python 3.12.14 验证自造临时证据包的索引夹具，范围见[QA记录](../../team/textbook-v08-qa.md)。\n \n ## 一个证据包应使独立者从入口走到结论\n \n@@ -25,7 +25,7 @@\n \n ## 文件完整性检查不能替代证据真实性\n \n-下面是 Python 3.10+ 标准库例子，校验索引中的版本、路径和文件内容摘要。它不会连接模型、读取真实用户数据或执行应用。保存为 `bundle_index.py` 后执行 `python3 bundle_index.py`，在临时目录构造一条教学记录，题定输出为 `INDEX_OK`、`HASH_MISMATCH`、`VERSION_MISMATCH`；本版未运行。\n+下面是 Python 3.10+ 标准库例子，校验索引中的版本、路径和文件内容摘要。它不会连接模型、读取真实用户数据或执行应用。保存为 `bundle_index.py` 后执行 `python3 bundle_index.py`，在临时目录构造一条教学记录，题定输出为 `INDEX_OK`、`HASH_MISMATCH`、`VERSION_MISMATCH`；作者编写时未执行，本轮独立 QA 在 Python 3.12.14 对这些输出及路径、分类等有限夹具作了8条离线检查，符合预期。`INDEX_OK` 仍不证明真实性或门槛通过，执行边界见上述 QA 记录。\n \n ```python\n from dataclasses import dataclass, replace\n",
+  "executionEvidence": "stage04/execution.json",
+  "repeatedRun": false,
+  "status": "prose_rebinding_pending_final_review"
+}

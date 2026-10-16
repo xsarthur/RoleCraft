@@ -1,0 +1,25 @@
+digraph AgentRuntime {
+ graph [rankdir=TB, bgcolor="white", pad="0.3", nodesep="0.55", ranksep="0.65", splines=polyline, fontname="PingFang SC", fontsize=18];
+ node [shape=box, style="rounded,filled", color="#44627C", fillcolor="#F2F7FB", fontcolor="#102B42", fontname="PingFang SC", fontsize=18, margin="0.18,0.15", width=3.3];
+ edge [color="#44627C", fontcolor="#304B61", fontname="PingFang SC", fontsize=15, arrowsize=0.8, penwidth=1.6];
+ task [label="目标与允许范围\n预先定义完成条件", fillcolor="#E7F4EC", color="#498062"];
+ context [label="当前上下文\n读已有观察与任务状态"];
+ model [label="模型提议\n下一步调查或候选结果"];
+ runtime [label="可信运行时准入\n核参数、权限、批准和预算", fillcolor="#E7F4EC", color="#498062"];
+ tools [label="工具与环境\n按任务读取、检索或受控写入\n写入前须准确授权"];
+ facts [label="事实与进度记录\n保存观察和未决效果\n需要恢复时采用持久存储"];
+ judge [label="当前任务判定\n按条件与证据验收\n效果未知不能算完成", fillcolor="#E7F4EC", color="#498062"];
+ exit [label="完成、等待或停止\n等待/停止仍保留未决事实", fillcolor="#FFF4E4", color="#A97A37"];
+ {rank=same;context;model;}
+ {rank=same;judge;runtime;}
+ {rank=same;facts;tools;}
+ task -> context [label="输入合同"];
+ context -> model [label="本次可见输入"];
+ model -> runtime [label="提议不等于批准"];
+ runtime -> tools [label="只有准入后才发送"];
+ tools -> facts [label="结果、拒绝或未知"];
+ facts -> judge [label="核事实与目标"];
+ judge -> context [label="继续：新观察改变下一步", color="#1873A8", fontcolor="#1873A8", penwidth=2.4, constraint=false];
+ runtime -> facts [label="候选/拒绝/等待\n可不调用工具", style=dashed, constraint=false];
+ judge -> exit [label="有依据的结局"];
+}

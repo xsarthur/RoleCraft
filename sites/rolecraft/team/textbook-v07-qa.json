@@ -1,0 +1,512 @@
+{
+  "schema_version": "textbook-v07-document-qa-1",
+  "status": "met_within_document_delivery_scope",
+  "scope": "Standalone textbook delivery evidence; no application test execution or source modification.",
+  "captured_at_utc": "2026-10-10T17:07:07.594521+00:00",
+  "application_baseline": {
+    "captured_at_utc": "2026-10-10T17:07:07.594521+00:00",
+    "coverage": [
+      "dist/**",
+      "server/**",
+      "selected root package/build manifests if present"
+    ],
+    "excluded": [
+      ".runtime/**",
+      "node_modules/**",
+      ".git/**",
+      "__pycache__/**",
+      ".env*",
+      "database files",
+      "key material"
+    ],
+    "file_count": 22,
+    "files": {
+      "dist/app.js": "a57a8281703b85d227a66c03814a9898e555390b1f3458391faa6f87204047eb",
+      "dist/creation-path-data.js": "24a814d9b098e23c698b924924f209dbf14bb5637d9b7cd0ccbe6200d721d2c4",
+      "dist/curriculum-data.js": "c3c93435d4417792182c1f98b450a1e1a5c23aa9a8136ddb03086570c03f1442",
+      "dist/generation-curriculum-data.js": "3864bf34d4f15e89a1e8c44b692272d3febb387a704371703886a7621ce1cdbc",
+      "dist/generation.js": "4729f5caad5b17638b73f2cb7744a7aff1015e6a8e97f05b0efd3c5146c09b40",
+      "dist/index.html": "80eb5e53d15cb5ec6a451d296fa30c9f546ae4b8661058a0cc125a51cc378bfe",
+      "dist/product-audit-data.js": "83f71b9865689c10efc350140c6ad63df344fc6606ef2e37511b39d16a539f0b",
+      "dist/product-gates-data.js": "a331ad6c46adc7d463e9b56d918a8f96765ebaecfa1ff6c07c2c5e6c19e09b0e",
+      "dist/styles.css": "33b5375c9c4d8af3f297bf3c64856291da5b4183f7eb67db2c5a6542201629a1",
+      "dist/textbook-content-review-data.js": "cb2fb21a45ba527142d121d965230b972b769edd80bfd4b95aaa6dcea4477b76",
+      "dist/textbook-data.js": "51a9a22a388fafd042af4dbe7410564b8874d4a360153e1325d0c7164b3f9902",
+      "dist/textbook-pilot.js": "c6d122bcbdd68ee0a3aa6e9f86a7af882f465f382ae297ef3c0d4c5d8d17a8f8",
+      "dist/textbook-v05-content-review-data.js": "9c061ad593af7d4c64e0f020a0c2a0f8d36811a621ece9cf8cd2c4db8a848d8c",
+      "dist/textbook-v05-data.js": "ed8a39e8e6bc5cb4a36184a702b4241b5864f3da68ebea18f26026b15beb2358",
+      "dist/textbook.js": "0844889099d6a55475360a587964cb7c427e9fd1188be6e3e2810420f92f3a1c",
+      "server/CONTRACT.md": "feb23aef7f3de4f86f40db52a72356197f204e8fdfb3f7542ddebfd05e8de33f",
+      "server/README.md": "f70de336bed80cf155da316e01a272a2595b0ebe083121574b6299bcad9052d4",
+      "server/dev-check.mjs": "e23d015a3a28e07f5822a76fd7019f258451b3f1a31fad547f408e1b878e5bcd",
+      "server/generation/dev-check-results.json": "30c9c0a0171c31ae73047c98ced209bdaa8d9d0890e7e6db9e892cea53a10e87",
+      "server/generation/dev-check.mjs": "f032c63ff03d89b724eb5ba9645cf644c94a8004f7f9fe038bc42db8415892b0",
+      "server/generation/index.mjs": "52ef3ffefe3028187192fa7712693a1929949403f651daaeb09999a7a12d5beb",
+      "server/index.mjs": "f111fa0f17389a0b586d34f75748b844fa042f9ab88985189c77a30563daf0d8"
+    },
+    "manifest_sha256": "5e9aa67bd237aee7886c9617a7105a3a87bce50864b81936df4df9e3ae72c07a",
+    "limitation": "Evidence starts at this baseline capture; it cannot establish absence of modifications earlier in the turn. Temporary edits reverted before the final comparison are not observable by this method."
+  },
+  "execution": {
+    "application_tests_run": false,
+    "article_code_run": false,
+    "provider_calls_made": false
+  },
+  "pending": [
+    "User trial quality feedback",
+    "Actual implementation and code/fault injection execution when separately scoped",
+    "External-service contract verification",
+    "Human industry expert and real learner/product/market/economics/production evidence"
+  ],
+  "user_quality_confirmation": "pending_user_feedback",
+  "human_expert_review": "not_performed",
+  "whole_product_status": "not_met",
+  "product_gates_changed": false,
+  "draft_check_at_utc": "2026-10-10T17:20:35.856340+00:00",
+  "draft_artifact": {
+    "reference": "textbooks/agent-control-loop-v07.md",
+    "sha256_observed_not_final": "829548aa1474a9bca0d341525f8dddfff2dfcf3509f450bedfec813aaeb97e4c",
+    "read_scope": "Full 14-section prose, interface definitions, main loop, execution/recovery pseudocode, event traces, fault matrix and exercises; read during active revision.",
+    "limitation": "Author revisions during reads mean this is preparatory evidence, not a frozen final-version endorsement."
+  },
+  "document_checks": [
+    {
+      "id": "D01",
+      "status": "checked_within_scope",
+      "observation": "Standalone Markdown file exists and was read. It identifies one control-loop problem, a prerequisite reader, constructed scenario, custom interfaces and pseudocode rather than SDK/production implementation.",
+      "locations": [
+        "title/introduction",
+        "section 1",
+        "section 8"
+      ]
+    },
+    {
+      "id": "D02",
+      "status": "checked_within_scope",
+      "observation": "24 triple-backtick fence markers were paired with 12 blocks; labels are text/typescript/python. No CSS export debris, TODO or ellipsis omission marker was found. This is source-structure inspection, not a rendered preview or executable-language validity judgment."
+    },
+    {
+      "id": "D03",
+      "status": "checked_within_scope",
+      "observation": "9 Markdown citation links, 8 unique official URLs. All opened read-only and returned readable text through web tool. AWS backoff link redirects to matching-title AWS Builder Center page. Reachability is distinct from supporting technical claims.",
+      "links": [
+        {
+          "label": "AWS：Making retries safe with idempotent APIs",
+          "target": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/",
+          "line": 175
+        },
+        {
+          "label": "SQLite：Atomic Commit",
+          "target": "https://www.sqlite.org/atomiccommit.html",
+          "line": 215
+        },
+        {
+          "label": "Stripe：Idempotent requests，API v1/v2 区别",
+          "target": "https://docs.stripe.com/api/idempotent_requests",
+          "line": 256
+        },
+        {
+          "label": "AWS：服务端 token 与变更的原子性",
+          "target": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/",
+          "line": 260
+        },
+        {
+          "label": "Python 3.14：Coroutines and tasks",
+          "target": "https://docs.python.org/3.14/library/asyncio-task.html",
+          "line": 295
+        },
+        {
+          "label": "AWS：Timeouts, retries, and backoff with jitter",
+          "target": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/",
+          "line": 679
+        },
+        {
+          "label": "etcd 3.6：API guarantees",
+          "target": "https://etcd.io/docs/v3.6/learning/api_guarantees/",
+          "line": 683
+        },
+        {
+          "label": "OpenTelemetry：Tracing API",
+          "target": "https://opentelemetry.io/docs/specs/otel/trace/api/",
+          "line": 802
+        },
+        {
+          "label": "OWASP：Logging Cheat Sheet",
+          "target": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
+          "line": 816
+        }
+      ],
+      "final_links": [
+        {
+          "label": "AWS：Making retries safe with idempotent APIs",
+          "target": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/",
+          "line": 175
+        },
+        {
+          "label": "SQLite：Atomic Commit",
+          "target": "https://www.sqlite.org/atomiccommit.html",
+          "line": 215
+        },
+        {
+          "label": "Stripe：Idempotent requests，API v1/v2 区别",
+          "target": "https://docs.stripe.com/api/idempotent_requests",
+          "line": 256
+        },
+        {
+          "label": "AWS：服务端 token 与变更的原子性",
+          "target": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/",
+          "line": 260
+        },
+        {
+          "label": "Python 3.14：Coroutines and tasks",
+          "target": "https://docs.python.org/3.14/library/asyncio-task.html",
+          "line": 295
+        },
+        {
+          "label": "AWS：Timeouts, retries, and backoff with jitter",
+          "target": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/",
+          "line": 698
+        },
+        {
+          "label": "etcd 3.6：API guarantees",
+          "target": "https://etcd.io/docs/v3.6/learning/api_guarantees/",
+          "line": 702
+        },
+        {
+          "label": "OpenTelemetry：Tracing API",
+          "target": "https://opentelemetry.io/docs/specs/otel/trace/api/",
+          "line": 821
+        },
+        {
+          "label": "OWASP：Logging Cheat Sheet",
+          "target": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
+          "line": 835
+        }
+      ],
+      "unchanged_unique_targets_since_link_check": true
+    },
+    {
+      "id": "D04",
+      "status": "checked_delivery_representation_and_independent_review_binding",
+      "observation": "Initial full prose/interface reading completed; after freeze, affected BeginToolResult, ConsumeResponse plan quota contract, stop-intent branch, main-loop re-read and zero-allowance example were reread. Their static correctness was independently rechecked by content reviewer CRV07-03/04. QA verifies actual delivered branch text and report binding, without executing it or assuming production guarantees.",
+      "locations": [
+        "section 8.1 event contracts",
+        "section 8.2 drive",
+        "section 8.3 drive_plan/dispatch_action",
+        "section 8.4 reconcile_actions"
+      ],
+      "final_locations": [
+        319,
+        348,
+        350,
+        363,
+        393,
+        426,
+        585,
+        609
+      ]
+    },
+    {
+      "id": "D05",
+      "status": "checked_within_scope",
+      "observation": "Explicit source not_run statement found at section 8 / line 299; final author handoff declares not_run and no actual external service/model/business execution or user acceptance. This resolves the initial delivery wording issue without adding code execution."
+    },
+    {
+      "id": "D06",
+      "status": "checked_within_scope",
+      "observation": "Actual final source/author/review artifacts match frozen hashes. Review JSON binds current source and MD; all four static-rechecked defect source hashes match. Referenced standards/user files/history snapshots exist with exact listed hashes and bytes."
+    },
+    {
+      "id": "D07",
+      "status": "checked_within_scope",
+      "observation": "Existing product-gates.json retains all eight gate IDs and decision rules. This standalone article supplies no website-provider generation, human professional review, learner product, comparative market, real cost or production-runtime closure evidence. Current full-product conclusion remains not_met; old audit is historical, not this article's pass."
+    },
+    {
+      "id": "D08",
+      "status": "checked_within_scope",
+      "observation": "Final manifest has same 22 covered files and matching content hashes as baseline; no added/removed/changed covered file. Baseline-period and transient-edit limitations remain explicit."
+    }
+  ],
+  "external_link_check": {
+    "checked_at_utc": "2026-10-10T17:20:35.856340+00:00",
+    "method": "web tool read-only open; source text returned; no browser render or third-party credential access",
+    "unique_targets": 8,
+    "citation_count": 9,
+    "readable": 8,
+    "redirects": [
+      {
+        "from": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/",
+        "to": "https://builder.aws.com/content/3EumjoZascWd1oZiEgL8ORlv3qE/timeouts-retries-and-backoff-with-jitter",
+        "observed_title": "Timeouts, retries, and backoff with jitter | AWS Builder Center"
+      }
+    ],
+    "claims_verified_by_qa": false
+  },
+  "input_documents": {
+    "team/TEXTBOOK_WRITING_STANDARD.md": "f6e63a740547e1faa86ec1fdfc4654c24dbaca924fadfd9ef5a6ed9a7f61514b",
+    "team/textbook-v07-spec.md": "26afabf21c961be0060783771491c40e554685e5b03173dd52f95fca0723206f",
+    "team/product-gates.json": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06",
+    "team/product-audit-v05.json": "94d2228baaefecb72083c4a8c32cde7786defe1fbfd4a6355dae48e079875a75"
+  },
+  "product_boundary": {
+    "gate_ids": [
+      "user_value",
+      "teaching_quality",
+      "real_generation",
+      "comparative_advantage",
+      "learner_creation",
+      "reliable_delivery",
+      "operating_economics",
+      "iteration_trace"
+    ],
+    "official_gate_statuses_reassigned": false,
+    "conclusion": "not_met",
+    "basis": "Established full-product failures and missing evidence are not remedied by one standalone authored article. Historical v05 audit was read; this check does not inherit its iteration pass or re-audit application behavior.",
+    "current_round_gaps": [
+      "User trial quality confirmation pending",
+      "Pseudocode not executed / external tool contracts untested",
+      "Human industry expert review absent",
+      "No real learner/unknown-task/user/market comparison/cost/production evidence",
+      "No website per-profile real provider generation in this document QA scope"
+    ],
+    "gate_document_unchanged_by_hash": true
+  },
+  "final_checked_at_utc": "2026-10-10T17:29:55.294799+00:00",
+  "final_artifacts": {
+    "textbooks/agent-control-loop-v07.md": {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/agent-control-loop-v07.md",
+      "sha256": "996e5aeb084b66405a0dd1023a375743d2e359c335b29517ac923f9f6a033c5c",
+      "bytes": 78050,
+      "expected_sha256": "996e5aeb084b66405a0dd1023a375743d2e359c335b29517ac923f9f6a033c5c",
+      "matches_expected": true
+    },
+    "team/textbook-v07-author.md": {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v07-author.md",
+      "sha256": "ff02bac2860de388945463f9d39496aa97cb5f6ac6d0d95e0d58f7afecaf52bd",
+      "bytes": 11046,
+      "expected_sha256": "ff02bac2860de388945463f9d39496aa97cb5f6ac6d0d95e0d58f7afecaf52bd",
+      "matches_expected": true
+    },
+    "team/textbook-v07-content-review.md": {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v07-content-review.md",
+      "sha256": "2f114ac68287943682ce9e7cc468a43342ab216cd092477257692097dc722182",
+      "bytes": 10338,
+      "expected_sha256": "2f114ac68287943682ce9e7cc468a43342ab216cd092477257692097dc722182",
+      "matches_expected": true
+    },
+    "team/textbook-v07-content-review.json": {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v07-content-review.json",
+      "sha256": "1c85c7d5126a33c7c0622cc11dfba62cbf1949b088a95c2cb72857071195c831",
+      "bytes": 18664,
+      "expected_sha256": "1c85c7d5126a33c7c0622cc11dfba62cbf1949b088a95c2cb72857071195c831",
+      "matches_expected": true
+    }
+  },
+  "binding_checks": {
+    "source": true,
+    "review_md": true,
+    "all_four_defects_rechecked_current_source": true
+  },
+  "review_references_verified": [
+    {
+      "group": "standards",
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/TEXTBOOK_WRITING_STANDARD.md",
+      "sha256": "f6e63a740547e1faa86ec1fdfc4654c24dbaca924fadfd9ef5a6ed9a7f61514b",
+      "bytes": 10442,
+      "expected_sha256": "f6e63a740547e1faa86ec1fdfc4654c24dbaca924fadfd9ef5a6ed9a7f61514b",
+      "expected_bytes": 10442,
+      "matches": true
+    },
+    {
+      "group": "standards",
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v07-spec.md",
+      "sha256": "26afabf21c961be0060783771491c40e554685e5b03173dd52f95fca0723206f",
+      "bytes": 10773,
+      "expected_sha256": "26afabf21c961be0060783771491c40e554685e5b03173dd52f95fca0723206f",
+      "expected_bytes": 10773,
+      "matches": true
+    },
+    {
+      "group": "userReferences",
+      "path": "/Users/shengxiong/Desktop/提示词.rtf",
+      "sha256": "74f745acb00033bf9656c37cd8ab7a6a47b7a0231dccb9f803da3589bbf19440",
+      "bytes": 13756,
+      "expected_sha256": "74f745acb00033bf9656c37cd8ab7a6a47b7a0231dccb9f803da3589bbf19440",
+      "expected_bytes": 13756,
+      "matches": true
+    },
+    {
+      "group": "userReferences",
+      "path": "/Users/shengxiong/Desktop/agent控制循环.rtf",
+      "sha256": "1de2421c1eab61342a43651dbc2befc0ea335452256c2286a91628eb9be65075",
+      "bytes": 61840,
+      "expected_sha256": "1de2421c1eab61342a43651dbc2befc0ea335452256c2286a91628eb9be65075",
+      "expected_bytes": 61840,
+      "matches": true
+    },
+    {
+      "group": "history",
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v07-history/author-partial-before-call-binding.md",
+      "sha256": "1249b09d4424f1282d13e82eead79c8bcd06b66ee914a0448d425a922d6d66e2",
+      "bytes": 43402,
+      "expected_sha256": "1249b09d4424f1282d13e82eead79c8bcd06b66ee914a0448d425a922d6d66e2",
+      "expected_bytes": 43402,
+      "matches": true
+    },
+    {
+      "group": "history",
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v07-review-history/control-skeleton-first-review.md",
+      "sha256": "7cce23f0ea0dd5e493b56f63781d27853a1a4b6b7d52fd5e7ae1d49a102401b7",
+      "bytes": 45500,
+      "expected_sha256": "7cce23f0ea0dd5e493b56f63781d27853a1a4b6b7d52fd5e7ae1d49a102401b7",
+      "expected_bytes": 45500,
+      "matches": true
+    },
+    {
+      "group": "history",
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v07-history/author-initial-complete-before-effect-resolution.md",
+      "sha256": "96c30358f2735ad7d532348d6625b9d7c04442c55a3f3b18c33ae36d7164893d",
+      "bytes": 70555,
+      "expected_sha256": "96c30358f2735ad7d532348d6625b9d7c04442c55a3f3b18c33ae36d7164893d",
+      "expected_bytes": 70555,
+      "matches": true
+    },
+    {
+      "group": "history",
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v07-review-history/control-loop-before-budget-refusal-fix.md",
+      "sha256": "829548aa1474a9bca0d341525f8dddfff2dfcf3509f450bedfec813aaeb97e4c",
+      "bytes": 75761,
+      "expected_sha256": "829548aa1474a9bca0d341525f8dddfff2dfcf3509f450bedfec813aaeb97e4c",
+      "expected_bytes": 75761,
+      "matches": true
+    },
+    {
+      "group": "history",
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v07-review-history/control-loop-before-action-quota-fix.md",
+      "sha256": "9113ec45e404cf9afece361153a88cebc3034c445b3de4b799a3410d724fc7a3",
+      "bytes": 77102,
+      "expected_sha256": "9113ec45e404cf9afece361153a88cebc3034c445b3de4b799a3410d724fc7a3",
+      "expected_bytes": 77102,
+      "matches": true
+    }
+  ],
+  "independent_content_review": {
+    "status": "reviewed_with_limitations",
+    "scope": {
+      "sectionsRead": "1–14",
+      "interfacesRead": true,
+      "allCoreLoopBranchesRead": true,
+      "method": "manual paragraph/interface/branch reading; static counterexample reasoning; direct primary-source reading; source revision comparison",
+      "codeExecution": "not_run_by_reviewer; manuscript is pseudocode",
+      "externalContractTesting": "not_done",
+      "applicationTesting": "not_done",
+      "humanExpertReview": "not_done",
+      "userQualityAcceptance": "not_done",
+      "learnerOutcomeValidation": "not_done",
+      "entireBookReview": "not_done; other eleven chapters outside scope",
+      "unchangedProductGates": true
+    },
+    "defects": [
+      {
+        "id": "CRV07-01",
+        "severity": "P2",
+        "status": "resolved_in_static_manuscript_review",
+        "recheckedSha256": "996e5aeb084b66405a0dd1023a375743d2e359c335b29517ac923f9f6a033c5c"
+      },
+      {
+        "id": "CRV07-02",
+        "severity": "P1",
+        "status": "resolved_in_static_manuscript_review",
+        "recheckedSha256": "996e5aeb084b66405a0dd1023a375743d2e359c335b29517ac923f9f6a033c5c"
+      },
+      {
+        "id": "CRV07-03",
+        "severity": "P1",
+        "status": "resolved_in_static_manuscript_review",
+        "recheckedSha256": "996e5aeb084b66405a0dd1023a375743d2e359c335b29517ac923f9f6a033c5c"
+      },
+      {
+        "id": "CRV07-04",
+        "severity": "P2",
+        "status": "resolved_in_static_manuscript_review",
+        "recheckedSha256": "996e5aeb084b66405a0dd1023a375743d2e359c335b29517ac923f9f6a033c5c"
+      }
+    ],
+    "interpretation": "QA verifies delivered review and binding; technical conclusion belongs to independent content reviewer and is limited to static manuscript review."
+  },
+  "application_final_comparison": {
+    "checked_at_utc": "2026-10-10T17:29:55.294799+00:00",
+    "file_count": 22,
+    "manifest_sha256": "5e9aa67bd237aee7886c9617a7105a3a87bce50864b81936df4df9e3ae72c07a",
+    "files": {
+      "dist/app.js": "a57a8281703b85d227a66c03814a9898e555390b1f3458391faa6f87204047eb",
+      "dist/creation-path-data.js": "24a814d9b098e23c698b924924f209dbf14bb5637d9b7cd0ccbe6200d721d2c4",
+      "dist/curriculum-data.js": "c3c93435d4417792182c1f98b450a1e1a5c23aa9a8136ddb03086570c03f1442",
+      "dist/generation-curriculum-data.js": "3864bf34d4f15e89a1e8c44b692272d3febb387a704371703886a7621ce1cdbc",
+      "dist/generation.js": "4729f5caad5b17638b73f2cb7744a7aff1015e6a8e97f05b0efd3c5146c09b40",
+      "dist/index.html": "80eb5e53d15cb5ec6a451d296fa30c9f546ae4b8661058a0cc125a51cc378bfe",
+      "dist/product-audit-data.js": "83f71b9865689c10efc350140c6ad63df344fc6606ef2e37511b39d16a539f0b",
+      "dist/product-gates-data.js": "a331ad6c46adc7d463e9b56d918a8f96765ebaecfa1ff6c07c2c5e6c19e09b0e",
+      "dist/styles.css": "33b5375c9c4d8af3f297bf3c64856291da5b4183f7eb67db2c5a6542201629a1",
+      "dist/textbook-content-review-data.js": "cb2fb21a45ba527142d121d965230b972b769edd80bfd4b95aaa6dcea4477b76",
+      "dist/textbook-data.js": "51a9a22a388fafd042af4dbe7410564b8874d4a360153e1325d0c7164b3f9902",
+      "dist/textbook-pilot.js": "c6d122bcbdd68ee0a3aa6e9f86a7af882f465f382ae297ef3c0d4c5d8d17a8f8",
+      "dist/textbook-v05-content-review-data.js": "9c061ad593af7d4c64e0f020a0c2a0f8d36811a621ece9cf8cd2c4db8a848d8c",
+      "dist/textbook-v05-data.js": "ed8a39e8e6bc5cb4a36184a702b4241b5864f3da68ebea18f26026b15beb2358",
+      "dist/textbook.js": "0844889099d6a55475360a587964cb7c427e9fd1188be6e3e2810420f92f3a1c",
+      "server/CONTRACT.md": "feb23aef7f3de4f86f40db52a72356197f204e8fdfb3f7542ddebfd05e8de33f",
+      "server/README.md": "f70de336bed80cf155da316e01a272a2595b0ebe083121574b6299bcad9052d4",
+      "server/dev-check.mjs": "e23d015a3a28e07f5822a76fd7019f258451b3f1a31fad547f408e1b878e5bcd",
+      "server/generation/dev-check-results.json": "30c9c0a0171c31ae73047c98ced209bdaa8d9d0890e7e6db9e892cea53a10e87",
+      "server/generation/dev-check.mjs": "f032c63ff03d89b724eb5ba9645cf644c94a8004f7f9fe038bc42db8415892b0",
+      "server/generation/index.mjs": "52ef3ffefe3028187192fa7712693a1929949403f651daaeb09999a7a12d5beb",
+      "server/index.mjs": "f111fa0f17389a0b586d34f75748b844fa042f9ab88985189c77a30563daf0d8"
+    },
+    "differences": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "unchanged_in_compared_contents": true,
+    "interpretation": "Same 22 covered file contents at baseline and final capture. Does not prove no earlier change or no transient reverted edit; excludes runtime/database/sensitive configuration."
+  },
+  "final_execution_declarations": {
+    "article_pseudocode": "not_run",
+    "external_service_contracts": "not_tested",
+    "application_tests": "not_run_in_this_scope",
+    "real_provider_calls": "not_performed_in_this_scope",
+    "human_industry_expert_review": "not_done",
+    "user_quality_acceptance": "not_done",
+    "real_learner_outcomes": "not_done"
+  },
+  "delivery_issue_history": [
+    {
+      "id": "DQ07-01",
+      "observation": "Initial source distinguished pseudocode/non-production but lacked explicit execution status; author handoff was not yet available during drafting.",
+      "owner": "教材研发员",
+      "change": "Source section 8 adds explicit not_run; final author handoff agrees.",
+      "recheck": "Final source exact SHA and author file read; statement verified, no actual execution claimed.",
+      "status": "resolved_within_document_delivery"
+    }
+  ],
+  "domain_self_check": {
+    "authorized_outputs_only": [
+      "team/textbook-v07-qa.md",
+      "team/textbook-v07-qa.json",
+      "team/textbook-v07-qa-history/**"
+    ],
+    "textbook_or_program_modified": false,
+    "program_tests_executed": false,
+    "pseudocode_executed": false,
+    "database_or_sensitive_runtime_read": false,
+    "upload_publish_paid_call": false,
+    "technical_review_or_user_acceptance_awarded_by_qa": false,
+    "final_source_bound": true,
+    "historical_failures_preserved": true
+  },
+  "qa_document": {
+    "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v07-qa.md",
+    "sha256": "0dafa93fdfca92eba757e647d32b9f98188795c4f9b364486f402108fd9a5de3",
+    "bytes": 4132
+  }
+}

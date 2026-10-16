@@ -1,0 +1,87 @@
+{
+  "atUtc": "2026-10-12T00:34:33.663Z",
+  "runtime": "v24.16.0",
+  "scope": "Independent narrow executed VM before/after source and return/list contract tests; no GUI, actual browser click, viewport or download claimed. Former author-discovered bank bug attribution retained.",
+  "oldExperienceSha256": "9af4d9aabe568eeff45a97a3307ad9e7ad1357fa3f86a5d16a4f57536d2afdbd",
+  "currentExperienceSha256": "7fc778e5d85702688caebf76370308ddee435b74acee7665666387a4dc902b9e",
+  "status": "pass",
+  "tests": [
+    {
+      "name": "Historical QI13-NAV01 and author-discovered DEV13-BANK-01 independently reproduced",
+      "status": "pass",
+      "scope": "proves former defect only, not current behavior"
+    },
+    {
+      "name": "QI13-NAV01 exact original question-source-question-filtered-list",
+      "status": "pass"
+    },
+    {
+      "name": "QI13-BANK01 current no-ID bank displays114 cards and no false Q1 detail",
+      "status": "pass"
+    },
+    {
+      "name": "Old unfiltered from=Q11 retains original question and114 bank",
+      "status": "pass"
+    },
+    {
+      "name": "Legal unit/kp/self-state/question-set context survives roundtrip",
+      "status": "pass"
+    },
+    {
+      "name": "Associated knowledge links as well as excerpts preserve declared original context",
+      "status": "pass"
+    },
+    {
+      "name": "Unknown context and arbitrary external return are not promoted",
+      "status": "pass"
+    }
+  ],
+  "observations": [
+    {
+      "phase": "before",
+      "sourceSha256": "9af4d9aabe568eeff45a97a3307ad9e7ad1357fa3f86a5d16a4f57536d2afdbd",
+      "bankNoIdDisplaysQ1": true,
+      "bankNoIdListCards": 0,
+      "roundtrip": {
+        "from": "#questions/Q11?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17",
+        "source": "#learn/agent/n03-planning-reflection/s-da63f3dcff17?from=Q11",
+        "back": "#questions/Q11",
+        "list": "#questions",
+        "renderedListCards": 0,
+        "listIsBank": false
+      },
+      "discoverer": "NAV01 first independently found by main QA; BANK01 first discovered by frontend developer DEV13-BANK-01, received then independently reproduced from frozen public source by QA"
+    },
+    {
+      "phase": "after-original",
+      "from": "#questions/Q11?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17",
+      "source": "#learn/agent/n03-planning-reflection/s-da63f3dcff17?from=Q11&fromUnit=n03-planning-reflection&fromKp=n03-planning-reflection%3As-da63f3dcff17",
+      "back": "#questions/Q11?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17",
+      "list": "#questions?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17",
+      "renderedListCards": 2,
+      "listIsBank": true
+    },
+    {
+      "phase": "after-no-filter",
+      "from": "#questions/Q11",
+      "source": "#learn/agent/n03-planning-reflection/s-da63f3dcff17?from=Q11",
+      "back": "#questions/Q11",
+      "list": "#questions",
+      "renderedListCards": 114,
+      "listIsBank": true
+    },
+    {
+      "phase": "after-legal-state-set",
+      "from": "#questions/Q11?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17&state=weak&set=fixed",
+      "source": "#learn/agent/n03-planning-reflection/s-da63f3dcff17?from=Q11&fromUnit=n03-planning-reflection&fromKp=n03-planning-reflection%3As-da63f3dcff17&fromState=weak&fromSet=fixed",
+      "back": "#questions/Q11?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17&state=weak&set=fixed",
+      "list": "#questions?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17&state=weak&set=fixed",
+      "renderedListCards": 1,
+      "listIsBank": true
+    },
+    {
+      "phase": "invalid-context",
+      "back": "#questions/Q11"
+    }
+  ]
+}

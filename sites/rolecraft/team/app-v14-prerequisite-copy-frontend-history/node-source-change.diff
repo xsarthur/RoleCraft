@@ -1,0 +1,35 @@
+--- candidate2/dist/learning-experience-v13.js
++++ candidate3/dist/learning-experience-v13.js
+@@ -49,13 +49,16 @@
+ const button=(label,attrs,selected=false)=>'<button class="outline'+(selected?' selected':'')+'" '+attrs+' aria-pressed="'+selected+'">'+label+'</button>';
+ function knowledgeLink(k,fromQuestion){const target=fromQuestion&&typeof fromQuestion==='object'&&qid(fromQuestion)?questionReadingHref(learnHref(k),fromQuestion):learnHref(k),status=knowledgeState(k);if(k.kind==='navigation')return '<a class="v13-knowledge-link" href="'+esc(target)+'"><span>'+esc(k.title)+'</span><small>导航参考</small></a>';return '<a class="v13-knowledge-link" href="'+esc(target)+'"><span>'+esc(k.title)+'</span>'+badge(status)+'</a>';}
+ function latestVisit(){return (LearningWorkbench.readingRecords().visits||[]).filter(LearningWorkbench.recordIsCurrent).at(-1);}
++function unitHasReading(u){return (LearningWorkbench.readingRecords().visits||[]).some(v=>v.unitId===u.unitId&&LearningWorkbench.recordIsCurrent(v));}
++function browsingBook(open){return '<svg class="v14-browse-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'+(open?'<path d="M12 5.5C8.9 3.7 5.8 3.6 2.8 4.9v14.6c3-1.3 6.1-1.2 9.2.6 3.1-1.8 6.2-1.9 9.2-.6V4.9c-3-1.3-6.1-1.2-9.2.6Z"/><path d="M12 5.5v14.6"/>':'<path d="M6 3.5h11.5v17H6a2 2 0 0 1 0-4h11.5M6 3.5a2 2 0 0 0-2 2v13"/>')+'</svg>';}
++
+ function continuation(){const v=latestVisit(),u=unit(v?.unitId)||corpus()?.units[0],name=u?.navigationLabel||'认识 Agent',action=v?'继续阅读':'开始阅读';return '<div class="v13-continue v14-compact-resume"><span>'+esc(action+' · '+name)+'</span><a href="#learn/agent/'+esc(u?.unitId||'00-learning-route')+(v?.sectionId?'/'+esc(v.sectionId):'')+'" aria-label="'+esc(action+'：'+name)+'">'+(v?'继续':'开始')+' →</a></div>';}
+ function coursePage(){
+  const c=corpus();if(!c)return issue('教材资源暂不可用。');
+  const d=data(),stages=d?.routeStages||[{title:'Agent 工程学习路线',unitIds:c.units.map(u=>u.unitId)}];
+  // Former view/filter preferences remain stored; this page always presents the full route.
+  scale=1;routeFilter='all';
+- const content='<div class="v13-map-viewport" id="v13-map-viewport" tabindex="0" aria-label="学习路线图，可滚动"><div class="v13-map-space" id="v13-map-space"><div class="v13-map-canvas" id="v13-map-canvas">'+stages.map((stage,i)=>{const us=(stage.unitIds||stage.ids||[]).map(unit).filter(Boolean);return us.length?'<section class="v13-map-stage"><h2><span>'+String(i+1).padStart(2,'0')+'</span>'+esc(stage.title)+'</h2><div class="v13-map-nodes">'+us.map(u=>'<article class="v13-route-node '+unitState(u)+'"><a class="v13-node-main" href="#learn/agent/'+u.unitId+'"><span class="v13-num">'+String(u.order).padStart(2,'0')+'</span><strong>'+esc(u.navigationLabel)+'</strong></a><small>'+(unitState(u)==='learned'?'本章打开过':unitState(u)==='weak'?'有本人待复习题':'尚无本版足迹')+'</small><details><summary>知识点 '+unitKnowledge(u.unitId).length+'</summary><div class="v13-branches">'+unitKnowledge(u.unitId).map(knowledgeLink).join('')+'</div></details></article>').join('')+'</div></section>':'';}).join('')+'</div></div></div>';
++ const content='<div class="v13-map-viewport" id="v13-map-viewport" tabindex="0" aria-label="学习路线图，可滚动"><div class="v13-map-space" id="v13-map-space"><div class="v13-map-canvas" id="v13-map-canvas">'+stages.map((stage,i)=>{const us=(stage.unitIds||stage.ids||[]).map(unit).filter(Boolean);return us.length?'<section class="v13-map-stage"><h2><span>'+String(i+1).padStart(2,'0')+'</span>'+esc(stage.title)+'</h2><div class="v13-map-nodes">'+us.map(u=>{const browsed=unitHasReading(u);return '<article class="v13-route-node v14-reading-node '+(browsed?'has-reading':'no-reading')+'"><a class="v13-node-main" href="#learn/agent/'+u.unitId+'"><span class="v13-num">'+String(u.order).padStart(2,'0')+'</span><strong>'+esc(u.navigationLabel)+'</strong>'+browsingBook(browsed)+'<span class="v14-node-sr">'+(browsed?'本版有阅读记录':'本版暂无阅读记录')+'</span></a><details><summary>知识点 '+unitKnowledge(u.unitId).length+'</summary><div class="v13-branches">'+unitKnowledge(u.unitId).map(knowledgeLink).join('')+'</div></details></article>';}).join('')+'</div></section>':'';}).join('')+'</div></div></div>';
+  return '<div class="v13-course">'+heading('Agent 开发学习路线','从理解 Agent，到实现、验证与交付自己的产品')+continuation()+content+'</div>';
+ }
+ function markButtons(q){const s=markStatus(q);return '<div class="v13-mark-actions">'+button(s==='weak'?'未掌握 · 取消':'未掌握','data-v13-mark="weak" data-v13-question="'+qid(q)+'"',s==='weak')+(s?button(s==='known'?'已掌握（自评）· 取消':'已掌握（自评）','data-v13-mark="known" data-v13-question="'+qid(q)+'"',s==='known'):'')+'</div>';}
+--- candidate2/dist/learning-experience-v13.css
++++ candidate3/dist/learning-experience-v13.css
+@@ -36,3 +36,12 @@
+ .v14-compact-resume>span{flex:1;min-width:0;overflow-wrap:anywhere;font-size:14px;line-height:1.7}
+ .v14-compact-resume>a{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 8px;font-size:14px;line-height:1.7;text-decoration:none;color:#87672d}
+ .v14-compact-resume>a:hover{text-decoration:underline}
++
++/* Node-only browsing state: book shape represents a validated visit, not mastery. */
++.v13-route-node.v14-reading-node{border-color:#dcd7cc;border-top:1px solid #dcd7cc;background:#fdfbf7}
++.v13-route-node.v14-reading-node.has-reading{border-color:#d5c39d;background:#f5f0e4}
++.v14-reading-node .v13-node-main strong{flex:1;min-width:0;overflow-wrap:anywhere}
++.v14-browse-icon{flex:0 0 22px;width:22px;height:22px;margin-top:2px;color:#7a7265}
++.has-reading .v14-browse-icon{color:#87672d}
++.v14-reading-node>details{margin-top:7px}
++.v14-node-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap;border:0}

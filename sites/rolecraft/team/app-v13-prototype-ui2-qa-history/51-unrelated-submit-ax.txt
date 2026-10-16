@@ -1,0 +1,15 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4475/#records".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 71-77
+~					64 text 本次表达： 装修厨房台面怎么选材料？
+~				66 text 离线语义检索 · 查询留在本机
+~				67 heading 当前 Agent 教材没有找到足够对应内容, Value: 3
+~					68 text 当前 Agent 教材没有找到足够对应内容
+~				69 text 检索范围是 v12 的 30 篇。你可以换一种表达，或从目录查看教材覆盖范围。
+~				70 link Description: 打开课程目录 →, Value: 127.0.0.1:4475/#learn
++		71 container lw-find-form
++			72 text 查教材
++			73 text entry area (settable) 查教材, Value: 装修厨房台面怎么选材料？, ID: lw-query
++			74 button 查找
++			75 button (expanded) Description: 收起检索结果, Secondary Actions: Collapse
+The focused UI element is 73 text entry area (settable) 查教材, Value: 装修厨房台面怎么选材料？, ID: lw-query

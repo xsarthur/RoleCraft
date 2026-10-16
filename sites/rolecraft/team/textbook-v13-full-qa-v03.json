@@ -1,0 +1,47 @@
+{
+  "report": "textbook-v13-full-qa-v03",
+  "date": "2026-10-16",
+  "role": "qa-engineer",
+  "version": "v13",
+  "source_report": "textbook-v13-full-qa-v02.md/.json",
+  "conclusion": "met_within_scope",
+  "manifest": {
+    "path": "sites/rolecraft/textbooks/v13/assembly-manifest.json",
+    "version_checked": "v02",
+    "chapterCount": 30,
+    "assetCount": 62,
+    "contentSetSha256": "8580eba3ee39132c83c3744792e6ea62a86f9f30df6916fdc83939601487b704"
+  },
+  "checks": {
+    "chapter_paths": {"status": "pass", "expected": 30, "present": 30, "mismatches": []},
+    "chapter_sha256_and_line_count": {"status": "pass", "checked": 30, "mismatches": []},
+    "asset_paths": {"status": "pass", "expected": 62, "present": 62, "mismatches": []},
+    "asset_sha256_and_bytes": {"status": "pass", "checked": 62, "mismatches": []},
+    "image_refs": {"status": "pass", "broken": []},
+    "manifest_validation_fields": {
+      "status": "pass",
+      "missingChapterFiles": [],
+      "brokenImageRefs": [],
+      "allChapterFilesPresent": true,
+      "allImageRefsResolve": true,
+      "v12RuntimeMutated": false,
+      "accountDatabaseMutated": false,
+      "deploymentPerformed": false
+    }
+  },
+  "counting_note": "Earlier v02 count of 63 used ls directory entries and included the assets/preview directory. Regular asset files count is 62, matching manifest v02.",
+  "not_verified": [
+    "browser_rendering",
+    "narrow_screen_layout",
+    "keyboard_accessibility",
+    "screen_reader_behavior",
+    "script_disabled_behavior",
+    "mermaid_runtime_rendering",
+    "code_execution",
+    "external_contracts",
+    "model_calls",
+    "real_reader_understanding",
+    "learning_transfer"
+  ],
+  "evidence_boundary": "Manifest and filesystem binding only; no claim of product integration, deployment, content correctness, or professional competence."
+}

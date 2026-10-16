@@ -1,0 +1,51 @@
+{
+  "practice_id": "AI-PRACTICE-DURABLE-002",
+  "exercise_version": "v0.3",
+  "record_id": "AI-L0-DURABLE-002-20261015-003",
+  "qa_role": "测试工程师",
+  "decision": "fail",
+  "local_scope_decision": "insufficient_evidence",
+  "l1_decision": "not_granted",
+  "l2_decision": "not_granted",
+  "independent": true,
+  "learner_artifacts_modified": false,
+  "checkpoint_manifest": {
+    "declared_sha256": "7a8447a8a4354f00225718a791a815246628cee6a5752317c5e90dbab5926312",
+    "recomputed_sha256": "7a8447a8a4354f00225718a791a815246628cee6a5752317c5e90dbab5926312",
+    "top_manifest_sha_pass": true,
+    "all_paths_bytes_sha256_pass": false,
+    "failed_entries": ["run-1/final.json", "run-2/final.json", "run-3/final.json"],
+    "runs": ["run-1", "run-2", "run-3"]
+  },
+  "checks": {
+    "all_final_json_local_draft_ready": "pass",
+    "all_final_outputs_local_draft_ready": "pass",
+    "all_final_outputs_scope_fixture_only": "fail",
+    "run_final_manifest_paths_bytes_sha256": "fail",
+    "run_1_run_2_run_3_event_replay": "pass_static",
+    "checkpoint_replay_hash": "fail",
+    "first_failure_stop_four_types": "pass_static",
+    "holdout_event_order_only": "pass_static",
+    "callback_id_dedupe": "pass_static",
+    "partial_result_hold": "pass_static",
+    "recovery_sequence": "pass_static",
+    "handoff_pending": "pass",
+    "self_signed_false": "pass",
+    "external_action_null": "pass",
+    "input_fixture_hash": "pass"
+  },
+  "limitations": [
+    "run-1/2/3 final.json manifest declares 261 bytes and sha256 2c21f9...d366, actual each is 302 bytes and sha256 ae2cfd...32496",
+    "run-1/2/3 final_output.json lack top-level scope=fixture-only and use status_scope instead",
+    "local JSON fixtures do not prove real process crash, durable storage/queue, RPO/RTO, concurrency, or production checkpoint",
+    "handoff remains pending and no human QA sign-off occurred",
+    "no real external tool or paid model call was executed"
+  ],
+  "evidence_paths": [
+    "sites/rolecraft/team/ai-generation-l0-practice-durable-002-v03/",
+    "sites/rolecraft/team/ai-generation-l0-practice-durable-002-v03/checkpoint_manifest.json",
+    "sites/rolecraft/team/ai-generation-l0-practice-durable-002-v03/repair_record.json",
+    "sites/rolecraft/team/ai-generation-l0-practice-durable-002-qa-v02.md",
+    "sites/rolecraft/team/ai-generation-l0-practice-durable-002-v02/"
+  ]
+}

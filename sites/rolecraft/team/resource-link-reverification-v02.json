@@ -1,0 +1,121 @@
+{
+  "schema_version": "resource-link-reverification-v02",
+  "review_date": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "scope_note": "四项训练前高时效资源复核；仅供目录维护和正式训练前接入，不覆盖冻结目录。",
+  "records": [
+    {
+      "resource_id": "PLR-AI-006",
+      "existing_title": "AI Agents in LangGraph",
+      "canonical_url": "https://www.deeplearning.ai/courses/ai-agents-in-langgraph",
+      "source_urls": [
+        "https://www.deeplearning.ai/courses/ai-agents-in-langgraph",
+        "https://www.deeplearning.ai/courses"
+      ],
+      "old_urls": [
+        "https://www.deeplearning.ai/alpha/short-courses/ai-agents-in-langgraph",
+        "https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/"
+      ],
+      "title": "AI Agents in LangGraph",
+      "provider_or_author": "DeepLearning.AI; Harrison Chase; Rotem Weiss",
+      "resource_type": "course",
+      "accessed_at": "2026-10-15",
+      "status": "verified_current_with_fetch_limitations",
+      "version_or_publication": "Current course page snapshot; no publication date or fixed version shown. Intermediate; 1h32m; 9 video lessons; 6 code examples; 1 PRO graded assignment.",
+      "cost_and_access": "Course access is stated as free for a limited time during the DeepLearning.AI platform beta; enrollment/account required. Graded assignment and accomplishment are marked PRO. Future price/beta end date not fixed on page.",
+      "language": "English (course page/content appears English; no alternate-language field verified).",
+      "prerequisites": "Official: intermediate Python knowledge. Project supplement may require basic LLM/tool-calling familiarity; supplement is not an official hard prerequisite.",
+      "license_or_use": "No open redistribution license shown for course content. Use original link and platform terms; do not republish videos/handouts/code package. LangGraph library license does not grant course-content rights.",
+      "old_link_handling": "Mark alpha/short-courses paths legacy_superseded; replace directory canonical_url with /courses/ path; retain old paths only for redirect/migration checks.",
+      "evidence_notes": "Search index confirmed title, instructors, outline, access, level and prerequisite; direct page fetch returned HTTP 403 on review date, so no publication date is asserted."
+    },
+    {
+      "resource_id": "PLR-COMP-004",
+      "existing_title": "European Commission Market Definition Notice",
+      "canonical_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:C_202401645",
+      "source_urls": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:C_202401645",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:52024XC01645",
+        "https://competition-policy.ec.europa.eu/mergers/legislation/notices-and-guidelines_en"
+      ],
+      "old_urls": [
+        "https://competition-policy.ec.europa.eu/public-consultations/2020-market-definition-notice_en"
+      ],
+      "title": "Communication from the Commission – Commission Notice on the definition of the relevant market for the purposes of Union competition law",
+      "provider_or_author": "European Commission, Directorate-General for Competition",
+      "resource_type": "standard_or_guideline",
+      "accessed_at": "2026-10-15",
+      "status": "verified_current",
+      "version_or_publication": "Official Journal C/2024/1645; CELEX 52024XC01645; C/2023/6789; published 2024-02-22. Paragraph 116 supersedes 1997 Notice 97/C 372/03.",
+      "cost_and_access": "Public EUR-Lex/Commission text and PDF; no course fee or login required.",
+      "language": "24 language versions listed by EUR-Lex: BG, ES, CS, DA, DE, ET, EL, EN, FR, GA, HR, IT, LV, LT, HU, MT, NL, PL, PT, RO, SK, SL, FI, SV.",
+      "prerequisites": "No formal course prerequisite. Training supplement: basic competition-law/antitrust, product and geographic market, substitution and market-share concepts.",
+      "license_or_use": "Official EU legal/policy notice; follow EUR-Lex/EU legal-information reuse policy and retain citation. Not legal advice or a commercial market-sizing template.",
+      "old_link_handling": "Mark 2020 consultation page historical_evaluation_context; use 2024/C 1645 as current rule/guidance link.",
+      "evidence_notes": "EUR-Lex search/PDF and Commission notices index agree on title, OJ identifier, publication date and replacement statement; direct HTML requested JavaScript robot verification."
+    },
+    {
+      "resource_id": "PLR-BE-003",
+      "existing_title": "Professional Data Engineer Learning Path — Google Cloud",
+      "canonical_url": "https://www.skills.google/paths/16",
+      "related_certification_url": "https://cloud.google.com/learn/certification/data-engineer",
+      "source_urls": [
+        "https://www.skills.google/paths/16",
+        "https://www.cloudskillsboost.google/paths/16",
+        "https://cloud.google.com/learn/certification/data-engineer",
+        "https://www.cloudskillsboost.google/paths/16/course_templates/72?locale=en"
+      ],
+      "old_urls": [
+        "https://cloud.google.com/learn/certification/data-engineer"
+      ],
+      "title": "Professional Data Engineer Certification (learning path)",
+      "provider_or_author": "Google Cloud / Google Skills",
+      "resource_type": "course_path",
+      "accessed_at": "2026-10-15",
+      "status": "verified_current_split_required",
+      "version_or_publication": "Google Skills path 16; 13 activities; managed by Google Cloud; page displays relative Last updated 4/5 months. No fixed path publication date or total duration exposed.",
+      "cost_and_access": "Sign in or join. Path has courses, labs and skill badges; official prep-course page says videos/documents usually free while labs may need subscription/credits. No stable total-path price.",
+      "language": "Path aggregate language not exposed. Official prep course lists English, Japanese, Spanish (Latin America), Portuguese (Brazil). Certification exam lists English/Japanese only.",
+      "prerequisites": "Path is advanced. Certification page: hard prerequisites none; recommended 3+ years industry experience including 1+ year designing/managing Google Cloud solutions.",
+      "license_or_use": "Google Skills/Cloud terms govern course, labs and badges; no public redistribution license. Link and quote minimally; keep lab/account data out of repository.",
+      "old_link_handling": "Existing cloud.google.com URL is a valid certification page but not the learning path. Split formal directory into path record (this URL) and separate certification record retaining related_certification_url.",
+      "evidence_notes": "Google Skills path confirms 13 activities, sign-in, managed-by and description; certification page confirms exam fee/languages/prerequisite/experience and points to the path. Relative update age is recorded without converting to a fake date."
+    },
+    {
+      "resource_id": "PLR-BE-004",
+      "existing_title": "Designing Data-Intensive Applications — Martin Kleppmann",
+      "canonical_url": "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/",
+      "source_urls": [
+        "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/",
+        "https://martin.kleppmann.com/",
+        "https://dataintensive.net/?lang=en"
+      ],
+      "old_urls": [
+        "https://dataintensive.net/?lang=en"
+      ],
+      "title": "Designing Data-Intensive Applications, 2nd Edition",
+      "provider_or_author": "Martin Kleppmann; Chris Riccomini; O’Reilly Media, Inc.",
+      "resource_type": "book",
+      "accessed_at": "2026-10-15",
+      "status": "verified_current_with_edition_note",
+      "version_or_publication": "O’Reilly: 2nd edition, February 2026, ISBN 9781098119058, 672 pages, English, intermediate to advanced. Author bibliography says O’Reilly Media, March 2026; month discrepancy retained.",
+      "cost_and_access": "O’Reilly page offers Read now/Unlock full access and Buy online; full text requires subscription or purchase; price varies by plan/region. Author page describes print/ebook availability for the older page.",
+      "language": "English (O’Reilly page).",
+      "prerequisites": "No formal publisher prerequisite; page level intermediate to advanced. Project supplement: software engineering, database and distributed-systems basics plus technical English.",
+      "license_or_use": "Book is copyrighted/O’Reilly terms; no open redistribution license found. Author website is CC BY 3.0 unless otherwise specified, but that license does not cover book text.",
+      "old_link_handling": "Keep dataintensive.net as first-edition historical overview (Martin Kleppmann, 2017); replace training canonical with O’Reilly 2nd edition and do not mix edition claims.",
+      "evidence_notes": "O’Reilly page confirms title, authors, February 2026, ISBN, language, level and access options. Author site confirms 2nd-ed coauthor and March 2026 bibliography entry; old dataintensive.net remains first-ed promotional page."
+    }
+  ],
+  "directory_change_recommendations": [
+    "Replace PLR-AI-006 canonical_url with current DeepLearning.AI /courses path and retain old alpha path as legacy alias.",
+    "Replace PLR-COMP-004 consultation URL with EUR-Lex OJ C/2024/1645; retain 2020 page as historical evaluation source.",
+    "Split PLR-BE-003 into a Google Skills learning-path record and a separate Professional Data Engineer certification record; do not share fee/language fields.",
+    "Replace PLR-BE-004 training URL with O’Reilly second-edition page; label dataintensive.net as first-edition historical source."
+  ],
+  "limits": [
+    "This review confirms source metadata and access conditions only; it does not verify learner outcomes, role competence, expert review, legal advice or production readiness.",
+    "Runtime APIs, cloud lab availability, prices, beta status and course contents can change; re-open dynamic pages before each cohort.",
+    "DeepLearning.AI and EUR-Lex direct fetch limitations were recorded instead of treating search snippets or indexed pages as proof of an immutable version."
+  ]
+}

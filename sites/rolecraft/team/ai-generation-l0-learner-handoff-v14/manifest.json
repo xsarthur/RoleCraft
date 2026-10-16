@@ -1,0 +1,115 @@
+{
+  "version": "v14",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "artifacts": {
+    "A-stdout.txt": {
+      "path": "A-stdout.txt",
+      "bytes": 16,
+      "sha256": "05ba5f8a1023781b54a71930c2cdec298d8e0383b56d684f05d7f6bc42e31573"
+    },
+    "A-receipt.json": {
+      "path": "A-receipt.json",
+      "bytes": 277,
+      "sha256": "8fc2d9c0dd498cc901b8bcb037252acafe0b7444f457988b32a8c055efc4e8c0"
+    },
+    "d0-04/event-trace.json": {
+      "path": "d0-04/event-trace.json",
+      "bytes": 146,
+      "sha256": "e1cdc95a0fe35dd814d0e505292515b82e41e1344c16c2b3a83a8078a44adf20"
+    },
+    "d0-04/checkpoint-before.json": {
+      "path": "d0-04/checkpoint-before.json",
+      "bytes": 32,
+      "sha256": "e60fa89b1a90e5fed729138dc0900ed87240e924743bb0bdfb5bca4e48e74434"
+    },
+    "d0-04/tool_output.json": {
+      "path": "d0-04/tool_output.json",
+      "bytes": 101,
+      "sha256": "b934334fe63021fe269a6da3fc198de76b45f6be7bbc898a9f6aebbdf62ac2fa"
+    },
+    "d0-04/checkpoint-after.json": {
+      "path": "d0-04/checkpoint-after.json",
+      "bytes": 30,
+      "sha256": "975bf260d1fb06b0f3079e6476292508f1a468488f25d79b3bb366e7ab00b87c"
+    },
+    "d0-04/tool_input.json": {
+      "path": "d0-04/tool_input.json",
+      "bytes": 175,
+      "sha256": "53868ad6b0f53f9834c1d9d5cd10be531634d100d2260255508f44b0c5939a72"
+    },
+    "d0-04/failure.json": {
+      "path": "d0-04/failure.json",
+      "bytes": 74,
+      "sha256": "6297ce07dadfb9d7d85d67cb70b4e28d4a5239d06fe14dd8aea7209a50f71771"
+    },
+    "d0-04/recovery.json": {
+      "path": "d0-04/recovery.json",
+      "bytes": 89,
+      "sha256": "23e0be6686f2667f0bfdc95bf5e35773ff0e41609cb627e45b8a1ec9cb4664eb"
+    },
+    "d0-05/regression.json": {
+      "path": "d0-05/regression.json",
+      "bytes": 166,
+      "sha256": "97ab926e1f39c8064fdadb220eb2515b82122c46bd74f7f8b9e8ea1a5ed6580e"
+    },
+    "d0-05/baseline.json": {
+      "path": "d0-05/baseline.json",
+      "bytes": 168,
+      "sha256": "685c41b006b9d5569391cb7c616214d375f00165fcf8b34ec821a561563bc9ff"
+    },
+    "d0-05/matrix.json": {
+      "path": "d0-05/matrix.json",
+      "bytes": 881,
+      "sha256": "b82ac351f5fc5864cd46395edba3f15e27d9dd5693263fe332d13ca5dc76e3e9"
+    },
+    "d0-05/first_failure.json": {
+      "path": "d0-05/first_failure.json",
+      "bytes": 172,
+      "sha256": "f0c82d736c9896c0c6ca2c5a68be6f78bfd7c716761abb71724abb64adf4f1aa"
+    },
+    "d0-05/holdout.json": {
+      "path": "d0-05/holdout.json",
+      "bytes": 172,
+      "sha256": "f0c82d736c9896c0c6ca2c5a68be6f78bfd7c716761abb71724abb64adf4f1aa"
+    },
+    "evidence_cards/d0-01.json": {
+      "path": "evidence_cards/d0-01.json",
+      "bytes": 494,
+      "sha256": "e2f0f3b4c4df38694d4cc788a7573263793a607957fe7863b0c9c9e8abe2cd95"
+    },
+    "evidence_cards/d0-02.json": {
+      "path": "evidence_cards/d0-02.json",
+      "bytes": 494,
+      "sha256": "1efc1fc937acaf214e96c907733efb20b4a2a46933dcb7f4a04b9bf036d80b5f"
+    },
+    "evidence_cards/d0-03.json": {
+      "path": "evidence_cards/d0-03.json",
+      "bytes": 494,
+      "sha256": "3ef5111ec838e78b6619c4f76ae7b1fc90decf965153c71a923b031ea78cf6e5"
+    },
+    "evidence_cards/d0-04.json": {
+      "path": "evidence_cards/d0-04.json",
+      "bytes": 494,
+      "sha256": "7e9d1df297c6de411aa25b0b13a03ed202c4e134ffc8ab7748d7a71074460e88"
+    },
+    "evidence_cards/d0-05.json": {
+      "path": "evidence_cards/d0-05.json",
+      "bytes": 494,
+      "sha256": "05c643d7e847da2d421f86f4c7e2cec147bd535d26eca290f55c203c3041015c"
+    }
+  },
+  "manifest_bytes": null,
+  "manifest_sha256": null,
+  "self_reference_rule": "null by construction",
+  "command": "python3 run_bundle.py",
+  "environment": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "original_failure": "checkpoint_write_failed",
+  "qa_status": "pending",
+  "human_receipt": "pending",
+  "self_signed": false,
+  "external_action": null,
+  "l0_status": "not_assessed",
+  "d0_status": "not_assessed",
+  "l1_decision": "not_granted",
+  "l2_decision": "not_granted"
+}

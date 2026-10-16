@@ -1,0 +1,24 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4486/#learn/agent/n03-planning-reflection/s-da63f3dcff17".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 404-408
++			404 button (collapsed) 导航, ID: mobile-menu, Secondary Actions: Expand
++	405 container lw-assistant
++		406 container Description: 教材内容检索, ID: lw-find-panel
++			407 heading 找对应教材, Value: 2
++				408 text 找对应教材
++			409 text 只推荐当前 v12 教材中的真实内容
++			410 button 收起
++			411 text 学习起点：已有编程基础
++			412 button 本次不限定起点
++			413 text 结合当前章：规划与反思 / 1 三种策略改变的是控制对象
++			414 button 清除章节上下文
++			415 container lw-find-results
++				416 heading 把问题说出来，不必知道章节名, Value: 3
++					417 text 把问题说出来，不必知道章节名
++				418 text 在当前 v12 的 30 篇中查找，并给出原文依据。
++		419 container lw-find-form
++			420 text 查教材
++			421 text entry area (settable) 查教材, ID: lw-query
++			422 button 查找
++			423 button (expanded) Description: 收起检索结果, Secondary Actions: Collapse
+The focused UI element is 421 text entry area (settable) 查教材, ID: lw-query

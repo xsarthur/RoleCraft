@@ -1,0 +1,34 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4475/#questions/Q11".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 55-63
+~				52 text 离线语义检索 · 查询留在本机
+~				53 heading 推荐阅读, Value: 3
+~					54 text 推荐阅读
++				55 text 检索理解：查找正文中的 ReAct；比较推理行动交错与先计划的策略
++				56 heading 查找正文中的 ReAct, Value: 4
++					57 text 查找正文中的 ReAct
++				58 container
++					59 text 第 18 篇 · 规划与反思  查找正文中的 ReAct
++					60 heading 7 从演算到作品, Value: 4
++						61 text 7 从演算到作品
++					62 text 本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。 教材原文 EX-N03-C：写出同一任务的固定、ReAct、先计划三条正常轨迹及各一条失败轨迹，做受限反思实验设计。参考分析应给事件、可观察证据、修正和停止条件，不以“采用更先进模式”代替选择依据。
++					63 link Description: 阅读这一节 →, Value: 127.0.0.1:4475/#learn/agent/n03-planning-reflection/s-dc2e15b8cffc
++					64 button (collapsed) 查看出处, Secondary Actions: Expand
++						65 text 查看出处
++				66 heading 比较推理行动交错与先计划的策略, Value: 4
++					67 text 比较推理行动交错与先计划的策略
++				68 container
++					69 text 第 18 篇 · 规划与反思  比较推理行动交错与先计划的策略
++					70 heading 1 三种策略改变的是控制对象, Value: 4
++						71 text 1 三种策略改变的是控制对象
++					72 text 你表达了“react”；这一小节说明比较推理行动交错与先计划的策略的具体机制。 教材原文 ReAct 将任务解释、下一行动与新观察交错。根据 report-71 发现 `refund(7)` 失败，选择读取退款函数；观察实际实现是 `<7` 后再查生效规则。每轮仅承诺一个或少数下一步，适合证据逐步揭示、路径难以先列全的调查。其成本是轮次增加、上下文污染与短视；下一步看似相关，不保证最终证据完整。[ReAct 原论文 v3](https://arxiv.org/abs/2210.03629v3)研究推理轨迹与行动交错。本教材记录可审查的短决策依据、行动参数和观察，不要求取得或展示模型隐藏的内部思维。
++					73 link Description: 阅读这一节 →, Value: 127.0.0.1:4475/#learn/agent/n03-planning-reflection/s-da63f3dcff17
++					74 button (collapsed) 查看出处, Secondary Actions: Expand
++						75 text 查看出处
++				76 text 使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。
++		77 container lw-find-form
++			78 text 查教材
++			79 text entry area (settable) 查教材, Value: react, ID: lw-query
++			80 button 查找
++			81 button (expanded) Description: 收起检索结果, Secondary Actions: Collapse
+The focused UI element is 79 text entry area (settable) 查教材, Value: react, ID: lw-query

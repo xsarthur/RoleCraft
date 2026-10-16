@@ -1,0 +1,24 @@
+{
+  "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "role_id": "AI",
+  "owner": "测试工程师（合同）；学习者本人执行",
+  "status": "pending_learner_execution",
+  "fixture_id": "F-AI-SOURCE-CLAIM-v1",
+  "fixture_sha256": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+  "isolation": {"network": "disabled", "real_model": false, "cloud": false, "paid_api": false, "real_user_data": false, "external_action": null},
+  "cases": [
+    {"case_id": "A-normal", "expected_status": "draft_ready_for_review", "required": ["two_bound_A_v2_claims", "unknowns_preserved", "external_action_null"]},
+    {"case_id": "B-tenant-denied", "first_failure": "SOURCE_SCOPE_DENIED", "stop_receipt": {"draft": null, "handoff": null, "external_action": null}, "required": ["B_text_absent", "no_cache_or_context"]},
+    {"case_id": "source-missing", "first_failure": "SOURCE_MISSING_OR_UNKNOWN_BLOCKED", "stop_receipt": {"draft": null, "handoff": null, "external_action": null}},
+    {"case_id": "source-conflict", "first_failure": "SOURCE_VERSION_MISMATCH_OR_SOURCE_HASH_MISMATCH", "stop_receipt": {"draft": null, "handoff": null, "external_action": null}}
+  ],
+  "learner_commands": {"hash": ["sha256sum sites/rolecraft/team/ai-generation-l0-practice-source-001/frozen_input.json", "sha256sum sites/rolecraft/team/ai-generation-l0-practice-source-001/replay_verify.py"], "run_template": "<learner-run-command> --case <case_id> 2>&1 | tee receipts/<case_id>.stdout", "replay": "python3 sites/rolecraft/team/ai-generation-l0-practice-source-001/replay_verify.py", "rule": "learner supplies actual entrypoint; QA replay is not learner execution"},
+  "repetitions": {"run_1": "all four cases with raw receipts", "run_2": "repeat from same frozen input; byte/SHA compare", "unknown_holdout": "unpublished equivalent variant changing document_id/source_version/text; dynamic bind or stop"},
+  "evidence_card_required_fields": ["evidence_card_id", "contract_id", "diagnostic_id", "case_id", "run_id", "fixture_id", "fixture_sha256", "input_path", "input_sha256", "command", "environment", "stdout_path", "stdout_bytes", "stdout_sha256", "stderr_path", "stderr_bytes", "stderr_sha256", "exit_code", "first_failure", "stop_before_draft", "draft_status", "claim_source_refs", "tool_receipt", "unknowns", "external_action", "unvisited_sources", "cache_or_context_evidence", "handoff_recipient", "human_receipt_pending"],
+  "qa_steps": ["freeze and hash inputs", "replay four cases in isolated temp dir", "verify A refs/unknown/tool receipt", "verify B denial and B text absence", "verify missing/conflict stop receipts", "compare run-1/run-2 bytes and SHA; run holdout", "verify zero external actions and pending human receipt"],
+  "decision_vocabulary": ["met_within_scope", "met_with_limitations", "not_met"],
+  "human_receipt_pending": true,
+  "levels_granted": [],
+  "unverified": ["real supplier source API", "real model fidelity", "cache/concurrency/recovery", "production permissions", "human approval/signoff", "learner transfer and occupational competence"]
+}

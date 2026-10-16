@@ -1,0 +1,59 @@
+{
+  "report": "backend-v1.0-question-bank-investigation",
+  "checkedAt": "2026-10-16T00:00:00+08:00",
+  "scope": {
+    "role": "backend-data-engineer",
+    "readOnly": true,
+    "formalDatabaseRead": false,
+    "remoteDeployment": false,
+    "clientOrTextbookModified": false
+  },
+  "conclusion": {
+    "status": "client_derived_bundle_identity_mismatch",
+    "rootCause": "learning-v13-data.js corpusHash is stale relative to content-v12-data.js",
+    "backendQuestionEndpointMissing": false,
+    "backendDatabaseCause": false,
+    "retrievalCause": false,
+    "questionBankCanBeRestoredWithoutDuplicatingBackendQuestionTable": true
+  },
+  "identity": {
+    "clientDerivedCorpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+    "currentContentCorpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+    "serverSeededCareerCorpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+    "bookSha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+    "clientDerivedVersion": "textbook-v12",
+    "units": 30,
+    "questions": 114,
+    "knowledgePoints": 240
+  },
+  "validation": {
+    "contentVersionMatch": true,
+    "corpusHashMatch": false,
+    "bookShaMatch": true,
+    "dataValidationResult": "null_unavailable",
+    "catalogHasQuestions": false,
+    "catalogCorpusVersion": "textbook-v12",
+    "catalogCorpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+    "catalogUnits": 30,
+    "readinessAvailable": true,
+    "readinessLocalSemanticPrepared": true,
+    "currentContentDataSha256": "3eb094b460e0a1f545820232058d3b58b4c85d1353c87895709af3784d408b12",
+    "declaredContentDataBindingSha256": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224",
+    "declaredContentDataBindingMatches": false
+  },
+  "evidence": [
+    "sites/rolecraft/dist/learning-experience-v13.js:data()",
+    "sites/rolecraft/dist/learning-experience-v13.js:questionPage",
+    "sites/rolecraft/dist/learning-experience-v13.js:eligible",
+    "sites/rolecraft/dist/content-v12-data.js",
+    "sites/rolecraft/dist/learning-v13-data.js",
+    "sites/rolecraft/server/retrieval/index.mjs:getContentCatalog",
+    "sites/rolecraft/server/index.mjs:seededCareer"
+  ],
+  "handoff": {
+    "owners": ["课程架构师", "软件工程师", "测试工程师"],
+    "action": "Regenerate or rebind the client learning data package to the current v12 corpus identity, then independently re-test V1-04.",
+    "preserve": ["Q1-Q100", "M101-M114", "Q10/Q99 personal evidence exclusion", "old V1-04 fail record"],
+    "doNot": ["Do not copy questions into SQLite in this fix", "Do not add an unconsumed endpoint", "Do not close V1-04 on this investigation alone"]
+  }
+}

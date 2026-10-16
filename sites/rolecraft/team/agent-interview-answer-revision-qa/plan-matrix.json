@@ -1,0 +1,2238 @@
+{
+  "version": "agent-interview-answer-revision-qa-plan-1",
+  "status": "pending_author_delivery",
+  "items": [
+    {
+      "id": "Q1",
+      "question": "如何界定 LLM Agent？你会用哪些可观察行为区分它与普通聊天应用？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "让模型按固定脚本循环输出三轮话但不读取新观察，能否解释它为何仍非动态Agent",
+      "priorSpecificGap": "未给可观察任务轨迹或用何种反例区分只聊天与观察驱动；定义未落到读者可核操作",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q1.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q2",
+      "question": "单次模型调用、固定 Workflow 和动态 Agent，分别适合什么业务条件？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "固定字段提取、固定审批、多跳未知调查三任务如何分别选型",
+      "priorSpecificGap": "没有分别给适用业务条件、同任务对比或收益代价，问题问适用性而摘录主要给定义",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q2.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q3",
+      "question": "用户说“帮我做一个 Agent”时，你先澄清哪些需求，才能决定实现方案？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "资料不能出域且禁止任何写入时，原澄清和候选方案哪里变化",
+      "priorSpecificGap": "task只有一行；缺用户、流程、数据权限、成功条件、预算等具体澄清路径及答案怎样改变选型",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q3.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q4",
+      "question": "工具调用、状态维护、规划和长期记忆，哪些取决于具体场景，并非每个 Agent 都需要？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "一次读取固定报告即结束的任务是否需要规划与长期记忆",
+      "priorSpecificGap": "未回答工具、规划是否可省及各自启用条件，状态术语不能替代四组件选用",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q4.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q5",
+      "question": "怎样判断增加自主决策带来的收益，足以抵消不确定性与运行成本？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "动态方案成功数略高但唯一新增越权错误且人工时间加倍时怎样决策",
+      "priorSpecificGap": "缺如何按预先价值风险判据作接受/放弃决定、具体对照结果与反例，不能从指标列表推导值得",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q5.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q6",
+      "question": "如果需求可以用 SQL、规则或传统搜索解决，你如何解释自己的技术选择？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "相同任务规则100%可解，模型成本升高但无新增目标收益怎样记录选择",
+      "priorSpecificGap": "未展开SQL/规则/搜索和模型的同任务替代比较与验证方法；ADR只引出未展示内容",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q6.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q7",
+      "question": "单 Agent 多工具与多 Agent 协作，在架构上有什么区别？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "一个Agent调用十个工具与十个子Agent如何分别拥有状态和控制权",
+      "priorSpecificGap": "未清楚对照一个决策者多工具与多个独立决策上下文的拓扑、状态和预算交接；E1只有引句",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q7.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q8",
+      "question": "你会如何评估自研 Agent 运行时、开源框架和低代码平台？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "必须私网部署且支持人审恢复时如何对三类方案作同条件验证",
+      "priorSpecificGap": "只介绍自研，开源框架/低代码评估维度、实际试验、限制与迁移代价未回答",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q8.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q9",
+      "question": "从演示原型到可交付的 Agent 服务，需要补齐哪些工程能力？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "演示成功但账户隔离与未知写恢复没有证据时能否交付及先补何项",
+      "priorSpecificGap": "缺从可运行演示到服务的具体缺口排查/优先顺序和一条可交付验收路径，发布术语未展开",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q9.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q10",
+      "question": "请用一个真实项目说明：Agent 改善了谁的什么工作，你如何证明改善成立？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "教学夹具跑通但无真实用户材料时怎样如实回答并保留个人证据缺口",
+      "priorSpecificGap": "缺一份从问题到本人行动及结果的完整标注示例/表达结构；“这些材料”无指代，未将分散内容组织成答题演示",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q10.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q11",
+      "question": "ReAct 如何组织推理、行动与观察？它与一次性生成计划有什么不同？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "第一次读取发现新文件依赖时ReAct如何改下一步而原一次性计划为何不足",
+      "priorSpecificGap": "完全未解释ReAct的推理候选、行动、观察迭代及与一次性计划的差别",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q11.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q12",
+      "question": "ReAct、Plan-and-Execute 和固定状态机，你会如何按任务特征选择？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "依赖可提前列出但执行长，与每步未知调查两任务怎样选不同方案",
+      "priorSpecificGap": "未说明ReAct与Plan-and-Execute机制和选择条件，只有三选一的一项",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q12.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q13",
+      "question": "不依赖现成框架，手写一个最小 Agent 控制循环，需要哪些状态和分支？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "收到工具UNKNOWN后最小循环进入何状态、允许调用哪些动作",
+      "priorSpecificGap": "“一轮决策可以写成”后无代码，未呈现状态字段、分支、失败/等待和推进算法",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q13.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q14",
+      "question": "如何区分“模型宣布完成”和“任务实际上完成”？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "模型说已创建但外部无匹配回执时具体何条件阻断完成",
+      "priorSpecificGap": "“需要同时满足”和“不会搜索完成二字”后关键验收条件及处理分支丢失",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q14.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q15",
+      "question": "怎样设置最大步数、时间和费用限制，同时避免过早中止任务？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "剩余预算够一次核对但不够新调查，系统如何完成已发效果核对",
+      "priorSpecificGap": "“预算至少拆成”后无类别，未给剩余额度/预留/恢复预算或避免过早中止策略",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q15.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q16",
+      "question": "面对带前置依赖的复杂任务，如何生成和验证可执行计划？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "计划把创建工单排在批准之前，验证器如何识别并阻止执行",
+      "priorSpecificGap": "缺依赖图有效性检查、环/缺能力/预算失败、可执行顺序和具体验证轨迹",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q16.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q17",
+      "question": "什么信号应触发 Replanning？如何避免反复改计划却没有实际进展？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "模型连续更换节点名但必要产物数不变，何时停止或请求澄清",
+      "priorSpecificGap": "未解释防抖/版本、无进展检测、修订次数与共享预算如何制止空转",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q17.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q18",
+      "question": "Reflection 或自我纠错在哪些情况下有帮助，又可能怎样放大原始错误？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "原事实就错且反思模型同源时两次自信解释为何不增加证据",
+      "priorSpecificGap": "没有展开何时反思有帮助、怎样放大错误及如何用独立证据约束自我评价",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q18.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q19",
+      "question": "工具结果与原计划冲突时，运行时应该如何更新状态和后续决策？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "工具新结果否定旧假设但旧计划后续写入已排队时如何撤销推进",
+      "priorSpecificGap": "未形成工具新证据冲突后失效旧事实/计划、保留历史、再验证目标的完整更新路径，E2还截在“确”",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q19.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q20",
+      "question": "如何识别和处理重复动作、无效搜索以及循环卡死？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "同一搜索改写十次候选来源不变而预算递减时触发什么动作",
+      "priorSpecificGap": "缺重复指纹/无效检索观察窗口及具体等待/停止分支；两段引出条件但无正文",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q20.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q21",
+      "question": "Function Calling 从模型输出到函数真正执行，中间经过哪些步骤？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "流先到合法JSON后以错误结束，哪些阶段不许产生外部效果",
+      "priorSpecificGap": "缺完整参数/业务/权限检查到结果提交回模型的连贯顺序，官方链接截断",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q21.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q22",
+      "question": "如何设计工具名称、描述和参数 Schema，减少错选工具与错误参数？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "同为读取的search与read有何必需字段与拒绝条件防止选错",
+      "priorSpecificGap": "Schema类型/必选/枚举/范围、描述前提和返回错误/选型测试全部未展开",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q22.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q23",
+      "question": "工具参数的 JSON 格式正确，为什么不等于调用安全、业务合法？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "字符串project属于别租户而Schema合法时应在哪层拒绝且不泄露存在性",
+      "priorSpecificGap": "缺结构合法但业务值错误/跨租户/过期批准的连续验证顺序和具体完整输入反例；URL截断",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q23.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q24",
+      "question": "工具数量达到数百个时，怎样降低选择错误和上下文负担？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "正确工具被top-k漏掉或候选版本变更时不能强选，如何发现和恢复",
+      "priorSpecificGap": "候选零命中/歧义/过时版本处理和召回覆盖与延迟/成本验证未交代",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q24.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q25",
+      "question": "工具超时、限流、参数错误和业务拒绝，应采用同一种重试策略吗？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "429带Retry-After与403业务拒绝是否同重试，未知写入与确认未执行如何分",
+      "priorSpecificGap": "未逐类回答限流/参数错误/业务拒绝/超时决策，退避链接和完整尾部被截",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q25.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q26",
+      "question": "对可能产生外部副作用的工具，如何防止重试导致重复执行？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "外部已创建、本地未提交结果后重启，在什么契约下能重发",
+      "priorSpecificGap": "稳定键下游原子性、窗口、状态决策、并发及回执丢失轨迹均未展开；E3只是引句",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q26.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q27",
+      "question": "MCP 解决哪一层集成问题？它与模型的 Tool Calling 有什么关系？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "MCP请求返回成功但工单重复，为什么协议集成不能承担业务去重",
+      "priorSpecificGap": "缺协议边界与业务幂等/权限不保证事项、具体一次交互和拒绝/测试",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q27.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q28",
+      "question": "MCP 中的 Tools、Resources 和 Prompts，各自适合表达什么能力？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "资源URI包含另一租户敏感资料时只读为何仍需访问控制",
+      "priorSpecificGap": "缺同一业务的三种资源示例和怎样验证调用/读取/模板不越权",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q28.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q29",
+      "question": "接入第三方工具服务时，如何处理认证、权限、版本与错误契约？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "服务声明有tools能力但凭据不允许当前项目时哪一步拒绝",
+      "priorSpecificGap": "认证、凭据存储/范围、当前主体授权、完整握手失败与契约测试缺失",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q29.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q30",
+      "question": "Tool Calling、MCP、Agent Skills（可复用技能说明与资源包）和 A2A，分别解决什么问题？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "技能中写调用某工具而MCP未注册时为什么不能直接执行",
+      "priorSpecificGap": "ToolCalling/MCP关系未回答，A2A只跳链接且截断，四者对比与组合实例缺失",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q30.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q31",
+      "question": "会话历史、任务工作状态和长期记忆有什么不同？应分别存储什么？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "聊天说已创建但账本UNKNOWN时谁是恢复依据、记忆应写什么",
+      "priorSpecificGap": "未给同一事实怎样分别落盘、生命周期/污染边界与核验案例",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q31.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q32",
+      "question": "上下文不足时，如何在截断、摘要、检索和外部状态之间选择？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "必须/禁止事项放历史开头时截断能否允许，如何验证未丢",
+      "priorSpecificGap": "截断/摘要/检索/外部状态四策略选择与损失检验未展开；E2只有引句",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q32.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q33",
+      "question": "摘要压缩如何避免丢失用户约束、未完成事项和关键事实？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "met_static_content",
+      "priorCounterexample": "摘要写已创建、权威账本UNKNOWN，应拒绝摘要且不改账本；保留<与源修订后复核边界",
+      "priorSpecificGap": "无已发现核心语义缺口；E1为冗余引句，可删除改善阅读但不阻断整体理解",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q33.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q34",
+      "question": "长期记忆应该在什么条件下写入、更新、合并或删除？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "撤回源偏好但派生摘要还命中时如何失效并确认不再消费",
+      "priorSpecificGap": "合并冲突优先规则、撤回后删除传播及下游复验没有完整过程；末句截断",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q34.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q35",
+      "question": "如何发现错误记忆对后续任务的持续污染，并修正受影响结果？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "改对m1后旧o1仍被检索，如何找到并阻断再传播",
+      "priorSpecificGap": "只描述问题，未给发现、依赖追踪、失效标记、重算/撤回与验证方法",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q35.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q36",
+      "question": "如何隔离不同用户、组织和会话的记忆？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "A召回后成员资格撤销，返回前重鉴权应阻止哪些内容进入模型",
+      "priorSpecificGap": "缺可复现实例/测试保证两个租户与会话历史互不穿透，缓存/派生记忆边界未明确",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q36.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q37",
+      "question": "检索材料、历史记忆与当前用户要求相冲突时，应如何处理？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "met_static_content",
+      "priorCounterexample": "旧偏好中文而当次英文只覆盖本次；用户要求读取他人文件仍拒绝，不能把两种覆盖等同",
+      "priorSpecificGap": "无已发现核心语义缺口；适用跨来源冲突解释，真实系统执行另验",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q37.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q38",
+      "question": "如何设计系统提示，使角色、工具使用规则和输出要求清晰而可测试？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "把用户资料里的“忽略限制”放入输入后怎样证明系统指令与执行权限未被改变",
+      "priorSpecificGap": "四层模板、角色/工具/输出合同与测试均未展示",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q38.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q39",
+      "question": "Few-shot 示例如何帮助工具选择？示例过多或失真会带来什么问题？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "示例全部选择同一个工具时未见场景是否被诱导错选",
+      "priorSpecificGap": "未解释工具选择示例结构、数量/偏差/失真风险和对照方法；论文URL截断",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q39.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q40",
+      "question": "如何验证一次提示或记忆策略调整确实改善了结果，而非只修好几个演示样例？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "只在看过的5个样例提高但保留集退化，应如何判定",
+      "priorSpecificGap": "缺同条件A/B、随机重复、指标和差异解释；两概念段不足以判断改动有效",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q40.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q41",
+      "question": "RAG、长上下文直接阅读和模型微调，分别适合解决哪些知识问题？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "资料每日更新且需可撤回引用时三方案如何保证当前事实并测过期回答",
+      "priorSpecificGap": "缺同一任务条件改变时的选型步骤/具体对照及验证预期",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q41.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q42",
+      "question": "一个完整 RAG 管线包含哪些环节？如何逐段定位回答错误？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "索引有正确块但答案没引用时怎样区别召回、重排截断或生成错误",
+      "priorSpecificGap": "未展示查询召回/重排/上下文/生成完整链与逐段隔离排查",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q42.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q43",
+      "question": "如何根据文档结构、查询类型和引用需求设计切块策略？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "函数名与决定条件分两块时应怎么切和测必要证据召回",
+      "priorSpecificGap": "未解释按文档结构和查询设计块/重叠/邻块扩展的选择过程",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q43.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q44",
+      "question": "如何选择 Embedding 模型，评估领域术语、中文与多语言查询效果？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "同维两模型混用能产生数字分数，为何仍不可比较",
+      "priorSpecificGap": "未给候选模型选择、领域/中文/多语言标注集、质量成本指标和实验；链接截断",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q44.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q45",
+      "question": "关键词检索、向量检索和混合检索分别有什么优势与盲区？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "自然语言返回近义但不同报告ID时如何拒绝，混合分数怎避免直接相加",
+      "priorSpecificGap": "混合如何融合、各自漏检与误召回的具体案例/检验结果不足",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q45.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q46",
+      "question": "Reranker 改善的是哪一阶段？怎样衡量它带来的质量与时延代价？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "正确块没进候选时重排再准为何不能补回，怎样把召回与重排收益分开",
+      "priorSpecificGap": "没有衡量reranker增益/时延的实验指标、召回漏失边界或case；URL截断",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q46.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q47",
+      "question": "查询改写、多查询和多跳检索什么时候有效，什么时候容易改变原意？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "问题需先找产品再找政策时怎样多跳且不扩张权限与预算",
+      "priorSpecificGap": "多查询和多跳的适用性、停止与去重及额外成本未回答",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q47.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q48",
+      "question": "如何让答案引用与实际支持结论的原文、版本及位置对应？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "引用正确代码行却声称业务规则应<=7，哪一层拒绝该主张",
+      "priorSpecificGap": "引用原子主张绑定与读回验证步骤不足；E3出现“实际为空”无运行前提并截断字段",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q48.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q49",
+      "question": "没有足够证据、资料互相矛盾或知识已经过期时，系统应怎样响应？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "旧政策有证据但已过适用期，能否仍作为确定答案引用",
+      "priorSpecificGap": "过期知识的时点检查/补证与用户响应完整案例未回答",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q49.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q50",
+      "question": "Agentic RAG 相对固定 RAG 增加了什么决策能力？如何证明额外复杂度值得？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "固定RAG已能回答所有样本时Agentic多次检索为何可能无收益",
+      "priorSpecificGap": "没有说明多一层决策如何产生收益/成本及怎样同条件证明值得",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q50.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q51",
+      "question": "在你采用的版本中，LangChain 和 LangGraph 分别承担什么职责？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "模型工具接口可用但图无检查点时分别是哪层能力缺口",
+      "priorSpecificGap": "LangChain职责只到create_agent被截断，LangGraph职责与协作例缺失",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q51.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q52",
+      "question": "用图表示 Agent 时，节点、边和共享状态分别应该包含什么？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "两个节点覆盖findings导致丢证据时如何在图和状态schema中修正",
+      "priorSpecificGap": "共享状态设计只有单表行，缺完整图例、条件边与字段责任/验证；链接截断",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q52.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q53",
+      "question": "状态字段应如何建模，避免把全部消息和中间数据无限累积？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "清理历史后pending action的回执还未核对，哪些字段必须保留",
+      "priorSpecificGap": "未给可检查状态schema、压缩/归档具体过程和内存增长验证，末段链接截断",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q53.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q54",
+      "question": "并行节点同时更新状态时，如何处理合并规则和写入冲突？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "met_static_content",
+      "priorCounterexample": "同键同内容重复应同结果；同键不同内容拒绝；交换两输入结果一致；有序步骤不可直接集合化",
+      "priorSpecificGap": "未发现决定性语义缺口；合并代数性质仍需安全样例独立验证，不能当LangGraph自动保证",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q54.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q55",
+      "question": "条件路由由规则决定还是由模型决定，各有什么适用场景？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "met_static_content",
+      "priorCounterexample": "模型输出未知节点不能动态执行函数；固定可枚举两路径不应因含模型便称动态Agent",
+      "priorSpecificGap": "未发现决定性语义缺口；通用定义段有截断冗余，但其余段落完整表达条件",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q55.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q56",
+      "question": "Checkpoint 应保存什么，才能支持失败恢复与人工介入？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "批准后目标revision变更，再加载检查点不得沿用旧批准执行",
+      "priorSpecificGap": "缺从暂停到人工审批有效性再恢复的完整事件例与验证；框架持久化链接截断",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q56.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q57",
+      "question": "恢复执行时，如何保证已经完成的外部操作不会再次产生副作用？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "已写成功checkpoint未提交后恢复，如何避免第二次业务效果且不把内存状态当证明",
+      "priorSpecificGap": "重要恢复段在代次、任意次数处截断，无完整同一动作轨迹和不同查询结果分支；引用不可点",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q57.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q58",
+      "question": "子图怎样封装独立任务？父图与子图之间如何交接状态？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "子图内部messages含未证实猜测时父图怎样只接收核验后的summary",
+      "priorSpecificGap": "两段末尾截断输出/受众规则，未给父子状态样例与拒绝/验证流程",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q58.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q59",
+      "question": "流式输出怎样区分文本、工具进度、暂停、错误和最终结果？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "seq1开始、seq3 final先到应请求2且不宣告完成，补2后重送3才终态",
+      "priorSpecificGap": "关键缺口重放段截于“已”；事件类别没有完整可走示例；源链接截断",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q59.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q60",
+      "question": "如果去掉 LangGraph，你如何实现等价的状态机，并说明取舍？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "租约过期旧worker仍在跑时，仅新worker领到lease为何不能保证外部唯一效果",
+      "priorSpecificGap": "自研推进/崩溃恢复的完整状态迁移和外部效果核对缺，E1在恢复后截断",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q60.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q61",
+      "question": "什么实验或业务证据会使你选择多 Agent，而不是给单 Agent 增加工具或步骤？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "met_static_content",
+      "priorCounterexample": "仅说明变长但错误未减应拒绝升级；瓶颈单一串行写入不能靠多Agent移除",
+      "priorSpecificGap": "无已发现核心语义缺口；没有真实多Agent效果证据，文本是实验设计而非结果",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q61.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q62",
+      "question": "Supervisor、交接式协作和共享讨论，分别适合什么任务？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "交接成功但旧Agent仍执行写动作时哪一种所有权确认阻止双执行",
+      "priorSpecificGap": "三行无表头，缺同任务选择过程及交接失败/终止的完整案例验证",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q62.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q63",
+      "question": "如何定义各 Agent 的输入、输出、职责边界和完成条件？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "子任务completed但引用不同修订或缺一个关键子问时父任务不得完成",
+      "priorSpecificGap": "缺一份实际子任务输入输出/完成判定和返工反例，字段清单不能独自复现交接",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q63.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q64",
+      "question": "如何把任务拆成可以并行的部分，并保留必要的依赖顺序？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "一读取成功另一超时，生成草稿不得仅因返回列表首项成功就继续",
+      "priorSpecificGap": "部分失败与超时的处理在段尾截断，无完整调度/返工案例",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q64.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q65",
+      "question": "多 Agent 应共享完整上下文，还是只传递必要材料？怎样判断？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "两个Agent权限不同但全文较短时仍不能全量共享，缺关键上下文要定向补取",
+      "priorSpecificGap": "缺项补料/权限边界句子截于“不允”，缺完整共享选择样例与反例结果",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q65.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q66",
+      "question": "子 Agent 返回互相矛盾的结果时，协调者应如何处理？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "两个同版本证据支持不同假设时不能只等业务版本确认，应再查能区分的证据",
+      "priorSpecificGap": "未分开版本冲突、事实矛盾、推断分歧的完整裁决/补证与复验路径",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q66.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q67",
+      "question": "如何防止子 Agent 的错误结论在汇总过程中变成“已验证事实”？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "met_static_content",
+      "priorCounterexample": "三子Agent复述同一无依据根因应仍标假设，报告引用不能证明创建成功",
+      "priorSpecificGap": "无已发现核心语义缺口；实际源事实/回执需具体任务证据，未声称已验真实项目",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q67.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q68",
+      "question": "某个子 Agent 超时或失败时，整体任务应等待、重分派还是部分交付？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "旧worker晚于替代任务完成返回working不得使completed回退或覆盖新版本",
+      "priorSpecificGap": "epoch提交与失效旧结果处理末句截断，未给重派后迟到结果完整判定/验证",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q68.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q69",
+      "question": "多 Agent 的通信次数、费用和时延怎样纳入统一预算？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "met_static_content",
+      "priorCounterexample": "父10次预算分给3子任务不能各得10；超时未结算不得全释放预算再花",
+      "priorSpecificGap": "无已发现核心语义缺口；真实收费/预算参数依合同，案例不冒充账单",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q69.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q70",
+      "question": "A2A 与应用内部的多 Agent 编排有何区别？跨系统任务交接需要哪些契约？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "首次send超时无task_id时怎样找到原任务，不能换身份再次创建",
+      "priorSpecificGap": "前三段截在关键协议身份/无task_id/终态，读者无法重建完整错误恢复合同",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q70.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q71",
+      "question": "如何定义 Agent 的任务成功率，避免把“生成了回答”当成任务成功？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "90次分配2次缺轨迹时通过率分母仍90且缺证单列，不能删成88",
+      "priorSpecificGap": "表格仅表头、基础公式/分母及完整例表缺失，末尾HARNESS_ERROR处理截断",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q71.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q72",
+      "question": "最终结果评测和执行轨迹评测分别能够发现什么问题？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "met_static_content",
+      "priorCounterexample": "最后答案正确但读取了别租户文件应结果层与过程层分别怎样判",
+      "priorSpecificGap": "无已发现决定性语义缺口；首行表头残片可整理，但拒答仍已越权、正确文件重复20次两个反例已能区分结果/轨迹/资源。",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q72.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q73",
+      "question": "如何构建包含正常、边界、歧义、失败和恶意输入的评测集？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "全部拒绝不能算安全功能达标；报告里注入与记忆旧批准均不能授权新写",
+      "priorSpecificGap": "其他测试类别有具体预期，但题面明确的歧义输入与澄清分支未呈现；当前不足以全覆盖题目。",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q73.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q74",
+      "question": "如何区分检索失败、规划失败、工具失败和最终表达失败？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "工具返回正确而context裁掉证据，与检索本来未召回怎样分别定位",
+      "priorSpecificGap": "没有系统展开题面四种失败的定位分界；混入RRF算法段且截断，削弱排查路径",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q74.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q75",
+      "question": "如何使用 LLM-as-a-Judge，并控制评判偏差及与人工结论的不一致？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "met_static_content",
+      "priorCounterexample": "始终拒绝的Judge误放0但错拒大，应被识别；裁判放宽不能被记成产品进步",
+      "priorSpecificGap": "QA未识别决定性语义缺口；原外链或尾部有截断，建议整理。完整来源卡支持追溯；相关运行/专业结论限于另列范围。",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q75.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q76",
+      "question": "同一个任务多次运行结果不同，应该怎样报告成功率与稳定性？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "同仓库10案例重复100次不得冒充100个独立业务样本算窄区间",
+      "priorSpecificGap": "配对段截断且“这张表”未展示，缺清楚成功率/分布结果算例",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q76.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q77",
+      "question": "一条 Agent Trace 应记录什么，才能定位问题且避免泄露敏感信息？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "异常含token而正常日志字段安全时，如何确认四通道和错误导出均未泄漏",
+      "priorSpecificGap": "缺一条脱敏完整trace实例及泄漏/缺span验证，OWASP链接截断",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q77.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q78",
+      "question": "如何设计模型、工具和检索组件的消融实验？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "met_static_content",
+      "priorCounterexample": "没有订单工具导致任务不可解应标不可行而非删除该任务或归模型变笨",
+      "priorSpecificGap": "QA未识别决定性语义缺口；原外链或尾部有截断，建议整理。完整来源卡支持追溯；相关运行/专业结论限于另列范围。",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q78.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q79",
+      "question": "模型、提示、工具或知识库升级后，如何判断新版本能否发布？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "met_static_content",
+      "priorCounterexample": "新版本成功率高但一次重复写必须阻断；旧镜像读不了新状态不能直接回滚任务",
+      "priorSpecificGap": "无已发现核心语义缺口；CANARY末尾逗号是省略但后段完整表达扩流条件",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q79.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q80",
+      "question": "用户报告一个偶发失败，但你本地无法复现，下一步怎么调查？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "只本地不可复现但生产限流相关时，怎样采集安全证据而不宣告问题不存在",
+      "priorSpecificGap": "缺用户偶发失败的初次证据获取/环境差异假设、无法复现情况下持续定位与停止标准",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q80.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q81",
+      "question": "直接提示注入和来自网页、文档或工具结果的间接注入，有什么不同？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "met_static_content",
+      "priorCounterexample": "攻击引起危险提议但宿主拒绝，不能说模型未受影响；用户也不能授权他人资源",
+      "priorSpecificGap": "无已发现核心语义缺口；局部解释不证明真实防护实现已验",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q81.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q82",
+      "question": "Agent 为什么不能仅靠系统提示保证工具权限与数据安全？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "met_static_content",
+      "priorCounterexample": "把攻击改写到检测器不认识但目标仍越权，可信工具边界应继续拒绝",
+      "priorSpecificGap": "QA未识别决定性语义缺口；原外链或尾部有截断，建议整理。完整来源卡支持追溯；相关运行/专业结论限于另列范围。",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q82.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q83",
+      "question": "如何让工具执行权限与当前用户身份、资源归属和操作范围一致？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "同Schema合法请求将tenant_id改成另一组织，应忽略自报身份并拒绝",
+      "priorSpecificGap": "缺完整请求授权决策样例与身份/资源/动作/撤权反例验证，引用截断",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q83.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q84",
+      "question": "高风险操作的人类确认应展示什么，才能构成有意义的批准？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "用户确认私有项目一条后目标改公共项目，原预览和批准不能继续用",
+      "priorSpecificGap": "未给批准身份/期限/参数变更后的完整决策例与验证；读者不知道何时必须重批",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q84.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q85",
+      "question": "如何防止确认后参数被修改，或一次确认被用于后续不同操作？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "两个不同动作并发使用同批准必须只有合法绑定成功，原动作核对不等于新消费",
+      "priorSpecificGap": "原动作过期后恢复关键句截断，如何原子消费批准/防重用未讲透；引用仍为正文绑定",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q85.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q86",
+      "question": "执行模型生成代码时，沙箱应限制哪些资源与外部访问？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "只设环境变量NO_NETWORK但进程能连网时不得认为沙箱通过；stdout洪泛需单独限额",
+      "priorSpecificGap": "未展示实现映射/读回与攻击测试，提到“这段代码”和Plan但答案未给代码，源链接截断",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q86.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q87",
+      "question": "如何防止检索内容、日志和错误消息泄露跨租户资料或密钥？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "met_static_content",
+      "priorCounterexample": "UI已遮但token进入模型/工具日志仍失败；四标记不等于所有未知秘密均安全",
+      "priorSpecificGap": "QA未识别决定性语义缺口；原外链或尾部有截断，建议整理。完整来源卡支持追溯；相关运行/专业结论限于另列范围。",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q87.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q88",
+      "question": "外部工具声称操作成功，你如何核实真实状态？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "查询空结果可能索引延迟而原写已成，不能据空结果自动新建",
+      "priorSpecificGap": "只显示成功状态编号1，仍执行/冲突/不存在/查不清分支缺失，多个外部URL截断",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q88.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q89",
+      "question": "多步骤任务部分成功后失败，如何设计补偿、恢复和用户告知？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "met_static_content",
+      "priorCounterexample": "撤草稿效果已成回执丢失，恢复应核同一补偿动作且不重复撤销/误报全部完成",
+      "priorSpecificGap": "无已发现核心语义缺口；原效果/补偿状态核对就是本题方案中的检验路径，正文完整描述发布失败与逆依赖撤回、未知恢复及用户说明。",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q89.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q90",
+      "question": "如何把安全反例纳入自动化回归，并验证修复没有破坏正常任务？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "全禁create_issue虽然拒绝攻击也必须被正常批准路径测试判失败",
+      "priorSpecificGap": "“开篇攻击文本”未附，四通道句截断，读者无法从当前答案完整重建输入及检查",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q90.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q91",
+      "question": "设计一个客服工单 Agent：如何确定自动处理范围、转人工条件及验收指标？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "客服工单关闭但用户问题未解决，不能记成功；漏转高风险任务如何被评测抓出",
+      "priorSpecificGap": "缺一条客服情境的完整分流/人工超时处理和对应验证案例",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q91.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q92",
+      "question": "设计一个企业知识 Agent：如何同时保证检索质量、权限和更新时效？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "文档撤回后向量仍留旧块，必须在返回前阻断且测漏删/版本混用",
+      "priorSpecificGap": "缺更新时效目标与失败/权限变化后当前查询处理的完整流程，权限引用截断",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q92.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q93",
+      "question": "设计一个长时间运行的研究 Agent：如何保存进度、取消任务和恢复执行？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "旧worker外部写已成功而本地提交被拒，取消不能证明没有副作用",
+      "priorSpecificGap": "末句只到本地epoch阻止本地提交，未完整解释外部动作去重/核对及恢复例验证",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q93.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q94",
+      "question": "请求量增长十倍时，如何识别模型、工具、队列或存储中的主要瓶颈？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "加worker后供应商429升高且完成吞吐不变，应判断瓶颈迁移而非性能改善",
+      "priorSpecificGap": "缺实际十倍负载的分层定位顺序与受控单变量验证过程/预期",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q94.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q95",
+      "question": "如何设计并发限制、超时、退避和熔断，避免故障扩大？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "met_static_content",
+      "priorCounterexample": "半开只允许一探针；旧代成功回执不得关闭新一轮熔断；写超时先核对",
+      "priorSpecificGap": "QA未识别决定性语义缺口；原外链或尾部有截断，建议整理。完整来源卡支持追溯；相关运行/专业结论限于另列范围。",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q95.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q96",
+      "question": "怎样分解一次任务的费用和时延，找到最值得优化的环节？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "两个阶段p95来自不同任务，直接相加不得称端到端p95；超时费用不能填零",
+      "priorSpecificGap": "时间线末句截断，缺一组完整数字算例和优化前后验证，费用段仍是口径",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q96.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q97",
+      "question": "什么时候使用小模型路由、大模型升级或缓存？如何量化质量损失？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "小模型错误自信时仅按自信路由会漏错；缓存命中但权限失效应拒绝",
+      "priorSpecificGap": "引用截断本身非阻断，但问题明确问量化质量损失，当前只列错放/升级等指标，缺一组基线—路由接受/拒绝/缓存失效的结果算例及预期；跨用户缓存句中断。",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q97.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q98",
+      "question": "从质量、成本和运维角度，怎样选择本地模型与托管 API？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "本地理论峰值便宜但常态闲置，应按真实合格任务计成本而非峰值吞吐",
+      "priorSpecificGap": "末句混合预算截断，缺具体工作负载成本/容量估计案例及决策验证",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q98.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q99",
+      "question": "请介绍一次实际 Agent 故障或失败案例：原因是什么，如何修复，怎样证明修复有效？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "只有故障注入而未真实事故，应怎样说清并以原例和关联回归证明修复",
+      "priorSpecificGap": "缺完整标注示例和具体证据如何支持根因/排除混杂；不因无真实履历而判框架永久失败",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q99.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "Q100",
+      "question": "如果必须在两周内交付一个可用 Agent，你会怎样确定最小范围、基线、风险与上线条件？",
+      "collection": "fixed100",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "第十天核心未知写恢复仍未验而界面完成，如何缩范围/停止上线而不降安全门槛",
+      "priorSpecificGap": "没回答两周内的阶段依赖/优先和风险取舍安排，ADR提示无实例，canary参数条件不完整",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/Q100.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "M101",
+      "question": "调用多个模型或工具API时，如何用Python asyncio组织并发？阻塞调用、无界任务创建和取消清理分别会导致什么问题，怎样用最小例定位？",
+      "collection": "market14",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "同步sleep占事件循环时超时任务能否准时触发，取消to_thread是否停外部效果",
+      "priorSpecificGap": "无并发代码和无界创建/取消清理机制，关键CPU句截断，最小例仅指向外部",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M101.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "M102",
+      "question": "把请求状态放进Python列表或字典时，别名与浅拷贝会怎样污染另一个任务？请说明不可变容器的边界，并解释如何用装饰器封装工具日志而保持函数行为。",
+      "collection": "market14",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "tuple里放list仍可修改；装饰器吞异常或不await会怎样改变函数行为",
+      "priorSpecificGap": "未答不可变容器内部可变边界和装饰器如何保返回/异常/异步取消/元数据",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M102.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "M103",
+      "question": "实现容量受限的LRU缓存，说明get/put复杂度，并给出容量为零、覆盖已有键和淘汰次序的测试。",
+      "collection": "market14",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "容量2放A/B、getA、putC应淘汰B；容量0不得保留；覆盖不增加长度",
+      "priorSpecificGap": "题目要求实现与测试，当前无实现/可运行断言或具体淘汰轨迹，仅练习任务",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M103.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "M104",
+      "question": "Agent服务运行数小时后内存持续增长，但请求量平稳。如何区别对象仍被引用、缓存无界、待完成任务堆积与暂时内存峰值，并验证修复？",
+      "collection": "market14",
+      "status": "pending",
+      "priorQaStatus": "met_static_content",
+      "priorCounterexample": "停止输入后Python对象下降而RSS不降，不得直接判泄漏；吞吐不可因丢结果换低内存",
+      "priorSpecificGap": "QA未识别决定性语义缺口；原外链或尾部有截断，建议整理。完整来源卡支持追溯；相关运行/专业结论限于另列范围。",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M104.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "M105",
+      "question": "余弦相似度、点积和欧氏距离如何计算？向量归一化会怎样改变它们的排序关系，零向量和维度不符怎样处理？",
+      "collection": "market14",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "单位向量时L2平方=2-2cos；未归一化大模长会改变点积排序",
+      "priorSpecificGap": "完全未答归一化后的排序关系及反例/数值检验",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M105.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "M106",
+      "question": "如何用精确向量检索建立基线，再比较HNSW与IVF的召回、内存、构建和查询代价？过滤条件加入后还需要怎样测量？",
+      "collection": "market14",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "过滤后合法top-k不同于全库top-k再丢无权限，召回分母必须重算",
+      "priorSpecificGap": "HNSW/IVF调参与召回/内存/构建/查询比较、过滤后重测全部缺失",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M106.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "M107",
+      "question": "文档局部修改、删除或权限变化时，怎样增量更新分块和向量索引？如何检测漏删、重复块及新旧版本混用？",
+      "collection": "market14",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "删除源文但向量旧块还被返回，如何标tombstone并检查索引一致性",
+      "priorSpecificGap": "未给增量更新/删除/撤权/原子发布、漏删/重复/混版检测流程",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M107.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "M108",
+      "question": "包含扫描页、表格和跨页段落的PDF怎样进入RAG？如何保留页码与结构、测解析质量，并防止OCR错误被引用成原文事实？",
+      "collection": "market14",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "表格两列错配仍文字全抽出时如何检测，不得以字符数判成功",
+      "priorSpecificGap": "未答页码坐标/表格跨页结构、质量测量和OCR不冒充原文机制，URL截断",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M108.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "M109",
+      "question": "解释decoder-only Transformer从token到下一token分布的基本推理过程：因果注意力、多头、位置、前馈层各起什么作用？这与检索外部事实有什么区别？",
+      "collection": "market14",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "生成下一token为何不能读取未来token，参数记忆为何不等于可引用实时事实",
+      "priorSpecificGap": "因果注意力、多头、FFN、下一token概率与外部检索区别均未答",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M109.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "M110",
+      "question": "提示模型返回JSON、使用JSON模式和按Schema约束生成分别能保证什么？遇到拒绝、截断、类型合法但语义错误时，应用怎样处理？",
+      "collection": "market14",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "合法schema却actual与报告不符应业务拒绝；refusal不能被当空成功解析",
+      "priorSpecificGap": "拒绝、截断、类型合法语义错时应用分支未答，官方链接截断",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M110.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "M111",
+      "question": "同一Agent英语任务表现正常，中文或混合语言却失败，怎样分别检查分词/检索、提示、工具参数与评测样本，而不是直接换模型？",
+      "collection": "market14",
+      "status": "pending",
+      "priorQaStatus": "met_static_content",
+      "priorCounterexample": "英文/中文检索相同但order_id变汉字，应先修参数；中文没证据换模型不算修好",
+      "priorSpecificGap": "无已发现核心语义缺口；无真人等价审查/模型实测结论，文本是方案",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M111.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "M112",
+      "question": "用户在多轮任务中突然换话题，又用“继续刚才那个”返回，怎样识别任务切换、保存各自状态并澄清指代，防止旧任务动作误执行？",
+      "collection": "market14",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "从T2返回“继续”而T1有未决写入，澄清后也不能自动重发旧动作",
+      "priorSpecificGap": "未展示完整任务切换、恢复当前授权/未决动作核对和验证例",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M112.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "M113",
+      "question": "部署本地推理服务时，怎样区分prefill与decode瓶颈，解释KV cache与批处理对吞吐、首token和尾延迟的影响，并设计公平比较而非先认定某框架更快？",
+      "collection": "market14",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "不同输入长度/缓存暖机比较框架吞吐不公平；超时不能从分母删去",
+      "priorSpecificGap": "关键不限于引用。没有以阶段计时/队列/资源数据构成瓶颈判断步骤，也无长输入/长输出/并发变化样例作判断；KV前缀有效性句中断。",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M113.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "M114",
+      "question": "面对客户工程团队，怎样交付一份可复现的Agent技术移交包，使对方能重建环境、运行评测、理解架构决策并报告失败？如何证明接手成功？",
+      "collection": "market14",
+      "status": "pending",
+      "priorQaStatus": "met_static_content",
+      "priorCounterexample": "目录齐全但陌生接收者无法启动，仍复现失败；作者现场口头补不算独立接手",
+      "priorSpecificGap": "无已发现核心语义缺口；实际接手成功仍需真实接收者及证据，不由清单推出",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/M114.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "P01",
+      "question": "Agent 与普通模型调用有什么区别？",
+      "collection": "prototype10",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "固定脚本循环三轮对话没有观察决策，如何与Agent区别",
+      "priorSpecificGap": "“用具体任务串闭环”只是给读者任务，未真的展开机制/案例/检验，缺版本来源",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/P01.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "P02",
+      "question": "工具调用超时，如何避免恢复时重复执行？",
+      "collection": "prototype10",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "外部成功本地未落盘且查询暂空时恢复不能新键重做",
+      "priorSpecificGap": "没有操作/尝试身份、持久化窗口、下游原子/保留期/并发、查不到与部分成功分支；无来源",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/P02.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "P03",
+      "question": "如何组织 Agent 的上下文和长期记忆？",
+      "collection": "prototype10",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "旧记忆批准与本次禁止冲突时哪层拒绝且如何修记忆",
+      "priorSpecificGap": "未给写入读取/压缩冲突与纠正流程、完整案例和预期；无来源",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/P03.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "P04",
+      "question": "如何说明你为什么选择 RAG，而不是微调？",
+      "collection": "prototype10",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "每日撤回政策需可追溯时微调为何不能直接承担删除与引用保证",
+      "priorSpecificGap": "没有同任务决策过程、完整例及微调知识/行为边界，验证还只是指标标签；无来源",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/P04.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "P05",
+      "question": "介绍一个你做过的 Agent 项目，如何证明它有效？",
+      "collection": "prototype10",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "团队已有平台能力不可自称本人实现，演练不能冒充真实事故",
+      "priorSpecificGap": "缺完整标注示例与证据如何支持效果/因果/本人贡献，未给无真实经历正确回答；无来源",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/P05.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "P06",
+      "question": "模型返回的 JSON 合法，为什么还不能直接执行？",
+      "collection": "prototype10",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "JSON合法但project为另一租户，结构检查成功仍需拒绝",
+      "priorSpecificGap": "没有具体JSON与真假字段验证顺序、拒绝分支和测试，缺来源",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/P06.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "P07",
+      "question": "如何评估一个 Agent 的改进是否真的有效？",
+      "collection": "prototype10",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "平均分更高但新增越权，不能综合均分抵消安全缺陷",
+      "priorSpecificGap": "未给成功率分母、配对案例/严重错误不抵消、缺证和实测结果例，缺来源",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/P07.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "P08",
+      "question": "检索资料里出现要求执行工具的指令，你怎么处理？",
+      "collection": "prototype10",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "恶意文档改写绕过检测但对象越权，工具仍应拒绝",
+      "priorSpecificGap": "缺实际攻击文本、四通道边界/合法对照、拒绝如何发生的完整例，缺来源",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/P08.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "P09",
+      "question": "服务中断后，Agent 如何恢复到可靠的执行位置？",
+      "collection": "prototype10",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "恢复检查点位于写请求前但写已成功，如何避免重发",
+      "priorSpecificGap": "未给保存时机、恢复状态表、旧worker并发/未知结果分支和实测，缺来源",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/P09.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    },
+    {
+      "id": "P10",
+      "question": "项目成本增加时，你会如何定位并优化？",
+      "collection": "prototype10",
+      "status": "pending",
+      "priorQaStatus": "not_met",
+      "priorCounterexample": "减少调用却降低合格率时单位合格任务成本可能升高，如何确认",
+      "priorSpecificGap": "没有费用单位/未决成本/并行时间计算、数字案例和优化验证，缺来源",
+      "newAnswerPath": "sites/rolecraft/textbooks/interview-answers-v1/answers/P10.md",
+      "plannedChecks": [
+        "read full answer and every question subpart",
+        "evaluate applicable AQS-01–08 semantically",
+        "retest prior counterexample and changed claims",
+        "verify source claim support and current binding",
+        "check experience/simulation/execution distinctions"
+      ],
+      "executionDecision": "after reading actual new claim; code presence alone does not imply execute production system"
+    }
+  ]
+}

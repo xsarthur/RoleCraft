@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1180" viewBox="0 0 1600 1180" role="img" aria-labelledby="title desc">
+  <title id="title">语音面试教练 v0.1 状态板</title>
+  <desc id="desc">静态设计提案，展示语音面试练习的待录音、录音中、转写待确认和反馈四个状态，并在底部展示窄屏单列反馈布局。画面中的题目、转写、时间和反馈都是演示数据，不是实际用户记录或实时 AI 结果。</desc>
+  <defs>
+    <style>
+      text{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;fill:#302d27}
+      .title{font-size:28px;font-weight:700}.h{font-size:17px;font-weight:700}.label{font-size:14px;font-weight:600}.small{font-size:12px;fill:#665f54}.tiny{font-size:11px;fill:#776f63}
+      .panel{fill:#fff;stroke:#d8d1c5;stroke-width:1.5}.soft{fill:#f5f1e9;stroke:#dfd7c9;stroke-width:1}.ink{fill:none;stroke:#544c40;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.accent{fill:#72562b}.line{stroke:#e7e0d5;stroke-width:1}
+      .record{fill:#a33a35}.wait{fill:#80691a}.source{fill:#2a5b56}.mutedFill{fill:#f7f5f0}.focus{stroke:#72562b;stroke-width:2}.warn{fill:#fff7e2;stroke:#d4b56b}.chip{fill:#f0ebe1;stroke:#d7cbb8}.ghost{fill:#fff;stroke:#a79f92}.transcript{fill:#f4f7f5;stroke:#b6cbc5}
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1 L6 4 L1 7" fill="none" stroke="#72562b" stroke-width="1.5"/></marker>
+  </defs>
+  <rect width="1600" height="1180" fill="#f7f5f0"/>
+  <text x="52" y="52" class="title">语音面试教练 · 视觉状态板</text>
+  <rect x="1170" y="28" width="360" height="32" rx="6" fill="#f5f0e4" stroke="#d4c19a"/>
+  <text x="1350" y="49" text-anchor="middle" class="tiny">设计提案 · 演示数据 / 非运行截图</text>
+  <text x="52" y="82" class="small">同一题目的四步主路径：看题 → 说回答 → 核对转写 → 根据反馈重答。</text>
+
+  <!-- State 1 -->
+  <g transform="translate(52,116)">
+    <rect width="355" height="565" rx="14" class="panel"/>
+    <text x="24" y="34" class="small">01 · READY</text>
+    <text x="24" y="64" class="h">待录音</text>
+    <rect x="24" y="84" width="108" height="27" rx="14" class="chip"/>
+    <circle cx="41" cy="98" r="5" fill="#72562b"/><text x="53" y="103" class="tiny">可开始录音</text>
+    <rect x="24" y="132" width="307" height="118" rx="10" class="soft"/>
+    <text x="40" y="158" class="tiny">Q017 · 工程设计 · 中等</text>
+    <text x="40" y="190" class="label">如何让 Agent 的工具调用</text>
+    <text x="40" y="213" class="label">在失败后安全恢复？</text>
+    <rect x="24" y="271" width="307" height="170" rx="12" fill="#fff" stroke="#d2c6b4" stroke-width="2"/>
+    <circle cx="177" cy="324" r="30" fill="#f5f0e4" stroke="#72562b" stroke-width="2"/>
+    <path d="M167 315 v18 M187 315 v18 M163 314 q14 -18 28 0 M163 334 q14 15 28 0" class="ink"/>
+    <text x="177" y="380" text-anchor="middle" class="label">准备好后开始口述</text>
+    <text x="177" y="404" text-anchor="middle" class="small">建议 2 分钟 · 麦克风权限只在点击后请求</text>
+    <rect x="24" y="462" width="178" height="44" rx="8" class="accent"/>
+    <text x="113" y="489" text-anchor="middle" font-size="14" fill="#fff">开始录音</text>
+    <rect x="211" y="462" width="120" height="44" rx="8" class="ghost"/>
+    <text x="271" y="489" text-anchor="middle" class="label">改用文字</text>
+    <text x="24" y="540" class="tiny">操作旁显示权限和替代入口</text>
+  </g>
+
+  <!-- State 2 -->
+  <g transform="translate(431,116)">
+    <rect width="355" height="565" rx="14" class="panel"/>
+    <text x="24" y="34" class="small">02 · RECORDING</text>
+    <text x="24" y="64" class="h">录音中</text>
+    <rect x="24" y="84" width="96" height="27" rx="14" fill="#f9e7e5" stroke="#d9a4a0"/>
+    <circle cx="41" cy="98" r="5" class="record"/><text x="53" y="103" class="tiny">录音中</text>
+    <rect x="24" y="132" width="307" height="84" rx="10" class="soft"/>
+    <text x="40" y="158" class="tiny">Q017 · 工程设计</text>
+    <text x="40" y="190" class="label">如何让工具调用在失败后安全恢复？</text>
+    <rect x="24" y="237" width="307" height="198" rx="12" fill="#fff" stroke="#d9a4a0" stroke-width="2"/>
+    <text x="40" y="266" class="small">已录制</text>
+    <text x="305" y="266" text-anchor="end" class="label">00:37</text>
+    <line x1="40" y1="282" x2="315" y2="282" class="line"/>
+    <path d="M42 351 L53 351 L59 326 L66 375 L75 340 L83 360 L91 314 L99 384 L109 345 L118 357 L126 332 L135 370 L144 349 L153 365 L162 326 L172 381 L181 350 L192 356 L201 337 L210 369 L219 350 L229 357 L239 319 L247 381 L258 343 L268 363 L278 333 L289 363 L300 349 L313 350" fill="none" stroke="#a33a35" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="177" y="412" text-anchor="middle" class="tiny">波形只表示正在捕获声音，不代表质量评分</text>
+    <rect x="24" y="460" width="145" height="44" rx="8" class="record"/>
+    <text x="96" y="487" text-anchor="middle" font-size="14" fill="#fff">停止录音</text>
+    <rect x="178" y="460" width="68" height="44" rx="8" class="ghost"/>
+    <text x="212" y="487" text-anchor="middle" class="label">暂停</text>
+    <rect x="255" y="460" width="76" height="44" rx="8" class="ghost"/>
+    <text x="293" y="487" text-anchor="middle" class="label">取消</text>
+    <text x="24" y="540" class="tiny">计时器在无障碍树中只在状态变化时播报</text>
+  </g>
+
+  <!-- State 3 -->
+  <g transform="translate(810,116)">
+    <rect width="355" height="565" rx="14" class="panel"/>
+    <text x="24" y="34" class="small">03 · TRANSCRIPT</text>
+    <text x="24" y="64" class="h">转写待确认</text>
+    <rect x="24" y="84" width="126" height="27" rx="14" class="transcript"/>
+    <path d="M39 92 h10 v12 h-10z M42 95 h5 M42 99 h5" class="ink"/>
+    <text x="57" y="103" class="tiny">请核对转写</text>
+    <rect x="24" y="132" width="307" height="78" rx="10" class="soft"/>
+    <text x="40" y="158" class="tiny">Q017 · 工程设计 · 00:37</text>
+    <text x="40" y="188" class="label">回答已录制，先确认原话再分析</text>
+    <rect x="24" y="231" width="307" height="174" rx="10" class="transcript"/>
+    <text x="40" y="258" class="small">可编辑转写 · 原始文本保留</text>
+    <text x="40" y="291" class="label">我会先给每次工具调用一个稳定</text>
+    <text x="40" y="316" class="label">的请求身份，然后记录事实再恢复。</text>
+    <rect x="40" y="331" width="48" height="3" fill="#a33a35"/>
+    <text x="92" y="345" class="tiny">低置信词：可编辑核对</text>
+    <rect x="24" y="427" width="140" height="41" rx="8" class="accent"/>
+    <text x="94" y="452" text-anchor="middle" font-size="13" fill="#fff">确认并分析</text>
+    <rect x="174" y="427" width="157" height="41" rx="8" class="ghost"/>
+    <text x="252" y="452" text-anchor="middle" class="label">重录这一题</text>
+    <rect x="24" y="486" width="307" height="35" rx="8" class="warn"/>
+    <text x="39" y="508" class="tiny">确认后才会调用分析；当前为演示数据</text>
+    <text x="24" y="548" class="tiny">播放、编辑和分析动作保持在转写旁</text>
+  </g>
+
+  <!-- State 4 -->
+  <g transform="translate(1189,116)">
+    <rect width="355" height="565" rx="14" class="panel"/>
+    <text x="24" y="34" class="small">04 · FEEDBACK</text>
+    <text x="24" y="64" class="h">AI 反馈</text>
+    <rect x="24" y="84" width="137" height="27" rx="14" fill="#e3f0ed" stroke="#a6c6be"/>
+    <circle cx="41" cy="98" r="5" class="source"/><text x="53" y="103" class="tiny">来源已核对 · 演示</text>
+    <rect x="24" y="132" width="307" height="55" rx="10" class="soft"/>
+    <text x="40" y="156" class="tiny">Q017 · 00:37 · 本地规则演示</text>
+    <text x="40" y="177" class="label">本次回答的可观察反馈</text>
+    <rect x="24" y="205" width="307" height="91" rx="10" fill="#f4f7f5" stroke="#b6cbc5"/>
+    <text x="40" y="230" class="label">内容与机制</text>
+    <text x="40" y="254" class="small">✓ 提到稳定身份与事实记录</text>
+    <text x="40" y="276" class="small">△ 未说明重复效果如何被抑制</text>
+    <rect x="24" y="308" width="307" height="84" rx="10" class="soft"/>
+    <text x="40" y="334" class="label">下一次重答动作</text>
+    <text x="40" y="358" class="small">补充一个失败例和验证指标。</text>
+    <text x="40" y="379" class="tiny">技术反馈与表达指标分开</text>
+    <rect x="24" y="404" width="307" height="60" rx="10" fill="#eef5f4" stroke="#b6cbc5"/>
+    <text x="40" y="430" class="label">来源 · 教材 v12 / 小节 P08</text>
+    <text x="40" y="450" class="tiny">阅读原文 →（绑定通过才可点击）</text>
+    <rect x="24" y="481" width="154" height="41" rx="8" class="accent"/>
+    <text x="101" y="506" text-anchor="middle" font-size="13" fill="#fff">再录一次</text>
+    <rect x="188" y="481" width="143" height="41" rx="8" class="ghost"/>
+    <text x="259" y="506" text-anchor="middle" class="label">查看转写</text>
+    <text x="24" y="548" class="tiny">不输出录用概率、人格或口音判断</text>
+  </g>
+
+  <path d="M407 398 H423" stroke="#72562b" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M786 398 H802" stroke="#72562b" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M1165 398 H1181" stroke="#72562b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Desktop / narrow layout strip -->
+  <text x="52" y="742" class="h">布局落点</text>
+  <text x="52" y="768" class="small">桌面把题目与主状态放在左侧，量规/来源固定在右侧；窄屏按同一关系单列。</text>
+  <g transform="translate(52,792)">
+    <rect width="995" height="315" rx="14" class="panel"/>
+    <rect x="18" y="18" width="635" height="279" rx="10" class="soft"/>
+    <text x="38" y="47" class="tiny">桌面 · 主区域（约 2/3）</text>
+    <rect x="38" y="67" width="595" height="66" rx="8" fill="#fff" stroke="#d8d1c5"/>
+    <text x="56" y="94" class="label">当前题目：如何让工具调用在失败后安全恢复？</text>
+    <text x="56" y="116" class="tiny">录音 / 转写 / 反馈卡根据状态替换，题目位置不跳动</text>
+    <rect x="38" y="151" width="595" height="127" rx="8" fill="#fff" stroke="#72562b" stroke-width="2"/>
+    <text x="56" y="180" class="label">主状态卡</text>
+    <text x="56" y="205" class="small">一个明确的主操作 + 一个可见的替代入口</text>
+    <rect x="56" y="223" width="110" height="34" rx="6" class="accent"/><text x="111" y="245" text-anchor="middle" font-size="12" fill="#fff">开始录音</text>
+    <rect x="176" y="223" width="112" height="34" rx="6" class="ghost"/><text x="232" y="245" text-anchor="middle" class="tiny">改用文字</text>
+    <rect x="673" y="18" width="304" height="279" rx="10" class="soft"/>
+    <text x="693" y="47" class="tiny">桌面 · 练习上下文（约 1/3）</text>
+    <text x="693" y="83" class="label">第 3 / 5 题</text>
+    <line x1="693" y1="100" x2="955" y2="100" class="line"/>
+    <text x="693" y="132" class="small">回答量规：机制 · 取舍 · 证据</text>
+    <rect x="693" y="151" width="264" height="62" rx="8" fill="#eef5f4" stroke="#b6cbc5"/>
+    <text x="708" y="177" class="tiny">来源</text><text x="708" y="198" class="label">教材 v12 · 小节 P08 →</text>
+    <text x="693" y="249" class="tiny">无来源时显示“未绑定教材”</text>
+  </g>
+  <g transform="translate(1080,792)">
+    <rect width="464" height="315" rx="14" class="panel"/>
+    <rect x="126" y="18" width="212" height="279" rx="20" fill="#fff" stroke="#72562b" stroke-width="2"/>
+    <rect x="143" y="47" width="178" height="48" rx="8" class="soft"/>
+    <text x="155" y="68" class="tiny">Q017 · 00:37</text><text x="155" y="87" class="label">录音反馈</text>
+    <rect x="143" y="111" width="178" height="82" rx="8" fill="#f4f7f5" stroke="#b6cbc5"/>
+    <text x="155" y="136" class="tiny">内容与机制</text><text x="155" y="158" class="small">✓ 稳定身份</text><text x="155" y="179" class="small">△ 补失败指标</text>
+    <rect x="143" y="208" width="178" height="35" rx="6" class="accent"/><text x="232" y="230" text-anchor="middle" font-size="12" fill="#fff">再录一次</text>
+    <text x="232" y="272" text-anchor="middle" class="tiny">窄屏单列 · 底部操作栏</text>
+  </g>
+  <rect x="52" y="1132" width="1492" height="28" rx="6" fill="#f1eee7"/>
+  <text x="68" y="1151" class="tiny">状态/指标/来源均为演示示意；真实权限、ASR、分析服务、浏览器渲染和用户理解待独立验证。</text>
+</svg>

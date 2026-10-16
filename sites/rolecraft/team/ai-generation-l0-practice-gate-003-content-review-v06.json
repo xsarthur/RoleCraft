@@ -1,0 +1,60 @@
+{
+  "practice_id": "AI-PRACTICE-GATE-003",
+  "version": "v06",
+  "review_version": "v0.6",
+  "reviewer_role": "content_reviewer",
+  "decision": "reviewed_with_limitations",
+  "scope": "static README, manifest/EvidenceCard references, unknown-field receipt, and logical handoff boundary review of v06 package",
+  "basis": [
+    "ai-generation-l0-practice-gate-003-v06/README.md",
+    "ai-generation-l0-practice-gate-003-v06/manifest.json",
+    "ai-generation-l0-practice-gate-003-v06/evidence-card.json",
+    "ai-generation-l0-practice-gate-003-v06/first_failure/schema_unknown_field/receipt.json",
+    "ai-generation-l0-practice-gate-003-v06/approval-or-hold-receipts/approval.json",
+    "ai-generation-l0-practice-gate-003-v06/approval-or-hold-receipts/holdout.json",
+    "ai-generation-l0-practice-gate-003-v06/repair_record.json",
+    "ai-generation-l0-practice-gate-003-content-review-v05.md",
+    "ai-generation-l0-practice-gate-003-content-review-v05.json"
+  ],
+  "checks": {
+    "readme_scope_and_local_only_boundary": "pass_within_scope",
+    "readme_hash_bound_to_manifest_and_evidence_card": "pass_within_scope",
+    "manifest_paths_and_artifact_refs": "pass_static",
+    "schema_unknown_field_receipt_reference": "pass_static",
+    "evidence_card_field_boundary": "pass_within_scope",
+    "logical_handoff_status_consistency": "pass_within_scope",
+    "independent_runtime_replay": "not_run"
+  },
+  "evidence": {
+    "readme_sha256": "f542af36e1da1b2c17bc2943ff20aefa0dce4de88c79f6a6e7a23944b837d0e4",
+    "manifest_readme_hash_matches": true,
+    "evidence_card_manifest_readme_hash_matches": true,
+    "manifest_artifacts_checked": 16,
+    "manifest_artifact_paths_exist": true,
+    "manifest_artifact_hashes_match": true,
+    "schema_unknown_field_receipt_present": true,
+    "unknown_field_result": "rejected",
+    "unknown_field": "legacy_status",
+    "external_action": null,
+    "handoff_qa": "pending",
+    "review_status": "pending_QA",
+    "self_signed": false,
+    "l1_decision": "not_granted",
+    "l2_decision": "not_granted",
+    "approval_decision": "approve_for_review_only",
+    "holdout_status": "awaiting_human_approval",
+    "logical_status_consistent": true
+  },
+  "limitations": [
+    "未独立重放迁移、validator、首失败或 holdout",
+    "等待真人审批，未验证真实并发迁移与回滚",
+    "local-only 静态证据不证明真实模型/API、生产迁移、真人审核、身份认证、学习效果或职业/行业能力"
+  ],
+  "does_not_grant": ["L1", "L2", "岗位等级", "生产发布授权"],
+  "required_follow_up": [
+    "QA/工程师独立重放正常迁移、五类首失败、unknown-field 首失败及 holdout",
+    "真人审批和真实并发迁移/回滚完成后重新记录状态并复验",
+    "任何 manifest/README/EvidenceCard/receipt 改动后重新计算哈希并审校"
+  ],
+  "historical_reports_preserved": true
+}

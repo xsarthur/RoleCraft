@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img" aria-labelledby="title desc">
+  <title id="title">同一任务的四种控制路径：从任务条件到方案升级</title>
+  <desc id="desc">先冻结任务、输入、权限、预算和验收条件，再判断下一步由谁选择。普通程序由代码选路，单次模型只生成一次候选，固定 workflow 由代码选分支且模型完成指定节点，动态 Agent 由模型提出调查路径但运行时仍受授权、预算和停止规则约束。底部给出放弃或升级条件以及共同证据记录。</desc>
+  <defs>
+    <style>
+      .ink{fill:#182230}.muted{fill:#526174}.small{font:500 20px 'PingFang SC','Microsoft YaHei',sans-serif}.body{font:600 24px 'PingFang SC','Microsoft YaHei',sans-serif}.head{font:700 30px 'PingFang SC','Microsoft YaHei',sans-serif}.title{font:700 42px 'PingFang SC','Microsoft YaHei',sans-serif}.tiny{font:500 17px 'PingFang SC','Microsoft YaHei',sans-serif}.line{stroke:#bac6d4;stroke-width:3;fill:none}.arrow{stroke:#3c6e9e;stroke-width:4;fill:none;marker-end:url(#a)}
+    </style>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#3c6e9e"/></marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#15324b" flood-opacity=".12"/></filter>
+  </defs>
+  <rect width="1600" height="1120" fill="#f6f8fb"/>
+  <rect x="48" y="38" width="1504" height="1044" rx="26" fill="#fff" stroke="#d5dee8" stroke-width="2"/>
+  <text x="92" y="102" class="title ink">先看谁控制下一步，再决定要不要升级</text>
+  <text x="92" y="140" class="small muted">c01-selection · 同一任务、同一输入、同一权限与验收条件下的选型视觉稿</text>
+  <rect x="92" y="180" width="1416" height="130" rx="18" fill="#eaf3fb" stroke="#9dc1dd" stroke-width="2"/>
+  <text x="126" y="224" class="head ink">① 先冻结共同条件</text>
+  <text x="126" y="265" class="body ink">任务目标  ·  输入材料  ·  允许资源  ·  预算/时限  ·  停止与验收</text>
+  <text x="126" y="294" class="small muted">没有共同条件，方案之间的成功率、成本和延迟无法公平比较。</text>
+  <path d="M 800 310 L 800 356" class="arrow"/>
+  <rect x="440" y="356" width="720" height="96" rx="18" fill="#fff8df" stroke="#e7c45d" stroke-width="3" filter="url(#shadow)"/>
+  <text x="800" y="395" text-anchor="middle" class="head ink">② 判断“下一步”由谁选择</text>
+  <text x="800" y="430" text-anchor="middle" class="body ink">路径能否事先列出？是否必须依赖新观察？</text>
+  <!-- v02 fix: end the connector before the caption to avoid text overlap -->
+  <path d="M 800 452 L 800 470" class="arrow"/>
+  <text x="800" y="492" text-anchor="middle" class="small muted">控制权从左到右逐步交给运行时</text>
+
+  <g filter="url(#shadow)">
+    <rect x="92" y="510" width="330" height="390" rx="18" fill="#f1f5f8" stroke="#aebdca" stroke-width="2"/>
+    <rect x="442" y="510" width="330" height="390" rx="18" fill="#eef8f4" stroke="#9dcbb7" stroke-width="2"/>
+    <rect x="792" y="510" width="330" height="390" rx="18" fill="#f5f1fb" stroke="#c4b1df" stroke-width="2"/>
+    <rect x="1142" y="510" width="366" height="390" rx="18" fill="#fff3ec" stroke="#e8b28d" stroke-width="2"/>
+  </g>
+  <g>
+    <circle cx="130" cy="548" r="20" fill="#60798c"/><text x="130" y="556" text-anchor="middle" fill="#fff" class="body">A</text><text x="164" y="558" class="head ink">普通程序</text>
+    <text x="116" y="604" class="small muted">谁选下一步</text><text x="116" y="633" class="body ink">代码</text><text x="116" y="680" class="small muted">可用实现</text><text x="116" y="710" class="small ink">解析固定测试格式</text><text x="116" y="738" class="small ink">填报告与工单模板</text><text x="116" y="786" class="small muted">升级/放弃信号</text><text x="116" y="816" class="small ink">语义无法由现有规则覆盖</text><text x="116" y="844" class="small ink">规则维护成本明显上升</text><rect x="116" y="860" width="270" height="22" rx="11" fill="#d9e1e8"/><text x="251" y="876" text-anchor="middle" class="tiny muted">确定性最高</text>
+    <circle cx="480" cy="548" r="20" fill="#3c8969"/><text x="480" y="556" text-anchor="middle" fill="#fff" class="body">B</text><text x="514" y="558" class="head ink">单次模型</text>
+    <text x="466" y="604" class="small muted">谁选下一步</text><text x="466" y="633" class="body ink">模型只写候选</text><text x="466" y="680" class="small muted">可用实现</text><text x="466" y="710" class="small ink">文件、报告、规则已齐</text><text x="466" y="738" class="small ink">一次生成缺陷说明</text><text x="466" y="786" class="small muted">升级/放弃信号</text><text x="466" y="816" class="small ink">结果需要回到环境取证</text><text x="466" y="844" class="small ink">必须分步隔离验证</text><rect x="466" y="860" width="270" height="22" rx="11" fill="#d4ede2"/><text x="601" y="876" text-anchor="middle" class="tiny muted">一次生成</text>
+    <circle cx="830" cy="548" r="20" fill="#7955a3"/><text x="830" y="556" text-anchor="middle" fill="#fff" class="body">C</text><text x="864" y="558" class="head ink">固定 workflow</text>
+    <text x="816" y="604" class="small muted">谁选下一步</text><text x="816" y="633" class="body ink">代码选分支</text><text x="816" y="680" class="small muted">可用实现</text><text x="816" y="710" class="small ink">读报告 → 文件 → 生成</text><text x="816" y="738" class="small ink">校验 → 审批 → 创建</text><text x="816" y="786" class="small muted">升级/放弃信号</text><text x="816" y="816" class="small ink">文件选择无法稳定表达</text><text x="816" y="844" class="small ink">分支不断依赖新观察</text><rect x="816" y="860" width="270" height="22" rx="11" fill="#e5daf2"/><text x="951" y="876" text-anchor="middle" class="tiny muted">代码控分支</text>
+    <circle cx="1180" cy="548" r="20" fill="#c66e3e"/><text x="1180" y="556" text-anchor="middle" fill="#fff" class="body">D</text><text x="1214" y="558" class="head ink">动态 Agent</text>
+    <text x="1166" y="604" class="small muted">谁选下一步</text><text x="1166" y="633" class="body ink">模型提议；运行时裁定</text><text x="1166" y="680" class="small muted">可用实现</text><text x="1166" y="710" class="small ink">先读失败报告</text><text x="1166" y="738" class="small ink">再判断读实现/调用者/规则</text><text x="1166" y="786" class="small muted">升级/放弃信号</text><text x="1166" y="816" class="small ink">探索没有提高合格率</text><text x="1166" y="844" class="small ink">权限、预算、恢复代价过高</text><rect x="1166" y="860" width="300" height="22" rx="11" fill="#f6dac7"/><text x="1316" y="876" text-anchor="middle" class="tiny muted">受护栏约束的动态探索</text>
+  </g>
+  <path d="M 800 900 L 800 932" class="arrow"/>
+  <rect x="92" y="936" width="1416" height="120" rx="18" fill="#f7fafc" stroke="#c6d2df" stroke-width="2"/>
+  <text x="126" y="975" class="head ink">③ 只用共同证据决定升级</text>
+  <!-- v02 fix: evidence is split into two readable lines -->
+  <text x="126" y="1010" class="body ink">记录：合格/完整目标合格 · 正确等待 · 错误完成 · 读/模型次数</text>
+  <text x="126" y="1040" class="body ink">用量 · 端到端延迟 · 未知结果</text>
+  <text x="1480" y="1050" text-anchor="end" class="small muted">材料冲突时输出 WAIT_INPUT；没有运行数据，不填性能排名。</text>
+  <text x="1480" y="1075" text-anchor="end" class="tiny muted">来源：v12 c01-selection.md（静态视觉稿，未代表实测排名）</text>
+</svg>

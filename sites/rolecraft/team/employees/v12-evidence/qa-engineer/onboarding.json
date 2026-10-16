@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-11T23:35:28.881463+08:00",
+  "role_id": "qa-engineer",
+  "employee_id": "EV12-08",
+  "role_name": "测试工程师",
+  "agent_name": "/root/employee_v12_qa",
+  "unique_domain": "质量验证",
+  "status": "accepted_with_dependencies",
+  "scope": "本轮八岗组织配置独立验收；不执行教材或外部集成行为",
+  "inputs": [
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/AGENTS.md",
+      "sha256": "55e190a02d9d64ba1a1622b815d3c8282373a8d5292b1518f68ce6f2a08449a1",
+      "read_status": "read",
+      "version_locator": "已读本轮收到文件；历史方法不代当前产品审核"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/employees/v12-evidence/COMMON.md",
+      "sha256": "f2a8a5e935fd521030f0cc1a7445cb9a2138cc3b417c228cc9ab43cfacb67bf0",
+      "read_status": "read",
+      "version_locator": "已读本轮收到文件；历史方法不代当前产品审核"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/employees/v12-evidence/qa-engineer/prompt.md",
+      "sha256": "9786285cc53d2d195f2d10d7bdbcbef76c175bd078e97e3f129374e263a785c5",
+      "read_status": "read",
+      "version_locator": "已读本轮收到文件；历史方法不代当前产品审核"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v12-product-assessment.md",
+      "sha256": "2a7a0e08cf959a6ad490d46a98128eebd0e82722c9d4ff1c104ea3fbead285eb",
+      "read_status": "read",
+      "version_locator": "已读本轮收到文件；历史方法不代当前产品审核"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v12-qa.md",
+      "sha256": "c2d6e7aae31d750ccc04a6c058251be097b8e3114638c004a455a053d37444d3",
+      "read_status": "read",
+      "version_locator": "已读本轮收到文件；历史方法不代当前产品审核"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/README.md",
+      "sha256": "f6e8b37b318dd2a662c064f6681509fdf7873cbd7687a7b91a6f7ed3bf2683a6",
+      "read_status": "read",
+      "version_locator": "已读本轮收到文件；历史方法不代当前产品审核"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/product-gates.json",
+      "sha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06",
+      "read_status": "read",
+      "version_locator": "product-creation-2026-10-10原八门槛"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/product-audit-method.md",
+      "sha256": "17a2e7711e3e5b3e9583ae559bd8f5a45a7d6fdff6f2966c56bb275f17b8f28a",
+      "read_status": "read",
+      "version_locator": "已读本轮收到文件；历史方法不代当前产品审核"
+    }
+  ],
+  "first_task": {
+    "goal": "核八份岗位提示词、实际接单、唯一领域、首任务交接、导航、收到809文件终点及当前结论边界",
+    "outputs_now": [
+      "onboarding.md",
+      "onboarding.json"
+    ],
+    "independent_audit_outputs": [
+      "audit.md",
+      "audit.json",
+      "first-results.json",
+      "final-results.json",
+      "artifact-binding.json及必要原例复验记录"
+    ],
+    "acceptance": "依COMMON既定组织验收条件，职责匹配、每岗独立接单、身份对应、路径互斥、首任务目标输入交付依赖明确、无虚构、导航与版本成立。配置通过不能关闭产品八门槛。",
+    "current_result": "已读取共同输入和八份提示词，接单完成；最终审计等待七岗接单及PM冻结。"
+  },
+  "dependencies": [
+    {
+      "owner": "项目经理",
+      "item": "八份配置、共同规则、收到版本台账和派工名单",
+      "status": "received",
+      "evidence": "本轮配置与manifest/dispatch-log可定位，行政状态仍更新中"
+    },
+    {
+      "owner": "其余七岗",
+      "item": "独立接单md/json、输入定位及领域自查",
+      "status": "partially_received_initial",
+      "evidence": "首读时运营尚未交付，其他接单随派工进行；不是失败"
+    },
+    {
+      "owner": "项目经理",
+      "item": "七岗已收齐/名册冻结确认",
+      "status": "pending",
+      "evidence": "需收到后最终审计；行政状态可在QA后更新"
+    },
+    {
+      "owner": "产品经理/对应工程与专业岗位",
+      "item": "未来新专业范围、预算授权、当前冻结实现/真实条件与新证据",
+      "status": "not_received_for_future_integration",
+      "evidence": "本次接单不执行外部集成，不要求这些条件先满足才完成配置"
+    }
+  ],
+  "handoffs": [
+    {
+      "to": "项目经理",
+      "deliver": "配置缺陷、对应责任人和原例复验证据；完成后只授配置范围结论"
+    },
+    {
+      "to": "各专业原责任岗",
+      "deliver": "发现接单缺证或越界时原输入和预期；不代修岗位产物"
+    },
+    {
+      "to": "产品经理",
+      "deliver": "当前配置不改原八门槛；完整产品仍以现有v12产品评估not_met为收到状态，没有新完整产品审核"
+    }
+  ],
+  "self_check": {
+    "domain": "质量验证",
+    "author_independence": "PM编配置，本岗独立核；专业岗自查不会被当成产品独立验收",
+    "allowed_write_paths": [
+      "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/employees/v12-evidence/qa-engineer/onboarding.md",
+      "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/employees/v12-evidence/qa-engineer/onboarding.json",
+      "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/employees/v12-evidence/qa-engineer/audit.md",
+      "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/employees/v12-evidence/qa-engineer/audit.json",
+      "本QA目录自身证据文件"
+    ],
+    "completed": [
+      "仅读取组织与已授权公开工作区文件",
+      "八份提示词已读且配置范围确认",
+      "接单与未来外部专业任务区分"
+    ],
+    "not_performed": [
+      "应用或教材修改",
+      "程序/教材行为运行",
+      "实际用户数据库或秘密配置读取",
+      "真实模型调用、招募、外部联系、付费或发布",
+      "当前完整产品新审核"
+    ]
+  },
+  "limitations": [
+    "809文件为命名保护范围，不涵盖全部程序、实际数据库或文件系统",
+    "文件hash比较证明收到字节一致，不证明行为可靠性或用户掌握",
+    "八岗独立代理为按需会话和持久资料，不是常驻员工或真人",
+    "当前产品not_met来自已读评估，员工配置不会修复其实际证据缺口"
+  ]
+}

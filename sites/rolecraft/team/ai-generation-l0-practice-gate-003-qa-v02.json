@@ -1,0 +1,37 @@
+{
+  "practice_id":"AI-PRACTICE-GATE-003","exercise_version":"v0.1","qa_version":"v0.2",
+  "reviewer_role":"测试工程师","decision":"fail","self_signed":false,"handoff_qa":"pending","external_action":null,
+  "level_decision":{"L0":"not_granted","L1":"not_granted","L2":"not_granted"},
+  "checks":{
+    "schema_v3_required_allowed_forbidden":"pass",
+    "legacy_status_removed_and_migration_diff":"pass",
+    "fixture_hash_and_validator_input":"pass_normalized; raw manifest input hash is separately documented",
+    "run_1_run_2_frozen_input_and_replay":"pass_limited_static; both outputs equal and run-2 validator points to run-2, execution independence not observed",
+    "event_state_trace":"pass_static_trace",
+    "manifest_per_item_path_bytes_sha256":"fail",
+    "normal_sequence":"pass_static_trace",
+    "five_first_failures_and_old_checkpoint_preservation":"pass_static_receipts",
+    "holdout_single_constraint":"pass",
+    "handoff_external_action":"pass"
+  },
+  "hash_recalculation":{
+    "raw_sha256_frozen_v2_input":"03e33c9958a906567affff664af05f3a32135d2ac08d00ce3743686d580ec39a",
+    "normalized_sha256_frozen_v2_input":"ca5ea96cebde0055acf2fa1b9b5019e155a5753d006781f5676ff77eb7d9a712",
+    "normalized_sha256_run_1":"118c508e04e579686f10c7db7bba041c79ddfdc930b44967f961567474ba99c4",
+    "normalized_sha256_run_2":"118c508e04e579686f10c7db7bba041c79ddfdc930b44967f961567474ba99c4",
+    "run_1_run_2_equal":true,
+    "manifest_declared_run_hash":"3cbff8c6f484bf88a4dad98de26ebd583628ab82b884661c29eab1b65267009a",
+    "manifest_run_hash_matches_recalculation":false,
+    "manifest_artifact_path_bytes_sha256_matches_files":true
+  },
+  "blocking_findings":[
+    "manifest run_1_migrated_hash and run_2_migrated_hash do not match the v02 migrated checkpoint content (declared 3cbff8...; recomputed normalized 118c508e...); manifest integrity is therefore not met",
+    "QA can verify files and receipts but cannot observe an independent execution provenance beyond the submitted artifacts"
+  ],
+  "required_retest":[
+    "refresh manifest run_1_migrated_hash and run_2_migrated_hash using the contracted normalized JSON hash, then re-run manifest verification",
+    "retain v02 failure record and provide command/environment or runtime event provenance for independent run-2 execution"
+  ],
+  "limitations":["本地确定性夹具不证明真实数据库迁移、并发回滚、真人审批、身份认证、生产审批、真实模型或外部动作"],
+  "evidence_root":"sites/rolecraft/team/ai-generation-l0-practice-gate-003-v02"
+}

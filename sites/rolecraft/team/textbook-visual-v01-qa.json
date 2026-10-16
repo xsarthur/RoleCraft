@@ -1,0 +1,215 @@
+{
+  "schema": "rolecraft.textbook.qa.v1",
+  "artifact": "AI视觉内容设计入门",
+  "version": "v0.1",
+  "at": "2026-10-14T00:00:00+08:00",
+  "role": "测试工程师",
+  "scope": [
+    "visual-design-v01 README",
+    "visual-design-v01 sources",
+    "visual-design-v01 main textbook"
+  ],
+  "conclusion": "met_with_limitations",
+  "full_career_goal": "not_met",
+  "baseline": {
+    "files": [
+      {
+        "path": "sites/rolecraft/textbooks/visual-design-v01/README.md",
+        "bytes": 1418,
+        "sha256": "353aad58af991123a167deb50f2213c26373914966541547fc2334b00c321cfd"
+      },
+      {
+        "path": "sites/rolecraft/textbooks/visual-design-v01/sources.md",
+        "bytes": 8219,
+        "sha256": "ee3d34558cb53fe950952a6388292ae949a72e1e005b5a9d63db9d71270ea989"
+      },
+      {
+        "path": "sites/rolecraft/textbooks/visual-design-v01/ai-visual-content-design-textbook.md",
+        "bytes": 36516,
+        "sha256": "ff2451a65bbbb8a22343d958d9e3d3c983e9c223230ee72b617c32b90e134cef"
+      }
+    ],
+    "chapter_count": 12,
+    "exercise_count": 10,
+    "headings_count": 67,
+    "practical_units": {
+      "regular_chapter_practice": 10,
+      "interview_practice": 1,
+      "capstone_stages": 6
+    }
+  },
+  "checks": [
+    {
+      "id": "VD-QA-01",
+      "name": "files_and_versions",
+      "status": "pass",
+      "evidence": "all three files exist and carry v0.1"
+    },
+    {
+      "id": "VD-QA-02",
+      "name": "local_links",
+      "status": "pass",
+      "local_links": [
+        {
+          "file": "sites/rolecraft/textbooks/visual-design-v01/README.md",
+          "target": "ai-visual-content-design-textbook.md",
+          "exists": true
+        },
+        {
+          "file": "sites/rolecraft/textbooks/visual-design-v01/README.md",
+          "target": "sources.md",
+          "exists": true
+        },
+        {
+          "file": "sites/rolecraft/textbooks/visual-design-v01/ai-visual-content-design-textbook.md",
+          "target": "sources.md",
+          "exists": true
+        }
+      ],
+      "external_links_live_checked": false
+    },
+    {
+      "id": "VD-QA-03",
+      "name": "chapter_structure",
+      "status": "pass",
+      "chapter_count": 12,
+      "chapters_are_contiguous": true,
+      "exercise_count": 10,
+      "practical_units": {
+        "regular_chapter_practice": 10,
+        "interview_practice": 1,
+        "capstone_stages": 6
+      }
+    },
+    {
+      "id": "VD-QA-04",
+      "name": "chapter_navigation",
+      "status": "partial",
+      "readme_has_chapter_toc": false,
+      "finding": "VD-F-01"
+    },
+    {
+      "id": "VD-QA-05",
+      "name": "ai_visual_vs_aigc_boundary",
+      "status": "pass",
+      "negative_scan_terms": [
+        "模型训练",
+        "ComfyUI",
+        "节点编排",
+        "批量提示词系统",
+        "API 接入",
+        "账号流水线"
+      ],
+      "contamination_found": false
+    },
+    {
+      "id": "VD-QA-06",
+      "name": "jd_mapping",
+      "status": "partial",
+      "jd_rows": 9,
+      "mapping_chapters_valid": true,
+      "body_ids": [],
+      "finding": "VD-F-02"
+    },
+    {
+      "id": "VD-QA-07",
+      "name": "interview_mapping",
+      "status": "partial",
+      "interview_rows": 10,
+      "mapping_chapters_valid": true,
+      "body_ids": [],
+      "finding": "VD-F-02"
+    },
+    {
+      "id": "VD-QA-08",
+      "name": "exercises_and_portfolio",
+      "status": "pass",
+      "chapter_exercises": 10,
+      "final_project_stages": 6,
+      "rubric_dimensions": 6
+    },
+    {
+      "id": "VD-QA-09",
+      "name": "fiction_and_employment_boundary",
+      "status": "pass",
+      "fictional_case_label_present": true,
+      "fabricated_metrics_or_reviews_found": false,
+      "employment_proof_claim_found": false
+    },
+    {
+      "id": "VD-QA-10",
+      "name": "rights_and_sources_boundary",
+      "status": "pass_limited",
+      "legal_or_platform_live_check": false
+    }
+  ],
+  "counterexamples": [
+    {
+      "id": "CE-01",
+      "case": "AIGC workflow/model training mixed into visual content design",
+      "status": "closed",
+      "result": "exclusion language only; no teaching steps found"
+    },
+    {
+      "id": "CE-02",
+      "case": "JD/interview samples presented as nationwide demand or fixed true questions",
+      "status": "closed",
+      "result": "sample limits explicitly stated"
+    },
+    {
+      "id": "CE-03",
+      "case": "fictional product/claims/metrics/reviews presented as real",
+      "status": "closed",
+      "result": "fictional case and pending claims labeled; no fabricated metrics"
+    },
+    {
+      "id": "CE-04",
+      "case": "portfolio/rubric/self-check presented as employment proof",
+      "status": "closed",
+      "result": "explicitly disclaimed"
+    },
+    {
+      "id": "CE-05",
+      "case": "AI output treated as final commercial asset",
+      "status": "closed",
+      "result": "six manual gates and editable-source requirements"
+    },
+    {
+      "id": "CE-06",
+      "case": "copyright/platform terms asserted as permanent legal conclusion",
+      "status": "closed_limited",
+      "result": "registration/escalation method only; no live legal check"
+    }
+  ],
+  "findings": [
+    {
+      "id": "VD-F-01",
+      "severity": "P2",
+      "status": "open",
+      "owner": "课程架构师/教材研发员",
+      "summary": "README lacks chapter TOC/anchors/prerequisite navigation",
+      "retest": "add chapter map then rerun local link/anchor check"
+    },
+    {
+      "id": "VD-F-02",
+      "severity": "P2",
+      "status": "open",
+      "owner": "竞品研究员/课程架构师/教材研发员",
+      "summary": "Jxx/Ixx mappings exist only in sources table; no body-near source IDs or reverse matrix",
+      "retest": "add source IDs/reverse map then rerun traceability check"
+    }
+  ],
+  "limitations": [
+    "external URLs not live checked",
+    "no browser/design software/export/platform review",
+    "no learner/industry expert/employer evidence",
+    "no model/API/paid call",
+    "no standalone content review artifact visible at QA start"
+  ],
+  "retest_conditions": [
+    "recompute hashes after any author change",
+    "verify chapter anchors and README navigation",
+    "verify all J01-J09/I01-I10 mappings and body/source traceability",
+    "rerun specified static counterexamples"
+  ]
+}

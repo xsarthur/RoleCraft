@@ -1,0 +1,15 @@
+{
+  "events": [
+    "tool_called",
+    "tool_returned",
+    "checkpoint_write_failed",
+    "recovery_required",
+    "replayed",
+    "final"
+  ],
+  "tool_input_hash": "input-hash-local",
+  "tool_output_hash": "output-hash-local",
+  "side_effect": null,
+  "checkpoint_receipt": "checkpoint.json",
+  "idempotency_receipt": "idempotency.json"
+}

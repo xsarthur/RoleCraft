@@ -1,0 +1,22 @@
+{
+  "atUtc": "2026-10-11T17:01:02.013212+00:00",
+  "scope": "QA report/evidence consistency only. No extra functional checks, UI, model inference or private state access.",
+  "status": "pass",
+  "checks": {
+    "exactOriginalGateIds": true,
+    "exactOriginalCriteria": true,
+    "exactVI": true,
+    "exactVIT": true,
+    "first21Actual18And3": true,
+    "finalAffected7Actual": true,
+    "original3ClosedByActualInputs": true,
+    "raw799And797SeparateFromAdmin2": true,
+    "adminReceivedBytesPrefixExact": true,
+    "fullIntegrationUiInsufficient": true,
+    "fullGoalNotMet": true,
+    "qaEvidenceExact": true,
+    "currentDeclaration119Exact": true,
+    "qaOwnCleanupExit0AndNoListener": true,
+    "noUserDatabaseTouched": true
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "qa_id": "employee-growth-training-qa-20261015",
+  "date": "2026-10-15",
+  "auditor_role": "qa-engineer",
+  "scope": "只读核验员工培训总计划、实施与运营计划、项目经理整合记录的静态结构、引用存在性和未验证边界；未执行培训任务。",
+  "overall": "met_within_training_plan_scope",
+  "inputs": [
+    {
+      "path": "sites/rolecraft/team/employee-growth-training-plan.md",
+      "exists": true,
+      "bytes": 14222,
+      "lines": 105,
+      "sha256": "316be37879d5f436588d89d022a29d406a5272237af77bd924ab17f983d06b4c"
+    },
+    {
+      "path": "sites/rolecraft/team/employee-growth-training-operations.md",
+      "exists": true,
+      "bytes": 22767,
+      "lines": 225,
+      "sha256": "3c05776a9135863afa6f5e1e504425e7502b640e3320e6fe455b560031083cf6"
+    },
+    {
+      "path": "sites/rolecraft/team/employee-growth-training-integration-pm.md",
+      "exists": true,
+      "bytes": 1781,
+      "lines": 44,
+      "sha256": "d700a8ca78ec24d93952cde8c3ccf66c4b4090b4fc487a52ae4d469209ab8599"
+    }
+  ],
+  "checks": [
+    {
+      "id": "TRAIN-STAGES-01",
+      "result": "pass",
+      "claim": "计划明确六阶段路线并给出目标、输入、产物、独立验证与退出条件。",
+      "evidence": {
+        "stage_count": 6,
+        "stages": [
+          "共同基础与诊断（D0）",
+          "岗位分流（D0–D30）",
+          "沙箱训练（D1–D30）",
+          "真实形状的隔离任务（D31–D60）",
+          "未知任务（D61–D90）",
+          "复盘与迁移（D30/D60/D90及持续）"
+        ],
+        "source": "employee-growth-training-plan.md §3"
+      }
+    },
+    {
+      "id": "TRAIN-CHECKPOINTS-01",
+      "result": "pass",
+      "claim": "计划和运营文件共同定义四个检查点 D0/D30/D60/D90，并保留非自动晋级规则。",
+      "evidence": {
+        "checkpoints": [
+          "D0",
+          "D30",
+          "D60",
+          "D90"
+        ],
+        "plan_section": "§4",
+        "operations_section": "§4.0"
+      }
+    },
+    {
+      "id": "TRAIN-LEVELS-01",
+      "result": "pass",
+      "claim": "L0–L4均有范围、最低证据和不可替代证据；L4要求外部证据且不自动授予产品等级。",
+      "evidence": {
+        "levels": [
+          "L0",
+          "L1",
+          "L2",
+          "L3",
+          "L4"
+        ],
+        "no_automatic_promotion": true,
+        "source": "employee-growth-training-plan.md §5; operations §5"
+      }
+    },
+    {
+      "id": "TRAIN-ROLES-01",
+      "result": "pass",
+      "claim": "十五个岗位均列出责任边界；运营波次 A/B/C 合计覆盖15岗。",
+      "evidence": {
+        "role_count": 15,
+        "roles": [
+          "项目经理（PM）",
+          "产品经理（PROD）",
+          "课程架构师（CURR）",
+          "设计师（DES）",
+          "软件工程师（FE）",
+          "测试工程师（QA）",
+          "教材研发员（ED）",
+          "AI生成工程师（AI）",
+          "后端数据工程师（BE）",
+          "用户研究员（UR）",
+          "竞品研究员（COMP）",
+          "实训评估员（PRACT）",
+          "运营分析员（OPS）",
+          "内容审校员（REV）",
+          "内容检索工程师（RETR）"
+        ],
+        "wave_counts": {
+          "A": 8,
+          "B": 5,
+          "C": 2
+        },
+        "wave_total": 15
+      }
+    },
+    {
+      "id": "TRAIN-CADENCE-01",
+      "result": "pass",
+      "claim": "运营计划定义90日节奏、前14日单岗位MVP、D0/D30/D60/D90里程碑及异步周节奏。",
+      "evidence": {
+        "cadence_terms": {
+          "周一": true,
+          "周二至周四": true,
+          "周五": true,
+          "两周末": true,
+          "每月": true
+        },
+        "mvp_first_14_days": true,
+        "weekly_async": true
+      }
+    },
+    {
+      "id": "TRAIN-TRACKS-01",
+      "result": "pass",
+      "claim": "Delivery 与 Growth 双轨分开，状态、证据和禁止互相覆盖的规则均有明确文字。",
+      "evidence": {
+        "delivery_defined": true,
+        "growth_defined": true,
+        "separate_state_rule": false,
+        "source": "employee-growth-training-operations.md §§2,5–7"
+      }
+    },
+    {
+      "id": "TRAIN-REFERENCES-01",
+      "result": "pass_with_limitations",
+      "claim": "运营计划的11个显式相对链接均可达；整合记录的输入均可按现有规范文件解析，但有两处简写需路径规范化。",
+      "evidence": {
+        "operations_link_count": 11,
+        "operations_missing": [],
+        "operations_links": [
+          {
+            "label": "员工成长产品流程",
+            "path": "employee-professional-growth-product.md",
+            "exists": true
+          },
+          {
+            "label": "员工成长课程架构",
+            "path": "employee-growth-curriculum.md",
+            "exists": true
+          },
+          {
+            "label": "员工赋能产品计划",
+            "path": "employee-enablement-product-plan-v01.md",
+            "exists": true
+          },
+          {
+            "label": "两周 MVP README",
+            "path": "employee-growth-mvp/README.md",
+            "exists": true
+          },
+          {
+            "label": "任务职责合同模板",
+            "path": "employee-growth-mvp/task-contract-template.md",
+            "exists": true
+          },
+          {
+            "label": "任务交接包模板",
+            "path": "employee-growth-mvp/handoff-template.md",
+            "exists": true
+          },
+          {
+            "label": "证据账本模板",
+            "path": "employee-growth-mvp/evidence-ledger-template.jsonl",
+            "exists": true
+          },
+          {
+            "label": "复盘卡模板",
+            "path": "employee-growth-mvp/retrospective-template.md",
+            "exists": true
+          },
+          {
+            "label": "状态交叉映射",
+            "path": "employee-growth-mvp/status-crosswalk.md",
+            "exists": true
+          },
+          {
+            "label": "配置 QA",
+            "path": "employee-growth-qa.md",
+            "exists": true
+          },
+          {
+            "label": "本地 MVP 交付边界",
+            "path": "LOCAL_MVP_DELIVERY.md",
+            "exists": true
+          }
+        ],
+        "integration_refs": [
+          {
+            "reference": "employee-professional-growth-product.md",
+            "resolved": "employee-professional-growth-product.md",
+            "exists": true
+          },
+          {
+            "reference": "employee-growth-curriculum.md",
+            "resolved": "employee-growth-curriculum.md",
+            "exists": true
+          },
+          {
+            "reference": "employee-growth-matrix.json",
+            "resolved": "employee-growth-matrix.json",
+            "exists": true
+          },
+          {
+            "reference": "employee-growth-mvp/",
+            "resolved": "employee-growth-mvp/",
+            "exists": true
+          },
+          {
+            "reference": "status-crosswalk.md",
+            "resolved": "employee-growth-mvp/status-crosswalk.md",
+            "exists": true,
+            "literal_base_path_exists": false
+          },
+          {
+            "reference": "employee-growth-qa.md/.json",
+            "resolved": [
+              "employee-growth-qa.md",
+              "employee-growth-qa.json"
+            ],
+            "exists": true,
+            "literal_combined_path": false
+          }
+        ],
+        "all_canonical_targets_exist": true
+      },
+      "advisory": "整合记录把 employee-growth-mvp/status-crosswalk.md 写成 status-crosswalk.md，并把 employee-growth-qa.md 与 .json 合写为 employee-growth-qa.md/.json；自动工具应使用 canonical resolved 路径。"
+    },
+    {
+      "id": "TRAIN-BOUNDARIES-01",
+      "result": "pass",
+      "claim": "三份文件明确标注计划/配置与实际能力结果的边界，禁止把训练完成、阅读或一次成功当作能力证明。",
+      "evidence": {
+        "d0_unexecuted": true,
+        "pilot_unexecuted": true,
+        "capability_unverified": true,
+        "plan_boundary": true
+      }
+    }
+  ],
+  "unexecuted_boundaries": [
+    "未执行十五岗位 D0 诊断；未执行 T1/T2/T3、两周 MVP 或任何培训试点。",
+    "未取得真实员工任务产物、能力迁移、晋级或职业能力证据。",
+    "未验证真实用户/学习效果、真人行业专家复核、生产质量/经济性或行业可比优势。",
+    "未执行真实模型付费调用、外部发布、上传或外部副作用；运行时状态机、证据账本填写和独立复核效果未测。"
+  ],
+  "limitations": [
+    "本QA仅覆盖三份计划/协调文件的静态文字结构和路径检查；不代表培训流程已运行或员工已达标。",
+    "整合记录的两个引用使用简写，canonical 文件均存在，但自动化消费前应统一路径。",
+    "未执行 D0、试点和员工能力验证，所有实际结果仍为 not_assessed/insufficient_evidence。"
+  ],
+  "protection": {
+    "read_only_inputs": true,
+    "input_files_not_modified": true,
+    "qa_outputs": [
+      "sites/rolecraft/team/employee-growth-training-qa.md",
+      "sites/rolecraft/team/employee-growth-training-qa.json"
+    ]
+  }
+}

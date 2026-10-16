@@ -1,0 +1,125 @@
+{
+  "version": "app-v13-prototype-qa-plan-1",
+  "status": "provisional_verification_plan_pending_product_handoff",
+  "date": "2026-10-12",
+  "timezone": "Asia/Shanghai",
+  "baseline": "app-v13-prototype-qa-history/received-baseline.json",
+  "baselineSha256": "932ac297b33d5d975583eac6f973edd5beb9fa93ccde04deb9dd68518bd7e6b6",
+  "scope": "Single Agent developer local website prototype/PRD alignment; no content regeneration or backend/account redesign. Product owner freezes necessary conditions before candidate acceptance. These verification groups do not invent acceptance thresholds.",
+  "groups": [
+    {
+      "id": "QA13-SINGLE",
+      "target": "Default entry and all main navigation are Agent developer only; no career square/switch/add/other-career cards; no required login or profile conversation to begin reading.",
+      "method": [
+        "source",
+        "actual HTTP browser"
+      ],
+      "status": "pending_candidate"
+    },
+    {
+      "id": "QA13-NAV",
+      "target": "Navigation names and page context match frozen product/design handoff, course/question detail remain subpages, topbar stays minimal; unrelated legacy/engineering modules do not dominate main flow.",
+      "method": [
+        "source",
+        "actual browser navigation/screenshot"
+      ],
+      "status": "pending_product_handoff"
+    },
+    {
+      "id": "QA13-COURSE",
+      "target": "Roadmap/catalog share v12 data, 30 formal reading units and preserved order/IDs/prerequisites; clicking a node/catalog item opens its actual source body, previous/next and return paths stay coherent.",
+      "method": [
+        "static source identity",
+        "HTTP corpus",
+        "actual browser click/reload/back"
+      ],
+      "status": "pending_candidate"
+    },
+    {
+      "id": "QA13-BODY",
+      "target": "Opening v12 engineering figure, running figure, one n03 mechanism section/table and example/code link remain complete, legible and correctly identified; example viewing does not execute code.",
+      "method": [
+        "source/resource identity",
+        "actual browser figure/detail/code/table"
+      ],
+      "status": "pending_candidate"
+    },
+    {
+      "id": "QA13-QUESTIONS",
+      "target": "Only frozen product-approved existing question/exercise resources are used; course to question and question to course target correct actual content; markings and review/test behavior follow handoff, user self-report remains self-report.",
+      "method": [
+        "source provenance",
+        "actual isolated browser interaction"
+      ],
+      "status": "pending_product_handoff"
+    },
+    {
+      "id": "QA13-INPUT",
+      "target": "One global helper entry except settings, context prompts match active page, opening/collapsing preserves current reading, request can finish without forcing navigation, actual retrieval/card sources/mode stay honest; no simulated model answers or telemetry.",
+      "method": [
+        "source",
+        "finite actual BGE HTTP smoke",
+        "actual browser query/card/collapse"
+      ],
+      "status": "pending_candidate"
+    },
+    {
+      "id": "QA13-RECORDS",
+      "target": "Fresh records reflect actual QA actions; continue/review/check controls and empty states follow product; do not infer completion/proficiency or industry certification from reading/self-labels.",
+      "method": [
+        "isolated source/VM only if necessary",
+        "actual fresh isolated browser notes/marks/reload/export"
+      ],
+      "status": "pending_candidate"
+    },
+    {
+      "id": "QA13-COMPAT",
+      "target": "v10/v11/v12/v1 legacy values and origins are retained rather than silently certified/migrated; current and explicit old deep links retain identity, older histories remain reachable through frozen secondary location.",
+      "method": [
+        "isolated legacy fixture VM where browser seeding unavailable",
+        "actual old/current deep link HTTP browser",
+        "actual current export download"
+      ],
+      "status": "pending_candidate"
+    },
+    {
+      "id": "QA13-MOBILE",
+      "target": "Desktop and narrow mobile viewport expose usable primary navigation, readable content and reachable helper/actions without global horizontal overflow or overlay hiding critical buttons.",
+      "method": [
+        "official viewport capability",
+        "actual screenshot/DOM geometry",
+        "keyboard/semantic controls"
+      ],
+      "status": "pending_candidate"
+    },
+    {
+      "id": "QA13-BOUNDARY",
+      "target": "Source/HTTP mode and current capability statements preserve generation/expert/learning/production boundaries; browser failure is not substituted by PM display or VM; public protected files match received baseline.",
+      "method": [
+        "actual source/HTTP/UI",
+        "protected end comparison",
+        "same original eight-gate evidence assessment"
+      ],
+      "status": "pending_candidate"
+    }
+  ],
+  "finiteInputsToFreezeBeforeCandidate": [
+    "react",
+    "新证据推翻计划后，哪些步骤要重做，哪些事实该保留？",
+    "React 前端框架的 JSX 和 Hooks",
+    "装修厨房台面怎么选材料？"
+  ],
+  "testingLimits": [
+    "No old textbook code/100-question regression/full model or industry experiments repeated solely for UI changes.",
+    "Browser evaluate remains read-only DOM; do not inspect hidden user storage or seed fixtures by unauthorized browser writes.",
+    "Legacy record fixture checks and actual fresh UI checks are reported separately.",
+    "A missing necessary UI condition stays insufficient.",
+    "No payment/provider invocation, external publication, real DB mutation, or prototype policy circumvention."
+  ],
+  "cleanup": [
+    "Owned isolated server only, separate port/data directory, explicit configuration to block generation.",
+    "Owned temporary tabs close, temporary viewport reset, own server SIGINT exit and no-listener check.",
+    "User service 4318 and existing records never used as test data."
+  ],
+  "fullGoal": "Pending candidate assessment under unchanged team/product-gates.json; local functional QA cannot establish real professional, learner, industry, generation, or production evidence."
+}

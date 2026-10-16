@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1.0",
+  "textbookVersion": "textbook-draft-0.5",
+  "sourceFile": "team/textbook-v05-authoring-snapshot.json",
+  "inputSha256": "49642ab97b656d3e82efa28bd15f420fc1ab815945803a1c3b3a716cf3c827c4",
+  "authoringComplete": false,
+  "reviewer": "/root/qa_engineer_v05",
+  "executedAt": "2026-10-10",
+  "environment": {
+    "python": "3.14.5",
+    "sqlite": "3.50.4"
+  },
+  "records": [
+    {
+      "chapterId": "f01",
+      "phase": "verbatim_author_example",
+      "bodySha256": "f0c374fdbc5d351c34b0575967c9ddd8fc3d015e549901b1c430308f0cbd5120",
+      "codeSha256": "981f0b249463956ded3a757a2e408c264605336ed80e623a12230af8d9b0eccc",
+      "command": "python3 <temporary-dir>/f01_author_example.py",
+      "exitCode": 0,
+      "stdout": "expected: local contract checks passed",
+      "stderr": ""
+    },
+    {
+      "chapterId": "f01",
+      "phase": "qa_declared_variants",
+      "bodySha256": "f0c374fdbc5d351c34b0575967c9ddd8fc3d015e549901b1c430308f0cbd5120",
+      "codeSha256": "981f0b249463956ded3a757a2e408c264605336ed80e623a12230af8d9b0eccc",
+      "command": "python3 <temporary-dir>/f01_author_example.py with QA appended assertions",
+      "exitCode": 0,
+      "stdout": "expected: local contract checks passed\nQA normal/boundary/invalid input variants passed",
+      "stderr": ""
+    },
+    {
+      "chapterId": "e02",
+      "phase": "verbatim_author_example",
+      "bodySha256": "7f520494643ef2140e9fe763766097a32acd5c2fc84d03321fd3685c9637479c",
+      "codeSha256": "6871896aca8d0c01c991b77c959a514eb58563da2bb498ea9590fc64d2872cd0",
+      "command": "python3 <temporary-dir>/e02_author_example.py",
+      "exitCode": 0,
+      "stdout": "{'total': 3, 'success': 2, 'critical': 1, 'success_rate': 0.6666666666666666, 'cost_per_success': 3.0}",
+      "stderr": ""
+    },
+    {
+      "chapterId": "e02",
+      "phase": "qa_declared_variants",
+      "bodySha256": "7f520494643ef2140e9fe763766097a32acd5c2fc84d03321fd3685c9637479c",
+      "codeSha256": "6871896aca8d0c01c991b77c959a514eb58563da2bb498ea9590fc64d2872cd0",
+      "command": "python3 <temporary-dir>/e02_author_example.py with QA appended assertions",
+      "exitCode": 0,
+      "stdout": "{'total': 3, 'success': 2, 'critical': 1, 'success_rate': 0.6666666666666666, 'cost_per_success': 3.0}\nQA critical-change/zero-success/empty variants passed",
+      "stderr": ""
+    }
+  ],
+  "scope": "Selected actual offline Python examples and specified variants only; author executionStatus remains not_run; not browser/provider/professional/learner/production evidence.",
+  "limits": [
+    "Only read standard-library, offline, no business side-effect examples executed.",
+    "Other pseudocode/integration/manual assignments not executed.",
+    "Example execution is QA evidence, not real learners or end-to-end Agent results."
+  ]
+}

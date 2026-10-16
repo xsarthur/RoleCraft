@@ -1,0 +1,6 @@
+{
+  "kind": "QA harness comparison error, not product defect",
+  "cause": "QA stripped final newlines from source while submitted index correctly preserved exact whole source including newline",
+  "observedExample": "00 sourceLength6988 equals bundleLength6988; literalEqual true",
+  "correction": "compare complete body to literal source without normalization; keep original failing harness output"
+}

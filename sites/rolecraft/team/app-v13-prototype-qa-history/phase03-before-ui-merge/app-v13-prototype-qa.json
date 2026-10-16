@@ -1,0 +1,199 @@
+{
+  "version": "app-v13-prototype-qa-2",
+  "date": "2026-10-12",
+  "timezone": "Asia/Shanghai",
+  "phase": "main_execution_complete_waiting_ui_specialist",
+  "artifactVersion": "local-workbench-0.13-learning",
+  "corpusVersion": "textbook-v12",
+  "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+  "bookSha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+  "frontendBindingVersion": "app-v13-prototype-frontend-binding-3",
+  "frontendBindingSha256": "73038957f7fe89cd3fcf7d50c419f2b0d8bd02b9c0a0020386059dd5f1978fa3",
+  "experienceSha256": "7fc778e5d85702688caebf76370308ddee435b74acee7665666387a4dc902b9e",
+  "limitedSourceHttpVmConclusion": "met_within_scope",
+  "allNecessaryLocalConditionsConclusion": "insufficient",
+  "productConditions": [
+    {
+      "id": "PV13-01",
+      "status": "insufficient",
+      "reason": "Main QA source/HTTP/VM scope recorded; required current actual UI evidence pending specialist"
+    },
+    {
+      "id": "PV13-02",
+      "status": "insufficient",
+      "reason": "Main QA source/HTTP/VM scope recorded; required current actual UI evidence pending specialist"
+    },
+    {
+      "id": "PV13-03",
+      "status": "insufficient",
+      "reason": "Main QA source/HTTP/VM scope recorded; required current actual UI evidence pending specialist"
+    },
+    {
+      "id": "PV13-04",
+      "status": "insufficient",
+      "reason": "Main QA source/HTTP/VM scope recorded; required current actual UI evidence pending specialist"
+    },
+    {
+      "id": "PV13-05",
+      "status": "insufficient",
+      "reason": "Main QA source/HTTP/VM scope recorded; required current actual UI evidence pending specialist"
+    },
+    {
+      "id": "PV13-06",
+      "status": "insufficient",
+      "reason": "Main QA source/HTTP/VM scope recorded; required current actual UI evidence pending specialist"
+    },
+    {
+      "id": "PV13-07",
+      "status": "insufficient",
+      "reason": "Main QA source/HTTP/VM scope recorded; required current actual UI evidence pending specialist"
+    },
+    {
+      "id": "PV13-08",
+      "status": "insufficient",
+      "reason": "Main QA source/HTTP/VM scope recorded; required current actual UI evidence pending specialist"
+    },
+    {
+      "id": "PV13-09",
+      "status": "insufficient",
+      "reason": "Main QA source/HTTP/VM scope recorded; required current actual UI evidence pending specialist"
+    },
+    {
+      "id": "PV13-10",
+      "status": "insufficient",
+      "reason": "Main QA source/HTTP/VM scope recorded; required current actual UI evidence pending specialist"
+    }
+  ],
+  "counts": {
+    "protectedCompared": 900,
+    "protectedUnchanged": 900,
+    "actualBgeQueries": 3,
+    "truthfulConceptClarifications": 1,
+    "initialVmCases": 25,
+    "initialVmPass": 23,
+    "initialVmFailures": 2,
+    "confirmedProductDefectsInInitialMainVm": 1,
+    "initialVmHarnessWordingError": 1,
+    "unknownTargetsNarrowChecks": 4,
+    "navRepairNarrowGroups": 7,
+    "navRepairHistoricalReproductionGroups": 1,
+    "mainActualBrowserActions": 0,
+    "mainActualDownloads": 0
+  },
+  "mainEvidence": [
+    "team/app-v13-prototype-qa-history/candidate01/independent-mapping.json",
+    "team/app-v13-prototype-qa-history/candidate01/independent-http.json",
+    "team/app-v13-prototype-qa-history/candidate01/independent-client-vm.json",
+    "team/app-v13-prototype-qa-history/candidate01/unknown-targets-narrow.json",
+    "team/app-v13-prototype-qa-history/candidate02/independent-nav-repair.json",
+    "team/app-v13-prototype-qa-history/candidate02/served-repair-bytes.json",
+    "team/app-v13-prototype-qa-history/protected-end-main.json",
+    "team/app-v13-prototype-qa-history/cleanup-main.json",
+    "team/app-v13-prototype-qa-history/ui-current-availability.json"
+  ],
+  "uiEvidence": "pending app-v13-prototype-ui-qa final report/binding, not inherited from PM or previous version",
+  "defects": [
+    {
+      "id": "QI13-NAV01",
+      "discoverer": "independent main QA",
+      "status": "closed_in_source_vm_scope_pending_actual_ui",
+      "owner": "客户端软件工程师",
+      "evidence": "candidate02/independent-nav-repair.json"
+    },
+    {
+      "id": "QI13-BANK01",
+      "ownerOriginalId": "DEV13-BANK-01",
+      "discoverer": "client engineer first; main QA independently reproduced frozen former source after handoff",
+      "status": "closed_in_source_vm_scope_pending_actual_ui",
+      "owner": "客户端软件工程师",
+      "evidence": "candidate02/independent-nav-repair.json"
+    },
+    {
+      "id": "DEV13-SHELL-01",
+      "discoverer": "PM actual display observation, not QA first discovery",
+      "status": "source repair handed_off_pending_UI_857_retest",
+      "owner": "客户端软件工程师"
+    }
+  ],
+  "fullProductAssessment": {
+    "standardPath": "team/product-gates.json",
+    "standardVersion": "product-creation-2026-10-10",
+    "scope": "formal_learning_product",
+    "artifactVersion": "local-workbench-0.13-learning",
+    "conclusion": "not_met",
+    "gateResults": [
+      {
+        "id": "user_value",
+        "status": "insufficient",
+        "reason": "用户给出了模块难懂的真实反馈；尚无试验前冻结目标用户指标/阈值与改后真实使用结果。",
+        "owner": "产品经理 / 用户研究员",
+        "nextAction": "按原目标用户试点核新主流程理解与采用，不把QA访客当用户。"
+      },
+      {
+        "id": "teaching_quality",
+        "status": "insufficient",
+        "reason": "当前冻结v12/30篇、114题327引文的机械来源证据完整，已有AI文稿有限审校；没有新增真人专业复核与真实学习效果证据。",
+        "owner": "课程架构师 / 内容审校员",
+        "nextAction": "保持原稿身份，取得实际行业专家复核与学习证据；不以映射/引用数授职业胜任。"
+      },
+      {
+        "id": "real_generation",
+        "status": "fail",
+        "reason": "本轮实际健康接口generation.configured=false，内容检索是实际本地BGE/规则，不是依档案生成教材。",
+        "owner": "软件工程师 / AI生成工程师",
+        "nextAction": "另按授权配置真实生成，留过程、来源/版本、失败与恢复证据；本轮不付费调用。"
+      },
+      {
+        "id": "comparative_advantage",
+        "status": "insufficient",
+        "reason": "原型视觉/流程对齐和题库回溯没有同任务、样本、资源、评分的行业实测。",
+        "owner": "产品经理 / 竞品研究员",
+        "nextAction": "按原公平比较条件取得可比行业产品/研究版本和实际指标/专业结果。"
+      },
+      {
+        "id": "learner_creation",
+        "status": "insufficient",
+        "reason": "QA虚构本地项目和本人自评只用于功能验证，没有真实学习者独立MVP、用户反馈与作品评审。",
+        "owner": "课程架构师 / 实训评估员",
+        "nextAction": "真实学习者产出可运行作品/未知任务，按原量规独立核作品和真实用户反馈。"
+      },
+      {
+        "id": "reliable_delivery",
+        "status": "fail",
+        "reason": "真实本地开发服务和历史账户后端保留，本轮未重新验收整个后端；尚不满足正式生产运行范围/跨端同步与可靠交付证据。",
+        "owner": "软件工程师 / 后端数据工程师",
+        "nextAction": "另定正式运行范围并取得账户隔离、持久化/异常恢复和生产版本QA证据。"
+      },
+      {
+        "id": "operating_economics",
+        "status": "insufficient",
+        "reason": "没有真实生成账单、维护质量与预定义运营预算结果；本地BGE不调用收费供应商不等于运营成本为零。",
+        "owner": "产品经理 / 运营分析员",
+        "nextAction": "按原预算记录真实成本、时间、质量和维护数据。"
+      },
+      {
+        "id": "iteration_trace",
+        "status": "pass",
+        "reason": "本轮版本/900基线、首反例、原始输出、责任人、窄返修与原例逻辑复验已分层记录；真实UI仍待专项，未据报告授完整改进完成。",
+        "owner": "项目经理 / 测试工程师",
+        "nextAction": "合并当版独立UI报告及实际复验，保留缺证和版本限制；此pass仅本轮可追溯改进范围。"
+      }
+    ],
+    "limitation": "Current local functionality does not infer real expert/learner/industry/generation/production evidence. UI specialist current receipt still pending."
+  },
+  "domains": {
+    "qaAppWrites": false,
+    "realUserDbRead": false,
+    "realUserStorageRead": false,
+    "user4318Operated": false,
+    "providerCalled": false,
+    "uploaded": false,
+    "published": false
+  },
+  "notRepeated": [
+    "Initial25 VM cases not all rerun after narrow experience-only repair; original output kept.",
+    "Existing teaching code/100-question professional support scoring/ten teaching holdouts/whole accounts/model downloads not repeated.",
+    "Four real HTTP queries not reexecuted after frontend-only navigation repair.",
+    "Fault response/timing fixtures remain VM logic, not real model or UI evidence."
+  ]
+}

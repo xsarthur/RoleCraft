@@ -1,0 +1,839 @@
+{
+  "schema": "rolecraft.employee-growth.d0-evaluation",
+  "schema_version": "0.1",
+  "evaluation_id": "D0-EVAL-AGDEV-20261015-LOCAL-01",
+  "diagnostic_id": "D0-AGDEV-20261015-LOCAL-01",
+  "role_id": "AGDEV",
+  "role_name": "Agent开发工程师",
+  "evaluator_role": "curriculum-architect",
+  "independent_reviewer_role": "qa-engineer",
+  "independent_review_status": "pending",
+  "evaluation_version": "d0-agdev-evaluation-v0.1",
+  "evaluated_at": "2026-10-15T00:00:00+08:00",
+  "overall_result": "insufficient_evidence",
+  "source_integrity": {
+    "original_answers_unchanged": true,
+    "source_hashes": {
+      "source_diagnostic_md_sha256": "77883a4d47b6414951fe79c285b54d354519de05829e18c79d495ba90186593e",
+      "source_diagnostic_json_sha256": "1ed19a91d50604628cf28a67231990389c60cac61718a4ad3a5f2a8c7e6473af",
+      "source_results_md_sha256": "037f45a67a4d444a1dab9bc232657cdc3400cef647c94f0c9f9e71c7de12bbf7",
+      "source_learner_responses_md_sha256": "2b2c034fa30031b96092c8b5ea8beba40c0ee3c321bfe4d8252949dc2598177a",
+      "stub_trace_summary_sha256": "ce027414db800484149aa8e33095f4e228e8770f60dbb9291c3dc53d57ebdeb0",
+      "stub_source_sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8"
+    }
+  },
+  "learner_and_environment": {
+    "learner_identity": "AGDEV-local-executor",
+    "runtime": {
+      "node": "24.16.0",
+      "python": "3.14.5"
+    },
+    "network": "disabled",
+    "paid_model_calls": 0,
+    "external_messages": 0,
+    "account_or_database_writes": 0,
+    "scope_note": "本地隔离；D0-03为一次内存检索stub运行，未启动4318或应用模块。"
+  },
+  "evidence_scale": {
+    "E0_unobserved": "没有个人回答、行为或产物",
+    "E1_written_static": "个人静态回答/计划/台账，无独立执行复核",
+    "E2_local_self_run": "本地确定性stub自运行，可回放但未QA独立重放",
+    "E3_independent_replay": "QA按原例独立重放并核对",
+    "E4_cross_context": "QA留出变体、跨情境或真实形状独立证据"
+  },
+  "d0_03_run_boundary": {
+    "executed": [
+      {
+        "run_id": "run-d0-03-001",
+        "case": "命中",
+        "result": "succeeded",
+        "scope": "一次本地内存检索stub",
+        "evidence_id": "E-D003-TRACE"
+      },
+      {
+        "run_id": "run-d0-03-002",
+        "case": "no_match",
+        "result": "needs_clarification",
+        "scope": "一次本地内存检索stub",
+        "evidence_id": "E-D003-TRACE"
+      }
+    ],
+    "trace_summary_sha256": "ce027414db800484149aa8e33095f4e228e8770f60dbb9291c3dc53d57ebdeb0",
+    "source_sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+    "not_executed_or_not_verified": [
+      "QA独立重放",
+      "T1 received→planning→tool_call→checking→completed控制循环",
+      "工具错误和最多一次受控重试",
+      "超时/unknown_effect",
+      "崩溃恢复/checkpoint",
+      "来源版本冲突留出变体",
+      "应用HTTP/4318接入",
+      "真实模型/供应商调用",
+      "生产检索质量"
+    ]
+  },
+  "diagnostics": [
+    {
+      "id": "D0-01",
+      "name": "职责边界",
+      "summary": "静态边界回答清晰，停止/升级和责任分派方向正确；没有独立行为或接收签收。",
+      "dimensions": {
+        "D1": {
+          "assessment": "pass_with_limitations",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "meets_static_expectation",
+          "observation": "明确唯一责任、7项禁止越界和PROD/AI/RETR/BE/FE/QA边界；未在留出情境观察实际拒收。",
+          "evidence_ids": [
+            "E-D001-WRITTEN"
+          ],
+          "limitations": [
+            "未做权限/副作用留出变体"
+          ]
+        },
+        "D2": {
+          "assessment": "not_assessed",
+          "evidence_level": "E0_unobserved",
+          "content_judgment": "not_observed",
+          "observation": "本题没有机制执行证据。",
+          "evidence_ids": [],
+          "limitations": [
+            "需在T1控制循环中观察"
+          ]
+        },
+        "D3": {
+          "assessment": "insufficient_evidence",
+          "evidence_level": "E0_unobserved",
+          "content_judgment": "not_observed",
+          "observation": "没有本题对应运行。",
+          "evidence_ids": [],
+          "limitations": [
+            "无事件轨迹或可回放工件"
+          ]
+        },
+        "D4": {
+          "assessment": "pass_with_limitations",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "meets_static_expectation",
+          "observation": "对no_match、模型不可用、写副作用、unknown_effect、迁移和无限循环写出停止/升级；没有故障注入。",
+          "evidence_ids": [
+            "E-D001-WRITTEN"
+          ],
+          "limitations": [
+            "停止动作未实跑"
+          ]
+        },
+        "D5": {
+          "assessment": "insufficient_evidence",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "partial",
+          "observation": "交接表含岗位、版本和不可验证项，但接收岗位未签收、复验未执行。",
+          "evidence_ids": [
+            "E-D001-HANDOFF"
+          ],
+          "limitations": [
+            "缺接收签名和独立复验"
+          ]
+        },
+        "D6": {
+          "assessment": "not_assessed",
+          "evidence_level": "E0_unobserved",
+          "content_judgment": "not_observed",
+          "observation": "未覆盖用户/行业创造。",
+          "evidence_ids": [],
+          "limitations": []
+        },
+        "D7": {
+          "assessment": "insufficient_evidence",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "partial",
+          "observation": "列出升级原则，没有返修差异、迁移结果或教会他人的观察。",
+          "evidence_ids": [
+            "E-D001-WRITTEN"
+          ],
+          "limitations": [
+            "缺未知变体与教学证据"
+          ]
+        }
+      },
+      "blocking_risks": [
+        {
+          "id": "D0-01-R1",
+          "severity": "P1",
+          "risk": "边界判断未经独立或留出变体；可能把字段合同误作相邻岗位已完成。",
+          "gate": "保持监督，不得独立Agent交付"
+        },
+        {
+          "id": "D0-01-R2",
+          "severity": "P1",
+          "risk": "no_match、权限冲突或unknown_effect的停止动作未实跑。",
+          "gate": "必须保留事件并由QA重放"
+        }
+      ],
+      "catch_up_plan": [
+        "用检索无匹配和需确认写工具两个变体执行拒收，保留stop_reason。",
+        "由RETR、BE、PROD、QA签收版本、范围和未验证项。",
+        "QA重放原题和未提示权限变体，确认无模型、检索写入或数据库迁移。"
+      ],
+      "t1_decision": {
+        "scoped_supervised": true,
+        "independent": false,
+        "reason": "书面边界可作为T1先修，但尚无独立行为证据。"
+      }
+    },
+    {
+      "id": "D0-02",
+      "name": "机制解释",
+      "summary": "机制与状态因果链的书面解释完整；没有T1控制循环或故障夹具的独立执行。",
+      "dimensions": {
+        "D1": {
+          "assessment": "pass_with_limitations",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "meets_static_expectation",
+          "observation": "把模型定位为提议者、宿主保留执行权，并按观察需求/共享状态/成本选择方案。",
+          "evidence_ids": [
+            "E-D002-WRITTEN"
+          ],
+          "limitations": [
+            "未做留出方案选择"
+          ]
+        },
+        "D2": {
+          "assessment": "pass_with_limitations",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "meets_static_expectation",
+          "observation": "状态、停止、来源hash、策略、checkpoint、重试/取消和unknown_effect因果链较完整。",
+          "evidence_ids": [
+            "E-D002-WRITTEN"
+          ],
+          "limitations": [
+            "未在控制循环中证明状态转换"
+          ]
+        },
+        "D3": {
+          "assessment": "insufficient_evidence",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "not_observed",
+          "observation": "只有伪代码和说明，没有T1正常/工具错误运行。",
+          "evidence_ids": [],
+          "limitations": [
+            "需实际事件轨迹"
+          ]
+        },
+        "D4": {
+          "assessment": "pass_with_limitations",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "meets_static_expectation",
+          "observation": "正确区分no_match、needs_clarification、unknown_effect、failed；拒绝盲目换key重发。",
+          "evidence_ids": [
+            "E-D002-WRITTEN"
+          ],
+          "limitations": [
+            "未做故障注入"
+          ]
+        },
+        "D5": {
+          "assessment": "insufficient_evidence",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "partial",
+          "observation": "字段可用于交接，但无接收和独立复现。",
+          "evidence_ids": [
+            "E-D002-WRITTEN"
+          ],
+          "limitations": [
+            "缺签收与复现"
+          ]
+        },
+        "D6": {
+          "assessment": "insufficient_evidence",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "partial",
+          "observation": "有架构取舍，没有真实用户问题、行业比较或迭代反馈。",
+          "evidence_ids": [
+            "E-D002-WRITTEN"
+          ],
+          "limitations": [
+            "不能推导产品优越性"
+          ]
+        },
+        "D7": {
+          "assessment": "insufficient_evidence",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "partial",
+          "observation": "列出假设和未知，但无迁移/教会他人结果。",
+          "evidence_ids": [
+            "E-D002-WRITTEN"
+          ],
+          "limitations": [
+            "缺未知任务"
+          ]
+        }
+      },
+      "blocking_risks": [
+        {
+          "id": "D0-02-R1",
+          "severity": "P1",
+          "risk": "文字状态图未证明终态不可重复提交、步数上限可执行或恢复读取checkpoint。",
+          "gate": "不得把D0-02写成T1通过"
+        },
+        {
+          "id": "D0-02-R2",
+          "severity": "P1",
+          "risk": "模型提议校验和unknown_effect处理未在工具错误夹具中运行。",
+          "gate": "先做正常/工具错误/留出复验"
+        }
+      ],
+      "catch_up_plan": [
+        "按T1-v1.0实现正常stub、工具错误stub和最多一次受控重试。",
+        "加入未提前给步骤的错误顺序变体，核步骤、停止原因和日志脱敏。",
+        "QA独立运行原例、错误例和留出变体，保留首次失败与返修差异。"
+      ],
+      "t1_decision": {
+        "scoped_supervised": true,
+        "independent": false,
+        "reason": "机制书面质量足以开始受限练习，不能替代运行证据。"
+      }
+    },
+    {
+      "id": "D0-03",
+      "name": "熟悉任务",
+      "summary": "两条内存检索stub轨迹确已本地运行，但只覆盖命中/无匹配；未覆盖T1控制循环及独立QA。",
+      "dimensions": {
+        "D1": {
+          "assessment": "pass_with_limitations",
+          "evidence_level": "E2_local_self_run",
+          "content_judgment": "meets_local_stub_contract",
+          "observation": "AgentSpec限制只读工具、来源根、预算和停止条件；未验证越权输入拒绝。",
+          "evidence_ids": [
+            "E-D003-TRACE",
+            "E-D003-SPEC"
+          ],
+          "limitations": [
+            "无独立重放"
+          ]
+        },
+        "D2": {
+          "assessment": "pass_with_limitations",
+          "evidence_level": "E2_local_self_run",
+          "content_judgment": "meets_local_stub_contract",
+          "observation": "输入/输出schema、版本字段和源hash校验设计明确；仅运行两条确定性路径。",
+          "evidence_ids": [
+            "E-D003-TRACE",
+            "E-D003-SPEC"
+          ],
+          "limitations": [
+            "无版本冲突或失败路径"
+          ]
+        },
+        "D3": {
+          "assessment": "insufficient_evidence",
+          "evidence_level": "E2_local_self_run",
+          "content_judgment": "partial_local_only",
+          "observation": "run-d0-03-001命中、run-d0-03-002为no_match→needs_clarification，均来自一次内存stub；这是检索切片，不是T1控制循环且未QA重放。",
+          "evidence_ids": [
+            "E-D003-TRACE"
+          ],
+          "limitations": [
+            "未运行T1状态链、工具错误、受控重试、应用HTTP"
+          ]
+        },
+        "D4": {
+          "assessment": "insufficient_evidence",
+          "evidence_level": "E2_local_self_run",
+          "content_judgment": "partial_local_only",
+          "observation": "no_match诚实停止已出现；来源冲突、超时、重复副作用、崩溃恢复均未运行。",
+          "evidence_ids": [
+            "E-D003-TRACE"
+          ],
+          "limitations": [
+            "未做故障注入"
+          ]
+        },
+        "D5": {
+          "assessment": "insufficient_evidence",
+          "evidence_level": "E2_local_self_run",
+          "content_judgment": "partial_local_only",
+          "observation": "事件含版本/来源字段，但无接收签名、独立复验或相邻岗位交接。",
+          "evidence_ids": [
+            "E-D003-TRACE"
+          ],
+          "limitations": [
+            "缺E3复核"
+          ]
+        },
+        "D6": {
+          "assessment": "not_assessed",
+          "evidence_level": "E0_unobserved",
+          "content_judgment": "not_observed",
+          "observation": "熟悉任务未包含用户/行业创造证据。",
+          "evidence_ids": [],
+          "limitations": []
+        },
+        "D7": {
+          "assessment": "insufficient_evidence",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "partial",
+          "observation": "有复验建议但未执行未知变体。",
+          "evidence_ids": [
+            "E-D003-LIMITS"
+          ],
+          "limitations": [
+            "缺迁移/复盘"
+          ]
+        }
+      },
+      "blocking_risks": [
+        {
+          "id": "D0-03-R1",
+          "severity": "P1",
+          "risk": "内存stub可能掩盖应用边界、序列化、并发和真实检索问题。",
+          "gate": "不得写成生产或T1成功"
+        },
+        {
+          "id": "D0-03-R2",
+          "severity": "P1",
+          "risk": "无工具错误与受控重试轨迹，无法证明失败停止和副作用安全。",
+          "gate": "T1须新增错误夹具"
+        },
+        {
+          "id": "D0-03-R3",
+          "severity": "P1",
+          "risk": "伪代码将needs_clarification封装为task_failed，终态语义需在T1合同中统一。",
+          "gate": "QA核状态枚举和停止原因"
+        }
+      ],
+      "catch_up_plan": [
+        "保留现有两条轨迹和hash，另做T1正常/工具错误两个独立夹具。",
+        "QA重放命中、无匹配、来源版本冲突和一个留出查询，核run_id、步数、停止原因和日志安全。",
+        "两种不同可回放工件且无P1后才记录L1候选。"
+      ],
+      "t1_decision": {
+        "scoped_supervised": true,
+        "independent": false,
+        "reason": "E2仅证明一次本地检索切片；不能单独授权独立T1。"
+      }
+    },
+    {
+      "id": "D0-04",
+      "name": "失败识别",
+      "summary": "四类缺陷均被正确识别并给出停止/升级动作，但完全是静态台账，没有故障注入。",
+      "dimensions": {
+        "D1": {
+          "assessment": "pass_with_limitations",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "meets_static_expectation",
+          "observation": "正确定位四类缺陷的责任边界；没有实际操作行为。",
+          "evidence_ids": [
+            "E-D004-LEDGER"
+          ],
+          "limitations": [
+            "缺留出边界行为"
+          ]
+        },
+        "D2": {
+          "assessment": "pass_with_limitations",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "meets_static_expectation",
+          "observation": "解释来源失配、无依据生成、重复写副作用和checkpoint恢复风险。",
+          "evidence_ids": [
+            "E-D004-LEDGER"
+          ],
+          "limitations": [
+            "无运行因果证据"
+          ]
+        },
+        "D3": {
+          "assessment": "insufficient_evidence",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "partial",
+          "observation": "台账是给定轨迹分析，不是修复后的运行。",
+          "evidence_ids": [
+            "E-D004-LEDGER"
+          ],
+          "limitations": [
+            "无可回放修复工件"
+          ]
+        },
+        "D4": {
+          "assessment": "pass_with_limitations",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "meets_static_expectation",
+          "observation": "风险分级和动作符合合同：来源拒绝、no_match澄清、原action_id查unknown_effect、恢复先核checkpoint。",
+          "evidence_ids": [
+            "E-D004-LEDGER"
+          ],
+          "limitations": [
+            "未故障注入"
+          ]
+        },
+        "D5": {
+          "assessment": "pass_with_limitations",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "meets_static_expectation",
+          "observation": "正确分派AI/RETR/BE/QA责任；无签收或复验。",
+          "evidence_ids": [
+            "E-D004-LEDGER"
+          ],
+          "limitations": [
+            "缺跨岗证据"
+          ]
+        },
+        "D6": {
+          "assessment": "not_assessed",
+          "evidence_level": "E0_unobserved",
+          "content_judgment": "not_observed",
+          "observation": "未涉及产品/行业创造。",
+          "evidence_ids": [],
+          "limitations": []
+        },
+        "D7": {
+          "assessment": "insufficient_evidence",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "partial",
+          "observation": "要求原例、回归、盲变体，但没有返修/复盘实证。",
+          "evidence_ids": [
+            "E-D004-LEDGER"
+          ],
+          "limitations": [
+            "缺未知任务"
+          ]
+        }
+      },
+      "blocking_risks": [
+        {
+          "id": "D0-04-R1",
+          "severity": "P0/P1",
+          "risk": "换新key重复发送是重复副作用阻断；识别风险不等于执行器会阻断。",
+          "gate": "独立交付禁止，先做副作用夹具"
+        },
+        {
+          "id": "D0-04-R2",
+          "severity": "P1",
+          "risk": "来源失配、no_match继续生成和忽略checkpoint均未重放。",
+          "gate": "保留首失败并做原例/变体复验"
+        }
+      ],
+      "catch_up_plan": [
+        "在内存夹具中注入四类缺陷，记录事件、物理请求计数和效果查询。",
+        "QA用未提示缺陷顺序变体重放，核停止、澄清、回滚、升级和首失败保留。",
+        "P0/P1由AGDEV返修，QA复验前不关闭风险。"
+      ],
+      "t1_decision": {
+        "scoped_supervised": true,
+        "independent": false,
+        "reason": "失败识别可用于T1练习输入，安全门槛尚未独立清除。"
+      }
+    },
+    {
+      "id": "D0-05",
+      "name": "迁移计划",
+      "summary": "语料/索引、运行时、权限和预算变化均有版本矩阵与回滚顺序；没有迁移命令实际输出。",
+      "dimensions": {
+        "D1": {
+          "assessment": "pass_with_limitations",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "meets_static_expectation",
+          "observation": "识别版本、权限、预算变化的边界影响；未运行。",
+          "evidence_ids": [
+            "E-D005-PLAN"
+          ],
+          "limitations": [
+            "缺执行行为"
+          ]
+        },
+        "D2": {
+          "assessment": "pass_with_limitations",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "meets_static_expectation",
+          "observation": "变更矩阵、升版契约、hash和兼容检查较完整。",
+          "evidence_ids": [
+            "E-D005-PLAN"
+          ],
+          "limitations": [
+            "计划不能替代执行"
+          ]
+        },
+        "D3": {
+          "assessment": "insufficient_evidence",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "not_observed",
+          "observation": "没有迁移或回滚命令的实际输出。",
+          "evidence_ids": [
+            "E-D005-PLAN"
+          ],
+          "limitations": [
+            "无运行记录"
+          ]
+        },
+        "D4": {
+          "assessment": "pass_with_limitations",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "meets_static_expectation",
+          "observation": "冻结、切换、暂停、回滚和恢复顺序明确；未做重启/未知效果演练。",
+          "evidence_ids": [
+            "E-D005-PLAN"
+          ],
+          "limitations": [
+            "缺故障演练"
+          ]
+        },
+        "D5": {
+          "assessment": "pass_with_limitations",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "partial",
+          "observation": "列出PROD/RETR/BE/AI/FE/QA/PM角色；没有实际签收。",
+          "evidence_ids": [
+            "E-D005-PLAN"
+          ],
+          "limitations": [
+            "缺批准/接收证据"
+          ]
+        },
+        "D6": {
+          "assessment": "insufficient_evidence",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "not_observed",
+          "observation": "没有真实问题、用户反馈或行业可比结果。",
+          "evidence_ids": [
+            "E-D005-PLAN"
+          ],
+          "limitations": [
+            "产品创造未测"
+          ]
+        },
+        "D7": {
+          "assessment": "insufficient_evidence",
+          "evidence_level": "E1_written_static",
+          "content_judgment": "partial",
+          "observation": "有未知清单和复验计划，没有迁移结果或教会他人的观察。",
+          "evidence_ids": [
+            "E-D005-PLAN"
+          ],
+          "limitations": [
+            "缺迁移复盘与辅导证据"
+          ]
+        }
+      },
+      "blocking_risks": [
+        {
+          "id": "D0-05-R1",
+          "severity": "P0/P1",
+          "risk": "未运行时复用旧来源、权限或在途状态可能越权、重复动作或无法回滚。",
+          "gate": "必须停止、升版或回滚"
+        },
+        {
+          "id": "D0-05-R2",
+          "severity": "P1",
+          "risk": "计划中的可回滚只能在实际恢复证据存在时成立。",
+          "gate": "保持insufficient_evidence"
+        }
+      ],
+      "catch_up_plan": [
+        "在临时目录执行语料版本冲突和Node运行时/重启恢复只读演练。",
+        "由RETR、BE、QA分别签收版本、checkpoint和复验条件。",
+        "做一个未提前给出的约束组合盲变体，再复评D7。"
+      ],
+      "t1_decision": {
+        "scoped_supervised": true,
+        "independent": false,
+        "reason": "迁移计划不授权迁移工作；T1仍限本地固定版本控制循环。"
+      }
+    }
+  ],
+  "d1_d7_summary": {
+    "D1": {
+      "evidence_level": "E1_plus_E2",
+      "static_judgment": "pass_with_limitations",
+      "formal_result": "pass_with_limitations",
+      "basis": "书面边界/停止/交接清晰；D0-03 AgentSpec局部支持；无独立拒收或留出权限变体。",
+      "gap": "独立边界行为"
+    },
+    "D2": {
+      "evidence_level": "E1_plus_E2",
+      "static_judgment": "pass_with_limitations",
+      "formal_result": "pass_with_limitations",
+      "basis": "状态、提议校验、来源hash、checkpoint和unknown_effect解释较完整；stub仅覆盖两条检索路径。",
+      "gap": "T1控制循环与工具错误实跑、QA复放"
+    },
+    "D3": {
+      "evidence_level": "E2_local_self_run",
+      "static_judgment": "partial_local_only",
+      "formal_result": "insufficient_evidence",
+      "basis": "两条内存检索stub轨迹确实运行。",
+      "gap": "T1控制循环、工具失败/重试、第二工件和独立重放"
+    },
+    "D4": {
+      "evidence_level": "E1_written_static",
+      "static_judgment": "pass_with_limitations",
+      "formal_result": "pass_with_limitations",
+      "basis": "四缺陷静态台账和停止动作方向正确。",
+      "gap": "P0/P1副作用、来源冲突、checkpoint恢复故障注入"
+    },
+    "D5": {
+      "evidence_level": "E1_plus_E2",
+      "static_judgment": "partial",
+      "formal_result": "insufficient_evidence",
+      "basis": "交接字段和复验顺序意识较强；没有接收签名或独立回放。",
+      "gap": "接收、复现、版本/哈希签收"
+    },
+    "D6": {
+      "evidence_level": "E0/E1",
+      "static_judgment": "not_assessed",
+      "formal_result": "not_assessed",
+      "basis": "D0未提供用户、行业、迭代或价值证据。",
+      "gap": "产品合同与真实问题/可比方案/反馈"
+    },
+    "D7": {
+      "evidence_level": "E1_written_static",
+      "static_judgment": "partial",
+      "formal_result": "insufficient_evidence",
+      "basis": "有迁移计划和未知清单；无迁移结果、返修差异或教会他人证据。",
+      "gap": "盲变体迁移、复盘和辅导/复用"
+    }
+  },
+  "level_decision": {
+    "starting_level": "L0",
+    "starting_level_reason": "静态回答较好且有一次局部stub运行，但没有E3独立复核、T1工具失败轨迹、跨情境工件或接收签收；L0是证据起点，不是负面人格判断。",
+    "l1_status": "candidate_pending",
+    "l1_not_granted": true,
+    "l1_candidate_conditions": [
+      "至少两个不同且可重建的本地工件（至少正常和工具错误/受控重试）",
+      "D1-D7均有初步观察",
+      "QA按原例→受影响回归→留出变体独立复核",
+      "无开放P0/P1，保留首次失败与返修差异",
+      "版本、环境、输入/夹具hash和接收/复验记录完整"
+    ]
+  },
+  "t1_gate": {
+    "decision": "scoped_supervised_only",
+    "allow_supervised_local_t1": true,
+    "allow_independent_t1_delivery": false,
+    "preconditions": [
+      "冻结T1-v1.0合同、夹具hash和qa-engineer复核人",
+      "仅临时目录和确定性无副作用stub",
+      "Node v24.16.0或记录兼容性",
+      "不接真实模型、网络、账户、数据库、外部写工具或发布",
+      "原例、工具错误例和未提示留出变体均由QA独立复验"
+    ],
+    "prohibited_until_retested": [
+      "独立Agent交付",
+      "真实供应商调用",
+      "持久任务/账户迁移",
+      "写副作用工具",
+      "跨岗代码越界",
+      "跳过QA或删除首次失败"
+    ],
+    "reason": "D0回答可作为受限T1教学起点；D0-03局部stub不等于T1通过，D0总体不授L1或职业胜任。"
+  },
+  "blocking_risks": [
+    {
+      "risk_id": "D0-EVAL-BR-01",
+      "severity": "P0/P1",
+      "risk": "重复写副作用、来源失配、no_match后生成和checkpoint恢复未由执行证据清除。",
+      "owner": "AGDEV learner",
+      "mitigation": "T1工具错误/恢复夹具，保留首失败，QA独立复验"
+    },
+    {
+      "risk_id": "D0-EVAL-BR-02",
+      "severity": "P1",
+      "risk": "D0-03内存stub边界被误读为应用或生产检索能力。",
+      "owner": "project-manager",
+      "mitigation": "在交接和报告中固定E2范围，禁止写成HTTP/供应商成功"
+    },
+    {
+      "risk_id": "D0-EVAL-BR-03",
+      "severity": "P1",
+      "risk": "跨岗接收和版本批准尚未签收。",
+      "owner": "project-manager",
+      "mitigation": "RETR/BE/PROD/QA分别签收并记录版本、hash、复验命令"
+    },
+    {
+      "risk_id": "D0-EVAL-BR-04",
+      "severity": "P1",
+      "risk": "D6用户价值/行业证据、D7迁移/教会他人证据缺失。",
+      "owner": "product-manager/curriculum-architect",
+      "mitigation": "后续产品合同、盲变体、复盘与辅导记录单列，不由D0补写"
+    }
+  ],
+  "next_actions": [
+    {
+      "id": "D0-EVAL-A1",
+      "owner": "project-manager",
+      "action": "指定qa-engineer并冻结T1夹具、版本与环境",
+      "status": "open"
+    },
+    {
+      "id": "D0-EVAL-A2",
+      "owner": "AGDEV learner",
+      "action": "交付T1正常和工具错误/最多一次重试轨迹，保留D0-03首失败与hash",
+      "status": "open"
+    },
+    {
+      "id": "D0-EVAL-A3",
+      "owner": "qa-engineer",
+      "action": "按原例→受影响回归→留出变体独立复验并记录P0-P3",
+      "status": "blocked_on_A2"
+    },
+    {
+      "id": "D0-EVAL-A4",
+      "owner": "curriculum-architect",
+      "action": "据独立结果更新D1-D7和补学路径，不覆盖旧回答/失败",
+      "status": "blocked_on_A3"
+    }
+  ],
+  "non_claims": [
+    "不宣称职业胜任",
+    "不宣称L1已达成",
+    "不宣称真实模型质量、用户价值、专家认可、生产可靠性或行业先进性"
+  ],
+  "evidence_registry": {
+    "E-D001-WRITTEN": {
+      "source": "D0-learner-responses.md",
+      "anchor": "D0-01 原始回答与停止/升级条件",
+      "level": "E1_written_static",
+      "independent_replay": false
+    },
+    "E-D001-HANDOFF": {
+      "source": "D0-learner-responses.md",
+      "anchor": "D0-01 职责—交接表",
+      "level": "E1_written_static",
+      "independent_replay": false
+    },
+    "E-D002-WRITTEN": {
+      "source": "D0-learner-responses.md",
+      "anchor": "D0-02 方案选择、状态图、因果链与未知",
+      "level": "E1_written_static",
+      "independent_replay": false
+    },
+    "E-D003-SPEC": {
+      "source": "D0-learner-responses.md",
+      "anchor": "D0-03 AgentSpec、schema、预算、只读工具",
+      "level": "E1_written_static",
+      "independent_replay": false
+    },
+    "E-D003-TRACE": {
+      "source": "D0-learner-responses.md",
+      "anchor": "D0-03 实际本地输出摘要与两条run_id轨迹",
+      "level": "E2_local_self_run",
+      "independent_replay": false,
+      "trace_summary_sha256": "ce027414db800484149aa8e33095f4e228e8770f60dbb9291c3dc53d57ebdeb0"
+    },
+    "E-D003-LIMITS": {
+      "source": "D0-learner-responses.md",
+      "anchor": "D0-03 未接入应用、未QA复核、未做真实模型调用的限制",
+      "level": "E1_written_static",
+      "independent_replay": false
+    },
+    "E-D004-LEDGER": {
+      "source": "D0-learner-responses.md",
+      "anchor": "D0-04 四缺陷台账与首次失败保留说明",
+      "level": "E1_written_static",
+      "independent_replay": false
+    },
+    "E-D005-PLAN": {
+      "source": "D0-learner-responses.md",
+      "anchor": "D0-05 变更矩阵、迁移/回滚顺序和未知",
+      "level": "E1_written_static",
+      "independent_replay": false
+    }
+  }
+}

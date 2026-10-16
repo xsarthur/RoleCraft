@@ -1,0 +1,38 @@
+{
+  "version": "app-v14-prerequisite-copy-qa-final-2",
+  "date": "2026-10-12",
+  "scope": "candidate3 node browsing-state narrow QA only",
+  "status": "candidate03_narrow_verified",
+  "testedScopeResult": "met_within_tested_ui_scope",
+  "frontendBinding": "team/app-v14-prerequisite-copy-frontend-binding3.json",
+  "staticReceiptReviewed": true,
+  "candidate2EvidencePreserved": "team/app-v14-prerequisite-copy-ui-qa.md",
+  "checks": {
+    "visitedOpenBookAndWarmBoundary": "passed",
+    "unvisitedClosedBookAndNeutralBoundary": "passed",
+    "visibleStatusCopyRemovedAndCompactSpacing": "passed",
+    "chapterClickKnowledgeDisclosureAndKeyboard": "passed"
+  },
+  "uiQa": {
+    "report": "team/app-v14-prerequisite-copy-ui-qa.md",
+    "json": "team/app-v14-prerequisite-copy-ui-qa.json",
+    "reportSha256": "b157ed672b7e57206645aa3f18af43429cceb472efc0916b16d611b491a538bd",
+    "jsonSha256": "85b78babb19e0e2fdd9565a432379746c0a344b6c180140f6df5a6de29b3a5be",
+    "surface": "official Codex In-app Browser id2",
+    "actualBrowserTested": true,
+    "tested": ["visited open-book", "unvisited closed-book", "status-row removal and compact spacing", "knowledge disclosure", "Tab/Enter"]
+  },
+  "evidenceUsed": [
+    "team/app-v14-prerequisite-copy-frontend-binding3.json",
+    "team/app-v14-prerequisite-copy-frontend-node-repair.md",
+    "team/app-v14-prerequisite-copy-frontend-history/node-source-change.diff",
+    "team/app-v14-prerequisite-copy-preview-post-session.json"
+  ],
+  "substituteBrowserUsed": false,
+  "browserStorageRead": false,
+  "formal4318Touched": false,
+  "privateDatabaseRead": false,
+  "cleanup": {"selfOwnedTabClosed": true, "temporaryViewportReset": true, "formal4318Operated": false, "privateStorageReadOrWrite": false, "serviceRestarted": false},
+  "fullProductStatus": "not_met",
+  "limitations": ["Candidate3 narrow UI only; candidate2 seven-condition matrix not rerun.", "No full responsive matrix, dark/high-contrast modes, all record combinations, or real learner comprehension evidence."]
+}

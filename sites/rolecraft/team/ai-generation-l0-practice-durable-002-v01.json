@@ -1,0 +1,93 @@
+{
+  "artifact_dir": "sites/rolecraft/team/ai-generation-l0-practice-durable-002",
+  "crash_sequence": [
+    {
+      "from_checkpoint": "tool",
+      "run_id": "run-durable-002",
+      "state": "restarted"
+    },
+    {
+      "reason": "partial_result_hold",
+      "state": "manual_stop"
+    },
+    {
+      "from_checkpoint": "tool",
+      "state": "replay_required"
+    },
+    {
+      "callback_id": "cb-001",
+      "dedupe": "reused",
+      "state": "replayed"
+    },
+    {
+      "checkpoint_manifest_valid": true,
+      "draft_complete": true,
+      "state": "checked"
+    },
+    {
+      "recipient": "QA",
+      "state": "handed_off",
+      "status": "pending"
+    }
+  ],
+  "decision": "insufficient_evidence",
+  "evidence_card_sha256": "a715850d9dfd6a933c15b8fd93f99bae1a385d4ea46e678f85503d118aa50089",
+  "exercise_version": "v0.1",
+  "first_failures": [
+    "DUPLICATE_CALLBACK_PAYLOAD_MISMATCH",
+    "CHECKPOINT_CORRUPT",
+    "CHECKPOINT_VERSION_MISMATCH",
+    "INCOMPLETE_RESULT_AFTER_CRASH"
+  ],
+  "fixture_hash": "b186af6b08d2a5bf426a5529e19f4465452b620b98c802b8097b404e15d5efd2",
+  "handoff": {
+    "recipient": "QA",
+    "self_signed": false,
+    "status": "pending"
+  },
+  "holdout": "event_order_only; callback_id dedupe and partial-result hold pass",
+  "local_scope_decision": "met_within_scope",
+  "manifest_sha256": "4e9fc683c3b6c5712b0fd6738930687fcf6bed071268f9a1c55d21243f27702b",
+  "normal_sequence": [
+    {
+      "seq": 1,
+      "state": "contract_checkpointed"
+    },
+    {
+      "callback_id": "cb-001",
+      "seq": 2,
+      "state": "tool_checkpointed"
+    },
+    {
+      "callback_id": "cb-001",
+      "payload_hash": "ea54ec0a4c635dc46f01923f7ffe9d85b71f9a6cb670bbb077bb815c3d7c7b38",
+      "seq": 3,
+      "state": "callback_accepted"
+    },
+    {
+      "callback_id": "cb-001",
+      "payload_hash": "ea54ec0a4c635dc46f01923f7ffe9d85b71f9a6cb670bbb077bb815c3d7c7b38",
+      "seq": 4,
+      "state": "duplicate_reused"
+    },
+    {
+      "content_hash": "ea54ec0a4c635dc46f01923f7ffe9d85b71f9a6cb670bbb077bb815c3d7c7b38",
+      "draft_id": "draft-run-durable-002",
+      "seq": 5,
+      "state": "single_draft_written"
+    },
+    {
+      "seq": 6,
+      "state": "final_checkpointed"
+    }
+  ],
+  "practice_id": "AI-PRACTICE-DURABLE-002",
+  "practice_pack_sha256": "b1cb993bfb6310f5f872c23980ad60a8d6dbc91c64462bbf253302328ffa0f1a",
+  "record_id": "AI-L0-DURABLE-002-20261015-001",
+  "run_byte_replay": true,
+  "unverified": [
+    "本地原子JSON不是生产数据库、真实进程崩溃、RPO/RTO、并发一致性或LangGraph checkpoint证明",
+    "真人QA签收",
+    "真实进程崩溃/RPO/RTO"
+  ]
+}

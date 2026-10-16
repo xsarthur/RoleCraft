@@ -1,0 +1,60 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4486/#records".
+1 AXWebArea 职造 · Agent 学习工作台, URL: 127.0.0.1:4486/#records
+	2 link Description: 跳到主要内容, Value: 127.0.0.1:4486/#main-content
+	3 container primary-sidebar
+		4 link Description: 职 职造 Agent 开发学习, Value: 127.0.0.1:4486/#home
+		5 container 主导航
+			6 button 首页
+			7 button 课程学习
+			8 button 题库浏览
+			9 button 学习记录
+			10 button 个人设置
+		11 text 当前学习方向
+		12 text Agent 开发者
+		13 link Description: 本机学习者 记录保存在此浏览器, Value: 127.0.0.1:4486/#settings
+	14 container main-content
+		15 container
+			34 text 学习记录
+			35 text 回到你需要的地方
+		18 container app
+			36 heading 学习记录, Value: 1
+				37 text 学习记录
+			38 text 接着读、回到疑问，再用一次自评查缺
+			39 container
+				40 heading 继续学习, Value: 2
+					41 text 继续学习
+				42 text 认识Agent工程
+				43 link Description: 继续阅读 →, Value: 127.0.0.1:4486/#learn/agent/00-learning-route/s-f8fb3240438f
+			44 container
+				45 heading 复习, Value: 2
+					46 text 复习
+				47 text 目前没有待复习题
+				48 link Description: 去题库标注 →, Value: 127.0.0.1:4486/#questions
+			49 container
+				50 heading 检验学习结果, Value: 2
+					51 text 检验学习结果
+				52 text 从你看过的知识点出题，结果只作本次自评。
+				53 link Description: 查看可用题目 →, Value: 127.0.0.1:4486/#check
+			54 checkbox 已学习, Value: 1
+			55 checkbox 未掌握, Value: 0
+			56 checkbox 已掌握（自评）, Value: 0
+			57 container
+				58 link Description: 哪些需求值得采用动态 Agent, Value: 127.0.0.1:4486/#learn/agent/00-learning-route/s-f8fb3240438f
+				59 text 认识Agent工程 · 2026/10/12 09:11:00
+				60 link Description: 做配套题目, Value: 127.0.0.1:4486/#questions?unit=00-learning-route&kp=00-learning-route%3As-f8fb3240438f
+			61 container
+				62 heading 我的项目记录, Value: 2
+					63 text 我的项目记录
+				64 text 保存问题、证据、作品结果和改进；都是本人自述。
+				65 link Description: 记录与查看项目 →, Value: 127.0.0.1:4486/#projects
+			66 button (collapsed) 收藏、笔记与历史学习记录, Secondary Actions: Expand
+				67 text 收藏、笔记与历史学习记录
+		32 container
+			33 text 职造 · Agent 开发学习 教材 v12 · 本浏览器保存
+	68 container lw-find-form
+		69 text 查教材
+		70 text entry area (settable) 查教材, ID: lw-query
+		71 button 查找
+		72 button (collapsed) Description: 展开检索结果, Secondary Actions: Expand
+
+The focused UI element is 36 heading 学习记录, Value: 1

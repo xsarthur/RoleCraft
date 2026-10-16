@@ -1,0 +1,49 @@
+{
+  "review_id": "AI-REAL-LEARNER-D0-CONTENT-20261016-01",
+  "target_record_id": "AI-REAL-LEARNER-D0-20261016-001",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "role_id": "AI",
+  "reviewer_role": "content_reviewer",
+  "date": "2026-10-16",
+  "decision": "reviewed_with_limitations",
+  "learner_status": "not_assessed",
+  "level_grant": "none",
+  "evidence": {
+    "raw_answer": "ai-generation-real-learner-d0-20261016-v01.md/.json",
+    "contract": "employee-growth-curriculum.md sections 4.1 and 5",
+    "pm_record": "ai-generation-d0-pm-v01.md",
+    "execution_performed": false,
+    "qa_status": "pending",
+    "real_model_called": false
+  },
+  "strengths": [
+    "租户A、授权来源、只读草稿和不做项边界清楚",
+    "B租户在读取前拒绝并处理混合请求依赖",
+    "unknown/blocked/forbidden首失败与QA独立复现要求清楚",
+    "输出来源定位、未知冲突和只读声明字段覆盖较全"
+  ],
+  "gaps": [
+    {"id":"P1-01","area":"claim_binding","finding":"缺tenant_id、source_hash/access_time、claim_type和绑定状态组成的逐条四元组/五元组","required_followup":"补字段合同并由QA验证跨租户、旧版本和规则引用"},
+    {"id":"P1-02","area":"model_host_boundary","finding":"未明确模型仅提议、宿主校验/执行，模型不得授权或决定退款","required_followup":"补模型前后校验与未验证输出阻断规则"},
+    {"id":"P1-03","area":"mixed_tenant_isolation","finding":"A/B混合请求未规定拆分、B不得进入prompt/cache/log及整单阻断条件","required_followup":"补可观察隔离与依赖不清时整单阻断"},
+    {"id":"P1-04","area":"failure_stop","finding":"未覆盖超时、schema错、部分响应、重复回调、旧版本和重试/幂等/升级","required_followup":"按D0失败合同补状态迁移和首失败收据"},
+    {"id":"P2-01","area":"handoff_fields","finding":"缺exercise_version、fixture hash、执行/复核人、失败编号、幂等键、签收状态；D0-03结果包未绑定冻结ID","required_followup":"补QA交接schema并保留原答"},
+    {"id":"P2-02","area":"evidence_form","finding":"只读和无外部动作仍为声明，未指定动作计数、网络/写入拦截、输出hash收据","required_followup":"无运行证据标insufficient_evidence"},
+    {"id":"P2-03","area":"fact_rule_distinction","finding":"原文事实、规则、推导、模型建议和人工决定未分型，规则版本/有效期未知时无阻断","required_followup":"补claim_type和规则有效期检查"},
+    {"id":"P2-04","area":"contract_binding","finding":"原始JSON未绑定D0合同版本、题目/夹具hash、环境和source_refs","required_followup":"由交接记录补齐，不回填学习者原答"}
+  ],
+  "unverified": [
+    "真实A/B权限与跨租户隔离",
+    "模型/SDK/供应商调用及schema、超时和部分响应",
+    "持久化恢复、缓存/日志泄漏、网络/写入拦截",
+    "QA独立复现、接收签收、真人专家和真实学习效果"
+  ],
+  "handoff": {
+    "owner": "AI生成工程师学习者/课程责任人",
+    "qa_scope": "A正常、B越权含混合输入、缺失/冲突/旧版本、schema/部分响应/超时、首失败停止与留出变体",
+    "closure": "每项缺口有运行收据、原例复验和留出证据；无真实运行时保持insufficient_evidence"
+  },
+  "notes": [
+    "不代写答案，不授等级，不覆盖历史审校或D0原始记录"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "origin": "learner_submission_draft",
+  "status": "accepted_with_evidence",
+  "learner_id": "learner-7391842650",
+  "source_receipt_index": "learner-receipt.json",
+  "learner_statement": "learner-statement-v02.txt",
+  "scope": [
+    "independent replay of four cases",
+    "verify hashes and bytes",
+    "verify B body absent",
+    "verify unpublished holdout"
+  ],
+  "receiver": {
+    "role": "独立接收方/测试工程师",
+    "identity": "chenny",
+    "accepted": true,
+    "accepted_at": "2026-10-16T13:31:30+08:00",
+    "signature": "Chenny",
+    "rebuild_command": "zsh \"/Users/shengxiong/Desktop/One People Company/sites/rolecraft/team/ai-generation-real-learner-d0-execution-learner-submission-v02/receiver-replay-v02.sh\"",
+    "reason": "Chenny 受控确认声明已签署；新版 replay 与动态 holdout 通过"
+  },
+  "level_decision": "pending",
+  "forbidden_inference": "Receiver acceptance confirms this evidence handoff only; it does not grant D0/L1/L2 or establish production competence.",
+  "raw_receipts": "raw-receipts-retry-02/",
+  "raw_sha256sums_sha256": "dd3be1b30b614d41d4421c1d32be0ad4280dff21405552c2ffc8506ad52e5535",
+  "submitted_at": "2026-10-16T11:09:25+08:00",
+  "runner_version": "d0_03_runner-v02-dynamic.py",
+  "holdout_status": "pass_dynamic_binding",
+  "holdout_evidence": "/private/tmp/chenny-receiver-holdout-v02.fekHQb/evidence",
+  "human_receipt_pending": false,
+  "receiver_confirmation": {
+    "path": "chenny-receiver-confirmation-v01.txt",
+    "sha256": "8bab7b3848b53d87072f789ebf920cfee23c141fb643d92f74fdf4dd3a02ed40"
+  },
+  "learner_statement_sha256": "7c6bf32f985c3e6c5fcb90398987fd66e33de9db74060cc07bc542a3e11961c4"
+}

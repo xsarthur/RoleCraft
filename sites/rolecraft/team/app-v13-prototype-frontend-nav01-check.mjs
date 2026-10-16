@@ -1,0 +1,36 @@
+// Client developer checks in a VM with isolated storage fixtures. This is not a browser or independent QA.
+import { readFileSync, writeFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const project = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const sources = ['dist/index.html','dist/app.js','dist/learning-workbench.js','dist/learning-experience-v13.js','dist/learning-experience-v13.css','dist/learning-v13-data.js'];
+const files = Object.fromEntries(sources.map(f => [f, { sha256: createHash('sha256').update(readFileSync(path.join(project,f))).digest('hex') }]));
+const staticData = ['content-v10-data.js','content-v12-data.js'];
+const classes = () => ({toggle(){},add(){},remove(){},contains(){return false;}});
+function runtime({localEntries = [], sessionEntries = []} = {}) {
+  const local = new Map(localEntries), session = new Map(sessionEntries), writes = [], events = new Map(), nodes = new Map(), downloads = [];
+  const store = (map, prefix) => ({getItem:k=>map.get(k)??null,setItem(k,v){writes.push(prefix+':'+k);map.set(k,v);},removeItem(){throw Error('Deleting records forbidden in this fixture');}});
+  const node = () => ({dataset:{},classList:classes(),style:{setProperty(){}},innerHTML:'',textContent:'',value:'',hidden:false,isConnected:true,setAttribute(){},removeAttribute(){},addEventListener(){},focus(){},scrollIntoView(){},querySelector(){return node();},querySelectorAll(){return [];},click(){},showModal(){},close(){}});
+  const document = {documentElement:{style:{setProperty(){}}},body:{dataset:{},classList:classes(),appendChild(n){nodes.set(n.id,n);}},activeElement:null,getElementById:id=>nodes.get(id)||null,querySelectorAll:()=>[],createElement:()=>node(),addEventListener:(name,fn)=>{events.set(name,[...(events.get(name)||[]),fn]);}};
+  class FixtureURL extends URL {static createObjectURL(blob){downloads.push(blob);return 'blob:fixture';}static revokeObjectURL(){}}
+  const context = vm.createContext({document,location:{hash:'#home',protocol:'http:',href:'http://fixture/#home'},navigator:{},localStorage:store(local,'local'),sessionStorage:store(session,'session'),URL:FixtureURL,URLSearchParams,Blob,Map,Set,AbortController,console,setTimeout(){return 1;},clearTimeout(){},requestAnimationFrame(fn){fn();return 1;},cancelAnimationFrame(){}});
+  for (const file of staticData) vm.runInContext(readFileSync(path.join(project,'dist',file),'utf8'),context,{filename:file});
+  vm.runInContext(readFileSync(path.join(project,'dist/learning-workbench.js'),'utf8'),context,{filename:'learning-workbench.js'});
+  for (const file of ['learning-v13-data.js','learning-experience-v13.js']) vm.runInContext(readFileSync(path.join(project,'dist',file),'utf8'),context,{filename:file});
+  const emit = (name,target) => { for(const fn of events.get(name)||[]) fn({target,preventDefault(){}}); };
+  const click = (attribute,dataset={}) => {const button=node();button.dataset=dataset;button.hasAttribute=name=>name===attribute;button.closest=()=>button;emit('click',button);};
+  return {context,local,session,writes,nodes,node,downloads,emit,click,workbench:context.LearningWorkbench,experience:context.LearningExperienceV13};
+}
+const tests=[];const rt=runtime();function check(name,fn){fn();tests.push({name,status:'pass'});}
+const decodeHtml=value=>value.replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#39;/g,"'");
+const links=html=>Array.from(html.matchAll(/<a[^>]*href="([^"]+)"[^>]*>(.*?)<\/a>/gs),m=>({href:decodeHtml(m[1]),label:m[2]}));
+const original='#questions/Q11?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17';
+let target,back,list;
+check('QI13-NAV01 original filtered Q11 to exact textbook evidence retains validated filter context',()=>{rt.context.location.hash=original;target=links(rt.experience.page('questions')).find(l=>l.label.includes('阅读这一节')).href;const p=new URLSearchParams(target.split('?')[1]);assert.equal(p.get('from'),'Q11');assert.equal(p.get('fromUnit'),'n03-planning-reflection');assert.equal(p.get('fromKp'),'n03-planning-reflection:s-da63f3dcff17');assert(target.startsWith('#learn/agent/'));});
+check('Textbook returns to original Q11 and then same unit/knowledge-point filtered list',()=>{rt.context.location.hash=target;back=links(rt.experience.page('learn')).find(l=>l.label.includes('回到原题 Q11')).href;assert.equal(back,original);rt.context.location.hash=back;list=links(rt.experience.page('questions')).find(l=>l.label.includes('返回题库')).href;assert.equal(list,'#questions?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17');rt.context.location.hash=list;const html=rt.experience.page('questions');assert(html.includes('value="n03-planning-reflection" selected'));assert(html.includes('value="n03-planning-reflection:s-da63f3dcff17" selected'));});
+check('Related knowledge-point jump and valid status/set filter use same return contract',()=>{rt.context.location.hash=original+'&state=weak&set=fixed';const html=rt.experience.page('questions'),knowledge=links(html).find(l=>l.href.startsWith('#learn/agent/')&&!l.label.includes('阅读这一节'));assert(knowledge);const p=new URLSearchParams(knowledge.href.split('?')[1]);assert.equal(p.get('fromState'),'weak');assert.equal(p.get('fromSet'),'fixed');rt.context.location.hash=knowledge.href;const returning=links(rt.experience.page('learn')).find(l=>l.label.includes('回到原题')).href;const params=new URLSearchParams(returning.split('?')[1]);assert.equal(params.get('state'),'weak');assert.equal(params.get('set'),'fixed');});
+check('No-filter existing reference still returns Q11; unknown filters/external return values are not promoted',()=>{rt.context.location.hash='#questions';assert.equal((rt.experience.page('questions').match(/class="v13-question-title"/g)||[]).length,114);rt.context.location.hash='#questions/Q11';const reference=links(rt.experience.page('questions')).find(l=>l.label.includes('阅读这一节')).href;rt.context.location.hash=reference;assert.equal(links(rt.experience.page('learn')).find(l=>l.label.includes('回到原题')).href,'#questions/Q11');rt.context.location.hash=reference+'&fromUnit=unknown&fromKp=javascript%3Aalert(1)&fromState=unknown&fromSet=unknown&return=https%3A%2F%2Fevil.invalid';assert.equal(links(rt.experience.page('learn')).find(l=>l.label.includes('回到原题')).href,'#questions/Q11');rt.context.location.hash=reference.replace('from=Q11','from=https%3A%2F%2Fevil.invalid');assert(!links(rt.experience.page('learn')).some(l=>l.label.includes('回到原题')));});
+const report={version:'app-v13-prototype-frontend-nav01-check-1',issueId:'QI13-NAV01',scope:'developer narrow isolated VM route/contract check only; not independent QA or real browser',runtime:process.version,createdAt:new Date().toISOString(),files,tests,corpusVersion:'textbook-v12',corpusHash:rt.context.RolecraftContentV12.corpusHash,original,target,back,list};writeFileSync(path.join(project,'team/app-v13-prototype-frontend-nav01-check.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({status:'pass',groups:tests.length,issueId:report.issueId,sourceSha256:files['dist/learning-experience-v13.js'].sha256,target,back,list}));

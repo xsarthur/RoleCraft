@@ -1,0 +1,78 @@
+{
+  "origin": "learner_submission_draft",
+  "status": "receiver_accepted_evidence_pending_level_review",
+  "learner_id": "learner-7391842650",
+  "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "role_id": "AI",
+  "fixture_id": "F-AI-SOURCE-CLAIM-v1",
+  "fixture_sha256": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+  "fixture_file_sha256": "f6cc25edad6403c052f66167adecf666d770f12b82170f2fc996119ef118f446",
+  "learner_entrypoint": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-learner-submission-v02/learner-run-v02-retry-02.sh",
+  "learner_entrypoint_sha256": "83ac0091ab39bebaea166d028a42595182dd07601e65cffefc99b8ca09ed0dfa",
+  "execution": {
+    "executed_by": "learner",
+    "execution_started_at": "2026-10-16T11:09:21+08:00",
+    "execution_finished_at": "2026-10-16T11:09:22+08:00",
+    "timezone": "Asia/Shanghai",
+    "workspace_path": "/Users/shengxiong/Desktop/One People Company",
+    "run_ids": [
+      "run-1",
+      "run-2"
+    ],
+    "raw_receipts_present": true,
+    "input_snapshot_sha256": "33be9e47edd1c9652b59d1bdac0e1fbe33a5f288f110eda1ff114c175f881939",
+    "manifest_sha256": "dd3be1b30b614d41d4421c1d32be0ad4280dff21405552c2ffc8506ad52e5535",
+    "raw_receipts_path": "raw-receipts-retry-02/",
+    "raw_sha256sums_sha256": "dd3be1b30b614d41d4421c1d32be0ad4280dff21405552c2ffc8506ad52e5535",
+    "bytes_manifest_sha256": "e2781d7f882b9dc95ace2fc7e8e2d83c9f598fbb3db5896f38a4552e248df50f",
+    "raw_manifest_entries": 34,
+    "entrypoint_sha256": "83ac0091ab39bebaea166d028a42595182dd07601e65cffefc99b8ca09ed0dfa"
+  },
+  "environment_contract": {
+    "network": "disabled",
+    "real_model": false,
+    "cloud": false,
+    "paid_api": false,
+    "real_user_data": false,
+    "external_action": null
+  },
+  "reference_only_existing_artifact": {
+    "path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-learner-receipts/",
+    "original_sha256sums_sha256": "7768f8af1a89c2830ba3dca945320f3b46722008f8400e8120eba7293f4deae7",
+    "execution_role": "AI-generation-engineer local isolated execution",
+    "learner_execution": false,
+    "use_as_learner_evidence": false
+  },
+  "provenance": {
+    "status": "corrected_learner_statement_and_receiver_acceptance_present",
+    "submission_channel": "workspace terminal and signed statement supplied by learner",
+    "submitted_at": "2026-10-16T11:09:25+08:00",
+    "learner_statement_sha256": "7c6bf32f985c3e6c5fcb90398987fd66e33de9db74060cc07bc542a3e11961c4",
+    "top_level_manifest_sha256": null,
+    "learner_statement_path": "learner-statement-v02.txt",
+    "receiver_acceptance_record": "receiver-acceptance-v03-dynamic-v02.json",
+    "receiver_confirmation_path": "chenny-receiver-confirmation-v01.txt",
+    "receiver_confirmation_sha256": "8bab7b3848b53d87072f789ebf920cfee23c141fb643d92f74fdf4dd3a02ed40"
+  },
+  "human_receipt_pending": false,
+  "level_granted": null,
+  "qa_status": "corrected_statement_signed; dynamic_holdout_passed; chenny_confirmation_signed; level_review_pending",
+  "receiver_candidate": {
+    "identity": "chenny",
+    "role": "独立接收方/测试工程师",
+    "acceptance_status": "accepted_with_evidence",
+    "accepted_at": "2026-10-16T13:31:30+08:00",
+    "signature": "Chenny",
+    "holdout_status": "pass_dynamic_binding",
+    "confirmation_path": "chenny-receiver-confirmation-v01.txt",
+    "confirmation_sha256": "8bab7b3848b53d87072f789ebf920cfee23c141fb643d92f74fdf4dd3a02ed40"
+  },
+  "statement_correction": {
+    "status": "signed_by_learner",
+    "path": "learner-statement-v02.txt",
+    "sha256": "7c6bf32f985c3e6c5fcb90398987fd66e33de9db74060cc07bc542a3e11961c4",
+    "supersedes": "learner-statement.txt",
+    "original_preserved": true
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "kind": "QA harness wording assumption, not product defect",
+  "firstOutput": "independent-client-vm.json",
+  "case": "PT13-11 unknown section",
+  "wrongExpectation": "literal 旧位置",
+  "actualControlledMessage": "这处教材位置在所选版本中不可用；不会换成另一小节",
+  "correction": "narrow retest explicit historical version and unknown section/question controlled outputs; preserve first full run, no broad repeated state suite claimed"
+}

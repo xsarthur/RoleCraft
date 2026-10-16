@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/team/employee-growth-mvp/agent-developer/run-20261015/scripts/check_evidence.py", line 32, in <module>
+    require(t2["hit"]["status"] == "recommended" and bool(t2["source_sha256"]), "T2 hit retained verified source hash", t2["hit"])
+                                                          ~~^^^^^^^^^^^^^^^^^
+KeyError: 'source_sha256'

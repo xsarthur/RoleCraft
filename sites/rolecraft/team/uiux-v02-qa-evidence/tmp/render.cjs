@@ -1,0 +1,2 @@
+const fs=require('fs');const path=require('path');const sharp=require('/Users/shengxiong/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
+(async()=>{let dir='sites/rolecraft/textbooks/uiux-design-v02/assets';for(let f of fs.readdirSync(dir).filter(x=>x.endsWith('.svg'))){await sharp(path.join(dir,f),{density:96}).png().toFile('sites/rolecraft/team/uiux-v02-qa-evidence/'+f.replace('.svg','.png'));console.log(f)}})();

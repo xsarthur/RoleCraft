@@ -1,0 +1,5333 @@
+{
+  "schemaVersion": 1,
+  "answerSetVersion": "interview-answers-v1",
+  "author": "教材研发员B / answer_author_b",
+  "assignedIds": [
+    "Q41",
+    "Q42",
+    "Q43",
+    "Q44",
+    "Q45",
+    "Q46",
+    "Q47",
+    "Q48",
+    "Q49",
+    "Q50",
+    "Q51",
+    "Q52",
+    "Q53",
+    "Q54",
+    "Q55",
+    "Q56",
+    "Q57",
+    "Q58",
+    "Q59",
+    "Q60",
+    "Q61",
+    "Q62",
+    "Q63",
+    "Q64",
+    "Q65",
+    "Q66",
+    "Q67",
+    "Q68",
+    "Q69",
+    "Q70",
+    "Q71",
+    "Q72",
+    "Q73",
+    "Q74",
+    "Q75",
+    "Q76",
+    "Q77",
+    "Q78",
+    "Q79",
+    "Q80"
+  ],
+  "items": [
+    {
+      "id": "Q41",
+      "collection": "fixed100",
+      "sourceId": 41,
+      "question": "RAG、长上下文直接阅读和模型微调，分别适合解决哪些知识问题？",
+      "answerPath": "answers/Q41.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "b44abd2d5f73f688ad2b365f503bab3ab0ba786b8b6994456fc108294c216ec4",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n05-retrieval-ingestion.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16",
+          "section": "8 RAG、长上下文与微调按缺失能力选择",
+          "startLine": 130,
+          "endLine": 135,
+          "supports": "RAG、长上下文与微调的信息路径、维护代价和组合边界。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "同一任务 四种控制权",
+          "startLine": 7,
+          "endLine": 21,
+          "supports": "按同一目标比较最小方案；固定流程和动态选择的控制权区别。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；先定位缺的是新事实、长文整合还是稳定行为。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：先定位缺的是新事实、长文整合还是稳定行为；对照RAG/长上下文/微调的信息与维护路径。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：资料每日更新且需可撤回引用时三方案如何保证当前事实并测过期回答。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q41-03",
+        "CR-Q41-04",
+        "CR-Q41-06"
+      ],
+      "priorCounterexample": "资料每日更新且需可撤回引用时三方案如何保证当前事实并测过期回答",
+      "priorAnswerSha256": "04d0b9ace4a1d52a81a640b3f8118cb6b9425a05fa4f2eb7da3a8bb53927010a",
+      "priorStrengthPreserved": "分别给RAG、长上下文和微调适用知识、维护成本与记忆删除边界",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q42",
+      "collection": "fixed100",
+      "sourceId": 42,
+      "question": "一个完整 RAG 管线包含哪些环节？如何逐段定位回答错误？",
+      "answerPath": "answers/Q42.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "d5fcca8f30cc5e04974bfcb302b85df1bbd81d5bada0d9fafe53ec4da38c8e85",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/c02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+          "section": "本次回答看到的是哪一个资料版本",
+          "startLine": 8,
+          "endLine": 17,
+          "supports": "源与索引快照、切块完整性、版本与当前权限的读取链。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+          "section": "无答案应能解释是哪一层缺证",
+          "startLine": 228,
+          "endLine": 235,
+          "supports": "NO_HITS原因、冲突条件、部分支持和权限安全的不足响应。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/f02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8",
+          "section": "先定义候选 而不是要求模型“给一个可靠答案”",
+          "startLine": 18,
+          "endLine": 25,
+          "supports": "观察/推断分离；结构校验不能替代业务和语义检查。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n05-retrieval-ingestion.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16",
+          "section": "1 摄取先恢复文档含义，再切块",
+          "startLine": 7,
+          "endLine": 28,
+          "supports": "表格、代码/段落结构与位置、跨页条件保留，解析质量核对。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；沿采集解析、版本切块、索引、查询召回、重排、组上下文和生成引用画全链。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：沿采集解析、版本切块、索引、查询召回、重排、组上下文和生成引用画全链；定位首个证据偏离阶段。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：索引有正确块但答案没引用时怎样区别召回、重排截断或生成错误。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q42-02",
+        "CR-Q42-03",
+        "CR-Q42-04",
+        "CR-Q42-06"
+      ],
+      "priorCounterexample": "索引有正确块但答案没引用时怎样区别召回、重排截断或生成错误",
+      "priorAnswerSha256": "9a8588632f8b6d148673d25ed06e0186b18c632276e61840d7722bef45e6a201",
+      "priorStrengthPreserved": "给摄取快照链、NO_HITS原因和事实/推断分离",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q43",
+      "collection": "fixed100",
+      "sourceId": 43,
+      "question": "如何根据文档结构、查询类型和引用需求设计切块策略？",
+      "answerPath": "answers/Q43.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "bce96408a69b649ed5f1f2ef8e5cee42d5c599d1288b798b3d646fe67684536c",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/c02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+          "section": "本次回答看到的是哪一个资料版本",
+          "startLine": 8,
+          "endLine": 17,
+          "supports": "源与索引快照、切块完整性、版本与当前权限的读取链。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+          "section": "做一个能定位问题的检索比较",
+          "startLine": 236,
+          "endLine": 253,
+          "supports": "固定查询与预算，逐段核必要证据、上下文和支持性；无实测不填提升。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n05-retrieval-ingestion.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16",
+          "section": "1 摄取先恢复文档含义，再切块",
+          "startLine": 7,
+          "endLine": 28,
+          "supports": "表格、代码/段落结构与位置、跨页条件保留，解析质量核对。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；从文档语义结构、查询跨度和引用粒度设计切块。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：从文档语义结构、查询跨度和引用粒度设计切块；比较标题/段落/表格边界与重叠代价。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：函数名与决定条件分两块时应怎么切和测必要证据召回。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q43-01",
+        "CR-Q43-02",
+        "CR-Q43-03",
+        "CR-Q43-04",
+        "CR-Q43-05",
+        "CR-Q43-06"
+      ],
+      "priorCounterexample": "函数名与决定条件分两块时应怎么切和测必要证据召回",
+      "priorAnswerSha256": "011a51367dd16220eedf9b4de5110a5ff194dd06b14ace73979b9aee073f3d05",
+      "priorStrengthPreserved": "给摄取版本、公平检索测量和表格/跨页结构风险",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q44",
+      "collection": "fixed100",
+      "sourceId": 44,
+      "question": "如何选择 Embedding 模型，评估领域术语、中文与多语言查询效果？",
+      "answerPath": "answers/Q44.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "e40ea5ff24cd7a7c995d458728cb2133cc657b2ebbd38deb83dfb069402f2117",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n05-retrieval-ingestion.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16",
+          "section": "嵌入模型选择要按查询分布验证",
+          "startLine": 55,
+          "endLine": 62,
+          "supports": "模型空间和编码一致性；领域/中英/否定/ID分层选型及质量成本实验。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+          "section": "检索策略必须按查询类型比较",
+          "startLine": 18,
+          "endLine": 27,
+          "supports": "词法与语义优劣、候选后重排、RRF及原始分数不可直接相加。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+          "section": "做一个能定位问题的检索比较",
+          "startLine": 236,
+          "endLine": 253,
+          "supports": "固定查询与预算，逐段核必要证据、上下文和支持性；无实测不填提升。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n10-evaluation-projects.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+          "section": "英文正常、中文失败：找第一处证据偏离",
+          "startLine": 34,
+          "endLine": 51,
+          "supports": "语言等价与分词、检索、提示、工具、评测的分层诊断。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；先固定领域、语言、术语及权限过滤的查询分布。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：先固定领域、语言、术语及权限过滤的查询分布；同样语料切块下比较候选Embedding。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：同维两模型混用能产生数字分数，为何仍不可比较。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q44-01",
+        "CR-Q44-02",
+        "CR-Q44-03",
+        "CR-Q44-04",
+        "CR-Q44-05",
+        "CR-Q44-06",
+        "CR-Q44-08"
+      ],
+      "priorCounterexample": "同维两模型混用能产生数字分数，为何仍不可比较",
+      "priorAnswerSha256": "f2f39ac35339cb871360c7f8ff73b3a1801823fa69b2a89aa4af613b26a8f03c",
+      "priorStrengthPreserved": "指出同维度不等同空间及模型/编码入口需一致",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q45",
+      "collection": "fixed100",
+      "sourceId": 45,
+      "question": "关键词检索、向量检索和混合检索分别有什么优势与盲区？",
+      "answerPath": "answers/Q45.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "7cf09de7520093168fc9be51da80522af1a630d3f17dc611d446733b6c1197ca",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/c02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+          "section": "检索策略必须按查询类型比较",
+          "startLine": 18,
+          "endLine": 27,
+          "supports": "词法与语义优劣、候选后重排、RRF及原始分数不可直接相加。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+          "section": "做一个能定位问题的检索比较",
+          "startLine": 236,
+          "endLine": 253,
+          "supports": "固定查询与预算，逐段核必要证据、上下文和支持性；无实测不填提升。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；用编号/术语精确匹配与同义表达分别说明关键词和向量长短。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：用编号/术语精确匹配与同义表达分别说明关键词和向量长短；明确混合候选去重与融合规则。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：自然语言返回近义但不同报告ID时如何拒绝，混合分数怎避免直接相加。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q45-02",
+        "CR-Q45-03",
+        "CR-Q45-04",
+        "CR-Q45-05",
+        "CR-Q45-06"
+      ],
+      "priorCounterexample": "自然语言返回近义但不同报告ID时如何拒绝，混合分数怎避免直接相加",
+      "priorAnswerSha256": "775e9be8acfb4aa000f5a0d57fe6cc9951b24a74f309446ca12008c9424bcb09",
+      "priorStrengthPreserved": "用精确ID和自然语言查询区分词法/语义，给公平评估设置",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q46",
+      "collection": "fixed100",
+      "sourceId": 46,
+      "question": "Reranker 改善的是哪一阶段？怎样衡量它带来的质量与时延代价？",
+      "answerPath": "answers/Q46.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "ba9d511e4bd314f6c5bcd81550f6c8573e9262898466eb22a1fb413f6d98d899",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n05-retrieval-ingestion.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16",
+          "section": "5 重排解决候选优先级，不解决摄取丢失",
+          "startLine": 75,
+          "endLine": 82,
+          "supports": "双塔与cross-encoder、固定候选对照、排序收益及端到端延迟边界。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；把reranker放在候选召回后并明确不能救回漏候选。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：把reranker放在候选召回后并明确不能救回漏候选；固定召回集合比较排序前后。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第3段（L13）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：正确块没进候选时重排再准为何不能补回，怎样把召回与重排收益分开。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q46-01",
+        "CR-Q46-03",
+        "CR-Q46-04",
+        "CR-Q46-05",
+        "CR-Q46-06",
+        "CR-Q46-08"
+      ],
+      "priorCounterexample": "正确块没进候选时重排再准为何不能补回，怎样把召回与重排收益分开",
+      "priorAnswerSha256": "4392f3479b80bf039af433d9a89762a94e53dcb18f3050415a9fa75ed28d4132",
+      "priorStrengthPreserved": "说明双塔预计算与cross-encoder逐对计算，定位候选后重排",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q47",
+      "collection": "fixed100",
+      "sourceId": 47,
+      "question": "查询改写、多查询和多跳检索什么时候有效，什么时候容易改变原意？",
+      "answerPath": "answers/Q47.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "487ef53ba3ef73e27f3795796fd27ae043bcd0bb447f17d21087d765230aded8",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n05-retrieval-ingestion.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16",
+          "section": "6 改写、多查询与多跳要保持原问题约束",
+          "startLine": 83,
+          "endLine": 92,
+          "supports": "硬约束、多查询去重、观察驱动多跳、预算和无进展停止。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；先保留用户实体、否定、时间和权限约束。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：先保留用户实体、否定、时间和权限约束；按缺词/多表达/证据依赖选改写、多查询或多跳。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第3段（L13）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：问题需先找产品再找政策时怎样多跳且不扩张权限与预算。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q47-01",
+        "CR-Q47-02",
+        "CR-Q47-03",
+        "CR-Q47-04",
+        "CR-Q47-05",
+        "CR-Q47-06"
+      ],
+      "priorCounterexample": "问题需先找产品再找政策时怎样多跳且不扩张权限与预算",
+      "priorAnswerSha256": "4dfe0b27c78538224f4f34a126e2c3870a7bebe7100bb730022a0ab0ba0d2cf3",
+      "priorStrengthPreserved": "给查询改写保存硬约束及React否定反例",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q48",
+      "collection": "fixed100",
+      "sourceId": 48,
+      "question": "如何让答案引用与实际支持结论的原文、版本及位置对应？",
+      "answerPath": "answers/Q48.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "e9051a0848796bcf45af3d5dfde907f958d9283d681fbe31a11472751d4b3372",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/c02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+          "section": "本次回答看到的是哪一个资料版本",
+          "startLine": 8,
+          "endLine": 17,
+          "supports": "源与索引快照、切块完整性、版本与当前权限的读取链。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+          "section": "把关联检查与支持判断分别建模",
+          "startLine": 28,
+          "endLine": 35,
+          "supports": "原子主张、引用关联与事实支持分离，代码不直接证明业务规则。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+          "section": "一个完整的过滤 排序 读回与事实支持链",
+          "startLine": 36,
+          "endLine": 227,
+          "supports": "固定快照的过滤、哈希位置读回、规范事实支持与冲突；不继承其运行结论。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；将答案拆成可核原子主张。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：将答案拆成可核原子主张；绑定来源版本、位置与快照。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：引用正确代码行却声称业务规则应<=7，哪一层拒绝该主张。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q48-02",
+        "CR-Q48-03",
+        "CR-Q48-04",
+        "CR-Q48-06",
+        "CR-Q48-08"
+      ],
+      "priorCounterexample": "引用正确代码行却声称业务规则应<=7，哪一层拒绝该主张",
+      "priorAnswerSha256": "e9f2b52dbdae651de3643924d4365d4b7033ce7706fd78b0d7d7d56bb8bf3a93",
+      "priorStrengthPreserved": "区分快照一致性与主张支持，给<7并不证明业务<=7的反例",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q49",
+      "collection": "fixed100",
+      "sourceId": 49,
+      "question": "没有足够证据、资料互相矛盾或知识已经过期时，系统应怎样响应？",
+      "answerPath": "answers/Q49.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "a41b07fa680e4ec5cc6a1605865a124090f738cbb71d9b4c0f861ebe3f7db22b",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/c02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+          "section": "无答案应能解释是哪一层缺证",
+          "startLine": 228,
+          "endLine": 235,
+          "supports": "NO_HITS原因、冲突条件、部分支持和权限安全的不足响应。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "三种输入暴露不同的必要性",
+          "startLine": 25,
+          "endLine": 32,
+          "supports": "资料齐全/未知路径/同级规则冲突的不同处理，投票不产生权威。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+          "section": "本次回答看到的是哪一个资料版本",
+          "startLine": 8,
+          "endLine": 17,
+          "supports": "源与索引快照、切块完整性、版本与当前权限的读取链。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+          "section": "把关联检查与支持判断分别建模",
+          "startLine": 28,
+          "endLine": 35,
+          "supports": "原子主张、引用关联与事实支持分离，代码不直接证明业务规则。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+          "section": "一个完整的过滤 排序 读回与事实支持链",
+          "startLine": 36,
+          "endLine": 227,
+          "supports": "固定快照的过滤、哈希位置读回、规范事实支持与冲突；不继承其运行结论。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；区分未检到、原资料无信息、证据矛盾和时效不足。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：区分未检到、原资料无信息、证据矛盾和时效不足；核来源权威与适用时间并有限补检。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：旧政策有证据但已过适用期，能否仍作为确定答案引用。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q49-02",
+        "CR-Q49-03",
+        "CR-Q49-04",
+        "CR-Q49-06"
+      ],
+      "priorCounterexample": "旧政策有证据但已过适用期，能否仍作为确定答案引用",
+      "priorAnswerSha256": "56c5da61a167a1f43a88b23414f49cce9809875398372ebeafad2978207e4471",
+      "priorStrengthPreserved": "说明NO_HITS不可等于资料不存在，冲突需WAIT_INPUT而非投票",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q50",
+      "collection": "fixed100",
+      "sourceId": 50,
+      "question": "Agentic RAG 相对固定 RAG 增加了什么决策能力？如何证明额外复杂度值得？",
+      "answerPath": "answers/Q50.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "e2dc5404222a70f73abbe86ebc1a38e95d033998bb2ceb93f991fec2a79d842b",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n05-retrieval-ingestion.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16",
+          "section": "7 固定 RAG 与 Agentic RAG 的完整对照",
+          "startLine": 93,
+          "endLine": 129,
+          "supports": "自适应补证控制、完成/冲突/预算分支、同预算强基线比较。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；对照固定检索路径与可选择补检/改写/多跳的动态策略。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：对照固定检索路径与可选择补检/改写/多跳的动态策略；用需要追加证据的任务说明新增价值。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：固定RAG已能回答所有样本时Agentic多次检索为何可能无收益。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q50-01",
+        "CR-Q50-02",
+        "CR-Q50-03",
+        "CR-Q50-04",
+        "CR-Q50-05",
+        "CR-Q50-06"
+      ],
+      "priorCounterexample": "固定RAG已能回答所有样本时Agentic多次检索为何可能无收益",
+      "priorAnswerSha256": "b36275a556f0b7f67973b2e9713ce8faa87cb6d8c77352dc7c636f1324b4473e",
+      "priorStrengthPreserved": "区分固定检索链与观察驱动检索/停止选择，运行时仍约束",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q51",
+      "collection": "fixed100",
+      "sourceId": 51,
+      "question": "在你采用的版本中，LangChain 和 LangGraph 分别承担什么职责？",
+      "answerPath": "answers/Q51.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "d47988adc786ac79fdc244b7c82e63c12b46018df62d479c5e6557bcf69ca237",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "把控制循环映射为可恢复的状态图",
+          "startLine": 1,
+          "endLine": 23,
+          "supports": "教材固定框架版本与LangChain/LangGraph职责；状态所有权和并行合并。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "先定义状态的所有者，再画节点",
+          "startLine": 7,
+          "endLine": 23,
+          "supports": "共享字段写入责任、节点局部更新、findings合并与未核事实区分。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e01.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+          "section": "三个提交点定义可恢复事实",
+          "startLine": 8,
+          "endLine": 17,
+          "supports": "意图、发送前尝试、结果三个本地提交边界，不能原子包含远端。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "section": "2 控制权在运行时 聊天上下文只是一种投影",
+          "startLine": 36,
+          "endLine": 59,
+          "supports": "权威状态和模型投影分离；批准、未决效果不能靠摘要更改。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "Checkpoint不是远端事务",
+          "startLine": 58,
+          "endLine": 65,
+          "supports": "内存与持久checkpointer区别、interrupt重入、外部动作和版本迁移边界。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "何时值得自研",
+          "startLine": 80,
+          "endLine": 90,
+          "supports": "任务表、CAS/lease与自研状态机；框架代价和相同故障合同对照。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；固定教材采用的框架版本与术语语境。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：固定教材采用的框架版本与术语语境；分开模型/工具应用接口和状态图持久执行职责。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：模型工具接口可用但图无检查点时分别是哪层能力缺口。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q51-01",
+        "CR-Q51-02",
+        "CR-Q51-03",
+        "CR-Q51-04",
+        "CR-Q51-05",
+        "CR-Q51-06",
+        "CR-Q51-08"
+      ],
+      "priorCounterexample": "模型工具接口可用但图无检查点时分别是哪层能力缺口",
+      "priorAnswerSha256": "05390349194860170adee0cb1079741976f30103d751eddcd42f672834b528d1",
+      "priorStrengthPreserved": "列已采用LangGraph/检查点/core版本并声明兼容限制",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      },
+      "externalSources": [
+        {
+          "title": "LangChain v1官方职责说明",
+          "url": "https://docs.langchain.com/oss/python/releases/langchain-v1",
+          "version": "v1滚动文档；本题固定包版本另以v12说明",
+          "checkedAt": "2026-10-14",
+          "supports": "create_agent建立于LangGraph之上；只核职责关系，不继承当前新增API。"
+        }
+      ]
+    },
+    {
+      "id": "Q52",
+      "collection": "fixed100",
+      "sourceId": 52,
+      "question": "用图表示 Agent 时，节点、边和共享状态分别应该包含什么？",
+      "answerPath": "answers/Q52.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "69a62213649126d88d981f4afd7bbb6314d7c182fbf770465feabefd778ad2c5",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "先定义状态的所有者，再画节点",
+          "startLine": 7,
+          "endLine": 23,
+          "supports": "共享字段写入责任、节点局部更新、findings合并与未核事实区分。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；先定义状态字段的所有者和不变量。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：先定义状态字段的所有者和不变量；再安排节点输入输出与条件边。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：两个节点覆盖findings导致丢证据时如何在图和状态schema中修正。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q52-02",
+        "CR-Q52-03",
+        "CR-Q52-04",
+        "CR-Q52-06",
+        "CR-Q52-08"
+      ],
+      "priorCounterexample": "两个节点覆盖findings导致丢证据时如何在图和状态schema中修正",
+      "priorAnswerSha256": "e89f047b216a883a2f8c1dac695700acd503e59ac418a9847cf059e679e69e6f",
+      "priorStrengthPreserved": "说明节点局部更新、边后继与reducer，TypedDict非运行校验",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q53",
+      "collection": "fixed100",
+      "sourceId": 53,
+      "question": "状态字段应如何建模，避免把全部消息和中间数据无限累积？",
+      "answerPath": "answers/Q53.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "e28d0af05c4532423a73e3c7d6a0458c9f7b1add805437865f8945accf0a94e5",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n02-context-memory-prompt.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+          "section": "1 四种保存对象，四种生命周期",
+          "startLine": 7,
+          "endLine": 21,
+          "supports": "历史、权威状态、当轮投影及长期记忆的字段和生命周期。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n02-context-memory-prompt.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+          "section": "5 压缩的是证据投影，不是事实账本",
+          "startLine": 74,
+          "endLine": 83,
+          "supports": "摘要校验、必要约束与未决动作保留、工件外置与存储配额。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e01.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+          "section": "三个提交点定义可恢复事实",
+          "startLine": 8,
+          "endLine": 17,
+          "supports": "意图、发送前尝试、结果三个本地提交边界，不能原子包含远端。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "section": "2 控制权在运行时 聊天上下文只是一种投影",
+          "startLine": 36,
+          "endLine": 59,
+          "supports": "权威状态和模型投影分离；批准、未决效果不能靠摘要更改。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "Checkpoint不是远端事务",
+          "startLine": 58,
+          "endLine": 65,
+          "supports": "内存与持久checkpointer区别、interrupt重入、外部动作和版本迁移边界。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n02-context-memory-prompt.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+          "section": "5 压缩的是证据投影，不是事实账本",
+          "startLine": 79,
+          "endLine": 83,
+          "supports": "摘要校验、必要约束与未决动作保留、工件外置与存储配额。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；分开权威任务状态、事件账本、消息投影与大工件引用。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：分开权威任务状态、事件账本、消息投影与大工件引用；限制每类字段增长与保留窗口。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第3段（L13）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：清理历史后pending action的回执还未核对，哪些字段必须保留。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q53-03",
+        "CR-Q53-04",
+        "CR-Q53-05",
+        "CR-Q53-06",
+        "CR-Q53-08"
+      ],
+      "priorCounterexample": "清理历史后pending action的回执还未核对，哪些字段必须保留",
+      "priorAnswerSha256": "7cb2705754f67a19a5362d483a3dd822330b168059dfcbc91f432fbed16621d5",
+      "priorStrengthPreserved": "给历史/状态分离、引用摘要游标、配额/清理并保留未决动作",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q54",
+      "collection": "fixed100",
+      "sourceId": 54,
+      "question": "并行节点同时更新状态时，如何处理合并规则和写入冲突？",
+      "answerPath": "answers/Q54.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "1cbb8eba11bdaf287f4fd3822e7c03fd810dc436193647d46385bb058f79dd59",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "先定义状态的所有者，再画节点",
+          "startLine": 7,
+          "endLine": 23,
+          "supports": "共享字段写入责任、节点局部更新、findings合并与未核事实区分。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "摘自本章可执行例：冲突必须暴露，返回新对象不就地改输入。",
+          "startLine": 24,
+          "endLine": 40,
+          "supports": "按不可变来源键幂等合并、同键异内容拒绝，结合/交换及有序字段边界。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；先按字段定义并行写入语义。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：先按字段定义并行写入语义；无序来源集合用不可变键去重合并，有序数据保留逻辑序号。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第3段（L13）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：同键同内容重复应同结果；同键不同内容拒绝；交换两输入结果一致；有序步骤不可直接集合化。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [],
+      "priorCounterexample": "同键同内容重复应同结果；同键不同内容拒绝；交换两输入结果一致；有序步骤不可直接集合化",
+      "priorAnswerSha256": "f52b3bf4ac078993af02168918108807bec9fd566ebb62e036284a0b66fa9808",
+      "priorStrengthPreserved": "说明稳定来源键合并、异内容冲突、重放去重，结合交换幂等及有序/单授权者边界",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q55",
+      "collection": "fixed100",
+      "sourceId": 55,
+      "question": "条件路由由规则决定还是由模型决定，各有什么适用场景？",
+      "answerPath": "answers/Q55.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "f6a434e601c7291a0cbfd9d9985c9635092207c3354d304684915b372d94a686",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "同一任务 四种控制权",
+          "startLine": 7,
+          "endLine": 21,
+          "supports": "按同一目标比较最小方案；固定流程和动态选择的控制权区别。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "三种输入暴露不同的必要性",
+          "startLine": 25,
+          "endLine": 32,
+          "supports": "资料齐全/未知路径/同级规则冲突的不同处理，投票不产生权威。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "核心连接摘录；完整导入、节点与self_test见链接文件。",
+          "startLine": 41,
+          "endLine": 90,
+          "supports": "汇合依赖、规则/模型白名单路由、批准摘要检查；不继承旧执行结果。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；将安全/权限/枚举条件交确定性规则。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：将安全/权限/枚举条件交确定性规则；把语义未知留给受约束模型候选。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第3段（L13）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：模型输出未知节点不能动态执行函数；固定可枚举两路径不应因含模型便称动态Agent。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [],
+      "priorCounterexample": "模型输出未知节点不能动态执行函数；固定可枚举两路径不应因含模型便称动态Agent",
+      "priorAnswerSha256": "ebb3ef565a309697a928cede9499da5e0d96cdd26124dd38cba80068cc811845",
+      "priorStrengthPreserved": "把规则适用权限/预算与模型适用未知调查区别，给固定路径仍够用及白名单节点反例",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q56",
+      "collection": "fixed100",
+      "sourceId": 56,
+      "question": "Checkpoint 应保存什么，才能支持失败恢复与人工介入？",
+      "answerPath": "answers/Q56.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "433e4981263c87736bad190cbbd86dab94811578651e923785f3842bc9ada439",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/e01.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+          "section": "三个提交点定义可恢复事实",
+          "startLine": 8,
+          "endLine": 17,
+          "supports": "意图、发送前尝试、结果三个本地提交边界，不能原子包含远端。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "section": "2 控制权在运行时 聊天上下文只是一种投影",
+          "startLine": 36,
+          "endLine": 59,
+          "supports": "权威状态和模型投影分离；批准、未决效果不能靠摘要更改。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "Checkpoint不是远端事务",
+          "startLine": 58,
+          "endLine": 65,
+          "supports": "内存与持久checkpointer区别、interrupt重入、外部动作和版本迁移边界。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c03.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+          "section": "一个意图 多个协议调用与发送尝试",
+          "startLine": 16,
+          "endLine": 80,
+          "supports": "action/tool_call/attempt身份分开、原参数指纹、唯一槽位及批准绑定。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "section": "6 先核对未决动作 再让模型继续",
+          "startLine": 241,
+          "endLine": 261,
+          "supports": "成功/不一致/执行中/无效果/查不到/不可查询恢复分支与下游幂等条件。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "section": "10.3 最关键的崩溃窗口 工单创建成功 结果尚未提交",
+          "startLine": 747,
+          "endLine": 767,
+          "supports": "工单成功但未提交时原键核对；结果提交确认丢失与远端效果去重的区别。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e03.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+          "section": "精确批准绑定的是一次逻辑意图",
+          "startLine": 54,
+          "endLine": 65,
+          "supports": "准确对象、内容和版本批准；原动作恢复与新动作授权分离。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；发送前意图、外部结果、验收终态分别定义提交点。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：发送前意图、外部结果、验收终态分别定义提交点；保存状态版本、动作及批准/预算关联。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：批准后目标revision变更，再加载检查点不得沿用旧批准执行。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q56-02",
+        "CR-Q56-03",
+        "CR-Q56-04",
+        "CR-Q56-06",
+        "CR-Q56-08"
+      ],
+      "priorCounterexample": "批准后目标revision变更，再加载检查点不得沿用旧批准执行",
+      "priorAnswerSha256": "647c1602ec9c5aad35e555128992d5fbe256cacba6106e91b5a910f5b7c4ac99",
+      "priorStrengthPreserved": "给意图/尝试/结果事务、State字段、提交丢回执核对与内存检查点限制",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      },
+      "externalSources": [
+        {
+          "title": "LangGraph官方持久化",
+          "url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+          "version": "2026-10-14滚动页面",
+          "checkedAt": "2026-10-14",
+          "supports": "checkpointer与thread_id用于保存/选择执行状态；生产需耐久存储。"
+        },
+        {
+          "title": "LangGraph官方中断",
+          "url": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+          "version": "2026-10-14滚动页面；不使用新增response_schema/v3 API",
+          "checkedAt": "2026-10-14",
+          "supports": "恢复会从节点开头重入，interrupt前代码会再次执行。"
+        }
+      ]
+    },
+    {
+      "id": "Q57",
+      "collection": "fixed100",
+      "sourceId": 57,
+      "question": "恢复执行时，如何保证已经完成的外部操作不会再次产生副作用？",
+      "answerPath": "answers/Q57.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "e8eeb6b3d0c3c45f248615f44a0be2b4d2b14524cdd3e9c433868a87f608a0cf",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "section": "6 先核对未决动作 再让模型继续",
+          "startLine": 241,
+          "endLine": 261,
+          "supports": "成功/不一致/执行中/无效果/查不到/不可查询恢复分支与下游幂等条件。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e01.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+          "section": "用一次恢复轨迹读懂提交边界",
+          "startLine": 341,
+          "endLine": 373,
+          "supports": "重入不再次派发，旧代次、原attempt结果、核对与取消的事实保持。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "Checkpoint不是远端事务",
+          "startLine": 58,
+          "endLine": 65,
+          "supports": "内存与持久checkpointer区别、interrupt重入、外部动作和版本迁移边界。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c03.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+          "section": "一个意图 多个协议调用与发送尝试",
+          "startLine": 16,
+          "endLine": 80,
+          "supports": "action/tool_call/attempt身份分开、原参数指纹、唯一槽位及批准绑定。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "section": "10.3 最关键的崩溃窗口 工单创建成功 结果尚未提交",
+          "startLine": 747,
+          "endLine": 767,
+          "supports": "工单成功但未提交时原键核对；结果提交确认丢失与远端效果去重的区别。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；明确checkpoint不能原子覆盖外部效果。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：明确checkpoint不能原子覆盖外部效果；复用逻辑动作身份及原参数。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第3段（L13）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：已写成功checkpoint未提交后恢复，如何避免第二次业务效果且不把内存状态当证明。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）",
+            "完整解析第7段（L21）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第7段（L21）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q57-03",
+        "CR-Q57-04",
+        "CR-Q57-06",
+        "CR-Q57-08"
+      ],
+      "priorCounterexample": "已写成功checkpoint未提交后恢复，如何避免第二次业务效果且不把内存状态当证明",
+      "priorAnswerSha256": "31afe106ecff0697b11a98e063fd89871fa08576ce885639a821b28ecf0550b0",
+      "priorStrengthPreserved": "说明下游原子去重才兑现效果保证及interrupt重跑风险",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q58",
+      "collection": "fixed100",
+      "sourceId": 58,
+      "question": "子图怎样封装独立任务？父图与子图之间如何交接状态？",
+      "answerPath": "answers/Q58.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "2d0931f49657ea640b143b32a18549accdeb892fce56c4a8094c397c6c9adc6f",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "子图是一份契约，不是共享所有记忆",
+          "startLine": 66,
+          "endLine": 71,
+          "supports": "父子schema投影、同名字段语义、引用/限制回传和受众过滤。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；以独立子任务合同封装子图。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：以独立子任务合同封装子图；父状态只投影必要字段并明确映射。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：子图内部messages含未证实猜测时父图怎样只接收核验后的summary。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q58-03",
+        "CR-Q58-04",
+        "CR-Q58-06",
+        "CR-Q58-08"
+      ],
+      "priorCounterexample": "子图内部messages含未证实猜测时父图怎样只接收核验后的summary",
+      "priorAnswerSha256": "f8a50e74b0a9e29ae2bc1311249f5ec0248adbbae928cde7b20bb58bff2ab980",
+      "priorStrengthPreserved": "父子schema投影/提取及同名字段非同义，返回claim来源限制",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q59",
+      "collection": "fixed100",
+      "sourceId": 59,
+      "question": "流式输出怎样区分文本、工具进度、暂停、错误和最终结果？",
+      "answerPath": "answers/Q59.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "2d95f00f3fe51dcbc9e6c9851911947867537c898ce4d129e01076eded71a3cf",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "流式输出是一串事件，不是逐字成功凭证",
+          "startLine": 72,
+          "endLine": 79,
+          "supports": "事件类型与身份、缺序重放、同序去重及终态依权威任务。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；按文本、进度、暂停、错误和终态定义事件类型。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：按文本、进度、暂停、错误和终态定义事件类型；用run/attempt/序号关联流。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：seq1开始、seq3 final先到应请求2且不宣告完成，补2后重送3才终态。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q59-03",
+        "CR-Q59-04",
+        "CR-Q59-06",
+        "CR-Q59-08"
+      ],
+      "priorCounterexample": "seq1开始、seq3 final先到应请求2且不宣告完成，补2后重送3才终态",
+      "priorAnswerSha256": "b42a4c18010fcd19493444a3ec9d04cfa1032be9ff72039e485019370ac9ee33",
+      "priorStrengthPreserved": "区分流式模式与业务封套，去重序号/缺口补发/最终状态分离",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q60",
+      "collection": "fixed100",
+      "sourceId": 60,
+      "question": "如果去掉 LangGraph，你如何实现等价的状态机，并说明取舍？",
+      "answerPath": "answers/Q60.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "3b66870dbabc4c41258972a406d5d06f84f99fe593910a6187cd804da885103c",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n06-graph-orchestration.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+          "section": "何时值得自研",
+          "startLine": 80,
+          "endLine": 90,
+          "supports": "任务表、CAS/lease与自研状态机；框架代价和相同故障合同对照。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；按任务表、CAS/lease、事件账本实现单次推进。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：按任务表、CAS/lease、事件账本实现单次推进；在每个外部调用前后设置恢复边界。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：租约过期旧worker仍在跑时，仅新worker领到lease为何不能保证外部唯一效果。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q60-03",
+        "CR-Q60-04",
+        "CR-Q60-06",
+        "CR-Q60-08"
+      ],
+      "priorCounterexample": "租约过期旧worker仍在跑时，仅新worker领到lease为何不能保证外部唯一效果",
+      "priorAnswerSha256": "23bea06a93a7b5420fa07e34c25a6786eb7f105a48cc7219a79e5dbeddfbe8b4",
+      "priorStrengthPreserved": "给任务表CAS/lease/动作账本和自研/框架权衡及同条件故障集",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q61",
+      "collection": "fixed100",
+      "sourceId": 61,
+      "question": "什么实验或业务证据会使你选择多 Agent，而不是给单 Agent 增加工具或步骤？",
+      "answerPath": "answers/Q61.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "e39b013d69616e62e5f8f370a6fc1743c3111f9f9bee3e828c2a7dc0fbf48878",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "多 Agent 的升级点是可分工 而不是人数",
+          "startLine": 33,
+          "endLine": 42,
+          "supports": "同预算分工、输入输出证据合同、唯一写者、交接成本与效益。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "怎样做一个公平且能定位原因的比较",
+          "startLine": 43,
+          "endLine": 50,
+          "supports": "同目标资料/权限/预算和重复比较，按失败原因而非平均数决策。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；先提出可独立核对的子任务分工假设。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：先提出可独立核对的子任务分工假设；以单Agent多工具为同预算基线。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：仅说明变长但错误未减应拒绝升级；瓶颈单一串行写入不能靠多Agent移除。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [],
+      "priorCounterexample": "仅说明变长但错误未减应拒绝升级；瓶颈单一串行写入不能靠多Agent移除",
+      "priorAnswerSha256": "9ee9f7a02fff72fdb77a09d67a0c3f60d89203c0193d59982534ff4dc8d35aac",
+      "priorStrengthPreserved": "给独立可核子问题、多Agent可证伪收益假设、放弃条件和同预算对照指标",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q62",
+      "collection": "fixed100",
+      "sourceId": 62,
+      "question": "Supervisor、交接式协作和共享讨论，分别适合什么任务？",
+      "answerPath": "answers/Q62.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "3418239fcf787b46eb4c33c3479de64a60796ea541ae3e52de5fd0da3e206cde",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n07-multiagent-a2a.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "24268cff6bfb435713458912750a5a958dd00d0aa935ef71b139e74c6dd23fb2",
+          "section": "三种协作模式改变谁持有控制权",
+          "startLine": 5,
+          "endLine": 16,
+          "supports": "Supervisor、handoff和黑板模式的适用、所有权、代价和显式接收。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；按中心裁决、顺序转移、共同讨论区分控制权。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：按中心裁决、顺序转移、共同讨论区分控制权；对照适合任务和状态归属。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：交接成功但旧Agent仍执行写动作时哪一种所有权确认阻止双执行。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q62-03",
+        "CR-Q62-04",
+        "CR-Q62-06"
+      ],
+      "priorCounterexample": "交接成功但旧Agent仍执行写动作时哪一种所有权确认阻止双执行",
+      "priorAnswerSha256": "dbeea4feb06030894efebed5eca79f2b39f6b18d7077288d7fba44360e6be209",
+      "priorStrengthPreserved": "对三种协作给控制/适用任务/主要失效风险",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q63",
+      "collection": "fixed100",
+      "sourceId": 63,
+      "question": "如何定义各 Agent 的输入、输出、职责边界和完成条件？",
+      "answerPath": "answers/Q63.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "8b1437b6ca1cc2f501a09eaf8141c4614ac231afef87e3c900c9d5ae2d5dcf63",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "多 Agent 的升级点是可分工 而不是人数",
+          "startLine": 33,
+          "endLine": 42,
+          "supports": "同预算分工、输入输出证据合同、唯一写者、交接成本与效益。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n07-multiagent-a2a.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "24268cff6bfb435713458912750a5a958dd00d0aa935ef71b139e74c6dd23fb2",
+          "section": "分解任务就是定义可验收接口",
+          "startLine": 17,
+          "endLine": 42,
+          "supports": "子任务输入范围、工具禁令、输出证据、完成及补料合同与共享选择。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；把子任务写成输入快照/权限/输出类型/版本/完成证据合同。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：把子任务写成输入快照/权限/输出类型/版本/完成证据合同；分开结论、证据与未知项。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：子任务completed但引用不同修订或缺一个关键子问时父任务不得完成。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q63-04",
+        "CR-Q63-06"
+      ],
+      "priorCounterexample": "子任务completed但引用不同修订或缺一个关键子问时父任务不得完成",
+      "priorAnswerSha256": "c85354af28ee71e7825520b56fc12df22de74f9f1f65379bac96d5e1c3f8ab38",
+      "priorStrengthPreserved": "给输入输出版本/权限/消耗/状态合同及单写者、父任务核验",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q64",
+      "collection": "fixed100",
+      "sourceId": 64,
+      "question": "如何把任务拆成可以并行的部分，并保留必要的依赖顺序？",
+      "answerPath": "answers/Q64.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "d8f92b95b4c1969845e72e99bd8ba19f655e3ea11b8a82528553e5a4689fbed8",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "多 Agent 的升级点是可分工 而不是人数",
+          "startLine": 33,
+          "endLine": 42,
+          "supports": "同预算分工、输入输出证据合同、唯一写者、交接成本与效益。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+          "section": "9 并发要分开处理工具依赖与运行推进权",
+          "startLine": 690,
+          "endLine": 707,
+          "supports": "可执行波次、必要输入、资源冲突、attempt关联、lease和远端效果边界。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；从读写集合和产物前置建立依赖图。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：从读写集合和产物前置建立依赖图；将独立只读任务分波次并行。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：一读取成功另一超时，生成草稿不得仅因返回列表首项成功就继续。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q64-03",
+        "CR-Q64-04",
+        "CR-Q64-06",
+        "CR-Q64-08"
+      ],
+      "priorCounterexample": "一读取成功另一超时，生成草稿不得仅因返回列表首项成功就继续",
+      "priorAnswerSha256": "1f4e6d5780dca8737793202d9e157816ba314343dcb0d56c336382089bda6127",
+      "priorStrengthPreserved": "给读取并行与写入前置依赖，波次合法性/预算/尝试关联",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q65",
+      "collection": "fixed100",
+      "sourceId": 65,
+      "question": "多 Agent 应共享完整上下文，还是只传递必要材料？怎样判断？",
+      "answerPath": "answers/Q65.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "fdc68f3e6a5d2e53c4caa8e8b0cebe9e0b30568ce2eb7cf483377632f4ad06d1",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n07-multiagent-a2a.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "24268cff6bfb435713458912750a5a958dd00d0aa935ef71b139e74c6dd23fb2",
+          "section": "分解任务就是定义可验收接口",
+          "startLine": 17,
+          "endLine": 42,
+          "supports": "子任务输入范围、工具禁令、输出证据、完成及补料合同与共享选择。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；从子任务所需事实和权限构建最小上下文。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：从子任务所需事实和权限构建最小上下文；比较全量共享的噪声泄露成本与投影遗漏。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第3段（L13）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：两个Agent权限不同但全文较短时仍不能全量共享，缺关键上下文要定向补取。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q65-03",
+        "CR-Q65-04",
+        "CR-Q65-06",
+        "CR-Q65-08"
+      ],
+      "priorCounterexample": "两个Agent权限不同但全文较短时仍不能全量共享，缺关键上下文要定向补取",
+      "priorAnswerSha256": "685b8922392166cab7230b908844be3db0c9887efa14360857d2871a2d2e06cc",
+      "priorStrengthPreserved": "说明完全共享与选择投影条件，清单和同预算对比指标",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q66",
+      "collection": "fixed100",
+      "sourceId": 66,
+      "question": "子 Agent 返回互相矛盾的结果时，协调者应如何处理？",
+      "answerPath": "answers/Q66.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "a14914aaa62f588d91fa978ad78af9ca5f0aa79abf6800a3e4dd251e21d47d5d",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "三种输入暴露不同的必要性",
+          "startLine": 25,
+          "endLine": 32,
+          "supports": "资料齐全/未知路径/同级规则冲突的不同处理，投票不产生权威。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "多 Agent 的升级点是可分工 而不是人数",
+          "startLine": 33,
+          "endLine": 42,
+          "supports": "同预算分工、输入输出证据合同、唯一写者、交接成本与效益。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "用条件做选择的练习",
+          "startLine": 51,
+          "endLine": 66,
+          "supports": "版本错配与同预算可证伪升级条件，旧证据一致不能抵消版本差异。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；先核版本和来源再区分事实矛盾与推断分歧。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：先核版本和来源再区分事实矛盾与推断分歧；回读证据并确定可裁决或须补证的范围。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：两个同版本证据支持不同假设时不能只等业务版本确认，应再查能区分的证据。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q66-02",
+        "CR-Q66-03",
+        "CR-Q66-06"
+      ],
+      "priorCounterexample": "两个同版本证据支持不同假设时不能只等业务版本确认，应再查能区分的证据",
+      "priorAnswerSha256": "3fb3b247f43eb37e602af51924b8b4e3be945ceb7bec9f4a88ed8bf2c29e3b67",
+      "priorStrengthPreserved": "同权威冲突停等版本确认、交接清单与异修订一致结论仍拒绝",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q67",
+      "collection": "fixed100",
+      "sourceId": 67,
+      "question": "如何防止子 Agent 的错误结论在汇总过程中变成“已验证事实”？",
+      "answerPath": "answers/Q67.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "3f785ef208f087d6c37f28bb521de8fefb751804c9275e391aa866f936260413",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "多 Agent 的升级点是可分工 而不是人数",
+          "startLine": 33,
+          "endLine": 42,
+          "supports": "同预算分工、输入输出证据合同、唯一写者、交接成本与效益。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+          "section": "把关联检查与支持判断分别建模",
+          "startLine": 28,
+          "endLine": 35,
+          "supports": "原子主张、引用关联与事实支持分离，代码不直接证明业务规则。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；交接时分开原子主张、证据、推断与未知。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：交接时分开原子主张、证据、推断与未知；父级逐项核来源实际支持与版本。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第3段（L13）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：三子Agent复述同一无依据根因应仍标假设，报告引用不能证明创建成功。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [],
+      "priorCounterexample": "三子Agent复述同一无依据根因应仍标假设，报告引用不能证明创建成功",
+      "priorAnswerSha256": "d12d0670667eec51c4de7f5119ad48f42e1a76cd0aad51a856c3a8087643db95",
+      "priorStrengthPreserved": "解释模型共识非事实、交接核版本、引用不等于支持、原子主张分离",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q68",
+      "collection": "fixed100",
+      "sourceId": 68,
+      "question": "某个子 Agent 超时或失败时，整体任务应等待、重分派还是部分交付？",
+      "answerPath": "answers/Q68.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "92e03cf84bdf9a1b41b61303c0308f5931a721ad89eac17953bbbff89bcf46ab",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n07-multiagent-a2a.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "24268cff6bfb435713458912750a5a958dd00d0aa935ef71b139e74c6dd23fb2",
+          "section": "分歧、缺席与预算怎样向上传播",
+          "startLine": 43,
+          "endLine": 54,
+          "supports": "来源核对、必要任务缺席、父子预算、重派epoch与迟到提交。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；按子任务必要性、剩余时限及外部效果状态决定等待/重派/部分交付。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：按子任务必要性、剩余时限及外部效果状态决定等待/重派/部分交付；保留同逻辑身份与新代次。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：旧worker晚于替代任务完成返回working不得使completed回退或覆盖新版本。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q68-03",
+        "CR-Q68-04",
+        "CR-Q68-06",
+        "CR-Q68-08"
+      ],
+      "priorCounterexample": "旧worker晚于替代任务完成返回working不得使completed回退或覆盖新版本",
+      "priorAnswerSha256": "90465409ac0be0616cffc79e34ee1135120c726781b5a7643bdf275783ebd52d",
+      "priorStrengthPreserved": "按必要/可选依赖选择等待或部分交付，重派身份/epoch与未知副作用限制",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q69",
+      "collection": "fixed100",
+      "sourceId": 69,
+      "question": "多 Agent 的通信次数、费用和时延怎样纳入统一预算？",
+      "answerPath": "answers/Q69.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "fc5fbfe8d1e2a1c4cb0af4a584410573df0fcb3a4146691ac6272c543817bbf7",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/c01-selection.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+          "section": "多 Agent 的升级点是可分工 而不是人数",
+          "startLine": 33,
+          "endLine": 42,
+          "supports": "同预算分工、输入输出证据合同、唯一写者、交接成本与效益。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e05.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6",
+          "section": "成本归到逻辑任务 才能看见失败代价",
+          "startLine": 8,
+          "endLine": 27,
+          "supports": "每次尝试归总账、确认/未知费用、每分配/每接受任务分母。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e05.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6",
+          "section": "预算与限流需要一个共同执行边界",
+          "startLine": 194,
+          "endLine": 203,
+          "supports": "发送前原子预留、共享限流、未决额度、恢复额度与唯一重试责任。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/n07-multiagent-a2a.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "24268cff6bfb435713458912750a5a958dd00d0aa935ef71b139e74c6dd23fb2",
+          "section": "分歧、缺席与预算怎样向上传播",
+          "startLine": 43,
+          "endLine": 54,
+          "supports": "来源核对、必要任务缺席、父子预算、重派epoch与迟到提交。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e05.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6",
+          "section": "延迟必须注明用户等到的是什么",
+          "startLine": 28,
+          "endLine": 37,
+          "supports": "端到端/并行关键路径、成功与超时等待分开、分位数与小样本限制。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；统一父run与每次物理尝试记账。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：统一父run与每次物理尝试记账；发送前原子预留父子额度与在途容量。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第3段（L13）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：父10次预算分给3子任务不能各得10；超时未结算不得全释放预算再花。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [],
+      "priorCounterexample": "父10次预算分给3子任务不能各得10；超时未结算不得全释放预算再花",
+      "priorAnswerSha256": "8ac7cfaa1ab8ced51ca74b1fd2a700a2f03476d7a3f7d9d4aceb3d40a3f2ad8f",
+      "priorStrengthPreserved": "统一run/attempt账本、父子额度预留结算、未知用量保留与核对额度",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q70",
+      "collection": "fixed100",
+      "sourceId": 70,
+      "question": "A2A 与应用内部的多 Agent 编排有何区别？跨系统任务交接需要哪些契约？",
+      "answerPath": "answers/Q70.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "6096aee43e2e85b0a66b20af952851025d0971c8c79249b30e6253d865eda0d3",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n07-multiagent-a2a.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "24268cff6bfb435713458912750a5a958dd00d0aa935ef71b139e74c6dd23fb2",
+          "section": "A2A把什么放到线上契约中",
+          "startLine": 55,
+          "endLine": 78,
+          "supports": "固定A2A0.3.0身份、消息/任务、发现认证、查询取消、无task_id超时边界。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；区分内部编排的共同状态与跨系统自治任务。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：区分内部编排的共同状态与跨系统自治任务；交接发现认证、身份、状态、工件和取消/续传合同。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：首次send超时无task_id时怎样找到原任务，不能换身份再次创建。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q70-03",
+        "CR-Q70-04",
+        "CR-Q70-06",
+        "CR-Q70-08"
+      ],
+      "priorCounterexample": "首次send超时无task_id时怎样找到原任务，不能换身份再次创建",
+      "priorAnswerSha256": "610c2e9e2a982da0e93e8afca032a5d059355cbebf0bea7e2b8571f0ee60a3c2",
+      "priorStrengthPreserved": "说明跨系统身份/任务差异和发现认证提交流程、取消/推送风险",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      },
+      "externalSources": [
+        {
+          "title": "A2A 0.3.0规范",
+          "url": "https://a2a-protocol.org/v0.3.0/specification/",
+          "version": "0.3.0",
+          "checkedAt": "2026-10-14",
+          "supports": "message/send返回Message或Task、各身份字段、任务查询取消与终态不可重启。"
+        }
+      ]
+    },
+    {
+      "id": "Q71",
+      "collection": "fixed100",
+      "sourceId": 71,
+      "question": "如何定义 Agent 的任务成功率，避免把“生成了回答”当成任务成功？",
+      "answerPath": "answers/Q71.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "d2846b251b26ca3b88ead1be6cc75a4581e980e77b73f657adb5fe5e7969adc5",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "把“好”拆成能被不同证据推翻的命题",
+          "startLine": 8,
+          "endLine": 23,
+          "supports": "结果/过程/资源与缺证分别判断，正确停止按任务合同计。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "先冻结比较 再运行所有被分配的任务",
+          "startLine": 73,
+          "endLine": 92,
+          "supports": "完整分配分母、重复配对、同源相关性、严重错误与小样本边界。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "一个判定器怎样拒绝把缺证当通过",
+          "startLine": 93,
+          "endLine": 218,
+          "supports": "PASS/FAIL/INSUFFICIENT/HARNESS_ERROR，反证与未知并存的判定。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；从任务合同定义成功、失败、缺证和测试装置失败。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：从任务合同定义成功、失败、缺证和测试装置失败；冻结所有被分配任务的分母。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17–L23）",
+            "完整解析第6段（L25）",
+            "完整解析第7段（L27）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：90次分配2次缺轨迹时通过率分母仍90且缺证单列，不能删成88。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17–L23）",
+            "完整解析第6段（L25）",
+            "完整解析第7段（L27）",
+            "完整解析第8段（L29）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第8段（L29）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q71-01",
+        "CR-Q71-03",
+        "CR-Q71-04",
+        "CR-Q71-08"
+      ],
+      "priorCounterexample": "90次分配2次缺轨迹时通过率分母仍90且缺证单列，不能删成88",
+      "priorAnswerSha256": "2a402b59cb8bf38bd5ef3eac84317308b58f11eac9e59de6530cb0fc70a98fdf",
+      "priorStrengthPreserved": "说明允许终止集、拒绝分层、分配单位和四判定状态",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q72",
+      "collection": "fixed100",
+      "sourceId": 72,
+      "question": "最终结果评测和执行轨迹评测分别能够发现什么问题？",
+      "answerPath": "answers/Q72.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "a18e8e5b8d78451fd0baab30875214bfa979889132935856710c6b7c03176e72",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "把“好”拆成能被不同证据推翻的命题",
+          "startLine": 8,
+          "endLine": 23,
+          "supports": "结果/过程/资源与缺证分别判断，正确停止按任务合同计。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "Trace 用来定位因果 不能当事实数据库",
+          "startLine": 219,
+          "endLine": 230,
+          "supports": "run/model/action/attempt关联、首偏离、理想输入诊断与安全最小记录。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；分别核最终产物、行动轨迹和资源消耗。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：分别核最终产物、行动轨迹和资源消耗；关联共同任务身份与权威结果。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：最后答案正确但读取了别租户文件应结果层与过程层分别怎样判。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [],
+      "priorCounterexample": "最后答案正确但读取了别租户文件应结果层与过程层分别怎样判",
+      "priorAnswerSha256": "bbd4d71097a5ae0343fa7e8c07780cefd1f1021fc920db2fc60cc604be18ac27",
+      "priorStrengthPreserved": "给内容/读取过程/资源错误的具体差异与trace关联、完整账本要求",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q73",
+      "collection": "fixed100",
+      "sourceId": 73,
+      "question": "如何构建包含正常、边界、歧义、失败和恶意输入的评测集？",
+      "answerPath": "answers/Q73.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "e335e98b4e24851a5c2c3d6ff66daf0020364edc7fb9f61223a2fd5f2cc7bca1",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "案例不是问答文本 而是一份执行契约",
+          "startLine": 24,
+          "endLine": 62,
+          "supports": "案例输入环境、允许动作、证据、边界和同源家庭。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "开发 回归和保留部分控制的是信息使用",
+          "startLine": 63,
+          "endLine": 72,
+          "supports": "独立保留集及泄漏后的处理，不以文件夹命名冒充独立。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e03.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+          "section": "精确批准绑定的是一次逻辑意图",
+          "startLine": 54,
+          "endLine": 65,
+          "supports": "准确对象、内容和版本批准；原动作恢复与新动作授权分离。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e03.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+          "section": "在三个入口放置同一注入",
+          "startLine": 294,
+          "endLine": 299,
+          "supports": "报告/源内容等不可信入口注入与合法任务对照的安全验证。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；用输入、允许动作、预期状态、证据和预算定义案例。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13–L19）",
+            "完整解析第4段（L21）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：用输入、允许动作、预期状态、证据和预算定义案例；分别构造正常/边界/歧义/技术失败/恶意输入。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13–L19）",
+            "完整解析第4段（L21）",
+            "完整解析第5段（L23）",
+            "完整解析第6段（L25）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：全部拒绝不能算安全功能达标；报告里注入与记忆旧批准均不能授权新写。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13–L19）",
+            "完整解析第4段（L21）",
+            "完整解析第5段（L23）",
+            "完整解析第6段（L25）",
+            "完整解析第7段（L27）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第7段（L27）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q73-03",
+        "CR-Q73-04"
+      ],
+      "priorCounterexample": "全部拒绝不能算安全功能达标；报告里注入与记忆旧批准均不能授权新写",
+      "priorAnswerSha256": "02c1bc8a85eb661a7413d5582b6452c064d6ec3a6205ad6a34a26848a6136b68",
+      "priorStrengthPreserved": "定义条件案例，正常/缺证/未知效果族、分离保留集和攻击/批准边界及预期",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q74",
+      "collection": "fixed100",
+      "sourceId": 74,
+      "question": "如何区分检索失败、规划失败、工具失败和最终表达失败？",
+      "answerPath": "answers/Q74.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "5a0b9a07b10cd97ba26a3e3aabaa92e531be8ade14f9461fa7e1ddce7530036e",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "Trace 用来定位因果 不能当事实数据库",
+          "startLine": 219,
+          "endLine": 230,
+          "supports": "run/model/action/attempt关联、首偏离、理想输入诊断与安全最小记录。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+          "section": "检索策略必须按查询类型比较",
+          "startLine": 18,
+          "endLine": 27,
+          "supports": "词法与语义优劣、候选后重排、RRF及原始分数不可直接相加。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e04.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8",
+          "section": "观测记录应回答哪一阶段首次偏离",
+          "startLine": 162,
+          "endLine": 178,
+          "supports": "阶段事件/版本/动作引用、关键过程证据、错误分类与高基数边界。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+          "section": "本次回答看到的是哪一个资料版本",
+          "startLine": 8,
+          "endLine": 17,
+          "supports": "源与索引快照、切块完整性、版本与当前权限的读取链。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/c02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+          "section": "无答案应能解释是哪一层缺证",
+          "startLine": 228,
+          "endLine": 235,
+          "supports": "NO_HITS原因、冲突条件、部分支持和权限安全的不足响应。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/f02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8",
+          "section": "先定义候选 而不是要求模型“给一个可靠答案”",
+          "startLine": 18,
+          "endLine": 25,
+          "supports": "观察/推断分离；结构校验不能替代业务和语义检查。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；沿任务ID链找第一个偏离预期的阶段。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11–L16）",
+            "完整解析第3段（L18）",
+            "完整解析第4段（L20）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：沿任务ID链找第一个偏离预期的阶段；分别定义检索证据缺失、计划依赖错误、工具失败和表达失真。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11–L16）",
+            "完整解析第3段（L18）",
+            "完整解析第4段（L20）",
+            "完整解析第5段（L22）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11–L16）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：工具返回正确而context裁掉证据，与检索本来未召回怎样分别定位。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11–L16）",
+            "完整解析第3段（L18）",
+            "完整解析第4段（L20）",
+            "完整解析第5段（L22）",
+            "完整解析第6段（L24）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L24）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q74-02",
+        "CR-Q74-04",
+        "CR-Q74-08"
+      ],
+      "priorCounterexample": "工具返回正确而context裁掉证据，与检索本来未召回怎样分别定位",
+      "priorAnswerSha256": "d1469836df8810b0c66f3f1eb572ea5f15ef2ca92041d122b69ff3be03bce87f",
+      "priorStrengthPreserved": "给ID链、投影丢断言具体时序、受控理想输入替换和端到端回归",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q75",
+      "collection": "fixed100",
+      "sourceId": 75,
+      "question": "如何使用 LLM-as-a-Judge，并控制评判偏差及与人工结论的不一致？",
+      "answerPath": "answers/Q75.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "25e0f5a246fe1d7f11bd7005e74029db8edd5406a4e767ae0328e85988470071",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "模型评分器的误差需要量化到决策用途",
+          "startLine": 231,
+          "endLine": 240,
+          "supports": "Judge偏差、人审校准、误放/误拒算例、评估版本和高风险人审。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；先用明确量规与结构化输出约束Judge。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：先用明确量规与结构化输出约束Judge；用独立人审标注校准误判、顺序和风格偏差。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：始终拒绝的Judge误放0但错拒大，应被识别；裁判放宽不能被记成产品进步。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [],
+      "priorCounterexample": "始终拒绝的Judge误放0但错拒大，应被识别；裁判放宽不能被记成产品进步",
+      "priorAnswerSha256": "6d3983e5ef063f022694c655d4aff263524c2b06f72c0c4bfbbd74a3aac1a4c7",
+      "priorStrengthPreserved": "给Judge偏差、人审校准、2/10与6/20错判例、保留材料和裁判版本重评",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q76",
+      "collection": "fixed100",
+      "sourceId": 76,
+      "question": "同一个任务多次运行结果不同，应该怎样报告成功率与稳定性？",
+      "answerPath": "answers/Q76.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "1ccd4aef31bba5499f5dfc811c524101eacd271578dacc4dbe3ae05a43f3e670",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "先冻结比较 再运行所有被分配的任务",
+          "startLine": 73,
+          "endLine": 92,
+          "supports": "完整分配分母、重复配对、同源相关性、严重错误与小样本边界。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e05.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6",
+          "section": "延迟必须注明用户等到的是什么",
+          "startLine": 28,
+          "endLine": 37,
+          "supports": "端到端/并行关键路径、成功与超时等待分开、分位数与小样本限制。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；固定任务分配与重复次数并配对比较。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15–L21）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：固定任务分配与重复次数并配对比较；给每任务分布与总体成功率分母。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15–L21）",
+            "完整解析第5段（L23）",
+            "完整解析第6段（L25）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第3段（L13）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：同仓库10案例重复100次不得冒充100个独立业务样本算窄区间。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15–L21）",
+            "完整解析第5段（L23）",
+            "完整解析第6段（L25）",
+            "完整解析第7段（L27）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第7段（L27）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q76-04",
+        "CR-Q76-08"
+      ],
+      "priorCounterexample": "同仓库10案例重复100次不得冒充100个独立业务样本算窄区间",
+      "priorAnswerSha256": "3f84356be9fd11ddf6fcda53494a9ecaa2158d4e3e3f0ee14099b4734c07d58c",
+      "priorStrengthPreserved": "说明案例配对重复、相关性、缺证分母和小样本边界",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q77",
+      "collection": "fixed100",
+      "sourceId": 77,
+      "question": "一条 Agent Trace 应记录什么，才能定位问题且避免泄露敏感信息？",
+      "answerPath": "answers/Q77.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "1042757570d216fd0f2e7374a568560c7231b87ad77b6e9416666bd43b113a13",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "Trace 用来定位因果 不能当事实数据库",
+          "startLine": 219,
+          "endLine": 230,
+          "supports": "run/model/action/attempt关联、首偏离、理想输入诊断与安全最小记录。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e04.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8",
+          "section": "观测记录应回答哪一阶段首次偏离",
+          "startLine": 162,
+          "endLine": 178,
+          "supports": "阶段事件/版本/动作引用、关键过程证据、错误分类与高基数边界。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e03.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+          "section": "内容投影需要覆盖四个通道",
+          "startLine": 44,
+          "endLine": 53,
+          "supports": "模型输入、输出、工具载荷和日志的最小化，异常/导出敏感扫描边界。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；按run/action/attempt记录阶段、时间、状态和安全关联ID。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15–L21）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：按run/action/attempt记录阶段、时间、状态和安全关联ID；以最早偏离连接权威账本。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15–L21）",
+            "完整解析第5段（L23）",
+            "完整解析第6段（L25）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：异常含token而正常日志字段安全时，如何确认四通道和错误导出均未泄漏。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15–L21）",
+            "完整解析第5段（L23）",
+            "完整解析第6段（L25）",
+            "完整解析第7段（L27）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第7段（L27）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q77-03",
+        "CR-Q77-04",
+        "CR-Q77-06",
+        "CR-Q77-08"
+      ],
+      "priorCounterexample": "异常含token而正常日志字段安全时，如何确认四通道和错误导出均未泄漏",
+      "priorAnswerSha256": "8b40ef428f5b9f42dd19b5ec6068ec243cd46547f16e68f491ae4554a57aa8db",
+      "priorStrengthPreserved": "提供run/action/attempt关联、阶段字段、保留权威账本与敏感最小化",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q78",
+      "collection": "fixed100",
+      "sourceId": 78,
+      "question": "如何设计模型、工具和检索组件的消融实验？",
+      "answerPath": "answers/Q78.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "cdd2561cad3d88cbb9e80cdba3ba17caefb79b272bb0ca9c30022b2a0bfe6698",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/n10-evaluation-projects.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+          "section": "消融要回答收益来自哪里",
+          "startLine": 17,
+          "endLine": 33,
+          "supports": "单变量与因子对照、oracle和不可行条件、重复与实际收益分离。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；明确想检验哪个组件贡献。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：明确想检验哪个组件贡献；固定其余条件做替换或删除对照。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第3段（L13）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：没有订单工具导致任务不可解应标不可行而非删除该任务或归模型变笨。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [],
+      "priorCounterexample": "没有订单工具导致任务不可解应标不可行而非删除该任务或归模型变笨",
+      "priorAnswerSha256": "faa30c1d6539986c52254992877588cd31af1205ae464c494fd4c54dea48894d",
+      "priorStrengthPreserved": "给单变量/不可行条件/oracle分离及2x2交互对照与重复统计",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q79",
+      "collection": "fixed100",
+      "sourceId": 79,
+      "question": "模型、提示、工具或知识库升级后，如何判断新版本能否发布？",
+      "answerPath": "answers/Q79.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "a64c524f68a3d60ede2613a8ab8d097adc6a9c37aa60f8c64c4e40f8172c3513",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "先冻结比较 再运行所有被分配的任务",
+          "startLine": 73,
+          "endLine": 92,
+          "supports": "完整分配分母、重复配对、同源相关性、严重错误与小样本边界。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "从失败分类到一次能够关闭的回归",
+          "startLine": 241,
+          "endLine": 248,
+          "supports": "首偏离和根因区分、原例/关联/独立条件三层复验。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e04.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8",
+          "section": "发布对象是一组相互兼容的版本",
+          "startLine": 8,
+          "endLine": 35,
+          "supports": "完整发布清单、状态读写兼容、存量语义和权限重核。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e04.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8",
+          "section": "一次发布的控制路径",
+          "startLine": 136,
+          "endLine": 149,
+          "supports": "预发/灰度/扩大、关键错误阻断、流量回退与在途任务核对分离。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；冻结完整版本组合和判据。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：冻结完整版本组合和判据；跑原例、相关合法回归与独立保留集。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：新版本成功率高但一次重复写必须阻断；旧镜像读不了新状态不能直接回滚任务。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [],
+      "priorCounterexample": "新版本成功率高但一次重复写必须阻断；旧镜像读不了新状态不能直接回滚任务",
+      "priorAnswerSha256": "d48b3e694532a04a85e8c7e40eb117531c4b81e043e71b6b2e425b5149f20fa2",
+      "priorStrengthPreserved": "给配置冻结/关键安全阻断/三类回归/状态兼容/发布与任务回退分离",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    },
+    {
+      "id": "Q80",
+      "collection": "fixed100",
+      "sourceId": 80,
+      "question": "用户报告一个偶发失败，但你本地无法复现，下一步怎么调查？",
+      "answerPath": "answers/Q80.md",
+      "answerVersion": "1.0.0",
+      "answerSha256": "10ef503d27f7e13aaa4a4ed0dfe4554f035046eec31f6e58310899d34a723802",
+      "sourceBindings": [
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "从失败分类到一次能够关闭的回归",
+          "startLine": 241,
+          "endLine": 248,
+          "supports": "首偏离和根因区分、原例/关联/独立条件三层复验。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "先冻结比较 再运行所有被分配的任务",
+          "startLine": 73,
+          "endLine": 92,
+          "supports": "完整分配分母、重复配对、同源相关性、严重错误与小样本边界。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e04.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8",
+          "section": "观测记录应回答哪一阶段首次偏离",
+          "startLine": 162,
+          "endLine": 178,
+          "supports": "阶段事件/版本/动作引用、关键过程证据、错误分类与高基数边界。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/p02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8",
+          "section": "独立评阅按一条实际任务走完全程",
+          "startLine": 119,
+          "endLine": 128,
+          "supports": "复现失败原因分层、原始证据与独立重建限制。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e02.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+          "section": "Trace 用来定位因果 不能当事实数据库",
+          "startLine": 219,
+          "endLine": 230,
+          "supports": "run/model/action/attempt关联、首偏离、理想输入诊断与安全最小记录。"
+        },
+        {
+          "path": "sites/rolecraft/textbooks/v12/e03.md",
+          "version": "textbook-v12-received-2026-10-14",
+          "sha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+          "section": "内容投影需要覆盖四个通道",
+          "startLine": 44,
+          "endLine": 53,
+          "supports": "模型输入、输出、工具载荷和日志的最小化，异常/导出敏感扫描边界。"
+        }
+      ],
+      "personalEvidenceRequired": false,
+      "authorSelfCheck": {
+        "AQS-01": {
+          "applicable": true,
+          "locations": [
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "先直接回答原题并限定关键前提；先收集脱敏任务ID、版本、时间线和预期/实际差异。",
+          "status": "author_checked"
+        },
+        "AQS-02": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）"
+          ],
+          "rationale": "解释本题相关对象、因果与约束关系：先收集脱敏任务ID、版本、时间线和预期/实际差异；检查环境及数据/权限时效差异。",
+          "status": "author_checked"
+        },
+        "AQS-03": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）"
+          ],
+          "rationale": "给出按顺序的实施/选择流程与输入、状态、拒绝或不足处理；未将设计当实跑。",
+          "status": "author_checked"
+        },
+        "AQS-04": {
+          "applicable": true,
+          "locations": [
+            "完整解析第3段（L13）"
+          ],
+          "rationale": "构造案例/算例展开对象、条件和事件变化；特别处理原反例：只本地不可复现但生产限流相关时，怎样采集安全证据而不宣告问题不存在。",
+          "status": "author_checked"
+        },
+        "AQS-05": {
+          "applicable": true,
+          "locations": [
+            "完整解析第2段（L11）",
+            "完整解析第3段（L13）",
+            "完整解析第4段（L15）",
+            "完整解析第5段（L17）",
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "区分适用条件、替代方式与失败边界；不以保证性措辞替代下游合同、专业证据或实际测试。",
+          "status": "author_checked"
+        },
+        "AQS-06": {
+          "applicable": true,
+          "locations": [
+            "完整解析第6段（L19）"
+          ],
+          "rationale": "列出可观察输入/反例、预期结果和失败信号，明确这些是验证计划而非已执行结果。",
+          "status": "author_checked"
+        },
+        "AQS-07": {
+          "applicable": true,
+          "locations": [
+            "参考出处（逐条行范围、哈希见sourceBindings）",
+            "完整解析第1段（L9）"
+          ],
+          "rationale": "回读完整相关小节，按支持主张绑定v12收到版本；新外链实际只读核查。无运行、专家或用户效果声明。",
+          "status": "author_checked"
+        },
+        "AQS-08": {
+          "applicable": true,
+          "locations": [
+            "原题",
+            "完整解析",
+            "参考出处"
+          ],
+          "rationale": "保留逐字原题，自然按本题推理组织，摘要不替正文；可比较信息用表，其余用连贯段落。",
+          "status": "author_checked"
+        }
+      },
+      "priorDefectReferences": [
+        "CR-Q80-02",
+        "CR-Q80-03",
+        "CR-Q80-04",
+        "CR-Q80-06"
+      ],
+      "priorCounterexample": "只本地不可复现但生产限流相关时，怎样采集安全证据而不宣告问题不存在",
+      "priorAnswerSha256": "f81a02e0d48226ac355791a8bd52c59cc9b058c04ecff508c8f851d550e442d1",
+      "priorStrengthPreserved": "给最早偏离/根因分开、重复实验条件、阶段记录和复现缺口分类",
+      "revisionScope": "完整参考解析重写与本版本自查；待独立审校和QA，不关闭旧缺陷记录。",
+      "validationExecuted": {
+        "structuralAuthorCheck": true,
+        "applicationRuns": 0,
+        "textbookExampleRuns": 0,
+        "modelCalls": 0,
+        "frameworkRuns": 0
+      }
+    }
+  ],
+  "memoryApplied": [
+    "TEXT-MEM-0002",
+    "CORE-PREF-EDITOR-001"
+  ],
+  "executionStatus": "No model, application, framework, or textbook example execution. Structural author checks only."
+}

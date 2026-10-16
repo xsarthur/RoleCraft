@@ -1,0 +1,98 @@
+{
+  "report_id": "backend-v1.0-real-model-deployment-20261016",
+  "role": "backend_data_engineer",
+  "target": "ubuntu@111.231.8.78:/opt/rolecraft",
+  "status": "deployed_provider_unavailable_pending_endpoint_review",
+  "local_secret_values_emitted": false,
+  "local_secure_config": {
+    "path": "sites/rolecraft/.env.external-services.local",
+    "api_key_present": true,
+    "custom_base_url_present": true,
+    "generate_model_present": true,
+    "copied_to_remote": false
+  },
+  "remote_before_deploy": {
+    "service_user": "ubuntu",
+    "node_version": "24.20.0",
+    "service_listener": "127.0.0.1:4318",
+    "pm2_in_non_login_path": false,
+    "remote_generation_fields_present": false
+  },
+  "backup": {
+    "completed": true,
+    "directory": "/opt/rolecraft/.runtime/backups/real-model-predeploy-20261016T005124Z",
+    "files": [
+      "rolecraft.sqlite",
+      "deploy.env",
+      "ecosystem.config.cjs",
+      "process.txt",
+      "SHA256SUMS"
+    ]
+  },
+  "deployment": {
+    "remote_env_written": true,
+    "remote_env_permissions": "600",
+    "service_restarted": true,
+    "pm2_process_name": "rolecraft",
+    "pm2_pid_after_restart": 2817513,
+    "provider_called": false,
+    "health_generation_configured": true,
+    "health_missing_count": 0,
+    "public_health_generation_configured": true,
+    "public_health_missing_count": 0,
+    "signed_parameters": {
+      "OPENAI_MAX_OUTPUT_TOKENS": 1200,
+      "ROLECRAFT_GENERATION_BUDGET_USD": 1,
+      "ROLECRAFT_ESTIMATED_MAX_COST_USD": 0.05,
+      "OPENAI_TIMEOUT_MS": 30000
+    },
+    "pm2_save": "not_run_auto_review_rejected_secret_persistence",
+    "local_generation_adapter_sha256": "9797e8053769a8bfa1f4ba6203933106fa28be649e44fedee323948f4a95477d",
+    "remote_generation_adapter_sha256": "9797e8053769a8bfa1f4ba6203933106fa28be649e44fedee323948f4a95477d",
+    "local_server_sha256": "23fe1071d490e8042cd408ad1b3b7bd445529ac432ab5b6327f5d8047de4a6a7",
+    "remote_server_sha256": "23fe1071d490e8042cd408ad1b3b7bd445529ac432ab5b6327f5d8047de4a6a7",
+    "model_logic_modified": false,
+    "adapter_endpoint_support_patch_present": true,
+    "adapter_offline_contract_checks": {
+      "passed": 19,
+      "total": 19,
+      "real_provider_called": false
+    },
+    "real_provider_acceptance": {
+      "report": "sites/rolecraft/team/qa-v1.0-real-model-acceptance.json",
+      "single_attempt": true,
+      "simulation": false,
+      "provider_called": true,
+      "status": "failed",
+      "http_status": 503,
+      "error_code": "provider_unavailable",
+      "provider_outcome_unknown": true,
+      "usage_present": false,
+      "request_id_present": false,
+      "response_id_present": false,
+      "retry_issued": false,
+      "successful_draft_saved": false
+    }
+  },
+  "blockers": [
+    {
+      "id": "GEN-PARAM-001",
+      "severity": "P0",
+      "owner": "ai_generation_engineer",
+      "issue": "真实请求到达供应商但返回 HTTP 503；目标端点的 Responses API 和严格 JSON Schema 成功能力尚未证实。"
+    },
+    {
+      "id": "GEN-PARAM-002",
+      "severity": "P1",
+      "owner": "operations_analyst",
+      "issue": "本次 503 没有 usage 或供应商请求/响应 ID；实际账单成本尚未核对。"
+    },
+    {
+      "id": "GEN-PARAM-003",
+      "severity": "P0",
+      "owner": "qa_engineer",
+      "issue": "真实调用证据表明 providerCalled=true 但未成功；不得 retry，需先核对 503 与端点协议。"
+    }
+  ],
+  "next_gate": "测试工程师使用隔离账户和固定 e03 输入执行一次受控真实调用，核对阶段、usage、request/response ID、来源绑定和失败语义。"
+}

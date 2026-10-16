@@ -1,0 +1,95 @@
+{
+  "qa_id": "AI-D0-03-LEARNER-RECEIPTS-NORMALIZATION-QA-20261016-002",
+  "artifact_dir": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-learner-receipts",
+  "derived_by": "QA",
+  "prior_record": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-learner-receipts-normalization-qa-v01.md",
+  "status": "met_with_limitations",
+  "normalization_scope": "pass",
+  "overall_gate": "not_met",
+  "decision": "remain_L0_guided",
+  "repair": {
+    "historical_wrapper": {
+      "path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-learner-receipts/learner-statement-qa-wrapper-v01.txt",
+      "status": "failed_derived_wrapper_preserved",
+      "bytes": 968,
+      "sha256": "a1adc4b61ec9e876b7c7a9c64ce4ee74f3ccd2bf8762b581a557d5b30a115e4b",
+      "content_changed_during_v02": false,
+      "reason": "Preserves the prior wrapper that incorrectly described itself as byte-preserving."
+    },
+    "canonical_statement": {
+      "path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-learner-receipts/learner-statement.txt",
+      "source_alias": "../ai-generation-real-learner-d0-execution-learner-signoff-v01.txt",
+      "copy_mode": "byte_exact",
+      "bytes": 766,
+      "sha256": "b8a4cafebf54c52d25ee3fb8f6df84c92979282d96e533df01c2625248f665c4",
+      "matches_source_bytes": true,
+      "matches_source_sha256": true
+    },
+    "metadata": {
+      "path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-learner-receipts/learner-statement.meta.json",
+      "derived_by": "QA",
+      "source_sha256": "b8a4cafebf54c52d25ee3fb8f6df84c92979282d96e533df01c2625248f665c4",
+      "copy_mode": "byte_exact"
+    }
+  },
+  "checks": {
+    "canonical_statement_cmp": {
+      "status": "pass",
+      "source_bytes": 766,
+      "statement_bytes": 766,
+      "source_sha256": "b8a4cafebf54c52d25ee3fb8f6df84c92979282d96e533df01c2625248f665c4",
+      "statement_sha256": "b8a4cafebf54c52d25ee3fb8f6df84c92979282d96e533df01c2625248f665c4"
+    },
+    "historical_wrapper_preserved": {
+      "status": "pass",
+      "bytes": 968,
+      "sha256": "a1adc4b61ec9e876b7c7a9c64ce4ee74f3ccd2bf8762b581a557d5b30a115e4b"
+    },
+    "raw_sha256sums": {
+      "status": "pass",
+      "sha256": "7768f8af1a89c2830ba3dca945320f3b46722008f8400e8120eba7293f4deae7",
+      "authoritative_original_unchanged_by_this_repair": true
+    },
+    "manifest_payload": {
+      "status": "pass",
+      "payload_matches_original_SHA256SUMS": true,
+      "original_sha256sums_sha256": "7768f8af1a89c2830ba3dca945320f3b46722008f8400e8120eba7293f4deae7"
+    },
+    "aggregates": {
+      "status": "pass",
+      "files": [
+        "sites/rolecraft/team/ai-generation-real-learner-d0-execution-learner-receipts/run-1.aggregate.json",
+        "sites/rolecraft/team/ai-generation-real-learner-d0-execution-learner-receipts/run-2.aggregate.json"
+      ],
+      "run_ids": [
+        "run-1",
+        "run-2"
+      ],
+      "derived_by_values": [
+        "QA",
+        "QA"
+      ]
+    }
+  },
+  "evidence_boundary": {
+    "learner_id": "unknown",
+    "human_receipt_pending": true,
+    "learner_receipt_status": "pending_learner_attribution",
+    "handoff_status": "pending",
+    "handoff_receiver_identity": null,
+    "handoff_accepted": null,
+    "handoff_accepted_at": null,
+    "handoff_signature": null,
+    "level_granted": null,
+    "forbidden_inference": [
+      "Byte-exact normalization does not establish learner identity or learner-owned execution.",
+      "A pending handoff is not receiver acceptance.",
+      "No D0, L1, or L2 level may be granted from these artifacts."
+    ]
+  },
+  "protected_sources": {
+    "raw_stdout_stderr": "not modified by v02 repair",
+    "original_SHA256SUMS": "not modified by v02 repair",
+    "original_learner_signoff": "not modified by v02 repair"
+  }
+}

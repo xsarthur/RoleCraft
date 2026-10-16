@@ -1,0 +1,125 @@
+{
+  "run_id": "agent-developer-mvp-20261015",
+  "agent_version": "agent-developer-mvp-v1.0",
+  "workspace": "/private/tmp/qa-agent-mvp-t3-variant-20261015",
+  "contracts": {
+    "T1": "T1-v1.0",
+    "T2": "T2-v1.0",
+    "T3": "T3-v1.0"
+  },
+  "source_manifest": {
+    "sites/rolecraft/textbooks/v12/c01-control-loop.md": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+    "sites/rolecraft/textbooks/v12/e01.md": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a"
+  },
+  "t1": [
+    {
+      "id": "t1-normal-001",
+      "contract": "T1-v1.0",
+      "fixture_id": "T1-normal-v1",
+      "fixture_sha256": "cad53e4bf5b874874862e2a313af0f4aa5ae0840425cdf0bc5055dcdea1ad86f",
+      "status": "completed",
+      "stop_reason": "completed",
+      "tool_attempts": 1,
+      "agent_steps": 3,
+      "events": 6,
+      "log": "logs/t1-normal-001.jsonl"
+    },
+    {
+      "id": "t1-tool-failure-001",
+      "contract": "T1-v1.0",
+      "fixture_id": "T1-tool-failure-v1",
+      "fixture_sha256": "c1f2736119ebdb532715072642af63520264f56cbd50cc0667f990e579e4d15b",
+      "status": "failed",
+      "stop_reason": "tool_error_after_one_retry",
+      "tool_attempts": 2,
+      "retry_count": 1,
+      "events": 8,
+      "log": "logs/t1-tool-failure-001.jsonl"
+    }
+  ],
+  "t2": [
+    {
+      "id": "t2-hit-001",
+      "contract": "T2-v1.0",
+      "case": "hit",
+      "fixture_sha256": "d8462df83c1230498c6131a04029918425f081f072a6bc885a4ce9e85055ff00",
+      "status": "recommended",
+      "stop_reason": "source_verified",
+      "section_id": "c01-control-loop",
+      "source_path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+      "excerpt": "一个可靠的控制循环，必须能够回答三个问题",
+      "source_sha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+      "events": 4,
+      "log": "logs/t2-hit-001.jsonl"
+    },
+    {
+      "id": "t2-no_match-001",
+      "contract": "T2-v1.0",
+      "case": "no_match",
+      "fixture_sha256": "94d1f62d978545e09ea70b9ca0081a5953c73c1e8c795971a3d64f07c577f894",
+      "status": "needs_clarification",
+      "stop_reason": "no_match",
+      "events": 3,
+      "log": "logs/t2-no_match-001.jsonl"
+    },
+    {
+      "id": "t2-ambiguous-001",
+      "contract": "T2-v1.0",
+      "case": "ambiguous",
+      "fixture_sha256": "58253d769b0c9ffcf8136d4aa9bd08733b2d12b585d4d45695c68328f793a9c1",
+      "status": "needs_clarification",
+      "stop_reason": "ambiguous_candidates",
+      "events": 3,
+      "log": "logs/t2-ambiguous-001.jsonl"
+    },
+    {
+      "id": "t2-version_conflict-001",
+      "contract": "T2-v1.0",
+      "case": "version_conflict",
+      "fixture_sha256": "c325c18dd0932c99d6e03a16b6856b1fc9b4a5cc7dcc9c230db3739ce958d61a",
+      "status": "stopped",
+      "stop_reason": "source_version_conflict",
+      "events": 3,
+      "log": "logs/t2-version_conflict-001.jsonl"
+    }
+  ],
+  "t3": [
+    {
+      "id": "t3-timeout-001",
+      "contract": "T3-v1.0",
+      "fixture_id": "T3-timeout-v1",
+      "fixture_sha256": "abba1b6849be7a36ad6e2294919c9e40d391fcba5b74b48a4abc0b54609a0728",
+      "status": "stopped",
+      "stop_reason": "timeout",
+      "tool_attempts": 1,
+      "tool_calls_after_stop": 0,
+      "events": 5,
+      "log": "logs/t3-timeout-001.jsonl"
+    },
+    {
+      "id": "t3-evidence-missing-001",
+      "contract": "T3-v1.0",
+      "fixture_id": "T3-evidence-missing-v1",
+      "fixture_sha256": "7dfbc4bb2abc8998a07601c751458444df9b41b52ec0b311f96988af5c3382d7",
+      "status": "stopped",
+      "stop_reason": "evidence_missing",
+      "missing_fields": [
+        "source_path"
+      ],
+      "recommendation_emitted": false,
+      "events": 3,
+      "log": "logs/t3-evidence-missing-001.jsonl"
+    },
+    {
+      "id": "t3-permission-conflict-001",
+      "contract": "T3-v1.0",
+      "fixture_id": "T3-permission-conflict-v1",
+      "fixture_sha256": "acd89496144cf20799dbda1ee4ac98f76fa9ff919a70404f7d00dc3935f70205",
+      "status": "stopped",
+      "stop_reason": "permission_conflict",
+      "tool_calls": 0,
+      "events": 3,
+      "log": "logs/t3-permission-conflict-001.jsonl"
+    }
+  ]
+}

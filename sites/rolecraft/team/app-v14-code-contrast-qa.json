@@ -1,0 +1,300 @@
+{
+  "version": "app-v14-code-contrast-independent-qa-1",
+  "atUtc": "2026-10-12T02:36:51.229180+00:00",
+  "role": "测试工程师",
+  "status": "met_within_scope",
+  "scope": "only current code-color CSS repair, bound representative rendered DOM and original refund/check_case read example; not full site QA",
+  "candidate": {
+    "cssPath": "dist/learning-experience-v13.css",
+    "sha256": "227e24bfc9c12a6c8254c4fbebfba65f3ddcb4d183a5405e803d5042c9ebe592",
+    "onlyApplicationChange": "experience CSS; other CSS, JS/index/content/textbooks protected"
+  },
+  "original": {
+    "unitId": "01-foundation",
+    "sectionId": "s-cdf0ad611ebb",
+    "sourceSha256": "3ca5c2391ccfba389cb16d7eac85034bcb50d0768f0e9e7374c92917044232d7",
+    "href": "#learn/agent/01-foundation/s-cdf0ad611ebb",
+    "code": "refund(days)/check_case",
+    "label": "python · 网页不执行代码"
+  },
+  "finding": {
+    "id": "CC14-01",
+    "status": "closed_in_tested_scope",
+    "cause": "light wrapper background cascaded over dark-theme pre/label foreground; pre code inherits explicit pre foreground",
+    "receivedFailureKinds": [
+      "block_code",
+      "block_pre",
+      "language_label"
+    ],
+    "repairOwner": "软件工程师"
+  },
+  "previousQAReview": {
+    "oldFrozenReport": "team/app-v14-dialog-qa.md/.json",
+    "actuallyChecked": "dialog answer/source/entrance and reader layout; source and direct-effect detail checks",
+    "missingCheck": "explicit computed pre/code/label/inline text versus effective background; this foundation code example was not a required visual readability case",
+    "cause": "QA plan omission",
+    "improvement": "reusable bound DOM contrast script executed now; mandatory representative affected-style checks for future relevant changes",
+    "owner": "测试工程师",
+    "oldFrozenReportChanged": false
+  },
+  "method": {
+    "source": "official independent UI computed-style snapshots",
+    "background": "actual target→HTML chains, alpha composition; all observed opacity1/no image/filter/blend",
+    "formula": "sRGB relative luminance, (higher+.05)/(lower+.05)",
+    "minimumNormalText": 4.5,
+    "unroundedDecision": true,
+    "standard": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+    "script": "team/app-v14-code-contrast-qa-history/check_contrast.py",
+    "captureTemplate": "team/app-v14-code-contrast-qa-history/capture_computed.js",
+    "readme": "team/app-v14-code-contrast-qa-history/README.md",
+    "allSiteCIDeployed": false
+  },
+  "results": {
+    "received": {
+      "exitCode": 1,
+      "status": "fail",
+      "samples": 5,
+      "failed": 3,
+      "rows": [
+        {
+          "kind": "block_code",
+          "selector": ".lw-code pre code containing def refund(days)",
+          "fontSize": "13px",
+          "foreground": "rgb(231, 238, 231)",
+          "effectiveBackgroundRgb": [
+            243.0,
+            240.0,
+            234.0
+          ],
+          "contrastRatio": 1.038330376957137,
+          "minimum": 4.5,
+          "status": "fail",
+          "backgroundAncestorCount": 11
+        },
+        {
+          "kind": "block_pre",
+          "selector": ".lw-code pre containing def refund(days)",
+          "fontSize": "13px",
+          "foreground": "rgb(231, 238, 231)",
+          "effectiveBackgroundRgb": [
+            243.0,
+            240.0,
+            234.0
+          ],
+          "contrastRatio": 1.038330376957137,
+          "minimum": 4.5,
+          "status": "fail",
+          "backgroundAncestorCount": 10
+        },
+        {
+          "kind": "language_label",
+          "selector": ".lw-code > span before the target pre",
+          "fontSize": "12px",
+          "foreground": "rgb(187, 204, 189)",
+          "effectiveBackgroundRgb": [
+            243.0,
+            240.0,
+            234.0
+          ],
+          "contrastRatio": 1.4788288942336465,
+          "minimum": 4.5,
+          "status": "fail",
+          "backgroundAncestorCount": 10
+        },
+        {
+          "kind": "inline_code",
+          "selector": ".lw-prose p code:first matched",
+          "fontSize": "14.08px",
+          "foreground": "rgb(38, 60, 49)",
+          "effectiveBackgroundRgb": [
+            238.0,
+            242.0,
+            235.0
+          ],
+          "contrastRatio": 10.453913690382345,
+          "minimum": 4.5,
+          "status": "pass",
+          "backgroundAncestorCount": 10
+        },
+        {
+          "kind": "body_paragraph",
+          "selector": ".lw-prose > p:first matched",
+          "fontSize": "16px",
+          "foreground": "rgb(38, 60, 49)",
+          "effectiveBackgroundRgb": [
+            249.0,
+            247.0,
+            243.0
+          ],
+          "contrastRatio": 11.068965807383355,
+          "minimum": 4.5,
+          "status": "pass",
+          "backgroundAncestorCount": 9
+        }
+      ]
+    },
+    "candidate1280": {
+      "exitCode": 0,
+      "status": "pass",
+      "samples": 5,
+      "rows": [
+        {
+          "kind": "block_code",
+          "selector": ".lw-code pre code containing def refund(days)",
+          "fontSize": "13px",
+          "foreground": "rgb(61, 57, 41)",
+          "effectiveBackgroundRgb": [
+            243.0,
+            240.0,
+            234.0
+          ],
+          "contrastRatio": 10.168627385542269,
+          "minimum": 4.5,
+          "status": "pass",
+          "backgroundAncestorCount": 11
+        },
+        {
+          "kind": "block_pre",
+          "selector": ".lw-code pre containing def refund(days)",
+          "fontSize": "13px",
+          "foreground": "rgb(61, 57, 41)",
+          "effectiveBackgroundRgb": [
+            243.0,
+            240.0,
+            234.0
+          ],
+          "contrastRatio": 10.168627385542269,
+          "minimum": 4.5,
+          "status": "pass",
+          "backgroundAncestorCount": 10
+        },
+        {
+          "kind": "language_label",
+          "selector": ".lw-code > span before the target pre",
+          "fontSize": "12px",
+          "foreground": "rgb(107, 99, 86)",
+          "effectiveBackgroundRgb": [
+            243.0,
+            240.0,
+            234.0
+          ],
+          "contrastRatio": 5.209269819345862,
+          "minimum": 4.5,
+          "status": "pass",
+          "backgroundAncestorCount": 10
+        },
+        {
+          "kind": "inline_code",
+          "selector": ".lw-prose p code:first matched",
+          "fontSize": "14.08px",
+          "foreground": "rgb(61, 57, 41)",
+          "effectiveBackgroundRgb": [
+            236.0,
+            231.0,
+            221.0
+          ],
+          "contrastRatio": 9.385429475186266,
+          "minimum": 4.5,
+          "status": "pass",
+          "backgroundAncestorCount": 10
+        },
+        {
+          "kind": "body_paragraph",
+          "selector": ".lw-prose > p:first matched",
+          "fontSize": "16px",
+          "foreground": "rgb(38, 60, 49)",
+          "effectiveBackgroundRgb": [
+            249.0,
+            247.0,
+            243.0
+          ],
+          "contrastRatio": 11.068965807383355,
+          "minimum": 4.5,
+          "status": "pass",
+          "backgroundAncestorCount": 9
+        }
+      ]
+    },
+    "candidate375": {
+      "exitCode": 0,
+      "status": "pass",
+      "samples": 5,
+      "ratiosSameAs1280": true
+    },
+    "staleAgainstCurrentCSS": {
+      "exitCode": 2,
+      "status": "rejected",
+      "noContrastPassClaimed": true
+    },
+    "transport": "own4497 actual HTTP200 exact hashes for three CSS"
+  },
+  "actualBrowser": {
+    "mainQaChannel": "unavailable; not replaced by unauthorized automation",
+    "independentUiSpecialist": "official fresh IAB2, own tab1, actual navigation/reload/computed and one final desktop tool-native screenshot",
+    "screenshotFileFabricated": false,
+    "narrow375": "actual DOM/style/width only, document scroll/client375, pre343/scroll638 overflowauto; target below viewport, no narrow visual screenshot/deep-link positioning pass"
+  },
+  "protection": {
+    "namedFiles": 1450,
+    "allMatch": true,
+    "threeStylesSeparatelyRecorded": true,
+    "onlyExperienceCSSChanged": true,
+    "parallelV13EvidenceExcluded": 80,
+    "excluded": "runtime/DB/env/secrets/dependencies/model,user browser records,PM admin,current-round new records",
+    "oldFrozenV14QAUnchanged": true,
+    "evidence": "team/app-v14-code-contrast-qa-history/protected-final.json"
+  },
+  "cleanup": {
+    "own4497BothSIGINTExit0": true,
+    "no4497Listener": true,
+    "twoKnownTemporaryDbDirsRemoved": true,
+    "uiOwnTabClosedViewportReset": true,
+    "user4318OperatedByQA": false,
+    "evidence": "team/app-v14-code-contrast-qa-history/cleanup-final.json"
+  },
+  "noAddedRuns": {
+    "old292Http": 0,
+    "textbookCode": 0,
+    "paidOrPublished": false,
+    "userDbOrStorageTested": false
+  },
+  "limitations": [
+    "one original page/five representative kinds/two widths, not all Chinese or all site accessibility",
+    "current actual warm theme only; no invented dark-mode validation",
+    "375 actual DOM not narrow screenshot or deep-link positioning validation",
+    "selection/focus painting, real phone/IME, full old functionality and textbook execution not independently verified in this round"
+  ],
+  "fullGoal": {
+    "status": "not_met",
+    "originalEightGatesUnchanged": true,
+    "real_generation": "fail",
+    "reliable_delivery": "fail",
+    "user_value": "insufficient",
+    "teaching_quality": "insufficient",
+    "comparative_advantage": "insufficient",
+    "learner_creation": "insufficient",
+    "operating_economics": "insufficient",
+    "iteration_trace": "pass_within_current_narrow_scope",
+    "reason": "CSS readability repair cannot establish real learner/human expert/market/production evidence",
+    "ownersAndNext": "Original product/domain owners retain existing evidence gaps; new artifacts require independent review; QA adds executed contrast check to future affected-style acceptance"
+  },
+  "evidence": [
+    "team/app-v14-code-contrast-qa-history/received-baseline.json",
+    "team/app-v14-code-contrast-qa-history/plan-frozen.json",
+    "team/app-v14-code-contrast-qa-history/candidate-http-styles.json",
+    "team/app-v14-code-contrast-qa-history/received-contrast-result.json",
+    "team/app-v14-code-contrast-qa-history/candidate-desktop-contrast-result.json",
+    "team/app-v14-code-contrast-qa-history/candidate-narrow-contrast-result.json",
+    "team/app-v14-code-contrast-qa-history/stale-current-css-rejection.json",
+    "team/app-v14-code-contrast-ui-qa.md",
+    "team/app-v14-code-contrast-ui-qa-history/binding.json"
+  ],
+  "domainSelfCheck": {
+    "onlyOwnQAPathsWritten": true,
+    "appNotRepairedByQA": true,
+    "rawComputedVsDesignColorsDistinguished": true,
+    "originalFailAndNewPassActuallyExecuted": true,
+    "sourceHashGuardActuallyRejected": true,
+    "limitationsReported": true
+  }
+}

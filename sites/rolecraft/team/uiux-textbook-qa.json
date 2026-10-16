@@ -1,0 +1,263 @@
+{
+  "schema": "rolecraft.textbook.qa.v1",
+  "artifact": "AI 时代 UI/UX 设计入门",
+  "version": "v0.1",
+  "at": "2026-10-14T00:00:00+08:00",
+  "role": "测试工程师",
+  "scope": [
+    "textbooks/uiux-design-v01 README",
+    "uiux-design-textbook.md",
+    "sources-and-interview-map.md",
+    "author-handoff.md",
+    "course architecture/product scope/research source files"
+  ],
+  "conclusion": "met_with_limitations",
+  "full_career_goal": "not_met",
+  "baseline": {
+    "files": [
+      {
+        "path": "sites/rolecraft/textbooks/uiux-design-v01/README.md",
+        "description": "教材入口与12章目录",
+        "bytes": 4064,
+        "sha256": "ff2b47e37cf6c3d2ff54f9ae5e0ccfdb172584c2cf043117d9818902be42a622",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/textbooks/uiux-design-v01/uiux-design-textbook.md",
+        "description": "UI/UX正文",
+        "bytes": 34852,
+        "sha256": "80518da47d06fc7f58f42e879269a9e9df01a91dc3e089ebae2340208371dfd0",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/textbooks/uiux-design-v01/sources-and-interview-map.md",
+        "description": "来源与题型映射",
+        "bytes": 6328,
+        "sha256": "2b5b07265fd9a540beaa7eb025a0fea064d33758cc131508f6af2467662ecc0d",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/textbooks/uiux-design-v01/author-handoff.md",
+        "description": "作者交接",
+        "bytes": 4796,
+        "sha256": "d1e15d6b35ca01f6aee51b1897ee0eae78b55339e6df81ede81468a2d26612bd",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/team/uiux-textbook-course-architecture.md",
+        "description": "课程架构规格 Markdown",
+        "bytes": 26444,
+        "sha256": "d4efafb8c73ac1864c5befb459e61cee3d9f7a0528faa79ddb33997b1d093cc7",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/team/uiux-textbook-course-architecture.json",
+        "description": "课程架构规格 JSON",
+        "bytes": 21093,
+        "sha256": "00e75abf5b359cc79c90296cb725a54c65d9f09ff57b49def10f0c6c8386a26e",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/team/uiux-textbook-product-scope.md",
+        "description": "产品范围 Markdown",
+        "bytes": 13617,
+        "sha256": "f4680194e0bd7a458f7320a375cc66bd57dbd83ec6c5ce5815353655e9c0633e",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/team/uiux-textbook-product-scope.json",
+        "description": "产品范围 JSON",
+        "bytes": 3709,
+        "sha256": "7af720642b07d23271b68c99265cd8b71470c29f012a521c1824379ccb9be09f",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/team/uiux-interview-questions-3m-research.md",
+        "description": "面试题研究 Markdown",
+        "bytes": 34551,
+        "sha256": "a78c8bf2f574bb2869493d0e37d3b995879ad40f0bfd0b6264f59702d1fee175",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/team/uiux-interview-questions-3m-research.json",
+        "description": "面试题研究 JSON",
+        "bytes": 86179,
+        "sha256": "0f2df0d9b0c9e179fc5a60de169c6ff2dc6ce837928cc0812038719f416443f8",
+        "status": "received"
+      }
+    ],
+    "frozen_before_checks": true
+  },
+  "checks": [
+    {
+      "id": "UXT-QA-01",
+      "name": "files_and_versions",
+      "status": "pass",
+      "evidence": "10 scoped files exist and baseline hashes recorded"
+    },
+    {
+      "id": "UXT-QA-02",
+      "name": "local_markdown_links",
+      "status": "pass",
+      "local_link_count": 7,
+      "missing": [],
+      "external_links_live_checked": false
+    },
+    {
+      "id": "UXT-QA-03",
+      "name": "json_parseability_and_research_ids",
+      "status": "pass",
+      "json_files": [
+        "course-architecture",
+        "product-scope",
+        "interview-research"
+      ],
+      "research_item_count": 103,
+      "research_unique_ids": 103,
+      "research_id_range": "UIUX-3M-001..UIUX-3M-103"
+    },
+    {
+      "id": "UXT-QA-04",
+      "name": "version_hash_binding",
+      "status": "partial",
+      "finding": "UXT-F-01",
+      "current_research_json_sha256": "0f2df0d9b0c9e179fc5a60de169c6ff2dc6ce837928cc0812038719f416443f8",
+      "spec_research_json_sha256": "7aa79f20e39ffe27ffbb21daf8e3bc1eb2cc985dd33a586bd27a9db7d59da6b4",
+      "current_research_json_parseable": true,
+      "spec_claims_line_73_syntax_error": true
+    },
+    {
+      "id": "UXT-QA-05",
+      "name": "chapter_structure",
+      "status": "pass",
+      "chapter_count": 12,
+      "contiguous": true,
+      "activity_note": "9 explicit practice headings; chapters 9 and 12 have inline exercise/capstone task and rubric"
+    },
+    {
+      "id": "UXT-QA-06",
+      "name": "chapter_to_curriculum_mapping",
+      "status": "partial",
+      "finding": "UXT-F-03",
+      "overview_chapters": 12,
+      "spec_units": 26,
+      "machine_reverse_matrix_present": false
+    },
+    {
+      "id": "UXT-QA-07",
+      "name": "question_id_and_mapping_traceability",
+      "status": "partial",
+      "findings": [
+        "UXT-F-02",
+        "UXT-F-04"
+      ],
+      "architecture_mapping_ids": 103,
+      "source_map_unique_ids": 77,
+      "source_map_mentions": 91,
+      "invalid_ids": [],
+      "duplicate_within_visual_cluster": [
+        "UIUX-3M-059",
+        "UIUX-3M-060"
+      ]
+    },
+    {
+      "id": "UXT-QA-08",
+      "name": "question_statistics_boundaries",
+      "status": "pass_limited",
+      "research_claims_103_not_national_frequency": true,
+      "S06_separate_candidate_report": true
+    },
+    {
+      "id": "UXT-QA-09",
+      "name": "chapter_navigation",
+      "status": "partial",
+      "finding": "UXT-F-03",
+      "readme_has_chapter_table": true,
+      "readme_chapter_anchor_links": false
+    },
+    {
+      "id": "UXT-QA-10",
+      "name": "validation_claim_boundaries",
+      "status": "pass_limited",
+      "unsupported_real_validation_claims_found": false,
+      "static_only": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "UXT-F-01",
+      "severity": "P1",
+      "status": "open",
+      "owner": [
+        "竞品研究员",
+        "课程架构师"
+      ],
+      "summary": "课程规格中的研究 JSON 旧哈希/语法错误说明与当前可解析文件不一致；一处 v12 输入哈希也漂移。",
+      "retest": "明确修复后版本并更新/分离快照、重算绑定。"
+    },
+    {
+      "id": "UXT-F-02",
+      "severity": "P2",
+      "status": "open",
+      "owner": [
+        "竞品研究员",
+        "课程架构师"
+      ],
+      "summary": "来源映射 UI 视觉簇重复列出 UIUX-3M-059、060。",
+      "retest": "去重或声明有意强调后重跑题型计数。"
+    },
+    {
+      "id": "UXT-F-03",
+      "severity": "P2",
+      "status": "open",
+      "owner": [
+        "课程架构师",
+        "教材研发员"
+      ],
+      "summary": "README 缺章节锚点/点击目录和 12→26 单元机器反向矩阵。",
+      "retest": "增加导航与矩阵后重跑链接、锚点和映射。"
+    },
+    {
+      "id": "UXT-F-04",
+      "severity": "P2",
+      "status": "open",
+      "owner": [
+        "竞品研究员",
+        "课程架构师",
+        "教材研发员"
+      ],
+      "summary": "研究 ID 只在来源表按能力簇出现，正文缺逐条近邻 ID/反向断言矩阵。",
+      "retest": "补正文近邻 ID 或反向表后按冻结研究版本复核。"
+    }
+  ],
+  "counterexamples": [
+    {
+      "id": "CE-01",
+      "status": "closed",
+      "case": "103公开题型被写成全国热度/固定真题/录用概率"
+    },
+    {
+      "id": "CE-02",
+      "status": "closed",
+      "case": "教学夹具或伪代码被写成真实运行结果"
+    },
+    {
+      "id": "CE-03",
+      "status": "closed",
+      "case": "12章概要被写成26单元全部交付"
+    }
+  ],
+  "limitations": [
+    "external URLs not live checked",
+    "no browser/Figma/assistive technology or code execution",
+    "no model/API/paid calls",
+    "no learner/industry expert/employer evidence"
+  ],
+  "retest_conditions": [
+    "resolve UXT-F-01 hash/provenance drift",
+    "resolve UXT-F-02 duplicate IDs",
+    "add UXT-F-03 navigation and reverse unit matrix",
+    "add UXT-F-04 body-near source traceability",
+    "recompute all hashes after author/source changes"
+  ]
+}

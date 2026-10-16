@@ -1,0 +1,223 @@
+{
+  "kind": "author_candidate_binding",
+  "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+  "createdAt": "2026-10-11T14:37:21.092Z",
+  "runtime": "v24.16.0",
+  "corpusVersion": "textbook-v10",
+  "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+  "bookSha256": "6707a4f03b298a5b234ce56a88edcbd9d79af6d40cb978227461a9d9d522f76e",
+  "files": [
+    {
+      "path": "dist/content-retrieval-core.js",
+      "sha256": "f75e67eb51f43a2f64f1ca68cf8d32a948b00dde443f4237dabb88ded01f88e4"
+    },
+    {
+      "path": "server/retrieval/index.mjs",
+      "sha256": "1d16d453dd96a88dc8627a702363a33d8e73b6b84b8991dd9f190bc5f2de817f"
+    },
+    {
+      "path": "server/retrieval/search-fix-dev-check.mjs",
+      "sha256": "17671b10f4ce9ec6c7debfbb0573ef71718ba8f9a6bcf89fc71dd1ffdf53a01e"
+    },
+    {
+      "path": "server/retrieval/semantic.mjs",
+      "sha256": "ef62b852a4e93314c5a2c178a84d8c4cd9a00d9e766568f78bbd94ab77c65fdf"
+    },
+    {
+      "path": "server/index.mjs",
+      "sha256": "f845271c8ab5a5c00b60cf7c6728f05f8fc6ff9a5df50f7d667abd03f5a8e464"
+    },
+    {
+      "path": "../../scripts/start-local.mjs",
+      "sha256": "b708c5d421e1ce77e7c0e399e833afd8d0b8881742f3adeeb2a98dfc3606a903"
+    },
+    {
+      "path": "server/retrieval/build-content.mjs",
+      "sha256": "d4ccba5dd141228abfdd8104bf34b672bfaae712f34bde29d9aa371cc6b11671"
+    },
+    {
+      "path": "server/retrieval/content-v10-index.json",
+      "sha256": "98dc7273c9d1d5b27a18b4589f0a540cc9705b326d64bda9689f51574204e4e4"
+    },
+    {
+      "path": "dist/content-v10-data.js",
+      "sha256": "0a2537f32ea2ddc2c5a020cc7a72937f0bfb7813ee2b701a3bdeec9035d02d58"
+    },
+    {
+      "path": "server/retrieval/model-lock.json",
+      "sha256": "4ca475a7d227148624e45c52df50cbe6c3ca0678a7ef4c9bb8b7a76e61f949e7"
+    },
+    {
+      "path": "server/retrieval/vectors-v10.json",
+      "sha256": "993cfda9d7738201ec404961efe6defa3c7945d53e176ef4e07188286f0f474b"
+    },
+    {
+      "path": "server/retrieval/intent-vectors-v10.json",
+      "sha256": "0fb078eca729c7c587b609dda062e2f263ded5618b545c5b36e9d5ef774b5018"
+    },
+    {
+      "path": "team/app-v11-search-fix-product.md",
+      "sha256": "ca9e4201fb69cdf904f650caf59265390a60d93c6c82138d2bd5ef78c6702cdb"
+    },
+    {
+      "path": "team/app-v11-search-fix-retrieval.md",
+      "sha256": "907b3a563830a38aa140631bbffb76ec66209bd62b7978937193095fc09f4871"
+    },
+    {
+      "path": "team/app-v11-search-fix-retrieval-dev-check.json",
+      "sha256": "9c2721c44deca40c7cd90697a1d25377b6d01aafef06354b92b896863def6004"
+    },
+    {
+      "path": "team/app-v11-search-fix-retrieval-repair-check.json",
+      "sha256": "d07d5ede75651d069e4a52fccd077d1ec5f68a01291c3cea7b6498b1ab0616c6"
+    }
+  ],
+  "sourceUnits": [
+    {
+      "unitId": "00-learning-route",
+      "sourcePath": "textbooks/v10/00-learning-route.md",
+      "sourceSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+      "actualSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac"
+    },
+    {
+      "unitId": "01-foundation",
+      "sourcePath": "textbooks/v10/01-foundation.md",
+      "sourceSha256": "9e21a39ca80ea9045111885d33f8a60e0c5fc403a43e74b86f0f58a23347abad",
+      "actualSha256": "9e21a39ca80ea9045111885d33f8a60e0c5fc403a43e74b86f0f58a23347abad"
+    },
+    {
+      "unitId": "p01-discovery",
+      "sourcePath": "textbooks/v10/p01-discovery.md",
+      "sourceSha256": "dfbaf177deeba2bd4f71a633764533a65dce7d14d036e75400744e8c0aee111b",
+      "actualSha256": "dfbaf177deeba2bd4f71a633764533a65dce7d14d036e75400744e8c0aee111b"
+    },
+    {
+      "unitId": "02-task-acceptance",
+      "sourcePath": "textbooks/v10/02-task-acceptance.md",
+      "sourceSha256": "73d4157f1db7a146b7f84c7913be05dadbb91d2a256560531a7ae748932bc5fc",
+      "actualSha256": "73d4157f1db7a146b7f84c7913be05dadbb91d2a256560531a7ae748932bc5fc"
+    },
+    {
+      "unitId": "03-trust-boundary",
+      "sourcePath": "textbooks/v10/03-trust-boundary.md",
+      "sourceSha256": "ede8fbe33929ecceafe800fadcc20186c854f8b4bd4b8288e6b74d3690db1f53",
+      "actualSha256": "ede8fbe33929ecceafe800fadcc20186c854f8b4bd4b8288e6b74d3690db1f53"
+    },
+    {
+      "unitId": "f01",
+      "sourcePath": "textbooks/v10/f01.md",
+      "sourceSha256": "54fa66bf5d2072b69a033516602e6db3498cd9cfe9dffecf13622f7d86b39f4e",
+      "actualSha256": "54fa66bf5d2072b69a033516602e6db3498cd9cfe9dffecf13622f7d86b39f4e"
+    },
+    {
+      "unitId": "f02",
+      "sourcePath": "textbooks/v10/f02.md",
+      "sourceSha256": "7179f323186c9af9930532d0f6cb96c45aa64121c8bf6afd171a9b23531918cf",
+      "actualSha256": "7179f323186c9af9930532d0f6cb96c45aa64121c8bf6afd171a9b23531918cf"
+    },
+    {
+      "unitId": "c01-selection",
+      "sourcePath": "textbooks/v10/c01-selection.md",
+      "sourceSha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f",
+      "actualSha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+    },
+    {
+      "unitId": "c01-control-primer",
+      "sourcePath": "textbooks/v10/c01-control-primer.md",
+      "sourceSha256": "345dd67c5bd8165a9d77dc7de819133f50dfcf39f91f59dec05bf385aba3d8c8",
+      "actualSha256": "345dd67c5bd8165a9d77dc7de819133f50dfcf39f91f59dec05bf385aba3d8c8"
+    },
+    {
+      "unitId": "c02",
+      "sourcePath": "textbooks/v10/c02.md",
+      "sourceSha256": "2614eaa7a00a00f54c484dc9cc36e8ed3bedcc144c5895947fcfe4094d47566d",
+      "actualSha256": "2614eaa7a00a00f54c484dc9cc36e8ed3bedcc144c5895947fcfe4094d47566d"
+    },
+    {
+      "unitId": "c03",
+      "sourcePath": "textbooks/v10/c03.md",
+      "sourceSha256": "4f4c0750bce1fa8de15a5f6bc94bc972c66a3e877e4b161b41890b4af8771261",
+      "actualSha256": "4f4c0750bce1fa8de15a5f6bc94bc972c66a3e877e4b161b41890b4af8771261"
+    },
+    {
+      "unitId": "e01",
+      "sourcePath": "textbooks/v10/e01.md",
+      "sourceSha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5",
+      "actualSha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5"
+    },
+    {
+      "unitId": "c01-fixed-workflow",
+      "sourcePath": "textbooks/v10/c01-fixed-workflow.md",
+      "sourceSha256": "d4f8ea6dd8065d0afc2a4c2176964161a03e23463397b2518036b7e11530822e",
+      "actualSha256": "d4f8ea6dd8065d0afc2a4c2176964161a03e23463397b2518036b7e11530822e"
+    },
+    {
+      "unitId": "c01-control-loop",
+      "sourcePath": "textbooks/v10/c01-control-loop.md",
+      "sourceSha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38",
+      "actualSha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+    },
+    {
+      "unitId": "e02",
+      "sourcePath": "textbooks/v10/e02.md",
+      "sourceSha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1",
+      "actualSha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+    },
+    {
+      "unitId": "p01-mvp",
+      "sourcePath": "textbooks/v10/p01-mvp.md",
+      "sourceSha256": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5",
+      "actualSha256": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5"
+    },
+    {
+      "unitId": "e03",
+      "sourcePath": "textbooks/v10/e03.md",
+      "sourceSha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a",
+      "actualSha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+    },
+    {
+      "unitId": "e04",
+      "sourcePath": "textbooks/v10/e04.md",
+      "sourceSha256": "cc0fdfe84f772dc444a24fd89b4a8d67f1bad600ab6818cf58f6e9d37dace025",
+      "actualSha256": "cc0fdfe84f772dc444a24fd89b4a8d67f1bad600ab6818cf58f6e9d37dace025"
+    },
+    {
+      "unitId": "e05",
+      "sourcePath": "textbooks/v10/e05.md",
+      "sourceSha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d",
+      "actualSha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+    },
+    {
+      "unitId": "p02",
+      "sourcePath": "textbooks/v10/p02.md",
+      "sourceSha256": "7a4ddb35b1a34d2a2ed99b4fa73124794b5220ed1498ef395e48817d5197c487",
+      "actualSha256": "7a4ddb35b1a34d2a2ed99b4fa73124794b5220ed1498ef395e48817d5197c487"
+    }
+  ],
+  "preservedHistoricalArtifacts": [
+    {
+      "path": "team/app-v11-retrieval.md",
+      "sha256": "7e7dfb80e4c7834ad10404ab82f58e14ecf4b9e363da811c1c9fad6cf7cc9fa9"
+    },
+    {
+      "path": "team/app-v11-retrieval-binding.json",
+      "sha256": "b844042940e9dbce9eb3ec56b243ff1327add4947708002643d8f4bf0b131ec2"
+    },
+    {
+      "path": "server/retrieval/dev-check-results.json",
+      "sha256": "f2c35b7bd4eaf455b86211d96f6ebb53240774071c1ae50319dea91d802b92bb"
+    },
+    {
+      "path": "server/retrieval/affected-check-results.json",
+      "sha256": "92b425533cb5df5f5d6ad4d7fc6e14243f80a4fde8d05ee9ee70c8199395f1f9"
+    },
+    {
+      "path": "server/retrieval/shutdown-check-results.json",
+      "sha256": "cb3a817637a4d901f99eb38f4edfcb5b5612327ca5d4253179358f9a05f46d5d"
+    },
+    {
+      "path": "server/retrieval/preview-operations.json",
+      "sha256": "dc26902efd8722e45db86fa0e071d550b98f1169eb0e3898bda652df3011fe54"
+    }
+  ]
+}

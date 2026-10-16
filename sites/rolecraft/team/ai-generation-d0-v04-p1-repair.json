@@ -1,0 +1,570 @@
+{
+  "append_record_id": "D0-AI-20261015-001-R3",
+  "artifact": {
+    "checkpoint_dir": "/private/tmp/ai_generation_d0_v04_p1_checkpoint_store",
+    "checkpoint_files": [
+      {
+        "bytes": 470,
+        "path": "/private/tmp/ai_generation_d0_v04_p1_checkpoint_store/run-durable-001-crash.json",
+        "sha256": "7f954f4beef23b5c151dfe9305d93529d65b8c26469e71d9882b8f7ef03b37f7"
+      },
+      {
+        "bytes": 880,
+        "path": "/private/tmp/ai_generation_d0_v04_p1_checkpoint_store/run-durable-001-final.json",
+        "sha256": "5296de26592e4a96dac25fb4d3af159406849be22f3a6e28488e0a17d0567fa6"
+      },
+      {
+        "bytes": 728,
+        "path": "/private/tmp/ai_generation_d0_v04_p1_checkpoint_store/run-durable-001-tool.json",
+        "sha256": "94dc851b5ad559526800e8901549a459817410c7b467d073af498785309d605d"
+      }
+    ],
+    "fixture_script": "/private/tmp/ai_generation_d0_v04_p1_repair.py",
+    "fixture_script_sha256": "68f3dc7078b50285f8729784e2c334688ee24ddd58944cb7a4e32a109ceff9d2",
+    "manifest": "/private/tmp/ai_generation_d0_v04_p1_manifest.json",
+    "manifest_sha256": "c663f3c9e1b0aac1504cedbd1d24ea8ed10357c9ffb9621322f67228ff152cf2",
+    "report_json": "sites/rolecraft/team/ai-generation-d0-v04-p1-repair.json",
+    "report_markdown": "sites/rolecraft/team/ai-generation-d0-v04-p1-repair.md",
+    "run_output": "/private/tmp/ai_generation_d0_v04_p1_repair_run.json",
+    "run_output_sha256": "3c701a9e9815ea421a3f9d3698b6509c3d3bab19fb483bf201777b78081574fe"
+  },
+  "assertions": {
+    "all_source_refs_have_document_version_location_hash": true,
+    "authorized_read_only_contract_executed": true,
+    "durable_checkpoint_write_and_recovery": true,
+    "holdout_changes_one_constraint": true,
+    "incomplete_result_not_handed_off": true,
+    "no_external_action": true,
+    "schema_empty_duplicate_first_failures_preserved": true,
+    "source_scope_denied_before_generation": true,
+    "tenant_B_denied_before_generation": true
+  },
+  "date": "2026-10-15",
+  "decision": "not_assessed",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "durable_checkpoint_crash_recovery": {
+    "base_contract_hash": "62b00891add927d4e94463a6a3c4c9d621acf645df4432c34382e6979a6455c4",
+    "durable_write_receipts": [
+      {
+        "bytes": 728,
+        "path": "/private/tmp/ai_generation_d0_v04_p1_checkpoint_store/run-durable-001-tool.json",
+        "sha256": "94dc851b5ad559526800e8901549a459817410c7b467d073af498785309d605d"
+      },
+      {
+        "bytes": 470,
+        "path": "/private/tmp/ai_generation_d0_v04_p1_checkpoint_store/run-durable-001-crash.json",
+        "sha256": "7f954f4beef23b5c151dfe9305d93529d65b8c26469e71d9882b8f7ef03b37f7"
+      },
+      {
+        "bytes": 470,
+        "path": "/private/tmp/ai_generation_d0_v04_p1_checkpoint_store/run-durable-001-crash.json",
+        "sha256": "7f954f4beef23b5c151dfe9305d93529d65b8c26469e71d9882b8f7ef03b37f7"
+      },
+      {
+        "bytes": 880,
+        "path": "/private/tmp/ai_generation_d0_v04_p1_checkpoint_store/run-durable-001-final.json",
+        "sha256": "5296de26592e4a96dac25fb4d3af159406849be22f3a6e28488e0a17d0567fa6"
+      }
+    ],
+    "first_failure": {
+      "checkpoint_sha256": "7f954f4beef23b5c151dfe9305d93529d65b8c26469e71d9882b8f7ef03b37f7",
+      "code": "INCOMPLETE_RESULT_AFTER_CRASH",
+      "schema_errors": [
+        "missing:status",
+        "source_refs_nonempty_list_required"
+      ]
+    },
+    "limitations": "本地原子 JSON 文件替身；不是生产数据库、真实进程崩溃、LangGraph checkpoint 或 RPO/RTO 证明。",
+    "manual_stop": {
+      "decision": "hold",
+      "external_action": null,
+      "operator": "simulated-human-gate",
+      "reason": "incomplete source_refs after restart"
+    },
+    "replay": {
+      "external_action": null,
+      "final_checkpoint_sha256": "5296de26592e4a96dac25fb4d3af159406849be22f3a6e28488e0a17d0567fa6",
+      "final_status": "draft_ready_for_review",
+      "replayed_from_checkpoint_sha256": "7f954f4beef23b5c151dfe9305d93529d65b8c26469e71d9882b8f7ef03b37f7",
+      "tool_checkpoint_sha256": "94dc851b5ad559526800e8901549a459817410c7b467d073af498785309d605d"
+    },
+    "scenario_id": "FI-AI-DURABLE-CRASH-001",
+    "state_sequence": [
+      {
+        "payload_hash": "44de8107e035307fc861bb9656922c9abdcb864b1b2a990b0c9363f217184e2e",
+        "reason": "contract frozen",
+        "state": "start"
+      },
+      {
+        "payload_hash": "a747622de506eb5609d0fba2e7f696874a0e87266b421ee90ef90c8aa8a1d83a",
+        "reason": "authorized source returned",
+        "state": "tool_returned"
+      },
+      {
+        "payload_hash": "6c727c8a52bdfff489583d8a182902528c25bdbd7966f1955624ec37812548d4",
+        "reason": "durable tool result stored before draft",
+        "state": "checkpoint_written"
+      },
+      {
+        "payload_hash": "a65c59ef9380467801d538c7ca9aeb34cecfff5c966b0e19568fdb5e9b88df15",
+        "reason": "simulated process crash at incomplete result",
+        "state": "crash_injected"
+      },
+      {
+        "payload_hash": "3053c39b94d3f961d5e88b6a8a1820e4ffee3e3ed6d82c90dfd8c80ce814de16",
+        "reason": "loaded durable incomplete checkpoint",
+        "state": "restarted"
+      },
+      {
+        "payload_hash": "277b73d54224c5900d1751438571700ecbc139d013dd29e87c5eabe07ac92cc5",
+        "reason": "human stop prevents incomplete draft handoff",
+        "state": "manual_stop"
+      },
+      {
+        "payload_hash": "cdbf943e788298ca73902c5cb149d6cb7e1912c65ea7e081543b482097230750",
+        "reason": "replay from durable tool result, do not trust partial output",
+        "state": "replay_required"
+      },
+      {
+        "payload_hash": "199e551cc08ddba6518bcc1af17a7b2a2e131902845b190f1d8b6b0aa02223b4",
+        "reason": "rebuilt complete output from durable tool result",
+        "state": "replayed"
+      },
+      {
+        "payload_hash": "79d453ef6f2aae889bee7c134cba372556dfa725afb96f0dab8eb4d2ba0cb154",
+        "reason": "schema/source/no-send validation passed",
+        "state": "checked"
+      },
+      {
+        "payload_hash": "199e551cc08ddba6518bcc1af17a7b2a2e131902845b190f1d8b6b0aa02223b4",
+        "reason": "local draft ready for review only",
+        "state": "handed_off"
+      }
+    ]
+  },
+  "execution": {
+    "external_writes": false,
+    "langgraph_imported": false,
+    "manifest": "/private/tmp/ai_generation_d0_v04_p1_manifest.json",
+    "network": "disabled_by_task_constraint",
+    "paid_api": false,
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "python": "3.14.5",
+    "real_model": false,
+    "real_user_data": false,
+    "run_output": "/private/tmp/ai_generation_d0_v04_p1_repair_run.json",
+    "script": "/private/tmp/ai_generation_d0_v04_p1_repair.py"
+  },
+  "faults_preserved_and_replayed": {
+    "duplicate_callback": {
+      "accepted_first": {
+        "callback_id": "dup-001",
+        "persisted": true,
+        "result_hash": "24c39f776c009e24036482a8b46c66c2827be899610cd8682a019e2f5b35eb62"
+      },
+      "duplicate_received": {
+        "callback_id": "dup-001",
+        "result_hash": "24c39f776c009e24036482a8b46c66c2827be899610cd8682a019e2f5b35eb62"
+      },
+      "external_action": null,
+      "first_failure": {
+        "attempt": 2,
+        "callback_id": "dup-001",
+        "code": "DUPLICATE_CALLBACK"
+      },
+      "repair": "deduplicate by callback_id and reuse exactly one persisted result",
+      "scenario_id": "FI-AI-DUP-001",
+      "second_draft_created": false,
+      "status_sequence": [
+        "start",
+        "tool_called",
+        "tool_returned",
+        "callback_accepted",
+        "duplicate_callback_detected",
+        "stopped",
+        "recovered",
+        "checked"
+      ],
+      "stopped": true
+    },
+    "empty_tool": {
+      "downstream_generation": false,
+      "external_action": null,
+      "first_failure": {
+        "attempt": 1,
+        "code": "EMPTY_TOOL_RESULT",
+        "tool_result_ref": null
+      },
+      "repair": "bounded retry is allowed only because side_effect=none; retry result must pass schema/source checks",
+      "scenario_id": "FI-AI-EMPTY-001",
+      "status_sequence": [
+        "start",
+        "tool_called",
+        "tool_returned_empty",
+        "failed",
+        "stopped",
+        "recovery_required"
+      ],
+      "stopped": true
+    },
+    "schema_error": {
+      "downstream_generation": false,
+      "external_action": null,
+      "first_failure": {
+        "attempt": 1,
+        "code": "SCHEMA_VALIDATION_ERROR",
+        "errors": [
+          "missing:run_id,status",
+          "source_refs_nonempty_list_required"
+        ]
+      },
+      "repair": "discard malformed output; rebuild only after valid source_refs and required fields",
+      "scenario_id": "FI-AI-SCHEMA-001",
+      "status_sequence": [
+        "start",
+        "draft_partial",
+        "schema_validation_failed",
+        "stopped",
+        "recovery_required"
+      ],
+      "stopped": true
+    }
+  },
+  "fixture": {
+    "documents": [
+      {
+        "allow_read": true,
+        "id": "doc-A-refund-v1",
+        "location": "fixture://documents/doc-A-refund-v1#text",
+        "source_version": "fixture-source-v1",
+        "tenant": "A",
+        "text": "退款需复核。"
+      },
+      {
+        "allow_read": false,
+        "id": "doc-B-private-v1",
+        "location": "fixture://documents/doc-B-private-v1#text",
+        "source_version": "fixture-source-v1",
+        "tenant": "B",
+        "text": "B租户私有内容，不得读取。"
+      }
+    ],
+    "fixture_id": "F-AI-D0-S1-v4-p1-repair",
+    "fixture_version": "ai-generation-d0-local-v4",
+    "identity": {
+      "actor": "training-fixture-user",
+      "authorized_tenant": "A"
+    },
+    "output_schema": {
+      "allowed": [
+        "run_id",
+        "tenant",
+        "schema_version",
+        "answer",
+        "source_refs",
+        "external_action",
+        "status"
+      ],
+      "required": [
+        "run_id",
+        "tenant",
+        "schema_version",
+        "answer",
+        "source_refs",
+        "external_action",
+        "status"
+      ],
+      "source_ref_required": [
+        "document_id",
+        "source_version",
+        "location",
+        "hash"
+      ],
+      "version": "ai-generation-d0-output-v3"
+    },
+    "request": {
+      "prompt": "生成一条内部退款复核草稿，必须带可核对来源。",
+      "run_id": "run-d0-v04-001",
+      "task_id": "DEMO-42",
+      "tenant": "A"
+    },
+    "tool_contract": {
+      "authorization": "actor authorized_tenant must equal requested tenant; source document tenant must match requested tenant",
+      "idempotency_key": "run_id:tool_attempt",
+      "input": {
+        "document_id": "string",
+        "tenant": "string"
+      },
+      "name": "retrieve_authorized_doc",
+      "output": {
+        "document_id": "string",
+        "hash": "string",
+        "location": "string",
+        "source_version": "string",
+        "text": "string"
+      },
+      "side_effect": "none",
+      "source_scope": "only documents in actor tenant A are readable"
+    }
+  },
+  "holdout_human_intervention_transfer": {
+    "base_contract": {
+      "document_id": "doc-A-refund-v1",
+      "human_approval_required_for_handoff": false,
+      "output_schema_version": "ai-generation-d0-output-v3",
+      "task_id": "DEMO-42",
+      "tenant": "A"
+    },
+    "changed_keys": [
+      "human_approval_required_for_handoff"
+    ],
+    "constraint_change": "human_approval_required_for_handoff: false -> true",
+    "draft": {
+      "answer": "退款需复核。",
+      "external_action": null,
+      "run_id": "run-holdout-001",
+      "schema_version": "ai-generation-d0-output-v3",
+      "source_refs": [
+        {
+          "access": "authorized_read",
+          "document_id": "doc-A-refund-v1",
+          "hash": "5803661baaddbe14953ff18735031ac57a030bf84bd0c8c05e88f5c4d69023d4",
+          "hash_type": "sha256(content)",
+          "location": "fixture://documents/doc-A-refund-v1#text",
+          "source_version": "fixture-source-v1"
+        }
+      ],
+      "status": "draft_ready_for_review",
+      "tenant": "A"
+    },
+    "external_action": null,
+    "human_receipt": {
+      "checks": {
+        "external_action": null,
+        "source_refs_nonempty": true,
+        "tenant": "A"
+      },
+      "decision": "approve_for_review_only",
+      "not_production_approval": true,
+      "reviewer": "simulated-human-gate"
+    },
+    "limitations": "人工收据为本地确定性 gate；不能证明真实学习者的判断、人工专家签收或生产审批。",
+    "only_one_constraint_changed": true,
+    "scenario_id": "U-AI-006-T2",
+    "state_sequence": [
+      {
+        "payload_hash": "6715e1a8b9bd72dde69e17b09e43425216877da8ac215473662556af0a367064",
+        "reason": "holdout task accepted",
+        "state": "start"
+      },
+      {
+        "payload_hash": "eefe437ef275ef239f94fa2aad7433187a134da003d0707d5f3af2757b64475f",
+        "reason": "same authorized source",
+        "state": "tool_returned"
+      },
+      {
+        "payload_hash": "31298878965e1e136c933e288eb5b3ee9e9b315edade0810998cebf85b9ec567",
+        "reason": "schema/source/no-send checks passed before handoff gate",
+        "state": "checked"
+      },
+      {
+        "payload_hash": "4b6b06aeb5367eb8cec7e1895813c767c699bf539e798aef2a80f412ef6cdbbe",
+        "reason": "single changed constraint requires manual gate",
+        "state": "awaiting_human_approval"
+      },
+      {
+        "payload_hash": "7ab40d06f50ae12f7172f4f6469974b1ec959cec483c676b86648bd6a9ee8fa9",
+        "reason": "simulated reviewer approved local review handoff",
+        "state": "human_intervention"
+      },
+      {
+        "payload_hash": "31298878965e1e136c933e288eb5b3ee9e9b315edade0810998cebf85b9ec567",
+        "reason": "local draft ready for review only",
+        "state": "handed_off"
+      }
+    ],
+    "variant_contract": {
+      "document_id": "doc-A-refund-v1",
+      "human_approval_required_for_handoff": true,
+      "output_schema_version": "ai-generation-d0-output-v3",
+      "task_id": "DEMO-42",
+      "tenant": "A"
+    }
+  },
+  "l1_decision": "not_granted",
+  "local_fixture_decision": "met_within_scope",
+  "next_actions": [
+    {
+      "action": "独立重跑脚本并核对六项P1收据、hash和旧失败保留",
+      "owner": "测试工程师",
+      "status": "pending"
+    },
+    {
+      "action": "核对授权边界、schema/恢复措辞和本地证据边界",
+      "owner": "内容审校员",
+      "status": "pending"
+    },
+    {
+      "action": "收到独立复验后更新D0是否达到证据门槛；不得以本地夹具直接授予L1",
+      "owner": "项目经理",
+      "status": "pending"
+    }
+  ],
+  "p1_coverage": {
+    "authorized_read_only_tool_contract_and_scope_rejection": "executed_with_receipts",
+    "durable_checkpoint_crash_recovery_incomplete_result_replay_manual_stop": "executed_local_atomic_json_fixture",
+    "human_intervention_holdout_single_constraint": "executed_local_simulated_gate",
+    "schema_empty_duplicate_original_first_failures": "preserved_and_replayed",
+    "source_binding_document_version_location_hash": "all_output_and_denial_receipts_bound",
+    "tenant_B_rejection": "executed_with_receipt"
+  },
+  "prior_files_preserved": {
+    "v03_content_review_md": {
+      "path": "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/team/ai-generation-d0-v03-content-review.md",
+      "sha256": "5f707f301fae32730b80d0d0db1130cbc83ba86ab942339bd4e2e43745fb85e2"
+    },
+    "v03_json": {
+      "path": "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/team/ai-generation-d0-v03-fault-transfer.json",
+      "sha256": "1b4fcbe6f7dbbfb65c745558630d774321e9902406ea9744a113a7f8f2a93906"
+    },
+    "v03_md": {
+      "path": "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/team/ai-generation-d0-v03-fault-transfer.md",
+      "sha256": "7f85e10abd3adba65ea9951095563b96c85d91949d78dda4ac79b3843fc416a9"
+    },
+    "v03_qa_md": {
+      "path": "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/team/ai-generation-d0-v03-qa.md",
+      "sha256": "eb331b3e06b72936f1a73a60a695178492c5403b3c4789f02121e54fb94991cf"
+    }
+  },
+  "role_id": "AI",
+  "role_title": "AI生成工程师",
+  "schema_version": "ai-generation-d0-v04-p1-repair",
+  "scope_note": "P1修复的本地确定性夹具；保留旧文件，不覆盖；不等同真实模型、LangGraph、生产存储、人工能力或岗位认证。",
+  "source_bindings": {
+    "authorized_A": {
+      "access": "authorized_read",
+      "document_id": "doc-A-refund-v1",
+      "hash": "5803661baaddbe14953ff18735031ac57a030bf84bd0c8c05e88f5c4d69023d4",
+      "hash_type": "sha256(content)",
+      "location": "fixture://documents/doc-A-refund-v1#text",
+      "source_version": "fixture-source-v1"
+    },
+    "source_scope_denied": {
+      "access": "denied_no_content_disclosed",
+      "document_id": "doc-B-private-v1",
+      "hash": "22658db4d17c87845524f09d8db28467e08a7f511fdb991f5a81e9aaf9c46457",
+      "hash_type": "sha256(acl_descriptor)",
+      "location": "unavailable://permission-denied",
+      "source_version": "fixture-source-v1"
+    },
+    "tenant_B_denied": {
+      "access": "denied_no_content_disclosed",
+      "document_id": "doc-B-private-v1",
+      "hash": "22658db4d17c87845524f09d8db28467e08a7f511fdb991f5a81e9aaf9c46457",
+      "hash_type": "sha256(acl_descriptor)",
+      "location": "unavailable://permission-denied",
+      "source_version": "fixture-source-v1"
+    }
+  },
+  "timezone": "Asia/Shanghai",
+  "tool_contract_executions": {
+    "authorized_read": {
+      "actor_tenant": "A",
+      "call_id": "auth-001",
+      "code": "OK",
+      "contract": "retrieve_authorized_doc",
+      "params": {
+        "document_id": "doc-A-refund-v1",
+        "tenant": "A"
+      },
+      "result": {
+        "document_id": "doc-A-refund-v1",
+        "hash": "5803661baaddbe14953ff18735031ac57a030bf84bd0c8c05e88f5c4d69023d4",
+        "location": "fixture://documents/doc-A-refund-v1#text",
+        "source_version": "fixture-source-v1",
+        "text": "退款需复核。"
+      },
+      "source_binding": {
+        "access": "authorized_read",
+        "document_id": "doc-A-refund-v1",
+        "hash": "5803661baaddbe14953ff18735031ac57a030bf84bd0c8c05e88f5c4d69023d4",
+        "hash_type": "sha256(content)",
+        "location": "fixture://documents/doc-A-refund-v1#text",
+        "source_version": "fixture-source-v1"
+      },
+      "status": "returned"
+    },
+    "invalid_params_rejection_receipt": {
+      "actor_tenant": "A",
+      "call_id": "invalid-001",
+      "code": "INVALID_PARAMS",
+      "contract": "retrieve_authorized_doc",
+      "params": {
+        "tenant": "A"
+      },
+      "reason": "document_id and tenant strings required",
+      "status": "rejected"
+    },
+    "source_scope_rejection_receipt": {
+      "actor_tenant": "A",
+      "call_id": "scope-001",
+      "code": "SOURCE_SCOPE_DENIED",
+      "contract": "retrieve_authorized_doc",
+      "params": {
+        "document_id": "doc-B-private-v1",
+        "tenant": "A"
+      },
+      "reason": "document is outside requested tenant source scope",
+      "source_binding": {
+        "access": "denied_no_content_disclosed",
+        "document_id": "doc-B-private-v1",
+        "hash": "22658db4d17c87845524f09d8db28467e08a7f511fdb991f5a81e9aaf9c46457",
+        "hash_type": "sha256(acl_descriptor)",
+        "location": "unavailable://permission-denied",
+        "source_version": "fixture-source-v1"
+      },
+      "status": "rejected"
+    },
+    "tenant_B_rejection_receipt": {
+      "actor_tenant": "A",
+      "call_id": "tenant-b-001",
+      "code": "TENANT_SCOPE_DENIED",
+      "contract": "retrieve_authorized_doc",
+      "params": {
+        "document_id": "doc-B-private-v1",
+        "tenant": "B"
+      },
+      "reason": "actor tenant is not authorized for requested tenant",
+      "source_binding": {
+        "access": "denied_no_content_disclosed",
+        "document_id": "doc-B-private-v1",
+        "hash": "22658db4d17c87845524f09d8db28467e08a7f511fdb991f5a81e9aaf9c46457",
+        "hash_type": "sha256(acl_descriptor)",
+        "location": "unavailable://permission-denied",
+        "source_version": "fixture-source-v1"
+      },
+      "status": "rejected"
+    },
+    "unknown_document_rejection_receipt": {
+      "actor_tenant": "A",
+      "call_id": "unknown-001",
+      "code": "DOCUMENT_NOT_FOUND",
+      "contract": "retrieve_authorized_doc",
+      "params": {
+        "document_id": "doc-does-not-exist",
+        "tenant": "A"
+      },
+      "reason": "no document in authorized source scope",
+      "status": "rejected"
+    }
+  },
+  "training_status": "in_progress",
+  "unverified": [
+    "真实LangGraph安装/API与checkpoint语义",
+    "真实模型输出质量、提示词效果、费用、限流与供应商失败",
+    "真实数据库/队列/进程崩溃、RPO/RTO、并发一致性和生产恢复",
+    "真实人工专家/学习者介入与迁移能力",
+    "外部工具副作用、云服务、真实用户数据、发送/发布",
+    "L1实际能力门槛与岗位作品尚未由学习者独立完成"
+  ]
+}

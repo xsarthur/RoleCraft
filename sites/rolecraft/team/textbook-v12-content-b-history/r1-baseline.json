@@ -1,0 +1,3299 @@
+{
+  "version": "v12-content-review-b-r1",
+  "date": "2026-10-11",
+  "role": "独立内容审校员B",
+  "scope": "Q51–100 / Q104,111,113,114；n06–n10正文与旧篇衔接",
+  "status": "baseline_reviewed_final_pending",
+  "method": "不读QA保留题，不执行应用或示例；代码静态检查与官方文档核对，执行结论交独立QA。",
+  "baselineCounts": {
+    "fixed100_subset": {
+      "未覆盖": 5,
+      "部分": 15,
+      "充分": 30
+    },
+    "market14_subset": {
+      "未覆盖": 1,
+      "部分": 2,
+      "充分": 1
+    }
+  },
+  "items": [
+    {
+      "id": 51,
+      "set": "fixed100",
+      "question": "在你采用的版本中，LangChain 和 LangGraph 分别承担什么职责？",
+      "sourceRefs": [
+        "https://www.interviewcoder.co/blog/langgraph-interview-questions",
+        "https://docs.langchain.com/oss/javascript/langgraph/thinking-in-langgraph"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q51",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "框架职责"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 9,
+          "section": "## 同一任务 四种控制权",
+          "quote": "“Agent”有不同用法。本文采用行为定义：普通程序由确定性代码决定路径；单次模型在已经组好的材料上生成一次候选；固定 workflow 允许模型完成局部语义任务，但步骤与分支由代码列出；动态 Agent 让模型依据观察提议新的调查动作，运行时仍掌握授权、执行和停止。这个 workflow/agent 控制权区分与 A",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        }
+      ],
+      "baselineSupport": "未覆盖",
+      "missingSubquestions": "无LangChain/LangGraph版本、分工、接口边界。",
+      "baselineSupported": "只有普通程序、固定流程与动态Agent定义。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无LangChain/LangGraph版本、分工、接口边界。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 52,
+      "set": "fixed100",
+      "question": "用图表示 Agent 时，节点、边和共享状态分别应该包含什么？",
+      "sourceRefs": [
+        "https://www.interviewcoder.co/blog/langgraph-interview-questions",
+        "https://docs.langchain.com/oss/javascript/langgraph/thinking-in-langgraph"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q52",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "状态图语义"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 48,
+          "section": "## 2 控制权在运行时 聊天上下文只是一种投影",
+          "quote": "模型决定“下一步看哪个文件”“如何组织缺陷说明”，这些决定依赖语义判断。运行时决定工具是否注册、参数是否符合契约、身份能否访问对象、内容是否已获审批、现在是否还有预算。执行器决定如何隔离调用、施加超时、接收实际结果。验收器决定提交的产物是否满足本次目标。每一项都只有一个权威责任者；模型的文字不能覆盖策略或执行记录。",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 52,
+          "section": "## 2 控制权在运行时 聊天上下文只是一种投影",
+          "quote": "**State 是恢复与授权依据。**它保存目标版本、运行修订号、动作账本、尝试记录、审批、取消请求、预算和验收反馈。未决动作不能因为上下文压缩而消失，审批不能因为模型在对话里写了“用户已同意”而产生。",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        }
+      ],
+      "baselineSupport": "部分",
+      "missingSubquestions": "未讲图编排的节点输入输出、边转移及共享状态合同。",
+      "baselineSupported": "运行时/执行器/验收器分工及权威State字段。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "未讲图编排的节点输入输出、边转移及共享状态合同。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 53,
+      "set": "fixed100",
+      "question": "状态字段应如何建模，避免把全部消息和中间数据无限累积？",
+      "sourceRefs": [
+        "https://www.interviewcoder.co/blog/langgraph-interview-questions",
+        "https://docs.langchain.com/oss/javascript/langgraph/thinking-in-langgraph"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q53",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "状态生命周期"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 52,
+          "section": "## 2 控制权在运行时 聊天上下文只是一种投影",
+          "quote": "**State 是恢复与授权依据。**它保存目标版本、运行修订号、动作账本、尝试记录、审批、取消请求、预算和验收反馈。未决动作不能因为上下文压缩而消失，审批不能因为模型在对话里写了“用户已同意”而产生。",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 54,
+          "section": "## 2 控制权在运行时 聊天上下文只是一种投影",
+          "quote": "**Context 是模型这一次看到的状态投影。**完整历史可能包含几十 MB 的日志和文件，本轮模型只需知道当前问题、相关证据、已经完成的动作、尚未解决的动作和最近的验收失败。投影必须有版本或摘要哈希，便于解释模型为什么提出这一步；它没有执行权限。",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        }
+      ],
+      "baselineSupport": "部分",
+      "missingSubquestions": "State与Context分离能减少本轮输入，但正文未给消息/中间数据在权威状态中的保留期限、裁剪归档、索引及存储增长策略，不能回答状态无限累积的全部子问。",
+      "baselineSupported": "权威状态保存目标/账本/尝试/批准/预算，Context仅当前证据与未决动作的投影，并保留摘要版本。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "State与Context分离能减少本轮输入，但正文未给消息/中间数据在权威状态中的保留期限、裁剪归档、索引及存储增长策略，不能回答状态无限累积的全部子问。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 54,
+      "set": "fixed100",
+      "question": "并行节点同时更新状态时，如何处理合并规则和写入冲突？",
+      "sourceRefs": [
+        "https://www.interviewcoder.co/blog/langgraph-interview-questions",
+        "https://docs.langchain.com/oss/javascript/langgraph/thinking-in-langgraph"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q54",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "并行合并"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 694,
+          "section": "## 9 并发要分开处理工具依赖与运行推进权",
+          "quote": "并发调度从 `ready_actions` 扩成**可执行波次**：前置动作都已成功、当前授权已满足、没有同一可变对象写冲突，且批次预留没有超过资源额度。为每个波次先持久化各自的尝试及预留，再分发；结果按 `attempt_id → action_id → CallBinding` 关联。不能用返回列表下标代替调用身份",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 700,
+          "section": "## 9 并发要分开处理工具依赖与运行推进权",
+          "quote": "另一个并发问题是：两个工作者同时恢复同一运行。这与模型一次提出两个工具完全不同。运行推进权由存储租约管理：取得租约时分配递增的 `lease_epoch`；所有状态写入携带代次；存储拒绝过期租约或旧代次。事务内的版本条件处理同一代次中取消、审批和结果提交的竞争。",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        }
+      ],
+      "baselineSupport": "部分",
+      "missingSubquestions": "没有图节点reducer/字段合并策略及冲突组合实例；通用CAS不能补齐。",
+      "baselineSupported": "依赖波次、各attempt独立关联、冲突检查、租约代次及事务版本条件。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "没有图节点reducer/字段合并策略及冲突组合实例；通用CAS不能补齐。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 55,
+      "set": "fixed100",
+      "question": "条件路由由规则决定还是由模型决定，各有什么适用场景？",
+      "sourceRefs": [
+        "https://www.interviewcoder.co/blog/langgraph-interview-questions",
+        "https://docs.langchain.com/oss/javascript/langgraph/thinking-in-langgraph"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q55",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "规则与模型路由"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 9,
+          "section": "## 同一任务 四种控制权",
+          "quote": "“Agent”有不同用法。本文采用行为定义：普通程序由确定性代码决定路径；单次模型在已经组好的材料上生成一次候选；固定 workflow 允许模型完成局部语义任务，但步骤与分支由代码列出；动态 Agent 让模型依据观察提议新的调查动作，运行时仍掌握授权、执行和停止。这个 workflow/agent 控制权区分与 A",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 18,
+          "section": "## 同一任务 四种控制权",
+          "quote": "“固定”不等于只有直线：代码可以有条件分支、循环、重试和审批。把 `while retry` 写进程序不会让它变成动态 Agent。区别在于循环内是否让模型重新决定业务行动路径。相反，一个动态 Agent 也可以被限制只读、最多调查数个文件；动态性不意味着无限授权。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 20,
+          "section": "## 同一任务 四种控制权",
+          "quote": "同一个任务可以有两部分：分析阶段采用动态只读调查，创建阶段仍使用固定审批与单写者。这比把权限、预算和审批都交给模型更容易测量因果：探索效果来自哪里，副作用控制由谁兑现。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 29,
+          "section": "## 三种输入暴露不同的必要性",
+          "quote": "第二种输入报告只给栈位置，根因可能在调用者的日期单位或实现边界。若稳定规则能列出“实现与调用者”两处，固定 workflow 仍够用。只有当下一处相关文件需依据刚读到的参数来源来判断，路径树无法合理穷举时，动态只读 Agent 才有优势候选。它也必须在证据包、资源范围与预算内调查，不能从“不知道读哪里”推导“允许读所有",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "固定规则覆盖稳定分支，新观察决定调查路径才升级动态；可混合只读动态与固定写入。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 56,
+      "set": "fixed100",
+      "question": "Checkpoint 应保存什么，才能支持失败恢复与人工介入？",
+      "sourceRefs": [
+        "https://www.interviewcoder.co/blog/langgraph-interview-questions",
+        "https://docs.langchain.com/oss/javascript/langgraph/thinking-in-langgraph"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q56",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "检查点"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e01.md",
+          "line": 10,
+          "section": "## 三个提交点定义可恢复事实",
+          "quote": "**意图提交。**保存准确参数、指纹、动作 ID、唯一槽位和下游操作键，批准绑定同一动作。创建事务成功前不发送。如果提交回执丢失，先按事件 ID读回，不分配另一组身份。模型上下文可引用这些事实，但不能反过来覆盖它们。",
+          "sha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e01.md",
+          "line": 12,
+          "section": "## 三个提交点定义可恢复事实",
+          "quote": "**发送前尝试提交。**保存新的 `attempt_id`，扣计尝试预算，设 `IN_FLIGHT + UNRESOLVED`。提交后、真正发送前仍可能崩溃，数据库只知道“可能已发”。这不是缺少一个 `sent=true`字段就能解决：设置它与发送之间仍有窗口。恢复默认核对，不能把 `IN_FLIGHT`当未执行。",
+          "sha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e01.md",
+          "line": 14,
+          "section": "## 三个提交点定义可恢复事实",
+          "quote": "**结果提交。**将回执、尝试观察和动作效果一次提交。外部成功、本地提交前崩溃时，核对原操作补齐事实；本地结果已提交但提交回执丢失时，按事件去重读回。完成状态与验收依据同一事务提交，取消与完成的竞态也由这次事务裁决。",
+          "sha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 52,
+          "section": "## 2 控制权在运行时 聊天上下文只是一种投影",
+          "quote": "**State 是恢复与授权依据。**它保存目标版本、运行修订号、动作账本、尝试记录、审批、取消请求、预算和验收反馈。未决动作不能因为上下文压缩而消失，审批不能因为模型在对话里写了“用户已同意”而产生。",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口；回答是运行时级，不包含特定框架API。",
+      "baselineSupported": "目标修订、准确意图与批准、发送尝试、效果观察、预算与取消均持久保存，重启先核未决。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口；回答是运行时级，不包含特定框架API。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 57,
+      "set": "fixed100",
+      "question": "恢复执行时，如何保证已经完成的外部操作不会再次产生副作用？",
+      "sourceRefs": [
+        "https://www.interviewcoder.co/blog/langgraph-interview-questions",
+        "https://docs.langchain.com/oss/javascript/langgraph/thinking-in-langgraph"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q57",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "外部副作用恢复"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 256,
+          "section": "## 6 先核对未决动作 再让模型继续",
+          "quote": "幂等也有条件：键的命名范围、参数一致性、保留时间、并发重复请求处理和失败响应的语义都要来自下游契约。以 Stripe 的官方说明为例，API v1 对首次开始执行的请求保存响应，同键重试可能仍得到保存的 `500`；键可以在至少 24 小时后清理。API v2 对失败或部分失败重试的处理不同。因此不能把“支持幂等键”泛",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 260,
+          "section": "## 6 先核对未决动作 再让模型继续",
+          "quote": "运行时可以保证自己不故意重复提交一个逻辑动作，但只有下游把去重记录与实际效果可靠绑定，才能保证重复传输不会重复产生业务效果。AWS 的服务端示例明确把记录幂等 token 与相关变更纳入原子操作；客户端自己的 checkpoint 不能代替这部分。[AWS：服务端 token 与变更的原子性](https://aws.",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e01.md",
+          "line": 366,
+          "section": "## 用一次恢复轨迹读懂提交边界",
+          "quote": "桥接的 `allow_replay=False`使重复begin事件在事务内拒绝，不能从旧DISPATCH再次发送。事件回执丢失或工作者重启时，先读权威动作/attempt，再走核对。结果事务回执丢失时仅重放原outcome事件，不重调适配器；并发新事件导致revision变化则重新读账、保留同一结果与attempt再",
+          "sha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "同动作/原键核对，持久账本、唯一槽位、下游幂等有效期与原子效果约束，checkpoint不等于外部去重。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 58,
+      "set": "fixed100",
+      "question": "子图怎样封装独立任务？父图与子图之间如何交接状态？",
+      "sourceRefs": [
+        "https://www.interviewcoder.co/blog/langgraph-interview-questions",
+        "https://docs.langchain.com/oss/javascript/langgraph/thinking-in-langgraph"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q58",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "父子图合同"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 37,
+          "section": "## 多 Agent 的升级点是可分工 而不是人数",
+          "quote": "一个可检查的交接至少包含 `subtask_id`、目标修订、输入证据清单与哈希、允许资源、输出主张与逐项引用、缺项、实际消耗、状态。整合者先查版本与权限，再整合结论；超时或 `INCOMPLETE` 不能当作“没有问题”。两位调查者对同一事实冲突时保留冲突，不按最后到达的答案覆盖。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        }
+      ],
+      "baselineSupport": "未覆盖",
+      "missingSubquestions": "未讲子图、父子图状态映射/调用/隔离与返回语义。",
+      "baselineSupported": "最近内容是多Agent交接合同。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "未讲子图、父子图状态映射/调用/隔离与返回语义。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 59,
+      "set": "fixed100",
+      "question": "流式输出怎样区分文本、工具进度、暂停、错误和最终结果？",
+      "sourceRefs": [
+        "https://www.interviewcoder.co/blog/langgraph-interview-questions",
+        "https://docs.langchain.com/oss/javascript/langgraph/thinking-in-langgraph"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q59",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "流事件"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 221,
+          "section": "## 5 完整模型输出才有资格成为执行计划",
+          "quote": "运行时在流式过程中可以显示文本，也可以增量拼接参数；默认不能提前执行副作用。一个看上去完整的 JSON 对象仍可能只是半轮响应：后续会追加另一动作、修正参数或以错误结束。本文规定适配器只在收到协议规定的完整响应结束信号、所有调用均完整且结束原因允许消费时，返回 `CompleteResponse`。",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 235,
+          "section": "## 5 完整模型输出才有资格成为执行计划",
+          "quote": "本篇把完整输出解析为互斥分支：`TOOLS`、`FINAL`、`ASK_INPUT`。模型同时给出“最终完成”与待执行工具时，不让解析器任意挑一个，而是返回 `MIXED_DECISION`。用户澄清只补任务缺失信息；它不能被自动解释为副作用审批。审批由运行时针对具体意图创建，不能让模型生成一个“审批通过”的工具结果。",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+          "line": 34,
+          "section": "## 完整任务与结果合同",
+          "quote": "  | { kind: \"WAIT_INPUT\"; missing_fields: string[]; reason: string }",
+          "sha256": "d4f8ea6dd8065d0afc2a4c2176964161a03e23463397b2518036b7e11530822e"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+          "line": 35,
+          "section": "## 完整任务与结果合同",
+          "quote": "  | { kind: \"WAIT_APPROVAL\"; action_id: string; intent_hash: string }",
+          "sha256": "d4f8ea6dd8065d0afc2a4c2176964161a03e23463397b2518036b7e11530822e"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+          "line": 37,
+          "section": "## 完整任务与结果合同",
+          "quote": "  | { kind: \"WAIT_RESOLUTION\"; action_id: string; reason: string }",
+          "sha256": "d4f8ea6dd8065d0afc2a4c2176964161a03e23463397b2518036b7e11530822e"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+          "line": 38,
+          "section": "## 完整任务与结果合同",
+          "quote": "  | { kind: \"STOPPED\"; reason: string; partial_refs: string[] };",
+          "sha256": "d4f8ea6dd8065d0afc2a4c2176964161a03e23463397b2518036b7e11530822e"
+        }
+      ],
+      "baselineSupport": "部分",
+      "missingSubquestions": "未设计覆盖题目全部类别的流事件协议、进度/暂停传输与客户端消费。",
+      "baselineSupported": "流文本仅预览，完整协议结束后才消费；最终/工具/澄清互斥及等待/停止结果。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "未设计覆盖题目全部类别的流事件协议、进度/暂停传输与客户端消费。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 60,
+      "set": "fixed100",
+      "question": "如果去掉 LangGraph，你如何实现等价的状态机，并说明取舍？",
+      "sourceRefs": [
+        "https://www.interviewcoder.co/blog/langgraph-interview-questions",
+        "https://docs.langchain.com/oss/javascript/langgraph/thinking-in-langgraph"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q60",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "自研状态机取舍"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 48,
+          "section": "## 2 控制权在运行时 聊天上下文只是一种投影",
+          "quote": "模型决定“下一步看哪个文件”“如何组织缺陷说明”，这些决定依赖语义判断。运行时决定工具是否注册、参数是否符合契约、身份能否访问对象、内容是否已获审批、现在是否还有预算。执行器决定如何隔离调用、施加超时、接收实际结果。验收器决定提交的产物是否满足本次目标。每一项都只有一个权威责任者；模型的文字不能覆盖策略或执行记录。",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e01.md",
+          "line": 10,
+          "section": "## 三个提交点定义可恢复事实",
+          "quote": "**意图提交。**保存准确参数、指纹、动作 ID、唯一槽位和下游操作键，批准绑定同一动作。创建事务成功前不发送。如果提交回执丢失，先按事件 ID读回，不分配另一组身份。模型上下文可引用这些事实，但不能反过来覆盖它们。",
+          "sha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5"
+        }
+      ],
+      "baselineSupport": "部分",
+      "missingSubquestions": "教材未教授LangGraph，无法仅靠正文说明与特定框架等价及失去的能力/成本。",
+      "baselineSupported": "自建权威状态、执行/验收职责、持久提交与恢复方法。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "教材未教授LangGraph，无法仅靠正文说明与特定框架等价及失去的能力/成本。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 61,
+      "set": "fixed100",
+      "question": "什么实验或业务证据会使你选择多 Agent，而不是给单 Agent 增加工具或步骤？",
+      "sourceRefs": [
+        "https://ac.nowcoder.com/discuss/1665837?channel=-1&source_id=discuss_tag_discuss_hot_nctrack&type=0",
+        "https://github.com/ishandutta2007/Awesome-AI-Agent-Architect-Interview-QA"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q61",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "多Agent选型实验"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 35,
+          "section": "## 多 Agent 的升级点是可分工 而不是人数",
+          "quote": "如果有两个可独立核对的证据子问题，例如实现控制路径与测试夹具生成方式，可以分别调查，再由一个分析整合者比对。但“两个模型都认为根因相同”不是独立事实：它们可能共享同一错误资料和推理偏差。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 41,
+          "section": "## 多 Agent 的升级点是可分工 而不是人数",
+          "quote": "升级多 Agent 的具体条件可写成可证伪假设：“两类证据能独立调查，在总预算不增的情况下减少漏掉测试夹具问题，且不会增加无支持根因和越权读取。”若实验只显示更长说明、更多引用而关键错误没有减少，就放弃升级。若瓶颈是一个不可并行的外部写调用，多 Agent 也不能移除它。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 45,
+          "section": "## 怎样做一个公平且能定位原因的比较",
+          "quote": "冻结相同任务集，分别标记材料完整、需动态调查、证据冲突；固定资料与工具版本、权限、验收器、模型快照与采样配置、总期限和资源上限。各方案可有不同路径，但不能偷偷取得测试集答案。记录每题的候选合格、完整目标合格、正确等待、错误完成、读/模型尝试、用量、端到端延迟和未知结果。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "可独立核对的子问题、同预算差异假设、关键错误/权限/成本护栏及放弃条件。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 62,
+      "set": "fixed100",
+      "question": "Supervisor、交接式协作和共享讨论，分别适合什么任务？",
+      "sourceRefs": [
+        "https://ac.nowcoder.com/discuss/1665837?channel=-1&source_id=discuss_tag_discuss_hot_nctrack&type=0",
+        "https://github.com/ishandutta2007/Awesome-AI-Agent-Architect-Interview-QA"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q62",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "协作模式"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 35,
+          "section": "## 多 Agent 的升级点是可分工 而不是人数",
+          "quote": "如果有两个可独立核对的证据子问题，例如实现控制路径与测试夹具生成方式，可以分别调查，再由一个分析整合者比对。但“两个模型都认为根因相同”不是独立事实：它们可能共享同一错误资料和推理偏差。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        }
+      ],
+      "baselineSupport": "未覆盖",
+      "missingSubquestions": "缺三类模式定义、控制交接及适用比较。",
+      "baselineSupported": "只有调查者与整合者的一个协作方案。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "缺三类模式定义、控制交接及适用比较。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 63,
+      "set": "fixed100",
+      "question": "如何定义各 Agent 的输入、输出、职责边界和完成条件？",
+      "sourceRefs": [
+        "https://ac.nowcoder.com/discuss/1665837?channel=-1&source_id=discuss_tag_discuss_hot_nctrack&type=0",
+        "https://github.com/ishandutta2007/Awesome-AI-Agent-Architect-Interview-QA"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q63",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "子任务合同"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 37,
+          "section": "## 多 Agent 的升级点是可分工 而不是人数",
+          "quote": "一个可检查的交接至少包含 `subtask_id`、目标修订、输入证据清单与哈希、允许资源、输出主张与逐项引用、缺项、实际消耗、状态。整合者先查版本与权限，再整合结论；超时或 `INCOMPLETE` 不能当作“没有问题”。两位调查者对同一事实冲突时保留冲突，不按最后到达的答案覆盖。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 39,
+          "section": "## 多 Agent 的升级点是可分工 而不是人数",
+          "quote": "写操作始终只有一个所有者，子代理只交建议。所有人的模型与读取尝试计入同一任务预算：并行可能降低关键路径等待，却不会自动降低总费用。调度器必须预留子任务额度；子任务取消后的在途用量仍可能未知。若交接上下文比直接分析更长、分工互相等待或反复重新解释同一证据，说明拆分没有带来有效并行。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "目标修订、资源、证据哈希、主张与引用、缺项、状态和消耗；单写所有者，超时不代表无问题。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 64,
+      "set": "fixed100",
+      "question": "如何把任务拆成可以并行的部分，并保留必要的依赖顺序？",
+      "sourceRefs": [
+        "https://ac.nowcoder.com/discuss/1665837?channel=-1&source_id=discuss_tag_discuss_hot_nctrack&type=0",
+        "https://github.com/ishandutta2007/Awesome-AI-Agent-Architect-Interview-QA"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q64",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "并行依赖"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 35,
+          "section": "## 多 Agent 的升级点是可分工 而不是人数",
+          "quote": "如果有两个可独立核对的证据子问题，例如实现控制路径与测试夹具生成方式，可以分别调查，再由一个分析整合者比对。但“两个模型都认为根因相同”不是独立事实：它们可能共享同一错误资料和推理偏差。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 692,
+          "section": "## 9 并发要分开处理工具依赖与运行推进权",
+          "quote": "上面的基线串行执行，但不能据此推断并发一定危险。读取固定修订的源文件与读取已有报告，彼此没有数据依赖，允许并发；“根据报告生成正文”依赖报告；创建工单依赖最终正文和批准，不能提前并行。",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 694,
+          "section": "## 9 并发要分开处理工具依赖与运行推进权",
+          "quote": "并发调度从 `ready_actions` 扩成**可执行波次**：前置动作都已成功、当前授权已满足、没有同一可变对象写冲突，且批次预留没有超过资源额度。为每个波次先持久化各自的尝试及预留，再分发；结果按 `attempt_id → action_id → CallBinding` 关联。不能用返回列表下标代替调用身份",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "独立证据子问题并行，依赖/授权/写冲突检查成波次，分别持久尝试与结果。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 65,
+      "set": "fixed100",
+      "question": "多 Agent 应共享完整上下文，还是只传递必要材料？怎样判断？",
+      "sourceRefs": [
+        "https://ac.nowcoder.com/discuss/1665837?channel=-1&source_id=discuss_tag_discuss_hot_nctrack&type=0",
+        "https://github.com/ishandutta2007/Awesome-AI-Agent-Architect-Interview-QA"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q65",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "上下文共享"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 37,
+          "section": "## 多 Agent 的升级点是可分工 而不是人数",
+          "quote": "一个可检查的交接至少包含 `subtask_id`、目标修订、输入证据清单与哈希、允许资源、输出主张与逐项引用、缺项、实际消耗、状态。整合者先查版本与权限，再整合结论；超时或 `INCOMPLETE` 不能当作“没有问题”。两位调查者对同一事实冲突时保留冲突，不按最后到达的答案覆盖。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 39,
+          "section": "## 多 Agent 的升级点是可分工 而不是人数",
+          "quote": "写操作始终只有一个所有者，子代理只交建议。所有人的模型与读取尝试计入同一任务预算：并行可能降低关键路径等待，却不会自动降低总费用。调度器必须预留子任务额度；子任务取消后的在途用量仍可能未知。若交接上下文比直接分析更长、分工互相等待或反复重新解释同一证据，说明拆分没有带来有效并行。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 54,
+          "section": "## 2 控制权在运行时 聊天上下文只是一种投影",
+          "quote": "**Context 是模型这一次看到的状态投影。**完整历史可能包含几十 MB 的日志和文件，本轮模型只需知道当前问题、相关证据、已经完成的动作、尚未解决的动作和最近的验收失败。投影必须有版本或摘要哈希，便于解释模型为什么提出这一步；它没有执行权限。",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        }
+      ],
+      "baselineSupport": "部分",
+      "missingSubquestions": "缺多Agent完整共享与选择性交接的系统比较、信息丢失/一致性判断方法。",
+      "baselineSupported": "受限资源与证据交接、必要上下文投影，交接成本过高则取消拆分。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "缺多Agent完整共享与选择性交接的系统比较、信息丢失/一致性判断方法。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 66,
+      "set": "fixed100",
+      "question": "子 Agent 返回互相矛盾的结果时，协调者应如何处理？",
+      "sourceRefs": [
+        "https://ac.nowcoder.com/discuss/1665837?channel=-1&source_id=discuss_tag_discuss_hot_nctrack&type=0",
+        "https://github.com/ishandutta2007/Awesome-AI-Agent-Architect-Interview-QA"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q66",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "冲突处理"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 31,
+          "section": "## 三种输入暴露不同的必要性",
+          "quote": "第三种输入有两份同级规则冲突，且无法判断哪份适用。更多 Agent 不会创造业务权威。正确输出是 `WAIT_INPUT`，列明冲突范围和需要的版本确认；若让几个模型投票选一个规则，只是给未经授权的裁决增加票数。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 37,
+          "section": "## 多 Agent 的升级点是可分工 而不是人数",
+          "quote": "一个可检查的交接至少包含 `subtask_id`、目标修订、输入证据清单与哈希、允许资源、输出主张与逐项引用、缺项、实际消耗、状态。整合者先查版本与权限，再整合结论；超时或 `INCOMPLETE` 不能当作“没有问题”。两位调查者对同一事实冲突时保留冲突，不按最后到达的答案覆盖。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 57,
+          "section": "## 用条件做选择的练习",
+          "quote": "**协作失败。**代码调查员用 `repo@8e12`，测试调查员交来 `repo@9a01` 的报告，却两者结论一致。参考分析：交接版本不匹配，整合者应拒绝合并并重新取得同修订证据；一致结论没有消除条件差异。把第二位换为更强模型并不修复输入合同。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "核版本/权限和原证据，保留冲突，不按到达顺序覆盖或投票创造权威；版本不合则重取同修订证据。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 67,
+      "set": "fixed100",
+      "question": "如何防止子 Agent 的错误结论在汇总过程中变成“已验证事实”？",
+      "sourceRefs": [
+        "https://ac.nowcoder.com/discuss/1665837?channel=-1&source_id=discuss_tag_discuss_hot_nctrack&type=0",
+        "https://github.com/ishandutta2007/Awesome-AI-Agent-Architect-Interview-QA"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q67",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "主张溯源"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 35,
+          "section": "## 多 Agent 的升级点是可分工 而不是人数",
+          "quote": "如果有两个可独立核对的证据子问题，例如实现控制路径与测试夹具生成方式，可以分别调查，再由一个分析整合者比对。但“两个模型都认为根因相同”不是独立事实：它们可能共享同一错误资料和推理偏差。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 37,
+          "section": "## 多 Agent 的升级点是可分工 而不是人数",
+          "quote": "一个可检查的交接至少包含 `subtask_id`、目标修订、输入证据清单与哈希、允许资源、输出主张与逐项引用、缺项、实际消耗、状态。整合者先查版本与权限，再整合结论；超时或 `INCOMPLETE` 不能当作“没有问题”。两位调查者对同一事实冲突时保留冲突，不按最后到达的答案覆盖。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "line": 30,
+          "section": "## 把关联检查与支持判断分别建模",
+          "quote": "一个引用可以通过“ID在包内、哈希与读回一致、位置有效”的关联检查，却仍不支持主张。`return days < 7` 支持“这个函数使用严格小于七的比较”，不独立支持“业务规则必须小于等于七”。报告支持“该报告中这项断言失败”，不证明修复后正确。",
+          "sha256": "2614eaa7a00a00f54c484dc9cc36e8ed3bedcc144c5895947fcfe4094d47566d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "line": 34,
+          "section": "## 把关联检查与支持判断分别建模",
+          "quote": "证据包中保留有序块、查询/范围/索引版本及拒绝原因；候选单独列原子主张。把“失败且根因已经确认且已创建工单”写成一句，只引用报告，会让部分支持被包装成整句成立。应拆成报告事实、根因假设、执行结果三个对象；工单效果来自动作回执，见 [写工具](c03.md)。",
+          "sha256": "2614eaa7a00a00f54c484dc9cc36e8ed3bedcc144c5895947fcfe4094d47566d"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "共用错误资料不构成独立事实；逐项主张/引用/缺项与版本核对，事实/假设/回执拆开。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 68,
+      "set": "fixed100",
+      "question": "某个子 Agent 超时或失败时，整体任务应等待、重分派还是部分交付？",
+      "sourceRefs": [
+        "https://ac.nowcoder.com/discuss/1665837?channel=-1&source_id=discuss_tag_discuss_hot_nctrack&type=0",
+        "https://github.com/ishandutta2007/Awesome-AI-Agent-Architect-Interview-QA"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q68",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "失败与重派"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 37,
+          "section": "## 多 Agent 的升级点是可分工 而不是人数",
+          "quote": "一个可检查的交接至少包含 `subtask_id`、目标修订、输入证据清单与哈希、允许资源、输出主张与逐项引用、缺项、实际消耗、状态。整合者先查版本与权限，再整合结论；超时或 `INCOMPLETE` 不能当作“没有问题”。两位调查者对同一事实冲突时保留冲突，不按最后到达的答案覆盖。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 39,
+          "section": "## 多 Agent 的升级点是可分工 而不是人数",
+          "quote": "写操作始终只有一个所有者，子代理只交建议。所有人的模型与读取尝试计入同一任务预算：并行可能降低关键路径等待，却不会自动降低总费用。调度器必须预留子任务额度；子任务取消后的在途用量仍可能未知。若交接上下文比直接分析更长、分工互相等待或反复重新解释同一证据，说明拆分没有带来有效并行。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        }
+      ],
+      "baselineSupport": "部分",
+      "missingSubquestions": "缺按子任务关键性选择等待/重分派/部分交付的决策机制与重分派去重合同。",
+      "baselineSupported": "超时/INCOMPLETE不能当无问题，预算统一并保留在途未知。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "缺按子任务关键性选择等待/重分派/部分交付的决策机制与重分派去重合同。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 69,
+      "set": "fixed100",
+      "question": "多 Agent 的通信次数、费用和时延怎样纳入统一预算？",
+      "sourceRefs": [
+        "https://ac.nowcoder.com/discuss/1665837?channel=-1&source_id=discuss_tag_discuss_hot_nctrack&type=0",
+        "https://github.com/ishandutta2007/Awesome-AI-Agent-Architect-Interview-QA"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q69",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "统一预算"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 39,
+          "section": "## 多 Agent 的升级点是可分工 而不是人数",
+          "quote": "写操作始终只有一个所有者，子代理只交建议。所有人的模型与读取尝试计入同一任务预算：并行可能降低关键路径等待，却不会自动降低总费用。调度器必须预留子任务额度；子任务取消后的在途用量仍可能未知。若交接上下文比直接分析更长、分工互相等待或反复重新解释同一证据，说明拆分没有带来有效并行。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 10,
+          "section": "## 成本归到逻辑任务 才能看见失败代价",
+          "quote": "一次逻辑任务可能有三次模型请求、两次读取、一次写后核对和十分钟人工确认。账本应把这些尝试归到同一 `run_id`，每次物理请求单独记录 `attempt_id`、配置/价格版本、用量、费用确认状态和时间。不能只计成功返回那次模型请求；超时请求可能已经计费，未决费用不能填零。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 196,
+          "section": "## 预算与限流需要一个共同执行边界",
+          "quote": "预算预留必须覆盖所有子请求和重试。在一次发送前，调度事务检查任务剩余额度、共享供应商额度和在途数量，预留该次资源，写尝试后才发。结果返回结算实际确认用量；不确定请求保留待确认状态，不把全部预留释放成可再花预算。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 198,
+          "section": "## 预算与限流需要一个共同执行边界",
+          "quote": "可读查询和写后核对可以使用预留的恢复额度，避免正常预算耗尽时永远无法确认已发效果；额度大小由实际契约决定，不能以“核对不算任务”无限使用。供应商限流的请求次数和模型用量是不同约束，只有一个任务并发数字并不覆盖它们。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "各模型/读取/重试归逻辑任务，子任务预留额度，在途未知用量不释放；全任务阶段等待与费用计算。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 70,
+      "set": "fixed100",
+      "question": "A2A 与应用内部的多 Agent 编排有何区别？跨系统任务交接需要哪些契约？",
+      "sourceRefs": [
+        "https://ac.nowcoder.com/discuss/1665837?channel=-1&source_id=discuss_tag_discuss_hot_nctrack&type=0",
+        "https://github.com/ishandutta2007/Awesome-AI-Agent-Architect-Interview-QA"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q70",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "A2A"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 37,
+          "section": "## 多 Agent 的升级点是可分工 而不是人数",
+          "quote": "一个可检查的交接至少包含 `subtask_id`、目标修订、输入证据清单与哈希、允许资源、输出主张与逐项引用、缺项、实际消耗、状态。整合者先查版本与权限，再整合结论；超时或 `INCOMPLETE` 不能当作“没有问题”。两位调查者对同一事实冲突时保留冲突，不按最后到达的答案覆盖。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        }
+      ],
+      "baselineSupport": "未覆盖",
+      "missingSubquestions": "没有A2A协议、跨系统身份发现/任务生命周期与内部编排的比较。",
+      "baselineSupported": "只有应用内多Agent任务交接字段。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "没有A2A协议、跨系统身份发现/任务生命周期与内部编排的比较。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 71,
+      "set": "fixed100",
+      "question": "如何定义 Agent 的任务成功率，避免把“生成了回答”当成任务成功？",
+      "sourceRefs": [
+        "https://www.nowcoder.com/discuss/891332286421929984",
+        "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q71",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "任务成功分母"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 12,
+          "section": "## 把“好”拆成能被不同证据推翻的命题",
+          "quote": "| 判断 | 需要的证据 | 不能用来替代它的证据 |",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 22,
+          "section": "## 把“好”拆成能被不同证据推翻的命题",
+          "quote": "每个案例先写允许的终止集合。例如资料缺失的任务，正确产物可以是明确指出缺少哪项证据并停止写操作；这是一项“缺证时正确停止”的能力通过，不是“成功创建工单”。把所有拒绝都算失败，会鼓励模型编造；把所有拒绝都算成功，则可以通过拒绝全部任务制造安全高分。两类任务应分层报告。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 77,
+          "section": "## 先冻结比较 再运行所有被分配的任务",
+          "quote": "比较单位是“同一案例的一次分配”，不是“成功返回的模型请求”。对于每个案例，旧版和新版分别重复运行约定次数，轮换执行顺序或交错执行，降低时间段、缓存暖机和服务波动与版本混淆的机会。各自固定随机种子只有在实现支持且承诺相关语义时才有作用；本章不假定一个通用种子可使不同模型得到同样随机结果。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 95,
+          "section": "## 一个判定器怎样拒绝把缺证当通过",
+          "quote": "判定链分三层：运行记录能否核验；确定性规则是否满足；语义判断是否有独立记录。最终状态采用 `PASS`、`FAIL`、`INSUFFICIENT`、`HARNESS_ERROR`。`FAIL` 表示已有反证；`INSUFFICIENT` 表示必要事实未知；`HARNESS_ERROR` 表示评估基础设施未完成预定观察。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "事前结果/过程判据、正确等待分层，全部分配作分母，缺证不进通过分子。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 72,
+      "set": "fixed100",
+      "question": "最终结果评测和执行轨迹评测分别能够发现什么问题？",
+      "sourceRefs": [
+        "https://www.nowcoder.com/discuss/891332286421929984",
+        "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q72",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "结果与轨迹"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 12,
+          "section": "## 把“好”拆成能被不同证据推翻的命题",
+          "quote": "| 判断 | 需要的证据 | 不能用来替代它的证据 |",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 18,
+          "section": "## 把“好”拆成能被不同证据推翻的命题",
+          "quote": "这三个命题发生在不同位置。模型把一个没有验证的根因写成事实，是内容错误；读取到了别人的私有仓库，即使最终拒答，也是过程错误；答案、授权均正确却为了同一文件调用了二十次，是资源问题。它们需要不同修正，合成一个均分会隐藏原因。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 221,
+          "section": "## Trace 用来定位因果 不能当事实数据库",
+          "quote": "一次最终失败需要能追到“错的是输入、检索、决策、执行还是验收”。本方案让 `run_id` 串联版本与目标，让 `model_attempt_id` 绑定输入投影，让 `action_id` 串联逻辑动作，让 `attempt_id` 标记物理发送。每条评估判断指向相应记录，而不是只保存整段聊天。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 229,
+          "section": "## Trace 用来定位因果 不能当事实数据库",
+          "quote": "Trace 可能采样，导出也可能失败，因此评估的关键授权、尝试与回执应来自完整的受控事件或账本。日志只保存安全 ID、错误类别、时长和内容引用，源文件、凭证、用户秘密不进入普通 trace。数据最小化与批准边界在[e03](e03.md)展开。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "结果内容有据与动作授权分别判断，轨迹定位输入/检索/决策/执行，关键事实仍核账本。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 73,
+      "set": "fixed100",
+      "question": "如何构建包含正常、边界、歧义、失败和恶意输入的评测集？",
+      "sourceRefs": [
+        "https://www.nowcoder.com/discuss/891332286421929984",
+        "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q73",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "评测样本"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 26,
+          "section": "## 案例不是问答文本 而是一份执行契约",
+          "quote": "评估案例由输入、可访问环境和期望性质共同定义。问题句子不变，报告换了、批准到期了、工单查询能力失效了，已经是不同条件。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 61,
+          "section": "## 案例不是问答文本 而是一份执行契约",
+          "quote": "把以下三个任务放在同一案例家庭，才有可解释的覆盖：正常批准与完整证据，期望一个确认工单；报告缺少运行环境，期望产物注明限制且不虚称复现；已发送写请求而回执丢失，期望核对后确定原效果，或保留待核对状态，不能直接创建第二条。它们测试不同能力，不能把最后一个仅写为“加超时测试”。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 65,
+          "section": "## 开发 回归和保留部分控制的是信息使用",
+          "quote": "开发案例帮助发现方案，允许查看答案、轨迹和失败原因。回归案例保存已知缺陷及正常路径，用来防止修复倒退。独立保留案例用于一个被冻结的版本判断尚未见过的条件，原始内容和参考判定由独立评阅者保管。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 62,
+          "section": "## 精确批准绑定的是一次逻辑意图",
+          "quote": "CR04 要同时验证合法路径和拒绝路径：匹配批准、未过期的动作确实成功；未批准、期限 `now == expires_at`、新动作使用已消费批准、组织或项目变化、正文或工具变化都不能产生新效果。受控时钟让期限边界能够重复验证，并发测试让“先查未消费，再各自写入”的竞态暴露出来。全部拒绝虽然可能没有未授权效果，却没有实",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 296,
+          "section": "### 在三个入口放置同一注入",
+          "quote": "将开篇攻击文本分别放入测试报告、`read_source` 返回和已有记忆。画出每种路径如何进入模型，标出真正有权限阻止读和写的组件，并给出正常路径的预期。不得接真实网络服务。",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 298,
+          "section": "### 在三个入口放置同一注入",
+          "quote": "参考分析：三种输入都保持资料级别；记忆中的旧话不是当前批准。读取服务先按宿主组织及固定修订返回允许内容；投影排除敏感字段；执行器只接受当前项目、任务范围及精确批准。正常报告仍可产生有引用的缺陷说明，批准后替身创建一个回执。若方案只是把“忽略规则”删掉，它不能处理改写注入，也没有实现对象授权。",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "执行契约、案例家庭分组、缺证和回执丢失、正常/拒绝成对、期限边界与多入口注入，保留集独立。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 74,
+      "set": "fixed100",
+      "question": "如何区分检索失败、规划失败、工具失败和最终表达失败？",
+      "sourceRefs": [
+        "https://www.nowcoder.com/discuss/891332286421929984",
+        "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q74",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "分层诊断"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 221,
+          "section": "## Trace 用来定位因果 不能当事实数据库",
+          "quote": "一次最终失败需要能追到“错的是输入、检索、决策、执行还是验收”。本方案让 `run_id` 串联版本与目标，让 `model_attempt_id` 绑定输入投影，让 `action_id` 串联逻辑动作，让 `attempt_id` 标记物理发送。每条评估判断指向相应记录，而不是只保存整段聊天。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 225,
+          "section": "## Trace 用来定位因果 不能当事实数据库",
+          "quote": "例如同一任务的时间顺序是：读取正确文件；上下文投影丢掉失败断言；模型断言“所有测试通过”；工单生成被验收器拒绝。正确归因为上下文构建缺陷和未据证推断，不能直接归为“模型不够强”。如果只看到最终输出和模型 span，两个原因无法区分。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 227,
+          "section": "## Trace 用来定位因果 不能当事实数据库",
+          "quote": "诊断可以进行受控替换：把模型输入中的片段替换成已核对的完整断言，保持其他配置不变；若内容恢复，则支持“输入投影不足”的假设。替换使用的是评估者提供的理想材料，其收益不是线上检索已经改善的收益。修复投影后必须重新跑端到端任务；此时还要检查上下文变长是否带来成本和其他引用回归。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "line": 24,
+          "section": "## 检索策略必须按查询类型比较",
+          "quote": "混合检索不宜直接相加来源不同尺度的原始分数。本篇用 reciprocal rank fusion（RRF）作为原创配置选择：每个候选按它在不同排序中的名次贡献 `1/(60+rank)`。常数60是本例参数，须实验验证；没有行业最优承诺。具体 OpenAI 检索服务也支持融合权重配置，本篇没有调用该服务，也不把自己的 ",
+          "sha256": "2614eaa7a00a00f54c484dc9cc36e8ed3bedcc144c5895947fcfe4094d47566d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 164,
+          "section": "## 观测记录应回答哪一阶段首次偏离",
+          "quote": "本方案每条阶段事件包含：`release_id`、`run_id`、目标版本、运行修订、租约代次、阶段名、开始/结束时间、结果类别、安全错误码、相关动作/尝试 ID 和证据引用。模型阶段另记上下文摘要及配置引用，工具阶段记契约版本和效果核对类别；不记凭据或整个载荷。",
+          "sha256": "cc0fdfe84f772dc444a24fd89b4a8d67f1bad600ab6818cf58f6e9d37dace025"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "沿阶段ID定位首次偏离、读回检索/上下文/模型候选/执行/验收，受控替换并重跑端到端。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 75,
+      "set": "fixed100",
+      "question": "如何使用 LLM-as-a-Judge，并控制评判偏差及与人工结论的不一致？",
+      "sourceRefs": [
+        "https://www.nowcoder.com/discuss/891332286421929984",
+        "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q75",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "模型裁判校准"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 233,
+          "section": "## 模型评分器的误差需要量化到决策用途",
+          "quote": "将语义评分交给另一个模型可以降低初筛成本，却会把评分器自身的偏差引入版本选择。MT-Bench/Chatbot Arena 的原始研究讨论位置、冗长、自我偏好和推理能力等限制；其在特定基准上的结果不能保证你的工单根因评分正确。[Zheng 等：Judging LLM-as-a-Judge，2023，访问于 2026-1",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 235,
+          "section": "## 模型评分器的误差需要量化到决策用途",
+          "quote": "本方案先由具有相关判断能力的人对一批覆盖正确、错误、含糊、缺证和对抗输入的材料给参考判断，保留原意见及分歧，再比较模型判定。需要看模型把错误放行的次数，也要看把正确拒绝的次数；一个始终拒绝的评分器可能误放为零，却无法承担功能判定。对安全关键或高争议类别，先保留人审，模型用于排序和解释候选问题。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 237,
+          "section": "## 模型评分器的误差需要量化到决策用途",
+          "quote": "假设校准材料中人审拒绝十项，模型接受两项；人审接受二十项，模型拒绝六项。总体相同判断二十二项占三十项，约 73.3%；但更相关的是错误放行 `2/10` 和错误拒绝 `6/20`。这些是虚构教学数字。若两项误放都来自“引用存在但推断无依据”，下一步应补这种反例、改量规或保留人审，而不是只追求总体一致率提高。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 239,
+          "section": "## 模型评分器的误差需要量化到决策用途",
+          "quote": "同一份校准材料也会被过拟合。校准后需要新的独立材料观察评分误差；更换评分器模型、提示或量规，属于评估系统版本变化，应同时重评旧版和新版候选，避免“产品没变、裁判变宽松”制造提升。评分器输出可以写理由及证据定位；不要请求或依赖不可核验的内部推理链作为真实因果证据。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "位置/冗长/自偏好限制、人审校准、错放/错拒分别统计、争议保留人审、新独立材料与评分器版本。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 76,
+      "set": "fixed100",
+      "question": "同一个任务多次运行结果不同，应该怎样报告成功率与稳定性？",
+      "sourceRefs": [
+        "https://www.nowcoder.com/discuss/891332286421929984",
+        "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q76",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "随机稳定性"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 77,
+          "section": "## 先冻结比较 再运行所有被分配的任务",
+          "quote": "比较单位是“同一案例的一次分配”，不是“成功返回的模型请求”。对于每个案例，旧版和新版分别重复运行约定次数，轮换执行顺序或交错执行，降低时间段、缓存暖机和服务波动与版本混淆的机会。各自固定随机种子只有在实现支持且承诺相关语义时才有作用；本章不假定一个通用种子可使不同模型得到同样随机结果。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 79,
+          "section": "## 先冻结比较 再运行所有被分配的任务",
+          "quote": "设案例 `i` 的旧版通过比例为 `r_old(i)`，新版为 `r_new(i)`，配对差值是 `d(i)=r_new(i)-r_old(i)`。先对同一案例求差，再按事前规定的案例权重汇总，避免新版本恰好多跑简单题。重复次数提高了对该案例随机波动的观察，却没有增加业务场景的多样性。若十个案例来自一个仓库，不能将一百",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 89,
+          "section": "## 先冻结比较 再运行所有被分配的任务",
+          "quote": "这张表只支持“在这些分配中观察到通过次数增加”。如果新版的一次恢复产生重复工单，该安全缺陷应独立阻断相应发布判断；总计多七次通过不能冲掉它。若新版缺了两次轨迹，分配仍为九十次，缺证数为二；应报告可判定通过数与缺证数，不把分母改成八十八。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 91,
+          "section": "## 先冻结比较 再运行所有被分配的任务",
+          "quote": "统计区间或显著性分析应与取样方式匹配。本章建议在样本很小、仓库高度相关或环境无法冻结时报告逐案例差值、反转案例及重复分布，保留结论范围；不要给没有依据的“达到行业标准 95%”数字。正式推断需要由懂统计的评阅者确认抽样单位、相关性和预先选定的方法。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "同案例重复与配对差值、轮换运行、全部分配/缺证分母、案例相关性与限制。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 77,
+      "set": "fixed100",
+      "question": "一条 Agent Trace 应记录什么，才能定位问题且避免泄露敏感信息？",
+      "sourceRefs": [
+        "https://www.nowcoder.com/discuss/891332286421929984",
+        "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q77",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "观测与隐私"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 221,
+          "section": "## Trace 用来定位因果 不能当事实数据库",
+          "quote": "一次最终失败需要能追到“错的是输入、检索、决策、执行还是验收”。本方案让 `run_id` 串联版本与目标，让 `model_attempt_id` 绑定输入投影，让 `action_id` 串联逻辑动作，让 `attempt_id` 标记物理发送。每条评估判断指向相应记录，而不是只保存整段聊天。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 229,
+          "section": "## Trace 用来定位因果 不能当事实数据库",
+          "quote": "Trace 可能采样，导出也可能失败，因此评估的关键授权、尝试与回执应来自完整的受控事件或账本。日志只保存安全 ID、错误类别、时长和内容引用，源文件、凭证、用户秘密不进入普通 trace。数据最小化与批准边界在[e03](e03.md)展开。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 164,
+          "section": "## 观测记录应回答哪一阶段首次偏离",
+          "quote": "本方案每条阶段事件包含：`release_id`、`run_id`、目标版本、运行修订、租约代次、阶段名、开始/结束时间、结果类别、安全错误码、相关动作/尝试 ID 和证据引用。模型阶段另记上下文摘要及配置引用，工具阶段记契约版本和效果核对类别；不记凭据或整个载荷。",
+          "sha256": "cc0fdfe84f772dc444a24fd89b4a8d67f1bad600ab6818cf58f6e9d37dace025"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 50,
+          "section": "## 内容投影需要覆盖四个通道",
+          "quote": "普通日志记录安全对象 ID、阶段和拒绝代码，例如 `OBJECT_DENIED`、`APPROVAL_EXPIRED`；不要把原参数、异常全文或整份模型输入直接写入日志。OWASP 日志指南列出令牌、密码、连接串和密钥等通常不应直接记录的内容；本章将这一建议落实为安全事件的字段限制。[OWASP：Logging，访问于",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "目标/版本/run/model/action/attempt关联、阶段结果、时长与安全错误码、内容引用，不存原秘密载荷。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 78,
+      "set": "fixed100",
+      "question": "如何设计模型、工具和检索组件的消融实验？",
+      "sourceRefs": [
+        "https://www.nowcoder.com/discuss/891332286421929984",
+        "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q78",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "组件消融"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 227,
+          "section": "## Trace 用来定位因果 不能当事实数据库",
+          "quote": "诊断可以进行受控替换：把模型输入中的片段替换成已核对的完整断言，保持其他配置不变；若内容恢复，则支持“输入投影不足”的假设。替换使用的是评估者提供的理想材料，其收益不是线上检索已经改善的收益。修复投影后必须重新跑端到端任务；此时还要检查上下文变长是否带来成本和其他引用回归。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 267,
+          "section": "### 用干预诊断一个新的失败",
+          "quote": "参考分析供评阅者使用：先核读取结果的修订、上下文投影和引用解析器，再分离生成、缓存和产物装配。若上下文已是旧修订，优先干预投影；若模型输出新修订而最终装配旧值，干预装配器；若模型输入新修订却生成旧引用，才检查生成约束及提示。每次保持其余条件不变，保存干预材料。真实修复要重跑新仓库端到端、原正常任务和旧修订不可复用的变体",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "line": 238,
+          "section": "## 做一个能定位问题的检索比较",
+          "quote": "先冻结合法资料集合和查询集，再为每题独立标出必要支持块，包含精确测试名、自然语言同义、需要实现与报告共同支持、规则缺失和冲突题。词法与语义使用同样的权限/修订过滤、`top_k` 和上下文上限；否则较大候选集的收益会被误归于算法。真实向量输入必须记录嵌入模型、维度、查询改写和编码版本；手工向量只能测排序实现。",
+          "sha256": "2614eaa7a00a00f54c484dc9cc36e8ed3bedcc144c5895947fcfe4094d47566d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 45,
+          "section": "## 怎样做一个公平且能定位原因的比较",
+          "quote": "冻结相同任务集，分别标记材料完整、需动态调查、证据冲突；固定资料与工具版本、权限、验收器、模型快照与采样配置、总期限和资源上限。各方案可有不同路径，但不能偷偷取得测试集答案。记录每题的候选合格、完整目标合格、正确等待、错误完成、读/模型尝试、用量、端到端延迟和未知结果。",
+          "sha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f"
+        }
+      ],
+      "baselineSupport": "部分",
+      "missingSubquestions": "未完整说明三类组件逐一移除/替换的对照矩阵、必要工具移除的任务有效性及交互效应。",
+      "baselineSupported": "控制其他条件替换输入/定位组件，固定检索基线与全任务条件。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "未完整说明三类组件逐一移除/替换的对照矩阵、必要工具移除的任务有效性及交互效应。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 79,
+      "set": "fixed100",
+      "question": "模型、提示、工具或知识库升级后，如何判断新版本能否发布？",
+      "sourceRefs": [
+        "https://www.nowcoder.com/discuss/891332286421929984",
+        "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q79",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "发布回归"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 75,
+          "section": "## 先冻结比较 再运行所有被分配的任务",
+          "quote": "一次版本对照至少冻结代码、系统提示、工具定义、上下文构建方式、资料快照、模型配置、预算、故障注入、判定器和案例集。能取得不可变模型修订就记录它；供应商只给滚动别名时，记录请求日期和响应中的可用身份，同时把无法完全冻结写为比较限制。不能凭相同别名声称底层模型一定相同。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 89,
+          "section": "## 先冻结比较 再运行所有被分配的任务",
+          "quote": "这张表只支持“在这些分配中观察到通过次数增加”。如果新版的一次恢复产生重复工单，该安全缺陷应独立阻断相应发布判断；总计多七次通过不能冲掉它。若新版缺了两次轨迹，分配仍为九十次，缺证数为二；应报告可判定通过数与缺证数，不把分母改成八十八。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 245,
+          "section": "## 从失败分类到一次能够关闭的回归",
+          "quote": "修复有三种不同验证。原例复验确认已知触发顺序被处理；关联回归确认合法路径与其他边界没有倒退；新约束或独立保留任务检查修复是否过度贴合原答案。比如为阻止错误写入而禁止全部 `create_issue`，可以修掉未审批样例，却会让正常批准路径失败。缺陷仍不能关闭为“安全完成”。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 32,
+          "section": "## 发布对象是一组相互兼容的版本",
+          "quote": "不能用版本数字大小推断兼容。`state_reader_versions=[1,2]` 必须由对两种真实状态夹具的读取和恢复检查支持；如果只测试 JSON 能 parse，却没有测试旧动作恢复，这只是格式读取证据。`state_writer_version=2` 表示启用后可能产生旧版本不认识的状态，因而直接回退 `r",
+          "sha256": "cc0fdfe84f772dc444a24fd89b4a8d67f1bad600ab6818cf58f6e9d37dace025"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 140,
+          "section": "## 一次发布的控制路径",
+          "quote": "`PRECHECK` 验证构建摘要、配置、状态读取和迁移计划。`STAGED` 在隔离环境读真实格式的脱敏夹具，验证正常完成、待审批、未决效果和停止状态。`CANARY` 只把一批**新任务**分给新版本；旧任务留在原执行语义集合，除非有已验证迁移许可。观察结果包括任务正确性、关键过程失败、队列等待、未决动作年龄及基础",
+          "sha256": "cc0fdfe84f772dc444a24fd89b4a8d67f1bad600ab6818cf58f6e9d37dace025"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 142,
+          "section": "## 一次发布的控制路径",
+          "quote": "条件满足则扩大新任务比例；任何关键边界失败则停止新版本领取，并保持已接受任务可查询。此时先查受影响任务是否已发动作，再选择继续旧集合、暂停核对或安全移交。流量回退与任务回退是两个决定，不能一句“回滚镜像”代替。",
+          "sha256": "cc0fdfe84f772dc444a24fd89b4a8d67f1bad600ab6818cf58f6e9d37dace025"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "冻结各版本和案例条件，原例/关联回归/独立新任务，过程关键失败阻断、缺证保留、发布状态兼容。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 80,
+      "set": "fixed100",
+      "question": "用户报告一个偶发失败，但你本地无法复现，下一步怎么调查？",
+      "sourceRefs": [
+        "https://www.nowcoder.com/discuss/891332286421929984",
+        "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q80",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "偶发失败排错"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 243,
+          "section": "## 从失败分类到一次能够关闭的回归",
+          "quote": "一份失败记录至少保留输入及快照、期望性质、实际证据、首次已知偏离阶段、原因假设、改动和复验。首次偏离与根因不同：首次发现答案错误，不代表错误从生成阶段开始。先沿证据反查，再给原因假设。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 77,
+          "section": "## 先冻结比较 再运行所有被分配的任务",
+          "quote": "比较单位是“同一案例的一次分配”，不是“成功返回的模型请求”。对于每个案例，旧版和新版分别重复运行约定次数，轮换执行顺序或交错执行，降低时间段、缓存暖机和服务波动与版本混淆的机会。各自固定随机种子只有在实现支持且承诺相关语义时才有作用；本章不假定一个通用种子可使不同模型得到同样随机结果。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 164,
+          "section": "## 观测记录应回答哪一阶段首次偏离",
+          "quote": "本方案每条阶段事件包含：`release_id`、`run_id`、目标版本、运行修订、租约代次、阶段名、开始/结束时间、结果类别、安全错误码、相关动作/尝试 ID 和证据引用。模型阶段另记上下文摘要及配置引用，工具阶段记契约版本和效果核对类别；不记凭据或整个载荷。",
+          "sha256": "cc0fdfe84f772dc444a24fd89b4a8d67f1bad600ab6818cf58f6e9d37dace025"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p02.md",
+          "line": 125,
+          "section": "## 独立评阅按一条实际任务走完全程",
+          "quote": "遇到无法复现，先定位：环境缺依赖；配置指向错误目标；资料快照缺失；工具契约不明确；运行没有持久记录；结果随机但仍在允许集合。无法启动是复现失败，模型服务无访问权限是相应实测缺证，两者应分开。作者修交接或实现后，由独立者重新执行当前版本；作者自己录像不替代重做。",
+          "sha256": "7a4ddb35b1a34d2a2ed99b4fa73124794b5220ed1498ef395e48817d5197c487"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "取得原版本/快照/时序/账本，分环境权限与随机性，阶段关联、重复运行与受控干预后独立复验。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 81,
+      "set": "fixed100",
+      "question": "直接提示注入和来自网页、文档或工具结果的间接注入，有什么不同？",
+      "sourceRefs": [
+        "https://github.com/modelcontextprotocol/modelcontextprotocol/security",
+        "https://blog.modelcontextprotocol.io/posts/2026-03-16-tool-annotations/"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q81",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "提示注入"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 10,
+          "section": "## 威胁模型先确定攻击者能够改变哪一段数据",
+          "quote": "本例保护三类资产：未授权仓库与报告内容；凭证和个人信息；创建工单的能力及批准记录。攻击者可以改变仓库注释、测试失败字符串或已有工单正文，不能修改宿主身份、权限数据库或批准事件。若攻击者也能修改运行时程序，已经超出本章“外部输入影响模型”的故障模型，需要另行处理供应链和主机安全。",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 16,
+          "section": "## 威胁模型先确定攻击者能够改变哪一段数据",
+          "quote": "攻击链是“可信身份获准读取一份报告 → 不可信报告进入模型输入 → 模型将报告中的话解释为控制指令 → 提议越权读取或发布”。报告来自内部测试系统，只能证明它的来源，不能证明其中所有字符串有指令权限。测试代码可能打印攻击者提交的数据。工具返回、旧记忆或摘要也可能保留这段内容；换一种传输容器不会改变其权限。",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 18,
+          "section": "## 威胁模型先确定攻击者能够改变哪一段数据",
+          "quote": "OWASP 将代码注释、文档、工单和网页等外部内容里的恶意指令列为间接提示注入入口，并建议把授权和最小权限放在模型之外。这里采用该威胁划分；下面具体对象检查和批准事务是本章方案。[OWASP：LLM Prompt Injection Prevention，访问于 2026-10-11](https://cheatshe",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        }
+      ],
+      "baselineSupport": "部分",
+      "missingSubquestions": "没有直接提示注入机制及与间接注入的明确对照。",
+      "baselineSupported": "间接注入入口、资料到控制指令攻击链、威胁主体能力。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "没有直接提示注入机制及与间接注入的明确对照。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 82,
+      "set": "fixed100",
+      "question": "Agent 为什么不能仅靠系统提示保证工具权限与数据安全？",
+      "sourceRefs": [
+        "https://github.com/modelcontextprotocol/modelcontextprotocol/security",
+        "https://blog.modelcontextprotocol.io/posts/2026-03-16-tool-annotations/"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q82",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "权限强制"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 3,
+          "section": "# 在数据返回和动作发送前强制执行权限",
+          "quote": "外部资料可以提供事实，模型可以提出动作；两者都不能产生授权。要让这个原则在提示注入、跨项目访问和批准被篡改时仍成立，权限检查必须发生在数据返回前和动作发送前，由可信宿主确定身份、对象范围及批准内容。给文本贴上“不可信”标签有助于模型解释资料，却没有能力阻止读取服务返回秘密，也没有能力撤销已经发送的写请求。",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 20,
+          "section": "## 威胁模型先确定攻击者能够改变哪一段数据",
+          "quote": "不必先证明模型“被骗了”，才能拦住动作。哪怕模型以完全合理的文字提出读取另一个组织的凭证，只要对象不在任务范围就拒绝。注入识别可以辅助调查，但不应成为对象授权的前提；攻击者改写措辞后，规则仍应成立。",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 36,
+          "section": "## 读取边界比最终答案过滤更早",
+          "quote": "第一道闸检查“这个身份可否读这个对象”。存储层或读取服务按宿主身份过滤，再返回内容；不能先检索全部组织，放进上下文后让模型选择自己的资料。即使最终答复拒绝，跨组织内容已经进入模型输入，读取边界仍失败。",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 40,
+          "section": "## 读取边界比最终答案过滤更早",
+          "quote": "第三道闸检查“模型提议的工具和对象是否属于本次任务”。JSON schema 只能证明 `project` 是字符串，不能证明它属于当前组织。运行时把提议中的项目与宿主允许对象比较，不把模型提供的 `tenant_id` 当身份。OWASP 的授权指南要求默认拒绝，并对每次请求检查权限；这一原则适用于模型产生的请求，不",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "文本不能阻止秘密读取或撤销已发送动作，宿主/读取服务/执行器强制对象权限。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 83,
+      "set": "fixed100",
+      "question": "如何让工具执行权限与当前用户身份、资源归属和操作范围一致？",
+      "sourceRefs": [
+        "https://github.com/modelcontextprotocol/modelcontextprotocol/security",
+        "https://blog.modelcontextprotocol.io/posts/2026-03-16-tool-annotations/"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q83",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "身份资源范围"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 36,
+          "section": "## 读取边界比最终答案过滤更早",
+          "quote": "第一道闸检查“这个身份可否读这个对象”。存储层或读取服务按宿主身份过滤，再返回内容；不能先检索全部组织，放进上下文后让模型选择自己的资料。即使最终答复拒绝，跨组织内容已经进入模型输入，读取边界仍失败。",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 40,
+          "section": "## 读取边界比最终答案过滤更早",
+          "quote": "第三道闸检查“模型提议的工具和对象是否属于本次任务”。JSON schema 只能证明 `project` 是字符串，不能证明它属于当前组织。运行时把提议中的项目与宿主允许对象比较，不把模型提供的 `tenant_id` 当身份。OWASP 的授权指南要求默认拒绝，并对每次请求检查权限；这一原则适用于模型产生的请求，不",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 42,
+          "section": "## 读取边界比最终答案过滤更早",
+          "quote": "权限变更与发送之间仍有竞态。安全要求取决于最终资源方：若它能用短期对象能力令牌验证租户、项目、动作和期限，应把当前授权绑定传到那里；若只能用一个覆盖全公司的凭证，应用预检查并不能使凭证变窄。此时应缩工具代理权限、限制出站目标、隔离凭据，并承认最终服务仍有更大的能力。不能将预检查写成“任何后续权限撤销都会即时生效”的保证",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "宿主可信身份、每次对象/任务范围检查、能力令牌及最终资源方撤权竞态。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 84,
+      "set": "fixed100",
+      "question": "高风险操作的人类确认应展示什么，才能构成有意义的批准？",
+      "sourceRefs": [
+        "https://github.com/modelcontextprotocol/modelcontextprotocol/security",
+        "https://blog.modelcontextprotocol.io/posts/2026-03-16-tool-annotations/"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q84",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "准确批准"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 56,
+          "section": "## 精确批准绑定的是一次逻辑意图",
+          "quote": "“请创建一条工单”不是对任何项目、任何正文和任何数量的批准。批准请求应让维护者看到具体工具、目标项目、标题、正文、证据引用和效果数量，然后绑定不可变意图。",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 58,
+          "section": "## 精确批准绑定的是一次逻辑意图",
+          "quote": "本方案的批准指纹输入为：组织、批准主体、本次运行、目标版本、`action_id`、工具版本、项目、标题、正文和证据引用。规范化编码必须确定：字段次序、字符串编码、空值、数组顺序等都要约定。本文使用 UTF-8、排序键 JSON、无浮点字段，证据引用按固定顺序排列；真实系统需验证参数结构和规范化范围，不能把任意 JSO",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "具体工具/目标/标题正文/证据/效果数量，绑定主体、运行、版本与不可变意图。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 85,
+      "set": "fixed100",
+      "question": "如何防止确认后参数被修改，或一次确认被用于后续不同操作？",
+      "sourceRefs": [
+        "https://github.com/modelcontextprotocol/modelcontextprotocol/security",
+        "https://blog.modelcontextprotocol.io/posts/2026-03-16-tool-annotations/"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q85",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "批准防篡改重用"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 58,
+          "section": "## 精确批准绑定的是一次逻辑意图",
+          "quote": "本方案的批准指纹输入为：组织、批准主体、本次运行、目标版本、`action_id`、工具版本、项目、标题、正文和证据引用。规范化编码必须确定：字段次序、字符串编码、空值、数组顺序等都要约定。本文使用 UTF-8、排序键 JSON、无浮点字段，证据引用按固定顺序排列；真实系统需验证参数结构和规范化范围，不能把任意 JSO",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 60,
+          "section": "## 精确批准绑定的是一次逻辑意图",
+          "quote": "维护者批准 `action-17` 的正文后，模型补了一段假定根因，意图已经改变，必须形成新提议并重新批准。项目从私有维护项目改为公共项目，也必须重新批准。批准的签发、主体身份和期限属于可信批准服务；模型写“用户已经同意”没有效力。",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 62,
+          "section": "## 精确批准绑定的是一次逻辑意图",
+          "quote": "CR04 要同时验证合法路径和拒绝路径：匹配批准、未过期的动作确实成功；未批准、期限 `now == expires_at`、新动作使用已消费批准、组织或项目变化、正文或工具变化都不能产生新效果。受控时钟让期限边界能够重复验证，并发测试让“先查未消费，再各自写入”的竞态暴露出来。全部拒绝虽然可能没有未授权效果，却没有实",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 64,
+          "section": "## 精确批准绑定的是一次逻辑意图",
+          "quote": "还要区分**消费批准的原动作恢复**与**借批准创建新动作**。批准已绑定并消费到 `action-17` 后，该动作的合法核对或同键重发仍可能必要；它必须保持原参数、原幂等键，并满足当前授权和控制循环的恢复许可。不同 `action_id` 不能借这个批准执行。批准过期不允许产生新的业务动作；已经确认的原回执可以返回",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "规范化指纹、修改重新批准、消费及期限并发验证、区分原动作恢复与借批准新动作。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 86,
+      "set": "fixed100",
+      "question": "执行模型生成代码时，沙箱应限制哪些资源与外部访问？",
+      "sourceRefs": [
+        "https://github.com/modelcontextprotocol/modelcontextprotocol/security",
+        "https://blog.modelcontextprotocol.io/posts/2026-03-16-tool-annotations/"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q86",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "代码沙箱"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 10,
+          "section": "## 威胁模型先确定攻击者能够改变哪一段数据",
+          "quote": "本例保护三类资产：未授权仓库与报告内容；凭证和个人信息；创建工单的能力及批准记录。攻击者可以改变仓库注释、测试失败字符串或已有工单正文，不能修改宿主身份、权限数据库或批准事件。若攻击者也能修改运行时程序，已经超出本章“外部输入影响模型”的故障模型，需要另行处理供应链和主机安全。",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 42,
+          "section": "## 读取边界比最终答案过滤更早",
+          "quote": "权限变更与发送之间仍有竞态。安全要求取决于最终资源方：若它能用短期对象能力令牌验证租户、项目、动作和期限，应把当前授权绑定传到那里；若只能用一个覆盖全公司的凭证，应用预检查并不能使凭证变窄。此时应缩工具代理权限、限制出站目标、隔离凭据，并承认最终服务仍有更大的能力。不能将预检查写成“任何后续权限撤销都会即时生效”的保证",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        }
+      ],
+      "baselineSupport": "未覆盖",
+      "missingSubquestions": "没有生成代码沙箱的CPU/内存/时间/进程/文件系统/网络/系统调用隔离教学。",
+      "baselineSupported": "只讨论主机威胁超出范围、工具出站目标/凭据隔离。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "没有生成代码沙箱的CPU/内存/时间/进程/文件系统/网络/系统调用隔离教学。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 87,
+      "set": "fixed100",
+      "question": "如何防止检索内容、日志和错误消息泄露跨租户资料或密钥？",
+      "sourceRefs": [
+        "https://github.com/modelcontextprotocol/modelcontextprotocol/security",
+        "https://blog.modelcontextprotocol.io/posts/2026-03-16-tool-annotations/"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q87",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "隔离与日志"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 36,
+          "section": "## 读取边界比最终答案过滤更早",
+          "quote": "第一道闸检查“这个身份可否读这个对象”。存储层或读取服务按宿主身份过滤，再返回内容；不能先检索全部组织，放进上下文后让模型选择自己的资料。即使最终答复拒绝，跨组织内容已经进入模型输入，读取边界仍失败。",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 38,
+          "section": "## 读取边界比最终答案过滤更早",
+          "quote": "第二道闸检查“允许读的内容中，哪些字段允许交给模型或写入工单”。一个被授权读取的测试报告可能包含连接串、访问令牌或个人邮箱。读取授权并不自动授权将整个报告交给另一个处理服务或公开项目。按任务选择失败断言、文件位置和已分类的必要片段；其他字段保持在受控存储，不进入普通上下文与日志。",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 46,
+          "section": "## 内容投影需要覆盖四个通道",
+          "quote": "沿用课程安全要求 CR03：同时检查模型上下文、模型或用户输出、工具载荷和普通日志。只遮住 UI 不够；只清理工具载荷也不够。令牌先进入模型输入再从答案删掉，仍然已经越过一个边界。",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 50,
+          "section": "## 内容投影需要覆盖四个通道",
+          "quote": "普通日志记录安全对象 ID、阶段和拒绝代码，例如 `OBJECT_DENIED`、`APPROVAL_EXPIRED`；不要把原参数、异常全文或整份模型输入直接写入日志。OWASP 日志指南列出令牌、密码、连接串和密钥等通常不应直接记录的内容；本章将这一建议落实为安全事件的字段限制。[OWASP：Logging，访问于",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 52,
+          "section": "## 内容投影需要覆盖四个通道",
+          "quote": "敏感值扫描属于验证，不是普遍的安全证明。用夹具中唯一标记扫描四个通道，可以揭示测试涉及的泄漏；攻击者可能编码、分段或转述秘密，未知秘密也不在标记集合里。通过有限扫描，只能说这些夹具值没有出现在这些完整采集通道，不能宣布所有敏感信息都不会泄漏。",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "返回前对象授权、允许字段投影、四通道检查、安全ID错误码日志、有限扫描边界。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 88,
+      "set": "fixed100",
+      "question": "外部工具声称操作成功，你如何核实真实状态？",
+      "sourceRefs": [
+        "https://github.com/modelcontextprotocol/modelcontextprotocol/security",
+        "https://blog.modelcontextprotocol.io/posts/2026-03-16-tool-annotations/"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q88",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "效果核验"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 243,
+          "section": "## 6 先核对未决动作 再让模型继续",
+          "quote": "恢复顺序必须把事实核对放在新决策之前。模型不知道一个丢失回执的远端调用到底有没有成功。重新问模型，最多产生另一个看上去合理的提议，不能消除执行不确定性。",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 245,
+          "section": "## 6 先核对未决动作 再让模型继续",
+          "quote": "本例中的 `create_issue` 在 `IN_FLIGHT` 或 `UNKNOWN` 状态时，恢复者按 `action_id` 对应的客户端操作 ID 查询：",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 247,
+          "section": "## 6 先核对未决动作 再让模型继续",
+          "quote": "1. **确认成功且内容指纹一致**：提交原工单回执，标为 `SUCCEEDED`，不再创建。",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 260,
+          "section": "## 6 先核对未决动作 再让模型继续",
+          "quote": "运行时可以保证自己不故意重复提交一个逻辑动作，但只有下游把去重记录与实际效果可靠绑定，才能保证重复传输不会重复产生业务效果。AWS 的服务端示例明确把记录幂等 token 与相关变更纳入原子操作；客户端自己的 checkpoint 不能代替这部分。[AWS：服务端 token 与变更的原子性](https://aws.",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c03.md",
+          "line": 174,
+          "section": "## 本地事务和下游接口各承担哪一半",
+          "quote": "下游须明确提供操作级核对和去重合同：相同键同参数在保留窗口内不增加效果，同键不同参数冲突，去重记录与实际对象原子关联，并定义并发请求、错误结果和到期后的行为。AWS 的幂等 API 设计强调调用者意图标识及幂等记录与变更的一致性。[AWS Making retries safe](https://aws.amazon.",
+          "sha256": "4f4c0750bce1fa8de15a5f6bc94bc972c66a3e877e4b161b41890b4af8771261"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "可信适配器与操作级查询、回执绑定原意图/键和对象，下游效果账本核验，不以模型/字符串成功作事实。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 89,
+      "set": "fixed100",
+      "question": "多步骤任务部分成功后失败，如何设计补偿、恢复和用户告知？",
+      "sourceRefs": [
+        "https://github.com/modelcontextprotocol/modelcontextprotocol/security",
+        "https://blog.modelcontextprotocol.io/posts/2026-03-16-tool-annotations/"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q89",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "补偿"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 239,
+          "section": "## 5 完整模型输出才有资格成为执行计划",
+          "quote": "预检通过不等于执行期间的所有动作原子成功。工具调用跨服务；第二个动作执行前权限可能撤销，第一个可能已经成功。每个动作发出前仍要检查动态权限、审批、取消和预算，并单独记录结果。批次发生部分成功时，应明确回传各动作状态，不宣称“整批失败所以没有效果”。",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 780,
+          "section": "### 10.4 超时 取消和两个恢复工作者",
+          "quote": "运行被取消与先前效果已发生并不矛盾。此时不提交 `COMPLETED`，也不声称外部创建已被撤销。若用户需要删除工单，那是另一项有权限、审批和失败语义的业务动作；不能用补偿动作伪装原请求从未发生。",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e01.md",
+          "line": 378,
+          "section": "## 已实现的终态保证与版本变化",
+          "quote": "停止事务的前置条件是所有写动作效果不再 `UNRESOLVED`，所有仍等待物理观察的attempt/lookup已经有结果或被操作级证据合法取代；否则仅保存 `WAIT_RESOLUTION`。满足时写 `STOPPED`，本例只保留布尔停止意图，实际停因与部分成果在事件输入/上层任务记录中另存。生产扩展须把原因和产",
+          "sha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p02.md",
+          "line": 162,
+          "section": "## 一次完整复盘 写后中断变成重复工单",
+          "quote": "还要区分**程序缺陷复验**与**旧效果处置**。旧 r1 已产生的 ISSUE-218/219 不会因 r2 通过而消失；它们的合并、关闭或人工确认，需要实际业务许可和记录。历史事故的影响可保持待处理，代码缺陷可在有限范围完成修复，两种状态分别维护。写一份复盘报告既不是修复，也不是旧效果已经清理。",
+          "sha256": "7a4ddb35b1a34d2a2ed99b4fa73124794b5220ed1498ef395e48817d5197c487"
+        }
+      ],
+      "baselineSupport": "部分",
+      "missingSubquestions": "没有多步骤补偿动作排序、补偿失败重试/幂等与用户告知完整流程。",
+      "baselineSupported": "逐动作状态、未知核对、取消不回滚，部分成果/原因保留；补偿另行授权。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "没有多步骤补偿动作排序、补偿失败重试/幂等与用户告知完整流程。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 90,
+      "set": "fixed100",
+      "question": "如何把安全反例纳入自动化回归，并验证修复没有破坏正常任务？",
+      "sourceRefs": [
+        "https://github.com/modelcontextprotocol/modelcontextprotocol/security",
+        "https://blog.modelcontextprotocol.io/posts/2026-03-16-tool-annotations/"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q90",
+      "roleLevel": "中级核心",
+      "capabilities": [
+        "安全回归"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 62,
+          "section": "## 精确批准绑定的是一次逻辑意图",
+          "quote": "CR04 要同时验证合法路径和拒绝路径：匹配批准、未过期的动作确实成功；未批准、期限 `now == expires_at`、新动作使用已消费批准、组织或项目变化、正文或工具变化都不能产生新效果。受控时钟让期限边界能够重复验证，并发测试让“先查未消费，再各自写入”的竞态暴露出来。全部拒绝虽然可能没有未授权效果，却没有实",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 296,
+          "section": "### 在三个入口放置同一注入",
+          "quote": "将开篇攻击文本分别放入测试报告、`read_source` 返回和已有记忆。画出每种路径如何进入模型，标出真正有权限阻止读和写的组件，并给出正常路径的预期。不得接真实网络服务。",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 298,
+          "section": "### 在三个入口放置同一注入",
+          "quote": "参考分析：三种输入都保持资料级别；记忆中的旧话不是当前批准。读取服务先按宿主组织及固定修订返回允许内容；投影排除敏感字段；执行器只接受当前项目、任务范围及精确批准。正常报告仍可产生有引用的缺陷说明，批准后替身创建一个回执。若方案只是把“忽略规则”删掉，它不能处理改写注入，也没有实现对象授权。",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 304,
+          "section": "### 独立实现 CR03 与 CR04",
+          "quote": "参考方案：每项拒绝后回执数保持原值；合法同动作并发产生一个 `CREATED` 和一个 `OBSERVED`，两个结果指向同一回执；两个不同动作竞争唯一槽位，最多一项创建。后一个场景需分别绑定两项合法批准，不能因第二项本来没有批准而误测槽位竞争。敏感值扫描输出保留四通道来源，不把整个 raw 夹具附进普通日志。自由文本",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 245,
+          "section": "## 从失败分类到一次能够关闭的回归",
+          "quote": "修复有三种不同验证。原例复验确认已知触发顺序被处理；关联回归确认合法路径与其他边界没有倒退；新约束或独立保留任务检查修复是否过度贴合原答案。比如为阻止错误写入而禁止全部 `create_issue`，可以修掉未审批样例，却会让正常批准路径失败。缺陷仍不能关闭为“安全完成”。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "正常/拒绝成对、注入多入口、期限/并发/四通道夹具、原例/关联/新任务验证。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 91,
+      "set": "fixed100",
+      "question": "设计一个客服工单 Agent：如何确定自动处理范围、转人工条件及验收指标？",
+      "sourceRefs": [
+        "https://github.com/amitshekhariitbhu/ai-engineering-interview-questions",
+        "https://aiarch.dev/ai-engineer-interview-questions"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q91",
+      "roleLevel": "中级系统设计/项目方法",
+      "capabilities": [
+        "客服设计"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-mvp.md",
+          "line": 19,
+          "section": "## MVP 契约限制的是要验证的机制",
+          "quote": "依据假设，MVP只需完成一条有据且可核对的路径：读固定修订与报告；提取事实并标未知根因；形成可审初稿；针对准确意图请求批准；创建或核对唯一工单。它不包含改业务代码、重跑生产测试、自动部署或发送通知，因为这些不参与当前“减少证据整理与返工”假设的第一轮验证。",
+          "sha256": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-mvp.md",
+          "line": 37,
+          "section": "## MVP 契约限制的是要验证的机制",
+          "quote": "  - 缺陷说明分开列观察、推断及需要新验证的项",
+          "sha256": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 22,
+          "section": "## 把“好”拆成能被不同证据推翻的命题",
+          "quote": "每个案例先写允许的终止集合。例如资料缺失的任务，正确产物可以是明确指出缺少哪项证据并停止写操作；这是一项“缺证时正确停止”的能力通过，不是“成功创建工单”。把所有拒绝都算失败，会鼓励模型编造；把所有拒绝都算成功，则可以通过拒绝全部任务制造安全高分。两类任务应分层报告。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        }
+      ],
+      "baselineSupport": "部分",
+      "missingSubquestions": "案例是开发缺陷工单；缺客服意图/业务风险分层、转人工服务合同与客服验收指标。",
+      "baselineSupported": "任务边界、准确批准、缺证/权限/未知等待与业务回执，结果/过程分层。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "案例是开发缺陷工单；缺客服意图/业务风险分层、转人工服务合同与客服验收指标。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 92,
+      "set": "fixed100",
+      "question": "设计一个企业知识 Agent：如何同时保证检索质量、权限和更新时效？",
+      "sourceRefs": [
+        "https://github.com/amitshekhariitbhu/ai-engineering-interview-questions",
+        "https://aiarch.dev/ai-engineer-interview-questions"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q92",
+      "roleLevel": "中级系统设计/项目方法",
+      "capabilities": [
+        "知识Agent设计"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "line": 10,
+          "section": "## 本次回答看到的是哪一个资料版本",
+          "quote": "摄取链应是“取得完整源文件→固定版本及哈希→按确定规则分块→带权限与来源入索引→发布索引快照”。新文件取得成功不等于新索引已发布；新索引发布也不等于当前正在进行的回答使用了它。查询开始时冻结 `index_snapshot_id`，证据包同时记录源版本和索引版本。更新完成的通知不能改写已经生成的请求历史。",
+          "sha256": "2614eaa7a00a00f54c484dc9cc36e8ed3bedcc144c5895947fcfe4094d47566d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "line": 14,
+          "section": "## 本次回答看到的是哪一个资料版本",
+          "quote": "块保留完整文件哈希、块哈希、行范围和可读主体。代码分块应尽量保留完整函数及其必要定义，测试记录保留输入、预期、实际同组事实。把 `return days < 7` 切到下一块，而只召回函数名，引用虽指向对的文件，却不能解释边界。更大块会增加输入、降低相似度的局部聚焦；更小块会丢前提，需要邻块扩展。选择应测必要证据是否进",
+          "sha256": "2614eaa7a00a00f54c484dc9cc36e8ed3bedcc144c5895947fcfe4094d47566d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "line": 16,
+          "section": "## 本次回答看到的是哪一个资料版本",
+          "quote": "权限范围由可信 `QueryScope` 派生，在检索前落实。应用不能把所有租户候选正文读到内存、传给重排器或模型后再删除越权项。对不能按对象权限过滤的索引，可选择租户隔离的索引或先取允许 ID 集合再检索；“有一个 metadata 字段”不证明实际过滤执行。OpenAI Retrieval 提供检索前 attrib",
+          "sha256": "2614eaa7a00a00f54c484dc9cc36e8ed3bedcc144c5895947fcfe4094d47566d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "line": 238,
+          "section": "## 做一个能定位问题的检索比较",
+          "quote": "先冻结合法资料集合和查询集，再为每题独立标出必要支持块，包含精确测试名、自然语言同义、需要实现与报告共同支持、规则缺失和冲突题。词法与语义使用同样的权限/修订过滤、`top_k` 和上下文上限；否则较大候选集的收益会被误归于算法。真实向量输入必须记录嵌入模型、维度、查询改写和编码版本；手工向量只能测排序实现。",
+          "sha256": "2614eaa7a00a00f54c484dc9cc36e8ed3bedcc144c5895947fcfe4094d47566d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 36,
+          "section": "## 读取边界比最终答案过滤更早",
+          "quote": "第一道闸检查“这个身份可否读这个对象”。存储层或读取服务按宿主身份过滤，再返回内容；不能先检索全部组织，放进上下文后让模型选择自己的资料。即使最终答复拒绝，跨组织内容已经进入模型输入，读取边界仍失败。",
+          "sha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口；不含某具体企业实施事实。",
+      "baselineSupported": "摄取/分块/版本索引快照、排序前权限过滤、召回与支持分层测量、更新不可改历史与缓存重授权。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口；不含某具体企业实施事实。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 93,
+      "set": "fixed100",
+      "question": "设计一个长时间运行的研究 Agent：如何保存进度、取消任务和恢复执行？",
+      "sourceRefs": [
+        "https://github.com/amitshekhariitbhu/ai-engineering-interview-questions",
+        "https://aiarch.dev/ai-engineer-interview-questions"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q93",
+      "roleLevel": "中级系统设计/项目方法",
+      "capabilities": [
+        "长期研究"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 52,
+          "section": "## 2 控制权在运行时 聊天上下文只是一种投影",
+          "quote": "**State 是恢复与授权依据。**它保存目标版本、运行修订号、动作账本、尝试记录、审批、取消请求、预算和验收反馈。未决动作不能因为上下文压缩而消失，审批不能因为模型在对话里写了“用户已同意”而产生。",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e01.md",
+          "line": 22,
+          "section": "## 先分清调度状态与效果状态",
+          "quote": "取消先设 `stop_intent`，放弃尚未发送动作，禁止新的尝试。已发请求成功仍需记录为已发生效果；任务保留停止意图，不能因迟到回执变成完成。核对使用独立持久额度，恢复不能把尝试预算归零。额度耗尽而效果仍未知时保留 `WAIT_RESOLUTION`与责任人，不写“取消成功、无工单”。",
+          "sha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e01.md",
+          "line": 24,
+          "section": "## 先分清调度状态与效果状态",
+          "quote": "租约解决谁能推进本地记录。单运行的递增 `lease_epoch`作为栅栏，旧代次不能写状态；它不会撤销旧工作者已经发出的网络请求。新代次按原动作核对，不能因为获得锁就分配新键再发。这里租约时间由可信时钟注入；多主机时钟偏差与数据库时钟语义须另设计，本例不提供分布式时钟保证。",
+          "sha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e01.md",
+          "line": 378,
+          "section": "## 已实现的终态保证与版本变化",
+          "quote": "停止事务的前置条件是所有写动作效果不再 `UNRESOLVED`，所有仍等待物理观察的attempt/lookup已经有结果或被操作级证据合法取代；否则仅保存 `WAIT_RESOLUTION`。满足时写 `STOPPED`，本例只保留布尔停止意图，实际停因与部分成果在事件输入/上层任务记录中另存。生产扩展须把原因和产",
+          "sha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5"
+        }
+      ],
+      "baselineSupport": "部分",
+      "missingSubquestions": "教材单缺陷任务明确不实现长期续租/完整模型计划账本；研究子问题进度与证据累积恢复未完整教学。",
+      "baselineSupported": "账本进度、取消意图/未知效果核对、租约恢复、预算持久与部分成果。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "教材单缺陷任务明确不实现长期续租/完整模型计划账本；研究子问题进度与证据累积恢复未完整教学。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 94,
+      "set": "fixed100",
+      "question": "请求量增长十倍时，如何识别模型、工具、队列或存储中的主要瓶颈？",
+      "sourceRefs": [
+        "https://github.com/amitshekhariitbhu/ai-engineering-interview-questions",
+        "https://aiarch.dev/ai-engineer-interview-questions"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q94",
+      "roleLevel": "中级系统设计/项目方法",
+      "capabilities": [
+        "瓶颈"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 136,
+          "section": "## 负载决定并发实验测到了什么",
+          "quote": "工作负载至少规定任务家庭及比例、资料大小、到达过程、观察窗口、任务期限、客户端重试、人工审批安排和资源额度。固定并发用户的闭环测试在服务变慢时会自动减少新提交，适合观察固定用户数的系统，却可能掩盖同样外部到达量下的排队。独立时间表提交的开放负载可以固定提供量，但压力发生器本身必须记录迟发与漏发；不能把发生器来不及提交的",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 138,
+          "section": "## 负载决定并发实验测到了什么",
+          "quote": "每个实验同时记录：计划提供量、实际提交量、被持久接受量、拒绝量、观察窗内终止量、被验收接受量和剩余在途量。吞吐采用某段明确窗口内完成并接受的任务数除以窗口秒数；窗口结束后排空的完成量另报。不能用最终排空的一百任务除以提交的十秒窗口，制造每秒十任务的假成绩。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 142,
+          "section": "## 负载决定并发实验测到了什么",
+          "quote": "并发增加能减少独立请求的串行等待，也会增加队列、供应商限流、存储锁争用和重试。先用阶段等待及资源饱和证据定位瓶颈，再调整相关并发。若总时间主要用于人工批准，翻倍模型请求并发不一定改善最终工单时长；若模型服务额度固定，更多工作者可能只把请求从本地队列挪到供应商限流。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 177,
+          "section": "## 观测记录应回答哪一阶段首次偏离",
+          "quote": "指标用于发现群体异常，例如版本别的完成率、失败原因、队列年龄、未决动作年龄、模型与工具时长分布。高基数 `run_id` 放事件或 trace，避免把每个任务都做成长期指标标签。指标或采样 trace 不适合证明某个未授权动作从未发生；独立评估仍应读取完整受控记录。",
+          "sha256": "cc0fdfe84f772dc444a24fd89b4a8d67f1bad600ab6818cf58f6e9d37dace025"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "开放/闭环负载、计划/实际量、阶段等待与资源饱和、队列/限流/锁争用及冷暖条件。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 95,
+      "set": "fixed100",
+      "question": "如何设计并发限制、超时、退避和熔断，避免故障扩大？",
+      "sourceRefs": [
+        "https://github.com/amitshekhariitbhu/ai-engineering-interview-questions",
+        "https://aiarch.dev/ai-engineer-interview-questions"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q95",
+      "roleLevel": "中级系统设计/项目方法",
+      "capabilities": [
+        "容错与熔断"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 196,
+          "section": "## 预算与限流需要一个共同执行边界",
+          "quote": "预算预留必须覆盖所有子请求和重试。在一次发送前，调度事务检查任务剩余额度、共享供应商额度和在途数量，预留该次资源，写尝试后才发。结果返回结算实际确认用量；不确定请求保留待确认状态，不把全部预留释放成可再花预算。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 200,
+          "section": "## 预算与限流需要一个共同执行边界",
+          "quote": "队列满或预计等待超过任务期限时，明确拒绝或返回可查询排队状态。无限入队会让吞吐看似稳定、等待持续增长。对重试设置共享预算及时间条件，避免工作者、HTTP 客户端和 SDK 每层各自重试导致乘法放大；需要先确认每层实际重试行为，再规定唯一责任层。这里没有指定 SDK，不能假定所有客户端默认值一样。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 698,
+          "section": "## 9 并发要分开处理工具依赖与运行推进权",
+          "quote": "并行化减少等待链长度，同时提高瞬时请求压力、费用预留和失败组合数量。只有在轨迹证明工具等待构成主要延迟、工具契约能表达独立性时才值得升级。否则串行基线更容易审查恢复行为。无论是否并发，重试应由一层拥有：执行器内部若重试，必须把实际尝试暴露给账本；调度器和 SDK 各自独立重试会使实际请求数超过预算。退避与抖动用于减轻相",
+          "sha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38"
+        }
+      ],
+      "baselineSupport": "部分",
+      "missingSubquestions": "缺熔断状态、触发窗口、半开探测/恢复与故障域隔离设计。",
+      "baselineSupported": "共享额度、在途/队列限制、期限、唯一重试责任层与退避抖动。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "缺熔断状态、触发窗口、半开探测/恢复与故障域隔离设计。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 96,
+      "set": "fixed100",
+      "question": "怎样分解一次任务的费用和时延，找到最值得优化的环节？",
+      "sourceRefs": [
+        "https://github.com/amitshekhariitbhu/ai-engineering-interview-questions",
+        "https://aiarch.dev/ai-engineer-interview-questions"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q96",
+      "roleLevel": "中级系统设计/项目方法",
+      "capabilities": [
+        "成本时延"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 10,
+          "section": "## 成本归到逻辑任务 才能看见失败代价",
+          "quote": "一次逻辑任务可能有三次模型请求、两次读取、一次写后核对和十分钟人工确认。账本应把这些尝试归到同一 `run_id`，每次物理请求单独记录 `attempt_id`、配置/价格版本、用量、费用确认状态和时间。不能只计成功返回那次模型请求；超时请求可能已经计费，未决费用不能填零。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 12,
+          "section": "## 成本归到逻辑任务 才能看见失败代价",
+          "quote": "先分别保存金额、资源用量和人工时间。若需要将人工时间折算为金额，采用明确的题定或组织核定费率，并同时保留原始分钟；不能直接把美元、人民币和分钟相加。共享存储和维护成本若按任务分摊，要写清分摊窗口与依据；没有实际依据时列为未计入项，不制造精确总成本。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 30,
+          "section": "## 延迟必须注明用户等到的是什么",
+          "quote": "本方案的任务时间线是：外部提交时刻 `submitted_at`；持久接受时刻 `accepted_at`；开始执行 `started_at`；用户得到本次终态或明确等待响应 `response_at`；最终业务效果确认 `effect_resolved_at`。对长期审批任务，“已接受、等待审批”的响应时长与最终完成",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 32,
+          "section": "## 延迟必须注明用户等到的是什么",
+          "quote": "端到端等待包括排队、模型、工具、核对和人工等待。各阶段可以分别分析瓶颈；总体分位数不能直接由阶段 p95 相加，因为每个阶段的慢样本未必来自同一任务，并行阶段也不应求和。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 142,
+          "section": "## 负载决定并发实验测到了什么",
+          "quote": "并发增加能减少独立请求的串行等待，也会增加队列、供应商限流、存储锁争用和重试。先用阶段等待及资源饱和证据定位瓶颈，再调整相关并发。若总时间主要用于人工批准，翻倍模型请求并发不一定改善最终工单时长；若模型服务额度固定，更多工作者可能只把请求从本地队列挪到供应商限流。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "尝试归run、价格/用量/待确认/人工分开；排队模型工具核对人工等待分段，资源饱和识别瓶颈。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 97,
+      "set": "fixed100",
+      "question": "什么时候使用小模型路由、大模型升级或缓存？如何量化质量损失？",
+      "sourceRefs": [
+        "https://github.com/amitshekhariitbhu/ai-engineering-interview-questions",
+        "https://aiarch.dev/ai-engineer-interview-questions"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q97",
+      "roleLevel": "中级系统设计/项目方法",
+      "capabilities": [
+        "模型路由缓存"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 148,
+          "section": "## 缓存应复用证据和候选 不能复用批准",
+          "quote": "本任务可以缓存不可变源读取或经核验的分析候选。工单副作用、批准或运行完成状态不能按问题文字复用；相同问题的另一个运行仍需自己的效果槽位与准确批准。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 150,
+          "section": "## 缓存应复用证据和候选 不能复用批准",
+          "quote": "读取缓存键包含组织/主体或等价可读范围、授权版本、仓库修订、路径、源内容哈希和工具契约。生成候选还包含证据包、任务约束、上下文构建、提示及模型配置。对可变 `latest`，先解析成固定修订再访问缓存；不能把旧内容挂在 `latest` 键下长期返回。将主体纳入键会降低共享命中，却简化个性化资料的隔离；若要跨用户共享公",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 184,
+          "section": "## 缓存应复用证据和候选 不能复用批准",
+          "quote": "更大的缓存不一定更有价值。若同一内容很少复用，存储、失效与调查成本可能超过节省；若任务允许读取大量相同不可变源，读缓存比完整答案缓存更容易维持证据关系。选择时比较同样任务的命中、正确引用、权限检查、维护成本和端到端结果，不能只报命中率。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 188,
+          "section": "## 模型路由改变的不只是单价",
+          "quote": "便宜模型用于格式提取，较强模型用于复杂分析，是一种可测假设。它增加了路由判断、升级请求和维护两种配置的成本。应先用代表任务独立评估小模型是否满足结构、引用和语义要求；对不满足或不确定的候选升级，升级尝试也归同一账目。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 190,
+          "section": "## 模型路由改变的不只是单价",
+          "quote": "若小模型错误但自信，单靠其“置信度”决定是否升级可能漏掉最重要样本。路由可以使用可观察任务条件及确定性检查，如报告长度、证据冲突、必要字段缺失；复杂语义仍需要经校准评阅。在冻结案例上比较：单一模型基线、路由方案、必要时的普通程序提取基线。保持最终任务判据、资料和总资源上限，列出各层接受率、升级率、错放和费用。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口。",
+      "baselineSupported": "不可变证据与候选缓存、授权失效，代表任务验证路由/升级，接受率/错放/费用对照及撤销条件。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 98,
+      "set": "fixed100",
+      "question": "从质量、成本和运维角度，怎样选择本地模型与托管 API？",
+      "sourceRefs": [
+        "https://github.com/amitshekhariitbhu/ai-engineering-interview-questions",
+        "https://aiarch.dev/ai-engineer-interview-questions"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q98",
+      "roleLevel": "中级系统设计/项目方法",
+      "capabilities": [
+        "本地与托管"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 188,
+          "section": "## 模型路由改变的不只是单价",
+          "quote": "便宜模型用于格式提取，较强模型用于复杂分析，是一种可测假设。它增加了路由判断、升级请求和维护两种配置的成本。应先用代表任务独立评估小模型是否满足结构、引用和语义要求；对不满足或不确定的候选升级，升级尝试也归同一账目。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 190,
+          "section": "## 模型路由改变的不只是单价",
+          "quote": "若小模型错误但自信，单靠其“置信度”决定是否升级可能漏掉最重要样本。路由可以使用可观察任务条件及确定性检查，如报告长度、证据冲突、必要字段缺失；复杂语义仍需要经校准评阅。在冻结案例上比较：单一模型基线、路由方案、必要时的普通程序提取基线。保持最终任务判据、资料和总资源上限，列出各层接受率、升级率、错放和费用。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 12,
+          "section": "## 成本归到逻辑任务 才能看见失败代价",
+          "quote": "先分别保存金额、资源用量和人工时间。若需要将人工时间折算为金额，采用明确的题定或组织核定费率，并同时保留原始分钟；不能直接把美元、人民币和分钟相加。共享存储和维护成本若按任务分摊，要写清分摊窗口与依据；没有实际依据时列为未计入项，不制造精确总成本。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/f02.md",
+          "line": 204,
+          "section": "## 完成原目标所需的练习证据",
+          "quote": "**真实请求作业。**读者在获准的隔离环境选择一个支持本 Schema 的具体模型或快照，先核当前官方模型页与账户权限，再主动配置上述两个环境变量，运行 `python3 f02_candidate.py`。只使用教学材料，记录请求配置、脱敏输入、响应 ID、完整状态、候选校验、实际用量、耗时和凭据/预算失败。凭据不得",
+          "sha256": "7179f323186c9af9930532d0f6cb96c45aa64121c8bf6afd171a9b23531918cf"
+        }
+      ],
+      "baselineSupport": "部分",
+      "missingSubquestions": "缺本地推理硬件/容量/部署维护与托管API可用性/数据边界的完整选型比较。",
+      "baselineSupported": "代表任务质量与全任务成本比较、维护成本、真实调用配置验证。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "缺本地推理硬件/容量/部署维护与托管API可用性/数据边界的完整选型比较。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 99,
+      "set": "fixed100",
+      "question": "请介绍一次实际 Agent 故障或失败案例：原因是什么，如何修复，怎样证明修复有效？",
+      "sourceRefs": [
+        "https://github.com/amitshekhariitbhu/ai-engineering-interview-questions",
+        "https://aiarch.dev/ai-engineer-interview-questions"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q99",
+      "roleLevel": "中级系统设计/项目方法",
+      "capabilities": [
+        "真实事故经历"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/p02.md",
+          "line": 139,
+          "section": "## 一次完整复盘 写后中断变成重复工单",
+          "quote": "以下事件、ID 和结果均为**构造演算**。它演示怎样改进，不是本项目真实发生的事故或验证成绩。",
+          "sha256": "7a4ddb35b1a34d2a2ed99b4fa73124794b5220ed1498ef395e48817d5197c487"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p02.md",
+          "line": 143,
+          "section": "## 一次完整复盘 写后中断变成重复工单",
+          "quote": "反证是同一目标/效果槽位下两条确认回执，不能仅由“调用两次”判断。竞争原因至少有：恢复顺序先问模型，忽略原未决动作；新协议 ID 被错当新逻辑动作身份；效果槽位没有持久唯一约束；下游幂等契约根本未按原键使用。它们可能同时存在，不能在没有记录时宣布一个根因。",
+          "sha256": "7a4ddb35b1a34d2a2ed99b4fa73124794b5220ed1498ef395e48817d5197c487"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p02.md",
+          "line": 145,
+          "section": "## 一次完整复盘 写后中断变成重复工单",
+          "quote": "`IssueRecord` 应保存：当前版本、输入与故障顺序、预期唯一效果、两条回执、原未决账本、恢复前后身份映射、候选原因、责任人和影响范围。定位实验先查原状态是否包含 action-17；如果原状态已丢失，先查持久化/恢复点；若状态存在而恢复先问模型，查恢复顺序；若映射产生 action-18，再查槽位提交与协议绑",
+          "sha256": "7a4ddb35b1a34d2a2ed99b4fa73124794b5220ed1498ef395e48817d5197c487"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p02.md",
+          "line": 147,
+          "section": "## 一次完整复盘 写后中断变成重复工单",
+          "quote": "本次教学候选改进限定为运行时：未决效果先核对；同一效果槽位同指纹复用原 action；槽位唯一约束阻止并发新建；保留新的 `tool_call_id` 到原 action 的绑定；原键和参数不变。下游查询、幂等有效期及发送隔离按[控制循环第 6、8、9 节](c01-control-loop.md#6-先核对未决动作-",
+          "sha256": "7a4ddb35b1a34d2a2ed99b4fa73124794b5220ed1498ef395e48817d5197c487"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p02.md",
+          "line": 160,
+          "section": "## 一次完整复盘 写后中断变成重复工单",
+          "quote": "`RetestRecord` 绑定旧失败记录、候选修订、测试输入、期望、实际输出、证据哈希、执行者和日期。原例复验、相关回归通过后，可以在测试责任人确认的范围关闭“候选代码的已知重复缺陷”；若新任务未执行，则迁移能力仍待验证。真实远端查询/幂等未测，就不能写远端可靠性已通过。",
+          "sha256": "7a4ddb35b1a34d2a2ed99b4fa73124794b5220ed1498ef395e48817d5197c487"
+        }
+      ],
+      "baselineSupport": "部分",
+      "missingSubquestions": "原文明示是构造演算，不能提供学习者实际经历；必须本人完成项目保存真实故障证据。",
+      "baselineSupported": "教学构造事故的原因竞争、修复和原例/回归/新任务证据方法。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "待终审",
+      "personalEvidenceStatus": "未取得学习者本人实际经历",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "原文明示是构造演算，不能提供学习者实际经历；必须本人完成项目保存真实故障证据。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 100,
+      "set": "fixed100",
+      "question": "如果必须在两周内交付一个可用 Agent，你会怎样确定最小范围、基线、风险与上线条件？",
+      "sourceRefs": [
+        "https://github.com/amitshekhariitbhu/ai-engineering-interview-questions",
+        "https://aiarch.dev/ai-engineer-interview-questions"
+      ],
+      "sourceType": "既有聊天题组的主题参考，非逐题企业真题认证",
+      "publishedDate": "未知/混合，原题组未逐题记录",
+      "accessDate": "2026-10-11（本轮读取本地固定题，不冒称重新检索每个旧URL）",
+      "dedupGroup": "fixed100-Q100",
+      "roleLevel": "中级系统设计/项目方法",
+      "capabilities": [
+        "限期MVP"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-mvp.md",
+          "line": 3,
+          "section": "# 依据问题和评价证据冻结 MVP 决定",
+          "quote": "MVP应只实现足以检验价值假设的机制，并在事前固定接受计划、备选和停止条件。实现完成回答能做什么，真实使用和同条件比较才回答是否值得做；安全失败不能用用户满意或低费用抵消。",
+          "sha256": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-mvp.md",
+          "line": 9,
+          "section": "## 预定义公平实验 而不是挑一次演示",
+          "quote": "实验先冻结任务集合、来源快照、权限、各方案配置、资源上限、人工后处理、判据、分配与停止规则。各方案取得同样必要信息及完成机会，输出按共同“有据初稿/准确批准/确认对象”的契约评价；资源的真实不同可以作为结果计量，但不能偷偷给候选更多资料和人力支持。",
+          "sha256": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-mvp.md",
+          "line": 19,
+          "section": "## MVP 契约限制的是要验证的机制",
+          "quote": "依据假设，MVP只需完成一条有据且可核对的路径：读固定修订与报告；提取事实并标未知根因；形成可审初稿；针对准确意图请求批准；创建或核对唯一工单。它不包含改业务代码、重跑生产测试、自动部署或发送通知，因为这些不参与当前“减少证据整理与返工”假设的第一轮验证。",
+          "sha256": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-mvp.md",
+          "line": 51,
+          "section": "## 架构决定要能解释放弃了什么",
+          "quote": "一份有效 ADR 包含问题、约束、实际备选、证据、选择、代价、反例和复查条件。它不只是“用了某框架”。下面是**暂定教学 ADR**，没有被真实试点认可。",
+          "sha256": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 245,
+          "section": "## 从失败分类到一次能够关闭的回归",
+          "quote": "修复有三种不同验证。原例复验确认已知触发顺序被处理；关联回归确认合法路径与其他边界没有倒退；新约束或独立保留任务检查修复是否过度贴合原答案。比如为阻止错误写入而禁止全部 `create_issue`，可以修掉未审批样例，却会让正常批准路径失败。缺陷仍不能关闭为“安全完成”。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 32,
+          "section": "## 发布对象是一组相互兼容的版本",
+          "quote": "不能用版本数字大小推断兼容。`state_reader_versions=[1,2]` 必须由对两种真实状态夹具的读取和恢复检查支持；如果只测试 JSON 能 parse，却没有测试旧动作恢复，这只是格式读取证据。`state_writer_version=2` 表示启用后可能产生旧版本不认识的状态，因而直接回退 `r",
+          "sha256": "cc0fdfe84f772dc444a24fd89b4a8d67f1bad600ab6818cf58f6e9d37dace025"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 140,
+          "section": "## 一次发布的控制路径",
+          "quote": "`PRECHECK` 验证构建摘要、配置、状态读取和迁移计划。`STAGED` 在隔离环境读真实格式的脱敏夹具，验证正常完成、待审批、未决效果和停止状态。`CANARY` 只把一批**新任务**分给新版本；旧任务留在原执行语义集合，除非有已验证迁移许可。观察结果包括任务正确性、关键过程失败、队列等待、未决动作年龄及基础",
+          "sha256": "cc0fdfe84f772dc444a24fd89b4a8d67f1bad600ab6818cf58f6e9d37dace025"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 142,
+          "section": "## 一次发布的控制路径",
+          "quote": "条件满足则扩大新任务比例；任何关键边界失败则停止新版本领取，并保持已接受任务可查询。此时先查受影响任务是否已发动作，再选择继续旧集合、暂停核对或安全移交。流量回退与任务回退是两个决定，不能一句“回滚镜像”代替。",
+          "sha256": "cc0fdfe84f772dc444a24fd89b4a8d67f1bad600ab6818cf58f6e9d37dace025"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "无实质缺口；不提供保证两周完成的真实交付成绩。",
+      "baselineSupported": "机制最小范围、同条件简单/人工基线、ADR代价/反例/复查、停止与发布兼容/验收；可据资源期限缩范围。",
+      "baselineReview": "独立读取当前v10原段落及相邻解释后判定；历史题面/定位用于查找，不以旧报告作教学证据。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "不作为正文覆盖授予真实掌握",
+      "owner": "教材研发员B；n02状态生命周期由作者A；课程架构整合",
+      "rationale": "无实质缺口；不提供保证两周完成的真实交付成绩。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 104,
+      "set": "market14",
+      "question": "Agent服务运行数小时后内存持续增长，但请求量平稳。如何区别对象仍被引用、缓存无界、待完成任务堆积与暂时内存峰值，并验证修复？",
+      "sourceRefs": [
+        {
+          "id": "S04",
+          "title": "Index.dev AI Agent Developer Interview Questions",
+          "url": "https://www.index.dev/interview-questions/ai-agent-developer",
+          "publication_date": "未知",
+          "source_type": "商业练习题库",
+          "level": "混合；页面自称expert级",
+          "independent_group": "INDEX-agent",
+          "evidence": "原页可读；LRU、内存泄漏、异步队列排错。其exactly-once承诺题应审查前提，不接受为事实。",
+          "access_date": "2026-10-11"
+        }
+      ],
+      "sourceType": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+      "publishedDate": "见sourceRefs",
+      "accessDate": "2026-10-11",
+      "dedupGroup": [
+        "S04"
+      ],
+      "roleLevel": "中级",
+      "capabilities": [
+        "运行时内存排错"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 142,
+          "section": "## 负载决定并发实验测到了什么",
+          "quote": "并发增加能减少独立请求的串行等待，也会增加队列、供应商限流、存储锁争用和重试。先用阶段等待及资源饱和证据定位瓶颈，再调整相关并发。若总时间主要用于人工批准，翻倍模型请求并发不一定改善最终工单时长；若模型服务额度固定，更多工作者可能只把请求从本地队列挪到供应商限流。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        }
+      ],
+      "baselineSupport": "未覆盖",
+      "missingSubquestions": "阶段资源饱和只能指引泛化瓶颈；未教对象引用、缓存/任务增长与峰值的具体内存诊断及修复验证。",
+      "baselineSupported": "阶段资源饱和只能指引泛化瓶颈；未教对象引用、缓存/任务增长与峰值的具体内存诊断及修复验证。",
+      "baselineReview": "按新完整问法读取v10正文后独立判定；并非全部新增题天然为缺口。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "真实掌握未验证",
+      "owner": "教材研发员B",
+      "rationale": "阶段资源饱和只能指引泛化瓶颈；未教对象引用、缓存/任务增长与峰值的具体内存诊断及修复验证。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 111,
+      "set": "market14",
+      "question": "同一Agent英语任务表现正常，中文或混合语言却失败，怎样分别检查分词/检索、提示、工具参数与评测样本，而不是直接换模型？",
+      "sourceRefs": [
+        {
+          "id": "S03",
+          "title": "GitHub AI Engineering Interview Questions",
+          "url": "https://github.com/amitshekhariitbhu/ai-engineering-interview-questions",
+          "publication_date": "未知，动态仓库",
+          "source_type": "公开整理题库，带课程链接",
+          "level": "混合级别",
+          "independent_group": "GH-amitshekhariitbhu",
+          "evidence": "原页可读；ANN、结构化输出、多语言、话题切换。不是企业真题频次。",
+          "access_date": "2026-10-11"
+        }
+      ],
+      "sourceType": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+      "publishedDate": "见sourceRefs",
+      "accessDate": "2026-10-11",
+      "dedupGroup": [
+        "S03"
+      ],
+      "roleLevel": "中级",
+      "capabilities": [
+        "跨语言整链排错"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 227,
+          "section": "## Trace 用来定位因果 不能当事实数据库",
+          "quote": "诊断可以进行受控替换：把模型输入中的片段替换成已核对的完整断言，保持其他配置不变；若内容恢复，则支持“输入投影不足”的假设。替换使用的是评估者提供的理想材料，其收益不是线上检索已经改善的收益。修复投影后必须重新跑端到端任务；此时还要检查上下文变长是否带来成本和其他引用回归。",
+          "sha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "line": 238,
+          "section": "## 做一个能定位问题的检索比较",
+          "quote": "先冻结合法资料集合和查询集，再为每题独立标出必要支持块，包含精确测试名、自然语言同义、需要实现与报告共同支持、规则缺失和冲突题。词法与语义使用同样的权限/修订过滤、`top_k` 和上下文上限；否则较大候选集的收益会被误归于算法。真实向量输入必须记录嵌入模型、维度、查询改写和编码版本；手工向量只能测排序实现。",
+          "sha256": "2614eaa7a00a00f54c484dc9cc36e8ed3bedcc144c5895947fcfe4094d47566d"
+        }
+      ],
+      "baselineSupport": "部分",
+      "missingSubquestions": "已有冻结资料/阶段干预方法；未覆盖跨语言分词、编码、参数与语义等值标注的整链诊断。",
+      "baselineSupported": "已有冻结资料/阶段干预方法；未覆盖跨语言分词、编码、参数与语义等值标注的整链诊断。",
+      "baselineReview": "按新完整问法读取v10正文后独立判定；并非全部新增题天然为缺口。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "真实掌握未验证",
+      "owner": "教材研发员B",
+      "rationale": "已有冻结资料/阶段干预方法；未覆盖跨语言分词、编码、参数与语义等值标注的整链诊断。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 113,
+      "set": "market14",
+      "question": "部署本地推理服务时，怎样区分prefill与decode瓶颈，解释KV cache与批处理对吞吐、首token和尾延迟的影响，并设计公平比较而非先认定某框架更快？",
+      "sourceRefs": [
+        {
+          "id": "S01",
+          "title": "牛客：字节27实习候选人面经",
+          "url": "https://www.nowcoder.com/feed/main/detail/c40d154b3b3847269da3c9fd9e381a72",
+          "publication_date": "05-06 18:25，年份未显示",
+          "source_type": "候选人自述，非企业认证",
+          "level": "实习/初级",
+          "independent_group": "NC-c40d",
+          "evidence": "原页正文读取；距离度量、增量索引、asyncio及推理框架；原题有预设优劣，不能照搬技术结论。",
+          "access_date": "2026-10-11"
+        }
+      ],
+      "sourceType": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+      "publishedDate": "见sourceRefs",
+      "accessDate": "2026-10-11",
+      "dedupGroup": [
+        "S01"
+      ],
+      "roleLevel": "高级专题",
+      "capabilities": [
+        "推理服务性能"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 134,
+          "section": "## 负载决定并发实验测到了什么",
+          "quote": "## 负载决定并发实验测到了什么",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 140,
+          "section": "## 负载决定并发实验测到了什么",
+          "quote": "冷缓存、预热和持续负载分别安排。预热输入、时长和排除规则在运行前决定，两版本一致；缓存命中依赖用户历史时，复放相同授权任务序列，并报告冷/热条件，而不是只截最快一段。重复实验需要重建一致初始状态，保存全部轮次及波动。安全故障与未决效果仍由[e02 的任务判定](e02.md)检查，性能汇总不能重新定义通过。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 142,
+          "section": "## 负载决定并发实验测到了什么",
+          "quote": "并发增加能减少独立请求的串行等待，也会增加队列、供应商限流、存储锁争用和重试。先用阶段等待及资源饱和证据定位瓶颈，再调整相关并发。若总时间主要用于人工批准，翻倍模型请求并发不一定改善最终工单时长；若模型服务额度固定，更多工作者可能只把请求从本地队列挪到供应商限流。",
+          "sha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d"
+        }
+      ],
+      "baselineSupport": "部分",
+      "missingSubquestions": "已有同条件冷暖负载和阶段测量；没有prefill/decode、KV生命周期、连续批处理等专属机制。",
+      "baselineSupported": "已有同条件冷暖负载和阶段测量；没有prefill/decode、KV生命周期、连续批处理等专属机制。",
+      "baselineReview": "按新完整问法读取v10正文后独立判定；并非全部新增题天然为缺口。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "真实掌握未验证",
+      "owner": "教材研发员B",
+      "rationale": "已有同条件冷暖负载和阶段测量；没有prefill/decode、KV生命周期、连续批处理等专属机制。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    },
+    {
+      "id": 114,
+      "set": "market14",
+      "question": "面对客户工程团队，怎样交付一份可复现的Agent技术移交包，使对方能重建环境、运行评测、理解架构决策并报告失败？如何证明接手成功？",
+      "sourceRefs": [
+        {
+          "id": "S06",
+          "title": "Anthropic Applied AI Engineer Startups官方JD",
+          "url": "https://job-boards.greenhouse.io/anthropic/jobs/5432575008",
+          "publication_date": "未知",
+          "source_type": "官方招聘JD",
+          "level": "4+年，高级参考",
+          "independent_group": "ANTHROPIC-5432575008",
+          "evidence": "原文读取：生产Python、客户共同开发、评测套件、架构图/技术文档和跨行业交付。不是面试原题。",
+          "access_date": "2026-10-11"
+        }
+      ],
+      "sourceType": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+      "publishedDate": "见sourceRefs",
+      "accessDate": "2026-10-11",
+      "dedupGroup": [
+        "S06"
+      ],
+      "roleLevel": "中高级；入门可做缩小版",
+      "capabilities": [
+        "工程技术交接与复现"
+      ],
+      "baselineVersion": "v10 received 2026-10-11",
+      "baselineEvidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/p02.md",
+          "line": 16,
+          "section": "## 一个证据包应使独立者从入口走到结论",
+          "quote": "| 定义 | 任务契约、原量规/门槛版本、范围、预定比较及资源条件 | 判断测的是否是用户要求 |",
+          "sha256": "7a4ddb35b1a34d2a2ed99b4fa73124794b5220ed1498ef395e48817d5197c487"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p02.md",
+          "line": 17,
+          "section": "## 一个证据包应使独立者从入口走到结论",
+          "quote": "| 工件 | 源码提交/构建摘要、锁定依赖、配置说明、工具/状态契约、资料快照 | 在允许环境重建同一候选 |",
+          "sha256": "7a4ddb35b1a34d2a2ed99b4fa73124794b5220ed1498ef395e48817d5197c487"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p02.md",
+          "line": 121,
+          "section": "## 独立评阅按一条实际任务走完全程",
+          "quote": "评阅前由责任人冻结目标、判据与材料，核作者是否提前接触保留任务，记录允许协作与禁止协作。评阅者从空工作目录按交接重建，读回源码和资料版本，再执行正常、缺证、未批准、写后中断和权限拒绝路径。应用展示的“通过”只是一项输出，评阅者核对应账本和外部/替身回执。",
+          "sha256": "7a4ddb35b1a34d2a2ed99b4fa73124794b5220ed1498ef395e48817d5197c487"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p02.md",
+          "line": 125,
+          "section": "## 独立评阅按一条实际任务走完全程",
+          "quote": "遇到无法复现，先定位：环境缺依赖；配置指向错误目标；资料快照缺失；工具契约不明确；运行没有持久记录；结果随机但仍在允许集合。无法启动是复现失败，模型服务无访问权限是相应实测缺证，两者应分开。作者修交接或实现后，由独立者重新执行当前版本；作者自己录像不替代重做。",
+          "sha256": "7a4ddb35b1a34d2a2ed99b4fa73124794b5220ed1498ef395e48817d5197c487"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-mvp.md",
+          "line": 51,
+          "section": "## 架构决定要能解释放弃了什么",
+          "quote": "一份有效 ADR 包含问题、约束、实际备选、证据、选择、代价、反例和复查条件。它不只是“用了某框架”。下面是**暂定教学 ADR**，没有被真实试点认可。",
+          "sha256": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 205,
+          "section": "### 让同伴复现发布和排空",
+          "quote": "提交实际项目的构建摘要、锁定依赖、无秘密配置说明、启动及观测入口、发布清单、任务路由兼容规则和回退步骤。由非作者在隔离环境执行：正常任务；模型依赖失效；状态提交后重启；未决写动作后的回退。只能使用无网络工单替身，真实部署另需明确授权。",
+          "sha256": "cc0fdfe84f772dc444a24fd89b4a8d67f1bad600ab6818cf58f6e9d37dace025"
+        }
+      ],
+      "baselineSupport": "充分",
+      "missingSubquestions": "p02的四层包/独立重建、e04的隔离故障复现和p01-mvp的ADR共同实教完整方法；真实接手成绩仍未取得。",
+      "baselineSupported": "p02的四层包/独立重建、e04的隔离故障复现和p01-mvp的ADR共同实教完整方法；真实接手成绩仍未取得。",
+      "baselineReview": "按新完整问法读取v10正文后独立判定；并非全部新增题天然为缺口。",
+      "finalVersion": "v12 pending author freeze",
+      "finalEvidence": [],
+      "finalSupport": "待审",
+      "methodSupport": "按正文等级",
+      "personalEvidenceStatus": "真实客户接手未验证",
+      "owner": "教材研发员B",
+      "rationale": "p02的四层包/独立重建、e04的隔离故障复现和p01-mvp的ADR共同实教完整方法；真实接手成绩仍未取得。",
+      "reviewer": "内容审校员B",
+      "dispute": null,
+      "retest": []
+    }
+  ],
+  "issues": [
+    {
+      "id": "CB-01",
+      "severity": "medium",
+      "file": "textbooks/v12/examples/n07-delegation.py",
+      "status": "open_author_notified",
+      "counterexample": "同一个event_id与完全相同JSON键值，仅用dict(reversed(list(original.items())))重排键顺序，repr不同导致错误冲突。",
+      "expected": "键序不同不改变JSON对象语义；规范化支持载荷后相同事件幂等，真改内容仍拒绝。",
+      "verification": "静态推导；作者返修/QA实跑待交"
+    },
+    {
+      "id": "CB-02",
+      "severity": "medium",
+      "file": "textbooks/v12/n07-multiagent-a2a.md",
+      "status": "open_author_notified",
+      "counterexample": "小型同权限固定资料全共享与选择性摘要丢关键限制，两种条件下读者尚缺何时选择、如何验证的正文方法。",
+      "expected": "补完整/最小共享条件及遗漏诊断/对比，Q65方可充分。",
+      "verification": "按产品完整问法与课程规格静态核"
+    }
+  ],
+  "officialChecks": [
+    {
+      "url": "https://docs.langchain.com/oss/python/langgraph/streaming",
+      "checked": "v2 type/ns/data、updates/values/messages/custom与子图流",
+      "date": "2026-10-11"
+    },
+    {
+      "url": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+      "checked": "同thread_id恢复，节点起点重入，外部副作用不受checkpoint自动保护",
+      "date": "2026-10-11"
+    },
+    {
+      "url": "https://docs.langchain.com/oss/python/langgraph/use-subgraphs",
+      "checked": "不同schema包装映射及共享schema直接节点两路径",
+      "date": "2026-10-11"
+    },
+    {
+      "url": "https://a2a-protocol.org/v0.3.0/specification/",
+      "checked": "固定0.3.0规范入口，进一步逐字段核待后续",
+      "date": "2026-10-11"
+    }
+  ],
+  "limits": [
+    "当前只完成改前逐题与n06/n07首轮静态审",
+    "代码运行、实际远端契约、真人专家及学习者均不由本审校授予通过"
+  ]
+}

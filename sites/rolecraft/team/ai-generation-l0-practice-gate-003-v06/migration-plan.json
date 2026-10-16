@@ -1,0 +1,22 @@
+{
+  "add": {
+    "schema_version": "v3",
+    "status": "awaiting_human_approval"
+  },
+  "forbid_changes": [
+    "tenant",
+    "source_refs",
+    "source_refs[].hash",
+    "external_action"
+  ],
+  "from": "v2",
+  "input_fixture_hash": "9002b8bcef99feaa63d88c4c4d8f3eb16d22107b0ceb61e3820240bf709fe364",
+  "preserve": [
+    "run_id",
+    "tenant",
+    "answer",
+    "source_refs",
+    "external_action"
+  ],
+  "to": "v3"
+}

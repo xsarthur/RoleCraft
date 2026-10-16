@@ -1,0 +1,108 @@
+{
+  "date": "2026-10-11",
+  "owner": "产品经理",
+  "status": "current_evidence_pending_final_qa_binding",
+  "counts": {
+    "fixed100": {
+      "before": [
+        54,
+        36,
+        10
+      ],
+      "after": [
+        98,
+        2,
+        0
+      ]
+    },
+    "market14": {
+      "before": [
+        1,
+        7,
+        6
+      ],
+      "after": [
+        14,
+        0,
+        0
+      ]
+    },
+    "holdout10": {
+      "first": [
+        10,
+        0,
+        0
+      ],
+      "method": "static_text_support_not_learner_result",
+      "strongBlind": false
+    }
+  },
+  "remainingPartial": [
+    10,
+    99
+  ],
+  "pending": [
+    "Q53 n02 evidence hash refresh and final QA binding"
+  ],
+  "dimensions": [
+    "knowledge_breadth",
+    "teaching_depth",
+    "executability",
+    "transfer_and_project_training",
+    "real_learner_and_employment_evidence"
+  ],
+  "gates": [
+    {
+      "id": "user_value",
+      "status": "insufficient",
+      "evidence": "有目标层级和教学产物，尚无真实学习者问题验证/预定义效果实测",
+      "owner": "用户研究员/产品经理"
+    },
+    {
+      "id": "teaching_quality",
+      "status": "insufficient",
+      "evidence": "30单元、能力练习作品关联与独立AI审校实质改进，12例有限运行；真人专业复核及全部外部机制证据仍缺",
+      "owner": "课程架构师/内容审校员"
+    },
+    {
+      "id": "real_generation",
+      "status": "fail",
+      "evidence": "本轮为人工组织代理编写独立教材，没有依学习档案真实生成产品执行链验证",
+      "owner": "AI生成工程师"
+    },
+    {
+      "id": "comparative_advantage",
+      "status": "insufficient",
+      "evidence": "市场便利样本查缺不是同条件竞品/研究实测，没有行业先进证据",
+      "owner": "竞品研究员/产品经理"
+    },
+    {
+      "id": "learner_creation",
+      "status": "insufficient",
+      "evidence": "已补真实项目/陌生任务与交接训练方法，但无真实学员MVP及用户验证和独立作品评价",
+      "owner": "实训评估员/课程架构师"
+    },
+    {
+      "id": "reliable_delivery",
+      "status": "fail",
+      "evidence": "当前交付是独立教材，不是正式生产系统；本轮未实现或验证正式运行交付",
+      "owner": "软件工程师/后端数据工程师"
+    },
+    {
+      "id": "operating_economics",
+      "status": "insufficient",
+      "evidence": "离线例运行不提供真实调用质量成本、维护经济性或预算达成证据",
+      "owner": "运营分析员/产品经理"
+    },
+    {
+      "id": "iteration_trace",
+      "status": "insufficient",
+      "evidence": "八内容反例静态关闭且有QA原例证据；当前Q53证据哈希尚待刷新，最终绑定未收口，不提前授pass",
+      "owner": "项目经理/测试工程师"
+    }
+  ],
+  "conclusion": "not_met",
+  "aggregateScore": null,
+  "specificationUnchanged": true,
+  "reportSha256": "2c9d96729068a8a0b845494633e31978e0225cc78f1ae857a26149265c11ba29"
+}

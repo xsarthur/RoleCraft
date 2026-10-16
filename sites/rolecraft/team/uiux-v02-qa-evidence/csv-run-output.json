@@ -1,0 +1,118 @@
+{
+  "00": {
+    "assigned_tasks": 8,
+    "safe_resolved": 6,
+    "safe_rate": 0.75,
+    "wilson_reference_only": [
+      0.4093,
+      0.9285
+    ],
+    "unsafe_count": 0,
+    "unsafe_rate": 0.0,
+    "observed_time_n": 8,
+    "observed_active_mean": 682.5,
+    "missing_time_n": 0,
+    "active_mean_sensitivity_300_1800": [
+      682.5,
+      682.5
+    ],
+    "review_mean": 43.125,
+    "combined_active_review_sensitivity_300_1800": [
+      725.625,
+      725.625
+    ],
+    "accepted_only_n": 0,
+    "accepted_only_mean": null,
+    "ai_calls": 0
+  },
+  "10": {
+    "assigned_tasks": 8,
+    "safe_resolved": 7,
+    "safe_rate": 0.875,
+    "wilson_reference_only": [
+      0.5291,
+      0.9776
+    ],
+    "unsafe_count": 0,
+    "unsafe_rate": 0.0,
+    "observed_time_n": 8,
+    "observed_active_mean": 577.5,
+    "missing_time_n": 0,
+    "active_mean_sensitivity_300_1800": [
+      577.5,
+      577.5
+    ],
+    "review_mean": 43.125,
+    "combined_active_review_sensitivity_300_1800": [
+      620.625,
+      620.625
+    ],
+    "accepted_only_n": 0,
+    "accepted_only_mean": null,
+    "ai_calls": 0
+  },
+  "01": {
+    "assigned_tasks": 8,
+    "safe_resolved": 5,
+    "safe_rate": 0.625,
+    "wilson_reference_only": [
+      0.3057,
+      0.8632
+    ],
+    "unsafe_count": 1,
+    "unsafe_rate": 0.125,
+    "observed_time_n": 7,
+    "observed_active_mean": 527.143,
+    "missing_time_n": 1,
+    "active_mean_sensitivity_300_1800": [
+      498.75,
+      686.25
+    ],
+    "review_mean": 116.25,
+    "combined_active_review_sensitivity_300_1800": [
+      615.0,
+      802.5
+    ],
+    "accepted_only_n": 6,
+    "accepted_only_mean": 495,
+    "ai_calls": 16
+  },
+  "11": {
+    "assigned_tasks": 8,
+    "safe_resolved": 6,
+    "safe_rate": 0.75,
+    "wilson_reference_only": [
+      0.4093,
+      0.9285
+    ],
+    "unsafe_count": 1,
+    "unsafe_rate": 0.125,
+    "observed_time_n": 8,
+    "observed_active_mean": 457.5,
+    "missing_time_n": 0,
+    "active_mean_sensitivity_300_1800": [
+      457.5,
+      457.5
+    ],
+    "review_mean": 116.25,
+    "combined_active_review_sensitivity_300_1800": [
+      573.75,
+      573.75
+    ],
+    "accepted_only_n": 5,
+    "accepted_only_mean": 396,
+    "ai_calls": 16
+  },
+  "contrasts": {
+    "scope_safe_rate": 0.125,
+    "ai_safe_rate": -0.125,
+    "interaction_safe_rate": 0.0
+  },
+  "limitations": [
+    "Synthetic allocation and outcomes, no causal or effectiveness claim",
+    "32 repeated tasks from 8 constructed participants, not 32 independent people",
+    "Wilson interval displayed only to show small denominators; repeated clustering invalidates independent-trial inference",
+    "Active time excludes unobserved waiting; missing values not zero",
+    "Sensitivity imputations are scenarios, not recovered observations"
+  ]
+}

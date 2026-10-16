@@ -1,0 +1,54 @@
+{
+  "practice_id": "AI-PRACTICE-DURABLE-002",
+  "exercise_version": "v0.2",
+  "record_id": "AI-L0-DURABLE-002-20261015-002",
+  "qa_role": "测试工程师",
+  "decision": "met_with_limitations",
+  "local_scope_decision": "met_within_scope",
+  "l1_decision": "not_granted",
+  "l2_decision": "not_granted",
+  "independent": true,
+  "learner_artifacts_modified": false,
+  "checkpoint_manifest": {
+    "declared_sha256": "69d8daa4dc46c20db9641de727ae9e91e9bdf8c9cc7e367b9f58be268e77afe8",
+    "recomputed_sha256": "69d8daa4dc46c20db9641de727ae9e91e9bdf8c9cc7e367b9f58be268e77afe8",
+    "all_paths_bytes_sha256_pass": true,
+    "runs": ["run-1", "run-2", "run-3"]
+  },
+  "repair_record": {
+    "from_version": "v01",
+    "to_version": "v02",
+    "self_signed": false,
+    "qa_status": "pending",
+    "first_failure_preserved": true
+  },
+  "checks": {
+    "run_1_run_2_run_3_byte_replay": "pass",
+    "checkpoint_replay_hash": "pass",
+    "normal_sequence": "pass",
+    "first_failure_stop_four_types": "pass",
+    "holdout_event_order_only": "pass",
+    "callback_id_dedupe": "pass",
+    "partial_result_hold": "pass",
+    "recovery_sequence": "pass",
+    "handoff_pending": "pass",
+    "self_signed_false": "pass",
+    "external_action_null": "pass",
+    "final_output_local_draft_ready_runs": "pass",
+    "final_output_local_draft_ready_holdout": "fail"
+  },
+  "limitations": [
+    "holdout final_output.json/final.json仍为status=final，需同步为local_draft_ready并保留fixture-only scope",
+    "本地原子JSON不证明真实进程崩溃、生产存储、RPO/RTO、并发一致性或LangGraph checkpoint",
+    "handoff仍pending，未发生真人QA签收",
+    "未进行真实外部工具或收费模型调用"
+  ],
+  "evidence_paths": [
+    "sites/rolecraft/team/ai-generation-l0-practice-durable-002-v02/",
+    "sites/rolecraft/team/ai-generation-l0-practice-durable-002-v02/repair_record.json",
+    "sites/rolecraft/team/ai-generation-l0-practice-durable-002-v02/checkpoint_manifest.json",
+    "sites/rolecraft/team/ai-generation-l0-practice-durable-002-v02/recovery_receipts/recovery.json",
+    "sites/rolecraft/team/ai-generation-l0-practice-durable-002-v01.md",
+    "sites/rolecraft/team/ai-generation-l0-practice-durable-002-content-review-v01.md"
+  ]
+}

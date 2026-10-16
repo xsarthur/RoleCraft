@@ -1,0 +1,122 @@
+{
+  "scope": "13 independent finite counterexample groups, exact frozen teaching functions. Not an end-to-end Agent/service, protocol, OS sandbox, GPU or real user test.",
+  "runtime": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "results": [
+    {
+      "id": "QA-CE01",
+      "questions": [
+        "Q54"
+      ],
+      "status": "PASS",
+      "observation": {
+        "orders": 6,
+        "result": {
+          "a@1": "A",
+          "b@1": "B",
+          "c@1": "C"
+        }
+      }
+    },
+    {
+      "id": "QA-CE02",
+      "questions": [
+        "Q54"
+      ],
+      "status": "PASS",
+      "observation": "same-key same-content idempotent; conflicting value rejected; inputs unchanged"
+    },
+    {
+      "id": "QA-CE03",
+      "questions": [
+        "Q59"
+      ],
+      "status": "PASS",
+      "observation": "gap final not consumed; replay completes once; conflicting duplicate rejected"
+    },
+    {
+      "id": "QA-CE04",
+      "questions": [
+        "Q59"
+      ],
+      "status": "PASS",
+      "observation": "wrong task and bool-as-sequence rejected without state change"
+    },
+    {
+      "id": "QA-CE05",
+      "questions": [
+        "M103"
+      ],
+      "status": "PASS",
+      "observation": "capacity0, hit promotion, overwrite and B eviction verified"
+    },
+    {
+      "id": "QA-CE06",
+      "questions": [
+        "M110",
+        "Q23"
+      ],
+      "status": "PASS",
+      "observation": "shape-valid wrong identity, refused, incomplete, duplicate-key branches differ"
+    },
+    {
+      "id": "QA-CE07",
+      "questions": [
+        "M102"
+      ],
+      "status": "PASS",
+      "observation": "shallow copy shares nested list; tuple does not freeze inner object"
+    },
+    {
+      "id": "QA-CE08",
+      "questions": [
+        "M102"
+      ],
+      "status": "PASS",
+      "observation": "exception identity, wrapped metadata and one failure log preserved"
+    },
+    {
+      "id": "QA-CE09",
+      "questions": [
+        "Q35",
+        "Q36",
+        "Q37"
+      ],
+      "status": "PASS",
+      "observation": "same user different tenant hidden; foreign delete rejected; source invalidation blocks dependent consumption"
+    },
+    {
+      "id": "QA-CE10",
+      "questions": [
+        "M112"
+      ],
+      "status": "PASS",
+      "observation": "ambiguous continue asks; switching invalidates old task result and requests approval recheck"
+    },
+    {
+      "id": "QA-CE11",
+      "questions": [
+        "Q89",
+        "P02"
+      ],
+      "status": "PASS",
+      "observation": "lost undo receipt reconciles same key; repeat recovery adds none; unknown original effect forbids blind undo"
+    },
+    {
+      "id": "QA-CE12",
+      "questions": [
+        "Q95"
+      ],
+      "status": "PASS",
+      "observation": "single half-open probe; stale success cannot close new generation"
+    },
+    {
+      "id": "QA-CE13",
+      "questions": [
+        "Q68",
+        "Q69"
+      ],
+      "status": "PASS",
+      "observation": "dedup does not double-charge; reassign keeps spent; old epoch/over-budget reject"
+    }
+  ]
+}

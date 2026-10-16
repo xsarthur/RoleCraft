@@ -1,0 +1,215 @@
+{
+  "report_id": "qa-memory-pm-8roles-2026-10-14",
+  "role": "测试工程师",
+  "executed_at": "2026-10-14",
+  "timezone": "Asia/Shanghai",
+  "scope": "最终独立核对 core 八岗跨项目长期记忆配置与 team/core README、handoff、AGENTS 唯一责任一致性；不验证运行时长期记忆或真实用户效果",
+  "overall_status": "met_within_configuration_scope",
+  "configuration_status": "pass",
+  "runtime_cross_project_memory_status": "not_verified",
+  "real_user_preference_status": "not_verified",
+  "source_files_unchanged_by_this_qa": true,
+  "roster": [
+    "项目经理",
+    "产品经理",
+    "产品设计师",
+    "软件工程师",
+    "课程架构师",
+    "教材研发员",
+    "内容审校员",
+    "实训评估员"
+  ],
+  "checks": [
+    {
+      "id": "8R-01",
+      "criterion": "manifest 注册八岗且三类文件存在",
+      "status": "pass",
+      "evidence": [
+        "manifest 的八个 employees 与八目录 ROLE/MEMORY/MEMORY_SCHEMA 一一对应"
+      ]
+    },
+    {
+      "id": "8R-02",
+      "criterion": "八份 ROLE.md 职责边界符合 AGENTS",
+      "status": "pass",
+      "evidence": [
+        "八岗唯一责任与禁止越界逐项对应 AGENTS；各岗均有跨领域交接"
+      ]
+    },
+    {
+      "id": "8R-03",
+      "criterion": "八份 ROLE.md 有跨项目读取和候选写入规则",
+      "status": "pass",
+      "evidence": [
+        "八份 ROLE 均要求读取共享偏好、岗位档案和当前项目资料",
+        "八份 ROLE 均要求先候选、确认后更新 MEMORY"
+      ]
+    },
+    {
+      "id": "8R-04",
+      "criterion": "八份 MEMORY 未把未确认偏好写成 confirmed",
+      "status": "pass",
+      "evidence": [
+        "已确认条目均为用户确认的记忆协作约定或设计视觉沟通偏好",
+        "软件工程师无已确认编码偏好；其他未确认专业偏好留在待确认区或明确禁止推断"
+      ]
+    },
+    {
+      "id": "8R-05",
+      "criterion": "八份 MEMORY_SCHEMA 含证据、范围、置信度、确认状态、版本",
+      "status": "pass",
+      "evidence": [
+        "八份 schema 均定义上述字段和候选升级/冲突替代/审计保留规则"
+      ]
+    },
+    {
+      "id": "8R-06",
+      "criterion": "user-profile、core README、team README、handoff 一致",
+      "status": "pass",
+      "evidence": [
+        "user-profile、core README、HANDOFF_TEMPLATE 和 team README 均按八岗定义复用、交接和候选流程",
+        "team README 已更新为八岗 QA 状态，最终快照确认无旧四岗待完成表述"
+      ]
+    },
+    {
+      "id": "8R-07",
+      "criterion": "八岗符合 AGENTS 唯一责任领域",
+      "status": "pass",
+      "evidence": [
+        "项目/产品/设计/客户端/课程架构/教材正文/内容审校/实训评价边界均与 AGENTS 对应，未见越界合并"
+      ]
+    }
+  ],
+  "role_matrix": [
+    {
+      "directory": "project-manager",
+      "name": "项目经理",
+      "domain": "项目协调",
+      "role_file": "pass",
+      "memory_candidate_rule": "pass",
+      "schema_fields": "pass",
+      "memory_confirmation": "pass"
+    },
+    {
+      "directory": "product-manager",
+      "name": "产品经理",
+      "domain": "产品需求",
+      "role_file": "pass",
+      "memory_candidate_rule": "pass",
+      "schema_fields": "pass",
+      "memory_confirmation": "pass"
+    },
+    {
+      "directory": "product-designer",
+      "name": "产品设计师",
+      "domain": "用户体验与视觉设计",
+      "role_file": "pass",
+      "memory_candidate_rule": "pass",
+      "schema_fields": "pass",
+      "memory_confirmation": "pass"
+    },
+    {
+      "directory": "software-engineer",
+      "name": "软件工程师",
+      "domain": "网站客户端实现",
+      "role_file": "pass",
+      "memory_candidate_rule": "pass",
+      "schema_fields": "pass",
+      "memory_confirmation": "pass"
+    },
+    {
+      "directory": "curriculum-architect",
+      "name": "课程架构师",
+      "domain": "教学架构",
+      "role_file": "pass",
+      "memory_candidate_rule": "pass",
+      "schema_fields": "pass",
+      "memory_confirmation": "pass"
+    },
+    {
+      "directory": "textbook-developer",
+      "name": "教材研发员",
+      "domain": "教学内容编写",
+      "role_file": "pass",
+      "memory_candidate_rule": "pass",
+      "schema_fields": "pass",
+      "memory_confirmation": "pass"
+    },
+    {
+      "directory": "content-reviewer",
+      "name": "内容审校员",
+      "domain": "技术内容审校",
+      "role_file": "pass",
+      "memory_candidate_rule": "pass",
+      "schema_fields": "pass",
+      "memory_confirmation": "pass"
+    },
+    {
+      "directory": "practicum-evaluator",
+      "name": "实训评估员",
+      "domain": "学习者实训评价",
+      "role_file": "pass",
+      "memory_candidate_rule": "pass",
+      "schema_fields": "pass",
+      "memory_confirmation": "pass"
+    }
+  ],
+  "open_findings": [],
+  "limitations": [
+    "未执行第二项目的八岗运行时读取、handoff、候选确认和回写",
+    "未取得跨项目真实用户持续反馈、真实岗位产出对比或真人专家证据",
+    "未验证 Codex 本地记忆、权限隔离或并发写入行为"
+  ],
+  "source_hashes": {
+    "manifest.json": "42a9a92a50670b5add71f37b1a71e44375929d93965d2c4895eec27e2d7bdee1",
+    "README.md": "68130e4f96dd99af978552f105c074f5ca6afefd460500a2367837e2be04c1e4",
+    "HANDOFF_TEMPLATE.md": "daba2364648e4ff0b71aef784c5598d92749167a549401516f579040bdd7f5c3",
+    "user-profile/approved-preferences.md": "a3c9740587879e9777a92753f36e7db36d94844872d5da0aa2504a49d9823cf5",
+    "project-manager/ROLE.md": "5723ae959545b720cf5f63fc16de87a7133be9f9bb93eb294bc0a3862a17a48c",
+    "project-manager/MEMORY.md": "62f904e7d6913adc7c7a557295e7d4c713931c93f9c37c3c62de999a1fb0e18a",
+    "project-manager/MEMORY_SCHEMA.md": "8956275ccc33c35be84ceb90b1021f016b2f918c061c6e303bfdc0262d1ed6c1",
+    "product-manager/ROLE.md": "56f932f3621b64469b3136ff3d1cafa3af900608f5c82947e33e0012ffd614c7",
+    "product-manager/MEMORY.md": "d992070fba035c1d3a5fb6f5734ed0922f011321c717cfb578b9b2e8209e38fe",
+    "product-manager/MEMORY_SCHEMA.md": "4026b98355e6fc1332871eaa9d93bf532288125fea200f40c7c78fc041303c07",
+    "product-designer/ROLE.md": "c4cc977f33667beb98c15ac31aa4f11c5b8f147f9d5fe9e15fd103f1c64cffa2",
+    "product-designer/MEMORY.md": "064e9a326a2e639dd9ac2e899c78abaaa1e803be7f7381d3c82e7b1a0eb63d7e",
+    "product-designer/MEMORY_SCHEMA.md": "eb13a5bdf1676aa9370e366f81e8c295d5271c064b674f831105434f4c8207f4",
+    "software-engineer/ROLE.md": "56940700e435fe7bfe075d98c61481da245f196ab0f8786880436850c70d02dd",
+    "software-engineer/MEMORY.md": "656820a15b419f663aa0854c89c4e1e42cb4974af5e459874196538c723fc1cd",
+    "software-engineer/MEMORY_SCHEMA.md": "54140baacc232219a481a1c61dda3182cd0679d7b3394a5d240a19194685815a",
+    "curriculum-architect/ROLE.md": "27b6240f660d7b3956947e6e3d23a71adee0151e95cda7d073a1dd08a652b13e",
+    "curriculum-architect/MEMORY.md": "8978b4727d114cfac1d83eea03c7c2972f9013e97bfea7457bfe34bda1cadfcf",
+    "curriculum-architect/MEMORY_SCHEMA.md": "717d37acdbcfee1a37752aa0bb63760221827e820881e3e46992e94036be84b9",
+    "textbook-developer/ROLE.md": "30dc5c7f39c3ad3a37ff55bd583c99e19002ee13a2a266004276d9d866c5bc7d",
+    "textbook-developer/MEMORY.md": "27f07d092fcf75692bd464a4e80e96254f54421c93e8097f4efe88516a3ee420",
+    "textbook-developer/MEMORY_SCHEMA.md": "759bb9f8ee4564d1a4976aaedee371c987e8f0c181abb8c2afe6f198291e49a5",
+    "content-reviewer/ROLE.md": "66ac6d3003b94dc1ea45b42f92dd3ad206e6602d90ba547f7f1be6769839c72f",
+    "content-reviewer/MEMORY.md": "8eddcb716d01674fa6088a9fbbbe3ae8cbc064edbb381740f30cb56f8da2ecbd",
+    "content-reviewer/MEMORY_SCHEMA.md": "9d70c68fc61f9dbba0b87f81a9269ababba9fc9acf505738a6f06c205b48361f",
+    "practicum-evaluator/ROLE.md": "a40e6ff2d988c7258934338a055d4b8b585ef2a880c4953d013e2ee89ae42217",
+    "practicum-evaluator/MEMORY.md": "d3beb07c359a21cf9f7b783a069305037bfaaf55133e2af7d657a70efc87f00e",
+    "practicum-evaluator/MEMORY_SCHEMA.md": "b3494d99f618fb699f8069d9b64e3d8a10de34b683f79dd42c921fcb8c73c4be",
+    "team/README.md": "0af47558ee10a783220e46b6bc1dccf204b9b16795d2f5bd82adfca790fc44c2"
+  },
+  "written_files": [
+    "sites/rolecraft/team/employees/core/qa-memory-pm.md",
+    "sites/rolecraft/team/employees/core/qa-memory-pm.json"
+  ],
+  "closed_findings": [
+    {
+      "id": "PM-8R-F-001",
+      "severity": "P2",
+      "status": "closed",
+      "title": "team README 状态引用漂移",
+      "resolution": "team README 核心员工 QA 状态已更新为八岗 met_within_configuration_scope，并删除教材四岗待完成表述",
+      "retested_in": "qa-memory-pm-8roles-2026-10-14 final snapshot",
+      "evidence_hashes": {
+        "team/README.md": "0af47558ee10a783220e46b6bc1dccf204b9b16795d2f5bd82adfca790fc44c2"
+      }
+    }
+  ],
+  "retest_results": {
+    "8R-06": "pass",
+    "PM-8R-F-001": "closed"
+  }
+}

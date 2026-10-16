@@ -1,0 +1,111 @@
+{
+  "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "execution_role": "AI-generation-engineer local isolated execution",
+  "human_receipt_pending": true,
+  "learner_execution": false,
+  "runs": [
+    {
+      "cases": [
+        {
+          "case_id": "A-normal",
+          "command": "python3 sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/implementation/d0_03_runner.py --case A-normal --run-id run-1 --input sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/input-snapshot.json",
+          "ended_at": "2026-10-16T08:30:55+08:00",
+          "exit_code": 0,
+          "started_at": "2026-10-16T08:30:55+08:00",
+          "stderr_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/receipts/run-1/A-normal.stderr",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/receipts/run-1/A-normal.stdout",
+          "stdout_sha256": "c4642281524913457c14032f5e3ae02d2fb66495324b6d64e0c89b28133adf4c"
+        },
+        {
+          "case_id": "B-tenant-denied",
+          "command": "python3 sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/implementation/d0_03_runner.py --case B-tenant-denied --run-id run-1 --input sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/input-snapshot.json",
+          "ended_at": "2026-10-16T08:30:55+08:00",
+          "exit_code": 0,
+          "started_at": "2026-10-16T08:30:55+08:00",
+          "stderr_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/receipts/run-1/B-tenant-denied.stderr",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/receipts/run-1/B-tenant-denied.stdout",
+          "stdout_sha256": "2c4c40dc2f1e3837348dcc1ad45302b38ee3a483d309df6b0fcedba95a377d04"
+        },
+        {
+          "case_id": "source-missing",
+          "command": "python3 sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/implementation/d0_03_runner.py --case source-missing --run-id run-1 --input sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/input-snapshot.json",
+          "ended_at": "2026-10-16T08:30:55+08:00",
+          "exit_code": 0,
+          "started_at": "2026-10-16T08:30:55+08:00",
+          "stderr_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/receipts/run-1/source-missing.stderr",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/receipts/run-1/source-missing.stdout",
+          "stdout_sha256": "fb9abbdccd671a82ea9c8c70dbc6e8fdfff8b9b98942d40895ebe5d0ec316fa7"
+        },
+        {
+          "case_id": "source-conflict",
+          "command": "python3 sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/implementation/d0_03_runner.py --case source-conflict --run-id run-1 --input sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/input-snapshot.json",
+          "ended_at": "2026-10-16T08:30:55+08:00",
+          "exit_code": 0,
+          "started_at": "2026-10-16T08:30:55+08:00",
+          "stderr_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/receipts/run-1/source-conflict.stderr",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/receipts/run-1/source-conflict.stdout",
+          "stdout_sha256": "dc391a72f16526934eb9c90dd56305b09776b96461eecebcbac766f9c6760cf4"
+        }
+      ],
+      "ended_at": "2026-10-16T08:30:55+08:00",
+      "run_id": "run-1",
+      "started_at": "2026-10-16T08:30:55+08:00"
+    },
+    {
+      "cases": [
+        {
+          "case_id": "A-normal",
+          "command": "python3 sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/implementation/d0_03_runner.py --case A-normal --run-id run-2 --input sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/input-snapshot.json",
+          "ended_at": "2026-10-16T08:30:55+08:00",
+          "exit_code": 0,
+          "started_at": "2026-10-16T08:30:55+08:00",
+          "stderr_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/receipts/run-2/A-normal.stderr",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/receipts/run-2/A-normal.stdout",
+          "stdout_sha256": "c4642281524913457c14032f5e3ae02d2fb66495324b6d64e0c89b28133adf4c"
+        },
+        {
+          "case_id": "B-tenant-denied",
+          "command": "python3 sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/implementation/d0_03_runner.py --case B-tenant-denied --run-id run-2 --input sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/input-snapshot.json",
+          "ended_at": "2026-10-16T08:30:55+08:00",
+          "exit_code": 0,
+          "started_at": "2026-10-16T08:30:55+08:00",
+          "stderr_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/receipts/run-2/B-tenant-denied.stderr",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/receipts/run-2/B-tenant-denied.stdout",
+          "stdout_sha256": "2c4c40dc2f1e3837348dcc1ad45302b38ee3a483d309df6b0fcedba95a377d04"
+        },
+        {
+          "case_id": "source-missing",
+          "command": "python3 sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/implementation/d0_03_runner.py --case source-missing --run-id run-2 --input sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/input-snapshot.json",
+          "ended_at": "2026-10-16T08:30:55+08:00",
+          "exit_code": 0,
+          "started_at": "2026-10-16T08:30:55+08:00",
+          "stderr_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/receipts/run-2/source-missing.stderr",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/receipts/run-2/source-missing.stdout",
+          "stdout_sha256": "fb9abbdccd671a82ea9c8c70dbc6e8fdfff8b9b98942d40895ebe5d0ec316fa7"
+        },
+        {
+          "case_id": "source-conflict",
+          "command": "python3 sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/implementation/d0_03_runner.py --case source-conflict --run-id run-2 --input sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/input-snapshot.json",
+          "ended_at": "2026-10-16T08:30:55+08:00",
+          "exit_code": 0,
+          "started_at": "2026-10-16T08:30:55+08:00",
+          "stderr_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/receipts/run-2/source-conflict.stderr",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/receipts/run-2/source-conflict.stdout",
+          "stdout_sha256": "dc391a72f16526934eb9c90dd56305b09776b96461eecebcbac766f9c6760cf4"
+        }
+      ],
+      "ended_at": "2026-10-16T08:30:55+08:00",
+      "run_id": "run-2",
+      "started_at": "2026-10-16T08:30:55+08:00"
+    }
+  ]
+}

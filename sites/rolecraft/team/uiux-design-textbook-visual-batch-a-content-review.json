@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "reviewId": "uiux-design-textbook-visual-batch-a-content-review",
+  "date": "2026-10-16",
+  "reviewerRole": "内容审校员",
+  "reviewerIdentity": "AI技术内容审校，非真人视觉设计专家、QA、辅助技术测试员或真实学习者",
+  "status": "reviewed_with_limitations",
+  "scope": {
+    "chapters": [
+      "textbooks/uiux-design-v02/chapters/01-role-and-evidence.md",
+      "textbooks/uiux-design-v02/chapters/02-problem-framing.md",
+      "textbooks/uiux-design-v02/chapters/03-research-design.md",
+      "textbooks/uiux-design-v02/chapters/04-evidence-synthesis.md"
+    ],
+    "assets": [
+      "textbooks/uiux-design-v02/assets/v02-batch-a-01-role-evidence.svg",
+      "textbooks/uiux-design-v02/assets/v02-batch-a-02-problem-causality.svg",
+      "textbooks/uiux-design-v02/assets/v02-batch-a-03-research-methods.svg",
+      "textbooks/uiux-design-v02/assets/v02-batch-a-04-evidence-synthesis.svg"
+    ],
+    "standards": [
+      "team/uiux-design-textbook-visual-optimization-product-v01.md",
+      "team/uiux-design-textbook-visual-optimization-curriculum-v01.md",
+      "team/DESIGN_VISUAL_QUALITY_STANDARD.md",
+      "textbooks/uiux-design-v02/assets/DESIGN_HANDOFF.md"
+    ]
+  },
+  "overallFinding": "四章视觉入口、图文职责、替代文本、教学构造和未验证边界基本成立；新SVG均可解析且不是Mermaid-only。README/source-index仍漏列四张新资产，当前没有多条件渲染、键盘/读屏或真人证据，合订本资产绑定也待复核，因此仅作reviewed_with_limitations。",
+  "strengths": [
+    "四章均有独立视觉入口，图承担关系/对照/分析链，正文承担定义、条件、反例、责任和验证边界。",
+    "四个SVG均为role=img、aria-labelledby、title、desc的1600x1000可编辑静态图，正文附近有asset_id、文字替代、source_type和visual_downgrade。",
+    "状态、未知、来源支持、提示前后和教学构造与真实证据分开。",
+    "01→02→03→04先修与分层练习、参考分析、基础补学和03—04研究工件保持。"
+  ],
+  "issues": [
+    {
+      "id": "BATCH-A-SRC-001",
+      "severity": "P1",
+      "status": "open",
+      "subject": "索引与入口仍漏列四张新资产",
+      "finding": "README/source-index仍写8幅图并只列原八张；四张Batch A仅在章节邻近记录和SVG内可发现。",
+      "owner": "课程架构师/教材研发员",
+      "retest": "索引列出四文件、chapter_id、教学目的、版本/来源/未验证，并复核章节、组装清单和资产身份一致。"
+    },
+    {
+      "id": "BATCH-A-VIS-002",
+      "severity": "P1",
+      "status": "insufficient",
+      "subject": "响应式、灰度、键盘和读屏无实际证据",
+      "finding": "新增图为1600x1000密集横向静态板；有降级说明但无760px/窄屏/灰度/大字号/字体回退预览或辅助技术实测。",
+      "owner": "设计师/测试工程师",
+      "retest": "逐图完成多条件预览及浏览器、键盘、读屏记录；未运行项继续标insufficient/not_verified。"
+    },
+    {
+      "id": "BATCH-A-LINK-003",
+      "severity": "P2",
+      "status": "open",
+      "subject": "合订本与资产版本绑定待复核",
+      "finding": "单章链接和文件存在性通过，但assembly-manifest未声明四张Batch A SVG资产绑定，不能推断合订本已同步。",
+      "owner": "组装责任人/QA",
+      "retest": "逐章源、合订本锚点、资产路径和SHA256形成绑定清单。"
+    }
+  ],
+  "acceptance": {
+    "VO-P01": "insufficient",
+    "VO-P02": "pass",
+    "VO-P03": "pass",
+    "VO-P04": "pass",
+    "VO-P05": "insufficient",
+    "VO-P06": "insufficient",
+    "VO-P07": "pass",
+    "VO-P08": "pass",
+    "VO-P09": "insufficient",
+    "VO-P10": "pass",
+    "VO-P11": "pass",
+    "VO-P12": "insufficient"
+  },
+  "verification": {
+    "xmlParse": "passed_for_four_new_svgs",
+    "linkExistence": "passed_for_local_chapter_links",
+    "browserRendering": "not_run",
+    "responsive": "not_run",
+    "keyboard": "not_run",
+    "screenReader": "not_run",
+    "realUserResearch": "not_run",
+    "learningEffect": "not_run"
+  },
+  "sha256": {
+    "chapters/01-role-and-evidence.md": "265e373b72aec19be909eb5feef1202fc48dd165865c5a30ecc2a03130bd9c28",
+    "chapters/02-problem-framing.md": "e8619bbe481c0befa16b6f12e0dd16704eab1d6e659c79cce2e7544e14568366",
+    "chapters/03-research-design.md": "0e2381811bff89bf57c14b85411dd650720191890c55e08c9e4673d6666f275a",
+    "chapters/04-evidence-synthesis.md": "c7bee98dae744e98469dd7b5c82cfc125ec6e065fea12cd2c3af6c476d97b0de",
+    "assets/v02-batch-a-01-role-evidence.svg": "87be8126f211d7a05c6811e82051e1c6b52211ae97ac6ec041b15603a88133b0",
+    "assets/v02-batch-a-02-problem-causality.svg": "5676139256354bcb2ac771fea37f5376761424e10dd843756d7b8dbdd4a2146f",
+    "assets/v02-batch-a-03-research-methods.svg": "b9523c5934ff1015d8880a02d5a5e6815ce0259078073433851cc7618a94f94c",
+    "assets/v02-batch-a-04-evidence-synthesis.svg": "898e962ae31ec7eeb85cab6205290e9cb15dbe3d049194fae69f987b64609511"
+  },
+  "nextAction": "课程架构/作者补索引与组装绑定；设计/QA补多条件渲染和辅助技术证据；内容审校在修订后复验。"
+}

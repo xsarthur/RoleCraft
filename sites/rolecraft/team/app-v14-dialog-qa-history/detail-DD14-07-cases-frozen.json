@@ -1,0 +1,22 @@
+{
+  "version": "app-v14-detail-qa-DD14-07-1",
+  "atUtc": "2026-10-12T01:09:46.358501+00:00",
+  "productSupplementSha256": "6e12c2c500206443ce2f12ab645272d44efb2258095ef95e771b7243d91ec672",
+  "scope": "only detail paired question block deferred; original DD conditions except paired-module existence superseded latest user",
+  "cases": [
+    {
+      "id": "DD14-07-a",
+      "action": "n03 ReAct detail exactsection: no 配套题目 heading/count/question/self-mark block or duplicate module"
+    },
+    {
+      "id": "DD14-07-b",
+      "action": "global题库仍真实114题/data/links independent entry; existing source question links can reach same source without detail pairing"
+    },
+    {
+      "id": "DD14-07-c",
+      "action": "no old/user question record migration/deletion; data/source bytes protected; QA only fresh browser origin"
+    }
+  ],
+  "priorFrozenCasesRetained": "detail-cases-frozen.json unchanged; original input32 unchanged",
+  "status": "frozen_before_detail_final_candidate"
+}

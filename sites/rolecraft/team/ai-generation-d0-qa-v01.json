@@ -1,0 +1,254 @@
+{
+  "schema": "rolecraft.ai-generation.d0.qa",
+  "schema_version": "0.1",
+  "qa_id": "AI-D0-QA-20261015-LOCAL-01",
+  "date": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "reviewer_role": "QA",
+  "target_role_id": "AI",
+  "target_role_name": "AI生成工程师",
+  "conclusion": "insufficient_evidence",
+  "l1_decision": "not_granted",
+  "provisional_starting_level": "L0",
+  "capability_conclusion": "not_assessed",
+  "scope_statement": "本报告独立核对AI生成工程师D0结构证据；不代学员作答、不修作者产物、不把AGDEV相邻岗位证据转移为AI能力证据。",
+  "received_inputs": [
+    {
+      "path": "sites/rolecraft/team/employee-professional-training-v01.md",
+      "sha256": "7932430580052d30c39d8228241b78d7654f142daeb7cd12807ef721480fde14",
+      "role_binding": "AI=AI生成工程师；模型调用、生成流程、来源关联、失败处理"
+    },
+    {
+      "path": "sites/rolecraft/team/employee-growth-training-plan.md",
+      "sha256": "316be37879d5f436588d89d022a29d406a5272237af77bd924ab17f983d06b4c",
+      "role_binding": "D0五项、隔离梯度、L1证据门槛"
+    },
+    {
+      "path": "sites/rolecraft/team/employee-professional-qa-v01.md",
+      "sha256": "64bee762f1244a2ead2f3f3bdd97e9425626bc17d1ab03db4ed61a8099bcb7dd",
+      "role_binding": "AI盲测、反例、EvidenceCard和独立复验规则"
+    },
+    {
+      "path": "sites/rolecraft/team/agent-development-engineer-product-v01.md",
+      "sha256": "142a051ff8590af24d40f3ab85da357b81069baf7ca4beeb9d7d89960c36dadd",
+      "role_binding": "AGDEV相邻岗位；明确不负责模型供应商/适配器/生成质量"
+    },
+    {
+      "path": "sites/rolecraft/team/employee-growth-mvp/agent-developer/D0-diagnostic.json",
+      "sha256": "1ed19a91d50604628cf28a67231990389c60cac61718a4ad3a5f2a8c7e6473af",
+      "observed_role_id": "AGDEV"
+    },
+    {
+      "path": "sites/rolecraft/team/employee-growth-mvp/agent-developer/D0-learner-responses.json",
+      "sha256": "157a44371deeefa527daa400ef6900d0672305cf5aa9f8b998dafd18e32d203a",
+      "observed_role_id": "AGDEV"
+    },
+    {
+      "path": "sites/rolecraft/team/employee-growth-mvp/agent-developer/D0-evaluation.json",
+      "sha256": "407088bf4221a3c168fd513b4508723e610339f808d8d1b0860c0164dbdc850d",
+      "observed_role_id": "AGDEV"
+    },
+    {
+      "path": "sites/rolecraft/team/employee-growth-mvp/agent-developer/run-20261015/QA-FINAL.md",
+      "sha256": "5a3b6ed956c7224fff0d0fedc02f4eb2c5462d20c87cede9e634fa5ba5f7db74",
+      "observed_role_id": "AGDEV",
+      "scope": "AGDEV T1/T2/T3 local MVP, not AI D0"
+    }
+  ],
+  "identity_check": {
+    "expected_role_id": "AI",
+    "observed_role_ids": ["AGDEV"],
+    "status": "fail",
+    "defect_id": "AI-D0-P1-ROLE-MISMATCH",
+    "severity": "P1",
+    "reason": "所有收到的D0与运行包均绑定AGDEV；AGDEV是独立的Agent开发工程师岗位，不是AI生成工程师。"
+  },
+  "environment_and_isolation": {
+    "source": "employee-growth-mvp/agent-developer/D0-learner-responses.json execution",
+    "mode": "local_static_only",
+    "application_started": false,
+    "network_calls": 0,
+    "real_model_calls": 0,
+    "paid_calls": 0,
+    "tool_write_calls": 0,
+    "database_changes": 0,
+    "account_changes": 0,
+    "qa_replay": false,
+    "runtime_receipt": null,
+    "status": "declared_safe_but_not_independently_replayed",
+    "limits": [
+      "D0 learner没有runtime版本、命令和实际收据",
+      "后续Node24/Python3.14 AGDEV运行包不能补齐AI D0"
+    ]
+  },
+  "fixture_check": {
+    "diagnostic_fixture_status": "draft_for_freeze",
+    "diagnostic_fixture_hash": null,
+    "project_manager_assignment": "pending",
+    "learner_d0_03_execution_status": "not_run",
+    "learner_d0_03_source_hash": null,
+    "learner_d0_03_checkpoint_hash": null,
+    "learner_d0_03_qa_replay": false,
+    "status": "fail",
+    "defect_id": "AI-D0-P1-NO-D0-FIXTURE",
+    "severity": "P1",
+    "reason": "未冻结AI专属合同/夹具/哈希，且没有AI任务收据。"
+  },
+  "five_d0_fields": [
+    {
+      "id": "D0-01",
+      "name": "职责边界",
+      "expected_ai_evidence": "模型服务、结构化输出、来源/预算/失败契约，及与BE/FE/CURR/ED/QA的边界",
+      "observed": "AGDEV Agent编排边界的静态回答",
+      "evidence_status": "insufficient_evidence",
+      "reason": "role_id错；无AI边界留出变体、交接签收或独立观察"
+    },
+    {
+      "id": "D0-02",
+      "name": "机制解释",
+      "expected_ai_evidence": "模型提议/宿主执行、schema、部分输出、超时、预算、来源冲突和降级语义",
+      "observed": "AGDEV状态机和控制循环静态解释",
+      "evidence_status": "insufficient_evidence",
+      "reason": "无AI模型服务或结构化生成运行轨迹"
+    },
+    {
+      "id": "D0-03",
+      "name": "熟悉任务",
+      "expected_ai_evidence": "确定性替身下的ModelRequest/Response、schema/来源绑定、无配置/部分输出和可回放收据",
+      "observed": "learner标not_run且无source/checkpoint hash；evaluation另称两条内存stub已运行",
+      "evidence_status": "insufficient_evidence",
+      "reason": "执行状态与评价矛盾，且任务属于AGDEV检索stub而非AI生成服务",
+      "defect_id": "AI-D0-P1-EVIDENCE-CONFLICT",
+      "severity": "P1"
+    },
+    {
+      "id": "D0-04",
+      "name": "失败识别",
+      "expected_ai_evidence": "无配置、schema错、部分输出、超时、预算不足、来源冲突的实际停止/交接",
+      "observed": "AGDEV静态失败台账；无AI故障注入",
+      "evidence_status": "insufficient_evidence",
+      "reason": "构造缺陷说明不等于学习者实际失败或AI服务安全行为"
+    },
+    {
+      "id": "D0-05",
+      "name": "迁移预告",
+      "expected_ai_evidence": "模型/配置/预算/版本/权限变化的契约升级、回滚、未知与批准",
+      "observed": "AGDEV迁移计划，无AI模型版本/配置/调用预算回滚记录",
+      "evidence_status": "insufficient_evidence",
+      "reason": "仅计划，无执行、接收或留出未知任务"
+    }
+  ],
+  "raw_failures": {
+    "ai_d0_failures_observed": false,
+    "hypothetical_failure_table": true,
+    "adjacent_agdev_harness_failures": [
+      "runner URL pathname %20 path error",
+      "T1 fixture retry_limit=2 contract violation",
+      "two Python checker field lookup failures",
+      "QA replay copy initially lacked hashes output directory"
+    ],
+    "transfer_allowed": false,
+    "reason": "这些是AGDEV后续MVP harness失败，不属于AI D0 learner失败。"
+  },
+  "unknowns": [
+    "AI模型配置和ModelRequest/Response版本",
+    "结构化输出schema错误、部分输出和来源绑定",
+    "供应商不可用、超时、预算/usage和重试语义",
+    "真实调用计费、网络和外部服务效果",
+    "AI岗位的接收签收、复验和未预告变体",
+    "用户价值、真实学习效果、生产可靠性、成本和行业比较"
+  ],
+  "handoff_check": {
+    "project_manager_assignment": "pending",
+    "independent_reviewer": "not_started",
+    "ai_receivers": ["FE", "BE", "CURR", "ED", "QA"],
+    "receiver_signoffs": 0,
+    "status": "missing",
+    "reason": "现有handoff为AGDEV T1/T2/T3，非AI D0。"
+  },
+  "real_model_and_side_effects": {
+    "real_model_calls": 0,
+    "external_network_calls": 0,
+    "paid_calls": 0,
+    "external_write_calls": 0,
+    "account_or_database_writes": 0,
+    "status": "no_side_effects_declared",
+    "qualification": "无副作用不等于真实模型能力通过"
+  },
+  "level_decision": {
+    "starting_level": "L0",
+    "starting_level_reason": "AI D0身份、夹具、环境、运行和独立复验不完整；L0仅表示受指导无副作用起点。",
+    "l1_status": "not_granted",
+    "l1_required_before_reconsideration": [
+      "新的AI唯一role_id和diagnostic_id",
+      "两个不同可重建AI沙箱工件（含正常和失败/降级）",
+      "D1-D7初步证据和AI岗位交接",
+      "fixture/input/output/source/environment hash与实际命令",
+      "QA原例→受影响回归→未预告变体独立复验",
+      "无开放P0/P1且保留首次失败、返修和复验"
+    ]
+  },
+  "defects": [
+    {
+      "id": "AI-D0-P1-ROLE-MISMATCH",
+      "severity": "P1",
+      "owner": "PM + CURR",
+      "status": "open",
+      "direct_cause": "沿用了AGDEV目录和契约",
+      "system_cause": "新增Agent开发岗位与十五岗AI岗位未在D0入口做唯一ID校验",
+      "escape_gate": "D0身份冻结",
+      "repair": "重新冻结AI合同/夹具/learner并由QA校验role_id",
+      "retest": "AI D0原例、回归、留出变体"
+    },
+    {
+      "id": "AI-D0-P1-EVIDENCE-CONFLICT",
+      "severity": "P1",
+      "owner": "CURR + AI",
+      "status": "open",
+      "direct_cause": "learner源标D0-03 not_run，evaluation记录两次已执行",
+      "system_cause": "评价记录未以原始运行收据和hash为唯一事实源",
+      "escape_gate": "D0-03执行状态一致性",
+      "repair": "保留旧版，提交原始run_id/命令/环境/输入输出hash并独立复演",
+      "retest": "QA原例→受影响回归→未预告变体"
+    },
+    {
+      "id": "AI-D0-P1-NO-D0-FIXTURE",
+      "severity": "P1",
+      "owner": "PM + QA",
+      "status": "open",
+      "direct_cause": "fixture_status=draft_for_freeze且fixture_hash为空",
+      "system_cause": "未完成合同/夹具/环境冻结就进入评价",
+      "escape_gate": "D0开始前冻结门",
+      "repair": "冻结AI五项夹具、环境和独立复核人",
+      "retest": "新AI D0完整五项"
+    }
+  ],
+  "next_actions": [
+    {
+      "owner": "PM",
+      "action": "指定AI learner、QA reviewer和接收岗位，建立新diagnostic_id",
+      "status": "open"
+    },
+    {
+      "owner": "CURR + AI",
+      "action": "冻结AI专属五项夹具：边界、生成机制、结构化输出、失败降级、迁移",
+      "status": "open"
+    },
+    {
+      "owner": "AI learner",
+      "action": "在无网络确定性替身中交可回放ModelRequest/Response和失败矩阵，不调用真实模型",
+      "status": "blocked_on_new_freeze"
+    },
+    {
+      "owner": "QA",
+      "action": "对新AI D0按原例、回归和未预告变体独立复验，保留首失败",
+      "status": "blocked_on_new_learner_artifacts"
+    }
+  ],
+  "non_claims": [
+    "不宣称AI岗位L1/L2/L3",
+    "不宣称真实模型调用、供应商质量、用户价值、生产可靠性、真实学习效果或行业先进",
+    "不把AGDEV相邻岗位运行包当AI证据",
+    "不把无副作用声明当作能力通过"
+  ]
+}

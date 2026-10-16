@@ -1,0 +1,73 @@
+{
+  "version": "app-v14-dialog-frontend-dev-check-1",
+  "createdAt": "2026-10-12T01:01:09.001Z",
+  "runtime": "v24.16.0",
+  "clientVersion": "local-workbench-0.14-dialog",
+  "scope": "Client developer isolated VM fixtures; not browser, actual HTTP/BGE, independent QA or user acceptance",
+  "corpusVersion": "textbook-v12",
+  "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+  "files": {
+    "dist/learning-workbench.js": {
+      "sha256": "100404b410f970636908b785a816480f1a25375ed95898d98914702eecbb218f"
+    },
+    "dist/learning-experience-v13.js": {
+      "sha256": "e8ffa56d832e72822ca6bb45567479d9abca539f8fceec292a66fe33602e385c"
+    },
+    "dist/learning-experience-v13.css": {
+      "sha256": "0bcd6fd898e222bedc69f459fbe3f79fa49760023d1e68f1a619fd538b4d2e34"
+    },
+    "dist/app.js": {
+      "sha256": "46b502c179e179b8fd7004bc4ced3888bb10249cba1d8b04659418d4b2bff663"
+    }
+  },
+  "tests": [
+    {
+      "name": "Five statuses remain distinct and invalid input stays editable with no network",
+      "status": "pass"
+    },
+    {
+      "name": "Every short sentence, source hash/path/title/href/quote offset and context must match public corpus",
+      "status": "pass"
+    },
+    {
+      "name": "Uses anonymous same-origin dialogue endpoint, plain text question/message and collapsed quoted sources",
+      "status": "pass"
+    },
+    {
+      "name": "Verified canonical topic only, related/filtered scope and explicit context origin are shown",
+      "status": "pass"
+    },
+    {
+      "name": "Pending same expression prevents duplicates; newer question suppresses old late answer/error/finally",
+      "status": "pass"
+    },
+    {
+      "name": "Collapse while waiting and page navigation remain; completion cannot reopen or steal reading focus",
+      "status": "pass"
+    },
+    {
+      "name": "Retry uses frozen submitted text and context despite changed draft or page",
+      "status": "pass"
+    },
+    {
+      "name": "Clear topic invalidates pending identity; old late answer cannot restore theme",
+      "status": "pass"
+    },
+    {
+      "name": "History and refresh recheck source; old query key and seeded user records remain untouched",
+      "status": "pass"
+    },
+    {
+      "name": "IME confirmation and Shift+Enter do not send; normal Enter does; clarified option sends full server expression",
+      "status": "pass"
+    },
+    {
+      "name": "Static file mode honestly unavailable and source failure clears answer/cards",
+      "status": "pass"
+    }
+  ],
+  "realBrowserTested": false,
+  "actualHttpTested": false,
+  "modelInvoked": false,
+  "privateRecordsAccessed": false
+}

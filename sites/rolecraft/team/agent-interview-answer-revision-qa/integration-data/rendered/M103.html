@@ -1,0 +1,91 @@
+<section class="ia-answer" data-answer-id="M103" data-answer-version="interview-answers-v1.0.1" data-answer-sha256="5110663ccc654402711e5620dfe408cb5ddd934a31e667941da57898a776b660" data-content-status="met_within_reviewed_scope"><div class="ia-answer-meta"><span>M103 · interview-answers-v1.0.1</span><strong>内容与测试已限定范围复核</strong></div><article class="ia-prose" aria-label="M103 完整参考解析"><h3>M103｜实现容量受限的LRU缓存，说明get/put复杂度，并给出容量为零、覆盖已有键和淘汰次序的测试。</h3><p>答案版本：interview-answers-v1.0.1。完整参考解析；示例及测试计划未由本稿执行。</p><p>LRU淘汰“最近最久未访问”的条目。哈希表负责从键找节点，双向链表负责访问顺序；get命中和put覆盖都把节点移到最新端，新键超容量时删除最旧端。单纯列表查找/删除虽然能实现顺序，却会使访问变成O(n)。</p><p>以下完整实现使用环形哨兵，root.next是最旧、root.prev是最新。适用Python 3.14；键必须可哈希且哈希/相等行为在缓存期内稳定；容量按条数，零表示禁用，缺失抛KeyError，合法值None与缺失不混淆。代码为本稿教学实现，<strong>未执行</strong>。</p><div class="ia-code"><span>python · 仅供阅读</span><pre tabindex="0"><code>class Node:
+    __slots__ = (&quot;key&quot;, &quot;value&quot;, &quot;prev&quot;, &quot;next&quot;)
+    def __init__(self, key=None, value=None):
+        self.key, self.value = key, value
+        self.prev = self.next = self
+
+class LRU:
+    def __init__(self, capacity):
+        if type(capacity) is not int or capacity &lt; 0:
+            raise ValueError(&quot;capacity must be nonnegative int&quot;)
+        self.capacity = capacity
+        self.nodes = {}
+        self.root = Node()
+
+    def _unlink(self, node):
+        node.prev.next = node.next
+        node.next.prev = node.prev
+
+    def _append(self, node):
+        tail = self.root.prev
+        node.prev, node.next = tail, self.root
+        tail.next = node
+        self.root.prev = node
+
+    def _touch(self, node):
+        self._unlink(node)
+        self._append(node)
+
+    def get(self, key):
+        node = self.nodes[key]
+        self._touch(node)
+        return node.value
+
+    def put(self, key, value):
+        if self.capacity == 0:
+            return
+        if key in self.nodes:
+            node = self.nodes[key]
+            node.value = value
+            self._touch(node)
+            return
+        node = Node(key, value)
+        self.nodes[key] = node
+        self._append(node)
+        if len(self.nodes) &gt; self.capacity:
+            oldest = self.root.next
+            self._unlink(oldest)
+            del self.nodes[oldest.key]
+
+    def keys_old_to_new(self):
+        keys = []
+        node = self.root.next
+        while node is not self.root:
+            keys.append(node.key)
+            node = node.next
+        return keys
+
+    def __len__(self):
+        return len(self.nodes)
+
+def must_miss(cache, key):
+    try:
+        cache.get(key)
+    except KeyError:
+        return
+    raise AssertionError(&quot;expected miss&quot;)
+
+zero = LRU(0)
+zero.put(&quot;a&quot;, 1)
+assert len(zero) == 0
+must_miss(zero, &quot;a&quot;)
+cache = LRU(2)
+cache.put(&quot;a&quot;, 1)
+cache.put(&quot;b&quot;, 2)
+assert cache.keys_old_to_new() == [&quot;a&quot;, &quot;b&quot;]
+assert cache.get(&quot;a&quot;) == 1
+cache.put(&quot;c&quot;, 3)
+must_miss(cache, &quot;b&quot;)
+assert cache.keys_old_to_new() == [&quot;a&quot;, &quot;c&quot;]
+cache.put(&quot;a&quot;, 9)
+assert len(cache) == 2 and cache.keys_old_to_new() == [&quot;c&quot;, &quot;a&quot;]
+cache.put(&quot;d&quot;, None)
+must_miss(cache, &quot;c&quot;)
+assert cache.get(&quot;d&quot;) is None
+one = LRU(1)
+one.put(&quot;x&quot;, 1)
+one.put(&quot;x&quot;, 2)
+assert one.get(&quot;x&quot;) == 2
+one.put(&quot;y&quot;, 3)
+must_miss(one, &quot;x&quot;)
+print(&quot;LRU assertions passed&quot;)</code></pre></div><p>不变量是字典里的节点与链表节点一一对应，root前后链接闭合，节点访问顺序由旧到新，条目数不超过容量。get/put包含常数次指针操作；在通常哈希假设下平均O(1)，极端哈希冲突不能承诺最坏O(1)。诊断遍历keys是O(n)，不用于核心访问。存储O(capacity)，但值可能很大，条数上限不等于字节上限。</p><p>上面断言分别定位零容量、访问刷新、覆盖不增量、淘汰次序和None值边界。还应测试非法容量、交替访问，以及每次操作后前后指针一致。多个线程同时操作需保护整次更新，跨await也须有明确一致性；这个类没有实现线程安全、TTL或权限失效。缓存受保护知识时键还要包含源版本和范围，返回前核当前权限。</p><p>生产可采用标准库OrderedDict的move_to_end与popitem(last=False)表达重排；手写链表是解释实现，不是推荐所有项目重复造轮子。<a href="https://docs.python.org/3.14/library/collections.html#ordereddict-objects" target="_blank" rel="noopener noreferrer">OrderedDict文档</a>，核查于2026-10-14。</p><h4>参考出处</h4><ul><li><a href="#learn/agent/n01-python-model-foundations/s-678ed262c90f">3 LRU 容量、复杂度与权限不是同一个问题</a>，v12，原文件第79–111行：对应本题原理、案例与边界。</li><li><a href="#learn/agent/n01-python-model-foundations/s-678ed262c90f">6 可运行入口与迁移练习</a>，v12，原文件第134–144行：对应本题原理、案例与边界。</li></ul></article><details class="ia-binding"><summary>答案版本与审核范围</summary><p>全文按当前答案版本展示。文稿与有限测试不等于真人专家认可、个人经历证据或职业能力认证。</p><p>SHA256：<code>5110663ccc654402711e5620dfe408cb5ddd934a31e667941da57898a776b660</code></p></details></section>

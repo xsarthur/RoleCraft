@@ -1,0 +1,61 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4475/#records".
+1 AXWebArea 职造 · Agent 学习工作台, URL: 127.0.0.1:4475/#records
+	2 link Description: 跳到主要内容, Value: 127.0.0.1:4475/#main-content
+	3 container primary-sidebar
+		4 link Description: 职 职造 Agent 开发学习, Value: 127.0.0.1:4475/#home
+		5 container 主导航
+			6 button 首页
+			7 button 课程学习
+			8 button 题库浏览
+			9 button 学习记录
+			10 button 个人设置
+		11 text 当前学习方向
+		12 text Agent 开发者
+		13 link Description: 本机学习者 记录保存在此浏览器, Value: 127.0.0.1:4475/#settings
+	14 container main-content
+		15 container
+			203 text 学习记录
+			204 text 回到你需要的地方
+		18 container app
+			205 heading 学习记录, Value: 1
+				206 text 学习记录
+			207 text 接着读、回到疑问，再用一次自评查缺
+			208 container
+				209 heading 继续学习, Value: 2
+					210 text 继续学习
+				211 text 规划与反思
+				212 link Description: 继续阅读 →, Value: 127.0.0.1:4475/#learn/agent/n03-planning-reflection/s-da63f3dcff17
+			213 container
+				214 heading 复习, Value: 2
+					215 text 复习
+				216 text 有 1 道本人未掌握题
+				217 link Description: 开始复习 →, Value: 127.0.0.1:4475/#review
+			218 container
+				219 heading 检验学习结果, Value: 2
+					220 text 检验学习结果
+				221 text 从你看过的知识点出题，结果只作本次自评。
+				222 link Description: 查看可用题目 →, Value: 127.0.0.1:4475/#check
+			223 checkbox 已学习, Value: 1
+			224 checkbox 未掌握, Value: 0
+			225 checkbox 已掌握（自评）, Value: 0
+			226 container
+				227 link Description: 1 三种策略改变的是控制对象, Value: 127.0.0.1:4475/#learn/agent/n03-planning-reflection/s-da63f3dcff17
+				228 text 规划与反思 · 2026/10/12 09:02:59
+				229 link Description: 做配套题目, Value: 127.0.0.1:4475/#questions?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17
+			230 container
+				231 heading 我的项目记录, Value: 2
+					232 text 我的项目记录
+				233 text 保存问题、证据、作品结果和改进；都是本人自述。
+				234 link Description: 记录与查看项目 →, Value: 127.0.0.1:4475/#projects
+			235 button (collapsed) 收藏、笔记与历史学习记录, Secondary Actions: Expand
+				236 text 收藏、笔记与历史学习记录
+		201 container
+			202 text 职造 · Agent 开发学习 教材 v12 · 本浏览器保存
+	237 container lw-find-form
+		238 text 查教材
+		239 text entry area (settable) 查教材, Value: 新证据推翻计划后哪些步骤要重做, ID: lw-query
+		240 button 查找
+		241 button (collapsed) Description: 展开检索结果, Secondary Actions: Expand
+		242 text 正在教材中查找，可收起继续学习
+
+The focused UI element is 205 heading 学习记录, Value: 1

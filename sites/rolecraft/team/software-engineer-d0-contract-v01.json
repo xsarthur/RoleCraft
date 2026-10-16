@@ -1,0 +1,31 @@
+{
+  "contract_id":"SW-REAL-LEARNER-D0-20261016-001",
+  "diagnostic_id":"D0-SW-20261016-001",
+  "role_id":"software-engineer",
+  "owner":"software-engineer",
+  "reviewer":"qa-engineer",
+  "receiver":"project-manager-or-designated-receiver",
+  "version":"software-engineer-d0-contract-v01",
+  "status":"pending_learner_execution",
+  "level_target":"L0",
+  "learner_execution":false,
+  "human_receipt_pending":true,
+  "external_action":null,
+  "environment":{"mode":"isolated_sandbox","real_model":false,"paid_api":false,"real_user_data":false,"production":false,"network":"disabled_or_allowlisted_local_only"},
+  "responsibility":["client pages/routes/state","read-only interface consumption","source/version display","loading/success/empty/clarification/error/recovery states","responsive/accessibility implementation from approved handoff","reproducible local handoff"],
+  "forbidden":["redefine product scope","write model generation logic","access database directly","change retrieval ranking","call production or paid services","upload/publish/send notifications","replace independent QA"],
+  "frozen_inputs":["product scope and acceptance handoff","design state contract","read-only HTTP/JSON interface contract","client version/checkout hash","fixture and response hashes"],
+  "tasks":[
+    {"task_id":"D0-01","name":"boundary_restatement","deliverable":"raw learner answer with permissions, prohibitions, escalation"},
+    {"task_id":"D0-02","name":"mechanism_explanation","deliverable":"version-bound state transition and schema assumptions"},
+    {"task_id":"D0-03","name":"scaffold_client_slice","deliverable":"isolated client state slice with source/version and empty/error/retry states"},
+    {"task_id":"D0-04","name":"first_failure_identification","fixtures":["empty_response","schema_missing","timeout","old_version","non_2xx","duplicate_or_restore"],"deliverable":"first failure and stop/recovery receipts"},
+    {"task_id":"D0-05","name":"unknown_transfer_plan","deliverable":"plan for undisclosed equivalent variant with stop and rollback"}
+  ],
+  "required_artifacts":["learner-receipt.json","d0-01-answer.md","d0-02-answer.md","d0-03-answer.md","d0-04-answer.md","d0-05-answer.md","run-1/","run-2/","manifest.sha256","learner-statement.txt","handoff-to-qa.json","evidence-cards/*.json"],
+  "first_failure_conditions":["CONTRACT_MISSING","schema_missing","source_or_version_conflict","empty_response_treated_as_success","timeout_or_non_2xx_unhandled","restore_or_duplicate_semantics_unknown"],
+  "qa_sequence":["freeze_contract_and_hashes","replay_original","replay_faults","repair","original_regression","affected_regression","unknown_holdout","check_learner_provenance","receiver_rebuild"],
+  "qa_allowed_results":["met_within_scope","met_with_limitations","not_met"],
+  "promotion_constraints":{"d0_does_not_grant":["D0","L1","L2","real_user_effect","production_reliability","industry_advantage"],"l1_requires":["two_non_isomorphic_sandboxes","independent_QA","unknown_transfer"],"l2_requires":["isolated_real_shape_task","failure_recovery","complete_handoff","independent_evidence"]},
+  "unverified":["real_users","real_model","production","external_provider_contract","cost","professional_expert_review"]
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "from_checkpoint": "tool",
+    "run_id": "run-durable-002",
+    "state": "restarted"
+  },
+  {
+    "reason": "partial_result_hold",
+    "state": "manual_stop"
+  },
+  {
+    "from_checkpoint": "tool",
+    "state": "replay_required"
+  },
+  {
+    "callback_id": "cb-001",
+    "dedupe": "reused",
+    "state": "replayed"
+  },
+  {
+    "checkpoint_manifest_valid": true,
+    "draft_complete": true,
+    "state": "checked"
+  },
+  {
+    "recipient": "QA",
+    "state": "handed_off",
+    "status": "pending"
+  }
+]

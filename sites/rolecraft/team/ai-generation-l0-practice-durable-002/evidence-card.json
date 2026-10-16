@@ -1,0 +1,48 @@
+{
+  "actions": [
+    "atomic checkpoint write",
+    "callback_id dedupe",
+    "crash recovery replay",
+    "failure injection",
+    "holdout event order"
+  ],
+  "checks": [
+    "normal sequence",
+    "crash sequence",
+    "four first failures",
+    "manifest hashes",
+    "single draft"
+  ],
+  "evidence_card_id": "EC-AI-PRACTICE-DURABLE-002",
+  "fixture_hash": "b186af6b08d2a5bf426a5529e19f4465452b620b98c802b8097b404e15d5efd2",
+  "fixture_id": "F-AI-DURABLE-v1",
+  "inputs": [
+    "fixture-source-v1",
+    "run-durable-002"
+  ],
+  "l1_decision": "not_granted",
+  "l2_decision": "not_granted",
+  "learner_id": "local-sandbox-learner",
+  "limitations": [
+    "本地原子JSON不是生产数据库、真实进程崩溃、RPO/RTO、并发一致性或LangGraph checkpoint证明"
+  ],
+  "objective": "在本地原子文件替身中实现幂等 callback、checkpoint 完整性校验和从最后完整工具结果重放。",
+  "outputs": [
+    "run-1",
+    "run-2",
+    "run-3",
+    "holdout",
+    "first_failure"
+  ],
+  "practice_id": "AI-PRACTICE-DURABLE-002",
+  "practice_pack_sha256": "b1cb993bfb6310f5f872c23980ad60a8d6dbc91c64462bbf253302328ffa0f1a",
+  "results": {
+    "failures": "pass",
+    "holdout": "pass",
+    "normal": "pass",
+    "recovery": "pass"
+  },
+  "review_status": "pending_QA",
+  "role_id": "AI",
+  "self_signed": false
+}

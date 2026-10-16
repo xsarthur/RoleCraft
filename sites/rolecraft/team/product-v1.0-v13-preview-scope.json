@@ -1,0 +1,96 @@
+{
+  "report": "product-v1.0-v13-preview-scope",
+  "date": "2026-10-16",
+  "role": "product_manager",
+  "decision": "v13_isolated_preview_contract_confirmed",
+  "approvalBoundary": "not_approved_for_v12_replacement",
+  "previewStatus": "planned_content_complete_pending_cross_functional_qa",
+  "userDirection": {
+    "supports": ["industry_knowledge", "textbook_navigation", "practice", "interview_preparation"],
+    "doesNotPromise": ["employment", "career_certification", "job_competence", "human_expert_approval", "industry_leadership"]
+  },
+  "remoteCurrentState": {
+    "target": "http://111.231.8.78/#learn",
+    "releaseVersion": "rolecraft-1.0",
+    "contentVersion": "textbook-v12",
+    "textbookVersionId": "agent-engineering-v12",
+    "retrievalVersion": "content-retrieval-0.12-v12",
+    "meaning": "remote formal runtime remains v12; v13 textbook preview is not integrated"
+  },
+  "candidateManifest": {
+    "path": "sites/rolecraft/textbooks/v13/assembly-manifest.json",
+    "id": "agent-developer-textbook-v13-isolated-preview",
+    "version": "textbook-v13",
+    "status": "isolated_preview_only",
+    "baseVersion": "textbook-v12",
+    "chapterCount": 30,
+    "assetCount": 62,
+    "contentSetSha256": "8580eba3ee39132c83c3744792e6ea62a86f9f30df6916fdc83939601487b704",
+    "validation": {
+      "allChapterFilesPresent": true,
+      "allImageRefsResolve": true,
+      "v12RuntimeMutated": false,
+      "accountDatabaseMutated": false,
+      "deploymentPerformed": false
+    }
+  },
+  "identifiers": {
+    "productVersion": "local-workbench-textbook-v13-preview",
+    "textbookVersion": "agent-textbook-v13-preview",
+    "scope": "30-units",
+    "previewState": "candidate / pending-cross-functional-qa",
+    "entryLabel": "试读 Agent 教材 v13 优化稿",
+    "returnLabel": "返回 v12 正式教材"
+  },
+  "contract": {
+    "defaultRuntime": "v12",
+    "readOnlyCandidate": true,
+    "recordIsolation": true,
+    "noModelOrExternalCalls": true,
+    "noUploadOrPublish": true,
+    "missingChapterFallback": "本篇暂无 v13 优化稿，继续阅读 v12",
+    "imageBoundary": ["manifest-bound static SVG/PNG", "alt text", "source/status", "no silent substitution"],
+    "mermaidBoundary": ["manifest-bound pre-generated image", "otherwise readable source-code fallback", "no untested runtime rendering"],
+    "codeFoldBoundary": {
+      "defaultCollapsedAtLines": 11,
+      "defaultExpandedAtLines": 10,
+      "summaryMustInclude": ["purpose", "language/runtime", "lineCount", "input/output", "failure/stop", "verificationStatus", "source"],
+      "toggleSideEffects": []
+    }
+  },
+  "acceptance": {
+    "V13-P-01": "met_within_scope_static_manifest",
+    "V13-P-02": "not_met",
+    "V13-P-03": "not_met",
+    "V13-P-04": "not_met",
+    "V13-P-05": "not_met",
+    "V13-P-06": "not_met",
+    "V13-P-07": "partial_static",
+    "V13-P-08": "not_met",
+    "V13-P-09": "not_met",
+    "V13-P-10": "blocked_for_trial"
+  },
+  "openGates": [
+    "v13 preview runtime integration and version binding",
+    "entry/return/deep-link behavior",
+    "v12 record/account/database/cache isolation evidence",
+    "30-unit visual, responsive and accessibility evidence",
+    "content review and current-candidate QA",
+    "Mermaid/image/script-disabled degradation evidence",
+    "real learner understanding, expert, employment/certification and industry evidence"
+  ],
+  "requiredOwners": {
+    "software_engineer": "isolated preview shell, manifest/asset allowlist, renderer, details, degradation, rollback",
+    "designer": "visual hierarchy, image legend, color redundancy, alt text, responsive/accessibility handoff",
+    "content_reviewer": "mechanism, source, image/text consistency and fold-summary review",
+    "qa_engineer": "independent browser, keyboard, screen-reader, narrow viewport, deep-link and isolation verification",
+    "project_manager": "coordinate handoffs, preserve v12, record blockers and retest; no replacement approval from this report"
+  },
+  "sourceReports": [
+    "sites/rolecraft/team/textbook-v13-pm-deployment-handoff.md",
+    "sites/rolecraft/team/textbook-v13-full-optimization-spec.md",
+    "sites/rolecraft/team/product-textbook-v13-preview-scope-v02.md",
+    "sites/rolecraft/team/textbook-v13-full-qa-v03.md",
+    "sites/rolecraft/team/textbook-v13-renderer-qa-v02.md"
+  ]
+}

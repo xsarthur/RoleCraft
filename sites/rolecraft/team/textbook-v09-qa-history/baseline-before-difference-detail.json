@@ -1,0 +1,374 @@
+{
+  "version": "textbook-v09-pathway",
+  "role": "测试工程师",
+  "status": "baseline_recorded; final_v09_qa_pending",
+  "userAuthorization": "PM delegated new user request 推进改动; pre-edit public-static baseline only",
+  "workspace": "/Users/shengxiong/Documents/ChatGPT/一人公司建设",
+  "readIntervalUtc": {
+    "startedAt": "2026-10-11 00:43:13 UTC",
+    "completedAt": "2026-10-11 00:43:33 UTC"
+  },
+  "method": {
+    "tool": "shasum",
+    "argv": [
+      "shasum",
+      "-a",
+      "256",
+      "sites/rolecraft/dist/textbook-content-review-data.js",
+      "sites/rolecraft/dist/textbook.js",
+      "sites/rolecraft/dist/index.html",
+      "sites/rolecraft/dist/styles.css",
+      "sites/rolecraft/dist/product-audit-data.js",
+      "sites/rolecraft/dist/textbook-data.js",
+      "sites/rolecraft/dist/product-gates-data.js",
+      "sites/rolecraft/dist/creation-path-data.js",
+      "sites/rolecraft/dist/generation-curriculum-data.js",
+      "sites/rolecraft/dist/generation.js",
+      "sites/rolecraft/dist/textbook-pilot.js",
+      "sites/rolecraft/dist/textbook-v05-data.js",
+      "sites/rolecraft/dist/app.js",
+      "sites/rolecraft/dist/textbook-v05-content-review-data.js",
+      "sites/rolecraft/dist/curriculum-data.js",
+      "sites/rolecraft/server/CONTRACT.md",
+      "sites/rolecraft/server/README.md",
+      "sites/rolecraft/server/index.mjs",
+      "sites/rolecraft/server/dev-check.mjs",
+      "sites/rolecraft/server/generation/dev-check-results.json",
+      "sites/rolecraft/server/generation/index.mjs",
+      "sites/rolecraft/server/generation/dev-check.mjs",
+      "sites/rolecraft/textbooks/agent-control-loop-v07.md",
+      "sites/rolecraft/textbooks/v08/e04.md",
+      "sites/rolecraft/textbooks/v08/e01.md",
+      "sites/rolecraft/textbooks/v08/p01.md",
+      "sites/rolecraft/textbooks/v08/e05.md",
+      "sites/rolecraft/textbooks/v08/f02.md",
+      "sites/rolecraft/textbooks/v08/agent-engineering-textbook.md",
+      "sites/rolecraft/textbooks/v08/README.md",
+      "sites/rolecraft/textbooks/v08/c02.md",
+      "sites/rolecraft/textbooks/v08/c03.md",
+      "sites/rolecraft/textbooks/v08/e02.md",
+      "sites/rolecraft/textbooks/v08/p02.md",
+      "sites/rolecraft/textbooks/v08/c01-solution-selection.md",
+      "sites/rolecraft/textbooks/v08/f01.md",
+      "sites/rolecraft/textbooks/v08/e03.md",
+      "sites/rolecraft/team/textbook-v07-qa.json",
+      "sites/rolecraft/team/textbook-v08-qa.json",
+      "sites/rolecraft/team/textbook-v08-content-review.json",
+      "sites/rolecraft/team/textbook-v07-spec.md",
+      "sites/rolecraft/team/textbook-v07-author.md",
+      "sites/rolecraft/team/textbook-v08-content-review.md",
+      "sites/rolecraft/team/textbook-v07-qa.md",
+      "sites/rolecraft/team/textbook-v08-author-core.md",
+      "sites/rolecraft/team/textbook-v08-spec.md",
+      "sites/rolecraft/team/textbook-v07-content-review.md",
+      "sites/rolecraft/team/textbook-v08-qa.md",
+      "sites/rolecraft/team/textbook-v08-manifest.json",
+      "sites/rolecraft/team/textbook-v08-author-core-assembly-manifest.json",
+      "sites/rolecraft/team/textbook-v07-content-review.json",
+      "sites/rolecraft/team/textbook-v08-author-engineering.md",
+      "AGENTS.md",
+      "sites/rolecraft/team/TEXTBOOK_WRITING_STANDARD.md",
+      "sites/rolecraft/team/product-gates.json"
+    ],
+    "exitCode": 0,
+    "evidence": "baseline-shasum.txt",
+    "noTextbookOrApplicationCodeExecuted": true,
+    "noBehaviorCodeRerun": true
+  },
+  "applicationWhitelist": {
+    "fileCount": 22,
+    "whitelistOrigin": "v08 final-application-baseline exact explicit public paths; no runtime/private/config/env/cache/log/database scan",
+    "records": [
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/dist/textbook-content-review-data.js",
+        "sha256": "cb2fb21a45ba527142d121d965230b972b769edd80bfd4b95aaa6dcea4477b76"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/dist/textbook.js",
+        "sha256": "0844889099d6a55475360a587964cb7c427e9fd1188be6e3e2810420f92f3a1c"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/dist/index.html",
+        "sha256": "80eb5e53d15cb5ec6a451d296fa30c9f546ae4b8661058a0cc125a51cc378bfe"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/dist/styles.css",
+        "sha256": "33b5375c9c4d8af3f297bf3c64856291da5b4183f7eb67db2c5a6542201629a1"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/dist/product-audit-data.js",
+        "sha256": "83f71b9865689c10efc350140c6ad63df344fc6606ef2e37511b39d16a539f0b"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/dist/textbook-data.js",
+        "sha256": "51a9a22a388fafd042af4dbe7410564b8874d4a360153e1325d0c7164b3f9902"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/dist/product-gates-data.js",
+        "sha256": "a331ad6c46adc7d463e9b56d918a8f96765ebaecfa1ff6c07c2c5e6c19e09b0e"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/dist/creation-path-data.js",
+        "sha256": "24a814d9b098e23c698b924924f209dbf14bb5637d9b7cd0ccbe6200d721d2c4"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/dist/generation-curriculum-data.js",
+        "sha256": "3864bf34d4f15e89a1e8c44b692272d3febb387a704371703886a7621ce1cdbc"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/dist/generation.js",
+        "sha256": "4729f5caad5b17638b73f2cb7744a7aff1015e6a8e97f05b0efd3c5146c09b40"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/dist/textbook-pilot.js",
+        "sha256": "c6d122bcbdd68ee0a3aa6e9f86a7af882f465f382ae297ef3c0d4c5d8d17a8f8"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/dist/textbook-v05-data.js",
+        "sha256": "ed8a39e8e6bc5cb4a36184a702b4241b5864f3da68ebea18f26026b15beb2358"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/dist/app.js",
+        "sha256": "a57a8281703b85d227a66c03814a9898e555390b1f3458391faa6f87204047eb"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/dist/textbook-v05-content-review-data.js",
+        "sha256": "9c061ad593af7d4c64e0f020a0c2a0f8d36811a621ece9cf8cd2c4db8a848d8c"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/dist/curriculum-data.js",
+        "sha256": "c3c93435d4417792182c1f98b450a1e1a5c23aa9a8136ddb03086570c03f1442"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/server/CONTRACT.md",
+        "sha256": "feb23aef7f3de4f86f40db52a72356197f204e8fdfb3f7542ddebfd05e8de33f"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/server/README.md",
+        "sha256": "f70de336bed80cf155da316e01a272a2595b0ebe083121574b6299bcad9052d4"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/server/index.mjs",
+        "sha256": "f111fa0f17389a0b586d34f75748b844fa042f9ab88985189c77a30563daf0d8"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/server/dev-check.mjs",
+        "sha256": "e23d015a3a28e07f5822a76fd7019f258451b3f1a31fad547f408e1b878e5bcd"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/server/generation/dev-check-results.json",
+        "sha256": "30c9c0a0171c31ae73047c98ced209bdaa8d9d0890e7e6db9e892cea53a10e87"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/server/generation/index.mjs",
+        "sha256": "52ef3ffefe3028187192fa7712693a1929949403f651daaeb09999a7a12d5beb"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/server/generation/dev-check.mjs",
+        "sha256": "f032c63ff03d89b724eb5ba9645cf644c94a8004f7f9fe038bc42db8415892b0"
+      }
+    ],
+    "comparisonWithV08Final": {
+      "reference": "sites/rolecraft/team/textbook-v08-qa-history/final-application-baseline.json",
+      "changed": [],
+      "sameCurrentHashes": true,
+      "notInheritedProgramAcceptance": true
+    }
+  },
+  "frozenTextbookAndNavigation": {
+    "fileCount": 15,
+    "records": [
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/agent-control-loop-v07.md",
+        "sha256": "996e5aeb084b66405a0dd1023a375743d2e359c335b29517ac923f9f6a033c5c"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e04.md",
+        "sha256": "a4d966da379b5e2c2bacb5db662beb040f9004ec12a0c020100a9bad3d17106c"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e01.md",
+        "sha256": "a9c6b72345f35acea039fce140908876bed095edcc517ded3acec701bec99e60"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p01.md",
+        "sha256": "d067573c93e44e0ab6a0b44f69916f52a89f2776b1bfd6a7f3098dd4ed648342"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e05.md",
+        "sha256": "3d3fa17284a018cfed61d2c8b40e9b52b60eace5afb04544849fd19c69a8f03b"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f02.md",
+        "sha256": "bddc63842ffdc846127ef97519387372aaf92f24536a0c9b7f0b46335a041277"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/agent-engineering-textbook.md",
+        "sha256": "f68f553bcd5fd6a86ef988fd780d5433cd305413111c5c4d08966a7fc39b3816"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/README.md",
+        "sha256": "de2e2c2c1c5edaba7a9fa5a9ed198a943dc1f50fd2cde794f56577aca87027f6"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c02.md",
+        "sha256": "9fe18c2ffaae3740425e82e7196b9fa61acac85d596cce76e109e7b41c7a196a"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md",
+        "sha256": "83f22cddfc2e6958e71a1ae9464f1342d3744f995985c75870c9630e2e884cfe"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e02.md",
+        "sha256": "6f9be813e460401ef0b25bae7d56a722ba53c53fb22adc23e713fd3ffd047333"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p02.md",
+        "sha256": "05aff19b4ff1a33c72ffa854626b528a62cecba74cf25b281f18bf2572c5eee7"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c01-solution-selection.md",
+        "sha256": "4d052f25f586c885cec380abc7a697761a0915c41a8b1391a5550246172e23f9"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f01.md",
+        "sha256": "f106810ec9d99b5a2946cc87f0afe4a6b6947ecae8614c62d167007e8b84dc73"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e03.md",
+        "sha256": "8cfd5fe6e8ee73258ce83d3baa347b693ff632fcc1f670fecb9b275892e02761"
+      }
+    ],
+    "v07ExpectedSha256": "996e5aeb084b66405a0dd1023a375743d2e359c335b29517ac923f9f6a033c5c",
+    "v07CurrentMatchesExpected": true
+  },
+  "priorReportsAndSpecifications": {
+    "fileCount": 15,
+    "records": [
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v07-qa.json",
+        "sha256": "aef52d2ac96a013ccc124422c3c93c68883645387443f1a6432f952c9a33fa44"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-qa.json",
+        "sha256": "6cbd6700d7ec5059342672b52ec6549a51115b7513e1dc739666a4f28f7d3f62"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-content-review.json",
+        "sha256": "2fdd407b03e68bc867d63055dac9bfcb04540e28bdf8cdde62da62216546a1b1"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v07-spec.md",
+        "sha256": "26afabf21c961be0060783771491c40e554685e5b03173dd52f95fca0723206f"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v07-author.md",
+        "sha256": "ff02bac2860de388945463f9d39496aa97cb5f6ac6d0d95e0d58f7afecaf52bd"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-content-review.md",
+        "sha256": "f358e163eb9777a932465ad3bb4038ac574295024d3f9c55af307c3c6db7d5d4"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v07-qa.md",
+        "sha256": "0dafa93fdfca92eba757e647d32b9f98188795c4f9b364486f402108fd9a5de3"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-author-core.md",
+        "sha256": "558e229d119f92374aef5d209f5a900b577b3db48f24ae1ca5e2154e3415515c"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-spec.md",
+        "sha256": "bbaa65200bf25e9edb9900129f8eb3ba0485147da887a7783a1f1c73ad50d397"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v07-content-review.md",
+        "sha256": "2f114ac68287943682ce9e7cc468a43342ab216cd092477257692097dc722182"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-qa.md",
+        "sha256": "c478ed8e3f5d887b4eb5e6dce9c898515ba445696e1683c585c1aad72233fde7"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-manifest.json",
+        "sha256": "a78e6d857a8bfcd24f27420133357f45ac2afdc87b57ee1a374e96a1c694c122"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-author-core-assembly-manifest.json",
+        "sha256": "a6bfd1fa25fa0fe44929398abd9c043b198a529071b6b4a9226424d43a9c9eab"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v07-content-review.json",
+        "sha256": "1c85c7d5126a33c7c0622cc11dfba62cbf1949b088a95c2cb72857071195c831"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v08-author-engineering.md",
+        "sha256": "cf820ade894129236f6ed0576f65df426812b5e1b058a7622f4caa0d1ba831b3"
+      }
+    ],
+    "qualityConclusionNotInherited": true
+  },
+  "guidanceAndGates": {
+    "fileCount": 3,
+    "records": [
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/AGENTS.md",
+        "sha256": "86aa11ba4ceb599dfe3fdf0eaa9f4e2372dcacf842c9deed4075e8b87f18e1f5"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/TEXTBOOK_WRITING_STANDARD.md",
+        "sha256": "46826414794822b5e2c836edad68ba6122f8e551d7669bcc8917bb315f5a6aa1"
+      },
+      {
+        "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/product-gates.json",
+        "sha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06"
+      }
+    ]
+  },
+  "oldFreezeComparison": {
+    "reference": "sites/rolecraft/team/textbook-v08-qa-history/final-version-binding.json",
+    "differences": [
+      {
+        "path": "sites/rolecraft/textbooks/v08/agent-engineering-textbook.md",
+        "previousFrozenSha256": "fd9f295bf112e13271b98f7e5c004d6099b335781d23c7bd6269b24768d717e5",
+        "currentSha256": "f68f553bcd5fd6a86ef988fd780d5433cd305413111c5c4d08966a7fc39b3816"
+      }
+    ],
+    "scope": "Recorded current public static hashes compared with archived v08 freeze; no new content quality review and no change attribution."
+  },
+  "preexistingDifferenceHandling": {
+    "status": "reported_to_PM; not_attributed_to_v09_author",
+    "preserveCurrentHashAsBaseline": true,
+    "notRebindOldV08QualityConclusion": true,
+    "noSourceModificationByQA": true
+  },
+  "totalRecordedFiles": 55,
+  "scope": {
+    "thisTurn": "Public static hash capture and initial QA scope only; no v09 quality/learning-path verdict",
+    "laterWhenPMResumes": [
+      "current v09 navigation and all local links",
+      "prerequisite ordering and routes against actual course specification",
+      "new assembly and chapter source correspondence",
+      "split content destinations and preservation of declared old material boundaries",
+      "only affected new safe examples after full code read, if present"
+    ],
+    "applicationAndOldBooksRemainReadOnly": true
+  },
+  "exclusions": [
+    ".env",
+    "private config",
+    "runtime and cache",
+    "business databases",
+    "real business or provider requests",
+    "website tests",
+    "deployment/upload/publication",
+    "blanket rerun of old textbook behaviors"
+  ],
+  "limits": [
+    "Hashes record only file bytes during this read interval, not every moment or atomic snapshot proof.",
+    "Application list covers the explicit22 public static paths only.",
+    "v09 is not accepted by this preparatory capture; no inherited v08 quality/user/human/learner/industry/production conclusion.",
+    "Old v08 combined-book difference is detected before this baseline and only reported; cause and author are not inferred."
+  ],
+  "fullProductStatus": "not_met; no new product-goal evidence acquired by baseline"
+}

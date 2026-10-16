@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-11T23:07:42.698146+08:00",
+  "python": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "frameworks": {
+    "langgraph": "1.2.4",
+    "langgraph-checkpoint": "4.1.1",
+    "langchain-core": "1.4.0"
+  },
+  "safety": "先读全源码；固定有限夹具，无模型/网络/数据库/危险代码执行；临时工作目录；真实框架只内存checkpointer",
+  "runs": [
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "-B",
+        "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n01-runtime-boundaries.py"
+      ],
+      "cwd": "isolated temporary directory",
+      "sha256": "a156424a76bddc73cb831bda826ea676facce8191311bc0ca15f372f4deab75a",
+      "exit": 0,
+      "stdout": "{\"async\": {\"active\": 0, \"cleaned\": [0, 1, 2], \"peak\": 2, \"results\": {\"0\": \"OK\", \"1\": \"OK\", \"2\": \"TIMEOUT\"}}, \"memory_fixture\": {\"after_clear_delta_bytes\": -269792, \"retained_bytes\": 271120}, \"status\": \"SELF_CHECK_OK\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "-B",
+        "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n02-memory-routing.py"
+      ],
+      "cwd": "isolated temporary directory",
+      "sha256": "400452b186375011da69c0c58b3917bb0cdd9b54e2e14e7b0f2d09ed5b584249",
+      "exit": 0,
+      "stdout": "{\"invalid_outputs\": [\"o1\", \"o2\"], \"memory_statuses\": {\"m1\": \"superseded\", \"m2\": \"source_invalid\", \"m3\": \"expired\", \"m4\": \"deleted\"}, \"routing\": {\"approval\": \"RECHECK_REQUIRED\", \"epoch\": 2, \"revision\": 2, \"status\": \"ACTIVE\", \"task_id\": \"issue\"}, \"status\": \"SELF_CHECK_OK\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "-B",
+        "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n03-plan-execution.py"
+      ],
+      "cwd": "isolated temporary directory",
+      "sha256": "211eabbd5fc5da020e8909742c0f7bf174e54478b07ea792f1daea0e1866db80",
+      "exit": 0,
+      "stdout": "{\"after_change\": {\"draft\": \"stale\", \"report\": \"done\", \"rule\": \"stale\"}, \"external_effect_after_change\": \"EFFECT_RECHECK\", \"inflight_unknown_recheck\": true, \"no_effect_can_stale\": true, \"order\": [\"report\", \"rule\", \"draft\"], \"status\": \"SELF_CHECK_OK\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "-B",
+        "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n04-tool-catalog.py"
+      ],
+      "cwd": "isolated temporary directory",
+      "sha256": "194e7d3c033357e781069973090605f21831429ee1419d4ba40d0508f66bf2c3",
+      "exit": 0,
+      "stdout": "{\"boundary\": \"fixture gates only; no OAuth or MCP transport\", \"candidates\": [\"search_reports\", \"read_report\"], \"catalog_size\": 103, \"status\": \"SELF_CHECK_OK\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "-B",
+        "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/examples/n05-index-lifecycle.py"
+      ],
+      "cwd": "isolated temporary directory",
+      "sha256": "a1364480c2d34b97208d75bd0358faeebf75d80f6f1f101faf0469654c44906b",
+      "exit": 0,
+      "stdout": "{\"control_gate_cases\": 5, \"delta\": {\"add\": 1, \"delete\": 2, \"keep\": 0}, \"revoked_results\": 0, \"status\": \"SELF_CHECK_OK\", \"unverified_ocr_excluded\": true}\n",
+      "stderr": ""
+    }
+  ]
+}

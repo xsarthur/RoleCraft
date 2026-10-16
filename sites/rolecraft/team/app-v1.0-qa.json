@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "rolecraft-v1-qa-1",
+  "report": "app-v1.0-qa.md",
+  "auditedAt": "2026-10-16T00:00:00+08:00",
+  "reviewerRole": "qa-engineer",
+  "scope": "product-v1.0-scope.md V1-01..V1-09",
+  "sourceBaseline": "local-workbench-0.15-p0",
+  "overall": "insufficient",
+  "commands": {
+    "nodeCheck": [
+      "node --check sites/rolecraft/server/index.mjs",
+      "node --check sites/rolecraft/dist/app.js",
+      "node --check sites/rolecraft/dist/learning-workbench.js",
+      "node --check sites/rolecraft/dist/learning-experience-v13.js"
+    ],
+    "nodeCheckResult": "pass",
+    "staticAssertions": "pass",
+    "serviceStartedThisRun": false,
+    "browserExecutedThisRun": false,
+    "formalDatabaseTouched": false,
+    "paidOrExternalModelCalled": false
+  },
+  "sourceHashes": {
+    "server/index.mjs": "fad1ba848029ee6dfdf41a60d866df9a9d5561ee231689923990b61fe1d2ecfd",
+    "dist/index.html": "de8647133091a34e767816c02cc47d2d792d88ff41b5e851a1b6002bf2dc817b",
+    "dist/app.js": "68415ce3c8e2695cbb7807fb4ddb02abf929c76ab9b22563e791081002817289",
+    "dist/learning-workbench.js": "0c923df440467a12583431a9fc34b3a2459569622534f0bd8d604abbbcded4f4",
+    "dist/learning-experience-v13.js": "ff4ff28653553c0c61ad2050629a8a12d54ae0869fdbff8054ea80291f7661bf",
+    "team/product-v1.0-scope.md": "d99cc91e1ee57170f0255841b2533802b0e6738ac58117a2f76e3d6808297af9"
+  },
+  "priorIndependentEvidence": {
+    "transport": {
+      "address": "127.0.0.1:47231",
+      "routes": ["health", "catalog", "static home/resources"],
+      "releaseVersion": "rolecraft-1.0",
+      "header": "X-Rolecraft-Release-Version: rolecraft-1.0",
+      "scope": "isolated TCP receipt; transport only"
+    },
+    "node26": {
+      "result": "runtime rejected before model initialization",
+      "scope": "prior retrieval runtime guard"
+    },
+    "browser": {
+      "result": "not executed",
+      "scope": "no browser evidence"
+    }
+  },
+  "criteria": [
+    {"id":"V1-01","status":"insufficient","evidence":"Static current-task branches/CTA present; no current-version browser state/recovery evidence."},
+    {"id":"V1-02","status":"insufficient","evidence":"Source has published/clarification/no-match/unavailable/confirm branches; no real HTTP/UI career-boundary run or restart-idempotency evidence."},
+    {"id":"V1-03","status":"insufficient","evidence":"Source result card and service fields present; no learning-query HTTP receipt or page-card binding evidence."},
+    {"id":"V1-04","status":"insufficient","evidence":"Static nav/pages present and no placeholder string found; no click/refresh/back/narrow-browser evidence."},
+    {"id":"V1-05","status":"insufficient","evidence":"Project/evidence status UI present; no isolated exercise submission/recovery/feedback run."},
+    {"id":"V1-06","status":"insufficient","evidence":"Static client/server identity plus prior health/catalog/static TCP release header; no full current index/question/build-manifest/page identity chain."},
+    {"id":"V1-07","status":"insufficient","evidence":"ARIA/responsive hooks statically present; no browser keyboard/screen-reader/zoom/viewport/soft-keyboard evidence."},
+    {"id":"V1-08","status":"insufficient","evidence":"Source status branches and fallback copy present; no fixed counterexample HTTP responses/source-hash receipt or stale/late-response run."},
+    {"id":"V1-09","status":"pass","scope":"static_transport_only","evidence":"Local-candidate wording, provider boundary and local-only prior TCP address verified; no external/public claims tested."}
+  ],
+  "limitations": [
+    "This is a quick independent source/transport QA, not a full 1.0 release sign-off.",
+    "V1-01..V1-08 require fresh current-source TCP/browser evidence after freeze.",
+    "No conclusion about learning effect, expert review, employment, production reliability, real model generation, or operating economics."
+  ]
+}

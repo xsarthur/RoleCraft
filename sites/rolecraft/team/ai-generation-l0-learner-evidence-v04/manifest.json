@@ -1,0 +1,50 @@
+{
+  "diagnostic_id": "D0-AI-20261015-001",
+  "fixture_hash": "5dc9f33e3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+  "qa_status": "pending",
+  "self_signed": false,
+  "external_action": null,
+  "l1_decision": "not_granted",
+  "l2_decision": "not_granted",
+  "artifacts": {
+    "learner_raw.json": {
+      "bytes": 3840,
+      "sha256": "787ada15df215a31ab91b1f2125c9c07e42e1165c302a2df3b48fc7adc8b5372"
+    },
+    "u-ai-l0-001/execution_log.json": {
+      "bytes": 572,
+      "sha256": "f654ef05b7d02fb059581306c08a2d2d1dc881d1aa8d05f3ae21d6cebae4add2"
+    },
+    "u-ai-l0-001/baseline.json": {
+      "bytes": 145,
+      "sha256": "d333928a3cd1a8dae2c52677d54e6531994a43c65a38c9833bc14ec845a5df48"
+    },
+    "u-ai-l0-001/first_failure.json": {
+      "bytes": 225,
+      "sha256": "5a1fab1e704e898ae903ea49ebd6c0c97c31c36a18706298eac4683a43e9778c"
+    },
+    "u-ai-l0-001/regression.json": {
+      "bytes": 203,
+      "sha256": "09a43d9de20fc28f49c4b40c35365b6153877311313cc777af04fcc0a46dfed2"
+    },
+    "u-ai-l0-001/holdout.json": {
+      "bytes": 170,
+      "sha256": "54fed271fbf9f09f809f90ad333192853c9f244bbb23eef5e2b5fe4de833f5f0"
+    },
+    "quality/demo-v02-qa.json": {
+      "bytes": 5803,
+      "sha256": "1bdab3d604227b9665f1e61b09082ea08f28172545da2649fd4df376ebee4180"
+    },
+    "quality/b-denial-qa.json": {
+      "bytes": 1864,
+      "sha256": "dcc6ea4a4b831888c73751b7551736c00e88dfc453d3ce9d7c7148f7c08e2a2c"
+    },
+    "quality/d6-failure-sample.json": {
+      "bytes": 657,
+      "sha256": "7291299ca3aa1bf8e6fc6ebdd97d9b4504c99d73527451fc524adbf22a85a533"
+    }
+  },
+  "d0_status": "not_assessed",
+  "l0_status": "not_assessed",
+  "human_receipt": "pending"
+}

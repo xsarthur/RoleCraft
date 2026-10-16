@@ -1,0 +1,41 @@
+{
+  "review_id": "uiux-v03-va03-va04-content-review-20261016",
+  "reviewer_role": "内容审校员",
+  "reviewer_identity": "AI技术内容审校，非真人视觉设计专家、无障碍专家、法务、测试工程师或真实学习者",
+  "source_version": "uiux-design-v03",
+  "conclusion": "reviewed_with_limitations",
+  "scope_decision": "met_within_scope",
+  "scope": "静态核对VA03/VA04的机制、取舍、失败模式、练习、visual_downgrade边界与交付责任；不改正文、不执行代码或授职业等级。",
+  "sources": [
+    {"path":"sites/rolecraft/textbooks/uiux-design-v03/VA03-visual-language-system.md","sha256":"a405f516fe0126af45c7f8db7033f88082b8b0f0743811a7543c69116b5253b8"},
+    {"path":"sites/rolecraft/textbooks/uiux-design-v03/VA04-polish-motion-delivery.md","sha256":"6965c175f6df9b7b3ce6a404aa86da90b747917c73c6a235ed6c18ae0cda0f2c"}
+  ],
+  "checks": {
+    "va03_mechanisms_tradeoffs_failure": "met_with_limitations",
+    "va03_practice_and_visual_downgrade": "met_with_limitations",
+    "va04_mechanisms_tradeoffs_failure": "met_with_limitations",
+    "va04_practice_and_visual_downgrade": "met_with_limitations",
+    "role_and_evidence_boundaries": "met_within_scope"
+  },
+  "findings": [
+    "VA03以命题→Token→组件状态合同→复验组织内容，四态与未知回执边界清楚；方向A/B、六层协同、例外治理和只换皮失败轨迹具有可操作取舍。",
+    "VA04覆盖精修分轮、动效规格、减少动效、字体回退、性能、多端国际化及工程合同，失败轨迹和L1-L3练习能回扣状态与证据。",
+    "两章均明确visual_downgrade，不把文字矩阵、伪代码或状态表冒充视觉稿、浏览器实测或合规证明。",
+    "当前证据仍是静态教学内容；量化性能门槛、目标产品Token绑定、真实视觉资产、读屏/浏览器/国际化运行和实训评分证据缺失。"
+  ],
+  "limitations": [
+    "未运行浏览器、CSS/脚本、动效、字体回退、性能或辅助技术测试。",
+    "未验证WCAG适用成功标准、RTL/多语言真实布局、低端设备/慢网和生产兼容性。",
+    "未核字体/图标/素材许可、品牌批准或法务；未进行真人学习者、专家、用户理解或职业能力验证。",
+    "未提供可审阅方向板、状态板、动效帧/录屏；练习完成质量与评分者一致性未验证。"
+  ],
+  "required_followup": [
+    "设计师补方向板、状态板和动效可审阅资产；工程绑定实际Token、字体、图标与停止条件。",
+    "测试工程师按默认/深色/灰度/高对比/200%/窄屏/键盘/读屏/减少动效/RTL矩阵独立复验。",
+    "产品与测试补性能、响应和设备/网络样本的目标门槛及可复算证据。",
+    "实训评估员补练习评分量规、陌生任务和学习者证据；复验前保持reviewed_with_limitations。"
+  ],
+  "static_only": true,
+  "learner_files_modified": false,
+  "level_decision": "no_level_granted"
+}

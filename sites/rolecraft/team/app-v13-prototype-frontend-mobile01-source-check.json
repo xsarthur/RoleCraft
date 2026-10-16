@@ -1,0 +1,19 @@
+{
+  "version": "app-v13-prototype-frontend-mobile01-source-check-1",
+  "issueId": "UI2-MOBILE01",
+  "scope": "engineering appended CSS source scope and delimiter/constraint check only; full CSS parser unavailable, no computed browser layout",
+  "frozenSha256": "d190bdc09f0fb9b3ae4eb308cd52b358c935f69d3b9b93ae16ea4418789654bd",
+  "repairedSha256": "87d7c3207eb615022b8298e2fa955f72227672c71d7d8fab47c70cad40dd15fd",
+  "patchSha256": "5d188d186d4d5b1829ca0f344459548d10bca9b41507180fd3f1d1b255f825af",
+  "facts": {
+    "onlyAppendExactPatch": true,
+    "selectorsRestrictedToFilterArea": true,
+    "singleColumnOnlyAtOrBelow480": true,
+    "controlsMinimum44px": true,
+    "fontAndLongProseUnmodified": true,
+    "noNewOverflowMaskOrHiddenContent": true
+  },
+  "real390ViewportVerified": false,
+  "wideViewportVerified": false,
+  "currentDistWrittenByThisTask": false
+}

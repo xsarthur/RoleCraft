@@ -1,0 +1,143 @@
+{
+  "qa_record_id": "AI-REAL-LEARNER-D0-EXEC-RUN-QA-20261016-FINAL-V2-001",
+  "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "artifact_id": "AI-REAL-LEARNER-D0-EXEC-RUN-20261016-001",
+  "supersedes": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-qa-final.json",
+  "scope": "独立复核最终冻结的四场景本地隔离执行工件；不冒充学习者本人执行",
+  "status": "met_with_limitations",
+  "decision": "met_with_limitations",
+  "evidence_root": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts",
+  "isolation": {
+    "network": "disabled",
+    "real_model": false,
+    "cloud": false,
+    "paid_api": false,
+    "real_user_data": false,
+    "external_action": null,
+    "learner_execution": false,
+    "human_receipt_pending": true
+  },
+  "fixture": {
+    "fixture_id": "F-AI-SOURCE-CLAIM-v1",
+    "fixture_sha256": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+    "fixture_path": "sites/rolecraft/team/ai-generation-l0-practice-source-001/frozen_input.json",
+    "fixture_file_sha256": "f6cc25edad6403c052f66167adecf666d770f12b82170f2fc996119ef118f446",
+    "input_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/input-snapshot.json",
+    "input_bytes": 1474,
+    "input_sha256": "33be9e47edd1c9652b59d1bdac0e1fbe33a5f288f110eda1ff114c175f881939",
+    "hash_scope_note": "fixture_sha256 是 root.fixture 规范化对象摘要；fixture_file_sha256 是完整 frozen_input.json 文件摘要；对象范围不同。"
+  },
+  "case_results": {
+    "A-normal": {
+      "status": "pass_within_local_scope",
+      "draft_status": "draft_ready_for_review",
+      "stop_before_draft": false,
+      "first_failure": null,
+      "claims_bound": 2,
+      "source_quads": {
+        "document_id": "doc-A-refund-v2",
+        "source_version": "refund-policy-v2",
+        "location": "fixture://docs/doc-A-refund-v2#rules",
+        "hash": "4a1fa4040c1c2840d176fc35da81c5df23984e68e44ed7e299e9cba2a6a1361d"
+      },
+      "unknowns_preserved": true,
+      "handoff_recipient": "QA",
+      "external_action": null
+    },
+    "B-tenant-denied": {
+      "status": "pass_within_local_scope",
+      "first_failure": "SOURCE_SCOPE_DENIED",
+      "stop_before_draft": true,
+      "draft": null,
+      "handoff": null,
+      "external_action": null,
+      "tool_receipt": {
+        "actor_tenant": "A",
+        "requested_tenant": "A",
+        "document_id": "doc-B-private-v1",
+        "document_tenant": "B",
+        "status": "rejected",
+        "code": "SOURCE_SCOPE_DENIED"
+      },
+      "unvisited_sources": ["doc-B-private-v1 text"],
+      "no_B_body_in_generated_artifacts": true,
+      "B_body_scan_scope": "receipts, case outputs, EvidenceCards, execution log, environment, manifest, comparison and runner files"
+    },
+    "source-missing": {
+      "status": "pass_within_local_scope",
+      "first_failure": "SOURCE_MISSING",
+      "stop_before_draft": true,
+      "draft": null,
+      "handoff": null,
+      "external_action": null,
+      "unknowns_or_blocked": ["required source unavailable"],
+      "alternate_source_used": false
+    },
+    "source-conflict": {
+      "status": "pass_within_local_scope",
+      "first_failure": "SOURCE_VERSION_MISMATCH",
+      "stop_before_draft": true,
+      "draft": null,
+      "handoff": null,
+      "external_action": null,
+      "conflict_keys": ["source_version", "content_hash"],
+      "expected_and_observed_conflict_recorded": true,
+      "conflicting_alternate_unvisited": true
+    }
+  },
+  "evidence_cards": {
+    "count": 8,
+    "required_fields_present_on_all_cards": true,
+    "raw_stdout_stderr_per_case_run": true,
+    "command_time_environment_per_case_run": true,
+    "input_output_bytes_and_sha256_verified": true,
+    "exit_code_verified": true,
+    "external_action_all_null": true,
+    "human_receipt_pending_all_true": true,
+    "learner_execution_all_false": true
+  },
+  "replay": {
+    "run_ids": ["run-1", "run-2"],
+    "all_four_cases_repeated": true,
+    "comparison_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/run-comparison.json",
+    "byte_equal": {
+      "A-normal": true,
+      "B-tenant-denied": true,
+      "source-missing": true,
+      "source-conflict": true
+    },
+    "first_failure_equal": {
+      "A-normal": true,
+      "B-tenant-denied": true,
+      "source-missing": true,
+      "source-conflict": true
+    },
+    "external_action_both_null": {
+      "A-normal": true,
+      "B-tenant-denied": true,
+      "source-missing": true,
+      "source-conflict": true
+    }
+  },
+  "hash_manifest": {
+    "path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/SHA256SUMS",
+    "sha256sum_check_exit_code": 0,
+    "all_entries_match": true,
+    "entry_count": 40
+  },
+  "repair_regression": {
+    "pre_fix_record": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-qa-pre-fix.json",
+    "pre_fix_failure": "raw_byte_replay_mismatch_due_to_run_id",
+    "hash_manifest_failure": "runner SHA mismatch observed before final freeze; preserved as historical first-failure record",
+    "repair": "移除确定性 stdout 的 run_id，补充 document_tenant=B，并从更新后的 input-snapshot.json 重跑四 case；重新生成 SHA256SUMS",
+    "post_fix_result": "四 case byte_equal=true；首失败码、external_action=null、所有 EvidenceCard 字段和 SHA256SUMS 均复验通过"
+  },
+  "unverified": [
+    "学习者本人执行、本人签收和真人审批；本轮 learner_execution=false，human_receipt_pending=true",
+    "真实供应商来源 API、真实模型引用忠实度、生产权限、缓存/并发/进程恢复、未知任务迁移",
+    "职业能力、D0/L1/L2 或生产权限；本地夹具 QA 不授等级",
+    "source-conflict 采用 expected_source_version 与 expected_content_hash 注入冲突，未访问实际冲突正文；本轮证明版本/hash 冲突首失败停线"
+  ],
+  "next_action": "保留本轮最终收据、历史 hash mismatch、首失败与修复复验；如进入学习者验收，须由学习者本人按冻结合同提交实际入口、原始 stdout/stderr 和签收，再由 QA 独立复跑。"
+}

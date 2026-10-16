@@ -1,0 +1,215 @@
+{
+  "schema": "rolecraft.textbook.qa.v3",
+  "artifact": "AI 时代 UI/UX 设计入门",
+  "version": "v0.1-r3",
+  "at": "2026-10-14T00:00:00+08:00",
+  "role": "测试工程师",
+  "scope": [
+    "current uiux-design-v01 README/textbook/source map/SVG/author v3",
+    "canonical uiux-textbook-course-architecture.md/.json",
+    "repaired research JSON and fix record"
+  ],
+  "conclusion": "met_with_limitations",
+  "full_career_goal": "not_met",
+  "baseline": {
+    "files": [
+      {
+        "path": "sites/rolecraft/textbooks/uiux-design-v01/README.md",
+        "description": "当前入口、12章与26单元映射",
+        "bytes": 6377,
+        "sha256": "d19cd6678fd094822330d98f2801c40371a1010df4e8e7dee4ea1f5a3324def8",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/textbooks/uiux-design-v01/uiux-design-textbook.md",
+        "description": "主正文",
+        "bytes": 37512,
+        "sha256": "a5406a6db125c3174af7d6228d0fcd57c9030131c4bc321325abf483278ccbd4",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/textbooks/uiux-design-v01/sources-and-interview-map.md",
+        "description": "来源与题型映射",
+        "bytes": 6586,
+        "sha256": "5bf979843e2e97e743afad840becca1cd9dca44f828c7f25d00d3a57428c1229",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/textbooks/uiux-design-v01/author-handoff-v3.md",
+        "description": "作者 v3 交接",
+        "bytes": 1442,
+        "sha256": "c33a9e31f82c10cdceb5f97fbae56643ba62664471c92f1cb8e5dac3db516b7d",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/textbooks/uiux-design-v01/assets/uiux-state-map-v01.svg",
+        "description": "状态视觉示意",
+        "bytes": 4609,
+        "sha256": "97ea6a67ed5ac29ba5f244ff9e35b1392a38486c13d1986c436230fd343b1254",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/team/uiux-textbook-course-architecture.md",
+        "description": "canonical课程架构 Markdown",
+        "bytes": 28095,
+        "sha256": "a1702312c6f526a8ad00decdc9a6b32e44f453e003032503858803272281ada5",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/team/uiux-textbook-course-architecture.json",
+        "description": "canonical课程架构 JSON",
+        "bytes": 23546,
+        "sha256": "3eca639d9d7a8408686b0cfd19e185ec3fe9a68c6ca02e1d074932ba46b5dbc1",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/team/uiux-interview-questions-3m-research.json",
+        "description": "修复后研究 JSON",
+        "bytes": 86179,
+        "sha256": "0f2df0d9b0c9e179fc5a60de169c6ff2dc6ce837928cc0812038719f416443f8",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/team/uiux-interview-questions-3m-research-fix.md",
+        "description": "研究修复记录",
+        "bytes": 766,
+        "sha256": "aaf1c5280a6bd6c29095451e45ffb444b5a8d67c7035ba3ebeaacf195190d258",
+        "status": "received"
+      }
+    ],
+    "frozen_before_checks": true
+  },
+  "checks": [
+    {
+      "id": "R3-QA-01",
+      "name": "fresh_baseline",
+      "status": "pass",
+      "files": 9,
+      "old_baseline_reused": false,
+      "canonical_arch_version": "uiux-textbook-course-architecture-v0.1-r3"
+    },
+    {
+      "id": "R3-QA-02",
+      "name": "r2_f01_prerequisites",
+      "status": "closed",
+      "readme_units": 26,
+      "architecture_units": 26,
+      "mismatches": []
+    },
+    {
+      "id": "R3-QA-03",
+      "name": "r2_f02_provenance",
+      "status": "closed",
+      "canonical_arch_research_sha256": "0f2df0d9b0c9e179fc5a60de169c6ff2dc6ce837928cc0812038719f416443f8",
+      "current_research_sha256": "0f2df0d9b0c9e179fc5a60de169c6ff2dc6ce837928cc0812038719f416443f8",
+      "hash_match": true,
+      "historical_old_hash_marked": true
+    },
+    {
+      "id": "R3-QA-04",
+      "name": "local_links_and_current_handoff_entry",
+      "status": "partial",
+      "local_links": 7,
+      "failures": [],
+      "author_v3_linked_in_readme": false,
+      "finding": "R3-F-01"
+    },
+    {
+      "id": "R3-QA-05",
+      "name": "chapters_and_titles",
+      "status": "pass",
+      "route_rows": 12,
+      "headings": 12,
+      "contiguous": true
+    },
+    {
+      "id": "R3-QA-06",
+      "name": "json_and_source_ids",
+      "status": "pass",
+      "research_items": 103,
+      "unique_research_ids": 103,
+      "research_range": [
+        "UIUX-3M-001",
+        "UIUX-3M-103"
+      ],
+      "architecture_mapping_ids": 103,
+      "architecture_ids_missing_from_research": [],
+      "source_map_mentions": 89,
+      "source_map_unique_ids": 77,
+      "invalid_source_map_ids": [],
+      "duplicate_ids_within_rows": []
+    },
+    {
+      "id": "R3-QA-07",
+      "name": "svg_xml",
+      "status": "pass_limited",
+      "root": "{http://www.w3.org/2000/svg}svg",
+      "viewBox": "0 0 1200 530",
+      "has_title": true,
+      "has_desc": true,
+      "aria_labelledby": "title desc",
+      "state_labels": {
+        "输入问题": true,
+        "检索中": true,
+        "带来源结果": true,
+        "低置信 / 澄清": true,
+        "无匹配 / 不可用": true,
+        "来源失配": true,
+        "人工接管": true,
+        "重新提交": true,
+        "未连接真实服务": true
+      },
+      "render_checked": false
+    },
+    {
+      "id": "R3-QA-08",
+      "name": "contract_and_unverified_boundaries",
+      "status": "pass_limited",
+      "contract_strings": {
+        "idle": true,
+        "pending": true,
+        "clarify": true,
+        "low_confidence": true,
+        "result": true,
+        "empty": true,
+        "unavailable": true,
+        "integrity_error": true,
+        "cancelled": true,
+        "queryId": true,
+        "sourceVersion": true,
+        "sectionId": true,
+        "retryCount": true,
+        "ignoreLateResponses": true
+      },
+      "unsupported_real_claims_found": false,
+      "compiled_or_api_checked": false
+    }
+  ],
+  "r2_findings_closed": [
+    "R2-F-01",
+    "R2-F-02"
+  ],
+  "findings": [
+    {
+      "id": "R3-F-01",
+      "severity": "P2",
+      "status": "open",
+      "owner": [
+        "教材研发员",
+        "课程架构师"
+      ],
+      "summary": "README links v2/v1 handoffs but not current author-handoff-v3.md.",
+      "retest": "add v3 link or explicitly designate v2 as canonical and rerun entry checks."
+    }
+  ],
+  "limitations": [
+    "no browser/Figma/assistive technology/render QA",
+    "no TypeScript compilation/API/model/production run",
+    "no learner/industry/employer evidence",
+    "external URLs not live checked"
+  ],
+  "retest_conditions": [
+    "resolve R3-F-01 entry link decision",
+    "recompute hashes after any source changes"
+  ]
+}

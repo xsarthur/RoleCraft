@@ -1,0 +1,339 @@
+{
+  "version": "app-v13-prototype-qa-plan-2",
+  "status": "preparation_complete_pending_explicit_stable_frontend_candidate",
+  "date": "2026-10-12",
+  "timezone": "Asia/Shanghai",
+  "baseline": "app-v13-prototype-qa-history/received-baseline.json",
+  "baselineSha256": "932ac297b33d5d975583eac6f973edd5beb9fa93ccde04deb9dd68518bd7e6b6",
+  "scope": "Single Agent developer local website prototype/PRD alignment; no content regeneration or backend/account redesign. Product owner freezes necessary conditions before candidate acceptance. These verification groups do not invent acceptance thresholds.",
+  "groups": [
+    {
+      "id": "QA13-SINGLE",
+      "target": "Default entry and all main navigation are Agent developer only; no career square/switch/add/other-career cards; no required login or profile conversation to begin reading.",
+      "method": [
+        "source",
+        "actual HTTP browser"
+      ],
+      "status": "pending_stable_candidate",
+      "productConditions": [
+        "PV13-01",
+        "PV13-08"
+      ],
+      "productScenarios": [
+        "PT13-01"
+      ]
+    },
+    {
+      "id": "QA13-NAV",
+      "target": "Navigation names and page context match frozen product/design handoff, course/question detail remain subpages, topbar stays minimal; unrelated legacy/engineering modules do not dominate main flow.",
+      "method": [
+        "source",
+        "actual browser navigation/screenshot"
+      ],
+      "status": "pending_stable_candidate",
+      "productConditions": [
+        "PV13-01",
+        "PV13-08",
+        "PV13-10"
+      ],
+      "productScenarios": [
+        "PT13-01",
+        "PT13-11",
+        "PT13-12"
+      ]
+    },
+    {
+      "id": "QA13-COURSE",
+      "target": "Roadmap/catalog share v12 data, 30 formal reading units and preserved order/IDs/prerequisites; clicking a node/catalog item opens its actual source body, previous/next and return paths stay coherent.",
+      "method": [
+        "static source identity",
+        "HTTP corpus",
+        "actual browser click/reload/back"
+      ],
+      "status": "pending_stable_candidate",
+      "productConditions": [
+        "PV13-02",
+        "PV13-05",
+        "PV13-06"
+      ],
+      "productScenarios": [
+        "PT13-02",
+        "PT13-05",
+        "PT13-07"
+      ]
+    },
+    {
+      "id": "QA13-BODY",
+      "target": "Opening v12 engineering figure, running figure, one n03 mechanism section/table and example/code link remain complete, legible and correctly identified; example viewing does not execute code.",
+      "method": [
+        "source/resource identity",
+        "actual browser figure/detail/code/table"
+      ],
+      "status": "pending_stable_candidate",
+      "productConditions": [
+        "PV13-03",
+        "PV13-10"
+      ],
+      "productScenarios": [
+        "PT13-03",
+        "PT13-12"
+      ]
+    },
+    {
+      "id": "QA13-QUESTIONS",
+      "target": "Independently verify all 114 stable full question titles and frozen groups, actual chapter/knowledge point filtering, precise v12 original evidence and source identities, and true question↔knowledge-point browser return. Q10/Q99 show personal experience requirement, do not invent a fixed answer or enter self-assessment.",
+      "method": [
+        "source provenance",
+        "actual isolated browser interaction"
+      ],
+      "status": "pending_stable_candidate",
+      "productConditions": [
+        "PV13-04",
+        "PV13-05"
+      ],
+      "productScenarios": [
+        "PT13-04",
+        "PT13-05"
+      ]
+    },
+    {
+      "id": "QA13-INPUT",
+      "target": "One global helper entry except settings, context prompts match active page, opening/collapsing preserves current reading, request can finish without forcing navigation, actual retrieval/card sources/mode stay honest; no simulated model answers or telemetry.",
+      "method": [
+        "source",
+        "finite actual BGE HTTP smoke",
+        "actual browser query/card/collapse"
+      ],
+      "status": "pending_stable_candidate",
+      "productConditions": [
+        "PV13-07",
+        "PV13-08"
+      ],
+      "productScenarios": [
+        "PT13-08",
+        "PT13-09",
+        "PT13-12"
+      ]
+    },
+    {
+      "id": "QA13-RECORDS",
+      "target": "Empty state, actual knowledge-point visits and question self-labels drive continuation/review/self-assessment. Eligible pool equals declared associated self-assessable questions of actually learned current knowledge points, unique, Q10/Q99 excluded, no whole-unit grants; current UI controls 5/10/20, fewer available disclosed, user-chosen wrong-question tracking and current-only counts verified.",
+      "method": [
+        "isolated source/VM only if necessary",
+        "actual fresh isolated browser notes/marks/reload/export"
+      ],
+      "status": "pending_stable_candidate",
+      "productConditions": [
+        "PV13-05",
+        "PV13-06",
+        "PV13-09"
+      ],
+      "productScenarios": [
+        "PT13-05",
+        "PT13-06",
+        "PT13-07",
+        "PT13-10"
+      ]
+    },
+    {
+      "id": "QA13-COMPAT",
+      "target": "v10/v11/v12/v1 legacy values and origins are retained rather than silently certified/migrated; current and explicit old deep links retain identity, older histories remain reachable through frozen secondary location.",
+      "method": [
+        "isolated legacy fixture VM where browser seeding unavailable",
+        "actual old/current deep link HTTP browser",
+        "actual current export download"
+      ],
+      "status": "pending_stable_candidate",
+      "productConditions": [
+        "PV13-09"
+      ],
+      "productScenarios": [
+        "PT13-10",
+        "PT13-11"
+      ]
+    },
+    {
+      "id": "QA13-MOBILE",
+      "target": "Desktop and narrow mobile viewport expose usable primary navigation, readable content and reachable helper/actions without global horizontal overflow or overlay hiding critical buttons.",
+      "method": [
+        "official viewport capability",
+        "actual screenshot/DOM geometry",
+        "keyboard/semantic controls"
+      ],
+      "status": "pending_stable_candidate",
+      "productConditions": [
+        "PV13-02",
+        "PV13-03",
+        "PV13-07",
+        "PV13-08",
+        "PV13-10"
+      ],
+      "productScenarios": [
+        "PT13-12"
+      ]
+    },
+    {
+      "id": "QA13-BOUNDARY",
+      "target": "Source/HTTP mode and current capability statements preserve generation/expert/learning/production boundaries; browser failure is not substituted by PM display or VM; public protected files match received baseline.",
+      "method": [
+        "actual source/HTTP/UI",
+        "protected end comparison",
+        "same original eight-gate evidence assessment"
+      ],
+      "status": "pending_stable_candidate",
+      "productConditions": [
+        "PV13-04",
+        "PV13-07",
+        "PV13-08",
+        "PV13-09",
+        "PV13-10"
+      ],
+      "productScenarios": [
+        "PT13-01",
+        "PT13-04",
+        "PT13-07",
+        "PT13-09",
+        "PT13-10",
+        "PT13-11",
+        "PT13-12"
+      ]
+    }
+  ],
+  "finiteInputsToFreezeBeforeCandidate": [
+    "react",
+    "新证据推翻计划后，哪些步骤要重做，哪些事实该保留？",
+    "React 前端框架的 JSX 和 Hooks",
+    "装修厨房台面怎么选材料？"
+  ],
+  "testingLimits": [
+    "No old textbook code/100-question regression/full model or industry experiments repeated solely for UI changes.",
+    "Browser evaluate remains read-only DOM; do not inspect hidden user storage or seed fixtures by unauthorized browser writes.",
+    "Legacy record fixture checks and actual fresh UI checks are reported separately.",
+    "A missing necessary UI condition stays insufficient.",
+    "No payment/provider invocation, external publication, real DB mutation, or prototype policy circumvention."
+  ],
+  "cleanup": [
+    "Owned isolated server only, separate port/data directory, explicit configuration to block generation.",
+    "Owned temporary tabs close, temporary viewport reset, own server SIGINT exit and no-listener check.",
+    "User service 4318 and existing records never used as test data."
+  ],
+  "fullGoal": "Assess current candidate after execution under unchanged team/product-gates.json; no wholesale inheritance of prior pass/insufficient and no new professional/learner/market evidence implied.",
+  "frozenInputs": [
+    {
+      "path": "team/app-v13-prototype-product.md",
+      "bytes": 23059,
+      "sha256": "fe0b3abe1dad32ed759a9bac6db806e8519003935e230f406ddcec46b77c46ef"
+    },
+    {
+      "path": "team/app-v13-prototype-design.md",
+      "bytes": 20176,
+      "sha256": "ee54f53c40858273f54b11a6dfdbe159dbfa989ff25aac8391c60ccf7914b20b"
+    },
+    {
+      "path": "team/app-v13-prototype-design-clarification.md",
+      "bytes": 6167,
+      "sha256": "1e0ee481047b9486ac18be29f8b32cf5963d393b6be8dc9982828073ff30bc5c"
+    }
+  ],
+  "baselineUnchanged": true,
+  "phase2CompletedAtUtc": "2026-10-12T00:04:44.325175+00:00",
+  "fixedProductInputs": [
+    {
+      "scenario": "PT13-08",
+      "inputs": [
+        "react",
+        "新证据推翻计划后哪些步骤要重做"
+      ]
+    },
+    {
+      "scenario": "PT13-09",
+      "inputs": [
+        "React 是前端框架还是 Agent 的方法？我想学它。",
+        "装修厨房台面怎么选材料？"
+      ]
+    }
+  ],
+  "preciseKnowledgePointChecks": {
+    "sourceOfTruth": "Only frozen course package mappings: explicit knowledgePointId/unitId/sectionId/parent/sourceSha256/kind(core/exercise/navigation)/questionIds and any declared precise-location core attribution. No nearest-heading or same-unit inference.",
+    "caseSelectionAfterDataFreeze": "Choose a declared core point with real questions, a same-unit point with at least one exclusive question, a unit-root/navigation position with no eligible attribution, and actual Q10/Q99 references. Freeze selected IDs and expected sets before running UI.",
+    "emptyAndUnitOnly": "No learned point => cannot start self-assessment. A plain unit opening or unknown/navigation position cannot grant the whole unit or all its questions.",
+    "singlePoint": "Visit one valid point => only that point learned; sibling remains unlearned; eligible self-assessment set is exact frozen relation after exclusion/deduplication. Reading the whole HTML must not imply all rendered points visited.",
+    "multipleEvidence": "Opening one cited source location records only its explicitly declared core point; it cannot mark all locations or knowledge points of that question.",
+    "personalQuestions": "Q10/Q99 remain browseable with method/excerpts and personal-evidence warning, but excluded from the self-assessment pool even when related point is learned.",
+    "statusSeparation": "Learned/visited point state, question not_mastered/mastered self-report, unit-opening history and legacy origins are separate identities; no credential or chapter completion claim.",
+    "inputIdentityException": "37 sourceBindings require current equality. routeStages provenance.receivedSourceSha256 is historical received-client reference, not required equality after authorized frontend changes.",
+    "originalEvidenceRanges": "327 exact quote ranges checked separately; original reviewSourceRange retains old QA span, including declared 22 wider spans crossing later headings, and is not silently rewritten."
+  },
+  "isolationMethod": {
+    "ports": "Reserve a currently unused QA-only loopback port at execution time (planned 4473; never user 4318). Secondary backend/fault ports only if necessary and owned by QA.",
+    "database": "Fresh temp dataDir, not actual .runtime; do not read production SQLite. Disable generation configuration in owned process; semantic retrieval remains actual locked local BGE.",
+    "storageFixtures": "After client contract freezes, create QA-only seed HTML in this history and serve it briefly at the exact unused QA origin. Its visible button declares writes of fabricated v1/v10/v12/corrupt-history fixtures and new v13 keys; click through official CUA. Stop owned seed server, then launch unchanged candidate on same origin so only fixture browser storage is exercised. Never clear/read/write another origin or real user records; seed values and expected exact strings separately frozen.",
+    "candidateIntegrity": "No fixture script is inserted into candidate HTML and no product file is modified by QA. Actual candidate UI runs its frozen bytes; any isolated VM checks labeled separately. Compare actual downloaded JSON/path bytes to frozen fixtures and new UI actions.",
+    "controlledFaults": "Use an explicitly labeled QA-only transport proxy if necessary for late-response/version-mismatch/service-unavailable cases: serve/forward candidate bytes unchanged, real BGE requests forwarded, selectively delay an actual response or inject declared stale/error contract data. No synthetic response counts as actual model inference; no browser hidden protocol/interception APIs.",
+    "browser": "Official CUA only. Keep app test tab background. Read-only DOM evaluation for geometry/visible semantics only; do not read localStorage or other hidden state through evaluate. Actual fixture, notes, marks, exports, routes and settings manipulated through visible UI.",
+    "proof": "Capture real DOM/action observations and screenshots; actual download event/path supported by official CUA. If any necessary screenshot/file/export/fault action is unavailable, disclose exact limitation, do not substitute VM or author evidence.",
+    "cleanup": "Reset official temporary viewport; close QA-created temporary tabs; SIGINT all owned seed/candidate/proxy/backend processes, record exit and no listener. User 4318 remains untouched."
+  },
+  "releaseConditionsBeforeExecution": [
+    "Course JSON/MD/source-check/binding identities received. Full independent 114-title/327-quote/mapping check runs only after stable candidate, not author-check inheritance.",
+    "Explicit stable frontend candidate handoff with file identities, new route/storage contracts and author self-check.",
+    "No concurrent writes to submitted candidate during independent execution; first failed outputs preserved before repair.",
+    "Product/design/main clarification hashes still match and original 900-file baseline unchanged."
+  ],
+  "learningDataContract": {
+    "path": "team/app-v13-prototype-learning-data.json",
+    "sha256": "2c0165b5013a88d5ae93fbe841901853cdf7d3cb184f576971e56ab2f572a394",
+    "metadataCountsNotYetIndependentlyValidated": {
+      "units": 30,
+      "indexedSections": 273,
+      "knowledgePoints": 240,
+      "knowledgePointKinds": {
+        "unit_introduction": 30,
+        "core": 172,
+        "navigation": 20,
+        "exercise": 18
+      },
+      "questions": 114,
+      "questionSets": {
+        "fixed100": 100,
+        "market14": 14
+      },
+      "evidence": 327,
+      "selfTestEligible": 112,
+      "personalEvidenceRequired": 2,
+      "qaHoldoutVariantsIncluded": 0,
+      "sourceBindings": 37
+    },
+    "metadataPolicies": {
+      "knowledgePointPolicy": "actual_level1_introduction_and_all_level2_headings; level3_exact_target_retained_and_parented_to_actual_level2",
+      "selfTestPolicy": "learner_self_assessment_only; exclude_Q10_Q99; deduplicated_visited_knowledgePoint_question_union",
+      "sourceLinePolicy": "exact_quote_startLine_endLine; original_QA_broader_range_preserved_in_reviewSourceRange"
+    },
+    "status": "identity_bound_pending_full_independent_mapping_check",
+    "authorSelfCheckNotInherited": true,
+    "finalHandoffFiles": [
+      {
+        "path": "team/app-v13-prototype-learning-data.md",
+        "sha256": "09c860173108d4822c963eeffa0ee2f2abe1d775113760abc2fe354222192d7c",
+        "bytes": 9038,
+        "meaning": "received course handoff; author self-check not independent QA"
+      },
+      {
+        "path": "team/app-v13-prototype-learning-data-source-check.json",
+        "sha256": "3b76023a72c88ac1c8702fc7ead09489ff6b1a6c92599739586eb91e0e8f69dd",
+        "bytes": 12500,
+        "meaning": "received course handoff; author self-check not independent QA"
+      },
+      {
+        "path": "team/app-v13-prototype-learning-data-binding.json",
+        "sha256": "e6098eaecb20840c5a4c5290b3952c92f5b8ebf87e0eafdafcc841af4b36c520",
+        "bytes": 1228,
+        "meaning": "received course handoff; author self-check not independent QA"
+      }
+    ]
+  },
+  "knowledgePointExpectedCases": {
+    "path": "team/app-v13-prototype-qa-history/knowledgepoint-cases-frozen.json",
+    "sha256": "0042ccb8c64c635bf0aca74be47df3b38ee8c9d5c44bbb38ef1ae537dc63bdbd"
+  }
+}

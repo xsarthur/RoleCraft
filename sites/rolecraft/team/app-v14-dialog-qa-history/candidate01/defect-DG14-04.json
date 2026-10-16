@@ -1,0 +1,22 @@
+{
+  "id": "DG14-04",
+  "owner": "软件工程师",
+  "atUtc": "2026-10-12T01:07:59.155554+00:00",
+  "candidate": "received frontend binding1; loaded before detail change",
+  "surface": "official IAB2 owned tab1, http://127.0.0.1:4485/#home",
+  "steps": [
+    "实际发送ReAct是什么，answered/source n03第1节",
+    "点击来源引用、展开原文、点击阅读这一节，实际s-da63f3dcff17 focus",
+    "reload保持节；back回home，旧题保留",
+    "在home发送有什么失败模式，scope结合上一个已核问答主题"
+  ],
+  "actualAnswer": [
+    "适合路径稳定、输入明确、动作可枚举的工作；它的局限是遇到动态未知依赖时需要预先编更多分支。",
+    "仍用“解释失败报告并形成有证据的缺陷说明”，设一开始只知道 report-71。"
+  ],
+  "expected": "UI短追问必须保留上一已核ReAct主题；直接HTTP保留server canonical focusTerm=ReAct时答ReAct成本/污染/短视，当前UI却答固定状态机局限/报告例",
+  "sourceFinding": "learning-workbench.js canonicalTopic只重建四字段，丢掉服务已回传/原文校验过focusTerm；currentContext与answered存储均用该重建。API补focusTerm的工程合同已冻。",
+  "status": "open",
+  "scope": "real UI semantic handoff failure; not inferred from VM",
+  "qaDidNotRepairCode": true
+}

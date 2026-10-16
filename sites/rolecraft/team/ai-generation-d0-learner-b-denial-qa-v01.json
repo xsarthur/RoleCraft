@@ -1,0 +1,144 @@
+{
+  "report_id": "ai-generation-d0-learner-b-denial-qa-v01",
+  "title": "独立 QA：学习者 B-denial 实作 v01",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "scope": "A baseline, B-private/wrong-tenant denials, non-isomorphic holdout, tenant-scope denial, null handoff/external action, execution log, manifest bytes/SHA, learner QA separation",
+  "source_dir": "/Users/shengxiong/Desktop/One People Company/sites/rolecraft/team/ai-generation-d0-learner-b-denial-v01",
+  "checked_at": "2026-10-15",
+  "independent_of_learner": true,
+  "qa_status": "complete",
+  "self_signed": false,
+  "conclusion": "met_within_scope",
+  "counts": {
+    "checks": 24,
+    "passed": 24,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "id": "manifest:fixture.json",
+      "status": "pass",
+      "detail": "bytes=208 sha256=b7058d622b464d78bfd45418192cbbb659b5664f5874fc20b1364151efe24d6d"
+    },
+    {
+      "id": "manifest:A-baseline-input.json",
+      "status": "pass",
+      "detail": "bytes=116 sha256=2d8d60705e3edb98d3f859f04ccebb655d7253519cc9733a105e14915c23d9ec"
+    },
+    {
+      "id": "manifest:A-baseline-output.json",
+      "status": "pass",
+      "detail": "bytes=342 sha256=34d1e1914ff71014524b61526a4ca417b98162a2e1ff982ead0ea7d44cbc7bf3"
+    },
+    {
+      "id": "manifest:B-private-input.json",
+      "status": "pass",
+      "detail": "bytes=83 sha256=0cad0e9a2cc2d3bb4082b2b5530c1c52e5a942a9a32137eb3dedfb851b05a7a1"
+    },
+    {
+      "id": "manifest:B-private-output.json",
+      "status": "pass",
+      "detail": "bytes=204 sha256=92a7e82d6052382cdd71661de96964b4100a2249c678caaf195c5055067271c3"
+    },
+    {
+      "id": "manifest:wrong-tenant-input.json",
+      "status": "pass",
+      "detail": "bytes=82 sha256=2c1af9319002da315aca83b107f00c6e62a46546f8b65708b25a1af77bfeb91f"
+    },
+    {
+      "id": "manifest:wrong-tenant-output.json",
+      "status": "pass",
+      "detail": "bytes=203 sha256=9d73c3c9413200b947a6af6438f509777f5e3d72e547439e9e2a2e3c10c4ae2b"
+    },
+    {
+      "id": "manifest:holdout-nonisomorphic-input.json",
+      "status": "pass",
+      "detail": "bytes=129 sha256=ba90a0769ccf80555603ae167659205747b998a87e2918ebf4bfff0525ab2f04"
+    },
+    {
+      "id": "manifest:holdout-nonisomorphic-output.json",
+      "status": "pass",
+      "detail": "bytes=182 sha256=be0ba8b30fb40d86cb3c2c9fdb82d58838622bec7b09676322a4b84d921a4f34"
+    },
+    {
+      "id": "manifest:execution_log.json",
+      "status": "pass",
+      "detail": "bytes=562 sha256=7b39f77953c2d41384bd47a1047e5e4af0598f6c1a2010f40a5bf815ef46f3ed"
+    },
+    {
+      "id": "manifest:learner_raw.json",
+      "status": "pass",
+      "detail": "bytes=298 sha256=dcdd193b5146ae642ce0874a39edf3a2dc55f88e7b1a9091d2ef6c53d9f86fa5"
+    },
+    {
+      "id": "manifest:EvidenceCard.json",
+      "status": "pass",
+      "detail": "bytes=241 sha256=8fad229524b64b70bc35adfb52541037618266163a3e7de1eb48ca92dc81e99d"
+    },
+    {
+      "id": "manifest-count",
+      "status": "pass",
+      "detail": "artifact_count=12 and 12 file entries"
+    },
+    {
+      "id": "manifest-state",
+      "status": "pass",
+      "detail": "diagnostic/state fields preserved"
+    },
+    {
+      "id": "A-baseline",
+      "status": "pass",
+      "detail": "A baseline produces source-bound draft with no external action"
+    },
+    {
+      "id": "B-private-denial",
+      "status": "pass",
+      "detail": "status=denied_before_generation reason=tenant_scope_denied answer_null=True source_refs_empty=True"
+    },
+    {
+      "id": "wrong-tenant-denial",
+      "status": "pass",
+      "detail": "status=denied_before_generation reason=tenant_scope_denied answer_null=True source_refs_empty=True"
+    },
+    {
+      "id": "first-failure",
+      "status": "pass",
+      "detail": "first failure and downstream_generation=false"
+    },
+    {
+      "id": "holdout-nonisomorphic",
+      "status": "pass",
+      "detail": "non-isomorphic mixed request held for human review with no partial output"
+    },
+    {
+      "id": "handoff-null",
+      "status": "pass",
+      "detail": "draft_handoff=false and external_action=null"
+    },
+    {
+      "id": "execution-log",
+      "status": "pass",
+      "detail": "execution log records isolated local fixture and four runs"
+    },
+    {
+      "id": "evidence-binding",
+      "status": "pass",
+      "detail": "EvidenceCard binds cases and remains unsigned/pending"
+    },
+    {
+      "id": "learner-separation",
+      "status": "pass",
+      "detail": "learner raw evidence does not self-assess or grant level"
+    },
+    {
+      "id": "fixture-scope",
+      "status": "pass",
+      "detail": "fixture includes private B document denied to authorized A scope"
+    }
+  ],
+  "limitations": [
+    "仅验证本地固定夹具与脚本产物；未验证真实权限系统、真实模型/API、数据库、网络、生产恢复或真实用户效果。",
+    "本结论不授予 L0/L1/L2 等级，不替代内容审校、真人专家或产品达标评审。"
+  ],
+  "next_action": "如需扩大结论，应由对应责任岗提供真实权限/模型契约与独立复验；保持当前 learner_raw decision=not_assessed。"
+}

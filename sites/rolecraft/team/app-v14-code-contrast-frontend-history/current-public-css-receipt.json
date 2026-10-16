@@ -1,0 +1,26 @@
+{
+  "version": "app-v14-code-contrast-public-css-receipt",
+  "atUtc": "2026-10-12T02:14:12.454928+00:00",
+  "url": "http://127.0.0.1:4318/learning-experience-v13.css",
+  "status": "unavailable_no_listener_observed",
+  "httpResourceReceived": false,
+  "localSha256": "227e24bfc9c12a6c8254c4fbebfba65f3ddcb4d183a5405e803d5042c9ebe592",
+  "equalsLocal": null,
+  "scope": "Public static asset attempt only; no actual rendering/ratio/independent QA",
+  "attempts": [
+    {
+      "routing": "inherited_environment_proxy",
+      "endpointReached": "local7897_proxy",
+      "curlExit": 7
+    },
+    {
+      "routing": "noproxy_127.0.0.1",
+      "endpointReached": false,
+      "curlExit": 7
+    }
+  ],
+  "listenerCheck": "lsof -nP -iTCP:4318 -sTCP:LISTEN returned no listener",
+  "serviceRestarted": false,
+  "cookiesSent": false,
+  "privateDataAccessed": false
+}

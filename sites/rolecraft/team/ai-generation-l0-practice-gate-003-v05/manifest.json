@@ -1,0 +1,125 @@
+{
+  "artifacts": {
+    "README.md": {
+      "bytes": 790,
+      "path": "ai-generation-l0-practice-gate-003-v05/README.md",
+      "sha256": "f542af36e1da1b2c17bc2943ff20aefa0dce4de88c79f6a6e7a23944b837d0e4"
+    },
+    "approval-or-hold-receipts/approval.json": {
+      "bytes": 235,
+      "path": "ai-generation-l0-practice-gate-003-v04/approval-or-hold-receipts/approval.json",
+      "sha256": "07d95dab873bb24a7838bbdbaaed7a51d7979884219be89659a59aee81899d69"
+    },
+    "approval-or-hold-receipts/holdout.json": {
+      "bytes": 179,
+      "path": "ai-generation-l0-practice-gate-003-v04/approval-or-hold-receipts/holdout.json",
+      "sha256": "566298f0c710a34af4b468dbd8a56331a6df867b87f8b9dc7cdcbe2192e89069"
+    },
+    "event-state-trace.json": {
+      "bytes": 4221,
+      "path": "ai-generation-l0-practice-gate-003-v04/event-state-trace.json",
+      "sha256": "55ab7265098d01cd717addd0e072d48a8da24b02c6714513be6ba54cb158cf5d"
+    },
+    "frozen-v2-input.json": {
+      "bytes": 413,
+      "path": "ai-generation-l0-practice-gate-003-v04/frozen-v2-input.json",
+      "sha256": "03e33c9958a906567affff664af05f3a32135d2ac08d00ce3743686d580ec39a"
+    },
+    "migration-diff.patch": {
+      "bytes": 280,
+      "path": "ai-generation-l0-practice-gate-003-v04/migration-diff.patch",
+      "sha256": "3979a9ef5bd76cc26fea89dd1c1c75863576b6bbad542c4399a056362bb1266e"
+    },
+    "migration-plan.json": {
+      "bytes": 421,
+      "path": "ai-generation-l0-practice-gate-003-v04/migration-plan.json",
+      "sha256": "3e848fb0619dbfee386d8d68dbf03aade7e335ef20ae29d79312f2ca08a41042"
+    },
+    "run-1/migrated_checkpoint.json": {
+      "bytes": 433,
+      "path": "ai-generation-l0-practice-gate-003-v04/run-1/migrated_checkpoint.json",
+      "sha256": "9eb142631b1117394cfa0cf083fb992630b46a89dd73795ff523852b36d412dd"
+    },
+    "run-1/validator-output.json": {
+      "bytes": 265,
+      "path": "ai-generation-l0-practice-gate-003-v04/run-1/validator-output.json",
+      "sha256": "c7f0ffac472c128ee23d1fdbdb1f4dd3bb8a83ed987033768b9471f044f719ab"
+    },
+    "run-2/event-state-trace.json": {
+      "bytes": 2112,
+      "path": "ai-generation-l0-practice-gate-003-v04/run-2/event-state-trace.json",
+      "sha256": "19dba7691aaa36b60130d9733f62a5e57efac6b6c146d4944ed5db56047c54d3"
+    },
+    "run-2/migrated_checkpoint.json": {
+      "bytes": 433,
+      "path": "ai-generation-l0-practice-gate-003-v04/run-2/migrated_checkpoint.json",
+      "sha256": "9eb142631b1117394cfa0cf083fb992630b46a89dd73795ff523852b36d412dd"
+    },
+    "run-2/validator-output.json": {
+      "bytes": 265,
+      "path": "ai-generation-l0-practice-gate-003-v04/run-2/validator-output.json",
+      "sha256": "68b0b5f809dc1fde6f4ec29f65ea55e33614a9522129fad0f0be500cec79007c"
+    },
+    "schema-v2.json": {
+      "bytes": 278,
+      "path": "ai-generation-l0-practice-gate-003-v04/schema-v2.json",
+      "sha256": "9bce23eb287913e9a2e577caf5f64f04887505e80be009bb76e286919de18652"
+    },
+    "schema-v3.json": {
+      "bytes": 350,
+      "path": "ai-generation-l0-practice-gate-003-v04/schema-v3.json",
+      "sha256": "c8cdb043afca8f4b93e865f68db802cb351c2e46595c1717d803ed2ff27cb1ae"
+    },
+    "validator-output.json": {
+      "bytes": 265,
+      "path": "ai-generation-l0-practice-gate-003-v04/validator-output.json",
+      "sha256": "c7f0ffac472c128ee23d1fdbdb1f4dd3bb8a83ed987033768b9471f044f719ab"
+    }
+  },
+  "event_state_trace": "event-state-trace.json",
+  "exercise_version": "v0.1",
+  "external_action": null,
+  "first_failures": [
+    "SCHEMA_VALIDATION_ERROR",
+    "HUMAN_APPROVAL_REQUIRED_OR_INVALID_REVIEW_RECEIPT",
+    "MIGRATION_SCOPE_VIOLATION",
+    "MIGRATION_MISSING_STATE",
+    "INVALID_HOLDOUT_CONTRACT"
+  ],
+  "fixture_id": "F-AI-GATE-MIGRATION-v1",
+  "holdout_changed_keys": [
+    "human_approval_required_for_handoff"
+  ],
+  "input_fixture_hash_computed": "9002b8bcef99feaa63d88c4c4d8f3eb16d22107b0ceb61e3820240bf709fe364",
+  "input_fixture_hash_declared": "9002b8bcef99feaa63d88c4c4d8f3eb16d22107b0ceb61e3820240bf709fe364",
+  "input_path": "frozen-v2-input.json",
+  "migration_hashes_unified": true,
+  "normal_sequence": [
+    "old_version_detected",
+    "migration_planned",
+    "v3_migrated",
+    "schema_checked",
+    "awaiting_human_approval",
+    "human_intervention",
+    "handed_off"
+  ],
+  "practice_id": "AI-PRACTICE-GATE-003",
+  "practice_pack_sha256": "b1cb993bfb6310f5f872c23980ad60a8d6dbc91c64462bbf253302328ffa0f1a",
+  "readme_hash": "f542af36e1da1b2c17bc2943ff20aefa0dce4de88c79f6a6e7a23944b837d0e4",
+  "repair_record": "repair_record.json",
+  "run_1_migrated_hash": "9eb142631b1117394cfa0cf083fb992630b46a89dd73795ff523852b36d412dd",
+  "run_1_normalized_hash": "118c508e04e579686f10c7db7bba041c79ddfdc930b44967f961567474ba99c4",
+  "run_2_event_state_trace": "run-2/event-state-trace.json",
+  "run_2_independent_input": "frozen original v2_checkpoint (not run-1 output)",
+  "run_2_migrated_hash": "9eb142631b1117394cfa0cf083fb992630b46a89dd73795ff523852b36d412dd",
+  "run_2_normalized_hash": "118c508e04e579686f10c7db7bba041c79ddfdc930b44967f961567474ba99c4",
+  "run_2_validator_input": "run-2/migrated_checkpoint.json",
+  "run_byte_replay_equal": true,
+  "run_hashes": [
+    "9eb142631b1117394cfa0cf083fb992630b46a89dd73795ff523852b36d412dd",
+    "9eb142631b1117394cfa0cf083fb992630b46a89dd73795ff523852b36d412dd"
+  ],
+  "schema_unknown_field_negative": "first_failure/schema_unknown_field/receipt.json",
+  "self_signed": false,
+  "version": "v05"
+}

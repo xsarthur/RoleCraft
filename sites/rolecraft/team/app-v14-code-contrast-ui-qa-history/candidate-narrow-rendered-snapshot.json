@@ -1,0 +1,435 @@
+{
+  "schema": "official-cua-computed-style-1",
+  "phase": "candidate",
+  "observed_at": "2026-10-12T02:25:05.958Z",
+  "browser": "Codex In-app Browser",
+  "browser_id": "2",
+  "tab_id": "1",
+  "url": "http://127.0.0.1:4497/#learn/agent/01-foundation/s-cdf0ad611ebb",
+  "navigation": [
+    "home actual UI link: 02 基础预备",
+    "本篇小节 expanded",
+    "完整短程序 actual UI link"
+  ],
+  "viewport": {
+    "width": 375,
+    "height": 812,
+    "devicePixelRatio": 1
+  },
+  "source_stylesheets": [
+    "http://127.0.0.1:4497/styles.css",
+    "http://127.0.0.1:4497/learning-workbench.css",
+    "http://127.0.0.1:4497/learning-experience-v13.css"
+  ],
+  "encoding_note": "Verbatim browser-computed values; ancestor paths compacted to arrays; no contrast ratio inferred here. Ancestor uniform properties were tested on every element through HTML.",
+  "all_observed_ancestor_properties": {
+    "opacity": "1",
+    "backgroundImage": "none",
+    "filter": "none",
+    "mixBlendMode": "normal"
+  },
+  "samples": [
+    {
+      "kind": "block_code",
+      "selector": ".lw-code pre code containing def refund(days)",
+      "text": "import json\nimport sys\n\ndef refund(days):\n    return days < 7\n\ndef che",
+      "color": "rgb(61, 57, 41)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "opacity": "1",
+      "fontSize": "13px",
+      "fontWeight": "400",
+      "textShadow": "none",
+      "background_ancestors": [
+        [
+          "CODE",
+          "",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "PRE",
+          "",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "lw-code",
+          "rgb(243, 240, 234)"
+        ],
+        [
+          "ARTICLE",
+          "lw-prose",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "lw-reading",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "lw-reader-columns",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "lw-reader-layout lw-detail",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "#app content",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "MAIN",
+          "#main-content",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "BODY",
+          "lw-active v13-active",
+          "rgb(249, 247, 243)"
+        ],
+        [
+          "HTML",
+          "",
+          "rgba(0, 0, 0, 0)"
+        ]
+      ]
+    },
+    {
+      "kind": "block_pre",
+      "selector": ".lw-code pre containing def refund(days)",
+      "text": "import json\nimport sys\n\ndef refund(days):\n    return days < 7\n\ndef che",
+      "color": "rgb(61, 57, 41)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "opacity": "1",
+      "fontSize": "13px",
+      "fontWeight": "400",
+      "textShadow": "none",
+      "background_ancestors": [
+        [
+          "PRE",
+          "",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "lw-code",
+          "rgb(243, 240, 234)"
+        ],
+        [
+          "ARTICLE",
+          "lw-prose",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "lw-reading",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "lw-reader-columns",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "lw-reader-layout lw-detail",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "#app content",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "MAIN",
+          "#main-content",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "BODY",
+          "lw-active v13-active",
+          "rgb(249, 247, 243)"
+        ],
+        [
+          "HTML",
+          "",
+          "rgba(0, 0, 0, 0)"
+        ]
+      ]
+    },
+    {
+      "kind": "language_label",
+      "selector": ".lw-code > span before the target pre",
+      "text": "python · 网页不执行代码",
+      "color": "rgb(107, 99, 86)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "opacity": "1",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "textShadow": "none",
+      "background_ancestors": [
+        [
+          "SPAN",
+          "",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "lw-code",
+          "rgb(243, 240, 234)"
+        ],
+        [
+          "ARTICLE",
+          "lw-prose",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "lw-reading",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "lw-reader-columns",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "lw-reader-layout lw-detail",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "#app content",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "MAIN",
+          "#main-content",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "BODY",
+          "lw-active v13-active",
+          "rgb(249, 247, 243)"
+        ],
+        [
+          "HTML",
+          "",
+          "rgba(0, 0, 0, 0)"
+        ]
+      ]
+    },
+    {
+      "kind": "inline_code",
+      "selector": ".lw-prose p code:first matched",
+      "text": "foundation.py",
+      "color": "rgb(61, 57, 41)",
+      "backgroundColor": "rgb(236, 231, 221)",
+      "opacity": "1",
+      "fontSize": "14.08px",
+      "fontWeight": "400",
+      "textShadow": "none",
+      "background_ancestors": [
+        [
+          "CODE",
+          "",
+          "rgb(236, 231, 221)"
+        ],
+        [
+          "P",
+          "",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "ARTICLE",
+          "lw-prose",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "lw-reading",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "lw-reader-columns",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "lw-reader-layout lw-detail",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "#app content",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "MAIN",
+          "#main-content",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "BODY",
+          "lw-active v13-active",
+          "rgb(249, 247, 243)"
+        ],
+        [
+          "HTML",
+          "",
+          "rgba(0, 0, 0, 0)"
+        ]
+      ]
+    },
+    {
+      "kind": "body_paragraph",
+      "selector": ".lw-prose > p:first matched",
+      "text": "先把输入解析成对象，再校验对象的形状和业务类型，最后计算并返回可检查的结果。语法正确、进程正常结束和任务结果符合预期是不同条件。读者只需一个",
+      "color": "rgb(38, 60, 49)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "opacity": "1",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "textShadow": "none",
+      "background_ancestors": [
+        [
+          "P",
+          "",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "ARTICLE",
+          "lw-prose",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "lw-reading",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "lw-reader-columns",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "lw-reader-layout lw-detail",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "DIV",
+          "#app content",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "MAIN",
+          "#main-content",
+          "rgba(0, 0, 0, 0)"
+        ],
+        [
+          "BODY",
+          "lw-active v13-active",
+          "rgb(249, 247, 243)"
+        ],
+        [
+          "HTML",
+          "",
+          "rgba(0, 0, 0, 0)"
+        ]
+      ]
+    }
+  ],
+  "refresh": "Same own IAB tab viewport override set; DOM batch reads; then normal reload recorded position only. No screenshot of narrow viewport.",
+  "candidate_css_sha256_from_main_qa_http_receipt": "227e24bfc9c12a6c8254c4fbebfba65f3ddcb4d183a5405e803d5042c9ebe592",
+  "code_styles_final_theme_CSSOM": [
+    {
+      "selector": ".lw-code",
+      "cssText": "background: rgb(243, 240, 234); box-shadow: rgb(220, 215, 204) 0px 0px 0px 1px inset;"
+    },
+    {
+      "selector": ".lw-code > span",
+      "cssText": "color: rgb(107, 99, 86); border-bottom-color: rgb(220, 215, 204);"
+    },
+    {
+      "selector": ".lw-prose code",
+      "cssText": "color: rgb(61, 57, 41); background: rgb(236, 231, 221);"
+    },
+    {
+      "selector": ".lw-code pre",
+      "cssText": "color: rgb(61, 57, 41); background: transparent;"
+    },
+    {
+      "selector": ".lw-code pre code",
+      "cssText": "color: inherit; background: transparent;"
+    }
+  ],
+  "screenshot": {
+    "captured": false,
+    "reason": "Only one final original screenshot requested; captured desktop. Narrow color and layout observations are DOM only."
+  },
+  "geometry": {
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "documentClientWidth": 375,
+    "documentScrollWidth": 375,
+    "pre": {
+      "rect": {
+        "x": 16,
+        "y": 1306.296875,
+        "width": 343,
+        "height": 1164.6015625
+      },
+      "clientWidth": 343,
+      "scrollWidth": 638,
+      "whiteSpace": "pre",
+      "overflowX": "auto"
+    },
+    "code": {
+      "x": 30,
+      "y": 1323.296875,
+      "width": 610.484375,
+      "height": 1130.15625
+    },
+    "box": {
+      "x": 16,
+      "y": 1263.1015625,
+      "width": 343,
+      "height": 1207.796875
+    },
+    "prose": {
+      "x": 16,
+      "y": -801.6171875,
+      "width": 343,
+      "height": 5793.0078125
+    }
+  },
+  "position_after_normal_reload": {
+    "heading": {
+      "x": 16,
+      "y": 974.3125,
+      "width": 343,
+      "height": 34
+    },
+    "pre": {
+      "x": 16,
+      "y": 1306.296875,
+      "width": 343,
+      "height": 1164.6015625
+    },
+    "codeVisibleAtStart": false,
+    "documentWidth": 375,
+    "viewportWidth": 375
+  },
+  "limits": [
+    "Narrow computed styles were read from rendered DOM but code start was outside viewport after width reflow and normal reload; this does not establish narrow screenshot legibility or deep-link scrolling pass. No scope expansion or navigation fix.",
+    "No real mobile OS or all-page/style matrix."
+  ]
+}

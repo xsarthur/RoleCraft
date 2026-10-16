@@ -1,0 +1,1425 @@
+{
+  "version": "reconciliation-1",
+  "date": "2026-10-14 Asia/Shanghai",
+  "reviewer": "原独立内容审校员",
+  "inputInitialReport": "sites/rolecraft/team/agent-interview-answer-content-review.json",
+  "inputInitialReportSha256": "09129559b0a51f9d42dc7085e9d4f68a91cdffb842215bacbc72f2e2782e9518",
+  "standardUnchanged": "ANSWER_QUALITY_STANDARD.md 1.0；沿用AQS-01–08，不增删门槛、不按多数票",
+  "purpose": "六题有理由的静态审读分歧复核；保留初审并区分评审纠正与作者返修",
+  "method": [
+    "重读当前六题全部显示evidence.quote，包括Q87此前工具输出未展开的E5。",
+    "逐项对照原缺陷、反例与AQS允许的文字流程/判定分支/验证方法，不统一强制代码、数字表、具体秘密或完整事故叙事。",
+    "比较六题收到与当前的原文、出处、哈希及范围字段，全部相同。",
+    "初审绑定六文件哈希全部保持，不重写旧报告。"
+  ],
+  "sourceDataSha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+  "authorRevisionOccurred": false,
+  "records": [
+    {
+      "id": "Q54",
+      "question": "并行节点同时更新状态时，如何处理合并规则和写入冲突？",
+      "set": "fixed100",
+      "answerLocation": "sites/rolecraft/dist/learning-v13-data.js:11323",
+      "originalConclusion": "not_met",
+      "originalDefects": [
+        {
+          "id": "CR-Q54-03",
+          "criterion": "AQS-03",
+          "reason": "未交代完整reducer输入/输出、冲突返回以及并发提交边界",
+          "owner": "教材研发员",
+          "status": "open",
+          "repairAction": "在保留现有正确内容和题意的前提下补齐：未交代完整reducer输入/输出、冲突返回以及并发提交边界",
+          "firstCounterexample": {
+            "type": "静态当前答案与明确子问/必要机制对照",
+            "receivedQuestion": "并行节点同时更新状态时，如何处理合并规则和写入冲突？",
+            "observed": "未交代完整reducer输入/输出、冲突返回以及并发提交边界",
+            "location": "sites/rolecraft/dist/learning-v13-data.js:11323"
+          },
+          "retest": "对当前题面、返修后的完整显示文本、原反例及受影响关联题重新逐项审读；涉及行为保证时由QA另定并执行必要的安全反例。"
+        },
+        {
+          "id": "CR-Q54-04",
+          "criterion": "AQS-04",
+          "reason": "缺两个节点先后次序交换与重放的具体数据轨迹",
+          "owner": "教材研发员",
+          "status": "open",
+          "repairAction": "在保留现有正确内容和题意的前提下补齐：缺两个节点先后次序交换与重放的具体数据轨迹",
+          "firstCounterexample": {
+            "type": "静态当前答案与明确子问/必要机制对照",
+            "receivedQuestion": "并行节点同时更新状态时，如何处理合并规则和写入冲突？",
+            "observed": "缺两个节点先后次序交换与重放的具体数据轨迹",
+            "location": "sites/rolecraft/dist/learning-v13-data.js:11323"
+          },
+          "retest": "对当前题面、返修后的完整显示文本、原反例及受影响关联题重新逐项审读；涉及行为保证时由QA另定并执行必要的安全反例。"
+        },
+        {
+          "id": "CR-Q54-06",
+          "criterion": "AQS-06",
+          "reason": "未给相同键不同内容、有序步骤和重复事件的验证预期。",
+          "owner": "教材研发员",
+          "status": "open",
+          "repairAction": "在保留现有正确内容和题意的前提下补齐：未给相同键不同内容、有序步骤和重复事件的验证预期。",
+          "firstCounterexample": {
+            "type": "静态当前答案与明确子问/必要机制对照",
+            "receivedQuestion": "并行节点同时更新状态时，如何处理合并规则和写入冲突？",
+            "observed": "未给相同键不同内容、有序步骤和重复事件的验证预期。",
+            "location": "sites/rolecraft/dist/learning-v13-data.js:11323"
+          },
+          "retest": "对当前题面、返修后的完整显示文本、原反例及受影响关联题重新逐项审读；涉及行为保证时由QA另定并执行必要的安全反例。"
+        }
+      ],
+      "receivedAndCurrentContentIdentical": true,
+      "payloadSha256": "267774758c51c4a0be5ef46020364e38b9cfe3d7ec4a35e2d006fdcae2df3b73",
+      "evidenceRechecked": [
+        {
+          "id": "Q54-E1",
+          "interpretation": "输入是两个并行节点返回的findings，按不可变来源键合并；同键不同内容中止，源版本改变另建键/快照。已包含算法的对象、判断与输出/停止分支。",
+          "sourcePath": "textbooks/v12/n06-graph-orchestration.md",
+          "startLine": 21
+        },
+        {
+          "id": "Q54-E2",
+          "interpretation": "对无冲突项要求结合、交换、幂等；有序数据另存逻辑序号并查缺项；唯一approved先归单个授权所有者。",
+          "sourcePath": "textbooks/v12/n06-graph-orchestration.md",
+          "startLine": 34
+        }
+      ],
+      "correctedCriteria": [
+        {
+          "id": "AQS-01",
+          "name": "直接回答",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。解释覆盖会丢结果、简单追加会在重放时重复；提出不可变来源键和冲突中止及代数性质。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:11323",
+          "evidenceRefs": [
+            "Q54-E1",
+            "Q54-E2"
+          ]
+        },
+        {
+          "id": "AQS-02",
+          "name": "多角度机制",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。解释覆盖会丢结果、简单追加会在重放时重复；提出不可变来源键和冲突中止及代数性质。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:11323",
+          "evidenceRefs": [
+            "Q54-E1",
+            "Q54-E2"
+          ]
+        },
+        {
+          "id": "AQS-03",
+          "name": "可操作路径",
+          "applicable": true,
+          "status": "pass",
+          "reason": "原判把必须另给完整reducer代码当作最低条件。当前文字已列必要输入、按键合并、冲突拒绝、版本处理和职责边界，足以回答本设计题。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:11323",
+          "evidenceRefs": [
+            "Q54-E1",
+            "Q54-E2"
+          ],
+          "basis": "本次重读同一未变文本的评审纠正，不是作者返修"
+        },
+        {
+          "id": "AQS-04",
+          "name": "具体案例与分支",
+          "applicable": true,
+          "status": "pass",
+          "reason": "覆盖丢数据、追加重放重复、同键异内容及有序数据不能套集合合并，已构成互相有联系的具体反例，不要求再有一条完整事故故事。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:11323",
+          "evidenceRefs": [
+            "Q54-E1",
+            "Q54-E2"
+          ],
+          "basis": "本次重读同一未变文本的评审纠正，不是作者返修"
+        },
+        {
+          "id": "AQS-05",
+          "name": "条件与取舍",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。解释覆盖会丢结果、简单追加会在重放时重复；提出不可变来源键和冲突中止及代数性质。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:11323",
+          "evidenceRefs": [
+            "Q54-E1",
+            "Q54-E2"
+          ]
+        },
+        {
+          "id": "AQS-06",
+          "name": "验证方法",
+          "applicable": true,
+          "status": "pass",
+          "reason": "交换节点完成顺序不应变结果、同一来源重放不增加项、同键异内容须拒绝均可从明确性质直接判定；这里是拟议验证，不冒称实际运行。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:11323",
+          "evidenceRefs": [
+            "Q54-E1",
+            "Q54-E2"
+          ],
+          "basis": "本次重读同一未变文本的评审纠正，不是作者返修"
+        },
+        {
+          "id": "AQS-07",
+          "name": "来源与不确定性",
+          "applicable": true,
+          "status": "pass",
+          "reason": "当前v12教材文件/小节/行号/哈希已绑定；本次逐条核对原文范围及哈希，327条均一致。仅支持给定教学主张，不继承旧QA或宣称外部服务已实测。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:11323",
+          "evidenceRefs": [
+            "Q54-E1",
+            "Q54-E2"
+          ]
+        },
+        {
+          "id": "AQS-08",
+          "name": "可读与可用",
+          "applicable": true,
+          "status": "pass",
+          "reason": "此项未发现阻断理解的独立问题；以当前显示顺序审读，其他AQS缺失不因语句可读而获得通过。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:11323",
+          "evidenceRefs": [
+            "Q54-E1",
+            "Q54-E2"
+          ]
+        }
+      ],
+      "newConclusion": "pass_within_content_review_scope",
+      "rationale": "改判为当前静态教学内容范围通过。原文已给出可实施的键合并算法、冲突停止与顺序/重复语义，无需每题再强制附JSON或代码。",
+      "reviewCorrections": {
+        "03": "原判把必须另给完整reducer代码当作最低条件。当前文字已列必要输入、按键合并、冲突拒绝、版本处理和职责边界，足以回答本设计题。",
+        "04": "覆盖丢数据、追加重放重复、同键异内容及有序数据不能套集合合并，已构成互相有联系的具体反例，不要求再有一条完整事故故事。",
+        "06": "交换节点完成顺序不应变结果、同一来源重放不增加项、同键异内容须拒绝均可从明确性质直接判定；这里是拟议验证，不冒称实际运行。"
+      },
+      "retiredDefectIds": [
+        "CR-Q54-03",
+        "CR-Q54-04",
+        "CR-Q54-06"
+      ],
+      "retirementReason": "reviewer_assessment_correction_no_author_change",
+      "remainingSubstantiveContentGap": false,
+      "nonBlockingEditorialSuggestion": "后续可增加最小输入输出帮助上手，但不以新增示例或代码为此题通过前提。",
+      "runtimeValidation": "not_run",
+      "userLearningOutcome": "not_verified"
+    },
+    {
+      "id": "Q69",
+      "question": "多 Agent 的通信次数、费用和时延怎样纳入统一预算？",
+      "set": "fixed100",
+      "answerLocation": "sites/rolecraft/dist/learning-v13-data.js:13010",
+      "originalConclusion": "not_met",
+      "originalDefects": [
+        {
+          "id": "CR-Q69-04",
+          "criterion": "AQS-04",
+          "reason": "缺具体父额度、各子预留、部分返回/超时与结算的数字轨迹",
+          "owner": "教材研发员",
+          "status": "open",
+          "repairAction": "在保留现有正确内容和题意的前提下补齐：缺具体父额度、各子预留、部分返回/超时与结算的数字轨迹",
+          "firstCounterexample": {
+            "type": "静态当前答案与明确子问/必要机制对照",
+            "receivedQuestion": "多 Agent 的通信次数、费用和时延怎样纳入统一预算？",
+            "observed": "缺具体父额度、各子预留、部分返回/超时与结算的数字轨迹",
+            "location": "sites/rolecraft/dist/learning-v13-data.js:13010"
+          },
+          "retest": "对当前题面、返修后的完整显示文本、原反例及受影响关联题重新逐项审读；涉及行为保证时由QA另定并执行必要的安全反例。"
+        },
+        {
+          "id": "CR-Q69-06",
+          "criterion": "AQS-06",
+          "reason": "无并发预留竞态、重复结算和取消但仍消耗的测试输入及不变量预期。",
+          "owner": "教材研发员",
+          "status": "open",
+          "repairAction": "在保留现有正确内容和题意的前提下补齐：无并发预留竞态、重复结算和取消但仍消耗的测试输入及不变量预期。",
+          "firstCounterexample": {
+            "type": "静态当前答案与明确子问/必要机制对照",
+            "receivedQuestion": "多 Agent 的通信次数、费用和时延怎样纳入统一预算？",
+            "observed": "无并发预留竞态、重复结算和取消但仍消耗的测试输入及不变量预期。",
+            "location": "sites/rolecraft/dist/learning-v13-data.js:13010"
+          },
+          "retest": "对当前题面、返修后的完整显示文本、原反例及受影响关联题重新逐项审读；涉及行为保证时由QA另定并执行必要的安全反例。"
+        }
+      ],
+      "receivedAndCurrentContentIdentical": true,
+      "payloadSha256": "d373c562d20d0c0afb1e44df511f5b52fd0a6cdab8ab8c5a935ee1140b8bc51a",
+      "evidenceRechecked": [
+        {
+          "id": "Q69-E1",
+          "interpretation": "所有子Agent模型/读取共用任务预算，并区分并行等待收益与总费用、交接成本。",
+          "sourcePath": "textbooks/v12/c01-selection.md",
+          "startLine": 39
+        },
+        {
+          "id": "Q69-E2",
+          "interpretation": "同一run_id下每次物理请求单独attempt_id，超时可能计费，未知不能填零。",
+          "sourcePath": "textbooks/v12/e05.md",
+          "startLine": 10
+        },
+        {
+          "id": "Q69-E3",
+          "interpretation": "发送前事务检查任务/供应商额度及在途数，预留并写尝试后发送；结算只基于实际确认用量，未知不释放为可花额度。",
+          "sourcePath": "textbooks/v12/e05.md",
+          "startLine": 196
+        },
+        {
+          "id": "Q69-E4",
+          "interpretation": "另预留恢复核对资源，区分请求次数与模型用量。",
+          "sourcePath": "textbooks/v12/e05.md",
+          "startLine": 198
+        },
+        {
+          "id": "Q69-E5",
+          "interpretation": "子预留和不得超过父预算；各自误以为剩10次会累计30次，未知远端继续占未结算额度，通信摘要也计账。",
+          "sourcePath": "textbooks/v12/n07-multiagent-a2a.md",
+          "startLine": 47
+        }
+      ],
+      "correctedCriteria": [
+        {
+          "id": "AQS-01",
+          "name": "直接回答",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。有父预算分配、原子预留、尝试计费、未决费用和恢复专用额度。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:13010",
+          "evidenceRefs": [
+            "Q69-E1",
+            "Q69-E2",
+            "Q69-E3",
+            "Q69-E4",
+            "Q69-E5"
+          ]
+        },
+        {
+          "id": "AQS-02",
+          "name": "多角度机制",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。有父预算分配、原子预留、尝试计费、未决费用和恢复专用额度。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:13010",
+          "evidenceRefs": [
+            "Q69-E1",
+            "Q69-E2",
+            "Q69-E3",
+            "Q69-E4",
+            "Q69-E5"
+          ]
+        },
+        {
+          "id": "AQS-03",
+          "name": "可操作路径",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。有父预算分配、原子预留、尝试计费、未决费用和恢复专用额度。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:13010",
+          "evidenceRefs": [
+            "Q69-E1",
+            "Q69-E2",
+            "Q69-E3",
+            "Q69-E4",
+            "Q69-E5"
+          ]
+        },
+        {
+          "id": "AQS-04",
+          "name": "具体案例与分支",
+          "applicable": true,
+          "status": "pass",
+          "reason": "原判要求另有一张完整数字轨迹超出最低标准。3×10反例加预留/结算/未知分支已说明预算膨胀的原因与正确处置。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:13010",
+          "evidenceRefs": [
+            "Q69-E1",
+            "Q69-E2",
+            "Q69-E3",
+            "Q69-E4",
+            "Q69-E5"
+          ],
+          "basis": "本次重读同一未变文本的评审纠正，不是作者返修"
+        },
+        {
+          "id": "AQS-05",
+          "name": "条件与取舍",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。有父预算分配、原子预留、尝试计费、未决费用和恢复专用额度。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:13010",
+          "evidenceRefs": [
+            "Q69-E1",
+            "Q69-E2",
+            "Q69-E3",
+            "Q69-E4",
+            "Q69-E5"
+          ]
+        },
+        {
+          "id": "AQS-06",
+          "name": "验证方法",
+          "applicable": true,
+          "status": "pass",
+          "reason": "“预留和≤父预算”、未知请求不提前释放、物理尝试逐次计账是明确可检查的不变量；有原子预留步骤和错误三Agent分账对照，足以形成本题验证方法。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:13010",
+          "evidenceRefs": [
+            "Q69-E1",
+            "Q69-E2",
+            "Q69-E3",
+            "Q69-E4",
+            "Q69-E5"
+          ],
+          "basis": "本次重读同一未变文本的评审纠正，不是作者返修"
+        },
+        {
+          "id": "AQS-07",
+          "name": "来源与不确定性",
+          "applicable": true,
+          "status": "pass",
+          "reason": "当前v12教材文件/小节/行号/哈希已绑定；本次逐条核对原文范围及哈希，327条均一致。仅支持给定教学主张，不继承旧QA或宣称外部服务已实测。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:13010",
+          "evidenceRefs": [
+            "Q69-E1",
+            "Q69-E2",
+            "Q69-E3",
+            "Q69-E4",
+            "Q69-E5"
+          ]
+        },
+        {
+          "id": "AQS-08",
+          "name": "可读与可用",
+          "applicable": true,
+          "status": "pass",
+          "reason": "此项未发现阻断理解的独立问题；以当前显示顺序审读，其他AQS缺失不因语句可读而获得通过。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:13010",
+          "evidenceRefs": [
+            "Q69-E1",
+            "Q69-E2",
+            "Q69-E3",
+            "Q69-E4",
+            "Q69-E5"
+          ]
+        }
+      ],
+      "newConclusion": "pass_within_content_review_scope",
+      "rationale": "改判为当前静态教学内容范围通过。已覆盖统一身份、尝试计账、发送前原子预留、返回后结算、未知保留和恢复额度。",
+      "reviewCorrections": {
+        "04": "原判要求另有一张完整数字轨迹超出最低标准。3×10反例加预留/结算/未知分支已说明预算膨胀的原因与正确处置。",
+        "06": "“预留和≤父预算”、未知请求不提前释放、物理尝试逐次计账是明确可检查的不变量；有原子预留步骤和错误三Agent分账对照，足以形成本题验证方法。"
+      },
+      "retiredDefectIds": [
+        "CR-Q69-04",
+        "CR-Q69-06"
+      ],
+      "retirementReason": "reviewer_assessment_correction_no_author_change",
+      "remainingSubstantiveContentGap": false,
+      "nonBlockingEditorialSuggestion": "没有替用户给真实费率或宣称实际账单测量；静态机制答案不需要真实费用数据。",
+      "runtimeValidation": "not_run",
+      "userLearningOutcome": "not_verified"
+    },
+    {
+      "id": "Q79",
+      "question": "模型、提示、工具或知识库升级后，如何判断新版本能否发布？",
+      "set": "fixed100",
+      "answerLocation": "sites/rolecraft/dist/learning-v13-data.js:14414",
+      "originalConclusion": "not_met",
+      "originalDefects": [
+        {
+          "id": "CR-Q79-03",
+          "criterion": "AQS-03",
+          "reason": "未将多类升级转为明确放行、暂停和回滚的连续决策",
+          "owner": "教材研发员",
+          "status": "open",
+          "repairAction": "在保留现有正确内容和题意的前提下补齐：未将多类升级转为明确放行、暂停和回滚的连续决策",
+          "firstCounterexample": {
+            "type": "静态当前答案与明确子问/必要机制对照",
+            "receivedQuestion": "模型、提示、工具或知识库升级后，如何判断新版本能否发布？",
+            "observed": "未将多类升级转为明确放行、暂停和回滚的连续决策",
+            "location": "sites/rolecraft/dist/learning-v13-data.js:14414"
+          },
+          "retest": "对当前题面、返修后的完整显示文本、原反例及受影响关联题重新逐项审读；涉及行为保证时由QA另定并执行必要的安全反例。"
+        },
+        {
+          "id": "CR-Q79-04",
+          "criterion": "AQS-04",
+          "reason": "无一次升级因关键边界退化而停止/回退的完整轨迹",
+          "owner": "教材研发员",
+          "status": "open",
+          "repairAction": "在保留现有正确内容和题意的前提下补齐：无一次升级因关键边界退化而停止/回退的完整轨迹",
+          "firstCounterexample": {
+            "type": "静态当前答案与明确子问/必要机制对照",
+            "receivedQuestion": "模型、提示、工具或知识库升级后，如何判断新版本能否发布？",
+            "observed": "无一次升级因关键边界退化而停止/回退的完整轨迹",
+            "location": "sites/rolecraft/dist/learning-v13-data.js:14414"
+          },
+          "retest": "对当前题面、返修后的完整显示文本、原反例及受影响关联题重新逐项审读；涉及行为保证时由QA另定并执行必要的安全反例。"
+        },
+        {
+          "id": "CR-Q79-06",
+          "criterion": "AQS-06",
+          "reason": "测试主题多但缺一组旧新样本结果如何判发布的具体示范",
+          "owner": "教材研发员",
+          "status": "open",
+          "repairAction": "在保留现有正确内容和题意的前提下补齐：测试主题多但缺一组旧新样本结果如何判发布的具体示范",
+          "firstCounterexample": {
+            "type": "静态当前答案与明确子问/必要机制对照",
+            "receivedQuestion": "模型、提示、工具或知识库升级后，如何判断新版本能否发布？",
+            "observed": "测试主题多但缺一组旧新样本结果如何判发布的具体示范",
+            "location": "sites/rolecraft/dist/learning-v13-data.js:14414"
+          },
+          "retest": "对当前题面、返修后的完整显示文本、原反例及受影响关联题重新逐项审读；涉及行为保证时由QA另定并执行必要的安全反例。"
+        },
+        {
+          "id": "CR-Q79-08",
+          "criterion": "AQS-08",
+          "reason": "灰度标准段以逗号中断，所指比较表未显示。",
+          "owner": "教材研发员",
+          "status": "open",
+          "repairAction": "在保留现有正确内容和题意的前提下补齐：灰度标准段以逗号中断，所指比较表未显示。",
+          "firstCounterexample": {
+            "type": "静态当前答案与明确子问/必要机制对照",
+            "receivedQuestion": "模型、提示、工具或知识库升级后，如何判断新版本能否发布？",
+            "observed": "灰度标准段以逗号中断，所指比较表未显示。",
+            "location": "sites/rolecraft/dist/learning-v13-data.js:14414"
+          },
+          "retest": "对当前题面、返修后的完整显示文本、原反例及受影响关联题重新逐项审读；涉及行为保证时由QA另定并执行必要的安全反例。"
+        }
+      ],
+      "receivedAndCurrentContentIdentical": true,
+      "payloadSha256": "43af7d767dda38d9faf24c6b34fba365d4b4dcac86af072cb242708b0b2e105e",
+      "evidenceRechecked": [
+        {
+          "id": "Q79-E1",
+          "interpretation": "完整冻结代码/提示/工具/上下文/资料/模型/预算/判据等，滚动别名不能当固定模型。",
+          "sourcePath": "textbooks/v12/e02.md",
+          "startLine": 75
+        },
+        {
+          "id": "Q79-E2",
+          "interpretation": "新版重复工单即使总计多7次通过仍阻断；缺2条轨迹不从90次分母中删除。",
+          "sourcePath": "textbooks/v12/e02.md",
+          "startLine": 89
+        },
+        {
+          "id": "Q79-E3",
+          "interpretation": "原例、关联合法回归、独立保留区分；禁止全部create_issue并非安全修复成功。",
+          "sourcePath": "textbooks/v12/e02.md",
+          "startLine": 245
+        },
+        {
+          "id": "Q79-E4",
+          "interpretation": "对reader/writer状态版本分别要求真实格式恢复验证，不能把JSON可解析当可回退。",
+          "sourcePath": "textbooks/v12/e04.md",
+          "startLine": 32
+        },
+        {
+          "id": "Q79-E5",
+          "interpretation": "PRECHECK/STAGED/CANARY的输入与观察已给出；旧任务保留原执行语义，无验证不迁移。",
+          "sourcePath": "textbooks/v12/e04.md",
+          "startLine": 140
+        },
+        {
+          "id": "Q79-E6",
+          "interpretation": "关键边界失败停止新版本领任务、保存查询能力，再按已发副作用选择继续、暂停或安全交接；区分流量与任务回退。",
+          "sourcePath": "textbooks/v12/e04.md",
+          "startLine": 142
+        }
+      ],
+      "correctedCriteria": [
+        {
+          "id": "AQS-01",
+          "name": "直接回答",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。有冻结版本、风险硬门槛、原例/回归/保留集及新任务灰度与回退边界。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:14414",
+          "evidenceRefs": [
+            "Q79-E1",
+            "Q79-E2",
+            "Q79-E3",
+            "Q79-E4",
+            "Q79-E5",
+            "Q79-E6"
+          ]
+        },
+        {
+          "id": "AQS-02",
+          "name": "多角度机制",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。有冻结版本、风险硬门槛、原例/回归/保留集及新任务灰度与回退边界。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:14414",
+          "evidenceRefs": [
+            "Q79-E1",
+            "Q79-E2",
+            "Q79-E3",
+            "Q79-E4",
+            "Q79-E5",
+            "Q79-E6"
+          ]
+        },
+        {
+          "id": "AQS-03",
+          "name": "可操作路径",
+          "applicable": true,
+          "status": "pass",
+          "reason": "这些阶段与失败决定已形成连续可执行的发布判断，并非只列名词。无需另强制一张决策表。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:14414",
+          "evidenceRefs": [
+            "Q79-E1",
+            "Q79-E2",
+            "Q79-E3",
+            "Q79-E4",
+            "Q79-E5",
+            "Q79-E6"
+          ],
+          "basis": "本次重读同一未变文本的评审纠正，不是作者返修"
+        },
+        {
+          "id": "AQS-04",
+          "name": "具体案例与分支",
+          "applicable": true,
+          "status": "pass",
+          "reason": "重复工单硬阻断及“全禁写操作”反例已经具体说明何时拒绝发布；状态版本例说明不能盲回滚。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:14414",
+          "evidenceRefs": [
+            "Q79-E1",
+            "Q79-E2",
+            "Q79-E3",
+            "Q79-E4",
+            "Q79-E5",
+            "Q79-E6"
+          ],
+          "basis": "本次重读同一未变文本的评审纠正，不是作者返修"
+        },
+        {
+          "id": "AQS-05",
+          "name": "条件与取舍",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。有冻结版本、风险硬门槛、原例/回归/保留集及新任务灰度与回退边界。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:14414",
+          "evidenceRefs": [
+            "Q79-E1",
+            "Q79-E2",
+            "Q79-E3",
+            "Q79-E4",
+            "Q79-E5",
+            "Q79-E6"
+          ]
+        },
+        {
+          "id": "AQS-06",
+          "name": "验证方法",
+          "applicable": true,
+          "status": "pass",
+          "reason": "三个复验层、缺证分母、状态恢复及灰度观测均有预期结果；数值表不是统一必要格式。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:14414",
+          "evidenceRefs": [
+            "Q79-E1",
+            "Q79-E2",
+            "Q79-E3",
+            "Q79-E4",
+            "Q79-E5",
+            "Q79-E6"
+          ],
+          "basis": "本次重读同一未变文本的评审纠正，不是作者返修"
+        },
+        {
+          "id": "AQS-07",
+          "name": "来源与不确定性",
+          "applicable": true,
+          "status": "pass",
+          "reason": "当前v12教材文件/小节/行号/哈希已绑定；本次逐条核对原文范围及哈希，327条均一致。仅支持给定教学主张，不继承旧QA或宣称外部服务已实测。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:14414",
+          "evidenceRefs": [
+            "Q79-E1",
+            "Q79-E2",
+            "Q79-E3",
+            "Q79-E4",
+            "Q79-E5",
+            "Q79-E6"
+          ]
+        },
+        {
+          "id": "AQS-08",
+          "name": "可读与可用",
+          "applicable": true,
+          "status": "pass",
+          "reason": "“这张表”残留及E5末尾逗号是可改善编辑问题，未删去发布判断所需前提、步骤或结果；完整引用卡可回读源文，不作为阻断。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:14414",
+          "evidenceRefs": [
+            "Q79-E1",
+            "Q79-E2",
+            "Q79-E3",
+            "Q79-E4",
+            "Q79-E5",
+            "Q79-E6"
+          ],
+          "basis": "本次重读同一未变文本的评审纠正，不是作者返修"
+        }
+      ],
+      "newConclusion": "pass_within_content_review_scope",
+      "rationale": "改判为当前静态教学内容范围通过。发布前冻结、分层复验、状态兼容、分阶段放量和出现关键错误的停止/回退链已完整。",
+      "reviewCorrections": {
+        "03": "这些阶段与失败决定已形成连续可执行的发布判断，并非只列名词。无需另强制一张决策表。",
+        "04": "重复工单硬阻断及“全禁写操作”反例已经具体说明何时拒绝发布；状态版本例说明不能盲回滚。",
+        "06": "三个复验层、缺证分母、状态恢复及灰度观测均有预期结果；数值表不是统一必要格式。",
+        "08": "“这张表”残留及E5末尾逗号是可改善编辑问题，未删去发布判断所需前提、步骤或结果；完整引用卡可回读源文，不作为阻断。"
+      },
+      "retiredDefectIds": [
+        "CR-Q79-03",
+        "CR-Q79-04",
+        "CR-Q79-06",
+        "CR-Q79-08"
+      ],
+      "retirementReason": "reviewer_assessment_correction_no_author_change",
+      "remainingSubstantiveContentGap": false,
+      "nonBlockingEditorialSuggestion": "建议未来整理残留指代/标点，提高顺读性；并未把建议记为已修复。",
+      "runtimeValidation": "not_run",
+      "userLearningOutcome": "not_verified"
+    },
+    {
+      "id": "Q87",
+      "question": "如何防止检索内容、日志和错误消息泄露跨租户资料或密钥？",
+      "set": "fixed100",
+      "answerLocation": "sites/rolecraft/dist/learning-v13-data.js:15498",
+      "originalConclusion": "not_met",
+      "originalDefects": [
+        {
+          "id": "CR-Q87-03",
+          "criterion": "AQS-03",
+          "reason": "缺字段分类、最小化投影、敏感错误映射及审计访问的实施流程",
+          "owner": "教材研发员",
+          "status": "open",
+          "repairAction": "在保留现有正确内容和题意的前提下补齐：缺字段分类、最小化投影、敏感错误映射及审计访问的实施流程",
+          "firstCounterexample": {
+            "type": "静态当前答案与明确子问/必要机制对照",
+            "receivedQuestion": "如何防止检索内容、日志和错误消息泄露跨租户资料或密钥？",
+            "observed": "缺字段分类、最小化投影、敏感错误映射及审计访问的实施流程",
+            "location": "sites/rolecraft/dist/learning-v13-data.js:15498"
+          },
+          "retest": "对当前题面、返修后的完整显示文本、原反例及受影响关联题重新逐项审读；涉及行为保证时由QA另定并执行必要的安全反例。"
+        },
+        {
+          "id": "CR-Q87-04",
+          "criterion": "AQS-04",
+          "reason": "无一个含令牌报告经四通道处理的完整例子",
+          "owner": "教材研发员",
+          "status": "open",
+          "repairAction": "在保留现有正确内容和题意的前提下补齐：无一个含令牌报告经四通道处理的完整例子",
+          "firstCounterexample": {
+            "type": "静态当前答案与明确子问/必要机制对照",
+            "receivedQuestion": "如何防止检索内容、日志和错误消息泄露跨租户资料或密钥？",
+            "observed": "无一个含令牌报告经四通道处理的完整例子",
+            "location": "sites/rolecraft/dist/learning-v13-data.js:15498"
+          },
+          "retest": "对当前题面、返修后的完整显示文本、原反例及受影响关联题重新逐项审读；涉及行为保证时由QA另定并执行必要的安全反例。"
+        },
+        {
+          "id": "CR-Q87-06",
+          "criterion": "AQS-06",
+          "reason": "仅要求同时检查，未给种子秘密/跨租户输入的预期观测和漏检边界",
+          "owner": "教材研发员",
+          "status": "open",
+          "repairAction": "在保留现有正确内容和题意的前提下补齐：仅要求同时检查，未给种子秘密/跨租户输入的预期观测和漏检边界",
+          "firstCounterexample": {
+            "type": "静态当前答案与明确子问/必要机制对照",
+            "receivedQuestion": "如何防止检索内容、日志和错误消息泄露跨租户资料或密钥？",
+            "observed": "仅要求同时检查，未给种子秘密/跨租户输入的预期观测和漏检边界",
+            "location": "sites/rolecraft/dist/learning-v13-data.js:15498"
+          },
+          "retest": "对当前题面、返修后的完整显示文本、原反例及受影响关联题重新逐项审读；涉及行为保证时由QA另定并执行必要的安全反例。"
+        },
+        {
+          "id": "CR-Q87-08",
+          "criterion": "AQS-08",
+          "reason": "OWASP链接段被截断。",
+          "owner": "教材研发员",
+          "status": "open",
+          "repairAction": "在保留现有正确内容和题意的前提下补齐：OWASP链接段被截断。",
+          "firstCounterexample": {
+            "type": "静态当前答案与明确子问/必要机制对照",
+            "receivedQuestion": "如何防止检索内容、日志和错误消息泄露跨租户资料或密钥？",
+            "observed": "OWASP链接段被截断。",
+            "location": "sites/rolecraft/dist/learning-v13-data.js:15498"
+          },
+          "retest": "对当前题面、返修后的完整显示文本、原反例及受影响关联题重新逐项审读；涉及行为保证时由QA另定并执行必要的安全反例。"
+        }
+      ],
+      "receivedAndCurrentContentIdentical": true,
+      "payloadSha256": "0282697ae26c78e8ae5fc8657dbb6ac97b041d0bab56192de51baf2efd82ae19",
+      "evidenceRechecked": [
+        {
+          "id": "Q87-E1",
+          "interpretation": "数据返回前用可信身份核对象；先把全部组织内容放上下文再拒答已经越界。",
+          "sourcePath": "textbooks/v12/e03.md",
+          "startLine": 36
+        },
+        {
+          "id": "Q87-E2",
+          "interpretation": "已授权测试报告可含连接串/令牌/邮箱，按任务只选断言、位置和已分类片段，其余留受控存储。",
+          "sourcePath": "textbooks/v12/e03.md",
+          "startLine": 38
+        },
+        {
+          "id": "Q87-E3",
+          "interpretation": "同时核模型输入、模型/用户输出、工具载荷、普通日志；只遮UI或只清工具均不足。",
+          "sourcePath": "textbooks/v12/e03.md",
+          "startLine": 46
+        },
+        {
+          "id": "Q87-E4",
+          "interpretation": "日志仅安全ID/阶段/拒绝码，不原样记参数、异常或模型输入。",
+          "sourcePath": "textbooks/v12/e03.md",
+          "startLine": 50
+        },
+        {
+          "id": "Q87-E5",
+          "interpretation": "用夹具唯一标记扫描四通道；明确编码/分段/转述及未知秘密不在覆盖内，有限通过不能宣称全部不泄露。",
+          "sourcePath": "textbooks/v12/e03.md",
+          "startLine": 52
+        }
+      ],
+      "correctedCriteria": [
+        {
+          "id": "AQS-01",
+          "name": "直接回答",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。区分读权限与内容转交授权，并要求检查模型输入、输出、工具载荷、日志四通道。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:15498",
+          "evidenceRefs": [
+            "Q87-E1",
+            "Q87-E2",
+            "Q87-E3",
+            "Q87-E4",
+            "Q87-E5"
+          ]
+        },
+        {
+          "id": "AQS-02",
+          "name": "多角度机制",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。区分读权限与内容转交授权，并要求检查模型输入、输出、工具载荷、日志四通道。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:15498",
+          "evidenceRefs": [
+            "Q87-E1",
+            "Q87-E2",
+            "Q87-E3",
+            "Q87-E4",
+            "Q87-E5"
+          ]
+        },
+        {
+          "id": "AQS-03",
+          "name": "可操作路径",
+          "applicable": true,
+          "status": "pass",
+          "reason": "报告字段选择与日志事件限制给出了资料→投影→输出/日志的实际操作路径，不能因没有完整安全中间件代码判失败。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:15498",
+          "evidenceRefs": [
+            "Q87-E1",
+            "Q87-E2",
+            "Q87-E3",
+            "Q87-E4",
+            "Q87-E5"
+          ],
+          "basis": "本次重读同一未变文本的评审纠正，不是作者返修"
+        },
+        {
+          "id": "AQS-04",
+          "name": "具体案例与分支",
+          "applicable": true,
+          "status": "pass",
+          "reason": "含令牌报告与只展示断言的例子加四通道泄漏反例，已足以说明正常允许用途与禁止传递边界。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:15498",
+          "evidenceRefs": [
+            "Q87-E1",
+            "Q87-E2",
+            "Q87-E3",
+            "Q87-E4",
+            "Q87-E5"
+          ],
+          "basis": "本次重读同一未变文本的评审纠正，不是作者返修"
+        },
+        {
+          "id": "AQS-05",
+          "name": "条件与取舍",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。区分读权限与内容转交授权，并要求检查模型输入、输出、工具载荷、日志四通道。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:15498",
+          "evidenceRefs": [
+            "Q87-E1",
+            "Q87-E2",
+            "Q87-E3",
+            "Q87-E4",
+            "Q87-E5"
+          ]
+        },
+        {
+          "id": "AQS-06",
+          "name": "验证方法",
+          "applicable": true,
+          "status": "pass",
+          "reason": "初审工具输出发生截断，本岗未重新展开Q87最后的E5，误称没有扫描预期。当前E5明确给唯一标记、四通道和有限覆盖声明，撤销该缺陷。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:15498",
+          "evidenceRefs": [
+            "Q87-E1",
+            "Q87-E2",
+            "Q87-E3",
+            "Q87-E4",
+            "Q87-E5"
+          ],
+          "basis": "本次重读同一未变文本的评审纠正，不是作者返修"
+        },
+        {
+          "id": "AQS-07",
+          "name": "来源与不确定性",
+          "applicable": true,
+          "status": "pass",
+          "reason": "当前v12教材文件/小节/行号/哈希已绑定；本次逐条核对原文范围及哈希，327条均一致。仅支持给定教学主张，不继承旧QA或宣称外部服务已实测。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:15498",
+          "evidenceRefs": [
+            "Q87-E1",
+            "Q87-E2",
+            "Q87-E3",
+            "Q87-E4",
+            "Q87-E5"
+          ]
+        },
+        {
+          "id": "AQS-08",
+          "name": "可读与可用",
+          "applicable": true,
+          "status": "pass",
+          "reason": "E4的原文引用URL截断不抹去完整操作说明，准确教材来源卡仍在；是可读性改进建议而非核心缺口。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:15498",
+          "evidenceRefs": [
+            "Q87-E1",
+            "Q87-E2",
+            "Q87-E3",
+            "Q87-E4",
+            "Q87-E5"
+          ],
+          "basis": "本次重读同一未变文本的评审纠正，不是作者返修"
+        }
+      ],
+      "newConclusion": "pass_within_content_review_scope",
+      "rationale": "改判为当前静态教学内容范围通过。原判漏读E5，且把必须附具体秘密字符串/完整泄露事故设为硬要求不符合本题。",
+      "reviewCorrections": {
+        "03": "报告字段选择与日志事件限制给出了资料→投影→输出/日志的实际操作路径，不能因没有完整安全中间件代码判失败。",
+        "04": "含令牌报告与只展示断言的例子加四通道泄漏反例，已足以说明正常允许用途与禁止传递边界。",
+        "06": "初审工具输出发生截断，本岗未重新展开Q87最后的E5，误称没有扫描预期。当前E5明确给唯一标记、四通道和有限覆盖声明，撤销该缺陷。",
+        "08": "E4的原文引用URL截断不抹去完整操作说明，准确教材来源卡仍在；是可读性改进建议而非核心缺口。"
+      },
+      "retiredDefectIds": [
+        "CR-Q87-03",
+        "CR-Q87-04",
+        "CR-Q87-06",
+        "CR-Q87-08"
+      ],
+      "retirementReason": "reviewer_assessment_correction_no_author_change",
+      "remainingSubstantiveContentGap": false,
+      "nonBlockingEditorialSuggestion": "不需要在正文公开真实秘密；后续若执行检查应使用隔离夹具值，AI静态审读不授予真实安全性认证。",
+      "runtimeValidation": "not_run",
+      "userLearningOutcome": "not_verified"
+    },
+    {
+      "id": "Q95",
+      "question": "如何设计并发限制、超时、退避和熔断，避免故障扩大？",
+      "set": "fixed100",
+      "answerLocation": "sites/rolecraft/dist/learning-v13-data.js:16592",
+      "originalConclusion": "not_met",
+      "originalDefects": [
+        {
+          "id": "CR-Q95-04",
+          "criterion": "AQS-04",
+          "reason": "缺在故障扩散下限流、超时、退避与熔断共同作用的完整事件例",
+          "owner": "教材研发员",
+          "status": "open",
+          "repairAction": "在保留现有正确内容和题意的前提下补齐：缺在故障扩散下限流、超时、退避与熔断共同作用的完整事件例",
+          "firstCounterexample": {
+            "type": "静态当前答案与明确子问/必要机制对照",
+            "receivedQuestion": "如何设计并发限制、超时、退避和熔断，避免故障扩大？",
+            "observed": "缺在故障扩散下限流、超时、退避与熔断共同作用的完整事件例",
+            "location": "sites/rolecraft/dist/learning-v13-data.js:16592"
+          },
+          "retest": "对当前题面、返修后的完整显示文本、原反例及受影响关联题重新逐项审读；涉及行为保证时由QA另定并执行必要的安全反例。"
+        },
+        {
+          "id": "CR-Q95-06",
+          "criterion": "AQS-06",
+          "reason": "无故障注入、半开仅一探测及旧代结果不得误关的可执行测试预期",
+          "owner": "教材研发员",
+          "status": "open",
+          "repairAction": "在保留现有正确内容和题意的前提下补齐：无故障注入、半开仅一探测及旧代结果不得误关的可执行测试预期",
+          "firstCounterexample": {
+            "type": "静态当前答案与明确子问/必要机制对照",
+            "receivedQuestion": "如何设计并发限制、超时、退避和熔断，避免故障扩大？",
+            "observed": "无故障注入、半开仅一探测及旧代结果不得误关的可执行测试预期",
+            "location": "sites/rolecraft/dist/learning-v13-data.js:16592"
+          },
+          "retest": "对当前题面、返修后的完整显示文本、原反例及受影响关联题重新逐项审读；涉及行为保证时由QA另定并执行必要的安全反例。"
+        },
+        {
+          "id": "CR-Q95-08",
+          "criterion": "AQS-08",
+          "reason": "离线例链接句被截断。",
+          "owner": "教材研发员",
+          "status": "open",
+          "repairAction": "在保留现有正确内容和题意的前提下补齐：离线例链接句被截断。",
+          "firstCounterexample": {
+            "type": "静态当前答案与明确子问/必要机制对照",
+            "receivedQuestion": "如何设计并发限制、超时、退避和熔断，避免故障扩大？",
+            "observed": "离线例链接句被截断。",
+            "location": "sites/rolecraft/dist/learning-v13-data.js:16592"
+          },
+          "retest": "对当前题面、返修后的完整显示文本、原反例及受影响关联题重新逐项审读；涉及行为保证时由QA另定并执行必要的安全反例。"
+        }
+      ],
+      "receivedAndCurrentContentIdentical": true,
+      "payloadSha256": "12a00012ea0a6028227864a51a8598423b8d10f71c0caebdd8decfac345bfda7",
+      "evidenceRechecked": [
+        {
+          "id": "Q95-E1",
+          "interpretation": "分租户有界队列、固定worker和分下游预算；先建几十万协程再Semaphore不解决积压。",
+          "sourcePath": "textbooks/v12/n09-runtime-delivery.md",
+          "startLine": 34
+        },
+        {
+          "id": "Q95-E2",
+          "interpretation": "排队/模型/工具共享剩余deadline；读瞬时错误可退避，参数/权限不重试，写超时先核对，过期停止。",
+          "sourcePath": "textbooks/v12/n09-runtime-delivery.md",
+          "startLine": 36
+        },
+        {
+          "id": "Q95-E3",
+          "interpretation": "10时间单位2技术失败开路，冷却5后仅1探测，成功关闭失败重开；明说教学参数并非生产推荐。",
+          "sourcePath": "textbooks/v12/n09-runtime-delivery.md",
+          "startLine": 38
+        },
+        {
+          "id": "Q95-E4",
+          "interpretation": "共享状态锁/CAS、在途代际和故障域隔离，降级须标明能力变化。",
+          "sourcePath": "textbooks/v12/n09-runtime-delivery.md",
+          "startLine": 40
+        }
+      ],
+      "correctedCriteria": [
+        {
+          "id": "AQS-01",
+          "name": "直接回答",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。包括有界队列、deadline、错误分类、指数退避与熔断状态及跨进程边界。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:16592",
+          "evidenceRefs": [
+            "Q95-E1",
+            "Q95-E2",
+            "Q95-E3",
+            "Q95-E4"
+          ]
+        },
+        {
+          "id": "AQS-02",
+          "name": "多角度机制",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。包括有界队列、deadline、错误分类、指数退避与熔断状态及跨进程边界。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:16592",
+          "evidenceRefs": [
+            "Q95-E1",
+            "Q95-E2",
+            "Q95-E3",
+            "Q95-E4"
+          ]
+        },
+        {
+          "id": "AQS-03",
+          "name": "可操作路径",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。包括有界队列、deadline、错误分类、指数退避与熔断状态及跨进程边界。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:16592",
+          "evidenceRefs": [
+            "Q95-E1",
+            "Q95-E2",
+            "Q95-E3",
+            "Q95-E4"
+          ]
+        },
+        {
+          "id": "AQS-04",
+          "name": "具体案例与分支",
+          "applicable": true,
+          "status": "pass",
+          "reason": "E3已有条件、事件和两个结果分支的具体熔断例，与前后队列/超时边界衔接；不要求另编完整事故故事。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:16592",
+          "evidenceRefs": [
+            "Q95-E1",
+            "Q95-E2",
+            "Q95-E3",
+            "Q95-E4"
+          ],
+          "basis": "本次重读同一未变文本的评审纠正，不是作者返修"
+        },
+        {
+          "id": "AQS-05",
+          "name": "条件与取舍",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。包括有界队列、deadline、错误分类、指数退避与熔断状态及跨进程边界。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:16592",
+          "evidenceRefs": [
+            "Q95-E1",
+            "Q95-E2",
+            "Q95-E3",
+            "Q95-E4"
+          ]
+        },
+        {
+          "id": "AQS-06",
+          "name": "验证方法",
+          "applicable": true,
+          "status": "pass",
+          "reason": "单探测、成功/失败迁移、旧代不能关新熔断以及业务错误不能触发全站故障，给出了可观察测试条件和预期，不强制附可执行测试脚本。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:16592",
+          "evidenceRefs": [
+            "Q95-E1",
+            "Q95-E2",
+            "Q95-E3",
+            "Q95-E4"
+          ],
+          "basis": "本次重读同一未变文本的评审纠正，不是作者返修"
+        },
+        {
+          "id": "AQS-07",
+          "name": "来源与不确定性",
+          "applicable": true,
+          "status": "pass",
+          "reason": "当前v12教材文件/小节/行号/哈希已绑定；本次逐条核对原文范围及哈希，327条均一致。仅支持给定教学主张，不继承旧QA或宣称外部服务已实测。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:16592",
+          "evidenceRefs": [
+            "Q95-E1",
+            "Q95-E2",
+            "Q95-E3",
+            "Q95-E4"
+          ]
+        },
+        {
+          "id": "AQS-08",
+          "name": "可读与可用",
+          "applicable": true,
+          "status": "pass",
+          "reason": "被截断的是离线例链接，主体状态机完整；来源卡可定位原文，链接修整列为非阻断建议。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:16592",
+          "evidenceRefs": [
+            "Q95-E1",
+            "Q95-E2",
+            "Q95-E3",
+            "Q95-E4"
+          ],
+          "basis": "本次重读同一未变文本的评审纠正，不是作者返修"
+        }
+      ],
+      "newConclusion": "pass_within_content_review_scope",
+      "rationale": "改判为当前静态教学内容范围通过。并发/队列、剩余deadline、错误分类、退避与熔断状态及故障域隔离已经构成完整回答。",
+      "reviewCorrections": {
+        "04": "E3已有条件、事件和两个结果分支的具体熔断例，与前后队列/超时边界衔接；不要求另编完整事故故事。",
+        "06": "单探测、成功/失败迁移、旧代不能关新熔断以及业务错误不能触发全站故障，给出了可观察测试条件和预期，不强制附可执行测试脚本。",
+        "08": "被截断的是离线例链接，主体状态机完整；来源卡可定位原文，链接修整列为非阻断建议。"
+      },
+      "retiredDefectIds": [
+        "CR-Q95-04",
+        "CR-Q95-06",
+        "CR-Q95-08"
+      ],
+      "retirementReason": "reviewer_assessment_correction_no_author_change",
+      "remainingSubstantiveContentGap": false,
+      "nonBlockingEditorialSuggestion": "真实阈值、线程/进程并发实现及负载效果仍未由本次静态复核验证。",
+      "runtimeValidation": "not_run",
+      "userLearningOutcome": "not_verified"
+    },
+    {
+      "id": "M104",
+      "question": "Agent服务运行数小时后内存持续增长，但请求量平稳。如何区别对象仍被引用、缓存无界、待完成任务堆积与暂时内存峰值，并验证修复？",
+      "set": "market14",
+      "answerLocation": "sites/rolecraft/dist/learning-v13-data.js:17689",
+      "originalConclusion": "not_met",
+      "originalDefects": [
+        {
+          "id": "CR-M104-04",
+          "criterion": "AQS-04",
+          "reason": "有限例只描述三类对象，没有把悬挂任务积压与暂时峰值按同一时间线对照出观察结果",
+          "owner": "教材研发员",
+          "status": "open",
+          "repairAction": "在保留现有正确内容和题意的前提下补齐：有限例只描述三类对象，没有把悬挂任务积压与暂时峰值按同一时间线对照出观察结果",
+          "firstCounterexample": {
+            "type": "静态当前答案与明确子问/必要机制对照",
+            "receivedQuestion": "Agent服务运行数小时后内存持续增长，但请求量平稳。如何区别对象仍被引用、缓存无界、待完成任务堆积与暂时内存峰值，并验证修复？",
+            "observed": "有限例只描述三类对象，没有把悬挂任务积压与暂时峰值按同一时间线对照出观察结果",
+            "location": "sites/rolecraft/dist/learning-v13-data.js:17689"
+          },
+          "retest": "对当前题面、返修后的完整显示文本、原反例及受影响关联题重新逐项审读；涉及行为保证时由QA另定并执行必要的安全反例。"
+        },
+        {
+          "id": "CR-M104-06",
+          "criterion": "AQS-06",
+          "reason": "未完整展示修复前后读数或待完成任务不丢失的断言",
+          "owner": "教材研发员",
+          "status": "open",
+          "repairAction": "在保留现有正确内容和题意的前提下补齐：未完整展示修复前后读数或待完成任务不丢失的断言",
+          "firstCounterexample": {
+            "type": "静态当前答案与明确子问/必要机制对照",
+            "receivedQuestion": "Agent服务运行数小时后内存持续增长，但请求量平稳。如何区别对象仍被引用、缓存无界、待完成任务堆积与暂时内存峰值，并验证修复？",
+            "observed": "未完整展示修复前后读数或待完成任务不丢失的断言",
+            "location": "sites/rolecraft/dist/learning-v13-data.js:17689"
+          },
+          "retest": "对当前题面、返修后的完整显示文本、原反例及受影响关联题重新逐项审读；涉及行为保证时由QA另定并执行必要的安全反例。"
+        },
+        {
+          "id": "CR-M104-08",
+          "criterion": "AQS-08",
+          "reason": "关键结尾“不能以丢结果换低内存”语句在“低”处中断，需补全而非改写所有已有机制。",
+          "owner": "教材研发员",
+          "status": "open",
+          "repairAction": "在保留现有正确内容和题意的前提下补齐：关键结尾“不能以丢结果换低内存”语句在“低”处中断，需补全而非改写所有已有机制。",
+          "firstCounterexample": {
+            "type": "静态当前答案与明确子问/必要机制对照",
+            "receivedQuestion": "Agent服务运行数小时后内存持续增长，但请求量平稳。如何区别对象仍被引用、缓存无界、待完成任务堆积与暂时内存峰值，并验证修复？",
+            "observed": "关键结尾“不能以丢结果换低内存”语句在“低”处中断，需补全而非改写所有已有机制。",
+            "location": "sites/rolecraft/dist/learning-v13-data.js:17689"
+          },
+          "retest": "对当前题面、返修后的完整显示文本、原反例及受影响关联题重新逐项审读；涉及行为保证时由QA另定并执行必要的安全反例。"
+        }
+      ],
+      "receivedAndCurrentContentIdentical": true,
+      "payloadSha256": "3f3741e07e27fc62d8d725cc54e0dbf3cbde4a82b9be93178ccf9fcc23b05bdf",
+      "evidenceRechecked": [
+        {
+          "id": "M104-E1",
+          "interpretation": "每分钟到达100完成80的例子解释请求稳定不等于在途稳定，并列出同时观测对象。",
+          "sourcePath": "textbooks/v12/n09-runtime-delivery.md",
+          "startLine": 46
+        },
+        {
+          "id": "M104-E2",
+          "interpretation": "固定负载热身、间隔快照、停输入观察、引用持有者排查；分别给持有/缓存/Task堆积/暂时峰值的行为区别。",
+          "sourcePath": "textbooks/v12/n09-runtime-delivery.md",
+          "startLine": 48
+        },
+        {
+          "id": "M104-E3",
+          "interpretation": "tracemalloc与RSS/原生/GPU边界、all_tasks仅当前循环，防止工具输出被过度解释。",
+          "sourcePath": "textbooks/v12/n09-runtime-delivery.md",
+          "startLine": 50
+        },
+        {
+          "id": "M104-E4",
+          "interpretation": "4批×32个4KB对象，比较保留列表、至多4项缓存和临时对象；同负载比较增长斜率、持有对象与吞吐，不承诺跨机字节值。",
+          "sourcePath": "textbooks/v12/n09-runtime-delivery.md",
+          "startLine": 52
+        }
+      ],
+      "correctedCriteria": [
+        {
+          "id": "AQS-01",
+          "name": "直接回答",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。四类增长原因、热身快照、tracemalloc边界和保持吞吐的复验路径较完整。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:17689",
+          "evidenceRefs": [
+            "M104-E1",
+            "M104-E2",
+            "M104-E3",
+            "M104-E4"
+          ]
+        },
+        {
+          "id": "AQS-02",
+          "name": "多角度机制",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。四类增长原因、热身快照、tracemalloc边界和保持吞吐的复验路径较完整。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:17689",
+          "evidenceRefs": [
+            "M104-E1",
+            "M104-E2",
+            "M104-E3",
+            "M104-E4"
+          ]
+        },
+        {
+          "id": "AQS-03",
+          "name": "可操作路径",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。四类增长原因、热身快照、tracemalloc边界和保持吞吐的复验路径较完整。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:17689",
+          "evidenceRefs": [
+            "M104-E1",
+            "M104-E2",
+            "M104-E3",
+            "M104-E4"
+          ]
+        },
+        {
+          "id": "AQS-04",
+          "name": "具体案例与分支",
+          "applicable": true,
+          "status": "pass",
+          "reason": "原判把四原因都必须放到同一条事故时序作为前提。已有队列数量例、三种内存持有对照及四类诊断分支足以示范区分，不应强制单一故事。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:17689",
+          "evidenceRefs": [
+            "M104-E1",
+            "M104-E2",
+            "M104-E3",
+            "M104-E4"
+          ],
+          "basis": "本次重读同一未变文本的评审纠正，不是作者返修"
+        },
+        {
+          "id": "AQS-05",
+          "name": "条件与取舍",
+          "applicable": true,
+          "status": "pass",
+          "reason": "本项可观察内容见本题已具备部分及其当前文本；不表示其他子问齐备。四类增长原因、热身快照、tracemalloc边界和保持吞吐的复验路径较完整。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:17689",
+          "evidenceRefs": [
+            "M104-E1",
+            "M104-E2",
+            "M104-E3",
+            "M104-E4"
+          ]
+        },
+        {
+          "id": "AQS-06",
+          "name": "验证方法",
+          "applicable": true,
+          "status": "pass",
+          "reason": "问题要求验证方法，现文已给相同负载/热身条件、长期斜率、结束持有和吞吐观察；不要求正文提供未实际测量的修复前后读数。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:17689",
+          "evidenceRefs": [
+            "M104-E1",
+            "M104-E2",
+            "M104-E3",
+            "M104-E4"
+          ],
+          "basis": "本次重读同一未变文本的评审纠正，不是作者返修"
+        },
+        {
+          "id": "AQS-07",
+          "name": "来源与不确定性",
+          "applicable": true,
+          "status": "pass",
+          "reason": "当前v12教材文件/小节/行号/哈希已绑定；本次逐条核对原文范围及哈希，327条均一致。仅支持给定教学主张，不继承旧QA或宣称外部服务已实测。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:17689",
+          "evidenceRefs": [
+            "M104-E1",
+            "M104-E2",
+            "M104-E3",
+            "M104-E4"
+          ]
+        },
+        {
+          "id": "AQS-08",
+          "name": "可读与可用",
+          "applicable": true,
+          "status": "pass",
+          "reason": "最后字词及来源URL被截断确有编辑瑕疵，但此前完整内容已表达比较方法和工具边界，未使核心机制不可读；撤销阻断，保留改善建议。",
+          "evidenceLocation": "sites/rolecraft/dist/learning-v13-data.js:17689",
+          "evidenceRefs": [
+            "M104-E1",
+            "M104-E2",
+            "M104-E3",
+            "M104-E4"
+          ],
+          "basis": "本次重读同一未变文本的评审纠正，不是作者返修"
+        }
+      ],
+      "newConclusion": "pass_within_content_review_scope",
+      "rationale": "改判为当前静态教学内容范围通过。已区分四类增长机制、观测/定位顺序、工具能力边界以及对照后的修复验证。",
+      "reviewCorrections": {
+        "04": "原判把四原因都必须放到同一条事故时序作为前提。已有队列数量例、三种内存持有对照及四类诊断分支足以示范区分，不应强制单一故事。",
+        "06": "问题要求验证方法，现文已给相同负载/热身条件、长期斜率、结束持有和吞吐观察；不要求正文提供未实际测量的修复前后读数。",
+        "08": "最后字词及来源URL被截断确有编辑瑕疵，但此前完整内容已表达比较方法和工具边界，未使核心机制不可读；撤销阻断，保留改善建议。"
+      },
+      "retiredDefectIds": [
+        "CR-M104-04",
+        "CR-M104-06",
+        "CR-M104-08"
+      ],
+      "retirementReason": "reviewer_assessment_correction_no_author_change",
+      "remainingSubstantiveContentGap": false,
+      "nonBlockingEditorialSuggestion": "有限内存例不能代表数小时真实服务实测；本轮未运行该例、未宣称真实内存问题已修复。",
+      "runtimeValidation": "not_run",
+      "userLearningOutcome": "not_verified"
+    }
+  ],
+  "summary": {
+    "reconciledQuestionIds": [
+      "Q54",
+      "Q69",
+      "Q79",
+      "Q87",
+      "Q95",
+      "M104"
+    ],
+    "assessmentsCorrected": 6,
+    "retiredReviewDefects": 19,
+    "initialReviewSummary": {
+      "fixed100": {
+        "total": 100,
+        "contentPassWithinScope": 11,
+        "notMet": 89
+      },
+      "market14": {
+        "total": 14,
+        "contentPassWithinScope": 2,
+        "notMet": 12
+      },
+      "prototype10": {
+        "total": 10,
+        "contentPassWithinScope": 0,
+        "notMet": 10
+      },
+      "all": {
+        "total": 124,
+        "contentPassWithinScope": 13,
+        "notMet": 111
+      }
+    },
+    "effectiveContentReviewSummary": {
+      "fixed100": {
+        "total": 100,
+        "passWithinContentScope": 16,
+        "notMet": 84
+      },
+      "market14": {
+        "total": 14,
+        "passWithinContentScope": 3,
+        "notMet": 11
+      },
+      "prototype10": {
+        "total": 10,
+        "passWithinContentScope": 0,
+        "notMet": 10
+      },
+      "all": {
+        "total": 124,
+        "passWithinContentScope": 19,
+        "notMet": 105
+      }
+    },
+    "effectiveOpenInitialDefects": 490
+  },
+  "limits": [
+    "不是六题被作者修好；文本完全未变，改动的是本岗评审判断。",
+    "当前105题的原实质缺口未因六题复核自动关闭；最终以产品整合和QA逐题独立证据为准。",
+    "六题只获静态教学内容范围通过；没有运行、生产安全、真实账单、真人理解或职业能力的新证据。",
+    "可读性建议仍建议后续编辑整理，不伪报已完成；不把不影响机制完整性的标点/链接截断都当阻断。"
+  ],
+  "completeTargetStatus": "not_met"
+}

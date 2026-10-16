@@ -1,0 +1,113 @@
+{
+  "auditor": "/root/employee_v12_qa",
+  "date": "2026-10-11T23:42:50.282072+08:00",
+  "scope": "PM岗位配置与七岗接单内容独立核对；本QA自身接单是会话接受证据，不以自查认证未来QA质量。",
+  "criteria_source": "COMMON.md 本次组织验收条件与八份既定岗位提示词；没有新产品评分或门槛",
+  "roles": [
+    {
+      "role_id": "content-reviewer",
+      "prompt_purpose_support": "真人专业复核包、专家真实身份/日期/版本/原始意见、作者返修与独立原问题核对",
+      "scope_and_dependency_finding": "课程架构师/作者与真人专家条件；本次无专家、不改作者正文",
+      "review_result": "matches_assigned_role_with_dependencies",
+      "inspected": [
+        "prompt.md",
+        "onboarding.md",
+        "onboarding.json"
+      ]
+    },
+    {
+      "role_id": "practicum-evaluator",
+      "prompt_purpose_support": "机制解释、独立实现、未知排错、迁移、MVP本人贡献、帮助记录与Q10/Q99实践原证",
+      "scope_and_dependency_finding": "既有量规适用条件、产品测量条件与真实学习者/作品；不代答或改评分标准",
+      "review_result": "matches_assigned_role_with_dependencies",
+      "inspected": [
+        "prompt.md",
+        "onboarding.md",
+        "onboarding.json"
+      ]
+    },
+    {
+      "role_id": "user-researcher",
+      "prompt_purpose_support": "真实用户发现/观察/试点/求职跟踪，正反/退出、核验与自述、混杂因素",
+      "scope_and_dependency_finding": "产品先定人群与研究指标、获准参与者与资料；无招募、无模拟用户",
+      "review_result": "matches_assigned_role_with_dependencies",
+      "inspected": [
+        "prompt.md",
+        "onboarding.md",
+        "onboarding.json"
+      ]
+    },
+    {
+      "role_id": "generation-engineer",
+      "prompt_purpose_support": "档案→任务→模型→来源→核验→版本、正常与关键失败、真实用量/耗时",
+      "scope_and_dependency_finding": "产品/课程包、当前后端合同、配置/预算与调用授权；本次无请求、历史配置不当当前成功",
+      "review_result": "matches_assigned_role_with_dependencies",
+      "inspected": [
+        "prompt.md",
+        "onboarding.md",
+        "onboarding.json"
+      ]
+    },
+    {
+      "role_id": "backend-data-engineer",
+      "prompt_purpose_support": "账户/任务/恢复/版本，临时合成数据、并发幂等、崩溃未知效果、迁移备份回滚",
+      "scope_and_dependency_finding": "产品范围、模型/客户端当前合同与独立QA；不碰实际用户库，不自授生产通过",
+      "review_result": "matches_assigned_role_with_dependencies",
+      "inspected": [
+        "prompt.md",
+        "onboarding.md",
+        "onboarding.json"
+      ]
+    },
+    {
+      "role_id": "benchmark-researcher",
+      "prompt_purpose_support": "独立来源/日期/版本/去重、公平比较与预登记，优势劣势未知均记录",
+      "scope_and_dependency_finding": "产品冻结比较条件、领域执行/QA/实训真实结果；面试覆盖不当行业领先",
+      "review_result": "matches_assigned_role_with_dependencies",
+      "inspected": [
+        "prompt.md",
+        "onboarding.md",
+        "onboarding.json"
+      ]
+    },
+    {
+      "role_id": "operations-analyst",
+      "prompt_purpose_support": "模型/检索/储存/计算/审核/重试/维护成本，尝试/成功分母、实际/估算/未知分栏",
+      "scope_and_dependency_finding": "产品预算质量护栏、工程实际用量与获准账单/工时；不虚构已付账单",
+      "review_result": "matches_assigned_role_with_dependencies",
+      "inspected": [
+        "prompt.md",
+        "onboarding.md",
+        "onboarding.json"
+      ]
+    },
+    {
+      "role_id": "qa-engineer",
+      "prompt_purpose_support": "当前版本独立检查，真实模型/协议/沙箱/恢复等与模拟分开，首次失败和原例复验",
+      "scope_and_dependency_finding": "当前冻结对象与专业证据；本次只组织配置，未来集成条件未收到",
+      "review_result": "matches_assigned_role_with_dependencies",
+      "inspected": [
+        "prompt.md",
+        "onboarding.md",
+        "onboarding.json"
+      ]
+    }
+  ],
+  "cross_role_checks": {
+    "single_domain": "八岗均对应AGENTS唯一领域，产品/课程原负责人保留；AI/后端与作者/审校/QA职责分离。",
+    "authorized_paths": "PM维护prompt/COMMON/行政名册，七岗只写本岗接单，QA仅本岗证据；无同文件并行写约定。",
+    "first_task_contract": "每份prompt含目标、共同及本岗输入、范围、独占目录、交付、验收和前置依赖；接单列收到/未收到与原责任人。",
+    "evidence_claims": "专业包、真人、生成、实训、竞品实测、账单与生产未发生均明确；未从配置或旧报告继承新通过。",
+    "identity_normalization": "以唯一目录、EV12员工编号、角色/领域、agent_name与manifest、prompt及dispatch联合定位；role_id的slug、下划线旧ID或EV12编号显式归一。AI生成接单没有重复role_name字段，身份由其员工编号、领域、提示词和实际agent_name明确，无实质混淆。",
+    "navigation": "本轮128本地Markdown目标全部存在；10个:行号范围有效，本轮链接没有#锚点；未渲染浏览器。",
+    "AGENTS_administrative_append": "8项接单收到AGENTS旧hash不同于当前；删PM声明的新尾段后原前文字节hash完全恢复，无旧职责/门槛变更。",
+    "independence": "PM写组织配置，七岗独立接单，QA独立核前述产物；QA报告没有再获另一QA独立审核。"
+  },
+  "employee_configuration_defects": [],
+  "limitations": [
+    "岗位已接受职责不代表后续专业工作完成",
+    "没有查全程序/私有数据库/秘密配置或任何生产行为",
+    "本轮不重跑教材、外部集成或学习者行为",
+    "现有产品not_met只引用收到版本，未作新完整产品审计"
+  ]
+}

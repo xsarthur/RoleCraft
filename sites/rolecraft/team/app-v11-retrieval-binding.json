@@ -1,0 +1,185 @@
+{
+  "scope": "retrieval_engineering_handoff_not_independent_QA",
+  "corpusVersion": "textbook-v10",
+  "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+  "bookSha256": "6707a4f03b298a5b234ce56a88edcbd9d79af6d40cb978227461a9d9d522f76e",
+  "files": [
+    {
+      "path": "scripts/start-local.mjs",
+      "sha256": "b708c5d421e1ce77e7c0e399e833afd8d0b8881742f3adeeb2a98dfc3606a903",
+      "bytes": 620
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "2ecff974b251cee17395d15e92ba65542e6d12222d8255b5c8da2f905bc7fab5",
+      "bytes": 286
+    },
+    {
+      "path": "sites/rolecraft/server/index.mjs",
+      "sha256": "f845271c8ab5a5c00b60cf7c6728f05f8fc6ff9a5df50f7d667abd03f5a8e464",
+      "bytes": 31212
+    },
+    {
+      "path": "sites/rolecraft/server/README.md",
+      "sha256": "79e2d2dcbbedacb6a0cab7050e35f145e9f0c948e1bbc2777b9b44ca7c1f53d9",
+      "bytes": 3486
+    },
+    {
+      "path": "sites/rolecraft/dist/content-retrieval-core.js",
+      "sha256": "9657fa6260a1b20c1ca2f4f0c1111114d5515ddbe58cac8345d22a68844feaff",
+      "bytes": 14655
+    },
+    {
+      "path": "sites/rolecraft/dist/content-v10-data.js",
+      "sha256": "0a2537f32ea2ddc2c5a020cc7a72937f0bfb7813ee2b701a3bdeec9035d02d58",
+      "bytes": 1071365
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/README.md",
+      "sha256": "9f4356a3364e34573c2860710a48a7c7edd946a8ef6601a15529b79f79ac0128",
+      "bytes": 5720
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/affected-check-results.json",
+      "sha256": "92b425533cb5df5f5d6ad4d7fc6e14243f80a4fde8d05ee9ee70c8199395f1f9",
+      "bytes": 18660
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/build-content.mjs",
+      "sha256": "d4ccba5dd141228abfdd8104bf34b672bfaae712f34bde29d9aa371cc6b11671",
+      "bytes": 4946
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/content-v10-index.json",
+      "sha256": "98dc7273c9d1d5b27a18b4589f0a540cc9705b326d64bda9689f51574204e4e4",
+      "bytes": 1092473
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/dev-check-results.json",
+      "sha256": "f2c35b7bd4eaf455b86211d96f6ebb53240774071c1ae50319dea91d802b92bb",
+      "bytes": 63524
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/dev-check.mjs",
+      "sha256": "a2b4bea0f78e4ed48fb9473be3f3c944525970f174065f3d57cee586802da003",
+      "bytes": 6412
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/index.mjs",
+      "sha256": "792ea2d84970580ecbe0d0e9f890764bdab6e144f8ce06f8ed976bf6114150d4",
+      "bytes": 6117
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/intent-vectors-v10.json",
+      "sha256": "0fb078eca729c7c587b609dda062e2f263ded5618b545c5b36e9d5ef774b5018",
+      "bytes": 346219
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/model-lock.json",
+      "sha256": "4ca475a7d227148624e45c52df50cbe6c3ca0678a7ef4c9bb8b7a76e61f949e7",
+      "bytes": 1693
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/package-lock.json",
+      "sha256": "cecb02a2efca46d990de9ede1e0e598c5854279adf00654d61df9fb077b93017",
+      "bytes": 38286
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/package.json",
+      "sha256": "5b8105f86bc314f93102130ae3db827e4e02958c7785ed140e461aa1b96bf292",
+      "bytes": 142
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/prepare-model.mjs",
+      "sha256": "5a89a92598cb393d4f2cb6abc41a885003a8c831912dfefc72b14becd15115fc",
+      "bytes": 1618
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/probe-apple.m",
+      "sha256": "7f2aeea66ecdcf04b40113c4f8cd0d5663dd81a81cb2c7b5d971c42605428dc3",
+      "bytes": 900
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/probe-apple.swift",
+      "sha256": "c83d77e07abb854b748b334ee783215414af1bdea22714abc8c0852e2c1b64ab",
+      "bytes": 704
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/semantic.mjs",
+      "sha256": "ef62b852a4e93314c5a2c178a84d8c4cd9a00d9e766568f78bbd94ab77c65fdf",
+      "bytes": 11204
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/shutdown-check-results.json",
+      "sha256": "cb3a817637a4d901f99eb38f4edfcb5b5612327ca5d4253179358f9a05f46d5d",
+      "bytes": 491
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/vectors-v10.json",
+      "sha256": "993cfda9d7738201ec404961efe6defa3c7945d53e176ef4e07188286f0f474b",
+      "bytes": 3989754
+    }
+  ],
+  "assets": [
+    {
+      "path": "sites/rolecraft/dist/content-v10-assets/agent-engineering-landscape.dot",
+      "sha256": "7a280385d49ebefe9c4d82bd81630101f67692c8ea7ac5cfb61194b70f1c829b"
+    },
+    {
+      "path": "sites/rolecraft/dist/content-v10-assets/agent-engineering-landscape.png",
+      "sha256": "7136b1c83c29f3ed357437e3c9885901b8b90238763e6263dead3fdd89249bd6"
+    },
+    {
+      "path": "sites/rolecraft/dist/content-v10-assets/agent-engineering-landscape.svg",
+      "sha256": "fd235b6f248af4ada7556044a7c393810832cde838f0945c98a7a22b3bd0a8f9"
+    },
+    {
+      "path": "sites/rolecraft/dist/content-v10-assets/agent-runtime-loop.dot",
+      "sha256": "7fcde3319a3f611f3909472530a29e73480ab5a8049b65313be53278e312ee5b"
+    },
+    {
+      "path": "sites/rolecraft/dist/content-v10-assets/agent-runtime-loop.png",
+      "sha256": "9497f77fa43566eb621549175ee55870a02b50e8ebd3144405e820d0ac2c7106"
+    },
+    {
+      "path": "sites/rolecraft/dist/content-v10-assets/agent-runtime-loop.svg",
+      "sha256": "c1929a8021f331df4452e949272028fcde05c037b996453e883d3f84a83e5a15"
+    },
+    {
+      "path": "sites/rolecraft/dist/content-v10-references/TEXTBOOK_WRITING_STANDARD.md",
+      "sha256": "46826414794822b5e2c836edad68ba6122f8e551d7669bcc8917bb315f5a6aa1"
+    },
+    {
+      "path": "sites/rolecraft/dist/content-v10-references/product-creation-standard.md",
+      "sha256": "b57e4ee78b58773377c73088068e6b036c8c52d53a48382424de5bdbcfd609ff"
+    },
+    {
+      "path": "sites/rolecraft/dist/content-v10-references/product-gates.json",
+      "sha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06"
+    },
+    {
+      "path": "sites/rolecraft/dist/content-v10-references/textbook-v09-curriculum.md",
+      "sha256": "3be6d21f77da19db6acb0e34df3947b8ef77fb310757d3497c33e4d99e359874"
+    },
+    {
+      "path": "sites/rolecraft/dist/content-v10-references/textbook-v09-manifest.json",
+      "sha256": "1e7f54cad711de82dfcdba999e282476b1db103ea637a82a18bb18a23aa12969"
+    },
+    {
+      "path": "sites/rolecraft/dist/content-v10-references/textbook-v09-qa.md",
+      "sha256": "c708997d143a5251e1e64af406d9846cac30572b14bf18a2fe219367baff05b3"
+    },
+    {
+      "path": "sites/rolecraft/dist/content-v10-references/textbook-v10-opening-content-review.md",
+      "sha256": "45d1b0a4a4cef987d08fd9e2e48077ab7c3dbc7a4a8b4d3fceaf6b4ed6f88756"
+    },
+    {
+      "path": "sites/rolecraft/dist/content-v10-references/textbook-v10-opening-qa.md",
+      "sha256": "79eaeb17e96859a2acf205ed982fd29c949e3b0135fbf2ed5693ce747f77278b"
+    },
+    {
+      "path": "sites/rolecraft/dist/content-v10-references/textbook-v10-opening-spec.md",
+      "sha256": "bd31d36c5c4e86d48e196ccf1e008d9b1f73e7364939789622834dd3a57cbdf8"
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-11T23:42:50.282072+08:00",
+  "auditor": "/root/employee_v12_qa",
+  "artifact_version": "employee-v12-evidence-1 / prompt-and-common-r1",
+  "scope": "八个既有岗位提示词、独立接单和首任务就绪条件的组织配置；命名版本保护",
+  "criteria_source": "COMMON.md组织验收条件、AGENTS唯一领域与八份用户岗位提示词目的",
+  "conclusion": "met_within_configuration_scope",
+  "summary": {
+    "protected_named_files": 809,
+    "protected_unchanged": 809,
+    "stable_configs": 9,
+    "stable_config_matches": 9,
+    "role_records": 8,
+    "input_checks": 80,
+    "navigation_file_targets": 128,
+    "errors": 0
+  },
+  "role_results": [
+    {
+      "employee_id": "EV12-01",
+      "role_id": "content-reviewer",
+      "name": "内容审校员",
+      "agent_name": "/root/employee_v12_content_review",
+      "configuration_result": "pass_within_configuration_scope",
+      "professional_execution": "not_started_with_dependencies"
+    },
+    {
+      "employee_id": "EV12-02",
+      "role_id": "practicum-evaluator",
+      "name": "实训评估员",
+      "agent_name": "/root/employee_v12_practicum",
+      "configuration_result": "pass_within_configuration_scope",
+      "professional_execution": "not_started_with_dependencies"
+    },
+    {
+      "employee_id": "EV12-03",
+      "role_id": "user-researcher",
+      "name": "用户研究员",
+      "agent_name": "/root/employee_v12_user_research",
+      "configuration_result": "pass_within_configuration_scope",
+      "professional_execution": "not_started_with_dependencies"
+    },
+    {
+      "employee_id": "EV12-04",
+      "role_id": "generation-engineer",
+      "name": "AI生成工程师",
+      "agent_name": "/root/employee_v12_generation",
+      "configuration_result": "pass_within_configuration_scope",
+      "professional_execution": "not_started_with_dependencies"
+    },
+    {
+      "employee_id": "EV12-05",
+      "role_id": "backend-data-engineer",
+      "name": "后端数据工程师",
+      "agent_name": "/root/employee_v12_backend",
+      "configuration_result": "pass_within_configuration_scope",
+      "professional_execution": "not_started_with_dependencies"
+    },
+    {
+      "employee_id": "EV12-06",
+      "role_id": "benchmark-researcher",
+      "name": "竞品研究员",
+      "agent_name": "/root/employee_v12_benchmark",
+      "configuration_result": "pass_within_configuration_scope",
+      "professional_execution": "not_started_with_dependencies"
+    },
+    {
+      "employee_id": "EV12-07",
+      "role_id": "operations-analyst",
+      "name": "运营分析员",
+      "agent_name": "/root/employee_v12_operations",
+      "configuration_result": "pass_within_configuration_scope",
+      "professional_execution": "not_started_with_dependencies"
+    },
+    {
+      "employee_id": "EV12-08",
+      "role_id": "qa-engineer",
+      "name": "测试工程师",
+      "agent_name": "/root/employee_v12_qa",
+      "configuration_result": "pass_within_configuration_scope",
+      "professional_execution": "not_started_with_dependencies"
+    }
+  ],
+  "actual_methods": [
+    "阅读八份prompt、七份专业接单MD/JSON和共同输入；独立核职责、依赖、交接与证据表述",
+    "运行本QA文件身份/记录/导航核查，809文件只计算哈希，不执行其代码",
+    "对照派工名单及实际接单agent_name，按已确认别名规则联合归一",
+    "保留QA初版解析误报，修本岗解析器后用未修改原数据复验",
+    "冻结25份提示词/共同规则/八岗接单及QA证据，行政名册状态可更新不纳入递归绑定"
+  ],
+  "version_findings": {
+    "protected_named_files": 809,
+    "unchanged": 809,
+    "stable_prompt_and_common_files": 9,
+    "matches": 9,
+    "onboarding_files": 16,
+    "input_file_identity_records": 80,
+    "normal_hash_matches": 72,
+    "AGENTS_administrative_append_original_prefix_matches": 8,
+    "textbook_sha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+    "protection_scope": "收到809个教材与team非行政命名文件，非全部程序/实际数据库审计"
+  },
+  "navigation": {
+    "local_targets": 128,
+    "missing": 0,
+    "line_suffixes": 10,
+    "line_range_failures": 0,
+    "anchor_targets": 0,
+    "browser_rendered": false
+  },
+  "defects": {
+    "employee_configuration_defects": [],
+    "qa_parser_issues": [
+      {
+        "id": "EV12-QA-PARSER01",
+        "owner": "测试工程师",
+        "type": "qa_parser_error_not_employee_defect",
+        "first_result": "初版以带:行号的目标作文件名，误报用户研究10条合法本地链接缺失",
+        "correction": "剥离末尾:正整数为行定位，再检查文件及行范围",
+        "retest": "同10条原目标文件存在且行号在范围；retest-first-results.json和final-results.json错误0",
+        "status": "closed"
+      },
+      {
+        "id": "EV12-QA-PARSER02",
+        "owner": "测试工程师",
+        "type": "qa_parser_error_not_employee_defect",
+        "first_result": "初版仅收slug/EV12且要求role_name字段，未识别AI生成岗generation_engineer旧ID和不重复岗位名的格式",
+        "correction": "按PM已确认规则将旧下划线ID归一，关联EV12-04/唯一目录/提示词岗位/领域/实际agent_name，不设额外字段要求",
+        "retest": "同AI生成接单联合身份准确，角色记录8/8成立；原接单保持",
+        "status": "closed"
+      }
+    ],
+    "first_raw_result": "first-results.json",
+    "original_input_retest": "retest-first-results.json",
+    "final_raw_result": "final-results.json"
+  },
+  "current_full_product": {
+    "received_status": "not_met",
+    "source": "sites/rolecraft/team/textbook-v12-product-assessment.md",
+    "sha256": "2a7a0e08cf959a6ad490d46a98128eebd0e82722c9d4ff1c104ea3fbead285eb",
+    "new_full_product_audit_performed": false,
+    "gate_ids_and_criteria_changed": false,
+    "organization_configuration_closes_gates": false
+  },
+  "remaining_items": [
+    {
+      "item": "真实专业复核及正文/外部机制证据",
+      "owner": "内容审校员/课程架构师；工程岗交运行证据",
+      "next_action": "派工专家复核准备包；实际专家条件取得后收真实意见，原作者返修与独立复验"
+    },
+    {
+      "item": "真实学习者独立作品、未知任务和求职效果",
+      "owner": "实训评估员/用户研究员/课程架构师/产品经理",
+      "next_action": "先冻结当前量规和研究条件并准备材料，再收获准真实参与者与原始作品/反馈"
+    },
+    {
+      "item": "真实生成、可靠交付及外部集成",
+      "owner": "AI生成工程师/后端数据工程师/软件工程师；QA独立核",
+      "next_action": "按有效授权交产品范围、模型预算/配置和当前合同，再针对新版本执行独立验证"
+    },
+    {
+      "item": "公平行业优势与真实经济性",
+      "owner": "竞品研究员/运营分析员/产品经理",
+      "next_action": "先冻结可比任务和预算护栏；收到真实同条件结果/用量后分析、交原门槛负责人"
+    }
+  ],
+  "evidence": [
+    "manual-review.json",
+    "frozen-roster-context.json",
+    "qa-parser-fixes.json",
+    "first-results.json",
+    "retest-first-results.json",
+    "final-results.json",
+    "artifact-binding.json"
+  ],
+  "limitations": [
+    "岗位已接受职责不代表后续专业工作完成",
+    "没有查全程序/私有数据库/秘密配置或任何生产行为",
+    "本轮不重跑教材、外部集成或学习者行为",
+    "现有产品not_met只引用收到版本，未作新完整产品审计",
+    "实际代理身份的证据为独立接单、PM派工和收到交接；早期会话已释放，未称八岗同时常驻。",
+    "本QA自身onboarding只确认本会话接受派工；本独立报告未获第二测试代理复审。"
+  ],
+  "self_check": {
+    "single_domain": "质量验证",
+    "changes": "只写qa-engineer获准接单、报告、核查脚本与自身证据",
+    "private_data_read": false,
+    "textbook_behavior_runs": 0,
+    "external_integrations": 0,
+    "paid_calls": 0,
+    "outreach": 0,
+    "employee_records_rewritten": 0
+  }
+}

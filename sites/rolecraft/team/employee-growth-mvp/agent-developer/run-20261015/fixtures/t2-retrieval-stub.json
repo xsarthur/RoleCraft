@@ -1,0 +1,71 @@
+{
+  "interface_version": "retrieval-interface-v1.0",
+  "content_version": "v12",
+  "index_version": "retrieval-stub-v1.0",
+  "allowed_root": "sites/rolecraft/textbooks/v12",
+  "responses": {
+    "hit": {
+      "query": "我想理解控制循环如何停止",
+      "retrieval_status": "hit",
+      "candidates": [
+        {
+          "section_id": "c01-control-loop",
+          "source_path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "excerpt": "一个可靠的控制循环，必须能够回答三个问题",
+          "content_version": "v12",
+          "index_version": "retrieval-stub-v1.0"
+        }
+      ]
+    },
+    "no_match": {
+      "query": "量子烘焙飞船的不存在教程",
+      "retrieval_status": "no_match",
+      "candidates": []
+    },
+    "ambiguous": {
+      "query": "循环",
+      "retrieval_status": "ambiguous",
+      "candidates": [
+        {
+          "section_id": "c01-control-loop",
+          "source_path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "excerpt": "一个可靠的控制循环，必须能够回答三个问题",
+          "content_version": "v12",
+          "index_version": "retrieval-stub-v1.0"
+        },
+        {
+          "section_id": "e01-persistence",
+          "source_path": "sites/rolecraft/textbooks/v12/e01.md",
+          "excerpt": "持久状态与恢复",
+          "content_version": "v12",
+          "index_version": "retrieval-stub-v1.0"
+        }
+      ]
+    },
+    "version_conflict": {
+      "query": "控制循环停止条件（过期来源）",
+      "retrieval_status": "hit",
+      "candidates": [
+        {
+          "section_id": "c01-control-loop",
+          "source_path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "excerpt": "一个可靠的控制循环，必须能够回答三个问题",
+          "content_version": "v11",
+          "index_version": "retrieval-stub-v0.9"
+        }
+      ]
+    },
+    "evidence_missing": {
+      "query": "控制循环缺证夹具",
+      "retrieval_status": "hit",
+      "candidates": [
+        {
+          "section_id": "c01-control-loop",
+          "source_path": "sites/rolecraft/textbooks/v12/c01-control-loop.md",
+          "content_version": "v12",
+          "index_version": "retrieval-stub-v1.0"
+        }
+      ]
+    }
+  }
+}

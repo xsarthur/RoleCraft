@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">视觉优先设计示意：课程路线、当前阅读和可选问教材</title>
+  <desc id="desc">独立设计提案，非运行截图或用户记录。左侧现有课程路线的前两篇进入中间阅读；当前篇为认识Agent工程且无前置章节。下一篇依真实顺序为基础预备。右侧问教材为可选辅助，展示等待和有依据结果两种互斥状态样例；结果不代表已学会。无配套题模块、课程工具栏或能力完成率。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M1 1 L7 4.5 L1 8" fill="none" stroke="#755624" stroke-width="1.5"/>
+    </marker>
+    <style>
+      text{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;fill:#3d3929}
+      .label{font-size:16px}.small{font-size:14px;fill:#6b6356}.caption{font-size:13px;fill:#6b6356}
+      .panel{fill:#fff;stroke:#dcd7cc;stroke-width:1.5}.inkline{fill:none;stroke:#3d3929;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+      .placeholder{stroke:#dcd7cc;stroke-width:6;stroke-linecap:round}.connection{fill:none;stroke:#755624;stroke-width:2;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1400" height="900" fill="#f9f7f3"/>
+  <text x="38" y="46" font-size="25" font-weight="650">位置、动作、反馈，由界面直接表达</text>
+  <rect x="1040" y="23" width="324" height="33" rx="6" fill="#f5f0e4" stroke="#d5c39d"/>
+  <text x="1202" y="45" text-anchor="middle" class="caption">设计提案 · 非运行截图 / 非用户记录</text>
+  <text x="38" y="78" class="small">既有区域与关系示意；阅读可直接继续，问教材是可选辅助。</text>
+
+  <text x="38" y="124" font-size="18" font-weight="600">找到内容</text>
+  <text x="344" y="124" font-size="18" font-weight="600">当前阅读</text>
+  <text x="1010" y="124" font-size="18" font-weight="600">可选：问教材</text>
+
+  <rect x="38" y="144" width="252" height="534" rx="14" class="panel"/>
+  <text x="60" y="181" font-size="17" font-weight="600">课程学习</text>
+  <line x1="60" y1="198" x2="268" y2="198" stroke="#e8e4dc"/>
+  <text x="60" y="228" class="small">起点与问题</text>
+  <path d="M81 294 V435" stroke="#dcd7cc" stroke-width="2" fill="none"/>
+  <rect x="59" y="249" width="209" height="120" rx="10" fill="#f5f0e4" stroke="#755624" stroke-width="2.5"/>
+  <path d="M73 273 L81 278 L73 283 Z" fill="#755624"/>
+  <text x="93" y="284" font-size="13" fill="#755624">当前示意</text>
+  <text x="75" y="317" class="label" font-weight="600">01 认识Agent工程</text>
+  <rect x="74" y="333" width="93" height="25" rx="4" fill="#fff" stroke="#755624"/>
+  <text x="120" y="350" text-anchor="middle" font-size="12">当前阅读</text>
+  <rect x="59" y="389" width="209" height="103" rx="10" fill="#fff" stroke="#dcd7cc" stroke-width="1.5"/>
+  <circle cx="79" cy="416" r="7" fill="#fff" stroke="#6b6356" stroke-width="1.5"/>
+  <text x="95" y="422" font-size="13">状态样例</text>
+  <text x="75" y="454" class="label" font-weight="600">02 基础预备</text>
+  <text x="75" y="477" class="caption">暂无本版足迹</text>
+  <path d="M81 516 V555" stroke="#dcd7cc" stroke-width="2" stroke-dasharray="4 5"/>
+  <text x="60" y="584" class="small">其余真实篇章继续向下</text>
+  <text x="60" y="642" class="caption">仅截取前两篇作视觉示意</text>
+
+  <path d="M290 311 H332" class="connection"/>
+  <text x="312" y="283" text-anchor="middle" class="caption">打开</text>
+
+  <rect x="344" y="144" width="622" height="612" rx="14" class="panel"/>
+  <text x="366" y="183" class="small">← 返回课程</text>
+  <text x="944" y="183" text-anchor="end" class="caption">课程 / 认识Agent工程</text>
+  <line x1="366" y1="200" x2="944" y2="200" stroke="#e8e4dc"/>
+  <path d="M370 227 H385 Q393 227 393 235 V260 Q385 253 370 254 Z M393 235 Q401 227 416 227 V254 Q401 253 393 260" class="inkline"/>
+  <text x="433" y="251" font-size="23" font-weight="600">认识 Agent 工程</text>
+  <rect x="366" y="284" width="578" height="64" rx="8" fill="#f9f7f3" stroke="#e8e4dc"/>
+  <text x="383" y="309" font-size="14" font-weight="600">需掌握的前置</text>
+  <text x="383" y="333" class="small">无前置章节</text>
+  <text x="366" y="383" class="small">本篇小节 ▾</text>
+  <text x="366" y="428" font-size="19" font-weight="600">教材正文</text>
+  <path d="M368 455 H891 M368 479 H927 M368 503 H870 M368 541 H927 M368 565 H884 M368 589 H924" class="placeholder"/>
+  <text x="366" y="625" class="caption">全文保持；灰线仅为设计占位，不是教材内容。</text>
+  <line x1="366" y1="650" x2="944" y2="650" stroke="#e8e4dc"/>
+  <text x="366" y="691" class="small">返回课程</text>
+  <rect x="706" y="670" width="238" height="60" rx="8" fill="#f5f0e4" stroke="#755624" stroke-width="1.5"/>
+  <text x="725" y="694" class="caption">下一篇 →</text>
+  <text x="725" y="717" class="label" font-weight="600">基础预备</text>
+
+  <path d="M967 564 H997" class="connection" stroke-dasharray="5 5"/>
+  <text x="982" y="540" text-anchor="middle" class="caption">可选</text>
+
+  <rect x="1010" y="144" width="354" height="77" rx="12" class="panel"/>
+  <path d="M1028 166 H1049 V181 H1035 L1028 187 Z" class="inkline"/>
+  <text x="1061" y="177" font-size="15" font-weight="600">问教材</text>
+  <text x="1028" y="204" class="caption">描述问题…</text>
+  <rect x="1286" y="163" width="61" height="40" rx="6" fill="#755624"/>
+  <text x="1316" y="188" text-anchor="middle" font-size="14" style="fill:#fff">发送</text>
+
+  <text x="1010" y="254" class="small">同一面板，两种互斥状态样例</text>
+  <rect x="1010" y="273" width="354" height="118" rx="12" fill="#fff" stroke="#9b7838" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <path d="M1029 293 H1047 M1029 315 H1047 M1030 294 L1046 314 M1046 294 L1030 314" class="inkline"/>
+  <text x="1060" y="309" font-size="16" font-weight="600">查教材中</text>
+  <rect x="1284" y="288" width="62" height="36" rx="6" fill="#fff" stroke="#6b6356"/>
+  <text x="1315" y="312" text-anchor="middle" font-size="14">收起</text>
+  <text x="1029" y="350" class="small">可以继续阅读</text>
+  <text x="1029" y="375" class="caption">未完成；不展示上一题回答</text>
+
+  <rect x="1010" y="414" width="354" height="286" rx="12" class="panel"/>
+  <path d="M1030 444 H1048 V459 H1030 Z M1035 449 H1043 M1035 454 H1043" class="inkline"/>
+  <text x="1060" y="454" font-size="16" font-weight="600">教材简答</text>
+  <path d="M1029 482 H1345 M1029 503 H1300" class="placeholder"/>
+  <rect x="1029" y="526" width="316" height="141" rx="8" fill="#f9f7f3" stroke="#dcd7cc"/>
+  <text x="1044" y="552" class="caption">来源 1</text>
+  <text x="1044" y="577" class="label" font-weight="600">对应教材小节</text>
+  <rect x="1044" y="594" width="286" height="45" rx="6" fill="#755624"/>
+  <text x="1187" y="622" text-anchor="middle" font-size="15" style="fill:#fff">阅读这一节 →</text>
+  <text x="1044" y="658" font-size="12" fill="#6b6356">展开教材原文 ▾</text>
+  <text x="1029" y="687" class="caption">只在真实出处核对通过后展示</text>
+
+  <path d="M1168 720 V746 H984" class="connection"/>
+  <text x="1188" y="748" class="caption">回原文</text>
+
+  <rect x="38" y="798" width="1326" height="64" rx="10" fill="#f3f0ea"/>
+  <text x="58" y="824" class="small">线索：边界与“当前阅读”定位；留白区分主体和辅助；有方向的已有入口；等待与结果形态不同。</text>
+  <text x="58" y="848" class="caption">状态都是样例，不是实际学习记录；未表示学会、认证或完整产品达标。真实操作与用户理解待独立验证。</text>
+</svg>

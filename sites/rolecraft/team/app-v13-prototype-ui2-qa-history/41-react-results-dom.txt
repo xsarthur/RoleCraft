@@ -1,0 +1,248 @@
+- link "跳到主要内容":
+  - /url: "#main-content"
+- complementary:
+  - link "职 职造 Agent 开发学习":
+    - /url: "#home"
+    - generic: 职
+    - strong:
+      - text: 职造
+      - generic: Agent 开发学习
+  - navigation "主导航":
+    - button "首页":
+      - generic: ⌂
+      - text: 首页
+    - button "课程学习":
+      - generic: ▤
+      - text: 课程学习
+    - button "题库浏览":
+      - generic: ◇
+      - text: 题库浏览
+    - button "学习记录":
+      - generic: ↻
+      - text: 学习记录
+    - button "个人设置":
+      - generic: ⚙
+      - text: 个人设置
+  - generic: 当前学习方向
+  - strong: Agent 开发者
+  - link "本机学习者 记录保存在此浏览器":
+    - /url: "#settings"
+    - generic: 本
+    - text: 本机学习者
+    - generic: 记录保存在此浏览器
+- main:
+  - strong: 课程学习
+  - paragraph: 读懂机制，再回到自己的问题
+  - heading "Agent 开发学习路线" [level=1]
+  - paragraph: 从理解 Agent，到实现、验证与交付自己的产品
+  - text: 继续上次阅读
+  - heading "规划与反思" [level=2]
+  - paragraph: 1 三种策略改变的是控制对象 · 2026/10/12 09:02:59
+  - link "继续阅读 →":
+    - /url: "#learn/agent/n03-planning-reflection/s-da63f3dcff17"
+  - button "路线图"
+  - button "目录" [pressed]
+  - button "全部" [pressed]
+  - button "已学习"
+  - button "未掌握"
+  - button "未学习"
+  - paragraph: 已学习只表示访问过；题目状态由你自记，不能代表专业能力。
+  - generic "01 认识Agent工程 未学习":
+    - generic: "01"
+    - strong: 认识Agent工程
+    - generic: 未学习
+  - generic "02 基础预备 未学习":
+    - generic: "02"
+    - strong: 基础预备
+    - generic: 未学习
+  - generic "03 Python与模型基础 未学习":
+    - generic: "03"
+    - strong: Python与模型基础
+    - generic: 未学习
+  - generic "04 问题发现 未学习":
+    - generic: "04"
+    - strong: 问题发现
+    - generic: 未学习
+  - generic "05 任务验收 未学习":
+    - generic: "05"
+    - strong: 任务验收
+    - generic: 未学习
+  - generic "06 信任边界 未学习":
+    - generic: "06"
+    - strong: 信任边界
+    - generic: 未学习
+  - generic "07 外部API 未学习":
+    - generic: "07"
+    - strong: 外部API
+    - generic: 未学习
+  - generic "08 模型候选 未学习":
+    - generic: "08"
+    - strong: 模型候选
+    - generic: 未学习
+  - generic "09 上下文、记忆与提示 未学习":
+    - generic: "09"
+    - strong: 上下文、记忆与提示
+    - generic: 未学习
+  - generic "10 方案选择 未学习":
+    - generic: "10"
+    - strong: 方案选择
+    - generic: 未学习
+  - generic "11 动作身份 未学习":
+    - generic: "11"
+    - strong: 动作身份
+    - generic: 未学习
+  - generic "12 检索证据 未学习":
+    - generic: "12"
+    - strong: 检索证据
+    - generic: 未学习
+  - generic "13 写工具 未学习":
+    - generic: "13"
+    - strong: 写工具
+    - generic: 未学习
+  - generic "14 工具目录与MCP 未学习":
+    - generic: "14"
+    - strong: 工具目录与MCP
+    - generic: 未学习
+  - generic "15 持久恢复 未学习":
+    - generic: "15"
+    - strong: 持久恢复
+    - generic: 未学习
+  - generic "16 固定流程 未学习":
+    - generic: "16"
+    - strong: 固定流程
+    - generic: 未学习
+  - generic "17 动态循环 未学习":
+    - generic: "17"
+    - strong: 动态循环
+    - generic: 未学习
+  - generic "18 规划与反思 有未掌握题":
+    - generic: "18"
+    - strong: 规划与反思
+    - generic: 有未掌握题
+  - link "阅读本篇 →":
+    - /url: "#learn/agent/n03-planning-reflection"
+  - link "让计划依据观察前进，而不是在反复规划中空转 未学习":
+    - /url: "#learn/agent/n03-planning-reflection/s-8daaf4201d23"
+    - generic: 让计划依据观察前进，而不是在反复规划中空转
+    - generic: 未学习
+  - link "1 三种策略改变的是控制对象 有未掌握题":
+    - /url: "#learn/agent/n03-planning-reflection/s-da63f3dcff17"
+    - generic: 1 三种策略改变的是控制对象
+    - generic: 有未掌握题
+  - link "2 从验收产物倒推候选计划 未学习":
+    - /url: "#learn/agent/n03-planning-reflection/s-7b6b3d9e9b99"
+    - generic: 2 从验收产物倒推候选计划
+    - generic: 未学习
+  - link "3 验证计划比检查 JSON 多一层 未学习":
+    - /url: "#learn/agent/n03-planning-reflection/s-c9f93b25fb1f"
+    - generic: 3 验证计划比检查 JSON 多一层
+    - generic: 未学习
+  - link "4 重规划保留事实，失效的是依赖假设 未学习":
+    - /url: "#learn/agent/n03-planning-reflection/s-7ee14c15626d"
+    - generic: 4 重规划保留事实，失效的是依赖假设
+    - generic: 未学习
+  - link "5 用实质进展阻止“再想一次” 未学习":
+    - /url: "#learn/agent/n03-planning-reflection/s-6fa365bb25d3"
+    - generic: 5 用实质进展阻止“再想一次”
+    - generic: 未学习
+  - link "6 Reflection 必须提出可以失败的修正 未学习":
+    - /url: "#learn/agent/n03-planning-reflection/s-5550f8a20c44"
+    - generic: 6 Reflection 必须提出可以失败的修正
+    - generic: 未学习
+  - link "7 从演算到作品 未学习":
+    - /url: "#learn/agent/n03-planning-reflection/s-dc2e15b8cffc"
+    - generic: 7 从演算到作品
+    - generic: 未学习
+  - generic "19 进阶检索与摄取 未学习":
+    - generic: "19"
+    - strong: 进阶检索与摄取
+    - generic: 未学习
+  - generic "20 图编排 未学习":
+    - generic: "20"
+    - strong: 图编排
+    - generic: 未学习
+  - generic "21 多Agent与A2A 未学习":
+    - generic: "21"
+    - strong: 多Agent与A2A
+    - generic: 未学习
+  - generic "22 版本评价 未学习":
+    - generic: "22"
+    - strong: 版本评价
+    - generic: 未学习
+  - generic "23 跨场景评价与移交 未学习":
+    - generic: "23"
+    - strong: 跨场景评价与移交
+    - generic: 未学习
+  - generic "24 MVP决定 未学习":
+    - generic: "24"
+    - strong: MVP决定
+    - generic: 未学习
+  - generic "25 强制安全 未学习":
+    - generic: "25"
+    - strong: 强制安全
+    - generic: 未学习
+  - generic "26 代码沙箱 未学习":
+    - generic: "26"
+    - strong: 代码沙箱
+    - generic: 未学习
+  - generic "27 发布回退 未学习":
+    - generic: "27"
+    - strong: 发布回退
+    - generic: 未学习
+  - generic "28 性能成本 未学习":
+    - generic: "28"
+    - strong: 性能成本
+    - generic: 未学习
+  - generic "29 运行交付 未学习":
+    - generic: "29"
+    - strong: 运行交付
+    - generic: 未学习
+  - generic "30 独立作品与复盘 未学习":
+    - generic: "30"
+    - strong: 独立作品与复盘
+    - generic: 未学习
+  - text: 职造 · Agent 开发学习
+  - generic: 教材 v12 · 本浏览器保存
+- status
+- region "教材内容检索":
+  - heading "找对应教材" [level=2]
+  - paragraph: 只推荐当前 v12 教材中的真实内容
+  - button "收起"
+  - generic: 学习起点：未限定
+  - generic: 在全部 30 篇中查找
+  - generic "最近查询 · 本会话"
+  - paragraph:
+    - strong: 本次表达：
+    - text: react
+  - paragraph: 提交时：未限定起点 · 全部 30 篇
+  - generic: 离线语义检索 · 查询留在本机
+  - heading "推荐阅读" [level=3]
+  - paragraph: 检索理解：查找正文中的 ReAct；比较推理行动交错与先计划的策略
+  - heading "查找正文中的 ReAct" [level=4]
+  - article:
+    - generic: 第 18 篇 · 规划与反思 查找正文中的 ReAct
+    - heading "7 从演算到作品" [level=4]
+    - paragraph: 本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。
+    - text: 教材原文
+    - blockquote: EX-N03-C：写出同一任务的固定、ReAct、先计划三条正常轨迹及各一条失败轨迹，做受限反思实验设计。参考分析应给事件、可观察证据、修正和停止条件，不以“采用更先进模式”代替选择依据。
+    - link "阅读这一节 →":
+      - /url: "#learn/agent/n03-planning-reflection/s-dc2e15b8cffc"
+    - generic "查看出处"
+  - heading "比较推理行动交错与先计划的策略" [level=4]
+  - article:
+    - generic: 第 18 篇 · 规划与反思 比较推理行动交错与先计划的策略
+    - heading "1 三种策略改变的是控制对象" [level=4]
+    - paragraph: 你表达了“react”；这一小节说明比较推理行动交错与先计划的策略的具体机制。
+    - text: 教材原文
+    - blockquote: "ReAct 将任务解释、下一行动与新观察交错。根据 report-71 发现 `refund(7)` 失败，选择读取退款函数；观察实际实现是 `<7` 后再查生效规则。每轮仅承诺一个或少数下一步，适合证据逐步揭示、路径难以先列全的调查。其成本是轮次增加、上下文污染与短视；下一步看似相关，不保证最终证据完整。[ReAct 原论文 v3](https://arxiv.org/abs/2210.03629v3)研究推理轨迹与行动交错。本教材记录可审查的短决策依据、行动参数和观察，不要求取得或展示模型隐藏的内部思维。"
+    - link "阅读这一节 →":
+      - /url: "#learn/agent/n03-planning-reflection/s-da63f3dcff17"
+    - generic "查看出处"
+  - paragraph: 使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。
+- generic: 查教材
+- textbox "查教材" [active]:
+  - /placeholder: 输入概念或问题，查找课程内容
+  - text: react
+- button "查找"
+- button "收起检索结果" [expanded]: ⌄
+- status

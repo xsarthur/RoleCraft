@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-11T23:42:50.282072+08:00",
+  "first_results_preserved": "first-results.json",
+  "original_dataset": "八岗冻结配置和接单；原输入未由责任岗修改",
+  "records": [
+    {
+      "id": "EV12-QA-PARSER01",
+      "owner": "测试工程师",
+      "type": "qa_parser_error_not_employee_defect",
+      "first_result": "初版以带:行号的目标作文件名，误报用户研究10条合法本地链接缺失",
+      "correction": "剥离末尾:正整数为行定位，再检查文件及行范围",
+      "retest": "同10条原目标文件存在且行号在范围；retest-first-results.json和final-results.json错误0",
+      "status": "closed"
+    },
+    {
+      "id": "EV12-QA-PARSER02",
+      "owner": "测试工程师",
+      "type": "qa_parser_error_not_employee_defect",
+      "first_result": "初版仅收slug/EV12且要求role_name字段，未识别AI生成岗generation_engineer旧ID和不重复岗位名的格式",
+      "correction": "按PM已确认规则将旧下划线ID归一，关联EV12-04/唯一目录/提示词岗位/领域/实际agent_name，不设额外字段要求",
+      "retest": "同AI生成接单联合身份准确，角色记录8/8成立；原接单保持",
+      "status": "closed"
+    }
+  ],
+  "first_parser_full_source_snapshot": "not_separately_frozen; initial tool patch/history and first raw results retained, corrections documented here",
+  "changed_artifacts": [
+    "qa-engineer/check_configuration.py only"
+  ],
+  "first_raw_errors": 11,
+  "after_original_input_retest_errors": 0,
+  "final_errors": 0
+}

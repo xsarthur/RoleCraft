@@ -1,0 +1,1768 @@
+{
+  "status": "in_progress",
+  "method": "QA全文阅读后人工选择语义位置及解释，脚本仅解析所选标题定位和源hash；不是关键词计数或manifest自证。",
+  "originalMetadataEvidence": "original-identity-comparison.json",
+  "moduleCount": 12,
+  "objectiveCount": 24,
+  "knowledgePointCount": 48,
+  "currentReadUnits": 13,
+  "notLearnerAchievement": true,
+  "notFinalFreeze": true,
+  "openCrossChapterDefect": "CR08-10 canonical fingerprint and DISPATCH-to-Dispatch mapping; c03/e01 locations require affected reread after repair",
+  "knowledgePoints": [
+    {
+      "id": "f01-k01",
+      "originalTitle": "输入类型与非法输入",
+      "objectiveIds": [
+        "f01-o1"
+      ],
+      "judgment": "可信身份与raw分离；列表/空值/未知字段在请求前拒绝且零调用，诊断区解释JSON解析与业务类型的区别。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f01.md",
+          "readSha256": "9ef1dafa015b497519ce9cca967d473f38ffbc302a1a5b49f48361eca41d5f15",
+          "line": 7,
+          "heading": "成功需要跨过四道边界"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f01.md",
+          "readSha256": "9ef1dafa015b497519ce9cca967d473f38ffbc302a1a5b49f48361eca41d5f15",
+          "line": 17,
+          "heading": "一个完整的只读适配器"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f01.md",
+          "readSha256": "9ef1dafa015b497519ce9cca967d473f38ffbc302a1a5b49f48361eca41d5f15",
+          "line": 208,
+          "heading": "独立先修诊断：从文本输入到可检查结果"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "f01-k02",
+      "originalTitle": "HTTP请求与失败分类",
+      "objectiveIds": [
+        "f01-o1"
+      ],
+      "judgment": "适配器区分HTTP拒绝、无结果、响应非法与业务身份/内容错误；迁移写接口时明确撤回只读重试策略。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f01.md",
+          "readSha256": "9ef1dafa015b497519ce9cca967d473f38ffbc302a1a5b49f48361eca41d5f15",
+          "line": 7,
+          "heading": "成功需要跨过四道边界"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f01.md",
+          "readSha256": "9ef1dafa015b497519ce9cca967d473f38ffbc302a1a5b49f48361eca41d5f15",
+          "line": 17,
+          "heading": "一个完整的只读适配器"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f01.md",
+          "readSha256": "9ef1dafa015b497519ce9cca967d473f38ffbc302a1a5b49f48361eca41d5f15",
+          "line": 192,
+          "heading": "何时扩展这个边界"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f01.md",
+          "readSha256": "9ef1dafa015b497519ce9cca967d473f38ffbc302a1a5b49f48361eca41d5f15",
+          "line": 198,
+          "heading": "三个推理与实作任务"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "f01-k03",
+      "originalTitle": "依赖与版本复现",
+      "objectiveIds": [
+        "f01-o2"
+      ],
+      "judgment": "解释Git源快照不等于环境，交接解释器/夹具/命令/输出；纯标准库不虚造锁文件，扩展第三方时要求版本锁定。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f01.md",
+          "readSha256": "9ef1dafa015b497519ce9cca967d473f38ffbc302a1a5b49f48361eca41d5f15",
+          "line": 184,
+          "heading": "让另一个开发者复现，而不是复制成功截图"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f01.md",
+          "readSha256": "9ef1dafa015b497519ce9cca967d473f38ffbc302a1a5b49f48361eca41d5f15",
+          "line": 198,
+          "heading": "三个推理与实作任务"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "f01-k04",
+      "originalTitle": "测试断言与变更记录",
+      "objectiveIds": [
+        "f01-o2"
+      ],
+      "judgment": "五项基础测试与边界任务核实际值/调用数；要求保存失败、恢复断言及修改记录，反对成功截图作为证据。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f01.md",
+          "readSha256": "9ef1dafa015b497519ce9cca967d473f38ffbc302a1a5b49f48361eca41d5f15",
+          "line": 17,
+          "heading": "一个完整的只读适配器"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f01.md",
+          "readSha256": "9ef1dafa015b497519ce9cca967d473f38ffbc302a1a5b49f48361eca41d5f15",
+          "line": 184,
+          "heading": "让另一个开发者复现，而不是复制成功截图"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f01.md",
+          "readSha256": "9ef1dafa015b497519ce9cca967d473f38ffbc302a1a5b49f48361eca41d5f15",
+          "line": 198,
+          "heading": "三个推理与实作任务"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f01.md",
+          "readSha256": "9ef1dafa015b497519ce9cca967d473f38ffbc302a1a5b49f48361eca41d5f15",
+          "line": 208,
+          "heading": "独立先修诊断：从文本输入到可检查结果"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "f02-k01",
+      "originalTitle": "模型请求与完成结果",
+      "objectiveIds": [
+        "f02-o1"
+      ],
+      "judgment": "提供真实REST请求包装及完成状态消费，拒绝incomplete/refusal/非对象；真实请求作业要求获准环境和原响应记录，目前未执行。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f02.md",
+          "readSha256": "3897fe951ee6d7a00e2d07b72de31444cb24bb7db8f7756f3b3c0fdf4092bf9a",
+          "line": 25,
+          "heading": "一次真实协议请求与完整候选闸门"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f02.md",
+          "readSha256": "3897fe951ee6d7a00e2d07b72de31444cb24bb7db8f7756f3b3c0fdf4092bf9a",
+          "line": 187,
+          "heading": "三种失败需要三个不同处理"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f02.md",
+          "readSha256": "3897fe951ee6d7a00e2d07b72de31444cb24bb7db8f7756f3b3c0fdf4092bf9a",
+          "line": 197,
+          "heading": "完成原目标所需的练习证据"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "f02-k02",
+      "originalTitle": "结构与业务双重校验",
+      "objectiveIds": [
+        "f02-o1"
+      ],
+      "judgment": "结构、事实身份/值、证据引用分别过闸，合法JSON不使候选成为真事实；根因仍保留未验证。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f02.md",
+          "readSha256": "3897fe951ee6d7a00e2d07b72de31444cb24bb7db8f7756f3b3c0fdf4092bf9a",
+          "line": 17,
+          "heading": "先定义候选，而不是要求模型“给一个可靠答案”"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f02.md",
+          "readSha256": "3897fe951ee6d7a00e2d07b72de31444cb24bb7db8f7756f3b3c0fdf4092bf9a",
+          "line": 25,
+          "heading": "一次真实协议请求与完整候选闸门"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f02.md",
+          "readSha256": "3897fe951ee6d7a00e2d07b72de31444cb24bb7db8f7756f3b3c0fdf4092bf9a",
+          "line": 187,
+          "heading": "三种失败需要三个不同处理"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f02.md",
+          "readSha256": "3897fe951ee6d7a00e2d07b72de31444cb24bb7db8f7756f3b3c0fdf4092bf9a",
+          "line": 197,
+          "heading": "完成原目标所需的练习证据"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "f02-k03",
+      "originalTitle": "可信指令与外部资料",
+      "objectiveIds": [
+        "f02-o2"
+      ],
+      "judgment": "运行时可信状态不从聊天恢复；资料/工具文字不能提权，模型候选与系统决定分开。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f02.md",
+          "readSha256": "3897fe951ee6d7a00e2d07b72de31444cb24bb7db8f7756f3b3c0fdf4092bf9a",
+          "line": 7,
+          "heading": "把任务状态与模型输入拆开"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f02.md",
+          "readSha256": "3897fe951ee6d7a00e2d07b72de31444cb24bb7db8f7756f3b3c0fdf4092bf9a",
+          "line": 17,
+          "heading": "先定义候选，而不是要求模型“给一个可靠答案”"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "f02-k04",
+      "originalTitle": "上下文预算与缺信息",
+      "objectiveIds": [
+        "f02-o2"
+      ],
+      "judgment": "上下文投影保留源修订/关键比较符；摘要损失任务要求比较请求；缺规则明确WAIT_INPUT而非猜测。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f02.md",
+          "readSha256": "3897fe951ee6d7a00e2d07b72de31444cb24bb7db8f7756f3b3c0fdf4092bf9a",
+          "line": 7,
+          "heading": "把任务状态与模型输入拆开"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f02.md",
+          "readSha256": "3897fe951ee6d7a00e2d07b72de31444cb24bb7db8f7756f3b3c0fdf4092bf9a",
+          "line": 187,
+          "heading": "三种失败需要三个不同处理"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/f02.md",
+          "readSha256": "3897fe951ee6d7a00e2d07b72de31444cb24bb7db8f7756f3b3c0fdf4092bf9a",
+          "line": 197,
+          "heading": "完成原目标所需的练习证据"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "c01-k01",
+      "originalTitle": "单次调用与工作流基线",
+      "objectiveIds": [
+        "c01-o1"
+      ],
+      "judgment": "同TaskContract比较普通程序、单调用及固定流程，固定依赖可程序决定；相同资源/权限/判据防止换题。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c01-solution-selection.md",
+          "readSha256": "820642c6219d747994c5ab1c70f18f18bfa276985b9d8e22bbb4bfb256cbef78",
+          "line": 7,
+          "heading": "同一任务，四种控制权"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c01-solution-selection.md",
+          "readSha256": "820642c6219d747994c5ab1c70f18f18bfa276985b9d8e22bbb4bfb256cbef78",
+          "line": 22,
+          "heading": "先冻结 TaskContract，避免比较不同题目"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c01-solution-selection.md",
+          "readSha256": "820642c6219d747994c5ab1c70f18f18bfa276985b9d8e22bbb4bfb256cbef78",
+          "line": 56,
+          "heading": "一个固定流程的完整决策骨架"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c01-solution-selection.md",
+          "readSha256": "820642c6219d747994c5ab1c70f18f18bfa276985b9d8e22bbb4bfb256cbef78",
+          "line": 211,
+          "heading": "用条件做选择的练习"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "c01-k02",
+      "originalTitle": "动态循环与复杂度取舍",
+      "objectiveIds": [
+        "c01-o1"
+      ],
+      "judgment": "固定多次调用并非自主控制；新增观察改变待选行动时才需要动态决策，并比较增加的状态和失败成本。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c01-solution-selection.md",
+          "readSha256": "820642c6219d747994c5ab1c70f18f18bfa276985b9d8e22bbb4bfb256cbef78",
+          "line": 7,
+          "heading": "同一任务，四种控制权"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c01-solution-selection.md",
+          "readSha256": "820642c6219d747994c5ab1c70f18f18bfa276985b9d8e22bbb4bfb256cbef78",
+          "line": 56,
+          "heading": "一个固定流程的完整决策骨架"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c01-solution-selection.md",
+          "readSha256": "820642c6219d747994c5ab1c70f18f18bfa276985b9d8e22bbb4bfb256cbef78",
+          "line": 185,
+          "heading": "三种输入暴露不同的必要性"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c01-solution-selection.md",
+          "readSha256": "820642c6219d747994c5ab1c70f18f18bfa276985b9d8e22bbb4bfb256cbef78",
+          "line": 211,
+          "heading": "用条件做选择的练习"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "c01-k03",
+      "originalTitle": "行动观察与重规划",
+      "objectiveIds": [
+        "c01-o2"
+      ],
+      "judgment": "冻结v07的主循环先核已有事实再计划，验收拒绝轨迹反馈新证据；工具拒绝不由模型自称成功覆盖。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/agent-control-loop-v07.md",
+          "readSha256": "996e5aeb084b66405a0dd1023a375743d2e359c335b29517ac923f9f6a033c5c",
+          "line": 367,
+          "heading": "### 8.2 主循环：先处理已有事实，再产生新决策"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/agent-control-loop-v07.md",
+          "readSha256": "996e5aeb084b66405a0dd1023a375743d2e359c335b29517ac923f9f6a033c5c",
+          "line": 731,
+          "heading": "### 10.2 验收拒绝：把失败事实变为决策输入"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "c01-k04",
+      "originalTitle": "停止预算与协作边界",
+      "objectiveIds": [
+        "c01-o2"
+      ],
+      "judgment": "v07保存预算/停止意图/等待原因；补篇仅在可独立分工时评估多Agent，协调和写槽位成本纳入同条件比较。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c01-solution-selection.md",
+          "readSha256": "820642c6219d747994c5ab1c70f18f18bfa276985b9d8e22bbb4bfb256cbef78",
+          "line": 193,
+          "heading": "多 Agent 的升级点是可分工，而不是人数"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c01-solution-selection.md",
+          "readSha256": "820642c6219d747994c5ab1c70f18f18bfa276985b9d8e22bbb4bfb256cbef78",
+          "line": 203,
+          "heading": "怎样做一个公平且能定位原因的比较"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c01-solution-selection.md",
+          "readSha256": "820642c6219d747994c5ab1c70f18f18bfa276985b9d8e22bbb4bfb256cbef78",
+          "line": 211,
+          "heading": "用条件做选择的练习"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/agent-control-loop-v07.md",
+          "readSha256": "996e5aeb084b66405a0dd1023a375743d2e359c335b29517ac923f9f6a033c5c",
+          "line": 262,
+          "heading": "## 7. 审批、取消和预算都必须跨暂停保留"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/agent-control-loop-v07.md",
+          "readSha256": "996e5aeb084b66405a0dd1023a375743d2e359c335b29517ac923f9f6a033c5c",
+          "line": 786,
+          "heading": "## 11. 成功、等待和停止必须保留不同的含义"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "c02-k01",
+      "originalTitle": "文档版本与可读范围",
+      "objectiveIds": [
+        "c02-o1"
+      ],
+      "judgment": "摄取版本/快照成员/租户/生效时点/读回ACL分开，入库不证明本次回答已看到；旧修订不能替当前资料。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c02.md",
+          "readSha256": "6062341a3757f43770db7bdcb4512f8ff85f27de24f7cd0afa791a79147cb087",
+          "line": 7,
+          "heading": "本次回答看到的是哪一个资料版本"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c02.md",
+          "readSha256": "6062341a3757f43770db7bdcb4512f8ff85f27de24f7cd0afa791a79147cb087",
+          "line": 35,
+          "heading": "一个完整的过滤、排序、读回与事实支持链"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "c02-k02",
+      "originalTitle": "片段与证据归属",
+      "objectiveIds": [
+        "c02-o1"
+      ],
+      "judgment": "引用存在只作关联检查，规范事实包含subject和条件身份；支持部分主张不能支持全部结论。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c02.md",
+          "readSha256": "6062341a3757f43770db7bdcb4512f8ff85f27de24f7cd0afa791a79147cb087",
+          "line": 27,
+          "heading": "把关联检查与支持判断分别建模"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c02.md",
+          "readSha256": "6062341a3757f43770db7bdcb4512f8ff85f27de24f7cd0afa791a79147cb087",
+          "line": 35,
+          "heading": "一个完整的过滤、排序、读回与事实支持链"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c02.md",
+          "readSha256": "6062341a3757f43770db7bdcb4512f8ff85f27de24f7cd0afa791a79147cb087",
+          "line": 227,
+          "heading": "无答案应能解释是哪一层缺证"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "c02-k03",
+      "originalTitle": "词法与语义检索比较",
+      "objectiveIds": [
+        "c02-o2"
+      ],
+      "judgment": "词法适用精确ID、语义适用改写，RRF有候选前提；要求分召回/排序/读回比较并保留失败分母。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c02.md",
+          "readSha256": "6062341a3757f43770db7bdcb4512f8ff85f27de24f7cd0afa791a79147cb087",
+          "line": 17,
+          "heading": "检索策略必须按查询类型比较"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c02.md",
+          "readSha256": "6062341a3757f43770db7bdcb4512f8ff85f27de24f7cd0afa791a79147cb087",
+          "line": 35,
+          "heading": "一个完整的过滤、排序、读回与事实支持链"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c02.md",
+          "readSha256": "6062341a3757f43770db7bdcb4512f8ff85f27de24f7cd0afa791a79147cb087",
+          "line": 235,
+          "heading": "做一个能定位问题的检索比较"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "c02-k04",
+      "originalTitle": "冲突和无答案",
+      "objectiveIds": [
+        "c02-o2"
+      ],
+      "judgment": "冲突先在同事实身份内比较且不受最终top_k遮蔽；未摄取/无命中/越权/旧版本分别留状态，不选有利条款。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c02.md",
+          "readSha256": "6062341a3757f43770db7bdcb4512f8ff85f27de24f7cd0afa791a79147cb087",
+          "line": 27,
+          "heading": "把关联检查与支持判断分别建模"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c02.md",
+          "readSha256": "6062341a3757f43770db7bdcb4512f8ff85f27de24f7cd0afa791a79147cb087",
+          "line": 35,
+          "heading": "一个完整的过滤、排序、读回与事实支持链"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c02.md",
+          "readSha256": "6062341a3757f43770db7bdcb4512f8ff85f27de24f7cd0afa791a79147cb087",
+          "line": 227,
+          "heading": "无答案应能解释是哪一层缺证"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "c03-k01",
+      "originalTitle": "工具定义建议与实际执行",
+      "objectiveIds": [
+        "c03-o1"
+      ],
+      "judgment": "提议/协议调用/动作/物理尝试/业务效果分开，回执核操作身份且协议结果按当前call_id关联。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md",
+          "readSha256": "2a74d2de01c4cac036fbbdbd181f7956a507e1f45b34f36194cd18b602257cef",
+          "line": 7,
+          "heading": "工具名与合法 JSON 都不能授执行权"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md",
+          "readSha256": "2a74d2de01c4cac036fbbdbd181f7956a507e1f45b34f36194cd18b602257cef",
+          "line": 15,
+          "heading": "一个意图，多个协议调用与发送尝试"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md",
+          "readSha256": "2a74d2de01c4cac036fbbdbd181f7956a507e1f45b34f36194cd18b602257cef",
+          "line": 127,
+          "heading": "一个有真实效果账本的无网络替身"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md",
+          "readSha256": "2a74d2de01c4cac036fbbdbd181f7956a507e1f45b34f36194cd18b602257cef",
+          "line": 214,
+          "heading": "取舍与失效顺序"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": "CR08-10"
+    },
+    {
+      "id": "c03-k02",
+      "originalTitle": "参数语义与对象授权",
+      "objectiveIds": [
+        "c03-o1"
+      ],
+      "judgment": "Schema合法之后仍核可信主体与对象权限，批准绑定工具/参数/证据指纹；当前规范指纹跨章一致性待CR08-10返修。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md",
+          "readSha256": "2a74d2de01c4cac036fbbdbd181f7956a507e1f45b34f36194cd18b602257cef",
+          "line": 7,
+          "heading": "工具名与合法 JSON 都不能授执行权"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md",
+          "readSha256": "2a74d2de01c4cac036fbbdbd181f7956a507e1f45b34f36194cd18b602257cef",
+          "line": 29,
+          "heading": "审批绑定不可变动作，重发资格另行核对"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md",
+          "readSha256": "2a74d2de01c4cac036fbbdbd181f7956a507e1f45b34f36194cd18b602257cef",
+          "line": 37,
+          "heading": "本地事务和下游接口各承担哪一半"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": "CR08-10"
+    },
+    {
+      "id": "c03-k03",
+      "originalTitle": "幂等与重复请求",
+      "objectiveIds": [
+        "c03-o2"
+      ],
+      "judgment": "唯一槽位复用逻辑动作，同参数新call不得换key；下游同key去重窗口与本地事务各负其责。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md",
+          "readSha256": "2a74d2de01c4cac036fbbdbd181f7956a507e1f45b34f36194cd18b602257cef",
+          "line": 15,
+          "heading": "一个意图，多个协议调用与发送尝试"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md",
+          "readSha256": "2a74d2de01c4cac036fbbdbd181f7956a507e1f45b34f36194cd18b602257cef",
+          "line": 37,
+          "heading": "本地事务和下游接口各承担哪一半"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md",
+          "readSha256": "2a74d2de01c4cac036fbbdbd181f7956a507e1f45b34f36194cd18b602257cef",
+          "line": 127,
+          "heading": "一个有真实效果账本的无网络替身"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md",
+          "readSha256": "2a74d2de01c4cac036fbbdbd181f7956a507e1f45b34f36194cd18b602257cef",
+          "line": 214,
+          "heading": "取舍与失效顺序"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": "CR08-10"
+    },
+    {
+      "id": "c03-k04",
+      "originalTitle": "业务失败与未知结果",
+      "objectiveIds": [
+        "c03-o2"
+      ],
+      "judgment": "丢回复为UNKNOWN，对THIS_ATTEMPT_ONLY无效果不能推翻既有未知；按原操作查询，错误操作同内容回执不可信。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md",
+          "readSha256": "2a74d2de01c4cac036fbbdbd181f7956a507e1f45b34f36194cd18b602257cef",
+          "line": 37,
+          "heading": "本地事务和下游接口各承担哪一半"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md",
+          "readSha256": "2a74d2de01c4cac036fbbdbd181f7956a507e1f45b34f36194cd18b602257cef",
+          "line": 127,
+          "heading": "一个有真实效果账本的无网络替身"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/c03.md",
+          "readSha256": "2a74d2de01c4cac036fbbdbd181f7956a507e1f45b34f36194cd18b602257cef",
+          "line": 214,
+          "heading": "取舍与失效顺序"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": "CR08-10"
+    },
+    {
+      "id": "e01-k01",
+      "originalTitle": "任务事件与业务事实",
+      "objectiveIds": [
+        "e01-o1"
+      ],
+      "judgment": "事件重放结果与动作事实独立持久；预算/批准/候选身份来自事务记录而非对话。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e01.md",
+          "readSha256": "56bb8db5f36b455d488bdf022ede6c5b5759d8736f1e62cb345b87962a956534",
+          "line": 7,
+          "heading": "三个提交点定义可恢复事实"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e01.md",
+          "readSha256": "56bb8db5f36b455d488bdf022ede6c5b5759d8736f1e62cb345b87962a956534",
+          "line": 17,
+          "heading": "先分清调度状态与效果状态"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e01.md",
+          "readSha256": "56bb8db5f36b455d488bdf022ede6c5b5759d8736f1e62cb345b87962a956534",
+          "line": 25,
+          "heading": "一个可检查的存储最小实现"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": "CR08-10"
+    },
+    {
+      "id": "e01-k02",
+      "originalTitle": "检查点与状态转换",
+      "objectiveIds": [
+        "e01-o1"
+      ],
+      "judgment": "停止意图不删除晚到效果；完成事务需当前verdict绑定及无未决，租约epoch阻止旧工作者推进。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e01.md",
+          "readSha256": "56bb8db5f36b455d488bdf022ede6c5b5759d8736f1e62cb345b87962a956534",
+          "line": 17,
+          "heading": "先分清调度状态与效果状态"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e01.md",
+          "readSha256": "56bb8db5f36b455d488bdf022ede6c5b5759d8736f1e62cb345b87962a956534",
+          "line": 25,
+          "heading": "一个可检查的存储最小实现"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e01.md",
+          "readSha256": "56bb8db5f36b455d488bdf022ede6c5b5759d8736f1e62cb345b87962a956534",
+          "line": 304,
+          "heading": "用一次恢复轨迹读懂提交边界"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e01.md",
+          "readSha256": "56bb8db5f36b455d488bdf022ede6c5b5759d8736f1e62cb345b87962a956534",
+          "line": 314,
+          "heading": "已实现的终态保证与版本变化"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": "CR08-10"
+    },
+    {
+      "id": "e01-k03",
+      "originalTitle": "中断与副作用核对",
+      "objectiveIds": [
+        "e01-o2"
+      ],
+      "judgment": "发送前持久未决尝试，外部提交/本地结果危险窗口先核原key；双独立SQLite替身练习保留跨库非原子边界。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e01.md",
+          "readSha256": "56bb8db5f36b455d488bdf022ede6c5b5759d8736f1e62cb345b87962a956534",
+          "line": 7,
+          "heading": "三个提交点定义可恢复事实"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e01.md",
+          "readSha256": "56bb8db5f36b455d488bdf022ede6c5b5759d8736f1e62cb345b87962a956534",
+          "line": 25,
+          "heading": "一个可检查的存储最小实现"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e01.md",
+          "readSha256": "56bb8db5f36b455d488bdf022ede6c5b5759d8736f1e62cb345b87962a956534",
+          "line": 304,
+          "heading": "用一次恢复轨迹读懂提交边界"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e01.md",
+          "readSha256": "56bb8db5f36b455d488bdf022ede6c5b5759d8736f1e62cb345b87962a956534",
+          "line": 322,
+          "heading": "用故障位置验证，而不是只测正常重启"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": "CR08-10"
+    },
+    {
+      "id": "e01-k04",
+      "originalTitle": "恢复与版本冲突",
+      "objectiveIds": [
+        "e01-o2"
+      ],
+      "judgment": "未知metadata.version拒绝启动，迁移须保留原参数/批准/状态/版本；不能默认新字段扩批准，回退须可读新状态。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e01.md",
+          "readSha256": "56bb8db5f36b455d488bdf022ede6c5b5759d8736f1e62cb345b87962a956534",
+          "line": 314,
+          "heading": "已实现的终态保证与版本变化"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e01.md",
+          "readSha256": "56bb8db5f36b455d488bdf022ede6c5b5759d8736f1e62cb345b87962a956534",
+          "line": 322,
+          "heading": "用故障位置验证，而不是只测正常重启"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": "CR08-10"
+    },
+    {
+      "id": "e02-k01",
+      "originalTitle": "能力回归与保留案例",
+      "objectiveIds": [
+        "e02-o1"
+      ],
+      "judgment": "开发/回归/独立保留集由信息使用定义；提前见题转回归并换新集，公开题不作迁移证据。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e02.md",
+          "readSha256": "6f9be813e460401ef0b25bae7d56a722ba53c53fb22adc23e713fd3ffd047333",
+          "line": 62,
+          "heading": "开发、回归和保留部分控制的是信息使用"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e02.md",
+          "readSha256": "6f9be813e460401ef0b25bae7d56a722ba53c53fb22adc23e713fd3ffd047333",
+          "line": 248,
+          "heading": "推理与实现练习"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "e02-k02",
+      "originalTitle": "重复测量与对照条件",
+      "objectiveIds": [
+        "e02-o1"
+      ],
+      "judgment": "冻结版本/任务分配/资源及判据，配对重复报告全部尝试而非最好一次，相关性不能按独立样本处理。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e02.md",
+          "readSha256": "6f9be813e460401ef0b25bae7d56a722ba53c53fb22adc23e713fd3ffd047333",
+          "line": 72,
+          "heading": "先冻结比较，再运行所有被分配的任务"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e02.md",
+          "readSha256": "6f9be813e460401ef0b25bae7d56a722ba53c53fb22adc23e713fd3ffd047333",
+          "line": 248,
+          "heading": "推理与实现练习"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "e02-k03",
+      "originalTitle": "结果轨迹与成本",
+      "objectiveIds": [
+        "e02-o2"
+      ],
+      "judgment": "结果、过程、资源分别判定；已知越权或错效果FAIL优先且保留缺证，HARNESS_ERROR不当模型失败或通过。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e02.md",
+          "readSha256": "6f9be813e460401ef0b25bae7d56a722ba53c53fb22adc23e713fd3ffd047333",
+          "line": 7,
+          "heading": "把“好”拆成能被不同证据推翻的命题"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e02.md",
+          "readSha256": "6f9be813e460401ef0b25bae7d56a722ba53c53fb22adc23e713fd3ffd047333",
+          "line": 23,
+          "heading": "案例不是问答文本，而是一份执行契约"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e02.md",
+          "readSha256": "6f9be813e460401ef0b25bae7d56a722ba53c53fb22adc23e713fd3ffd047333",
+          "line": 92,
+          "heading": "一个判定器怎样拒绝把缺证当通过"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e02.md",
+          "readSha256": "6f9be813e460401ef0b25bae7d56a722ba53c53fb22adc23e713fd3ffd047333",
+          "line": 218,
+          "heading": "Trace 用来定位因果，不能当事实数据库"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "e02-k04",
+      "originalTitle": "评分器校准与归因",
+      "objectiveIds": [
+        "e02-o2"
+      ],
+      "judgment": "模型评分需与独立专业标签校准，不冒专家；按trace形成竞争原因，替换证据/干预定位，再复验原例和回归。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e02.md",
+          "readSha256": "6f9be813e460401ef0b25bae7d56a722ba53c53fb22adc23e713fd3ffd047333",
+          "line": 218,
+          "heading": "Trace 用来定位因果，不能当事实数据库"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e02.md",
+          "readSha256": "6f9be813e460401ef0b25bae7d56a722ba53c53fb22adc23e713fd3ffd047333",
+          "line": 230,
+          "heading": "模型评分器的误差需要量化到决策用途"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e02.md",
+          "readSha256": "6f9be813e460401ef0b25bae7d56a722ba53c53fb22adc23e713fd3ffd047333",
+          "line": 240,
+          "heading": "从失败分类到一次能够关闭的回归"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e02.md",
+          "readSha256": "6f9be813e460401ef0b25bae7d56a722ba53c53fb22adc23e713fd3ffd047333",
+          "line": 248,
+          "heading": "推理与实现练习"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "e03-k01",
+      "originalTitle": "威胁模型与提示注入",
+      "objectiveIds": [
+        "e03-o1"
+      ],
+      "judgment": "文档/工具结果/持久记忆三个可控入口分别建威胁；恶意资料不取得动作许可，练习要求同注入跨入口对照。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e03.md",
+          "readSha256": "8cfd5fe6e8ee73258ce83d3baa347b693ff632fcc1f670fecb9b275892e02761",
+          "line": 7,
+          "heading": "威胁模型先确定攻击者能够改变哪一段数据"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e03.md",
+          "readSha256": "8cfd5fe6e8ee73258ce83d3baa347b693ff632fcc1f670fecb9b275892e02761",
+          "line": 21,
+          "heading": "读取边界比最终答案过滤更早"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e03.md",
+          "readSha256": "8cfd5fe6e8ee73258ce83d3baa347b693ff632fcc1f670fecb9b275892e02761",
+          "line": 291,
+          "heading": "成对安全练习及参考分析"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "e03-k02",
+      "originalTitle": "提示分隔与强制边界",
+      "objectiveIds": [
+        "e03-o1"
+      ],
+      "judgment": "不可信标签只提示模型；模型外对象授权/资料投影更早执行，先泄跨租户数据不能靠最终拒答补救。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e03.md",
+          "readSha256": "8cfd5fe6e8ee73258ce83d3baa347b693ff632fcc1f670fecb9b275892e02761",
+          "line": 21,
+          "heading": "读取边界比最终答案过滤更早"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e03.md",
+          "readSha256": "8cfd5fe6e8ee73258ce83d3baa347b693ff632fcc1f670fecb9b275892e02761",
+          "line": 65,
+          "heading": "无网络替身把局部保证做完整"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e03.md",
+          "readSha256": "8cfd5fe6e8ee73258ce83d3baa347b693ff632fcc1f670fecb9b275892e02761",
+          "line": 281,
+          "heading": "失败顺序决定正确的补救"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "e03-k03",
+      "originalTitle": "敏感字段与日志",
+      "objectiveIds": [
+        "e03-o2"
+      ],
+      "judgment": "上下文/输出/工具载荷/日志四通道允许字段；递归原叶值匹配特殊标记，说明不能发现未知/编码秘密。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e03.md",
+          "readSha256": "8cfd5fe6e8ee73258ce83d3baa347b693ff632fcc1f670fecb9b275892e02761",
+          "line": 43,
+          "heading": "内容投影需要覆盖四个通道"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e03.md",
+          "readSha256": "8cfd5fe6e8ee73258ce83d3baa347b693ff632fcc1f670fecb9b275892e02761",
+          "line": 65,
+          "heading": "无网络替身把局部保证做完整"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e03.md",
+          "readSha256": "8cfd5fe6e8ee73258ce83d3baa347b693ff632fcc1f670fecb9b275892e02761",
+          "line": 291,
+          "heading": "成对安全练习及参考分析"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "e03-k04",
+      "originalTitle": "精确审批与副作用",
+      "objectiveIds": [
+        "e03-o2"
+      ],
+      "judgment": "精确批准含参数、证据、权限、期限与动作消费；同槽并发最多一建；远端转移需持久意图及下游合同。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e03.md",
+          "readSha256": "8cfd5fe6e8ee73258ce83d3baa347b693ff632fcc1f670fecb9b275892e02761",
+          "line": 53,
+          "heading": "精确批准绑定的是一次逻辑意图"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e03.md",
+          "readSha256": "8cfd5fe6e8ee73258ce83d3baa347b693ff632fcc1f670fecb9b275892e02761",
+          "line": 65,
+          "heading": "无网络替身把局部保证做完整"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e03.md",
+          "readSha256": "8cfd5fe6e8ee73258ce83d3baa347b693ff632fcc1f670fecb9b275892e02761",
+          "line": 273,
+          "heading": "从局部替身走到远端，哪些保证会消失"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e03.md",
+          "readSha256": "8cfd5fe6e8ee73258ce83d3baa347b693ff632fcc1f670fecb9b275892e02761",
+          "line": 291,
+          "heading": "成对安全练习及参考分析"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "e04-k01",
+      "originalTitle": "环境配置与依赖隔离",
+      "objectiveIds": [
+        "e04-o1"
+      ],
+      "judgment": "环境配置启动前校验，秘密独立提供；版本清单包括模型/提示/工具/资料/schema/依赖，不把本地演示称生产。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e04.md",
+          "readSha256": "a4d966da379b5e2c2bacb5db662beb040f9004ec12a0c020100a9bad3d17106c",
+          "line": 7,
+          "heading": "发布对象是一组相互兼容的版本"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e04.md",
+          "readSha256": "a4d966da379b5e2c2bacb5db662beb040f9004ec12a0c020100a9bad3d17106c",
+          "line": 35,
+          "heading": "分环境配置在启动前验证"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e04.md",
+          "readSha256": "a4d966da379b5e2c2bacb5db662beb040f9004ec12a0c020100a9bad3d17106c",
+          "line": 47,
+          "heading": "新任务与旧任务可以走不同工作者集合"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "e04-k02",
+      "originalTitle": "可观测性与回退",
+      "objectiveIds": [
+        "e04-o1"
+      ],
+      "judgment": "暂停/排空与新旧worker路由保护在途任务；schema不可读时回退HOLD，镜像旧不代表状态可回退。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e04.md",
+          "readSha256": "a4d966da379b5e2c2bacb5db662beb040f9004ec12a0c020100a9bad3d17106c",
+          "line": 7,
+          "heading": "发布对象是一组相互兼容的版本"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e04.md",
+          "readSha256": "a4d966da379b5e2c2bacb5db662beb040f9004ec12a0c020100a9bad3d17106c",
+          "line": 47,
+          "heading": "新任务与旧任务可以走不同工作者集合"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e04.md",
+          "readSha256": "a4d966da379b5e2c2bacb5db662beb040f9004ec12a0c020100a9bad3d17106c",
+          "line": 135,
+          "heading": "一次发布的控制路径"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e04.md",
+          "readSha256": "a4d966da379b5e2c2bacb5db662beb040f9004ec12a0c020100a9bad3d17106c",
+          "line": 149,
+          "heading": "状态迁移比镜像回退更难"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "e04-k03",
+      "originalTitle": "运行事实与故障阶段",
+      "objectiveIds": [
+        "e04-o2"
+      ],
+      "judgment": "trace记录阶段及版本、请求/动作/操作关联；查检索/模型/工具最早偏离点而非最后错误文本。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e04.md",
+          "readSha256": "a4d966da379b5e2c2bacb5db662beb040f9004ec12a0c020100a9bad3d17106c",
+          "line": 161,
+          "heading": "观测记录应回答哪一阶段首次偏离"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e04.md",
+          "readSha256": "a4d966da379b5e2c2bacb5db662beb040f9004ec12a0c020100a9bad3d17106c",
+          "line": 178,
+          "heading": "可由他人执行的故障处理说明"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "e04-k04",
+      "originalTitle": "恢复说明与他人复现",
+      "objectiveIds": [
+        "e04-o2"
+      ],
+      "judgment": "runbook要求安全权限、诊断依据、可执行恢复、复验和敏感日志处理；交非作者复现发布排空并留原记录，未实跑。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e04.md",
+          "readSha256": "a4d966da379b5e2c2bacb5db662beb040f9004ec12a0c020100a9bad3d17106c",
+          "line": 178,
+          "heading": "可由他人执行的故障处理说明"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e04.md",
+          "readSha256": "a4d966da379b5e2c2bacb5db662beb040f9004ec12a0c020100a9bad3d17106c",
+          "line": 194,
+          "heading": "练习与参考分析"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "e05-k01",
+      "originalTitle": "任务成本与单位",
+      "objectiveIds": [
+        "e05-o1"
+      ],
+      "judgment": "逻辑任务归集全部尝试、失败/重试及人工等成本；credit是假设单位，未知费用不能记零，未取真实账单。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e05.md",
+          "readSha256": "3d3fa17284a018cfed61d2c8b40e9b52b60eace5afb04544849fd19c69a8f03b",
+          "line": 7,
+          "heading": "成本归到逻辑任务，才能看见失败代价"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e05.md",
+          "readSha256": "3d3fa17284a018cfed61d2c8b40e9b52b60eace5afb04544849fd19c69a8f03b",
+          "line": 37,
+          "heading": "一个不把失败和未知费用丢掉的汇总器"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e05.md",
+          "readSha256": "3d3fa17284a018cfed61d2c8b40e9b52b60eace5afb04544849fd19c69a8f03b",
+          "line": 203,
+          "heading": "练习与参考分析"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "e05-k02",
+      "originalTitle": "延迟分布与失败分母",
+      "objectiveIds": [
+        "e05-o1"
+      ],
+      "judgment": "分别报候选/批准/最终验收等待，超时取消/在途注明分母；有限样本p95不是总体尾延迟保证。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e05.md",
+          "readSha256": "3d3fa17284a018cfed61d2c8b40e9b52b60eace5afb04544849fd19c69a8f03b",
+          "line": 27,
+          "heading": "延迟必须注明用户等到的是什么"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e05.md",
+          "readSha256": "3d3fa17284a018cfed61d2c8b40e9b52b60eace5afb04544849fd19c69a8f03b",
+          "line": 37,
+          "heading": "一个不把失败和未知费用丢掉的汇总器"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e05.md",
+          "readSha256": "3d3fa17284a018cfed61d2c8b40e9b52b60eace5afb04544849fd19c69a8f03b",
+          "line": 133,
+          "heading": "负载决定并发实验测到了什么"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "e05-k03",
+      "originalTitle": "缓存与模型选择比较",
+      "objectiveIds": [
+        "e05-o2"
+      ],
+      "judgment": "缓存键含租户/资料/权限版本，只复用证据候选不复用批准；模型路由须同任务质量护栏、事实和成本比较。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e05.md",
+          "readSha256": "3d3fa17284a018cfed61d2c8b40e9b52b60eace5afb04544849fd19c69a8f03b",
+          "line": 145,
+          "heading": "缓存应复用证据和候选，不能复用批准"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e05.md",
+          "readSha256": "3d3fa17284a018cfed61d2c8b40e9b52b60eace5afb04544849fd19c69a8f03b",
+          "line": 185,
+          "heading": "模型路由改变的不只是单价"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e05.md",
+          "readSha256": "3d3fa17284a018cfed61d2c8b40e9b52b60eace5afb04544849fd19c69a8f03b",
+          "line": 203,
+          "heading": "练习与参考分析"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "e05-k04",
+      "originalTitle": "并发预算与资源取舍",
+      "objectiveIds": [
+        "e05-o2"
+      ],
+      "judgment": "开放/闭环负载可测不同队列效应；并发/限流/预算统一有界，速度不以丢失败或无界重试取得。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e05.md",
+          "readSha256": "3d3fa17284a018cfed61d2c8b40e9b52b60eace5afb04544849fd19c69a8f03b",
+          "line": 133,
+          "heading": "负载决定并发实验测到了什么"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e05.md",
+          "readSha256": "3d3fa17284a018cfed61d2c8b40e9b52b60eace5afb04544849fd19c69a8f03b",
+          "line": 193,
+          "heading": "预算与限流需要一个共同执行边界"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/e05.md",
+          "readSha256": "3d3fa17284a018cfed61d2c8b40e9b52b60eace5afb04544849fd19c69a8f03b",
+          "line": 203,
+          "heading": "练习与参考分析"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "p01-k01",
+      "originalTitle": "真实问题与作者假设",
+      "objectiveIds": [
+        "p01-o1"
+      ],
+      "judgment": "真实原任务/同意范围与作者解释/构造例分开；近期过程暴露反证，负反馈可缩范围或停止而非编用户肯定。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p01.md",
+          "readSha256": "d067573c93e44e0ab6a0b44f69916f52a89f2776b1bfd6a7f3098dd4ed648342",
+          "line": 7,
+          "heading": "问题证据与方案意图分成两条链"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p01.md",
+          "readSha256": "d067573c93e44e0ab6a0b44f69916f52a89f2776b1bfd6a7f3098dd4ed648342",
+          "line": 25,
+          "heading": "取得证据时，让任务过程暴露反例"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p01.md",
+          "readSha256": "d067573c93e44e0ab6a0b44f69916f52a89f2776b1bfd6a7f3098dd4ed648342",
+          "line": 143,
+          "heading": "真实反馈改变假设，不能只变宣传"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p01.md",
+          "readSha256": "d067573c93e44e0ab6a0b44f69916f52a89f2776b1bfd6a7f3098dd4ed648342",
+          "line": 151,
+          "heading": "练习与参考分析"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "p01-k02",
+      "originalTitle": "行业基线与差异假设",
+      "objectiveIds": [
+        "p01-o1"
+      ],
+      "judgment": "现实替代与简单技术基线代表用户可选方案；差异假设可被推翻，版本/任务/资源/护栏预定义后才比较。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p01.md",
+          "readSha256": "d067573c93e44e0ab6a0b44f69916f52a89f2776b1bfd6a7f3098dd4ed648342",
+          "line": 37,
+          "heading": "基线应代表用户现在真正能选的方案"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p01.md",
+          "readSha256": "d067573c93e44e0ab6a0b44f69916f52a89f2776b1bfd6a7f3098dd4ed648342",
+          "line": 54,
+          "heading": "把差异写成能失败的假设"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p01.md",
+          "readSha256": "d067573c93e44e0ab6a0b44f69916f52a89f2776b1bfd6a7f3098dd4ed648342",
+          "line": 83,
+          "heading": "预定义公平实验，而不是挑一次演示"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p01.md",
+          "readSha256": "d067573c93e44e0ab6a0b44f69916f52a89f2776b1bfd6a7f3098dd4ed648342",
+          "line": 151,
+          "heading": "练习与参考分析"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "p01-k03",
+      "originalTitle": "MVP范围与架构决策",
+      "objectiveIds": [
+        "p01-o2"
+      ],
+      "judgment": "MVP按要验证的机制冻结TaskContract/AcceptancePlan；ADR解释普通程序/Agent取舍、替代和重新决策条件。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p01.md",
+          "readSha256": "d067573c93e44e0ab6a0b44f69916f52a89f2776b1bfd6a7f3098dd4ed648342",
+          "line": 93,
+          "heading": "MVP 契约限制的是要验证的机制"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p01.md",
+          "readSha256": "d067573c93e44e0ab6a0b44f69916f52a89f2776b1bfd6a7f3098dd4ed648342",
+          "line": 125,
+          "heading": "架构决定要能解释放弃了什么"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p01.md",
+          "readSha256": "d067573c93e44e0ab6a0b44f69916f52a89f2776b1bfd6a7f3098dd4ed648342",
+          "line": 151,
+          "heading": "练习与参考分析"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "p01-k04",
+      "originalTitle": "协作交接与用户反馈",
+      "objectiveIds": [
+        "p01-o2"
+      ],
+      "judgment": "同决定分别交业务/技术受众，原反馈连回假设与实验；非作者复现/真实使用/维护文档仍需实际证据。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p01.md",
+          "readSha256": "d067573c93e44e0ab6a0b44f69916f52a89f2776b1bfd6a7f3098dd4ed648342",
+          "line": 135,
+          "heading": "同一决定交给业务与技术受众"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p01.md",
+          "readSha256": "d067573c93e44e0ab6a0b44f69916f52a89f2776b1bfd6a7f3098dd4ed648342",
+          "line": 143,
+          "heading": "真实反馈改变假设，不能只变宣传"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p01.md",
+          "readSha256": "d067573c93e44e0ab6a0b44f69916f52a89f2776b1bfd6a7f3098dd4ed648342",
+          "line": 151,
+          "heading": "练习与参考分析"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "p02-k01",
+      "originalTitle": "作品证据与外部评审",
+      "objectiveIds": [
+        "p02-o1"
+      ],
+      "judgment": "证据索引只核字节/版本，独立评阅走实际任务和原专业意见；启动/INDEX_OK均不推出毕业或真实性。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p02.md",
+          "readSha256": "143d114a9f394002f72546e2e76d9974e552c720003579fb72bf26f5df14af43",
+          "line": 7,
+          "heading": "一个证据包应使独立者从入口走到结论"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p02.md",
+          "readSha256": "143d114a9f394002f72546e2e76d9974e552c720003579fb72bf26f5df14af43",
+          "line": 26,
+          "heading": "文件完整性检查不能替代证据真实性"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p02.md",
+          "readSha256": "143d114a9f394002f72546e2e76d9974e552c720003579fb72bf26f5df14af43",
+          "line": 102,
+          "heading": "先核具体作品，再判更大的能力范围"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p02.md",
+          "readSha256": "143d114a9f394002f72546e2e76d9974e552c720003579fb72bf26f5df14af43",
+          "line": 118,
+          "heading": "独立评阅按一条实际任务走完全程"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p02.md",
+          "readSha256": "143d114a9f394002f72546e2e76d9974e552c720003579fb72bf26f5df14af43",
+          "line": 175,
+          "heading": "练习与参考分析"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "p02-k02",
+      "originalTitle": "真实使用与比较局限",
+      "objectiveIds": [
+        "p02-o1"
+      ],
+      "judgment": "真实使用失败/退出与抽样限制保留，有限满意自述与行业可比实测分开；当前证据不足不改原门槛。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p02.md",
+          "readSha256": "143d114a9f394002f72546e2e76d9974e552c720003579fb72bf26f5df14af43",
+          "line": 102,
+          "heading": "先核具体作品，再判更大的能力范围"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p02.md",
+          "readSha256": "143d114a9f394002f72546e2e76d9974e552c720003579fb72bf26f5df14af43",
+          "line": 128,
+          "heading": "真实使用与可比优势需要从作品外取得证据"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p02.md",
+          "readSha256": "143d114a9f394002f72546e2e76d9974e552c720003579fb72bf26f5df14af43",
+          "line": 175,
+          "heading": "练习与参考分析"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "p02-k03",
+      "originalTitle": "失败复盘与二次验证",
+      "objectiveIds": [
+        "p02-o2"
+      ],
+      "judgment": "完整构造复盘有旧例/竞争原因/修订/原例复验/回归/开放真实合同；修代码不消除旧外部重复效果。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p02.md",
+          "readSha256": "143d114a9f394002f72546e2e76d9974e552c720003579fb72bf26f5df14af43",
+          "line": 136,
+          "heading": "一次完整复盘：写后中断变成重复工单"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p02.md",
+          "readSha256": "143d114a9f394002f72546e2e76d9974e552c720003579fb72bf26f5df14af43",
+          "line": 175,
+          "heading": "练习与参考分析"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    },
+    {
+      "id": "p02-k04",
+      "originalTitle": "未知任务与能力边界",
+      "objectiveIds": [
+        "p02-o2"
+      ],
+      "judgment": "非作者未见资料与约束、允许帮助及污染规则检验判断/实现/调试；正确停止可合格但不外推所有行业。",
+      "locations": [
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p02.md",
+          "readSha256": "143d114a9f394002f72546e2e76d9974e552c720003579fb72bf26f5df14af43",
+          "line": 165,
+          "heading": "未知任务测的是独立判断，不是换标题"
+        },
+        {
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v08/p02.md",
+          "readSha256": "143d114a9f394002f72546e2e76d9974e552c720003579fb72bf26f5df14af43",
+          "line": 175,
+          "heading": "练习与参考分析"
+        }
+      ],
+      "status": "observed_in_text_pending_final_alignment",
+      "qualityBlocker": null
+    }
+  ],
+  "objectives": [
+    {
+      "id": "f01-o1",
+      "originalObjective": "实现输入校验、异常处理与 API 请求",
+      "knowledgePointIds": [
+        "f01-k01",
+        "f01-k02"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "f01-o2",
+      "originalObjective": "使用 Git、依赖锁定和测试复现服务",
+      "knowledgePointIds": [
+        "f01-k03",
+        "f01-k04"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "f02-o1",
+      "originalObjective": "完成真实模型调用及结构与业务双重校验",
+      "knowledgePointIds": [
+        "f02-k01",
+        "f02-k02"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "本次只测协议消费/校验夹具，原真实模型调用目标未完成"
+    },
+    {
+      "id": "f02-o2",
+      "originalObjective": "区分用户输入、工具结果与指令来源",
+      "knowledgePointIds": [
+        "f02-k03",
+        "f02-k04"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "c01-o1",
+      "originalObjective": "按任务不确定性选择固定流程或动态决策",
+      "knowledgePointIds": [
+        "c01-k01",
+        "c01-k02"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "c01-o2",
+      "originalObjective": "根据工具反馈决策并设置停止预算",
+      "knowledgePointIds": [
+        "c01-k03",
+        "c01-k04"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "c02-o1",
+      "originalObjective": "记录数据来源、版本与访问范围",
+      "knowledgePointIds": [
+        "c02-k01",
+        "c02-k02"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "c02-o2",
+      "originalObjective": "比较检索策略并验证引用与无答案行为",
+      "knowledgePointIds": [
+        "c02-k03",
+        "c02-k04"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "c03-o1",
+      "originalObjective": "实现输入输出契约与授权规则",
+      "knowledgePointIds": [
+        "c03-k01",
+        "c03-k02"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "c03-o2",
+      "originalObjective": "验证幂等请求与失败反馈",
+      "knowledgePointIds": [
+        "c03-k03",
+        "c03-k04"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "e01-o1",
+      "originalObjective": "显式保存任务状态与已完成动作",
+      "knowledgePointIds": [
+        "e01-k01",
+        "e01-k02"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "e01-o2",
+      "originalObjective": "在中断后核对外部系统再恢复",
+      "knowledgePointIds": [
+        "e01-k03",
+        "e01-k04"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "e02-o1",
+      "originalObjective": "区分能力、回归和独立保留案例",
+      "knowledgePointIds": [
+        "e02-k01",
+        "e02-k02"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "e02-o2",
+      "originalObjective": "分别评价任务结果、轨迹和成本",
+      "knowledgePointIds": [
+        "e02-k03",
+        "e02-k04"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "e03-o1",
+      "originalObjective": "区分不可信资料与指令",
+      "knowledgePointIds": [
+        "e03-k01",
+        "e03-k02"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "e03-o2",
+      "originalObjective": "验证最小权限、敏感数据处理和人工介入",
+      "knowledgePointIds": [
+        "e03-k03",
+        "e03-k04"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "e04-o1",
+      "originalObjective": "提供分环境配置、可观测运行和回退",
+      "knowledgePointIds": [
+        "e04-k01",
+        "e04-k02"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "e04-o2",
+      "originalObjective": "用故障记录定位服务阶段",
+      "knowledgePointIds": [
+        "e04-k03",
+        "e04-k04"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "e05-o1",
+      "originalObjective": "在约定负载下记录尾延迟与每任务成本",
+      "knowledgePointIds": [
+        "e05-k01",
+        "e05-k02"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "e05-o2",
+      "originalObjective": "比较缓存、模型选择或并发方案",
+      "knowledgePointIds": [
+        "e05-k03",
+        "e05-k04"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "p01-o1",
+      "originalObjective": "把用户问题映射为可衡量的技术任务",
+      "knowledgePointIds": [
+        "p01-k01",
+        "p01-k02"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "p01-o2",
+      "originalObjective": "通过架构评审和文档解释取舍",
+      "knowledgePointIds": [
+        "p01-k03",
+        "p01-k04"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "p02-o1",
+      "originalObjective": "整合证据并完成外部评审",
+      "knowledgePointIds": [
+        "p02-k01",
+        "p02-k02"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    },
+    {
+      "id": "p02-o2",
+      "originalObjective": "用失败分析改进并迁移到未知任务",
+      "knowledgePointIds": [
+        "p02-k03",
+        "p02-k04"
+      ],
+      "textCoverage": "mechanism_and_practice_present_pending_final_review",
+      "learnerAchievement": "not_verified",
+      "executionLimit": "见分篇离线执行范围；练习、真实使用、独立作品及真人专业评阅未替读者完成"
+    }
+  ]
+}

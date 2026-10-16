@@ -1,0 +1,10 @@
+{
+  "version": "review-completion-local-patch-1",
+  "issueId": "UI2-REVIEW01",
+  "target": "dist/learning-experience-v13.js",
+  "oldFragment": "if(route().parts[1]==='done'||!available.length||reviewIndex>=available.length)return heading('复习','本次复习已结束')+issue('目前没有本人未掌握题，可回题库继续学习。');",
+  "newFragment": "if(route().parts[1]==='done'||!available.length||reviewIndex>=available.length)return '<div class=\"v13-question-detail\">'+heading('复习','本次复习已结束')+'<div class=\"v13-empty\"><p>'+(weak.length?'仍有 '+weak.length+' 道本人未掌握题保留在学习记录中。':'目前没有本人未掌握题，可回题库继续学习。')+'</p><div class=\"v13-actions\">'+(weak.length?'<a class=\"primary\" href=\"#review\">继续复习这些题 →</a>':'<a class=\"outline\" href=\"#questions\">回到题库 →</a>')+'<a class=\"outline\" href=\"#records\">返回学习记录</a></div></div></div>';",
+  "requiredOccurrences": 1,
+  "scope": "only completion copy and links; preserve all surrounding current v14 source",
+  "writePreconditions": "PM/actual owner confirms exclusive stable handoff, supplies current expectedSha256; default check is read-only"
+}

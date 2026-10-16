@@ -1,0 +1,18 @@
+{
+  "version": "course-controls-added-plan-1",
+  "atUtc": "2026-10-12T03:17:47.674612+00:00",
+  "contract": "team/app-v14-prerequisite-copy-product-course-controls.md",
+  "ids": [
+    "CC14-01",
+    "CC14-02"
+  ],
+  "cases": [
+    "course #learn shows all30 real chapters without segment/filters/notes/toolbars",
+    "old catalog preference received from real UI action when channel available; candidate normal reload still full map",
+    "old view/filter/scale hash parameters ignored for current course display, no stored record deletion",
+    "a real node href with mouse/Tab Enter works; original detail hashes retained"
+  ],
+  "sourceReceivedObservation": "courseView is stored preferences; scale=1 and routeFilter=all are closure variables; no persistent zoom/filter source field",
+  "unavailableMainBrowser": true,
+  "noExtraScreensOrFullRegression": true
+}

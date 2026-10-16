@@ -1,0 +1,126 @@
+{
+  "version": "app-v13-prototype-qa-knowledgepoint-cases-1",
+  "frozenAtUtc": "2026-10-12T00:05:56.764089+00:00",
+  "learningDataSha256": "2c0165b5013a88d5ae93fbe841901853cdf7d3cb184f576971e56ab2f572a394",
+  "status": "expected_cases_from_frozen_course_contract_before_ui_execution_not_acceptance_result",
+  "authorBlindness": "No strong blind holdout claimed; frontend implementation is already underway in shared workspace. This is a finite contract check, not the ten protected teaching variants.",
+  "cases": [
+    {
+      "knowledgePointId": "n03-planning-reflection:s-8daaf4201d23",
+      "unitId": "n03-planning-reflection",
+      "sectionId": "s-8daaf4201d23",
+      "title": "让计划依据观察前进，而不是在反复规划中空转",
+      "kind": "unit_introduction",
+      "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+      "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+      "href": "#learn/agent/n03-planning-reflection/s-8daaf4201d23",
+      "declaredQuestionIds": [],
+      "expectedEligibleWhenOnlyThisPointLearned": []
+    },
+    {
+      "knowledgePointId": "n03-planning-reflection:s-da63f3dcff17",
+      "unitId": "n03-planning-reflection",
+      "sectionId": "s-da63f3dcff17",
+      "title": "1 三种策略改变的是控制对象",
+      "kind": "core",
+      "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+      "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+      "href": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
+      "declaredQuestionIds": [
+        "Q11",
+        "Q12"
+      ],
+      "expectedEligibleWhenOnlyThisPointLearned": [
+        "Q11",
+        "Q12"
+      ]
+    },
+    {
+      "knowledgePointId": "n03-planning-reflection:s-7b6b3d9e9b99",
+      "unitId": "n03-planning-reflection",
+      "sectionId": "s-7b6b3d9e9b99",
+      "title": "2 从验收产物倒推候选计划",
+      "kind": "core",
+      "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+      "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+      "href": "#learn/agent/n03-planning-reflection/s-7b6b3d9e9b99",
+      "declaredQuestionIds": [
+        "Q16"
+      ],
+      "expectedEligibleWhenOnlyThisPointLearned": [
+        "Q16"
+      ]
+    },
+    {
+      "knowledgePointId": "n03-planning-reflection:s-7ee14c15626d",
+      "unitId": "n03-planning-reflection",
+      "sectionId": "s-7ee14c15626d",
+      "title": "4 重规划保留事实，失效的是依赖假设",
+      "kind": "core",
+      "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+      "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+      "href": "#learn/agent/n03-planning-reflection/s-7ee14c15626d",
+      "declaredQuestionIds": [
+        "Q17",
+        "Q19"
+      ],
+      "expectedEligibleWhenOnlyThisPointLearned": [
+        "Q17",
+        "Q19"
+      ]
+    },
+    {
+      "knowledgePointId": "00-learning-route:s-7be19d9ebfa3",
+      "unitId": "00-learning-route",
+      "sectionId": "s-7be19d9ebfa3",
+      "title": "v12新增训练如何接到原实作",
+      "kind": "navigation",
+      "sourcePath": "textbooks/v12/00-learning-route.md",
+      "sourceSha256": "452129591648ca6c146945fae000e3e905e87c2794315109c727592a7b16dced",
+      "href": "#learn/agent/00-learning-route/s-7be19d9ebfa3",
+      "declaredQuestionIds": [],
+      "expectedEligibleWhenOnlyThisPointLearned": []
+    },
+    {
+      "knowledgePointId": "n10-evaluation-projects:s-caf1ec2e47ac",
+      "unitId": "n10-evaluation-projects",
+      "sectionId": "s-caf1ec2e47ac",
+      "title": "从实验走向一个独立作品",
+      "kind": "core",
+      "sourcePath": "textbooks/v12/n10-evaluation-projects.md",
+      "sourceSha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+      "href": "#learn/agent/n10-evaluation-projects/s-caf1ec2e47ac",
+      "declaredQuestionIds": [
+        "Q10",
+        "Q99"
+      ],
+      "expectedEligibleWhenOnlyThisPointLearned": []
+    },
+    {
+      "knowledgePointId": "00-learning-route:s-3b82fdeafaab",
+      "unitId": "00-learning-route",
+      "sectionId": "s-3b82fdeafaab",
+      "title": "认识 Agent 工程",
+      "kind": "unit_introduction",
+      "sourcePath": "textbooks/v12/00-learning-route.md",
+      "sourceSha256": "452129591648ca6c146945fae000e3e905e87c2794315109c727592a7b16dced",
+      "href": "#learn/agent/00-learning-route/s-3b82fdeafaab",
+      "declaredQuestionIds": [
+        "Q1"
+      ],
+      "expectedEligibleWhenOnlyThisPointLearned": [
+        "Q1"
+      ]
+    }
+  ],
+  "checks": [
+    "Fresh no learned-point state cannot start self-test.",
+    "Only ReAct point visited => expected pool Q11/Q12, length2 even selecting5/10/20; same-unit Q16/Q17/Q19/Q20/Q18 not included just because unit HTML rendered.",
+    "Ordinary n03 chapter opening may record declared introduction only (no associated questions); must not grant all sibling points or full-unit pool.",
+    "Navigation point has no eligible questions and is not promoted to a different core point.",
+    "Only n10 personal-method point visited => Q10/Q99 remain viewable personal-method questions, eligible pool empty.",
+    "ReAct + replanning point union => unique Q11/Q12/Q17/Q19, not all unit questions.",
+    "Opening a Q11 evidence location only records its explicit core mapping; all other Q11 citations are not auto-marked.",
+    "Explicit opening root knowledge point grants Q1 only, never same-unit Q9/Q20. A root introduction is a declared distinct point, not whole-unit completion."
+  ]
+}

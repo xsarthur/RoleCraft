@@ -1,0 +1,18 @@
+{
+  "defects": [
+    {
+      "defectId": "REV-QA-Q99-01",
+      "question": "Q99",
+      "criterion": "AQS-07",
+      "firstDetectedVersion": "interview-answers-v1.0.0",
+      "firstDetectedSha256": "e9e2dc8287531302300c8da1abaa9d3a3fadc88e7e7bf018920fc0fc123111ad",
+      "state": "open",
+      "reason": "正文以稳定action/key、原操作查询、并发代次与下游去重给出核心修复；本题来源只绑定作品/评测/观测/问题发现章节，缺直接支持该恢复机制的具体小节。",
+      "counterexample": "追问从Q99参考出处哪个具体原文可核对“远端成功丢回执时必须沿原操作身份查询”的机制与限制，当前八条引用无对应恢复段落。",
+      "owner": "教材研发员C",
+      "requiredRepair": "在Q99正文和author-c sourceBindings追加已读的c03/控制循环/e01精确恢复小节及主张；重算版本/哈希。不得改冻结v12源。",
+      "retest": "按新哈希读回Q99新增来源原文并复核三层身份/未知/并发/下游边界，同时核旧内容与原题不变。",
+      "limits": "本缺陷不认定现有恢复机制错误；指该题关键主张来源绑定不足。"
+    }
+  ]
+}

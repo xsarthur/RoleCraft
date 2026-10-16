@@ -1,0 +1,70 @@
+{
+  "report": "product-v1.0-p0-reacceptance",
+  "date": "2026-10-16",
+  "role": "product_manager",
+  "target": "http://111.231.8.78/#learn",
+  "releaseVersion": "rolecraft-1.0",
+  "scope": "P0 remote single development environment",
+  "evidenceMode": ["remote_http", "remote_static_resource_parse", "dom_render_branch_source_review"],
+  "browserInteractiveEvidence": "not_available_in_subagent_channel",
+  "productScopeResult": "met_within_scope_for_p0_remote_product_contract",
+  "overallResult": "overall_not_met",
+  "positioningBoundary": {
+    "supports": ["industry_knowledge", "textbook_navigation", "practice", "interview_preparation"],
+    "doesNotPromise": ["employment", "career_certification", "job_competence", "human_expert_approval", "industry_leadership"]
+  },
+  "remoteEvidence": {
+    "health": {
+      "releaseVersion": "rolecraft-1.0",
+      "contentVersion": "textbook-v12",
+      "indexVersion": "content-retrieval-0.12-v12",
+      "providerCalled": false
+    },
+    "learningDataSha256": "6d27dabc1cedc15236de846c44dae8f66c4f82b77c2ede543941d3589e8772a4",
+    "questionCount": 114,
+    "questionSets": {"fixed100": 100, "market14": 14},
+    "knowledgePoints": 240,
+    "evidenceCount": 327,
+    "selfTestEligible": 112,
+    "personalEvidenceRequired": ["Q10", "Q99"],
+    "questionSourceBindingCheck": {"missingEvidence": [], "invalidSources": []},
+    "httpCases": {
+      "reactCareer": "needs_clarification",
+      "agentDeveloperCareer": "recommended",
+      "reactLearningQuery": "recommended",
+      "uncoveredQuery": "no_match_related_uncovered",
+      "dialogReact": "answered_extractively",
+      "dialogUncovered": "related_uncovered"
+    }
+  },
+  "matrix": {
+    "V1-01": "met_within_scope_state_logic",
+    "V1-02": "met_within_scope_http_boundary",
+    "V1-03": "met_within_scope",
+    "V1-04": "met_within_scope_static_data_and_route",
+    "V1-05": "insufficient",
+    "V1-06": "met_within_scope",
+    "V1-07": "insufficient",
+    "V1-08": "met_within_scope_http_boundary",
+    "V1-09": "met_within_scope"
+  },
+  "remainingGaps": [
+    "browser UI/UX click and screenshot evidence",
+    "P01 browser save/submit/reload recovery",
+    "login confirmation write, cancellation, conflict and idempotency",
+    "independent QA current-source re-run",
+    "real learner, human expert, production, model and cost evidence"
+  ],
+  "responsibility": {
+    "design_client_qa": "visual, responsive, keyboard, focus, screen-reader and seven-state verification",
+    "client_backend_qa": "P01 isolated-account save/submit/revision/recovery verification",
+    "product_backend_retrieval_qa": "career confirmation boundary, conflict and idempotency verification",
+    "project_manager": "coordinate roles, preserve prior report, track retest and overall status"
+  },
+  "sourceReports": [
+    "sites/rolecraft/team/product-v1.0-final-acceptance.md",
+    "sites/rolecraft/team/product-v1.0-scope.md",
+    "sites/rolecraft/team/deployment-v1.0-p0-fix.md",
+    "sites/rolecraft/team/app-p0-qa.md"
+  ]
+}

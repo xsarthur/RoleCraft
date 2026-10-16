@@ -1,0 +1,47 @@
+{
+  "review_id": "AI-L0-LEARNER-HANDOFF-CONTENT-REVIEW-20261015-V08",
+  "reviewer_role": "内容审校员",
+  "target": "sites/rolecraft/team/ai-generation-l0-learner-handoff-v08.md",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "version": "v08",
+  "conclusion": "reviewed_with_limitations",
+  "scope_decision": "met_within_scope",
+  "scope": "逐题核对D0-01..05语义绑定、A/B来源与拒绝、checkpoint恢复、D0-05字段映射、B output unavailable限制、证据匹配和岗位边界；不执行代码、不授等级。",
+  "checks": {
+    "d0_01_semantic_binding": "met_with_limitations",
+    "d0_02_semantic_binding": "met_with_limitations",
+    "d0_03_ab_output_and_denial": "not_met",
+    "d0_04_checkpoint_recovery": "met_with_limitations",
+    "d0_05_field_mapping": "met_with_limitations",
+    "role_and_level_boundaries": "met_within_scope"
+  },
+  "findings": [
+    "v08修复D0-03 A/B/holdout分文件及D0-04 holdout路径，新增D0-05 schema_version/source_refs/tenant/source_version/status映射。",
+    "D0-01/02仍为短receipt，缺答案正文、状态字段、输入哈希和具体课程/练习定位。",
+    "D0-03 A output_hash=unavailable-local，B output_hash=unavailable: no raw output file；两者没有可复核正文或完整状态/source_refs，QA denial不能替代学习者输出。",
+    "D0-04路径修复后仅有短断言，缺首失败/checkpoint/工具结果/幂等键逐项连接；真实崩溃恢复未验证。",
+    "D0-05字段映射存在但多个目标指向不可用输出或仅有简短holdout/regression文件，缺四类工件的逐字段值和断言映射。",
+    "manifest/状态和岗位边界清楚，self_signed=false、human/QA pending、D0/L0 not_assessed、L1/L2 not_granted保持。"
+  ],
+  "limitations": [
+    "真实模型/API、供应商来源、生产租户权限、数据库耐久性、并发、RPO/RTO、真人签收和真实用户学习效果未验证。",
+    "B denial学习者输出不可复核；不能用QA夹具通过替代学习者证据。",
+    "D0-03 A/B输出hash不可用，holdout缺完整输入/输出/预期实际绑定。",
+    "D0-05 source_refs/tenant字段映射分别落到不可用A/B输出，schema/status映射未展开断言值。"
+  ],
+  "required_followup": [
+    "补D0-01/02答案正文、状态字段、输入输出hash和逐题source_ref。",
+    "补D0-03 A实际输出或完整unavailable receipt、B拒绝码与空输出字段、holdout预期/实际结果并独立复验。",
+    "为D0-04绑定first_failure、checkpoint、工具结果、幂等键、恢复及holdout断言。",
+    "扩展D0-05字段到baseline/first_failure/regression/holdout逐字段值和断言ID。",
+    "保持D0/L0 not_assessed、L1/L2 not_granted，不授等级。"
+  ],
+  "self_signed": false,
+  "external_action": null,
+  "level_decisions": {
+    "d0": "not_assessed",
+    "l0": "not_assessed",
+    "l1": "not_granted",
+    "l2": "not_granted"
+  }
+}

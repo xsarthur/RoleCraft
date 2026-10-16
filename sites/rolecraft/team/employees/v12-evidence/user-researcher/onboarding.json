@@ -1,0 +1,196 @@
+{
+  "role_id": "EV12-03",
+  "role": "用户研究员",
+  "agent_name": "/root/employee_v12_user_research",
+  "unique_domain": "用户研究",
+  "status": "accepted_with_dependencies",
+  "date": "2026-10-11T23:30:22.544764+08:00",
+  "inputs": [
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/AGENTS.md",
+      "sha256": "55e190a02d9d64ba1a1622b815d3c8282373a8d5292b1518f68ce6f2a08449a1",
+      "locator": "## 岗位与唯一责任领域",
+      "line": 9,
+      "read_status": "read",
+      "finding": "用户研究员唯一领域、十五岗及v12未达标边界；最新请求为员工配置。"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/employees/v12-evidence/COMMON.md",
+      "sha256": "f2a8a5e935fd521030f0cc1a7445cb9a2138cc3b417c228cc9ab43cfacb67bf0",
+      "locator": "## 本次派工范围",
+      "line": 5,
+      "read_status": "read",
+      "finding": "配置、接单与组织验收；不执行外部专业任务。"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/employees/v12-evidence/user-researcher/prompt.md",
+      "sha256": "e57d386e6962d8b59f403415360f5b1d876efd6615e247e9f20ea8ff50cf7eb4",
+      "locator": "## 本次首项派工",
+      "line": 21,
+      "read_status": "read",
+      "finding": "EV12-03只写本目录接单文件。"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v12-product-assessment.md",
+      "sha256": "2a7a0e08cf959a6ad490d46a98128eebd0e82722c9d4ff1c104ea3fbead285eb",
+      "locator": "## 原八门槛当前评估",
+      "line": 31,
+      "read_status": "read",
+      "finding": "当前user_value和learner_creation证据不足；完整目标not_met。"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v12-qa.md",
+      "sha256": "c2d6e7aae31d750ccc04a6c058251be097b8e3114638c004a455a053d37444d3",
+      "locator": "## 五维成熟度及剩余工作",
+      "line": 41,
+      "read_status": "read",
+      "finding": "正文支持度与真实学习、作品和求职证据分开；不存在真实学习者效果结论。"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/README.md",
+      "sha256": "f6e8b37b318dd2a662c064f6681509fdf7873cbd7687a7b91a6f7ed3bf2683a6",
+      "locator": "## 版本、练习和证据",
+      "line": 81,
+      "read_status": "read",
+      "finding": "独立v12教材30单元；不自动接入应用，例与效果分列。"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/product-gates.json",
+      "sha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06",
+      "locator": "\"id\": \"user_value\"",
+      "line": 34,
+      "read_status": "read",
+      "finding": "原标准product-creation-2026-10-10；user_value要求试验前定义人群、问题和指标及真实用户证据。"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/product-standard.md",
+      "sha256": "76d0aac23a5573112967a01061b0ee97db3877ced58ec41f758d96ee439f4eb6",
+      "locator": "## 培养目标",
+      "line": 5,
+      "read_status": "read",
+      "finding": "生产级Agent能力需可复现作品和评价，阅读与自查不直接证明胜任。"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v12-product.md",
+      "sha256": "ded892bce12edc87b962b9661cf12f079a4e567a4cc12c85deeefc1ce9c318e3",
+      "locator": "## 范围与目标人群",
+      "line": 5,
+      "read_status": "read",
+      "finding": "有软件工程和大模型应用基础的初中级Agent应用学习者为当前默认范围；基础补学及高级专题分列。"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/specialists/user-researcher.md",
+      "sha256": "1d9f7407c66c5ea548684b21e46b7162b9e116452aca9d6a4a491b341a9e4aa3",
+      "locator": "## 试点前冻结表（产品经理填写）",
+      "line": 17,
+      "read_status": "read",
+      "finding": "2026-10-10研究方案v1、prototype-0.3历史准备；未招募/研究，不继承为v12协议或效果。"
+    }
+  ],
+  "first_task": {
+    "goal": "完成用户研究岗位接单，列当前真实研究前置条件、证据记录要求与跨岗位交接。",
+    "status": "onboarding_completed_professional_execution_not_started",
+    "next_professional_task": "收到PM专业派工后，按产品经理冻结研究范围编制v12研究协议、非诱导观察/访谈、同意及原始记录材料；协议审查后才在获准参与者中执行。",
+    "outputs_now": [
+      "onboarding.md",
+      "onboarding.json"
+    ],
+    "future_outputs": [
+      "版本化研究协议与招募/同意材料",
+      "获准原始观察/访谈、行为和帮助记录",
+      "包含负面、退出、缺失及竞争解释的证据分析",
+      "学习及求职随访与来源/核验状态",
+      "交产品经理的user_value证据，交实训评估员的真实作品链"
+    ],
+    "acceptance_now": "测试工程师核身份、输入定位、职责/写入边界、真实依赖与无伪造执行；PM据独立组织QA收口。",
+    "acceptance_future": "执行前冻结范围/口径；每条原始证据可追溯到同意范围、时间、版本、匿名参与者、实际行为与帮助；区分自述、核验、解释和未知；门槛判定由产品经理，独立复核由测试工程师。"
+  },
+  "dependencies": [
+    {
+      "id": "UR-D01",
+      "item": "目标岗位与学习者范围",
+      "owner": "产品经理",
+      "status": "received",
+      "evidence": "textbook-v12-product.md：范围与目标人群",
+      "note": "此为教材产品定位，不是研究招募结果。"
+    },
+    {
+      "id": "UR-D02",
+      "item": "本轮真实研究范围、指标/阈值、窗口、样本依据及缺失处理规则",
+      "owner": "产品经理",
+      "status": "not_received",
+      "note": "历史冻结表为待填写模板；v12教材评估口径不等于已冻结用户研究协议。"
+    },
+    {
+      "id": "UR-D03",
+      "item": "真实参与者、外部联系/实际资料使用授权与知情同意",
+      "owner": "项目经理协调用户与参与者",
+      "status": "not_received",
+      "note": "本次只建队；未招募、外部联系、访谈或读取实际用户记录。"
+    },
+    {
+      "id": "UR-D04",
+      "item": "作品/陌生任务规格、评分量规及允许帮助规则",
+      "owner": "课程架构师、实训评估员",
+      "status": "needs_current_handoff",
+      "note": "本岗不制定学习者能力通过阈值，不代作品独立评分。"
+    },
+    {
+      "id": "UR-D05",
+      "item": "研究对象的冻结交付版本、原始记录保管与退出处理安排",
+      "owner": "产品经理、项目经理",
+      "status": "partially_received",
+      "note": "已收到v12教材入口和当前报告；实际研究协议、受控证据保存和退出安排未收到。v12教材与仍用v10的应用必须分开。"
+    },
+    {
+      "id": "UR-D06",
+      "item": "如试点含个性化真实生成产品，其服务就绪及当前独立QA",
+      "owner": "AI生成工程师、后端数据工程师、软件工程师、测试工程师",
+      "status": "conditional_not_received",
+      "note": "独立教材阅读研究可在自身范围冻结后开展；不要求所有阅读观察等候生成系统。生成产品效果不得由v12文稿QA代证。"
+    }
+  ],
+  "handoffs": [
+    {
+      "to": "产品经理",
+      "payload": "UR-D02研究范围冻结请求及未来真实用户价值证据；保留原user_value标准与责任人。"
+    },
+    {
+      "to": "实训评估员",
+      "payload": "参与者授权下的真实作品/运行与帮助记录，求职自述另标；陌生任务独立评分由该岗负责。"
+    },
+    {
+      "to": "课程架构师",
+      "payload": "真实阅读困难与学习路径问题证据，申请任务/量规交接；本岗不改教材。"
+    },
+    {
+      "to": "项目经理",
+      "payload": "参与者和权限依赖、任务状态、跨领域问题及必要后续派工。"
+    },
+    {
+      "to": "测试工程师",
+      "payload": "本次接单文件；未来冻结协议、原始证据索引、缺失/退出和口径供独立复核。"
+    }
+  ],
+  "self_check": {
+    "identity": "本会话实际代理 /root/employee_v12_user_research，以用户研究员接单；不是人类参与者、外部研究团队或常驻进程。",
+    "single_domain": "仅用户研究；未代产品决策、量规设计、能力认证、代码实现或教材编写。",
+    "write_scope": "仅user-researcher/onboarding.md和onboarding.json。",
+    "evidence_integrity": "已读10份输入并记录读取时SHA256和定位；当前报告为输入，未继承为新研究结果。",
+    "no_external_execution": "本轮无招募消息、外部联系、访谈、录用效果、付费调用或实际用户资料读取。",
+    "judgment_boundaries": "不改八门槛；接单不关闭user_value、learner_creation或完整not_met。",
+    "independent_acceptance": "本自查不是QA；等待测试工程师独立组织验收。"
+  },
+  "limitations": [
+    "当前没有真实参与者、原始观察/访谈、真实学习/求职随访，本岗专业研究未开始。",
+    "无真实学员作品及用人方核验，不能宣布用户会答、独立实现、岗位胜任或获得录用。",
+    "历史研究方案v1是prototype-0.3准备材料，不是v12有效试点协议。",
+    "本次未制作专业研究协议或其他实施产物；依任务范围只完成接单与依赖确认。",
+    "AI代理不模拟用户、专家或学员；录用若后续发生，也须讨论基础、投入和其他资源等混杂因素。"
+  ],
+  "current_product_state_from_input": "not_met",
+  "current_user_value_from_input": "insufficient",
+  "actual_research_executed": false,
+  "real_participants_observed_this_task": 0,
+  "independent_qa_status": "pending"
+}

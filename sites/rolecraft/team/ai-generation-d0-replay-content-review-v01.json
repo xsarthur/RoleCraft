@@ -1,0 +1,178 @@
+{
+  "schema": "rolecraft.ai-generation.d0.replay.content-review",
+  "schema_version": "0.1",
+  "review_id": "AI-D0-REPLAY-CONTENT-REVIEW-20261015-01",
+  "reviewed_at": "2026-10-15T00:00:00+08:00",
+  "reviewer_role": "content-reviewer",
+  "target_role_id": "AI",
+  "target_role_name": "AI生成工程师",
+  "scope": [
+    "mechanism explanation",
+    "failure boundaries",
+    "source/version binding",
+    "PLR-AI-006 applicability",
+    "deterministic stand-in vs real model claims"
+  ],
+  "overall_content_review": "reviewed_with_limitations",
+  "training_decision": "not_assessed",
+  "l1_or_real_model_permission": "not_granted",
+  "source_records": {
+    "initial_md": "sites/rolecraft/team/ai-generation-d0-v01-initial.md",
+    "initial_json": "sites/rolecraft/team/ai-generation-d0-v01-initial.json",
+    "replay_md": "sites/rolecraft/team/ai-generation-d0-v02-replay.md",
+    "replay_json": "sites/rolecraft/team/ai-generation-d0-v02-replay.json",
+    "initial_sha256": {
+      "ai-generation-d0-v01.md": "4a97347a91e96c07e2d84e37f22011be15890a5d955da950fd8b1a27c0aeef6d",
+      "ai-generation-d0-v01.json": "069cee385c47889cadcfa32e4605cd368eb089d62c529af629ad443d2f1ebebf"
+    },
+    "replay_id": "D0-AI-20261015-001-R1",
+    "fixture_script_sha256": "fddcf6f9660b5c68079057ffb0fb170aa11e39e0c9379ff9ad95c32be7d39bde",
+    "fixture_sha256": "050e9dd30dcf55b680b5e8141dafd669f58ed271cc38e92fa011a1a975d3799f",
+    "run_output_sha256": "399797452164d129d1e733159545f757bf8ae665981a4728ef5ddda132bd268b"
+  },
+  "initial_vs_replay": {
+    "initial_status": "D0-AI-03 not_run; decision not_assessed",
+    "replay_status": "passed_local_fixture; decision remains not_assessed",
+    "difference": "replay adds one deterministic local normal-path run; it does not retroactively change initial D0 or prove capability",
+    "preserved": true
+  },
+  "d0_item_reviews": [
+    {
+      "id": "D0-AI-01",
+      "status": "adequate_with_limitations",
+      "basis": "Role boundaries are explicit; no frozen AI task contract or receiver acknowledgement."
+    },
+    {
+      "id": "D0-AI-02",
+      "status": "adequate_with_limitations",
+      "basis": "Persistence-before-complete principle is sound, but no durable checkpoint, crash, or LangGraph run evidence."
+    },
+    {
+      "id": "D0-AI-03",
+      "status": "pass_with_limitations",
+      "basis": "One normal synthetic A-tenant path and no-send/source fields pass; B rejection and negative/error paths are not exercised."
+    },
+    {
+      "id": "D0-AI-04",
+      "status": "adequate_with_limitations",
+      "basis": "Hypothetical failure is identified correctly; replay does not inject or observe it."
+    },
+    {
+      "id": "D0-AI-05",
+      "status": "planned_not_run",
+      "basis": "Plan preserves one-variable change, evidence and stop conditions; no transfer or holdout execution."
+    }
+  ],
+  "replay_supported_claims": [
+    "Python 3.14.5/macOS 26.6.2 local script ran with network and paid API disabled by task constraint",
+    "Normal path recorded start -> tool_called -> tool_returned -> drafted -> checked -> handed_off",
+    "Synthetic doc-A-refund-v1 citation and source_version=fixture-source-v1 appear in output",
+    "B-PRIVATE marker is absent from output and external_action is null",
+    "Output is handed off as draft_ready_for_review"
+  ],
+  "critical_non_claims": [
+    "No real provider model call or model-quality evidence",
+    "No real LangGraph package/API compatibility evidence",
+    "No durable persistence, crash recovery, retry, timeout, duplicate callback, or production side-effect evidence",
+    "No evidence of cost, latency, quality, or general Agent competence",
+    "No evidence of learner transfer or L1 capability"
+  ],
+  "issues": [
+    {
+      "id": "AI-D0-REPLAY-CR-01",
+      "severity": "P1",
+      "title": "Unauthorized tenant rejection path not exercised",
+      "status": "open",
+      "evidence": "Fixture directly selects authorized A document; it never requests B document and records rejection.",
+      "owner": "AI-generation-engineer + curriculum-architect",
+      "retest": "Add B-request rejection receipt, no downstream generation, A regression, and QA holdout tenant/document."
+    },
+    {
+      "id": "AI-D0-REPLAY-CR-02",
+      "severity": "P1",
+      "title": "No durable persistence or recovery-fault evidence",
+      "status": "open",
+      "evidence": "states is in-memory and output is emitted after normal process completion; no checkpoint failure/crash/recovery.",
+      "owner": "AI-generation-engineer",
+      "retest": "Inject checkpoint write failure/process stop and record durable result, checkpoint, replay key, recovery state, and manual pause."
+    },
+    {
+      "id": "AI-D0-REPLAY-CR-03",
+      "severity": "P1",
+      "title": "Insufficient claim-level source/version binding",
+      "status": "open",
+      "evidence": "Only PLR-AI-006 resource ID is bound; no course section/API/package version. Course page had HTTP 403 at recheck and no release version.",
+      "owner": "curriculum-architect + AI-generation-engineer",
+      "retest": "Add per-claim source_ref and claim_type; record package version or preserve unavailable status."
+    },
+    {
+      "id": "AI-D0-REPLAY-CR-04",
+      "severity": "P2",
+      "title": "Hand-written field assertions are not schema validation",
+      "status": "open",
+      "evidence": "Fixed dictionary equality checks; no schema version, malformed/partial output, or type/extra-field tests.",
+      "owner": "AI-generation-engineer",
+      "retest": "Add versioned JSON Schema/equivalent validator and malformed/partial-output fixtures."
+    },
+    {
+      "id": "AI-D0-REPLAY-CR-05",
+      "severity": "P2",
+      "title": "Synthetic source has fields but no integrity/freshness proof",
+      "status": "open",
+      "evidence": "Inline fixture text and fixture-source-v1; no source file hash/location/update evidence.",
+      "owner": "AI-generation-engineer",
+      "retest": "Hash fixture source and provide locator/version; recheck real source separately."
+    },
+    {
+      "id": "AI-D0-REPLAY-CR-06",
+      "severity": "P2",
+      "title": "Required error boundaries and transfer task remain unexecuted",
+      "status": "open",
+      "evidence": "Timeout, duplicate callback, old checkpoint, empty tool result, U-AI-006-T1 and holdout are listed unverified.",
+      "owner": "AI-generation-engineer",
+      "retest": "Run isolated faults and one-variable holdout after independent QA freeze."
+    },
+    {
+      "id": "AI-D0-REPLAY-CR-07",
+      "severity": "P2",
+      "title": "Initial and replay state vocabulary lacks explicit mapping",
+      "status": "open",
+      "evidence": "Initial expected tool_requested/source_checked/draft_ready differs from replay tool_called/checked/handed_off.",
+      "owner": "curriculum-architect + AI-generation-engineer",
+      "retest": "Version enum and map events with transition conditions."
+    }
+  ],
+  "langgraph_course_boundary": {
+    "resource_id": "PLR-AI-006",
+    "course": "DeepLearning.AI AI Agents in LangGraph",
+    "snapshot": "Intermediate; 1h32m; 9 video lessons; 6 code examples; 1 PRO graded assignment; no public release version/date",
+    "course_fetch_limit": "Direct course-page fetch returned HTTP 403 during recheck; metadata retained with limitation.",
+    "applicable_as": "Framework-specific learning input for state, tools, persistence, human-in-the-loop, and Agentic Search concepts.",
+    "not_evidence_of": "General Agent architecture competence, real LangGraph API compatibility, model quality, production reliability, cost, or user value.",
+    "source_separation": [
+      "DeepLearning.AI course page",
+      "official LangGraph docs/package",
+      "project design assumptions",
+      "local deterministic fixture"
+    ],
+    "licence_boundary": "Course content/code licence is not inferred; framework licence is separate; link/minimal quote only until checked."
+  },
+  "stand_in_classification": {
+    "is_real_model_call": false,
+    "is_real_langgraph_run": false,
+    "is_external_write": false,
+    "classification": "deterministic local fixture evidence only",
+    "reason": "Fixture composes fixed dictionary output from inline synthetic documents and explicit assertions."
+  },
+  "next_review_inputs": [
+    "B-tenant rejection receipt and A regression",
+    "durable checkpoint failure/crash/recovery snapshots",
+    "versioned schema and malformed/partial output evidence",
+    "LangGraph dependency/version or explicit unavailable evidence",
+    "claim-level source references and source/assumption tags",
+    "timeout/duplicate/old-checkpoint/empty-result and U-AI-006-T1 holdout evidence",
+    "independent QA original-regression-holdout review and non-author sign-off"
+  ],
+  "preserve_original_and_replay": true,
+  "non_author_completion": true
+}

@@ -1,0 +1,76 @@
+{
+  "qa_id": "AI-GEN-L0-HANDOFF-QA-V08-20261015-001",
+  "version": "v08",
+  "status": "met_with_limitations",
+  "grade_decision": "not_granted",
+  "independent_role": "qa-engineer",
+  "scope": [
+    "D0-01",
+    "D0-02",
+    "D0-03",
+    "D0-04",
+    "D0-05",
+    "manifest bytes/SHA",
+    "state fields"
+  ],
+  "checks": {
+    "d0_01_02_mechanism_receipts": {
+      "status": "pass",
+      "evidence": [
+        "d0-01-mechanism-receipt.json",
+        "d0-02-mechanism-receipt.json"
+      ]
+    },
+    "d0_03_A_B_holdout": {
+      "status": "pass_with_limits",
+      "A_output": "unavailable-local",
+      "B_output": "unavailable: no raw output file",
+      "B_stop_receipt": "tenant B denied",
+      "holdout": "source_version -> stop mismatch"
+    },
+    "d0_04_separation": {
+      "status": "pass",
+      "regression": "recovery_required; idempotency preserved",
+      "holdout": "outage duration; retry budget stop"
+    },
+    "d0_05_assertion_mapping": {
+      "status": "pass",
+      "fields": [
+        "schema_version",
+        "source_refs",
+        "tenant",
+        "source_version",
+        "status"
+      ]
+    },
+    "manifest_integrity": {
+      "status": "pass",
+      "artifacts_checked": 29,
+      "bytes_sha256_mismatches": 0
+    },
+    "state_fields": {
+      "status": "pass",
+      "qa_status": "pending",
+      "self_signed": false,
+      "external_action": null,
+      "d0_status": "not_assessed",
+      "l0_status": "not_assessed",
+      "human_receipt": "pending",
+      "l1_decision": "not_granted",
+      "l2_decision": "not_granted"
+    }
+  },
+  "limitations": [
+    "A/B raw output unavailable",
+    "B-tenant denial learner execution unverified",
+    "real model/API unverified",
+    "production RPO/RTO unverified",
+    "human receipt pending",
+    "evidence card paths reference v06/v07 temporary directories"
+  ],
+  "retest_required": [
+    "Provide reviewable A/B raw outputs or controlled denial execution logs",
+    "Rebind and rehash manifest in new version",
+    "Re-run independent QA"
+  ]
+}

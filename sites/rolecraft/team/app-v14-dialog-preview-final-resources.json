@@ -1,0 +1,82 @@
+{
+  "version": "app-v14-dialog-preview-final-resources-1",
+  "atUtc": "2026-10-12T01:39:53.660Z",
+  "origin": "http://127.0.0.1:4318",
+  "serverPid": 47895,
+  "serverPty": 10912,
+  "lastFrontendBinding": "team/app-v14-dialog-frontend-binding4.json",
+  "lastFrontendBindingVersion": "app-v14-dialog-frontend-binding-4",
+  "lastFrontendBindingSha256": "cfdb717da36617c37045001e3c85703e76ae584bc7d4f83c6b8b3373d9644fa1",
+  "lastRetrievalBinding": "team/app-v14-dialog-retrieval-binding.json",
+  "lastRetrievalBindingVersion": "content-dialog-0.14-extractive-candidate-3",
+  "lastRetrievalBindingSha256": "4530323a796ce9ebfd5e2a025781fae9ec4d0e0da45d9de1fef6cfe90d869cc3",
+  "resources": [
+    {
+      "path": "dist/index.html",
+      "httpStatus": 200,
+      "sha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+      "expectedSha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+      "matchesLastFrontendBinding": true
+    },
+    {
+      "path": "dist/app.js",
+      "httpStatus": 200,
+      "sha256": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd",
+      "expectedSha256": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd",
+      "matchesLastFrontendBinding": true
+    },
+    {
+      "path": "dist/learning-workbench.js",
+      "httpStatus": 200,
+      "sha256": "9099d3bbf6ea51816c01f422517ae5323fb0c1048854f4acc54caa88bff65cca",
+      "expectedSha256": "9099d3bbf6ea51816c01f422517ae5323fb0c1048854f4acc54caa88bff65cca",
+      "matchesLastFrontendBinding": true
+    },
+    {
+      "path": "dist/learning-experience-v13.js",
+      "httpStatus": 200,
+      "sha256": "d9664458d1e60c54d8235e160c4c229b1629c8b694d0f16d7136557b3374cd23",
+      "expectedSha256": "d9664458d1e60c54d8235e160c4c229b1629c8b694d0f16d7136557b3374cd23",
+      "matchesLastFrontendBinding": true
+    },
+    {
+      "path": "dist/learning-experience-v13.css",
+      "httpStatus": 200,
+      "sha256": "1f20aafb25a30842e660a18b2d51445efc6ab3527d359b95703131332fcb9aaf",
+      "expectedSha256": "1f20aafb25a30842e660a18b2d51445efc6ab3527d359b95703131332fcb9aaf",
+      "matchesLastFrontendBinding": true
+    },
+    {
+      "path": "dist/learning-v13-data.js",
+      "httpStatus": 200,
+      "sha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "expectedSha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "matchesLastFrontendBinding": true
+    }
+  ],
+  "serviceFiles": [
+    {
+      "path": "sites/rolecraft/server/retrieval/dialog.mjs",
+      "sha256": "db17b415b6d53c82ce933c064dc21c6d0ea00d2567e63b8fb0c20653f6dee4f1",
+      "bytes": 30341,
+      "actualSha256": "db17b415b6d53c82ce933c064dc21c6d0ea00d2567e63b8fb0c20653f6dee4f1",
+      "matchesLastRetrievalBinding": true
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/index.mjs",
+      "sha256": "c87dfde6c1ae60ee7594bf5f033ab4fc2a90554a55deabe8520f1045bfc43530",
+      "bytes": 8597,
+      "actualSha256": "c87dfde6c1ae60ee7594bf5f033ab4fc2a90554a55deabe8520f1045bfc43530",
+      "matchesLastRetrievalBinding": true
+    },
+    {
+      "path": "sites/rolecraft/server/index.mjs",
+      "sha256": "f8c24960d16bedf253baf903ff9ab3973b055c53030a80427e000565f5cdfceb",
+      "bytes": 31772,
+      "actualSha256": "f8c24960d16bedf253baf903ff9ab3973b055c53030a80427e000565f5cdfceb",
+      "matchesLastRetrievalBinding": true
+    }
+  ],
+  "allMatch": true,
+  "scope": "Public static transport and current service sources only; frontend DG14-06 real UI remains independently assessed by QA. No static-file restart needed."
+}

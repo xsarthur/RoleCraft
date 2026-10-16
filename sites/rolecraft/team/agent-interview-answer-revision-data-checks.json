@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "version": "data-checks-2",
+  "owner": "内容检索工程师",
+  "scope": "REV-QA-LINK-01构建开发自检，不是独立QA或实际点击验证",
+  "runtime": "v24.16.0",
+  "answerSetSha256": "2cd40dcca5342944ab7c0c7836e759054dc3b5d4aaf992508f78d9172473b61a",
+  "exactUtf8Answers": 124,
+  "unchangedEditorialAndReviewBindings": 124,
+  "unchangedSourceReferences": 366,
+  "unchangedBook": true,
+  "fullCitationSpans": 400,
+  "allLocalOccurrencesMatchQaExpected": 372,
+  "localMismatchCount": 0,
+  "original118FailuresNowMatch": 118,
+  "firstRoundGuardChecksPreserved": [
+    {
+      "name": "current_Q99_without_matching_QA",
+      "exitCode": 1,
+      "expectedMessage": "Final build blocked",
+      "result": "expected_rejection"
+    },
+    {
+      "name": "editorial_bytes_changed_after_review",
+      "exitCode": 1,
+      "expectedMessage": "Answer hash differs: Q1",
+      "result": "expected_rejection"
+    },
+    {
+      "name": "prototype_followup_identity_drift",
+      "exitCode": 1,
+      "expectedMessage": "Followups differ: P01",
+      "result": "expected_rejection"
+    }
+  ],
+  "currentGuardChecks": [
+    {
+      "name": "unknown_label_is_not_first_match",
+      "exitCode": 1,
+      "result": "expected_ambiguous_or_unknown_citation_rejection"
+    },
+    {
+      "name": "two_named_sections_are_not_first_match",
+      "exitCode": 1,
+      "result": "expected_ambiguous_or_unknown_citation_rejection"
+    }
+  ],
+  "rebuildOutputHashesIdentical": true,
+  "outputBindings": [
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/README.md",
+      "sha256": "3455af3c61cb020913010d1c6ee122cfc28f3cf82296bca34234f9e5aa2ca939",
+      "bytes": 19699
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/agent-interview-answers.md",
+      "sha256": "9ff887bb145f774a210517fc2ae9b02168e613da6f70b7341ee4e3041187a657",
+      "bytes": 428790
+    },
+    {
+      "path": "sites/rolecraft/textbooks/interview-answers-v1/manifest.json",
+      "sha256": "e3bb9ecf56c525b57019af129a96159d258a21a1768c382ef536eb4430614fe5",
+      "bytes": 1661131
+    },
+    {
+      "path": "sites/rolecraft/dist/interview-answers-v1-data.js",
+      "sha256": "4a9e3ce4f5067e77b26bdd551bed911a6efadb9fe905de206876f03c773dad7b",
+      "bytes": 1661964
+    }
+  ],
+  "temporaryCopyOnly": true,
+  "realEditorialMutations": 0,
+  "realReviewMutations": 0,
+  "applicationRuns": 0,
+  "modelCalls": 0
+}

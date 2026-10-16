@@ -1,0 +1,112 @@
+{
+  "qa_record_id": "AI-REAL-LEARNER-D0-EXEC-RUN-QA-20261016-001",
+  "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "artifact_id": "AI-REAL-LEARNER-D0-EXEC-RUN-20261016-001",
+  "scope": "独立复核本轮四场景本地隔离执行工件；不冒充学习者本人执行",
+  "status": "met_with_limitations",
+  "decision": "met_with_limitations",
+  "strict_contract_note": "四场景语义结果、停线收据、原始 stdout/stderr、命令/时间/环境、bytes/SHA 和 external_action 均可复核；run-1/run-2 原始 JSON 因包含各自 run_id 而逐字节不相等，去除 run_id 后四场景语义字节一致。",
+  "evidence_root": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts",
+  "fixture": {
+    "fixture_id": "F-AI-SOURCE-CLAIM-v1",
+    "fixture_sha256_normalized_object": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+    "fixture_path": "sites/rolecraft/team/ai-generation-l0-practice-source-001/frozen_input.json",
+    "fixture_file_sha256": "f6cc25edad6403c052f66167adecf666d770f12b82170f2fc996119ef118f446",
+    "input_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/input-snapshot.json",
+    "input_sha256": "9187e3b0a8c8fd1f5971d43e14dc3cb5009525648211b34d865a2ac982284976",
+    "hash_scope_note": "合同 fixture_sha256 是 root.fixture 规范化对象摘要；fixture_file_sha256 是完整 frozen_input.json 文件摘要；两者对象范围不同。"
+  },
+  "isolation": {
+    "network": "disabled",
+    "real_model": false,
+    "cloud": false,
+    "paid_api": false,
+    "real_user_data": false,
+    "external_action": null,
+    "human_receipt_pending": true,
+    "learner_execution": false
+  },
+  "cases": {
+    "A-normal": {
+      "status": "pass_within_local_scope",
+      "expected": "draft_ready_for_review",
+      "observed": "draft_ready_for_review",
+      "claims_bound": 2,
+      "source": {
+        "document_id": "doc-A-refund-v2",
+        "source_version": "refund-policy-v2",
+        "location": "fixture://docs/doc-A-refund-v2#rules",
+        "hash": "4a1fa4040c1c2840d176fc35da81c5df23984e68e44ed7e299e9cba2a6a1361d"
+      },
+      "unknowns_preserved": true,
+      "handoff": "QA pending",
+      "external_action": null
+    },
+    "B-tenant-denied": {
+      "status": "pass_within_local_scope",
+      "first_failure": "SOURCE_SCOPE_DENIED",
+      "stop_before_draft": true,
+      "draft": null,
+      "handoff": null,
+      "external_action": null,
+      "B_text_unvisited": true,
+      "B_text_scan": "no B private body marker found in generated receipts, outputs, cards, logs, environment, manifest, comparison, or runner files"
+    },
+    "source-missing": {
+      "status": "pass_within_local_scope",
+      "first_failure": "SOURCE_MISSING",
+      "stop_before_draft": true,
+      "draft": null,
+      "unknown_or_blocked": true,
+      "handoff": null,
+      "external_action": null,
+      "alternate_source_used": false
+    },
+    "source-conflict": {
+      "status": "pass_within_local_scope",
+      "first_failure": "SOURCE_VERSION_MISMATCH",
+      "stop_before_draft": true,
+      "draft": null,
+      "conflict_keys": ["source_version", "content_hash"],
+      "handoff": null,
+      "external_action": null
+    }
+  },
+  "run_replay": {
+    "runs": ["run-1", "run-2"],
+    "all_cases_executed_twice": true,
+    "all_case_exit_codes_zero": true,
+    "all_case_stdout_stderr_hashes_verified": true,
+    "byte_equal_by_case": {
+      "A-normal": false,
+      "B-tenant-denied": false,
+      "source-missing": false,
+      "source-conflict": false
+    },
+    "semantic_equal_after_excluding_run_id": true,
+    "comparison_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/run-comparison.json",
+    "limitation": "runner includes run_id in each JSON stdout, so raw output bytes/SHA differ between run-1 and run-2; this is preserved and reported rather than normalized after the fact."
+  },
+  "evidence_cards": {
+    "required_fields_present_all_8": true,
+    "cards": 8,
+    "per_case_raw_stdout_stderr": true,
+    "per_case_command_time_environment": true,
+    "per_case_input_output_bytes_sha256": true,
+    "all_external_action_null": true,
+    "all_human_receipt_pending": true,
+    "paths": [
+      "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/run-1/*.evidence-card.json",
+      "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/run-2/*.evidence-card.json"
+    ]
+  },
+  "unverified": [
+    "学习者本人执行；本轮 learner_execution=false，QA 复核不能代签或代答",
+    "真实供应商来源 API、真实模型引用忠实度、生产权限、缓存/并发/进程恢复、真人审批与接收签收",
+    "未知任务迁移和职业能力；不得据此授予 D0/L1/L2",
+    "原始 run-1/run-2 stdout 的逐字节相等性（当前因 run_id 差异未满足；去除 run_id 后语义一致）",
+    "source-conflict 使用期望版本与期望 content_hash 注入冲突，未访问实际冲突正文；本轮证明 hash/version 冲突停线"
+  ],
+  "next_action": "若合同将 raw byte equality 作为硬门槛，先让责任工程师移除非语义 run_id 或定义可审计的规范化比较，再独立重跑四场景并保留本轮失败记录；不得覆盖本报告或原始收据。"
+}

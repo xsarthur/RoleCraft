@@ -1,0 +1,128 @@
+{
+  "executedAtUtc": "2026-10-11T08:12:21.796Z",
+  "method": "QA owned subprocesses, isolated temp databases, Node24 one real CPU query and unsupported Node26 controlled unavailable; exact SIGINT then natural exitCode handler matching repaired CLI. No user service signalled.",
+  "rows": [
+    {
+      "bin": "/Users/shengxiong/.nvm/versions/node/v24.16.0/bin/node",
+      "port": 4431,
+      "ready": true,
+      "supportedRuntime": true,
+      "queryOutput": {
+        "status": "recommended",
+        "engineMode": "local_semantic_retrieval",
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "recovery",
+            "label": "中断后恢复任务",
+            "evidence": [
+              "中断后恢复任务时，怎样避免重复外部动作"
+            ],
+            "unitIds": [
+              "e01",
+              "c01-control-primer"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "e01",
+            "sectionId": "s-2cd345377707",
+            "order": 12,
+            "unitTitle": "用持久状态保存动作事实",
+            "sectionTitle": "用一次恢复轨迹读懂提交边界",
+            "title": "用一次恢复轨迹读懂提交边界",
+            "reason": "你表达了“中断后恢复任务时，怎样避免重复外部动作”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "桥接的 `allow_replay=False`使重复begin事件在事务内拒绝，不能从旧DISPATCH再次发送。",
+            "sourcePath": "textbooks/v10/e01.md",
+            "sourceSha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5",
+            "version": "textbook-v10",
+            "href": "#learn/agent/e01/s-2cd345377707",
+            "intentId": "recovery",
+            "prerequisiteUnitIds": [
+              "c03",
+              "c01-control-primer"
+            ]
+          },
+          {
+            "unitId": "c01-control-primer",
+            "sectionId": "s-13bbf9fcf319",
+            "order": 9,
+            "unitTitle": "在重复提议和发送中识别同一个动作",
+            "sectionTitle": "调度与效果分别判断",
+            "title": "调度与效果分别判断",
+            "reason": "你表达了“中断后恢复任务时，怎样避免重复外部动作”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "`status`表达接下来可怎样推进，`effect_resolution`表达业务效果是否确定。发送前是NOT_SENT，可能已发后是UNRESOLVED；操作级证据才能确认成功、无效果或冲突。具备合法同键重发许可时，动作可能可调度为READY而效果仍未决；“现在可以发送”不能推导“上一次没发生”。",
+            "sourcePath": "textbooks/v10/c01-control-primer.md",
+            "sourceSha256": "345dd67c5bd8165a9d77dc7de819133f50dfcf39f91f59dec05bf385aba3d8c8",
+            "version": "textbook-v10",
+            "href": "#learn/agent/c01-control-primer/s-13bbf9fcf319",
+            "intentId": "recovery",
+            "prerequisiteUnitIds": [
+              "c01-selection",
+              "03-trust-boundary"
+            ]
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念与否定规则检索；没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "httpStatus": 200,
+      "signalSent": "SIGINT",
+      "signalSentAtUtc": "2026-10-11T08:12:21.573Z",
+      "exit": {
+        "code": 0,
+        "signal": null
+      },
+      "stdout": "{\"qaOwned\":true,\"url\":\"http://127.0.0.1:4431\",\"dataDir\":\"/var/folders/v5/yy0xf3tx1gddnb0qz7skr8wr0000gn/T/rolecraft-v11-independent-qa-J1qrtj\",\"runtime\":\"v24.16.0\",\"executable\":\"/Users/shengxiong/.nvm/versions/node/v24.16.0/bin/node\",\"startedAtUtc\":\"2026-10-11T08:12:21.280Z\"}\n",
+      "stderr": "",
+      "status": "pass"
+    },
+    {
+      "bin": "/opt/homebrew/Cellar/node/26.3.0/bin/node",
+      "port": 4432,
+      "ready": true,
+      "supportedRuntime": false,
+      "queryOutput": {
+        "status": "unavailable",
+        "engineMode": "local_semantic_retrieval",
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "当前 Node 主版本不在本地语义服务支持范围，请用 Node.js 24 启动；教材目录仍可阅读。"
+        ],
+        "errorCode": "runtime_unsupported"
+      },
+      "httpStatus": 200,
+      "signalSent": "SIGINT",
+      "signalSentAtUtc": "2026-10-11T08:12:21.790Z",
+      "exit": {
+        "code": 0,
+        "signal": null
+      },
+      "stdout": "{\"qaOwned\":true,\"url\":\"http://127.0.0.1:4432\",\"dataDir\":\"/var/folders/v5/yy0xf3tx1gddnb0qz7skr8wr0000gn/T/rolecraft-v11-independent-qa-xZ0zZs\",\"runtime\":\"v26.3.0\",\"executable\":\"/opt/homebrew/Cellar/node/26.3.0/bin/node\",\"startedAtUtc\":\"2026-10-11T08:12:21.711Z\"}\n",
+      "stderr": "",
+      "status": "pass"
+    }
+  ]
+}

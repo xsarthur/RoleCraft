@@ -1,0 +1,146 @@
+{
+  "kind": "author_preview_operation_check",
+  "executedAt": "2026-10-11T14:42:21.997Z",
+  "runtime": "v24.16.0",
+  "execPath": "/Users/shengxiong/.nvm/versions/node/v24.16.0/bin/node",
+  "url": "http://127.0.0.1:4318",
+  "pid": 95893,
+  "ptySession": 81687,
+  "owner": {
+    "command": "/Users/shengxiong/.nvm/versions/node/v24.16.0/bin/node sites/rolecraft/server/index.mjs",
+    "cwd": "/Users/shengxiong/Documents/ChatGPT/一人公司建设",
+    "listener": "127.0.0.1:4318"
+  },
+  "priorPid": 83835,
+  "priorPidFoundBeforeStart": false,
+  "priorListenerFoundBeforeStart": false,
+  "dataDir": "sites/rolecraft/.runtime",
+  "database": {
+    "path": "sites/rolecraft/.runtime/rolecraft.sqlite",
+    "inode": 134545867,
+    "size": 98304,
+    "usedExistingFile": true,
+    "deletedOrMigrated": false
+  },
+  "httpStatus": {
+    "health": 200,
+    "recommend": 200,
+    "chapter": 200
+  },
+  "passed": true,
+  "health": {
+    "productVersion": "local-mvp-0.4",
+    "mode": "local-development",
+    "generation": {
+      "configured": false,
+      "missing": [
+        "OPENAI_API_KEY",
+        "OPENAI_MODEL",
+        "OPENAI_MAX_OUTPUT_TOKENS",
+        "ROLECRAFT_GENERATION_BUDGET_USD",
+        "ROLECRAFT_ESTIMATED_MAX_COST_USD"
+      ]
+    },
+    "contentRetrieval": {
+      "available": true,
+      "corpusVersion": "textbook-v10",
+      "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+      "units": 20,
+      "localSemanticPrepared": true,
+      "runtimeSupported": true,
+      "requiredNodeMajor": 24,
+      "nodeVersion": "v24.16.0",
+      "providerCalled": false
+    }
+  },
+  "recommendation": {
+    "status": "recommended",
+    "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+    "engineMode": "local_semantic_retrieval",
+    "matchingMethods": [
+      "local_semantic_vectors",
+      "local_task_concepts",
+      "source_term_recall"
+    ],
+    "providerCalled": false,
+    "corpusVersion": "textbook-v10",
+    "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+    "interpretedIntents": [
+      {
+        "id": "source_term_0",
+        "label": "查找正文中的 ReAct",
+        "evidence": [
+          "ReAct"
+        ],
+        "unitIds": [
+          "00-learning-route"
+        ],
+        "sectionKeys": [
+          "00-learning-route/s-7547e5ce91f8"
+        ],
+        "term": "react"
+      }
+    ],
+    "excludedIntents": [],
+    "results": [
+      {
+        "unitId": "00-learning-route",
+        "sectionId": "s-7547e5ce91f8",
+        "order": 1,
+        "unitTitle": "认识 Agent 工程",
+        "sectionTitle": "一次任务怎样形成反馈闭环",
+        "title": "一次任务怎样形成反馈闭环",
+        "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
+        "evidenceExcerpt": "上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。[ReAct](https://arxiv.org/abs/2210.03629)",
+        "sourcePath": "textbooks/v10/00-learning-route.md",
+        "sourceSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+        "version": "textbook-v10",
+        "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
+        "intentId": "source_term_0",
+        "matchingBasis": "source_term",
+        "matchedSourceTerms": [
+          "react"
+        ],
+        "prerequisiteUnitIds": []
+      }
+    ],
+    "clarification": null,
+    "limitations": [
+      "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+    ],
+    "semanticProvenance": {
+      "modelId": "Xenova/bge-small-zh-v1.5",
+      "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+      "dtype": "int8",
+      "pooling": "cls",
+      "dimensions": 512,
+      "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+      "remoteModelsAllowed": false,
+      "querySentExternally": false
+    }
+  },
+  "chapterTarget": {
+    "unitId": "00-learning-route",
+    "sectionId": "s-7547e5ce91f8",
+    "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
+    "sourceSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+    "bodyMarkdown": "## 一次任务怎样形成反馈闭环\n\n![Agent任务运行闭环：目标进入上下文，模型提议经宿主准入后才调用工具；观察进入记录和判定，新观察可反馈，完成等待或停止分别离开循环](assets/agent-runtime-loop.png)\n\n[放大SVG](assets/agent-runtime-loop.svg) · [可保存的DOT语义源](assets/agent-runtime-loop.dot)\n\n图中实线表达本次运行的信息与控制流，蓝线表示继续时把新观察反馈到上下文。虚线是可不调用工具的旁路：候选、拒绝或等待先进入记录，再按任务条件判定。它们不是已发生的业务效果。工具中的检索、读取或写入按任务采用；需要跨中断恢复时，再为权威记录选择持久机制。\n\n上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。[ReAct](https://arxiv.org/abs/2210.03629)\n\n用一条构造轨迹读图：\n\n1. 维护者要求定位构建失败并形成有据说明；目标同时限定可读项目，只有准确批准后才可创建一条工单。\n2. 第一份日志显示依赖加载异常。模型提议读取依赖配置；宿主核资源范围和剩余预算，允许的读取结果进入事实记录。\n3. 新配置说明依赖由另一个模块注册，模型据此改查该模块。若路径可由稳定映射直接确定，固定流程也能完成这一步；这里要比较的是新观察是否需要语义判断，而不是读取次数。\n4. 说明仍缺关键版本时，记录缺项并等待。若证据齐全、准确批准后发送创建请求，却没有收到回执，则保留效果未知，核对原操作；不能为了闭环“继续”再创建第二条。只有对应效果已确认且验收条件满足，才声明完成。\n\n“继续”还须有目标内理由与资源额度。没有新信息时应补来源、请求澄清或合理停止；循环不是用重复请求掩盖未知的许可。第13篇 [固定流程](c01-fixed-workflow.md)使用相同组件与边界，但合法路径由代码规定；第14篇 [完整动态循环](c01-control-loop.md)解释观察驱动的控制与恢复。版本评价和服务发布属于工程生命周期，不是每轮必须调用的工具。"
+  },
+  "binding": [
+    {
+      "path": "dist/content-retrieval-core.js",
+      "sha256": "e5d178306c992fb2f8143b67fc714ab73519eedb65a66c09c42caec9b5e31889"
+    },
+    {
+      "path": "server/retrieval/index.mjs",
+      "sha256": "1d16d453dd96a88dc8627a702363a33d8e73b6b84b8991dd9f190bc5f2de817f"
+    },
+    {
+      "path": "server/index.mjs",
+      "sha256": "f845271c8ab5a5c00b60cf7c6728f05f8fc6ff9a5df50f7d667abd03f5a8e464"
+    }
+  ],
+  "limitations": [
+    "工程启动和HTTP原例点核，不替代独立QA或实际浏览器点击、刷新、复制链接验证。"
+  ]
+}

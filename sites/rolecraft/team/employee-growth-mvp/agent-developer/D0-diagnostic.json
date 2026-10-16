@@ -1,0 +1,243 @@
+{
+  "schema": "rolecraft.employee-growth.d0-diagnostic",
+  "schema_version": "0.1",
+  "diagnostic_id": "D0-AGDEV-20261015-LOCAL-01",
+  "role_id": "AGDEV",
+  "role_name": "Agent开发工程师",
+  "owner_role": "curriculum-architect",
+  "independent_reviewer_role": "qa-engineer",
+  "project_manager_assignment": "pending",
+  "diagnostic_version": "d0-agdev-v0.1",
+  "created_at": "2026-10-15T00:00:00+08:00",
+  "status": "insufficient_evidence",
+  "fixture_status": "draft_for_freeze",
+  "fixture_hash": null,
+  "execution": {
+    "mode": "local_isolated",
+    "network": "disabled_for_d0",
+    "external_side_effects": false,
+    "paid_model_calls": 0,
+    "runs_completed": 0,
+    "learner_identity": null,
+    "runtime": null,
+    "raw_answer_store": null,
+    "limitation": "No learner was assigned and no original answers or artifacts were collected in this record."
+  },
+  "evidence_boundary": {
+    "role_contract": "sites/rolecraft/team/agent-development-engineer-product-v01.md",
+    "architecture_input": "sites/rolecraft/team/agent-development-architecture-v01.md",
+    "qa_input": "sites/rolecraft/team/agent-development-architecture-qa-v01.md",
+    "runtime_qa_input": "sites/rolecraft/team/agent-runtime-v01-qa.md",
+    "these_are_not_learner_evidence": true,
+    "unverified_claims": [
+      "individual capability",
+      "L1/L2/L3 readiness",
+      "real model quality",
+      "user value",
+      "production reliability",
+      "industry advantage"
+    ]
+  },
+  "provisional_level": {
+    "starting_level": "L0",
+    "starting_level_reason": "D0 has not run; no original response, artifact, environment, or independent review exists.",
+    "l1_readiness": "insufficient_evidence",
+    "l1_minimum_evidence": [
+      "two different replayable sandbox artifacts",
+      "initial evidence across D1-D7",
+      "independent review with no open P1",
+      "normal, boundary, and failure behavior recorded"
+    ],
+    "product_permission": "none beyond reading, observation, and no-side-effect sandbox"
+  },
+  "diagnostics": [
+    {
+      "id": "D0-01",
+      "name": "职责边界",
+      "dimension_targets": ["D1", "D4", "D5"],
+      "question": "作为AGDEV，说明唯一责任、至少四项禁止越界和三项停止/升级条件，并为检索no_match、模型不可用、工具写副作用、账户/任务迁移指定接收岗位和动作。提交职责—交接表或等价JSON。",
+      "expected_evidence": [
+        "AGDEV与PROD/AI/RETR/BE/FE/QA边界正确",
+        "权限、来源或副作用不明时停止",
+        "接收岗位、版本和未验证项可定位"
+      ],
+      "actual_answer_or_artifact": {
+        "status": "not_collected",
+        "answer": null,
+        "artifact_uri": null,
+        "artifact_sha256": null
+      },
+      "observations": {
+        "D1": {"status": "not_assessed", "evidence_ids": [], "note": "个人边界复述未观察"},
+        "D2": {"status": "not_assessed", "evidence_ids": [], "note": "机制解释未观察"},
+        "D3": {"status": "not_assessed", "evidence_ids": [], "note": "受约束执行未观察"},
+        "D4": {"status": "not_assessed", "evidence_ids": [], "note": "停止/升级行为未观察"},
+        "D5": {"status": "not_assessed", "evidence_ids": [], "note": "交接与版本字段未观察"},
+        "D6": {"status": "not_assessed", "evidence_ids": [], "note": "产品/行业判断未观察"},
+        "D7": {"status": "not_assessed", "evidence_ids": [], "note": "迁移/复盘未观察"}
+      },
+      "blocking_risks": [
+        {"severity": "P0/P1", "risk": "越权接管模型、检索、数据库、客户端或QA责任", "gate": "不得进入独立Agent交付"},
+        {"severity": "P0/P1", "risk": "来源、权限或副作用不明仍继续执行", "gate": "必须停线并升级"}
+      ],
+      "catch_up_path": [
+        {"step": 1, "action": "阅读岗位契约第2-4节和架构蓝图第1-2节", "mode": "guided_reading"},
+        {"step": 2, "action": "完成职责—交接矩阵及检索无匹配/工具写入反例", "mode": "sandbox_scaffold"},
+        {"step": 3, "action": "QA复核原题和权限/副作用留出变体", "mode": "independent_review"}
+      ],
+      "next_evidence": "原始回答、交接表、版本/哈希、独立复核记录"
+    },
+    {
+      "id": "D0-02",
+      "name": "机制解释",
+      "dimension_targets": ["D1", "D2", "D4", "D6", "D7"],
+      "question": "解释教材定位需求何时采用一次调用、固定workflow、单Agent控制循环或多Agent；画出received到终态的状态与停止条件，并说明模型提议校验、检索来源hash、工具策略、checkpoint、重试/取消/unknown_effect的因果关系。",
+      "expected_evidence": [
+        "模型是提议者，宿主保有执行权",
+        "区分no_match、needs_clarification、unknown_effect和failed",
+        "方案选择有取舍、假设、版本和未知"
+      ],
+      "actual_answer_or_artifact": {"status": "not_collected", "answer": null, "artifact_uri": null, "artifact_sha256": null},
+      "observations": {
+        "D1": {"status": "not_assessed", "evidence_ids": [], "note": "边界解释未观察"},
+        "D2": {"status": "not_assessed", "evidence_ids": [], "note": "机制、假设、版本、未知未观察"},
+        "D3": {"status": "not_assessed", "evidence_ids": [], "note": "运行轨迹未观察"},
+        "D4": {"status": "not_assessed", "evidence_ids": [], "note": "停止/恢复语义未观察"},
+        "D5": {"status": "not_assessed", "evidence_ids": [], "note": "跨岗接口未观察"},
+        "D6": {"status": "not_assessed", "evidence_ids": [], "note": "方案取舍与真实问题证据未观察"},
+        "D7": {"status": "not_assessed", "evidence_ids": [], "note": "迁移解释未观察"}
+      },
+      "blocking_risks": [
+        {"severity": "P1", "risk": "把提示词或模拟成功当执行授权", "gate": "不得进入工具执行"},
+        {"severity": "P1", "risk": "把unknown_effect直接改成failed并盲目重做", "gate": "必须先查询效果账本或升级"}
+      ],
+      "catch_up_path": [
+        {"step": 1, "action": "完成v12最小方案、成功与停止、模型候选、重复动作单元的机制图", "mode": "guided_reading"},
+        {"step": 2, "action": "用确定性stub写四条状态/失败轨迹", "mode": "sandbox_scaffold"},
+        {"step": 3, "action": "QA复核原轨迹和未提示约束变体", "mode": "independent_review"}
+      ],
+      "next_evidence": "机制解释、状态图、四条可回放轨迹和复核结论"
+    },
+    {
+      "id": "D0-03",
+      "name": "熟悉任务",
+      "dimension_targets": ["D1", "D2", "D3", "D4", "D5"],
+      "question": "使用本地确定性检索stub，为教材定位需求提交版本化AgentSpec、工具描述、输入/输出schema、正常和no_match状态、事件轨迹及停止条件；只读、隔离、可重置。",
+      "expected_evidence": [
+        "受约束小切片可回放",
+        "版本、来源、环境、正常/边界/失败预期和复验步骤完整",
+        "没有把模拟供应商或静态图写成真实成功"
+      ],
+      "actual_answer_or_artifact": {"status": "not_collected", "answer": null, "artifact_uri": null, "artifact_sha256": null},
+      "observations": {
+        "D1": {"status": "not_assessed", "evidence_ids": [], "note": "合同边界未观察"},
+        "D2": {"status": "not_assessed", "evidence_ids": [], "note": "AgentSpec机制未观察"},
+        "D3": {"status": "not_assessed", "evidence_ids": [], "note": "回放工件和运行记录未观察"},
+        "D4": {"status": "not_assessed", "evidence_ids": [], "note": "失败/恢复未观察"},
+        "D5": {"status": "not_assessed", "evidence_ids": [], "note": "交接包未观察"},
+        "D6": {"status": "not_assessed", "evidence_ids": [], "note": "产品价值未观察"},
+        "D7": {"status": "not_assessed", "evidence_ids": [], "note": "迁移未观察"}
+      },
+      "blocking_risks": [
+        {"severity": "P0/P1", "risk": "未冻结合同、来源、预算、步数或回滚点即接入真实模型/账户/外部工具", "gate": "保持本地隔离"},
+        {"severity": "P1", "risk": "私改RETR/BE/FE独占路径", "gate": "退回跨岗交接"}
+      ],
+      "catch_up_path": [
+        {"step": 1, "action": "阅读server/retrieval只读合同和架构蓝图第3-5节", "mode": "guided_reading"},
+        {"step": 2, "action": "完成正常/no_match两条sandbox_scaffold夹具", "mode": "sandbox_scaffold"},
+        {"step": 3, "action": "改变查询或教材版本，提交交接并由QA按原例—回归—留出复验", "mode": "sandbox_independent"}
+      ],
+      "next_evidence": "AgentSpec、stub运行日志、事件轨迹、提交哈希和接收确认"
+    },
+    {
+      "id": "D0-04",
+      "name": "失败识别",
+      "dimension_targets": ["D1", "D2", "D3", "D4", "D5", "D7"],
+      "question": "从含来源不存在、no_match后继续生成、工具超时重复写入、恢复忽略checkpoint的轨迹中，逐项写出预期/实际差异、风险级别、停止/澄清/回滚/升级动作、责任岗位和最小复验证据。",
+      "expected_evidence": [
+        "识别来源失配、无依据生成、重复副作用和错误恢复",
+        "正确分派AI/RETR/BE/QA责任",
+        "保留首次失败，修复建议可重放"
+      ],
+      "actual_answer_or_artifact": {"status": "not_collected", "answer": null, "artifact_uri": null, "artifact_sha256": null},
+      "observations": {
+        "D1": {"status": "not_assessed", "evidence_ids": [], "note": "升级边界未观察"},
+        "D2": {"status": "not_assessed", "evidence_ids": [], "note": "失败机制未观察"},
+        "D3": {"status": "not_assessed", "evidence_ids": [], "note": "失败轨迹操作未观察"},
+        "D4": {"status": "not_assessed", "evidence_ids": [], "note": "风险分级/停止/恢复未观察"},
+        "D5": {"status": "not_assessed", "evidence_ids": [], "note": "责任分派未观察"},
+        "D6": {"status": "not_assessed", "evidence_ids": [], "note": "产品影响未观察"},
+        "D7": {"status": "not_assessed", "evidence_ids": [], "note": "根因与留出复验未观察"}
+      },
+      "blocking_risks": [
+        {"severity": "P0", "risk": "不能阻断未授权副作用、来源冲突或恢复不确定性", "gate": "禁止独立交付"},
+        {"severity": "P1", "risk": "用最终回答看似正确抵消失败证据", "gate": "必须保留失败和复验"}
+      ],
+      "catch_up_path": [
+        {"step": 1, "action": "完成v12事实/动作授权、可去重写工具、版本权限证据包练习", "mode": "guided_reading"},
+        {"step": 2, "action": "按架构QA G2-G5编写缺陷台账并做原例复验", "mode": "sandbox_scaffold"},
+        {"step": 3, "action": "QA盲测一个未提示步骤的失败变体", "mode": "unknown_transfer"}
+      ],
+      "next_evidence": "缺陷台账、停止/升级理由、返修版本、原例与变体复验"
+    },
+    {
+      "id": "D0-05",
+      "name": "迁移计划",
+      "dimension_targets": ["D1", "D2", "D3", "D4", "D5", "D6", "D7"],
+      "question": "将熟悉任务至少改变两项约束（corpus版本不一致、Node运行时、预算、工具权限或重启在途动作），写出有效事实、需升版的契约、迁移/回滚顺序、停止条件、证据和未知；不能只在原题调参。",
+      "expected_evidence": [
+        "区分原例、受影响回归和留出未知任务",
+        "保留旧版本、首次失败和回滚点",
+        "明确批准人、接收岗位、停止条件和未运行项"
+      ],
+      "actual_answer_or_artifact": {"status": "not_collected", "answer": null, "artifact_uri": null, "artifact_sha256": null},
+      "observations": {
+        "D1": {"status": "not_assessed", "evidence_ids": [], "note": "变更边界未观察"},
+        "D2": {"status": "not_assessed", "evidence_ids": [], "note": "版本/假设影响未观察"},
+        "D3": {"status": "not_assessed", "evidence_ids": [], "note": "迁移执行未观察"},
+        "D4": {"status": "not_assessed", "evidence_ids": [], "note": "回滚/停止未观察"},
+        "D5": {"status": "not_assessed", "evidence_ids": [], "note": "跨岗批准/接收未观察"},
+        "D6": {"status": "not_assessed", "evidence_ids": [], "note": "真实问题和可比证据未观察"},
+        "D7": {"status": "not_assessed", "evidence_ids": [], "note": "未知迁移/复盘/教会他人未观察"}
+      },
+      "blocking_risks": [
+        {"severity": "P0/P1", "risk": "忽略版本、权限或预算变化而复用旧工具/状态", "gate": "必须停止、升版或回滚"},
+        {"severity": "P1", "risk": "把迁移计划当成已运行结果", "gate": "证据不足保持insufficient_evidence"}
+      ],
+      "catch_up_path": [
+        {"step": 1, "action": "阅读v12持久状态、工具副作用、评估/回滚单元和架构版本恢复段", "mode": "guided_reading"},
+        {"step": 2, "action": "本地演练corpus版本冲突和重启恢复", "mode": "sandbox_independent"},
+        {"step": 3, "action": "QA盲测新的约束组合，PM确认跨岗交接和回滚顺序", "mode": "unknown_transfer"}
+      ],
+      "next_evidence": "迁移计划、版本差异表、回滚/恢复运行记录、未知任务复盘"
+    }
+  ],
+  "d1_d7_snapshot": {
+    "D1": {"status": "not_assessed", "blocking": true, "next_check": "D0-01"},
+    "D2": {"status": "not_assessed", "blocking": false, "next_check": "D0-02"},
+    "D3": {"status": "not_assessed", "blocking": false, "next_check": "D0-03"},
+    "D4": {"status": "not_assessed", "blocking": true, "next_check": "D0-04"},
+    "D5": {"status": "not_assessed", "blocking": true, "next_check": "D0-01/D0-03"},
+    "D6": {"status": "not_assessed", "blocking": false, "next_check": "product contract and isolated real-shape task"},
+    "D7": {"status": "not_assessed", "blocking": false, "next_check": "D0-05 and D30/D60/D90"}
+  },
+  "blocking_risks": [
+    {"risk_id": "D0-BR-01", "severity": "P0/P1", "risk": "边界、权限、来源、副作用和恢复判断没有个人证据", "owner": "AGDEV learner", "mitigation": "先完成D0-01和D0-04，未复核前只允许L0沙箱"},
+    {"risk_id": "D0-BR-02", "severity": "P1", "risk": "已有架构文件或历史QA被误读为个人能力", "owner": "project-manager", "mitigation": "独立保存原始回答、工件和复核结论"},
+    {"risk_id": "D0-BR-03", "severity": "P0", "risk": "D0期间产生真实模型、账户、数据库、外部工具或发布副作用", "owner": "project-manager", "mitigation": "本地隔离、无网络、无付费、无生产写入"}
+  ],
+  "catch_up_plan": {
+    "sequence": ["共同基础", "D0-01职责边界", "D0-02机制解释", "D0-03熟悉任务", "D0-04失败识别", "D0-05迁移计划"],
+    "target": "L1_candidate_only_after_two_sandbox_artifacts_and_independent_review",
+    "independent_reviewer": "qa-engineer",
+    "retest_order": ["original_fixture", "affected_regression", "held_out_variant"],
+    "closure_rule": "缺少原始回答、环境、版本/哈希或独立复核时保持insufficient_evidence；失败记录不得覆盖"
+  },
+  "next_actions": [
+    {"action_id": "D0-A1", "owner": "project-manager", "action": "指定学习者与独立测试工程师，冻结夹具和环境", "status": "open"},
+    {"action_id": "D0-A2", "owner": "AGDEV learner", "action": "在本地隔离完成五项原始回答/产物并保存哈希", "status": "blocked_on_A1"},
+    {"action_id": "D0-A3", "owner": "qa-engineer", "action": "按原题和留出变体独立复核，登记P0-P3与复验", "status": "blocked_on_A2"},
+    {"action_id": "D0-A4", "owner": "curriculum-architect", "action": "依据复核结果调整补学路径，不修改历史失败", "status": "blocked_on_A3"}
+  ],
+  "conclusion": "D0 specification is present, but the employee diagnostic has not run. Provisional starting point is L0; L1 and all capability claims remain insufficient_evidence."
+}

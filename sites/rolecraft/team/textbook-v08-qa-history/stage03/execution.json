@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-10T18:11:28.127941+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "sqliteVersion": "3.53.1",
+  "phases": [
+    {
+      "phase": "crash_after_external_commit",
+      "command": [
+        "/Users/shengxiong/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-I",
+        "-B",
+        "/private/tmp/textbook-v08-qa-sqlite-hop3o1gj/e01_runner.py",
+        "crash_after_external_commit"
+      ],
+      "cwd": "/private/tmp/textbook-v08-qa-sqlite-hop3o1gj",
+      "exitCode": 23,
+      "expectedExitCode": 23,
+      "intentionalProcessExit": true,
+      "stdoutSha256": "8def4d43c86add4f91072a0de4d7b3146a03cf9635148d1df6dc7fb9bff0cfe9",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "phase": "restart_recover",
+      "command": [
+        "/Users/shengxiong/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-I",
+        "-B",
+        "/private/tmp/textbook-v08-qa-sqlite-hop3o1gj/e01_runner.py",
+        "restart_recover"
+      ],
+      "cwd": "/private/tmp/textbook-v08-qa-sqlite-hop3o1gj",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "intentionalProcessExit": false,
+      "stdoutSha256": "ba4fe50f6b83e46f9b5eb51b2e381d2310bd164e008f900c23946f57d41e5b7d",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "phase": "boundaries",
+      "command": [
+        "/Users/shengxiong/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-I",
+        "-B",
+        "/private/tmp/textbook-v08-qa-sqlite-hop3o1gj/e01_runner.py",
+        "boundaries"
+      ],
+      "cwd": "/private/tmp/textbook-v08-qa-sqlite-hop3o1gj",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "intentionalProcessExit": false,
+      "stdoutSha256": "6876876667d96aa47753297a7af6cdce4b19c14d13bd49d52bc5286f6cfcca2b",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "runnerSha256": "86d17d636969ed31f10879d7a2995ce2ef871e6bb3b3df2021ce4e495dbd7908",
+  "safety": "minimal env; inherited Python guards; sqlite connect only temp cwd; no business db; subprocess phases launched only by QA controller",
+  "tempRemovedAfterRun": true,
+  "scope": "one genuine interpreter termination after independent local effect commit, then a new interpreter reads both isolated teaching DBs. Not OS/hardware power loss or real remote service."
+}

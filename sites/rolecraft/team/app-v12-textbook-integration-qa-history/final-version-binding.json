@@ -1,0 +1,837 @@
+{
+  "capturedAtUtc": "2026-10-11T16:51:40.742231+00:00",
+  "clientVersion": "local-workbench-0.12-textbook",
+  "retrievalVersion": "content-retrieval-0.12-v12",
+  "corpusVersion": "textbook-v12",
+  "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+  "bookSha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+  "runtimeActuallyTested": "Node.js v24.16.0",
+  "modelActuallyInferred": {
+    "modelId": "Xenova/bge-small-zh-v1.5",
+    "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+    "dtype": "int8",
+    "pooling": "cls",
+    "dimensions": 512,
+    "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5"
+  },
+  "scope": "Current exact professional declarations/source identity independently hashed. Does not convert author self-checks or production preview receipt into independent browser acceptance.",
+  "files": [
+    {
+      "path": "team/app-v12-textbook-integration-product.md",
+      "bytes": 11185,
+      "sha256": "5803ff5be1af9b6db081ff519505f7531af9bb2c5426d3f879ef26bdfe483765"
+    },
+    {
+      "path": "team/product-gates.json",
+      "bytes": 8080,
+      "sha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-retrieval.md",
+      "bytes": 9132,
+      "sha256": "316fd376d4e2484a1032eeef34dbbe7df40e5fd75da09b53d1d4622bc5ab63ff"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-retrieval-binding.json",
+      "bytes": 20926,
+      "sha256": "066e5f1292649af2c2e204a8fea61f6adf5bd8eb775a66feb46fa7d3d2ca1e16"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-retrieval-preview.json",
+      "bytes": 12529,
+      "sha256": "12ed7c1906881b80ff06644c7efa65302dfcd7ed097ad32ef5933547090e00ea"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-frontend.md",
+      "bytes": 5495,
+      "sha256": "36544f0c72c893da5047c1982fe7fa3085414079503529208477c87fbbce3604"
+    },
+    {
+      "path": "team/app-v12-textbook-integration-frontend-binding.json",
+      "bytes": 1510,
+      "sha256": "3d7b28edac784d0ce20f8f60d89c08ec11af3223755d73e2f9634c74e976ab9d"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 4756,
+      "sha256": "5c69d6037a73393b190c708bff14c4118f7462fbc7942aca48732e5f484507c3"
+    },
+    {
+      "path": "dist/app.js",
+      "bytes": 91914,
+      "sha256": "cc361b3a8debb8318518ca7856f0d227a025ced56600eda10edd160cc1569d19"
+    },
+    {
+      "path": "dist/learning-workbench.js",
+      "bytes": 53317,
+      "sha256": "b708c0fb6cc58c9e48698c65671964ca5511ba91e6e98675bd54e56d19879d7b"
+    },
+    {
+      "path": "dist/content-v12-data.js",
+      "bytes": 1545912,
+      "sha256": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224"
+    },
+    {
+      "path": "dist/content-retrieval-core.js",
+      "bytes": 24073,
+      "sha256": "b3535b2249effdb0118713295ae9b86e117e0d86c86041aade3e8c33a0fc092d"
+    },
+    {
+      "path": "server/index.mjs",
+      "bytes": 31639,
+      "sha256": "63cee03519aaeb53257108227d17464bc3fb8942a7636ea87fddd13a76d2182b"
+    },
+    {
+      "path": "server/retrieval/index.mjs",
+      "bytes": 7744,
+      "sha256": "acc8555c9b23603f04afa20ff7dd6eb2fc5429894b7474814d4b16114e1ded0d"
+    },
+    {
+      "path": "server/retrieval/semantic.mjs",
+      "bytes": 16045,
+      "sha256": "d101163e0934cac93309265c4949fccbc9fe304120c5954ef9466a4fe68a4115"
+    },
+    {
+      "path": "server/retrieval/content-v12-index.json",
+      "bytes": 1591766,
+      "sha256": "ac87bfa9c88f6e1709fc59c05fc3af1fcf98b7274aeb1be48a07e490578bdd6b"
+    },
+    {
+      "path": "server/retrieval/vectors-v12.json",
+      "bytes": 6084178,
+      "sha256": "c28e1e27e7185638aeecc4357498ae19e99f5277e5d271a7d529e57aa1754164"
+    },
+    {
+      "path": "server/retrieval/intent-vectors-v12.json",
+      "bytes": 606009,
+      "sha256": "cd0f1e55e25d9b275558baf1693f0721b6ae9eb896a7519c582e8e75a0b51431"
+    },
+    {
+      "path": "textbooks/v12/assembly-manifest.json",
+      "bytes": 3749,
+      "sha256": "16907987dcebb2195f9bae4df3f0648d566f597f49722e681fb589b87e32305e"
+    },
+    {
+      "path": "textbooks/v12/agent-engineering-textbook.md",
+      "bytes": 523145,
+      "sha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e"
+    }
+  ],
+  "engineeringAndFrontendDeclarationChecked": [
+    {
+      "path": "server/index.mjs",
+      "declaredSha256": "63cee03519aaeb53257108227d17464bc3fb8942a7636ea87fddd13a76d2182b",
+      "actualSha256": "63cee03519aaeb53257108227d17464bc3fb8942a7636ea87fddd13a76d2182b",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/index.mjs",
+      "declaredSha256": "acc8555c9b23603f04afa20ff7dd6eb2fc5429894b7474814d4b16114e1ded0d",
+      "actualSha256": "acc8555c9b23603f04afa20ff7dd6eb2fc5429894b7474814d4b16114e1ded0d",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/semantic.mjs",
+      "declaredSha256": "d101163e0934cac93309265c4949fccbc9fe304120c5954ef9466a4fe68a4115",
+      "actualSha256": "d101163e0934cac93309265c4949fccbc9fe304120c5954ef9466a4fe68a4115",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/build-content-v12.mjs",
+      "declaredSha256": "9593c399b4b0b94f5bb34966f5aacaae679fd30c8dda28009dc51bc51cdb83f4",
+      "actualSha256": "9593c399b4b0b94f5bb34966f5aacaae679fd30c8dda28009dc51bc51cdb83f4",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/self-check-v12.mjs",
+      "declaredSha256": "6c3a60849ef7981efdb53a0c23683193bbca0c1e69e5e4b4bdeac147f9ea2fd5",
+      "actualSha256": "6c3a60849ef7981efdb53a0c23683193bbca0c1e69e5e4b4bdeac147f9ea2fd5",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/self-check-v12-repair.mjs",
+      "declaredSha256": "bb5bae629ead319f92ba321160d4b741dc79a771b9a4047256f8e3f98ebedd3e",
+      "actualSha256": "bb5bae629ead319f92ba321160d4b741dc79a771b9a4047256f8e3f98ebedd3e",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/preview-v12.mjs",
+      "declaredSha256": "3f7dce2480222c66da56a0d7e1c4c74227d3fe6ecab479cf08fafbe2575438b6",
+      "actualSha256": "3f7dce2480222c66da56a0d7e1c4c74227d3fe6ecab479cf08fafbe2575438b6",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/bind-v12.mjs",
+      "declaredSha256": "07fe046df4dce8e9ed67607de011905ec526ba3277499995b21ee71fec636938",
+      "actualSha256": "07fe046df4dce8e9ed67607de011905ec526ba3277499995b21ee71fec636938",
+      "matches": true
+    },
+    {
+      "path": "dist/content-retrieval-core.js",
+      "declaredSha256": "b3535b2249effdb0118713295ae9b86e117e0d86c86041aade3e8c33a0fc092d",
+      "actualSha256": "b3535b2249effdb0118713295ae9b86e117e0d86c86041aade3e8c33a0fc092d",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-data.js",
+      "declaredSha256": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224",
+      "actualSha256": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/content-v12-index.json",
+      "declaredSha256": "ac87bfa9c88f6e1709fc59c05fc3af1fcf98b7274aeb1be48a07e490578bdd6b",
+      "actualSha256": "ac87bfa9c88f6e1709fc59c05fc3af1fcf98b7274aeb1be48a07e490578bdd6b",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/vectors-v12.json",
+      "declaredSha256": "c28e1e27e7185638aeecc4357498ae19e99f5277e5d271a7d529e57aa1754164",
+      "actualSha256": "c28e1e27e7185638aeecc4357498ae19e99f5277e5d271a7d529e57aa1754164",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/intent-vectors-v12.json",
+      "declaredSha256": "cd0f1e55e25d9b275558baf1693f0721b6ae9eb896a7519c582e8e75a0b51431",
+      "actualSha256": "cd0f1e55e25d9b275558baf1693f0721b6ae9eb896a7519c582e8e75a0b51431",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/model-lock.json",
+      "declaredSha256": "4ca475a7d227148624e45c52df50cbe6c3ca0678a7ef4c9bb8b7a76e61f949e7",
+      "actualSha256": "4ca475a7d227148624e45c52df50cbe6c3ca0678a7ef4c9bb8b7a76e61f949e7",
+      "matches": true
+    },
+    {
+      "path": "team/app-v12-textbook-integration-retrieval.md",
+      "declaredSha256": "316fd376d4e2484a1032eeef34dbbe7df40e5fd75da09b53d1d4622bc5ab63ff",
+      "actualSha256": "316fd376d4e2484a1032eeef34dbbe7df40e5fd75da09b53d1d4622bc5ab63ff",
+      "matches": true
+    },
+    {
+      "path": "team/app-v12-textbook-integration-retrieval-self-check.json",
+      "declaredSha256": "b28e4b045d27dea16958630dd105180ae00cdac62e7213074c356397a5abc7de",
+      "actualSha256": "b28e4b045d27dea16958630dd105180ae00cdac62e7213074c356397a5abc7de",
+      "matches": true
+    },
+    {
+      "path": "team/app-v12-textbook-integration-retrieval-self-check-input-error.json",
+      "declaredSha256": "09adcaea5a57eee47fc8f660b6249907984dee8e4bea7516eed5354075f0d904",
+      "actualSha256": "09adcaea5a57eee47fc8f660b6249907984dee8e4bea7516eed5354075f0d904",
+      "matches": true
+    },
+    {
+      "path": "team/app-v12-textbook-integration-retrieval-self-check-contract-error.json",
+      "declaredSha256": "88fe59e570901cb59e832e202cffa6290b9777378d510aa47636b673c2d66444",
+      "actualSha256": "88fe59e570901cb59e832e202cffa6290b9777378d510aa47636b673c2d66444",
+      "matches": true
+    },
+    {
+      "path": "team/app-v12-textbook-integration-retrieval-repair-self-check.json",
+      "declaredSha256": "74744bab7d05158f5a9e7c98e2eaa1ebed75dd2b58a74466468daf37b0031970",
+      "actualSha256": "74744bab7d05158f5a9e7c98e2eaa1ebed75dd2b58a74466468daf37b0031970",
+      "matches": true
+    },
+    {
+      "path": "team/app-v12-textbook-integration-retrieval-repair-check.json",
+      "declaredSha256": "f0cb22febb13c05c63d0b2375c9a0bc3fc93faafa407df56aced325533d0884f",
+      "actualSha256": "f0cb22febb13c05c63d0b2375c9a0bc3fc93faafa407df56aced325533d0884f",
+      "matches": true
+    },
+    {
+      "path": "team/app-v12-textbook-integration-retrieval-preview.json",
+      "declaredSha256": "12ed7c1906881b80ff06644c7efa65302dfcd7ed097ad32ef5933547090e00ea",
+      "actualSha256": "12ed7c1906881b80ff06644c7efa65302dfcd7ed097ad32ef5933547090e00ea",
+      "matches": true
+    },
+    {
+      "path": "team/app-v12-textbook-integration-retrieval-history/candidate/binding.json",
+      "declaredSha256": "325bc48bdf9b418a28dec0589e809b2490741388c895a630a2eaa59f732b5e86",
+      "actualSha256": "325bc48bdf9b418a28dec0589e809b2490741388c895a630a2eaa59f732b5e86",
+      "matches": true
+    },
+    {
+      "path": "team/app-v12-textbook-integration-retrieval-history/candidate/dist__content-retrieval-core.js",
+      "declaredSha256": "7905edee26ab460c8a78accb4e3fcb0bd1ff97e0d44885ba3df7c7713b2fbfb6",
+      "actualSha256": "7905edee26ab460c8a78accb4e3fcb0bd1ff97e0d44885ba3df7c7713b2fbfb6",
+      "matches": true
+    },
+    {
+      "path": "team/app-v12-textbook-integration-retrieval-history/candidate/server__retrieval__index.mjs",
+      "declaredSha256": "acc8555c9b23603f04afa20ff7dd6eb2fc5429894b7474814d4b16114e1ded0d",
+      "actualSha256": "acc8555c9b23603f04afa20ff7dd6eb2fc5429894b7474814d4b16114e1ded0d",
+      "matches": true
+    },
+    {
+      "path": "team/app-v12-textbook-integration-retrieval-history/candidate/server__retrieval__semantic.mjs",
+      "declaredSha256": "d101163e0934cac93309265c4949fccbc9fe304120c5954ef9466a4fe68a4115",
+      "actualSha256": "d101163e0934cac93309265c4949fccbc9fe304120c5954ef9466a4fe68a4115",
+      "matches": true
+    },
+    {
+      "path": "team/app-v12-textbook-integration-retrieval-history/candidate/team__app-v12-textbook-integration-retrieval.md",
+      "declaredSha256": "133412e58067a3d1ac6b6e1899cc3d3760ce1a65395c463ffda6526e5ec9eb85",
+      "actualSha256": "133412e58067a3d1ac6b6e1899cc3d3760ce1a65395c463ffda6526e5ec9eb85",
+      "matches": true
+    },
+    {
+      "path": "team/app-v12-textbook-integration-retrieval-history/candidate/team__app-v12-textbook-integration-retrieval-binding.json",
+      "declaredSha256": "2e767f8dac9f8769271f949e6c05dfc4e237ab5963092fee4559d928e600a294",
+      "actualSha256": "2e767f8dac9f8769271f949e6c05dfc4e237ab5963092fee4559d928e600a294",
+      "matches": true
+    },
+    {
+      "path": "team/app-v12-textbook-integration-retrieval-history/candidate/team__app-v12-textbook-integration-retrieval-self-check.json",
+      "declaredSha256": "b28e4b045d27dea16958630dd105180ae00cdac62e7213074c356397a5abc7de",
+      "actualSha256": "b28e4b045d27dea16958630dd105180ae00cdac62e7213074c356397a5abc7de",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/assembly-manifest.json",
+      "declaredSha256": "16907987dcebb2195f9bae4df3f0648d566f597f49722e681fb589b87e32305e",
+      "actualSha256": "16907987dcebb2195f9bae4df3f0648d566f597f49722e681fb589b87e32305e",
+      "matches": true
+    },
+    {
+      "path": "team/textbook-v12-curriculum.json",
+      "declaredSha256": "02dcab757b4e72f7fb28b39f648b30090b0e57b3725ca0af25e421e0fafad5ae",
+      "actualSha256": "02dcab757b4e72f7fb28b39f648b30090b0e57b3725ca0af25e421e0fafad5ae",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/agent-engineering-textbook.md",
+      "declaredSha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+      "actualSha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/00-learning-route.md",
+      "declaredSha256": "452129591648ca6c146945fae000e3e905e87c2794315109c727592a7b16dced",
+      "actualSha256": "452129591648ca6c146945fae000e3e905e87c2794315109c727592a7b16dced",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/01-foundation.md",
+      "declaredSha256": "3ca5c2391ccfba389cb16d7eac85034bcb50d0768f0e9e7374c92917044232d7",
+      "actualSha256": "3ca5c2391ccfba389cb16d7eac85034bcb50d0768f0e9e7374c92917044232d7",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/n01-python-model-foundations.md",
+      "declaredSha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62",
+      "actualSha256": "9941d23b0d506ac87d6b032b1f15449b03a9fa74e6563bcd093e3f54af874e62",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/p01-discovery.md",
+      "declaredSha256": "2d0340f4e6e05129f423977a272b515c56bd37295a6b00f392f1d56fca25392e",
+      "actualSha256": "2d0340f4e6e05129f423977a272b515c56bd37295a6b00f392f1d56fca25392e",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/02-task-acceptance.md",
+      "declaredSha256": "2a15989e762cf659822a9ec3d0b37d881fb28ddcd2d8f1503957ad73d8343ec1",
+      "actualSha256": "2a15989e762cf659822a9ec3d0b37d881fb28ddcd2d8f1503957ad73d8343ec1",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/03-trust-boundary.md",
+      "declaredSha256": "8ff1050570a84ade4751619e28bb6e02bdd06d2b914d74e5192ea446b045272e",
+      "actualSha256": "8ff1050570a84ade4751619e28bb6e02bdd06d2b914d74e5192ea446b045272e",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/f01.md",
+      "declaredSha256": "5fcb2bd1db423ca8e149b0803bafedeaf0e77ca2331312ff32f63a2087ba9d61",
+      "actualSha256": "5fcb2bd1db423ca8e149b0803bafedeaf0e77ca2331312ff32f63a2087ba9d61",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/f02.md",
+      "declaredSha256": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8",
+      "actualSha256": "09e2b93cd1ee84a6d7cae99faa3f10831792f7bf05d3d065f50bad81c8f8b4e8",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/n02-context-memory-prompt.md",
+      "declaredSha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+      "actualSha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/c01-selection.md",
+      "declaredSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+      "actualSha256": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/c01-control-primer.md",
+      "declaredSha256": "ef50f49868351894e0b928eced4cfb2fdabb9cb28ca03eb9043b9cf42d5689b9",
+      "actualSha256": "ef50f49868351894e0b928eced4cfb2fdabb9cb28ca03eb9043b9cf42d5689b9",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/c02.md",
+      "declaredSha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+      "actualSha256": "878dc0f56a62f83dae3a6c065c70cd2dd81e32780ba532564b228ab7a41f2330",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/c03.md",
+      "declaredSha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+      "actualSha256": "00efb05420c22e693c95bc3bebeec554ddbc064a4231d754ec2f13d2934b8fe3",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/n04-tools-mcp.md",
+      "declaredSha256": "b3432424e61870ac250db2068423ed33e827c97cfc2f1440f3ae2987bfd4f39a",
+      "actualSha256": "b3432424e61870ac250db2068423ed33e827c97cfc2f1440f3ae2987bfd4f39a",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/e01.md",
+      "declaredSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+      "actualSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/c01-fixed-workflow.md",
+      "declaredSha256": "5dd87adc743723c842ed22f80065fda6408d28aee369adf8dfe1206ac81c2fcf",
+      "actualSha256": "5dd87adc743723c842ed22f80065fda6408d28aee369adf8dfe1206ac81c2fcf",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/c01-control-loop.md",
+      "declaredSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+      "actualSha256": "f836af7e291cae69328e5e9fceb92c8734046906f6588bfd66edf2e0cf365fd8",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/n03-planning-reflection.md",
+      "declaredSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+      "actualSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/n05-retrieval-ingestion.md",
+      "declaredSha256": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16",
+      "actualSha256": "354bf1dbf80df77b368a1d2a1fa3a94798835c11c9b824c945b8028679c79a16",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/n06-graph-orchestration.md",
+      "declaredSha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+      "actualSha256": "9bdb706675c572bec41f7c229f7c88c8b398bc5dd502900532fa6e5eb0212bbb",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/n07-multiagent-a2a.md",
+      "declaredSha256": "24268cff6bfb435713458912750a5a958dd00d0aa935ef71b139e74c6dd23fb2",
+      "actualSha256": "24268cff6bfb435713458912750a5a958dd00d0aa935ef71b139e74c6dd23fb2",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/e02.md",
+      "declaredSha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+      "actualSha256": "ebadd9a70f6bdd59f0e97ed01d30550a9e34fc1afe3c57a21a202c801b93d89f",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/n10-evaluation-projects.md",
+      "declaredSha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+      "actualSha256": "ed5da5944202ccda7d0f6935b926dd4a827cecf24866e678e369baced0f3c95b",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/p01-mvp.md",
+      "declaredSha256": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9",
+      "actualSha256": "deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/e03.md",
+      "declaredSha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+      "actualSha256": "0a2e8c9e7c1c1a5577fd7f5584258d0a76e32c48a4fed45967da24c4842a2c70",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/n08-sandbox-security.md",
+      "declaredSha256": "16b1fe631c244ec394965f9443bc680380997cf4427a7555184c26cf3ee064f2",
+      "actualSha256": "16b1fe631c244ec394965f9443bc680380997cf4427a7555184c26cf3ee064f2",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/e04.md",
+      "declaredSha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8",
+      "actualSha256": "e0ac46cd7d0d261c3e6453341eac755d9da1b150c8736ef72b0cd256cff92ca8",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/e05.md",
+      "declaredSha256": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6",
+      "actualSha256": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/n09-runtime-delivery.md",
+      "declaredSha256": "b621b838657aaa9915506a5bee6e25f7733b41085b08c50143e5965722157714",
+      "actualSha256": "b621b838657aaa9915506a5bee6e25f7733b41085b08c50143e5965722157714",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/p02.md",
+      "declaredSha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8",
+      "actualSha256": "ef1dd0ddd01026e0d012e05902f4b3357fc0d2e8d59f10e140761fa09fc3caa8",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/assets/agent-runtime-loop.png",
+      "declaredSha256": "9497f77fa43566eb621549175ee55870a02b50e8ebd3144405e820d0ac2c7106",
+      "actualSha256": "9497f77fa43566eb621549175ee55870a02b50e8ebd3144405e820d0ac2c7106",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-assets/agent-runtime-loop.png",
+      "declaredSha256": "9497f77fa43566eb621549175ee55870a02b50e8ebd3144405e820d0ac2c7106",
+      "actualSha256": "9497f77fa43566eb621549175ee55870a02b50e8ebd3144405e820d0ac2c7106",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/assets/agent-runtime-loop.svg",
+      "declaredSha256": "c1929a8021f331df4452e949272028fcde05c037b996453e883d3f84a83e5a15",
+      "actualSha256": "c1929a8021f331df4452e949272028fcde05c037b996453e883d3f84a83e5a15",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-assets/agent-runtime-loop.svg",
+      "declaredSha256": "c1929a8021f331df4452e949272028fcde05c037b996453e883d3f84a83e5a15",
+      "actualSha256": "c1929a8021f331df4452e949272028fcde05c037b996453e883d3f84a83e5a15",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/assets/agent-runtime-loop.dot",
+      "declaredSha256": "7fcde3319a3f611f3909472530a29e73480ab5a8049b65313be53278e312ee5b",
+      "actualSha256": "7fcde3319a3f611f3909472530a29e73480ab5a8049b65313be53278e312ee5b",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-assets/agent-runtime-loop.dot",
+      "declaredSha256": "7fcde3319a3f611f3909472530a29e73480ab5a8049b65313be53278e312ee5b",
+      "actualSha256": "7fcde3319a3f611f3909472530a29e73480ab5a8049b65313be53278e312ee5b",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/assets/agent-engineering-landscape-v12.png",
+      "declaredSha256": "198bff0d7cbd597c3e284755aeb79d8867214d6114151fd2f504e6adbe8d523d",
+      "actualSha256": "198bff0d7cbd597c3e284755aeb79d8867214d6114151fd2f504e6adbe8d523d",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-assets/agent-engineering-landscape-v12.png",
+      "declaredSha256": "198bff0d7cbd597c3e284755aeb79d8867214d6114151fd2f504e6adbe8d523d",
+      "actualSha256": "198bff0d7cbd597c3e284755aeb79d8867214d6114151fd2f504e6adbe8d523d",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/assets/agent-engineering-landscape-v12.svg",
+      "declaredSha256": "fad2379ad07797ad046ed507b63f4efc9bb2db24d1d1a6347ca1f062a5a6e718",
+      "actualSha256": "fad2379ad07797ad046ed507b63f4efc9bb2db24d1d1a6347ca1f062a5a6e718",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-assets/agent-engineering-landscape-v12.svg",
+      "declaredSha256": "fad2379ad07797ad046ed507b63f4efc9bb2db24d1d1a6347ca1f062a5a6e718",
+      "actualSha256": "fad2379ad07797ad046ed507b63f4efc9bb2db24d1d1a6347ca1f062a5a6e718",
+      "matches": true
+    },
+    {
+      "path": "team/product-creation-standard.md",
+      "declaredSha256": "b57e4ee78b58773377c73088068e6b036c8c52d53a48382424de5bdbcfd609ff",
+      "actualSha256": "b57e4ee78b58773377c73088068e6b036c8c52d53a48382424de5bdbcfd609ff",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-references/product-creation-standard.md",
+      "declaredSha256": "b57e4ee78b58773377c73088068e6b036c8c52d53a48382424de5bdbcfd609ff",
+      "actualSha256": "b57e4ee78b58773377c73088068e6b036c8c52d53a48382424de5bdbcfd609ff",
+      "matches": true
+    },
+    {
+      "path": "team/product-gates.json",
+      "declaredSha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06",
+      "actualSha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-references/product-gates.json",
+      "declaredSha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06",
+      "actualSha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06",
+      "matches": true
+    },
+    {
+      "path": "team/textbook-v09-qa.md",
+      "declaredSha256": "c708997d143a5251e1e64af406d9846cac30572b14bf18a2fe219367baff05b3",
+      "actualSha256": "c708997d143a5251e1e64af406d9846cac30572b14bf18a2fe219367baff05b3",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-references/textbook-v09-qa.md",
+      "declaredSha256": "c708997d143a5251e1e64af406d9846cac30572b14bf18a2fe219367baff05b3",
+      "actualSha256": "c708997d143a5251e1e64af406d9846cac30572b14bf18a2fe219367baff05b3",
+      "matches": true
+    },
+    {
+      "path": "team/textbook-v12-curriculum.md",
+      "declaredSha256": "60629842d563df8a1906aa56cac40b0724bb38468ed3243de896e48c60153cd8",
+      "actualSha256": "60629842d563df8a1906aa56cac40b0724bb38468ed3243de896e48c60153cd8",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-references/textbook-v12-curriculum.md",
+      "declaredSha256": "60629842d563df8a1906aa56cac40b0724bb38468ed3243de896e48c60153cd8",
+      "actualSha256": "60629842d563df8a1906aa56cac40b0724bb38468ed3243de896e48c60153cd8",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-references/textbook-v12-curriculum.json",
+      "declaredSha256": "02dcab757b4e72f7fb28b39f648b30090b0e57b3725ca0af25e421e0fafad5ae",
+      "actualSha256": "02dcab757b4e72f7fb28b39f648b30090b0e57b3725ca0af25e421e0fafad5ae",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/README.md",
+      "declaredSha256": "f6e8b37b318dd2a662c064f6681509fdf7873cbd7687a7b91a6f7ed3bf2683a6",
+      "actualSha256": "f6e8b37b318dd2a662c064f6681509fdf7873cbd7687a7b91a6f7ed3bf2683a6",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-references/textbook-README.md",
+      "declaredSha256": "f6e8b37b318dd2a662c064f6681509fdf7873cbd7687a7b91a6f7ed3bf2683a6",
+      "actualSha256": "f6e8b37b318dd2a662c064f6681509fdf7873cbd7687a7b91a6f7ed3bf2683a6",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-references/agent-engineering-textbook.md",
+      "declaredSha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+      "actualSha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/examples/README.md",
+      "declaredSha256": "855bfe68fe4873f4fdeb7c3f71527375a05e316d37945f1f36f7b08488b94b40",
+      "actualSha256": "855bfe68fe4873f4fdeb7c3f71527375a05e316d37945f1f36f7b08488b94b40",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-references/examples-README.md",
+      "declaredSha256": "855bfe68fe4873f4fdeb7c3f71527375a05e316d37945f1f36f7b08488b94b40",
+      "actualSha256": "855bfe68fe4873f4fdeb7c3f71527375a05e316d37945f1f36f7b08488b94b40",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/examples/n01-runtime-boundaries.py",
+      "declaredSha256": "a156424a76bddc73cb831bda826ea676facce8191311bc0ca15f372f4deab75a",
+      "actualSha256": "a156424a76bddc73cb831bda826ea676facce8191311bc0ca15f372f4deab75a",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-references/n01-runtime-boundaries.py.txt",
+      "declaredSha256": "a156424a76bddc73cb831bda826ea676facce8191311bc0ca15f372f4deab75a",
+      "actualSha256": "a156424a76bddc73cb831bda826ea676facce8191311bc0ca15f372f4deab75a",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/examples/n02-memory-routing.py",
+      "declaredSha256": "400452b186375011da69c0c58b3917bb0cdd9b54e2e14e7b0f2d09ed5b584249",
+      "actualSha256": "400452b186375011da69c0c58b3917bb0cdd9b54e2e14e7b0f2d09ed5b584249",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-references/n02-memory-routing.py.txt",
+      "declaredSha256": "400452b186375011da69c0c58b3917bb0cdd9b54e2e14e7b0f2d09ed5b584249",
+      "actualSha256": "400452b186375011da69c0c58b3917bb0cdd9b54e2e14e7b0f2d09ed5b584249",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/examples/n03-plan-execution.py",
+      "declaredSha256": "211eabbd5fc5da020e8909742c0f7bf174e54478b07ea792f1daea0e1866db80",
+      "actualSha256": "211eabbd5fc5da020e8909742c0f7bf174e54478b07ea792f1daea0e1866db80",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-references/n03-plan-execution.py.txt",
+      "declaredSha256": "211eabbd5fc5da020e8909742c0f7bf174e54478b07ea792f1daea0e1866db80",
+      "actualSha256": "211eabbd5fc5da020e8909742c0f7bf174e54478b07ea792f1daea0e1866db80",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/examples/n04-tool-catalog.py",
+      "declaredSha256": "194e7d3c033357e781069973090605f21831429ee1419d4ba40d0508f66bf2c3",
+      "actualSha256": "194e7d3c033357e781069973090605f21831429ee1419d4ba40d0508f66bf2c3",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-references/n04-tool-catalog.py.txt",
+      "declaredSha256": "194e7d3c033357e781069973090605f21831429ee1419d4ba40d0508f66bf2c3",
+      "actualSha256": "194e7d3c033357e781069973090605f21831429ee1419d4ba40d0508f66bf2c3",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/examples/n05-index-lifecycle.py",
+      "declaredSha256": "a1364480c2d34b97208d75bd0358faeebf75d80f6f1f101faf0469654c44906b",
+      "actualSha256": "a1364480c2d34b97208d75bd0358faeebf75d80f6f1f101faf0469654c44906b",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-references/n05-index-lifecycle.py.txt",
+      "declaredSha256": "a1364480c2d34b97208d75bd0358faeebf75d80f6f1f101faf0469654c44906b",
+      "actualSha256": "a1364480c2d34b97208d75bd0358faeebf75d80f6f1f101faf0469654c44906b",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/examples/n06-graph-contracts.py",
+      "declaredSha256": "d2ce027e04056fc598bf70f8dc7f3ecae5926f3848723ca85f167e959b0d9dc8",
+      "actualSha256": "d2ce027e04056fc598bf70f8dc7f3ecae5926f3848723ca85f167e959b0d9dc8",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-references/n06-graph-contracts.py.txt",
+      "declaredSha256": "d2ce027e04056fc598bf70f8dc7f3ecae5926f3848723ca85f167e959b0d9dc8",
+      "actualSha256": "d2ce027e04056fc598bf70f8dc7f3ecae5926f3848723ca85f167e959b0d9dc8",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/examples/n06-graph.py",
+      "declaredSha256": "51ed00eea1cb36983e1eac38efe6cb122fd80357688152002f383e23607bb866",
+      "actualSha256": "51ed00eea1cb36983e1eac38efe6cb122fd80357688152002f383e23607bb866",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-references/n06-graph.py.txt",
+      "declaredSha256": "51ed00eea1cb36983e1eac38efe6cb122fd80357688152002f383e23607bb866",
+      "actualSha256": "51ed00eea1cb36983e1eac38efe6cb122fd80357688152002f383e23607bb866",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/examples/n07-delegation.py",
+      "declaredSha256": "c374265dd30165b99bee6512ce06c646ba7f4443e595ff358a7e4c1ccce84840",
+      "actualSha256": "c374265dd30165b99bee6512ce06c646ba7f4443e595ff358a7e4c1ccce84840",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-references/n07-delegation.py.txt",
+      "declaredSha256": "c374265dd30165b99bee6512ce06c646ba7f4443e595ff358a7e4c1ccce84840",
+      "actualSha256": "c374265dd30165b99bee6512ce06c646ba7f4443e595ff358a7e4c1ccce84840",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/examples/n08-sandbox-policy.py",
+      "declaredSha256": "6157b8fb93f56e72db7614913baf379c2446a0860f9d3c97ff0381e3771fb7c3",
+      "actualSha256": "6157b8fb93f56e72db7614913baf379c2446a0860f9d3c97ff0381e3771fb7c3",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-references/n08-sandbox-policy.py.txt",
+      "declaredSha256": "6157b8fb93f56e72db7614913baf379c2446a0860f9d3c97ff0381e3771fb7c3",
+      "actualSha256": "6157b8fb93f56e72db7614913baf379c2446a0860f9d3c97ff0381e3771fb7c3",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/examples/n09-memory-diagnostic.py",
+      "declaredSha256": "9d90ef1295ed3543b909f935ffeb60f17b9681396a0779e20ca8dd7a4b75980d",
+      "actualSha256": "9d90ef1295ed3543b909f935ffeb60f17b9681396a0779e20ca8dd7a4b75980d",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-references/n09-memory-diagnostic.py.txt",
+      "declaredSha256": "9d90ef1295ed3543b909f935ffeb60f17b9681396a0779e20ca8dd7a4b75980d",
+      "actualSha256": "9d90ef1295ed3543b909f935ffeb60f17b9681396a0779e20ca8dd7a4b75980d",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/examples/n09-runtime-recovery.py",
+      "declaredSha256": "e984d32ffa7f6b02d40ee6be2ce633dd8692d688a11dbdf037275d2607574f32",
+      "actualSha256": "e984d32ffa7f6b02d40ee6be2ce633dd8692d688a11dbdf037275d2607574f32",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-references/n09-runtime-recovery.py.txt",
+      "declaredSha256": "e984d32ffa7f6b02d40ee6be2ce633dd8692d688a11dbdf037275d2607574f32",
+      "actualSha256": "e984d32ffa7f6b02d40ee6be2ce633dd8692d688a11dbdf037275d2607574f32",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v12/examples/n10-evaluation-matrix.py",
+      "declaredSha256": "d30b8b8a3297203fa0be35a603bb8e19eea3332e79f73da2487e1cb55e09024b",
+      "actualSha256": "d30b8b8a3297203fa0be35a603bb8e19eea3332e79f73da2487e1cb55e09024b",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-references/n10-evaluation-matrix.py.txt",
+      "declaredSha256": "d30b8b8a3297203fa0be35a603bb8e19eea3332e79f73da2487e1cb55e09024b",
+      "actualSha256": "d30b8b8a3297203fa0be35a603bb8e19eea3332e79f73da2487e1cb55e09024b",
+      "matches": true
+    },
+    {
+      "path": "dist/index.html",
+      "declaredSha256": "5c69d6037a73393b190c708bff14c4118f7462fbc7942aca48732e5f484507c3",
+      "actualSha256": "5c69d6037a73393b190c708bff14c4118f7462fbc7942aca48732e5f484507c3",
+      "matches": true
+    },
+    {
+      "path": "dist/app.js",
+      "declaredSha256": "cc361b3a8debb8318518ca7856f0d227a025ced56600eda10edd160cc1569d19",
+      "actualSha256": "cc361b3a8debb8318518ca7856f0d227a025ced56600eda10edd160cc1569d19",
+      "matches": true
+    },
+    {
+      "path": "dist/learning-workbench.js",
+      "declaredSha256": "b708c0fb6cc58c9e48698c65671964ca5511ba91e6e98675bd54e56d19879d7b",
+      "actualSha256": "b708c0fb6cc58c9e48698c65671964ca5511ba91e6e98675bd54e56d19879d7b",
+      "matches": true
+    },
+    {
+      "path": "dist/styles.css",
+      "declaredSha256": "47850ba437e3598424846361bb10463fc83513a3eae4d5ff7f1abcd6ad404139",
+      "actualSha256": "47850ba437e3598424846361bb10463fc83513a3eae4d5ff7f1abcd6ad404139",
+      "matches": true
+    },
+    {
+      "path": "dist/learning-workbench.css",
+      "declaredSha256": "c13ed2dbe5b68770e142ef9ec3962eb14f7ccdd745c99ff650c7b47def9c5ace",
+      "actualSha256": "c13ed2dbe5b68770e142ef9ec3962eb14f7ccdd745c99ff650c7b47def9c5ace",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v10-data.js",
+      "declaredSha256": "0a2537f32ea2ddc2c5a020cc7a72937f0bfb7813ee2b701a3bdeec9035d02d58",
+      "actualSha256": "0a2537f32ea2ddc2c5a020cc7a72937f0bfb7813ee2b701a3bdeec9035d02d58",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v12-data.js",
+      "declaredSha256": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224",
+      "actualSha256": "bf9f65e85fde895fd819b2f8c5c581e4ec5339eeed2043fcc8cf21e757c12224",
+      "matches": true
+    },
+    {
+      "path": "team/app-v12-textbook-integration-frontend.md",
+      "declaredSha256": "36544f0c72c893da5047c1982fe7fa3085414079503529208477c87fbbce3604",
+      "actualSha256": "36544f0c72c893da5047c1982fe7fa3085414079503529208477c87fbbce3604",
+      "matches": true
+    },
+    {
+      "path": "team/app-v12-textbook-integration-frontend-check.mjs",
+      "declaredSha256": "50a97cbdbf14477c37284c087a3a414632805c013c092ad10e3257804ff3a38b",
+      "actualSha256": "50a97cbdbf14477c37284c087a3a414632805c013c092ad10e3257804ff3a38b",
+      "matches": true
+    },
+    {
+      "path": "team/app-v12-textbook-integration-frontend-check.json",
+      "declaredSha256": "439f44c268ae79112b29f4f92586f0b313fed6a121b67777e095fa2c76a39e59",
+      "actualSha256": "439f44c268ae79112b29f4f92586f0b313fed6a121b67777e095fa2c76a39e59",
+      "matches": true
+    }
+  ],
+  "excludedDeclarationFiles": []
+}

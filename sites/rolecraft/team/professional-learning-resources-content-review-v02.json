@@ -1,0 +1,125 @@
+{
+  "review_id": "professional-learning-resources-content-review-v02",
+  "reviewed_at": "2026-10-14",
+  "reviewer_role": "内容审校员",
+  "status": "reviewed_with_limitations",
+  "scope": [
+    "team/professional-learning-resources-v01.md",
+    "team/professional-learning-resources-v01.json"
+  ],
+  "prior_review": "team/professional-learning-resources-content-review-v01.md/.json",
+  "reopened_sources": {
+    "langgraph": "https://www.deeplearning.ai/courses/ai-agents-in-langgraph",
+    "eu_market_definition": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ%3AC_202401645",
+    "google_cloud_data_engineer": "https://cloud.google.com/learn/certification/data-engineer",
+    "ddia_author_site": "https://dataintensive.net/?lang=en",
+    "openstax": "https://openstax.org/books/writing-guide/pages/preface",
+    "openai_agents_sdk": "https://developers.openai.com/api/docs/guides/agents/sdk",
+    "openai_python_sdk": "https://openai.github.io/openai-agents-python/",
+    "agentic_ai": "https://www.deeplearning.ai/courses/agentic-ai",
+    "anthropic": "https://www.anthropic.com/engineering/building-effective-agents"
+  },
+  "not_reopened": "All other catalog resources; v0.1 source review remains the evidence for them until QA reopens them.",
+  "fixed": [
+    {
+      "item": "catalog_structure",
+      "finding": "59 rows; A=25, B=31, PM supplement=3; 59 unique resource_id; all 15 role_id present with expected counts."
+    },
+    {
+      "item": "role_binding",
+      "finding": "No remaining null role_id; resources can be handed to role owners."
+    },
+    {
+      "item": "batch_provenance",
+      "finding": "A, B and PM source batches are retained; duplicate AI resources remain traceable by batch."
+    }
+  ],
+  "remaining_source_or_content_issues": [
+    {
+      "item": "PLR-AI-006",
+      "severity": "high",
+      "status": "not_fixed",
+      "finding": "Still uses DeepLearning.AI alpha/short-courses URL; canonical is /courses/ai-agents-in-langgraph."
+    },
+    {
+      "item": "PLR-COMP-004",
+      "severity": "high",
+      "status": "not_fixed",
+      "finding": "Still uses 2020 EU consultation/evaluation page; use 2024 EUR-Lex Notice or mark historical."
+    },
+    {
+      "item": "PLR-BE-003",
+      "severity": "high",
+      "status": "not_fixed",
+      "finding": "Certification page is labeled Learning Path; split certification and learning-path records/fields."
+    },
+    {
+      "item": "PLR-BE-004",
+      "severity": "high",
+      "status": "not_fixed",
+      "finding": "First-edition author landing page is used while limitations claim 2026 second edition; add Chris Riccomini and edition-specific publisher/author URL."
+    },
+    {
+      "item": "PLR-ED-003",
+      "severity": "high",
+      "status": "partial",
+      "finding": "CC BY-NC-SA is present, but OpenStax LLM/GenAI ingestion restriction is absent from limitations."
+    },
+    {
+      "item": "PLR-AI-002/PLR-AI-007",
+      "severity": "medium",
+      "status": "partial",
+      "finding": "Anthropic article is dated vendor experience and warns tooling landscape changed; catalog needs that explicit time-bound caveat."
+    },
+    {
+      "item": "PLR-AI-001",
+      "severity": "medium",
+      "status": "partial",
+      "finding": "“Directly corresponds to this project” is an inference; rewrite as learning-input mapping."
+    },
+    {
+      "item": "PLR-PROD-001",
+      "severity": "low",
+      "status": "partial",
+      "finding": "Wharton six-week course is typed article_or_reference; use course and retain fee/cohort limits."
+    },
+    {
+      "item": "AI duplicates",
+      "severity": "medium",
+      "status": "partial",
+      "finding": "A/B copies of Agentic AI, Anthropic and OpenAI resources are retained; add duplicate-group note so eight records are not mistaken for eight distinct courses."
+    }
+  ],
+  "catalog_contract_gap": {
+    "status": "not_met",
+    "missing_fields": [
+      "source_version",
+      "language",
+      "cost_and_access",
+      "prerequisites",
+      "estimated_effort",
+      "authority_reason",
+      "maintenance_or_publication_date",
+      "known_limits",
+      "theory_check",
+      "required_artifact",
+      "transfer_case",
+      "reviewer",
+      "status"
+    ],
+    "notes": "Current JSON uses limitations, learning_output and source_relevance, but framework contract requires named fields or an explicit mapping."
+  },
+  "status_by_scope": {
+    "structure": "met_within_structure_scope",
+    "source_and_description": "reviewed_with_limitations",
+    "resource_card_contract": "not_met",
+    "learning_effect": "not_assessed",
+    "professional_competence": "not_assessed",
+    "expert_review": "not_assessed",
+    "production_or_industry_advantage": "not_assessed"
+  },
+  "hashes": {
+    "professional-learning-resources-v01.md": "3c1506ab5c77f0c547078d3acd522848e0553ebb2a23fadcf785c0c57bbc058d",
+    "professional-learning-resources-v01.json": "40b087a59dbf24dc6ec75fa390984a460bf1110128e5600bd60534444433d259"
+  }
+}

@@ -1,0 +1,23 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4475/#records".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 63-74
+~			56 checkbox 已学习, Value: 0
+~			57 checkbox 未掌握, Value: 1
+~				60 text Q11 · 固定题组
+~				61 link Description: ReAct 如何组织推理、行动与观察？它与一次性生成计划有什么不同？, Value: 127.0.0.1:4475/#questions/Q11
+~				62 link Description: 1 三种策略改变的是控制对象, Value: 127.0.0.1:4475/#learn/agent/n03-planning-reflection/s-da63f3dcff17?from=Q11
++				63 checkbox 未掌握 · 取消, Value: 1
++				64 checkbox 已掌握（自评）, Value: 0
++			65 container
++				66 heading 我的项目记录, Value: 2
++					67 text 我的项目记录
++				68 text 保存问题、证据、作品结果和改进；都是本人自述。
++				69 link Description: 记录与查看项目 →, Value: 127.0.0.1:4475/#projects
++			70 button (collapsed) 收藏、笔记与历史学习记录, Secondary Actions: Expand
++				71 text 收藏、笔记与历史学习记录
++	72 container lw-find-form
++		73 text 查教材
++		74 text entry area (settable) 查教材, ID: lw-query
++		75 button 查找
++		76 button (collapsed) Description: 展开检索结果, Secondary Actions: Expand
+The focused UI element is 1 AXWebArea 职造 · Agent 学习工作台, URL: 127.0.0.1:4475/#records

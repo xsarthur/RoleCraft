@@ -1,0 +1,153 @@
+{
+  "version": "qa-v14-candidate02-received-1",
+  "atUtc": "2026-10-12T01:17:19.155467+00:00",
+  "files": {
+    "sites/rolecraft/server/retrieval/dialog.mjs": "f3acbc01a0973591cb0049bce26dbaf16ea96cf3e444b261c380f8ce9794008c",
+    "sites/rolecraft/server/retrieval/index.mjs": "c87dfde6c1ae60ee7594bf5f033ab4fc2a90554a55deabe8520f1045bfc43530",
+    "sites/rolecraft/server/index.mjs": "f8c24960d16bedf253baf903ff9ab3973b055c53030a80427e000565f5cdfceb",
+    "sites/rolecraft/server/retrieval/dialog-dev-check.mjs": "df0f942c3d7ab2ef6627588c44dba31c9d80aef74b427928df3c400934966715",
+    "sites/rolecraft/server/retrieval/dialog-repair-check.mjs": "adfde38be0bb6c5390120267f62fd66fc8606bb05f3f4b51c6db81a042ea5d4b",
+    "sites/rolecraft/team/app-v14-dialog-api.md": "8d347ab25a74c297d84303cc9a7228fb58340b901ee8bf4ab7ab1df464f863c5",
+    "sites/rolecraft/team/app-v14-dialog-retrieval-dev-check.json": "b7091f15a14659cab88a1df2540f5bd4519d5ba167f15480078407eb8b9e3995",
+    "sites/rolecraft/team/app-v14-dialog-retrieval-repair-check.json": "7e49c2f0002a40aa571faccf6abf4ab5e48520e102dfd1ee8f38a8dac146f94a",
+    "sites/rolecraft/dist/index.html": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+    "sites/rolecraft/dist/app.js": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd",
+    "sites/rolecraft/dist/learning-workbench.js": "e6918f1afb322c79e6a966200dda42cfecbe48bf437711ac3e18b3ca5289aa1f",
+    "sites/rolecraft/dist/learning-experience-v13.js": "d9664458d1e60c54d8235e160c4c229b1629c8b694d0f16d7136557b3374cd23",
+    "sites/rolecraft/dist/learning-experience-v13.css": "fa64c8c55b7bf0bfe0d463641e7af27b9caf3ca418ba274af9b81114f3f6deee",
+    "sites/rolecraft/dist/learning-v13-data.js": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+    "sites/rolecraft/team/app-v14-dialog-frontend-detail-repair.md": "825d05bfd6ef5a5910596b38183ed0051e0e4cb80eb363855b63399237b48be0",
+    "sites/rolecraft/team/app-v14-dialog-frontend-repair-dev-check.mjs": "122762376fdcf10616316c7662a2a0ce0b13f7494d4dfea4df8017d3743ff590",
+    "sites/rolecraft/team/app-v14-dialog-frontend-repair-dev-check.json": "4f659f3bd4a190557957f2a63630944cfd78ee8f9360800f36e4765127f7e784",
+    "sites/rolecraft/team/app-v14-dialog-frontend-history/candidate01/manifest.json": "5a1f66e7c0cf7eba2552854659a63984a29c439e43b1f5c062719f734c71bdb7"
+  },
+  "declarations": [
+    {
+      "binding": "app-v14-dialog-retrieval-binding.json",
+      "path": "sites/rolecraft/server/retrieval/dialog.mjs",
+      "expected": "f3acbc01a0973591cb0049bce26dbaf16ea96cf3e444b261c380f8ce9794008c",
+      "actual": "f3acbc01a0973591cb0049bce26dbaf16ea96cf3e444b261c380f8ce9794008c",
+      "matches": true
+    },
+    {
+      "binding": "app-v14-dialog-retrieval-binding.json",
+      "path": "sites/rolecraft/server/retrieval/index.mjs",
+      "expected": "c87dfde6c1ae60ee7594bf5f033ab4fc2a90554a55deabe8520f1045bfc43530",
+      "actual": "c87dfde6c1ae60ee7594bf5f033ab4fc2a90554a55deabe8520f1045bfc43530",
+      "matches": true
+    },
+    {
+      "binding": "app-v14-dialog-retrieval-binding.json",
+      "path": "sites/rolecraft/server/index.mjs",
+      "expected": "f8c24960d16bedf253baf903ff9ab3973b055c53030a80427e000565f5cdfceb",
+      "actual": "f8c24960d16bedf253baf903ff9ab3973b055c53030a80427e000565f5cdfceb",
+      "matches": true
+    },
+    {
+      "binding": "app-v14-dialog-retrieval-binding.json",
+      "path": "sites/rolecraft/server/retrieval/dialog-dev-check.mjs",
+      "expected": "df0f942c3d7ab2ef6627588c44dba31c9d80aef74b427928df3c400934966715",
+      "actual": "df0f942c3d7ab2ef6627588c44dba31c9d80aef74b427928df3c400934966715",
+      "matches": true
+    },
+    {
+      "binding": "app-v14-dialog-retrieval-binding.json",
+      "path": "sites/rolecraft/server/retrieval/dialog-repair-check.mjs",
+      "expected": "adfde38be0bb6c5390120267f62fd66fc8606bb05f3f4b51c6db81a042ea5d4b",
+      "actual": "adfde38be0bb6c5390120267f62fd66fc8606bb05f3f4b51c6db81a042ea5d4b",
+      "matches": true
+    },
+    {
+      "binding": "app-v14-dialog-retrieval-binding.json",
+      "path": "sites/rolecraft/team/app-v14-dialog-api.md",
+      "expected": "8d347ab25a74c297d84303cc9a7228fb58340b901ee8bf4ab7ab1df464f863c5",
+      "actual": "8d347ab25a74c297d84303cc9a7228fb58340b901ee8bf4ab7ab1df464f863c5",
+      "matches": true
+    },
+    {
+      "binding": "app-v14-dialog-retrieval-binding.json",
+      "path": "sites/rolecraft/team/app-v14-dialog-retrieval-dev-check.json",
+      "expected": "b7091f15a14659cab88a1df2540f5bd4519d5ba167f15480078407eb8b9e3995",
+      "actual": "b7091f15a14659cab88a1df2540f5bd4519d5ba167f15480078407eb8b9e3995",
+      "matches": true
+    },
+    {
+      "binding": "app-v14-dialog-retrieval-binding.json",
+      "path": "sites/rolecraft/team/app-v14-dialog-retrieval-repair-check.json",
+      "expected": "7e49c2f0002a40aa571faccf6abf4ab5e48520e102dfd1ee8f38a8dac146f94a",
+      "actual": "7e49c2f0002a40aa571faccf6abf4ab5e48520e102dfd1ee8f38a8dac146f94a",
+      "matches": true
+    },
+    {
+      "binding": "app-v14-dialog-frontend-binding2.json",
+      "path": "sites/rolecraft/dist/index.html",
+      "expected": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+      "actual": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+      "matches": true
+    },
+    {
+      "binding": "app-v14-dialog-frontend-binding2.json",
+      "path": "sites/rolecraft/dist/app.js",
+      "expected": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd",
+      "actual": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd",
+      "matches": true
+    },
+    {
+      "binding": "app-v14-dialog-frontend-binding2.json",
+      "path": "sites/rolecraft/dist/learning-workbench.js",
+      "expected": "e6918f1afb322c79e6a966200dda42cfecbe48bf437711ac3e18b3ca5289aa1f",
+      "actual": "e6918f1afb322c79e6a966200dda42cfecbe48bf437711ac3e18b3ca5289aa1f",
+      "matches": true
+    },
+    {
+      "binding": "app-v14-dialog-frontend-binding2.json",
+      "path": "sites/rolecraft/dist/learning-experience-v13.js",
+      "expected": "d9664458d1e60c54d8235e160c4c229b1629c8b694d0f16d7136557b3374cd23",
+      "actual": "d9664458d1e60c54d8235e160c4c229b1629c8b694d0f16d7136557b3374cd23",
+      "matches": true
+    },
+    {
+      "binding": "app-v14-dialog-frontend-binding2.json",
+      "path": "sites/rolecraft/dist/learning-experience-v13.css",
+      "expected": "fa64c8c55b7bf0bfe0d463641e7af27b9caf3ca418ba274af9b81114f3f6deee",
+      "actual": "fa64c8c55b7bf0bfe0d463641e7af27b9caf3ca418ba274af9b81114f3f6deee",
+      "matches": true
+    },
+    {
+      "binding": "app-v14-dialog-frontend-binding2.json",
+      "path": "sites/rolecraft/dist/learning-v13-data.js",
+      "expected": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "actual": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "matches": true
+    },
+    {
+      "binding": "app-v14-dialog-frontend-binding2.json",
+      "path": "sites/rolecraft/team/app-v14-dialog-frontend-detail-repair.md",
+      "expected": "825d05bfd6ef5a5910596b38183ed0051e0e4cb80eb363855b63399237b48be0",
+      "actual": "825d05bfd6ef5a5910596b38183ed0051e0e4cb80eb363855b63399237b48be0",
+      "matches": true
+    },
+    {
+      "binding": "app-v14-dialog-frontend-binding2.json",
+      "path": "sites/rolecraft/team/app-v14-dialog-frontend-repair-dev-check.mjs",
+      "expected": "122762376fdcf10616316c7662a2a0ce0b13f7494d4dfea4df8017d3743ff590",
+      "actual": "122762376fdcf10616316c7662a2a0ce0b13f7494d4dfea4df8017d3743ff590",
+      "matches": true
+    },
+    {
+      "binding": "app-v14-dialog-frontend-binding2.json",
+      "path": "sites/rolecraft/team/app-v14-dialog-frontend-repair-dev-check.json",
+      "expected": "4f659f3bd4a190557957f2a63630944cfd78ee8f9360800f36e4765127f7e784",
+      "actual": "4f659f3bd4a190557957f2a63630944cfd78ee8f9360800f36e4765127f7e784",
+      "matches": true
+    },
+    {
+      "binding": "app-v14-dialog-frontend-binding2.json",
+      "path": "sites/rolecraft/team/app-v14-dialog-frontend-history/candidate01/manifest.json",
+      "expected": "5a1f66e7c0cf7eba2552854659a63984a29c439e43b1f5c062719f734c71bdb7",
+      "actual": "5a1f66e7c0cf7eba2552854659a63984a29c439e43b1f5c062719f734c71bdb7",
+      "matches": true
+    }
+  ],
+  "allMatch": true
+}

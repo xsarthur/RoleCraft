@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "design-v1.0-v13-preview-review-1",
+  "role": "designer",
+  "date": "2026-10-16",
+  "target": {
+    "version": "textbook-v13",
+    "mode": "isolated_preview_only",
+    "sourceRoot": "sites/rolecraft/textbooks/v13/"
+  },
+  "method": {
+    "readOnly": true,
+    "codeChanged": false,
+    "browserRender": false,
+    "checks": ["manifest paths and hashes", "SVG XML parse", "Markdown image references and alt", "details summaries"]
+  },
+  "runtimeSeparation": {
+    "remoteRelease": "rolecraft-1.0",
+    "remoteContentVersion": "textbook-v12",
+    "remoteTextbookVersionId": "agent-engineering-v12",
+    "remoteRetrievalVersion": "content-retrieval-0.12-v12",
+    "v13Integrated": false
+  },
+  "inventory": {
+    "chapters": 30,
+    "assets": 62,
+    "manifestHashesMatch": true,
+    "missingAssetReferences": 0,
+    "referencedSvgCount": 42,
+    "referencedSvgWithoutEmbeddedTitleOrDesc": 13,
+    "svgParseErrors": ["assets/f01-api-boundary-map-v01.svg"],
+    "markdownImageAltEmpty": 0,
+    "detailsSummaryCount": 64,
+    "detailsSummaryMissingVerification": [
+      "agent-engineering-textbook.md: 展开派工契约示例（13 行）",
+      "n07-multiagent-a2a.md: 展开派工契约示例（13 行）"
+    ]
+  },
+  "overall": {
+    "status": "insufficient",
+    "reason": "Manifest and references are structurally bound, but one referenced SVG is malformed, 13 referenced SVGs lack embedded title/desc, two fold summaries omit verification status, and browser/viewport/accessibility rendering evidence is absent."
+  },
+  "checks": [
+    {"id": "V13-ASM-01", "status": "pass", "scope": "file_manifest", "evidence": "30 chapters and 62 assets; all manifest file hashes and byte counts match."},
+    {"id": "V13-REF-01", "status": "pass", "scope": "file_manifest", "evidence": "All Markdown image references resolve to existing assets."},
+    {"id": "V13-ALT-01", "status": "pass", "scope": "markdown_source", "evidence": "All Markdown image alt strings are non-empty."},
+    {"id": "V13-SVG-VALID-01", "status": "fail", "scope": "asset_xml", "evidence": "f01-api-boundary-map-v01.svg fails XML parsing because the outer g element is not closed."},
+    {"id": "V13-A11Y-01", "status": "fail", "scope": "asset_contract", "evidence": "13 referenced SVGs lack embedded title or desc; Markdown alt is present but does not satisfy the embedded metadata contract."},
+    {"id": "V13-LEGEND-01", "status": "insufficient", "scope": "static_only", "evidence": "Color and textual labels exist, but grayscale/color-blind/low-light rendering was not tested."},
+    {"id": "V13-ARROW-01", "status": "insufficient", "scope": "static_only", "evidence": "Arrow paths are present; no rendered overlap review was performed."},
+    {"id": "V13-RESP-01", "status": "insufficient", "scope": "not_rendered", "evidence": "No narrow-screen variants or browser preview evidence."},
+    {"id": "V13-FONT-01", "status": "insufficient", "scope": "not_rendered", "evidence": "Real font fallback, long labels, clipping and scaling were not observed."},
+    {"id": "V13-FOLD-01", "status": "fail", "scope": "summary_contract", "evidence": "Two dispatch-contract summaries omit verification state."},
+    {"id": "V13-FOLD-02", "status": "insufficient", "scope": "not_rendered", "evidence": "No keyboard, screen-reader, refresh or deep-link interaction evidence."},
+    {"id": "V13-FALLBACK-01", "status": "insufficient", "scope": "not_rendered", "evidence": "Alt/adjacent fallback text exists in source, but image failure and script-off behavior were not tested."},
+    {"id": "V13-ISOLATION-01", "status": "pass", "scope": "handoff_runtime", "evidence": "Remote runtime remains textbook-v12; v13 manifest is isolated_preview_only and no application/database write occurred."}
+  ],
+  "gaps": [
+    {"id": "GAP-V13-MALFORMED-SVG", "priority": "P0", "owner": "designer/textbook-developer", "action": "Close the SVG group, regenerate hash, and rerun XML/browser load checks."},
+    {"id": "GAP-V13-SVG-METADATA", "priority": "P1", "owner": "designer/content-reviewer", "action": "Add title/desc to 13 referenced SVGs and rebind manifest."},
+    {"id": "GAP-V13-FOLD-SUMMARY", "priority": "P1", "owner": "textbook-developer/content-reviewer", "action": "Add verification status and key input/output context to two dispatch-contract summaries."},
+    {"id": "GAP-V13-RENDER-QA", "priority": "P1", "owner": "software-engineer/qa-engineer/designer", "action": "Run isolated browser preview at desktop, 760, 390 and 320 widths with grayscale, 200%, keyboard, screen-reader, missing-image and script-off checks."}
+  ],
+  "limitations": [
+    "No source, application or remote runtime changes were made.",
+    "No browser rendering or human reading evidence was available in this review.",
+    "The review does not establish certification, employment, professional competence or real learning outcomes."
+  ]
+}

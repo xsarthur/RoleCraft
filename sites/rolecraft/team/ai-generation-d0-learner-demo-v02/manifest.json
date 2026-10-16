@@ -1,0 +1,101 @@
+{
+  "artifact_count": 15,
+  "diagnostic_id": "D0-AI-20261015-001",
+  "external_action": null,
+  "files": [
+    {
+      "bytes": 445,
+      "diagnostic_id": "D0-AI-20261015-001",
+      "path": "D0-03-A-normal.json",
+      "sha256": "7e54db32b4fb2284fe5aebb1259897f9eeb2b36e0f939dc3a33d5b7ac8d63c13"
+    },
+    {
+      "bytes": 234,
+      "diagnostic_id": "D0-AI-20261015-001",
+      "path": "D0-03-B-denial.json",
+      "sha256": "4c4572f5a6fbf418b11da9562302e34a329582dfae56c8ef97e09e79bba2a8db"
+    },
+    {
+      "bytes": 412,
+      "diagnostic_id": "D0-AI-20261015-001",
+      "path": "DURABLE-002-v04-final.json",
+      "sha256": "c104af453fb8d893634fe04618b46eeb5a8d13b8f481471bf72997235f71ab07"
+    },
+    {
+      "bytes": 178,
+      "diagnostic_id": "D0-AI-20261015-001",
+      "path": "DURABLE-002-v04-first-failure.json",
+      "sha256": "535edb9f51982b17b59470e0990d92f441bbacde875875394854d58186a542d4"
+    },
+    {
+      "bytes": 538,
+      "diagnostic_id": "D0-AI-20261015-001",
+      "path": "DURABLE-002-v04-recovery.json",
+      "sha256": "1be969f6eb8a66a141703bb821bde2dbdff450d306a666a786451f446aaeb56e"
+    },
+    {
+      "bytes": 365,
+      "diagnostic_id": "D0-AI-20261015-001",
+      "path": "DURABLE-002-v04-tool.json",
+      "sha256": "bd5f4d8ac6fea76c70ce1bdcc52d4586a02bbf68035b01c21553e026eae70c15"
+    },
+    {
+      "bytes": 215,
+      "diagnostic_id": "D0-AI-20261015-001",
+      "path": "EvidenceCard.json",
+      "sha256": "ae791e3644e44937d248e69dd2d24154c1df0a7e158d7e37750824d3fba250b1"
+    },
+    {
+      "bytes": 161,
+      "diagnostic_id": "D0-AI-20261015-001",
+      "path": "GATE-003-v06-baseline.json",
+      "sha256": "c290eec30aab675c23ed839570e8238bc166c11f2c21447484bc9f3a635a80f3"
+    },
+    {
+      "bytes": 223,
+      "diagnostic_id": "D0-AI-20261015-001",
+      "path": "GATE-003-v06-first-failure.json",
+      "sha256": "e8049f165840433ed5ad18dc304a552c18c0bcb1c9d19cde40b8016a092c685d"
+    },
+    {
+      "bytes": 199,
+      "diagnostic_id": "D0-AI-20261015-001",
+      "path": "GATE-003-v06-holdout.json",
+      "sha256": "5661506023a5b327ba10189c5da1fc7e419b06987396f30a0cd097a5ed6b5e0f"
+    },
+    {
+      "bytes": 472,
+      "diagnostic_id": "D0-AI-20261015-001",
+      "path": "GATE-003-v06-regression.json",
+      "sha256": "e90e349065f6bc62e639d3a9ecec00f3f19178be148245870f02553e44cdfb44"
+    },
+    {
+      "bytes": 414,
+      "diagnostic_id": "D0-AI-20261015-001",
+      "path": "SOURCE-001.json",
+      "sha256": "9700daf23c5ec2ae21ebb7c974cf239db0f66eb46a749aa7e4cf3bfa4364a542"
+    },
+    {
+      "bytes": 249,
+      "diagnostic_id": "D0-AI-20261015-001",
+      "path": "learner_raw.json",
+      "sha256": "b90f51cc23081745265a173ef89c178ad80104fa765cb707ba32298416718cdc"
+    },
+    {
+      "bytes": 274,
+      "diagnostic_id": "D0-AI-20261015-001",
+      "path": "repair_record.json",
+      "sha256": "4e13889975bbc0b504a6e304a0121f985b97830d91711371db35101c0df7f28b"
+    },
+    {
+      "bytes": null,
+      "diagnostic_id": "D0-AI-20261015-001",
+      "path": "manifest.json",
+      "self_hash": "intentionally_unset_due_to_self_reference",
+      "sha256": null
+    }
+  ],
+  "manifest_id": "ai-generation-d0-learner-demo-v02",
+  "qa_status": "pending",
+  "self_signed": false
+}

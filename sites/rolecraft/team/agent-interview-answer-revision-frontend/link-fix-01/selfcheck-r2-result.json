@@ -1,0 +1,125 @@
+{
+  "kind": "developer_selfcheck_not_independent_qa",
+  "runtime": "v26.3.0",
+  "checks": [
+    {
+      "name": "approved current fixture includes complete body and version identity",
+      "status": "passed"
+    },
+    {
+      "name": "pending answer body is withheld and status stays honest",
+      "status": "passed"
+    },
+    {
+      "name": "identity mismatch does not expose another question answer",
+      "status": "passed"
+    },
+    {
+      "name": "markdown raw HTML, inline code and fenced code cannot execute",
+      "status": "passed"
+    },
+    {
+      "name": "only bound HTTP(S) and known textbook targets are linked",
+      "status": "passed"
+    },
+    {
+      "name": "same file references bind their own labels and reject ambiguous targets",
+      "status": "passed"
+    },
+    {
+      "name": "tables, code pipes, nested lists and final text remain present",
+      "status": "passed"
+    },
+    {
+      "name": "prototype questions, original answers, followups and timing unchanged",
+      "status": "passed"
+    },
+    {
+      "name": "main experience change is limited to the existing internal answer function",
+      "status": "passed"
+    },
+    {
+      "name": "main index keeps received content and appends only necessary local assets",
+      "status": "passed"
+    },
+    {
+      "name": "prototype inline application JavaScript remains syntactically valid",
+      "status": "passed"
+    },
+    {
+      "name": "all current answer bodies parse with code fence counts and bound links preserved",
+      "status": "passed"
+    },
+    {
+      "name": "all prototype mappings match the original question identity",
+      "status": "passed"
+    }
+  ],
+  "dataSummary": {
+    "answerSetSha256": "2cd40dcca5342944ab7c0c7836e759054dc3b5d4aaf992508f78d9172473b61a",
+    "contentStatus": "met_within_reviewed_scope",
+    "counts": [
+      {
+        "id": "fixed100",
+        "count": 100,
+        "counts": {
+          "met_within_reviewed_scope": 100,
+          "not_met": 0,
+          "insufficient": 0,
+          "pending": 0
+        }
+      },
+      {
+        "id": "market14",
+        "count": 14,
+        "counts": {
+          "met_within_reviewed_scope": 14,
+          "not_met": 0,
+          "insufficient": 0,
+          "pending": 0
+        }
+      },
+      {
+        "id": "prototype10",
+        "count": 10,
+        "counts": {
+          "met_within_reviewed_scope": 10,
+          "not_met": 0,
+          "insufficient": 0,
+          "pending": 0
+        }
+      }
+    ],
+    "tables": 22,
+    "fences": 13,
+    "localLinks": 372,
+    "externalLinks": 28
+  },
+  "bindings": [
+    {
+      "path": "dist/index.html",
+      "sha256": "407983825552db7ea4da8b643e30ca9ef8b300622871e89be5610be0e9ed0eca"
+    },
+    {
+      "path": "dist/learning-experience-v13.js",
+      "sha256": "3cc08b26fbf11be0e6515f2e966eeaa728cff890ce1cd013a9b93e86c9f139b9"
+    },
+    {
+      "path": "dist/interview-prep-v1-prototype.html",
+      "sha256": "1051cb0b1a97b3b7803f50ad0ec162c92cb19efae246d38a2c228cd433f54469"
+    },
+    {
+      "path": "dist/interview-answer-renderer.js",
+      "sha256": "27c67c8ffa3e16249f96fea34880c405ee786424d0eec4a82f2f78f71c3e069a"
+    },
+    {
+      "path": "dist/interview-answer-reader.css",
+      "sha256": "94a65d0e234357678da6d5d8dcce2ef9fee39f9004b3611764935e248e255bff"
+    }
+  ],
+  "limitations": [
+    "No browser UI execution in this developer self-check.",
+    "No independent content review or acceptance performed by frontend author.",
+    "No user storage, database, server or external API is accessed."
+  ]
+}

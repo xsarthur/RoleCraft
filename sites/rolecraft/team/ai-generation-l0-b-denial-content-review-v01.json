@@ -1,0 +1,52 @@
+{
+  "review_id": "AI-L0-B-DENIAL-CONTENT-REVIEW-20261015-001",
+  "reviewer_role": "内容审校员",
+  "practice_id": "AI-PRACTICE-SOURCE-001-B-DENIAL-TRANSFER",
+  "version": "v0.1",
+  "decision": "reviewed_with_limitations",
+  "scope": "静态内容、来源范围、租户拒绝、非同构留出与限制措辞审校；未执行独立运行",
+  "basis": [
+    "sites/rolecraft/team/ai-generation-l0-b-denial-transfer-v01.md",
+    "sites/rolecraft/team/ai-generation-l0-b-denial-transfer-v01.json",
+    "sites/rolecraft/team/ai-generation-l0-b-denial-transfer-v01/README.md",
+    "sites/rolecraft/team/ai-generation-l0-b-denial-transfer-v01/manifest.json",
+    "sites/rolecraft/team/ai-generation-l0-b-denial-transfer-v01/evidence-card.json",
+    "sites/rolecraft/team/ai-generation-l0-b-denial-transfer-v01/implementation/run.py",
+    "sites/rolecraft/team/ai-generation-l0-b-denial-transfer-v01/receipts/denials.json",
+    "sites/rolecraft/team/ai-generation-l0-b-denial-transfer-v01/holdout/changed-keys.json",
+    "sites/rolecraft/team/ai-generation-l0-b-denial-transfer-v01/first-failure/1-B_private_document.json",
+    "sites/rolecraft/team/ai-generation-l0-b-denial-transfer-v01/first-failure/2-wrong_requested_tenant.json"
+  ],
+  "checks": {
+    "tenant_and_source_scope": "pass_within_local_fixture",
+    "wrong_tenant_denial_before_generation": "pass_within_local_fixture",
+    "non_isomorphic_holdout": "pass_within_local_fixture",
+    "source_bound_baseline": "pass_within_local_fixture",
+    "manifest_paths_and_hashes": "pass_static",
+    "limitation_and_level_boundary": "pass",
+    "independent_runtime_replay": "not_run"
+  },
+  "evidence": {
+    "normal_document": "doc-A-refund-v2",
+    "denial_code": "SOURCE_SCOPE_DENIED",
+    "denial_cases": ["B_private_document", "wrong_requested_tenant"],
+    "holdout_document": "doc-B-private-v9",
+    "holdout_changed_keys": ["document_id", "source_version", "text"],
+    "draft_on_denial": null,
+    "handoff_on_denial": null,
+    "external_action": null,
+    "manifest_file_hashes_match": true,
+    "replay_byte_equal": true,
+    "qa_handoff": "pending",
+    "self_signed": false,
+    "l1_decision": "not_granted",
+    "l2_decision": "not_granted"
+  },
+  "limitations": [
+    "Python 进程内确定性字典夹具不等于真实身份、数据库行级安全、服务间授权或供应商来源 API",
+    "未验证 B 的合法读取路径、并发/恢复、日志/缓存泄漏、真实模型或生产运行时拒绝",
+    "未执行独立 QA 重放，未获得真人审批/接收方签收"
+  ],
+  "does_not_grant": ["L1", "L2", "岗位等级", "生产权限安全", "生产发布授权"],
+  "historical_reports_preserved": true
+}

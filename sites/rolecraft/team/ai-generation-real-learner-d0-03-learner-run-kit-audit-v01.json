@@ -1,0 +1,17 @@
+{
+  "report_id":"AI-REAL-LEARNER-D0-03-RUN-KIT-AUDIT-v01",
+  "date":"2026-10-16",
+  "role":"测试工程师",
+  "contract_id":"AI-REAL-LEARNER-D0-EXEC-20261016-001",
+  "diagnostic_id":"D0-AI-20261015-001",
+  "decision":"learner_owned_receipt_required",
+  "learner_execution":false,
+  "level_granted":{"D0":false,"L1":false,"L2":false},
+  "entry_sufficient":true,
+  "required_files":["learner-receipt.json","run-1/","run-2/","manifest.sha256","bytes.txt","learner-statement.txt","handoff-to-qa.json"],
+  "required_identity_fields":["learner_id","learner_statement","execution_started_at","execution_finished_at","workspace_path","contract_id","diagnostic_id","fixture_id","fixture_sha256","command","environment","external_action"],
+  "qa_replay_required":true,
+  "recipient_receipt_required":true,
+  "proxy_execution_forbidden":true,
+  "next_gate":"reassess L0-to-L1 after learner receipt, independent QA, holdout, and recipient receipt"
+}

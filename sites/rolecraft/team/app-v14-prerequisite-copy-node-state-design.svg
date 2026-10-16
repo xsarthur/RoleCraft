@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="310" viewBox="0 0 840 310" role="img" aria-labelledby="title desc">
+  <title id="title">候选3节点浏览状态设计示意</title>
+  <desc id="desc">非运行截图，非真实学习记录。两个互斥状态展示同一认识Agent工程节点：未浏览用中性闭合书形图标和中性边框；浏览用打开书页图标和轻棕边框。两者保留01序号、章节标题、知识点6折叠入口，无本章打开过等独立说明段，不使用打勾或能力完成图形。</desc>
+  <style>text{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;fill:#3d3929}.small{font-size:13px;fill:#6b6356}.cardtitle{font-size:16px;font-weight:600}.book{fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}</style>
+  <rect width="840" height="310" fill="#f9f7f3"/>
+  <text x="36" y="44" font-size="22" font-weight="600">节点浏览状态</text>
+  <text x="804" y="42" text-anchor="end" class="small">candidate3 · 独立设计示意</text>
+  <text x="36" y="86" class="small">未浏览示意</text>
+  <text x="436" y="86" class="small">浏览示意</text>
+  <rect x="36" y="102" width="360" height="112" rx="12" fill="#fdfbf7" stroke="#dcd7cc"/>
+  <path d="M48 103 H384" stroke="#c7bfae" stroke-width="3" stroke-linecap="round"/>
+  <text x="52" y="140" font-size="12" fill="#87672d">01</text>
+  <text x="84" y="141" class="cardtitle">认识Agent工程</text>
+  <g transform="translate(354 122)" stroke="#6b6356" class="book"><path d="M3 2 H17 Q19 2 19 4 V19 H4 Q1 19 1 16 V5 Q1 2 3 2 Z"/><path d="M5 2 V16 M4 16 H19"/></g>
+  <path d="M53 180 L59 184 L53 188 Z" fill="#6b6356"/>
+  <text x="71" y="189" font-size="13">知识点 6</text>
+  <rect x="436" y="102" width="360" height="112" rx="12" fill="#f5f0e4" stroke="#c4a35a"/>
+  <path d="M448 103 H784" stroke="#87672d" stroke-width="3" stroke-linecap="round"/>
+  <text x="452" y="140" font-size="12" fill="#87672d">01</text>
+  <text x="484" y="141" class="cardtitle">认识Agent工程</text>
+  <g transform="translate(752 122)" stroke="#755624" class="book"><path d="M11 4 Q6 0 1 2 V18 Q6 16 11 20 Q16 16 21 18 V2 Q16 0 11 4 Z"/><path d="M11 4 V20 M4 7 L8 9 M4 11 L8 13 M14 9 L18 7 M14 13 L18 11"/></g>
+  <path d="M453 180 L459 184 L453 188 Z" fill="#6b6356"/>
+  <text x="471" y="189" font-size="13">知识点 6</text>
+  <text x="36" y="255" class="small">卡片内仅章节入口、书页形状与知识点入口；浏览事实不画成掌握或认证。</text>
+  <text x="36" y="282" class="small">非运行截图 / 非用户记录 · 真实标题及知识点数量来自收到内容包。</text>
+</svg>

@@ -1,0 +1,148 @@
+{
+  "version": "app-v0.12-continuation-qa",
+  "generatedAt": "2026-10-15T15:01:25.270Z",
+  "scope": "职业选择与学习内容输入双路径独立只读 QA",
+  "baseline": {
+    "projectHandoff": "project-handoff-2026-10-15",
+    "product": "agent-system-v0.12",
+    "client": "local-workbench-0.11"
+  },
+  "sourceBinding": {
+    "dist/index.html": "407983825552db7ea4da8b643e30ca9ef8b300622871e89be5610be0e9ed0eca",
+    "dist/auth-career-v15.js": "119ee8cacf91587065e52d23e476c0ceab05a3d30017a93212c859ebbfa03cf6",
+    "dist/learning-workbench.js": "24d1963aa5737b825d4b718767960c359b7ef67050b2aba472dc0dee1a01e0d2",
+    "server/index.mjs": "cbd88d07a1f1c6a25706b7daed1d1878de4da8c81517315d25463b41e90f5154",
+    "server/retrieval/index.mjs": "c87dfde6c1ae60ee7594bf5f033ab4fc2a90554a55deabe8520f1045bfc43530",
+    "server/retrieval/dialog.mjs": "db17b415b6d53c82ce933c064dc21c6d0ea00d2567e63b8fb0c20653f6dee4f1",
+    "server/retrieval/content-v12-index.json": "ac87bfa9c88f6e1709fc59c05fc3af1fcf98b7274aeb1be48a07e490578bdd6b",
+    "textbooks/v12/c01-selection.md": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+    "team/agent-system-v0.12-prd.md": "985655a4fee90c795f4c5c83b52145a8b5733ec1ee09335c5b3158a7ea9bfd04",
+    "team/agent-system-v0.12-ux.md": "ba87321b74ea03e855026264fe6a556f28a8ae8ee76f67abc41727a878ce1777",
+    "team/agent-system-v0.12-backend.md": "dcdabd91b37d6f2ef81cd17219114da540625ae59817a9ddf0daa13581892bd4",
+    "team/agent-system-v0.12-frontend-repair.md": "a646538654e4cd84718baf753b359de24941f6f05a52e1431fe3133a80fad053",
+    "team/project-handoff-2026-10-15.md": "c4cc9b96a0a3912c5dd932d3d76fbd32cc78be5c953d876c6ff094d722957a89"
+  },
+  "runtime": {
+    "node": "v26.3.0",
+    "http": "in_process_http_handler_with_temp_sqlite",
+    "tcp": "EPERM_bind_denied",
+    "browser": "not_run",
+    "externalProviderCalled": false,
+    "formalDatabase": "not_touched"
+  },
+  "counts": {
+    "total": 17,
+    "pass": 10,
+    "fail": 4,
+    "insufficient": 3
+  },
+  "checks": [
+    {
+      "id": "syntax",
+      "status": "pass",
+      "evidence": "Node --check 通过：auth-career-v15.js、learning-workbench.js、server/index.mjs、retrieval/index.mjs、dialog.mjs。"
+    },
+    {
+      "id": "vm-load",
+      "status": "pass",
+      "evidence": "Node vm 隔离上下文分别加载两份客户端脚本并暴露 RolecraftAuthCareer/LearningWorkbench，未抛异常。"
+    },
+    {
+      "id": "static-boundaries",
+      "status": "pass",
+      "evidence": "职业确认后才进入 confirm/旧 PUT 回退；搜索序号、选中请求号、版本快照和学习请求迟到保护均存在。"
+    },
+    {
+      "id": "static-learning-contract",
+      "status": "pass",
+      "evidence": "学习默认不发送章节上下文；显式开启后才发送位置；来源 hash、原文摘录、语料版本和定位链接均校验。"
+    },
+    {
+      "id": "retrieval-catalog-integrity",
+      "status": "fail",
+      "evidence": "getContentCatalog(textbook-v12) 抛 Current source differs; rebuild content；索引 c01-selection.md SHA256=123f00a8…，当前源 SHA256=4ee70a19…。"
+    },
+    {
+      "id": "retrieval-dialogs",
+      "status": "fail",
+      "evidence": "React 澄清、题外 no_match、教材来源查询均因源失配返回 unavailable，未形成合同结果。"
+    },
+    {
+      "id": "retrieval-recommend",
+      "status": "fail",
+      "evidence": "recommendContent 返回 unavailable 且空结果；空数组 every 不计为通过。"
+    },
+    {
+      "id": "http-career-recommend",
+      "status": "pass",
+      "evidence": "临时 SQLite 进程内 POST /api/agent/career/recommend(Agent) 返回 recommended/published 候选和教材版本快照；推荐前无 user_preferences 写入。"
+    },
+    {
+      "id": "http-career-clarification-no-match",
+      "status": "pass",
+      "evidence": "React 返回两个澄清选项；无匹配表达返回 no_match 空候选。"
+    },
+    {
+      "id": "http-career-confirm",
+      "status": "pass",
+      "evidence": "临时账户确认携带 user_explicit、expected 快照和幂等键后返回 confirmed；数据库确认后才有 user_preferences，重复幂等键可重放，篡改 hash 返回 409 career_version_mismatch。"
+    },
+    {
+      "id": "http-learning",
+      "status": "fail",
+      "evidence": "普通学习查询返回 unavailable；显式当前章节上下文返回 500；旧 dialog 路由同样 unavailable，均由语料失配阻断。"
+    },
+    {
+      "id": "http-learning-boundaries",
+      "status": "pass",
+      "evidence": "关闭上下文却携带 currentUnitId 返回 400 input_invalid；错误 contentVersion 返回 409 content_version_mismatch，并回显 requestId。"
+    },
+    {
+      "id": "http-legacy-career",
+      "status": "pass",
+      "evidence": "GET /api/careers?q=Agent 返回 recommended，旧职业目录回退仍可用。"
+    },
+    {
+      "id": "http-dynamic-career",
+      "status": "pass",
+      "evidence": "隔离导入的 published 动态职业可被推荐；无专属检索适配器时学习返回 unavailable、空结果、providerCalled=false。"
+    },
+    {
+      "id": "runtime-tcp",
+      "status": "insufficient",
+      "evidence": "本地临时监听被沙箱拒绝：EPERM listen EPERM；未形成真实 socket HTTP 证据。"
+    },
+    {
+      "id": "runtime-browser",
+      "status": "insufficient",
+      "evidence": "未取得真实浏览器焦点、滚动、中文输入法、窄屏、职业确认或迟到网络响应证据。"
+    },
+    {
+      "id": "runtime-node24",
+      "status": "insufficient",
+      "evidence": "执行器为 Node v26.3.0，项目合同目标 Node24；本轮未将 Node24 本地语义模型路径标为通过。"
+    }
+  ],
+  "overall": "not_met",
+  "defects": [
+    {
+      "id": "CONT-RETR-001",
+      "owner": "内容检索工程师/内容数据构建责任人",
+      "problem": "textbook-v12 索引与 c01-selection.md 当前源 hash 失配，loadCorpus 拒绝加载。",
+      "retest": "修复并绑定索引后，QA 在 Node24 重跑 catalog、React 澄清、题外 no_match、来源摘录、上下文 opt-in 和旧 dialog。"
+    },
+    {
+      "id": "CONT-QA-002",
+      "owner": "测试工程师/工程环境责任人",
+      "problem": "真实 TCP 与浏览器证据缺失。",
+      "retest": "在可访问服务和浏览器环境重做真实 HTTP/UI、IME、窄屏、迟到响应与职业确认。"
+    }
+  ],
+  "limitations": [
+    "进程内 handler 不是真实 TCP HTTP。",
+    "VM 加载不代表浏览器交互通过。",
+    "语料 hash 失配阻断学习问答成功路径。",
+    "Node26 不满足 Node24 合同。",
+    "未修改应用代码、交接、正式数据库或历史 QA。"
+  ]
+}

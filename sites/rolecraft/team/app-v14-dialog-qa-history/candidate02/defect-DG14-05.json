@@ -1,0 +1,51 @@
+{
+  "id": "DG14-05",
+  "atUtc": "2026-10-12T01:27:31.765776+00:00",
+  "owner": "内容检索工程师",
+  "candidate": "service2 / frontend2 JS + final3 CSS",
+  "query": "React怎么用",
+  "surface": "official IAB2 ownedtab1/4496 with no fault for this input",
+  "actual": "message询问Agent ReAct还是前端React；实际两个澄清按钮却是Agent推理行动策略与Agent任务规划，缺前端React选项，第二按钮与此歧义不对应",
+  "expected": "React歧义给Agent ReAct和明确前端React两个可理解方向，点击提交相应完整表达；单独规划歧义才用规划选项；不改原过滤/未覆盖门槛",
+  "response": {
+    "status": "needs_clarification",
+    "retrievalVersion": "content-retrieval-0.12-v12",
+    "dialogVersion": "content-dialog-0.14-extractive",
+    "engineMode": "local_dialog_rules",
+    "providerCalled": false,
+    "corpusVersion": "textbook-v12",
+    "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+    "interpretedIntents": [],
+    "excludedIntents": [],
+    "results": [],
+    "clarification": {
+      "question": "你指 Agent 的 ReAct 方法，还是前端 React 框架？",
+      "options": [
+        {
+          "label": "Agent 的推理与行动策略",
+          "query": "Agent ReAct 的推理和行动如何交错"
+        },
+        {
+          "label": "Agent 的任务规划",
+          "query": "Agent 候选计划如何验证"
+        }
+      ]
+    },
+    "limitations": [],
+    "dialog": {
+      "status": "needs_clarification",
+      "answerMode": "extractive",
+      "sentences": [],
+      "citations": [],
+      "scope": {
+        "relatedSegments": [],
+        "filteredSegments": [],
+        "contextUsed": null
+      },
+      "message": "你指 Agent 的 ReAct 方法，还是前端 React 框架？",
+      "context": null
+    }
+  },
+  "status": "open",
+  "qaDidNotRepairCode": true
+}

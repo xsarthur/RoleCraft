@@ -1,0 +1,80 @@
+{
+  "schema": "rolecraft.textbook.qa.v3-narrow",
+  "artifact": "AI视觉内容设计入门",
+  "version": "v0.1-r1",
+  "at": "2026-10-14T00:00:00+08:00",
+  "role": "测试工程师",
+  "conclusion": "met_within_scope",
+  "scope": [
+    "VD-R2-F-01 feedback role-count repair only"
+  ],
+  "not_rerun": [
+    "chapter navigation",
+    "local links and anchors",
+    "source ID traceability",
+    "SVG/XML or visual rendering",
+    "AIGC boundary",
+    "external URLs",
+    "complete career goal"
+  ],
+  "baseline": {
+    "file": "sites/rolecraft/textbooks/visual-design-v01/assets/feedback-card-v01.md",
+    "bytes": 976,
+    "sha256": "2bfe074ae71efb8f101980659df4a53769ee4943a7103cd1cc747e735187075b",
+    "expected_sha256": "2bfe074ae71efb8f101980659df4a53769ee4943a7103cd1cc747e735187075b",
+    "intro_role_phrase": "四位角色",
+    "role_rows": [
+      "| 运营 | 明天 12:00 前确认主图可读性与商品资料 | “主图缩小后看不出是洁面产品，能不能把产品再放大？” |",
+      "| 品牌负责人 | 今天 18:00 前确认临时色卡和语气 | “背景太热闹，保留清洁克制的留白；不要新增季节色。” |",
+      "| 资料/法务联络人 | 上线前确认文字依据 | “‘温和清洁’尚未给证据，先标待确认或删除。” |",
+      "| 开发/上架同事 | 明天 10:00 前检查 4:5 叠加区域 | “4:5 版底部有平台按钮，主信息必须上移到安全区。” |"
+    ],
+    "role_row_count": 4
+  },
+  "checks": [
+    {
+      "id": "R3-01",
+      "name": "target_hash",
+      "status": "pass",
+      "actual_sha256": "2bfe074ae71efb8f101980659df4a53769ee4943a7103cd1cc747e735187075b",
+      "expected_sha256": "2bfe074ae71efb8f101980659df4a53769ee4943a7103cd1cc747e735187075b"
+    },
+    {
+      "id": "R3-02",
+      "name": "feedback_role_count",
+      "status": "pass",
+      "intro_count": 4,
+      "table_count": 4,
+      "role_names": [
+        "运营",
+        "品牌负责人",
+        "资料/法务联络人",
+        "开发/上架同事"
+      ]
+    },
+    {
+      "id": "R3-03",
+      "name": "body_reference_consistency",
+      "status": "pass",
+      "four_fixed_roles_line": 504,
+      "four_role_conflict_line": 405,
+      "stale_three_role_reference_found": false
+    },
+    {
+      "id": "R3-04",
+      "name": "classroom_feedback_boundary",
+      "status": "pass",
+      "classroom_only_line": 12,
+      "real_feedback_claim": false
+    }
+  ],
+  "finding_closed": {
+    "id": "VD-R2-F-01",
+    "status": "closed",
+    "reason": "feedback-card introduction, four table rows and正文“四个固定角色/四角色冲突” now agree"
+  },
+  "limitations": [
+    "This is a narrow repair recheck; all other conclusions and limitations remain as recorded in textbook-visual-v01-qa-r2.md/.json",
+    "No visual rendering, external URL, model, learner, expert, employer or employment evidence was collected in this run."
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "schema": "rolecraft.ai-generation.d0.v04.content-review",
+  "schema_version": "0.1",
+  "review_id": "AI-D0-V04-CONTENT-REVIEW-20261015-01",
+  "reviewed_at": "2026-10-15T00:00:00+08:00",
+  "reviewer_role": "content-reviewer",
+  "target_role_id": "AI",
+  "target_role_name": "AI生成工程师",
+  "scope": [
+    "v0.4 P1 repair mechanism and evidence",
+    "authorization and tenant/source boundaries",
+    "checkpoint/restart/replay wording",
+    "schema and first-failure preservation",
+    "holdout human-gate wording",
+    "LangGraph/model/licence boundary"
+  ],
+  "overall_content_review": "reviewed_with_limitations",
+  "local_fixture_conclusion": "met_within_scope",
+  "training_decision": "not_assessed",
+  "l1_or_real_model_permission": "not_granted",
+  "independent_replay": {
+    "command": "python3 /private/tmp/ai_generation_d0_v04_p1_repair.py",
+    "output": "/private/tmp/ai_generation_d0_v04_p1_content_review_rerun.json",
+    "output_sha256": "3c701a9e9815ea421a3f9d3698b6509c3d3bab19fb483bf201777b78081574fe",
+    "byte_equal_to_author_output": true,
+    "script_sha256": "68f3dc7078b50285f8729784e2c334688ee24ddd58944cb7a4e32a109ceff9d2",
+    "manifest_sha256": "c663f3c9e1b0aac1504cedbd1d24ea8ed10357c9ffb9621322f67228ff152cf2"
+  },
+  "source_records": {
+    "repair_md": {
+      "path": "sites/rolecraft/team/ai-generation-d0-v04-p1-repair.md",
+      "sha256": "2b8a3ff519c3500cb124ed36ad655aff3c7eb9cbe3bce9d18cff4ab2dd3b95bb"
+    },
+    "repair_json": {
+      "path": "sites/rolecraft/team/ai-generation-d0-v04-p1-repair.json",
+      "sha256": "98f7dffc8ce9d8f6bb880f32ccc56fd92be681aa8e5121433407e1b8bb74f0ff"
+    },
+    "qa_md": "sites/rolecraft/team/ai-generation-d0-v04-qa.md",
+    "qa_json": "sites/rolecraft/team/ai-generation-d0-v04-qa.json",
+    "prior_content_review_md": {
+      "path": "sites/rolecraft/team/ai-generation-d0-v03-content-review.md",
+      "sha256": "5f707f301fae32730b80d0d0db1130cbc83ba86ab942339bd4e2e43745fb85e2"
+    },
+    "prior_fault_transfer_md": {
+      "path": "sites/rolecraft/team/ai-generation-d0-v03-fault-transfer.md",
+      "sha256": "7f85e10abd3adba65ea9951095563b96c85d91949d78dda4ac79b3843fc416a9"
+    },
+    "prior_fault_transfer_json": {
+      "path": "sites/rolecraft/team/ai-generation-d0-v03-fault-transfer.json",
+      "sha256": "1b4fcbe6f7dbbfb65c745558630d774321e9902406ea9744a113a7f8f2a93906"
+    }
+  },
+  "evidence_checks": {
+    "tenant_B_denial_receipt_rejected": true,
+    "tenant_B_denial_has_no_result": true,
+    "source_scope_denial_receipt_rejected": true,
+    "authorized_read_result_has_content_hash_and_location": true,
+    "checkpoint_files_written_and_hashed": true,
+    "manual_stop_precedes_replay": true,
+    "holdout_changed_keys": [
+      "human_approval_required_for_handoff"
+    ],
+    "first_failures_schema_empty_duplicate_preserved": true,
+    "qa_base_and_unseen_variants_met_within_scope": true,
+    "fixture_contains_synthetic_denied_text": true
+  },
+  "p1_status": [
+    {
+      "id": "AI-D0-V03-CR-01",
+      "title": "tenant rejection path",
+      "status": "closed_within_local_fixture",
+      "limitation": "real authorization system not tested"
+    },
+    {
+      "id": "AI-D0-V03-CR-02",
+      "title": "durable checkpoint/recovery evidence",
+      "status": "closed_within_local_fixture",
+      "limitation": "no actual process exit, storage fault, concurrency, RPO/RTO or production recovery"
+    },
+    {
+      "id": "AI-D0-V03-CR-03",
+      "title": "claim-level source/version binding",
+      "status": "partial",
+      "limitation": "fixture four-tuples and local versions exist; no claim_type, external course/API locator or LangGraph package version"
+    },
+    {
+      "id": "AI-D0-V03-CR-04",
+      "title": "authorized read-only tool contract",
+      "status": "closed_within_local_fixture",
+      "limitation": "contract is a deterministic function, not a real provider tool"
+    },
+    {
+      "id": "AI-D0-V03-CR-05",
+      "title": "durable-result wording",
+      "status": "partial",
+      "limitation": "duplicate callback still says persisted=true without durable callback storage or idempotency execution"
+    }
+  ],
+  "remaining_p2": [
+    {
+      "id": "AI-D0-V04-CR-06",
+      "title": "schema checker is narrow",
+      "status": "open",
+      "requirement": "add type, exact schema-version, enum, hash-format, duplicate/conflict and malformed-source cases"
+    },
+    {
+      "id": "AI-D0-V04-CR-07",
+      "title": "retry/idempotency not executed",
+      "status": "open",
+      "requirement": "run actual retry, exhaustion, late callback and same/different key behavior"
+    },
+    {
+      "id": "AI-D0-V04-CR-08",
+      "title": "state vocabulary mapping absent",
+      "status": "open",
+      "requirement": "freeze versioned enum, transition conditions and old-to-new mapping"
+    },
+    {
+      "id": "AI-D0-V04-CR-09",
+      "title": "human gate is simulated",
+      "status": "open",
+      "requirement": "obtain separate human approve/reject/escalate evidence and learner/role sign-off"
+    },
+    {
+      "id": "AI-D0-V04-CR-10",
+      "title": "synthetic denied text in run package",
+      "status": "open",
+      "requirement": "redact before sharing or label fixture-only and keep no-real-data evidence"
+    }
+  ],
+  "source_license_boundary": {
+    "fixture_source_version": "fixture-source-v1",
+    "output_schema_version": "ai-generation-d0-output-v3",
+    "langgraph_imported": false,
+    "real_model": false,
+    "network": "disabled_by_task_constraint",
+    "paid_api": false,
+    "external_writes": false,
+    "course_code_copied": false,
+    "license_claim_made": false,
+    "unverified": [
+      "LangGraph/API/package release and licence",
+      "DeepLearning.AI course version/licence locator",
+      "real provider costs, limits and failure contracts"
+    ]
+  },
+  "stand_in_classification": {
+    "classification": "deterministic local state-machine plus local atomic JSON checkpoint fixture",
+    "real_langgraph": false,
+    "real_model": false,
+    "production_recovery": false,
+    "human_approval_real": false,
+    "external_action": false
+  },
+  "preserve_original_and_failed_records": true,
+  "non_author_completion": true,
+  "handoff": [
+    {
+      "owner": "AI生成工程师",
+      "action": "改写 duplicate callback persisted wording or add durable callback result and idempotency/retry evidence",
+      "status": "pending"
+    },
+    {
+      "owner": "课程架构师/内容审校员",
+      "action": "给外部理论主张补 claim_type、段落/API/包版本和访问日期；无法取得则保留 insufficient_evidence",
+      "status": "pending"
+    },
+    {
+      "owner": "测试工程师",
+      "action": "独立补 schema 边界、真实重试/迟到回调及状态合同回归",
+      "status": "pending"
+    },
+    {
+      "owner": "项目经理",
+      "action": "结合学习者 D0-01/02、EvidenceCard 和本轮审校后复盘 D0；不得因局部夹具授予 L1",
+      "status": "pending"
+    }
+  ]
+}

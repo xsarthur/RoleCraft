@@ -1,0 +1,64 @@
+{
+  "change_record_id": "professional-learning-resources-v02-change-record",
+  "version": "professional-learning-resources-v02",
+  "created_at": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "base_catalog": "team/professional-learning-resources-v01.json",
+  "base_sha256": "40b087a59dbf24dc6ec75fa390984a460bf1110128e5600bd60534444433d259",
+  "candidate_patch": "team/professional-learning-resources-metadata-v02.json",
+  "candidate_patch_sha256": "ffa11722d446717b1f397c7c4614176ce0da0e9848b030715b35bb2176ce63c1",
+  "output_catalog": "team/professional-learning-resources-v02.json",
+  "output_sha256": "fe03b43087ac42d708e4db9bc8c5ec16aa3eec18d9e184defac29581f1295dc9",
+  "scope": [
+    "PLR-AI-006",
+    "PLR-COMP-004",
+    "PLR-BE-003",
+    "PLR-BE-004"
+  ],
+  "preservation": [
+    "v01 JSON is retained unchanged; v02 is a new file.",
+    "All 59 top-level resource_id values are preserved and remain unique.",
+    "No教材、应用、服务、数据库或用户记录 was modified.",
+    "Old URLs remain in legacy_urls/source_urls for migration and historical context."
+  ],
+  "normalizations": {
+    "PLR-COMP-004": {
+      "canonical_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024XC01645",
+      "aliases": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:C_202401645"
+      ],
+      "old_url": "https://competition-policy.ec.europa.eu/public-consultations/2020-market-definition-notice_en"
+    },
+    "PLR-BE-003": {
+      "canonical_url": "https://www.skills.google/paths/16",
+      "related_certification_url": "https://cloud.google.com/learn/certification/data-engineer",
+      "split": "learning-path access/language/cost fields are separate from nested certification fee/language/validity fields"
+    },
+    "field_mapping": {
+      "license_or_use": "license_or_usage",
+      "version_or_publication": "source_version",
+      "provider_or_author": "provider",
+      "accessed_at": "recheck_at",
+      "old_urls": "legacy_urls",
+      "related_certification_url": "related_certification.url"
+    }
+  },
+  "status": "final_qa_complete_formal_training_blocked",
+  "formal_training_gate": "not_ready_pending_theory_check_and_access_reverification",
+  "evidence_refs": [
+    "team/resource-link-reverification-v02.md",
+    "team/resource-link-reverification-qa-v02.md",
+    "team/professional-learning-resources-content-review-v02.md"
+  ],
+  "output_markdown": "team/professional-learning-resources-v02.md",
+  "output_markdown_sha256": "127b7ece967838192db5c7020aca8a4b392d392a6293764df0e7f29f6dc31f41",
+  "output_catalog_sha256": "fe03b43087ac42d708e4db9bc8c5ec16aa3eec18d9e184defac29581f1295dc9",
+  "final_qa": {
+    "qa_id": "PLR-QA-V02-FINAL",
+    "status": "structure_met_source_metadata_met_with_limitations_formal_training_blocked",
+    "markdown": "team/professional-learning-resources-v02-qa.md",
+    "json": "team/professional-learning-resources-v02-qa.json",
+    "markdown_sha256": "af7ec17b2ee52fe0057d866bcf9f9dce20640dc8139950549c021fb32769c043",
+    "json_sha256": "a439d8399cf42f12288b090df1cc378e9379ee36d8328a0af2c7d64c6d451b1d"
+  }
+}

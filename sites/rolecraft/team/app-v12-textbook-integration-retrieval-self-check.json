@@ -1,0 +1,1573 @@
+{
+  "kind": "author_self_check_not_independent_acceptance",
+  "startedFromProductFiniteCases": true,
+  "nodeVersion": "v26.3.0",
+  "providerCalled": false,
+  "corpusVersion": "textbook-v12",
+  "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+  "bookSha256": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+  "units": 30,
+  "sourceBinding": {
+    "server/retrieval/index.mjs": "cda0aae5d8ee6bee8eacba9ae5402392a8fc45e3cff0f36d5551ec2932e976c2",
+    "server/retrieval/semantic.mjs": "97b53560731c6238bcabb7d6e1f44597cdc7c03c24b1599f231d4ade73b7bfc8",
+    "server/retrieval/build-content-v12.mjs": "9593c399b4b0b94f5bb34966f5aacaae679fd30c8dda28009dc51bc51cdb83f4",
+    "dist/content-retrieval-core.js": "b3535b2249effdb0118713295ae9b86e117e0d86c86041aade3e8c33a0fc092d",
+    "server/index.mjs": "7011f6eb4bae4f9082b7a1c3506a83cb33f410bf88354691052b7c71a2ba4ef0",
+    "server/retrieval/content-v12-index.json": "c005e8fd4071d14a8acc657a762e53359ea79cd785879bdbaceb52c4768b8142",
+    "server/retrieval/vectors-v12.json": "56b81378723d8cd915abb848bc8ec6c4a84eeac0a52fe548ca711ae183f49e47",
+    "server/retrieval/intent-vectors-v12.json": "cd0f1e55e25d9b275558baf1693f0721b6ae9eb896a7519c582e8e75a0b51431",
+    "dist/content-v12-data.js": "3eb094b460e0a1f545820232058d3b58b4c85d1353c87895709af3784d408b12"
+  },
+  "runs": [
+    {
+      "id": "react",
+      "query": "react",
+      "pass": true,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+        "interpretedIntents": [
+          {
+            "id": "source_term_0",
+            "label": "查找正文中的 ReAct",
+            "evidence": [
+              "ReAct"
+            ],
+            "unitIds": [
+              "n03-planning-reflection",
+              "00-learning-route",
+              "n05-retrieval-ingestion"
+            ],
+            "sectionKeys": [
+              "00-learning-route/s-7547e5ce91f8",
+              "00-learning-route/s-810a87808157",
+              "n03-planning-reflection/s-da63f3dcff17",
+              "n03-planning-reflection/s-dc2e15b8cffc",
+              "n05-retrieval-ingestion/s-ec5a23388832"
+            ],
+            "term": "react",
+            "preferredUnit": "n03-planning-reflection"
+          },
+          {
+            "id": "react_strategy",
+            "label": "比较推理行动交错与先计划的策略",
+            "evidence": [
+              "react"
+            ],
+            "unitIds": [
+              "n03-planning-reflection"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-dc2e15b8cffc",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "7 从演算到作品",
+            "title": "7 从演算到作品",
+            "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
+            "evidenceExcerpt": "EX-N03-C：写出同一任务的固定、ReAct、先计划三条正常轨迹及各一条失败轨迹，做受限反思实验设计。参考分析应给事件、可观察证据、修正和停止条件，不以“采用更先进模式”代替选择依据。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-dc2e15b8cffc",
+            "intentId": "source_term_0",
+            "matchingBasis": "source_term",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ],
+            "intent": "source_term_0",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          },
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-da63f3dcff17",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "1 三种策略改变的是控制对象",
+            "title": "1 三种策略改变的是控制对象",
+            "reason": "你表达了“react”；这一小节说明比较推理行动交错与先计划的策略的具体机制。",
+            "evidenceExcerpt": "ReAct 将任务解释、下一行动与新观察交错。根据 report-71 发现 `refund(7)` 失败，选择读取退款函数；观察实际实现是 `<7` 后再查生效规则。每轮仅承诺一个或少数下一步，适合证据逐步揭示、路径难以先列全的调查。其成本是轮次增加、上下文污染与短视；下一步看似相关，不保证最终证据完整。[ReAct 原论文 v3](https://arxiv.org/abs/2210.03629v3)研究推理轨迹与行动交错。本教材记录可审查的短决策依据、行动参数和观察，不要求取得或展示模型隐藏的内部思维。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
+            "intentId": "react_strategy",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ],
+            "intent": "react_strategy",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+          "chunkHash": "650101c27eb7db6bfe730fbc567fa08c3a1fcfb88cdf61acb91ee0b97b05014e",
+          "passages": 562,
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        },
+        "resultType": "recommendation",
+        "intent": "source_term_0",
+        "intents": [
+          "source_term_0",
+          "react_strategy"
+        ],
+        "contentVersion": "textbook-v12",
+        "textbookVersionId": "agent-engineering-v12",
+        "indexVersion": "content-retrieval-0.12-v12",
+        "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+        "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+        "reason": "匹配当前已核验教材原文。",
+        "uncertainty": "medium"
+      }
+    },
+    {
+      "id": "react-mechanism",
+      "query": "ReAct 怎么把推理和动作交错？",
+      "pass": true,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+        "interpretedIntents": [
+          {
+            "id": "source_term_0",
+            "label": "查找正文中的 ReAct",
+            "evidence": [
+              "ReAct"
+            ],
+            "unitIds": [
+              "n03-planning-reflection",
+              "00-learning-route",
+              "n05-retrieval-ingestion"
+            ],
+            "sectionKeys": [
+              "00-learning-route/s-7547e5ce91f8",
+              "00-learning-route/s-810a87808157",
+              "n03-planning-reflection/s-da63f3dcff17",
+              "n03-planning-reflection/s-dc2e15b8cffc",
+              "n05-retrieval-ingestion/s-ec5a23388832"
+            ],
+            "term": "react",
+            "preferredUnit": "n03-planning-reflection"
+          },
+          {
+            "id": "react_strategy",
+            "label": "比较推理行动交错与先计划的策略",
+            "evidence": [
+              "ReAct 怎么把推理和动作交错"
+            ],
+            "unitIds": [
+              "n03-planning-reflection"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-da63f3dcff17",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "1 三种策略改变的是控制对象",
+            "title": "1 三种策略改变的是控制对象",
+            "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
+            "evidenceExcerpt": "ReAct 将任务解释、下一行动与新观察交错。根据 report-71 发现 `refund(7)` 失败，选择读取退款函数；观察实际实现是 `<7` 后再查生效规则。每轮仅承诺一个或少数下一步，适合证据逐步揭示、路径难以先列全的调查。其成本是轮次增加、上下文污染与短视；下一步看似相关，不保证最终证据完整。[ReAct 原论文 v3](https://arxiv.org/abs/2210.03629v3)研究推理轨迹与行动交错。本教材记录可审查的短决策依据、行动参数和观察，不要求取得或展示模型隐藏的内部思维。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
+            "intentId": "source_term_0",
+            "matchingBasis": "source_term",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ],
+            "intent": "source_term_0",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          },
+          {
+            "unitId": "00-learning-route",
+            "sectionId": "s-7547e5ce91f8",
+            "order": 1,
+            "unitTitle": "认识 Agent 工程",
+            "sectionTitle": "一次任务怎样形成反馈闭环",
+            "title": "一次任务怎样形成反馈闭环",
+            "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
+            "evidenceExcerpt": "上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。[ReAct](https://arxiv.org/abs/2210.03629)",
+            "sourcePath": "textbooks/v12/00-learning-route.md",
+            "sourceSha256": "452129591648ca6c146945fae000e3e905e87c2794315109c727592a7b16dced",
+            "version": "textbook-v12",
+            "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
+            "intentId": "source_term_0",
+            "matchingBasis": "source_term",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": [],
+            "intent": "source_term_0",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          },
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-dc2e15b8cffc",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "7 从演算到作品",
+            "title": "7 从演算到作品",
+            "reason": "你表达了“ReAct 怎么把推理和动作交错”；这一小节说明比较推理行动交错与先计划的策略的具体机制。",
+            "evidenceExcerpt": "EX-N03-C：写出同一任务的固定、ReAct、先计划三条正常轨迹及各一条失败轨迹，做受限反思实验设计。参考分析应给事件、可观察证据、修正和停止条件，不以“采用更先进模式”代替选择依据。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-dc2e15b8cffc",
+            "intentId": "react_strategy",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ],
+            "intent": "react_strategy",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+          "chunkHash": "650101c27eb7db6bfe730fbc567fa08c3a1fcfb88cdf61acb91ee0b97b05014e",
+          "passages": 562,
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        },
+        "resultType": "recommendation",
+        "intent": "source_term_0",
+        "intents": [
+          "source_term_0",
+          "react_strategy"
+        ],
+        "contentVersion": "textbook-v12",
+        "textbookVersionId": "agent-engineering-v12",
+        "indexVersion": "content-retrieval-0.12-v12",
+        "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+        "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+        "reason": "匹配当前已核验教材原文。",
+        "uncertainty": "medium"
+      }
+    },
+    {
+      "id": "planning-term",
+      "query": "Planning",
+      "pass": true,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+        "interpretedIntents": [
+          {
+            "id": "planning",
+            "label": "从验收产物倒推并验证候选计划",
+            "evidence": [
+              "Planning"
+            ],
+            "unitIds": [
+              "n03-planning-reflection"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-7b6b3d9e9b99",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "2 从验收产物倒推候选计划",
+            "title": "2 从验收产物倒推候选计划",
+            "reason": "你表达了“Planning”；这一小节说明从验收产物倒推并验证候选计划的具体机制。",
+            "evidenceExcerpt": "先把“做好分析”改成所需产物集合：`failure_fact`、`source_observation`、`policy_evidence`、`analysis_with_refs`。每个产物有可检查条件，例如报告事实必须绑定 report_id 与 revision；根因若没有规则支持只能标假设。再列工具能产生什么、需要什么。规划器可以由模型提出候选，也可以由模板或规则生成；两种来源都经过同一验证器。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-7b6b3d9e9b99",
+            "intentId": "planning",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ],
+            "intent": "planning",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          },
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-c9f93b25fb1f",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "3 验证计划比检查 JSON 多一层",
+            "title": "3 验证计划比检查 JSON 多一层",
+            "reason": "你表达了“Planning”；这一小节说明从验收产物倒推并验证候选计划的具体机制。",
+            "evidenceExcerpt": "候选计划至少经过六步，任何失败都回到有限修订或 WAIT_INPUT：",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-c9f93b25fb1f",
+            "intentId": "planning",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ],
+            "intent": "planning",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+          "chunkHash": "650101c27eb7db6bfe730fbc567fa08c3a1fcfb88cdf61acb91ee0b97b05014e",
+          "passages": 562,
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        },
+        "resultType": "recommendation",
+        "intent": "planning",
+        "intents": [
+          "planning"
+        ],
+        "contentVersion": "textbook-v12",
+        "textbookVersionId": "agent-engineering-v12",
+        "indexVersion": "content-retrieval-0.12-v12",
+        "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+        "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+        "reason": "匹配当前已核验教材原文。",
+        "uncertainty": "medium"
+      }
+    },
+    {
+      "id": "planning-meaning",
+      "query": "怎样从目标倒推步骤，再检查计划能不能执行？",
+      "pass": true,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+        "interpretedIntents": [
+          {
+            "id": "planning",
+            "label": "从验收产物倒推并验证候选计划",
+            "evidence": [
+              "怎样从目标倒推步骤，再检查计划能不能执行"
+            ],
+            "unitIds": [
+              "n03-planning-reflection"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-7b6b3d9e9b99",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "2 从验收产物倒推候选计划",
+            "title": "2 从验收产物倒推候选计划",
+            "reason": "你表达了“怎样从目标倒推步骤，再检查计划能不能执行”；这一小节说明从验收产物倒推并验证候选计划的具体机制。",
+            "evidenceExcerpt": "完整例的 `build_plan` 为每种产物只给一个确定性 recipe；用 visiting 集检测递归环，用已生成节点去重。该例说明从目标反推步骤的机械部分；没有宣称能自动将任意自然语言转成正确产物。真实 LLM 规划输入应给目标验收、工具目录、已知事实/缺项、资源上限；输出结构化候选后保留模型版本和输入哈希，供失败归因。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-7b6b3d9e9b99",
+            "intentId": "planning",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ],
+            "intent": "planning",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          },
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-c9f93b25fb1f",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "3 验证计划比检查 JSON 多一层",
+            "title": "3 验证计划比检查 JSON 多一层",
+            "reason": "你表达了“怎样从目标倒推步骤，再检查计划能不能执行”；这一小节说明从验收产物倒推并验证候选计划的具体机制。",
+            "evidenceExcerpt": "3. 每个输入来自初始材料或本节点的祖先产物，不能仅因为另一平行节点“也会生成”就提前使用。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-c9f93b25fb1f",
+            "intentId": "planning",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ],
+            "intent": "planning",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+          "chunkHash": "650101c27eb7db6bfe730fbc567fa08c3a1fcfb88cdf61acb91ee0b97b05014e",
+          "passages": 562,
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        },
+        "resultType": "recommendation",
+        "intent": "planning",
+        "intents": [
+          "planning"
+        ],
+        "contentVersion": "textbook-v12",
+        "textbookVersionId": "agent-engineering-v12",
+        "indexVersion": "content-retrieval-0.12-v12",
+        "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+        "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+        "reason": "匹配当前已核验教材原文。",
+        "uncertainty": "medium"
+      }
+    },
+    {
+      "id": "replanning-term",
+      "query": "Replanning",
+      "pass": true,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+        "interpretedIntents": [
+          {
+            "id": "replanning",
+            "label": "重规划时保留事实并失效依赖假设",
+            "evidence": [
+              "Replanning"
+            ],
+            "unitIds": [
+              "n03-planning-reflection"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-7ee14c15626d",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "4 重规划保留事实，失效的是依赖假设",
+            "title": "4 重规划保留事实，失效的是依赖假设",
+            "reason": "你表达了“Replanning”；这一小节说明重规划时保留事实并失效依赖假设的具体机制。",
+            "evidenceExcerpt": "触发重规划的信号应具体：新证据否定 assumed_fact；目标版本改变；工具能力或权限不可用；预算余量不足；验收指出缺失产物。临时服务限流通常先按原动作合同重试，不必重新设计整个任务；把每次 429 都变成新计划会增加不确定性。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-7ee14c15626d",
+            "intentId": "replanning",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ],
+            "intent": "replanning",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          },
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-da63f3dcff17",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "1 三种策略改变的是控制对象",
+            "title": "1 三种策略改变的是控制对象",
+            "reason": "你表达了“Replanning”；这一小节说明重规划时保留事实并失效依赖假设的具体机制。",
+            "evidenceExcerpt": "仍用“解释失败报告并形成有证据的缺陷说明”，设一开始只知道 report-71。最终要有报告事实、相关实现和适用规则；若规则冲突则等待。这里先不执行创建工单，以便观察策略差别。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
+            "intentId": "replanning",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ],
+            "intent": "replanning",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+          "chunkHash": "650101c27eb7db6bfe730fbc567fa08c3a1fcfb88cdf61acb91ee0b97b05014e",
+          "passages": 562,
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        },
+        "resultType": "recommendation",
+        "intent": "replanning",
+        "intents": [
+          "replanning"
+        ],
+        "contentVersion": "textbook-v12",
+        "textbookVersionId": "agent-engineering-v12",
+        "indexVersion": "content-retrieval-0.12-v12",
+        "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+        "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+        "reason": "匹配当前已核验教材原文。",
+        "uncertainty": "medium"
+      }
+    },
+    {
+      "id": "replanning-meaning",
+      "query": "新证据推翻计划后，哪些步骤要重做，哪些事实该保留？",
+      "pass": true,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+        "interpretedIntents": [
+          {
+            "id": "replanning",
+            "label": "重规划时保留事实并失效依赖假设",
+            "evidence": [
+              "新证据推翻计划后，哪些步骤要重做，哪些事实该保留"
+            ],
+            "unitIds": [
+              "n03-planning-reflection"
+            ]
+          },
+          {
+            "id": "recovery",
+            "label": "中断后恢复任务",
+            "evidence": [
+              "哪些步骤要重做"
+            ],
+            "unitIds": [
+              "e01",
+              "c01-control-primer"
+            ]
+          },
+          {
+            "id": "context_memory",
+            "label": "维护跨轮上下文与可纠正的长期记忆",
+            "evidence": [
+              "哪些事实该保留"
+            ],
+            "unitIds": [
+              "n02-context-memory-prompt"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-7ee14c15626d",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "4 重规划保留事实，失效的是依赖假设",
+            "title": "4 重规划保留事实，失效的是依赖假设",
+            "reason": "你表达了“新证据推翻计划后，哪些步骤要重做，哪些事实该保留”；这一小节说明重规划时保留事实并失效依赖假设的具体机制。",
+            "evidenceExcerpt": "设 plan-v1 中 report、rule、draft 已完成，随后发现规则修订错误。标记 rule 的旧证据无效，沿后继边传播到 draft；report 的报告事实若仍有效则保留。plan-v2 引用原 report 证据并重新取得正确 rule，完成后重新生成 draft。失效传播是有向依赖闭包，不能只重做被点名节点，也不能清空所有有效事实增加成本。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-7ee14c15626d",
+            "intentId": "replanning",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ],
+            "intent": "replanning",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          },
+          {
+            "unitId": "n03-planning-reflection",
+            "sectionId": "s-7b6b3d9e9b99",
+            "order": 18,
+            "unitTitle": "让计划依据观察前进，而不是在反复规划中空转",
+            "sectionTitle": "2 从验收产物倒推候选计划",
+            "title": "2 从验收产物倒推候选计划",
+            "reason": "你表达了“新证据推翻计划后，哪些步骤要重做，哪些事实该保留”；这一小节说明重规划时保留事实并失效依赖假设的具体机制。",
+            "evidenceExcerpt": "完整例的 `build_plan` 为每种产物只给一个确定性 recipe；用 visiting 集检测递归环，用已生成节点去重。该例说明从目标反推步骤的机械部分；没有宣称能自动将任意自然语言转成正确产物。真实 LLM 规划输入应给目标验收、工具目录、已知事实/缺项、资源上限；输出结构化候选后保留模型版本和输入哈希，供失败归因。",
+            "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+            "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n03-planning-reflection/s-7b6b3d9e9b99",
+            "intentId": "replanning",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c01-control-loop",
+              "02-task-acceptance"
+            ],
+            "intent": "replanning",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          },
+          {
+            "unitId": "e01",
+            "sectionId": "s-c2209725ec11",
+            "order": 15,
+            "unitTitle": "用持久状态保存动作事实",
+            "sectionTitle": "三个提交点定义可恢复事实",
+            "title": "三个提交点定义可恢复事实",
+            "reason": "你表达了“哪些步骤要重做”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "**意图提交。**保存准确参数、指纹、动作 ID、唯一槽位和下游操作键，批准绑定同一动作。创建事务成功前不发送。如果提交回执丢失，先按事件 ID读回，不分配另一组身份。模型上下文可引用这些事实，但不能反过来覆盖它们。",
+            "sourcePath": "textbooks/v12/e01.md",
+            "sourceSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+            "version": "textbook-v12",
+            "href": "#learn/agent/e01/s-c2209725ec11",
+            "intentId": "recovery",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c03",
+              "c01-control-primer"
+            ],
+            "intent": "recovery",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          },
+          {
+            "unitId": "c01-control-primer",
+            "sectionId": "s-13bbf9fcf319",
+            "order": 11,
+            "unitTitle": "在重复提议和发送中识别同一个动作",
+            "sectionTitle": "调度与效果分别判断",
+            "title": "调度与效果分别判断",
+            "reason": "你表达了“哪些步骤要重做”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "参考分析：第二次观察只证明本次尝试，第一条可能已经发生。继续核对原操作或保留未决，不能凭最后一次结果清掉历史事实。带着这条不变量进入 [证据包](c02.md)和 [写工具实现](c03.md)，再在 [完整固定流程](c01-fixed-workflow.md)连接各组件。",
+            "sourcePath": "textbooks/v12/c01-control-primer.md",
+            "sourceSha256": "ef50f49868351894e0b928eced4cfb2fdabb9cb28ca03eb9043b9cf42d5689b9",
+            "version": "textbook-v12",
+            "href": "#learn/agent/c01-control-primer/s-13bbf9fcf319",
+            "intentId": "recovery",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c01-selection",
+              "03-trust-boundary"
+            ],
+            "intent": "recovery",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          },
+          {
+            "unitId": "n02-context-memory-prompt",
+            "sectionId": "s-735bdf162e41",
+            "order": 9,
+            "unitTitle": "让跨轮上下文保留事实，让长期记忆可以被纠正",
+            "sectionTitle": "3 错误记忆要沿来源和依赖撤回",
+            "title": "3 错误记忆要沿来源和依赖撤回",
+            "reason": "你表达了“哪些事实该保留”；这一小节说明维护跨轮上下文与可纠正的长期记忆的具体机制。",
+            "evidenceExcerpt": "已发送工单不能随记忆删除而消失，仍保留动作审计并走更正流程。",
+            "sourcePath": "textbooks/v12/n02-context-memory-prompt.md",
+            "sourceSha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n02-context-memory-prompt/s-735bdf162e41",
+            "intentId": "context_memory",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "f02",
+              "03-trust-boundary"
+            ],
+            "intent": "context_memory",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          },
+          {
+            "unitId": "n02-context-memory-prompt",
+            "sectionId": "s-e3ca8acc970e",
+            "order": 9,
+            "unitTitle": "让跨轮上下文保留事实，让长期记忆可以被纠正",
+            "sectionTitle": "1 四种保存对象，四种生命周期",
+            "title": "1 四种保存对象，四种生命周期",
+            "reason": "你表达了“哪些事实该保留”；这一小节说明维护跨轮上下文与可纠正的长期记忆的具体机制。",
+            "evidenceExcerpt": "会话历史保存“发生过哪些消息”，适合交互追溯；权威任务状态保存当前目标版本、已确认事实、动作账本、待办和预算，适合恢复与执行；上下文是本轮模型真正收到的有限投影；长期记忆保存经筛选、可跨轮或跨会话复用的信息。它们不能相互代替。",
+            "sourcePath": "textbooks/v12/n02-context-memory-prompt.md",
+            "sourceSha256": "1ede728a0c653ad60d457a05088e9807e46043a30654973e9c7d8d50fbfcc537",
+            "version": "textbook-v12",
+            "href": "#learn/agent/n02-context-memory-prompt/s-e3ca8acc970e",
+            "intentId": "context_memory",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "f02",
+              "03-trust-boundary"
+            ],
+            "intent": "context_memory",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+          "chunkHash": "650101c27eb7db6bfe730fbc567fa08c3a1fcfb88cdf61acb91ee0b97b05014e",
+          "passages": 562,
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        },
+        "resultType": "recommendation",
+        "intent": "replanning",
+        "intents": [
+          "replanning",
+          "recovery",
+          "context_memory"
+        ],
+        "contentVersion": "textbook-v12",
+        "textbookVersionId": "agent-engineering-v12",
+        "indexVersion": "content-retrieval-0.12-v12",
+        "sourcePath": "textbooks/v12/n03-planning-reflection.md",
+        "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+        "reason": "匹配当前已核验教材原文。",
+        "uncertainty": "medium"
+      }
+    },
+    {
+      "id": "recovery",
+      "query": "程序崩了以后怎么接着干，又不把已经做过的事情再做一遍？",
+      "pass": true,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+        "interpretedIntents": [
+          {
+            "id": "recovery",
+            "label": "中断后恢复任务",
+            "evidence": [
+              "崩",
+              "接着干",
+              "做过的事情再做"
+            ],
+            "unitIds": [
+              "e01",
+              "c01-control-primer"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "e01",
+            "sectionId": "s-2cd345377707",
+            "order": 15,
+            "unitTitle": "用持久状态保存动作事实",
+            "sectionTitle": "用一次恢复轨迹读懂提交边界",
+            "title": "用一次恢复轨迹读懂提交边界",
+            "reason": "你表达了“崩、接着干、做过的事情再做”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "先创建run和意图，把意图事务返回的 `action_id/intent_hash`交给可信审批入口；批准必须回送这个入库指纹，不在审批端对显示JSON另算。",
+            "sourcePath": "textbooks/v12/e01.md",
+            "sourceSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+            "version": "textbook-v12",
+            "href": "#learn/agent/e01/s-2cd345377707",
+            "intentId": "recovery",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c03",
+              "c01-control-primer"
+            ],
+            "intent": "recovery",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          },
+          {
+            "unitId": "c01-control-primer",
+            "sectionId": "s-13bbf9fcf319",
+            "order": 11,
+            "unitTitle": "在重复提议和发送中识别同一个动作",
+            "sectionTitle": "调度与效果分别判断",
+            "title": "调度与效果分别判断",
+            "reason": "你表达了“崩、接着干、做过的事情再做”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "成功、等待和停止也不同。无批准是等待批准；效果未知是等待核对；取消禁止未来发送，但不撤销已发生工单。取消后核对出成功，仍保存该效果并完成停止，不把用户已取消的任务改成正常完成。这里先学判断语言，存储章再把它们落到提交事件。",
+            "sourcePath": "textbooks/v12/c01-control-primer.md",
+            "sourceSha256": "ef50f49868351894e0b928eced4cfb2fdabb9cb28ca03eb9043b9cf42d5689b9",
+            "version": "textbook-v12",
+            "href": "#learn/agent/c01-control-primer/s-13bbf9fcf319",
+            "intentId": "recovery",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c01-selection",
+              "03-trust-boundary"
+            ],
+            "intent": "recovery",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+          "chunkHash": "650101c27eb7db6bfe730fbc567fa08c3a1fcfb88cdf61acb91ee0b97b05014e",
+          "passages": 562,
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        },
+        "resultType": "recommendation",
+        "intent": "recovery",
+        "intents": [
+          "recovery"
+        ],
+        "contentVersion": "textbook-v12",
+        "textbookVersionId": "agent-engineering-v12",
+        "indexVersion": "content-retrieval-0.12-v12",
+        "sourcePath": "textbooks/v12/e01.md",
+        "sourceSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+        "reason": "匹配当前已核验教材原文。",
+        "uncertainty": "medium"
+      }
+    },
+    {
+      "id": "multi",
+      "query": "想知道中断后不重复做事，以及整个任务一共花了多少钱。",
+      "pass": true,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+        "interpretedIntents": [
+          {
+            "id": "recovery",
+            "label": "中断后恢复任务",
+            "evidence": [
+              "想知道中断后不重复做事"
+            ],
+            "unitIds": [
+              "e01",
+              "c01-control-primer"
+            ]
+          },
+          {
+            "id": "cost",
+            "label": "核算任务性能与费用",
+            "evidence": [
+              "整个任务一共花了多少钱"
+            ],
+            "unitIds": [
+              "e05"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "e01",
+            "sectionId": "s-2cd345377707",
+            "order": 15,
+            "unitTitle": "用持久状态保存动作事实",
+            "sectionTitle": "用一次恢复轨迹读懂提交边界",
+            "title": "用一次恢复轨迹读懂提交边界",
+            "reason": "你表达了“想知道中断后不重复做事”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "桥接的 `allow_replay=False`使重复begin事件在事务内拒绝，不能从旧DISPATCH再次发送。",
+            "sourcePath": "textbooks/v12/e01.md",
+            "sourceSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+            "version": "textbook-v12",
+            "href": "#learn/agent/e01/s-2cd345377707",
+            "intentId": "recovery",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c03",
+              "c01-control-primer"
+            ],
+            "intent": "recovery",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          },
+          {
+            "unitId": "c01-control-primer",
+            "sectionId": "s-954a9e8d4527",
+            "order": 11,
+            "unitTitle": "在重复提议和发送中识别同一个动作",
+            "sectionTitle": "一次创建后的超时轨迹",
+            "title": "一次创建后的超时轨迹",
+            "reason": "你表达了“想知道中断后不重复做事”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "3. 新一轮call-create-12重复同槽位同参数。",
+            "sourcePath": "textbooks/v12/c01-control-primer.md",
+            "sourceSha256": "ef50f49868351894e0b928eced4cfb2fdabb9cb28ca03eb9043b9cf42d5689b9",
+            "version": "textbook-v12",
+            "href": "#learn/agent/c01-control-primer/s-954a9e8d4527",
+            "intentId": "recovery",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c01-selection",
+              "03-trust-boundary"
+            ],
+            "intent": "recovery",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          },
+          {
+            "unitId": "e05",
+            "sectionId": "s-ae0b34dc0191",
+            "order": 28,
+            "unitTitle": "在质量护栏下比较性能与成本",
+            "sectionTitle": "成本归到逻辑任务 才能看见失败代价",
+            "title": "成本归到逻辑任务 才能看见失败代价",
+            "reason": "你表达了“整个任务一共花了多少钱”；这一小节说明核算任务性能与费用的具体机制。",
+            "evidenceExcerpt": "一次逻辑任务可能有三次模型请求、两次读取、一次写后核对和十分钟人工确认。账本应把这些尝试归到同一 `run_id`，每次物理请求单独记录 `attempt_id`、配置/价格版本、用量、费用确认状态和时间。不能只计成功返回那次模型请求；超时请求可能已经计费，未决费用不能填零。",
+            "sourcePath": "textbooks/v12/e05.md",
+            "sourceSha256": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6",
+            "version": "textbook-v12",
+            "href": "#learn/agent/e05/s-ae0b34dc0191",
+            "intentId": "cost",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "e02",
+              "e04"
+            ],
+            "intent": "cost",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          },
+          {
+            "unitId": "e05",
+            "sectionId": "s-e1d15049880a",
+            "order": 28,
+            "unitTitle": "在质量护栏下比较性能与成本",
+            "sectionTitle": "一个不把失败和未知费用丢掉的汇总器",
+            "title": "一个不把失败和未知费用丢掉的汇总器",
+            "reason": "你表达了“整个任务一共花了多少钱”；这一小节说明核算任务性能与费用的具体机制。",
+            "evidenceExcerpt": "“所有支出都已归账”是该汇总器的外部输入契约，不由四个字段证明。实际导入时按任务查所有模型/工具尝试，验证事件序列、账单或供应商用量记录、价格版本与费用确认；丢了一次超时尝试会让结果偏低。代码只拒绝重复逻辑任务和非法数值，不伪称连接过账单服务。",
+            "sourcePath": "textbooks/v12/e05.md",
+            "sourceSha256": "dff396be3880d9d820c72b3e95c396e644b2dd844aa8dd744949eecbcb1515f6",
+            "version": "textbook-v12",
+            "href": "#learn/agent/e05/s-e1d15049880a",
+            "intentId": "cost",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "e02",
+              "e04"
+            ],
+            "intent": "cost",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+          "chunkHash": "650101c27eb7db6bfe730fbc567fa08c3a1fcfb88cdf61acb91ee0b97b05014e",
+          "passages": 562,
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        },
+        "resultType": "recommendation",
+        "intent": "recovery",
+        "intents": [
+          "recovery",
+          "cost"
+        ],
+        "contentVersion": "textbook-v12",
+        "textbookVersionId": "agent-engineering-v12",
+        "indexVersion": "content-retrieval-0.12-v12",
+        "sourcePath": "textbooks/v12/e01.md",
+        "sourceSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+        "reason": "匹配当前已核验教材原文。",
+        "uncertainty": "medium"
+      }
+    },
+    {
+      "id": "negation",
+      "query": "先不看 ReAct，我只想知道中断后怎样继续。",
+      "pass": true,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+        "interpretedIntents": [
+          {
+            "id": "recovery",
+            "label": "中断后恢复任务",
+            "evidence": [
+              "中断"
+            ],
+            "unitIds": [
+              "e01",
+              "c01-control-primer"
+            ]
+          }
+        ],
+        "excludedIntents": [
+          {
+            "id": "react_strategy",
+            "label": "比较推理行动交错与先计划的策略",
+            "evidence": [
+              "ReAct"
+            ],
+            "unitIds": [
+              "n03-planning-reflection"
+            ]
+          }
+        ],
+        "results": [
+          {
+            "unitId": "e01",
+            "sectionId": "s-2cd345377707",
+            "order": 15,
+            "unitTitle": "用持久状态保存动作事实",
+            "sectionTitle": "用一次恢复轨迹读懂提交边界",
+            "title": "用一次恢复轨迹读懂提交边界",
+            "reason": "你表达了“中断”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "单次 `KNOWN_NO_EFFECT`也保存原proof/code并结算该观察，但动作仍未决，继续查原操作，不自动重发。",
+            "sourcePath": "textbooks/v12/e01.md",
+            "sourceSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+            "version": "textbook-v12",
+            "href": "#learn/agent/e01/s-2cd345377707",
+            "intentId": "recovery",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c03",
+              "c01-control-primer"
+            ],
+            "intent": "recovery",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          },
+          {
+            "unitId": "c01-control-primer",
+            "sectionId": "s-13bbf9fcf319",
+            "order": 11,
+            "unitTitle": "在重复提议和发送中识别同一个动作",
+            "sectionTitle": "调度与效果分别判断",
+            "title": "调度与效果分别判断",
+            "reason": "你表达了“中断”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "参考分析：第二次观察只证明本次尝试，第一条可能已经发生。继续核对原操作或保留未决，不能凭最后一次结果清掉历史事实。带着这条不变量进入 [证据包](c02.md)和 [写工具实现](c03.md)，再在 [完整固定流程](c01-fixed-workflow.md)连接各组件。",
+            "sourcePath": "textbooks/v12/c01-control-primer.md",
+            "sourceSha256": "ef50f49868351894e0b928eced4cfb2fdabb9cb28ca03eb9043b9cf42d5689b9",
+            "version": "textbook-v12",
+            "href": "#learn/agent/c01-control-primer/s-13bbf9fcf319",
+            "intentId": "recovery",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c01-selection",
+              "03-trust-boundary"
+            ],
+            "intent": "recovery",
+            "resultType": "recommendation",
+            "uncertainty": "medium",
+            "contentVersion": "textbook-v12",
+            "textbookVersionId": "agent-engineering-v12",
+            "indexVersion": "content-retrieval-0.12-v12",
+            "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757"
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+          "chunkHash": "650101c27eb7db6bfe730fbc567fa08c3a1fcfb88cdf61acb91ee0b97b05014e",
+          "passages": 562,
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        },
+        "resultType": "recommendation",
+        "intent": "recovery",
+        "intents": [
+          "recovery"
+        ],
+        "contentVersion": "textbook-v12",
+        "textbookVersionId": "agent-engineering-v12",
+        "indexVersion": "content-retrieval-0.12-v12",
+        "sourcePath": "textbooks/v12/e01.md",
+        "sourceSha256": "0b430171313c93a7e8b0e183f11297c158ad102bfcce86834f2ef675f194b35a",
+        "reason": "匹配当前已核验教材原文。",
+        "uncertainty": "medium"
+      }
+    },
+    {
+      "id": "frontend",
+      "query": "React 前端框架的 JSX 和 Hooks",
+      "pass": true,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "no_match",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+          "chunkHash": "650101c27eb7db6bfe730fbc567fa08c3a1fcfb88cdf61acb91ee0b97b05014e",
+          "passages": 562,
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        },
+        "resultType": "no_match",
+        "intent": null,
+        "intents": [],
+        "contentVersion": "textbook-v12",
+        "textbookVersionId": "agent-engineering-v12",
+        "indexVersion": "content-retrieval-0.12-v12",
+        "sourcePath": null,
+        "sourceSha256": null,
+        "reason": "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。",
+        "uncertainty": "high"
+      }
+    },
+    {
+      "id": "ambiguity",
+      "query": "React 是前端框架还是 Agent 的方法？我想学它。",
+      "pass": true,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "needs_clarification",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_concept_retrieval",
+        "matchingMethods": [
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+        "interpretedIntents": [
+          {
+            "id": "react_strategy",
+            "label": "比较推理行动交错与先计划的策略",
+            "evidence": [
+              "React"
+            ],
+            "unitIds": [
+              "n03-planning-reflection"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": {
+          "question": "你想找哪个方向的内容？当前教材讲解 Agent ReAct，不提供前端 React 教程。",
+          "options": [
+            {
+              "label": "Agent 的 ReAct 方法",
+              "query": "ReAct 的推理和行动是怎样交错的？"
+            },
+            {
+              "label": "前端 React 框架",
+              "query": "React 前端框架的 JSX 和 Hooks"
+            }
+          ]
+        },
+        "limitations": [
+          "本地任务概念规则与原文术语查找只覆盖所选 Agent 教材；没有调用大模型。"
+        ],
+        "resultType": "clarification",
+        "intent": "react_strategy",
+        "intents": [
+          "react_strategy"
+        ],
+        "contentVersion": "textbook-v12",
+        "textbookVersionId": "agent-engineering-v12",
+        "indexVersion": "content-retrieval-0.12-v12",
+        "sourcePath": null,
+        "sourceSha256": null,
+        "reason": "你想找哪个方向的内容？当前教材讲解 Agent ReAct，不提供前端 React 教程。",
+        "uncertainty": "medium"
+      }
+    },
+    {
+      "id": "no-match",
+      "query": "装修厨房台面怎么选材料？",
+      "pass": true,
+      "evidenceValid": true,
+      "limits": true,
+      "response": {
+        "status": "no_match",
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "corpusVersion": "textbook-v12",
+          "corpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+          "chunkHash": "650101c27eb7db6bfe730fbc567fa08c3a1fcfb88cdf61acb91ee0b97b05014e",
+          "passages": 562,
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        },
+        "resultType": "no_match",
+        "intent": null,
+        "intents": [],
+        "contentVersion": "textbook-v12",
+        "textbookVersionId": "agent-engineering-v12",
+        "indexVersion": "content-retrieval-0.12-v12",
+        "sourcePath": null,
+        "sourceSha256": null,
+        "reason": "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。",
+        "uncertainty": "high"
+      }
+    }
+  ],
+  "pass": true
+}

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">焦点扫描箭头示意</title>
+  <desc id="desc">教学构造／未验证：用连续箭头展示学习者从目标、证据到判断的扫描路径。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#245b8f"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" fill="#f7fafc"/>
+  <text x="48" y="56" font-family="sans-serif" font-size="26" font-weight="700" fill="#17324d">焦点扫描：从问题到可复核判断</text>
+  <text x="48" y="86" font-family="sans-serif" font-size="15" fill="#66788a">教学构造／未验证</text>
+  <g font-family="sans-serif" font-size="20" text-anchor="middle">
+    <rect x="60" y="190" width="180" height="100" rx="12" fill="#e7f1fb" stroke="#245b8f" stroke-width="2"/>
+    <text x="150" y="232" fill="#17324d">1 目标</text><text x="150" y="260" font-size="15" fill="#456">我需要判断什么？</text>
+    <rect x="290" y="190" width="180" height="100" rx="12" fill="#eaf7f0" stroke="#2f7d57" stroke-width="2"/>
+    <text x="380" y="232" fill="#17324d">2 证据</text><text x="380" y="260" font-size="15" fill="#456">事实、来源、缺口</text>
+    <rect x="520" y="190" width="180" height="100" rx="12" fill="#fff4df" stroke="#a46b00" stroke-width="2"/>
+    <text x="610" y="232" fill="#17324d">3 扫描</text><text x="610" y="260" font-size="15" fill="#456">沿线索定位重点</text>
+    <rect x="750" y="190" width="150" height="100" rx="12" fill="#f4eafb" stroke="#73469a" stroke-width="2"/>
+    <text x="825" y="232" fill="#17324d">4 判断</text><text x="825" y="260" font-size="15" fill="#456">结论与下一步</text>
+  </g>
+  <g stroke="#245b8f" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <path d="M240 240 H280"/><path d="M470 240 H510"/><path d="M700 240 H740"/>
+  </g>
+  <path d="M825 320 C825 390 610 420 380 360 C260 328 160 340 150 300" stroke="#829ab0" stroke-width="3" fill="none" stroke-dasharray="8 8" marker-end="url(#arrow)"/>
+  <text x="480" y="446" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#526779">发现缺口时回扫证据，保留未验证状态</text>
+</svg>

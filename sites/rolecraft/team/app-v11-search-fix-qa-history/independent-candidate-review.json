@@ -1,0 +1,90 @@
+{
+  "reviewedAtUtc": "2026-10-11T14:34:20.630122+00:00",
+  "method": "Independent explicit semantic judgment of separately frozen inputs after actual HTTP outputs. Fixed contract checks remain in firstcandidate artifact; no successrate certification.",
+  "rows": [
+    {
+      "id": "S04",
+      "query": "我想了解 ReAct 这种 Agent 架构。",
+      "actualStatus": "recommended",
+      "actualUnits": [
+        "00-learning-route",
+        "00-learning-route"
+      ],
+      "judgment": "Existing ReAct target, reason limitedprose; no fabricated course.",
+      "status": "pass"
+    },
+    {
+      "id": "S05",
+      "query": "ReAct、RAG 这两种思路的内容在哪里？",
+      "actualStatus": "recommended",
+      "actualUnits": [
+        "00-learning-route",
+        "00-learning-route",
+        "c02",
+        "e03"
+      ],
+      "judgment": "Actual ReAct plusc02/e03 task/source support both within4returned.",
+      "status": "pass"
+    },
+    {
+      "id": "S06",
+      "query": "先不看 ReAct，我只想知道整个任务一共花了多少钱。",
+      "actualStatus": "recommended",
+      "actualUnits": [
+        "e05",
+        "e05"
+      ],
+      "judgment": "Onlye05 cost; excludedReAct notprimary.",
+      "status": "pass"
+    },
+    {
+      "id": "S07",
+      "query": "不是 React 前端框架，我指的是 ReAct 智能体方式。",
+      "actualStatus": "recommended",
+      "actualUnits": [
+        "c01-selection",
+        "c01-selection",
+        "00-learning-route"
+      ],
+      "judgment": "ActualReAct target included; explicitly frontendnegated thenAgentpositive, relatedselection extra accepted underno-fixedorder policy.",
+      "status": "pass"
+    },
+    {
+      "id": "S08",
+      "query": "React 前端框架里的组件和 Hooks 怎么写？",
+      "actualStatus": "no_match",
+      "actualUnits": [],
+      "judgment": "no_match for explicitfrontend.",
+      "status": "pass"
+    },
+    {
+      "id": "S09",
+      "query": "我想学 react，但不是 agent 的推理和行动，而是网页组件。",
+      "actualStatus": "recommended",
+      "actualUnits": [
+        "00-learning-route"
+      ],
+      "judgment": "FAIL: explicitAgentmeaning negated and webpagecomponents positive, yet certainAgentReAct returned.",
+      "status": "fail"
+    },
+    {
+      "id": "S10",
+      "query": "RAG 怎么过滤过期文档并控制检索权限？",
+      "actualStatus": "recommended",
+      "actualUnits": [
+        "c02",
+        "e03"
+      ],
+      "judgment": "RAG c02/e03 genuineoldsemantics retained.",
+      "status": "pass"
+    },
+    {
+      "id": "S12",
+      "query": "Replanning",
+      "actualStatus": "no_match",
+      "actualUnits": [],
+      "judgment": "No actualReplanning prose string in currentv10; no_match honest, no fabricated standalonechapter.",
+      "status": "pass"
+    }
+  ]
+}

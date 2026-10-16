@@ -1,0 +1,104 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4486/#projects".
+1 AXWebArea 职造 · Agent 学习工作台, URL: 127.0.0.1:4486/#projects
+	2 link Description: 跳到主要内容, Value: 127.0.0.1:4486/#main-content
+	3 container primary-sidebar
+		4 link Description: 职 职造 Agent 开发学习, Value: 127.0.0.1:4486/#home
+		5 container 主导航
+			6 button 首页
+			7 button 课程学习
+			8 button 题库浏览
+			9 button 学习记录
+			10 button 个人设置
+		11 text 当前学习方向
+		12 text Agent 开发者
+		13 link Description: 本机学习者 记录保存在此浏览器, Value: 127.0.0.1:4486/#settings
+	14 container main-content
+		15 container
+			211 text 我的项目记录
+			212 text 实际作品与本人自述
+		18 container app
+			213 link Description: ← 返回学习记录, Value: 127.0.0.1:4486/#records
+			214 text 实作与作品
+			215 heading 项目工坊, Value: 1
+				216 text 项目工坊
+			217 text 把所学落到同一个真实问题。这里保存你的自述材料，不自动判定作品通过。
+			218 container
+				219 heading 我的项目档案, Value: 2
+					220 text 我的项目档案
+				221 text 记录保存在此浏览器，链接仅保存文字，不自动访问或运行。 我的项目名称
+				222 text field (settable) 我的项目名称, Value: QA 旧 v12 自述, ID: lw-project-title
+				223 text 要解决的真实问题
+				224 text entry area (settable) 要解决的真实问题, Value: 保留的问题, ID: lw-project-problem
+				225 text 用户、现有方案与比较证据
+				226 text entry area (settable) 用户、现有方案与比较证据, ID: lw-project-evidence
+				227 text 已取得的实际结果与作品位置
+				228 text entry area (settable) 已取得的实际结果与作品位置, ID: lw-project-result
+				229 text 未达标准的部分与原因
+				230 text entry area (settable) 未达标准的部分与原因, ID: lw-project-gap
+				231 text 下一步、责任人与复验方法
+				232 text entry area (settable) 下一步、责任人与复验方法, ID: lw-project-next
+				233 button 保存项目档案
+				234 button 导出记录
+				235 text 自述资料 · 未独立评价 · 行业先进性未验证
+			236 container
+				237 heading 按教材推进实作, Value: 2
+					238 text 按教材推进实作
+				239 heading 起点与问题, Value: 3
+					240 text 起点与问题
+				241 text 基础诊断、问题档案、允许结果和风险边界
+				242 link Description: 01认识Agent工程, Value: 127.0.0.1:4486/#learn/agent/00-learning-route
+				243 link Description: 02基础预备, Value: 127.0.0.1:4486/#learn/agent/01-foundation
+				244 link Description: 03Python与模型基础, Value: 127.0.0.1:4486/#learn/agent/n01-python-model-foundations
+				245 link Description: 04问题发现, Value: 127.0.0.1:4486/#learn/agent/p01-discovery
+				246 link Description: 05任务验收, Value: 127.0.0.1:4486/#learn/agent/02-task-acceptance
+				247 link Description: 06信任边界, Value: 127.0.0.1:4486/#learn/agent/03-trust-boundary
+				248 heading 程序与模型边界, Value: 3
+					249 text 程序与模型边界
+				250 text 可判错的读取适配器、经结构和业务校验的候选、上下文与记忆
+				251 link Description: 07外部API, Value: 127.0.0.1:4486/#learn/agent/f01
+				252 link Description: 08模型候选, Value: 127.0.0.1:4486/#learn/agent/f02
+				253 link Description: 09上下文、记忆与提示, Value: 127.0.0.1:4486/#learn/agent/n02-context-memory-prompt
+				254 heading 选型与组件, Value: 3
+					255 text 选型与组件
+				256 text 最小方案决定、证据包、写工具合同、工具接入和持久账本
+				257 link Description: 10方案选择, Value: 127.0.0.1:4486/#learn/agent/c01-selection
+				258 link Description: 11动作身份, Value: 127.0.0.1:4486/#learn/agent/c01-control-primer
+				259 link Description: 12检索证据, Value: 127.0.0.1:4486/#learn/agent/c02
+				260 link Description: 13写工具, Value: 127.0.0.1:4486/#learn/agent/c03
+				261 link Description: 14工具目录与MCP, Value: 127.0.0.1:4486/#learn/agent/n04-tools-mcp
+				262 link Description: 15持久恢复, Value: 127.0.0.1:4486/#learn/agent/e01
+				263 heading 固定与动态流程, Value: 3
+					264 text 固定与动态流程
+				265 text 完整固定流程、动态控制循环与规划，再按需要组织检索、图和协作
+				266 link Description: 16固定流程, Value: 127.0.0.1:4486/#learn/agent/c01-fixed-workflow
+				267 link Description: 17动态循环, Value: 127.0.0.1:4486/#learn/agent/c01-control-loop
+				268 link Description: 18规划与反思, Value: 127.0.0.1:4486/#learn/agent/n03-planning-reflection
+				269 link Description: 19进阶检索与摄取, Value: 127.0.0.1:4486/#learn/agent/n05-retrieval-ingestion
+				270 link Description: 20图编排, Value: 127.0.0.1:4486/#learn/agent/n06-graph-orchestration
+				271 link Description: 21多Agent与A2A, Value: 127.0.0.1:4486/#learn/agent/n07-multiagent-a2a
+				272 heading 评价与产品决定, Value: 3
+					273 text 评价与产品决定
+				274 text 同条件版本比较、跨场景验证、MVP 契约、安全与沙箱、运行交付和任务账目
+				275 link Description: 22版本评价, Value: 127.0.0.1:4486/#learn/agent/e02
+				276 link Description: 23跨场景评价与移交, Value: 127.0.0.1:4486/#learn/agent/n10-evaluation-projects
+				277 link Description: 24MVP决定, Value: 127.0.0.1:4486/#learn/agent/p01-mvp
+				278 link Description: 25强制安全, Value: 127.0.0.1:4486/#learn/agent/e03
+				279 link Description: 26代码沙箱, Value: 127.0.0.1:4486/#learn/agent/n08-sandbox-security
+				280 link Description: 27发布回退, Value: 127.0.0.1:4486/#learn/agent/e04
+				281 link Description: 28性能成本, Value: 127.0.0.1:4486/#learn/agent/e05
+				282 link Description: 29运行交付, Value: 127.0.0.1:4486/#learn/agent/n09-runtime-delivery
+				283 heading 交付与迭代, Value: 3
+					284 text 交付与迭代
+				285 text 可复现作品、独立判定、原问题复验和未知任务
+				286 link Description: 30独立作品与复盘, Value: 127.0.0.1:4486/#learn/agent/p02
+				287 link Description: 进入产品达标复盘 →, Value: 127.0.0.1:4486/#product-review
+				288 link Description: 查看历史项目记录 →, Value: 127.0.0.1:4486/#projects-history
+		209 container
+			210 text 职造 · Agent 开发学习 教材 v12 · 本浏览器保存
+	289 container lw-find-form
+		290 text 查教材
+		291 text entry area (settable) 查教材, ID: lw-query
+		292 button 查找
+		293 button (collapsed) Description: 展开检索结果, Secondary Actions: Expand
+
+The focused UI element is 215 heading 项目工坊, Value: 1

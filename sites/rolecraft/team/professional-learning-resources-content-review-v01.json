@@ -1,0 +1,203 @@
+{
+  "review_id": "professional-learning-resources-content-review-v01",
+  "reviewed_at": "2026-10-14",
+  "reviewer_role": "内容审校员",
+  "status": "reviewed_with_limitations",
+  "scope": [
+    "team/resource-research-a.md",
+    "team/resource-research-b.md",
+    "team/role-training-framework-v01.md",
+    "team/professional-learning-resources-v01.md",
+    "team/professional-learning-resources-v01.json"
+  ],
+  "method": {
+    "read_source_files": true,
+    "opened_representative_official_university_standard_author_pages": true,
+    "course_execution": false,
+    "exam_or_certification": false,
+    "code_or_api_execution": false,
+    "capability_assessment": false,
+    "review_date": "2026-10-14"
+  },
+  "inventory_snapshot": {
+    "integrated_catalog_rows": 34,
+    "integrated_role_counts": {
+      "PM": 3,
+      "null": 31
+    },
+    "integrated_identifiable_role_ids": [
+      "PM"
+    ],
+    "expected_role_count": 15,
+    "batch_a_present_in_integrated_catalog": false,
+    "batch_b_present_in_integrated_catalog": true,
+    "pm_supplement_present": true,
+    "ai_duplicate_across_a_and_b": true
+  },
+  "confirmed": [
+    {
+      "item": "A/B source authority",
+      "finding": "Most entries point to university, standards body, government, vendor official documentation, or original-author pages; NN/g, SVPG, Elastic, Sentence Transformers and BEIR remain complementary professional/project sources rather than standards."
+    },
+    {
+      "item": "B-AI-01 Agentic AI",
+      "finding": "DeepLearning.AI page supports Andrew Ng attribution, 7h45m, intermediate level and reflection/tool-use/planning/multi-agent/evaluation topics."
+    },
+    {
+      "item": "A-PM-01 Wharton",
+      "finding": "Official page supports six weeks, 4–6 hours/week and product lifecycle/data-informed strategy topics."
+    },
+    {
+      "item": "A-CURR-01 Stanford learning outcomes",
+      "finding": "Official page supports learning outcomes, assessment alignment and ABCD framing."
+    },
+    {
+      "item": "A-FE-01 MIT 6.005",
+      "finding": "MIT OCW supports specifications/invariants, testing, ADTs, concurrency and functional programming; Spring 2016 is explicit."
+    },
+    {
+      "item": "A-QA-01 CTFL",
+      "finding": "ISTQB v4.0.1 dated 2024-09-15 and testing topics are supported by the official syllabus page."
+    },
+    {
+      "item": "A-ED-03 OpenStax",
+      "finding": "OpenStax page supports CC BY-NC-SA 4.0; the same page also states LLM/GenAI ingestion requires prior written permission."
+    },
+    {
+      "item": "A-AI-03/B-AI-05 OpenAI Agents SDK",
+      "finding": "Official docs support agents, tools, handoffs, guardrails, sessions, MCP, tracing and testing; runtime/API version and cost remain separate."
+    },
+    {
+      "item": "B-UR-02 GOV.UK",
+      "finding": "Official page supports research objectives, user groups, recruitment, accessibility and continuous planning; page was updated 2026-10-06."
+    },
+    {
+      "item": "B-COMP-01 Five Forces",
+      "finding": "HBS page supports Porter attribution and five-forces framing; it does not provide current market share or product quality."
+    },
+    {
+      "item": "B-PRACT-01 AERA/APA/NCME",
+      "finding": "Joint publisher page supports 2014 edition and testing-development/use scope; it cannot set project pass scores by itself."
+    },
+    {
+      "item": "B-OPS-04 NIST AI RMF",
+      "finding": "Current NIST material supports Govern/Map/Measure/Manage and says AI RMF 1.0 is being updated; it is voluntary and not a KPI template."
+    },
+    {
+      "item": "B-RETR-03 Elastic",
+      "finding": "Current docs support BM25, vector search and RRF in Elasticsearch; this is vendor-specific and currently versioned."
+    },
+    {
+      "item": "PM supplements",
+      "finding": "PMI page supports PMBOK Eighth Edition; MIT ESD.36 official page supports CPM/PERT, DSM, system dynamics, risk and cost/schedule topics and explicitly says no project-manager certification."
+    }
+  ],
+  "needs_followup": [
+    {
+      "item": "catalog structure",
+      "severity": "high",
+      "finding": "31 of 34 integrated rows have null role_id; only PM is identifiable. Restore role IDs before learning-package use."
+    },
+    {
+      "item": "batch A omission",
+      "severity": "high",
+      "finding": "A batch resources are absent from the integrated Markdown and JSON despite the catalog claim of 15-role coverage."
+    },
+    {
+      "item": "catalog count claim",
+      "severity": "high",
+      "finding": "“34 items, 15 roles” is not supported by current JSON; recalculate after restoring A and role IDs."
+    },
+    {
+      "item": "B-AI-03 LangGraph URL",
+      "severity": "high",
+      "finding": "Listed alpha/short-courses URL is stale relative to current canonical https://www.deeplearning.ai/courses/ai-agents-in-langgraph; bind current duration/access status."
+    },
+    {
+      "item": "B-COMP-04 EU notice",
+      "severity": "high",
+      "finding": "Listed page is a 2020 consultation/evaluation page. Use 2024 EUR-Lex Notice CELEX:52024XC01645 or label the old page historical context."
+    },
+    {
+      "item": "A-BE-03 Google Cloud",
+      "severity": "medium",
+      "finding": "Title says learning path while URL is certification page. Separate certification, learning path, fee, language, validity and recommended experience."
+    },
+    {
+      "item": "A-BE-04 DDIA",
+      "severity": "high",
+      "finding": "dataintensive.net points to a first-edition landing page; 2026 second edition has Chris Riccomini as coauthor. Use edition-specific source and do not mix commands/examples."
+    },
+    {
+      "item": "A-AI-02 Anthropic",
+      "severity": "medium",
+      "finding": "The article is a dated vendor experience and warns that its tooling landscape changed. Keep date and current-follow-up link in the resource card."
+    },
+    {
+      "item": "B-RETR-03 Elastic version",
+      "severity": "medium",
+      "finding": "Bind the vendor documentation to the current version (page currently identifies v9.0+) and test claims on the project corpus."
+    },
+    {
+      "item": "license/cost/access fields",
+      "severity": "high",
+      "finding": "Integrated JSON lacks source_version, language, cost_and_access, prerequisites, authority_reason, maintenance date and license fields required by the framework."
+    },
+    {
+      "item": "resource-level cost/region",
+      "severity": "medium",
+      "finding": "Wharton, MIT PE, PMBOK, ISO, Chicago, Google Cloud certification, DeepLearning.AI PRO and vendor/cloud/API entries need access, fee, currency, region and login status recorded at access date."
+    },
+    {
+      "item": "mapping language",
+      "severity": "medium",
+      "finding": "Phrases such as “supports this project’s eight gates” and “directly corresponds to production ability” are project mappings, not source claims; rewrite as learning-input mappings."
+    }
+  ],
+  "unsupported_or_should_not_be_used_as_pass": [
+    {
+      "item": "fifteen-role coverage",
+      "reason": "Current null role IDs and missing A batch contradict the claim."
+    },
+    {
+      "item": "null-row role ownership",
+      "reason": "No auditable binding assigns the 31 null rows to AI/UR/COMP/PRACT/OPS/REV/RETR."
+    },
+    {
+      "item": "course/reading/credential equals competence",
+      "reason": "No source supports that inference; project policy explicitly requires artifacts, unknown-task transfer, independent QA and real evidence."
+    },
+    {
+      "item": "2020 EU page as current 2026 notice",
+      "reason": "The page is an ended consultation/evaluation and should be replaced by the 2024 Notice."
+    },
+    {
+      "item": "first-edition DDIA page proves second-edition content",
+      "reason": "Edition and coauthor mismatch."
+    }
+  ],
+  "required_reverification": [
+    "Restore all A rows and assign all 15 role_ids; de-duplicate AI resources without losing batch provenance.",
+    "Replace or contextualize LangGraph, EU market-definition, Google Cloud Data Engineer and DDIA links/versions.",
+    "Add framework-required access, language, cost, license, publication/maintenance and authority fields.",
+    "Run QA for links, role coverage and boundary wording after author revision; retain this review as the first-failure record."
+  ],
+  "not_assessed": [
+    "course completion",
+    "theory checks",
+    "job artifacts",
+    "unknown-task transfer",
+    "certification/exam results",
+    "real user value",
+    "production readiness",
+    "human expert review",
+    "industry advantage"
+  ],
+  "input_hashes": {
+    "resource-research-a.md": "ab5168eadd2a56b74391de35579e4dacc5d49ec961d75eeb5fea4f268b93c0c2",
+    "resource-research-b.md": "8114608fd79a86e6f7ba7170bcdd4e57db006ff0ce1fbacf9c50b8579d21cff5",
+    "role-training-framework-v01.md": "081ee0f07b1a9b0a18585ca1d1f8bce361d2452edf02340d0e98193d686cabb1",
+    "professional-learning-resources-v01.md": "7669ff2e307e3143993ae8e826619e532499f94333b7b6aa8a2caac56fed5b10",
+    "professional-learning-resources-v01.json": "5deeea6f6ce114a43d49edeedf8bbd5810a7b6534115c6e25b9d33c0d1709416"
+  }
+}

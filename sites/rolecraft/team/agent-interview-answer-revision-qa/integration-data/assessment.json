@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "status": "not_met",
+  "scope": "independent data, source and isolated VM integration",
+  "answerSetSha256": "2cd40dcca5342944ab7c0c7836e759054dc3b5d4aaf992508f78d9172473b61a",
+  "dataSha256": "da904df28e346c15193df969cf79981c3eeb7c39eefd5065c264c96a2addb48d",
+  "checks": {"dataAndVm": "result.json", "prosePreservation": "prose-result.json", "crossLayerSourceLinks": "link-label-result.json"},
+  "openDefects": [{"id": "REV-QA-LINK-01", "severity": "blocking_for_source_navigation", "status": "open", "checkedLinkOccurrences": 372, "mismatchedLinkOccurrences": 118, "affectedAnswerCount": 62, "unresolvedLinkOccurrences": 0, "owners": ["content-data-engineer", "frontend-engineer"], "evidence": "link-label-result.json"}],
+  "browserValidation": "assigned_to_parent_QA",
+  "userStorageAccessed": false,
+  "appOrAnswersModified": false,
+  "completeProductStatus": "not_met"
+}

@@ -1,0 +1,14 @@
+import fs from 'node:fs';import path from 'node:path';import vm from 'node:vm';import crypto from 'node:crypto';import {fileURLToPath} from 'node:url';
+const here=path.dirname(fileURLToPath(import.meta.url)),root=path.resolve(here,'../..'),read=p=>fs.readFileSync(p,'utf8'),hash=s=>crypto.createHash('sha256').update(s).digest('hex');
+const parse=p=>{const s=read(p);return JSON.parse(s.slice(s.indexOf('=')+1).trim().replace(/;\s*$/,''));};
+const c=parse(path.join(root,'dist/content-v12-data.js')),d=parse(path.join(root,'dist/learning-v13-data.js'));
+function context(old){const ctx={console,URL,URLSearchParams,Map,Set,Date,AbortController,location:{protocol:'http:',origin:'http://127.0.0.1:4498',hash:'#learn',pathname:'/'},document:{addEventListener(){},querySelector(){return null;},querySelectorAll(){return[];},getElementById(){return null;}},localStorage:{getItem(){return null;},setItem(){}},sessionStorage:{getItem(){return null;},setItem(){}},addEventListener(){},RolecraftContentV12:c,RolecraftLearningV13:d};vm.createContext(ctx);vm.runInContext(read(path.join(old?path.join(here,'received'):path.join(root,'dist'),'learning-workbench.js')),ctx);return ctx;}
+const before=context(true),after=context(false),rows=[];
+for(const u of c.units){const hidden=u.sections.filter(s=>s.title==='v12 学习衔接'),masked=u.bodyMarkdown.replace(/\r\n?/g,'\n').split('\n');
+ for(const s of hidden){const next=u.sections.filter(x=>x.startLine>s.startLine&&x.level<=s.level).sort((a,b)=>a.startLine-b.startLine)[0];for(let i=s.startLine-1;i<(next?next.startLine-1:masked.length);i++)masked[i]='';}
+ const expected=before.LearningWorkbench.markdown({...u,bodyMarkdown:masked.join('\n')}),actual=after.LearningWorkbench.markdown(u,true);
+ rows.push({unitId:u.unitId,hiddenCount:hidden.length,expectedSha256:hash(expected),actualSha256:hash(actual),outsideSectionPreserved:actual===expected});
+}
+const source=read(path.join(root,'dist/learning-workbench.js')),xp=read(path.join(root,'dist/learning-experience-v13.js'));
+const result={atUtc:new Date().toISOString(),kind:'independent_source_renderer_check_not_browser_UI',method:'frozen received renderer applied to independently masked exact-title source ranges; compare complete remaining HTML with candidate; no textbook code executed',rows,hiddenUnits:rows.filter(r=>r.hiddenCount).length,allRemainingHtmlMatch:rows.every(r=>r.outsideSectionPreserved),receivedReaderSha256:hash(read(path.join(here,'received/learning-workbench.js'))),candidateReaderSha256:hash(source),candidateExperienceSha256:hash(xp),uiPassClaimed:false};
+fs.writeFileSync(path.join(here,'source-renderer-result.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({hiddenUnits:result.hiddenUnits,htmlPreserved:result.allRemainingHtmlMatch,failed:rows.filter(r=>!r.outsideSectionPreserved).map(r=>r.unitId),uiPassClaimed:false}));process.exitCode=result.allRemainingHtmlMatch?0:1;

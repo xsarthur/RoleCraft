@@ -1,0 +1,377 @@
+{
+  "schemaVersion": "1.0",
+  "productVersion": "local-mvp-0.4",
+  "standardVersion": "product-creation-2026-10-10",
+  "auditedAt": "2026-10-10",
+  "reviewer": "测试工程师独立代理 /root/qa_engineer",
+  "assessmentScope": "formal_learning_product",
+  "assessmentScopeLabel": "按正式职业学习产品八门槛审计local-mvp-0.4本机研发闭环",
+  "overall": "not_met",
+  "overallLabel": "未达标",
+  "decisionBasis": "3必需fail、4证据不足、1仅本次追踪pass；必需失败整体未达标。本地账户/SQLite/生成适配已实现，但不能替代真实教材生成、完整教学或正式生产实证。",
+  "method": "独立读取冻结实际源码、课程包、审校与研究证据，并执行模型替身、本机HTTP/临时SQLite及客户端VM；重新逐门槛判断，不继承0.3报告。",
+  "criteria": [
+    {
+      "id": "user_value",
+      "required": true,
+      "status": "insufficient",
+      "evidence": [
+        {
+          "reference": "team/implementation-v04-product.md",
+          "sha256": "834bd3086308a2b251d0497ce316c419cbdd22f07886b3104afe68d1b8d6ca27",
+          "observation": "冻结单章MVP与试点边界，未附真实用户访谈或预定阈值结果。"
+        },
+        {
+          "reference": "team/specialists/user-researcher.md",
+          "sha256": "1d9f7407c66c5ea548684b21e46b7162b9e116452aca9d6a4a491b341a9e4aa3",
+          "observation": "研究协议与空模板齐备，但真实招募、访谈、使用及价值结果未执行。"
+        }
+      ],
+      "limits": "新本地账户及可操作网站不构成用户价值实验；本次QA是测试夹具账户。",
+      "gap": "缺获授权真实样本、试验前阈值、原始观察及实际结果。",
+      "owner": "产品经理（用户研究员执行）",
+      "nextAction": "冻结试点指标和协议，收集真实用户原始证据。",
+      "retest": {
+        "status": "待真实实施或补证并独立复验",
+        "method": "核对协议早于实测、样本与退出、实际用户结果及范围。"
+      }
+    },
+    {
+      "id": "teaching_quality",
+      "required": true,
+      "status": "fail",
+      "evidence": [
+        {
+          "reference": "team/generation-curriculum-v04.json",
+          "sha256": "4333cf72964a0fd3e315333fcf65e19b2b234a60e0d87a7dfdf327f68a40d415",
+          "observation": "e03作者九节已按结构接收并完整提供；其他缺失模块和八章深化未完成，verification CR05/exampleExecution not_run、人类专家not_done。"
+        },
+        {
+          "reference": "team/content-v04-review.md",
+          "sha256": "d237e9d13e63efc819649eb19eeedadd439bdc0497e7204d573acbcaac14976a",
+          "observation": "九节与作者hash/论断有专业来源定位，摘录计数原缺陷已复核；是AI辅助审校，未运行案例或审核模型新稿。"
+        },
+        {
+          "reference": "dist/generation.js",
+          "sha256": "4729f5caad5b17638b73f2cb7744a7aff1015e6a8e97f05b0efd3c5146c09b40",
+          "observation": "作者正文可独立阅读，模型新稿明确未审/未运行；没有授予完整教学通过。"
+        }
+      ],
+      "limits": "承认新增e03实质正文、课程接收和AI独立文稿复核；完整覆盖、示例运行、专业专家及教学效果仍缺，结构合法不是教学质量。",
+      "gap": "缺其余正文深度、案例受控执行、真人专业审核和真实学习效果。",
+      "owner": "课程架构师（教材研发员/内容审校员专项）",
+      "nextAction": "补其他正文与练习，工程实现案例，组织内容及实际专家复核。",
+      "retest": {
+        "status": "待真实实施或补证并独立复验",
+        "method": "逐模块按原结构/量规核覆盖深度，独立执行正常/边界/失败与未知案例，复核专业意见。"
+      }
+    },
+    {
+      "id": "real_generation",
+      "required": true,
+      "status": "fail",
+      "evidence": [
+        {
+          "reference": "server/generation/index.mjs",
+          "sha256": "52ef3ffefe3028187192fa7712693a1929949403f651daaeb09999a7a12d5beb",
+          "observation": "已实现固定Responses真实协议适配、配置/预算阻止、来源/九节检查和失败处理；本轮仅模拟transport运行。"
+        },
+        {
+          "reference": "team/qa-v04-review.md",
+          "sha256": "77ea38c531142629fc1ca1995ca1eaea6f54618e0aa19985ccf520741ce6e8bd",
+          "observation": "当前进程API_KEY和MODEL存在性均false，13组模拟验证及本机HTTP合成成功不是真实供应商执行。"
+        },
+        {
+          "reference": "team/implementation-v04-product.md",
+          "sha256": "834bd3086308a2b251d0497ce316c419cbdd22f07886b3104afe68d1b8d6ca27",
+          "observation": "明确本轮无真实调用时real_generation仍未通过，不用教材或模拟报成功。"
+        }
+      ],
+      "limits": "相比0.3已提供调用实现，失败依据为必需真实执行及产物关联证据尚无；不能声称模型服务未编写。声明预算并非供应商硬cap，无真实账单。",
+      "gap": "缺明确模型/预算/安全凭据交接、实际请求ID/usage/教材及逐稿内容核对。",
+      "owner": "AI生成工程师（后端/客户端接口协作）",
+      "nextAction": "获得实际输入后按预算执行真实单章，保留请求与来源产物版本、失败恢复及新稿复核。",
+      "retest": {
+        "status": "待真实实施或补证并独立复验",
+        "method": "独立核真实供应商调用、不同画像、请求ID与usage、来源/正文/任务关联、故障和专业内容；模拟不替代。"
+      }
+    },
+    {
+      "id": "comparative_advantage",
+      "required": true,
+      "status": "insufficient",
+      "evidence": [
+        {
+          "reference": "team/specialists/benchmark-researcher.md",
+          "sha256": "1685abace8c3f60dd1c33f9e744584c1e478eb13ec627b60bd2e4ac8f64df26f",
+          "observation": "有官方候选和公平比较协议，403限制/未知版本如实，尚无同条件比较实测。"
+        },
+        {
+          "reference": "team/product-gates.json",
+          "sha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06",
+          "observation": "11比较字段、失败优先及行业实证要求不变，本地服务实现没有产生比较结果。"
+        }
+      ],
+      "limits": "不推定优于或差于同行；本岗位没有联网复核新行业动态或访问403页面。",
+      "gap": "缺锁定行业/研究对象版本、同任务样本资源、预定义指标、实际比较和专业评审。",
+      "owner": "产品经理（竞品研究员专项）",
+      "nextAction": "与研究/评估/工程冻结公平比较并执行原始测量。",
+      "retest": {
+        "status": "待真实实施或补证并独立复验",
+        "method": "复核基线、条件、样本、测量方法和专业评审，只判断证据支持的限定优势。"
+      }
+    },
+    {
+      "id": "learner_creation",
+      "required": true,
+      "status": "insufficient",
+      "evidence": [
+        {
+          "reference": "server/index.mjs",
+          "sha256": "f111fa0f17389a0b586d34f75748b844fa042f9ab88985189c77a30563daf0d8",
+          "observation": "作品/自评可在真实本机SQLite保存，链接仅引用不抓取，evidenceStatus incomplete/self_reported，独立/专业固定unreviewed。"
+        },
+        {
+          "reference": "team/specialists/practicum-evaluator.md",
+          "sha256": "1f372912e0a68cac8fb9fc5443986f19ad6a975347b120cf39d7d599564f00e1",
+          "observation": "既定量规与独立未知任务流程已有，没有真实学员作品、运行、用户验证或专业评分。"
+        }
+      ],
+      "limits": "QA合成提交是软件记录验证，不是实际学员MVP或学习效果。",
+      "gap": "缺学员作品版本、可运行证据、目标用户结果及独立评分。",
+      "owner": "课程架构师（实训评估员专项）",
+      "nextAction": "组织真实学员作品与未知任务，依原量规独立评分并保存用户结果。",
+      "retest": {
+        "status": "待真实实施或补证并独立复验",
+        "method": "非作者复现作品，对照量规、帮助记录、保留集和真实用户证据。"
+      }
+    },
+    {
+      "id": "reliable_delivery",
+      "required": true,
+      "status": "fail",
+      "evidence": [
+        {
+          "reference": "server/index.mjs",
+          "sha256": "f111fa0f17389a0b586d34f75748b844fa042f9ab88985189c77a30563daf0d8",
+          "observation": "本机研发账户/会话、CSRF、SQLite、任务版本与lease fence已实现；独立HTTP检验隔离、真实重启及SIGKILL恢复通过。"
+        },
+        {
+          "reference": "server/README.md",
+          "sha256": "f70de336bed80cf155da316e01a272a2595b0ebe083121574b6299bcad9052d4",
+          "observation": "明确仅127.0.0.1研发；缺生产身份验证、TLS、找回、自动备份、多worker、全局限流及运维监控。"
+        },
+        {
+          "reference": "team/qa-v04-review.md",
+          "sha256": "77ea38c531142629fc1ca1995ca1eaea6f54618e0aa19985ccf520741ce6e8bd",
+          "observation": "15组临时库/HTTP检查通过，未开展生产运行、真实供应商持久链或备份恢复验证。"
+        }
+      ],
+      "limits": "不再以无账户或无数据库作为失败理由，承认本地真实系统改善；正式生产可靠交付仍未建立，服务启动不等于生产范围验收。",
+      "gap": "正式生产运行范围、身份及运维/备份体系与独立真实运行证据未完成。",
+      "owner": "后端数据工程师（原工程岗位接口整合）",
+      "nextAction": "先由产品定义正式运行范围，补生产身份、恢复/备份与监控，再独立验证。",
+      "retest": {
+        "status": "待真实实施或补证并独立复验",
+        "method": "独立账户与真实环境隔离、任务恢复、备份恢复及运行范围验证，真实模型链与浏览器另测。"
+      }
+    },
+    {
+      "id": "operating_economics",
+      "required": true,
+      "status": "insufficient",
+      "evidence": [
+        {
+          "reference": "server/generation/index.mjs",
+          "sha256": "52ef3ffefe3028187192fa7712693a1929949403f651daaeb09999a7a12d5beb",
+          "observation": "记录真实usage协议与人工预算声明，actualCostUsd null、hardProviderCostCap false；模拟用量不是账单。"
+        },
+        {
+          "reference": "team/specialists/operations-analyst.md",
+          "sha256": "90f780edfe5a7505316fe532bfa16c25df47b44bcc1ea5f2f4f05e30334f9e51",
+          "observation": "预算模板/成本与重试归因规格已有，真实账单、交付耗时质量、维护记录未提交。"
+        }
+      ],
+      "limits": "不把QA执行耗时、固定教材时长或合成tokens当运营结果，不推定超预算。",
+      "gap": "缺已批准实际预算、供应商费用账目、成功质量分母及维护结果。",
+      "owner": "产品经理（运营分析员专项）",
+      "nextAction": "冻结预算及质量条件，结合真实调用/任务日志与账单核算并保存维护记录。",
+      "retest": {
+        "status": "待真实实施或补证并独立复验",
+        "method": "独立抽样重算，区分usage/估算/账单，核重试、未知费用、质量和维护证据。"
+      }
+    },
+    {
+      "id": "iteration_trace",
+      "required": true,
+      "status": "pass",
+      "evidence": [
+        {
+          "reference": "team/qa-v04-review.md",
+          "sha256": "77ea38c531142629fc1ca1995ca1eaea6f54618e0aa19985ccf520741ce6e8bd",
+          "observation": "本产物范围、冻结hash、首次P2、修复和路径原断言复核、测试夹具适配与旧版本失败均保留；未拿开发自检代独立结果。"
+        },
+        {
+          "reference": "team/implementation-v04-frontend.md",
+          "sha256": "b1f6723b6f7ab734ec438b1f325d2a30192f7ab894b362d7373abe1a49e2b089",
+          "observation": "真实file启动提示缺陷由原客户端岗位修复并冻结，局限与后续责任记录。"
+        },
+        {
+          "reference": "team/content-v04-review.md",
+          "sha256": "d237e9d13e63efc819649eb19eeedadd439bdc0497e7204d573acbcaac14976a",
+          "observation": "原计数P3、课程改正和独立原问题复核保持，运行/教学缺口未关闭。"
+        }
+      ],
+      "limits": "仅本次0.4产出的版本复盘证据链；不保证未来每次学习者产物已复盘，也不证明其他门槛完成。报告包装仍待专项核对。",
+      "gap": "当前有限功能问题改进已验证；正式其他门槛及未来持续追踪开放。",
+      "owner": "项目经理",
+      "nextAction": "登记当前实际结果与未完成项；工程原样包装本报告后专项核对，新版本重新审计。",
+      "retest": {
+        "status": "当前限定追踪通过；其他门槛缺口开放",
+        "method": "核本产物报告包装/版本与两范围结论，未来每次产出新证据、独立复验及责任。"
+      }
+    }
+  ],
+  "counts": {
+    "required": 8,
+    "fail": 3,
+    "insufficient": 4,
+    "pass": 1
+  },
+  "inputHashes": {
+    "dist/app.js": "d147f189a81d7f6ebcdb8e6cb7f047e13c50b1146f9e0bde3a7995dacf27693c",
+    "dist/generation.js": "4729f5caad5b17638b73f2cb7744a7aff1015e6a8e97f05b0efd3c5146c09b40",
+    "dist/index.html": "70f5c5c0c5e9e645415b1032b5f6d33dc96d74153a010a590c00b454b829321b",
+    "dist/styles.css": "9b99139a1362025c6d9ed7dc9463fb65cb306d90af4cedf6c9048487ae8de353",
+    "dist/generation-curriculum-data.js": "3864bf34d4f15e89a1e8c44b692272d3febb387a704371703886a7621ce1cdbc",
+    "dist/curriculum-data.js": "c3c93435d4417792182c1f98b450a1e1a5c23aa9a8136ddb03086570c03f1442",
+    "dist/product-gates-data.js": "a331ad6c46adc7d463e9b56d918a8f96765ebaecfa1ff6c07c2c5e6c19e09b0e",
+    "dist/creation-path-data.js": "24a814d9b098e23c698b924924f209dbf14bb5637d9b7cd0ccbe6200d721d2c4",
+    "dist/product-audit-data.js": "d46faae2909d44c13df3a0a8fa01056560db0a69019c889cf959e7ceba015490",
+    "server/index.mjs": "f111fa0f17389a0b586d34f75748b844fa042f9ab88985189c77a30563daf0d8",
+    "server/generation/index.mjs": "52ef3ffefe3028187192fa7712693a1929949403f651daaeb09999a7a12d5beb",
+    "server/CONTRACT.md": "feb23aef7f3de4f86f40db52a72356197f204e8fdfb3f7542ddebfd05e8de33f",
+    "team/generation-curriculum-v04.json": "4333cf72964a0fd3e315333fcf65e19b2b234a60e0d87a7dfdf327f68a40d415",
+    "team/product-gates.json": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06",
+    "team/curriculum-data.json": "8eb4730321916a7b12f154f06b31444116657a59941e66c1d6fb34b19cf16609",
+    "team/content-v04-review.md": "d237e9d13e63efc819649eb19eeedadd439bdc0497e7204d573acbcaac14976a"
+  },
+  "staticVerification": {
+    "productVersion": "local-mvp-0.4",
+    "scope": "static_prototype",
+    "scopeLabel": "沿UI契约枚举；实际范围为本机HTTP/SQLite + 隔离客户端VM + 模拟模型协议",
+    "standardVersion": "product-creation-2026-10-10",
+    "conclusion": "met_within_scope",
+    "reviewer": "测试工程师独立代理 /root/qa_engineer",
+    "auditedAt": "2026-10-10",
+    "evidence": [
+      {
+        "reference": "team/qa-v04-review.md",
+        "sha256": "77ea38c531142629fc1ca1995ca1eaea6f54618e0aa19985ccf520741ce6e8bd",
+        "observation": "独立13组模拟模型、15组真实本机HTTP/SQLite、12组客户端VM按阶段通过；包含真实子进程kill/restart及存储隔离。"
+      },
+      {
+        "reference": "team/qa-v04-check.mjs",
+        "sha256": "d8d0dd9f62350e6663f7dcc053c080f11a505dd3f99c9f85dcf8bffb75f49062",
+        "observation": "可复现隔离脚本，供应商请求全被QA拦截，成功均合成fixture，未访问用户DB或真实浏览器。"
+      }
+    ],
+    "limits": "scope static_prototype仅沿当前UI数据契约；实际验收是本地研发HTTP/SQLite、隔离客户端VM与模拟供应商协议。没有浏览器/视觉/键盘/读屏/原生下载或浏览器服务联合实测；没有真实模型调用、真实密钥/费用、生成内容专业审查、CR05教学执行、真实用户/学员/市场/账单或生产运行。budget是人工声明预估，不是供应商硬cap。HTTP fixture可能在默认fetch路径保存openai字段，仍是全拦截模拟且库已删除，绝非真实生成证据。旧脚本版本失败及首轮问题保留；最终报告包装尚待专项复验。",
+    "tests": [
+      {
+        "command": "node sites/rolecraft/team/qa-v04-check.mjs",
+        "scope": "模型13组通过；同次HTTP14/15为Host运输待核",
+        "passed": 27,
+        "total": 28,
+        "exitCode": 1
+      },
+      {
+        "command": "node sites/rolecraft/team/qa-v04-check.mjs --http-only",
+        "scope": "修正为原生http发送Host；真实临时SQLite/loopbackHTTP",
+        "passed": 15,
+        "total": 15,
+        "exitCode": 0
+      },
+      {
+        "command": "node sites/rolecraft/team/qa-v04-check.mjs --client-only",
+        "scope": "模拟fetch/DOM VM",
+        "passed": 12,
+        "total": 12,
+        "exitCode": 0
+      },
+      {
+        "command": "node sites/rolecraft/team/qa-check.mjs",
+        "passed": 22,
+        "total": 22,
+        "exitCode": 0
+      },
+      {
+        "command": "node sites/rolecraft/team/curriculum-check.mjs",
+        "passed": 20,
+        "total": 20,
+        "exitCode": 0
+      },
+      {
+        "command": "node sites/rolecraft/team/qa-v02-check.mjs",
+        "passed": 25,
+        "total": 26,
+        "exitCode": 1,
+        "exception": "V09固定prototype-0.2版本，当前0.4；C04独立接收新版与保留旧记录"
+      },
+      {
+        "command": "node sites/rolecraft/team/qa-v03-check.mjs",
+        "passed": 23,
+        "total": 30,
+        "exitCode": 1,
+        "exception": "P01/P02/P12/P13/P16/P26/P28固定0.3/10导航/旧fixture；新C01/C03/C04/C05核对当前11入口与报告机制"
+      }
+    ],
+    "references": [
+      "team/qa-v04-review.md",
+      "team/implementation-v04-product.md",
+      "server/CONTRACT.md"
+    ],
+    "firstIssues": [
+      {
+        "id": "V04-01",
+        "severity": "P2",
+        "status": "原file提示路径存在断言C02复验通过",
+        "owner": "网站客户端工程师"
+      },
+      {
+        "id": "CV04-01",
+        "severity": "P3",
+        "status": "13/10空白计数和JS/JSON元数据已专项核对",
+        "owner": "课程架构师"
+      }
+    ],
+    "displayVerification": {
+      "command": "Node ESM内联focused：标题逆替换hash比对、其他输入hash不变、当前实际QA JSON隔离呈现",
+      "passed": 2,
+      "total": 2,
+      "exitCode": 0,
+      "appSha256": "d147f189a81d7f6ebcdb8e6cb7f047e13c50b1146f9e0bde3a7995dacf27693c",
+      "scope": "仅文案和VM显示，非浏览器",
+      "reference": "team/qa-v04-review.md 最终显示文案专项冻结"
+    }
+  },
+  "professionalReviewStatus": "未真人专业审核；输入作者稿有AI辅助文稿审校，生成新稿未审",
+  "advancedStatus": "无同条件行业实测，行业先进性未验证",
+  "remainingItems": [
+    "真实模型配置/预算授权及实际请求产物证据",
+    "完整教材与案例运行/逐稿审校/真人专业审核",
+    "真实用户试点与阈值结果",
+    "同条件行业基线和专业比较",
+    "真实学员作品、用户验证和独立评分",
+    "正式生产身份、备份恢复、监控及运行范围",
+    "真实费用/耗时质量/维护数据",
+    "真实浏览器和浏览器服务联合验证",
+    "报告原样包装后专项核对；未来版本重新审计"
+  ],
+  "limits": [
+    "本轮没有真实外网调用、收费或发布；模拟只支持程序机制。",
+    "本地研发账户与真实SQLite恢复已验收，不承诺生产安全或远端恰好一次。",
+    "新版本独立核对，旧报告仅历史；限定本地功能结论不能覆盖正式系统失败。",
+    "本报告交付时dist只含0.2/0.3历史；工程包装后另核一致性，不改此历史输入hash。"
+  ]
+}

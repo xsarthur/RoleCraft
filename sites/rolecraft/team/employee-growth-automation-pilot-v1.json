@@ -1,0 +1,109 @@
+{
+  "pilot_id": "employee-growth-automation-pilot-v1",
+  "version": "v1",
+  "status": "specification_only_not_assessed",
+  "scope": "low_risk_isolated_read_only_training_loop",
+  "pilot_role": "content-retrieval-engineer",
+  "fallback_role": "product-manager",
+  "sandboxes": [
+    "S1_normal_retrieval",
+    "S2_uncertainty_and_refusal"
+  ],
+  "automation": [
+    "diagnostic_to_material",
+    "sandbox_issuance",
+    "automated_checks",
+    "cited_feedback",
+    "revision_scheduling_after_learner_confirmation",
+    "regression_and_holdout_tracking",
+    "evidence_pack_aggregation",
+    "exception_summary"
+  ],
+  "human_gates": [
+    "onboarding_boundary",
+    "exception_handling",
+    "version_release",
+    "milestone_review",
+    "high_risk_action",
+    "weekly_sampling"
+  ],
+  "forbidden": [
+    "proxy_answer",
+    "auto_edit_learner_work",
+    "fabricated_learner_identity",
+    "fabricated_signoff",
+    "auto_grant_L1",
+    "auto_grant_L2",
+    "external_write",
+    "paid_model_call",
+    "production_data"
+  ],
+  "learner_attribution_required": [
+    "learner_id",
+    "learner_statement",
+    "signed_by_learner",
+    "actual_command",
+    "environment",
+    "timestamps",
+    "raw_work",
+    "first_failure",
+    "revision_confirmation",
+    "holdout_submission"
+  ],
+  "states": [
+    "diagnosed",
+    "material_recommended",
+    "sandbox_issued",
+    "learner_running",
+    "learner_submitted",
+    "auto_checked",
+    "feedback_ready",
+    "learner_revision",
+    "regression_checked",
+    "holdout_ready",
+    "evidence_pack_pending_review",
+    "qa_review",
+    "milestone_review",
+    "closed",
+    "blocked",
+    "needs_human"
+  ],
+  "metrics": [
+    "human_minutes",
+    "automatic_closure_rate",
+    "repeat_failure_rate",
+    "holdout_transfer_rate",
+    "false_release_rate",
+    "evidence_completeness_rate",
+    "intervention_reason_distribution"
+  ],
+  "evidence_statuses": [
+    "pending",
+    "insufficient_evidence",
+    "met_with_limitations",
+    "ready_for_milestone_review"
+  ],
+  "pilot_limits": [
+    "no_real_users",
+    "no_production",
+    "no_external_writes",
+    "no_paid_calls",
+    "no_upload_or_publish",
+    "no_claim_of_learning_effect"
+  ],
+  "exit_conditions": [
+    "unauthorized_access",
+    "proxy_or_fabricated_learner_evidence",
+    "automatic_answering",
+    "high_risk_false_release",
+    "non_reproducible_receipt",
+    "two_consecutive_provenance_breaks"
+  ],
+  "evidence_basis": [
+    "sites/rolecraft/team/app-v14-dialog-retrieval.md",
+    "sites/rolecraft/team/product-manager-d0-contract-v01.md",
+    "sites/rolecraft/team/employee-growth-training-qa.md"
+  ],
+  "ownership": "project-manager-coordinated; retrieval role owns retrieval artifacts; QA independently verifies; curriculum/content roles review learning claims",
+  "next_action": "freeze pilot contract, sandbox hashes, and learner receipt template; run at most five isolated learner tasks"
+}

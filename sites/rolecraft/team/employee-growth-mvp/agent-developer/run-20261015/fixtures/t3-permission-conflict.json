@@ -1,0 +1,7 @@
+{
+  "fixture_id": "T3-permission-conflict-v1",
+  "tool": "external_write_stub",
+  "required_permission": "external.write",
+  "allowed_permissions": ["read_local_only"],
+  "expected": {"stop_reason": "permission_conflict", "tool_calls": 0}
+}

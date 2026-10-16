@@ -1,0 +1,2963 @@
+{
+  "recordedAt": "2026-10-11T01:03:00.985617+00:00",
+  "status": "mapped_with_limitations",
+  "method": "QA read current twenty bodies and migration context, selected semantic locations and wrote new current judgments. Historical v08 headings supply location candidates only; no inherited judgment/pass and no keyword count quality test. Scripts resolve selected headings/hash and check metadata identity only.",
+  "manifestSha256": "1e7f54cad711de82dfcdba999e282476b1db103ea637a82a18bb18a23aa12969",
+  "historicalManifestSha256": "a78e6d857a8bfcd24f27420133357f45ac2afdc87b57ee1a374e96a1c694c122",
+  "moduleCount": 12,
+  "objectiveCount": 24,
+  "knowledgePointCount": 48,
+  "moduleIdentityComparisons": [
+    {
+      "module": "f01",
+      "preservedFields": {
+        "moduleId": true,
+        "originalTitle": true,
+        "objectives": true,
+        "competencyIds": true,
+        "creationStageIds": true,
+        "knowledgePointIds": true,
+        "historicalPrerequisites": true
+      }
+    },
+    {
+      "module": "f02",
+      "preservedFields": {
+        "moduleId": true,
+        "originalTitle": true,
+        "objectives": true,
+        "competencyIds": true,
+        "creationStageIds": true,
+        "knowledgePointIds": true,
+        "historicalPrerequisites": true
+      }
+    },
+    {
+      "module": "c01",
+      "preservedFields": {
+        "moduleId": true,
+        "originalTitle": true,
+        "objectives": true,
+        "competencyIds": true,
+        "creationStageIds": true,
+        "knowledgePointIds": true,
+        "historicalPrerequisites": true
+      }
+    },
+    {
+      "module": "c02",
+      "preservedFields": {
+        "moduleId": true,
+        "originalTitle": true,
+        "objectives": true,
+        "competencyIds": true,
+        "creationStageIds": true,
+        "knowledgePointIds": true,
+        "historicalPrerequisites": true
+      }
+    },
+    {
+      "module": "c03",
+      "preservedFields": {
+        "moduleId": true,
+        "originalTitle": true,
+        "objectives": true,
+        "competencyIds": true,
+        "creationStageIds": true,
+        "knowledgePointIds": true,
+        "historicalPrerequisites": true
+      }
+    },
+    {
+      "module": "e01",
+      "preservedFields": {
+        "moduleId": true,
+        "originalTitle": true,
+        "objectives": true,
+        "competencyIds": true,
+        "creationStageIds": true,
+        "knowledgePointIds": true,
+        "historicalPrerequisites": true
+      }
+    },
+    {
+      "module": "e02",
+      "preservedFields": {
+        "moduleId": true,
+        "originalTitle": true,
+        "objectives": true,
+        "competencyIds": true,
+        "creationStageIds": true,
+        "knowledgePointIds": true,
+        "historicalPrerequisites": true
+      }
+    },
+    {
+      "module": "e03",
+      "preservedFields": {
+        "moduleId": true,
+        "originalTitle": true,
+        "objectives": true,
+        "competencyIds": true,
+        "creationStageIds": true,
+        "knowledgePointIds": true,
+        "historicalPrerequisites": true
+      }
+    },
+    {
+      "module": "e04",
+      "preservedFields": {
+        "moduleId": true,
+        "originalTitle": true,
+        "objectives": true,
+        "competencyIds": true,
+        "creationStageIds": true,
+        "knowledgePointIds": true,
+        "historicalPrerequisites": true
+      }
+    },
+    {
+      "module": "e05",
+      "preservedFields": {
+        "moduleId": true,
+        "originalTitle": true,
+        "objectives": true,
+        "competencyIds": true,
+        "creationStageIds": true,
+        "knowledgePointIds": true,
+        "historicalPrerequisites": true
+      }
+    },
+    {
+      "module": "p01",
+      "preservedFields": {
+        "moduleId": true,
+        "originalTitle": true,
+        "objectives": true,
+        "competencyIds": true,
+        "creationStageIds": true,
+        "knowledgePointIds": true,
+        "historicalPrerequisites": true
+      }
+    },
+    {
+      "module": "p02",
+      "preservedFields": {
+        "moduleId": true,
+        "originalTitle": true,
+        "objectives": true,
+        "competencyIds": true,
+        "creationStageIds": true,
+        "knowledgePointIds": true,
+        "historicalPrerequisites": true
+      }
+    }
+  ],
+  "knowledgeIdentityComparisons": [
+    {
+      "id": "f01-k01",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "f01-k02",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "f01-k03",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "f01-k04",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "f02-k01",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "f02-k02",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "f02-k03",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "f02-k04",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "c01-k01",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "c01-k02",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "c01-k03",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "c01-k04",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "c02-k01",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "c02-k02",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "c02-k03",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "c02-k04",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "c03-k01",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "c03-k02",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "c03-k03",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "c03-k04",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "e01-k01",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "e01-k02",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "e01-k03",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "e01-k04",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "e02-k01",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "e02-k02",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "e02-k03",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "e02-k04",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "e03-k01",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "e03-k02",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "e03-k03",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "e03-k04",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "e04-k01",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "e04-k02",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "e04-k03",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "e04-k04",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "e05-k01",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "e05-k02",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "e05-k03",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "e05-k04",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "p01-k01",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "p01-k02",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "p01-k03",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "p01-k04",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "p02-k01",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "p02-k02",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "p02-k03",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    },
+    {
+      "id": "p02-k04",
+      "preservedFields": {
+        "id": true,
+        "originalTitle": true,
+        "objectiveIds": true,
+        "publicQuestionId": true,
+        "originalPrimaryQuestion": true,
+        "originalTransferQuestion": true
+      }
+    }
+  ],
+  "originalProfessionalRequirementComparisons": [
+    {
+      "module": "f01",
+      "historicalSourceUnit": "f01",
+      "preservedFields": {
+        "mechanismRequirements": true,
+        "implementationRequirements": true,
+        "failureRequirements": true,
+        "tradeoffRequirements": true,
+        "practiceRequirements": true,
+        "originalEvidenceRequirements": true,
+        "originalValidationRequirements": true
+      }
+    },
+    {
+      "module": "f02",
+      "historicalSourceUnit": "f02",
+      "preservedFields": {
+        "mechanismRequirements": true,
+        "implementationRequirements": true,
+        "failureRequirements": true,
+        "tradeoffRequirements": true,
+        "practiceRequirements": true,
+        "originalEvidenceRequirements": true,
+        "originalValidationRequirements": true
+      }
+    },
+    {
+      "module": "c01",
+      "historicalSourceUnit": "c01-solution-selection",
+      "preservedFields": {
+        "mechanismRequirements": true,
+        "implementationRequirements": true,
+        "failureRequirements": true,
+        "tradeoffRequirements": true,
+        "practiceRequirements": true,
+        "originalEvidenceRequirements": true,
+        "originalValidationRequirements": true
+      }
+    },
+    {
+      "module": "c02",
+      "historicalSourceUnit": "c02",
+      "preservedFields": {
+        "mechanismRequirements": true,
+        "implementationRequirements": true,
+        "failureRequirements": true,
+        "tradeoffRequirements": true,
+        "practiceRequirements": true,
+        "originalEvidenceRequirements": true,
+        "originalValidationRequirements": true
+      }
+    },
+    {
+      "module": "c03",
+      "historicalSourceUnit": "c03",
+      "preservedFields": {
+        "mechanismRequirements": true,
+        "implementationRequirements": true,
+        "failureRequirements": true,
+        "tradeoffRequirements": true,
+        "practiceRequirements": true,
+        "originalEvidenceRequirements": true,
+        "originalValidationRequirements": true
+      }
+    },
+    {
+      "module": "e01",
+      "historicalSourceUnit": "e01",
+      "preservedFields": {
+        "mechanismRequirements": true,
+        "implementationRequirements": true,
+        "failureRequirements": true,
+        "tradeoffRequirements": true,
+        "practiceRequirements": true,
+        "originalEvidenceRequirements": true,
+        "originalValidationRequirements": true
+      }
+    },
+    {
+      "module": "e02",
+      "historicalSourceUnit": "e02",
+      "preservedFields": {
+        "mechanismRequirements": true,
+        "implementationRequirements": true,
+        "failureRequirements": true,
+        "tradeoffRequirements": true,
+        "practiceRequirements": true,
+        "originalEvidenceRequirements": true,
+        "originalValidationRequirements": true
+      }
+    },
+    {
+      "module": "e03",
+      "historicalSourceUnit": "e03",
+      "preservedFields": {
+        "mechanismRequirements": true,
+        "implementationRequirements": true,
+        "failureRequirements": true,
+        "tradeoffRequirements": true,
+        "practiceRequirements": true,
+        "originalEvidenceRequirements": true,
+        "originalValidationRequirements": true
+      }
+    },
+    {
+      "module": "e04",
+      "historicalSourceUnit": "e04",
+      "preservedFields": {
+        "mechanismRequirements": true,
+        "implementationRequirements": true,
+        "failureRequirements": true,
+        "tradeoffRequirements": true,
+        "practiceRequirements": true,
+        "originalEvidenceRequirements": true,
+        "originalValidationRequirements": true
+      }
+    },
+    {
+      "module": "e05",
+      "historicalSourceUnit": "e05",
+      "preservedFields": {
+        "mechanismRequirements": true,
+        "implementationRequirements": true,
+        "failureRequirements": true,
+        "tradeoffRequirements": true,
+        "practiceRequirements": true,
+        "originalEvidenceRequirements": true,
+        "originalValidationRequirements": true
+      }
+    },
+    {
+      "module": "p01",
+      "historicalSourceUnit": "p01",
+      "preservedFields": {
+        "mechanismRequirements": true,
+        "implementationRequirements": true,
+        "failureRequirements": true,
+        "tradeoffRequirements": true,
+        "practiceRequirements": true,
+        "originalEvidenceRequirements": true,
+        "originalValidationRequirements": true
+      }
+    },
+    {
+      "module": "p02",
+      "historicalSourceUnit": "p02",
+      "preservedFields": {
+        "mechanismRequirements": true,
+        "implementationRequirements": true,
+        "failureRequirements": true,
+        "tradeoffRequirements": true,
+        "practiceRequirements": true,
+        "originalEvidenceRequirements": true,
+        "originalValidationRequirements": true
+      }
+    }
+  ],
+  "knowledgePoints": [
+    {
+      "id": "f01-k01",
+      "originalTitle": "输入类型与非法输入",
+      "objectiveIds": [
+        "f01-o1"
+      ],
+      "actualPrimaryUnits": [
+        "f01"
+      ],
+      "locations": [
+        {
+          "unitId": "f01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f01.md",
+          "sourceSha256": "a960288d8ffd5ba281ed3aec1366433533ba22ee7eddfc5c0537a84f6f4b3b6b",
+          "line": 8,
+          "heading": "成功需要跨过四道边界"
+        },
+        {
+          "unitId": "f01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f01.md",
+          "sourceSha256": "a960288d8ffd5ba281ed3aec1366433533ba22ee7eddfc5c0537a84f6f4b3b6b",
+          "line": 18,
+          "heading": "一个完整的只读适配器"
+        },
+        {
+          "unitId": "01-foundation",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/01-foundation.md",
+          "sourceSha256": "9e21a39ca80ea9045111885d33f8a60e0c5fc403a43e74b86f0f58a23347abad",
+          "line": 24,
+          "heading": "完整短程序"
+        },
+        {
+          "unitId": "01-foundation",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/01-foundation.md",
+          "sourceSha256": "9e21a39ca80ea9045111885d33f8a60e0c5fc403a43e74b86f0f58a23347abad",
+          "line": 86,
+          "heading": "顺着数据和控制流读程序"
+        }
+      ],
+      "currentQAReadingJudgment": "专业边界继续区分可信身份与原始输入；新预备课先用文本解析、严格类型和零业务调用的拒绝路径补齐读代码能力。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "f01-k02",
+      "originalTitle": "HTTP请求与失败分类",
+      "objectiveIds": [
+        "f01-o1"
+      ],
+      "actualPrimaryUnits": [
+        "f01"
+      ],
+      "locations": [
+        {
+          "unitId": "f01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f01.md",
+          "sourceSha256": "a960288d8ffd5ba281ed3aec1366433533ba22ee7eddfc5c0537a84f6f4b3b6b",
+          "line": 8,
+          "heading": "成功需要跨过四道边界"
+        },
+        {
+          "unitId": "f01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f01.md",
+          "sourceSha256": "a960288d8ffd5ba281ed3aec1366433533ba22ee7eddfc5c0537a84f6f4b3b6b",
+          "line": 18,
+          "heading": "一个完整的只读适配器"
+        },
+        {
+          "unitId": "f01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f01.md",
+          "sourceSha256": "a960288d8ffd5ba281ed3aec1366433533ba22ee7eddfc5c0537a84f6f4b3b6b",
+          "line": 193,
+          "heading": "何时扩展这个边界"
+        },
+        {
+          "unitId": "f01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f01.md",
+          "sourceSha256": "a960288d8ffd5ba281ed3aec1366433533ba22ee7eddfc5c0537a84f6f4b3b6b",
+          "line": 199,
+          "heading": "三个推理与实作任务"
+        }
+      ],
+      "currentQAReadingJudgment": "只读适配器保持 HTTP、网络、解析和业务错误的分层；改写接口的练习要求重新判断未知效果，未把只读重试泛化到写动作。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "f01-k03",
+      "originalTitle": "依赖与版本复现",
+      "objectiveIds": [
+        "f01-o2"
+      ],
+      "actualPrimaryUnits": [
+        "f01"
+      ],
+      "locations": [
+        {
+          "unitId": "f01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f01.md",
+          "sourceSha256": "a960288d8ffd5ba281ed3aec1366433533ba22ee7eddfc5c0537a84f6f4b3b6b",
+          "line": 185,
+          "heading": "让另一个开发者复现 而不是复制成功截图"
+        },
+        {
+          "unitId": "f01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f01.md",
+          "sourceSha256": "a960288d8ffd5ba281ed3aec1366433533ba22ee7eddfc5c0537a84f6f4b3b6b",
+          "line": 199,
+          "heading": "三个推理与实作任务"
+        }
+      ],
+      "currentQAReadingJudgment": "复现段保留源快照与运行环境区别、运行时/依赖/配置/提交记录；预备课明确独立目录和退出码，补学不代替专业环境交接。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "f01-k04",
+      "originalTitle": "测试断言与变更记录",
+      "objectiveIds": [
+        "f01-o2"
+      ],
+      "actualPrimaryUnits": [
+        "f01"
+      ],
+      "locations": [
+        {
+          "unitId": "f01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f01.md",
+          "sourceSha256": "a960288d8ffd5ba281ed3aec1366433533ba22ee7eddfc5c0537a84f6f4b3b6b",
+          "line": 18,
+          "heading": "一个完整的只读适配器"
+        },
+        {
+          "unitId": "f01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f01.md",
+          "sourceSha256": "a960288d8ffd5ba281ed3aec1366433533ba22ee7eddfc5c0537a84f6f4b3b6b",
+          "line": 199,
+          "heading": "三个推理与实作任务"
+        },
+        {
+          "unitId": "01-foundation",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/01-foundation.md",
+          "sourceSha256": "9e21a39ca80ea9045111885d33f8a60e0c5fc403a43e74b86f0f58a23347abad",
+          "line": 96,
+          "heading": "根据失败补对应基础"
+        }
+      ],
+      "currentQAReadingJudgment": "专业夹具断言及变更交接保留；新预备课新增故意错断言、定位、恢复和环境变更记录，实际 QA 只完成所列路径。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "f02-k01",
+      "originalTitle": "模型请求与完成结果",
+      "objectiveIds": [
+        "f02-o1"
+      ],
+      "actualPrimaryUnits": [
+        "f02"
+      ],
+      "locations": [
+        {
+          "unitId": "f02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f02.md",
+          "sourceSha256": "341f74e36852a020fb4633ee284396f95082e762a61010d6d10b1cedfb19fe05",
+          "line": 26,
+          "heading": "一次真实协议请求与完整候选闸门"
+        },
+        {
+          "unitId": "f02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f02.md",
+          "sourceSha256": "341f74e36852a020fb4633ee284396f95082e762a61010d6d10b1cedfb19fe05",
+          "line": 188,
+          "heading": "三种失败需要三个不同处理"
+        },
+        {
+          "unitId": "f02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f02.md",
+          "sourceSha256": "341f74e36852a020fb4633ee284396f95082e762a61010d6d10b1cedfb19fe05",
+          "line": 198,
+          "heading": "完成原目标所需的练习证据"
+        }
+      ],
+      "currentQAReadingJudgment": "完整响应才能产生候选，拒绝/不完整/协议错误单独处理；正文仍要求真实调用的学习者证据，本轮不声称 provider 已调用。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "f02-k02",
+      "originalTitle": "结构与业务双重校验",
+      "objectiveIds": [
+        "f02-o1"
+      ],
+      "actualPrimaryUnits": [
+        "f02"
+      ],
+      "locations": [
+        {
+          "unitId": "f02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f02.md",
+          "sourceSha256": "341f74e36852a020fb4633ee284396f95082e762a61010d6d10b1cedfb19fe05",
+          "line": 18,
+          "heading": "先定义候选 而不是要求模型“给一个可靠答案”"
+        },
+        {
+          "unitId": "f02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f02.md",
+          "sourceSha256": "341f74e36852a020fb4633ee284396f95082e762a61010d6d10b1cedfb19fe05",
+          "line": 26,
+          "heading": "一次真实协议请求与完整候选闸门"
+        },
+        {
+          "unitId": "f02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f02.md",
+          "sourceSha256": "341f74e36852a020fb4633ee284396f95082e762a61010d6d10b1cedfb19fe05",
+          "line": 188,
+          "heading": "三种失败需要三个不同处理"
+        },
+        {
+          "unitId": "f02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f02.md",
+          "sourceSha256": "341f74e36852a020fb4633ee284396f95082e762a61010d6d10b1cedfb19fe05",
+          "line": 198,
+          "heading": "完成原目标所需的练习证据"
+        }
+      ],
+      "currentQAReadingJudgment": "schema 仅完成结构闸门，证据引用、项目/修订和断言事实继续由业务校验；候选不能自行证明根因。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "f02-k03",
+      "originalTitle": "可信指令与外部资料",
+      "objectiveIds": [
+        "f02-o2"
+      ],
+      "actualPrimaryUnits": [
+        "f02"
+      ],
+      "locations": [
+        {
+          "unitId": "f02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f02.md",
+          "sourceSha256": "341f74e36852a020fb4633ee284396f95082e762a61010d6d10b1cedfb19fe05",
+          "line": 8,
+          "heading": "把任务状态与模型输入拆开"
+        },
+        {
+          "unitId": "f02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f02.md",
+          "sourceSha256": "341f74e36852a020fb4633ee284396f95082e762a61010d6d10b1cedfb19fe05",
+          "line": 18,
+          "heading": "先定义候选 而不是要求模型“给一个可靠答案”"
+        }
+      ],
+      "currentQAReadingJudgment": "状态与输入投影分离；外部资料只能供证，可信策略不由资料正文授予。早期信任导读支撑原则而未替代代码。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "f02-k04",
+      "originalTitle": "上下文预算与缺信息",
+      "objectiveIds": [
+        "f02-o2"
+      ],
+      "actualPrimaryUnits": [
+        "f02"
+      ],
+      "locations": [
+        {
+          "unitId": "f02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f02.md",
+          "sourceSha256": "341f74e36852a020fb4633ee284396f95082e762a61010d6d10b1cedfb19fe05",
+          "line": 8,
+          "heading": "把任务状态与模型输入拆开"
+        },
+        {
+          "unitId": "f02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f02.md",
+          "sourceSha256": "341f74e36852a020fb4633ee284396f95082e762a61010d6d10b1cedfb19fe05",
+          "line": 188,
+          "heading": "三种失败需要三个不同处理"
+        },
+        {
+          "unitId": "f02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/f02.md",
+          "sourceSha256": "341f74e36852a020fb4633ee284396f95082e762a61010d6d10b1cedfb19fe05",
+          "line": 198,
+          "heading": "完成原目标所需的练习证据"
+        }
+      ],
+      "currentQAReadingJudgment": "上下文选择须保留关键断言及必要环境；信息不足返回缺证，投影与裁剪不得伪造完整状态。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "c01-k01",
+      "originalTitle": "单次调用与工作流基线",
+      "objectiveIds": [
+        "c01-o1"
+      ],
+      "actualPrimaryUnits": [
+        "c01-fixed-workflow",
+        "c01-selection"
+      ],
+      "locations": [
+        {
+          "unitId": "c01-selection",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c01-selection.md",
+          "sourceSha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f",
+          "line": 7,
+          "heading": "同一任务 四种控制权"
+        },
+        {
+          "unitId": "c01-selection",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c01-selection.md",
+          "sourceSha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f",
+          "line": 22,
+          "heading": "先固定共同任务条件"
+        },
+        {
+          "unitId": "c01-fixed-workflow",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c01-fixed-workflow.md",
+          "sourceSha256": "d4f8ea6dd8065d0afc2a4c2176964161a03e23463397b2518036b7e11530822e",
+          "line": 7,
+          "heading": "完整任务与结果合同"
+        },
+        {
+          "unitId": "c01-fixed-workflow",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c01-fixed-workflow.md",
+          "sourceSha256": "d4f8ea6dd8065d0afc2a4c2176964161a03e23463397b2518036b7e11530822e",
+          "line": 45,
+          "heading": "一个固定流程的完整决策骨架"
+        }
+      ],
+      "currentQAReadingJudgment": "前篇先对比普通程序、一次调用、固定流程的控制权；完整合同和候选—审批—交付实作后移到工具/存储之后，完整原围栏未截断。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "c01-k02",
+      "originalTitle": "动态循环与复杂度取舍",
+      "objectiveIds": [
+        "c01-o1"
+      ],
+      "actualPrimaryUnits": [
+        "c01-control-loop",
+        "c01-selection"
+      ],
+      "locations": [
+        {
+          "unitId": "c01-selection",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c01-selection.md",
+          "sourceSha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f",
+          "line": 25,
+          "heading": "三种输入暴露不同的必要性"
+        },
+        {
+          "unitId": "c01-selection",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c01-selection.md",
+          "sourceSha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f",
+          "line": 51,
+          "heading": "用条件做选择的练习"
+        },
+        {
+          "unitId": "c01-control-loop",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c01-control-loop.md",
+          "sourceSha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38",
+          "line": 806,
+          "heading": "12 选择最小足够的循环 而不是先选最复杂框架"
+        }
+      ],
+      "currentQAReadingJudgment": "方案原则与条件练习不要求完整 Store；后置动态章节保留运行成本、重规划条件与退出/收回固定流程的取舍。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "c01-k03",
+      "originalTitle": "行动观察与重规划",
+      "objectiveIds": [
+        "c01-o2"
+      ],
+      "actualPrimaryUnits": [
+        "c01-control-loop"
+      ],
+      "locations": [
+        {
+          "unitId": "c01-control-loop",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c01-control-loop.md",
+          "sourceSha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38",
+          "line": 367,
+          "heading": "8.2 主循环 先处理已有事实 再产生新决策"
+        },
+        {
+          "unitId": "c01-control-loop",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c01-control-loop.md",
+          "sourceSha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38",
+          "line": 731,
+          "heading": "10.2 验收拒绝 把失败事实变为决策输入"
+        },
+        {
+          "unitId": "c01-control-primer",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c01-control-primer.md",
+          "sourceSha256": "345dd67c5bd8165a9d77dc7de819133f50dfcf39f91f59dec05bf385aba3d8c8",
+          "line": 28,
+          "heading": "一次创建后的超时轨迹"
+        }
+      ],
+      "currentQAReadingJudgment": "身份导读只追踪动作/尝试/效果短轨迹；完整循环后置，先处理持久事实、工具结果与验收反馈再产生新决策。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "c01-k04",
+      "originalTitle": "停止预算与协作边界",
+      "objectiveIds": [
+        "c01-o2"
+      ],
+      "actualPrimaryUnits": [
+        "c01-control-loop",
+        "c01-selection"
+      ],
+      "locations": [
+        {
+          "unitId": "c01-selection",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c01-selection.md",
+          "sourceSha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f",
+          "line": 33,
+          "heading": "多 Agent 的升级点是可分工 而不是人数"
+        },
+        {
+          "unitId": "c01-selection",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c01-selection.md",
+          "sourceSha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f",
+          "line": 43,
+          "heading": "怎样做一个公平且能定位原因的比较"
+        },
+        {
+          "unitId": "c01-control-loop",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c01-control-loop.md",
+          "sourceSha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38",
+          "line": 262,
+          "heading": "7 审批 取消和预算都必须跨暂停保留"
+        },
+        {
+          "unitId": "c01-control-loop",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c01-control-loop.md",
+          "sourceSha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38",
+          "line": 786,
+          "heading": "11 成功 等待和停止必须保留不同的含义"
+        }
+      ],
+      "currentQAReadingJudgment": "多 Agent 分工边界留在选型，审批/取消/预算跨暂停和完整等待状态留在动态章；人数不证明收益。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "c02-k01",
+      "originalTitle": "文档版本与可读范围",
+      "objectiveIds": [
+        "c02-o1"
+      ],
+      "actualPrimaryUnits": [
+        "c02"
+      ],
+      "locations": [
+        {
+          "unitId": "c02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c02.md",
+          "sourceSha256": "dcc837358d21523fe5cfb16e91682220346b151ed86b84a294f48dd6aee7aff8",
+          "line": 8,
+          "heading": "本次回答看到的是哪一个资料版本"
+        },
+        {
+          "unitId": "c02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c02.md",
+          "sourceSha256": "dcc837358d21523fe5cfb16e91682220346b151ed86b84a294f48dd6aee7aff8",
+          "line": 36,
+          "heading": "一个完整的过滤 排序 读回与事实支持链"
+        }
+      ],
+      "currentQAReadingJudgment": "不可变修订、哈希、主体范围与检索前过滤仍为资料链前提，不用事后答案过滤替代授权。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "c02-k02",
+      "originalTitle": "片段与证据归属",
+      "objectiveIds": [
+        "c02-o1"
+      ],
+      "actualPrimaryUnits": [
+        "c02"
+      ],
+      "locations": [
+        {
+          "unitId": "c02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c02.md",
+          "sourceSha256": "dcc837358d21523fe5cfb16e91682220346b151ed86b84a294f48dd6aee7aff8",
+          "line": 28,
+          "heading": "把关联检查与支持判断分别建模"
+        },
+        {
+          "unitId": "c02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c02.md",
+          "sourceSha256": "dcc837358d21523fe5cfb16e91682220346b151ed86b84a294f48dd6aee7aff8",
+          "line": 36,
+          "heading": "一个完整的过滤 排序 读回与事实支持链"
+        },
+        {
+          "unitId": "c02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c02.md",
+          "sourceSha256": "dcc837358d21523fe5cfb16e91682220346b151ed86b84a294f48dd6aee7aff8",
+          "line": 228,
+          "heading": "无答案应能解释是哪一层缺证"
+        }
+      ],
+      "currentQAReadingJudgment": "全文/块身份和行范围核验与结论支持分开；正规化事实不能越过主体、来源与版本关系。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "c02-k03",
+      "originalTitle": "词法与语义检索比较",
+      "objectiveIds": [
+        "c02-o2"
+      ],
+      "actualPrimaryUnits": [
+        "c02"
+      ],
+      "locations": [
+        {
+          "unitId": "c02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c02.md",
+          "sourceSha256": "dcc837358d21523fe5cfb16e91682220346b151ed86b84a294f48dd6aee7aff8",
+          "line": 18,
+          "heading": "检索策略必须按查询类型比较"
+        },
+        {
+          "unitId": "c02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c02.md",
+          "sourceSha256": "dcc837358d21523fe5cfb16e91682220346b151ed86b84a294f48dd6aee7aff8",
+          "line": 36,
+          "heading": "一个完整的过滤 排序 读回与事实支持链"
+        },
+        {
+          "unitId": "c02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c02.md",
+          "sourceSha256": "dcc837358d21523fe5cfb16e91682220346b151ed86b84a294f48dd6aee7aff8",
+          "line": 236,
+          "heading": "做一个能定位问题的检索比较"
+        }
+      ],
+      "currentQAReadingJudgment": "词法、语义、混合、融合和重排按查询类型比较；最小程序仍只是词交集，未冒称 BM25 或真实嵌入实验。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "c02-k04",
+      "originalTitle": "冲突和无答案",
+      "objectiveIds": [
+        "c02-o2"
+      ],
+      "actualPrimaryUnits": [
+        "c02"
+      ],
+      "locations": [
+        {
+          "unitId": "c02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c02.md",
+          "sourceSha256": "dcc837358d21523fe5cfb16e91682220346b151ed86b84a294f48dd6aee7aff8",
+          "line": 28,
+          "heading": "把关联检查与支持判断分别建模"
+        },
+        {
+          "unitId": "c02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c02.md",
+          "sourceSha256": "dcc837358d21523fe5cfb16e91682220346b151ed86b84a294f48dd6aee7aff8",
+          "line": 36,
+          "heading": "一个完整的过滤 排序 读回与事实支持链"
+        },
+        {
+          "unitId": "c02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c02.md",
+          "sourceSha256": "dcc837358d21523fe5cfb16e91682220346b151ed86b84a294f48dd6aee7aff8",
+          "line": 228,
+          "heading": "无答案应能解释是哪一层缺证"
+        }
+      ],
+      "currentQAReadingJudgment": "引用关联、必要事实缺失、环境缺失与版本冲突有不同缺证理由；练习保留无答案和越权对照。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "c03-k01",
+      "originalTitle": "工具定义建议与实际执行",
+      "objectiveIds": [
+        "c03-o1"
+      ],
+      "actualPrimaryUnits": [
+        "c03"
+      ],
+      "locations": [
+        {
+          "unitId": "c03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c03.md",
+          "sourceSha256": "5784b4d0332cc9ddce2277fcdcae2f39b7d2c0887426a0e13f1db89081369d4b",
+          "line": 8,
+          "heading": "工具名与合法 JSON 都不能授执行权"
+        },
+        {
+          "unitId": "c03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c03.md",
+          "sourceSha256": "5784b4d0332cc9ddce2277fcdcae2f39b7d2c0887426a0e13f1db89081369d4b",
+          "line": 16,
+          "heading": "一个意图 多个协议调用与发送尝试"
+        },
+        {
+          "unitId": "c03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c03.md",
+          "sourceSha256": "5784b4d0332cc9ddce2277fcdcae2f39b7d2c0887426a0e13f1db89081369d4b",
+          "line": 178,
+          "heading": "一个有真实效果账本的无网络替身"
+        },
+        {
+          "unitId": "c03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c03.md",
+          "sourceSha256": "5784b4d0332cc9ddce2277fcdcae2f39b7d2c0887426a0e13f1db89081369d4b",
+          "line": 271,
+          "heading": "取舍与失效顺序"
+        }
+      ],
+      "currentQAReadingJudgment": "模型调用是建议；Dispatch、物理发送和效果记录分开。导读提供名称前提，完整替身保留到工具章。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "c03-k02",
+      "originalTitle": "参数语义与对象授权",
+      "objectiveIds": [
+        "c03-o1"
+      ],
+      "actualPrimaryUnits": [
+        "c03"
+      ],
+      "locations": [
+        {
+          "unitId": "c03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c03.md",
+          "sourceSha256": "5784b4d0332cc9ddce2277fcdcae2f39b7d2c0887426a0e13f1db89081369d4b",
+          "line": 8,
+          "heading": "工具名与合法 JSON 都不能授执行权"
+        },
+        {
+          "unitId": "c03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c03.md",
+          "sourceSha256": "5784b4d0332cc9ddce2277fcdcae2f39b7d2c0887426a0e13f1db89081369d4b",
+          "line": 16,
+          "heading": "一个意图 多个协议调用与发送尝试"
+        },
+        {
+          "unitId": "c03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c03.md",
+          "sourceSha256": "5784b4d0332cc9ddce2277fcdcae2f39b7d2c0887426a0e13f1db89081369d4b",
+          "line": 81,
+          "heading": "审批绑定不可变动作 重发资格另行核对"
+        },
+        {
+          "unitId": "c03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c03.md",
+          "sourceSha256": "5784b4d0332cc9ddce2277fcdcae2f39b7d2c0887426a0e13f1db89081369d4b",
+          "line": 89,
+          "heading": "本地事务和下游接口各承担哪一半"
+        }
+      ],
+      "currentQAReadingJudgment": "参数结构、项目语义与对象授权分开；不可变规范指纹和当前批准不由模型正文更改。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "c03-k03",
+      "originalTitle": "幂等与重复请求",
+      "objectiveIds": [
+        "c03-o2"
+      ],
+      "actualPrimaryUnits": [
+        "c03"
+      ],
+      "locations": [
+        {
+          "unitId": "c03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c03.md",
+          "sourceSha256": "5784b4d0332cc9ddce2277fcdcae2f39b7d2c0887426a0e13f1db89081369d4b",
+          "line": 16,
+          "heading": "一个意图 多个协议调用与发送尝试"
+        },
+        {
+          "unitId": "c03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c03.md",
+          "sourceSha256": "5784b4d0332cc9ddce2277fcdcae2f39b7d2c0887426a0e13f1db89081369d4b",
+          "line": 89,
+          "heading": "本地事务和下游接口各承担哪一半"
+        },
+        {
+          "unitId": "c03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c03.md",
+          "sourceSha256": "5784b4d0332cc9ddce2277fcdcae2f39b7d2c0887426a0e13f1db89081369d4b",
+          "line": 178,
+          "heading": "一个有真实效果账本的无网络替身"
+        },
+        {
+          "unitId": "c03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c03.md",
+          "sourceSha256": "5784b4d0332cc9ddce2277fcdcae2f39b7d2c0887426a0e13f1db89081369d4b",
+          "line": 271,
+          "heading": "取舍与失效顺序"
+        }
+      ],
+      "currentQAReadingJudgment": "业务槽位/action 与协议 call/attempt 不混用；同键同内容重发、改内容冲突、旧批准失效的机制完整保留。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "c03-k04",
+      "originalTitle": "业务失败与未知结果",
+      "objectiveIds": [
+        "c03-o2"
+      ],
+      "actualPrimaryUnits": [
+        "c03"
+      ],
+      "locations": [
+        {
+          "unitId": "c03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c03.md",
+          "sourceSha256": "5784b4d0332cc9ddce2277fcdcae2f39b7d2c0887426a0e13f1db89081369d4b",
+          "line": 89,
+          "heading": "本地事务和下游接口各承担哪一半"
+        },
+        {
+          "unitId": "c03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c03.md",
+          "sourceSha256": "5784b4d0332cc9ddce2277fcdcae2f39b7d2c0887426a0e13f1db89081369d4b",
+          "line": 178,
+          "heading": "一个有真实效果账本的无网络替身"
+        },
+        {
+          "unitId": "c03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/c03.md",
+          "sourceSha256": "5784b4d0332cc9ddce2277fcdcae2f39b7d2c0887426a0e13f1db89081369d4b",
+          "line": 271,
+          "heading": "取舍与失效顺序"
+        }
+      ],
+      "currentQAReadingJudgment": "超时归未知，失败观察须绑定原 action/attempt/operation/hash；按下游契约决定核对与重发。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "e01-k01",
+      "originalTitle": "任务事件与业务事实",
+      "objectiveIds": [
+        "e01-o1"
+      ],
+      "actualPrimaryUnits": [
+        "e01"
+      ],
+      "locations": [
+        {
+          "unitId": "e01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e01.md",
+          "sourceSha256": "86af5b074a277c5f2325e53767cea17218a75c4ce5529cec254c01e8a9858b11",
+          "line": 8,
+          "heading": "三个提交点定义可恢复事实"
+        },
+        {
+          "unitId": "e01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e01.md",
+          "sourceSha256": "86af5b074a277c5f2325e53767cea17218a75c4ce5529cec254c01e8a9858b11",
+          "line": 18,
+          "heading": "先分清调度状态与效果状态"
+        },
+        {
+          "unitId": "e01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e01.md",
+          "sourceSha256": "86af5b074a277c5f2325e53767cea17218a75c4ce5529cec254c01e8a9858b11",
+          "line": 26,
+          "heading": "一个可检查的存储最小实现"
+        }
+      ],
+      "currentQAReadingJudgment": "事件输入、持久动作和外部效果不是同一事实；最小 Store 解释意图、尝试和结果三个提交点。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "e01-k02",
+      "originalTitle": "检查点与状态转换",
+      "objectiveIds": [
+        "e01-o1"
+      ],
+      "actualPrimaryUnits": [
+        "e01"
+      ],
+      "locations": [
+        {
+          "unitId": "e01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e01.md",
+          "sourceSha256": "86af5b074a277c5f2325e53767cea17218a75c4ce5529cec254c01e8a9858b11",
+          "line": 18,
+          "heading": "先分清调度状态与效果状态"
+        },
+        {
+          "unitId": "e01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e01.md",
+          "sourceSha256": "86af5b074a277c5f2325e53767cea17218a75c4ce5529cec254c01e8a9858b11",
+          "line": 26,
+          "heading": "一个可检查的存储最小实现"
+        },
+        {
+          "unitId": "e01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e01.md",
+          "sourceSha256": "86af5b074a277c5f2325e53767cea17218a75c4ce5529cec254c01e8a9858b11",
+          "line": 341,
+          "heading": "用一次恢复轨迹读懂提交边界"
+        },
+        {
+          "unitId": "e01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e01.md",
+          "sourceSha256": "86af5b074a277c5f2325e53767cea17218a75c4ce5529cec254c01e8a9858b11",
+          "line": 374,
+          "heading": "已实现的终态保证与版本变化"
+        }
+      ],
+      "currentQAReadingJudgment": "持久状态与效果状态分开；最小存储和 Dispatch 桥接学习后才进入固定/动态整体流程，并明确未实现全模型账本。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "e01-k03",
+      "originalTitle": "中断与副作用核对",
+      "objectiveIds": [
+        "e01-o2"
+      ],
+      "actualPrimaryUnits": [
+        "e01"
+      ],
+      "locations": [
+        {
+          "unitId": "e01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e01.md",
+          "sourceSha256": "86af5b074a277c5f2325e53767cea17218a75c4ce5529cec254c01e8a9858b11",
+          "line": 8,
+          "heading": "三个提交点定义可恢复事实"
+        },
+        {
+          "unitId": "e01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e01.md",
+          "sourceSha256": "86af5b074a277c5f2325e53767cea17218a75c4ce5529cec254c01e8a9858b11",
+          "line": 26,
+          "heading": "一个可检查的存储最小实现"
+        },
+        {
+          "unitId": "e01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e01.md",
+          "sourceSha256": "86af5b074a277c5f2325e53767cea17218a75c4ce5529cec254c01e8a9858b11",
+          "line": 341,
+          "heading": "用一次恢复轨迹读懂提交边界"
+        },
+        {
+          "unitId": "e01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e01.md",
+          "sourceSha256": "86af5b074a277c5f2325e53767cea17218a75c4ce5529cec254c01e8a9858b11",
+          "line": 384,
+          "heading": "用故障位置验证 而不是只测正常重启"
+        }
+      ],
+      "currentQAReadingJudgment": "窗口轨迹先核对原动作，真实效果已有但本地回执未提交不能解释为未发送；取消和未知事实分开。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "e01-k04",
+      "originalTitle": "恢复与版本冲突",
+      "objectiveIds": [
+        "e01-o2"
+      ],
+      "actualPrimaryUnits": [
+        "e01"
+      ],
+      "locations": [
+        {
+          "unitId": "e01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e01.md",
+          "sourceSha256": "86af5b074a277c5f2325e53767cea17218a75c4ce5529cec254c01e8a9858b11",
+          "line": 374,
+          "heading": "已实现的终态保证与版本变化"
+        },
+        {
+          "unitId": "e01",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e01.md",
+          "sourceSha256": "86af5b074a277c5f2325e53767cea17218a75c4ce5529cec254c01e8a9858b11",
+          "line": 384,
+          "heading": "用故障位置验证 而不是只测正常重启"
+        }
+      ],
+      "currentQAReadingJudgment": "版本快照与冲突拒绝保留；并发代次仅保护本地推进，外部旧请求仍需核对。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "e02-k01",
+      "originalTitle": "能力回归与保留案例",
+      "objectiveIds": [
+        "e02-o1"
+      ],
+      "actualPrimaryUnits": [
+        "e02"
+      ],
+      "locations": [
+        {
+          "unitId": "e02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e02.md",
+          "sourceSha256": "ee08b65f1bd78bf87324d7edac1a7642dae74f7fb1fadd41f4197410b32f4069",
+          "line": 63,
+          "heading": "开发 回归和保留部分控制的是信息使用"
+        },
+        {
+          "unitId": "e02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e02.md",
+          "sourceSha256": "ee08b65f1bd78bf87324d7edac1a7642dae74f7fb1fadd41f4197410b32f4069",
+          "line": 249,
+          "heading": "推理与实现练习"
+        }
+      ],
+      "currentQAReadingJudgment": "开发、回归和保留集控制信息使用；定向修复旧反例后仍需新独立任务，不能复用作者已见材料认证。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "e02-k02",
+      "originalTitle": "重复测量与对照条件",
+      "objectiveIds": [
+        "e02-o1"
+      ],
+      "actualPrimaryUnits": [
+        "e02"
+      ],
+      "locations": [
+        {
+          "unitId": "e02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e02.md",
+          "sourceSha256": "ee08b65f1bd78bf87324d7edac1a7642dae74f7fb1fadd41f4197410b32f4069",
+          "line": 73,
+          "heading": "先冻结比较 再运行所有被分配的任务"
+        },
+        {
+          "unitId": "e02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e02.md",
+          "sourceSha256": "ee08b65f1bd78bf87324d7edac1a7642dae74f7fb1fadd41f4197410b32f4069",
+          "line": 249,
+          "heading": "推理与实现练习"
+        }
+      ],
+      "currentQAReadingJudgment": "任务和比较条件先冻结，重复轮次、随机性及全分母保留；前置验收导读不替代完整评估器。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "e02-k03",
+      "originalTitle": "结果轨迹与成本",
+      "objectiveIds": [
+        "e02-o2"
+      ],
+      "actualPrimaryUnits": [
+        "e02"
+      ],
+      "locations": [
+        {
+          "unitId": "e02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e02.md",
+          "sourceSha256": "ee08b65f1bd78bf87324d7edac1a7642dae74f7fb1fadd41f4197410b32f4069",
+          "line": 8,
+          "heading": "把“好”拆成能被不同证据推翻的命题"
+        },
+        {
+          "unitId": "e02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e02.md",
+          "sourceSha256": "ee08b65f1bd78bf87324d7edac1a7642dae74f7fb1fadd41f4197410b32f4069",
+          "line": 24,
+          "heading": "案例不是问答文本 而是一份执行契约"
+        },
+        {
+          "unitId": "e02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e02.md",
+          "sourceSha256": "ee08b65f1bd78bf87324d7edac1a7642dae74f7fb1fadd41f4197410b32f4069",
+          "line": 93,
+          "heading": "一个判定器怎样拒绝把缺证当通过"
+        },
+        {
+          "unitId": "e02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e02.md",
+          "sourceSha256": "ee08b65f1bd78bf87324d7edac1a7642dae74f7fb1fadd41f4197410b32f4069",
+          "line": 219,
+          "heading": "Trace 用来定位因果 不能当事实数据库"
+        }
+      ],
+      "currentQAReadingJudgment": "结果、轨迹、成本与已确认回执分别评价；缺证返回 INSUFFICIENT，安全但零功能不算正常任务完成。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "e02-k04",
+      "originalTitle": "评分器校准与归因",
+      "objectiveIds": [
+        "e02-o2"
+      ],
+      "actualPrimaryUnits": [
+        "e02"
+      ],
+      "locations": [
+        {
+          "unitId": "e02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e02.md",
+          "sourceSha256": "ee08b65f1bd78bf87324d7edac1a7642dae74f7fb1fadd41f4197410b32f4069",
+          "line": 219,
+          "heading": "Trace 用来定位因果 不能当事实数据库"
+        },
+        {
+          "unitId": "e02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e02.md",
+          "sourceSha256": "ee08b65f1bd78bf87324d7edac1a7642dae74f7fb1fadd41f4197410b32f4069",
+          "line": 231,
+          "heading": "模型评分器的误差需要量化到决策用途"
+        },
+        {
+          "unitId": "e02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e02.md",
+          "sourceSha256": "ee08b65f1bd78bf87324d7edac1a7642dae74f7fb1fadd41f4197410b32f4069",
+          "line": 241,
+          "heading": "从失败分类到一次能够关闭的回归"
+        },
+        {
+          "unitId": "e02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e02.md",
+          "sourceSha256": "ee08b65f1bd78bf87324d7edac1a7642dae74f7fb1fadd41f4197410b32f4069",
+          "line": 249,
+          "heading": "推理与实现练习"
+        }
+      ],
+      "currentQAReadingJudgment": "Trace 调查与业务事实分开；受控替换只支持因果假设，模型评分需独立人审校准和新保留材料。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "e03-k01",
+      "originalTitle": "威胁模型与提示注入",
+      "objectiveIds": [
+        "e03-o1"
+      ],
+      "actualPrimaryUnits": [
+        "e03"
+      ],
+      "locations": [
+        {
+          "unitId": "e03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e03.md",
+          "sourceSha256": "e91f8462415fe1c3906eb8b5740b94a59310adaee72bc20124d401f56a258dc0",
+          "line": 8,
+          "heading": "威胁模型先确定攻击者能够改变哪一段数据"
+        },
+        {
+          "unitId": "e03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e03.md",
+          "sourceSha256": "e91f8462415fe1c3906eb8b5740b94a59310adaee72bc20124d401f56a258dc0",
+          "line": 22,
+          "heading": "读取边界比最终答案过滤更早"
+        },
+        {
+          "unitId": "e03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e03.md",
+          "sourceSha256": "e91f8462415fe1c3906eb8b5740b94a59310adaee72bc20124d401f56a258dc0",
+          "line": 292,
+          "heading": "成对安全练习及参考分析"
+        }
+      ],
+      "currentQAReadingJudgment": "先明确攻击者可改的输入通道与资产；读取正文前执行授权，对抗与正常案例成对比较。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "e03-k02",
+      "originalTitle": "提示分隔与强制边界",
+      "objectiveIds": [
+        "e03-o1"
+      ],
+      "actualPrimaryUnits": [
+        "e03"
+      ],
+      "locations": [
+        {
+          "unitId": "e03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e03.md",
+          "sourceSha256": "e91f8462415fe1c3906eb8b5740b94a59310adaee72bc20124d401f56a258dc0",
+          "line": 22,
+          "heading": "读取边界比最终答案过滤更早"
+        },
+        {
+          "unitId": "e03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e03.md",
+          "sourceSha256": "e91f8462415fe1c3906eb8b5740b94a59310adaee72bc20124d401f56a258dc0",
+          "line": 66,
+          "heading": "无网络替身把局部保证做完整"
+        },
+        {
+          "unitId": "e03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e03.md",
+          "sourceSha256": "e91f8462415fe1c3906eb8b5740b94a59310adaee72bc20124d401f56a258dc0",
+          "line": 282,
+          "heading": "失败顺序决定正确的补救"
+        }
+      ],
+      "currentQAReadingJudgment": "提示隔离不等于强制执行边界；可信宿主在数据读取和动作发送前实施最小权限，远端保证另验。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "e03-k03",
+      "originalTitle": "敏感字段与日志",
+      "objectiveIds": [
+        "e03-o2"
+      ],
+      "actualPrimaryUnits": [
+        "e03"
+      ],
+      "locations": [
+        {
+          "unitId": "e03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e03.md",
+          "sourceSha256": "e91f8462415fe1c3906eb8b5740b94a59310adaee72bc20124d401f56a258dc0",
+          "line": 44,
+          "heading": "内容投影需要覆盖四个通道"
+        },
+        {
+          "unitId": "e03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e03.md",
+          "sourceSha256": "e91f8462415fe1c3906eb8b5740b94a59310adaee72bc20124d401f56a258dc0",
+          "line": 66,
+          "heading": "无网络替身把局部保证做完整"
+        },
+        {
+          "unitId": "e03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e03.md",
+          "sourceSha256": "e91f8462415fe1c3906eb8b5740b94a59310adaee72bc20124d401f56a258dc0",
+          "line": 292,
+          "heading": "成对安全练习及参考分析"
+        }
+      ],
+      "currentQAReadingJudgment": "材料、候选、工具参数和日志四通道均需投影；有限字段策略不冒称识别未知秘密。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "e03-k04",
+      "originalTitle": "精确审批与副作用",
+      "objectiveIds": [
+        "e03-o2"
+      ],
+      "actualPrimaryUnits": [
+        "e03"
+      ],
+      "locations": [
+        {
+          "unitId": "e03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e03.md",
+          "sourceSha256": "e91f8462415fe1c3906eb8b5740b94a59310adaee72bc20124d401f56a258dc0",
+          "line": 54,
+          "heading": "精确批准绑定的是一次逻辑意图"
+        },
+        {
+          "unitId": "e03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e03.md",
+          "sourceSha256": "e91f8462415fe1c3906eb8b5740b94a59310adaee72bc20124d401f56a258dc0",
+          "line": 66,
+          "heading": "无网络替身把局部保证做完整"
+        },
+        {
+          "unitId": "e03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e03.md",
+          "sourceSha256": "e91f8462415fe1c3906eb8b5740b94a59310adaee72bc20124d401f56a258dc0",
+          "line": 274,
+          "heading": "从局部替身走到远端 哪些保证会消失"
+        },
+        {
+          "unitId": "e03",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e03.md",
+          "sourceSha256": "e91f8462415fe1c3906eb8b5740b94a59310adaee72bc20124d401f56a258dc0",
+          "line": 292,
+          "heading": "成对安全练习及参考分析"
+        }
+      ],
+      "currentQAReadingJudgment": "批准绑定精确逻辑意图、项目、主体、有效期和单次消费；远端未知不可沿用内存替身假设。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "e04-k01",
+      "originalTitle": "环境配置与依赖隔离",
+      "objectiveIds": [
+        "e04-o1"
+      ],
+      "actualPrimaryUnits": [
+        "e04"
+      ],
+      "locations": [
+        {
+          "unitId": "e04",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e04.md",
+          "sourceSha256": "de92b0f2c1de87aacf7a549c39965fb68e43f667e9f34804907895df6b5a6cd2",
+          "line": 8,
+          "heading": "发布对象是一组相互兼容的版本"
+        },
+        {
+          "unitId": "e04",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e04.md",
+          "sourceSha256": "de92b0f2c1de87aacf7a549c39965fb68e43f667e9f34804907895df6b5a6cd2",
+          "line": 36,
+          "heading": "分环境配置在启动前验证"
+        },
+        {
+          "unitId": "e04",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e04.md",
+          "sourceSha256": "de92b0f2c1de87aacf7a549c39965fb68e43f667e9f34804907895df6b5a6cd2",
+          "line": 48,
+          "heading": "新任务与旧任务可以走不同工作者集合"
+        }
+      ],
+      "currentQAReadingJudgment": "配置在启动前验证，发布绑定状态/工具/政策/提示与模型版本；新任务和旧任务分路不等于所有旧状态可迁移。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "e04-k02",
+      "originalTitle": "可观测性与回退",
+      "objectiveIds": [
+        "e04-o1"
+      ],
+      "actualPrimaryUnits": [
+        "e04"
+      ],
+      "locations": [
+        {
+          "unitId": "e04",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e04.md",
+          "sourceSha256": "de92b0f2c1de87aacf7a549c39965fb68e43f667e9f34804907895df6b5a6cd2",
+          "line": 8,
+          "heading": "发布对象是一组相互兼容的版本"
+        },
+        {
+          "unitId": "e04",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e04.md",
+          "sourceSha256": "de92b0f2c1de87aacf7a549c39965fb68e43f667e9f34804907895df6b5a6cd2",
+          "line": 48,
+          "heading": "新任务与旧任务可以走不同工作者集合"
+        },
+        {
+          "unitId": "e04",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e04.md",
+          "sourceSha256": "de92b0f2c1de87aacf7a549c39965fb68e43f667e9f34804907895df6b5a6cd2",
+          "line": 136,
+          "heading": "一次发布的控制路径"
+        },
+        {
+          "unitId": "e04",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e04.md",
+          "sourceSha256": "de92b0f2c1de87aacf7a549c39965fb68e43f667e9f34804907895df6b5a6cd2",
+          "line": 150,
+          "heading": "状态迁移比镜像回退更难"
+        }
+      ],
+      "currentQAReadingJudgment": "规划器依据暂停后的受控库存判断 HOLD/READY；程序不执行发布，回退须状态和契约兼容。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "e04-k03",
+      "originalTitle": "运行事实与故障阶段",
+      "objectiveIds": [
+        "e04-o2"
+      ],
+      "actualPrimaryUnits": [
+        "e04"
+      ],
+      "locations": [
+        {
+          "unitId": "e04",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e04.md",
+          "sourceSha256": "de92b0f2c1de87aacf7a549c39965fb68e43f667e9f34804907895df6b5a6cd2",
+          "line": 162,
+          "heading": "观测记录应回答哪一阶段首次偏离"
+        },
+        {
+          "unitId": "e04",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e04.md",
+          "sourceSha256": "de92b0f2c1de87aacf7a549c39965fb68e43f667e9f34804907895df6b5a6cd2",
+          "line": 179,
+          "heading": "可由他人执行的故障处理说明"
+        }
+      ],
+      "currentQAReadingJudgment": "观测分模型、工具、存储、授权与业务验收阶段；回执/账本不能由 trace 成功状态替代。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "e04-k04",
+      "originalTitle": "恢复说明与他人复现",
+      "objectiveIds": [
+        "e04-o2"
+      ],
+      "actualPrimaryUnits": [
+        "e04"
+      ],
+      "locations": [
+        {
+          "unitId": "e04",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e04.md",
+          "sourceSha256": "de92b0f2c1de87aacf7a549c39965fb68e43f667e9f34804907895df6b5a6cd2",
+          "line": 179,
+          "heading": "可由他人执行的故障处理说明"
+        },
+        {
+          "unitId": "e04",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e04.md",
+          "sourceSha256": "de92b0f2c1de87aacf7a549c39965fb68e43f667e9f34804907895df6b5a6cd2",
+          "line": 195,
+          "heading": "练习与参考分析"
+        }
+      ],
+      "currentQAReadingJudgment": "runbook 要求实际故障身份、兼容目标、核对窗口及非作者复现；本轮未执行任何部署/runbook。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "e05-k01",
+      "originalTitle": "任务成本与单位",
+      "objectiveIds": [
+        "e05-o1"
+      ],
+      "actualPrimaryUnits": [
+        "e05"
+      ],
+      "locations": [
+        {
+          "unitId": "e05",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e05.md",
+          "sourceSha256": "649430ad094793c4740c5fda6224d7917a5bf3cfe6b5b3136e1ede20915a67b1",
+          "line": 8,
+          "heading": "成本归到逻辑任务 才能看见失败代价"
+        },
+        {
+          "unitId": "e05",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e05.md",
+          "sourceSha256": "649430ad094793c4740c5fda6224d7917a5bf3cfe6b5b3136e1ede20915a67b1",
+          "line": 38,
+          "heading": "一个不把失败和未知费用丢掉的汇总器"
+        },
+        {
+          "unitId": "e05",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e05.md",
+          "sourceSha256": "649430ad094793c4740c5fda6224d7917a5bf3cfe6b5b3136e1ede20915a67b1",
+          "line": 204,
+          "heading": "练习与参考分析"
+        }
+      ],
+      "currentQAReadingJudgment": "费用按逻辑任务汇总全部尝试；未知费用和预留分开，Decimal 教学 credit 不当作价格或账单。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "e05-k02",
+      "originalTitle": "延迟分布与失败分母",
+      "objectiveIds": [
+        "e05-o1"
+      ],
+      "actualPrimaryUnits": [
+        "e05"
+      ],
+      "locations": [
+        {
+          "unitId": "e05",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e05.md",
+          "sourceSha256": "649430ad094793c4740c5fda6224d7917a5bf3cfe6b5b3136e1ede20915a67b1",
+          "line": 28,
+          "heading": "延迟必须注明用户等到的是什么"
+        },
+        {
+          "unitId": "e05",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e05.md",
+          "sourceSha256": "649430ad094793c4740c5fda6224d7917a5bf3cfe6b5b3136e1ede20915a67b1",
+          "line": 38,
+          "heading": "一个不把失败和未知费用丢掉的汇总器"
+        },
+        {
+          "unitId": "e05",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e05.md",
+          "sourceSha256": "649430ad094793c4740c5fda6224d7917a5bf3cfe6b5b3136e1ede20915a67b1",
+          "line": 134,
+          "heading": "负载决定并发实验测到了什么"
+        }
+      ],
+      "currentQAReadingJudgment": "分清接受延迟、终止等待和在途年龄；分母及观察截止不丢失败/超时，实际负载仍需另测。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "e05-k03",
+      "originalTitle": "缓存与模型选择比较",
+      "objectiveIds": [
+        "e05-o2"
+      ],
+      "actualPrimaryUnits": [
+        "e05"
+      ],
+      "locations": [
+        {
+          "unitId": "e05",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e05.md",
+          "sourceSha256": "649430ad094793c4740c5fda6224d7917a5bf3cfe6b5b3136e1ede20915a67b1",
+          "line": 146,
+          "heading": "缓存应复用证据和候选 不能复用批准"
+        },
+        {
+          "unitId": "e05",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e05.md",
+          "sourceSha256": "649430ad094793c4740c5fda6224d7917a5bf3cfe6b5b3136e1ede20915a67b1",
+          "line": 186,
+          "heading": "模型路由改变的不只是单价"
+        },
+        {
+          "unitId": "e05",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e05.md",
+          "sourceSha256": "649430ad094793c4740c5fda6224d7917a5bf3cfe6b5b3136e1ede20915a67b1",
+          "line": 204,
+          "heading": "练习与参考分析"
+        }
+      ],
+      "currentQAReadingJudgment": "缓存键绑定权限/版本/证据，缓存候选仍需当前批准；模型路由是待公平实测假设，不保证省钱。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "e05-k04",
+      "originalTitle": "并发预算与资源取舍",
+      "objectiveIds": [
+        "e05-o2"
+      ],
+      "actualPrimaryUnits": [
+        "e05"
+      ],
+      "locations": [
+        {
+          "unitId": "e05",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e05.md",
+          "sourceSha256": "649430ad094793c4740c5fda6224d7917a5bf3cfe6b5b3136e1ede20915a67b1",
+          "line": 134,
+          "heading": "负载决定并发实验测到了什么"
+        },
+        {
+          "unitId": "e05",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e05.md",
+          "sourceSha256": "649430ad094793c4740c5fda6224d7917a5bf3cfe6b5b3136e1ede20915a67b1",
+          "line": 194,
+          "heading": "预算与限流需要一个共同执行边界"
+        },
+        {
+          "unitId": "e05",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/e05.md",
+          "sourceSha256": "649430ad094793c4740c5fda6224d7917a5bf3cfe6b5b3136e1ede20915a67b1",
+          "line": 204,
+          "heading": "练习与参考分析"
+        }
+      ],
+      "currentQAReadingJudgment": "开放/闭环负载区别、并发排队、全局预算、限流及重试开销仍保留；早期成本护栏只是计划。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "p01-k01",
+      "originalTitle": "真实问题与作者假设",
+      "objectiveIds": [
+        "p01-o1"
+      ],
+      "actualPrimaryUnits": [
+        "p01-discovery"
+      ],
+      "locations": [
+        {
+          "unitId": "p01-discovery",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p01-discovery.md",
+          "sourceSha256": "dfbaf177deeba2bd4f71a633764533a65dce7d14d036e75400744e8c0aee111b",
+          "line": 7,
+          "heading": "问题证据与方案意图分成两条链"
+        },
+        {
+          "unitId": "p01-discovery",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p01-discovery.md",
+          "sourceSha256": "dfbaf177deeba2bd4f71a633764533a65dce7d14d036e75400744e8c0aee111b",
+          "line": 25,
+          "heading": "取得证据时 让任务过程暴露反例"
+        },
+        {
+          "unitId": "p01-discovery",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p01-discovery.md",
+          "sourceSha256": "dfbaf177deeba2bd4f71a633764533a65dce7d14d036e75400744e8c0aee111b",
+          "line": 85,
+          "heading": "重写一个不能失败的需求"
+        }
+      ],
+      "currentQAReadingJudgment": "问题发现独立取得真实任务、现有方法与反例，事实/判断/计划三分；教学案例不替真实用户证据。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "p01-k02",
+      "originalTitle": "行业基线与差异假设",
+      "objectiveIds": [
+        "p01-o1"
+      ],
+      "actualPrimaryUnits": [
+        "p01-discovery",
+        "p01-mvp"
+      ],
+      "locations": [
+        {
+          "unitId": "p01-discovery",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p01-discovery.md",
+          "sourceSha256": "dfbaf177deeba2bd4f71a633764533a65dce7d14d036e75400744e8c0aee111b",
+          "line": 37,
+          "heading": "基线应代表用户现在真正能选的方案"
+        },
+        {
+          "unitId": "p01-discovery",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p01-discovery.md",
+          "sourceSha256": "dfbaf177deeba2bd4f71a633764533a65dce7d14d036e75400744e8c0aee111b",
+          "line": 54,
+          "heading": "把差异写成能失败的假设"
+        },
+        {
+          "unitId": "p01-mvp",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p01-mvp.md",
+          "sourceSha256": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5",
+          "line": 7,
+          "heading": "预定义公平实验 而不是挑一次演示"
+        }
+      ],
+      "currentQAReadingJudgment": "问题篇保留现实可选基线与可失败假设，MVP 篇在 e02 后冻结同条件比较与指标，不靠演示结论。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "p01-k03",
+      "originalTitle": "MVP范围与架构决策",
+      "objectiveIds": [
+        "p01-o2"
+      ],
+      "actualPrimaryUnits": [
+        "p01-mvp"
+      ],
+      "locations": [
+        {
+          "unitId": "p01-mvp",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p01-mvp.md",
+          "sourceSha256": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5",
+          "line": 17,
+          "heading": "MVP 契约限制的是要验证的机制"
+        },
+        {
+          "unitId": "p01-mvp",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p01-mvp.md",
+          "sourceSha256": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5",
+          "line": 49,
+          "heading": "架构决定要能解释放弃了什么"
+        },
+        {
+          "unitId": "p01-mvp",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p01-mvp.md",
+          "sourceSha256": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5",
+          "line": 76,
+          "heading": "独立取得真实问题并交付实验契约"
+        }
+      ],
+      "currentQAReadingJudgment": "组件教学后才决策自身 MVP，包含明确范围/验收与 ADR 的采用/放弃条件；并未先实现自身产品再补需求。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "p01-k04",
+      "originalTitle": "协作交接与用户反馈",
+      "objectiveIds": [
+        "p01-o2"
+      ],
+      "actualPrimaryUnits": [
+        "p01-mvp"
+      ],
+      "locations": [
+        {
+          "unitId": "p01-mvp",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p01-mvp.md",
+          "sourceSha256": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5",
+          "line": 59,
+          "heading": "同一决定交给业务与技术受众"
+        },
+        {
+          "unitId": "p01-mvp",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p01-mvp.md",
+          "sourceSha256": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5",
+          "line": 67,
+          "heading": "真实反馈改变假设 不能只变宣传"
+        },
+        {
+          "unitId": "p01-mvp",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p01-mvp.md",
+          "sourceSha256": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5",
+          "line": 82,
+          "heading": "用负面反馈作一次决策"
+        }
+      ],
+      "currentQAReadingJudgment": "业务和技术同一决策分别交接，负反馈按原始任务改变假设和后续版本；真实反馈未被教材作者代做。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "p02-k01",
+      "originalTitle": "作品证据与外部评审",
+      "objectiveIds": [
+        "p02-o1"
+      ],
+      "actualPrimaryUnits": [
+        "p02"
+      ],
+      "locations": [
+        {
+          "unitId": "p02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p02.md",
+          "sourceSha256": "edee96e191076ca60a182d830cdd60cab6d2054e1acc9bfa3a2009c53e3427a4",
+          "line": 8,
+          "heading": "一个证据包应使独立者从入口走到结论"
+        },
+        {
+          "unitId": "p02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p02.md",
+          "sourceSha256": "edee96e191076ca60a182d830cdd60cab6d2054e1acc9bfa3a2009c53e3427a4",
+          "line": 27,
+          "heading": "文件完整性检查不能替代证据真实性"
+        },
+        {
+          "unitId": "p02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p02.md",
+          "sourceSha256": "edee96e191076ca60a182d830cdd60cab6d2054e1acc9bfa3a2009c53e3427a4",
+          "line": 103,
+          "heading": "先核具体作品 再判更大的能力范围"
+        },
+        {
+          "unitId": "p02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p02.md",
+          "sourceSha256": "edee96e191076ca60a182d830cdd60cab6d2054e1acc9bfa3a2009c53e3427a4",
+          "line": 119,
+          "heading": "独立评阅按一条实际任务走完全程"
+        },
+        {
+          "unitId": "p02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p02.md",
+          "sourceSha256": "edee96e191076ca60a182d830cdd60cab6d2054e1acc9bfa3a2009c53e3427a4",
+          "line": 176,
+          "heading": "练习与参考分析"
+        }
+      ],
+      "currentQAReadingJudgment": "作品包绑定当前版本、来源、失败和独立复现；索引一致只证明路径/摘要/版本，不能证明真实性或认证。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "p02-k02",
+      "originalTitle": "真实使用与比较局限",
+      "objectiveIds": [
+        "p02-o1"
+      ],
+      "actualPrimaryUnits": [
+        "p02"
+      ],
+      "locations": [
+        {
+          "unitId": "p02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p02.md",
+          "sourceSha256": "edee96e191076ca60a182d830cdd60cab6d2054e1acc9bfa3a2009c53e3427a4",
+          "line": 103,
+          "heading": "先核具体作品 再判更大的能力范围"
+        },
+        {
+          "unitId": "p02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p02.md",
+          "sourceSha256": "edee96e191076ca60a182d830cdd60cab6d2054e1acc9bfa3a2009c53e3427a4",
+          "line": 129,
+          "heading": "真实使用与可比优势需要从作品外取得证据"
+        },
+        {
+          "unitId": "p02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p02.md",
+          "sourceSha256": "edee96e191076ca60a182d830cdd60cab6d2054e1acc9bfa3a2009c53e3427a4",
+          "line": 176,
+          "heading": "练习与参考分析"
+        }
+      ],
+      "currentQAReadingJudgment": "真实使用和公平可比优势需作品外证据；自查、作者演示与用户认可分别保留。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "p02-k03",
+      "originalTitle": "失败复盘与二次验证",
+      "objectiveIds": [
+        "p02-o2"
+      ],
+      "actualPrimaryUnits": [
+        "p02"
+      ],
+      "locations": [
+        {
+          "unitId": "p02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p02.md",
+          "sourceSha256": "edee96e191076ca60a182d830cdd60cab6d2054e1acc9bfa3a2009c53e3427a4",
+          "line": 137,
+          "heading": "一次完整复盘 写后中断变成重复工单"
+        },
+        {
+          "unitId": "p02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p02.md",
+          "sourceSha256": "edee96e191076ca60a182d830cdd60cab6d2054e1acc9bfa3a2009c53e3427a4",
+          "line": 176,
+          "heading": "练习与参考分析"
+        }
+      ],
+      "currentQAReadingJudgment": "重复工单原例按原因、行动、责任和原故障重验闭环，不用报告数量代替修复验证。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    },
+    {
+      "id": "p02-k04",
+      "originalTitle": "未知任务与能力边界",
+      "objectiveIds": [
+        "p02-o2"
+      ],
+      "actualPrimaryUnits": [
+        "p02"
+      ],
+      "locations": [
+        {
+          "unitId": "p02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p02.md",
+          "sourceSha256": "edee96e191076ca60a182d830cdd60cab6d2054e1acc9bfa3a2009c53e3427a4",
+          "line": 166,
+          "heading": "未知任务测的是独立判断 不是换标题"
+        },
+        {
+          "unitId": "p02",
+          "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v09/p02.md",
+          "sourceSha256": "edee96e191076ca60a182d830cdd60cab6d2054e1acc9bfa3a2009c53e3427a4",
+          "line": 176,
+          "heading": "练习与参考分析"
+        }
+      ],
+      "currentQAReadingJudgment": "陌生权限/源/业务任务由非作者检查独立判断，认证范围限定于证据支持，不能由教材完成度推出胜任。",
+      "status": "observed_in_current_text_with_limits",
+      "learnerAchievement": "not_verified"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "f01-o1",
+      "originalText": "实现输入校验、异常处理与 API 请求",
+      "currentBodyKnowledgeEvidence": [
+        "f01-k01",
+        "f01-k02"
+      ],
+      "currentPrimaryUnits": [
+        "f01"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "f01-o2",
+      "originalText": "使用 Git、依赖锁定和测试复现服务",
+      "currentBodyKnowledgeEvidence": [
+        "f01-k03",
+        "f01-k04"
+      ],
+      "currentPrimaryUnits": [
+        "f01"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "f02-o1",
+      "originalText": "完成真实模型调用及结构与业务双重校验",
+      "currentBodyKnowledgeEvidence": [
+        "f02-k01",
+        "f02-k02"
+      ],
+      "currentPrimaryUnits": [
+        "f02"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "provider_not_executed"
+    },
+    {
+      "id": "f02-o2",
+      "originalText": "区分用户输入、工具结果与指令来源",
+      "currentBodyKnowledgeEvidence": [
+        "f02-k03",
+        "f02-k04"
+      ],
+      "currentPrimaryUnits": [
+        "f02"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "c01-o1",
+      "originalText": "按任务不确定性选择固定流程或动态决策",
+      "currentBodyKnowledgeEvidence": [
+        "c01-k01",
+        "c01-k02"
+      ],
+      "currentPrimaryUnits": [
+        "c01-control-loop",
+        "c01-fixed-workflow",
+        "c01-selection"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "c01-o2",
+      "originalText": "根据工具反馈决策并设置停止预算",
+      "currentBodyKnowledgeEvidence": [
+        "c01-k03",
+        "c01-k04"
+      ],
+      "currentPrimaryUnits": [
+        "c01-control-loop",
+        "c01-selection"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "c02-o1",
+      "originalText": "记录数据来源、版本与访问范围",
+      "currentBodyKnowledgeEvidence": [
+        "c02-k01",
+        "c02-k02"
+      ],
+      "currentPrimaryUnits": [
+        "c02"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "c02-o2",
+      "originalText": "比较检索策略并验证引用与无答案行为",
+      "currentBodyKnowledgeEvidence": [
+        "c02-k03",
+        "c02-k04"
+      ],
+      "currentPrimaryUnits": [
+        "c02"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "c03-o1",
+      "originalText": "实现输入输出契约与授权规则",
+      "currentBodyKnowledgeEvidence": [
+        "c03-k01",
+        "c03-k02"
+      ],
+      "currentPrimaryUnits": [
+        "c03"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "c03-o2",
+      "originalText": "验证幂等请求与失败反馈",
+      "currentBodyKnowledgeEvidence": [
+        "c03-k03",
+        "c03-k04"
+      ],
+      "currentPrimaryUnits": [
+        "c03"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "e01-o1",
+      "originalText": "显式保存任务状态与已完成动作",
+      "currentBodyKnowledgeEvidence": [
+        "e01-k01",
+        "e01-k02"
+      ],
+      "currentPrimaryUnits": [
+        "e01"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "e01-o2",
+      "originalText": "在中断后核对外部系统再恢复",
+      "currentBodyKnowledgeEvidence": [
+        "e01-k03",
+        "e01-k04"
+      ],
+      "currentPrimaryUnits": [
+        "e01"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "e02-o1",
+      "originalText": "区分能力、回归和独立保留案例",
+      "currentBodyKnowledgeEvidence": [
+        "e02-k01",
+        "e02-k02"
+      ],
+      "currentPrimaryUnits": [
+        "e02"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "e02-o2",
+      "originalText": "分别评价任务结果、轨迹和成本",
+      "currentBodyKnowledgeEvidence": [
+        "e02-k03",
+        "e02-k04"
+      ],
+      "currentPrimaryUnits": [
+        "e02"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "e03-o1",
+      "originalText": "区分不可信资料与指令",
+      "currentBodyKnowledgeEvidence": [
+        "e03-k01",
+        "e03-k02"
+      ],
+      "currentPrimaryUnits": [
+        "e03"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "e03-o2",
+      "originalText": "验证最小权限、敏感数据处理和人工介入",
+      "currentBodyKnowledgeEvidence": [
+        "e03-k03",
+        "e03-k04"
+      ],
+      "currentPrimaryUnits": [
+        "e03"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "e04-o1",
+      "originalText": "提供分环境配置、可观测运行和回退",
+      "currentBodyKnowledgeEvidence": [
+        "e04-k01",
+        "e04-k02"
+      ],
+      "currentPrimaryUnits": [
+        "e04"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "e04-o2",
+      "originalText": "用故障记录定位服务阶段",
+      "currentBodyKnowledgeEvidence": [
+        "e04-k03",
+        "e04-k04"
+      ],
+      "currentPrimaryUnits": [
+        "e04"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "e05-o1",
+      "originalText": "在约定负载下记录尾延迟与每任务成本",
+      "currentBodyKnowledgeEvidence": [
+        "e05-k01",
+        "e05-k02"
+      ],
+      "currentPrimaryUnits": [
+        "e05"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "e05-o2",
+      "originalText": "比较缓存、模型选择或并发方案",
+      "currentBodyKnowledgeEvidence": [
+        "e05-k03",
+        "e05-k04"
+      ],
+      "currentPrimaryUnits": [
+        "e05"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "p01-o1",
+      "originalText": "把用户问题映射为可衡量的技术任务",
+      "currentBodyKnowledgeEvidence": [
+        "p01-k01",
+        "p01-k02"
+      ],
+      "currentPrimaryUnits": [
+        "p01-discovery",
+        "p01-mvp"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "p01-o2",
+      "originalText": "通过架构评审和文档解释取舍",
+      "currentBodyKnowledgeEvidence": [
+        "p01-k03",
+        "p01-k04"
+      ],
+      "currentPrimaryUnits": [
+        "p01-mvp"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "p02-o1",
+      "originalText": "整合证据并完成外部评审",
+      "currentBodyKnowledgeEvidence": [
+        "p02-k01",
+        "p02-k02"
+      ],
+      "currentPrimaryUnits": [
+        "p02"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    },
+    {
+      "id": "p02-o2",
+      "originalText": "用失败分析改进并迁移到未知任务",
+      "currentBodyKnowledgeEvidence": [
+        "p02-k03",
+        "p02-k04"
+      ],
+      "currentPrimaryUnits": [
+        "p02"
+      ],
+      "textCoverage": "mechanism_practice_reference_analysis_observed_with_limits",
+      "actualLearnerCompletion": "not_verified",
+      "actualRuntimeCompletion": "only_selected_new_foundation_cases; professional_behavior_not_rerun"
+    }
+  ],
+  "notLearnerOrIndustryAchievement": true
+}

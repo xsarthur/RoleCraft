@@ -1,0 +1,95 @@
+{
+  "schema": "rolecraft.textbook.qa.baseline.v2",
+  "artifact": "AI 时代 UI/UX 设计入门",
+  "version": "v0.1-v2-retest",
+  "at": "2026-10-14T00:00:00+08:00",
+  "role": "测试工程师",
+  "status": "received_before_checks",
+  "files": [
+    {
+      "path": "sites/rolecraft/textbooks/uiux-design-v01/README.md",
+      "description": "v2 入口、12章路线与26单元映射",
+      "bytes": 6332,
+      "sha256": "d58bd229fe2c6a89064a9eb3d44502e4ba94ac320f006207fc44cd3a60d93ff7",
+      "status": "received"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/uiux-design-v01/uiux-design-textbook.md",
+      "description": "v2 主正文",
+      "bytes": 37512,
+      "sha256": "a5406a6db125c3174af7d6228d0fcd57c9030131c4bc321325abf483278ccbd4",
+      "status": "received"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/uiux-design-v01/sources-and-interview-map.md",
+      "description": "来源与题型映射",
+      "bytes": 6586,
+      "sha256": "5bf979843e2e97e743afad840becca1cd9dca44f828c7f25d00d3a57428c1229",
+      "status": "received"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/uiux-design-v01/author-handoff-v2.md",
+      "description": "v2 作者交接",
+      "bytes": 3982,
+      "sha256": "ebb98b401e4a9df3008e7ae262683d9e67d91fb51a96676c3bda1d09c063fa43",
+      "status": "received"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/uiux-design-v01/author-handoff-v1.md",
+      "description": "v1 作者交接保留",
+      "bytes": 4796,
+      "sha256": "d1e15d6b35ca01f6aee51b1897ee0eae78b55339e6df81ede81468a2d26612bd",
+      "status": "received"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/uiux-design-v01/assets/uiux-state-map-v01.svg",
+      "description": "新增状态视觉示意",
+      "bytes": 4609,
+      "sha256": "97ea6a67ed5ac29ba5f244ff9e35b1392a38486c13d1986c436230fd343b1254",
+      "status": "received"
+    },
+    {
+      "path": "sites/rolecraft/team/uiux-interview-questions-3m-research-fix.md",
+      "description": "研究 JSON 修复记录",
+      "bytes": 766,
+      "sha256": "aaf1c5280a6bd6c29095451e45ffb444b5a8d67c7035ba3ebeaacf195190d258",
+      "status": "received"
+    },
+    {
+      "path": "sites/rolecraft/team/uiux-interview-questions-3m-research.json",
+      "description": "修复后研究 JSON",
+      "bytes": 86179,
+      "sha256": "0f2df0d9b0c9e179fc5a60de169c6ff2dc6ce837928cc0812038719f416443f8",
+      "status": "received"
+    },
+    {
+      "path": "sites/rolecraft/team/uiux-textbook-course-architecture.md",
+      "description": "课程规格 Markdown",
+      "bytes": 26444,
+      "sha256": "d4efafb8c73ac1864c5befb459e61cee3d9f7a0528faa79ddb33997b1d093cc7",
+      "status": "received"
+    },
+    {
+      "path": "sites/rolecraft/team/uiux-textbook-course-architecture.json",
+      "description": "课程规格 JSON",
+      "bytes": 21093,
+      "sha256": "00e75abf5b359cc79c90296cb725a54c65d9f09ff57b49def10f0c6c8386a26e",
+      "status": "received"
+    },
+    {
+      "path": "sites/rolecraft/team/uiux-textbook-product-scope.md",
+      "description": "产品范围 Markdown",
+      "bytes": 13617,
+      "sha256": "f4680194e0bd7a458f7320a375cc66bd57dbd83ec6c5ce5815353655e9c0633e",
+      "status": "received"
+    },
+    {
+      "path": "sites/rolecraft/team/uiux-textbook-product-scope.json",
+      "description": "产品范围 JSON",
+      "bytes": 3709,
+      "sha256": "7af720642b07d23271b68c99265cd8b71470c29f012a521c1824379ccb9be09f",
+      "status": "received"
+    }
+  ],
+  "note": "New v2 baseline; do not inherit v1 QA hashes or conclusions."
+}

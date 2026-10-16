@@ -1,0 +1,9 @@
+{
+  "contract": "T3-v1.0",
+  "run_ids": ["t3-timeout-001", "t3-evidence-missing-001", "t3-permission-conflict-001"],
+  "developer_delivery": "handoff",
+  "qa_status": "not_started",
+  "growth": "emerging",
+  "evidence": ["logs/t3-timeout-001.jsonl", "logs/t3-evidence-missing-001.jsonl", "logs/t3-permission-conflict-001.jsonl", "hashes/log-hashes.json", "run-results.json"],
+  "limits": ["no account/permission database changed", "no external side effects", "independent QA not run"]
+}

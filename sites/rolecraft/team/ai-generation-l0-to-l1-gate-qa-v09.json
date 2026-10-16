@@ -1,0 +1,86 @@
+{
+  "report_id": "AI-GEN-L0-TO-L1-GATE-QA-v09",
+  "date": "2026-10-16",
+  "role": "测试工程师",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+  "decision": "remain_L0_guided",
+  "l1_review": "insufficient_evidence",
+  "level_granted": {
+    "L0": false,
+    "L1": false,
+    "L2": false
+  },
+  "production_permission": false,
+  "inputs": [
+    "ai-generation-real-learner-d0-execution-run-v01-qa-final-v2.json",
+    "ai-generation-real-learner-d0-execution-run-v01-pm.md",
+    "ai-generation-real-learner-d0-execution-run-v01-artifacts/run-comparison.json",
+    "ai-generation-real-learner-d0-20261016-v01.json/.md",
+    "ai-generation-real-learner-d0-execution-content-review-v02.json",
+    "ai-generation-l0-to-l1-gate-qa-v08.json",
+    "ai-generation-l0-to-l1-gate-content-review-v02.json"
+  ],
+  "checks": {
+    "four_cases": {
+      "status": "pass_within_local_fixture",
+      "A-normal": "A/v2 claims source-bound, unknowns preserved, draft_ready_for_review, external_action=null",
+      "B-tenant-denied": "SOURCE_SCOPE_DENIED before draft; B body absent; no draft/handoff/action",
+      "source-missing": "SOURCE_MISSING before draft; no alternate source",
+      "source-conflict": "SOURCE_VERSION_MISMATCH before draft; conflict keys recorded; alternate unvisited"
+    },
+    "run_replay": {
+      "status": "pass",
+      "all_four_cases_repeated": true,
+      "byte_equal": true,
+      "first_failure_equal": true,
+      "external_action_both_null": true,
+      "sha256_manifest_entries": 40,
+      "sha256_manifest_all_match": true
+    },
+    "evidence_cards": {
+      "status": "pass_within_local_fixture",
+      "count": 8,
+      "raw_stdout_stderr": true,
+      "bytes_sha_exit_verified": true
+    },
+    "isolation": {
+      "status": "pass",
+      "network": "disabled",
+      "real_model": false,
+      "cloud": false,
+      "paid_api": false,
+      "real_user_data": false,
+      "external_action": null
+    },
+    "learner_execution": {
+      "status": "fail",
+      "learner_execution": false,
+      "self_signed": false,
+      "human_receipt_pending": true,
+      "reason": "QA/engineer replay is not learner execution"
+    },
+    "prior_gate_capabilities": {
+      "status": "insufficient_evidence",
+      "reason": "No learner-bound complete D1-D5, two non-isomorphic learner sandboxes, unknown-task migration, expanded D6 denominator, or human receipt"
+    }
+  },
+  "evidence_boundary": {
+    "local_fixture_mechanism": true,
+    "real_model_quality": false,
+    "provider_api": false,
+    "database_queue_persistence": false,
+    "process_crash_rpo_rto": false,
+    "unknown_task_migration": false,
+    "human_expert_or_receipt": false,
+    "career_or_level_certification": false
+  },
+  "next_gate_requirements": [
+    "learner-owned four-case EvidenceCards and human receipt",
+    "independent QA rerun of learner submission",
+    "complete learner-bound D1-D5 and two non-isomorphic sandboxes",
+    "expand D6 samples/failure denominator and preserve no-real-model statement",
+    "declare verified runtime scope"
+  ],
+  "preserved_boundary": "本地夹具回放、QA收据和哈希一致性不授任何等级或生产权限。"
+}

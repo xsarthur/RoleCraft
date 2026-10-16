@@ -1,0 +1,12 @@
+{
+  "version": "app-v14-dialog-preview-plan-1",
+  "clientDate": "2026-10-12",
+  "clientTimezone": "Asia/Shanghai",
+  "state": "ownership_read_only_confirmed_waiting_pm_core_qa_release",
+  "currentListener": {"pid": 23034, "ppid": 73824, "port": 4318, "host": "127.0.0.1", "command": "/Users/shengxiong/.nvm/versions/node/v24.16.0/bin/node sites/rolecraft/server/index.mjs", "cwd": "/Users/shengxiong/Documents/ChatGPT/一人公司建设"},
+  "identityEvidence": ["lsof localhost4318 LISTEN pid23034", "ps public argv is this project's server/index.mjs under Node24", "lsof cwd/txt project dependency locations and runtime shared-memory pathname only; no database contents", "GET /api/health 200: local-mvp-0.4, content-retrieval-0.12-v12, textbook-v12/30, Node24.16.0"],
+  "runtimePathObservedByFileMetadataOnly": "sites/rolecraft/.runtime",
+  "restartPlanAfterPmRelease": ["Reconfirm current PID/listener/project argv immediately before action; do not rely only on old PID", "Use previous PTY Ctrl-C if available, otherwise SIGINT only on confirmed project PID; wait for clean exit and no4318 listener", "Start Node24 sites/rolecraft/server/index.mjs from current workspace with default same runtime location", "Read public health and v14 dialog endpoint/version with bounded textbook question; record actual PID/PTY and retain user service", "Do not read, migrate, delete, copy or use actual database for tests; do not run account/job endpoints"],
+  "permissions": {"psAndLocalhostRead": "default sandbox blocked; read-only escalations approved and completed", "restartExecuted": false, "databaseContentsRead": false, "externalCall": false},
+  "limits": "This is operational ownership preparation, not independent QA. Current public version remains pre-dialog process until PM authorizes restart after independent core review."
+}

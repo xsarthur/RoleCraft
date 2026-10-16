@@ -1,0 +1,189 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-11",
+  "role_id": "backend-data-engineer",
+  "employee_id": "EV12-05",
+  "role": "后端数据工程师",
+  "agent_name": "/root/employee_v12_backend",
+  "status": "accepted_with_dependencies",
+  "unique_domain": "服务端数据与任务",
+  "assigned_write_paths": [
+    "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/employees/v12-evidence/backend-data-engineer/onboarding.md",
+    "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/employees/v12-evidence/backend-data-engineer/onboarding.json"
+  ],
+  "inputs": [
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/AGENTS.md",
+      "version_locator": "最新组织与授权",
+      "sha256": "55e190a02d9d64ba1a1622b815d3c8282373a8d5292b1518f68ce6f2a08449a1",
+      "read_status": "read",
+      "evidence_scope": "current_document_read"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/employees/v12-evidence/COMMON.md",
+      "version_locator": "本轮员工配置共同规则",
+      "sha256": "f2a8a5e935fd521030f0cc1a7445cb9a2138cc3b417c228cc9ab43cfacb67bf0",
+      "read_status": "read",
+      "evidence_scope": "current_document_read"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/employees/v12-evidence/backend-data-engineer/prompt.md",
+      "version_locator": "EV12-05岗位派工",
+      "sha256": "6a4a1deb94045e8dc756cb234735f4171b9e13d20134bd79478734eaaf66461f",
+      "read_status": "read",
+      "evidence_scope": "current_document_read"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v12-product-assessment.md",
+      "version_locator": "v12产品判断：final_evidence_assessed_with_limitations",
+      "sha256": "2a7a0e08cf959a6ad490d46a98128eebd0e82722c9d4ff1c104ea3fbead285eb",
+      "read_status": "read",
+      "evidence_scope": "current_document_read"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v12-qa.md",
+      "version_locator": "v12独立教材QA：met_with_limitations，完整目标not_met",
+      "sha256": "c2d6e7aae31d750ccc04a6c058251be097b8e3114638c004a455a053d37444d3",
+      "read_status": "read",
+      "evidence_scope": "current_document_read"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/README.md",
+      "version_locator": "v12教材目录，30单元",
+      "sha256": "f6e8b37b318dd2a662c064f6681509fdf7873cbd7687a7b91a6f7ed3bf2683a6",
+      "read_status": "read",
+      "evidence_scope": "current_document_read"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/product-gates.json",
+      "version_locator": "product-creation-2026-10-10原八门槛",
+      "sha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06",
+      "read_status": "read",
+      "evidence_scope": "current_document_read"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/implementation-v04-backend.md",
+      "version_locator": "2026-10-10 local-mvp-0.4后端实施历史",
+      "sha256": "0a92e1a845bb3900350b148c8424848124be941eed735034c5865cd4d8036d4e",
+      "read_status": "read",
+      "evidence_scope": "historical_reference_only"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/qa-v04-review.md",
+      "version_locator": "2026-10-10 local-mvp-0.4独立QA历史",
+      "sha256": "826f8efd762db4aebc9b9b85c8f2836d98a5cacb464ff286287c1aaffe7b8c3c",
+      "read_status": "read",
+      "evidence_scope": "historical_reference_only"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/specialists/backend-data-engineer.md",
+      "version_locator": "2026-10-10后端准备历史",
+      "sha256": "ddc4029b613d15ae81260ba4bce9bdee2f58cf455ae430576ccee93f4dab4abf",
+      "read_status": "read",
+      "evidence_scope": "historical_reference_only"
+    }
+  ],
+  "first_task": {
+    "title": "确认后端交接、隔离验证边界与生产缺证",
+    "scope": "岗位接单与首任务依赖准备",
+    "completed_now": [
+      "独立代理已读共同与本岗输入并确认唯一领域",
+      "识别历史后端报告与当前生产验证的证据边界",
+      "记录模型/客户端合同、隔离验证、正式运行范围的待交接条件"
+    ],
+    "next_professional_task": "收到产品范围、PM唯一写入派工及当前模型/客户端冻结合同后，建立独立临时库/合成账户的后端恢复与版本验证交接；是否修改实现须依该次派工",
+    "deliverables_after_dispatch": [
+      "隔离环境与版本说明",
+      "任务/attempt/lease/取消与未知效果协议交接",
+      "正常、并发幂等、崩溃恢复、过期租约、版本冲突及备份回滚自检轨迹",
+      "生产证据不足清单与QA复验输入"
+    ],
+    "acceptance": "业务最终状态与持久数据、任务/尝试/事件/版本相互核对；QA在冻结新版本用独立环境按原输入复验，不能仅凭日志或模型陈述判成功"
+  },
+  "dependencies": [
+    {
+      "id": "D01",
+      "owner": "产品经理",
+      "item": "后续账户、任务、恢复、版本与正式运行范围及验收条件",
+      "status": "not_received_for_new_implementation",
+      "received": "已读原八门槛与v12产品判断；不作为新生产范围交接"
+    },
+    {
+      "id": "D02",
+      "owner": "项目经理",
+      "item": "后续唯一写入路径、执行边界及隔离数据方案派工",
+      "status": "pending_next_dispatch",
+      "received": "本轮仅本岗接单两文件获准"
+    },
+    {
+      "id": "D03",
+      "owner": "AI生成工程师",
+      "item": "冻结模型单attempt输入/输出、取消、稳定错误、调用状态和未知效果协议",
+      "status": "current_contract_not_verified",
+      "received": "历史实施/准备报告已读；未查当前程序或实际配置"
+    },
+    {
+      "id": "D04",
+      "owner": "软件工程师",
+      "item": "当前客户端任务查询、版本冲突、重试与证据状态消费合同",
+      "status": "current_contract_not_verified",
+      "received": "历史交接只作参考"
+    },
+    {
+      "id": "D05",
+      "owner": "后端数据工程师与测试工程师",
+      "item": "后续新版本冻结、自检证据和独立QA故障注入环境",
+      "status": "not_executed",
+      "received": "历史临时SQLite/loopback/重启证据可定位，不能继承"
+    },
+    {
+      "id": "D06",
+      "owner": "产品经理、项目经理及用户授权输入",
+      "item": "正式生产身份/TLS/备份恢复/监控范围及需要的部署或真实资料授权",
+      "status": "not_received_or_not_verified",
+      "received": "不读取私有用户记录；未核当前配置；本轮不部署"
+    }
+  ],
+  "handoffs": [
+    {
+      "to": "AI生成工程师",
+      "item": "任务/尝试身份、输入快照与版本、取消、资源限制；接收模型候选/来源/调用证据、用量及稳定错误，不代实现推理"
+    },
+    {
+      "to": "软件工程师",
+      "item": "任务状态、错误/重试、归属、版本冲突与证据状态合同，不代实现客户端"
+    },
+    {
+      "to": "测试工程师",
+      "item": "新版本及独立临时环境、精确复现输入、期望/实际、故障时点与脱敏持久快照；独立QA待后续执行"
+    },
+    {
+      "to": "原reliable_delivery门槛责任人，经项目经理协调",
+      "item": "后端生产可靠性证据交原软件工程师门槛责任人整合，不改原ID/标准/责任"
+    }
+  ],
+  "self_check": {
+    "domain": "服务端数据与任务",
+    "completed": [
+      "仅写本岗接单记录",
+      "输入带实际文件哈希及可定位版本",
+      "未访问私有数据库、用户记录、凭据或当前服务配置",
+      "明确自检与独立QA分离、历史与当前证据分离",
+      "未以接单或历史本地通过关闭生产门槛"
+    ],
+    "not_performed": [
+      "应用或数据库修改",
+      "代码/HTTP/数据库行为运行",
+      "实际用户资料操作",
+      "付费模型调用、外部联系、发布或部署",
+      "当前生产验证"
+    ]
+  },
+  "limitations": [
+    "本次完成岗位接单，不是后端实现或可靠交付验收",
+    "当前配置、实际数据库状态、当前接口与生产环境未核验",
+    "v12独立教材QA不验证后端账户/任务生产链；历史v04仅其报告范围",
+    "完整培养与行业先进目标仍not_met；reliable_delivery仍fail",
+    "新专业产物需独立QA，后端开发自检不替代独立验收"
+  ]
+}

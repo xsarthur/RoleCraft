@@ -1,0 +1,90 @@
+- link "跳到主要内容":
+  - /url: "#main-content"
+- complementary:
+  - link "职 职造 Agent 开发学习":
+    - /url: "#home"
+    - generic: 职
+    - strong:
+      - text: 职造
+      - generic: Agent 开发学习
+  - navigation "主导航":
+    - button "首页":
+      - generic: ⌂
+      - text: 首页
+    - button "课程学习":
+      - generic: ▤
+      - text: 课程学习
+    - button "题库浏览":
+      - generic: ◇
+      - text: 题库浏览
+    - button "学习记录":
+      - generic: ↻
+      - text: 学习记录
+    - button "个人设置":
+      - generic: ⚙
+      - text: 个人设置
+  - generic: 当前学习方向
+  - strong: Agent 开发者
+  - link "本机学习者 记录保存在此浏览器":
+    - /url: "#settings"
+    - generic: 本
+    - text: 本机学习者
+    - generic: 记录保存在此浏览器
+- main:
+  - strong: 学习记录
+  - paragraph: 回到你需要的地方
+  - heading "学习记录" [level=1]
+  - paragraph: 接着读、回到疑问，再用一次自评查缺
+  - heading "继续学习" [level=2]
+  - paragraph: 规划与反思
+  - link "继续阅读 →":
+    - /url: "#learn/agent/n03-planning-reflection/s-da63f3dcff17"
+  - heading "复习" [level=2]
+  - paragraph: 有 1 道本人未掌握题
+  - link "开始复习 →":
+    - /url: "#review"
+  - heading "检验学习结果" [level=2]
+  - paragraph: 从你看过的知识点出题，结果只作本次自评。
+  - link "查看可用题目 →":
+    - /url: "#check"
+  - button "已学习" [pressed]
+  - button "未掌握"
+  - button "已掌握（自评）"
+  - article:
+    - link "1 三种策略改变的是控制对象":
+      - /url: "#learn/agent/n03-planning-reflection/s-da63f3dcff17"
+    - paragraph: 规划与反思 · 2026/10/12 09:02:59
+    - link "做配套题目":
+      - /url: "#questions?unit=n03-planning-reflection&kp=n03-planning-reflection%3As-da63f3dcff17"
+  - heading "我的项目记录" [level=2]
+  - paragraph: 保存问题、证据、作品结果和改进；都是本人自述。
+  - link "记录与查看项目 →":
+    - /url: "#projects"
+  - generic "收藏、笔记与历史学习记录"
+  - text: 职造 · Agent 开发学习
+  - generic: 教材 v12 · 本浏览器保存
+- status
+- region "教材内容检索":
+  - heading "找对应教材" [level=2]
+  - paragraph: 只推荐当前 v12 教材中的真实内容
+  - button "收起"
+  - generic: 学习起点：未限定
+  - generic: 在全部 30 篇中查找
+  - generic "最近查询 · 本会话"
+  - paragraph:
+    - strong: 本次表达：
+    - text: React 是前端框架还是 Agent 的方法？我想学它。
+  - paragraph: 提交时：未限定起点 · 全部 30 篇
+  - generic: 本地概念检索 · 未调用语义模型
+  - heading "补充一个信息" [level=3]
+  - paragraph: 你想找哪个方向的内容？当前教材讲解 Agent ReAct，不提供前端 React 教程。
+  - button "Agent 的 ReAct 方法"
+  - button "前端 React 框架"
+  - paragraph: 选择后重新查找，也可以直接改写表达。
+- generic: 查教材
+- textbox "查教材" [active]:
+  - /placeholder: 描述想复习或解决的问题，找到相关教材
+  - text: React 是前端框架还是 Agent 的方法？我想学它。
+- button "查找"
+- button "收起检索结果" [expanded]: ⌄
+- status

@@ -1,0 +1,2681 @@
+{
+  "frozen_at": "2026-10-11T22:47:59.570505+08:00",
+  "source": "unchanged historical two independent audit item arrays; full questions retained",
+  "items": [
+    {
+      "id": 1,
+      "question": "如何界定 LLM Agent？你会用哪些可观察行为区分它与普通聊天应用？",
+      "status": "充分",
+      "supported_answer_points": "定义、目标/观察/工具交互，模型提议与宿主准入，观察驱动改变路径可用于区分聊天。",
+      "missing_answer_points": "无本题关键内容缺口；不证明读者已掌握。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/00-learning-route.md",
+          "start_line": 3,
+          "end_line": 7,
+          "quote": "Agent 是一种围绕目标、依据新观察选择下一步，并通过工具与环境交互的软件系统。本书讨论基于大语言模型的 Agent：模型解释当前信息，提出下一步调查或候选结果；运行 Agent 的应用程序（下文称宿主程序）限定允许范围，决定能否执行，记录实际观察，再根据完成条件继续、等待或结束。它的价值来自把语言理解接到可核对的任"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "start_line": 9,
+          "end_line": 19,
+          "quote": "“Agent”有不同用法。本文采用行为定义：普通程序由确定性代码决定路径；单次模型在已经组好的材料上生成一次候选；固定 workflow 允许模型完成局部语义任务，但步骤与分支由代码列出；动态 Agent 让模型依据观察提议新的调查动作，运行时仍掌握授权、执行和停止。这个 workflow/agent 控制权区分与 A"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 2,
+      "question": "单次模型调用、固定 Workflow 和动态 Agent，分别适合什么业务条件？",
+      "status": "充分",
+      "supported_answer_points": "材料一次齐备用单调用；可枚举分支用workflow；路径依赖新观察且难穷举才用动态Agent；比较相同目标。",
+      "missing_answer_points": "无本题关键内容缺口。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "start_line": 9,
+          "end_line": 31,
+          "quote": "“Agent”有不同用法。本文采用行为定义：普通程序由确定性代码决定路径；单次模型在已经组好的材料上生成一次候选；固定 workflow 允许模型完成局部语义任务，但步骤与分支由代码列出；动态 Agent 让模型依据观察提议新的调查动作，运行时仍掌握授权、执行和停止。这个 workflow/agent 控制权区分与 A"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 3,
+      "question": "用户说“帮我做一个 Agent”时，你先澄清哪些需求，才能决定实现方案？",
+      "status": "充分",
+      "supported_answer_points": "先问真实角色/任务、材料、困难、完成条件、权限和现有替代，再固定共同条件选型。",
+      "missing_answer_points": "无本题关键内容缺口。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-discovery.md",
+          "start_line": 9,
+          "end_line": 35,
+          "quote": "“维护者需要更聪明的 Agent”已经把问题替换成方案。可研究的问题是：失败报告进入维护流程后，谁要根据它做什么决定，哪一步反复等待、复制、漏证或返工，什么结果才算可以交给下一位维护者。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/02-task-acceptance.md",
+          "start_line": 7,
+          "end_line": 41,
+          "quote": "task: 从指定失败报告形成有据说明，经准确批准创建唯一缺陷工单"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "start_line": 22,
+          "end_line": 31,
+          "quote": "各方案应完成同一任务：取得相同输入、权限和验收条件，允许相同合理停止。完整接口类型后置于 [固定流程实作](c01-fixed-workflow.md)。模型配置是比较输入之一，不能让一个方案用更强模型、更多材料，然后把优势全部归于架构。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 4,
+      "question": "工具调用、状态维护、规划和长期记忆，哪些取决于具体场景，并非每个 Agent 都需要？",
+      "status": "部分",
+      "supported_answer_points": "只读任务无需写工具，短时可重做任务可用内存；规划取决于依赖可表达和环境稳定。",
+      "missing_answer_points": "没有长期记忆的适用条件及它与持久任务状态的明确区别，不能完整回答四类组件。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/00-learning-route.md",
+          "start_line": 23,
+          "end_line": 23,
+          "quote": "多 Agent 是可选的组织方式。可独立调查的子问题可能适合分工，但要加总预算、统一资料版本、处理交接失败，并保留唯一写入所有者。把一项任务交给多个模型，不会自动产生独立事实或更高正确率。只读任务也无需为配齐组件而增加写工具；短时、可重做的任务未必需要长期持久平台。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 808,
+          "end_line": 817,
+          "quote": "| 方案 | 适用条件 | 主要成本 | 升级或放弃条件 |"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 5,
+      "question": "怎样判断增加自主决策带来的收益，足以抵消不确定性与运行成本？",
+      "status": "充分",
+      "supported_answer_points": "冻结同条件任务和基线；按失败类别判断动态选路的收益；同时看合格率、错误完成、费用与等待，设升级/放弃条件。",
+      "missing_answer_points": "无本题关键内容缺口；实际效益仍须实验。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "start_line": 43,
+          "end_line": 59,
+          "quote": "冻结相同任务集，分别标记材料完整、需动态调查、证据冲突；固定资料与工具版本、权限、验收器、模型快照与采样配置、总期限和资源上限。各方案可有不同路径，但不能偷偷取得测试集答案。记录每题的候选合格、完整目标合格、正确等待、错误完成、读/模型尝试、用量、端到端延迟和未知结果。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-mvp.md",
+          "start_line": 7,
+          "end_line": 15,
+          "quote": "实验先冻结任务集合、来源快照、权限、各方案配置、资源上限、人工后处理、判据、分配与停止规则。各方案取得同样必要信息及完成机会，输出按共同“有据初稿/准确批准/确认对象”的契约评价；资源的真实不同可以作为结果计量，但不能偷偷给候选更多资料和人力支持。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "start_line": 8,
+          "end_line": 36,
+          "quote": "一次逻辑任务可能有三次模型请求、两次读取、一次写后核对和十分钟人工确认。账本应把这些尝试归到同一 `run_id`，每次物理请求单独记录 `attempt_id`、配置/价格版本、用量、费用确认状态和时间。不能只计成功返回那次模型请求；超时请求可能已经计费，未决费用不能填零。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 6,
+      "question": "如果需求可以用 SQL、规则或传统搜索解决，你如何解释自己的技术选择？",
+      "status": "充分",
+      "supported_answer_points": "普通程序已经满足目标则保留；稳定结构字段无需LLM；以同一任务、维护代价和真实替代写ADR，而非因技术流行选Agent。",
+      "missing_answer_points": "无本题关键内容缺口；题目未要求SQL语法，故不因未教SQL扣分。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "start_line": 11,
+          "end_line": 19,
+          "quote": "| 方案 | 谁选下一步 | 同一缺陷任务中的可用实现 | 应放弃或升级的条件 |"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "start_line": 51,
+          "end_line": 59,
+          "quote": "**固定字段还是 Agent？**报告格式稳定、所需说明只有输入/预期/实际，维护者禁止推断根因。参考分析：普通程序加模板满足目标；LLM 和动态调查没有目标内收益。保留错误解析与缺项分支，不能因为不用模型就省掉验收。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-mvp.md",
+          "start_line": 49,
+          "end_line": 57,
+          "quote": "一份有效 ADR 包含问题、约束、实际备选、证据、选择、代价、反例和复查条件。它不只是“用了某框架”。下面是**暂定教学 ADR**，没有被真实试点认可。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 7,
+      "question": "单 Agent 多工具与多 Agent 协作，在架构上有什么区别？",
+      "status": "充分",
+      "supported_answer_points": "一个运行时内多工具调用与可分工子任务/整合者不同；多Agent新增交接合同、版本与冲突检查、统一预算和唯一写所有者。",
+      "missing_answer_points": "无本题关键内容缺口；不等于已学会具体多Agent框架。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 26,
+          "end_line": 34,
+          "quote": "工具注册表先定义执行契约，再把可用工具说明给模型："
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 48,
+          "end_line": 58,
+          "quote": "模型决定“下一步看哪个文件”“如何组织缺陷说明”，这些决定依赖语义判断。运行时决定工具是否注册、参数是否符合契约、身份能否访问对象、内容是否已获审批、现在是否还有预算。执行器决定如何隔离调用、施加超时、接收实际结果。验收器决定提交的产物是否满足本次目标。每一项都只有一个权威责任者；模型的文字不能覆盖策略或执行记录。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "start_line": 33,
+          "end_line": 41,
+          "quote": "如果有两个可独立核对的证据子问题，例如实现控制路径与测试夹具生成方式，可以分别调查，再由一个分析整合者比对。但“两个模型都认为根因相同”不是独立事实：它们可能共享同一错误资料和推理偏差。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 8,
+      "question": "你会如何评估自研 Agent 运行时、开源框架和低代码平台？",
+      "status": "部分",
+      "supported_answer_points": "提供最小方案、公平试验、ADR及恢复权限成本等评估维度。",
+      "missing_answer_points": "没有自研、开源框架、低代码平台的能力边界与具体比较方法；通用ADR不能补成三类平台完整选型。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-mvp.md",
+          "start_line": 49,
+          "end_line": 57,
+          "quote": "一份有效 ADR 包含问题、约束、实际备选、证据、选择、代价、反例和复查条件。它不只是“用了某框架”。下面是**暂定教学 ADR**，没有被真实试点认可。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 806,
+          "end_line": 817,
+          "quote": "| 方案 | 适用条件 | 主要成本 | 升级或放弃条件 |"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 9,
+      "question": "从演示原型到可交付的 Agent 服务，需要补齐哪些工程能力？",
+      "status": "充分",
+      "supported_answer_points": "正文全景连接需求/组件/运行/评价/安全/发布/经济/独立交付；具体状态、配置、回退与复現文档提供落地要求。",
+      "missing_answer_points": "无本题关键内容缺口；真实生产能力尚需实践证据。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/00-learning-route.md",
+          "start_line": 46,
+          "end_line": 81,
+          "quote": "运行闭环回答一项任务怎样推进。工程全景回答怎样把这项能力设计、实现、验证、交付并持续改进；图中的分组和箭头表示工程关系，阅读仍按1至20进行。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-mvp.md",
+          "start_line": 63,
+          "end_line": 65,
+          "quote": "协作交接明确输入版本、产物、接收岗位和验收依据。产品负责人交任务契约和试点规则；课程或领域专家交专业判据；设计负责证据状态表达；工程交实现和自检；独立测试与评阅交实际结果。本文教学习者建立这条交接链，不以教材作者身份批准真实需求或专业规则。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "start_line": 136,
+          "end_line": 193,
+          "quote": "发布控制面使用 `PRECHECK → STAGED → CANARY → ACTIVE`，异常进入 `HOLD` 或 `DRAINING → ROLLBACK_READY → ROLLED_BACK`。这些是本章发布状态，不覆盖业务运行的 `WAIT_RESOLUTION` 等状态。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p02.md",
+          "start_line": 8,
+          "end_line": 25,
+          "quote": "作品文件和评价报告之间，需要一条能检查的关联链：目标与标准 → 冻结产物 → 环境和输入 → 运行记录 → 业务回执/内容判断 → 独立结论。报告写“全部通过”但找不到原记录，只有结论没有证明材料；只有原日志却不知道对应哪个版本与判据，也无法评阅。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 10,
+      "question": "请用一个真实项目说明：Agent 改善了谁的什么工作，你如何证明改善成立？",
+      "status": "部分",
+      "supported_answer_points": "教真实问题研究、同条件价值实验和真实使用反馈，说明如何证明改善。",
+      "missing_answer_points": "教材构造例不能生成个人真实项目经历；尚需本人项目、角色、效果原始证据。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-discovery.md",
+          "start_line": 23,
+          "end_line": 35,
+          "quote": "这些材料能演示推理，不能进入“真实用户验证通过”的分子。正式 `ProblemEvidence` 保存来源类型、采集时间、任务场景、参与者角色、允许使用范围、原记录引用、直接观察、解释、反例和未确认项。资料脱敏后保留可核来源，敏感原记录按实际授权隔离；不能为了公开作业把用户私有仓库或录音放进公开附件。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-mvp.md",
+          "start_line": 7,
+          "end_line": 15,
+          "quote": "实验先冻结任务集合、来源快照、权限、各方案配置、资源上限、人工后处理、判据、分配与停止规则。各方案取得同样必要信息及完成机会，输出按共同“有据初稿/准确批准/确认对象”的契约评价；资源的真实不同可以作为结果计量，但不能偷偷给候选更多资料和人力支持。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-mvp.md",
+          "start_line": 67,
+          "end_line": 88,
+          "quote": "试点前约定采用观察：符合任务条件的人是否进入流程，在哪里退出，是否回到原方式，为什么返工，有没有未经允许的使用。满意话、实际行为和任务结果分别记录。用户仍把材料复制到另一个系统，可能是集成成本、资料权限、审阅信任或功能无价值，不能默认只改按钮样式。"
+        }
+      ],
+      "experience_evidence_missing": true
+    },
+    {
+      "id": 11,
+      "question": "ReAct 如何组织推理、行动与观察？它与一次性生成计划有什么不同？",
+      "status": "部分",
+      "supported_answer_points": "开篇说明推理/动作交错、环境信息更新，给观察驱动改查轨迹；后文有先规划后执行的适用条件。",
+      "missing_answer_points": "ReAct仅短段提及，没有把其推理—行动—观察协议与一次性计划作完整结构对比或失败模式展开。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/00-learning-route.md",
+          "start_line": 33,
+          "end_line": 43,
+          "quote": "上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。[ReAct](https://arxiv.org/abs/2"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 808,
+          "end_line": 817,
+          "quote": "| 方案 | 适用条件 | 主要成本 | 升级或放弃条件 |"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 12,
+      "question": "ReAct、Plan-and-Execute 和固定状态机，你会如何按任务特征选择？",
+      "status": "部分",
+      "supported_answer_points": "对短反馈、先规划后执行局部重规划、固定workflow的任务条件与成本有比较。",
+      "missing_answer_points": "未完整讲ReAct与Plan-and-Execute各自运行机制；读者需外部知识才能把名称对应到选择逻辑。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 808,
+          "end_line": 817,
+          "quote": "| 方案 | 适用条件 | 主要成本 | 升级或放弃条件 |"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "start_line": 9,
+          "end_line": 19,
+          "quote": "“Agent”有不同用法。本文采用行为定义：普通程序由确定性代码决定路径；单次模型在已经组好的材料上生成一次候选；固定 workflow 允许模型完成局部语义任务，但步骤与分支由代码列出；动态 Agent 让模型依据观察提议新的调查动作，运行时仍掌握授权、执行和停止。这个 workflow/agent 控制权区分与 A"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 13,
+      "question": "不依赖现成框架，手写一个最小 Agent 控制循环，需要哪些状态和分支？",
+      "status": "充分",
+      "supported_answer_points": "State/Context、TOOLS/FINAL/ASK_INPUT、准入执行、验收、等待/停止、预算及恢复有完整骨架与明确契约。",
+      "missing_answer_points": "无本题关键内容缺口；伪代码未运行，不授实现熟练度。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 36,
+          "end_line": 58,
+          "quote": "一轮决策可以写成："
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 297,
+          "end_line": 366,
+          "quote": "下面的伪代码选择**单运行、单推进者、串行执行工具**作为基线。并发工具将在下一节按契约扩展。模型、数据库、工单服务和策略服务都通过接口接入；不假定它们共享事务。本篇伪代码未运行，实际外部服务契约也未实测。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 786,
+          "end_line": 804,
+          "quote": "模型最终回答是一个候选；运行时终态是一次已提交的决定；业务成功是有证据支持的结果。这三者不相等。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 14,
+      "question": "如何区分“模型宣布完成”和“任务实际上完成”？",
+      "status": "充分",
+      "supported_answer_points": "模型最终答复只是候选；独立验收检查指定证据、批准和外部回执；同版本无未决动作才提交完成。",
+      "missing_answer_points": "无本题关键内容缺口。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 17,
+          "end_line": 24,
+          "quote": "本次验收需要同时满足："
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 731,
+          "end_line": 745,
+          "quote": "假设第 4 步读取成功后，模型直接输出“已经创建工单，问题定位完成”。运行时不会通过搜索“完成”二字停止："
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 786,
+          "end_line": 804,
+          "quote": "模型最终回答是一个候选；运行时终态是一次已提交的决定；业务成功是有证据支持的结果。这三者不相等。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 15,
+      "question": "怎样设置最大步数、时间和费用限制，同时避免过早中止任务？",
+      "status": "充分",
+      "supported_answer_points": "分开模型/逻辑动作/工具尝试/恢复次数/绝对期限/费用；预留与实际结算跨暂停保持；恢复有独立额度及等待条件。",
+      "missing_answer_points": "无本题关键内容缺口；具体额度须按实际任务决定。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 278,
+          "end_line": 295,
+          "quote": "暂停后恢复的是同一个运行和预算账本。预算至少拆成："
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 786,
+          "end_line": 804,
+          "quote": "模型最终回答是一个候选；运行时终态是一次已提交的决定；业务成功是有证据支持的结果。这三者不相等。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 16,
+      "question": "面对带前置依赖的复杂任务，如何生成和验证可执行计划？",
+      "status": "部分",
+      "supported_answer_points": "有依赖无环检查、前置动作成功后可执行波次、资源/授权/写冲突验证。",
+      "missing_answer_points": "没有复杂任务计划生成算法、任务分解及计划完整性验证教学；执行前检查不能覆盖生成问题。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 532,
+          "end_line": 536,
+          "quote": "`preflight_batch` 必须逐项解析工具名和参数、拒绝未知字段或错误类型、核对访问对象、验证依赖构成无环图，并限制批次大小。工具 schema 只能证明结构合法，不能证明项目 ID 属于当前身份或正文获准。语义授权由策略判定，槽位与参数一致性由意图提交事务判断。工具注册表及当前目标之外的调用，作为拒绝反馈提"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 690,
+          "end_line": 707,
+          "quote": "上面的基线串行执行，但不能据此推断并发一定危险。读取固定修订的源文件与读取已有报告，彼此没有数据依赖，允许并发；“根据报告生成正文”依赖报告；创建工单依赖最终正文和批准，不能提前并行。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 812,
+          "end_line": 812,
+          "quote": "| 先规划再执行，局部重规划 | 子任务依赖可表达，观察不会频繁使计划失效 | 维护计划版本、依赖与失效传播；旧计划容易过期 | 环境变更频繁、计划每步被推翻时改用短反馈步；关键动作前仍校验当前事实 |"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 17,
+      "question": "什么信号应触发 Replanning？如何避免反复改计划却没有实际进展？",
+      "status": "部分",
+      "supported_answer_points": "观察频繁推翻计划时切短反馈；保留版本/失效传播；拒绝反馈和上限防无限修正。",
+      "missing_answer_points": "缺重规划触发分类、失效节点保留/撤销算法及进展指标，不足以回答反复重规划控制。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 812,
+          "end_line": 817,
+          "quote": "| 先规划再执行，局部重规划 | 子任务依赖可表达，观察不会频繁使计划失效 | 维护计划版本、依赖与失效传播；旧计划容易过期 | 环境变更频繁、计划每步被推翻时改用短反馈步；关键动作前仍校验当前事实 |"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 731,
+          "end_line": 745,
+          "quote": "假设第 4 步读取成功后，模型直接输出“已经创建工单，问题定位完成”。运行时不会通过搜索“完成”二字停止："
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 18,
+      "question": "Reflection 或自我纠错在哪些情况下有帮助，又可能怎样放大原始错误？",
+      "status": "部分",
+      "supported_answer_points": "事实错位可反馈具体差异后受限修正；不能无限用同一模型评价自己的结论；独立评估器偏差需校准。",
+      "missing_answer_points": "没有Reflection机制、何时增益及错误自强化的系统解释/对比实验，不能靠运行时验收代替反思教学。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/f02.md",
+          "start_line": 188,
+          "end_line": 196,
+          "quote": "**格式完整，事实错位。**模型输出 `actual=True`，JSON 与 Schema 都合法，却与报告矛盾。闸门返回 `FACT_MISMATCH(actual)`，可在剩余预算内把具体差异反馈给模型。不能把冲突响应修改成报告值后声称模型原来正确；修正产物应记录其来源。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 24,
+          "end_line": 24,
+          "quote": "模型可能对根因作出错误分析；验收器也可能无法确定某个推断是否真实。循环不能凭这些不确定内容创建一个“验证通过”的事实。可确定部分用确定性规则检查，例如修订号、证据标识、审批指纹和回执绑定；专业判断可以由人工或另外的评估器完成。自动验收失败后允许修正，但不能无限用同一个模型重新评价自己的同一结论。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "start_line": 231,
+          "end_line": 239,
+          "quote": "将语义评分交给另一个模型可以降低初筛成本，却会把评分器自身的偏差引入版本选择。MT-Bench/Chatbot Arena 的原始研究讨论位置、冗长、自我偏好和推理能力等限制；其在特定基准上的结果不能保证你的工单根因评分正确。[Zheng 等：Judging LLM-as-a-Judge，2023，访问于 2026-1"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 19,
+      "question": "工具结果与原计划冲突时，运行时应该如何更新状态和后续决策？",
+      "status": "充分",
+      "supported_answer_points": "工具观察与计划分开提交，逐动作保留部分效果；FinishPlan合并实际观察，验收拒绝写入下轮上下文，未知先核对不盲重做。",
+      "missing_answer_points": "无本题关键内容缺口；此题按当前执行计划/动作冲突解释，不额外要求未提及的规划算法。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 237,
+          "end_line": 260,
+          "quote": "在 `TOOLS` 分支，先对整批提议预检，再发出任何调用：检查工具、参数、对象授权、调用 ID 唯一性、依赖合法性和批次规模。预检发现错误，整批暂不执行，给模型结构化反馈。对于一批需要审批的合法动作，则先持久化计划，再等待批准；不是因为未批准就丢掉计划、重问模型。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 343,
+          "end_line": 364,
+          "quote": "| 事件 | 事务必须完成的工作 | 拒绝或并发语义 |"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 731,
+          "end_line": 745,
+          "quote": "假设第 4 步读取成功后，模型直接输出“已经创建工单，问题定位完成”。运行时不会通过搜索“完成”二字停止："
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 20,
+      "question": "如何识别和处理重复动作、无效搜索以及循环卡死？",
+      "status": "充分",
+      "supported_answer_points": "唯一槽位/指纹识别重复写动作，返回已有回执；无新信息补来源/澄清/停止；具体失败反馈、拒绝计数及各类预算终止卡死。",
+      "missing_answer_points": "无本题关键内容缺口；未授通用自动检测所有循环的保证。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 175,
+          "end_line": 187,
+          "quote": "不能简单用参数哈希作为 `action_id`。相同参数可能代表用户真正希望创建两条相同工单，也可能代表同一操作重试。AWS 的幂等 API 设计同样强调调用者表达意图的请求 ID，并处理同一个 ID 的参数冲突。这里采用相同原则，具体槽位规则由本次业务目标定义。[AWS：Making retries safe wit"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/00-learning-route.md",
+          "start_line": 42,
+          "end_line": 42,
+          "quote": "“继续”还须有目标内理由与资源额度。没有新信息时应补来源、请求澄清或合理停止；循环不是用重复请求掩盖未知的许可。第13篇 [固定流程](c01-fixed-workflow.md)使用相同组件与边界，但合法路径由代码规定；第14篇 [完整动态循环](c01-control-loop.md)解释观察驱动的控制与恢复。版本"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 731,
+          "end_line": 745,
+          "quote": "假设第 4 步读取成功后，模型直接输出“已经创建工单，问题定位完成”。运行时不会通过搜索“完成”二字停止："
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 278,
+          "end_line": 295,
+          "quote": "暂停后恢复的是同一个运行和预算账本。预算至少拆成："
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 21,
+      "question": "Function Calling 从模型输出到函数真正执行，中间经过哪些步骤？",
+      "status": "充分",
+      "supported_answer_points": "模型调用只为提议；完整协议响应、工具/参数预检、可信授权/批准/预算、意图及尝试提交后执行，结果关联原调用。",
+      "missing_answer_points": "无本题关键内容缺口；题目未要求特定SDK消息格式。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c03.md",
+          "start_line": 8,
+          "end_line": 24,
+          "quote": "模型返回 `create_issue`、参数和 `tool_call_id`，只是本次协议中的建议。执行器才调用业务实现，结果必须回传到同一次调用。OpenAI 的函数调用流程也明确区分模型返回调用、应用执行以及回传结果；其具体消息格式应由协议适配器转换成本文内部类型，不把内部 `Outcome` 当 SDK 返回。["
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 219,
+          "end_line": 239,
+          "quote": "运行时在流式过程中可以显示文本，也可以增量拼接参数；默认不能提前执行副作用。一个看上去完整的 JSON 对象仍可能只是半轮响应：后续会追加另一动作、修正参数或以错误结束。本文规定适配器只在收到协议规定的完整响应结束信号、所有调用均完整且结束原因允许消费时，返回 `CompleteResponse`。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 183,
+          "end_line": 211,
+          "quote": "首次合法提议创建槽位记录和 `action_id`。后续同槽位同指纹提议映射到已有动作，不创建新的工单；同槽位不同指纹返回 `INTENT_CONFLICT`，不能静默替换已经审批、在途或已完成的动作。若用户确实要求另一条工单，必须以新的目标版本或明确的新槽位表达。数据库对槽位实施唯一约束，不能仅靠应用先查后写。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 22,
+      "question": "如何设计工具名称、描述和参数 Schema，减少错选工具与错误参数？",
+      "status": "部分",
+      "supported_answer_points": "输入字段最小合同、未知字段拒绝、参数类型/大小/对象约束、工具注册范围和恢复合同。",
+      "missing_answer_points": "缺名称与描述的辨识性设计、相近工具消歧及错选率验证，Schema校验仅答一部分。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c03.md",
+          "start_line": 8,
+          "end_line": 14,
+          "quote": "模型返回 `create_issue`、参数和 `tool_call_id`，只是本次协议中的建议。执行器才调用业务实现，结果必须回传到同一次调用。OpenAI 的函数调用流程也明确区分模型返回调用、应用执行以及回传结果；其具体消息格式应由协议适配器转换成本文内部类型，不把内部 `Outcome` 当 SDK 返回。["
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 26,
+          "end_line": 34,
+          "quote": "工具注册表先定义执行契约，再把可用工具说明给模型："
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 23,
+      "question": "工具参数的 JSON 格式正确，为什么不等于调用安全、业务合法？",
+      "status": "充分",
+      "supported_answer_points": "结构合法不代表对象属于身份、不代表准确批准与业务事实成立；运行时注入身份、逐请求准入。",
+      "missing_answer_points": "无本题关键内容缺口。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c03.md",
+          "start_line": 8,
+          "end_line": 14,
+          "quote": "模型返回 `create_issue`、参数和 `tool_call_id`，只是本次协议中的建议。执行器才调用业务实现，结果必须回传到同一次调用。OpenAI 的函数调用流程也明确区分模型返回调用、应用执行以及回传结果；其具体消息格式应由协议适配器转换成本文内部类型，不把内部 `Outcome` 当 SDK 返回。["
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/f02.md",
+          "start_line": 18,
+          "end_line": 24,
+          "quote": "本篇候选字段故意区分观察与推断：`failed_test/expected/actual` 必须来自报告；`source_refs` 只能引用本轮可见证据；`hypothesis` 是待核根因，允许为 `null`；`missing_fields` 表达哪些事实不能确定。模型不得用一段自然语言同时承担事实、批准和执行结"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "start_line": 34,
+          "end_line": 42,
+          "quote": "第一道闸检查“这个身份可否读这个对象”。存储层或读取服务按宿主身份过滤，再返回内容；不能先检索全部组织，放进上下文后让模型选择自己的资料。即使最终答复拒绝，跨组织内容已经进入模型输入，读取边界仍失败。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 24,
+      "question": "工具数量达到数百个时，怎样降低选择错误和上下文负担？",
+      "status": "未覆盖",
+      "supported_answer_points": "最接近的是三个教学工具的注册表与禁止任意执行器；没有百工具选择教学。",
+      "missing_answer_points": "缺工具发现/检索/路由/渐进暴露、工具集消歧和上下文控制。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 26,
+          "end_line": 34,
+          "quote": "工具注册表先定义执行契约，再把可用工具说明给模型："
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 25,
+      "question": "工具超时、限流、参数错误和业务拒绝，应采用同一种重试策略吗？",
+      "status": "充分",
+      "supported_answer_points": "超时写效果未知先查询；只读可有界重读；参数失败可反馈修正；限流需区分额度；凭据或权限拒绝不能盲重试；统一层退避和预算。",
+      "missing_answer_points": "无本题关键内容缺口。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/f01.md",
+          "start_line": 9,
+          "end_line": 15,
+          "quote": "`{\"path\": [\"src/refund.py\"]}` 是合法 JSON，但不是本接口合法输入。`str(path)` 会把类型错误转为另一个资源名，随后得到“文件不存在”，把错误归因从调用者参数移到仓库。先检查类型，再检查范围；不要用自动转换掩盖输入错误。空字符串、缺字段和未知字段也分别处理，防止调用者悄悄塞入 "
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/f02.md",
+          "start_line": 188,
+          "end_line": 196,
+          "quote": "**格式完整，事实错位。**模型输出 `actual=True`，JSON 与 Schema 都合法，却与报告矛盾。闸门返回 `FACT_MISMATCH(actual)`，可在剩余预算内把具体差异反馈给模型。不能把冲突响应修改成报告值后声称模型原来正确；修正产物应记录其来源。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 243,
+          "end_line": 258,
+          "quote": "恢复顺序必须把事实核对放在新决策之前。模型不知道一个丢失回执的远端调用到底有没有成功。重新问模型，最多产生另一个看上去合理的提议，不能消除执行不确定性。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 698,
+          "end_line": 698,
+          "quote": "并行化减少等待链长度，同时提高瞬时请求压力、费用预留和失败组合数量。只有在轨迹证明工具等待构成主要延迟、工具契约能表达独立性时才值得升级。否则串行基线更容易审查恢复行为。无论是否并发，重试应由一层拥有：执行器内部若重试，必须把实际尝试暴露给账本；调度器和 SDK 各自独立重试会使实际请求数超过预算。退避与抖动用于减轻相"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 26,
+      "question": "对可能产生外部副作用的工具，如何防止重试导致重复执行？",
+      "status": "充分",
+      "supported_answer_points": "稳定逻辑动作ID和槽位、原参数/批准/下游键持久化；写后超时先核对，契约有效期内同键重发；本地去重不能替代下游原子效果绑定。",
+      "missing_answer_points": "无本题关键内容缺口。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c03.md",
+          "start_line": 16,
+          "end_line": 24,
+          "quote": "`tool_call_id` 只关联一轮模型消息；`action_id` 是逻辑意图；`attempt_id` 是一次物理发送。模型第二次提出相同内容，会有新协议 ID，却应绑定同一动作。不能拿参数哈希直接当逻辑身份：两个真正不同的用户意图也可能有相同参数。本任务用唯一槽位表达“一条缺陷工单”："
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 243,
+          "end_line": 260,
+          "quote": "恢复顺序必须把事实核对放在新决策之前。模型不知道一个丢失回执的远端调用到底有没有成功。重新问模型，最多产生另一个看上去合理的提议，不能消除执行不确定性。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 747,
+          "end_line": 766,
+          "quote": "沿用正常轨迹的第 7 步，改变后续时序："
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 27,
+      "question": "MCP 解决哪一层集成问题？它与模型的 Tool Calling 有什么关系？",
+      "status": "未覆盖",
+      "supported_answer_points": "仅Function Calling的模型提议/宿主执行流程可作邻近背景。",
+      "missing_answer_points": "无MCP架构或集成层说明，不能回答MCP与Tool Calling关系。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c03.md",
+          "start_line": 8,
+          "end_line": 14,
+          "quote": "模型返回 `create_issue`、参数和 `tool_call_id`，只是本次协议中的建议。执行器才调用业务实现，结果必须回传到同一次调用。OpenAI 的函数调用流程也明确区分模型返回调用、应用执行以及回传结果；其具体消息格式应由协议适配器转换成本文内部类型，不把内部 `Outcome` 当 SDK 返回。["
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 28,
+      "question": "MCP 中的 Tools、Resources 和 Prompts，各自适合表达什么能力？",
+      "status": "未覆盖",
+      "supported_answer_points": "工具执行合同是邻近背景，不是MCP三类原语教学。",
+      "missing_answer_points": "未讲MCP Tools、Resources、Prompts及适用能力。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 26,
+          "end_line": 34,
+          "quote": "工具注册表先定义执行契约，再把可用工具说明给模型："
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 29,
+      "question": "接入第三方工具服务时，如何处理认证、权限、版本与错误契约？",
+      "status": "部分",
+      "supported_answer_points": "可信身份/对象权限、固定服务和TLS、版本固定、协议与错误分类、工具契约边界有教学。",
+      "missing_answer_points": "生产认证明确不包含；未教第三方认证生命周期、凭据委派和完整接入契约验证，四子问不能全部回答。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/f01.md",
+          "start_line": 3,
+          "end_line": 15,
+          "quote": "把 HTTP 接口接进 Agent 前，应先建立一个确定性边界：输入符合契约且当前身份有权访问，才发请求；收到完整响应且对象、版本、内容一致，才产出可引用的结果；其余分支返回具体错误或未知状态。模型不能修补这个边界的事实缺口。这里选择一个只读接口实现它：读取 `repo@8e12` 下的文件，为已有失败报告 `test"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 26,
+          "end_line": 34,
+          "quote": "工具注册表先定义执行契约，再把可用工具说明给模型："
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/f02.md",
+          "start_line": 188,
+          "end_line": 196,
+          "quote": "**格式完整，事实错位。**模型输出 `actual=True`，JSON 与 Schema 都合法，却与报告矛盾。闸门返回 `FACT_MISMATCH(actual)`，可在剩余预算内把具体差异反馈给模型。不能把冲突响应修改成报告值后声称模型原来正确；修正产物应记录其来源。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 30,
+      "question": "Tool Calling、MCP、Agent Skills（可复用技能说明与资源包）和 A2A，分别解决什么问题？",
+      "status": "部分",
+      "supported_answer_points": "Tool Calling有实质教学，可回答模型提出调用、宿主执行和回传结果这一子问。",
+      "missing_answer_points": "MCP、Skills和A2A均无对应教学，无法完成四者职责对比。QA反例复核后按部分子问有覆盖归部分。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c03.md",
+          "start_line": 8,
+          "end_line": 14,
+          "quote": "模型返回 `create_issue`、参数和 `tool_call_id`，只是本次协议中的建议。执行器才调用业务实现，结果必须回传到同一次调用。OpenAI 的函数调用流程也明确区分模型返回调用、应用执行以及回传结果；其具体消息格式应由协议适配器转换成本文内部类型，不把内部 `Outcome` 当 SDK 返回。["
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 31,
+      "question": "会话历史、任务工作状态和长期记忆有什么不同？应分别存储什么？",
+      "status": "部分",
+      "supported_answer_points": "State是授权恢复依据，Context是当前投影，聊天文本不能替代动作账本；说明保存目标/证据/未决事项。",
+      "missing_answer_points": "未定义长期记忆、跨会话用途及它和会话历史的存储边界。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 50,
+          "end_line": 58,
+          "quote": "这里最重要的分离是 `State` 与 `Context`。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/f02.md",
+          "start_line": 8,
+          "end_line": 16,
+          "quote": "权威状态保存可信目标、当前身份、资料版本、已经读取的证据和待处理事项。模型输入是本轮投影：它包含对当前判断足够的证据，却不承担身份授权。令模型输出一个 `tenant_id` 或 `approved=true` 并不能改变状态；工具层仍从可信运行时取身份与批准。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 32,
+      "question": "上下文不足时，如何在截断、摘要、检索和外部状态之间选择？",
+      "status": "充分",
+      "supported_answer_points": "保留权威外部状态和不可变原文；探索日志可压缩；输入放不下先检索片段/拆分，拒绝静默截断，并记录上下文版本。",
+      "missing_answer_points": "无本题关键内容缺口。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/f02.md",
+          "start_line": 8,
+          "end_line": 16,
+          "quote": "权威状态保存可信目标、当前身份、资料版本、已经读取的证据和待处理事项。模型输入是本轮投影：它包含对当前判断足够的证据，却不承担身份授权。令模型输出一个 `tenant_id` 或 `approved=true` 并不能改变状态；工具层仍从可信运行时取身份与批准。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 50,
+          "end_line": 58,
+          "quote": "这里最重要的分离是 `State` 与 `Context`。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 33,
+      "question": "摘要压缩如何避免丢失用户约束、未完成事项和关键事实？",
+      "status": "充分",
+      "supported_answer_points": "用户目标/审批/未决动作存在权威状态，投影包含问题、已完成/未决和反馈；原文比较条件/引用不自由摘要；给摘要遗漏的反例和恢复约束。",
+      "missing_answer_points": "无本题关键内容缺口。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 50,
+          "end_line": 58,
+          "quote": "这里最重要的分离是 `State` 与 `Context`。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/f02.md",
+          "start_line": 14,
+          "end_line": 16,
+          "quote": "上下文不足的失败不只来自窗口溢出。摘要可能把 `days < 7` 改写成“七天内可退款”，恰好删去边界条件；即便字符数大幅减少，业务判断已经改变。本文要求不可变证据原文不由自由摘要替代：投影保留比较操作、测试输入、预期和实际；探索日志可以压缩，引用必须仍能定位原文。如果材料放不下，应先检索相关片段、保留原文引用或拆分"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/f02.md",
+          "start_line": 202,
+          "end_line": 202,
+          "quote": "**摘要损失。**把源代码片段替成“七天内可退”，报告保持不变。说明为什么事实校验可能仍通过，而根因判断质量下降。参考分析：校验器仍可比对报告，但摘要没有比较符，无法判断边界实现；应保留源文件原行及修订，不能仅通过增加提示词修复消失的证据。提交改变前后的请求内容和候选，不虚构质量改善百分比。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 34,
+      "question": "长期记忆应该在什么条件下写入、更新、合并或删除？",
+      "status": "未覆盖",
+      "supported_answer_points": "任务状态与上下文只是邻近主题。",
+      "missing_answer_points": "缺长期记忆写入条件、抽取、去重合并、更新、过期和删除全生命周期。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 50,
+          "end_line": 58,
+          "quote": "这里最重要的分离是 `State` 与 `Context`。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 35,
+      "question": "如何发现错误记忆对后续任务的持续污染，并修正受影响结果？",
+      "status": "部分",
+      "supported_answer_points": "说明摘要丢事实导致重复动作、运行时以权威账本拒绝；已有记忆中的旧话不具当前批准权限。",
+      "missing_answer_points": "未教跨任务错误记忆检测、来源依赖、失效传播、回收与受影响结果修复。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 56,
+          "end_line": 58,
+          "quote": "例如，状态账本中已有工单 `ISSUE-218`，但摘要把它遗漏了，模型又提议创建工单。正确处理是运行时识别唯一工单槽位已经满足，返回原回执或冲突信息；不是相信模型“尚未创建”的摘要。把摘要当权威状态，会使上下文长度优化直接破坏副作用安全。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "start_line": 294,
+          "end_line": 298,
+          "quote": "将开篇攻击文本分别放入测试报告、`read_source` 返回和已有记忆。画出每种路径如何进入模型，标出真正有权限阻止读和写的组件，并给出正常路径的预期。不得接真实网络服务。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 36,
+      "question": "如何隔离不同用户、组织和会话的记忆？",
+      "status": "部分",
+      "supported_answer_points": "可信宿主身份在存储读取前过滤、禁止跨组织内容入上下文；缓存带主体/授权版本。",
+      "missing_answer_points": "缺记忆对象的user/session作用域、写入和跨会话继承控制；不能称已完整教授记忆隔离。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "start_line": 22,
+          "end_line": 42,
+          "quote": "身份、对象和内容分类要在不同位置检查。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "start_line": 146,
+          "end_line": 150,
+          "quote": "本任务可以缓存不可变源读取或经核验的分析候选。工单副作用、批准或运行完成状态不能按问题文字复用；相同问题的另一个运行仍需自己的效果槽位与准确批准。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 37,
+      "question": "检索材料、历史记忆与当前用户要求相冲突时，应如何处理？",
+      "status": "部分",
+      "supported_answer_points": "外部资料/历史记忆不获得指令权限；当前目标与策略控制动作；同级事实规则冲突先核版本/权威并请求确认。",
+      "missing_answer_points": "未系统教历史用户偏好与当前明确要求的冲突更新、记忆失效和完整来源优先级。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "start_line": 56,
+          "end_line": 58,
+          "quote": "例如，状态账本中已有工单 `ISSUE-218`，但摘要把它遗漏了，模型又提议创建工单。正确处理是运行时识别唯一工单槽位已经满足，返回原回执或冲突信息；不是相信模型“尚未创建”的摘要。把摘要当权威状态，会使上下文长度优化直接破坏副作用安全。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "start_line": 294,
+          "end_line": 298,
+          "quote": "将开篇攻击文本分别放入测试报告、`read_source` 返回和已有记忆。画出每种路径如何进入模型，标出真正有权限阻止读和写的组件，并给出正常路径的预期。不得接真实网络服务。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "start_line": 228,
+          "end_line": 234,
+          "quote": "`NO_HITS` 只说明当前检索没有候选；原因可能是未摄取、索引未更新、版本过滤、查询词面不匹配或确实缺资料。对用户可说当前可用证据不足，并提供允许的补证路径；内部运维记录层级原因。没有权限时，不应通过“搜到了机密规则但不能给你”泄露受限对象存在性。本篇选择对外统一不足，内部仅在获准审计通道记录权限拒绝原因。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 38,
+      "question": "如何设计系统提示，使角色、工具使用规则和输出要求清晰而可测试？",
+      "status": "部分",
+      "supported_answer_points": "开发者指令定义输出任务，资料是数据；Schema与业务校验分离；协议/事实反例及冻结提示对照可用于测试。",
+      "missing_answer_points": "缺一套同时包含角色、工具使用规则和输出约束的系统提示设计方法及相互冲突处理。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/f02.md",
+          "start_line": 10,
+          "end_line": 24,
+          "quote": "权威状态保存可信目标、当前身份、资料版本、已经读取的证据和待处理事项。模型输入是本轮投影：它包含对当前判断足够的证据，却不承担身份授权。令模型输出一个 `tenant_id` 或 `approved=true` 并不能改变状态；工具层仍从可信运行时取身份与批准。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/f02.md",
+          "start_line": 198,
+          "end_line": 205,
+          "quote": "**协议与业务反例。**构造完整合法、完整但 `actual` 错位、`incomplete`、包含 `refusal` 四个 REST 文档，再加入顶层为数组/null的响应。给合法候选一个并不存在的引用 ID。参考分析：分别得到候选、事实拒绝、协议拒绝、模型拒绝、顶层对象拒绝和上下文引用拒绝。调用包装层也须检查对象"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "start_line": 73,
+          "end_line": 79,
+          "quote": "一次版本对照至少冻结代码、系统提示、工具定义、上下文构建方式、资料快照、模型配置、预算、故障注入、判定器和案例集。能取得不可变模型修订就记录它；供应商只给滚动别名时，记录请求日期和响应中的可用身份，同时把无法完全冻结写为比较限制。不能凭相同别名声称底层模型一定相同。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 39,
+      "question": "Few-shot 示例如何帮助工具选择？示例过多或失真会带来什么问题？",
+      "status": "未覆盖",
+      "supported_answer_points": "有教学示例和评测泄漏，但不是模型few-shot工具选择机制。",
+      "missing_answer_points": "缺示例选择、覆盖、排序、token代价、误导/失真以及工具选择行为实验。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "start_line": 63,
+          "end_line": 71,
+          "quote": "开发案例帮助发现方案，允许查看答案、轨迹和失败原因。回归案例保存已知缺陷及正常路径，用来防止修复倒退。独立保留案例用于一个被冻结的版本判断尚未见过的条件，原始内容和参考判定由独立评阅者保管。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 40,
+      "question": "如何验证一次提示或记忆策略调整确实改善了结果，而非只修好几个演示样例？",
+      "status": "充分",
+      "supported_answer_points": "冻结提示和上下文等版本，只改策略；开发/回归/独立保留分开；同案例重复配对比较，错误和缺证保留，原例/关联/未知条件三类复验。",
+      "missing_answer_points": "无本题关键内容缺口；实际策略效果仍需运行；本题问验证方法而非记忆算法。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "start_line": 63,
+          "end_line": 91,
+          "quote": "开发案例帮助发现方案，允许查看答案、轨迹和失败原因。回归案例保存已知缺陷及正常路径，用来防止修复倒退。独立保留案例用于一个被冻结的版本判断尚未见过的条件，原始内容和参考判定由独立评阅者保管。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "start_line": 241,
+          "end_line": 247,
+          "quote": "一份失败记录至少保留输入及快照、期望性质、实际证据、首次已知偏离阶段、原因假设、改动和复验。首次偏离与根因不同：首次发现答案错误，不代表错误从生成阶段开始。先沿证据反查，再给原因假设。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 41,
+      "question": "RAG、长上下文直接阅读和模型微调，分别适合解决哪些知识问题？",
+      "status": "部分",
+      "supported_answer_points": "检索相关片段、上下文放不下时拆分、版本和证据包可支持RAG部分。",
+      "missing_answer_points": "没有微调与RAG/长上下文三者的知识更新、事实依据与成本适用性比较。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/f02.md",
+          "start_line": 14,
+          "end_line": 16,
+          "quote": "上下文不足的失败不只来自窗口溢出。摘要可能把 `days < 7` 改写成“七天内可退款”，恰好删去边界条件；即便字符数大幅减少，业务判断已经改变。本文要求不可变证据原文不由自由摘要替代：投影保留比较操作、测试输入、预期和实际；探索日志可以压缩，引用必须仍能定位原文。如果材料放不下，应先检索相关片段、保留原文引用或拆分"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "start_line": 8,
+          "end_line": 26,
+          "quote": "摄取链应是“取得完整源文件→固定版本及哈希→按确定规则分块→带权限与来源入索引→发布索引快照”。新文件取得成功不等于新索引已发布；新索引发布也不等于当前正在进行的回答使用了它。查询开始时冻结 `index_snapshot_id`，证据包同时记录源版本和索引版本。更新完成的通知不能改写已经生成的请求历史。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 42,
+      "question": "一个完整 RAG 管线包含哪些环节？如何逐段定位回答错误？",
+      "status": "充分",
+      "supported_answer_points": "摄取固定源、分块、权限索引快照、词法/向量/融合、重排、读回、上下文和逐主张支持；按未入库/过滤/召回/裁剪/误读定位。",
+      "missing_answer_points": "无本题关键内容缺口；不代表已有真实嵌入服务运行。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "start_line": 8,
+          "end_line": 38,
+          "quote": "摄取链应是“取得完整源文件→固定版本及哈希→按确定规则分块→带权限与来源入索引→发布索引快照”。新文件取得成功不等于新索引已发布；新索引发布也不等于当前正在进行的回答使用了它。查询开始时冻结 `index_snapshot_id`，证据包同时记录源版本和索引版本。更新完成的通知不能改写已经生成的请求历史。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "start_line": 228,
+          "end_line": 247,
+          "quote": "`NO_HITS` 只说明当前检索没有候选；原因可能是未摄取、索引未更新、版本过滤、查询词面不匹配或确实缺资料。对用户可说当前可用证据不足，并提供允许的补证路径；内部运维记录层级原因。没有权限时，不应通过“搜到了机密规则但不能给你”泄露受限对象存在性。本篇选择对外统一不足，内部仅在获准审计通道记录权限拒绝原因。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/f02.md",
+          "start_line": 18,
+          "end_line": 24,
+          "quote": "本篇候选字段故意区分观察与推断：`failed_test/expected/actual` 必须来自报告；`source_refs` 只能引用本轮可见证据；`hypothesis` 是待核根因，允许为 `null`；`missing_fields` 表达哪些事实不能确定。模型不得用一段自然语言同时承担事实、批准和执行结"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 43,
+      "question": "如何根据文档结构、查询类型和引用需求设计切块策略？",
+      "status": "充分",
+      "supported_answer_points": "按函数与定义、测试输入/预期/实际同组保留，块带哈希及行号；大小块的聚焦/丢前提取舍，邻块扩展；按查询必要块评估。",
+      "missing_answer_points": "无本题关键内容缺口。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "start_line": 10,
+          "end_line": 16,
+          "quote": "摄取链应是“取得完整源文件→固定版本及哈希→按确定规则分块→带权限与来源入索引→发布索引快照”。新文件取得成功不等于新索引已发布；新索引发布也不等于当前正在进行的回答使用了它。查询开始时冻结 `index_snapshot_id`，证据包同时记录源版本和索引版本。更新完成的通知不能改写已经生成的请求历史。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "start_line": 236,
+          "end_line": 247,
+          "quote": "先冻结合法资料集合和查询集，再为每题独立标出必要支持块，包含精确测试名、自然语言同义、需要实现与报告共同支持、规则缺失和冲突题。词法与语义使用同样的权限/修订过滤、`top_k` 和上下文上限；否则较大候选集的收益会被误归于算法。真实向量输入必须记录嵌入模型、维度、查询改写和编码版本；手工向量只能测排序实现。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 44,
+      "question": "如何选择 Embedding 模型，评估领域术语、中文与多语言查询效果？",
+      "status": "部分",
+      "supported_answer_points": "相同模型空间/维度/编码版本要求；按精确词和同义查询分组测必要块召回；中文tokenizer局限须诚实基线。",
+      "missing_answer_points": "缺Embedding选型维度/领域适配、中文和多语言对比集/编码策略与模型质量方法。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "start_line": 18,
+          "end_line": 26,
+          "quote": "精确文件路径、报告 ID、测试名优先做字段定位或词法检索。它们的字符形式本来就是身份信息，语义相近的另一个测试不能替代。自然语言“为什么第七天边界失败”可能没有出现 `test_refund_day_7` 的词面，需要查询改写、语义召回或混合。语义召回依靠相同嵌入模型空间中的相似性，不代表事实为真，也不能用一个高分解除"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "start_line": 38,
+          "end_line": 38,
+          "quote": "以下代码可保存为 `c02_evidence.py`。嵌入向量为可选外部输入：须由相同 `embedding_version` 对查询和块编码、维度一致、非零且有限；代码实现余弦和融合，但**没有嵌入服务，不能通过它得到真实语义比较成绩**。默认示例只做词法检索。源对象存储是本地可信夹具；真实服务应按当前身份读回，不能"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "start_line": 236,
+          "end_line": 247,
+          "quote": "先冻结合法资料集合和查询集，再为每题独立标出必要支持块，包含精确测试名、自然语言同义、需要实现与报告共同支持、规则缺失和冲突题。词法与语义使用同样的权限/修订过滤、`top_k` 和上下文上限；否则较大候选集的收益会被误归于算法。真实向量输入必须记录嵌入模型、维度、查询改写和编码版本；手工向量只能测排序实现。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 45,
+      "question": "关键词检索、向量检索和混合检索分别有什么优势与盲区？",
+      "status": "充分",
+      "supported_answer_points": "精确ID用字段/词法，语义补同义但不证真，BM25机制及RRF融合避免分值直接相加；按查询分组公平比较。",
+      "missing_answer_points": "无本题关键内容缺口。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "start_line": 18,
+          "end_line": 26,
+          "quote": "精确文件路径、报告 ID、测试名优先做字段定位或词法检索。它们的字符形式本来就是身份信息，语义相近的另一个测试不能替代。自然语言“为什么第七天边界失败”可能没有出现 `test_refund_day_7` 的词面，需要查询改写、语义召回或混合。语义召回依靠相同嵌入模型空间中的相似性，不代表事实为真，也不能用一个高分解除"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "start_line": 236,
+          "end_line": 247,
+          "quote": "先冻结合法资料集合和查询集，再为每题独立标出必要支持块，包含精确测试名、自然语言同义、需要实现与报告共同支持、规则缺失和冲突题。词法与语义使用同样的权限/修订过滤、`top_k` 和上下文上限；否则较大候选集的收益会被误归于算法。真实向量输入必须记录嵌入模型、维度、查询改写和编码版本；手工向量只能测排序实现。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 46,
+      "question": "Reranker 改善的是哪一阶段？怎样衡量它带来的质量与时延代价？",
+      "status": "部分",
+      "supported_answer_points": "明确重排只能看召回候选，不能修复漏召回；必要块进入上下文和逐主张支持可定位质量。",
+      "missing_answer_points": "缺reranker评分机制、候选规模/模型成本/时延权衡及与无重排基线的专门实验。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "start_line": 26,
+          "end_line": 26,
+          "quote": "重排只看已经召回的候选，不能给从未召回的块打分。因此同义查询失败时，先检查资料是否入库、是否被正确过滤、候选是否出现，再查重排和上下文裁剪。正确片段已入上下文而模型误读，则改生成或支持检查层；继续扩大索引不对应这个原因。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "start_line": 236,
+          "end_line": 239,
+          "quote": "先冻结合法资料集合和查询集，再为每题独立标出必要支持块，包含精确测试名、自然语言同义、需要实现与报告共同支持、规则缺失和冲突题。词法与语义使用同样的权限/修订过滤、`top_k` 和上下文上限；否则较大候选集的收益会被误归于算法。真实向量输入必须记录嵌入模型、维度、查询改写和编码版本；手工向量只能测排序实现。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 47,
+      "question": "查询改写、多查询和多跳检索什么时候有效，什么时候容易改变原意？",
+      "status": "部分",
+      "supported_answer_points": "自然语言同义需改写/语义召回；改写版本须冻结，中文词法无命中可比较改写。",
+      "missing_answer_points": "缺多查询、多跳检索的执行与终止、有效条件及改写偏离原意的保护和反例。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "start_line": 20,
+          "end_line": 20,
+          "quote": "精确文件路径、报告 ID、测试名优先做字段定位或词法检索。它们的字符形式本来就是身份信息，语义相近的另一个测试不能替代。自然语言“为什么第七天边界失败”可能没有出现 `test_refund_day_7` 的词面，需要查询改写、语义召回或混合。语义召回依靠相同嵌入模型空间中的相似性，不代表事实为真，也不能用一个高分解除"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "start_line": 238,
+          "end_line": 247,
+          "quote": "先冻结合法资料集合和查询集，再为每题独立标出必要支持块，包含精确测试名、自然语言同义、需要实现与报告共同支持、规则缺失和冲突题。词法与语义使用同样的权限/修订过滤、`top_k` 和上下文上限；否则较大候选集的收益会被误归于算法。真实向量输入必须记录嵌入模型、维度、查询改写和编码版本；手工向量只能测排序实现。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 48,
+      "question": "如何让答案引用与实际支持结论的原文、版本及位置对应？",
+      "status": "充分",
+      "supported_answer_points": "原文源版本/块哈希/行范围和读回校验；引用合法不等于支持，拆原子主张核规范事实，冲突及未判断分开。",
+      "missing_answer_points": "无本题关键内容缺口。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "start_line": 8,
+          "end_line": 16,
+          "quote": "摄取链应是“取得完整源文件→固定版本及哈希→按确定规则分块→带权限与来源入索引→发布索引快照”。新文件取得成功不等于新索引已发布；新索引发布也不等于当前正在进行的回答使用了它。查询开始时冻结 `index_snapshot_id`，证据包同时记录源版本和索引版本。更新完成的通知不能改写已经生成的请求历史。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "start_line": 28,
+          "end_line": 38,
+          "quote": "一个引用可以通过“ID在包内、哈希与读回一致、位置有效”的关联检查，却仍不支持主张。`return days < 7` 支持“这个函数使用严格小于七的比较”，不独立支持“业务规则必须小于等于七”。报告支持“该报告中这项断言失败”，不证明修复后正确。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "start_line": 222,
+          "end_line": 234,
+          "quote": "预期为 `HITS`、规范报告事实 `SUPPORTED`、业务规则 `UNSUPPORTED`；实际结果为空。`IndexSnapshot` 的成员不可变，内容地址绑定全部检索/支持元数据；查询同时检查可信Scope里的ID和成员重新计算的ID，混入后发布块不能继续回显旧ID。可信摄取方提供这份快照，模型不能自行构造"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 49,
+      "question": "没有足够证据、资料互相矛盾或知识已经过期时，系统应怎样响应？",
+      "status": "充分",
+      "supported_answer_points": "无命中不等于无知识，统一表达可用证据不足和补证；版本缺失不得回退旧源，同级权威冲突请确认，部分支持删无据部分。",
+      "missing_answer_points": "无本题关键内容缺口。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "start_line": 228,
+          "end_line": 247,
+          "quote": "`NO_HITS` 只说明当前检索没有候选；原因可能是未摄取、索引未更新、版本过滤、查询词面不匹配或确实缺资料。对用户可说当前可用证据不足，并提供允许的补证路径；内部运维记录层级原因。没有权限时，不应通过“搜到了机密规则但不能给你”泄露受限对象存在性。本篇选择对外统一不足，内部仅在获准审计通道记录权限拒绝原因。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "start_line": 31,
+          "end_line": 31,
+          "quote": "第三种输入有两份同级规则冲突，且无法判断哪份适用。更多 Agent 不会创造业务权威。正确输出是 `WAIT_INPUT`，列明冲突范围和需要的版本确认；若让几个模型投票选一个规则，只是给未经授权的裁决增加票数。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 50,
+      "question": "Agentic RAG 相对固定 RAG 增加了什么决策能力？如何证明额外复杂度值得？",
+      "status": "部分",
+      "supported_answer_points": "动态调查依观察选择新文件/问题；相同任务/权限/预算比较新增路径价值；静态证据包提供固定检索基线。",
+      "missing_answer_points": "没有Agentic RAG专门循环（查询规划、检索充分性、自适应跳转/停止）与固定RAG一组完整对照，跨章仅有可迁移基础。",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "start_line": 25,
+          "end_line": 31,
+          "quote": "第一种输入已有报告、实现和业务规则，且测试失败是固定字段。普通程序可输出失败事实；需要解释时一轮模型足够。动态 Agent 再读取同样材料只增加路径与失败面，除非比较表明它改善了事先定义的缺陷。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "start_line": 43,
+          "end_line": 59,
+          "quote": "冻结相同任务集，分别标记材料完整、需动态调查、证据冲突；固定资料与工具版本、权限、验收器、模型快照与采样配置、总期限和资源上限。各方案可有不同路径，但不能偷偷取得测试集答案。记录每题的候选合格、完整目标合格、正确等待、错误完成、读/模型尝试、用量、端到端延迟和未知结果。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "start_line": 236,
+          "end_line": 247,
+          "quote": "先冻结合法资料集合和查询集，再为每题独立标出必要支持块，包含精确测试名、自然语言同义、需要实现与报告共同支持、规则缺失和冲突题。词法与语义使用同样的权限/修订过滤、`top_k` 和上下文上限；否则较大候选集的收益会被误归于算法。真实向量输入必须记录嵌入模型、维度、查询改写和编码版本；手工向量只能测排序实现。"
+        }
+      ],
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 51,
+      "question": "在你采用的版本中，LangChain 和 LangGraph 分别承担什么职责？",
+      "status": "未覆盖",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 9,
+          "quote": "“Agent”有不同用法。本文采用行为定义：普通程序由确定性代码决定路径；单次模型在已经组好的材料上生成一次候选；固定 workflow 允许模型完成局部语义任务，但步骤与分支由代码列出；动态 Agent 让模型依据观察提议新的调查动作，运行时仍掌握授权、执行和停止。这个 workflow/agent 控制权区分与 Anthropic 2024 年文章一致；"
+        }
+      ],
+      "supported": "只有普通程序、固定流程与动态Agent定义。",
+      "missing": "无LangChain/LangGraph版本、分工、接口边界。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 52,
+      "question": "用图表示 Agent 时，节点、边和共享状态分别应该包含什么？",
+      "status": "部分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 48,
+          "quote": "模型决定“下一步看哪个文件”“如何组织缺陷说明”，这些决定依赖语义判断。运行时决定工具是否注册、参数是否符合契约、身份能否访问对象、内容是否已获审批、现在是否还有预算。执行器决定如何隔离调用、施加超时、接收实际结果。验收器决定提交的产物是否满足本次目标。每一项都只有一个权威责任者；模型的文字不能覆盖策略或执行记录。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 52,
+          "quote": "**State 是恢复与授权依据。**它保存目标版本、运行修订号、动作账本、尝试记录、审批、取消请求、预算和验收反馈。未决动作不能因为上下文压缩而消失，审批不能因为模型在对话里写了“用户已同意”而产生。"
+        }
+      ],
+      "supported": "运行时/执行器/验收器分工及权威State字段。",
+      "missing": "未讲图编排的节点输入输出、边转移及共享状态合同。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 53,
+      "question": "状态字段应如何建模，避免把全部消息和中间数据无限累积？",
+      "status": "部分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 52,
+          "quote": "**State 是恢复与授权依据。**它保存目标版本、运行修订号、动作账本、尝试记录、审批、取消请求、预算和验收反馈。未决动作不能因为上下文压缩而消失，审批不能因为模型在对话里写了“用户已同意”而产生。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 54,
+          "quote": "**Context 是模型这一次看到的状态投影。**完整历史可能包含几十 MB 的日志和文件，本轮模型只需知道当前问题、相关证据、已经完成的动作、尚未解决的动作和最近的验收失败。投影必须有版本或摘要哈希，便于解释模型为什么提出这一步；它没有执行权限。"
+        }
+      ],
+      "supported": "权威状态保存目标/账本/尝试/批准/预算，Context仅当前证据与未决动作的投影，并保留摘要版本。",
+      "missing": "State与Context分离能减少本轮输入，但正文未给消息/中间数据在权威状态中的保留期限、裁剪归档、索引及存储增长策略，不能回答状态无限累积的全部子问。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 54,
+      "question": "并行节点同时更新状态时，如何处理合并规则和写入冲突？",
+      "status": "部分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 694,
+          "quote": "并发调度从 `ready_actions` 扩成**可执行波次**：前置动作都已成功、当前授权已满足、没有同一可变对象写冲突，且批次预留没有超过资源额度。为每个波次先持久化各自的尝试及预留，再分发；结果按 `attempt_id → action_id → CallBinding` 关联。不能用返回列表下标代替调用身份。一个只读任务先返回、另一个超时，必须各"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 700,
+          "quote": "另一个并发问题是：两个工作者同时恢复同一运行。这与模型一次提出两个工具完全不同。运行推进权由存储租约管理：取得租约时分配递增的 `lease_epoch`；所有状态写入携带代次；存储拒绝过期租约或旧代次。事务内的版本条件处理同一代次中取消、审批和结果提交的竞争。"
+        }
+      ],
+      "supported": "依赖波次、各attempt独立关联、冲突检查、租约代次及事务版本条件。",
+      "missing": "没有图节点reducer/字段合并策略及冲突组合实例；通用CAS不能补齐。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 55,
+      "question": "条件路由由规则决定还是由模型决定，各有什么适用场景？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 9,
+          "quote": "“Agent”有不同用法。本文采用行为定义：普通程序由确定性代码决定路径；单次模型在已经组好的材料上生成一次候选；固定 workflow 允许模型完成局部语义任务，但步骤与分支由代码列出；动态 Agent 让模型依据观察提议新的调查动作，运行时仍掌握授权、执行和停止。这个 workflow/agent 控制权区分与 Anthropic 2024 年文章一致；"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 18,
+          "quote": "“固定”不等于只有直线：代码可以有条件分支、循环、重试和审批。把 `while retry` 写进程序不会让它变成动态 Agent。区别在于循环内是否让模型重新决定业务行动路径。相反，一个动态 Agent 也可以被限制只读、最多调查数个文件；动态性不意味着无限授权。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 20,
+          "quote": "同一个任务可以有两部分：分析阶段采用动态只读调查，创建阶段仍使用固定审批与单写者。这比把权限、预算和审批都交给模型更容易测量因果：探索效果来自哪里，副作用控制由谁兑现。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 29,
+          "quote": "第二种输入报告只给栈位置，根因可能在调用者的日期单位或实现边界。若稳定规则能列出“实现与调用者”两处，固定 workflow 仍够用。只有当下一处相关文件需依据刚读到的参数来源来判断，路径树无法合理穷举时，动态只读 Agent 才有优势候选。它也必须在证据包、资源范围与预算内调查，不能从“不知道读哪里”推导“允许读所有东西”。"
+        }
+      ],
+      "supported": "固定规则覆盖稳定分支，新观察决定调查路径才升级动态；可混合只读动态与固定写入。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 56,
+      "question": "Checkpoint 应保存什么，才能支持失败恢复与人工介入？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e01.md",
+          "line": 10,
+          "quote": "**意图提交。**保存准确参数、指纹、动作 ID、唯一槽位和下游操作键，批准绑定同一动作。创建事务成功前不发送。如果提交回执丢失，先按事件 ID读回，不分配另一组身份。模型上下文可引用这些事实，但不能反过来覆盖它们。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e01.md",
+          "line": 12,
+          "quote": "**发送前尝试提交。**保存新的 `attempt_id`，扣计尝试预算，设 `IN_FLIGHT + UNRESOLVED`。提交后、真正发送前仍可能崩溃，数据库只知道“可能已发”。这不是缺少一个 `sent=true`字段就能解决：设置它与发送之间仍有窗口。恢复默认核对，不能把 `IN_FLIGHT`当未执行。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e01.md",
+          "line": 14,
+          "quote": "**结果提交。**将回执、尝试观察和动作效果一次提交。外部成功、本地提交前崩溃时，核对原操作补齐事实；本地结果已提交但提交回执丢失时，按事件去重读回。完成状态与验收依据同一事务提交，取消与完成的竞态也由这次事务裁决。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 52,
+          "quote": "**State 是恢复与授权依据。**它保存目标版本、运行修订号、动作账本、尝试记录、审批、取消请求、预算和验收反馈。未决动作不能因为上下文压缩而消失，审批不能因为模型在对话里写了“用户已同意”而产生。"
+        }
+      ],
+      "supported": "目标修订、准确意图与批准、发送尝试、效果观察、预算与取消均持久保存，重启先核未决。",
+      "missing": "无实质缺口；回答是运行时级，不包含特定框架API。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 57,
+      "question": "恢复执行时，如何保证已经完成的外部操作不会再次产生副作用？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 256,
+          "quote": "幂等也有条件：键的命名范围、参数一致性、保留时间、并发重复请求处理和失败响应的语义都要来自下游契约。以 Stripe 的官方说明为例，API v1 对首次开始执行的请求保存响应，同键重试可能仍得到保存的 `500`；键可以在至少 24 小时后清理。API v2 对失败或部分失败重试的处理不同。因此不能把“支持幂等键”泛化成永久去重或必然恢复成功。[Strip"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 260,
+          "quote": "运行时可以保证自己不故意重复提交一个逻辑动作，但只有下游把去重记录与实际效果可靠绑定，才能保证重复传输不会重复产生业务效果。AWS 的服务端示例明确把记录幂等 token 与相关变更纳入原子操作；客户端自己的 checkpoint 不能代替这部分。[AWS：服务端 token 与变更的原子性](https://aws.amazon.com/builders-"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e01.md",
+          "line": 366,
+          "quote": "桥接的 `allow_replay=False`使重复begin事件在事务内拒绝，不能从旧DISPATCH再次发送。事件回执丢失或工作者重启时，先读权威动作/attempt，再走核对。结果事务回执丢失时仅重放原outcome事件，不重调适配器；并发新事件导致revision变化则重新读账、保留同一结果与attempt再提交，不能递增尝试ID来绕过冲突。代次失"
+        }
+      ],
+      "supported": "同动作/原键核对，持久账本、唯一槽位、下游幂等有效期与原子效果约束，checkpoint不等于外部去重。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 58,
+      "question": "子图怎样封装独立任务？父图与子图之间如何交接状态？",
+      "status": "未覆盖",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 37,
+          "quote": "一个可检查的交接至少包含 `subtask_id`、目标修订、输入证据清单与哈希、允许资源、输出主张与逐项引用、缺项、实际消耗、状态。整合者先查版本与权限，再整合结论；超时或 `INCOMPLETE` 不能当作“没有问题”。两位调查者对同一事实冲突时保留冲突，不按最后到达的答案覆盖。"
+        }
+      ],
+      "supported": "最近内容是多Agent交接合同。",
+      "missing": "未讲子图、父子图状态映射/调用/隔离与返回语义。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 59,
+      "question": "流式输出怎样区分文本、工具进度、暂停、错误和最终结果？",
+      "status": "部分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 221,
+          "quote": "运行时在流式过程中可以显示文本，也可以增量拼接参数；默认不能提前执行副作用。一个看上去完整的 JSON 对象仍可能只是半轮响应：后续会追加另一动作、修正参数或以错误结束。本文规定适配器只在收到协议规定的完整响应结束信号、所有调用均完整且结束原因允许消费时，返回 `CompleteResponse`。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 235,
+          "quote": "本篇把完整输出解析为互斥分支：`TOOLS`、`FINAL`、`ASK_INPUT`。模型同时给出“最终完成”与待执行工具时，不让解析器任意挑一个，而是返回 `MIXED_DECISION`。用户澄清只补任务缺失信息；它不能被自动解释为副作用审批。审批由运行时针对具体意图创建，不能让模型生成一个“审批通过”的工具结果。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+          "line": 34,
+          "quote": "  | { kind: \"WAIT_INPUT\"; missing_fields: string[]; reason: string }"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+          "line": 35,
+          "quote": "  | { kind: \"WAIT_APPROVAL\"; action_id: string; intent_hash: string }"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+          "line": 37,
+          "quote": "  | { kind: \"WAIT_RESOLUTION\"; action_id: string; reason: string }"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-fixed-workflow.md",
+          "line": 38,
+          "quote": "  | { kind: \"STOPPED\"; reason: string; partial_refs: string[] };"
+        }
+      ],
+      "supported": "流文本仅预览，完整协议结束后才消费；最终/工具/澄清互斥及等待/停止结果。",
+      "missing": "未设计覆盖题目全部类别的流事件协议、进度/暂停传输与客户端消费。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 60,
+      "question": "如果去掉 LangGraph，你如何实现等价的状态机，并说明取舍？",
+      "status": "部分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 48,
+          "quote": "模型决定“下一步看哪个文件”“如何组织缺陷说明”，这些决定依赖语义判断。运行时决定工具是否注册、参数是否符合契约、身份能否访问对象、内容是否已获审批、现在是否还有预算。执行器决定如何隔离调用、施加超时、接收实际结果。验收器决定提交的产物是否满足本次目标。每一项都只有一个权威责任者；模型的文字不能覆盖策略或执行记录。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e01.md",
+          "line": 10,
+          "quote": "**意图提交。**保存准确参数、指纹、动作 ID、唯一槽位和下游操作键，批准绑定同一动作。创建事务成功前不发送。如果提交回执丢失，先按事件 ID读回，不分配另一组身份。模型上下文可引用这些事实，但不能反过来覆盖它们。"
+        }
+      ],
+      "supported": "自建权威状态、执行/验收职责、持久提交与恢复方法。",
+      "missing": "教材未教授LangGraph，无法仅靠正文说明与特定框架等价及失去的能力/成本。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 61,
+      "question": "什么实验或业务证据会使你选择多 Agent，而不是给单 Agent 增加工具或步骤？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 35,
+          "quote": "如果有两个可独立核对的证据子问题，例如实现控制路径与测试夹具生成方式，可以分别调查，再由一个分析整合者比对。但“两个模型都认为根因相同”不是独立事实：它们可能共享同一错误资料和推理偏差。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 41,
+          "quote": "升级多 Agent 的具体条件可写成可证伪假设：“两类证据能独立调查，在总预算不增的情况下减少漏掉测试夹具问题，且不会增加无支持根因和越权读取。”若实验只显示更长说明、更多引用而关键错误没有减少，就放弃升级。若瓶颈是一个不可并行的外部写调用，多 Agent 也不能移除它。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 45,
+          "quote": "冻结相同任务集，分别标记材料完整、需动态调查、证据冲突；固定资料与工具版本、权限、验收器、模型快照与采样配置、总期限和资源上限。各方案可有不同路径，但不能偷偷取得测试集答案。记录每题的候选合格、完整目标合格、正确等待、错误完成、读/模型尝试、用量、端到端延迟和未知结果。"
+        }
+      ],
+      "supported": "可独立核对的子问题、同预算差异假设、关键错误/权限/成本护栏及放弃条件。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 62,
+      "question": "Supervisor、交接式协作和共享讨论，分别适合什么任务？",
+      "status": "未覆盖",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 35,
+          "quote": "如果有两个可独立核对的证据子问题，例如实现控制路径与测试夹具生成方式，可以分别调查，再由一个分析整合者比对。但“两个模型都认为根因相同”不是独立事实：它们可能共享同一错误资料和推理偏差。"
+        }
+      ],
+      "supported": "只有调查者与整合者的一个协作方案。",
+      "missing": "缺三类模式定义、控制交接及适用比较。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 63,
+      "question": "如何定义各 Agent 的输入、输出、职责边界和完成条件？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 37,
+          "quote": "一个可检查的交接至少包含 `subtask_id`、目标修订、输入证据清单与哈希、允许资源、输出主张与逐项引用、缺项、实际消耗、状态。整合者先查版本与权限，再整合结论；超时或 `INCOMPLETE` 不能当作“没有问题”。两位调查者对同一事实冲突时保留冲突，不按最后到达的答案覆盖。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 39,
+          "quote": "写操作始终只有一个所有者，子代理只交建议。所有人的模型与读取尝试计入同一任务预算：并行可能降低关键路径等待，却不会自动降低总费用。调度器必须预留子任务额度；子任务取消后的在途用量仍可能未知。若交接上下文比直接分析更长、分工互相等待或反复重新解释同一证据，说明拆分没有带来有效并行。"
+        }
+      ],
+      "supported": "目标修订、资源、证据哈希、主张与引用、缺项、状态和消耗；单写所有者，超时不代表无问题。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 64,
+      "question": "如何把任务拆成可以并行的部分，并保留必要的依赖顺序？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 35,
+          "quote": "如果有两个可独立核对的证据子问题，例如实现控制路径与测试夹具生成方式，可以分别调查，再由一个分析整合者比对。但“两个模型都认为根因相同”不是独立事实：它们可能共享同一错误资料和推理偏差。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 692,
+          "quote": "上面的基线串行执行，但不能据此推断并发一定危险。读取固定修订的源文件与读取已有报告，彼此没有数据依赖，允许并发；“根据报告生成正文”依赖报告；创建工单依赖最终正文和批准，不能提前并行。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 694,
+          "quote": "并发调度从 `ready_actions` 扩成**可执行波次**：前置动作都已成功、当前授权已满足、没有同一可变对象写冲突，且批次预留没有超过资源额度。为每个波次先持久化各自的尝试及预留，再分发；结果按 `attempt_id → action_id → CallBinding` 关联。不能用返回列表下标代替调用身份。一个只读任务先返回、另一个超时，必须各"
+        }
+      ],
+      "supported": "独立证据子问题并行，依赖/授权/写冲突检查成波次，分别持久尝试与结果。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 65,
+      "question": "多 Agent 应共享完整上下文，还是只传递必要材料？怎样判断？",
+      "status": "部分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 37,
+          "quote": "一个可检查的交接至少包含 `subtask_id`、目标修订、输入证据清单与哈希、允许资源、输出主张与逐项引用、缺项、实际消耗、状态。整合者先查版本与权限，再整合结论；超时或 `INCOMPLETE` 不能当作“没有问题”。两位调查者对同一事实冲突时保留冲突，不按最后到达的答案覆盖。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 39,
+          "quote": "写操作始终只有一个所有者，子代理只交建议。所有人的模型与读取尝试计入同一任务预算：并行可能降低关键路径等待，却不会自动降低总费用。调度器必须预留子任务额度；子任务取消后的在途用量仍可能未知。若交接上下文比直接分析更长、分工互相等待或反复重新解释同一证据，说明拆分没有带来有效并行。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 54,
+          "quote": "**Context 是模型这一次看到的状态投影。**完整历史可能包含几十 MB 的日志和文件，本轮模型只需知道当前问题、相关证据、已经完成的动作、尚未解决的动作和最近的验收失败。投影必须有版本或摘要哈希，便于解释模型为什么提出这一步；它没有执行权限。"
+        }
+      ],
+      "supported": "受限资源与证据交接、必要上下文投影，交接成本过高则取消拆分。",
+      "missing": "缺多Agent完整共享与选择性交接的系统比较、信息丢失/一致性判断方法。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 66,
+      "question": "子 Agent 返回互相矛盾的结果时，协调者应如何处理？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 31,
+          "quote": "第三种输入有两份同级规则冲突，且无法判断哪份适用。更多 Agent 不会创造业务权威。正确输出是 `WAIT_INPUT`，列明冲突范围和需要的版本确认；若让几个模型投票选一个规则，只是给未经授权的裁决增加票数。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 37,
+          "quote": "一个可检查的交接至少包含 `subtask_id`、目标修订、输入证据清单与哈希、允许资源、输出主张与逐项引用、缺项、实际消耗、状态。整合者先查版本与权限，再整合结论；超时或 `INCOMPLETE` 不能当作“没有问题”。两位调查者对同一事实冲突时保留冲突，不按最后到达的答案覆盖。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 57,
+          "quote": "**协作失败。**代码调查员用 `repo@8e12`，测试调查员交来 `repo@9a01` 的报告，却两者结论一致。参考分析：交接版本不匹配，整合者应拒绝合并并重新取得同修订证据；一致结论没有消除条件差异。把第二位换为更强模型并不修复输入合同。"
+        }
+      ],
+      "supported": "核版本/权限和原证据，保留冲突，不按到达顺序覆盖或投票创造权威；版本不合则重取同修订证据。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 67,
+      "question": "如何防止子 Agent 的错误结论在汇总过程中变成“已验证事实”？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 35,
+          "quote": "如果有两个可独立核对的证据子问题，例如实现控制路径与测试夹具生成方式，可以分别调查，再由一个分析整合者比对。但“两个模型都认为根因相同”不是独立事实：它们可能共享同一错误资料和推理偏差。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 37,
+          "quote": "一个可检查的交接至少包含 `subtask_id`、目标修订、输入证据清单与哈希、允许资源、输出主张与逐项引用、缺项、实际消耗、状态。整合者先查版本与权限，再整合结论；超时或 `INCOMPLETE` 不能当作“没有问题”。两位调查者对同一事实冲突时保留冲突，不按最后到达的答案覆盖。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "line": 30,
+          "quote": "一个引用可以通过“ID在包内、哈希与读回一致、位置有效”的关联检查，却仍不支持主张。`return days < 7` 支持“这个函数使用严格小于七的比较”，不独立支持“业务规则必须小于等于七”。报告支持“该报告中这项断言失败”，不证明修复后正确。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "line": 34,
+          "quote": "证据包中保留有序块、查询/范围/索引版本及拒绝原因；候选单独列原子主张。把“失败且根因已经确认且已创建工单”写成一句，只引用报告，会让部分支持被包装成整句成立。应拆成报告事实、根因假设、执行结果三个对象；工单效果来自动作回执，见 [写工具](c03.md)。"
+        }
+      ],
+      "supported": "共用错误资料不构成独立事实；逐项主张/引用/缺项与版本核对，事实/假设/回执拆开。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 68,
+      "question": "某个子 Agent 超时或失败时，整体任务应等待、重分派还是部分交付？",
+      "status": "部分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 37,
+          "quote": "一个可检查的交接至少包含 `subtask_id`、目标修订、输入证据清单与哈希、允许资源、输出主张与逐项引用、缺项、实际消耗、状态。整合者先查版本与权限，再整合结论；超时或 `INCOMPLETE` 不能当作“没有问题”。两位调查者对同一事实冲突时保留冲突，不按最后到达的答案覆盖。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 39,
+          "quote": "写操作始终只有一个所有者，子代理只交建议。所有人的模型与读取尝试计入同一任务预算：并行可能降低关键路径等待，却不会自动降低总费用。调度器必须预留子任务额度；子任务取消后的在途用量仍可能未知。若交接上下文比直接分析更长、分工互相等待或反复重新解释同一证据，说明拆分没有带来有效并行。"
+        }
+      ],
+      "supported": "超时/INCOMPLETE不能当无问题，预算统一并保留在途未知。",
+      "missing": "缺按子任务关键性选择等待/重分派/部分交付的决策机制与重分派去重合同。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 69,
+      "question": "多 Agent 的通信次数、费用和时延怎样纳入统一预算？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 39,
+          "quote": "写操作始终只有一个所有者，子代理只交建议。所有人的模型与读取尝试计入同一任务预算：并行可能降低关键路径等待，却不会自动降低总费用。调度器必须预留子任务额度；子任务取消后的在途用量仍可能未知。若交接上下文比直接分析更长、分工互相等待或反复重新解释同一证据，说明拆分没有带来有效并行。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 10,
+          "quote": "一次逻辑任务可能有三次模型请求、两次读取、一次写后核对和十分钟人工确认。账本应把这些尝试归到同一 `run_id`，每次物理请求单独记录 `attempt_id`、配置/价格版本、用量、费用确认状态和时间。不能只计成功返回那次模型请求；超时请求可能已经计费，未决费用不能填零。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 196,
+          "quote": "预算预留必须覆盖所有子请求和重试。在一次发送前，调度事务检查任务剩余额度、共享供应商额度和在途数量，预留该次资源，写尝试后才发。结果返回结算实际确认用量；不确定请求保留待确认状态，不把全部预留释放成可再花预算。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 198,
+          "quote": "可读查询和写后核对可以使用预留的恢复额度，避免正常预算耗尽时永远无法确认已发效果；额度大小由实际契约决定，不能以“核对不算任务”无限使用。供应商限流的请求次数和模型用量是不同约束，只有一个任务并发数字并不覆盖它们。"
+        }
+      ],
+      "supported": "各模型/读取/重试归逻辑任务，子任务预留额度，在途未知用量不释放；全任务阶段等待与费用计算。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 70,
+      "question": "A2A 与应用内部的多 Agent 编排有何区别？跨系统任务交接需要哪些契约？",
+      "status": "未覆盖",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 37,
+          "quote": "一个可检查的交接至少包含 `subtask_id`、目标修订、输入证据清单与哈希、允许资源、输出主张与逐项引用、缺项、实际消耗、状态。整合者先查版本与权限，再整合结论；超时或 `INCOMPLETE` 不能当作“没有问题”。两位调查者对同一事实冲突时保留冲突，不按最后到达的答案覆盖。"
+        }
+      ],
+      "supported": "只有应用内多Agent任务交接字段。",
+      "missing": "没有A2A协议、跨系统身份发现/任务生命周期与内部编排的比较。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 71,
+      "question": "如何定义 Agent 的任务成功率，避免把“生成了回答”当成任务成功？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 12,
+          "quote": "| 判断 | 需要的证据 | 不能用来替代它的证据 |"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 22,
+          "quote": "每个案例先写允许的终止集合。例如资料缺失的任务，正确产物可以是明确指出缺少哪项证据并停止写操作；这是一项“缺证时正确停止”的能力通过，不是“成功创建工单”。把所有拒绝都算失败，会鼓励模型编造；把所有拒绝都算成功，则可以通过拒绝全部任务制造安全高分。两类任务应分层报告。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 77,
+          "quote": "比较单位是“同一案例的一次分配”，不是“成功返回的模型请求”。对于每个案例，旧版和新版分别重复运行约定次数，轮换执行顺序或交错执行，降低时间段、缓存暖机和服务波动与版本混淆的机会。各自固定随机种子只有在实现支持且承诺相关语义时才有作用；本章不假定一个通用种子可使不同模型得到同样随机结果。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 95,
+          "quote": "判定链分三层：运行记录能否核验；确定性规则是否满足；语义判断是否有独立记录。最终状态采用 `PASS`、`FAIL`、`INSUFFICIENT`、`HARNESS_ERROR`。`FAIL` 表示已有反证；`INSUFFICIENT` 表示必要事实未知；`HARNESS_ERROR` 表示评估基础设施未完成预定观察。后两者都不能进入通过分子。不能把评估器崩"
+        }
+      ],
+      "supported": "事前结果/过程判据、正确等待分层，全部分配作分母，缺证不进通过分子。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 72,
+      "question": "最终结果评测和执行轨迹评测分别能够发现什么问题？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 12,
+          "quote": "| 判断 | 需要的证据 | 不能用来替代它的证据 |"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 18,
+          "quote": "这三个命题发生在不同位置。模型把一个没有验证的根因写成事实，是内容错误；读取到了别人的私有仓库，即使最终拒答，也是过程错误；答案、授权均正确却为了同一文件调用了二十次，是资源问题。它们需要不同修正，合成一个均分会隐藏原因。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 221,
+          "quote": "一次最终失败需要能追到“错的是输入、检索、决策、执行还是验收”。本方案让 `run_id` 串联版本与目标，让 `model_attempt_id` 绑定输入投影，让 `action_id` 串联逻辑动作，让 `attempt_id` 标记物理发送。每条评估判断指向相应记录，而不是只保存整段聊天。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 229,
+          "quote": "Trace 可能采样，导出也可能失败，因此评估的关键授权、尝试与回执应来自完整的受控事件或账本。日志只保存安全 ID、错误类别、时长和内容引用，源文件、凭证、用户秘密不进入普通 trace。数据最小化与批准边界在[e03](e03.md)展开。"
+        }
+      ],
+      "supported": "结果内容有据与动作授权分别判断，轨迹定位输入/检索/决策/执行，关键事实仍核账本。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 73,
+      "question": "如何构建包含正常、边界、歧义、失败和恶意输入的评测集？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 26,
+          "quote": "评估案例由输入、可访问环境和期望性质共同定义。问题句子不变，报告换了、批准到期了、工单查询能力失效了，已经是不同条件。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 61,
+          "quote": "把以下三个任务放在同一案例家庭，才有可解释的覆盖：正常批准与完整证据，期望一个确认工单；报告缺少运行环境，期望产物注明限制且不虚称复现；已发送写请求而回执丢失，期望核对后确定原效果，或保留待核对状态，不能直接创建第二条。它们测试不同能力，不能把最后一个仅写为“加超时测试”。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 65,
+          "quote": "开发案例帮助发现方案，允许查看答案、轨迹和失败原因。回归案例保存已知缺陷及正常路径，用来防止修复倒退。独立保留案例用于一个被冻结的版本判断尚未见过的条件，原始内容和参考判定由独立评阅者保管。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 62,
+          "quote": "CR04 要同时验证合法路径和拒绝路径：匹配批准、未过期的动作确实成功；未批准、期限 `now == expires_at`、新动作使用已消费批准、组织或项目变化、正文或工具变化都不能产生新效果。受控时钟让期限边界能够重复验证，并发测试让“先查未消费，再各自写入”的竞态暴露出来。全部拒绝虽然可能没有未授权效果，却没有实现批准后的合法功能。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 296,
+          "quote": "将开篇攻击文本分别放入测试报告、`read_source` 返回和已有记忆。画出每种路径如何进入模型，标出真正有权限阻止读和写的组件，并给出正常路径的预期。不得接真实网络服务。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 298,
+          "quote": "参考分析：三种输入都保持资料级别；记忆中的旧话不是当前批准。读取服务先按宿主组织及固定修订返回允许内容；投影排除敏感字段；执行器只接受当前项目、任务范围及精确批准。正常报告仍可产生有引用的缺陷说明，批准后替身创建一个回执。若方案只是把“忽略规则”删掉，它不能处理改写注入，也没有实现对象授权。"
+        }
+      ],
+      "supported": "执行契约、案例家庭分组、缺证和回执丢失、正常/拒绝成对、期限边界与多入口注入，保留集独立。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 74,
+      "question": "如何区分检索失败、规划失败、工具失败和最终表达失败？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 221,
+          "quote": "一次最终失败需要能追到“错的是输入、检索、决策、执行还是验收”。本方案让 `run_id` 串联版本与目标，让 `model_attempt_id` 绑定输入投影，让 `action_id` 串联逻辑动作，让 `attempt_id` 标记物理发送。每条评估判断指向相应记录，而不是只保存整段聊天。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 225,
+          "quote": "例如同一任务的时间顺序是：读取正确文件；上下文投影丢掉失败断言；模型断言“所有测试通过”；工单生成被验收器拒绝。正确归因为上下文构建缺陷和未据证推断，不能直接归为“模型不够强”。如果只看到最终输出和模型 span，两个原因无法区分。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 227,
+          "quote": "诊断可以进行受控替换：把模型输入中的片段替换成已核对的完整断言，保持其他配置不变；若内容恢复，则支持“输入投影不足”的假设。替换使用的是评估者提供的理想材料，其收益不是线上检索已经改善的收益。修复投影后必须重新跑端到端任务；此时还要检查上下文变长是否带来成本和其他引用回归。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "line": 24,
+          "quote": "混合检索不宜直接相加来源不同尺度的原始分数。本篇用 reciprocal rank fusion（RRF）作为原创配置选择：每个候选按它在不同排序中的名次贡献 `1/(60+rank)`。常数60是本例参数，须实验验证；没有行业最优承诺。具体 OpenAI 检索服务也支持融合权重配置，本篇没有调用该服务，也不把自己的 Python 算法当成其内部实现。[Op"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 164,
+          "quote": "本方案每条阶段事件包含：`release_id`、`run_id`、目标版本、运行修订、租约代次、阶段名、开始/结束时间、结果类别、安全错误码、相关动作/尝试 ID 和证据引用。模型阶段另记上下文摘要及配置引用，工具阶段记契约版本和效果核对类别；不记凭据或整个载荷。"
+        }
+      ],
+      "supported": "沿阶段ID定位首次偏离、读回检索/上下文/模型候选/执行/验收，受控替换并重跑端到端。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 75,
+      "question": "如何使用 LLM-as-a-Judge，并控制评判偏差及与人工结论的不一致？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 233,
+          "quote": "将语义评分交给另一个模型可以降低初筛成本，却会把评分器自身的偏差引入版本选择。MT-Bench/Chatbot Arena 的原始研究讨论位置、冗长、自我偏好和推理能力等限制；其在特定基准上的结果不能保证你的工单根因评分正确。[Zheng 等：Judging LLM-as-a-Judge，2023，访问于 2026-10-11](https://arxiv."
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 235,
+          "quote": "本方案先由具有相关判断能力的人对一批覆盖正确、错误、含糊、缺证和对抗输入的材料给参考判断，保留原意见及分歧，再比较模型判定。需要看模型把错误放行的次数，也要看把正确拒绝的次数；一个始终拒绝的评分器可能误放为零，却无法承担功能判定。对安全关键或高争议类别，先保留人审，模型用于排序和解释候选问题。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 237,
+          "quote": "假设校准材料中人审拒绝十项，模型接受两项；人审接受二十项，模型拒绝六项。总体相同判断二十二项占三十项，约 73.3%；但更相关的是错误放行 `2/10` 和错误拒绝 `6/20`。这些是虚构教学数字。若两项误放都来自“引用存在但推断无依据”，下一步应补这种反例、改量规或保留人审，而不是只追求总体一致率提高。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 239,
+          "quote": "同一份校准材料也会被过拟合。校准后需要新的独立材料观察评分误差；更换评分器模型、提示或量规，属于评估系统版本变化，应同时重评旧版和新版候选，避免“产品没变、裁判变宽松”制造提升。评分器输出可以写理由及证据定位；不要请求或依赖不可核验的内部推理链作为真实因果证据。"
+        }
+      ],
+      "supported": "位置/冗长/自偏好限制、人审校准、错放/错拒分别统计、争议保留人审、新独立材料与评分器版本。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 76,
+      "question": "同一个任务多次运行结果不同，应该怎样报告成功率与稳定性？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 77,
+          "quote": "比较单位是“同一案例的一次分配”，不是“成功返回的模型请求”。对于每个案例，旧版和新版分别重复运行约定次数，轮换执行顺序或交错执行，降低时间段、缓存暖机和服务波动与版本混淆的机会。各自固定随机种子只有在实现支持且承诺相关语义时才有作用；本章不假定一个通用种子可使不同模型得到同样随机结果。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 79,
+          "quote": "设案例 `i` 的旧版通过比例为 `r_old(i)`，新版为 `r_new(i)`，配对差值是 `d(i)=r_new(i)-r_old(i)`。先对同一案例求差，再按事前规定的案例权重汇总，避免新版本恰好多跑简单题。重复次数提高了对该案例随机波动的观察，却没有增加业务场景的多样性。若十个案例来自一个仓库，不能将一百次重复视为一百个独立业务样本来制造狭窄区"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 89,
+          "quote": "这张表只支持“在这些分配中观察到通过次数增加”。如果新版的一次恢复产生重复工单，该安全缺陷应独立阻断相应发布判断；总计多七次通过不能冲掉它。若新版缺了两次轨迹，分配仍为九十次，缺证数为二；应报告可判定通过数与缺证数，不把分母改成八十八。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 91,
+          "quote": "统计区间或显著性分析应与取样方式匹配。本章建议在样本很小、仓库高度相关或环境无法冻结时报告逐案例差值、反转案例及重复分布，保留结论范围；不要给没有依据的“达到行业标准 95%”数字。正式推断需要由懂统计的评阅者确认抽样单位、相关性和预先选定的方法。"
+        }
+      ],
+      "supported": "同案例重复与配对差值、轮换运行、全部分配/缺证分母、案例相关性与限制。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 77,
+      "question": "一条 Agent Trace 应记录什么，才能定位问题且避免泄露敏感信息？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 221,
+          "quote": "一次最终失败需要能追到“错的是输入、检索、决策、执行还是验收”。本方案让 `run_id` 串联版本与目标，让 `model_attempt_id` 绑定输入投影，让 `action_id` 串联逻辑动作，让 `attempt_id` 标记物理发送。每条评估判断指向相应记录，而不是只保存整段聊天。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 229,
+          "quote": "Trace 可能采样，导出也可能失败，因此评估的关键授权、尝试与回执应来自完整的受控事件或账本。日志只保存安全 ID、错误类别、时长和内容引用，源文件、凭证、用户秘密不进入普通 trace。数据最小化与批准边界在[e03](e03.md)展开。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 164,
+          "quote": "本方案每条阶段事件包含：`release_id`、`run_id`、目标版本、运行修订、租约代次、阶段名、开始/结束时间、结果类别、安全错误码、相关动作/尝试 ID 和证据引用。模型阶段另记上下文摘要及配置引用，工具阶段记契约版本和效果核对类别；不记凭据或整个载荷。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 50,
+          "quote": "普通日志记录安全对象 ID、阶段和拒绝代码，例如 `OBJECT_DENIED`、`APPROVAL_EXPIRED`；不要把原参数、异常全文或整份模型输入直接写入日志。OWASP 日志指南列出令牌、密码、连接串和密钥等通常不应直接记录的内容；本章将这一建议落实为安全事件的字段限制。[OWASP：Logging，访问于 2026-10-11](https:/"
+        }
+      ],
+      "supported": "目标/版本/run/model/action/attempt关联、阶段结果、时长与安全错误码、内容引用，不存原秘密载荷。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 78,
+      "question": "如何设计模型、工具和检索组件的消融实验？",
+      "status": "部分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 227,
+          "quote": "诊断可以进行受控替换：把模型输入中的片段替换成已核对的完整断言，保持其他配置不变；若内容恢复，则支持“输入投影不足”的假设。替换使用的是评估者提供的理想材料，其收益不是线上检索已经改善的收益。修复投影后必须重新跑端到端任务；此时还要检查上下文变长是否带来成本和其他引用回归。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 267,
+          "quote": "参考分析供评阅者使用：先核读取结果的修订、上下文投影和引用解析器，再分离生成、缓存和产物装配。若上下文已是旧修订，优先干预投影；若模型输出新修订而最终装配旧值，干预装配器；若模型输入新修订却生成旧引用，才检查生成约束及提示。每次保持其余条件不变，保存干预材料。真实修复要重跑新仓库端到端、原正常任务和旧修订不可复用的变体；理想材料替换通过不等于产品修复通过。题"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "line": 238,
+          "quote": "先冻结合法资料集合和查询集，再为每题独立标出必要支持块，包含精确测试名、自然语言同义、需要实现与报告共同支持、规则缺失和冲突题。词法与语义使用同样的权限/修订过滤、`top_k` 和上下文上限；否则较大候选集的收益会被误归于算法。真实向量输入必须记录嵌入模型、维度、查询改写和编码版本；手工向量只能测排序实现。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-selection.md",
+          "line": 45,
+          "quote": "冻结相同任务集，分别标记材料完整、需动态调查、证据冲突；固定资料与工具版本、权限、验收器、模型快照与采样配置、总期限和资源上限。各方案可有不同路径，但不能偷偷取得测试集答案。记录每题的候选合格、完整目标合格、正确等待、错误完成、读/模型尝试、用量、端到端延迟和未知结果。"
+        }
+      ],
+      "supported": "控制其他条件替换输入/定位组件，固定检索基线与全任务条件。",
+      "missing": "未完整说明三类组件逐一移除/替换的对照矩阵、必要工具移除的任务有效性及交互效应。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 79,
+      "question": "模型、提示、工具或知识库升级后，如何判断新版本能否发布？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 75,
+          "quote": "一次版本对照至少冻结代码、系统提示、工具定义、上下文构建方式、资料快照、模型配置、预算、故障注入、判定器和案例集。能取得不可变模型修订就记录它；供应商只给滚动别名时，记录请求日期和响应中的可用身份，同时把无法完全冻结写为比较限制。不能凭相同别名声称底层模型一定相同。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 89,
+          "quote": "这张表只支持“在这些分配中观察到通过次数增加”。如果新版的一次恢复产生重复工单，该安全缺陷应独立阻断相应发布判断；总计多七次通过不能冲掉它。若新版缺了两次轨迹，分配仍为九十次，缺证数为二；应报告可判定通过数与缺证数，不把分母改成八十八。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 245,
+          "quote": "修复有三种不同验证。原例复验确认已知触发顺序被处理；关联回归确认合法路径与其他边界没有倒退；新约束或独立保留任务检查修复是否过度贴合原答案。比如为阻止错误写入而禁止全部 `create_issue`，可以修掉未审批样例，却会让正常批准路径失败。缺陷仍不能关闭为“安全完成”。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 32,
+          "quote": "不能用版本数字大小推断兼容。`state_reader_versions=[1,2]` 必须由对两种真实状态夹具的读取和恢复检查支持；如果只测试 JSON 能 parse，却没有测试旧动作恢复，这只是格式读取证据。`state_writer_version=2` 表示启用后可能产生旧版本不认识的状态，因而直接回退 `r11` 未必可行。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 140,
+          "quote": "`PRECHECK` 验证构建摘要、配置、状态读取和迁移计划。`STAGED` 在隔离环境读真实格式的脱敏夹具，验证正常完成、待审批、未决效果和停止状态。`CANARY` 只把一批**新任务**分给新版本；旧任务留在原执行语义集合，除非有已验证迁移许可。观察结果包括任务正确性、关键过程失败、队列等待、未决动作年龄及基础设施错误，标准由服务责任人在发布前确定，"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 142,
+          "quote": "条件满足则扩大新任务比例；任何关键边界失败则停止新版本领取，并保持已接受任务可查询。此时先查受影响任务是否已发动作，再选择继续旧集合、暂停核对或安全移交。流量回退与任务回退是两个决定，不能一句“回滚镜像”代替。"
+        }
+      ],
+      "supported": "冻结各版本和案例条件，原例/关联回归/独立新任务，过程关键失败阻断、缺证保留、发布状态兼容。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 80,
+      "question": "用户报告一个偶发失败，但你本地无法复现，下一步怎么调查？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 243,
+          "quote": "一份失败记录至少保留输入及快照、期望性质、实际证据、首次已知偏离阶段、原因假设、改动和复验。首次偏离与根因不同：首次发现答案错误，不代表错误从生成阶段开始。先沿证据反查，再给原因假设。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 77,
+          "quote": "比较单位是“同一案例的一次分配”，不是“成功返回的模型请求”。对于每个案例，旧版和新版分别重复运行约定次数，轮换执行顺序或交错执行，降低时间段、缓存暖机和服务波动与版本混淆的机会。各自固定随机种子只有在实现支持且承诺相关语义时才有作用；本章不假定一个通用种子可使不同模型得到同样随机结果。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 164,
+          "quote": "本方案每条阶段事件包含：`release_id`、`run_id`、目标版本、运行修订、租约代次、阶段名、开始/结束时间、结果类别、安全错误码、相关动作/尝试 ID 和证据引用。模型阶段另记上下文摘要及配置引用，工具阶段记契约版本和效果核对类别；不记凭据或整个载荷。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p02.md",
+          "line": 125,
+          "quote": "遇到无法复现，先定位：环境缺依赖；配置指向错误目标；资料快照缺失；工具契约不明确；运行没有持久记录；结果随机但仍在允许集合。无法启动是复现失败，模型服务无访问权限是相应实测缺证，两者应分开。作者修交接或实现后，由独立者重新执行当前版本；作者自己录像不替代重做。"
+        }
+      ],
+      "supported": "取得原版本/快照/时序/账本，分环境权限与随机性，阶段关联、重复运行与受控干预后独立复验。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 81,
+      "question": "直接提示注入和来自网页、文档或工具结果的间接注入，有什么不同？",
+      "status": "部分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 10,
+          "quote": "本例保护三类资产：未授权仓库与报告内容；凭证和个人信息；创建工单的能力及批准记录。攻击者可以改变仓库注释、测试失败字符串或已有工单正文，不能修改宿主身份、权限数据库或批准事件。若攻击者也能修改运行时程序，已经超出本章“外部输入影响模型”的故障模型，需要另行处理供应链和主机安全。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 16,
+          "quote": "攻击链是“可信身份获准读取一份报告 → 不可信报告进入模型输入 → 模型将报告中的话解释为控制指令 → 提议越权读取或发布”。报告来自内部测试系统，只能证明它的来源，不能证明其中所有字符串有指令权限。测试代码可能打印攻击者提交的数据。工具返回、旧记忆或摘要也可能保留这段内容；换一种传输容器不会改变其权限。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 18,
+          "quote": "OWASP 将代码注释、文档、工单和网页等外部内容里的恶意指令列为间接提示注入入口，并建议把授权和最小权限放在模型之外。这里采用该威胁划分；下面具体对象检查和批准事务是本章方案。[OWASP：LLM Prompt Injection Prevention，访问于 2026-10-11](https://cheatsheetseries.owasp.org/c"
+        }
+      ],
+      "supported": "间接注入入口、资料到控制指令攻击链、威胁主体能力。",
+      "missing": "没有直接提示注入机制及与间接注入的明确对照。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 82,
+      "question": "Agent 为什么不能仅靠系统提示保证工具权限与数据安全？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 3,
+          "quote": "外部资料可以提供事实，模型可以提出动作；两者都不能产生授权。要让这个原则在提示注入、跨项目访问和批准被篡改时仍成立，权限检查必须发生在数据返回前和动作发送前，由可信宿主确定身份、对象范围及批准内容。给文本贴上“不可信”标签有助于模型解释资料，却没有能力阻止读取服务返回秘密，也没有能力撤销已经发送的写请求。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 20,
+          "quote": "不必先证明模型“被骗了”，才能拦住动作。哪怕模型以完全合理的文字提出读取另一个组织的凭证，只要对象不在任务范围就拒绝。注入识别可以辅助调查，但不应成为对象授权的前提；攻击者改写措辞后，规则仍应成立。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 36,
+          "quote": "第一道闸检查“这个身份可否读这个对象”。存储层或读取服务按宿主身份过滤，再返回内容；不能先检索全部组织，放进上下文后让模型选择自己的资料。即使最终答复拒绝，跨组织内容已经进入模型输入，读取边界仍失败。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 40,
+          "quote": "第三道闸检查“模型提议的工具和对象是否属于本次任务”。JSON schema 只能证明 `project` 是字符串，不能证明它属于当前组织。运行时把提议中的项目与宿主允许对象比较，不把模型提供的 `tenant_id` 当身份。OWASP 的授权指南要求默认拒绝，并对每次请求检查权限；这一原则适用于模型产生的请求，不因工具调用来自内部进程而取消。[OWAS"
+        }
+      ],
+      "supported": "文本不能阻止秘密读取或撤销已发送动作，宿主/读取服务/执行器强制对象权限。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 83,
+      "question": "如何让工具执行权限与当前用户身份、资源归属和操作范围一致？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 36,
+          "quote": "第一道闸检查“这个身份可否读这个对象”。存储层或读取服务按宿主身份过滤，再返回内容；不能先检索全部组织，放进上下文后让模型选择自己的资料。即使最终答复拒绝，跨组织内容已经进入模型输入，读取边界仍失败。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 40,
+          "quote": "第三道闸检查“模型提议的工具和对象是否属于本次任务”。JSON schema 只能证明 `project` 是字符串，不能证明它属于当前组织。运行时把提议中的项目与宿主允许对象比较，不把模型提供的 `tenant_id` 当身份。OWASP 的授权指南要求默认拒绝，并对每次请求检查权限；这一原则适用于模型产生的请求，不因工具调用来自内部进程而取消。[OWAS"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 42,
+          "quote": "权限变更与发送之间仍有竞态。安全要求取决于最终资源方：若它能用短期对象能力令牌验证租户、项目、动作和期限，应把当前授权绑定传到那里；若只能用一个覆盖全公司的凭证，应用预检查并不能使凭证变窄。此时应缩工具代理权限、限制出站目标、隔离凭据，并承认最终服务仍有更大的能力。不能将预检查写成“任何后续权限撤销都会即时生效”的保证。"
+        }
+      ],
+      "supported": "宿主可信身份、每次对象/任务范围检查、能力令牌及最终资源方撤权竞态。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 84,
+      "question": "高风险操作的人类确认应展示什么，才能构成有意义的批准？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 56,
+          "quote": "“请创建一条工单”不是对任何项目、任何正文和任何数量的批准。批准请求应让维护者看到具体工具、目标项目、标题、正文、证据引用和效果数量，然后绑定不可变意图。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 58,
+          "quote": "本方案的批准指纹输入为：组织、批准主体、本次运行、目标版本、`action_id`、工具版本、项目、标题、正文和证据引用。规范化编码必须确定：字段次序、字符串编码、空值、数组顺序等都要约定。本文使用 UTF-8、排序键 JSON、无浮点字段，证据引用按固定顺序排列；真实系统需验证参数结构和规范化范围，不能把任意 JSON 的摘要当通用跨语言标准。"
+        }
+      ],
+      "supported": "具体工具/目标/标题正文/证据/效果数量，绑定主体、运行、版本与不可变意图。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 85,
+      "question": "如何防止确认后参数被修改，或一次确认被用于后续不同操作？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 58,
+          "quote": "本方案的批准指纹输入为：组织、批准主体、本次运行、目标版本、`action_id`、工具版本、项目、标题、正文和证据引用。规范化编码必须确定：字段次序、字符串编码、空值、数组顺序等都要约定。本文使用 UTF-8、排序键 JSON、无浮点字段，证据引用按固定顺序排列；真实系统需验证参数结构和规范化范围，不能把任意 JSON 的摘要当通用跨语言标准。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 60,
+          "quote": "维护者批准 `action-17` 的正文后，模型补了一段假定根因，意图已经改变，必须形成新提议并重新批准。项目从私有维护项目改为公共项目，也必须重新批准。批准的签发、主体身份和期限属于可信批准服务；模型写“用户已经同意”没有效力。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 62,
+          "quote": "CR04 要同时验证合法路径和拒绝路径：匹配批准、未过期的动作确实成功；未批准、期限 `now == expires_at`、新动作使用已消费批准、组织或项目变化、正文或工具变化都不能产生新效果。受控时钟让期限边界能够重复验证，并发测试让“先查未消费，再各自写入”的竞态暴露出来。全部拒绝虽然可能没有未授权效果，却没有实现批准后的合法功能。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 64,
+          "quote": "还要区分**消费批准的原动作恢复**与**借批准创建新动作**。批准已绑定并消费到 `action-17` 后，该动作的合法核对或同键重发仍可能必要；它必须保持原参数、原幂等键，并满足当前授权和控制循环的恢复许可。不同 `action_id` 不能借这个批准执行。批准过期不允许产生新的业务动作；已经确认的原回执可以返回为历史观察。真实远端原动作是否可以过期后"
+        }
+      ],
+      "supported": "规范化指纹、修改重新批准、消费及期限并发验证、区分原动作恢复与借批准新动作。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 86,
+      "question": "执行模型生成代码时，沙箱应限制哪些资源与外部访问？",
+      "status": "未覆盖",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 10,
+          "quote": "本例保护三类资产：未授权仓库与报告内容；凭证和个人信息；创建工单的能力及批准记录。攻击者可以改变仓库注释、测试失败字符串或已有工单正文，不能修改宿主身份、权限数据库或批准事件。若攻击者也能修改运行时程序，已经超出本章“外部输入影响模型”的故障模型，需要另行处理供应链和主机安全。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 42,
+          "quote": "权限变更与发送之间仍有竞态。安全要求取决于最终资源方：若它能用短期对象能力令牌验证租户、项目、动作和期限，应把当前授权绑定传到那里；若只能用一个覆盖全公司的凭证，应用预检查并不能使凭证变窄。此时应缩工具代理权限、限制出站目标、隔离凭据，并承认最终服务仍有更大的能力。不能将预检查写成“任何后续权限撤销都会即时生效”的保证。"
+        }
+      ],
+      "supported": "只讨论主机威胁超出范围、工具出站目标/凭据隔离。",
+      "missing": "没有生成代码沙箱的CPU/内存/时间/进程/文件系统/网络/系统调用隔离教学。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 87,
+      "question": "如何防止检索内容、日志和错误消息泄露跨租户资料或密钥？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 36,
+          "quote": "第一道闸检查“这个身份可否读这个对象”。存储层或读取服务按宿主身份过滤，再返回内容；不能先检索全部组织，放进上下文后让模型选择自己的资料。即使最终答复拒绝，跨组织内容已经进入模型输入，读取边界仍失败。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 38,
+          "quote": "第二道闸检查“允许读的内容中，哪些字段允许交给模型或写入工单”。一个被授权读取的测试报告可能包含连接串、访问令牌或个人邮箱。读取授权并不自动授权将整个报告交给另一个处理服务或公开项目。按任务选择失败断言、文件位置和已分类的必要片段；其他字段保持在受控存储，不进入普通上下文与日志。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 46,
+          "quote": "沿用课程安全要求 CR03：同时检查模型上下文、模型或用户输出、工具载荷和普通日志。只遮住 UI 不够；只清理工具载荷也不够。令牌先进入模型输入再从答案删掉，仍然已经越过一个边界。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 50,
+          "quote": "普通日志记录安全对象 ID、阶段和拒绝代码，例如 `OBJECT_DENIED`、`APPROVAL_EXPIRED`；不要把原参数、异常全文或整份模型输入直接写入日志。OWASP 日志指南列出令牌、密码、连接串和密钥等通常不应直接记录的内容；本章将这一建议落实为安全事件的字段限制。[OWASP：Logging，访问于 2026-10-11](https:/"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 52,
+          "quote": "敏感值扫描属于验证，不是普遍的安全证明。用夹具中唯一标记扫描四个通道，可以揭示测试涉及的泄漏；攻击者可能编码、分段或转述秘密，未知秘密也不在标记集合里。通过有限扫描，只能说这些夹具值没有出现在这些完整采集通道，不能宣布所有敏感信息都不会泄漏。"
+        }
+      ],
+      "supported": "返回前对象授权、允许字段投影、四通道检查、安全ID错误码日志、有限扫描边界。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 88,
+      "question": "外部工具声称操作成功，你如何核实真实状态？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 243,
+          "quote": "恢复顺序必须把事实核对放在新决策之前。模型不知道一个丢失回执的远端调用到底有没有成功。重新问模型，最多产生另一个看上去合理的提议，不能消除执行不确定性。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 245,
+          "quote": "本例中的 `create_issue` 在 `IN_FLIGHT` 或 `UNKNOWN` 状态时，恢复者按 `action_id` 对应的客户端操作 ID 查询："
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 247,
+          "quote": "1. **确认成功且内容指纹一致**：提交原工单回执，标为 `SUCCEEDED`，不再创建。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 260,
+          "quote": "运行时可以保证自己不故意重复提交一个逻辑动作，但只有下游把去重记录与实际效果可靠绑定，才能保证重复传输不会重复产生业务效果。AWS 的服务端示例明确把记录幂等 token 与相关变更纳入原子操作；客户端自己的 checkpoint 不能代替这部分。[AWS：服务端 token 与变更的原子性](https://aws.amazon.com/builders-"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c03.md",
+          "line": 174,
+          "quote": "下游须明确提供操作级核对和去重合同：相同键同参数在保留窗口内不增加效果，同键不同参数冲突，去重记录与实际对象原子关联，并定义并发请求、错误结果和到期后的行为。AWS 的幂等 API 设计强调调用者意图标识及幂等记录与变更的一致性。[AWS Making retries safe](https://aws.amazon.com/builders-library"
+        }
+      ],
+      "supported": "可信适配器与操作级查询、回执绑定原意图/键和对象，下游效果账本核验，不以模型/字符串成功作事实。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 89,
+      "question": "多步骤任务部分成功后失败，如何设计补偿、恢复和用户告知？",
+      "status": "部分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 239,
+          "quote": "预检通过不等于执行期间的所有动作原子成功。工具调用跨服务；第二个动作执行前权限可能撤销，第一个可能已经成功。每个动作发出前仍要检查动态权限、审批、取消和预算，并单独记录结果。批次发生部分成功时，应明确回传各动作状态，不宣称“整批失败所以没有效果”。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 780,
+          "quote": "运行被取消与先前效果已发生并不矛盾。此时不提交 `COMPLETED`，也不声称外部创建已被撤销。若用户需要删除工单，那是另一项有权限、审批和失败语义的业务动作；不能用补偿动作伪装原请求从未发生。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e01.md",
+          "line": 378,
+          "quote": "停止事务的前置条件是所有写动作效果不再 `UNRESOLVED`，所有仍等待物理观察的attempt/lookup已经有结果或被操作级证据合法取代；否则仅保存 `WAIT_RESOLUTION`。满足时写 `STOPPED`，本例只保留布尔停止意图，实际停因与部分成果在事件输入/上层任务记录中另存。生产扩展须把原因和产物引用一起持久化；若需要补偿交另一个明确"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p02.md",
+          "line": 162,
+          "quote": "还要区分**程序缺陷复验**与**旧效果处置**。旧 r1 已产生的 ISSUE-218/219 不会因 r2 通过而消失；它们的合并、关闭或人工确认，需要实际业务许可和记录。历史事故的影响可保持待处理，代码缺陷可在有限范围完成修复，两种状态分别维护。写一份复盘报告既不是修复，也不是旧效果已经清理。"
+        }
+      ],
+      "supported": "逐动作状态、未知核对、取消不回滚，部分成果/原因保留；补偿另行授权。",
+      "missing": "没有多步骤补偿动作排序、补偿失败重试/幂等与用户告知完整流程。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 90,
+      "question": "如何把安全反例纳入自动化回归，并验证修复没有破坏正常任务？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 62,
+          "quote": "CR04 要同时验证合法路径和拒绝路径：匹配批准、未过期的动作确实成功；未批准、期限 `now == expires_at`、新动作使用已消费批准、组织或项目变化、正文或工具变化都不能产生新效果。受控时钟让期限边界能够重复验证，并发测试让“先查未消费，再各自写入”的竞态暴露出来。全部拒绝虽然可能没有未授权效果，却没有实现批准后的合法功能。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 296,
+          "quote": "将开篇攻击文本分别放入测试报告、`read_source` 返回和已有记忆。画出每种路径如何进入模型，标出真正有权限阻止读和写的组件，并给出正常路径的预期。不得接真实网络服务。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 298,
+          "quote": "参考分析：三种输入都保持资料级别；记忆中的旧话不是当前批准。读取服务先按宿主组织及固定修订返回允许内容；投影排除敏感字段；执行器只接受当前项目、任务范围及精确批准。正常报告仍可产生有引用的缺陷说明，批准后替身创建一个回执。若方案只是把“忽略规则”删掉，它不能处理改写注入，也没有实现对象授权。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 304,
+          "quote": "参考方案：每项拒绝后回执数保持原值；合法同动作并发产生一个 `CREATED` 和一个 `OBSERVED`，两个结果指向同一回执；两个不同动作竞争唯一槽位，最多一项创建。后一个场景需分别绑定两项合法批准，不能因第二项本来没有批准而误测槽位竞争。敏感值扫描输出保留四通道来源，不把整个 raw 夹具附进普通日志。自由文本未知秘密若不能判定，标未覆盖，不能用四个"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 245,
+          "quote": "修复有三种不同验证。原例复验确认已知触发顺序被处理；关联回归确认合法路径与其他边界没有倒退；新约束或独立保留任务检查修复是否过度贴合原答案。比如为阻止错误写入而禁止全部 `create_issue`，可以修掉未审批样例，却会让正常批准路径失败。缺陷仍不能关闭为“安全完成”。"
+        }
+      ],
+      "supported": "正常/拒绝成对、注入多入口、期限/并发/四通道夹具、原例/关联/新任务验证。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 91,
+      "question": "设计一个客服工单 Agent：如何确定自动处理范围、转人工条件及验收指标？",
+      "status": "部分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-mvp.md",
+          "line": 19,
+          "quote": "依据假设，MVP只需完成一条有据且可核对的路径：读固定修订与报告；提取事实并标未知根因；形成可审初稿；针对准确意图请求批准；创建或核对唯一工单。它不包含改业务代码、重跑生产测试、自动部署或发送通知，因为这些不参与当前“减少证据整理与返工”假设的第一轮验证。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-mvp.md",
+          "line": 37,
+          "quote": "  - 缺陷说明分开列观察、推断及需要新验证的项"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 22,
+          "quote": "每个案例先写允许的终止集合。例如资料缺失的任务，正确产物可以是明确指出缺少哪项证据并停止写操作；这是一项“缺证时正确停止”的能力通过，不是“成功创建工单”。把所有拒绝都算失败，会鼓励模型编造；把所有拒绝都算成功，则可以通过拒绝全部任务制造安全高分。两类任务应分层报告。"
+        }
+      ],
+      "supported": "任务边界、准确批准、缺证/权限/未知等待与业务回执，结果/过程分层。",
+      "missing": "案例是开发缺陷工单；缺客服意图/业务风险分层、转人工服务合同与客服验收指标。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 92,
+      "question": "设计一个企业知识 Agent：如何同时保证检索质量、权限和更新时效？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "line": 10,
+          "quote": "摄取链应是“取得完整源文件→固定版本及哈希→按确定规则分块→带权限与来源入索引→发布索引快照”。新文件取得成功不等于新索引已发布；新索引发布也不等于当前正在进行的回答使用了它。查询开始时冻结 `index_snapshot_id`，证据包同时记录源版本和索引版本。更新完成的通知不能改写已经生成的请求历史。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "line": 14,
+          "quote": "块保留完整文件哈希、块哈希、行范围和可读主体。代码分块应尽量保留完整函数及其必要定义，测试记录保留输入、预期、实际同组事实。把 `return days < 7` 切到下一块，而只召回函数名，引用虽指向对的文件，却不能解释边界。更大块会增加输入、降低相似度的局部聚焦；更小块会丢前提，需要邻块扩展。选择应测必要证据是否进入上下文，不用统一块长代表所有资料。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "line": 16,
+          "quote": "权限范围由可信 `QueryScope` 派生，在检索前落实。应用不能把所有租户候选正文读到内存、传给重排器或模型后再删除越权项。对不能按对象权限过滤的索引，可选择租户隔离的索引或先取允许 ID 集合再检索；“有一个 metadata 字段”不证明实际过滤执行。OpenAI Retrieval 提供检索前 attribute filtering 与语义检索机"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c02.md",
+          "line": 238,
+          "quote": "先冻结合法资料集合和查询集，再为每题独立标出必要支持块，包含精确测试名、自然语言同义、需要实现与报告共同支持、规则缺失和冲突题。词法与语义使用同样的权限/修订过滤、`top_k` 和上下文上限；否则较大候选集的收益会被误归于算法。真实向量输入必须记录嵌入模型、维度、查询改写和编码版本；手工向量只能测排序实现。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e03.md",
+          "line": 36,
+          "quote": "第一道闸检查“这个身份可否读这个对象”。存储层或读取服务按宿主身份过滤，再返回内容；不能先检索全部组织，放进上下文后让模型选择自己的资料。即使最终答复拒绝，跨组织内容已经进入模型输入，读取边界仍失败。"
+        }
+      ],
+      "supported": "摄取/分块/版本索引快照、排序前权限过滤、召回与支持分层测量、更新不可改历史与缓存重授权。",
+      "missing": "无实质缺口；不含某具体企业实施事实。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 93,
+      "question": "设计一个长时间运行的研究 Agent：如何保存进度、取消任务和恢复执行？",
+      "status": "部分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 52,
+          "quote": "**State 是恢复与授权依据。**它保存目标版本、运行修订号、动作账本、尝试记录、审批、取消请求、预算和验收反馈。未决动作不能因为上下文压缩而消失，审批不能因为模型在对话里写了“用户已同意”而产生。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e01.md",
+          "line": 22,
+          "quote": "取消先设 `stop_intent`，放弃尚未发送动作，禁止新的尝试。已发请求成功仍需记录为已发生效果；任务保留停止意图，不能因迟到回执变成完成。核对使用独立持久额度，恢复不能把尝试预算归零。额度耗尽而效果仍未知时保留 `WAIT_RESOLUTION`与责任人，不写“取消成功、无工单”。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e01.md",
+          "line": 24,
+          "quote": "租约解决谁能推进本地记录。单运行的递增 `lease_epoch`作为栅栏，旧代次不能写状态；它不会撤销旧工作者已经发出的网络请求。新代次按原动作核对，不能因为获得锁就分配新键再发。这里租约时间由可信时钟注入；多主机时钟偏差与数据库时钟语义须另设计，本例不提供分布式时钟保证。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e01.md",
+          "line": 378,
+          "quote": "停止事务的前置条件是所有写动作效果不再 `UNRESOLVED`，所有仍等待物理观察的attempt/lookup已经有结果或被操作级证据合法取代；否则仅保存 `WAIT_RESOLUTION`。满足时写 `STOPPED`，本例只保留布尔停止意图，实际停因与部分成果在事件输入/上层任务记录中另存。生产扩展须把原因和产物引用一起持久化；若需要补偿交另一个明确"
+        }
+      ],
+      "supported": "账本进度、取消意图/未知效果核对、租约恢复、预算持久与部分成果。",
+      "missing": "教材单缺陷任务明确不实现长期续租/完整模型计划账本；研究子问题进度与证据累积恢复未完整教学。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 94,
+      "question": "请求量增长十倍时，如何识别模型、工具、队列或存储中的主要瓶颈？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 136,
+          "quote": "工作负载至少规定任务家庭及比例、资料大小、到达过程、观察窗口、任务期限、客户端重试、人工审批安排和资源额度。固定并发用户的闭环测试在服务变慢时会自动减少新提交，适合观察固定用户数的系统，却可能掩盖同样外部到达量下的排队。独立时间表提交的开放负载可以固定提供量，但压力发生器本身必须记录迟发与漏发；不能把发生器来不及提交的任务从样本删除。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 138,
+          "quote": "每个实验同时记录：计划提供量、实际提交量、被持久接受量、拒绝量、观察窗内终止量、被验收接受量和剩余在途量。吞吐采用某段明确窗口内完成并接受的任务数除以窗口秒数；窗口结束后排空的完成量另报。不能用最终排空的一百任务除以提交的十秒窗口，制造每秒十任务的假成绩。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 142,
+          "quote": "并发增加能减少独立请求的串行等待，也会增加队列、供应商限流、存储锁争用和重试。先用阶段等待及资源饱和证据定位瓶颈，再调整相关并发。若总时间主要用于人工批准，翻倍模型请求并发不一定改善最终工单时长；若模型服务额度固定，更多工作者可能只把请求从本地队列挪到供应商限流。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 177,
+          "quote": "指标用于发现群体异常，例如版本别的完成率、失败原因、队列年龄、未决动作年龄、模型与工具时长分布。高基数 `run_id` 放事件或 trace，避免把每个任务都做成长期指标标签。指标或采样 trace 不适合证明某个未授权动作从未发生；独立评估仍应读取完整受控记录。"
+        }
+      ],
+      "supported": "开放/闭环负载、计划/实际量、阶段等待与资源饱和、队列/限流/锁争用及冷暖条件。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 95,
+      "question": "如何设计并发限制、超时、退避和熔断，避免故障扩大？",
+      "status": "部分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 196,
+          "quote": "预算预留必须覆盖所有子请求和重试。在一次发送前，调度事务检查任务剩余额度、共享供应商额度和在途数量，预留该次资源，写尝试后才发。结果返回结算实际确认用量；不确定请求保留待确认状态，不把全部预留释放成可再花预算。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 200,
+          "quote": "队列满或预计等待超过任务期限时，明确拒绝或返回可查询排队状态。无限入队会让吞吐看似稳定、等待持续增长。对重试设置共享预算及时间条件，避免工作者、HTTP 客户端和 SDK 每层各自重试导致乘法放大；需要先确认每层实际重试行为，再规定唯一责任层。这里没有指定 SDK，不能假定所有客户端默认值一样。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/c01-control-loop.md",
+          "line": 698,
+          "quote": "并行化减少等待链长度，同时提高瞬时请求压力、费用预留和失败组合数量。只有在轨迹证明工具等待构成主要延迟、工具契约能表达独立性时才值得升级。否则串行基线更容易审查恢复行为。无论是否并发，重试应由一层拥有：执行器内部若重试，必须把实际尝试暴露给账本；调度器和 SDK 各自独立重试会使实际请求数超过预算。退避与抖动用于减轻相关重试压力，不会把非幂等调用变为安全调用"
+        }
+      ],
+      "supported": "共享额度、在途/队列限制、期限、唯一重试责任层与退避抖动。",
+      "missing": "缺熔断状态、触发窗口、半开探测/恢复与故障域隔离设计。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 96,
+      "question": "怎样分解一次任务的费用和时延，找到最值得优化的环节？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 10,
+          "quote": "一次逻辑任务可能有三次模型请求、两次读取、一次写后核对和十分钟人工确认。账本应把这些尝试归到同一 `run_id`，每次物理请求单独记录 `attempt_id`、配置/价格版本、用量、费用确认状态和时间。不能只计成功返回那次模型请求；超时请求可能已经计费，未决费用不能填零。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 12,
+          "quote": "先分别保存金额、资源用量和人工时间。若需要将人工时间折算为金额，采用明确的题定或组织核定费率，并同时保留原始分钟；不能直接把美元、人民币和分钟相加。共享存储和维护成本若按任务分摊，要写清分摊窗口与依据；没有实际依据时列为未计入项，不制造精确总成本。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 30,
+          "quote": "本方案的任务时间线是：外部提交时刻 `submitted_at`；持久接受时刻 `accepted_at`；开始执行 `started_at`；用户得到本次终态或明确等待响应 `response_at`；最终业务效果确认 `effect_resolved_at`。对长期审批任务，“已接受、等待审批”的响应时长与最终完成时长都可有意义，但不能混成一个响应速度数"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 32,
+          "quote": "端到端等待包括排队、模型、工具、核对和人工等待。各阶段可以分别分析瓶颈；总体分位数不能直接由阶段 p95 相加，因为每个阶段的慢样本未必来自同一任务，并行阶段也不应求和。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 142,
+          "quote": "并发增加能减少独立请求的串行等待，也会增加队列、供应商限流、存储锁争用和重试。先用阶段等待及资源饱和证据定位瓶颈，再调整相关并发。若总时间主要用于人工批准，翻倍模型请求并发不一定改善最终工单时长；若模型服务额度固定，更多工作者可能只把请求从本地队列挪到供应商限流。"
+        }
+      ],
+      "supported": "尝试归run、价格/用量/待确认/人工分开；排队模型工具核对人工等待分段，资源饱和识别瓶颈。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 97,
+      "question": "什么时候使用小模型路由、大模型升级或缓存？如何量化质量损失？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 148,
+          "quote": "本任务可以缓存不可变源读取或经核验的分析候选。工单副作用、批准或运行完成状态不能按问题文字复用；相同问题的另一个运行仍需自己的效果槽位与准确批准。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 150,
+          "quote": "读取缓存键包含组织/主体或等价可读范围、授权版本、仓库修订、路径、源内容哈希和工具契约。生成候选还包含证据包、任务约束、上下文构建、提示及模型配置。对可变 `latest`，先解析成固定修订再访问缓存；不能把旧内容挂在 `latest` 键下长期返回。将主体纳入键会降低共享命中，却简化个性化资料的隔离；若要跨用户共享公开内容，必须证明缓存产物只含共同可读资料"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 184,
+          "quote": "更大的缓存不一定更有价值。若同一内容很少复用，存储、失效与调查成本可能超过节省；若任务允许读取大量相同不可变源，读缓存比完整答案缓存更容易维持证据关系。选择时比较同样任务的命中、正确引用、权限检查、维护成本和端到端结果，不能只报命中率。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 188,
+          "quote": "便宜模型用于格式提取，较强模型用于复杂分析，是一种可测假设。它增加了路由判断、升级请求和维护两种配置的成本。应先用代表任务独立评估小模型是否满足结构、引用和语义要求；对不满足或不确定的候选升级，升级尝试也归同一账目。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 190,
+          "quote": "若小模型错误但自信，单靠其“置信度”决定是否升级可能漏掉最重要样本。路由可以使用可观察任务条件及确定性检查，如报告长度、证据冲突、必要字段缺失；复杂语义仍需要经校准评阅。在冻结案例上比较：单一模型基线、路由方案、必要时的普通程序提取基线。保持最终任务判据、资料和总资源上限，列出各层接受率、升级率、错放和费用。"
+        }
+      ],
+      "supported": "不可变证据与候选缓存、授权失效，代表任务验证路由/升级，接受率/错放/费用对照及撤销条件。",
+      "missing": "无实质缺口。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 98,
+      "question": "从质量、成本和运维角度，怎样选择本地模型与托管 API？",
+      "status": "部分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 188,
+          "quote": "便宜模型用于格式提取，较强模型用于复杂分析，是一种可测假设。它增加了路由判断、升级请求和维护两种配置的成本。应先用代表任务独立评估小模型是否满足结构、引用和语义要求；对不满足或不确定的候选升级，升级尝试也归同一账目。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 190,
+          "quote": "若小模型错误但自信，单靠其“置信度”决定是否升级可能漏掉最重要样本。路由可以使用可观察任务条件及确定性检查，如报告长度、证据冲突、必要字段缺失；复杂语义仍需要经校准评阅。在冻结案例上比较：单一模型基线、路由方案、必要时的普通程序提取基线。保持最终任务判据、资料和总资源上限，列出各层接受率、升级率、错放和费用。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e05.md",
+          "line": 12,
+          "quote": "先分别保存金额、资源用量和人工时间。若需要将人工时间折算为金额，采用明确的题定或组织核定费率，并同时保留原始分钟；不能直接把美元、人民币和分钟相加。共享存储和维护成本若按任务分摊，要写清分摊窗口与依据；没有实际依据时列为未计入项，不制造精确总成本。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/f02.md",
+          "line": 204,
+          "quote": "**真实请求作业。**读者在获准的隔离环境选择一个支持本 Schema 的具体模型或快照，先核当前官方模型页与账户权限，再主动配置上述两个环境变量，运行 `python3 f02_candidate.py`。只使用教学材料，记录请求配置、脱敏输入、响应 ID、完整状态、候选校验、实际用量、耗时和凭据/预算失败。凭据不得进入提交物。没有配置或预算则真实调用目标"
+        }
+      ],
+      "supported": "代表任务质量与全任务成本比较、维护成本、真实调用配置验证。",
+      "missing": "缺本地推理硬件/容量/部署维护与托管API可用性/数据边界的完整选型比较。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    },
+    {
+      "id": 99,
+      "question": "请介绍一次实际 Agent 故障或失败案例：原因是什么，如何修复，怎样证明修复有效？",
+      "status": "部分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/p02.md",
+          "line": 139,
+          "quote": "以下事件、ID 和结果均为**构造演算**。它演示怎样改进，不是本项目真实发生的事故或验证成绩。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p02.md",
+          "line": 143,
+          "quote": "反证是同一目标/效果槽位下两条确认回执，不能仅由“调用两次”判断。竞争原因至少有：恢复顺序先问模型，忽略原未决动作；新协议 ID 被错当新逻辑动作身份；效果槽位没有持久唯一约束；下游幂等契约根本未按原键使用。它们可能同时存在，不能在没有记录时宣布一个根因。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p02.md",
+          "line": 145,
+          "quote": "`IssueRecord` 应保存：当前版本、输入与故障顺序、预期唯一效果、两条回执、原未决账本、恢复前后身份映射、候选原因、责任人和影响范围。定位实验先查原状态是否包含 action-17；如果原状态已丢失，先查持久化/恢复点；若状态存在而恢复先问模型，查恢复顺序；若映射产生 action-18，再查槽位提交与协议绑定。直接给提示加“不要重复”不能代替这些"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p02.md",
+          "line": 147,
+          "quote": "本次教学候选改进限定为运行时：未决效果先核对；同一效果槽位同指纹复用原 action；槽位唯一约束阻止并发新建；保留新的 `tool_call_id` 到原 action 的绑定；原键和参数不变。下游查询、幂等有效期及发送隔离按[控制循环第 6、8、9 节](c01-control-loop.md#6-先核对未决动作-再让模型继续)的契约实施。改变几个相关机"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p02.md",
+          "line": 160,
+          "quote": "`RetestRecord` 绑定旧失败记录、候选修订、测试输入、期望、实际输出、证据哈希、执行者和日期。原例复验、相关回归通过后，可以在测试责任人确认的范围关闭“候选代码的已知重复缺陷”；若新任务未执行，则迁移能力仍待验证。真实远端查询/幂等未测，就不能写远端可靠性已通过。"
+        }
+      ],
+      "supported": "教学构造事故的原因竞争、修复和原例/回归/新任务证据方法。",
+      "missing": "原文明示是构造演算，不能提供学习者实际经历；必须本人完成项目保存真实故障证据。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": true
+    },
+    {
+      "id": 100,
+      "question": "如果必须在两周内交付一个可用 Agent，你会怎样确定最小范围、基线、风险与上线条件？",
+      "status": "充分",
+      "evidence": [
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-mvp.md",
+          "line": 3,
+          "quote": "MVP应只实现足以检验价值假设的机制，并在事前固定接受计划、备选和停止条件。实现完成回答能做什么，真实使用和同条件比较才回答是否值得做；安全失败不能用用户满意或低费用抵消。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-mvp.md",
+          "line": 9,
+          "quote": "实验先冻结任务集合、来源快照、权限、各方案配置、资源上限、人工后处理、判据、分配与停止规则。各方案取得同样必要信息及完成机会，输出按共同“有据初稿/准确批准/确认对象”的契约评价；资源的真实不同可以作为结果计量，但不能偷偷给候选更多资料和人力支持。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-mvp.md",
+          "line": 19,
+          "quote": "依据假设，MVP只需完成一条有据且可核对的路径：读固定修订与报告；提取事实并标未知根因；形成可审初稿；针对准确意图请求批准；创建或核对唯一工单。它不包含改业务代码、重跑生产测试、自动部署或发送通知，因为这些不参与当前“减少证据整理与返工”假设的第一轮验证。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/p01-mvp.md",
+          "line": 51,
+          "quote": "一份有效 ADR 包含问题、约束、实际备选、证据、选择、代价、反例和复查条件。它不只是“用了某框架”。下面是**暂定教学 ADR**，没有被真实试点认可。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e02.md",
+          "line": 245,
+          "quote": "修复有三种不同验证。原例复验确认已知触发顺序被处理；关联回归确认合法路径与其他边界没有倒退；新约束或独立保留任务检查修复是否过度贴合原答案。比如为阻止错误写入而禁止全部 `create_issue`，可以修掉未审批样例，却会让正常批准路径失败。缺陷仍不能关闭为“安全完成”。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 32,
+          "quote": "不能用版本数字大小推断兼容。`state_reader_versions=[1,2]` 必须由对两种真实状态夹具的读取和恢复检查支持；如果只测试 JSON 能 parse，却没有测试旧动作恢复，这只是格式读取证据。`state_writer_version=2` 表示启用后可能产生旧版本不认识的状态，因而直接回退 `r11` 未必可行。"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 140,
+          "quote": "`PRECHECK` 验证构建摘要、配置、状态读取和迁移计划。`STAGED` 在隔离环境读真实格式的脱敏夹具，验证正常完成、待审批、未决效果和停止状态。`CANARY` 只把一批**新任务**分给新版本；旧任务留在原执行语义集合，除非有已验证迁移许可。观察结果包括任务正确性、关键过程失败、队列等待、未决动作年龄及基础设施错误，标准由服务责任人在发布前确定，"
+        },
+        {
+          "file": "sites/rolecraft/textbooks/v10/e04.md",
+          "line": 142,
+          "quote": "条件满足则扩大新任务比例；任何关键边界失败则停止新版本领取，并保持已接受任务可查询。此时先查受影响任务是否已发动作，再选择继续旧集合、暂停核对或安全移交。流量回退与任务回退是两个决定，不能一句“回滚镜像”代替。"
+        }
+      ],
+      "supported": "机制最小范围、同条件简单/人工基线、ADR代价/反例/复查、停止与发布兼容/验收；可据资源期限缩范围。",
+      "missing": "无实质缺口；不提供保证两周完成的真实交付成绩。",
+      "search_scope": "v10全部20单元及目录全文关键词检索；相关逐篇正文；排除合订重复、外链、旧报告和应用源码",
+      "experience_evidence_missing": false
+    }
+  ]
+}

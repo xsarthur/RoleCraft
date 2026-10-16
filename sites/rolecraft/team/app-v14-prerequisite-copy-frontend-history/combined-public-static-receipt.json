@@ -1,0 +1,29 @@
+{
+  "version": "app-v14-prerequisite-copy-combined-static-receipt",
+  "atUtc": "2026-10-12T03:23:07.594978+00:00",
+  "status": "endpoint_unavailable_resource_not_received",
+  "attemptedURL": "http://127.0.0.1:4318/learning-workbench.js",
+  "routing": "noproxy_127.0.0.1",
+  "curlExit": 7,
+  "resourceReceived": false,
+  "assets": [
+    {
+      "url": "http://127.0.0.1:4318/learning-workbench.js",
+      "localSha256": "9a30a208e9fae48589ab67f9262793d140607d8151d6d3f950382d5a5eba43f8",
+      "equalsLocal": null
+    },
+    {
+      "url": "http://127.0.0.1:4318/learning-experience-v13.js",
+      "localSha256": "903e6092132a979afff36e6201879b53a5aa17c59dcc3dff29be069ead74d376",
+      "equalsLocal": null
+    },
+    {
+      "url": "http://127.0.0.1:4318/learning-experience-v13.css",
+      "localSha256": "cdd014999bccee644072ac3c41fb389f50463e7e0dfcb5dff8976a8afe76aa60",
+      "equalsLocal": null
+    }
+  ],
+  "scope": "Current public source attempt only; not browser or QA",
+  "serviceOperated": false,
+  "privateDataAccessed": false
+}

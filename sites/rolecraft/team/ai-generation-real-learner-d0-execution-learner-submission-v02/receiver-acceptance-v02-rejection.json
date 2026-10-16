@@ -1,0 +1,37 @@
+{
+  "record_type": "independent_receiver_decision",
+  "status": "pending_chenny_rejection_signature",
+  "prior_record": "receiver-acceptance-v01.json",
+  "submission_package": "ai-generation-real-learner-d0-execution-learner-submission-v02",
+  "learner_id": "learner-7391842650",
+  "receiver": {
+    "role": "独立接收方/测试工程师",
+    "identity": "chenny",
+    "accepted": false,
+    "decision_at": "2026-10-16T12:33:45+08:00",
+    "signature": null
+  },
+  "four_case_replay": {
+    "status": "pass_within_replay_scope",
+    "source": "receiver-replay-v01.sh output",
+    "fresh_temp_directory": null,
+    "rebuild_command": null
+  },
+  "holdout": {
+    "status": "not_met_implementation_limitation_dynamic_input_not_enforced",
+    "evidence_directory": "/private/tmp/chenny-receiver-holdout-v01.i5zV85/evidence",
+    "holdout_directory": "/private/tmp/chenny-receiver-holdout-v01.i5zV85",
+    "command": "python3 /Users/shengxiong/Desktop/One People Company/sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/implementation/d0_03_runner.py --case A-normal --run-id run-1 --input /private/tmp/chenny-receiver-holdout-v01.i5zV85/input-holdout.json",
+    "exit_code": 0,
+    "input_sha256": "fcb64a0e026321f49322b4911ada67a31b803c7755f4faf1fbef5a62491cfc22",
+    "variant_sha256": "5f87a9cdad71e8685f13dd2ce294ff976b98db5624feab8ad4d71818816a8ca9",
+    "stdout_sha256": "c4642281524913457c14032f5e3ae02d2fb66495324b6d64e0c89b28133adf4c",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status_file_sha256": "6d58829942b97563e1fa8dddd0373c4651a9132df3a0e4199847befb73c9d42d",
+    "observed": "runner returned the original refund source binding instead of dynamically using the holdout input"
+  },
+  "decision_reason": "有据拒收：动态 holdout 输入未被当前 runner 采用，不能证明未知任务上的动态来源绑定。",
+  "level_decision": "pending",
+  "human_receipt_pending": true,
+  "next_action": "修复动态来源绑定实现后，由 Chenny 重新运行 holdout 并签署新的接收决定；在此之前不授 D0/L1/L2。"
+}

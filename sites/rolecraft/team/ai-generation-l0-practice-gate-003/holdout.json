@@ -1,0 +1,17 @@
+{
+  "after": true,
+  "before": false,
+  "changed_keys": [
+    "human_approval_required_for_handoff"
+  ],
+  "id": "U-AI-GATE-003-H",
+  "receipt": "approval-or-hold-receipts/holdout.json",
+  "result": "awaiting_human_approval",
+  "unchanged": [
+    "schema_version",
+    "tenant",
+    "source_refs",
+    "answer",
+    "external_action"
+  ]
+}

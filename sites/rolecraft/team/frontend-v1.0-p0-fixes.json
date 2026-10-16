@@ -1,0 +1,64 @@
+{
+  "reportId": "frontend-v1.0-p0-fixes",
+  "role": "软件工程师（客户端）",
+  "status": "implemented_pending_independent_ui_qa",
+  "scope": "320px顶栏可见性与题库派生包绑定；不改后端、数据库、教材正文或远程服务器",
+  "inputs": [
+    "team/qa-v1.0-uiux-product-final.md",
+    "team/qa-v1.0-uiux-product-final.json",
+    "team/employee-sync-v1.0-design.md"
+  ],
+  "rootCause": {
+    "topbar": "固定高度单行顶栏叠加移动端最大宽度限制，导致选择职业与登录/注册在320px被裁切",
+    "questionBank": {
+      "clientPackageCorpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+      "currentCorpusHash": "c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757",
+      "staleC01SourceHash": "123f00a89c54dc0e0b18f7752ec5dcb443bf5490c8388068d38b1e7b421b7cd4",
+      "currentC01SourceHash": "4ee70a19c07d14a550ff9f1fbcfb46ec26a3e236aef30b5d3f2b1ce3f190d982",
+      "effect": "strict data() identity validation returned null; client displayed unavailable state"
+    }
+  },
+  "changedFiles": [
+    {
+      "path": "sites/rolecraft/dist/auth-career-v15.css",
+      "sha256": "1d5c799bb641056b051bf4a522d960f6863fee8ab6686e55fbd42f297f0fb13a",
+      "change": "Narrow topbar auto-height/wrap and second-row career/account grid; hide only noncritical release badge at <=340px"
+    },
+    {
+      "path": "sites/rolecraft/dist/learning-v13-data.js",
+      "sha256": "6d27dabc1cedc15236de846c44dae8f66c4f82b77c2ede543941d3589e8772a4",
+      "change": "Rebound package corpus/source hashes and regenerated 327 evidence line ranges against current v12"
+    }
+  ],
+  "unchangedClientValidator": {
+    "path": "sites/rolecraft/dist/learning-experience-v13.js",
+    "sha256": "3b17e6ce3b1d06c6aecea39f2f69a8745233f85192b275c7168016b556e89d65",
+    "note": "Strict corpus/source validation retained"
+  },
+  "checks": {
+    "nodeSyntax": {
+      "learningV13Data": true,
+      "learningExperienceV13": true
+    },
+    "dataLoad": {
+      "valid": true,
+      "questions": 114,
+      "knowledgePoints": 240,
+      "questionCardsRendered": 114,
+      "unavailableState": false
+    },
+    "selfTestEligibility": {
+      "withoutVisit": 0,
+      "withIsolatedVisitToQuestionKnowledgePoint": 1,
+      "interpretation": "0 without a current-version knowledge visit is intentional empty state"
+    },
+    "remoteDeployment": false,
+    "databaseWrites": false
+  },
+  "pendingIndependentQA": [
+    "320/375/390 browser screenshots and no horizontal overflow",
+    "career/login buttons visible and keyboard focusable at 320px",
+    "question list, detail, source link and self-test flow in remote environment",
+    "authenticated task/recovery paths remain separate from this client fix"
+  ]
+}

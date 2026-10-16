@@ -1,0 +1,275 @@
+{
+  "schema": "rolecraft.ai_generation.d0.v03.qa",
+  "schema_version": "0.1",
+  "qa_id": "AI-D0-V03-QA-20261015-01",
+  "date": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "reviewer_role": "QA",
+  "target_role_id": "AI",
+  "target_role_title": "AI生成工程师",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "append_record_id": "D0-AI-20261015-001-R2",
+  "scope": "独立复验v0.3故障注入、陌生约束迁移、哈希、停止/恢复和未预告来源变体；不代学员作答，不修改作者文件。",
+  "local_fixture_conclusion": "met_within_scope",
+  "d0_decision": "not_assessed",
+  "l1_decision": "not_granted",
+  "starting_level": "L0_guided",
+  "capability_conclusion": "not_assessed",
+  "received_inputs": [
+    {
+      "path": "sites/rolecraft/team/ai-generation-d0-v03-fault-transfer.md",
+      "sha256": "7f85e10abd3adba65ea9951095563b96c85d91949d78dda4ac79b3843fc416a9"
+    },
+    {
+      "path": "sites/rolecraft/team/ai-generation-d0-v03-fault-transfer.json",
+      "sha256": "1b4fcbe6f7dbbfb65c745558630d774321e9902406ea9744a113a7f8f2a93906"
+    },
+    {
+      "path": "/private/tmp/ai_generation_d0_fault_transfer_v1.py",
+      "sha256": "37c18726cc2391bc7997b93e0bafa1bf626367d0d5686956316101e3f3f9ee34"
+    },
+    {
+      "path": "/private/tmp/ai_generation_d0_fault_transfer_run_v3.json",
+      "sha256": "6a74928b13d8fc28499b1d591d2ad5c0679852c4e9c52d9571e7f9a09d13c062"
+    },
+    {
+      "path": "/private/tmp/ai_generation_d0_fault_transfer_qa_rerun.json",
+      "sha256": "6a74928b13d8fc28499b1d591d2ad5c0679852c4e9c52d9571e7f9a09d13c062"
+    }
+  ],
+  "replay": {
+    "command": "python3 /private/tmp/ai_generation_d0_fault_transfer_v1.py > /private/tmp/ai_generation_d0_fault_transfer_qa_rerun.json",
+    "byte_equal_to_received_output": true,
+    "json_equal_to_received_output": true,
+    "python": "3.14.5",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "network": "disabled_by_task_constraint",
+    "real_model": false,
+    "langgraph_imported": false,
+    "paid_api": false,
+    "external_writes": false
+  },
+  "fixture_identity": {
+    "fixture_id": "F-AI-D0-S1-v2-fault-transfer",
+    "fixture_version": "ai-generation-d0-local-v2",
+    "fixture_sha256": "c8f7884042d59e714d82f266a34ff17fe33faa7291160abb8647695e2db62239",
+    "role_id": "AI",
+    "tenant": "A",
+    "external_action_contract": "none"
+  },
+  "fault_scenarios": [
+    {
+      "scenario_id": "FI-AI-EMPTY-001",
+      "fault": "empty_tool_result",
+      "first_failure": {
+        "code": "EMPTY_TOOL_RESULT",
+        "attempt": 1,
+        "tool_result_ref": null
+      },
+      "states": [
+        "start",
+        "tool_called",
+        "tool_returned_empty",
+        "failed",
+        "stopped",
+        "recovery_required",
+        "tool_retried",
+        "tool_returned",
+        "drafted",
+        "checked",
+        "handed_off"
+      ],
+      "stop_evidence": {
+        "downstream_generation_before_recovery": false,
+        "external_action": null
+      },
+      "recovery_evidence": {
+        "retry_safe": true,
+        "final_status": "draft_ready_for_review"
+      },
+      "qa_status": "pass_local_fixture"
+    },
+    {
+      "scenario_id": "FI-AI-DUP-001",
+      "fault": "duplicate_callback",
+      "first_failure": {
+        "code": "DUPLICATE_CALLBACK",
+        "callback_id": "cb-001",
+        "action": "ignore_duplicate"
+      },
+      "states": [
+        "start",
+        "tool_called",
+        "tool_returned",
+        "callback_accepted",
+        "duplicate_callback_detected",
+        "stopped",
+        "recovered",
+        "checked",
+        "handed_off"
+      ],
+      "stop_evidence": {
+        "duplicate_downstream_effect": false,
+        "second_draft_created": false,
+        "external_action": null
+      },
+      "recovery_evidence": {
+        "dedupe_key": "callback_id",
+        "durable_result_reused": true,
+        "final_status": "draft_ready_for_review"
+      },
+      "qa_status": "pass_local_fixture"
+    },
+    {
+      "scenario_id": "FI-AI-OLD-001",
+      "fault": "old_checkpoint",
+      "first_failure": {
+        "code": "CHECKPOINT_INCONSISTENT",
+        "checkpoint_version": "v0",
+        "missing": [
+          "tool_result_ref",
+          "source_refs"
+        ]
+      },
+      "states": [
+        "start",
+        "old_checkpoint_loaded",
+        "failed",
+        "stopped",
+        "recovery_required",
+        "tool_result_recovered",
+        "drafted",
+        "checked",
+        "handed_off"
+      ],
+      "stop_evidence": {
+        "completed_flag_trusted": false,
+        "draft_before_recovery": false,
+        "external_action": null
+      },
+      "recovery_evidence": {
+        "durable_result_used": true,
+        "old_checkpoint_preserved": true,
+        "final_status": "draft_ready_for_review"
+      },
+      "qa_status": "pass_local_fixture"
+    },
+    {
+      "scenario_id": "FI-AI-TIMEOUT-001",
+      "fault": "timeout",
+      "first_failure": {
+        "code": "TOOL_TIMEOUT",
+        "attempt": 1,
+        "timeout_ms": 50
+      },
+      "states": [
+        "start",
+        "tool_called",
+        "timeout",
+        "stopped",
+        "recovery_required",
+        "tool_retried",
+        "tool_returned",
+        "drafted",
+        "checked",
+        "handed_off"
+      ],
+      "stop_evidence": {
+        "partial_output_discarded": true,
+        "external_action": null
+      },
+      "recovery_evidence": {
+        "retry_budget_used": 1,
+        "retry_safe": true,
+        "final_status": "draft_ready_for_review"
+      },
+      "qa_status": "pass_local_fixture"
+    }
+  ],
+  "unknown_transfer": {
+    "scenario_id": "U-AI-006-T1",
+    "constraint_change": "checkpoint storage is temporarily unavailable; no other input, identity, tool, schema or model change",
+    "first_failure": {
+      "code": "CHECKPOINT_STORE_TRANSIENT_UNAVAILABLE",
+      "attempt": 1,
+      "retry_after_ms": 20
+    },
+    "states": [
+      "start",
+      "tool_called",
+      "tool_returned",
+      "checkpoint_write_failed",
+      "stopped",
+      "recovery_required",
+      "checkpoint_write_recovered",
+      "drafted",
+      "checked",
+      "handed_off"
+    ],
+    "plan_executed": true,
+    "stop_evidence": {
+      "draft_published_before_checkpoint": false,
+      "external_action": null
+    },
+    "recovery_evidence": {
+      "checkpoint_version": "v2",
+      "final_status": "draft_ready_for_review"
+    },
+    "qa_status": "pass_local_fixture"
+  },
+  "unannounced_variant": {
+    "variant": "unseen_source_binding_v9",
+    "script": "/private/tmp/ai_generation_d0_fault_qa_unseen.py",
+    "script_sha256": "7faf5c7756afa16b19c8f94ae2d388b1c6e35770fdb562905dc12cabe266e943",
+    "output": "/private/tmp/ai_generation_d0_fault_qa_unseen_output.json",
+    "output_sha256": "b865c9e72b3ca7aedc28fa4fe64d86a9c87027eb9c0b0aa3f7cd93ffc95c69ea",
+    "changed_constraint": "in-memory source document/version/text only",
+    "safety_invariants_held": true,
+    "recovered_result_hashes_changed": true,
+    "external_action": null,
+    "real_model": false,
+    "status": "pass_local_fixture"
+  },
+  "assertions": {
+    "script_hash_matches_record": true,
+    "run_output_hash_matches_record": true,
+    "qa_rerun_byte_equal": true,
+    "qa_rerun_json_equal": true,
+    "all_faults_have_first_failure": true,
+    "all_faults_stop_before_handoff": true,
+    "all_faults_external_action_null": true,
+    "all_faults_recover_to_draft_ready_for_review": true,
+    "unknown_transfer_only_changes_checkpoint_availability": true,
+    "unknown_transfer_plan_executed": true,
+    "unannounced_variant_safety_invariants_hold": true
+  },
+  "defects_and_limits": [
+    {
+      "id": "AI-D0-REPLAY-QA-P2-STATE-NAME-DRIFT",
+      "severity": "P2",
+      "status": "open",
+      "description": "原始计划使用 source_checked，v0.2/v0.3 夹具使用 checked；缺少状态合同别名或迁移说明。",
+      "owner": "AI + CURR",
+      "retest": "固定状态命名/别名后执行原例、回归和留出变体。"
+    }
+  ],
+  "unverified": [
+    "真实LangGraph安装/API兼容性",
+    "真实模型输出质量、参数效果和费用",
+    "真实工具副作用、生产checkpoint持久化、RPO/RTO、并发一致性和进程崩溃恢复",
+    "学习者迁移、相邻岗位签收、完整EvidenceCard和真实职业能力",
+    "用户价值、生产可靠性、成本和行业先进性"
+  ],
+  "review": {
+    "author_self_review": false,
+    "independent_qa_status": "complete",
+    "content_review_status": "pending",
+    "scope_boundary": "本地确定性状态机证据；不外推真实模型、LangGraph或生产恢复"
+  },
+  "non_claims": [
+    "不授予L1或无监督生产权限",
+    "不宣称真实模型或LangGraph已运行",
+    "不将本地恢复写成真实耐久存储/生产恢复",
+    "不以QA报告代替学习者原始回答、岗位作品或内容审校"
+  ]
+}

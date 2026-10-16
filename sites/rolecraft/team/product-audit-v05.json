@@ -1,0 +1,435 @@
+{
+  "schemaVersion": "1.0",
+  "productVersion": "local-mvp-0.5-textbook",
+  "textbookVersion": "textbook-draft-0.5",
+  "textbookInputSha256": "bec38479047f9158ac0b218c3e3b921601a5ab90ed5caeddb9c1e370562796fd",
+  "standardVersion": "product-creation-2026-10-10",
+  "assessmentScope": "formal_learning_product",
+  "scopeLabel": "正式职业学习系统",
+  "reviewer": "测试工程师独立代理 /root/qa_engineer_v05",
+  "auditedAt": "2026-10-10",
+  "overall": "not_met",
+  "criteria": [
+    {
+      "id": "user_value",
+      "required": true,
+      "criterion": "目标人群、问题和验证指标在试验前定义，有真实用户证据且达到预定阈值。",
+      "status": "insufficient",
+      "evidence": [
+        {
+          "reference": "team/textbook-v05-product.md",
+          "sha256": "7dd6515bb4a2fd447db360d9650d9f65ddc95659fc810180ab87d9b615eb7eb9",
+          "observation": "明确三类读者和双培养目标；本轮没有真实用户问题/事前指标与结果。"
+        }
+      ],
+      "limits": "作者原创虚构售后场景不是访谈；没有推定用户满意或不满意。",
+      "gap": "缺真实目标用户证据、事前指标/阈值及结果。",
+      "owner": "产品经理（用户研究员专项）",
+      "nextAction": "按试点协议取得真实用户问题及行为记录，再核预定义结果。",
+      "method": "复核协议日期、实际样本、退出及原始结果与范围。",
+      "retest": {
+        "status": "待取得真实实施或补证并独立复验",
+        "method": "复核协议日期、实际样本、退出及原始结果与范围。"
+      }
+    },
+    {
+      "id": "teaching_quality",
+      "required": true,
+      "criterion": "能力、章节、练习和作品建立关联；内容覆盖、深度、来源与案例通过内容核对和专业复核。",
+      "status": "insufficient",
+      "evidence": [
+        {
+          "reference": "team/textbook-v05.json",
+          "sha256": "bec38479047f9158ac0b218c3e3b921601a5ab90ed5caeddb9c1e370562796fd",
+          "observation": "十二章/108正文节/48知识点与题解/36分层练习已写；原目标先修量规保留，作者所有例仍not_run。"
+        },
+        {
+          "reference": "team/textbook-v05-content-review.json",
+          "sha256": "9625c2c826f53bbcc1a20781cb093de20b9f214397069d35f7cf095062736b62",
+          "observation": "独立AI文稿审校完成，七项文稿问题返修复核，12章绑定当前源hash；humanExpertReview与learnerValidation not_done。"
+        },
+        {
+          "reference": "team/qa-v05-examples-evidence.json",
+          "sha256": "74a310e0c1ac600c586103045e6338f4da7004d2b52c48dfb499cd7b70887632",
+          "observation": "f01/e02/e03三例在Python3.14.5实际原样与独立变体6进程exit0，绑定正文与代码hash。"
+        }
+      ],
+      "limits": "与0.4的缺章已知失败相比，正文完整性与AI文稿检查已改善，故不再以缺失章作为fail；专业确认与全书案例覆盖仍证据不足。三例离线运行不代表所有代码、Python3.10兼容、真实模型或学习效果。",
+      "gap": "全书检索/恢复/部署/性能和真实模型案例执行、人类专业内容审核及真实学习结果仍缺。",
+      "owner": "课程架构师（教材研发员/内容审校员专项）",
+      "nextAction": "对其他章逐例实现与独立执行，取得有身份和范围的真人专业审核，组织真实学员未知任务。",
+      "method": "按原九节/量规逐章核深度，正常/边界/失败/未知案例与专业意见分别复验。",
+      "retest": {
+        "status": "待取得真实实施或补证并独立复验",
+        "method": "按原九节/量规逐章核深度，正常/边界/失败/未知案例与专业意见分别复验。"
+      }
+    },
+    {
+      "id": "real_generation",
+      "required": true,
+      "criterion": "真实模型依学习档案生成教材，保存生成过程、来源及版本，示例验证与失败状态真实。",
+      "status": "fail",
+      "evidence": [
+        {
+          "reference": "server/generation/index.mjs",
+          "sha256": "52ef3ffefe3028187192fa7712693a1929949403f651daaeb09999a7a12d5beb",
+          "observation": "已有真实模型协议适配器，文件未改；本轮没有按账户档案进行真实供应商调用。"
+        },
+        {
+          "reference": "team/textbook-v05.json",
+          "sha256": "bec38479047f9158ac0b218c3e3b921601a5ab90ed5caeddb9c1e370562796fd",
+          "observation": "provenance明确agent_authored_draft；静态作者包不是网站账户供应商生成任务。"
+        }
+      ],
+      "limits": "数字员工借助模型编写教材不能替代原门槛要求的档案/实际供应商任务关联；不声称适配器未实现，不伪造请求ID、usage或费用。",
+      "gap": "缺安全配置/模型/明确预算以及真实请求、来源、产物、失败恢复与逐稿核验。",
+      "owner": "AI生成工程师（后端数据与客户端接口协作）",
+      "nextAction": "完成真实配置和预算交接后执行受控单章并独立核过程及新内容。",
+      "method": "核实际供应商记录、档案、任务/版本、usage与来源，模拟不替代。",
+      "retest": {
+        "status": "待取得真实实施或补证并独立复验",
+        "method": "核实际供应商记录、档案、任务/版本、usage与来源，模拟不替代。"
+      }
+    },
+    {
+      "id": "comparative_advantage",
+      "required": true,
+      "criterion": "选定行业产品及研究基线，在同任务、样本、资源与评分条件下验证差异化指标，并记录专业评审。",
+      "status": "insufficient",
+      "evidence": [
+        {
+          "reference": "team/textbook-v05.json",
+          "sha256": "bec38479047f9158ac0b218c3e3b921601a5ab90ed5caeddb9c1e370562796fd",
+          "observation": "p01/p02安排真实问题、比较条件、差异假设与反馈；教材未声称示范数据是行业实测。"
+        },
+        {
+          "reference": "team/specialists/benchmark-researcher.md",
+          "sha256": "1685abace8c3f60dd1c33f9e744584c1e478eb13ec627b60bd2e4ac8f64df26f",
+          "observation": "候选基线/公平比较流程已有，尚无同条件实际优势结果。"
+        }
+      ],
+      "limits": "领航结构参考、方法来源、章节多或AI审校不能证明优于行业。",
+      "gap": "缺锁定对象/版本/场景/任务/样本/资源、事前指标、实际比较与专业评审。",
+      "owner": "产品经理（竞品研究员专项）",
+      "nextAction": "冻结同条件行业及研究基线并执行，保留负面与未知结果。",
+      "method": "逐项核原11比较字段、实际测量、约束与专业评审，仅支持限定优势。",
+      "retest": {
+        "status": "待取得真实实施或补证并独立复验",
+        "method": "逐项核原11比较字段、实际测量、约束与专业评审，仅支持限定优势。"
+      }
+    },
+    {
+      "id": "learner_creation",
+      "required": true,
+      "criterion": "学习者产出可运行 MVP，具备测试、目标用户验证和独立作品评审，并满足预定评分条件。",
+      "status": "insufficient",
+      "evidence": [
+        {
+          "reference": "team/textbook-v05.json",
+          "sha256": "bec38479047f9158ac0b218c3e3b921601a5ab90ed5caeddb9c1e370562796fd",
+          "observation": "三个学习层次、36练习/解析与未知任务/真实用户作业已有；公开答案不作为独立保留集。"
+        },
+        {
+          "reference": "team/textbook-v05-content-review.json",
+          "sha256": "9625c2c826f53bbcc1a20781cb093de20b9f214397069d35f7cf095062736b62",
+          "observation": "真实学员未知任务与学习效果尚无证据；AI文稿检查不授予职业能力。"
+        }
+      ],
+      "limits": "QA做题或运行作者代码不是学员MVP或用户验证。",
+      "gap": "缺真实学员可运行作品、独立复现/评分及目标用户结果。",
+      "owner": "课程架构师（实训评估员专项）",
+      "nextAction": "组织真实学员独立作品与非作者未知任务，保留帮助量及真实用户反馈。",
+      "method": "依原0—3量规与安全关键规则独立核作品和未知任务，不以阅读完成代替。",
+      "retest": {
+        "status": "待取得真实实施或补证并独立复验",
+        "method": "依原0—3量规与安全关键规则独立核作品和未知任务，不以阅读完成代替。"
+      }
+    },
+    {
+      "id": "reliable_delivery",
+      "required": true,
+      "criterion": "真实系统的持久化、账户权限隔离、异常恢复及版本追踪经独立验证，满足明确运行范围。",
+      "status": "fail",
+      "evidence": [
+        {
+          "reference": "server/index.mjs",
+          "sha256": "f111fa0f17389a0b586d34f75748b844fa042f9ab88985189c77a30563daf0d8",
+          "observation": "本地研发账户/SQLite/持久任务和版本已有0.4独立验证，本轮原文件hash不变；没有正式生产范围。"
+        },
+        {
+          "reference": "server/README.md",
+          "sha256": "f70de336bed80cf155da316e01a272a2595b0ebe083121574b6299bcad9052d4",
+          "observation": "本地127.0.0.1研发限制保留；生产身份/TLS/备份/监控/多worker尚缺。"
+        },
+        {
+          "reference": "team/qa-v05-review.md",
+          "observation": "本轮首轮连接拒绝、detached恢复后独立公开HTTP200/磁盘一致；浏览器能力不可用。"
+        }
+      ],
+      "limits": "不再以无账户/数据库作为失败理由；承认本地改善，但本轮不重测私有数据/账户，不拿公开HTTP通过证明生产体系。",
+      "gap": "正式生产身份/运行范围、备份恢复、监控与真实环境联合验证未建立。",
+      "owner": "后端数据工程师（客户端及测试接口协作）",
+      "nextAction": "由产品冻结正式运行范围，补身份/运维/备份并独立验证。",
+      "method": "真实环境隔离、恢复/备份/监控及版本，浏览器与真实供应商链另外验证。",
+      "retest": {
+        "status": "待取得真实实施或补证并独立复验",
+        "method": "真实环境隔离、恢复/备份/监控及版本，浏览器与真实供应商链另外验证。"
+      }
+    },
+    {
+      "id": "operating_economics",
+      "required": true,
+      "criterion": "真实调用与交付记录包含成本、耗时、质量及维护机制，达到预定资源预算。",
+      "status": "insufficient",
+      "evidence": [
+        {
+          "reference": "team/textbook-v05.json",
+          "sha256": "bec38479047f9158ac0b218c3e3b921601a5ab90ed5caeddb9c1e370562796fd",
+          "observation": "e05区分逻辑任务/尝试/质量成功与未知费用；案例cost_units为原创假设。"
+        },
+        {
+          "reference": "team/specialists/operations-analyst.md",
+          "sha256": "90f780edfe5a7505316fe532bfa16c25df47b44bcc1ea5f2f4f05e30334f9e51",
+          "observation": "运营预算与核算模板已有，实际账单/维护/交付质量分母仍无。"
+        }
+      ],
+      "limits": "QA耗时、文字长度、假设指标与模拟tokens不能作真实成本/运营结果，不能假定成本为零。",
+      "gap": "缺预定义真实预算、供应商账单、任务成功/质量/耗时及维护数据。",
+      "owner": "产品经理（运营分析员专项）",
+      "nextAction": "与真实模型运行及使用记录关联账单，核重试/未知费用和质量。",
+      "method": "独立重算实际成本与预算，分别记录usage/估计/真实账单与维护。",
+      "retest": {
+        "status": "待取得真实实施或补证并独立复验",
+        "method": "独立重算实际成本与预算，分别记录usage/估计/真实账单与维护。"
+      }
+    },
+    {
+      "id": "iteration_trace",
+      "required": true,
+      "criterion": "每次产出记录版本、门槛、实际证据、差距、原因、责任人、下一步及复验条件与结果；自评、QA、专业审核分别记录。",
+      "status": "pass",
+      "evidence": [
+        {
+          "reference": "team/textbook-v05-content-review.json",
+          "sha256": "9625c2c826f53bbcc1a20781cb093de20b9f214397069d35f7cf095062736b62",
+          "observation": "7项文稿首次问题与两轮修订复核保持；当前源hash绑定，全文运行缺口开放。"
+        },
+        {
+          "reference": "team/qa-v05-review.md",
+          "observation": "实际首轮15/20、夹具修正3/3、审校包1/1、公共HTTP1/1、范围状态2/2与6进程，原失败/原因/责任/复验及残留保留。"
+        },
+        {
+          "reference": "team/qa-v05-examples-evidence.json",
+          "sha256": "74a310e0c1ac600c586103045e6338f4da7004d2b52c48dfb499cd7b70887632",
+          "observation": "新稿绑定当前完整作者hash及例正文/codehash，快照记录另存，不泛继承。"
+        }
+      ],
+      "limits": "只本次教材/网站产出追踪通过，不保证未来全部作品已复盘；新稿未继承旧audit。最终原样报告打包另做专项核对。",
+      "gap": "当次有限改进已复核，正式其他门槛及未来持续追踪开放。",
+      "owner": "项目经理",
+      "nextAction": "原样包装当前报告并专项核对；按残留门槛安排下一轮实际证据。",
+      "method": "核当前网站/教材/hash/两范围，未来每版重新审计、复验问题闭合。",
+      "retest": {
+        "status": "当次限定追踪通过；其他门槛开放",
+        "method": "核当前网站/教材/hash/两范围，未来每版重新审计、复验问题闭合。"
+      }
+    }
+  ],
+  "counts": {
+    "required": 8,
+    "fail": 2,
+    "insufficient": 5,
+    "pass": 1
+  },
+  "inputHashes": {
+    "dist/app.js": "84c8f04d28466132a40bdf2238d183c917371681271ff35bae67aba1dd618c43",
+    "dist/index.html": "1aab6c6f461c162ccef31f223c24461b0e80b75fb797c12e28815b92e62abba1",
+    "dist/styles.css": "3bbc6595e02bcf37a9bc924216d2edab67956a096a7207cf925c7bf69b5daeee",
+    "dist/textbook.js": "b9f543f2bd01c13335ca17d4700f9399cb4f7d97b20fcc7082a6e1de6a4ca0dd",
+    "dist/textbook-data.js": "6fa6a704f46d26adc38bbdc90256d27919309e98177c69459899aa77a3413d73",
+    "dist/textbook-content-review-data.js": "9969bb86e62ffa5bd1709ea63a892410c13e99933f1ab3480553abbb268dd5ef",
+    "dist/generation.js": "4729f5caad5b17638b73f2cb7744a7aff1015e6a8e97f05b0efd3c5146c09b40",
+    "dist/generation-curriculum-data.js": "3864bf34d4f15e89a1e8c44b692272d3febb387a704371703886a7621ce1cdbc",
+    "dist/curriculum-data.js": "c3c93435d4417792182c1f98b450a1e1a5c23aa9a8136ddb03086570c03f1442",
+    "dist/product-gates-data.js": "a331ad6c46adc7d463e9b56d918a8f96765ebaecfa1ff6c07c2c5e6c19e09b0e",
+    "dist/creation-path-data.js": "24a814d9b098e23c698b924924f209dbf14bb5637d9b7cd0ccbe6200d721d2c4",
+    "server/index.mjs": "f111fa0f17389a0b586d34f75748b844fa042f9ab88985189c77a30563daf0d8",
+    "server/generation/index.mjs": "52ef3ffefe3028187192fa7712693a1929949403f651daaeb09999a7a12d5beb",
+    "team/textbook-v05.json": "bec38479047f9158ac0b218c3e3b921601a5ab90ed5caeddb9c1e370562796fd",
+    "team/textbook-v05.md": "a8d8d30111ed865f6ab013e1a025f2d0907e73b9107cccdc854489211eb0b102",
+    "team/textbook-v05-spec.json": "6872ea67963145ab859fda1d74822336382a9d6ffbc3c236c4bfacf97c712bfb",
+    "team/textbook-v05-content-review.json": "9625c2c826f53bbcc1a20781cb093de20b9f214397069d35f7cf095062736b62",
+    "team/product-gates.json": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06",
+    "team/curriculum-data.json": "8eb4730321916a7b12f154f06b31444116657a59941e66c1d6fb34b19cf16609",
+    "team/qa-v05-examples-evidence.json": "74a310e0c1ac600c586103045e6338f4da7004d2b52c48dfb499cd7b70887632"
+  },
+  "historicalAuditHashes": {
+    "team/product-audit-baseline.json": "c0a127f0ee3b5ab5d21201ee47ae6f65392ebdbfa7a1f0c4e855ab5ad3a31155",
+    "team/product-audit-v03.json": "e108f207fcebcd0456e9e001999b0f5f772ff77f8f4291aecfd3c17006583d0f",
+    "team/product-audit-v04.json": "febc33a88cb0eb11bba58e2c422009cb4110f66a01f0e573b384acd73d47c020"
+  },
+  "staticVerification": {
+    "productVersion": "local-mvp-0.5-textbook",
+    "textbookVersion": "textbook-draft-0.5",
+    "textbookInputSha256": "bec38479047f9158ac0b218c3e3b921601a5ab90ed5caeddb9c1e370562796fd",
+    "scope": "static_prototype",
+    "scopeLabel": "UI契约枚举；实际为教材作者包/只读阅读VM/公共HTTP/选定离线例",
+    "standardVersion": "product-creation-2026-10-10",
+    "reviewer": "/root/qa_engineer_v05",
+    "auditedAt": "2026-10-10",
+    "conclusion": "met_within_scope",
+    "evidence": [
+      {
+        "reference": "team/qa-v05-review.md",
+        "observation": "20项按阶段全部通过，首轮与复验保留；不是一次20/20整体运行。"
+      },
+      {
+        "reference": "team/qa-v05-examples-evidence.json",
+        "sha256": "74a310e0c1ac600c586103045e6338f4da7004d2b52c48dfb499cd7b70887632",
+        "observation": "最终源hash绑定三个具体离线例及独立扰动6进程exit0。"
+      }
+    ],
+    "limits": "独立源包/课程对应/隔离DOM+虚构storage VM阅读与Markdown内容导出、公开loopback HTTP资产，以及f01/e02/e03三个Python3.14.5离线例的已记录用例。不是实际浏览器、原生下载、真实模型、全书运行、人类专家/学习效果、用户/市场/成本或生产验证。",
+    "tests": [
+      {
+        "command": "node sites/rolecraft/team/qa-v05-check.mjs",
+        "passed": 15,
+        "total": 20,
+        "exitCode": 1,
+        "scope": "首轮，T10/T11/T16夹具问题、T15旧审校包、T19沙盒/连接失败保留"
+      },
+      {
+        "command": "node sites/rolecraft/team/qa-v05-check.mjs --only=T10,T11,T16",
+        "passed": 3,
+        "total": 3,
+        "exitCode": 0,
+        "scope": "修closest夹具，原应用断言不变"
+      },
+      {
+        "command": "node sites/rolecraft/team/qa-v05-check.mjs --only=T15",
+        "passed": 1,
+        "total": 1,
+        "exitCode": 0,
+        "scope": "独立报告原样包+hash拒绝错误稿"
+      },
+      {
+        "command": "node sites/rolecraft/team/qa-v05-check.mjs --only=T19",
+        "passed": 1,
+        "total": 1,
+        "exitCode": 0,
+        "scope": "自动批准的只读公共loopbackHTTP，后端detached后5资源一致"
+      },
+      {
+        "command": "node sites/rolecraft/team/qa-v05-examples-check.mjs textbook-v05.json --include-e03",
+        "passed": 6,
+        "total": 6,
+        "exitCode": 0,
+        "scope": "三个原样+三个声明扰动的实际Python进程，仅离线夹具"
+      }
+    ],
+    "displayVerification": {
+      "passed": 2,
+      "total": 2,
+      "exitCode": 0,
+      "scope": "AI审校状态/实际remainingGaps/仅状态映射变化；隔离VM"
+    },
+    "exampleExecution": {
+      "reference": "team/qa-v05-examples-evidence.json",
+      "inputSha256": "bec38479047f9158ac0b218c3e3b921601a5ab90ed5caeddb9c1e370562796fd",
+      "environment": {
+        "python": "3.14.5",
+        "sqlite": "3.50.4"
+      },
+      "records": [
+        {
+          "chapterId": "f01",
+          "phase": "verbatim_author_example",
+          "bodySha256": "87406395e418c32da50f539f52e3904bbc60f56f1481d79404fc41891e8fe1a9",
+          "codeSha256": "75035b4dab5d056186ccdc56225bad1aa0a862c3d329f97460fae403d0c7508c",
+          "command": "python3 <temporary-dir>/f01_author_example.py",
+          "exitCode": 0,
+          "stdout": "expected: local contract checks passed",
+          "stderr": "",
+          "exampleId": "f01-example"
+        },
+        {
+          "chapterId": "f01",
+          "phase": "qa_declared_variants",
+          "bodySha256": "87406395e418c32da50f539f52e3904bbc60f56f1481d79404fc41891e8fe1a9",
+          "codeSha256": "75035b4dab5d056186ccdc56225bad1aa0a862c3d329f97460fae403d0c7508c",
+          "command": "python3 <temporary-dir>/f01_author_example.py with QA appended assertions",
+          "exitCode": 0,
+          "stdout": "expected: local contract checks passed\nQA normal/schema-error/all JSON priority type variants passed",
+          "stderr": "",
+          "exampleId": "f01-example"
+        },
+        {
+          "chapterId": "e02",
+          "phase": "verbatim_author_example",
+          "bodySha256": "973364d90ebd779000cfff0ac1c7bae78386e0afe475ae74595f5da1826624b2",
+          "codeSha256": "6871896aca8d0c01c991b77c959a514eb58563da2bb498ea9590fc64d2872cd0",
+          "command": "python3 <temporary-dir>/e02_author_example.py",
+          "exitCode": 0,
+          "stdout": "{'total': 3, 'success': 2, 'critical': 1, 'success_rate': 0.6666666666666666, 'cost_per_success': 3.0}",
+          "stderr": "",
+          "exampleId": "e02-example"
+        },
+        {
+          "chapterId": "e02",
+          "phase": "qa_declared_variants",
+          "bodySha256": "973364d90ebd779000cfff0ac1c7bae78386e0afe475ae74595f5da1826624b2",
+          "codeSha256": "6871896aca8d0c01c991b77c959a514eb58563da2bb498ea9590fc64d2872cd0",
+          "command": "python3 <temporary-dir>/e02_author_example.py with QA appended assertions",
+          "exitCode": 0,
+          "stdout": "{'total': 3, 'success': 2, 'critical': 1, 'success_rate': 0.6666666666666666, 'cost_per_success': 3.0}\nQA critical-change/zero-success/empty variants passed",
+          "stderr": "",
+          "exampleId": "e02-example"
+        },
+        {
+          "chapterId": "e03",
+          "phase": "verbatim_author_example",
+          "bodySha256": "33684bdf00dc3cece133c322a512fc0340ff8254f8b3dc47153ed3b2e7a0215d",
+          "codeSha256": "bbc334db77a0de1630e4865f0341f96c3b4b59acaf2d5493989fa6c9fba99ccf",
+          "command": "python3 <temporary-dir>/e03_author_example.py",
+          "exitCode": 0,
+          "stdout": "expected: CR03 four channels clear; CR04 valid once and denials passed",
+          "stderr": "",
+          "exampleId": "e03-example"
+        },
+        {
+          "chapterId": "e03",
+          "phase": "qa_declared_variants",
+          "bodySha256": "33684bdf00dc3cece133c322a512fc0340ff8254f8b3dc47153ed3b2e7a0215d",
+          "codeSha256": "bbc334db77a0de1630e4865f0341f96c3b4b59acaf2d5493989fa6c9fba99ccf",
+          "command": "python3 <temporary-dir>/e03_author_example.py with QA appended assertions",
+          "exitCode": 0,
+          "stdout": "expected: CR03 four channels clear; CR04 valid once and denials passed\nQA scope/object/exact-approval/tamper/expiry/consumption/four-channel variants passed",
+          "stderr": "",
+          "exampleId": "e03-example"
+        }
+      ],
+      "limits": [
+        "Only read standard-library, offline, no business side-effect examples executed.",
+        "Other pseudocode/integration/manual assignments not executed.",
+        "Example execution is QA evidence, not real learners or end-to-end Agent results."
+      ]
+    }
+  },
+  "professionalReviewStatus": "未真人行业专业审核；当前作者稿有独立AI文稿审校（有范围限制）",
+  "advancedStatus": "无同条件行业实测，行业先进性未验证",
+  "remainingItems": [
+    "全书剩余案例实现与运行、Python3.10兼容实测、人类专业审核",
+    "真实档案供应商生成与新稿逐稿核验",
+    "真实用户试点/学习者未知任务/作品与行业比较",
+    "正式生产身份/运行范围/备份恢复/监控",
+    "真实费用质量耗时与维护",
+    "真实浏览器/原生下载/视觉/键盘/读屏验证",
+    "当前报告原样包装的专项核对及未来版本重新审计"
+  ],
+  "limits": [
+    "教材是数字员工AI作者草稿，与网站按账户实际供应商生成不同。",
+    "原八门槛/判定规则不变，完整稿和AI审校不代替正式质量/能力/行业先进。",
+    "独立源包/课程对应/隔离DOM+虚构storage VM阅读与Markdown内容导出、公开loopback HTTP资产，以及f01/e02/e03三个Python3.14.5离线例的已记录用例。不是实际浏览器、原生下载、真实模型、全书运行、人类专家/学习效果、用户/市场/成本或生产验证。",
+    "本JSON在报告打包前冻结；最终原样包核对追加独立MD记录，避免改JSON的重复包装循环。"
+  ]
+}

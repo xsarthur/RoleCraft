@@ -1,0 +1,21 @@
+{
+  "derived_by": "QA",
+  "receipt_status": "pending",
+  "source_receipt_index": "learner-receipt.json",
+  "learner_id": "unknown",
+  "receiver": {
+    "role": "QA/接收方",
+    "identity": null,
+    "accepted": null,
+    "accepted_at": null,
+    "signature": null
+  },
+  "scope": [
+    "independent replay of four cases",
+    "verify hashes and bytes",
+    "verify B body absent",
+    "verify holdout"
+  ],
+  "level_decision": "pending",
+  "forbidden_inference": "This template is not receiver acceptance and does not grant D0/L1/L2."
+}

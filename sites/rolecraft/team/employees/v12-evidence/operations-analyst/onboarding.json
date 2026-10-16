@@ -1,0 +1,202 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-11",
+  "role_id": "EV12-07",
+  "role_name": "运营分析员",
+  "agent_name": "/root/employee_v12_operations",
+  "unique_domain": "运营经济分析",
+  "status": "accepted_with_dependencies",
+  "scope": "员工配置、接单与首任务前置确认",
+  "inputs": [
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/AGENTS.md",
+      "sha256": "55e190a02d9d64ba1a1622b815d3c8282373a8d5292b1518f68ce6f2a08449a1",
+      "locator": "岗位表：运营分析员；交接与执行8/10/12；v12交付状态",
+      "read_status": "read"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/employees/v12-evidence/operations-analyst/prompt.md",
+      "sha256": "60e2835291a1125bbcd94f6a325e8a45f606c958ae981846ef5b292ca3fbfa2e",
+      "locator": "员工EV12-07；专业职责、输入与交接、本次首项派工",
+      "read_status": "read"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/employees/v12-evidence/COMMON.md",
+      "sha256": "f2a8a5e935fd521030f0cc1a7445cb9a2138cc3b417c228cc9ab43cfacb67bf0",
+      "locator": "本次派工范围；共同只读输入；唯一写入和接单输出；依赖与验收",
+      "read_status": "read"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v12-product-assessment.md",
+      "sha256": "2a7a0e08cf959a6ad490d46a98128eebd0e82722c9d4ff1c104ea3fbead285eb",
+      "locator": "五维判断；原八门槛当前评估：operating_economics insufficient，整体not_met",
+      "read_status": "read"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v12-qa.md",
+      "sha256": "c2d6e7aae31d750ccc04a6c058251be097b8e3114638c004a455a053d37444d3",
+      "locator": "实际执行范围；原八门槛当前复核：缺真实调用/运营质量成本及预算证据",
+      "read_status": "read"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v12/README.md",
+      "sha256": "f6e8b37b318dd2a662c064f6681509fdf7873cbd7687a7b91a6f7ed3bf2683a6",
+      "locator": "30单元阅读順序28/29；版本、练习和证据",
+      "read_status": "read"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/product-gates.json",
+      "sha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06",
+      "locator": "standardVersion product-creation-2026-10-10；gates[id=operating_economics]，原责任人产品经理",
+      "read_status": "read"
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/specialists/operations-analyst.md",
+      "sha256": "90f780edfe5a7505316fe532bfa16c25df47b44bcc1ea5f2f4f05e30334f9e51",
+      "locator": "2026-10-10；记录契约与空模板；核算与预算；维护、交接与复验",
+      "read_status": "read"
+    }
+  ],
+  "current_evidence": {
+    "textbook_version": "v12",
+    "textbook_sha256_reported_by_qa": "25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e",
+    "textbook_sha256_independently_recomputed": false,
+    "gate_id": "operating_economics",
+    "original_gate_owner": "产品经理",
+    "received_current_gate_status": "insufficient",
+    "received_current_product_conclusion": "not_met",
+    "classification": "现有文稿/离线执行证据，不是运营实测或账单"
+  },
+  "first_task": {
+    "id": "EV12-07-01",
+    "title": "运营数据与核算口径前置确认",
+    "current_step_completed": "阅读输入、接单、列依赖与交接，待独立组织验收",
+    "next_professional_step": "产品条件冻结后制定获准运行批次的采集/核算计划，收到脱敏实际证据后核算与对账",
+    "deliverables": [
+      "获准实际用量和账单引用",
+      "按尝试/成功交付分栏的成本、延迟、质量与维护表",
+      "价格与计算依据、未知及对账差异",
+      "预算比较、缺陷与责任人"
+    ],
+    "acceptance": [
+      "产品先冻结范围、预算和成功质量条件",
+      "每条核算绑定版本、批次、原始证据及计价日期",
+      "实际账单、按usage估算、假设预算与未知分开",
+      "失败重试不漏计、重复调用不重复计、缓存计费边界准确",
+      "零成功时每成功交付成本未定义；缺数据不按0处理",
+      "QA独立抽样重算、对账和脱敏核查；缺证不判达标"
+    ]
+  },
+  "dependencies": [
+    {
+      "id": "OP-D01",
+      "input": "预定义范围、预算与质量护栏",
+      "owner": "产品经理",
+      "status": "not_received",
+      "detail": "历史预算模板的scope/version/currency/sample/qualityCondition/costLimit/latencyLimit/reliabilityLimit/maintenanceLimit/approver/approvedAt未确认；门槛标准已收到，但不是试点预算。"
+    },
+    {
+      "id": "OP-D02",
+      "input": "获准实际模型调用/usage与失败重试记录",
+      "owner": "AI生成工程师",
+      "status": "not_received",
+      "detail": "当前v12 QA只证明有限离线例；没有本轮产品真实模型调用链，不能用代理编写教材代替。"
+    },
+    {
+      "id": "OP-D03",
+      "input": "任务、检索、计算、存储和恢复计量记录",
+      "owner": "后端数据工程师；内容检索工程师；软件工程师",
+      "status": "not_received",
+      "detail": "须交付获准日志的匿名关联、版本、时间、attempt及任务终态；当前接单未读取或抽取实际服务日志。"
+    },
+    {
+      "id": "OP-D04",
+      "input": "实际账单/用量、价格生效版本及授权读取范围",
+      "owner": "项目经理协调用户；AI生成工程师交付用量",
+      "status": "not_received",
+      "detail": "没有实际账单及私有资料读取授权；未知费用为null，不填0。价格核对是后续专业任务，本轮没有查询报价。"
+    },
+    {
+      "id": "OP-D05",
+      "input": "成功交付与质量判定、实际审校维护工时",
+      "owner": "产品经理；内容审校员；测试工程师；相应维护责任岗位",
+      "status": "partially_received",
+      "detail": "现有v12文稿QA已收到；真实调用产物质量、运营任务成功定义及实际工时未收到，不可将98题正文支持或12离线例通过充作生产质量分母。"
+    }
+  ],
+  "handoffs": [
+    {
+      "to": "产品经理",
+      "deliver": "范围、预算、质量条件待确认清单及未来成本/耗时/质量对照",
+      "original_gate_owner_unchanged": true
+    },
+    {
+      "to": "AI生成工程师",
+      "deliver": "call/attempt/usage/失败与收费未知状态所需字段，保留每次尝试"
+    },
+    {
+      "to": "后端数据工程师；内容检索工程师；软件工程师",
+      "deliver": "任务与运行计量、版本和恢复记录交接需求；本岗不实现记录系统"
+    },
+    {
+      "to": "内容审校员及维护责任岗位",
+      "deliver": "真实审核/返工/维护工时及证据引用需求"
+    },
+    {
+      "to": "测试工程师",
+      "deliver": "后续脱敏核算输入与计算依据，独立重算与对账复验"
+    },
+    {
+      "to": "项目经理",
+      "deliver": "接单、依赖状态及未完成证据；需按独立专业任务继续派工"
+    }
+  ],
+  "evidence_lanes": {
+    "actual_measurement": {
+      "records_received": false,
+      "cost": null,
+      "latency": null,
+      "quality": null,
+      "maintenance": null
+    },
+    "actual_bill": {
+      "received": false,
+      "amount": null
+    },
+    "usage_pricing_estimate": {
+      "calculated": false,
+      "amount": null
+    },
+    "assumption_estimate": {
+      "calculated": false,
+      "amount": null
+    }
+  },
+  "self_check": {
+    "domain": "运营经济分析",
+    "allowed_files_only": [
+      "onboarding.md",
+      "onboarding.json"
+    ],
+    "performed": [
+      "只读8项共同/本岗输入并登记哈希与定位",
+      "确认唯一领域与原门槛责任人",
+      "确认首任务依赖与实际/估算/未知分栏",
+      "编写本岗接单记录"
+    ],
+    "not_performed": [
+      "未读取凭证、实际用户数据或私有账单",
+      "未调用模型、付费、外部联系、发布或查询报价",
+      "未改教材、门槛、配置、应用、运行系统或历史报告",
+      "未自称经济性成立或独立QA验收完成"
+    ],
+    "independent_acceptance": "pending_test_engineer"
+  },
+  "limitations": [
+    "本轮只有岗位接单及前置确认，没有真实经济核算。",
+    "实际数据、试点预算/质量护栏、账单/工时与授权范围仍缺。",
+    "八门槛未修改，原责任人不变；组织配置不能关闭operating_economics。",
+    "未独立复验本轮教材或应用，现有结果仅为收到的领域报告。",
+    "岗位是按需AI代理，不是常驻员工、真人运营人员或独立账号。"
+  ]
+}

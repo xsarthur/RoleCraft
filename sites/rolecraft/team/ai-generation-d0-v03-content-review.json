@@ -1,0 +1,193 @@
+{
+  "schema": "rolecraft.ai-generation.d0.fault-transfer.content-review",
+  "schema_version": "0.1",
+  "review_id": "AI-D0-V03-CONTENT-REVIEW-20261015-01",
+  "reviewed_at": "2026-10-15T00:00:00+08:00",
+  "reviewer_role": "content-reviewer",
+  "target_role_id": "AI",
+  "target_role_name": "AI生成工程师",
+  "scope": [
+    "fault mechanism explanations",
+    "first-failure and stop/recovery evidence",
+    "state contract and transfer constraint",
+    "source/version/licence boundaries",
+    "deterministic stand-in versus real model/LangGraph/production claims"
+  ],
+  "overall_content_review": "reviewed_with_limitations",
+  "training_decision": "not_assessed",
+  "l1_or_real_model_permission": "not_granted",
+  "source_records": {
+    "transfer_md": "sites/rolecraft/team/ai-generation-d0-v03-fault-transfer.md",
+    "transfer_md_sha256": "7f85e10abd3adba65ea9951095563b96c85d91949d78dda4ac79b3843fc416a9",
+    "transfer_json": "sites/rolecraft/team/ai-generation-d0-v03-fault-transfer.json",
+    "transfer_json_sha256": "1b4fcbe6f7dbbfb65c745558630d774321e9902406ea9744a113a7f8f2a93906",
+    "fixture_script": "/private/tmp/ai_generation_d0_fault_transfer_v1.py",
+    "fixture_script_sha256": "37c18726cc2391bc7997b93e0bafa1bf626367d0d5686956316101e3f3f9ee34",
+    "author_run_output": "/private/tmp/ai_generation_d0_fault_transfer_run_v3.json",
+    "author_run_output_sha256": "6a74928b13d8fc28499b1d591d2ad5c0679852c4e9c52d9571e7f9a09d13c062",
+    "reviewer_rerun_output": "/private/tmp/ai_generation_d0_fault_transfer_review_run.json",
+    "reviewer_rerun_output_sha256": "6a74928b13d8fc28499b1d591d2ad5c0679852c4e9c52d9571e7f9a09d13c062",
+    "theory_check_md": "sites/rolecraft/team/professional-learning-theory-check-v01.md",
+    "theory_check_md_sha256": "175b31a81ad4bc0692e7d1db22c57cec138b4b33ab509876a7e7138629b28749",
+    "theory_check_json": "sites/rolecraft/team/professional-learning-theory-check-v01.json",
+    "theory_check_json_sha256": "881a3a7cc11ca48010d8c84613d4ca93752aa1cdb3da39e5c0af2436a087eac0"
+  },
+  "execution_reproducibility": {
+    "scenario_count": 5,
+    "scenario_ids": ["FI-AI-EMPTY-001", "FI-AI-DUP-001", "FI-AI-OLD-001", "FI-AI-TIMEOUT-001", "U-AI-006-T1"],
+    "python": "3.14.5",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "network": "disabled_by_task_constraint",
+    "real_model": false,
+    "langgraph_imported": false,
+    "external_writes": false,
+    "rerun_equal_to_author_output": true
+  },
+  "scenario_reviews": [
+    {
+      "scenario_id": "FI-AI-EMPTY-001",
+      "status": "pass_with_limitations",
+      "supported": ["empty result is recorded", "stop precedes retry and draft", "no external action", "bounded local retry path"],
+      "limitations": ["no real tool call", "idempotence is asserted from fixture side_effect=none", "no retry exhaustion or conflict path", "no durable failure record"]
+    },
+    {
+      "scenario_id": "FI-AI-DUP-001",
+      "status": "pass_with_limitations",
+      "supported": ["same callback_id is detected", "no second logical draft in fixture", "no external action"],
+      "limitations": ["persisted/durable wording is not backed by storage", "no concurrent ordering or late callback", "dedupe behavior is local branch logic"]
+    },
+    {
+      "scenario_id": "FI-AI-OLD-001",
+      "status": "pass_with_limitations",
+      "supported": ["incomplete completed flag is rejected", "old checkpoint is retained in local state", "no draft before recovery branch"],
+      "limitations": ["source_result is regenerated, not recovered from durable storage", "no checkpoint integrity or migration version check"]
+    },
+    {
+      "scenario_id": "FI-AI-TIMEOUT-001",
+      "status": "adequate_with_limitations",
+      "supported": ["timeout state and stop condition are represented", "partial output is marked discarded", "one bounded retry path"],
+      "limitations": ["no real clock, cancellation, late result, or partial output", "budget exhaustion is untested"]
+    },
+    {
+      "scenario_id": "U-AI-006-T1",
+      "status": "pass_with_limitations",
+      "supported": ["BASE contract is reused", "checkpoint-unavailable branch stops before draft", "recovery occurs before draft/check/hand-off in fixture", "no external action"],
+      "limitations": ["no real queue or checkpoint store", "no process interruption or concurrency", "no human approve/reject event", "no holdout transfer variant"]
+    }
+  ],
+  "supported_claims": [
+    "The deterministic fixture can reproduce five preset paths with first-failure, stopped, recovery and no-external-action fields.",
+    "The reviewer rerun produces the same output hash as the author run.",
+    "The fixture explicitly declares no real model, no LangGraph import, disabled network, no paid API and no external writes.",
+    "The local stand-in preserves an A-tenant source field and a draft-ready-for-review hand-off on successful branches."
+  ],
+  "critical_non_claims": [
+    "No real provider model output or quality evidence",
+    "No real LangGraph package/API or course-code compatibility evidence",
+    "No durable checkpoint, process crash, queue, concurrency or production recovery evidence",
+    "No proof of tenant-B rejection because no unauthorized request is executed",
+    "No general JSON Schema validation evidence",
+    "No cost, latency, user value, learner transfer or L1 capability evidence"
+  ],
+  "issues": [
+    {
+      "id": "AI-D0-V03-CR-01",
+      "severity": "P1",
+      "status": "open",
+      "title": "Tenant rejection path not exercised",
+      "evidence": "source_result() always returns the fixed A document; no B request or rejection receipt exists.",
+      "retest": "Run explicit B-document/tenant request, preserve denial code and no-downstream-generation evidence, then run A regression and an independent holdout."
+    },
+    {
+      "id": "AI-D0-V03-CR-02",
+      "severity": "P1",
+      "status": "open",
+      "title": "No durable checkpoint or recovery-fault evidence",
+      "evidence": "States are in-memory dictionaries; no durable write, process stop or actual restore occurs.",
+      "retest": "Use auditable local durable storage, inject write failure/process interruption, and record checkpoint/result references and replay key."
+    },
+    {
+      "id": "AI-D0-V03-CR-03",
+      "severity": "P1",
+      "status": "open",
+      "title": "Claim-level source and version binding is insufficient",
+      "evidence": "Only PLR-AI-006 and fixture-source-v2 fields are present; no source_ref, claim_type, course locator or LangGraph package version.",
+      "retest": "Tag each claim as course fact, official framework fact, project assumption or local observation; record section/API/package version and access date, or retain insufficient_evidence."
+    },
+    {
+      "id": "AI-D0-V03-CR-04",
+      "severity": "P1",
+      "status": "open",
+      "title": "Authorization tool contract is not executed",
+      "evidence": "The fixed source function does not accept or validate tenant/document inputs.",
+      "retest": "Execute authorized, unauthorized, missing-document and source-conflict paths."
+    },
+    {
+      "id": "AI-D0-V03-CR-05",
+      "severity": "P1",
+      "status": "open",
+      "title": "Durable-result wording overstates the stand-in",
+      "evidence": "Duplicate and old-checkpoint paths say persisted/durable/recovered while reconstructing fixed in-memory values.",
+      "retest": "Rename to synthetic state reconstruction or provide actual local durable storage evidence; do not mix the two."
+    },
+    {
+      "id": "AI-D0-V03-CR-06",
+      "severity": "P2",
+      "status": "open",
+      "title": "Timeout branch is symbolic rather than a timed fault",
+      "evidence": "The script directly appends timeout without clock, cancellation, late callback or partial-output behavior.",
+      "retest": "Inject a controllable clock/task interruption and preserve pre/post timeout evidence."
+    },
+    {
+      "id": "AI-D0-V03-CR-07",
+      "severity": "P2",
+      "status": "open",
+      "title": "Field assertions are not schema validation",
+      "evidence": "draft() creates a complete fixed dictionary and checks only fixed values; malformed/partial/extra-field cases are absent.",
+      "retest": "Add versioned schema and malformed, partial, extra-field, empty-citation and conflicting-source fixtures."
+    },
+    {
+      "id": "AI-D0-V03-CR-08",
+      "severity": "P2",
+      "status": "open",
+      "title": "State vocabulary remains unmapped",
+      "evidence": "Earlier D0 uses tool_requested/source_checked/draft_ready while v0.3 uses tool_called/tool_returned/checked/handed_off.",
+      "retest": "Freeze a versioned enum, transition conditions and an explicit old-to-new mapping with human approval states."
+    },
+    {
+      "id": "AI-D0-V03-CR-09",
+      "severity": "P2",
+      "status": "open",
+      "title": "Human intervention and holdout migration are not executed",
+      "evidence": "No approve/reject/escalate event and no non-author frozen transfer variant are present.",
+      "retest": "Run human reject/recovery and one unseen queue/checkpoint constraint under independent QA freeze."
+    },
+    {
+      "id": "AI-D0-V03-CR-10",
+      "severity": "P2",
+      "status": "open",
+      "title": "Retry safety is inferred from side_effect=none",
+      "evidence": "The empty-result retry changes idempotency key and no tool implementation demonstrates idempotent behavior or retry exhaustion.",
+      "retest": "Record actual idempotency contract, same/different key behavior, exhausted budget and source-conflict handling; otherwise keep retry_safety_unverified."
+    }
+  ],
+  "langgraph_and_licence_boundary": {
+    "resource_id": "PLR-AI-006",
+    "course_version": "No public release version/date in current resource snapshot",
+    "current_snapshot": "DeepLearning.AI AI Agents in LangGraph; intermediate Python; 1h32m; 9 videos; 6 code examples; 1 PRO assignment",
+    "course_page_access_limit": "Course-page access/version evidence remains limited; v0.3 does not add a new course snapshot.",
+    "langgraph_run": false,
+    "license": "Course content/code licence is not inferred; framework licence is separate. Link/minimal quote only until checked.",
+    "source_separation": ["course/source metadata", "official LangGraph docs/package", "project design assumptions", "local deterministic fixture"]
+  },
+  "stand_in_classification": {
+    "is_real_model_call": false,
+    "is_real_langgraph_run": false,
+    "is_durable_storage": false,
+    "is_external_write": false,
+    "classification": "deterministic local state-machine fixture evidence only",
+    "reason": "The script appends preset states and reconstructs fixed source/draft dictionaries; it does not invoke a model, LangGraph, queue or durable storage."
+  },
+  "preserve_original_and_failed_records": true,
+  "non_author_completion": true
+}

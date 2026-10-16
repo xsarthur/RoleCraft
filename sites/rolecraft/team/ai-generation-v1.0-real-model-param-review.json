@@ -1,0 +1,56 @@
+{
+  "report_id": "ai-generation-v1.0-real-model-param-review-20261016",
+  "role": "ai_generation_engineer",
+  "status": "reviewed_with_blockers",
+  "scope": "真实模型参数、Responses 协议、预算与敏感数据边界；未发起供应商调用",
+  "real_provider_called": false,
+  "secret_values_in_artifacts": false,
+  "secret_values_written": false,
+  "reviewed_files": [
+    {"path": "sites/rolecraft/server/generation/index.mjs", "sha256": "52ef3ffefe3028187192fa7712693a1929949403f651daaeb09999a7a12d5beb"},
+    {"path": "sites/rolecraft/server/generation/dev-check.mjs", "sha256": "f032c63ff03d89b724eb5ba9645cf644c94a8004f7f9fe038bc42db8415892b0"},
+    {"path": "sites/rolecraft/server/README.md", "sha256": "79e2d2dcbbedacb6a0cab7050e35f145e9f0c948e1bbc2777b9b44ca7c1f53d9"},
+    {"path": "deploy/.env.example", "sha256": "c40cde7279c46c98705dd823efde069911cf716a6c5f547c1ff9e1923288f9dd"},
+    {"path": "deploy/ecosystem.config.cjs", "sha256": "dadc7d190255936b6c509d8d3d66f4e080f8c2d0ed1e40b51f58e56deef00576"}
+  ],
+  "adapter": {
+    "endpoint": "https://api.openai.com/v1/responses",
+    "endpoint_is_configurable": false,
+    "reads": ["OPENAI_API_KEY", "OPENAI_MODEL", "OPENAI_MAX_OUTPUT_TOKENS", "ROLECRAFT_GENERATION_BUDGET_USD", "ROLECRAFT_ESTIMATED_MAX_COST_USD", "OPENAI_TIMEOUT_MS"],
+    "does_not_read": ["OPENAI_BASE_URL", "GENERATE_MODEL"],
+    "max_response_bytes": 2097152,
+    "max_input_chars": 100000,
+    "max_output_tokens": {"min": 256, "max": 16000},
+    "timeout_ms": {"min": 100, "max": 300000, "default": 60000}
+  },
+  "contract_checks": {
+    "strict_json_schema": true,
+    "source_association_validation": true,
+    "single_output_text_required": true,
+    "usage_sum_required": true,
+    "refusal_rejected": true,
+    "incomplete_rejected": true,
+    "unknown_external_outcome_on_timeout_cancel_network": true,
+    "raw_provider_body_persisted": false,
+    "actual_cost_recorded": false,
+    "provider_hard_cost_cap": false
+  },
+  "self_check": {
+    "path": "sites/rolecraft/server/generation/dev-check-results.json",
+    "simulated_cases_passed": 16,
+    "simulated_cases_total": 16,
+    "real_provider_called": false
+  },
+  "blockers": [
+    {"id": "GEN-PARAM-001", "severity": "P0", "owner": "backend_data_engineer", "status": "open", "issue": "远程配置必须确认标准 OpenAI Responses 端点；当前适配器忽略 OPENAI_BASE_URL 和 GENERATE_MODEL。"},
+    {"id": "GEN-PARAM-002", "severity": "P0", "owner": "backend_data_engineer", "status": "open", "issue": "实际模型 ID、最大输出、单次成本估算与总预算尚未签收。"},
+    {"id": "GEN-PARAM-003", "severity": "P0", "owner": "qa_engineer", "status": "open", "issue": "尚无远程真实供应商调用证据；模拟 self-check 不能替代真实验收。"},
+    {"id": "GEN-PARAM-004", "severity": "P1", "owner": "operations_analyst", "status": "open", "issue": "actualCostUsd 尚为空，供应商账单核对未完成；声明预算不是硬性费用封顶。"}
+  ],
+  "qa_handoff": {
+    "preconditions": ["health generation.configured=true", "隔离测试账户", "无个人资料的固定 e03 输入", "远程配置值不出现在日志"],
+    "observe": ["sources_validating", "generating", "structure_validating", "draft_ready", "provider response/request ID", "usage", "provenance.simulation=false", "chapter verification remains unreviewed"],
+    "must_not_claim": ["模型质量通过", "专家审核完成", "职业认证", "就业结果", "估算成本等于实际账单"]
+  },
+  "next_action": "后端先签收端点/变量/预算并部署；AI 生成工程师核对配置摘要；测试工程师再执行一次受控真实调用和独立验收。"
+}

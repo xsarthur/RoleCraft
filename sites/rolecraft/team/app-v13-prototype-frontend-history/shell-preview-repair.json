@@ -1,0 +1,15 @@
+{
+  "issueId": "DEV13-SHELL-01",
+  "scope": "PM delivery preview observation, not independent QA",
+  "observedViewport": [
+    857,
+    1120
+  ],
+  "observed": "left five navigation became 3+2 grid; sidebar remained document flow and pushed main/topbar down around 313px",
+  "cause": "legacy <=900px sidebar position:static and nav grid-template-columns survived new CSS properties",
+  "repair": "new final CSS explicitly fixes sidebar to viewport, column nav, restored labels/icons, topbar60; <=760 mobile menu retained",
+  "firstCssSha256": "3c9a81649c463fcfb44a4904fcdef87cde3e8809bd06edec092334910974ecf5",
+  "repairedCssSha256": "d190bdc09f0fb9b3ae4eb308cd52b358c935f69d3b9b93ae16ea4418789654bd",
+  "status": "repaired_pending_independent_UI_retest",
+  "evidenceLimit": "first engineering binding was provisional; the development-check output was refreshed during ongoing selfcheck and is not presented as preserved first-candidate QA evidence"
+}

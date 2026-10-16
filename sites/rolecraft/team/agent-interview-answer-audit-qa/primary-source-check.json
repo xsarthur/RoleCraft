@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-14",
+  "method": "Targeted current primary-source reading for source-only first-pass concerns. Scope limited to listed claims; not a re-audit of every external API or benchmark. No long source quotations retained.",
+  "sources": [
+    {
+      "questions": [
+        "Q75"
+      ],
+      "url": "https://arxiv.org/abs/2306.05685",
+      "checked": "Abstract identifies position, verbosity, self-enhancement biases and limited reasoning ability; current record shows 2023 v4.",
+      "supports": "Existing excerpt lists these limitations and does not transplant benchmark result as task guarantee."
+    },
+    {
+      "questions": [
+        "Q82",
+        "Q83"
+      ],
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+      "checked": "Recommendations require least privilege, deny by default and permission validation for every request.",
+      "supports": "Host authorization claims only; does not prove implementation has these controls."
+    },
+    {
+      "questions": [
+        "Q87",
+        "Q77"
+      ],
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html#data-to-exclude",
+      "checked": "Lists access tokens, passwords, connection strings, keys and sensitive data as normally excluded or protected in logs.",
+      "supports": "Logging data exclusion claim; not proof that a finite secret scan covers all encodings."
+    },
+    {
+      "questions": [
+        "M104"
+      ],
+      "url": "https://docs.python.org/3.14/library/tracemalloc.html",
+      "checked": "Read version-specific Python3.14 documentation; actual runtime here3.14.5, current page title3.14.8. Rolling /3 page now3.15 so not used as exact runtime identity.",
+      "supports": "Python allocator tracing scope, snapshots and source traces; not whole RSS/native/GPU memory measurement."
+    },
+    {
+      "questions": [
+        "M113"
+      ],
+      "url": "https://docs.vllm.ai/en/latest/configuration/optimization/",
+      "checked": "Current V1 docs discuss KV capacity, preemption/recompute, chunked prefill and tuning tradeoffs between TTFT and ITL.",
+      "supports": "Generic scheduling tradeoff only. No GPU measurement, no benchmark claim, no universal compute/memory-bound assumption."
+    },
+    {
+      "questions": [
+        "Q78"
+      ],
+      "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+      "checked": "Current primary methodology page reviewed; teaching single-variable/factorial/oracle experiment is marked as a design, not a vendor API or benchmark result.",
+      "supports": "Evaluation methodology context only; does not validate a real product improvement."
+    }
+  ]
+}

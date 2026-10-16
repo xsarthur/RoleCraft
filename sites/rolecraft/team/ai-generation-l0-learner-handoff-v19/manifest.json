@@ -1,0 +1,69 @@
+{
+  "version": "v18",
+  "artifacts": {
+    "d0-05/holdout-output.json": {
+      "path": "d0-05/holdout-output.json",
+      "bytes": 175,
+      "sha256": "a45b0f606fc47c2ce44274eccd01c27cd21c9eb4fcd005db43a90bde13a7e9da"
+    },
+    "d0-05/matrix.json": {
+      "path": "d0-05/matrix.json",
+      "bytes": 296,
+      "sha256": "6eaf7b0631ebbd48b73ab7dd9554f92cdf969daf5509999e44653ce3de3422ce"
+    },
+    "d0-05/execution-log.json": {
+      "path": "d0-05/execution-log.json",
+      "bytes": 315,
+      "sha256": "a5c2274caaf9371e1cd69d5bd7bc76908313a0291b0419c42533285b12fa45ec"
+    },
+    "d0-05/first_failure.json": {
+      "path": "d0-05/first_failure.json",
+      "bytes": 145,
+      "sha256": "f97d5d546055db5b3ec021aeae269e029425fea43cd53b48e6d38acc36b38341"
+    },
+    "d0-05/holdout.json": {
+      "path": "d0-05/holdout.json",
+      "bytes": 175,
+      "sha256": "a45b0f606fc47c2ce44274eccd01c27cd21c9eb4fcd005db43a90bde13a7e9da"
+    },
+    "d0-05/holdout-input.json": {
+      "path": "d0-05/holdout-input.json",
+      "bytes": 106,
+      "sha256": "47ce40bc3d260527d6f98f1dca5f7559745e936ccea48533d594104bdb537ed2"
+    },
+    "evidence_cards/d0-01.json": {
+      "path": "evidence_cards/d0-01.json",
+      "bytes": 111,
+      "sha256": "e53a7756afc81ddc45617fd3303a2c1bf5cc5061e3e59193f65eefc3e6ec9cf4"
+    },
+    "evidence_cards/d0-04.json": {
+      "path": "evidence_cards/d0-04.json",
+      "bytes": 111,
+      "sha256": "43daf256cd7bb77b5defefcb2ba1f100cb5b2060891263135814721da0ee9ad8"
+    },
+    "evidence_cards/d0-05.json": {
+      "path": "evidence_cards/d0-05.json",
+      "bytes": 201,
+      "sha256": "d9ac883aa1f4d3d84903a5265f8f96d329d0c62202373e1cab47066ccb9eb0f2"
+    },
+    "evidence_cards/d0-02.json": {
+      "path": "evidence_cards/d0-02.json",
+      "bytes": 111,
+      "sha256": "b5c536030ba60fee5ecf0a2573dbbe902f4e7c9bc26ccb0259043dc9ef7a3c20"
+    },
+    "evidence_cards/d0-03.json": {
+      "path": "evidence_cards/d0-03.json",
+      "bytes": 105,
+      "sha256": "232425a4e3d1547cdcc166d9918bfe7eb7ccba27ea2aaaf3f8b30e6dc6d11c75"
+    }
+  },
+  "self_reference_rule": "manifest self bytes/SHA null",
+  "manifest_bytes": null,
+  "manifest_sha256": null,
+  "qa_status": "pending",
+  "human_receipt": "pending",
+  "l0_status": "not_assessed",
+  "d0_status": "not_assessed",
+  "l1_decision": "not_granted",
+  "l2_decision": "not_granted"
+}

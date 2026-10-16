@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "version": "textbook-v10-opening",
+  "date": "2026-10-11",
+  "role": "测试工程师",
+  "status": "completed",
+  "documentScopeStatus": "met_with_limitations",
+  "fullProductStatus": "not_met",
+  "currentVersionBindings": [
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/00-learning-route.md",
+      "sha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+      "bytes": 14114
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/README.md",
+      "sha256": "6958afe2292ed024bf6fb7a526869a4ecce3c22bc124c9f8ae81ad8f8014a8cf",
+      "bytes": 3594
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/textbooks/v10/agent-engineering-textbook.md",
+      "sha256": "6707a4f03b298a5b234ce56a88edcbd9d79af6d40cb978227461a9d9d522f76e",
+      "bytes": 392881
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-spec.md",
+      "sha256": "bd31d36c5c4e86d48e196ccf1e008d9b1f73e7364939789622834dd3a57cbdf8",
+      "bytes": 11425
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-spec.json",
+      "sha256": "8da1252eb5b401baae421468bd92022f5c445f0f6d7670cca1bc88fc470697ff",
+      "bytes": 25943
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-author.md",
+      "sha256": "ca7c729367f54256271a3040fe6fb41a4891b4f25802d4a7c401d5df48f72a8e",
+      "bytes": 5690
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-author-assembly-manifest.json",
+      "sha256": "476bab05b50ca9753870a6db4ebba64dea53cd1b24558a4b9eca24dfcb388885",
+      "bytes": 89763
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-content-review.md",
+      "sha256": "45d1b0a4a4cef987d08fd9e2e48077ab7c3dbc7a4a8b4d3fceaf6b4ed6f88756",
+      "bytes": 5888
+    },
+    {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-content-review.json",
+      "sha256": "9b6c515e3ebc89ea06cf9d0347775b736bb3370018abacb6af68aa79f0921cc3",
+      "bytes": 32780
+    }
+  ],
+  "evidence": {
+    "actualBaseline": {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-qa-history/baseline.json",
+      "sha256": "4a4f14882d72ddc4bcb9d2bea50337bce1e39bacde1004e20bc80916a5969058",
+      "bytes": 41494
+    },
+    "retained19And39Fences": {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-qa-history/stage01-migration/retained-chapters.json",
+      "sha256": "bcd499e44a4eeae665e174fcf0273fbd28dd49e3bed9b3853fc1d0d46487afff",
+      "bytes": 37891
+    },
+    "firstVisualFailures": {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-qa-history/stage02-figures/visual-findings-before.json",
+      "sha256": "68db40faff4083974a0fc1297fe9d74390d887c9484fa042f3cfbd7dcd104ee6",
+      "bytes": 2434
+    },
+    "finalOriginalVisualRecheck": {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-qa-history/stage02-figures/after-layout-repair-3/visual-recheck.json",
+      "sha256": "4578ee31cc4dcf8a61c81f09887fe5442f88beee6a9fac29f46a3c8459f9460b",
+      "bytes": 7616
+    },
+    "openingChecks": {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-qa-history/stage03-opening/opening-checks.json",
+      "sha256": "06970007e4e9e75303be64fe832054d416769a0301d598d987f2f3b941340289",
+      "bytes": 9404
+    },
+    "finalOpeningNarrowRebinding": {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-qa-history/stage03-opening/final-source-rebinding.json",
+      "sha256": "46cee9d80e8d4ec2c6a8346181825b576e5ad05522a0c59e97fe94721dd529ff",
+      "bytes": 604
+    },
+    "independentAssemblyAndChapterGroups": {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-qa-history/stage04-final-artifacts/artifacts.json",
+      "sha256": "b6d1aee6d87ec8d6ce98016a45d32a0444b10689df6a1b9ec0292bb0979699a0",
+      "bytes": 180730
+    },
+    "finalAllSourcesAssetsReviewAndLinks": {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-qa-history/stage05-final-binding/final-bindings.json",
+      "sha256": "cd751c8ecb5e9690f6c54a3a102818bb292dc627a74646b17eae1e6d97772872",
+      "bytes": 192709
+    },
+    "protectedFinal": {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-qa-history/stage05-final-binding/protected-final.json",
+      "sha256": "74ba50374a4f96c3b44a0945b5904f4e5d03bbfe19374745bf56ce76f7bc5b01",
+      "bytes": 25171
+    },
+    "currentEightGates": {
+      "path": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/team/textbook-v10-opening-qa-history/stage06-current-gates.json",
+      "sha256": "710e0b259aad3ac35c126c5b1057fdf934cf4d8354a471bf148f1fc37951bd87",
+      "bytes": 5449
+    }
+  },
+  "actualCompletedScope": {
+    "opening": "Agent definition, task needs, runtime loop, engineering lifecycle, 20-chapter map, diagnosis and retained stage artifacts inspected; final first-use/source-aside edit read separately",
+    "figures": "Both current author PNGs actually viewed and both SVGs independently rasterized at 760px for viewing; original and residual overlap/cross-node defects rechecked after author repairs",
+    "professionalMigration": "19 current bodies permit only 10 exact historical-QA link-label changes; actual titles, formal prerequisites and all 39 full fences preserved",
+    "originalAbilityPreservation": "Original12 modules/24 objectives/48 knowledge points and rubrics retained with unchanged bodies and frozen mapping; not a new full professional quality or learner-attainment verdict",
+    "assembly": "Whole392881-byte book equals20 current sources under only allowed heading/link/footer transforms;39 complete fences preserve order",
+    "navigation": "413 local link occurrences with final handoffs resolve; no invalid checked Markdown anchors or report line references",
+    "protection": "55 explicit public-static files match their actual baseline at two read intervals; program whitelist22 unchanged; AGENTS/TASKS/R13 PM administration outside this v10 whitelist"
+  },
+  "visualFindings": [
+    {
+      "id": "QA10-01",
+      "status": "closed_original_visual_recheck",
+      "repairOwner": "教材研发员",
+      "retestOwner": "测试工程师"
+    },
+    {
+      "id": "QA10-02",
+      "status": "closed_original_visual_recheck",
+      "repairOwner": "教材研发员",
+      "retestOwner": "测试工程师"
+    }
+  ],
+  "executionBoundary": {
+    "textbookBehaviorExecutionsThisRound": 0,
+    "newExecutableExampleFences": 0,
+    "old39BehaviorRerun": false,
+    "actualMechanicalPython": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+    "actualOfflinePreviewRenderer": "Node v24.16.0 + bundled sharp0.35.5; only existing SVG artifact viewing",
+    "historicalBehavior": "v09 foundation Python3.14.5 and v08 limited Python3.12.14/SQLite3.53.1 remain historical source/path evidence. No copied v10 execution or old count/pass inherited.",
+    "browserCSSOrMobileRendering": false,
+    "realProviderBusinessOrProductionExecution": false
+  },
+  "gateSummary": {
+    "pass": [
+      "iteration_trace"
+    ],
+    "fail": [
+      "real_generation",
+      "reliable_delivery"
+    ],
+    "insufficient": [
+      "user_value",
+      "teaching_quality",
+      "comparative_advantage",
+      "learner_creation",
+      "operating_economics"
+    ],
+    "passScope": "Only current opening-document improvement/retest trace; all full-system gates unchanged"
+  },
+  "limitations": [
+    "AI static content review and visual/source checks do not establish user reading approval, actual comprehension or learning effect.",
+    "No new full technical audit of19 retained chapters, human industry-expert review, learner certification or industry-advanced comparison.",
+    "Fixed/dynamic complete pseudocode and actual external provider/business contracts unexecuted in this round.",
+    "No enabled browser;760px was actual offline raster preview, not browser CSS/mobile acceptance.",
+    "Protected comparison proves two explicit55-file record points only; no claim about all files throughout the turn, no private/config/env/database read."
+  ],
+  "administrativeFreezePolicy": "Do not bind PM final AGENTS/TASKS/R13 administrative records; author/reviewer do not back-bind QA final hash."
+}

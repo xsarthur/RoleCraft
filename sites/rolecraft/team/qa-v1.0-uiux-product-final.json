@@ -1,0 +1,187 @@
+{
+  "reportId": "qa-v1.0-uiux-product-final",
+  "version": "rolecraft-1.0",
+  "role": "测试工程师",
+  "scope": "独立复核远程单环境 UI/UX视觉与交互、产品核心只读路径；不修代码、不写真实数据库。",
+  "testedAt": "2026-10-15T19:22:47Z",
+  "environment": {
+    "baseUrl": "http://111.231.8.78/#learn",
+    "apiBaseUrl": "http://111.231.8.78",
+    "releaseVersion": "rolecraft-1.0",
+    "responseDate": "Thu, 15 Oct 2026 19:22 UTC",
+    "nodeVersion": "v24.20.0",
+    "contentVersion": "textbook-v12",
+    "retrievalVersion": "content-retrieval-0.12-v12",
+    "providerCalled": false,
+    "databaseWrites": false,
+    "cookiesOrCredentialsUsed": false
+  },
+  "method": [
+    "curl over public HTTP with read-only GET and read-only public POST retrieval/query payloads",
+    "remote asset SHA256 compared with local dist files",
+    "static source inspection only where live browser observation was unavailable",
+    "unauthenticated account/task endpoint boundary checks"
+  ],
+  "assetSha256": {
+    "index.html": "de8647133091a34e767816c02cc47d2d792d88ff41b5e851a1b6002bf2dc817b",
+    "styles.css": "47850ba437e3598424846361bb10463fc83513a3eae4d5ff7f1abcd6ad404139",
+    "learning-workbench.css": "b35eaef44e73a56e2b1df0985fdfe8c960393ca086ffecaeba96b51bf798336c",
+    "learning-experience-v13.css": "bd29b71eed6e7742b1e39ac13dabc9ef07ac5dfd9bd018e2d16b82b4a55cf509",
+    "auth-career-v15.css": "7ee6e33b9cc7c1406b26143475b85c45d8a2cb67c7403bee616bf13e7bfb119",
+    "interview-answer-reader.css": "94a65d0e234357678da6d5d8dcce2ef9fee39f9004b3611764935e248e255bff",
+    "learning-workbench.js": "2086c9ae26ee158e1bf4c89a296513b24b9173fb65a098bf03f9cd27c065668e",
+    "learning-experience-v13.js": "3b17e6ce3b1d06c6aecea39f2f69a8745233f85192b275c7168016b556e89d65",
+    "auth-career-v15.js": "48f6b83354c89546cd884ab505e73653814f03cf323c20aad5d7561869be078c",
+    "app.js": "68415ce3c8e2695cbb7807fb4ddb02abf929c76ab9b22563e791081002817289"
+  },
+  "cases": [
+    {
+      "id": "UI-01",
+      "area": "发布版本与健康",
+      "status": "pass",
+      "evidence": "GET http://111.231.8.78/api/health -> HTTP 200; X-Rolecraft-Release-Version=rolecraft-1.0; nodeVersion=v24.20.0; contentVersion=textbook-v12; retrievalVersion/content index content-retrieval-0.12-v12; units=30; localSemanticPrepared=true; providerCalled=false.",
+      "limits": "generation configured=false; paid/external model was not invoked."
+    },
+    {
+      "id": "UI-02",
+      "area": "客户端资源传输",
+      "status": "pass",
+      "evidence": "index.html, styles.css, learning-workbench.css, learning-experience-v13.css, auth-career-v15.css, interview-answer-reader.css, learning-workbench.js, learning-experience-v13.js, auth-career-v15.js and app.js all returned HTTP 200 with X-Rolecraft-Release-Version=rolecraft-1.0. Remote SHA256 matched the local dist files listed in assetSha256.",
+      "limits": "HTTP transport only; browser parse/render not independently observed."
+    },
+    {
+      "id": "UI-03",
+      "area": "教材目录与版本身份",
+      "status": "pass",
+      "evidence": "GET /api/content/catalog -> 200; textbook-v12; 30 units, 5 assets, 20 references; corpusHash=c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757; bookSha256=25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c2801e. Explicit v10 catalog -> 200; bogus version -> 400 content_version_invalid.",
+      "limits": "No visual check of the route map."
+    },
+    {
+      "id": "UI-04",
+      "area": "教材章节定位",
+      "status": "pass",
+      "evidence": "GET /api/content/chapter/00-learning-route -> 200 with 7 sections and stable href #learn/agent/00-learning-route/s-3b82fdeafaab; n03-planning-reflection -> 200 with 8 sections; c01-control-loop -> 200 with 29 sections. Missing unit -> 404 not_found.",
+      "limits": "Clicking a returned href and focus/scroll behavior were not browser-tested."
+    },
+    {
+      "id": "UI-05",
+      "area": "内容推荐 React 术语与出处",
+      "status": "pass",
+      "evidence": "POST /api/content/recommend {query:react} -> 200 status=recommended; matchingMethods include local_semantic_vectors, local_task_concepts, source_term_recall; first result n03-planning-reflection, sourcePath=textbooks/v12/n03-planning-reflection.md, sourceSha256=76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd, href=#learn/agent/n03-planning-reflection/s-dc2e15b8cffc; providerCalled=false.",
+      "limits": "No visual click-through to the source card."
+    },
+    {
+      "id": "UI-06",
+      "area": "学习查询澄清",
+      "status": "pass",
+      "evidence": "POST /api/agent/learning/query with valid requestId/workbenchVersion/local-workbench-0.11/agentVersion/agent-system-v0.12 and query=React -> 200 status=needs_clarification; asks Agent ReAct method vs frontend React framework and supplies two options; providerCalled=false.",
+      "limits": "No live form submission was performed."
+    },
+    {
+      "id": "UI-07",
+      "area": "学习查询推荐",
+      "status": "pass",
+      "evidence": "Same endpoint query=如何让模型根据新观察规划下一步 -> 200 status=recommended, resultType=plan, engineMode=local_semantic_retrieval, results=2, providerCalled=false; dialog is extractive and includes教材版本身份.",
+      "limits": "No DOM rendering or citation activation check."
+    },
+    {
+      "id": "UI-08",
+      "area": "无匹配与输入错误",
+      "status": "pass",
+      "evidence": "POST /api/content/recommend query=火星上的陶艺课程 -> 200 status=no_match, results=0. Learning query with same unrelated text -> 200 status=needs_clarification and asks for Agent/software/product relation. Empty query -> 400 input_invalid query format. No fabricated answer observed.",
+      "limits": "Only API responses; visual error and recovery affordances untested."
+    },
+    {
+      "id": "UI-09",
+      "area": "账户/任务/记录边界",
+      "status": "pass",
+      "evidence": "Unauthenticated GET /api/auth/me, /api/profile/career, /api/jobs, /api/chapters, /api/submissions, /api/reviews, /api/export each returned HTTP 401 unauthenticated with releaseVersion=rolecraft-1.0.",
+      "limits": "This confirms auth gating only; no account was created and no task/progress/recovery mutation was attempted."
+    },
+    {
+      "id": "UI-10",
+      "area": "导航与入口可发现性",
+      "status": "insufficient",
+      "evidence": "Current deployed index source contains nav buttons for 首页、课程学习、题库、复习、自评检验、学习记录、个人设置; mobile-menu has aria-controls/aria-expanded; onboarding dialog has labels and live status regions. This is static source evidence, not a live browser observation.",
+      "limits": "CUA/IAB in this sub-agent could not expose the existing remote tab; getTab/getAXState timed out and createBrowserTab visibility is unsupported. No screenshot/AX tree, click, route change or content load was independently observed."
+    },
+    {
+      "id": "UI-11",
+      "area": "当前任务状态与恢复",
+      "status": "insufficient",
+      "evidence": "Deployed learning-experience-v13.js contains explicit not_started/in_progress/interrupted/browsed states, actions 开始学习/继续学习/恢复任务/回顾, and save/resume links; learning-workbench.js contains data-lw-interrupt and local browser persistence.",
+      "limits": "No live browser state transition, reload, resume URL, interruption or localStorage persistence test."
+    },
+    {
+      "id": "UI-12",
+      "area": "题库/复习/自评入口",
+      "status": "insufficient",
+      "evidence": "Deployed client source contains filters for fixed100/market14, question detail, review state, self-check flow, source excerpts and links back to教材.",
+      "limits": "No live page interaction, answer entry, mark/review transition, or browser persistence was observed."
+    },
+    {
+      "id": "UI-13",
+      "area": "P01项目提交/版本链",
+      "status": "insufficient",
+      "evidence": "Client source exposes project fields and local save/export; server protected account endpoints are present and unauthenticated access is rejected.",
+      "limits": "No authenticated isolated account was available; no create/update/duplicate-version/recovery operation was attempted against the remote database."
+    },
+    {
+      "id": "UI-14",
+      "area": "视觉响应式与可访问性",
+      "status": "insufficient",
+      "evidence": "Source includes viewport meta, semantic nav/main/dialog, labels, aria-live/status, aria-controls and focusable map container.",
+      "limits": "Visual spacing, contrast, breakpoint behavior, keyboard-only traversal, focus order, screen reader output, reduced-motion and zoom were not tested because browser screenshot/AX channel was unavailable in this sub-agent."
+    },
+    {
+      "id": "UI-15",
+      "area": "正式产品验收结论",
+      "status": "not_met",
+      "evidence": "Public health, curriculum/catalog, chapter identity, retrieval/recommendation, clarification/no-match and auth boundary passed over current remote HTTP deployment.",
+      "limits": "Final UI/UX and product acceptance requires independent browser evidence for live rendering and interactions; authenticated task/record paths were not exercised. Therefore the full product cannot be marked final-success from this run."
+    }
+  ],
+  "browserObservation": {
+    "status": "unavailable",
+    "attempts": [
+      "existing IAB tab id=1; getTab/getAXState timed out at 30s",
+      "createBrowserTab visible=true rejected in sub-agent: IAB visibility is not supported",
+      "createBrowserTab visible=false timed out"
+    ],
+    "notObserved": [
+      "screenshot",
+      "AX tree",
+      "clicks",
+      "form submission",
+      "hash route transitions",
+      "responsive breakpoints",
+      "keyboard traversal",
+      "screen reader output",
+      "focus order",
+      "zoom/reduced motion"
+    ]
+  },
+  "conclusion": {
+    "apiAndContentScope": "met_within_scope",
+    "uiuxLiveScope": "insufficient_evidence",
+    "productFinalAcceptance": "not_met",
+    "reason": "当前远程 HTTP 契约与内容检索路径可重复通过，但没有独立浏览器渲染/交互证据，且账户绑定任务、恢复、题库复习自评和 P01 提交未使用隔离账户实测。不能把静态源码或工程自检当作最终 UI/UX 与产品通过。"
+  },
+  "nextActions": [
+    {
+      "owner": "项目经理",
+      "action": "协调具备浏览器 AX/截图能力的独立 QA 通道，在远程单环境执行访客流程；准备可回收隔离账户或不写库的测试夹具后再验账户任务/记录链。",
+      "retest": "重跑 UI-09 至 UI-15，保留截图、AX树、请求响应和版本哈希。"
+    },
+    {
+      "owner": "设计师/软件工程师",
+      "action": "等待独立浏览器证据；若发现布局、交互或可访问性缺陷，按对应责任域修复并提交新版本。",
+      "retest": "新版本必须重新进行完整视觉与交互复验。"
+    },
+    {
+      "owner": "产品经理",
+      "action": "根据用户方向保持“行业知识与面试准备”价值表述，确认最终验收门槛与未验证项。",
+      "retest": "按产品门槛核对真实路径证据，不能用 API 200 替代用户可用性。"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "design-v1.0-p0-reacceptance-1",
+  "role": "designer",
+  "date": "2026-10-16",
+  "target": {
+    "url": "http://111.231.8.78/#learn",
+    "environment": "remote-single-dev"
+  },
+  "method": {
+    "browser": "CUA remote browser unavailable in subagent; HTTP/static checks only",
+    "visualEvidence": false,
+    "viewports": [
+      {"width": 1280, "height": 720, "status": "not_observed"},
+      {"width": 390, "height": 844, "status": "not_observed"},
+      {"width": 375, "height": 844, "status": "not_observed"},
+      {"width": 320, "height": 844, "status": "not_observed"}
+    ],
+    "codeChanged": false,
+    "httpEvidence": {
+      "healthStatus": 200,
+      "releaseVersion": "rolecraft-1.0",
+      "contentVersion": "textbook-v12",
+      "questions": 114,
+      "knowledgePoints": 240,
+      "providerCalled": false,
+      "assets": {
+        "auth-career-v15.css": {"status": 200, "sha256": "1d5c799bb641056b051bf4a522d960f6863fee8ab6686e55fbd42f297f0fb13a"},
+        "learning-v13-data.js": {"status": 200, "sha256": "6d27dabc1cedc15236de846c44dae8f66c4f82b77c2ede543941d3589e8772a4"}
+      }
+    }
+  },
+  "overall": {
+    "status": "insufficient",
+    "reason": "Remote HTTP and asset hashes are verified, but no browser screenshot, DOM interaction, keyboard focus, or viewport evidence was available in the design subagent; the P0 visual and interaction acceptance remains open."
+  },
+  "checks": [
+    {"id": "P0-DESIGN-1280", "status": "insufficient", "scope": "not_observed", "evidence": "No 1280x720 browser rendering or DOM snapshot."},
+    {"id": "P0-DESIGN-390", "status": "insufficient", "scope": "not_observed", "evidence": "No 390x844 browser rendering or DOM snapshot."},
+    {"id": "P0-DESIGN-375", "status": "insufficient", "scope": "not_observed", "evidence": "No 375x844 browser rendering or overflow measurement."},
+    {"id": "P0-DESIGN-320", "status": "insufficient", "scope": "not_observed", "evidence": "Responsive CSS is deployed, but no 320x844 screenshot or boundary measurement; previous clipping issue cannot be closed."},
+    {"id": "P0-QBANK-01", "status": "insufficient", "scope": "static_only", "evidence": "Remote data resource reports 114 questions, but no question card was displayed in a browser."},
+    {"id": "P0-QBANK-02", "status": "insufficient", "scope": "not_observed", "evidence": "No details/source expansion or textbook link was clicked."},
+    {"id": "P0-QBANK-03", "status": "insufficient", "scope": "not_observed", "evidence": "No read-then-self-assessment flow was exercised."},
+    {"id": "P0-TASK-01", "status": "insufficient", "scope": "not_observed", "evidence": "Task state and resume CTA were not observed."},
+    {"id": "P0-ASK-01", "status": "insufficient", "scope": "not_observed", "evidence": "Ask-textbook open, result/source, and no-match states were not interacted with."},
+    {"id": "P0-MENU-01", "status": "insufficient", "scope": "not_observed", "evidence": "Mobile menu and Escape close were not observed."},
+    {"id": "P0-FOCUS-01", "status": "insufficient", "scope": "not_observed", "evidence": "No Tab/Shift+Tab/Escape or activeElement/focus-ring evidence."},
+    {"id": "P0-SCOPE-01", "status": "pass", "scope": "http_static_only", "evidence": "Release and content identity are visible in HTML/health responses; no employment or certification promise was inferred."}
+  ],
+  "gaps": [
+    {"id": "GAP-P0-BROWSER-EVIDENCE", "priority": "P0", "owner": "project-manager/qa-engineer/designer", "action": "Run the requested four viewport browser acceptance in the main browser session and attach screenshots, DOM, and interaction records."},
+    {"id": "GAP-P0-QBANK-INTERACTION", "priority": "P0", "owner": "product-manager/client/qa", "action": "Verify question card, detail/source, and read-then-self-assessment flow in the remote UI."},
+    {"id": "GAP-P0-A11Y", "priority": "P1", "owner": "qa-engineer/designer", "action": "Verify keyboard focus, focus restoration, screen reader, 200% zoom, contrast/grayscale, and soft keyboard."}
+  ],
+  "limitations": [
+    "No code or data changes were made.",
+    "Subagent did not have a browser tab; HTTP/static verification cannot substitute for visual and interaction evidence.",
+    "No conclusion about employment, certification, professional competence, expert approval, or industry advantage is made."
+  ]
+}

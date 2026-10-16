@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "reviewId": "uiux-textbook-content-review-r3",
+  "date": "2026-10-14",
+  "reviewerRole": "内容审校员",
+  "reviewerIdentity": "AI技术内容审校，非真人课程架构师、QA、设计专家、无障碍专家、真实学习者或就业评估",
+  "sourceVersion": "uiux-design-v01-r3-narrow",
+  "status": "reviewed_with_limitations",
+  "scope": [
+    "仅复核C07研究JSON语法/哈希/当前canonical绑定",
+    "仅复核README 00-25先修集合与canonical reading_order一致性",
+    "仅复核README作者入口与author-handoff-v3/v4声明一致性"
+  ],
+  "sourceBindings": [
+    {"path":"sites/rolecraft/textbooks/uiux-design-v01/README.md","sha256":"2223b1faaa4c2793e18626c2653dad9369fa5e9e68cbc8bde310dae57c8fa2e9"},
+    {"path":"sites/rolecraft/textbooks/uiux-design-v01/author-handoff-v3.md","sha256":"c33a9e31f82c10cdceb5f97fbae56643ba62664471c92f1cb8e5dac3db516b7d"},
+    {"path":"sites/rolecraft/textbooks/uiux-design-v01/author-handoff-v4.md","sha256":"43d1a474a9e5a429ea88dcc9f8385d2ad842632fd21f25fd739206379265b116"},
+    {"path":"sites/rolecraft/team/uiux-textbook-course-architecture.md","sha256":"a1702312c6f526a8ad00decdc9a6b32e44f453e003032503858803272281ada5"},
+    {"path":"sites/rolecraft/team/uiux-textbook-course-architecture.json","sha256":"3eca639d9d7a8408686b0cfd19e185ec3fe9a68c6ca02e1d074932ba46b5dbc1"},
+    {"path":"sites/rolecraft/team/uiux-interview-questions-3m-research.json","sha256":"0f2df0d9b0c9e179fc5a60de169c6ff2dc6ce837928cc0812038719f416443f8"},
+    {"path":"sites/rolecraft/team/uiux-interview-questions-3m-research-fix.md","sha256":"aaf1c5280a6bd6c29095451e45ffb444b5a8d67c7035ba3ebeaacf195190d258"},
+    {"path":"sites/rolecraft/team/uiux-interview-questions-3m-research-fix.json","sha256":"b52ef8c6532391ae78fdb18ad2e66e0f73457aa1ce4c3e2178d04b62fb6d36c5"}
+  ],
+  "results": {
+    "C07": {
+      "status": "closed_static_with_history",
+      "severity": "P2",
+      "evidence": [
+        "canonical architecture md/json current binding 0f2df0d9...",
+        "research fix record original 7aa79f20... -> fixed 0f2df0d9...",
+        "python JSON parse passed; items=103; sources=5"
+      ],
+      "finding": "旧语法错误和旧哈希保留为历史；当前研究JSON修复后绑定已进入canonical规格，当前文件哈希一致。",
+      "limits": "不重新证明来源主张、题型代表性或就业概率"
+    },
+    "prerequisites": {
+      "status": "closed_static_with_scope_limit",
+      "rowsChecked": 26,
+      "diffCount": 0,
+      "focus": {
+        "unit24": {"canonical":["10","13","18","20","21","23"],"readme":["10","13","18","20","21","23"]},
+        "unit25": {"canonical":["23","24"],"readme":["23","24"]},
+        "unit22": {"canonical":["07","11","17","20"],"readme":["07","11","17","20"],"unit25Role":"advanced_related_optional"}
+      },
+      "finding": "README 00-25先修集合与canonical JSON reading_order逐行一致；完整课程可学性和真实学习迁移未验证。"
+    },
+    "authorEntry": {
+      "status": "closed_static_with_scope_limit",
+      "evidence": [
+        "README links author-handoff-v3 and retains v2/v1",
+        "author-handoff-v3 records r3 prerequisite edits",
+        "author-handoff-v4 states v3 is current entry and v1/v2 are history",
+        "relative links resolve"
+      ],
+      "finding": "README、v3、v4关于当前作者入口的声明一致。",
+      "limits": "入口一致不等于26单元正文、真人可学性或职业能力通过"
+    }
+  },
+  "inheritedLimitations": {
+    "C02": "AI状态契约/ResultCard/RetrievalState和SVG状态粒度仍不完全一致",
+    "C05": "200%缩放仍缺320 CSS px/400%等价重排与最小语义交接例",
+    "C06": "跨能力题型重复ID仍无primary_unit/secondary_unit",
+    "C08": "来源身份完整性与语义支持未分层",
+    "C09": "SVG未实际渲染且状态粒度有合并差异"
+  },
+  "staticChecks": {
+    "canonicalArchitectureJson": "valid",
+    "researchJson": "valid; items=103; sources=5",
+    "researchHashMatchesCanonical": true,
+    "readmePrerequisiteRowsChecked": 26,
+    "readmePrerequisiteDiffs": 0,
+    "authorEntryRelativeLinks": "pass",
+    "runtimeLearnerBrowserA11yModel": "not_run"
+  },
+  "limits": [
+    "仅本轮窄范围，不重审正文机制",
+    "未验证真人学习、陌生任务迁移、浏览器/辅助技术、模型/API或可用性"
+  ]
+}

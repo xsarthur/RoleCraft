@@ -1,0 +1,194 @@
+{
+  "schema": "rolecraft.textbook.qa.v4",
+  "artifact": "AI 时代 UI/UX 设计入门",
+  "version": "v0.1-r4",
+  "at": "2026-10-14T00:00:00+08:00",
+  "role": "测试工程师",
+  "scope": [
+    "README/current author v4/v3 entry",
+    "canonical course architecture md/json",
+    "repaired research JSON",
+    "state SVG",
+    "main textbook"
+  ],
+  "conclusion": "met_within_scope",
+  "full_career_goal": "not_met",
+  "baseline": {
+    "files": [
+      {
+        "path": "sites/rolecraft/textbooks/uiux-design-v01/README.md",
+        "description": "当前目录入口",
+        "bytes": 6419,
+        "sha256": "2223b1faaa4c2793e18626c2653dad9369fa5e9e68cbc8bde310dae57c8fa2e9",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/textbooks/uiux-design-v01/uiux-design-textbook.md",
+        "description": "正文",
+        "bytes": 37512,
+        "sha256": "a5406a6db125c3174af7d6228d0fcd57c9030131c4bc321325abf483278ccbd4",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/textbooks/uiux-design-v01/author-handoff-v4.md",
+        "description": "作者 v4 交接",
+        "bytes": 561,
+        "sha256": "43d1a474a9e5a429ea88dcc9f8385d2ad842632fd21f25fd739206379265b116",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/textbooks/uiux-design-v01/author-handoff-v3.md",
+        "description": "作者当前入口目标",
+        "bytes": 1442,
+        "sha256": "c33a9e31f82c10cdceb5f97fbae56643ba62664471c92f1cb8e5dac3db516b7d",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/textbooks/uiux-design-v01/assets/uiux-state-map-v01.svg",
+        "description": "状态视觉示意",
+        "bytes": 4609,
+        "sha256": "97ea6a67ed5ac29ba5f244ff9e35b1392a38486c13d1986c436230fd343b1254",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/team/uiux-textbook-course-architecture.md",
+        "description": "canonical课程架构 Markdown",
+        "bytes": 28095,
+        "sha256": "a1702312c6f526a8ad00decdc9a6b32e44f453e003032503858803272281ada5",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/team/uiux-textbook-course-architecture.json",
+        "description": "canonical课程架构 JSON",
+        "bytes": 23546,
+        "sha256": "3eca639d9d7a8408686b0cfd19e185ec3fe9a68c6ca02e1d074932ba46b5dbc1",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/team/uiux-interview-questions-3m-research.json",
+        "description": "修复后研究 JSON",
+        "bytes": 86179,
+        "sha256": "0f2df0d9b0c9e179fc5a60de169c6ff2dc6ce837928cc0812038719f416443f8",
+        "status": "received"
+      },
+      {
+        "path": "sites/rolecraft/team/uiux-interview-questions-3m-research-fix.md",
+        "description": "研究修复记录",
+        "bytes": 766,
+        "sha256": "aaf1c5280a6bd6c29095451e45ffb444b5a8d67c7035ba3ebeaacf195190d258",
+        "status": "received"
+      }
+    ],
+    "frozen_before_checks": true
+  },
+  "checks": [
+    {
+      "id": "R4-QA-01",
+      "name": "readme_author_handoff_links",
+      "status": "pass",
+      "local_link_count": 7,
+      "failures": [],
+      "author_v3_linked": true,
+      "author_v4_present": true
+    },
+    {
+      "id": "R4-QA-02",
+      "name": "canonical_curriculum_binding",
+      "status": "pass",
+      "architecture_version": "uiux-textbook-course-architecture-v0.1-r3",
+      "canonical_hash": "0f2df0d9b0c9e179fc5a60de169c6ff2dc6ce837928cc0812038719f416443f8",
+      "actual_research_hash": "0f2df0d9b0c9e179fc5a60de169c6ff2dc6ce837928cc0812038719f416443f8",
+      "hash_match": true,
+      "history_old_hash_only": true
+    },
+    {
+      "id": "R4-QA-03",
+      "name": "prerequisite_mapping",
+      "status": "pass",
+      "readme_units": 26,
+      "architecture_units": 26,
+      "mismatches": []
+    },
+    {
+      "id": "R4-QA-04",
+      "name": "research_103_question_ids",
+      "status": "pass",
+      "items": 103,
+      "unique_ids": 103,
+      "range": [
+        "UIUX-3M-001",
+        "UIUX-3M-103"
+      ],
+      "architecture_mapping_ids": 103,
+      "missing_from_research": []
+    },
+    {
+      "id": "R4-QA-05",
+      "name": "svg_xml",
+      "status": "pass_limited",
+      "root": "{http://www.w3.org/2000/svg}svg",
+      "viewBox": "0 0 1200 530",
+      "has_title": true,
+      "has_desc": true,
+      "aria_labelledby": "title desc",
+      "state_labels": {
+        "输入问题": true,
+        "检索中": true,
+        "带来源结果": true,
+        "低置信 / 澄清": true,
+        "无匹配 / 不可用": true,
+        "来源失配": true,
+        "人工接管": true,
+        "重新提交": true,
+        "未连接真实服务": true
+      },
+      "render_checked": false
+    },
+    {
+      "id": "R4-QA-06",
+      "name": "state_contract_strings",
+      "status": "pass_limited",
+      "contract_strings": {
+        "idle": true,
+        "pending": true,
+        "clarify": true,
+        "low_confidence": true,
+        "result": true,
+        "empty": true,
+        "unavailable": true,
+        "integrity_error": true,
+        "cancelled": true,
+        "queryId": true,
+        "sourceVersion": true,
+        "sectionId": true,
+        "retryCount": true,
+        "ignoreLateResponses": true
+      },
+      "compiled_or_api_checked": false
+    },
+    {
+      "id": "R4-QA-07",
+      "name": "unverified_boundaries_and_no_regression",
+      "status": "pass_limited",
+      "chapter_count": 12,
+      "chapters_contiguous": true,
+      "unsupported_real_claims_found": false
+    }
+  ],
+  "previous_findings_closed": [
+    "R2-F-01",
+    "R2-F-02",
+    "R3-F-01"
+  ],
+  "open_findings": [],
+  "limitations": [
+    "no browser/Figma/assistive technology/render QA",
+    "no TypeScript/API/model/production run",
+    "no learner/industry/expert/employer evidence",
+    "external URLs not live checked"
+  ],
+  "retest_conditions": [
+    "recompute hashes after future source changes",
+    "repeat static checks when curriculum/research/author entry changes"
+  ]
+}

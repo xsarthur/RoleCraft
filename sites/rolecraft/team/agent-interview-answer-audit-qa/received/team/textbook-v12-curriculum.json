@@ -1,0 +1,3318 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-10-11",
+  "role": "课程架构师",
+  "version": "textbook-v12-curriculum",
+  "status": "authoring_specification_not_review_or_learner_pass",
+  "inputs": [
+    {
+      "path": "team/textbook-v12-product.md",
+      "sha256": "ded892bce12edc87b962b9661cf12f079a4e567a4cc12c85deeefc1ce9c318e3"
+    },
+    {
+      "path": "team/textbook-v12-market.md",
+      "sha256": "c7be1fa44b442a5a127a44307d7ae5eb6bf7ae5e9fbc26c299b4138dea2039d9"
+    },
+    {
+      "path": "team/TEXTBOOK_WRITING_STANDARD.md",
+      "sha256": "46826414794822b5e2c836edad68ba6122f8e551d7669bcc8917bb315f5a6aa1"
+    },
+    {
+      "path": "team/interview100-coverage-qa.md",
+      "sha256": "e853833671767eebf547bcf28b6b289d98057fe3ef12250a3705a761edbec95b"
+    },
+    {
+      "path": "textbooks/v10/agent-engineering-textbook.md",
+      "sha256": "6707a4f03b298a5b234ce56a88edcbd9d79af6d40cb978227461a9d9d522f76e"
+    }
+  ],
+  "scope": "仅课程规格；不写正文/应用，不读取保留变体题面",
+  "oldUnits": 20,
+  "newUnits": 10,
+  "readingOrder": [
+    "00-learning-route",
+    "01-foundation",
+    "n01-python-model-foundations",
+    "p01-discovery",
+    "02-task-acceptance",
+    "03-trust-boundary",
+    "f01",
+    "f02",
+    "n02-context-memory-prompt",
+    "c01-selection",
+    "c01-control-primer",
+    "c02",
+    "c03",
+    "n04-tools-mcp",
+    "e01",
+    "c01-fixed-workflow",
+    "c01-control-loop",
+    "n03-planning-reflection",
+    "n05-retrieval-ingestion",
+    "n06-graph-orchestration",
+    "n07-multiagent-a2a",
+    "e02",
+    "n10-evaluation-projects",
+    "p01-mvp",
+    "e03",
+    "n08-sandbox-security",
+    "e04",
+    "e05",
+    "n09-runtime-delivery",
+    "p02"
+  ],
+  "units": [
+    {
+      "id": "00-learning-route",
+      "path": "textbooks/v12/00-learning-route.md",
+      "source": "textbooks/v10/00-learning-route.md",
+      "prerequisites": [],
+      "migration": "开篇保留定义/双图语义并扩展30单元映射",
+      "author": "B"
+    },
+    {
+      "id": "01-foundation",
+      "path": "textbooks/v12/01-foundation.md",
+      "source": "textbooks/v10/01-foundation.md",
+      "prerequisites": [
+        "00-learning-route"
+      ],
+      "migration": "保留完整专业正文/全部围栏/练习；仅追加短导读与关联链接，不把旧例认证为新运行",
+      "author": "B"
+    },
+    {
+      "id": "p01-discovery",
+      "path": "textbooks/v12/p01-discovery.md",
+      "source": "textbooks/v10/p01-discovery.md",
+      "prerequisites": [
+        "00-learning-route"
+      ],
+      "migration": "保留完整专业正文/全部围栏/练习；仅追加短导读与关联链接，不把旧例认证为新运行",
+      "author": "B"
+    },
+    {
+      "id": "02-task-acceptance",
+      "path": "textbooks/v12/02-task-acceptance.md",
+      "source": "textbooks/v10/02-task-acceptance.md",
+      "prerequisites": [
+        "p01-discovery"
+      ],
+      "migration": "保留完整专业正文/全部围栏/练习；仅追加短导读与关联链接，不把旧例认证为新运行",
+      "author": "B"
+    },
+    {
+      "id": "03-trust-boundary",
+      "path": "textbooks/v12/03-trust-boundary.md",
+      "source": "textbooks/v10/03-trust-boundary.md",
+      "prerequisites": [
+        "02-task-acceptance"
+      ],
+      "migration": "保留完整专业正文/全部围栏/练习；仅追加短导读与关联链接，不把旧例认证为新运行",
+      "author": "B"
+    },
+    {
+      "id": "f01",
+      "path": "textbooks/v12/f01.md",
+      "source": "textbooks/v10/f01.md",
+      "prerequisites": [
+        "01-foundation",
+        "02-task-acceptance",
+        "03-trust-boundary"
+      ],
+      "migration": "保留完整专业正文/全部围栏/练习；仅追加短导读与关联链接，不把旧例认证为新运行",
+      "author": "B"
+    },
+    {
+      "id": "f02",
+      "path": "textbooks/v12/f02.md",
+      "source": "textbooks/v10/f02.md",
+      "prerequisites": [
+        "f01"
+      ],
+      "migration": "保留完整专业正文/全部围栏/练习；仅追加短导读与关联链接，不把旧例认证为新运行",
+      "author": "B"
+    },
+    {
+      "id": "c01-selection",
+      "path": "textbooks/v12/c01-selection.md",
+      "source": "textbooks/v10/c01-selection.md",
+      "prerequisites": [
+        "f02",
+        "02-task-acceptance"
+      ],
+      "migration": "保留完整专业正文/全部围栏/练习；仅追加短导读与关联链接，不把旧例认证为新运行",
+      "author": "B"
+    },
+    {
+      "id": "c01-control-primer",
+      "path": "textbooks/v12/c01-control-primer.md",
+      "source": "textbooks/v10/c01-control-primer.md",
+      "prerequisites": [
+        "c01-selection",
+        "03-trust-boundary"
+      ],
+      "migration": "保留完整专业正文/全部围栏/练习；仅追加短导读与关联链接，不把旧例认证为新运行",
+      "author": "B"
+    },
+    {
+      "id": "c02",
+      "path": "textbooks/v12/c02.md",
+      "source": "textbooks/v10/c02.md",
+      "prerequisites": [
+        "f02",
+        "03-trust-boundary"
+      ],
+      "migration": "保留完整专业正文/全部围栏/练习；仅追加短导读与关联链接，不把旧例认证为新运行",
+      "author": "B"
+    },
+    {
+      "id": "c03",
+      "path": "textbooks/v12/c03.md",
+      "source": "textbooks/v10/c03.md",
+      "prerequisites": [
+        "f01",
+        "c01-selection",
+        "c01-control-primer"
+      ],
+      "migration": "保留完整专业正文/全部围栏/练习；仅追加短导读与关联链接，不把旧例认证为新运行",
+      "author": "B"
+    },
+    {
+      "id": "e01",
+      "path": "textbooks/v12/e01.md",
+      "source": "textbooks/v10/e01.md",
+      "prerequisites": [
+        "c03",
+        "c01-control-primer"
+      ],
+      "migration": "保留完整专业正文/全部围栏/练习；仅追加短导读与关联链接，不把旧例认证为新运行",
+      "author": "B"
+    },
+    {
+      "id": "c01-fixed-workflow",
+      "path": "textbooks/v12/c01-fixed-workflow.md",
+      "source": "textbooks/v10/c01-fixed-workflow.md",
+      "prerequisites": [
+        "f02",
+        "c02",
+        "c03",
+        "e01"
+      ],
+      "migration": "保留完整专业正文/全部围栏/练习；仅追加短导读与关联链接，不把旧例认证为新运行",
+      "author": "B"
+    },
+    {
+      "id": "c01-control-loop",
+      "path": "textbooks/v12/c01-control-loop.md",
+      "source": "textbooks/v10/c01-control-loop.md",
+      "prerequisites": [
+        "c01-fixed-workflow",
+        "c03",
+        "e01"
+      ],
+      "migration": "保留完整专业正文/全部围栏/练习；仅追加短导读与关联链接，不把旧例认证为新运行",
+      "author": "B"
+    },
+    {
+      "id": "e02",
+      "path": "textbooks/v12/e02.md",
+      "source": "textbooks/v10/e02.md",
+      "prerequisites": [
+        "c02",
+        "c03",
+        "c01-control-loop"
+      ],
+      "migration": "保留完整专业正文/全部围栏/练习；仅追加短导读与关联链接，不把旧例认证为新运行",
+      "author": "B"
+    },
+    {
+      "id": "p01-mvp",
+      "path": "textbooks/v12/p01-mvp.md",
+      "source": "textbooks/v10/p01-mvp.md",
+      "prerequisites": [
+        "p01-discovery",
+        "c01-selection",
+        "e02"
+      ],
+      "migration": "保留完整专业正文/全部围栏/练习；仅追加短导读与关联链接，不把旧例认证为新运行",
+      "author": "B"
+    },
+    {
+      "id": "e03",
+      "path": "textbooks/v12/e03.md",
+      "source": "textbooks/v10/e03.md",
+      "prerequisites": [
+        "c02",
+        "c03",
+        "e02",
+        "03-trust-boundary"
+      ],
+      "migration": "保留完整专业正文/全部围栏/练习；仅追加短导读与关联链接，不把旧例认证为新运行",
+      "author": "B"
+    },
+    {
+      "id": "e04",
+      "path": "textbooks/v12/e04.md",
+      "source": "textbooks/v10/e04.md",
+      "prerequisites": [
+        "e01",
+        "e02",
+        "e03"
+      ],
+      "migration": "保留完整专业正文/全部围栏/练习；仅追加短导读与关联链接，不把旧例认证为新运行",
+      "author": "B"
+    },
+    {
+      "id": "e05",
+      "path": "textbooks/v12/e05.md",
+      "source": "textbooks/v10/e05.md",
+      "prerequisites": [
+        "e02",
+        "e04"
+      ],
+      "migration": "保留完整专业正文/全部围栏/练习；仅追加短导读与关联链接，不把旧例认证为新运行",
+      "author": "B"
+    },
+    {
+      "id": "p02",
+      "path": "textbooks/v12/p02.md",
+      "source": "textbooks/v10/p02.md",
+      "prerequisites": [
+        "e01",
+        "e03",
+        "e04",
+        "e05",
+        "p01-mvp"
+      ],
+      "migration": "保留完整专业正文/全部围栏/练习；仅追加短导读与关联链接，不把旧例认证为新运行",
+      "author": "B"
+    },
+    {
+      "id": "n01-python-model-foundations",
+      "path": "textbooks/v12/n01-python-model-foundations.md",
+      "prerequisites": [
+        "01-foundation"
+      ],
+      "migration": "新增专题融入全书",
+      "author": "A"
+    },
+    {
+      "id": "n02-context-memory-prompt",
+      "path": "textbooks/v12/n02-context-memory-prompt.md",
+      "prerequisites": [
+        "f02",
+        "03-trust-boundary"
+      ],
+      "migration": "新增专题融入全书",
+      "author": "A"
+    },
+    {
+      "id": "n03-planning-reflection",
+      "path": "textbooks/v12/n03-planning-reflection.md",
+      "prerequisites": [
+        "c01-control-loop",
+        "02-task-acceptance"
+      ],
+      "migration": "新增专题融入全书",
+      "author": "A"
+    },
+    {
+      "id": "n04-tools-mcp",
+      "path": "textbooks/v12/n04-tools-mcp.md",
+      "prerequisites": [
+        "c03",
+        "f01",
+        "c01-control-primer"
+      ],
+      "migration": "新增专题融入全书",
+      "author": "A"
+    },
+    {
+      "id": "n05-retrieval-ingestion",
+      "path": "textbooks/v12/n05-retrieval-ingestion.md",
+      "prerequisites": [
+        "c02",
+        "n01-python-model-foundations",
+        "n03-planning-reflection"
+      ],
+      "migration": "新增专题融入全书",
+      "author": "A"
+    },
+    {
+      "id": "n06-graph-orchestration",
+      "path": "textbooks/v12/n06-graph-orchestration.md",
+      "prerequisites": [
+        "e01",
+        "c01-control-loop",
+        "n03-planning-reflection"
+      ],
+      "migration": "新增专题融入全书",
+      "author": "B"
+    },
+    {
+      "id": "n07-multiagent-a2a",
+      "path": "textbooks/v12/n07-multiagent-a2a.md",
+      "prerequisites": [
+        "n06-graph-orchestration",
+        "n02-context-memory-prompt",
+        "n04-tools-mcp"
+      ],
+      "migration": "新增专题融入全书",
+      "author": "B"
+    },
+    {
+      "id": "n08-sandbox-security",
+      "path": "textbooks/v12/n08-sandbox-security.md",
+      "prerequisites": [
+        "e03",
+        "n01-python-model-foundations"
+      ],
+      "migration": "新增专题融入全书",
+      "author": "B"
+    },
+    {
+      "id": "n09-runtime-delivery",
+      "path": "textbooks/v12/n09-runtime-delivery.md",
+      "prerequisites": [
+        "e04",
+        "e05",
+        "n08-sandbox-security",
+        "e01"
+      ],
+      "migration": "新增专题融入全书",
+      "author": "B"
+    },
+    {
+      "id": "n10-evaluation-projects",
+      "path": "textbooks/v12/n10-evaluation-projects.md",
+      "prerequisites": [
+        "e02",
+        "n05-retrieval-ingestion",
+        "n07-multiagent-a2a"
+      ],
+      "migration": "新增专题融入全书",
+      "author": "B"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "n01-python-model-foundations",
+      "author": "A",
+      "title": "把并发、对象与模型输出变成可推理的运行边界",
+      "level": "基础补学与应用先修",
+      "prerequisites": [
+        "01-foundation"
+      ],
+      "questions": [
+        101,
+        102,
+        103,
+        109,
+        110
+      ],
+      "core": "为什么同一段调用逻辑会阻塞、串改状态或收下无效模型结果，以及怎样重建机制",
+      "teach": [
+        "Python事件循环的协作调度：await可让出执行，阻塞函数不会；有界队列/信号量限制在途任务，超时与取消传播，try/finally清理并等待子任务退出；不要把取消本地await写成远端撤销。",
+        "引用、别名、嵌套浅拷贝和深拷贝取舍；tuple只固定槽位不冻结内部对象。工具日志装饰器须保留返回值/异常/签名元数据，区分同步与异步包装，日志不读取密钥。",
+        "用OrderedDict或字典+双向链表实际实现容量受限LRU；get/put平均O(1)的前提，容量0、更新移到最新、正确淘汰；空间上限不等于业务缓存键隔离正确。",
+        "decoder-only从token嵌入、位置、因果掩码、多头注意力、残差/归一化与前馈到logits/采样；解释下一token条件分布为何不是外部事实库，给小矩阵演算但不扩成训练课。",
+        "提示JSON、JSON模式、Schema约束各自保障范围；完整响应/拒绝/截断先分类，再类型和业务校验；供应商特性查官方版本，离线例只模拟响应消费。"
+      ],
+      "exercises": [
+        "EX-N01-A：修复嵌套字典跨任务污染并解释为何tuple未保护内部列表。",
+        "EX-N01-B：实现有界异步任务组，在一个超时和一个异常下清理所有本地任务，给取消不等于远端撤销的反例。",
+        "EX-N01-C：独立实现LRU三边界；手算小注意力掩码；将拒绝/截断/合法但错误归属的JSON正确分类。"
+      ],
+      "artifact": "W-N01：运行命令、受控输入与输出、LRU实现、并发与对象反例、模型消费状态图",
+      "examples": [
+        "n01-runtime-boundaries.py"
+      ],
+      "mustRun": "异步正常/超时/取消清理、浅拷贝反例、LRU容量0/覆盖/淘汰、拒绝/截断/语义拒绝。模型推理演算不是实际LLM运行。"
+    },
+    {
+      "id": "n02-context-memory-prompt",
+      "author": "A",
+      "title": "让跨轮上下文和记忆保留事实而不继承错误权限",
+      "level": "核心",
+      "prerequisites": [
+        "f02",
+        "03-trust-boundary"
+      ],
+      "questions": [
+        4,
+        31,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        53,
+        112
+      ],
+      "core": "哪些信息应进入当前上下文，跨任务保存哪些记忆，以及错误和话题切换怎样恢复",
+      "teach": [
+        "会话历史、任务权威状态、当轮上下文和长期记忆分别定义生命周期/作用域/事实权威；给无长期记忆即可完成的任务与确需跨会话偏好的对照。",
+        "记忆记录包含tenant/user/session或共享范围、类型、来源、置信/确认状态、适用时间、版本、替代/删除标记和依赖；明确何时抽取、确认、写入、合并、更新、过期和删除。记忆不得保留可复用批准。",
+        "错误记忆通过来源版本与依赖图传播失效，停止继续使用、重新取证并标出受影响结果；当前明确要求覆盖旧偏好但不提升权限。过滤必须在候选召回前按范围限制且读回重验。",
+        "提示角色/工具规则/输出契约分层，示例选择覆盖容易混淆动作、正反例与拒绝，不堆冗余；Few-shot排序、token代价与偏置，固定任务实验比较无例/精选/失真例的错选与成本。",
+        "上下文裁剪不能删除权威事实；消息TTL/归档、摘要校验、可检索中间产物和索引限额控制存储增长。会话路由保留独立task_id，切换需识别/澄清指代，返回旧任务重核目标修订及批准。"
+      ],
+      "exercises": [
+        "EX-N02-A：同一用户更改偏好和跨租户同名记录，验证只影响授权作用域。",
+        "EX-N02-B：撤销错误来源后列出受影响记忆与输出，删除后重检不能返回。",
+        "EX-N02-C：设计包含相近工具的Few-shot对照；“继续刚才那个”存在两个未完任务时必须澄清并禁止误发动作。"
+      ],
+      "artifact": "W-N02：记忆schema/生命周期与失效记录、提示版本和实验契约、双任务切换轨迹",
+      "examples": [
+        "n02-memory-routing.py"
+      ],
+      "mustRun": "本地记忆更新/过期/删除/租户拒绝/来源失效、歧义切换拒绝；不能假称模型Few-shot效果已测。"
+    },
+    {
+      "id": "n03-planning-reflection",
+      "author": "A",
+      "title": "依据观察修订可执行计划而不在思考中空转",
+      "level": "核心",
+      "prerequisites": [
+        "c01-control-loop",
+        "02-task-acceptance"
+      ],
+      "questions": [
+        11,
+        12,
+        16,
+        17,
+        18
+      ],
+      "core": "在观察逐步揭示依赖和风险时，怎样选择、执行并修订决策策略",
+      "teach": [
+        "同一研究/调查任务逐步展示固定状态机、ReAct与Plan-and-Execute的控制对象、推理/行动/观察协议、一次计划的承诺范围和各自失败轨迹。推理说明只作候选依据，不要求泄露模型内部思维。",
+        "计划节点包含目标、依赖、输入/预期产物、工具/权限、预算、状态和证据；给生成候选→验证引用存在/有向无环/前提可达/产物完备/预算/授权→可执行前沿的实际算法。",
+        "新证据否定假设、工具不可用、目标变化与预算变化触发重规划；保留已完成有效节点，失效节点及其后继重新核对，外部效果不随计划删除而撤销。版本化计划、进展量及重复状态指纹共同避免循环。",
+        "Reflection用外部失败证据定位偏差、提出可验证修正并重测；与仅自述反思区分，同源错误和反馈投机可能放大错误。预算约束、无法验证时停止和同条件消融。"
+      ],
+      "exercises": [
+        "EX-N03-A：实现计划DAG校验并拒绝环、缺依赖和不可满足输入。",
+        "EX-N03-B：观察更新后只使依赖失效的子图重做，解释为什么已发生副作用不能消失。",
+        "EX-N03-C：比较无反思/有证据修正/空泛反思，记录首次失败和最终结果而非只报最后一次。"
+      ],
+      "artifact": "W-N03：三策略轨迹、计划版本图、重规划理由和停止证据、反思对照契约",
+      "examples": [
+        "n03-plan-execution.py"
+      ],
+      "mustRun": "有效计划/环/缺依赖、观察失效传播、无进展停止，使用确定性提议替身，不冒称LLM规划效果。"
+    },
+    {
+      "id": "n04-tools-mcp",
+      "author": "A",
+      "title": "让工具发现与协议接入保持明确能力和权限边界",
+      "level": "核心；跨组织认证深入选读",
+      "prerequisites": [
+        "c03",
+        "f01",
+        "c01-control-primer"
+      ],
+      "questions": [
+        22,
+        24,
+        27,
+        28,
+        29,
+        30
+      ],
+      "core": "当工具来自不同服务且数量增长时，怎样让模型选得准、宿主接得稳",
+      "teach": [
+        "名称表达动作与对象，描述限定输入/适用与不适用条件、输出/副作用、失败；用相似工具对照和固定测试判错选率、参数错率。",
+        "大工具集采用权限前置过滤→能力目录检索/路由→少量schema渐进暴露→验证；目录结果只是候选，工具调用前再核注册版本/权限。演示候选召回漏工具与选错近邻的不同处理。",
+        "依据明确MCP规范版本讲host/client/server、初始化能力协商、请求/通知、tools/list/call、resources/list/read、prompts/list/get三原语及控制主体，给完整往返消息与错误路径；不把MCP协议当模型决策或执行授权。",
+        "第三方认证含身份主体、范围/audience、令牌获取/到期/刷新/撤销和最小委派、请求绑定；禁止令牌透传假定、核服务端资源权限。协议与业务错误分类，版本不兼容拒绝和契约测试。",
+        "Tool Calling是模型提议接口，MCP连接应用与工具/资源，Skills是可复用说明与资源包，A2A为跨系统Agent任务协议；给同一场景责任图并链接n07完整任务合同。"
+      ],
+      "exercises": [
+        "EX-N04-A：给搜索/读取/写入三个相近工具重写契约，以近义/否定/越权输入判候选。",
+        "EX-N04-B：构造100个目录项，权限过滤后选少量schema，检查候选漏召回、版本变更和调用重验。",
+        "EX-N04-C：追踪MCP会话初始化至调用返回；注入过期令牌/错误audience/不兼容版本并说明拒绝层。"
+      ],
+      "artifact": "W-N04：版本化工具目录、MCP时序与消息、第三方接入契约矩阵和失败归因",
+      "examples": [
+        "n04-tool-catalog.py"
+      ],
+      "mustRun": "目录发现与调用重验的允许/拒绝路径；离线消息夹具不等于真实MCP互操作或OAuth认证验证。"
+    },
+    {
+      "id": "n05-retrieval-ingestion",
+      "author": "A",
+      "title": "从原始文档到可比较的自适应检索链",
+      "level": "核心；ANN参数/大规模选读",
+      "prerequisites": [
+        "c02",
+        "n01-python-model-foundations",
+        "n03-planning-reflection"
+      ],
+      "questions": [
+        41,
+        44,
+        46,
+        47,
+        50,
+        105,
+        106,
+        107,
+        108
+      ],
+      "core": "检索失败发生在入库、召回、排序还是调查策略，以及如何用基线定位",
+      "teach": [
+        "PDF摄取区分原生文本/扫描/OCR、表格/阅读顺序/跨页段落；数据对象保留文档哈希、页与坐标、解析器版本、OCR置信与核验状态；抽样对照原页，错误文本不冒称逐字原文。",
+        "分块身份含文档版本/结构位置/内容哈希；增量构建用manifest比对保留/新增/删除，权限变化即时过滤并更新索引，原子发布一致快照；给漏删、重复、混版的检测/回滚。",
+        "余弦、点积、L2完整计算、单位向量排序等价条件、零向量/维度拒绝。Embedding评估按中文/术语/多语和文档查询编码策略分层，以真实相关性标签比较recall与任务结果。",
+        "精确flat作基线，HNSW图连通/搜索宽度、IVF聚类与探测数的机制；召回、内存、构建、查询和过滤选择率一起测，不直接声称ANN更快更好。",
+        "rerank从召回候选的query-document相关性评分与排序改变入选，解释候选上限、得分不可跨模型硬比与端到端延迟；查询改写保持约束，多查询融合去重，多跳每跳有待证子问题/证据与停止。",
+        "固定RAG与Agentic RAG在同一任务预算下比较；自适应只增加查询/证据充分性/下一跳决策，不创造证据。RAG、长上下文和微调比较知识更新、事实追溯、行为适配与成本。"
+      ],
+      "exercises": [
+        "EX-N05-A：从构造的页/表格/OCR错误对象追溯引用并隔离未核文本。",
+        "EX-N05-B：修改/删除/权限收回后发布新索引，证明旧块不漏入当前版本。",
+        "EX-N05-C：验证向量排序等价与非法输入；设计flat/ANN、无重排/重排及固定/Agentic的同条件实验。"
+      ],
+      "artifact": "W-N05：摄取manifest、来源页坐标、版本索引、召回/排序/任务分层指标与错误归因",
+      "examples": [
+        "n05-index-lifecycle.py"
+      ],
+      "mustRun": "向量运算边界、增量修改/删除/权限过滤/混版拒绝；固定向量与OCR文本夹具不等于真实Embedding/OCR/ANN模型运行。"
+    },
+    {
+      "id": "n06-graph-orchestration",
+      "author": "B",
+      "title": "把运行状态与控制转移映射到可恢复图编排",
+      "level": "核心；框架选择依项目而定",
+      "prerequisites": [
+        "e01",
+        "c01-control-loop",
+        "n03-planning-reflection"
+      ],
+      "questions": [
+        8,
+        51,
+        52,
+        53,
+        54,
+        58,
+        59,
+        60
+      ],
+      "core": "怎样用LangGraph表达已知运行不变量，并识别框架承担和未承担的职责",
+      "teach": [
+        "固定可追溯LangChain/LangGraph文档或包版本，说明模型/工具集成层与有状态运行编排边界，给实际可识别的StateGraph/节点/边/compile/invoke或对应版本API，未安装仍须正确解释契约。",
+        "State字段分权威任务/消息投影/产物引用，节点消费状态返回增量，边决定下步；reducer按字段合并、消息ID更新与并行冲突、不可交换更新的解决方案，不用普通CAS替代框架语义。",
+        "父子图共享schema与显式映射两种路径，限定子图输入/返回和私有状态；checkpointer/thread标识与暂停恢复，节点重入可能重复副作用；框架不保证下游exactly-once。",
+        "流事件用kind/run_id/task_id/seq/payload区分text/tool_progress/pause/error/final，处理乱序/重复/断线与恢复；声明应用事件模型与具体框架stream modes的映射而不冒称SDK原生事件。",
+        "与手写状态机、开源框架和低代码平台比较可表达控制、持久化、调试、版本迁移、可导出性、权限、费用；给同任务等价边界与不等价项的试验。"
+      ],
+      "exercises": [
+        "EX-N06-A：并行节点写同一字段，在非交换和可交换reducer下说明结果。",
+        "EX-N06-B：子图私有证据不泄漏给父图，只返回声明合同；暂停恢复后副作用不得盲重放。",
+        "EX-N06-C：消费重复/乱序/截断流并区分预览与终态；做去框架迁移能力清单。"
+      ],
+      "artifact": "W-N06：图/状态schema、字段合并与父子合同、框架版本锁定、流消费和手写对照",
+      "examples": [
+        "n06-graph-contracts.py"
+      ],
+      "mustRun": "离线reducer/父子映射/事件消费正常与冲突；如真实LangGraph已安装可另跑固定版本最小例，否则明确未运行而不能以自研例认证SDK。"
+    },
+    {
+      "id": "n07-multiagent-a2a",
+      "author": "B",
+      "title": "让分工交接保持任务责任与证据身份",
+      "level": "协作选择核心；A2A跨组织专题选读",
+      "prerequisites": [
+        "n06-graph-orchestration",
+        "n02-context-memory-prompt",
+        "n04-tools-mcp"
+      ],
+      "questions": [
+        30,
+        62,
+        65,
+        68,
+        70
+      ],
+      "core": "何时分工产生净收益，以及跨角色和跨系统如何交接不失真",
+      "teach": [
+        "Supervisor集中分派与汇总、handoff转移会话/任务控制、共享讨论/黑板共同证据三模式的控制权、状态归属和停止；同任务可并行性/权限/成本决定选择。",
+        "完整共享与最小交接比较信息完整性、泄露、token、旧状态和一致性；交接包只含任务合同、证据引用/版本、未决问题、权限范围/预算，不传可继承批准。",
+        "子任务必要性和时限决定等待/重分派/部分交付；attempt_id与稳定task_id分离、旧执行者结果以版本/fence核对，外部未知效果先核而非并发重做。",
+        "依据明确A2A规范版本讲Agent发现/能力与身份、Message/Task/Artifact、状态生命周期、取消请求与终态、流/重连、认证/授权、结果来源与版本；与同进程编排及MCP区别。"
+      ],
+      "exercises": [
+        "EX-N07-A：同一任务分别画三种控制权图并论证不选多Agent的条件。",
+        "EX-N07-B：关键子任务超时后重分派，迟到旧结果不得覆盖新任务状态；非关键项允许标缺交付。",
+        "EX-N07-C：用A2A合同追踪发现、提交、需要输入、取消与最终产物，列跨组织不能推定的保证。"
+      ],
+      "artifact": "W-N07：协作决策、最小交接包、超时迟到轨迹与A2A版本化时序",
+      "examples": [
+        "n07-handoff-state.py"
+      ],
+      "mustRun": "必要/可选任务超时分流和迟到拒绝；离线任务状态模拟不冒称A2A真实互操作。"
+    },
+    {
+      "id": "n08-sandbox-security",
+      "author": "B",
+      "title": "把不可信输入与生成代码限制在可检查的执行边界",
+      "level": "执行生成代码前强制；系统隔离部署另验",
+      "prerequisites": [
+        "e03",
+        "n01-python-model-foundations"
+      ],
+      "questions": [
+        81,
+        86
+      ],
+      "core": "为什么提示规则不能约束代码的系统能力，以及限制必须落在哪一层",
+      "teach": [
+        "直接注入来自当前请求试图改变受保护目标，间接注入来自资料/网页/工具；给相同恶意意图两个入口的信任/数据流与阻断位置，合法用户改变任务不自动等于攻击。",
+        "生成代码不可信：CPU时间/墙钟/内存/PID数/文件与输出尺寸、文件系统只读与临时工作区、环境秘密、用户权限、网络出站/内网/元数据、系统调用与宿主挂载均有明确限制。",
+        "比较进程、容器、强化容器/微VM的共享内核/逃逸/启动维护边界；展示sandbox请求/策略/运行回执合同、超限和清理路径。策略字典或subprocess timeout不是安全沙箱。",
+        "成对允许/拒绝验证与攻击面测试；本轮只执行自带无害确定性夹具，未经隔离不运行任意模型代码，不以模拟策略拒绝证明OS隔离有效。"
+      ],
+      "exercises": [
+        "EX-N08-A：将同一注入放进用户输入与检索文档，标明可变数据和真正执行闸门。",
+        "EX-N08-B：为只读CSV分析工作定义最小文件/网络/CPU/输出合同，解释需要哪些OS强制。",
+        "EX-N08-C：设计正常读临时夹具与越界路径/网络/PID/输出限额的成对验证，并列无法在本机证明的隔离项。"
+      ],
+      "artifact": "W-N08：威胁模型、sandbox能力合同、执行层/策略层证据区分与攻击回归计划",
+      "examples": [
+        "n08-sandbox-policy.py"
+      ],
+      "mustRun": "安全策略模型的允许/拒绝和路径归一化；不执行危险输入，不声称完成系统级沙箱验收。"
+    },
+    {
+      "id": "n09-runtime-delivery",
+      "author": "B",
+      "title": "让长任务、补偿与推理服务在资源约束下持续运行",
+      "level": "运行交付核心；推理引擎内部高级选读",
+      "prerequisites": [
+        "e04",
+        "e05",
+        "n08-sandbox-security",
+        "e01"
+      ],
+      "questions": [
+        89,
+        93,
+        95,
+        98,
+        104,
+        113
+      ],
+      "core": "失败、资源增长和未知效果出现时，怎样恢复服务而不虚报完成",
+      "teach": [
+        "多步骤业务动作有向依赖与逆序补偿，补偿不是数据库rollback；每步效果/补偿状态和幂等键、未知先核对、补偿失败续试/人工处理与用户告知残余效果。",
+        "长研究任务记录子问题/来源/证据覆盖/计划版本/租约与预算，续租/检查点/取消标记和迟到结果；恢复重核证据时效与外部效果，独立子任务允许部分交付。",
+        "并发、超时、指数退避与jitter/重试预算、故障域舱壁；circuit breaker CLOSED/OPEN/HALF_OPEN、计数窗口/探测限制/恢复/再次打开，业务拒绝不误计为服务故障。",
+        "内存排错用稳定负载与多时点对象/分配/任务/cache长度，区分仍引用、无界缓存、悬挂任务与峰值；tracemalloc/任务枚举等选定工具的限制，修复后重复测增长斜率而非单次RSS降幅。",
+        "本地与托管比较质量/数据边界/容量/硬件/运维/高可用/费用分母，不能编账单；高级解释prefill与decode、KV cache大小/生命周期、连续批处理吞吐和首token/尾延迟，公平实验固定模型/硬件/长度/并发/质量。"
+      ],
+      "exercises": [
+        "EX-N09-A：两个已成功步骤后失败，补偿中断再恢复，未知效果不双发。",
+        "EX-N09-B：熔断半开只放有限探测，服务恢复和持续故障两轨迹；取消研究任务后拒绝迟到最终完成。",
+        "EX-N09-C：构造无界cache/待办任务与峰值对照，收集多时点指标；写本地/托管和prefill/decode公平比较契约。"
+      ],
+      "artifact": "W-N09：效果补偿账本、长研究检查点、熔断与内存轨迹、部署和推理实验契约",
+      "examples": [
+        "n09-runtime-recovery.py"
+      ],
+      "mustRun": "多步骤补偿失败/续试与去重，熔断半开恢复/重开，有限本地内存诊断；实际GPU性能与供应商稳定性未运行分别保留。"
+    },
+    {
+      "id": "n10-evaluation-projects",
+      "author": "B",
+      "title": "用跨场景实验和技术移交检验是否真正会交付",
+      "level": "核心；客户组织级交付高级选读",
+      "prerequisites": [
+        "e02",
+        "n05-retrieval-ingestion",
+        "n07-multiagent-a2a"
+      ],
+      "questions": [
+        10,
+        78,
+        91,
+        99,
+        111,
+        114
+      ],
+      "core": "怎样把已学组件用于新业务并把结果交给独立者复现",
+      "teach": [
+        "模型/工具/检索逐一替换的消融矩阵，固定任务与预算；必要工具拿掉会使任务不可解须标不可行条件，不把这种失败归模型；交互效应用小因子实验并报告成本/时延。",
+        "客服意图与风险分层、自动解答/可逆动作/高风险转人工，交接包含用户上下文/证据/已发生动作/待处理项与SLA；按解决、误处理、转人工恰当性和等待等定义指标，阈值由实际业务定。",
+        "英语正常中文失败按token预算/文本归一化、召回、提示、工具编码/参数和评测标注分层定位；同语义跨语言成对任务，避免把翻译差异当模型差异，解释先干预哪层。",
+        "技术移交包包含环境锁/启动与配置模板(无密钥)/架构ADR/数据权限与版本/评测夹具/失败复现/监控回退/已知限制/责任；接手者从干净环境独立复现并反馈，文件齐不等于接手成功。",
+        "真实项目/事故保留本人贡献、原始问题/用户证据、已有方案研究、差异假设、实现版本、失败原例和修复回归、真实反馈/迭代。Q10/99方法可以教，真实经历不得由教材构造。"
+      ],
+      "exercises": [
+        "EX-N10-A：客服知识任务与研究任务二选一，从业务合同做最小实现和分层消融，不能照搬退款工单。",
+        "EX-N10-B：对照中文/英文/混合语言失败轨迹定位第一处偏离并验证修正。",
+        "EX-N10-C：交付缩小版移交包让未参与实现的人复现；无真实接手者时标待验证，勿代答。"
+      ],
+      "artifact": "W-N10：跨场景项目合同、分层消融结果、跨语失败复验、交接包及独立接手证据待办",
+      "examples": [
+        "n10-evaluation-matrix.py"
+      ],
+      "mustRun": "消融条件完整/无效任务识别和跨语夹具归因的本地逻辑；不得模拟用户或接手者来授真实交付通过。"
+    }
+  ],
+  "baselineGapAssignments": [
+    {
+      "id": 4,
+      "question": "工具调用、状态维护、规划和长期记忆，哪些取决于具体场景，并非每个 Agent 都需要？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "没有长期记忆的适用条件及它与持久任务状态的明确区别，不能完整回答四类组件。",
+      "destinationUnits": [
+        "n02-context-memory-prompt"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 8,
+      "question": "你会如何评估自研 Agent 运行时、开源框架和低代码平台？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "没有自研、开源框架、低代码平台的能力边界与具体比较方法；通用ADR不能补成三类平台完整选型。",
+      "destinationUnits": [
+        "n06-graph-orchestration"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 10,
+      "question": "请用一个真实项目说明：Agent 改善了谁的什么工作，你如何证明改善成立？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "教材构造例不能生成个人真实项目经历；尚需本人项目、角色、效果原始证据。",
+      "destinationUnits": [
+        "n10-evaluation-projects"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "方法教学可补；真实经历仍待学习者证据"
+    },
+    {
+      "id": 11,
+      "question": "ReAct 如何组织推理、行动与观察？它与一次性生成计划有什么不同？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "ReAct仅短段提及，没有把其推理—行动—观察协议与一次性计划作完整结构对比或失败模式展开。",
+      "destinationUnits": [
+        "n03-planning-reflection"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 12,
+      "question": "ReAct、Plan-and-Execute 和固定状态机，你会如何按任务特征选择？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "未完整讲ReAct与Plan-and-Execute各自运行机制；读者需外部知识才能把名称对应到选择逻辑。",
+      "destinationUnits": [
+        "n03-planning-reflection"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 16,
+      "question": "面对带前置依赖的复杂任务，如何生成和验证可执行计划？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "没有复杂任务计划生成算法、任务分解及计划完整性验证教学；执行前检查不能覆盖生成问题。",
+      "destinationUnits": [
+        "n03-planning-reflection"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 17,
+      "question": "什么信号应触发 Replanning？如何避免反复改计划却没有实际进展？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "缺重规划触发分类、失效节点保留/撤销算法及进展指标，不足以回答反复重规划控制。",
+      "destinationUnits": [
+        "n03-planning-reflection"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 18,
+      "question": "Reflection 或自我纠错在哪些情况下有帮助，又可能怎样放大原始错误？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "没有Reflection机制、何时增益及错误自强化的系统解释/对比实验，不能靠运行时验收代替反思教学。",
+      "destinationUnits": [
+        "n03-planning-reflection"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 22,
+      "question": "如何设计工具名称、描述和参数 Schema，减少错选工具与错误参数？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "缺名称与描述的辨识性设计、相近工具消歧及错选率验证，Schema校验仅答一部分。",
+      "destinationUnits": [
+        "n04-tools-mcp"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 24,
+      "question": "工具数量达到数百个时，怎样降低选择错误和上下文负担？",
+      "historicalSupport": "未覆盖",
+      "missingSubquestions": "缺工具发现/检索/路由/渐进暴露、工具集消歧和上下文控制。",
+      "destinationUnits": [
+        "n04-tools-mcp"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 27,
+      "question": "MCP 解决哪一层集成问题？它与模型的 Tool Calling 有什么关系？",
+      "historicalSupport": "未覆盖",
+      "missingSubquestions": "无MCP架构或集成层说明，不能回答MCP与Tool Calling关系。",
+      "destinationUnits": [
+        "n04-tools-mcp"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 28,
+      "question": "MCP 中的 Tools、Resources 和 Prompts，各自适合表达什么能力？",
+      "historicalSupport": "未覆盖",
+      "missingSubquestions": "未讲MCP Tools、Resources、Prompts及适用能力。",
+      "destinationUnits": [
+        "n04-tools-mcp"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 29,
+      "question": "接入第三方工具服务时，如何处理认证、权限、版本与错误契约？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "生产认证明确不包含；未教第三方认证生命周期、凭据委派和完整接入契约验证，四子问不能全部回答。",
+      "destinationUnits": [
+        "n04-tools-mcp"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 30,
+      "question": "Tool Calling、MCP、Agent Skills（可复用技能说明与资源包）和 A2A，分别解决什么问题？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "MCP、Skills和A2A均无对应教学，无法完成四者职责对比。QA反例复核后按部分子问有覆盖归部分。",
+      "destinationUnits": [
+        "n04-tools-mcp",
+        "n07-multiagent-a2a"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 31,
+      "question": "会话历史、任务工作状态和长期记忆有什么不同？应分别存储什么？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "未定义长期记忆、跨会话用途及它和会话历史的存储边界。",
+      "destinationUnits": [
+        "n02-context-memory-prompt"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 34,
+      "question": "长期记忆应该在什么条件下写入、更新、合并或删除？",
+      "historicalSupport": "未覆盖",
+      "missingSubquestions": "缺长期记忆写入条件、抽取、去重合并、更新、过期和删除全生命周期。",
+      "destinationUnits": [
+        "n02-context-memory-prompt"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 35,
+      "question": "如何发现错误记忆对后续任务的持续污染，并修正受影响结果？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "未教跨任务错误记忆检测、来源依赖、失效传播、回收与受影响结果修复。",
+      "destinationUnits": [
+        "n02-context-memory-prompt"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 36,
+      "question": "如何隔离不同用户、组织和会话的记忆？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "缺记忆对象的user/session作用域、写入和跨会话继承控制；不能称已完整教授记忆隔离。",
+      "destinationUnits": [
+        "n02-context-memory-prompt"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 37,
+      "question": "检索材料、历史记忆与当前用户要求相冲突时，应如何处理？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "未系统教历史用户偏好与当前明确要求的冲突更新、记忆失效和完整来源优先级。",
+      "destinationUnits": [
+        "n02-context-memory-prompt"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 38,
+      "question": "如何设计系统提示，使角色、工具使用规则和输出要求清晰而可测试？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "缺一套同时包含角色、工具使用规则和输出约束的系统提示设计方法及相互冲突处理。",
+      "destinationUnits": [
+        "n02-context-memory-prompt"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 39,
+      "question": "Few-shot 示例如何帮助工具选择？示例过多或失真会带来什么问题？",
+      "historicalSupport": "未覆盖",
+      "missingSubquestions": "缺示例选择、覆盖、排序、token代价、误导/失真以及工具选择行为实验。",
+      "destinationUnits": [
+        "n02-context-memory-prompt"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 41,
+      "question": "RAG、长上下文直接阅读和模型微调，分别适合解决哪些知识问题？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "没有微调与RAG/长上下文三者的知识更新、事实依据与成本适用性比较。",
+      "destinationUnits": [
+        "n05-retrieval-ingestion"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 44,
+      "question": "如何选择 Embedding 模型，评估领域术语、中文与多语言查询效果？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "缺Embedding选型维度/领域适配、中文和多语言对比集/编码策略与模型质量方法。",
+      "destinationUnits": [
+        "n05-retrieval-ingestion"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 46,
+      "question": "Reranker 改善的是哪一阶段？怎样衡量它带来的质量与时延代价？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "缺reranker评分机制、候选规模/模型成本/时延权衡及与无重排基线的专门实验。",
+      "destinationUnits": [
+        "n05-retrieval-ingestion"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 47,
+      "question": "查询改写、多查询和多跳检索什么时候有效，什么时候容易改变原意？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "缺多查询、多跳检索的执行与终止、有效条件及改写偏离原意的保护和反例。",
+      "destinationUnits": [
+        "n05-retrieval-ingestion"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 50,
+      "question": "Agentic RAG 相对固定 RAG 增加了什么决策能力？如何证明额外复杂度值得？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "没有Agentic RAG专门循环（查询规划、检索充分性、自适应跳转/停止）与固定RAG一组完整对照，跨章仅有可迁移基础。",
+      "destinationUnits": [
+        "n05-retrieval-ingestion"
+      ],
+      "owner": "教材研发员 A",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 51,
+      "question": "在你采用的版本中，LangChain 和 LangGraph 分别承担什么职责？",
+      "historicalSupport": "未覆盖",
+      "missingSubquestions": "无LangChain/LangGraph版本、分工、接口边界。",
+      "destinationUnits": [
+        "n06-graph-orchestration"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 52,
+      "question": "用图表示 Agent 时，节点、边和共享状态分别应该包含什么？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "未讲图编排的节点输入输出、边转移及共享状态合同。",
+      "destinationUnits": [
+        "n06-graph-orchestration"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 53,
+      "question": "状态字段应如何建模，避免把全部消息和中间数据无限累积？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "State与Context分离能减少本轮输入，但正文未给消息/中间数据在权威状态中的保留期限、裁剪归档、索引及存储增长策略，不能回答状态无限累积的全部子问。",
+      "destinationUnits": [
+        "n02-context-memory-prompt",
+        "n06-graph-orchestration"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 54,
+      "question": "并行节点同时更新状态时，如何处理合并规则和写入冲突？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "没有图节点reducer/字段合并策略及冲突组合实例；通用CAS不能补齐。",
+      "destinationUnits": [
+        "n06-graph-orchestration"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 58,
+      "question": "子图怎样封装独立任务？父图与子图之间如何交接状态？",
+      "historicalSupport": "未覆盖",
+      "missingSubquestions": "未讲子图、父子图状态映射/调用/隔离与返回语义。",
+      "destinationUnits": [
+        "n06-graph-orchestration"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 59,
+      "question": "流式输出怎样区分文本、工具进度、暂停、错误和最终结果？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "未设计覆盖题目全部类别的流事件协议、进度/暂停传输与客户端消费。",
+      "destinationUnits": [
+        "n06-graph-orchestration"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 60,
+      "question": "如果去掉 LangGraph，你如何实现等价的状态机，并说明取舍？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "教材未教授LangGraph，无法仅靠正文说明与特定框架等价及失去的能力/成本。",
+      "destinationUnits": [
+        "n06-graph-orchestration"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 62,
+      "question": "Supervisor、交接式协作和共享讨论，分别适合什么任务？",
+      "historicalSupport": "未覆盖",
+      "missingSubquestions": "缺三类模式定义、控制交接及适用比较。",
+      "destinationUnits": [
+        "n07-multiagent-a2a"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 65,
+      "question": "多 Agent 应共享完整上下文，还是只传递必要材料？怎样判断？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "缺多Agent完整共享与选择性交接的系统比较、信息丢失/一致性判断方法。",
+      "destinationUnits": [
+        "n07-multiagent-a2a"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 68,
+      "question": "某个子 Agent 超时或失败时，整体任务应等待、重分派还是部分交付？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "缺按子任务关键性选择等待/重分派/部分交付的决策机制与重分派去重合同。",
+      "destinationUnits": [
+        "n07-multiagent-a2a"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 70,
+      "question": "A2A 与应用内部的多 Agent 编排有何区别？跨系统任务交接需要哪些契约？",
+      "historicalSupport": "未覆盖",
+      "missingSubquestions": "没有A2A协议、跨系统身份发现/任务生命周期与内部编排的比较。",
+      "destinationUnits": [
+        "n07-multiagent-a2a"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 78,
+      "question": "如何设计模型、工具和检索组件的消融实验？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "未完整说明三类组件逐一移除/替换的对照矩阵、必要工具移除的任务有效性及交互效应。",
+      "destinationUnits": [
+        "n10-evaluation-projects"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 81,
+      "question": "直接提示注入和来自网页、文档或工具结果的间接注入，有什么不同？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "没有直接提示注入机制及与间接注入的明确对照。",
+      "destinationUnits": [
+        "n08-sandbox-security"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 86,
+      "question": "执行模型生成代码时，沙箱应限制哪些资源与外部访问？",
+      "historicalSupport": "未覆盖",
+      "missingSubquestions": "没有生成代码沙箱的CPU/内存/时间/进程/文件系统/网络/系统调用隔离教学。",
+      "destinationUnits": [
+        "n08-sandbox-security"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 89,
+      "question": "多步骤任务部分成功后失败，如何设计补偿、恢复和用户告知？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "没有多步骤补偿动作排序、补偿失败重试/幂等与用户告知完整流程。",
+      "destinationUnits": [
+        "n09-runtime-delivery"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 91,
+      "question": "设计一个客服工单 Agent：如何确定自动处理范围、转人工条件及验收指标？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "案例是开发缺陷工单；缺客服意图/业务风险分层、转人工服务合同与客服验收指标。",
+      "destinationUnits": [
+        "n10-evaluation-projects"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 93,
+      "question": "设计一个长时间运行的研究 Agent：如何保存进度、取消任务和恢复执行？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "教材单缺陷任务明确不实现长期续租/完整模型计划账本；研究子问题进度与证据累积恢复未完整教学。",
+      "destinationUnits": [
+        "n09-runtime-delivery"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 95,
+      "question": "如何设计并发限制、超时、退避和熔断，避免故障扩大？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "缺熔断状态、触发窗口、半开探测/恢复与故障域隔离设计。",
+      "destinationUnits": [
+        "n09-runtime-delivery"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 98,
+      "question": "从质量、成本和运维角度，怎样选择本地模型与托管 API？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "缺本地推理硬件/容量/部署维护与托管API可用性/数据边界的完整选型比较。",
+      "destinationUnits": [
+        "n09-runtime-delivery"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "正文补机制/实现/取舍/失败，最终支持等级由独立审校和QA判定"
+    },
+    {
+      "id": 99,
+      "question": "请介绍一次实际 Agent 故障或失败案例：原因是什么，如何修复，怎样证明修复有效？",
+      "historicalSupport": "部分",
+      "missingSubquestions": "原文明示是构造演算，不能提供学习者实际经历；必须本人完成项目保存真实故障证据。",
+      "destinationUnits": [
+        "n10-evaluation-projects"
+      ],
+      "owner": "教材研发员 B；跨章部分与A交接",
+      "policy": "方法教学可补；真实经历仍待学习者证据"
+    }
+  ],
+  "marketAssignments": [
+    {
+      "id": 101,
+      "sourceRecord": {
+        "id": 101,
+        "question": "调用多个模型或工具API时，如何用Python asyncio组织并发？阻塞调用、无界任务创建和取消清理分别会导致什么问题，怎样用最小例定位？",
+        "capability": "异步IO与资源生命周期",
+        "level": "初中级",
+        "sources": [
+          "S01",
+          "S04"
+        ],
+        "novelty": "Q55/95讨论编排和限流，本题核语言运行时/事件循环具体机制。",
+        "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+        "source_intent": "API异步优势与异步队列停止处理"
+      },
+      "sourcePath": "team/textbook-v12-market.json",
+      "destinationUnits": [
+        "n01-python-model-foundations"
+      ],
+      "levelPolicy": "必要软件/模型先修须实质补学",
+      "requiredTeaching": [
+        "Python事件循环的协作调度：await可让出执行，阻塞函数不会；有界队列/信号量限制在途任务，超时与取消传播，try/finally清理并等待子任务退出；不要把取消本地await写成远端撤销。",
+        "引用、别名、嵌套浅拷贝和深拷贝取舍；tuple只固定槽位不冻结内部对象。工具日志装饰器须保留返回值/异常/签名元数据，区分同步与异步包装，日志不读取密钥。",
+        "用OrderedDict或字典+双向链表实际实现容量受限LRU；get/put平均O(1)的前提，容量0、更新移到最新、正确淘汰；空间上限不等于业务缓存键隔离正确。",
+        "decoder-only从token嵌入、位置、因果掩码、多头注意力、残差/归一化与前馈到logits/采样；解释下一token条件分布为何不是外部事实库，给小矩阵演算但不扩成训练课。",
+        "提示JSON、JSON模式、Schema约束各自保障范围；完整响应/拒绝/截断先分类，再类型和业务校验；供应商特性查官方版本，离线例只模拟响应消费。"
+      ]
+    },
+    {
+      "id": 102,
+      "sourceRecord": {
+        "id": 102,
+        "question": "把请求状态放进Python列表或字典时，别名与浅拷贝会怎样污染另一个任务？请说明不可变容器的边界，并解释如何用装饰器封装工具日志而保持函数行为。",
+        "capability": "Python可变性/函数对象/装饰器",
+        "level": "基础补学",
+        "sources": [
+          "S05"
+        ],
+        "novelty": "原100没有语言对象语义与函数包装实作；后半为根据原题意组合的任务化追问。",
+        "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+        "source_intent": "元组列表、函数对象和装饰器"
+      },
+      "sourcePath": "team/textbook-v12-market.json",
+      "destinationUnits": [
+        "n01-python-model-foundations"
+      ],
+      "levelPolicy": "必要软件/模型先修须实质补学",
+      "requiredTeaching": [
+        "Python事件循环的协作调度：await可让出执行，阻塞函数不会；有界队列/信号量限制在途任务，超时与取消传播，try/finally清理并等待子任务退出；不要把取消本地await写成远端撤销。",
+        "引用、别名、嵌套浅拷贝和深拷贝取舍；tuple只固定槽位不冻结内部对象。工具日志装饰器须保留返回值/异常/签名元数据，区分同步与异步包装，日志不读取密钥。",
+        "用OrderedDict或字典+双向链表实际实现容量受限LRU；get/put平均O(1)的前提，容量0、更新移到最新、正确淘汰；空间上限不等于业务缓存键隔离正确。",
+        "decoder-only从token嵌入、位置、因果掩码、多头注意力、残差/归一化与前馈到logits/采样；解释下一token条件分布为何不是外部事实库，给小矩阵演算但不扩成训练课。",
+        "提示JSON、JSON模式、Schema约束各自保障范围；完整响应/拒绝/截断先分类，再类型和业务校验；供应商特性查官方版本，离线例只模拟响应消费。"
+      ]
+    },
+    {
+      "id": 103,
+      "sourceRecord": {
+        "id": 103,
+        "question": "实现容量受限的LRU缓存，说明get/put复杂度，并给出容量为零、覆盖已有键和淘汰次序的测试。",
+        "capability": "数据结构与独立编码",
+        "level": "基础补学",
+        "sources": [
+          "S04"
+        ],
+        "novelty": "Q97只问使用缓存的取舍，不检验具体数据结构实现。",
+        "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+        "source_intent": "LRU编码及复杂度"
+      },
+      "sourcePath": "team/textbook-v12-market.json",
+      "destinationUnits": [
+        "n01-python-model-foundations"
+      ],
+      "levelPolicy": "必要软件/模型先修须实质补学",
+      "requiredTeaching": [
+        "Python事件循环的协作调度：await可让出执行，阻塞函数不会；有界队列/信号量限制在途任务，超时与取消传播，try/finally清理并等待子任务退出；不要把取消本地await写成远端撤销。",
+        "引用、别名、嵌套浅拷贝和深拷贝取舍；tuple只固定槽位不冻结内部对象。工具日志装饰器须保留返回值/异常/签名元数据，区分同步与异步包装，日志不读取密钥。",
+        "用OrderedDict或字典+双向链表实际实现容量受限LRU；get/put平均O(1)的前提，容量0、更新移到最新、正确淘汰；空间上限不等于业务缓存键隔离正确。",
+        "decoder-only从token嵌入、位置、因果掩码、多头注意力、残差/归一化与前馈到logits/采样；解释下一token条件分布为何不是外部事实库，给小矩阵演算但不扩成训练课。",
+        "提示JSON、JSON模式、Schema约束各自保障范围；完整响应/拒绝/截断先分类，再类型和业务校验；供应商特性查官方版本，离线例只模拟响应消费。"
+      ]
+    },
+    {
+      "id": 104,
+      "sourceRecord": {
+        "id": 104,
+        "question": "Agent服务运行数小时后内存持续增长，但请求量平稳。如何区别对象仍被引用、缓存无界、待完成任务堆积与暂时内存峰值，并验证修复？",
+        "capability": "运行时内存排错",
+        "level": "中级",
+        "sources": [
+          "S04"
+        ],
+        "novelty": "Q80泛化偶发故障，本题要求专门内存诊断路径。",
+        "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+        "source_intent": "长时Agent内存泄漏排查"
+      },
+      "sourcePath": "team/textbook-v12-market.json",
+      "destinationUnits": [
+        "n09-runtime-delivery"
+      ],
+      "levelPolicy": "核心应用；114组织级统筹另列高级",
+      "requiredTeaching": [
+        "多步骤业务动作有向依赖与逆序补偿，补偿不是数据库rollback；每步效果/补偿状态和幂等键、未知先核对、补偿失败续试/人工处理与用户告知残余效果。",
+        "长研究任务记录子问题/来源/证据覆盖/计划版本/租约与预算，续租/检查点/取消标记和迟到结果；恢复重核证据时效与外部效果，独立子任务允许部分交付。",
+        "并发、超时、指数退避与jitter/重试预算、故障域舱壁；circuit breaker CLOSED/OPEN/HALF_OPEN、计数窗口/探测限制/恢复/再次打开，业务拒绝不误计为服务故障。",
+        "内存排错用稳定负载与多时点对象/分配/任务/cache长度，区分仍引用、无界缓存、悬挂任务与峰值；tracemalloc/任务枚举等选定工具的限制，修复后重复测增长斜率而非单次RSS降幅。",
+        "本地与托管比较质量/数据边界/容量/硬件/运维/高可用/费用分母，不能编账单；高级解释prefill与decode、KV cache大小/生命周期、连续批处理吞吐和首token/尾延迟，公平实验固定模型/硬件/长度/并发/质量。"
+      ]
+    },
+    {
+      "id": 105,
+      "sourceRecord": {
+        "id": 105,
+        "question": "余弦相似度、点积和欧氏距离如何计算？向量归一化会怎样改变它们的排序关系，零向量和维度不符怎样处理？",
+        "capability": "向量检索数学与输入校验",
+        "level": "初中级",
+        "sources": [
+          "S01",
+          "S02"
+        ],
+        "novelty": "Q44/45模型与混合检索选择未要求距离计算与不变量。",
+        "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+        "source_intent": "余弦与欧氏距离比较"
+      },
+      "sourcePath": "team/textbook-v12-market.json",
+      "destinationUnits": [
+        "n05-retrieval-ingestion"
+      ],
+      "levelPolicy": "核心应用；114组织级统筹另列高级",
+      "requiredTeaching": [
+        "PDF摄取区分原生文本/扫描/OCR、表格/阅读顺序/跨页段落；数据对象保留文档哈希、页与坐标、解析器版本、OCR置信与核验状态；抽样对照原页，错误文本不冒称逐字原文。",
+        "分块身份含文档版本/结构位置/内容哈希；增量构建用manifest比对保留/新增/删除，权限变化即时过滤并更新索引，原子发布一致快照；给漏删、重复、混版的检测/回滚。",
+        "余弦、点积、L2完整计算、单位向量排序等价条件、零向量/维度拒绝。Embedding评估按中文/术语/多语和文档查询编码策略分层，以真实相关性标签比较recall与任务结果。",
+        "精确flat作基线，HNSW图连通/搜索宽度、IVF聚类与探测数的机制；召回、内存、构建、查询和过滤选择率一起测，不直接声称ANN更快更好。",
+        "rerank从召回候选的query-document相关性评分与排序改变入选，解释候选上限、得分不可跨模型硬比与端到端延迟；查询改写保持约束，多查询融合去重，多跳每跳有待证子问题/证据与停止。",
+        "固定RAG与Agentic RAG在同一任务预算下比较；自适应只增加查询/证据充分性/下一跳决策，不创造证据。RAG、长上下文和微调比较知识更新、事实追溯、行为适配与成本。"
+      ]
+    },
+    {
+      "id": 106,
+      "sourceRecord": {
+        "id": 106,
+        "question": "如何用精确向量检索建立基线，再比较HNSW与IVF的召回、内存、构建和查询代价？过滤条件加入后还需要怎样测量？",
+        "capability": "ANN索引选型",
+        "level": "中高级专题",
+        "sources": [
+          "S03"
+        ],
+        "novelty": "Q45/46不是近似索引参数与精确基线比较。",
+        "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+        "source_intent": "HNSW/IVF/flat比较"
+      },
+      "sourcePath": "team/textbook-v12-market.json",
+      "destinationUnits": [
+        "n05-retrieval-ingestion"
+      ],
+      "levelPolicy": "精确基线及召回/内存/构建/查询权衡属于核心；HNSW/IVF大规模调参属于高级，完整题不删",
+      "requiredTeaching": [
+        "PDF摄取区分原生文本/扫描/OCR、表格/阅读顺序/跨页段落；数据对象保留文档哈希、页与坐标、解析器版本、OCR置信与核验状态；抽样对照原页，错误文本不冒称逐字原文。",
+        "分块身份含文档版本/结构位置/内容哈希；增量构建用manifest比对保留/新增/删除，权限变化即时过滤并更新索引，原子发布一致快照；给漏删、重复、混版的检测/回滚。",
+        "余弦、点积、L2完整计算、单位向量排序等价条件、零向量/维度拒绝。Embedding评估按中文/术语/多语和文档查询编码策略分层，以真实相关性标签比较recall与任务结果。",
+        "精确flat作基线，HNSW图连通/搜索宽度、IVF聚类与探测数的机制；召回、内存、构建、查询和过滤选择率一起测，不直接声称ANN更快更好。",
+        "rerank从召回候选的query-document相关性评分与排序改变入选，解释候选上限、得分不可跨模型硬比与端到端延迟；查询改写保持约束，多查询融合去重，多跳每跳有待证子问题/证据与停止。",
+        "固定RAG与Agentic RAG在同一任务预算下比较；自适应只增加查询/证据充分性/下一跳决策，不创造证据。RAG、长上下文和微调比较知识更新、事实追溯、行为适配与成本。"
+      ]
+    },
+    {
+      "id": 107,
+      "sourceRecord": {
+        "id": 107,
+        "question": "文档局部修改、删除或权限变化时，怎样增量更新分块和向量索引？如何检测漏删、重复块及新旧版本混用？",
+        "capability": "索引增量与删除一致性",
+        "level": "中级",
+        "sources": [
+          "S01",
+          "S03"
+        ],
+        "novelty": "Q49过期应答/Q92更新时效泛述；这里单列可操作的增量数据生命周期。",
+        "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+        "source_intent": "文档局部更新与增量索引"
+      },
+      "sourcePath": "team/textbook-v12-market.json",
+      "destinationUnits": [
+        "n05-retrieval-ingestion"
+      ],
+      "levelPolicy": "核心应用；114组织级统筹另列高级",
+      "requiredTeaching": [
+        "PDF摄取区分原生文本/扫描/OCR、表格/阅读顺序/跨页段落；数据对象保留文档哈希、页与坐标、解析器版本、OCR置信与核验状态；抽样对照原页，错误文本不冒称逐字原文。",
+        "分块身份含文档版本/结构位置/内容哈希；增量构建用manifest比对保留/新增/删除，权限变化即时过滤并更新索引，原子发布一致快照；给漏删、重复、混版的检测/回滚。",
+        "余弦、点积、L2完整计算、单位向量排序等价条件、零向量/维度拒绝。Embedding评估按中文/术语/多语和文档查询编码策略分层，以真实相关性标签比较recall与任务结果。",
+        "精确flat作基线，HNSW图连通/搜索宽度、IVF聚类与探测数的机制；召回、内存、构建、查询和过滤选择率一起测，不直接声称ANN更快更好。",
+        "rerank从召回候选的query-document相关性评分与排序改变入选，解释候选上限、得分不可跨模型硬比与端到端延迟；查询改写保持约束，多查询融合去重，多跳每跳有待证子问题/证据与停止。",
+        "固定RAG与Agentic RAG在同一任务预算下比较；自适应只增加查询/证据充分性/下一跳决策，不创造证据。RAG、长上下文和微调比较知识更新、事实追溯、行为适配与成本。"
+      ]
+    },
+    {
+      "id": 108,
+      "sourceRecord": {
+        "id": 108,
+        "question": "包含扫描页、表格和跨页段落的PDF怎样进入RAG？如何保留页码与结构、测解析质量，并防止OCR错误被引用成原文事实？",
+        "capability": "文档解析/OCR/结构溯源",
+        "level": "初中级；TB规模不作初级门槛",
+        "sources": [
+          "S02",
+          "S03"
+        ],
+        "novelty": "Q43切块建立在已有可用文本上，本题核上游解析。",
+        "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+        "source_intent": "混合PDF解析与入库"
+      },
+      "sourcePath": "team/textbook-v12-market.json",
+      "destinationUnits": [
+        "n05-retrieval-ingestion"
+      ],
+      "levelPolicy": "核心应用；114组织级统筹另列高级",
+      "requiredTeaching": [
+        "PDF摄取区分原生文本/扫描/OCR、表格/阅读顺序/跨页段落；数据对象保留文档哈希、页与坐标、解析器版本、OCR置信与核验状态；抽样对照原页，错误文本不冒称逐字原文。",
+        "分块身份含文档版本/结构位置/内容哈希；增量构建用manifest比对保留/新增/删除，权限变化即时过滤并更新索引，原子发布一致快照；给漏删、重复、混版的检测/回滚。",
+        "余弦、点积、L2完整计算、单位向量排序等价条件、零向量/维度拒绝。Embedding评估按中文/术语/多语和文档查询编码策略分层，以真实相关性标签比较recall与任务结果。",
+        "精确flat作基线，HNSW图连通/搜索宽度、IVF聚类与探测数的机制；召回、内存、构建、查询和过滤选择率一起测，不直接声称ANN更快更好。",
+        "rerank从召回候选的query-document相关性评分与排序改变入选，解释候选上限、得分不可跨模型硬比与端到端延迟；查询改写保持约束，多查询融合去重，多跳每跳有待证子问题/证据与停止。",
+        "固定RAG与Agentic RAG在同一任务预算下比较；自适应只增加查询/证据充分性/下一跳决策，不创造证据。RAG、长上下文和微调比较知识更新、事实追溯、行为适配与成本。"
+      ]
+    },
+    {
+      "id": 109,
+      "sourceRecord": {
+        "id": 109,
+        "question": "解释decoder-only Transformer从token到下一token分布的基本推理过程：因果注意力、多头、位置、前馈层各起什么作用？这与检索外部事实有什么区别？",
+        "capability": "模型基础先修",
+        "level": "基础补学",
+        "sources": [
+          "S02"
+        ],
+        "novelty": "原100是应用架构，没有基础推理机制；不扩为训练研究岗要求。",
+        "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+        "source_intent": "Transformer结构与推理"
+      },
+      "sourcePath": "team/textbook-v12-market.json",
+      "destinationUnits": [
+        "n01-python-model-foundations"
+      ],
+      "levelPolicy": "必要软件/模型先修须实质补学",
+      "requiredTeaching": [
+        "Python事件循环的协作调度：await可让出执行，阻塞函数不会；有界队列/信号量限制在途任务，超时与取消传播，try/finally清理并等待子任务退出；不要把取消本地await写成远端撤销。",
+        "引用、别名、嵌套浅拷贝和深拷贝取舍；tuple只固定槽位不冻结内部对象。工具日志装饰器须保留返回值/异常/签名元数据，区分同步与异步包装，日志不读取密钥。",
+        "用OrderedDict或字典+双向链表实际实现容量受限LRU；get/put平均O(1)的前提，容量0、更新移到最新、正确淘汰；空间上限不等于业务缓存键隔离正确。",
+        "decoder-only从token嵌入、位置、因果掩码、多头注意力、残差/归一化与前馈到logits/采样；解释下一token条件分布为何不是外部事实库，给小矩阵演算但不扩成训练课。",
+        "提示JSON、JSON模式、Schema约束各自保障范围；完整响应/拒绝/截断先分类，再类型和业务校验；供应商特性查官方版本，离线例只模拟响应消费。"
+      ]
+    },
+    {
+      "id": 110,
+      "sourceRecord": {
+        "id": 110,
+        "question": "提示模型返回JSON、使用JSON模式和按Schema约束生成分别能保证什么？遇到拒绝、截断、类型合法但语义错误时，应用怎样处理？",
+        "capability": "结构化输出生成与消费契约",
+        "level": "初中级",
+        "sources": [
+          "S03"
+        ],
+        "novelty": "Q23是工具参数合法性，本题补输出生成阶段和不完整响应路径。",
+        "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+        "source_intent": "稳定结构化输出"
+      },
+      "sourcePath": "team/textbook-v12-market.json",
+      "destinationUnits": [
+        "n01-python-model-foundations"
+      ],
+      "levelPolicy": "核心应用；114组织级统筹另列高级",
+      "requiredTeaching": [
+        "Python事件循环的协作调度：await可让出执行，阻塞函数不会；有界队列/信号量限制在途任务，超时与取消传播，try/finally清理并等待子任务退出；不要把取消本地await写成远端撤销。",
+        "引用、别名、嵌套浅拷贝和深拷贝取舍；tuple只固定槽位不冻结内部对象。工具日志装饰器须保留返回值/异常/签名元数据，区分同步与异步包装，日志不读取密钥。",
+        "用OrderedDict或字典+双向链表实际实现容量受限LRU；get/put平均O(1)的前提，容量0、更新移到最新、正确淘汰；空间上限不等于业务缓存键隔离正确。",
+        "decoder-only从token嵌入、位置、因果掩码、多头注意力、残差/归一化与前馈到logits/采样；解释下一token条件分布为何不是外部事实库，给小矩阵演算但不扩成训练课。",
+        "提示JSON、JSON模式、Schema约束各自保障范围；完整响应/拒绝/截断先分类，再类型和业务校验；供应商特性查官方版本，离线例只模拟响应消费。"
+      ]
+    },
+    {
+      "id": 111,
+      "sourceRecord": {
+        "id": 111,
+        "question": "同一Agent英语任务表现正常，中文或混合语言却失败，怎样分别检查分词/检索、提示、工具参数与评测样本，而不是直接换模型？",
+        "capability": "跨语言整链排错",
+        "level": "中级",
+        "sources": [
+          "S03"
+        ],
+        "novelty": "Q44只覆盖embedding，本题是整链语言分布迁移。",
+        "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+        "source_intent": "英语有效而其他语言失败"
+      },
+      "sourcePath": "team/textbook-v12-market.json",
+      "destinationUnits": [
+        "n10-evaluation-projects"
+      ],
+      "levelPolicy": "核心应用；114组织级统筹另列高级",
+      "requiredTeaching": [
+        "模型/工具/检索逐一替换的消融矩阵，固定任务与预算；必要工具拿掉会使任务不可解须标不可行条件，不把这种失败归模型；交互效应用小因子实验并报告成本/时延。",
+        "客服意图与风险分层、自动解答/可逆动作/高风险转人工，交接包含用户上下文/证据/已发生动作/待处理项与SLA；按解决、误处理、转人工恰当性和等待等定义指标，阈值由实际业务定。",
+        "英语正常中文失败按token预算/文本归一化、召回、提示、工具编码/参数和评测标注分层定位；同语义跨语言成对任务，避免把翻译差异当模型差异，解释先干预哪层。",
+        "技术移交包包含环境锁/启动与配置模板(无密钥)/架构ADR/数据权限与版本/评测夹具/失败复现/监控回退/已知限制/责任；接手者从干净环境独立复现并反馈，文件齐不等于接手成功。",
+        "真实项目/事故保留本人贡献、原始问题/用户证据、已有方案研究、差异假设、实现版本、失败原例和修复回归、真实反馈/迭代。Q10/99方法可以教，真实经历不得由教材构造。"
+      ]
+    },
+    {
+      "id": 112,
+      "sourceRecord": {
+        "id": 112,
+        "question": "用户在多轮任务中突然换话题，又用“继续刚才那个”返回，怎样识别任务切换、保存各自状态并澄清指代，防止旧任务动作误执行？",
+        "capability": "多任务会话与指代路由",
+        "level": "初中级",
+        "sources": [
+          "S03"
+        ],
+        "novelty": "Q37是内容冲突，本题处理并存任务及切换语义。",
+        "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+        "source_intent": "聊天中话题切换失败"
+      },
+      "sourcePath": "team/textbook-v12-market.json",
+      "destinationUnits": [
+        "n02-context-memory-prompt"
+      ],
+      "levelPolicy": "核心应用；114组织级统筹另列高级",
+      "requiredTeaching": [
+        "会话历史、任务权威状态、当轮上下文和长期记忆分别定义生命周期/作用域/事实权威；给无长期记忆即可完成的任务与确需跨会话偏好的对照。",
+        "记忆记录包含tenant/user/session或共享范围、类型、来源、置信/确认状态、适用时间、版本、替代/删除标记和依赖；明确何时抽取、确认、写入、合并、更新、过期和删除。记忆不得保留可复用批准。",
+        "错误记忆通过来源版本与依赖图传播失效，停止继续使用、重新取证并标出受影响结果；当前明确要求覆盖旧偏好但不提升权限。过滤必须在候选召回前按范围限制且读回重验。",
+        "提示角色/工具规则/输出契约分层，示例选择覆盖容易混淆动作、正反例与拒绝，不堆冗余；Few-shot排序、token代价与偏置，固定任务实验比较无例/精选/失真例的错选与成本。",
+        "上下文裁剪不能删除权威事实；消息TTL/归档、摘要校验、可检索中间产物和索引限额控制存储增长。会话路由保留独立task_id，切换需识别/澄清指代，返回旧任务重核目标修订及批准。"
+      ]
+    },
+    {
+      "id": 113,
+      "sourceRecord": {
+        "id": 113,
+        "question": "部署本地推理服务时，怎样区分prefill与decode瓶颈，解释KV cache与批处理对吞吐、首token和尾延迟的影响，并设计公平比较而非先认定某框架更快？",
+        "capability": "推理服务性能",
+        "level": "高级专题",
+        "sources": [
+          "S01"
+        ],
+        "novelty": "Q98本地/托管选型不含推理引擎内部机制；改写原面经诱导性优劣前提。",
+        "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+        "source_intent": "推理框架比较"
+      },
+      "sourcePath": "team/textbook-v12-market.json",
+      "destinationUnits": [
+        "n09-runtime-delivery"
+      ],
+      "levelPolicy": "高级专题；保留原完整问法，不计为普遍初级门槛",
+      "requiredTeaching": [
+        "多步骤业务动作有向依赖与逆序补偿，补偿不是数据库rollback；每步效果/补偿状态和幂等键、未知先核对、补偿失败续试/人工处理与用户告知残余效果。",
+        "长研究任务记录子问题/来源/证据覆盖/计划版本/租约与预算，续租/检查点/取消标记和迟到结果；恢复重核证据时效与外部效果，独立子任务允许部分交付。",
+        "并发、超时、指数退避与jitter/重试预算、故障域舱壁；circuit breaker CLOSED/OPEN/HALF_OPEN、计数窗口/探测限制/恢复/再次打开，业务拒绝不误计为服务故障。",
+        "内存排错用稳定负载与多时点对象/分配/任务/cache长度，区分仍引用、无界缓存、悬挂任务与峰值；tracemalloc/任务枚举等选定工具的限制，修复后重复测增长斜率而非单次RSS降幅。",
+        "本地与托管比较质量/数据边界/容量/硬件/运维/高可用/费用分母，不能编账单；高级解释prefill与decode、KV cache大小/生命周期、连续批处理吞吐和首token/尾延迟，公平实验固定模型/硬件/长度/并发/质量。"
+      ]
+    },
+    {
+      "id": 114,
+      "sourceRecord": {
+        "id": 114,
+        "question": "面对客户工程团队，怎样交付一份可复现的Agent技术移交包，使对方能重建环境、运行评测、理解架构决策并报告失败？如何证明接手成功？",
+        "capability": "工程技术交接与复现",
+        "level": "中高级；入门可做缩小版",
+        "sources": [
+          "S06"
+        ],
+        "novelty": "由JD能力派生，非企业原题；Q10/99要求本人经历，本题要求交接产物与接手验证。",
+        "derivation": "研究员按来源题意/岗位职责改写，非逐字企业真题",
+        "source_intent": "客户共同开发、技术文档与评测交接"
+      },
+      "sourcePath": "team/textbook-v12-market.json",
+      "destinationUnits": [
+        "n10-evaluation-projects"
+      ],
+      "levelPolicy": "核心交接方法；高级客户组织场景另列；方法题不适用Q10/Q99经历上限，实际接手证据另记",
+      "requiredTeaching": [
+        "模型/工具/检索逐一替换的消融矩阵，固定任务与预算；必要工具拿掉会使任务不可解须标不可行条件，不把这种失败归模型；交互效应用小因子实验并报告成本/时延。",
+        "客服意图与风险分层、自动解答/可逆动作/高风险转人工，交接包含用户上下文/证据/已发生动作/待处理项与SLA；按解决、误处理、转人工恰当性和等待等定义指标，阈值由实际业务定。",
+        "英语正常中文失败按token预算/文本归一化、召回、提示、工具编码/参数和评测标注分层定位；同语义跨语言成对任务，避免把翻译差异当模型差异，解释先干预哪层。",
+        "技术移交包包含环境锁/启动与配置模板(无密钥)/架构ADR/数据权限与版本/评测夹具/失败复现/监控回退/已知限制/责任；接手者从干净环境独立复现并反馈，文件齐不等于接手成功。",
+        "真实项目/事故保留本人贡献、原始问题/用户证据、已有方案研究、差异假设、实现版本、失败原例和修复回归、真实反馈/迭代。Q10/99方法可以教，真实经历不得由教材构造。"
+      ]
+    }
+  ],
+  "originalModules": [
+    {
+      "moduleId": "f01",
+      "originalTitle": "编程、HTTP 与软件测试",
+      "objectives": [
+        {
+          "id": "f01-o1",
+          "text": "实现输入校验、异常处理与 API 请求"
+        },
+        {
+          "id": "f01-o2",
+          "text": "使用 Git、依赖锁定和测试复现服务"
+        }
+      ],
+      "competencyIds": [
+        "software"
+      ],
+      "creationStageIds": [
+        "mvp"
+      ],
+      "unitIds": [
+        "01-foundation",
+        "f01"
+      ],
+      "knowledgePointIds": [
+        "f01-k01",
+        "f01-k02",
+        "f01-k03",
+        "f01-k04"
+      ],
+      "historicalOriginalModulePrerequisites": [],
+      "dependencyPolicy": "historical_module_requirements_preserved_as_provenance; current_learning_graph_is_prerequisiteUnitIds",
+      "v12PrimaryUnits": [
+        "01-foundation",
+        "f01"
+      ],
+      "v12Policy": "原目标文本/ID保持，新增专题补子能力不授认证"
+    },
+    {
+      "moduleId": "f02",
+      "originalTitle": "模型调用与上下文基础",
+      "objectives": [
+        {
+          "id": "f02-o1",
+          "text": "完成真实模型调用及结构与业务双重校验"
+        },
+        {
+          "id": "f02-o2",
+          "text": "区分用户输入、工具结果与指令来源"
+        }
+      ],
+      "competencyIds": [
+        "model-context",
+        "software"
+      ],
+      "creationStageIds": [
+        "mvp"
+      ],
+      "unitIds": [
+        "f02"
+      ],
+      "knowledgePointIds": [
+        "f02-k01",
+        "f02-k02",
+        "f02-k03",
+        "f02-k04"
+      ],
+      "historicalOriginalModulePrerequisites": [
+        "f01"
+      ],
+      "dependencyPolicy": "historical_module_requirements_preserved_as_provenance; current_learning_graph_is_prerequisiteUnitIds",
+      "v12PrimaryUnits": [
+        "f02"
+      ],
+      "v12Policy": "原目标文本/ID保持，新增专题补子能力不授认证"
+    },
+    {
+      "moduleId": "c01",
+      "originalTitle": "工作流、Agent 循环与方案选择",
+      "objectives": [
+        {
+          "id": "c01-o1",
+          "text": "按任务不确定性选择固定流程或动态决策"
+        },
+        {
+          "id": "c01-o2",
+          "text": "根据工具反馈决策并设置停止预算"
+        }
+      ],
+      "competencyIds": [
+        "model-context",
+        "tools-state"
+      ],
+      "creationStageIds": [
+        "baseline",
+        "mvp"
+      ],
+      "unitIds": [
+        "c01-selection",
+        "c01-control-primer",
+        "c01-fixed-workflow",
+        "c01-control-loop"
+      ],
+      "knowledgePointIds": [
+        "c01-k01",
+        "c01-k02",
+        "c01-k03",
+        "c01-k04"
+      ],
+      "historicalOriginalModulePrerequisites": [
+        "f02"
+      ],
+      "dependencyPolicy": "historical_module_requirements_preserved_as_provenance; current_learning_graph_is_prerequisiteUnitIds",
+      "v12PrimaryUnits": [
+        "c01-selection",
+        "c01-control-primer",
+        "c01-fixed-workflow",
+        "c01-control-loop"
+      ],
+      "v12Policy": "原目标文本/ID保持，新增专题补子能力不授认证"
+    },
+    {
+      "moduleId": "c02",
+      "originalTitle": "资料治理、检索与有据回答",
+      "objectives": [
+        {
+          "id": "c02-o1",
+          "text": "记录数据来源、版本与访问范围"
+        },
+        {
+          "id": "c02-o2",
+          "text": "比较检索策略并验证引用与无答案行为"
+        }
+      ],
+      "competencyIds": [
+        "retrieval-data",
+        "model-context"
+      ],
+      "creationStageIds": [
+        "baseline",
+        "mvp"
+      ],
+      "unitIds": [
+        "c02"
+      ],
+      "knowledgePointIds": [
+        "c02-k01",
+        "c02-k02",
+        "c02-k03",
+        "c02-k04"
+      ],
+      "historicalOriginalModulePrerequisites": [
+        "f02"
+      ],
+      "dependencyPolicy": "historical_module_requirements_preserved_as_provenance; current_learning_graph_is_prerequisiteUnitIds",
+      "v12PrimaryUnits": [
+        "c02"
+      ],
+      "v12Policy": "原目标文本/ID保持，新增专题补子能力不授认证"
+    },
+    {
+      "moduleId": "c03",
+      "originalTitle": "工具契约与业务动作",
+      "objectives": [
+        {
+          "id": "c03-o1",
+          "text": "实现输入输出契约与授权规则"
+        },
+        {
+          "id": "c03-o2",
+          "text": "验证幂等请求与失败反馈"
+        }
+      ],
+      "competencyIds": [
+        "tools-state",
+        "software"
+      ],
+      "creationStageIds": [
+        "mvp"
+      ],
+      "unitIds": [
+        "c01-control-primer",
+        "c03"
+      ],
+      "knowledgePointIds": [
+        "c03-k01",
+        "c03-k02",
+        "c03-k03",
+        "c03-k04"
+      ],
+      "historicalOriginalModulePrerequisites": [
+        "c01",
+        "f01"
+      ],
+      "dependencyPolicy": "historical_module_requirements_preserved_as_provenance; current_learning_graph_is_prerequisiteUnitIds",
+      "v12PrimaryUnits": [
+        "c01-control-primer",
+        "c03"
+      ],
+      "v12Policy": "原目标文本/ID保持，新增专题补子能力不授认证"
+    },
+    {
+      "moduleId": "e01",
+      "originalTitle": "状态、检查点与失败恢复",
+      "objectives": [
+        {
+          "id": "e01-o1",
+          "text": "显式保存任务状态与已完成动作"
+        },
+        {
+          "id": "e01-o2",
+          "text": "在中断后核对外部系统再恢复"
+        }
+      ],
+      "competencyIds": [
+        "tools-state"
+      ],
+      "creationStageIds": [
+        "quality"
+      ],
+      "unitIds": [
+        "c01-control-primer",
+        "e01"
+      ],
+      "knowledgePointIds": [
+        "e01-k01",
+        "e01-k02",
+        "e01-k03",
+        "e01-k04"
+      ],
+      "historicalOriginalModulePrerequisites": [
+        "c03"
+      ],
+      "dependencyPolicy": "historical_module_requirements_preserved_as_provenance; current_learning_graph_is_prerequisiteUnitIds",
+      "v12PrimaryUnits": [
+        "c01-control-primer",
+        "e01"
+      ],
+      "v12Policy": "原目标文本/ID保持，新增专题补子能力不授认证"
+    },
+    {
+      "moduleId": "e02",
+      "originalTitle": "评估集、追踪与回归",
+      "objectives": [
+        {
+          "id": "e02-o1",
+          "text": "区分能力、回归和独立保留案例"
+        },
+        {
+          "id": "e02-o2",
+          "text": "分别评价任务结果、轨迹和成本"
+        }
+      ],
+      "competencyIds": [
+        "eval-safety",
+        "operations"
+      ],
+      "creationStageIds": [
+        "baseline",
+        "hypothesis",
+        "quality",
+        "iterate"
+      ],
+      "unitIds": [
+        "02-task-acceptance",
+        "e02"
+      ],
+      "knowledgePointIds": [
+        "e02-k01",
+        "e02-k02",
+        "e02-k03",
+        "e02-k04"
+      ],
+      "historicalOriginalModulePrerequisites": [
+        "c02",
+        "c03"
+      ],
+      "dependencyPolicy": "historical_module_requirements_preserved_as_provenance; current_learning_graph_is_prerequisiteUnitIds",
+      "v12PrimaryUnits": [
+        "02-task-acceptance",
+        "e02"
+      ],
+      "v12Policy": "原目标文本/ID保持，新增专题补子能力不授认证"
+    },
+    {
+      "moduleId": "e03",
+      "originalTitle": "安全边界与对抗输入",
+      "objectives": [
+        {
+          "id": "e03-o1",
+          "text": "区分不可信资料与指令"
+        },
+        {
+          "id": "e03-o2",
+          "text": "验证最小权限、敏感数据处理和人工介入"
+        }
+      ],
+      "competencyIds": [
+        "eval-safety",
+        "tools-state",
+        "retrieval-data"
+      ],
+      "creationStageIds": [
+        "quality"
+      ],
+      "unitIds": [
+        "03-trust-boundary",
+        "e03"
+      ],
+      "knowledgePointIds": [
+        "e03-k01",
+        "e03-k02",
+        "e03-k03",
+        "e03-k04"
+      ],
+      "historicalOriginalModulePrerequisites": [
+        "c02",
+        "c03",
+        "e02"
+      ],
+      "dependencyPolicy": "historical_module_requirements_preserved_as_provenance; current_learning_graph_is_prerequisiteUnitIds",
+      "v12PrimaryUnits": [
+        "03-trust-boundary",
+        "e03"
+      ],
+      "v12Policy": "原目标文本/ID保持，新增专题补子能力不授认证"
+    },
+    {
+      "moduleId": "e04",
+      "originalTitle": "部署、可观测性与运行维护",
+      "objectives": [
+        {
+          "id": "e04-o1",
+          "text": "提供分环境配置、可观测运行和回退"
+        },
+        {
+          "id": "e04-o2",
+          "text": "用故障记录定位服务阶段"
+        }
+      ],
+      "competencyIds": [
+        "operations",
+        "software"
+      ],
+      "creationStageIds": [
+        "quality",
+        "usage",
+        "iterate"
+      ],
+      "unitIds": [
+        "e04"
+      ],
+      "knowledgePointIds": [
+        "e04-k01",
+        "e04-k02",
+        "e04-k03",
+        "e04-k04"
+      ],
+      "historicalOriginalModulePrerequisites": [
+        "e01",
+        "e02",
+        "e03"
+      ],
+      "dependencyPolicy": "historical_module_requirements_preserved_as_provenance; current_learning_graph_is_prerequisiteUnitIds",
+      "v12PrimaryUnits": [
+        "e04"
+      ],
+      "v12Policy": "原目标文本/ID保持，新增专题补子能力不授认证"
+    },
+    {
+      "moduleId": "e05",
+      "originalTitle": "性能、成本与规模取舍",
+      "objectives": [
+        {
+          "id": "e05-o1",
+          "text": "在约定负载下记录尾延迟与每任务成本"
+        },
+        {
+          "id": "e05-o2",
+          "text": "比较缓存、模型选择或并发方案"
+        }
+      ],
+      "competencyIds": [
+        "operations",
+        "model-context"
+      ],
+      "creationStageIds": [
+        "hypothesis",
+        "quality",
+        "usage",
+        "iterate"
+      ],
+      "unitIds": [
+        "e05"
+      ],
+      "knowledgePointIds": [
+        "e05-k01",
+        "e05-k02",
+        "e05-k03",
+        "e05-k04"
+      ],
+      "historicalOriginalModulePrerequisites": [
+        "e02",
+        "e04"
+      ],
+      "dependencyPolicy": "historical_module_requirements_preserved_as_provenance; current_learning_graph_is_prerequisiteUnitIds",
+      "v12PrimaryUnits": [
+        "e05"
+      ],
+      "v12Policy": "原目标文本/ID保持，新增专题补子能力不授认证"
+    },
+    {
+      "moduleId": "p01",
+      "originalTitle": "业务理解、技术协作与文档",
+      "objectives": [
+        {
+          "id": "p01-o1",
+          "text": "把用户问题映射为可衡量的技术任务"
+        },
+        {
+          "id": "p01-o2",
+          "text": "通过架构评审和文档解释取舍"
+        }
+      ],
+      "competencyIds": [
+        "product-collaboration",
+        "software"
+      ],
+      "creationStageIds": [
+        "discover",
+        "hypothesis",
+        "mvp",
+        "usage",
+        "iterate"
+      ],
+      "unitIds": [
+        "p01-discovery",
+        "p01-mvp"
+      ],
+      "knowledgePointIds": [
+        "p01-k01",
+        "p01-k02",
+        "p01-k03",
+        "p01-k04"
+      ],
+      "historicalOriginalModulePrerequisites": [
+        "c01",
+        "e02"
+      ],
+      "dependencyPolicy": "historical_module_requirements_preserved_as_provenance; current_learning_graph_is_prerequisiteUnitIds",
+      "v12PrimaryUnits": [
+        "p01-discovery",
+        "p01-mvp"
+      ],
+      "v12Policy": "原目标文本/ID保持，新增专题补子能力不授认证"
+    },
+    {
+      "moduleId": "p02",
+      "originalTitle": "综合作品、答辩与复盘",
+      "objectives": [
+        {
+          "id": "p02-o1",
+          "text": "整合证据并完成外部评审"
+        },
+        {
+          "id": "p02-o2",
+          "text": "用失败分析改进并迁移到未知任务"
+        }
+      ],
+      "competencyIds": [
+        "software",
+        "model-context",
+        "retrieval-data",
+        "tools-state",
+        "eval-safety",
+        "operations",
+        "product-collaboration"
+      ],
+      "creationStageIds": [
+        "usage",
+        "iterate"
+      ],
+      "unitIds": [
+        "p02"
+      ],
+      "knowledgePointIds": [
+        "p02-k01",
+        "p02-k02",
+        "p02-k03",
+        "p02-k04"
+      ],
+      "historicalOriginalModulePrerequisites": [
+        "e01",
+        "e03",
+        "e04",
+        "e05",
+        "p01"
+      ],
+      "dependencyPolicy": "historical_module_requirements_preserved_as_provenance; current_learning_graph_is_prerequisiteUnitIds",
+      "v12PrimaryUnits": [
+        "p02"
+      ],
+      "v12Policy": "原目标文本/ID保持，新增专题补子能力不授认证"
+    }
+  ],
+  "originalKnowledgePoints": [
+    {
+      "id": "f01-k01",
+      "originalTitle": "输入类型与非法输入",
+      "objectiveIds": [
+        "f01-o1"
+      ],
+      "publicQuestionId": "f01-k01-q",
+      "originalPrimaryQuestion": "工单编号传入列表时如何处理？",
+      "originalTransferQuestion": "改为空字符串或超长正文",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "f01",
+      "historicalV08Destination": "输入边界与类型/语义校验",
+      "v09PrimaryUnitIds": [
+        "f01"
+      ],
+      "v09PreparatoryUnitIds": [
+        "01-foundation"
+      ],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "f01"
+      ],
+      "v12PreparatoryUnitIds": [
+        "01-foundation"
+      ]
+    },
+    {
+      "id": "f01-k02",
+      "originalTitle": "HTTP请求与失败分类",
+      "objectiveIds": [
+        "f01-o1"
+      ],
+      "publicQuestionId": "f01-k02-q",
+      "originalPrimaryQuestion": "接口超时后可否报告查到订单？",
+      "originalTransferQuestion": "改为权限拒绝，判断是否重试",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "f01",
+      "historicalV08Destination": "HTTP 状态、网络失败与解析分层",
+      "v09PrimaryUnitIds": [
+        "f01"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "f01"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "f01-k03",
+      "originalTitle": "依赖与版本复现",
+      "objectiveIds": [
+        "f01-o2"
+      ],
+      "publicQuestionId": "f01-k03-q",
+      "originalPrimaryQuestion": "自己电脑能跑但同伴不能跑，交接缺什么？",
+      "originalTransferQuestion": "改运行时版本并记录差异",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "f01",
+      "historicalV08Destination": "可复现运行与依赖/Git 交接",
+      "v09PrimaryUnitIds": [
+        "f01"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "f01"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "f01-k04",
+      "originalTitle": "测试断言与变更记录",
+      "objectiveIds": [
+        "f01-o2"
+      ],
+      "publicQuestionId": "f01-k04-q",
+      "originalPrimaryQuestion": "只有成功截图能否证明非法输入被处理？",
+      "originalTransferQuestion": "改变夹具并检查原断言",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "f01",
+      "historicalV08Destination": "测试断言、固定夹具与变更追踪",
+      "v09PrimaryUnitIds": [
+        "f01"
+      ],
+      "v09PreparatoryUnitIds": [
+        "01-foundation"
+      ],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "f01"
+      ],
+      "v12PreparatoryUnitIds": [
+        "01-foundation"
+      ]
+    },
+    {
+      "id": "f02-k01",
+      "originalTitle": "模型请求与完成结果",
+      "objectiveIds": [
+        "f02-o1"
+      ],
+      "publicQuestionId": "f02-k01-q",
+      "originalPrimaryQuestion": "只收到半段响应能否保存为完成？",
+      "originalTransferQuestion": "增加拒绝或截断状态",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "f02",
+      "historicalV08Destination": "完整响应与请求结果归一化",
+      "v09PrimaryUnitIds": [
+        "f02"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "f02"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "f02-k02",
+      "originalTitle": "结构与业务双重校验",
+      "objectiveIds": [
+        "f02-o1"
+      ],
+      "publicQuestionId": "f02-k02-q",
+      "originalPrimaryQuestion": "合法JSON的订单归属错误能否接受？",
+      "originalTransferQuestion": "改为引用不支持结论",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "f02",
+      "historicalV08Destination": "结构合法与业务有效的双重校验",
+      "v09PrimaryUnitIds": [
+        "f02"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "f02"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "f02-k03",
+      "originalTitle": "可信指令与外部资料",
+      "objectiveIds": [
+        "f02-o2"
+      ],
+      "publicQuestionId": "f02-k03-q",
+      "originalPrimaryQuestion": "手册自称系统指令能否提高权限？",
+      "originalTransferQuestion": "同样文字来自工具输出",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "f02",
+      "historicalV08Destination": "指令/用户/工具资料的信任分层",
+      "v09PrimaryUnitIds": [
+        "f02"
+      ],
+      "v09PreparatoryUnitIds": [
+        "03-trust-boundary"
+      ],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "f02"
+      ],
+      "v12PreparatoryUnitIds": [
+        "03-trust-boundary"
+      ]
+    },
+    {
+      "id": "f02-k04",
+      "originalTitle": "上下文预算与缺信息",
+      "objectiveIds": [
+        "f02-o2"
+      ],
+      "publicQuestionId": "f02-k04-q",
+      "originalPrimaryQuestion": "摘要删掉退款例外条件会怎样？",
+      "originalTransferQuestion": "改变输入长度与必须保留字段",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "f02",
+      "historicalV08Destination": "上下文预算、压缩不变量与缺信息处理",
+      "v09PrimaryUnitIds": [
+        "f02"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "f02"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "c01-k01",
+      "originalTitle": "单次调用与工作流基线",
+      "objectiveIds": [
+        "c01-o1"
+      ],
+      "publicQuestionId": "c01-k01-q",
+      "originalPrimaryQuestion": "固定查手册任务为何要先测简单方案？",
+      "originalTransferQuestion": "请求需要动态澄清",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "c01",
+      "historicalV08Destination": "单次/普通程序/workflow 可比基线",
+      "v09PrimaryUnitIds": [
+        "c01-selection",
+        "c01-fixed-workflow"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "c01-selection",
+        "c01-fixed-workflow"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "c01-k02",
+      "originalTitle": "动态循环与复杂度取舍",
+      "objectiveIds": [
+        "c01-o1"
+      ],
+      "publicQuestionId": "c01-k02-q",
+      "originalPrimaryQuestion": "多次模型调用是否已经构成Agent？",
+      "originalTransferQuestion": "将固定分支改为依据观察决策",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "c01",
+      "historicalV08Destination": "动态控制判定与复杂度选择",
+      "v09PrimaryUnitIds": [
+        "c01-selection",
+        "c01-control-loop"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "c01-selection",
+        "c01-control-loop"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "c01-k03",
+      "originalTitle": "行动观察与重规划",
+      "objectiveIds": [
+        "c01-o2"
+      ],
+      "publicQuestionId": "c01-k03-q",
+      "originalPrimaryQuestion": "工具拒绝后模型自称成功如何处理？",
+      "originalTransferQuestion": "取得新证据使旧计划失效",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "c01",
+      "historicalV08Destination": "v07 的反馈/验收拒绝/再规划，补篇只给选型关联",
+      "v09PrimaryUnitIds": [
+        "c01-control-loop"
+      ],
+      "v09PreparatoryUnitIds": [
+        "c01-control-primer"
+      ],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "c01-control-loop"
+      ],
+      "v12PreparatoryUnitIds": [
+        "c01-control-primer"
+      ]
+    },
+    {
+      "id": "c01-k04",
+      "originalTitle": "停止预算与协作边界",
+      "objectiveIds": [
+        "c01-o2"
+      ],
+      "publicQuestionId": "c01-k04-q",
+      "originalPrimaryQuestion": "连续三次相同工具错误后怎么停止？",
+      "originalTransferQuestion": "比较单Agent与角色分工协调成本",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "c01",
+      "historicalV08Destination": "v07 的预算/停止；补篇的单/多 Agent 协作合同与代价",
+      "v09PrimaryUnitIds": [
+        "c01-selection",
+        "c01-control-loop"
+      ],
+      "v09PreparatoryUnitIds": [
+        "c01-control-primer"
+      ],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "c01-selection",
+        "c01-control-loop"
+      ],
+      "v12PreparatoryUnitIds": [
+        "c01-control-primer"
+      ]
+    },
+    {
+      "id": "c02-k01",
+      "originalTitle": "文档版本与可读范围",
+      "objectiveIds": [
+        "c02-o1"
+      ],
+      "publicQuestionId": "c02-k01-q",
+      "originalPrimaryQuestion": "新政策入库是否代表已用于本次回答？",
+      "originalTransferQuestion": "同文档不同租户或生效日",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "c02",
+      "historicalV08Destination": "文档/索引版本和可信查询范围",
+      "v09PrimaryUnitIds": [
+        "c02"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "c02"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "c02-k02",
+      "originalTitle": "片段与证据归属",
+      "objectiveIds": [
+        "c02-o1"
+      ],
+      "publicQuestionId": "c02-k02-q",
+      "originalPrimaryQuestion": "引用编号存在但片段无该结论怎么办？",
+      "originalTransferQuestion": "片段支持部分而非全部主张",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "c02",
+      "historicalV08Destination": "片段 provenance 与引用支持边界",
+      "v09PrimaryUnitIds": [
+        "c02"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "c02"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "c02-k03",
+      "originalTitle": "词法与语义检索比较",
+      "objectiveIds": [
+        "c02-o2"
+      ],
+      "publicQuestionId": "c02-k03-q",
+      "originalPrimaryQuestion": "同义查询召回失败先改哪一层？",
+      "originalTransferQuestion": "精确订单编号与语义问句对照",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "c02",
+      "historicalV08Destination": "精确/词法/语义或混合的可比检索",
+      "v09PrimaryUnitIds": [
+        "c02"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "c02"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "c02-k04",
+      "originalTitle": "冲突和无答案",
+      "objectiveIds": [
+        "c02-o2"
+      ],
+      "publicQuestionId": "c02-k04-q",
+      "originalPrimaryQuestion": "两份政策冲突能否自行选有利条款？",
+      "originalTransferQuestion": "过期资料和权限不足分别处理",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "c02",
+      "historicalV08Destination": "冲突、过期、无答案与无权限的不同决策",
+      "v09PrimaryUnitIds": [
+        "c02"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "c02"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "c03-k01",
+      "originalTitle": "工具定义建议与实际执行",
+      "objectiveIds": [
+        "c03-o1"
+      ],
+      "publicQuestionId": "c03-k01-q",
+      "originalPrimaryQuestion": "模型提出create_draft是否表示草稿已保存？",
+      "originalTransferQuestion": "输出关联ID错位",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "c03",
+      "historicalV08Destination": "模型工具建议到执行观察的协议绑定",
+      "v09PrimaryUnitIds": [
+        "c03"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "c03"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "c03-k02",
+      "originalTitle": "参数语义与对象授权",
+      "objectiveIds": [
+        "c03-o1"
+      ],
+      "publicQuestionId": "c03-k02-q",
+      "originalPrimaryQuestion": "用户传tenant=B能否改变读取身份？",
+      "originalTransferQuestion": "合法schema但目标越权",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "c03",
+      "historicalV08Destination": "类型/业务语义/对象授权与精确批准",
+      "v09PrimaryUnitIds": [
+        "c03"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "c03"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "c03-k03",
+      "originalTitle": "幂等与重复请求",
+      "objectiveIds": [
+        "c03-o2"
+      ],
+      "publicQuestionId": "c03-k03-q",
+      "originalPrimaryQuestion": "保存超时后重新提交为何可能产生两份？",
+      "originalTransferQuestion": "同逻辑动作不同请求ID",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "c03",
+      "historicalV08Destination": "稳定逻辑意图、去重槽位与幂等条件",
+      "v09PrimaryUnitIds": [
+        "c03"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "c03"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "c03-k04",
+      "originalTitle": "业务失败与未知结果",
+      "objectiveIds": [
+        "c03-o2"
+      ],
+      "publicQuestionId": "c03-k04-q",
+      "originalPrimaryQuestion": "工具超时可否报告失败并立即再写？",
+      "originalTransferQuestion": "查询到既有回执后如何继续",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "c03",
+      "historicalV08Destination": "业务失败、未知效果和回执核对",
+      "v09PrimaryUnitIds": [
+        "c03"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "c03"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "e01-k01",
+      "originalTitle": "任务事件与业务事实",
+      "objectiveIds": [
+        "e01-o1"
+      ],
+      "publicQuestionId": "e01-k01-q",
+      "originalPrimaryQuestion": "聊天说已保存、任务仍提交中，谁是证据？",
+      "originalTransferQuestion": "摘要压缩导致关键信息丢失",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "e01",
+      "historicalV08Destination": "任务事件/权威状态/业务事实的对应",
+      "v09PrimaryUnitIds": [
+        "e01"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "e01"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "e01-k02",
+      "originalTitle": "检查点与状态转换",
+      "objectiveIds": [
+        "e01-o1"
+      ],
+      "publicQuestionId": "e01-k02-q",
+      "originalPrimaryQuestion": "取消后迟到结果能否把任务标完成？",
+      "originalTransferQuestion": "恢复同任务的两名执行者",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "e01",
+      "historicalV08Destination": "检查点事务与并发状态迁移",
+      "v09PrimaryUnitIds": [
+        "e01"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "e01"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "e01-k03",
+      "originalTitle": "中断与副作用核对",
+      "objectiveIds": [
+        "e01-o2"
+      ],
+      "publicQuestionId": "e01-k03-q",
+      "originalPrimaryQuestion": "写入后记录前崩溃如何避免重复？",
+      "originalTransferQuestion": "把崩溃点移到写入前",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "e01",
+      "historicalV08Destination": "中断窗口、外部核对与未决扫描",
+      "v09PrimaryUnitIds": [
+        "e01"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "e01"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "e01-k04",
+      "originalTitle": "恢复与版本冲突",
+      "objectiveIds": [
+        "e01-o2"
+      ],
+      "publicQuestionId": "e01-k04-q",
+      "originalPrimaryQuestion": "旧快照恢复到新字段结构能否直接运行？",
+      "originalTransferQuestion": "检查审批参数也已变更",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "e01",
+      "historicalV08Destination": "状态/tool 版本兼容及审批迁移",
+      "v09PrimaryUnitIds": [
+        "e01"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "e01"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "e02-k01",
+      "originalTitle": "能力回归与保留案例",
+      "objectiveIds": [
+        "e02-o1"
+      ],
+      "publicQuestionId": "e02-k01-q",
+      "originalPrimaryQuestion": "反复调过的十题能证明迁移吗？",
+      "originalTransferQuestion": "保留案例被提前看到",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "e02",
+      "historicalV08Destination": "能力/回归/独立保留集治理",
+      "v09PrimaryUnitIds": [
+        "e02"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "e02"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "e02-k02",
+      "originalTitle": "重复测量与对照条件",
+      "objectiveIds": [
+        "e02-o1"
+      ],
+      "publicQuestionId": "e02-k02-q",
+      "originalPrimaryQuestion": "只展示最好一次是否证明改进？",
+      "originalTransferQuestion": "交换模型版本与同一任务样本",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "e02",
+      "historicalV08Destination": "重复试验、固定对照与不确定性",
+      "v09PrimaryUnitIds": [
+        "e02"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "e02"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "e02-k03",
+      "originalTitle": "结果轨迹与成本",
+      "objectiveIds": [
+        "e02-o2"
+      ],
+      "publicQuestionId": "e02-k03-q",
+      "originalPrimaryQuestion": "回答拒绝但读取越权是否安全？",
+      "originalTransferQuestion": "工具成功但答案漏引用",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "e02",
+      "historicalV08Destination": "业务结果/轨迹/成本的分开评价",
+      "v09PrimaryUnitIds": [
+        "e02"
+      ],
+      "v09PreparatoryUnitIds": [
+        "02-task-acceptance"
+      ],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "e02"
+      ],
+      "v12PreparatoryUnitIds": [
+        "02-task-acceptance"
+      ]
+    },
+    {
+      "id": "e02-k04",
+      "originalTitle": "评分器校准与归因",
+      "objectiveIds": [
+        "e02-o2"
+      ],
+      "publicQuestionId": "e02-k04-q",
+      "originalPrimaryQuestion": "另一个模型赞同能否视为专家审核？",
+      "originalTransferQuestion": "替换检索片段隔离生成错误",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "e02",
+      "historicalV08Destination": "评分校准、争议与组件归因",
+      "v09PrimaryUnitIds": [
+        "e02"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "e02"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "e03-k01",
+      "originalTitle": "威胁模型与提示注入",
+      "objectiveIds": [
+        "e03-o1"
+      ],
+      "publicQuestionId": "e03-k01-q",
+      "originalPrimaryQuestion": "手册要求外发全文时谁有授权？",
+      "originalTransferQuestion": "注入来自工具输出或记忆",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "e03",
+      "historicalV08Destination": "威胁模型、直接/间接注入入口",
+      "v09PrimaryUnitIds": [
+        "e03"
+      ],
+      "v09PreparatoryUnitIds": [
+        "03-trust-boundary"
+      ],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "e03"
+      ],
+      "v12PreparatoryUnitIds": [
+        "03-trust-boundary"
+      ]
+    },
+    {
+      "id": "e03-k02",
+      "originalTitle": "提示分隔与强制边界",
+      "objectiveIds": [
+        "e03-o1"
+      ],
+      "publicQuestionId": "e03-k02-q",
+      "originalPrimaryQuestion": "加上不可信标签能否保证不越权？",
+      "originalTransferQuestion": "跨租户数据已经进入上下文",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "e03",
+      "historicalV08Destination": "提示表达与执行强制边界",
+      "v09PrimaryUnitIds": [
+        "e03"
+      ],
+      "v09PreparatoryUnitIds": [
+        "03-trust-boundary"
+      ],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "e03"
+      ],
+      "v12PreparatoryUnitIds": [
+        "03-trust-boundary"
+      ]
+    },
+    {
+      "id": "e03-k03",
+      "originalTitle": "敏感字段与日志",
+      "objectiveIds": [
+        "e03-o2"
+      ],
+      "publicQuestionId": "e03-k03-q",
+      "originalPrimaryQuestion": "输出遮蔽但原秘密写入日志能否通过？",
+      "originalTransferQuestion": "检查上下文、载荷与日志",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "e03",
+      "historicalV08Destination": "四通道敏感字段/日志最小投影",
+      "v09PrimaryUnitIds": [
+        "e03"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "e03"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "e03-k04",
+      "originalTitle": "精确审批与副作用",
+      "objectiveIds": [
+        "e03-o2"
+      ],
+      "publicQuestionId": "e03-k04-q",
+      "originalPrimaryQuestion": "用户同意T1后收件人改变能否沿用批准？",
+      "originalTransferQuestion": "合法路径、过期、已消费分别对照",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "e03",
+      "historicalV08Destination": "精确审批、期限、消费与副作用正反例",
+      "v09PrimaryUnitIds": [
+        "e03"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "e03"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "e04-k01",
+      "originalTitle": "环境配置与依赖隔离",
+      "objectiveIds": [
+        "e04-o1"
+      ],
+      "publicQuestionId": "e04-k01-q",
+      "originalPrimaryQuestion": "本地演示启动能否算生产部署？",
+      "originalTransferQuestion": "开发配置误入发布包",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "e04",
+      "historicalV08Destination": "分环境配置与依赖/秘密隔离",
+      "v09PrimaryUnitIds": [
+        "e04"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "e04"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "e04-k02",
+      "originalTitle": "可观测性与回退",
+      "objectiveIds": [
+        "e04-o1"
+      ],
+      "publicQuestionId": "e04-k02-q",
+      "originalPrimaryQuestion": "新版本故障怎样保留未完成任务？",
+      "originalTransferQuestion": "回退时状态格式不同",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "e04",
+      "historicalV08Destination": "可观测发布和兼容回退",
+      "v09PrimaryUnitIds": [
+        "e04"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "e04"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "e04-k03",
+      "originalTitle": "运行事实与故障阶段",
+      "objectiveIds": [
+        "e04-o2"
+      ],
+      "publicQuestionId": "e04-k03-q",
+      "originalPrimaryQuestion": "最终失败但不知哪个阶段出错怎么查？",
+      "originalTransferQuestion": "检索、模型、工具分别失效",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "e04",
+      "historicalV08Destination": "运行阶段关联与事实定位",
+      "v09PrimaryUnitIds": [
+        "e04"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "e04"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "e04-k04",
+      "originalTitle": "恢复说明与他人复现",
+      "objectiveIds": [
+        "e04-o2"
+      ],
+      "publicQuestionId": "e04-k04-q",
+      "originalPrimaryQuestion": "同伴按说明重启后记录缺失说明什么？",
+      "originalTransferQuestion": "检查敏感日志和权限",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "e04",
+      "historicalV08Destination": "runbook、他人复现和安全维护",
+      "v09PrimaryUnitIds": [
+        "e04"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "e04"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "e05-k01",
+      "originalTitle": "任务成本与单位",
+      "objectiveIds": [
+        "e05-o1"
+      ],
+      "publicQuestionId": "e05-k01-q",
+      "originalPrimaryQuestion": "只看模型单价能否得到成功任务成本？",
+      "originalTransferQuestion": "加入失败、重试和人工耗时",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "e05",
+      "historicalV08Destination": "每任务/每成功任务成本和成本组成",
+      "v09PrimaryUnitIds": [
+        "e05"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "e05"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "e05-k02",
+      "originalTitle": "延迟分布与失败分母",
+      "objectiveIds": [
+        "e05-o1"
+      ],
+      "publicQuestionId": "e05-k02-q",
+      "originalPrimaryQuestion": "只计算成功请求p95会漏掉什么？",
+      "originalTransferQuestion": "含取消和超时并注明分母",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "e05",
+      "historicalV08Destination": "延迟分布、尾部、失败分母和删失",
+      "v09PrimaryUnitIds": [
+        "e05"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "e05"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "e05-k03",
+      "originalTitle": "缓存与模型选择比较",
+      "objectiveIds": [
+        "e05-o2"
+      ],
+      "publicQuestionId": "e05-k03-q",
+      "originalPrimaryQuestion": "旧政策缓存更快是否必然更好？",
+      "originalTransferQuestion": "按租户、资料版本和质量护栏比较",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "e05",
+      "historicalV08Destination": "版本/权限安全缓存及模型选择比较",
+      "v09PrimaryUnitIds": [
+        "e05"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "e05"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "e05-k04",
+      "originalTitle": "并发预算与资源取舍",
+      "objectiveIds": [
+        "e05-o2"
+      ],
+      "publicQuestionId": "e05-k04-q",
+      "originalPrimaryQuestion": "并发翻倍为何成本和尾延迟不一定下降？",
+      "originalTransferQuestion": "保持同负载对照并记录限流",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "e05",
+      "historicalV08Destination": "并发、限流、预算与资源约束",
+      "v09PrimaryUnitIds": [
+        "e05"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "e05"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "p01-k01",
+      "originalTitle": "真实问题与作者假设",
+      "objectiveIds": [
+        "p01-o1"
+      ],
+      "publicQuestionId": "p01-k01-q",
+      "originalPrimaryQuestion": "虚构客服故事能否当用户访谈？",
+      "originalTransferQuestion": "负面反馈推翻原问题判断",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "p01",
+      "historicalV08Destination": "真实问题、观察/解释/假设的证据链",
+      "v09PrimaryUnitIds": [
+        "p01-discovery"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "p01-discovery"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "p01-k02",
+      "originalTitle": "行业基线与差异假设",
+      "objectiveIds": [
+        "p01-o1"
+      ],
+      "publicQuestionId": "p01-k02-q",
+      "originalPrimaryQuestion": "演示比宣传视频好看能否声称领先？",
+      "originalTransferQuestion": "冻结版本任务资源与护栏后比较",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "p01",
+      "historicalV08Destination": "行业替代基线与可证伪差异假设",
+      "v09PrimaryUnitIds": [
+        "p01-discovery",
+        "p01-mvp"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "p01-discovery",
+        "p01-mvp"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "p01-k03",
+      "originalTitle": "MVP范围与架构决策",
+      "objectiveIds": [
+        "p01-o2"
+      ],
+      "publicQuestionId": "p01-k03-q",
+      "originalPrimaryQuestion": "为了展示框架增加多Agent的代价是什么？",
+      "originalTransferQuestion": "改用普通程序完成同一任务",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "p01",
+      "historicalV08Destination": "MVP任务范围、ADR和架构评审",
+      "v09PrimaryUnitIds": [
+        "p01-mvp"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "p01-mvp"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "p01-k04",
+      "originalTitle": "协作交接与用户反馈",
+      "objectiveIds": [
+        "p01-o2"
+      ],
+      "publicQuestionId": "p01-k04-q",
+      "originalPrimaryQuestion": "实现完成后用户不用应检查什么？",
+      "originalTransferQuestion": "业务与技术受众分别解释取舍",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "p01",
+      "historicalV08Destination": "业务/技术交接、真实采用反馈与修订",
+      "v09PrimaryUnitIds": [
+        "p01-mvp"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "p01-mvp"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "p02-k01",
+      "originalTitle": "作品证据与外部评审",
+      "objectiveIds": [
+        "p02-o1"
+      ],
+      "publicQuestionId": "p02-k01-q",
+      "originalPrimaryQuestion": "作品能启动但无真实任务结果能否毕业？",
+      "originalTransferQuestion": "独立评审无法重现关键路径",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "p02",
+      "historicalV08Destination": "可复现作品证据与外部专业评审",
+      "v09PrimaryUnitIds": [
+        "p02"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "p02"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "p02-k02",
+      "originalTitle": "真实使用与比较局限",
+      "objectiveIds": [
+        "p02-o1"
+      ],
+      "publicQuestionId": "p02-k02-q",
+      "originalPrimaryQuestion": "两名用户说满意能否证明行业先进？",
+      "originalTransferQuestion": "记录使用失败、退出和对照限制",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "p02",
+      "historicalV08Destination": "真实使用、可比先进性和小样本局限",
+      "v09PrimaryUnitIds": [
+        "p02"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "p02"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "p02-k03",
+      "originalTitle": "失败复盘与二次验证",
+      "objectiveIds": [
+        "p02-o2"
+      ],
+      "publicQuestionId": "p02-k03-q",
+      "originalPrimaryQuestion": "修提示后未复测是否关闭原缺陷？",
+      "originalTransferQuestion": "修复一个问题引出另一个回归",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "p02",
+      "historicalV08Destination": "失败归因、改进、原例复验及回归",
+      "v09PrimaryUnitIds": [
+        "p02"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "p02"
+      ],
+      "v12PreparatoryUnitIds": []
+    },
+    {
+      "id": "p02-k04",
+      "originalTitle": "未知任务与能力边界",
+      "objectiveIds": [
+        "p02-o2"
+      ],
+      "publicQuestionId": "p02-k04-q",
+      "originalPrimaryQuestion": "换行业但保留原答案能否算迁移？",
+      "originalTransferQuestion": "非作者安排新资料与约束",
+      "coverageStatus": "preservation_specification_pending_current_body_QA",
+      "moduleId": "p02",
+      "historicalV08Destination": "非作者未知任务迁移及有限能力结论",
+      "v09PrimaryUnitIds": [
+        "p02"
+      ],
+      "v09PreparatoryUnitIds": [],
+      "coveragePolicy": "primer_support_does_not_replace_primary_professional_mechanism_practice_and_analysis",
+      "v12PrimaryUnitIds": [
+        "p02"
+      ],
+      "v12PreparatoryUnitIds": []
+    }
+  ],
+  "preservationCounts": {
+    "modules": 12,
+    "objectives": 24,
+    "knowledgePoints": 48
+  },
+  "preservationPolicy": "原20专业单元保留，原目标/知识点与量规/八门槛不改；先修旧边保留，新边按此图增加；所有当前正文均由审校/QA重新绑定",
+  "authorOwnership": {
+    "A": [
+      "textbooks/v12/n01-*.md",
+      "textbooks/v12/n02-*.md",
+      "textbooks/v12/n03-*.md",
+      "textbooks/v12/n04-*.md",
+      "textbooks/v12/n05-*.md",
+      "textbooks/v12/examples/n01-*.py",
+      "textbooks/v12/examples/n02-*.py",
+      "textbooks/v12/examples/n03-*.py",
+      "textbooks/v12/examples/n04-*.py",
+      "textbooks/v12/examples/n05-*.py"
+    ],
+    "B": [
+      "textbooks/v12/n06-*.md",
+      "textbooks/v12/n07-*.md",
+      "textbooks/v12/n08-*.md",
+      "textbooks/v12/n09-*.md",
+      "textbooks/v12/n10-*.md",
+      "textbooks/v12/examples/n06-*.py",
+      "textbooks/v12/examples/n07-*.py",
+      "textbooks/v12/examples/n08-*.py",
+      "textbooks/v12/examples/n09-*.py",
+      "textbooks/v12/examples/n10-*.py",
+      "textbooks/v12/原20单元同名文件",
+      "textbooks/v12/README.md",
+      "textbooks/v12/agent-engineering-textbook.md",
+      "textbooks/v12/figures/"
+    ]
+  },
+  "qaHandoff": [
+    "全部46历史不足题逐子问核改前改后，原54充分题受影响不继承",
+    "101–114单独计数；Q10/99真实经历最高部分",
+    "保留变体题面由QA保管，课程/作者未读取；作者冻结后首测",
+    "旧24/48实文定位与完整39围栏保持检查，计数不替代语义",
+    "新示例正常/关键失败路径实跑；模型/协议/系统沙箱/真实学习各分证据",
+    "目录/先修拓扑/跨章链接/合订唯一顺序/哈希绑定检查"
+  ],
+  "selfCheck": {
+    "all46HistoricalGapsAssigned": true,
+    "all14MarketIdsAssigned": true,
+    "unchangedProductThresholds": true,
+    "holdoutRead": false,
+    "textbookWritten": false,
+    "testsRun": false
+  }
+}

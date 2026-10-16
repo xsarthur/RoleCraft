@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0",
+  "textbookVersion": "textbook-draft-0.6-pilot",
+  "sourceFile": "team/textbook-v06.json",
+  "inputSha256": "b2702e2464ccaae22984659d7c7fdfe3dba7f09238b6202b9659e99498e0b33f",
+  "reviewer": "/root/qa_engineer_v05",
+  "executedAt": "2026-10-11",
+  "environment": {
+    "python": "3.14.5"
+  },
+  "authorExecutionStatus": "not_run",
+  "records": [
+    {
+      "exampleId": "c01-example",
+      "chapterId": "c01",
+      "phase": "verbatim_author_example",
+      "bodySha256": "05c65886ed82d1fb87c6b94aa217f2ebebd2aaad7bb84310b876415311c55509",
+      "fencedCodeSha256": "9a76b7e6f75c79c2f18b0f33849d8212d58b334109cc0b6dea52e1339ff8e8ad",
+      "codeSha256": "650f67d148f7030a74cdafb06543b640ac878f3cb8d6de9eca6487b413827535",
+      "executedFileSha256": "650f67d148f7030a74cdafb06543b640ac878f3cb8d6de9eca6487b413827535",
+      "command": "python3 <temporary-dir>/c01_warranty_demo.py",
+      "exitCode": 0,
+      "stdout": "{\n  \"status\": \"completed\",\n  \"state\": {\n    \"model\": \"星河-01\",\n    \"policy\": {\n      \"status\": \"found\",\n      \"model\": \"星河-01\",\n      \"policy_id\": \"星河保修-v1\",\n      \"months\": 12\n    },\n    \"draft\": {\n      \"status\": \"saved\",\n      \"draft_id\": \"小林保修草稿-01\",\n      \"policy_id\": \"星河保修-v1\",\n      \"text\": \"星河-01耳机保修期限为购买之日起12个月。\"\n    }\n  },\n  \"trace\": [\n    {\n      \"step\": 1,\n      \"action\": \"read_policy\",\n      \"observation\": {\n        \"status\": \"found\",\n        \"model\": \"星河-01\",\n        \"policy_id\": \"星河保修-v1\",\n        \"months\": 12\n      }\n    },\n    {\n      \"step\": 2,\n      \"action\": \"save_draft\",\n      \"observation\": {\n        \"status\": \"saved\",\n        \"draft_id\": \"小林保修草稿-01\",\n        \"policy_id\": \"星河保修-v1\",\n        \"text\": \"星河-01耳机保修期限为购买之日起12个月。\"\n      }\n    }\n  ],\n  \"tool_calls\": 2\n}",
+      "stderr": "",
+      "testedCases": []
+    },
+    {
+      "exampleId": "c01-example",
+      "chapterId": "c01",
+      "phase": "qa_declared_variants",
+      "bodySha256": "05c65886ed82d1fb87c6b94aa217f2ebebd2aaad7bb84310b876415311c55509",
+      "fencedCodeSha256": "9a76b7e6f75c79c2f18b0f33849d8212d58b334109cc0b6dea52e1339ff8e8ad",
+      "codeSha256": "650f67d148f7030a74cdafb06543b640ac878f3cb8d6de9eca6487b413827535",
+      "executedFileSha256": "36b19babc6354efee374987b705bd7f5039f741018d14848096481ec8c228e27",
+      "command": "python3 <temporary-dir>/c01_warranty_demo.py with independent QA appended assertions",
+      "exitCode": 0,
+      "stdout": "{\n  \"status\": \"completed\",\n  \"state\": {\n    \"model\": \"星河-01\",\n    \"policy\": {\n      \"status\": \"found\",\n      \"model\": \"星河-01\",\n      \"policy_id\": \"星河保修-v1\",\n      \"months\": 12\n    },\n    \"draft\": {\n      \"status\": \"saved\",\n      \"draft_id\": \"小林保修草稿-01\",\n      \"policy_id\": \"星河保修-v1\",\n      \"text\": \"星河-01耳机保修期限为购买之日起12个月。\"\n    }\n  },\n  \"trace\": [\n    {\n      \"step\": 1,\n      \"action\": \"read_policy\",\n      \"observation\": {\n        \"status\": \"found\",\n        \"model\": \"星河-01\",\n        \"policy_id\": \"星河保修-v1\",\n        \"months\": 12\n      }\n    },\n    {\n      \"step\": 2,\n      \"action\": \"save_draft\",\n      \"observation\": {\n        \"status\": \"saved\",\n        \"draft_id\": \"小林保修草稿-01\",\n        \"policy_id\": \"星河保修-v1\",\n        \"text\": \"星河-01耳机保修期限为购买之日起12个月。\"\n      }\n    }\n  ],\n  \"tool_calls\": 2\n}\nQA c01 normal/boundary/failure/controlled-perturbation assertions passed",
+      "stderr": "",
+      "testedCases": [
+        [
+          "normal",
+          "默认输入、带空格合法型号、保存回执与资料版本相符"
+        ],
+        [
+          "boundary",
+          "0/1/20步数及调用额度，工具调用不超上限；布尔预算及非法JSON类型拒绝"
+        ],
+        [
+          "failure",
+          "缺型号、未知型号、权限拒绝、持续超时、保存失败、开始前取消/到期"
+        ],
+        [
+          "perturbation",
+          "首轮超时随后成功、持续超时最多两次、禁止新动作字符串且无工具调用"
+        ]
+      ]
+    }
+  ],
+  "scope": "Only c01 standard-library json memory control-loop example and explicit normal/boundary/failure/string-action controlled variations.",
+  "limits": [
+    "Deterministic decision/tool replacements; no real model or store and no external saving.",
+    "No persistent resume, wall-clock deadline, asynchronous cancellation, real cost or user/object identity authentication tested.",
+    "Malformed future model/tool interface is outside this controlled example contract and remains untested.",
+    "No v05 examples reexecuted or inherited as v06/new whole-book execution.",
+    "No expert, learner, comparative advantage, production or browser evidence."
+  ]
+}

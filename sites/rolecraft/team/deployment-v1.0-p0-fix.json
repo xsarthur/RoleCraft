@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0",
+  "status": "deployed_verified",
+  "deployedAt": "2026-10-15T19:55:33Z",
+  "target": {
+    "host": "111.231.8.78",
+    "user": "ubuntu",
+    "root": "/opt/rolecraft",
+    "environmentCount": 1,
+    "nodeVersion": "v24.20.0",
+    "processManager": "pm2",
+    "releaseVersion": "rolecraft-1.0"
+  },
+  "scope": {
+    "updated": [
+      "sites/rolecraft/dist/auth-career-v15.css",
+      "sites/rolecraft/dist/learning-v13-data.js"
+    ],
+    "preserved": [".runtime", ".env", "node_modules", "models", "教材", "后端接口"]
+  },
+  "backup": {
+    "directory": "/opt/rolecraft/.runtime/backups/20261015T195300Z",
+    "database": {
+      "path": "rolecraft.sqlite",
+      "sha256": "5626f0392a0a55cbbfe77529821d830a62c557c687901daa6913aab5df26505d"
+    },
+    "walShm": {
+      "status": "not_present_after_graceful_stop",
+      "note": "停服后 SQLite 已回收 WAL/SHM；停服前存在但未继续存在，未被覆盖。"
+    },
+    "staticRollbackTar": {
+      "path": "static-p0-before.tar.gz",
+      "sha256": "e24f3523c855255ece1aefc91806e7d4ffdac92139c85347c7dde5946be2ad7a"
+    }
+  },
+  "files": {
+    "auth-career-v15.css": {
+      "sha256": "1d5c799bb641056b051bf4a522d960f6863fee8ab6686e55fbd42f297f0fb13a",
+      "httpPath": "/auth-career-v15.css"
+    },
+    "learning-v13-data.js": {
+      "sha256": "6d27dabc1cedc15236de846c44dae8f66c4f82b77c2ede543941d3589e8772a4",
+      "httpPath": "/learning-v13-data.js"
+    }
+  },
+  "verification": {
+    "localHealthHttp": 200,
+    "publicHealthHttp": 200,
+    "publicCssHttp": 200,
+    "publicLearningDataHttp": 200,
+    "releaseHeader": "rolecraft-1.0",
+    "pm2Status": "online",
+    "nodeVm": {
+      "globalLoaded": true,
+      "questions": 114,
+      "knowledgePoints": 240,
+      "metadataQuestions": 114,
+      "metadataKnowledgePoints": 240,
+      "corpusVersion": "textbook-v12"
+    },
+    "generationProviderCalled": false
+  },
+  "limitations": [
+    "本记录不构成 UI/UX 视觉验收或产品最终验收",
+    "未执行付费模型调用",
+    "浏览器交互和真实用户效果需由对应岗位独立验收"
+  ]
+}

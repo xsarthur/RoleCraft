@@ -1,0 +1,51 @@
+{
+  "qa_id": "AI-ADV-TRAINING-QA-20261015-03",
+  "schema": "rolecraft.ai_generation.advancement_training.qa",
+  "schema_version": "0.3",
+  "date": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "reviewer_role": "QA",
+  "target_role_id": "AI",
+  "target_role_title": "AI生成工程师",
+  "scope": "独立复核 v0.3 进阶方案及 source_records 修复回归；不代学员执行训练、不修改作者文件、不授予 L1/L2。",
+  "inputs": {
+    "advancement_json": {"path": "sites/rolecraft/team/ai-generation-engineer-advancement-v03.json", "sha256": "7135891eb9bf38da3c23022b334e5179ed6b81587116dbaef7ccf1ea4fd82850"},
+    "advancement_md": {"path": "sites/rolecraft/team/ai-generation-engineer-advancement-v03.md", "sha256": "29fd15a70ba1d590f7e5b4ca347117ba4c61f0077f5d83dabf666f6676364986"},
+    "repair_record": "sites/rolecraft/team/ai-generation-engineer-advancement-source-records-repair-v01.json",
+    "v02_json_sha256": "0bdf99d6e679ec8755d0e79f29cf26e8df98b377d113a22f8c347d8bd9305f61"
+  },
+  "checks": {
+    "json_parse": true,
+    "source_records_non_empty_array": true,
+    "source_records_count": 7,
+    "source_records_all_path_status_objects": true,
+    "practice_crosswalk_equal_to_v02": true,
+    "current_state_preserved": true,
+    "training_or_external_action_executed": false,
+    "first_failure_preserved_per_repair_record": true
+  },
+  "current_state": {
+    "level": "L0_guided",
+    "d0_decision": "not_assessed",
+    "l1_decision": "not_granted",
+    "production_permission": "not_granted"
+  },
+  "finding": {
+    "id": "QA-AI-ADV-P2-001",
+    "severity": "P2",
+    "title": "v0.2 source_records 混用对象和裸字符串",
+    "status": "closed",
+    "repair": "v0.3 将最后一项规范为含非空 path/status 的对象，7/7 统一通过。"
+  },
+  "conclusion": "P2_closed_with_training_not_assessed",
+  "limitations": [
+    "未执行学习者 D0、三项实训、未知迁移或独立晋级复核。",
+    "未验证真实 LangGraph/API、模型、费用、延迟、限流、生产持久恢复、真人审批或接收签收。",
+    "来源形状修复不等于能力认证，L1/L2 与生产权限继续未授予。"
+  ],
+  "next_actions": [
+    {"owner": "课程架构师/PM", "action": "保留 v0.2、修复记录与 v0.3 版本链，训练启动前冻结输入。", "status": "pending"},
+    {"owner": "AI生成工程师/学习者", "action": "按 v0.3 合同提交 D0 原始证据、EvidenceCard、运行/失败/回归/留出材料。", "status": "pending"},
+    {"owner": "QA/内容审校/接收岗位", "action": "对训练产物执行独立运行、来源、迁移、边界与签收复核。", "status": "pending"}
+  ]
+}

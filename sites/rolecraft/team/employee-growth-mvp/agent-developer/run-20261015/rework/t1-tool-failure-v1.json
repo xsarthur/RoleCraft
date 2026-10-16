@@ -1,0 +1,8 @@
+{
+  "fixture_id": "T1-tool-failure-v1",
+  "tool": "echo_stub",
+  "return": {"status": "error", "code": "deterministic_tool_error"},
+  "retry_limit": 1,
+  "draft_status": "accepted_for_run",
+  "reason": "matches T1-v1.0 maximum of one retry"
+}

@@ -1,0 +1,10 @@
+{
+  "contract": "T1-v1.0",
+  "run_ids": ["t1-normal-001", "t1-tool-failure-001"],
+  "developer_delivery": "handoff",
+  "qa_status": "not_started",
+  "growth": "emerging",
+  "evidence": ["logs/t1-normal-001.jsonl", "logs/t1-tool-failure-001.jsonl", "run-results.json", "hashes/fixture-hashes.json"],
+  "rework": ["rework/t1-tool-failure-v0.json", "rework/t1-tool-failure-v1.json", "rework/v0.exit", "rework/v1.exit", "logs/runner.exit", "logs/runner-retest.exit"],
+  "limits": ["deterministic stubs only", "no network/model/account/database", "independent QA not run"]
+}

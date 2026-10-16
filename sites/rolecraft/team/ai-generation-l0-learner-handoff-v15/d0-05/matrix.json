@@ -1,0 +1,42 @@
+{
+  "baseline": {
+    "path": "d0-05/baseline.json",
+    "status": "tool_returned",
+    "schema_version": "v1",
+    "source_refs": [
+      "doc-A-shipping-v3"
+    ],
+    "tenant": "A",
+    "source_version": "v3"
+  },
+  "first_failure": {
+    "path": "d0-05/first_failure.json",
+    "status": "recovery_required",
+    "schema_version": "v1",
+    "source_refs": [
+      "doc-A-shipping-v3"
+    ],
+    "tenant": "A",
+    "source_version": "v3"
+  },
+  "regression": {
+    "path": "d0-05/regression.json",
+    "status": "draft_ready",
+    "schema_version": "v1",
+    "source_refs": [
+      "doc-A-shipping-v3"
+    ],
+    "tenant": "A",
+    "source_version": "v3"
+  },
+  "holdout": {
+    "path": "d0-05/holdout.json",
+    "status": "recovery_required",
+    "schema_version": "v1",
+    "source_refs": [
+      "doc-A-shipping-v3"
+    ],
+    "tenant": "A",
+    "source_version": "v3"
+  }
+}

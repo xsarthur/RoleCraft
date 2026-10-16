@@ -1,0 +1,695 @@
+{
+  "pack_id": "AI-PRACTICE-PACK-20261015-002",
+  "schema_version": "v0.2",
+  "date": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "role_id": "AI",
+  "role_title": "AI生成工程师",
+  "status": "training_specification_ready_not_assessed",
+  "decision": "not_assessed",
+  "level_target": "L1_candidate_evidence_only",
+  "scope": "本地确定性隔离练习；不运行真实模型，不连接 LangGraph/API、网络、收费服务、云服务、生产数据库或外部动作。",
+  "prior_evidence": {
+    "diagnostic_id": "D0-AI-20261015-001",
+    "prior_report": "sites/rolecraft/team/ai-generation-d0-v04-p1-repair.md",
+    "prior_qa": "sites/rolecraft/team/ai-generation-d0-v04-qa.md",
+    "known_gaps": [
+      "外部来源与版本的逐条 claim 绑定",
+      "重复回调的真实持久化语义",
+      "通用 schema 校验",
+      "真实进程恢复、人工审批、LangGraph/API 和模型运行",
+      "学习者独立能力与接收方签收证据"
+    ]
+  },
+  "execution_policy": {
+    "network": "disabled",
+    "real_model": false,
+    "langgraph": false,
+    "paid_api": false,
+    "cloud": false,
+    "real_user_data": false,
+    "external_action": null,
+    "allowed_write_scope": "训练者隔离目录",
+    "first_failure_must_be_preserved": true,
+    "replay_order": [
+      "same_fixture",
+      "affected_regression",
+      "unseen_holdout"
+    ]
+  },
+  "common_contract": {
+    "owner": "AI",
+    "reviewer": "QA",
+    "content_reviewer": "REV",
+    "coordinator": "PM",
+    "mode": "sandbox_independent",
+    "input_fixture_hash_rule": "规范化 JSON（UTF-8、排序键、无尾换行）SHA-256；运行时实际记录值",
+    "required_evidence": [
+      "exercise_id/exercise_version",
+      "input_fixture_id/input_fixture_hash",
+      "environment_and_command",
+      "normal_boundary_failure_results",
+      "first_failure_and_stop_receipt",
+      "repair_diff",
+      "run_1/run_2_bytes_and_hashes",
+      "holdout_changed_keys",
+      "handoff_or_rejection_receipt",
+      "residual_unknowns"
+    ],
+    "decision_values": [
+      "pass",
+      "pass_with_limitations",
+      "fail",
+      "insufficient_evidence"
+    ]
+  },
+  "exercises": [
+    {
+      "exercise_id": "AI-PRACTICE-SOURCE-001",
+      "exercise_version": "v0.1",
+      "title": "逐条来源与版本 claim 绑定",
+      "gap": "外部来源与版本的逐条 claim 绑定",
+      "purpose": "让每个可核验断言都绑定到授权文档的 document_id、source_version、location 和内容 SHA-256，并在错版本、篡改或无来源时停线。",
+      "user_scenario": "租户 A 的退款规则助手生成仅供复核的草稿；租户 B 文档不可读。",
+      "prerequisites": [
+        "D0 v04 retrieve_authorized_doc 只读工具契约",
+        "ai-generation-d0-output-v3 输出 schema",
+        "来源四元组和租户范围",
+        "事实/推断/未知区分"
+      ],
+      "mode": "sandbox_independent",
+      "input_fixture_hash": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+      "authorized_tools": [
+        "retrieve_authorized_doc(side_effect=none)",
+        "deterministic_renderer"
+      ],
+      "fixture": {
+        "fixture_id": "F-AI-SOURCE-CLAIM-v1",
+        "documents": [
+          {
+            "document_id": "doc-A-refund-v1",
+            "tenant": "A",
+            "source_version": "refund-policy-v1",
+            "location": "fixture://docs/doc-A-refund-v1#rules",
+            "text": "退款超过30天需人工复核。"
+          },
+          {
+            "document_id": "doc-A-refund-v2",
+            "tenant": "A",
+            "source_version": "refund-policy-v2",
+            "location": "fixture://docs/doc-A-refund-v2#rules",
+            "text": "退款超过14天需人工复核；重复退款必须拒绝。"
+          },
+          {
+            "document_id": "doc-B-private-v1",
+            "tenant": "B",
+            "source_version": "private-v1",
+            "location": "fixture://docs/doc-B-private-v1#rules",
+            "text": "B租户私有规则，不得读取。",
+            "allow_read": false
+          }
+        ],
+        "request": {
+          "run_id": "run-source-001",
+          "task_id": "AI-SOURCE-CLAIM",
+          "tenant": "A",
+          "prompt": "生成退款复核草稿，每个事实句绑定可核对来源。"
+        },
+        "tool": {
+          "name": "retrieve_authorized_doc",
+          "side_effect": "none",
+          "input": [
+            "document_id",
+            "tenant"
+          ],
+          "output": [
+            "document_id",
+            "source_version",
+            "location",
+            "hash",
+            "text"
+          ]
+        }
+      },
+      "constraints": [
+        "网络关闭",
+        "只读夹具",
+        "不搜索夹具外事实",
+        "不读取 B 正文",
+        "最多一次有界重试",
+        "external_action=null"
+      ],
+      "expected": {
+        "normal": "A/v2 的每条 claim 恰好绑定来源四元组和内容 hash；状态 draft_ready_for_review。",
+        "boundary": "指定未收录的 v3 时 SOURCE_VERSION_MISMATCH 并 stopped；资料未说明的句子只能标 unknown。",
+        "failure": [
+          {
+            "injection": "claim 使用 v1 元数据但正文来自 v2",
+            "first_failure": "SOURCE_VERSION_MISMATCH"
+          },
+          {
+            "injection": "正文改变但保留旧 hash",
+            "first_failure": "SOURCE_HASH_MISMATCH"
+          },
+          {
+            "injection": "增加无 claim_id/source_refs 的句子",
+            "first_failure": "UNBOUND_CLAIM"
+          },
+          {
+            "injection": "请求 B 文档或声明错误租户",
+            "first_failure": "SOURCE_SCOPE_DENIED"
+          }
+        ]
+      },
+      "acceptance": [
+        "正常输出每条 claim 的 document_id/source_version/location/hash 与工具收据逐字一致",
+        "四类首失败均保留且失败时 draft/handoff 为空、external_action 为 null",
+        "原例两次输出字节一致",
+        "留出来源 doc-A-shipping-v3 替换后仍能动态绑定，不能依赖字符串白名单"
+      ],
+      "stop_conditions": [
+        "来源版本未知",
+        "正文 hash 不一致",
+        "claim 无来源",
+        "租户/权限不符",
+        "来源位置不可解析"
+      ],
+      "failure_injection": [
+        "wrong_source_version",
+        "mutated_text_stale_hash",
+        "unbound_claim",
+        "tenant_scope_denied"
+      ],
+      "submission": [
+        "claim_source_matrix.json",
+        "deterministic_output.json",
+        "tool_and_denial_receipts",
+        "first_failure/",
+        "repair_diff.patch",
+        "manifest.json",
+        "run-1/",
+        "run-2/",
+        "evidence-card.json",
+        "README.md"
+      ],
+      "hash_and_replay": {
+        "hashes": [
+          "fixture_manifest",
+          "tool_receipts",
+          "claim_matrix",
+          "final_output"
+        ],
+        "replay": "从冻结输入重新读取工具结果；run-2 与 run-1 字节相等；不得把旧最终草稿作为输入"
+      },
+      "holdout": {
+        "id": "U-AI-SOURCE-001-H",
+        "changed_keys": [
+          "document_id",
+          "source_version",
+          "text"
+        ],
+        "change": "doc-A-refund-v2 -> doc-A-shipping-v3；一条规则新增人工复核标记",
+        "expected": "新 claim 绑定新 hash，并保留人工复核标记"
+      },
+      "handoff": {
+        "recipient": "QA",
+        "review": [
+          "REV核论断支持关系",
+          "QA核版本/hash/拒绝/重放"
+        ],
+        "status": "pending"
+      },
+      "limitations": [
+        "不证明真实供应商来源 API、缓存一致性、真实模型引用忠实度或生产审批"
+      ],
+      "decision": "insufficient_evidence"
+    },
+    {
+      "exercise_id": "AI-PRACTICE-DURABLE-002",
+      "exercise_version": "v0.1",
+      "title": "重复回调、durable checkpoint 与崩溃重放",
+      "gap": "重复回调持久化语义、崩溃恢复和不完整结果停止",
+      "purpose": "在本地原子文件替身中实现幂等 callback、checkpoint 完整性校验和从最后完整工具结果重放。",
+      "user_scenario": "只读工具回调可能重复，流程可能在工具结果持久化后、草稿完成前崩溃。",
+      "prerequisites": [
+        "幂等键和重复回调首失败",
+        "v04 本地 checkpoint 收据",
+        "状态序列与人工 hold"
+      ],
+      "mode": "sandbox_independent",
+      "input_fixture_hash": "b186af6b08d2a5bf426a5529e19f4465452b620b98c802b8097b404e15d5efd2",
+      "authorized_tools": [
+        "local_atomic_checkpoint_store",
+        "deterministic_renderer"
+      ],
+      "fixture": {
+        "fixture_id": "F-AI-DURABLE-v1",
+        "events": [
+          {
+            "state": "tool_called",
+            "callback_id": "cb-001"
+          },
+          {
+            "state": "tool_returned",
+            "callback_id": "cb-001",
+            "payload": "authorized-A-v1"
+          },
+          {
+            "state": "duplicate_callback",
+            "callback_id": "cb-001",
+            "payload": "authorized-A-v1"
+          },
+          {
+            "state": "crash_after_tool_checkpoint"
+          },
+          {
+            "state": "partial_draft_checkpoint"
+          }
+        ],
+        "checkpoint_store": "isolated-local-atomic-json",
+        "request": {
+          "run_id": "run-durable-002",
+          "tenant": "A",
+          "source_version": "fixture-source-v1",
+          "schema_version": "ai-generation-d0-output-v3"
+        }
+      },
+      "constraints": [
+        "仅隔离目录写入",
+        "callback_id为幂等键",
+        "side_effect=none 才可有界重试",
+        "不删除首失败",
+        "不调用真实队列/数据库/LangGraph",
+        "external_action=null"
+      ],
+      "expected": {
+        "normal_sequence": [
+          "contract_checkpointed",
+          "tool_checkpointed",
+          "callback_accepted",
+          "duplicate_reused",
+          "single_draft_written",
+          "final_checkpointed"
+        ],
+        "crash_sequence": [
+          "restarted",
+          "manual_stop",
+          "replay_required",
+          "replayed",
+          "checked",
+          "handed_off"
+        ],
+        "failure": [
+          {
+            "injection": "相同 callback_id 但 payload hash 不同",
+            "first_failure": "DUPLICATE_CALLBACK_PAYLOAD_MISMATCH"
+          },
+          {
+            "injection": "半 JSON checkpoint",
+            "first_failure": "CHECKPOINT_CORRUPT"
+          },
+          {
+            "injection": "旧 source version checkpoint",
+            "first_failure": "CHECKPOINT_VERSION_MISMATCH"
+          },
+          {
+            "injection": "恢复后直接交接部分草稿",
+            "first_failure": "INCOMPLETE_RESULT_AFTER_CRASH"
+          }
+        ]
+      },
+      "acceptance": [
+        "同 callback_id 只保留一个结果",
+        "不一致重复回调不覆盖第一次结果",
+        "checkpoint manifest可验证",
+        "恢复顺序正确",
+        "不产生第二份draft",
+        "run-1/run-2 文件字节与manifest一致"
+      ],
+      "stop_conditions": [
+        "callback payload不一致",
+        "checkpoint不可解析/版本不符",
+        "部分结果缺字段",
+        "状态来源不明"
+      ],
+      "failure_injection": [
+        "duplicate_payload_mismatch",
+        "corrupt_checkpoint",
+        "checkpoint_version_mismatch",
+        "unsafe_partial_handoff"
+      ],
+      "submission": [
+        "isolated_checkpoint_store/",
+        "event_log.jsonl",
+        "checkpoint_manifest.json",
+        "first_failure/",
+        "recovery_receipts/",
+        "final_output.json",
+        "dedupe_table.json",
+        "evidence-card.json",
+        "README.md"
+      ],
+      "hash_and_replay": {
+        "hashes": [
+          "each_event",
+          "each_checkpoint",
+          "manifest",
+          "final_payload"
+        ],
+        "replay": "原例两次比较文件字节；第三次从工具checkpoint重放得到相同最终payload hash"
+      },
+      "holdout": {
+        "id": "U-AI-DURABLE-002-H",
+        "changed_keys": [
+          "event_order"
+        ],
+        "change": "只把重复回调改为先到、原回调后到；崩溃点和其余输入保持不变",
+        "expected": "以callback_id去重，不按到达顺序覆盖；部分结果先hold"
+      },
+      "handoff": {
+        "recipient": "QA",
+        "review": [
+          "QA核事件/文件/hash/恢复",
+          "REV核耐久性措辞不扩大为生产RPO/RTO"
+        ],
+        "status": "pending"
+      },
+      "limitations": [
+        "本地原子JSON不是生产数据库、真实进程崩溃、RPO/RTO、并发一致性或LangGraph checkpoint证明"
+      ],
+      "decision": "insufficient_evidence"
+    },
+    {
+      "exercise_id": "AI-PRACTICE-GATE-003",
+      "exercise_version": "v0.1",
+      "title": "schema、人工审批与单约束迁移",
+      "gap": "通用 schema、人工 gate、版本迁移和单约束留出",
+      "purpose": "让结构化输出、来源、人工审批和 checkpoint 迁移成为显式状态与收据，而非隐含布尔旁路。",
+      "user_scenario": "历史 v2 checkpoint 迁移到 v3 后，只能在 schema、来源、租户和无外部动作检查通过且 approval_required 条件满足时交给人工复核。",
+      "prerequisites": [
+        "ai-generation-d0-output-v3 required/allowed字段",
+        "人工holdout收据",
+        "checkpoint版本和来源四元组"
+      ],
+      "mode": "sandbox_independent",
+      "input_fixture_hash": "9002b8bcef99feaa63d88c4c4d8f3eb16d22107b0ceb61e3820240bf709fe364",
+      "authorized_tools": [
+        "schema_validator",
+        "local_migration_runner",
+        "simulated_human_gate"
+      ],
+      "fixture": {
+        "fixture_id": "F-AI-GATE-MIGRATION-v1",
+        "v2_checkpoint": {
+          "run_id": "run-gate-003",
+          "tenant": "A",
+          "answer": "退款需复核。",
+          "legacy_status": "draft_ready_for_review",
+          "source_refs": [
+            {
+              "document_id": "doc-A-refund-v1",
+              "source_version": "fixture-source-v1",
+              "location": "fixture://docs/doc-A-refund-v1#text",
+              "hash": "5803661baaddbe14953ff18735031ac57a030bf84bd0c8c05e88f5c4d69023d4"
+            }
+          ],
+          "external_action": null
+        },
+        "v3_required": [
+          "run_id",
+          "tenant",
+          "schema_version",
+          "answer",
+          "source_refs",
+          "external_action",
+          "status"
+        ],
+        "approval": {
+          "approval_required": true,
+          "allowed_decisions": [
+            "approve_for_review_only",
+            "hold"
+          ]
+        }
+      },
+      "constraints": [
+        "只允许本地 reviewer 收据",
+        "不能写生产审批",
+        "迁移显式列出字段变化",
+        "不得改变租户/来源范围",
+        "external_action=null"
+      ],
+      "expected": {
+        "normal_sequence": [
+          "old_version_detected",
+          "migration_planned",
+          "v3_migrated",
+          "schema_checked",
+          "awaiting_human_approval",
+          "human_intervention",
+          "handed_off"
+        ],
+        "failure": [
+          {
+            "injection": "缺status/空source_refs/未知字段",
+            "first_failure": "SCHEMA_VALIDATION_ERROR"
+          },
+          {
+            "injection": "绕过人工gate或收据缺reason",
+            "first_failure": "HUMAN_APPROVAL_REQUIRED_OR_INVALID_REVIEW_RECEIPT"
+          },
+          {
+            "injection": "迁移改变tenant/source_version/权限",
+            "first_failure": "MIGRATION_SCOPE_VIOLATION"
+          },
+          {
+            "injection": "v2缺legacy_status无法推导v3状态",
+            "first_failure": "MIGRATION_MISSING_STATE"
+          },
+          {
+            "injection": "留出同时改schema版本和审批要求",
+            "first_failure": "INVALID_HOLDOUT_CONTRACT"
+          }
+        ]
+      },
+      "acceptance": [
+        "schema失败先于人工gate",
+        "人工审批为显式状态",
+        "合法迁移保留来源/hash",
+        "非法迁移拒绝且保留旧checkpoint",
+        "首失败和人工收据可重放",
+        "留出只改一个约束"
+      ],
+      "stop_conditions": [
+        "必填字段缺失",
+        "来源为空/不匹配",
+        "external_action非null",
+        "审批缺reviewer/reason",
+        "迁移缺少可推导状态",
+        "迁移改变权限/租户/来源"
+      ],
+      "failure_injection": [
+        "schema_invalid",
+        "approval_bypass",
+        "migration_scope_violation",
+        "migration_missing_state",
+        "multi_constraint_holdout"
+      ],
+      "submission": [
+        "schema-v2.json",
+        "schema-v3.json",
+        "migration-plan.json",
+        "migration-diff.patch",
+        "validator-output.json",
+        "approval-or-hold-receipts/",
+        "first_failure/",
+        "manifest.json",
+        "evidence-card.json"
+      ],
+      "hash_and_replay": {
+        "hashes": [
+          "input_v2_checkpoint",
+          "migrated_checkpoint",
+          "validator_output",
+          "human_receipt"
+        ],
+        "replay": "从旧v2输入重新迁移两次；结果hash相同，不能使用上一次迁移结果作为输入"
+      },
+      "holdout": {
+        "id": "U-AI-GATE-003-H",
+        "changed_keys": [
+          "human_approval_required_for_handoff"
+        ],
+        "change": "false -> true；schema、租户、来源和输出其余不变",
+        "expected": "停在awaiting_human_approval，等待本地reviewer；批准仅限review handoff"
+      },
+      "handoff": {
+        "recipient": "QA",
+        "review": [
+          "QA核schema/状态/迁移边界",
+          "REV核人工审批不等于生产认证",
+          "PM记录真实实现缺口"
+        ],
+        "status": "pending"
+      },
+      "limitations": [
+        "本地人工收据不是真人专家、生产审批、身份认证或真实数据库迁移证据"
+      ],
+      "decision": "insufficient_evidence"
+    }
+  ],
+  "progression_gate": {
+    "local_exercise_result": "三个练习均通过独立QA后，对应局部P1可记为met_within_scope",
+    "does_not_grant": [
+      "D0通过",
+      "L1",
+      "生产权限",
+      "真实模型能力",
+      "岗位认证"
+    ],
+    "additional_required_before_L1_review": [
+      "D0-01/02学习者原始诊断和EvidenceCard",
+      "真实或明确授权的LangGraph/API练习",
+      "模型质量、费用、限流和供应商失败证据",
+      "真实持久存储/进程恢复和接收方签收",
+      "一个非作者冻结的综合未知任务",
+      "QA与REV独立复核及PM版本复盘"
+    ],
+    "current_decision": "not_assessed",
+    "l1_decision": "not_granted"
+  },
+  "practice_crosswalk": [
+    {
+      "practice_id": "AI-PRACTICE-SOURCE-001",
+      "gap_id": "G-AI-04",
+      "stage_id": "A",
+      "task_ids": [
+        "E-AI-L0-001",
+        "E-AI-L0-002"
+      ],
+      "evidence_card_ids": [
+        "EC-AI-PRACTICE-SOURCE-001",
+        "EC-E-AI-L0-001",
+        "EC-E-AI-L0-002"
+      ],
+      "capability_dims": [
+        "D1",
+        "D2",
+        "D4",
+        "D5"
+      ],
+      "required_for_gate": true,
+      "gate": "L0→L1",
+      "reviewers": [
+        "内容审校员",
+        "测试工程师"
+      ],
+      "limitations": "仅本地来源夹具，不证明真实供应商来源API或模型忠实度"
+    },
+    {
+      "practice_id": "AI-PRACTICE-DURABLE-002",
+      "gap_id": "G-AI-05",
+      "stage_id": "A",
+      "task_ids": [
+        "E-AI-L0-002",
+        "U-AI-L0-001"
+      ],
+      "evidence_card_ids": [
+        "EC-AI-PRACTICE-DURABLE-002",
+        "EC-E-AI-L0-002",
+        "EC-U-AI-L0-001"
+      ],
+      "capability_dims": [
+        "D2",
+        "D3",
+        "D4",
+        "D7"
+      ],
+      "required_for_gate": true,
+      "gate": "L0→L1",
+      "reviewers": [
+        "内容审校员",
+        "测试工程师"
+      ],
+      "limitations": "本地原子JSON替身，不证明生产耐久性/RPO/RTO"
+    },
+    {
+      "practice_id": "AI-PRACTICE-GATE-003",
+      "gap_id": "G-AI-06",
+      "stage_id": "A",
+      "task_ids": [
+        "E-AI-L0-001",
+        "E-AI-L0-002"
+      ],
+      "evidence_card_ids": [
+        "EC-AI-PRACTICE-GATE-003",
+        "EC-E-AI-L0-001",
+        "EC-E-AI-L0-002"
+      ],
+      "capability_dims": [
+        "D1",
+        "D2",
+        "D4",
+        "D5"
+      ],
+      "required_for_gate": true,
+      "gate": "L0→L1",
+      "reviewers": [
+        "内容审校员",
+        "测试工程师"
+      ],
+      "limitations": "模拟人工gate，不是真人审批或生产认证"
+    },
+    {
+      "practice_id": "AI-PRACTICE-SOURCE-001",
+      "gap_id": "G-AI-09",
+      "stage_id": "B",
+      "task_ids": [
+        "U-AI-L1-001"
+      ],
+      "evidence_card_ids": [
+        "EC-U-AI-L1-001",
+        "EC-AI-PRACTICE-SOURCE-001"
+      ],
+      "capability_dims": [
+        "D3",
+        "D4",
+        "D6",
+        "D7"
+      ],
+      "required_for_gate": true,
+      "gate": "L1保持",
+      "reviewers": [
+        "测试工程师",
+        "接收岗位"
+      ],
+      "limitations": "留出迁移必须新建EvidenceCard，不能复用L0卡"
+    },
+    {
+      "practice_id": "AI-PRACTICE-DURABLE-002",
+      "gap_id": "G-AI-05",
+      "stage_id": "B",
+      "task_ids": [
+        "U-AI-L1-001"
+      ],
+      "evidence_card_ids": [
+        "EC-U-AI-L1-001"
+      ],
+      "capability_dims": [
+        "D3",
+        "D4",
+        "D7"
+      ],
+      "required_for_gate": true,
+      "gate": "L1保持",
+      "reviewers": [
+        "测试工程师",
+        "内容审校员"
+      ],
+      "limitations": "新约束至少改变恢复/回调或工具条件之一"
+    }
+  ],
+  "limitations": [
+    "v0.2新增crosswalk仅定义证据链，不代表练习已执行"
+  ]
+}

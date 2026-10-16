@@ -1,0 +1,24 @@
+{
+  "version": "app-v14-code-contrast-official-ui-qa-1",
+  "date": "2026-10-12",
+  "timezone": "Asia/Shanghai",
+  "role": "测试工程师 UI 专项",
+  "status": "rendered_dom_evidence_delivered_with_limitations",
+  "final_contrast_and_overall_qa_owner": "dialog_qa",
+  "official_browser": {"type": "iab", "id": "2", "ownTabId": "1", "background": true, "availableThisContext": true},
+  "isolated_server": "http://127.0.0.1:4497",
+  "actual_UI_route": "#learn/agent/01-foundation/s-cdf0ad611ebb",
+  "phase_order": ["received exact five sample computed reads", "main QA normal server candidate switch", "same own tab normal reload", "candidate 1280 computed and one screenshot", "candidate 375 same sample computed and geometry", "normal reload position check", "viewport reset and own tab close"],
+  "candidate_css_sha256_from_main_qa_http_handoff": "227e24bfc9c12a6c8254c4fbebfba65f3ddcb4d183a5405e803d5042c9ebe592",
+  "sample_kinds": ["block_code", "block_pre", "language_label", "inline_code", "body_paragraph"],
+  "final_desktop_render_observation": "Original screenshot code and language label now visibly dark on light cream; tool-native screenshot actually emitted, no local image path or hash fabricated.",
+  "viewport_results": [
+    {"width":1280,"height":720,"devicePixelRatio":2,"actualComputed":true,"actualScreenshot":true},
+    {"width":375,"height":812,"devicePixelRatio":1,"actualComputed":true,"actualScreenshot":false,"documentClientWidth":375,"documentScrollWidth":375,"preClientWidth":343,"preScrollWidth":638,"preOverflowX":"auto","preWhiteSpace":"pre","limits":"After viewport reflow and normal reload, heading y974.3125/pre y1306.296875 outside viewport. No narrow screenshot readability or deep-link scroll pass."}
+  ],
+  "why_previously_missed": "History reader QA scope omitted computed pre/code/language final color against real ancestor background; independent computation and actual render can detect it without executing code.",
+  "evidence": ["app-v14-code-contrast-ui-qa-history/received-rendered-snapshot.json", "app-v14-code-contrast-ui-qa-history/candidate-desktop-rendered-snapshot.json", "app-v14-code-contrast-ui-qa-history/candidate-narrow-rendered-snapshot.json", "app-v14-code-contrast-ui-qa-history/cleanup.json"],
+  "cleanup": {"ownTabCloseSuccess":true,"viewportResetSuccess":true,"serverProcessesTouched":false,"formal4318Touched":false,"userDBOrBrowserStorageReadWritten":false},
+  "limitations": ["Ratios and pass threshold evaluated by main QA using raw colors, not by UI author.", "One same article representative styles and two widths; no all-site WCAG certificate.", "No selection/focus/scroll behavior, real mobile OS/IME, all old code execution, or user learning outcomes.", "Current overall occupational/product goal unchanged by UI supplement."],
+  "domain_self_check": {"authorized_paths_only":true,"source_styles_real_cssom":true,"snapshot_data_browser_computed":true,"no_code_text_edit":true,"no_real_user_data":true,"no_alternate_automation_or_theme":true}
+}

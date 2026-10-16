@@ -1,0 +1,23 @@
+{
+  "version": "app-v14-dialog-cases-product-clarification-1",
+  "atUtc": "2026-10-12T00:54:55.005628+00:00",
+  "originalFrozenCasesSha256": "ae18a2ec338d1b3204589607c6ff2693d183b7b96ab51bc242f55b4b307597fa",
+  "productClarificationSha256": "35ae1a7f5836d355a7918361282f49bd3cbce32dcdf6a4675a1d2f3b0dad5b0e",
+  "caseExpectationOverrides": {
+    "DV14-07-a": [
+      "unrelated",
+      "needs_clarification"
+    ],
+    "DV14-07-b": [
+      "unrelated",
+      "needs_clarification"
+    ],
+    "HV14-11": [
+      "related_uncovered"
+    ]
+  },
+  "retainedConditions": [
+    "pure injection gives no knowledge sentences/results or false review/source",
+    "explicit React frontend must not receive ReAct source or ambiguous prompt"
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "version": "app-v14-dialog-ui-cases-1",
+  "atUtc": "2026-10-12T00:57:47.091336+00:00",
+  "tab": {
+    "browserId": "2",
+    "tabId": "1",
+    "owned": true,
+    "initialUrl": "about:blank"
+  },
+  "realServicePort": 4475,
+  "isolatedFaultPort": 4476,
+  "status": "planned_not_tested",
+  "cases": [
+    {
+      "id": "UI14-01",
+      "name": "normal actual semantic submit",
+      "steps": "发送ReAct是什么，观察等待与1–3教材短答、来源卡、展开原文及引用跳卡；语义适合性人工核",
+      "status": "not_tested"
+    },
+    {
+      "id": "UI14-02",
+      "name": "exact source route lifecycle",
+      "steps": "点击阅读这一节，真实标题/节URL；刷新保持；浏览器后退恢复同问答来源与提交题，不当新完成",
+      "status": "not_tested"
+    },
+    {
+      "id": "UI14-03",
+      "name": "short follow-up",
+      "steps": "基于上题追问有什么失败模式，明确主题及源；清除主题后它有什么缺点需澄清；显式天气仍过滤",
+      "status": "not_tested"
+    },
+    {
+      "id": "UI14-04",
+      "name": "unrelated uncovered ambiguous mixed negative",
+      "steps": "实际发送红烧肉/芯片/裸React/混合及否定，五类状态清晰，无旧答残留或强配入口",
+      "status": "not_tested"
+    },
+    {
+      "id": "UI14-05",
+      "name": "pending collapse no focus theft",
+      "steps": "隔离迟到夹具等待时收起、点击阅读链接继续读；完成不自动展开/滚动/焦点切换",
+      "status": "not_tested"
+    },
+    {
+      "id": "UI14-06",
+      "name": "late response identity",
+      "steps": "隔离迟到ReAct后立即发重规划，等待旧答到达仍保持新题/答案/主题/状态",
+      "status": "not_tested"
+    },
+    {
+      "id": "UI14-07",
+      "name": "HTTP503 retry",
+      "steps": "一次503受控暂不可用、保留本题，点重试后真实上游短答，上一答不当新答",
+      "status": "not_tested"
+    },
+    {
+      "id": "UI14-08",
+      "name": "tampered response",
+      "steps": "隔离来源hash/section/quote/citationID/version变更夹具，前端实际拒绝展示可用答案和入口",
+      "status": "not_tested"
+    },
+    {
+      "id": "UI14-09",
+      "name": "keyboard and small viewport",
+      "steps": "Enter发送/ShiftEnter换行；小屏375与760布局及键盘可见区域，如实际能力受限单列不冒称",
+      "status": "not_tested"
+    },
+    {
+      "id": "UI14-10",
+      "name": "affected existing ability",
+      "steps": "5导航不变/30目录可读/既有题入口与原文定位有限相关核，不推全部v13UI",
+      "status": "not_tested"
+    }
+  ],
+  "rules": [
+    "official CUA only",
+    "normal service separate from QA transport fixtures",
+    "UI inference uses visible DOM/geometry only, no hidden storage",
+    "never touch4318/user stored records or v13 4474"
+  ]
+}

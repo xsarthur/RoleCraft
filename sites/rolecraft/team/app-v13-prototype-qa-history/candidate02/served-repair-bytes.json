@@ -1,0 +1,20 @@
+{
+  "atUtc": "2026-10-12T00:36:00.144Z",
+  "runtime": "v24.16.0",
+  "scope": "Two public served byte checks after only experience JS changed; no unchanged model queries repeated.",
+  "status": "pass",
+  "tests": [
+    {
+      "file": "dist/index.html",
+      "http": 200,
+      "sha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+      "status": "pass"
+    },
+    {
+      "file": "dist/learning-experience-v13.js",
+      "http": 200,
+      "sha256": "7fc778e5d85702688caebf76370308ddee435b74acee7665666387a4dc902b9e",
+      "status": "pass"
+    }
+  ]
+}

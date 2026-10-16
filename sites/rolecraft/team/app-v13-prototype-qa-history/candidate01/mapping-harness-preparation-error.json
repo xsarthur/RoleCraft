@@ -1,0 +1,8 @@
+{
+  "kind": "QA harness preparation error, not product defect",
+  "attempt": 1,
+  "error": "KeyError startLine at original review range comparison",
+  "cause": "some frozen old finalEvidence records use line only; QA harness incorrectly required startLine/endLine",
+  "correction": "honor documented line fallback for original review range; exact quote-derived ranges checked separately",
+  "testsCompleted": "no final result written; complete mechanical check reruns after harness correction"
+}

@@ -1,0 +1,370 @@
+{
+  "capturedAtUtc": "2026-10-11T14:46:30.933596+00:00",
+  "appVersion": "local-workbench-0.11",
+  "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+  "runtimeActuallyTested": "v24.16.0",
+  "corpusVersion": "textbook-v10",
+  "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+  "bookSha256": "6707a4f03b298a5b234ce56a88edcbd9d79af6d40cb978227461a9d9d522f76e",
+  "files": [
+    {
+      "path": "team/app-v11-search-fix-product.md",
+      "bytes": 7919,
+      "sha256": "ca9e4201fb69cdf904f650caf59265390a60d93c6c82138d2bd5ef78c6702cdb"
+    },
+    {
+      "path": "team/app-v11-search-fix-retrieval.md",
+      "bytes": 7479,
+      "sha256": "ee63fe603c850056dacd55a84028f0c9e15d0cd2b8a49aff690ea2df8d8df389"
+    },
+    {
+      "path": "team/app-v11-search-fix-retrieval-binding.json",
+      "bytes": 9976,
+      "sha256": "fb9a3975e3a5081caca619119e520e9d23efb6be43f244c9f3178a9c2f9c0bae"
+    },
+    {
+      "path": "dist/content-retrieval-core.js",
+      "bytes": 20187,
+      "sha256": "e5d178306c992fb2f8143b67fc714ab73519eedb65a66c09c42caec9b5e31889"
+    },
+    {
+      "path": "server/retrieval/index.mjs",
+      "bytes": 6260,
+      "sha256": "1d16d453dd96a88dc8627a702363a33d8e73b6b84b8991dd9f190bc5f2de817f"
+    },
+    {
+      "path": "server/retrieval/semantic.mjs",
+      "bytes": 11204,
+      "sha256": "ef62b852a4e93314c5a2c178a84d8c4cd9a00d9e766568f78bbd94ab77c65fdf"
+    },
+    {
+      "path": "server/index.mjs",
+      "bytes": 31212,
+      "sha256": "f845271c8ab5a5c00b60cf7c6728f05f8fc6ff9a5df50f7d667abd03f5a8e464"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 4706,
+      "sha256": "b2a7c08cc059ca7cd14cad1ab6bec0a80342b4ee7183fb590c54688f0ef96020"
+    },
+    {
+      "path": "dist/app.js",
+      "bytes": 91907,
+      "sha256": "dbb860f3c55c0fb37f243d7aba224e10116f9f962d81fc670fb29028d14c13f0"
+    },
+    {
+      "path": "dist/styles.css",
+      "bytes": 27190,
+      "sha256": "47850ba437e3598424846361bb10463fc83513a3eae4d5ff7f1abcd6ad404139"
+    },
+    {
+      "path": "dist/learning-workbench.js",
+      "bytes": 46137,
+      "sha256": "81865f3ef8d465d883ead50a57a39bff1ef29e5125c78c74894022a729812638"
+    },
+    {
+      "path": "dist/learning-workbench.css",
+      "bytes": 20490,
+      "sha256": "c13ed2dbe5b68770e142ef9ec3962eb14f7ccdd745c99ff650c7b47def9c5ace"
+    },
+    {
+      "path": "server/retrieval/content-v10-index.json",
+      "bytes": 1092473,
+      "sha256": "98dc7273c9d1d5b27a18b4589f0a540cc9705b326d64bda9689f51574204e4e4"
+    },
+    {
+      "path": "dist/content-v10-data.js",
+      "bytes": 1071365,
+      "sha256": "0a2537f32ea2ddc2c5a020cc7a72937f0bfb7813ee2b701a3bdeec9035d02d58"
+    },
+    {
+      "path": "team/product-gates.json",
+      "bytes": 8080,
+      "sha256": "93ef8940281aa173324c581e2fb23366d22026ff2bf3883ff5d0fe93e958ec06"
+    }
+  ],
+  "engineeringDeclarationChecked": [
+    {
+      "path": "dist/content-retrieval-core.js",
+      "declaredSha256": "e5d178306c992fb2f8143b67fc714ab73519eedb65a66c09c42caec9b5e31889",
+      "actualSha256": "e5d178306c992fb2f8143b67fc714ab73519eedb65a66c09c42caec9b5e31889",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/index.mjs",
+      "declaredSha256": "1d16d453dd96a88dc8627a702363a33d8e73b6b84b8991dd9f190bc5f2de817f",
+      "actualSha256": "1d16d453dd96a88dc8627a702363a33d8e73b6b84b8991dd9f190bc5f2de817f",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/search-fix-dev-check.mjs",
+      "declaredSha256": "17671b10f4ce9ec6c7debfbb0573ef71718ba8f9a6bcf89fc71dd1ffdf53a01e",
+      "actualSha256": "17671b10f4ce9ec6c7debfbb0573ef71718ba8f9a6bcf89fc71dd1ffdf53a01e",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/semantic.mjs",
+      "declaredSha256": "ef62b852a4e93314c5a2c178a84d8c4cd9a00d9e766568f78bbd94ab77c65fdf",
+      "actualSha256": "ef62b852a4e93314c5a2c178a84d8c4cd9a00d9e766568f78bbd94ab77c65fdf",
+      "matches": true
+    },
+    {
+      "path": "server/index.mjs",
+      "declaredSha256": "f845271c8ab5a5c00b60cf7c6728f05f8fc6ff9a5df50f7d667abd03f5a8e464",
+      "actualSha256": "f845271c8ab5a5c00b60cf7c6728f05f8fc6ff9a5df50f7d667abd03f5a8e464",
+      "matches": true
+    },
+    {
+      "path": "../../scripts/start-local.mjs",
+      "declaredSha256": "b708c5d421e1ce77e7c0e399e833afd8d0b8881742f3adeeb2a98dfc3606a903",
+      "actualSha256": "b708c5d421e1ce77e7c0e399e833afd8d0b8881742f3adeeb2a98dfc3606a903",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/build-content.mjs",
+      "declaredSha256": "d4ccba5dd141228abfdd8104bf34b672bfaae712f34bde29d9aa371cc6b11671",
+      "actualSha256": "d4ccba5dd141228abfdd8104bf34b672bfaae712f34bde29d9aa371cc6b11671",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/content-v10-index.json",
+      "declaredSha256": "98dc7273c9d1d5b27a18b4589f0a540cc9705b326d64bda9689f51574204e4e4",
+      "actualSha256": "98dc7273c9d1d5b27a18b4589f0a540cc9705b326d64bda9689f51574204e4e4",
+      "matches": true
+    },
+    {
+      "path": "dist/content-v10-data.js",
+      "declaredSha256": "0a2537f32ea2ddc2c5a020cc7a72937f0bfb7813ee2b701a3bdeec9035d02d58",
+      "actualSha256": "0a2537f32ea2ddc2c5a020cc7a72937f0bfb7813ee2b701a3bdeec9035d02d58",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/model-lock.json",
+      "declaredSha256": "4ca475a7d227148624e45c52df50cbe6c3ca0678a7ef4c9bb8b7a76e61f949e7",
+      "actualSha256": "4ca475a7d227148624e45c52df50cbe6c3ca0678a7ef4c9bb8b7a76e61f949e7",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/vectors-v10.json",
+      "declaredSha256": "993cfda9d7738201ec404961efe6defa3c7945d53e176ef4e07188286f0f474b",
+      "actualSha256": "993cfda9d7738201ec404961efe6defa3c7945d53e176ef4e07188286f0f474b",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/intent-vectors-v10.json",
+      "declaredSha256": "0fb078eca729c7c587b609dda062e2f263ded5618b545c5b36e9d5ef774b5018",
+      "actualSha256": "0fb078eca729c7c587b609dda062e2f263ded5618b545c5b36e9d5ef774b5018",
+      "matches": true
+    },
+    {
+      "path": "team/app-v11-search-fix-product.md",
+      "declaredSha256": "ca9e4201fb69cdf904f650caf59265390a60d93c6c82138d2bd5ef78c6702cdb",
+      "actualSha256": "ca9e4201fb69cdf904f650caf59265390a60d93c6c82138d2bd5ef78c6702cdb",
+      "matches": true
+    },
+    {
+      "path": "team/app-v11-search-fix-retrieval.md",
+      "declaredSha256": "ee63fe603c850056dacd55a84028f0c9e15d0cd2b8a49aff690ea2df8d8df389",
+      "actualSha256": "ee63fe603c850056dacd55a84028f0c9e15d0cd2b8a49aff690ea2df8d8df389",
+      "matches": true
+    },
+    {
+      "path": "team/app-v11-search-fix-retrieval-dev-check.json",
+      "declaredSha256": "9c2721c44deca40c7cd90697a1d25377b6d01aafef06354b92b896863def6004",
+      "actualSha256": "9c2721c44deca40c7cd90697a1d25377b6d01aafef06354b92b896863def6004",
+      "matches": true
+    },
+    {
+      "path": "team/app-v11-search-fix-retrieval-repair-check.json",
+      "declaredSha256": "d07d5ede75651d069e4a52fccd077d1ec5f68a01291c3cea7b6498b1ab0616c6",
+      "actualSha256": "d07d5ede75651d069e4a52fccd077d1ec5f68a01291c3cea7b6498b1ab0616c6",
+      "matches": true
+    },
+    {
+      "path": "team/app-v11-search-fix-retrieval-repair2-check.json",
+      "declaredSha256": "65eaea19e70d45bf4afd21f8d488916decc6e26b1a64db9b99bb04ac5a364a8f",
+      "actualSha256": "65eaea19e70d45bf4afd21f8d488916decc6e26b1a64db9b99bb04ac5a364a8f",
+      "matches": true
+    },
+    {
+      "path": "team/app-v11-search-fix-retrieval-binding-repair1.json",
+      "declaredSha256": "88c89152a08fbad6d779ec4f31667442c2f08b201a495ee09eeec218d5d08f70",
+      "actualSha256": "88c89152a08fbad6d779ec4f31667442c2f08b201a495ee09eeec218d5d08f70",
+      "matches": true
+    },
+    {
+      "path": "team/app-v11-search-fix-retrieval-preview.json",
+      "declaredSha256": "51f114ea78f44194849aeda31f5dd6a9124d652cb99057434c4f1d223bdfbabb",
+      "actualSha256": "51f114ea78f44194849aeda31f5dd6a9124d652cb99057434c4f1d223bdfbabb",
+      "matches": true
+    },
+    {
+      "path": "team/app-v11-search-fix-retrieval-binding-repair2-candidate.json",
+      "declaredSha256": "c7077555a1772758f62b94692fa569fd276f8ed51c0f6239fbcc8262bb6ec5e3",
+      "actualSha256": "c7077555a1772758f62b94692fa569fd276f8ed51c0f6239fbcc8262bb6ec5e3",
+      "matches": true
+    },
+    {
+      "path": "team/app-v11-retrieval.md",
+      "declaredSha256": "7e7dfb80e4c7834ad10404ab82f58e14ecf4b9e363da811c1c9fad6cf7cc9fa9",
+      "actualSha256": "7e7dfb80e4c7834ad10404ab82f58e14ecf4b9e363da811c1c9fad6cf7cc9fa9",
+      "matches": true
+    },
+    {
+      "path": "team/app-v11-retrieval-binding.json",
+      "declaredSha256": "b844042940e9dbce9eb3ec56b243ff1327add4947708002643d8f4bf0b131ec2",
+      "actualSha256": "b844042940e9dbce9eb3ec56b243ff1327add4947708002643d8f4bf0b131ec2",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/dev-check-results.json",
+      "declaredSha256": "f2c35b7bd4eaf455b86211d96f6ebb53240774071c1ae50319dea91d802b92bb",
+      "actualSha256": "f2c35b7bd4eaf455b86211d96f6ebb53240774071c1ae50319dea91d802b92bb",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/affected-check-results.json",
+      "declaredSha256": "92b425533cb5df5f5d6ad4d7fc6e14243f80a4fde8d05ee9ee70c8199395f1f9",
+      "actualSha256": "92b425533cb5df5f5d6ad4d7fc6e14243f80a4fde8d05ee9ee70c8199395f1f9",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/shutdown-check-results.json",
+      "declaredSha256": "cb3a817637a4d901f99eb38f4edfcb5b5612327ca5d4253179358f9a05f46d5d",
+      "actualSha256": "cb3a817637a4d901f99eb38f4edfcb5b5612327ca5d4253179358f9a05f46d5d",
+      "matches": true
+    },
+    {
+      "path": "server/retrieval/preview-operations.json",
+      "declaredSha256": "dc26902efd8722e45db86fa0e071d550b98f1169eb0e3898bda652df3011fe54",
+      "actualSha256": "dc26902efd8722e45db86fa0e071d550b98f1169eb0e3898bda652df3011fe54",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v10/00-learning-route.md",
+      "declaredSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+      "actualSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v10/01-foundation.md",
+      "declaredSha256": "9e21a39ca80ea9045111885d33f8a60e0c5fc403a43e74b86f0f58a23347abad",
+      "actualSha256": "9e21a39ca80ea9045111885d33f8a60e0c5fc403a43e74b86f0f58a23347abad",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v10/p01-discovery.md",
+      "declaredSha256": "dfbaf177deeba2bd4f71a633764533a65dce7d14d036e75400744e8c0aee111b",
+      "actualSha256": "dfbaf177deeba2bd4f71a633764533a65dce7d14d036e75400744e8c0aee111b",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v10/02-task-acceptance.md",
+      "declaredSha256": "73d4157f1db7a146b7f84c7913be05dadbb91d2a256560531a7ae748932bc5fc",
+      "actualSha256": "73d4157f1db7a146b7f84c7913be05dadbb91d2a256560531a7ae748932bc5fc",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v10/03-trust-boundary.md",
+      "declaredSha256": "ede8fbe33929ecceafe800fadcc20186c854f8b4bd4b8288e6b74d3690db1f53",
+      "actualSha256": "ede8fbe33929ecceafe800fadcc20186c854f8b4bd4b8288e6b74d3690db1f53",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v10/f01.md",
+      "declaredSha256": "54fa66bf5d2072b69a033516602e6db3498cd9cfe9dffecf13622f7d86b39f4e",
+      "actualSha256": "54fa66bf5d2072b69a033516602e6db3498cd9cfe9dffecf13622f7d86b39f4e",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v10/f02.md",
+      "declaredSha256": "7179f323186c9af9930532d0f6cb96c45aa64121c8bf6afd171a9b23531918cf",
+      "actualSha256": "7179f323186c9af9930532d0f6cb96c45aa64121c8bf6afd171a9b23531918cf",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v10/c01-selection.md",
+      "declaredSha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f",
+      "actualSha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v10/c01-control-primer.md",
+      "declaredSha256": "345dd67c5bd8165a9d77dc7de819133f50dfcf39f91f59dec05bf385aba3d8c8",
+      "actualSha256": "345dd67c5bd8165a9d77dc7de819133f50dfcf39f91f59dec05bf385aba3d8c8",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v10/c02.md",
+      "declaredSha256": "2614eaa7a00a00f54c484dc9cc36e8ed3bedcc144c5895947fcfe4094d47566d",
+      "actualSha256": "2614eaa7a00a00f54c484dc9cc36e8ed3bedcc144c5895947fcfe4094d47566d",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v10/c03.md",
+      "declaredSha256": "4f4c0750bce1fa8de15a5f6bc94bc972c66a3e877e4b161b41890b4af8771261",
+      "actualSha256": "4f4c0750bce1fa8de15a5f6bc94bc972c66a3e877e4b161b41890b4af8771261",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v10/e01.md",
+      "declaredSha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5",
+      "actualSha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v10/c01-fixed-workflow.md",
+      "declaredSha256": "d4f8ea6dd8065d0afc2a4c2176964161a03e23463397b2518036b7e11530822e",
+      "actualSha256": "d4f8ea6dd8065d0afc2a4c2176964161a03e23463397b2518036b7e11530822e",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v10/c01-control-loop.md",
+      "declaredSha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38",
+      "actualSha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v10/e02.md",
+      "declaredSha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1",
+      "actualSha256": "a64e2f15115e86541bc64de192758d6a1c0535811f626f7cc8c1ab091eeb74b1",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v10/p01-mvp.md",
+      "declaredSha256": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5",
+      "actualSha256": "132588d00a4338c3791637ddefabcbe11841f51c02f0e50bc3901758510337c5",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v10/e03.md",
+      "declaredSha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a",
+      "actualSha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v10/e04.md",
+      "declaredSha256": "cc0fdfe84f772dc444a24fd89b4a8d67f1bad600ab6818cf58f6e9d37dace025",
+      "actualSha256": "cc0fdfe84f772dc444a24fd89b4a8d67f1bad600ab6818cf58f6e9d37dace025",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v10/e05.md",
+      "declaredSha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d",
+      "actualSha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d",
+      "matches": true
+    },
+    {
+      "path": "textbooks/v10/p02.md",
+      "declaredSha256": "7a4ddb35b1a34d2a2ed99b4fa73124794b5220ed1498ef395e48817d5197c487",
+      "actualSha256": "7a4ddb35b1a34d2a2ed99b4fa73124794b5220ed1498ef395e48817d5197c487",
+      "matches": true
+    }
+  ],
+  "scope": "Final limited source-term/meaning regression candidate. Oldv11 fullfeature outcomes not automatically reused; final10 affected tests differ from firstcandidate23 execution point.",
+  "developerPreviewEvidence": {
+    "path": "team/app-v11-search-fix-retrieval-preview.json",
+    "sha256": "51f114ea78f44194849aeda31f5dd6a9124d652cb99057434c4f1d223bdfbabb",
+    "limit": "Engineering service startup and APIpointselfcheck, not independent QA UI or userDBvalidation."
+  }
+}

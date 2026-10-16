@@ -1,0 +1,2300 @@
+{
+  "completedAtUtc": "2026-10-11T14:32:38.443Z",
+  "runtime": "v24.16.0",
+  "base": "http://127.0.0.1:4452",
+  "scope": "Finite narrow term-fix HTTP validation and actual source identity, isolated QA tempDB. Independent cases retain human semantic review separately; no UI or textbook code behavior run claimed.",
+  "sourceHashes": {
+    "server/retrieval/index.mjs": "1d16d453dd96a88dc8627a702363a33d8e73b6b84b8991dd9f190bc5f2de817f",
+    "server/retrieval/semantic.mjs": "ef62b852a4e93314c5a2c178a84d8c4cd9a00d9e766568f78bbd94ab77c65fdf",
+    "dist/content-retrieval-core.js": "b259d08e3537dbf05175ce5bb1724e458a6a8e97d7b818e408cff5562348ca28",
+    "server/retrieval/content-v10-index.json": "98dc7273c9d1d5b27a18b4589f0a540cc9705b326d64bda9689f51574204e4e4"
+  },
+  "records": [
+    {
+      "id": "SF11-01",
+      "query": "react",
+      "expectation": "react",
+      "kind": "product-fixed",
+      "startedAtUtc": "2026-10-11T14:32:37.328Z",
+      "elapsedMs": 254,
+      "request": {
+        "query": "react"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "source_term_0",
+            "label": "查找正文中的 ReAct",
+            "evidence": [
+              "ReAct"
+            ],
+            "unitIds": [
+              "00-learning-route"
+            ],
+            "sectionKeys": [
+              "00-learning-route/s-7547e5ce91f8"
+            ],
+            "term": "react"
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "00-learning-route",
+            "sectionId": "s-7547e5ce91f8",
+            "order": 1,
+            "unitTitle": "认识 Agent 工程",
+            "sectionTitle": "一次任务怎样形成反馈闭环",
+            "title": "一次任务怎样形成反馈闭环",
+            "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
+            "evidenceExcerpt": "上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。[ReAct](https://arxiv.org/abs/2210.03629)",
+            "sourcePath": "textbooks/v10/00-learning-route.md",
+            "sourceSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+            "version": "textbook-v10",
+            "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
+            "intentId": "source_term_0",
+            "matchingBasis": "source_term",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": []
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "SF11-02a",
+      "query": "ReAct",
+      "expectation": "react",
+      "kind": "product-fixed",
+      "startedAtUtc": "2026-10-11T14:32:37.583Z",
+      "elapsedMs": 49,
+      "request": {
+        "query": "ReAct"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "source_term_0",
+            "label": "查找正文中的 ReAct",
+            "evidence": [
+              "ReAct"
+            ],
+            "unitIds": [
+              "00-learning-route"
+            ],
+            "sectionKeys": [
+              "00-learning-route/s-7547e5ce91f8"
+            ],
+            "term": "react"
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "00-learning-route",
+            "sectionId": "s-7547e5ce91f8",
+            "order": 1,
+            "unitTitle": "认识 Agent 工程",
+            "sectionTitle": "一次任务怎样形成反馈闭环",
+            "title": "一次任务怎样形成反馈闭环",
+            "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
+            "evidenceExcerpt": "上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。[ReAct](https://arxiv.org/abs/2210.03629)",
+            "sourcePath": "textbooks/v10/00-learning-route.md",
+            "sourceSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+            "version": "textbook-v10",
+            "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
+            "intentId": "source_term_0",
+            "matchingBasis": "source_term",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": []
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "SF11-02b",
+      "query": "REACT",
+      "expectation": "react",
+      "kind": "product-fixed",
+      "startedAtUtc": "2026-10-11T14:32:37.632Z",
+      "elapsedMs": 42,
+      "request": {
+        "query": "REACT"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "source_term_0",
+            "label": "查找正文中的 ReAct",
+            "evidence": [
+              "ReAct"
+            ],
+            "unitIds": [
+              "00-learning-route"
+            ],
+            "sectionKeys": [
+              "00-learning-route/s-7547e5ce91f8"
+            ],
+            "term": "react"
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "00-learning-route",
+            "sectionId": "s-7547e5ce91f8",
+            "order": 1,
+            "unitTitle": "认识 Agent 工程",
+            "sectionTitle": "一次任务怎样形成反馈闭环",
+            "title": "一次任务怎样形成反馈闭环",
+            "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
+            "evidenceExcerpt": "上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。[ReAct](https://arxiv.org/abs/2210.03629)",
+            "sourcePath": "textbooks/v10/00-learning-route.md",
+            "sourceSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+            "version": "textbook-v10",
+            "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
+            "intentId": "source_term_0",
+            "matchingBasis": "source_term",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": []
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "SF11-03",
+      "query": "ReAct 的推理和行动是怎样交错的？",
+      "expectation": "react",
+      "kind": "product-fixed",
+      "startedAtUtc": "2026-10-11T14:32:37.674Z",
+      "elapsedMs": 39,
+      "request": {
+        "query": "ReAct 的推理和行动是怎样交错的？"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "source_term_0",
+            "label": "查找正文中的 ReAct",
+            "evidence": [
+              "ReAct"
+            ],
+            "unitIds": [
+              "00-learning-route"
+            ],
+            "sectionKeys": [
+              "00-learning-route/s-7547e5ce91f8"
+            ],
+            "term": "react"
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "00-learning-route",
+            "sectionId": "s-7547e5ce91f8",
+            "order": 1,
+            "unitTitle": "认识 Agent 工程",
+            "sectionTitle": "一次任务怎样形成反馈闭环",
+            "title": "一次任务怎样形成反馈闭环",
+            "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
+            "evidenceExcerpt": "上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。[ReAct](https://arxiv.org/abs/2210.03629)",
+            "sourcePath": "textbooks/v10/00-learning-route.md",
+            "sourceSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+            "version": "textbook-v10",
+            "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
+            "intentId": "source_term_0",
+            "matchingBasis": "source_term",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": []
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "SF11-04a",
+      "query": "React 前端框架",
+      "expectation": "framework",
+      "kind": "product-fixed",
+      "startedAtUtc": "2026-10-11T14:32:37.713Z",
+      "elapsedMs": 37,
+      "request": {
+        "query": "React 前端框架"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "no_match",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "SF11-04b",
+      "query": "React 的 JSX 和 Hooks",
+      "expectation": "framework",
+      "kind": "product-fixed",
+      "startedAtUtc": "2026-10-11T14:32:37.750Z",
+      "elapsedMs": 36,
+      "request": {
+        "query": "React 的 JSX 和 Hooks"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "no_match",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "SF11-05",
+      "query": "React 是前端框架还是 Agent 的方法？我想学它。",
+      "expectation": "ambiguous",
+      "kind": "product-fixed",
+      "startedAtUtc": "2026-10-11T14:32:37.786Z",
+      "elapsedMs": 4,
+      "request": {
+        "query": "React 是前端框架还是 Agent 的方法？我想学它。"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "needs_clarification",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_concept_retrieval",
+        "matchingMethods": [
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": {
+          "question": "你想找哪个方向的内容？当前教材只包含 Agent ReAct 的有限提及。",
+          "options": [
+            {
+              "label": "Agent 的 ReAct 方法",
+              "query": "ReAct 的推理和行动是怎样交错的？"
+            },
+            {
+              "label": "前端 React 框架",
+              "query": "React 前端框架的 JSX 和 Hooks"
+            }
+          ]
+        },
+        "limitations": [
+          "本地任务概念规则与原文术语查找只覆盖当前 Agent 教材；没有调用大模型。"
+        ]
+      },
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "SF11-06",
+      "query": "先不看 ReAct，我想知道程序崩了后怎样接着干。",
+      "expectation": "recover_exclude_term",
+      "kind": "product-fixed",
+      "startedAtUtc": "2026-10-11T14:32:37.790Z",
+      "elapsedMs": 40,
+      "request": {
+        "query": "先不看 ReAct，我想知道程序崩了后怎样接着干。"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "recovery",
+            "label": "中断后恢复任务",
+            "evidence": [
+              "崩",
+              "接着干"
+            ],
+            "unitIds": [
+              "e01",
+              "c01-control-primer"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "e01",
+            "sectionId": "s-2cd345377707",
+            "order": 12,
+            "unitTitle": "用持久状态保存动作事实",
+            "sectionTitle": "用一次恢复轨迹读懂提交边界",
+            "title": "用一次恢复轨迹读懂提交边界",
+            "reason": "你表达了“崩、接着干”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "先创建run和意图，把意图事务返回的 `action_id/intent_hash`交给可信审批入口；批准必须回送这个入库指纹，不在审批端对显示JSON另算。",
+            "sourcePath": "textbooks/v10/e01.md",
+            "sourceSha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5",
+            "version": "textbook-v10",
+            "href": "#learn/agent/e01/s-2cd345377707",
+            "intentId": "recovery",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c03",
+              "c01-control-primer"
+            ]
+          },
+          {
+            "unitId": "c01-control-primer",
+            "sectionId": "s-13bbf9fcf319",
+            "order": 9,
+            "unitTitle": "在重复提议和发送中识别同一个动作",
+            "sectionTitle": "调度与效果分别判断",
+            "title": "调度与效果分别判断",
+            "reason": "你表达了“崩、接着干”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "`status`表达接下来可怎样推进，`effect_resolution`表达业务效果是否确定。发送前是NOT_SENT，可能已发后是UNRESOLVED；操作级证据才能确认成功、无效果或冲突。具备合法同键重发许可时，动作可能可调度为READY而效果仍未决；“现在可以发送”不能推导“上一次没发生”。",
+            "sourcePath": "textbooks/v10/c01-control-primer.md",
+            "sourceSha256": "345dd67c5bd8165a9d77dc7de819133f50dfcf39f91f59dec05bf385aba3d8c8",
+            "version": "textbook-v10",
+            "href": "#learn/agent/c01-control-primer/s-13bbf9fcf319",
+            "intentId": "recovery",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c01-selection",
+              "03-trust-boundary"
+            ]
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "SF11-07",
+      "query": "不要推荐 react。",
+      "expectation": "exclude_only",
+      "kind": "product-fixed",
+      "startedAtUtc": "2026-10-11T14:32:37.830Z",
+      "elapsedMs": 35,
+      "request": {
+        "query": "不要推荐 react。"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "no_match",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [],
+        "excludedIntents": [
+          {
+            "id": "selection",
+            "label": "选择最小可用方案",
+            "evidence": [
+              "不要推荐 react"
+            ],
+            "unitIds": [
+              "c01-selection"
+            ]
+          }
+        ],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "SF11-08",
+      "query": "程序崩了以后怎么接着干，又不把已经做过的事情再做一遍？",
+      "expectation": "recover",
+      "kind": "product-fixed",
+      "startedAtUtc": "2026-10-11T14:32:37.865Z",
+      "elapsedMs": 43,
+      "request": {
+        "query": "程序崩了以后怎么接着干，又不把已经做过的事情再做一遍？"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "recovery",
+            "label": "中断后恢复任务",
+            "evidence": [
+              "崩",
+              "接着干",
+              "做过的事情再做"
+            ],
+            "unitIds": [
+              "e01",
+              "c01-control-primer"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "e01",
+            "sectionId": "s-2cd345377707",
+            "order": 12,
+            "unitTitle": "用持久状态保存动作事实",
+            "sectionTitle": "用一次恢复轨迹读懂提交边界",
+            "title": "用一次恢复轨迹读懂提交边界",
+            "reason": "你表达了“崩、接着干、做过的事情再做”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "先创建run和意图，把意图事务返回的 `action_id/intent_hash`交给可信审批入口；批准必须回送这个入库指纹，不在审批端对显示JSON另算。",
+            "sourcePath": "textbooks/v10/e01.md",
+            "sourceSha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5",
+            "version": "textbook-v10",
+            "href": "#learn/agent/e01/s-2cd345377707",
+            "intentId": "recovery",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c03",
+              "c01-control-primer"
+            ]
+          },
+          {
+            "unitId": "c01-control-primer",
+            "sectionId": "s-13bbf9fcf319",
+            "order": 9,
+            "unitTitle": "在重复提议和发送中识别同一个动作",
+            "sectionTitle": "调度与效果分别判断",
+            "title": "调度与效果分别判断",
+            "reason": "你表达了“崩、接着干、做过的事情再做”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "成功、等待和停止也不同。无批准是等待批准；效果未知是等待核对；取消禁止未来发送，但不撤销已发生工单。取消后核对出成功，仍保存该效果并完成停止，不把用户已取消的任务改成正常完成。这里先学判断语言，存储章再把它们落到提交事件。",
+            "sourcePath": "textbooks/v10/c01-control-primer.md",
+            "sourceSha256": "345dd67c5bd8165a9d77dc7de819133f50dfcf39f91f59dec05bf385aba3d8c8",
+            "version": "textbook-v10",
+            "href": "#learn/agent/c01-control-primer/s-13bbf9fcf319",
+            "intentId": "recovery",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c01-selection",
+              "03-trust-boundary"
+            ]
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "SF11-09",
+      "query": "想知道中断后不重复做事，以及整个任务一共花了多少钱。",
+      "expectation": "recover_cost",
+      "kind": "product-fixed",
+      "startedAtUtc": "2026-10-11T14:32:37.907Z",
+      "elapsedMs": 45,
+      "request": {
+        "query": "想知道中断后不重复做事，以及整个任务一共花了多少钱。"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "recovery",
+            "label": "中断后恢复任务",
+            "evidence": [
+              "想知道中断后不重复做事，整个任务一共花了多少钱"
+            ],
+            "unitIds": [
+              "e01",
+              "c01-control-primer"
+            ]
+          },
+          {
+            "id": "cost",
+            "label": "核算任务性能与费用",
+            "evidence": [
+              "整个任务一共花了多少钱"
+            ],
+            "unitIds": [
+              "e05"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "e01",
+            "sectionId": "s-2cd345377707",
+            "order": 12,
+            "unitTitle": "用持久状态保存动作事实",
+            "sectionTitle": "用一次恢复轨迹读懂提交边界",
+            "title": "用一次恢复轨迹读懂提交边界",
+            "reason": "你表达了“想知道中断后不重复做事，整个任务一共花了多少钱”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "桥接的 `allow_replay=False`使重复begin事件在事务内拒绝，不能从旧DISPATCH再次发送。",
+            "sourcePath": "textbooks/v10/e01.md",
+            "sourceSha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5",
+            "version": "textbook-v10",
+            "href": "#learn/agent/e01/s-2cd345377707",
+            "intentId": "recovery",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c03",
+              "c01-control-primer"
+            ]
+          },
+          {
+            "unitId": "c01-control-primer",
+            "sectionId": "s-954a9e8d4527",
+            "order": 9,
+            "unitTitle": "在重复提议和发送中识别同一个动作",
+            "sectionTitle": "一次创建后的超时轨迹",
+            "title": "一次创建后的超时轨迹",
+            "reason": "你表达了“想知道中断后不重复做事，整个任务一共花了多少钱”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "3. 新一轮call-create-12重复同槽位同参数。",
+            "sourcePath": "textbooks/v10/c01-control-primer.md",
+            "sourceSha256": "345dd67c5bd8165a9d77dc7de819133f50dfcf39f91f59dec05bf385aba3d8c8",
+            "version": "textbook-v10",
+            "href": "#learn/agent/c01-control-primer/s-954a9e8d4527",
+            "intentId": "recovery",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c01-selection",
+              "03-trust-boundary"
+            ]
+          },
+          {
+            "unitId": "e05",
+            "sectionId": "s-ae0b34dc0191",
+            "order": 19,
+            "unitTitle": "在质量护栏下比较性能与成本",
+            "sectionTitle": "成本归到逻辑任务 才能看见失败代价",
+            "title": "成本归到逻辑任务 才能看见失败代价",
+            "reason": "你表达了“整个任务一共花了多少钱”；这一小节说明核算任务性能与费用的具体机制。",
+            "evidenceExcerpt": "一次逻辑任务可能有三次模型请求、两次读取、一次写后核对和十分钟人工确认。账本应把这些尝试归到同一 `run_id`，每次物理请求单独记录 `attempt_id`、配置/价格版本、用量、费用确认状态和时间。不能只计成功返回那次模型请求；超时请求可能已经计费，未决费用不能填零。",
+            "sourcePath": "textbooks/v10/e05.md",
+            "sourceSha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d",
+            "version": "textbook-v10",
+            "href": "#learn/agent/e05/s-ae0b34dc0191",
+            "intentId": "cost",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "e02",
+              "e04"
+            ]
+          },
+          {
+            "unitId": "e05",
+            "sectionId": "s-e1d15049880a",
+            "order": 19,
+            "unitTitle": "在质量护栏下比较性能与成本",
+            "sectionTitle": "一个不把失败和未知费用丢掉的汇总器",
+            "title": "一个不把失败和未知费用丢掉的汇总器",
+            "reason": "你表达了“整个任务一共花了多少钱”；这一小节说明核算任务性能与费用的具体机制。",
+            "evidenceExcerpt": "“所有支出都已归账”是该汇总器的外部输入契约，不由四个字段证明。实际导入时按任务查所有模型/工具尝试，验证事件序列、账单或供应商用量记录、价格版本与费用确认；丢了一次超时尝试会让结果偏低。代码只拒绝重复逻辑任务和非法数值，不伪称连接过账单服务。",
+            "sourcePath": "textbooks/v10/e05.md",
+            "sourceSha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d",
+            "version": "textbook-v10",
+            "href": "#learn/agent/e05/s-e1d15049880a",
+            "intentId": "cost",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "e02",
+              "e04"
+            ]
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "SF11-10a",
+      "query": "JSON Schema",
+      "expectation": "schema",
+      "kind": "product-fixed",
+      "startedAtUtc": "2026-10-11T14:32:37.952Z",
+      "elapsedMs": 43,
+      "request": {
+        "query": "JSON Schema"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "source_term_0",
+            "label": "查找正文中的 JSON",
+            "evidence": [
+              "JSON"
+            ],
+            "unitIds": [
+              "00-learning-route",
+              "01-foundation",
+              "f01",
+              "f02",
+              "c02",
+              "c03",
+              "e01",
+              "c01-fixed-workflow",
+              "c01-control-loop",
+              "e03",
+              "e04"
+            ],
+            "sectionKeys": [
+              "00-learning-route/s-39f96e054e8b",
+              "01-foundation/s-cdf0ad611ebb",
+              "01-foundation/s-13184e1a94bd",
+              "01-foundation/s-f57a7deeadbf",
+              "f01/s-44ff3d5c11de",
+              "f01/s-11652f13b694",
+              "f01/s-32460a0c132f",
+              "f02/s-91c983bf957f",
+              "f02/s-fd51deac36c3",
+              "f02/s-1f0cddb8cef6",
+              "f02/s-a11bc0d8244c",
+              "c02/s-b17bea51524c",
+              "c03/s-34b01e188a3e",
+              "c03/s-7b876ac1ecdb",
+              "e01/s-96b2f8d2afe0",
+              "e01/s-2cd345377707",
+              "c01-fixed-workflow/s-e3535e2e77f0",
+              "c01-control-loop/s-76263bf5db11",
+              "e03/s-ddf2d7f3e96a",
+              "e03/s-6be54445ef14",
+              "e03/s-01d266a91eb6",
+              "e04/s-1fa733ddbee2"
+            ],
+            "term": "json"
+          },
+          {
+            "id": "source_term_1",
+            "label": "查找正文中的 Schema",
+            "evidence": [
+              "Schema"
+            ],
+            "unitIds": [
+              "f02",
+              "e01",
+              "c01-control-loop",
+              "e03",
+              "e04"
+            ],
+            "sectionKeys": [
+              "f02/s-91c983bf957f",
+              "f02/s-fd51deac36c3",
+              "f02/s-1f0cddb8cef6",
+              "f02/s-a11bc0d8244c",
+              "e01/s-a2a38e2c2388",
+              "c01-control-loop/s-0d1de33f9aed",
+              "c01-control-loop/s-5adf0c6c9187",
+              "c01-control-loop/s-50ac7c3de029",
+              "e03/s-ddf2d7f3e96a",
+              "e04/s-4eb00c02c6b2",
+              "e04/s-0c6b540e16b3",
+              "e04/s-0216279b992d",
+              "e04/s-3af8ec53f8ba"
+            ],
+            "term": "schema"
+          },
+          {
+            "id": "model_candidate",
+            "label": "校验模型响应与业务候选",
+            "evidence": [
+              "JSON"
+            ],
+            "unitIds": [
+              "f02"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "f02",
+            "sectionId": "s-91c983bf957f",
+            "order": 7,
+            "unitTitle": "把模型响应变成经校验的业务候选",
+            "sectionTitle": "先定义候选 而不是要求模型“给一个可靠答案”",
+            "title": "先定义候选 而不是要求模型“给一个可靠答案”",
+            "reason": "本节正文实际提及“JSON”；这里只定位已有论述，内容范围请以原文为准。",
+            "evidenceExcerpt": "具体 REST 请求通过 `text.format` 声明 JSON Schema，严格模式要求使用支持的 Schema 子集；对象的额外属性被关闭，所有字段列入 `required`，可缺的假设以 `null` 表达。",
+            "sourcePath": "textbooks/v10/f02.md",
+            "sourceSha256": "7179f323186c9af9930532d0f6cb96c45aa64121c8bf6afd171a9b23531918cf",
+            "version": "textbook-v10",
+            "href": "#learn/agent/f02/s-91c983bf957f",
+            "intentId": "source_term_0",
+            "matchingBasis": "source_term",
+            "matchedSourceTerms": [
+              "json"
+            ],
+            "prerequisiteUnitIds": [
+              "f01"
+            ]
+          },
+          {
+            "unitId": "e03",
+            "sectionId": "s-ddf2d7f3e96a",
+            "order": 17,
+            "unitTitle": "在数据返回和动作发送前强制执行权限",
+            "sectionTitle": "读取边界比最终答案过滤更早",
+            "title": "读取边界比最终答案过滤更早",
+            "reason": "本节正文实际提及“JSON”；这里只定位已有论述，内容范围请以原文为准。",
+            "evidenceExcerpt": "JSON schema 只能证明 `project` 是字符串，不能证明它属于当前组织。",
+            "sourcePath": "textbooks/v10/e03.md",
+            "sourceSha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a",
+            "version": "textbook-v10",
+            "href": "#learn/agent/e03/s-ddf2d7f3e96a",
+            "intentId": "source_term_0",
+            "matchingBasis": "source_term",
+            "matchedSourceTerms": [
+              "json"
+            ],
+            "prerequisiteUnitIds": [
+              "c02",
+              "c03",
+              "e02",
+              "03-trust-boundary"
+            ]
+          },
+          {
+            "unitId": "f02",
+            "sectionId": "s-fd51deac36c3",
+            "order": 7,
+            "unitTitle": "把模型响应变成经校验的业务候选",
+            "sectionTitle": "一次真实协议请求与完整候选闸门",
+            "title": "一次真实协议请求与完整候选闸门",
+            "reason": "你表达了“JSON”；这一小节说明校验模型响应与业务候选的具体机制。",
+            "evidenceExcerpt": "# 不自动重试；调用者依据结构化供应商错误和预算再决定。",
+            "sourcePath": "textbooks/v10/f02.md",
+            "sourceSha256": "7179f323186c9af9930532d0f6cb96c45aa64121c8bf6afd171a9b23531918cf",
+            "version": "textbook-v10",
+            "href": "#learn/agent/f02/s-fd51deac36c3",
+            "intentId": "model_candidate",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [
+              "json",
+              "schema"
+            ],
+            "prerequisiteUnitIds": [
+              "f01"
+            ]
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "SF11-10b",
+      "query": "json schema",
+      "expectation": "schema",
+      "kind": "product-fixed",
+      "startedAtUtc": "2026-10-11T14:32:37.995Z",
+      "elapsedMs": 48,
+      "request": {
+        "query": "json schema"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "source_term_0",
+            "label": "查找正文中的 JSON",
+            "evidence": [
+              "JSON"
+            ],
+            "unitIds": [
+              "00-learning-route",
+              "01-foundation",
+              "f01",
+              "f02",
+              "c02",
+              "c03",
+              "e01",
+              "c01-fixed-workflow",
+              "c01-control-loop",
+              "e03",
+              "e04"
+            ],
+            "sectionKeys": [
+              "00-learning-route/s-39f96e054e8b",
+              "01-foundation/s-cdf0ad611ebb",
+              "01-foundation/s-13184e1a94bd",
+              "01-foundation/s-f57a7deeadbf",
+              "f01/s-44ff3d5c11de",
+              "f01/s-11652f13b694",
+              "f01/s-32460a0c132f",
+              "f02/s-91c983bf957f",
+              "f02/s-fd51deac36c3",
+              "f02/s-1f0cddb8cef6",
+              "f02/s-a11bc0d8244c",
+              "c02/s-b17bea51524c",
+              "c03/s-34b01e188a3e",
+              "c03/s-7b876ac1ecdb",
+              "e01/s-96b2f8d2afe0",
+              "e01/s-2cd345377707",
+              "c01-fixed-workflow/s-e3535e2e77f0",
+              "c01-control-loop/s-76263bf5db11",
+              "e03/s-ddf2d7f3e96a",
+              "e03/s-6be54445ef14",
+              "e03/s-01d266a91eb6",
+              "e04/s-1fa733ddbee2"
+            ],
+            "term": "json"
+          },
+          {
+            "id": "source_term_1",
+            "label": "查找正文中的 Schema",
+            "evidence": [
+              "Schema"
+            ],
+            "unitIds": [
+              "f02",
+              "e01",
+              "c01-control-loop",
+              "e03",
+              "e04"
+            ],
+            "sectionKeys": [
+              "f02/s-91c983bf957f",
+              "f02/s-fd51deac36c3",
+              "f02/s-1f0cddb8cef6",
+              "f02/s-a11bc0d8244c",
+              "e01/s-a2a38e2c2388",
+              "c01-control-loop/s-0d1de33f9aed",
+              "c01-control-loop/s-5adf0c6c9187",
+              "c01-control-loop/s-50ac7c3de029",
+              "e03/s-ddf2d7f3e96a",
+              "e04/s-4eb00c02c6b2",
+              "e04/s-0c6b540e16b3",
+              "e04/s-0216279b992d",
+              "e04/s-3af8ec53f8ba"
+            ],
+            "term": "schema"
+          },
+          {
+            "id": "model_candidate",
+            "label": "校验模型响应与业务候选",
+            "evidence": [
+              "json"
+            ],
+            "unitIds": [
+              "f02"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "e03",
+            "sectionId": "s-ddf2d7f3e96a",
+            "order": 17,
+            "unitTitle": "在数据返回和动作发送前强制执行权限",
+            "sectionTitle": "读取边界比最终答案过滤更早",
+            "title": "读取边界比最终答案过滤更早",
+            "reason": "本节正文实际提及“JSON”；这里只定位已有论述，内容范围请以原文为准。",
+            "evidenceExcerpt": "JSON schema 只能证明 `project` 是字符串，不能证明它属于当前组织。",
+            "sourcePath": "textbooks/v10/e03.md",
+            "sourceSha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a",
+            "version": "textbook-v10",
+            "href": "#learn/agent/e03/s-ddf2d7f3e96a",
+            "intentId": "source_term_0",
+            "matchingBasis": "source_term",
+            "matchedSourceTerms": [
+              "json"
+            ],
+            "prerequisiteUnitIds": [
+              "c02",
+              "c03",
+              "e02",
+              "03-trust-boundary"
+            ]
+          },
+          {
+            "unitId": "f02",
+            "sectionId": "s-91c983bf957f",
+            "order": 7,
+            "unitTitle": "把模型响应变成经校验的业务候选",
+            "sectionTitle": "先定义候选 而不是要求模型“给一个可靠答案”",
+            "title": "先定义候选 而不是要求模型“给一个可靠答案”",
+            "reason": "本节正文实际提及“JSON”；这里只定位已有论述，内容范围请以原文为准。",
+            "evidenceExcerpt": "具体 REST 请求通过 `text.format` 声明 JSON Schema，严格模式要求使用支持的 Schema 子集；对象的额外属性被关闭，所有字段列入 `required`，可缺的假设以 `null` 表达。",
+            "sourcePath": "textbooks/v10/f02.md",
+            "sourceSha256": "7179f323186c9af9930532d0f6cb96c45aa64121c8bf6afd171a9b23531918cf",
+            "version": "textbook-v10",
+            "href": "#learn/agent/f02/s-91c983bf957f",
+            "intentId": "source_term_0",
+            "matchingBasis": "source_term",
+            "matchedSourceTerms": [
+              "json"
+            ],
+            "prerequisiteUnitIds": [
+              "f01"
+            ]
+          },
+          {
+            "unitId": "f02",
+            "sectionId": "s-fd51deac36c3",
+            "order": 7,
+            "unitTitle": "把模型响应变成经校验的业务候选",
+            "sectionTitle": "一次真实协议请求与完整候选闸门",
+            "title": "一次真实协议请求与完整候选闸门",
+            "reason": "你表达了“json”；这一小节说明校验模型响应与业务候选的具体机制。",
+            "evidenceExcerpt": "# 不自动重试；调用者依据结构化供应商错误和预算再决定。",
+            "sourcePath": "textbooks/v10/f02.md",
+            "sourceSha256": "7179f323186c9af9930532d0f6cb96c45aa64121c8bf6afd171a9b23531918cf",
+            "version": "textbook-v10",
+            "href": "#learn/agent/f02/s-fd51deac36c3",
+            "intentId": "model_candidate",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [
+              "json",
+              "schema"
+            ],
+            "prerequisiteUnitIds": [
+              "f01"
+            ]
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "SF11-10c",
+      "query": "JSON SCHEMA",
+      "expectation": "schema",
+      "kind": "product-fixed",
+      "startedAtUtc": "2026-10-11T14:32:38.043Z",
+      "elapsedMs": 44,
+      "request": {
+        "query": "JSON SCHEMA"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "source_term_0",
+            "label": "查找正文中的 JSON",
+            "evidence": [
+              "JSON"
+            ],
+            "unitIds": [
+              "00-learning-route",
+              "01-foundation",
+              "f01",
+              "f02",
+              "c02",
+              "c03",
+              "e01",
+              "c01-fixed-workflow",
+              "c01-control-loop",
+              "e03",
+              "e04"
+            ],
+            "sectionKeys": [
+              "00-learning-route/s-39f96e054e8b",
+              "01-foundation/s-cdf0ad611ebb",
+              "01-foundation/s-13184e1a94bd",
+              "01-foundation/s-f57a7deeadbf",
+              "f01/s-44ff3d5c11de",
+              "f01/s-11652f13b694",
+              "f01/s-32460a0c132f",
+              "f02/s-91c983bf957f",
+              "f02/s-fd51deac36c3",
+              "f02/s-1f0cddb8cef6",
+              "f02/s-a11bc0d8244c",
+              "c02/s-b17bea51524c",
+              "c03/s-34b01e188a3e",
+              "c03/s-7b876ac1ecdb",
+              "e01/s-96b2f8d2afe0",
+              "e01/s-2cd345377707",
+              "c01-fixed-workflow/s-e3535e2e77f0",
+              "c01-control-loop/s-76263bf5db11",
+              "e03/s-ddf2d7f3e96a",
+              "e03/s-6be54445ef14",
+              "e03/s-01d266a91eb6",
+              "e04/s-1fa733ddbee2"
+            ],
+            "term": "json"
+          },
+          {
+            "id": "source_term_1",
+            "label": "查找正文中的 Schema",
+            "evidence": [
+              "Schema"
+            ],
+            "unitIds": [
+              "f02",
+              "e01",
+              "c01-control-loop",
+              "e03",
+              "e04"
+            ],
+            "sectionKeys": [
+              "f02/s-91c983bf957f",
+              "f02/s-fd51deac36c3",
+              "f02/s-1f0cddb8cef6",
+              "f02/s-a11bc0d8244c",
+              "e01/s-a2a38e2c2388",
+              "c01-control-loop/s-0d1de33f9aed",
+              "c01-control-loop/s-5adf0c6c9187",
+              "c01-control-loop/s-50ac7c3de029",
+              "e03/s-ddf2d7f3e96a",
+              "e04/s-4eb00c02c6b2",
+              "e04/s-0c6b540e16b3",
+              "e04/s-0216279b992d",
+              "e04/s-3af8ec53f8ba"
+            ],
+            "term": "schema"
+          },
+          {
+            "id": "model_candidate",
+            "label": "校验模型响应与业务候选",
+            "evidence": [
+              "JSON"
+            ],
+            "unitIds": [
+              "f02"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "f02",
+            "sectionId": "s-91c983bf957f",
+            "order": 7,
+            "unitTitle": "把模型响应变成经校验的业务候选",
+            "sectionTitle": "先定义候选 而不是要求模型“给一个可靠答案”",
+            "title": "先定义候选 而不是要求模型“给一个可靠答案”",
+            "reason": "本节正文实际提及“JSON”；这里只定位已有论述，内容范围请以原文为准。",
+            "evidenceExcerpt": "具体 REST 请求通过 `text.format` 声明 JSON Schema，严格模式要求使用支持的 Schema 子集；对象的额外属性被关闭，所有字段列入 `required`，可缺的假设以 `null` 表达。",
+            "sourcePath": "textbooks/v10/f02.md",
+            "sourceSha256": "7179f323186c9af9930532d0f6cb96c45aa64121c8bf6afd171a9b23531918cf",
+            "version": "textbook-v10",
+            "href": "#learn/agent/f02/s-91c983bf957f",
+            "intentId": "source_term_0",
+            "matchingBasis": "source_term",
+            "matchedSourceTerms": [
+              "json"
+            ],
+            "prerequisiteUnitIds": [
+              "f01"
+            ]
+          },
+          {
+            "unitId": "e03",
+            "sectionId": "s-ddf2d7f3e96a",
+            "order": 17,
+            "unitTitle": "在数据返回和动作发送前强制执行权限",
+            "sectionTitle": "读取边界比最终答案过滤更早",
+            "title": "读取边界比最终答案过滤更早",
+            "reason": "本节正文实际提及“JSON”；这里只定位已有论述，内容范围请以原文为准。",
+            "evidenceExcerpt": "JSON schema 只能证明 `project` 是字符串，不能证明它属于当前组织。",
+            "sourcePath": "textbooks/v10/e03.md",
+            "sourceSha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a",
+            "version": "textbook-v10",
+            "href": "#learn/agent/e03/s-ddf2d7f3e96a",
+            "intentId": "source_term_0",
+            "matchingBasis": "source_term",
+            "matchedSourceTerms": [
+              "json"
+            ],
+            "prerequisiteUnitIds": [
+              "c02",
+              "c03",
+              "e02",
+              "03-trust-boundary"
+            ]
+          },
+          {
+            "unitId": "f02",
+            "sectionId": "s-fd51deac36c3",
+            "order": 7,
+            "unitTitle": "把模型响应变成经校验的业务候选",
+            "sectionTitle": "一次真实协议请求与完整候选闸门",
+            "title": "一次真实协议请求与完整候选闸门",
+            "reason": "你表达了“JSON”；这一小节说明校验模型响应与业务候选的具体机制。",
+            "evidenceExcerpt": "# 不自动重试；调用者依据结构化供应商错误和预算再决定。",
+            "sourcePath": "textbooks/v10/f02.md",
+            "sourceSha256": "7179f323186c9af9930532d0f6cb96c45aa64121c8bf6afd171a9b23531918cf",
+            "version": "textbook-v10",
+            "href": "#learn/agent/f02/s-fd51deac36c3",
+            "intentId": "model_candidate",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [
+              "json",
+              "schema"
+            ],
+            "prerequisiteUnitIds": [
+              "f01"
+            ]
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "SF11-10d",
+      "query": "装修厨房台面怎么选材料？",
+      "expectation": "no_match",
+      "kind": "product-fixed",
+      "startedAtUtc": "2026-10-11T14:32:38.087Z",
+      "elapsedMs": 35,
+      "request": {
+        "query": "装修厨房台面怎么选材料？"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "no_match",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "S04",
+      "query": "我想了解 ReAct 这种 Agent 架构。",
+      "expected": "Existing ReAct mention with limitedcoverage, not full implementation claim",
+      "expectation": "independent_observation",
+      "kind": "independent",
+      "startedAtUtc": "2026-10-11T14:32:38.122Z",
+      "elapsedMs": 38,
+      "request": {
+        "query": "我想了解 ReAct 这种 Agent 架构。"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "source_term_0",
+            "label": "查找正文中的 ReAct",
+            "evidence": [
+              "ReAct"
+            ],
+            "unitIds": [
+              "00-learning-route"
+            ],
+            "sectionKeys": [
+              "00-learning-route/s-7547e5ce91f8"
+            ],
+            "term": "react"
+          },
+          {
+            "id": "orientation",
+            "label": "认识 Agent 与工程全貌",
+            "evidence": [
+              "Agent 架构"
+            ],
+            "unitIds": [
+              "00-learning-route"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "00-learning-route",
+            "sectionId": "s-7547e5ce91f8",
+            "order": 1,
+            "unitTitle": "认识 Agent 工程",
+            "sectionTitle": "一次任务怎样形成反馈闭环",
+            "title": "一次任务怎样形成反馈闭环",
+            "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
+            "evidenceExcerpt": "上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。[ReAct](https://arxiv.org/abs/2210.03629)",
+            "sourcePath": "textbooks/v10/00-learning-route.md",
+            "sourceSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+            "version": "textbook-v10",
+            "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
+            "intentId": "source_term_0",
+            "matchingBasis": "source_term",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": []
+          },
+          {
+            "unitId": "00-learning-route",
+            "sectionId": "s-3b82fdeafaab",
+            "order": 1,
+            "unitTitle": "认识 Agent 工程",
+            "sectionTitle": "认识 Agent 工程",
+            "title": "认识 Agent 工程",
+            "reason": "你表达了“Agent 架构”；这一小节说明认识 Agent 与工程全貌的具体机制。",
+            "evidenceExcerpt": "“Agent”在不同产品中有不同用法。本书采用控制路径的区分：固定工作流由代码预列步骤与合法分支，动态 Agent 让模型根据新观察提议业务路径。这与 Anthropic 的架构定义一致；本文进一步采用宿主准入与事实记录的工程约束。这里仅以该文支持概念区分与最小足够方案原则。[Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)",
+            "sourcePath": "textbooks/v10/00-learning-route.md",
+            "sourceSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+            "version": "textbook-v10",
+            "href": "#learn/agent/00-learning-route/s-3b82fdeafaab",
+            "intentId": "orientation",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": []
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "needs_human_inspection"
+    },
+    {
+      "id": "S05",
+      "query": "ReAct、RAG 这两种思路的内容在哪里？",
+      "expected": "Term/context groups existing ReAct and retrieval evidence both; sourceidentityvalid",
+      "expectation": "independent_observation",
+      "kind": "independent",
+      "startedAtUtc": "2026-10-11T14:32:38.160Z",
+      "elapsedMs": 50,
+      "request": {
+        "query": "ReAct、RAG 这两种思路的内容在哪里？"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "source_term_0",
+            "label": "查找正文中的 ReAct",
+            "evidence": [
+              "ReAct"
+            ],
+            "unitIds": [
+              "00-learning-route"
+            ],
+            "sectionKeys": [
+              "00-learning-route/s-7547e5ce91f8"
+            ],
+            "term": "react"
+          },
+          {
+            "id": "orientation",
+            "label": "认识 Agent 与工程全貌",
+            "evidence": [
+              "ReAct、RAG 这两种思路的内容在哪里"
+            ],
+            "unitIds": [
+              "00-learning-route"
+            ]
+          },
+          {
+            "id": "retrieval",
+            "label": "检索当前且有权限的资料",
+            "evidence": [
+              "RAG"
+            ],
+            "unitIds": [
+              "c02",
+              "e03"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "00-learning-route",
+            "sectionId": "s-7547e5ce91f8",
+            "order": 1,
+            "unitTitle": "认识 Agent 工程",
+            "sectionTitle": "一次任务怎样形成反馈闭环",
+            "title": "一次任务怎样形成反馈闭环",
+            "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
+            "evidenceExcerpt": "上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。[ReAct](https://arxiv.org/abs/2210.03629)",
+            "sourcePath": "textbooks/v10/00-learning-route.md",
+            "sourceSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+            "version": "textbook-v10",
+            "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
+            "intentId": "source_term_0",
+            "matchingBasis": "source_term",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": []
+          },
+          {
+            "unitId": "00-learning-route",
+            "sectionId": "s-3b82fdeafaab",
+            "order": 1,
+            "unitTitle": "认识 Agent 工程",
+            "sectionTitle": "认识 Agent 工程",
+            "title": "认识 Agent 工程",
+            "reason": "你表达了“ReAct、RAG 这两种思路的内容在哪里”；这一小节说明认识 Agent 与工程全貌的具体机制。",
+            "evidenceExcerpt": "Agent 是一种围绕目标、依据新观察选择下一步，并通过工具与环境交互的软件系统。本书讨论基于大语言模型的 Agent：模型解释当前信息，提出下一步调查或候选结果；运行 Agent 的应用程序（下文称宿主程序）限定允许范围，决定能否执行，记录实际观察，再根据完成条件继续、等待或结束。它的价值来自把语言理解接到可核对的任务过程。",
+            "sourcePath": "textbooks/v10/00-learning-route.md",
+            "sourceSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+            "version": "textbook-v10",
+            "href": "#learn/agent/00-learning-route/s-3b82fdeafaab",
+            "intentId": "orientation",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": []
+          },
+          {
+            "unitId": "c02",
+            "sectionId": "s-8057f8ab7d20",
+            "order": 10,
+            "unitTitle": "构造符合版本和权限的证据包",
+            "sectionTitle": "检索策略必须按查询类型比较",
+            "title": "检索策略必须按查询类型比较",
+            "reason": "你表达了“RAG”；这一小节说明检索当前且有权限的资料的具体机制。",
+            "evidenceExcerpt": "精确文件路径、报告 ID、测试名优先做字段定位或词法检索。它们的字符形式本来就是身份信息，语义相近的另一个测试不能替代。自然语言“为什么第七天边界失败”可能没有出现 `test_refund_day_7` 的词面，需要查询改写、语义召回或混合。语义召回依靠相同嵌入模型空间中的相似性，不代表事实为真，也不能用一个高分解除修订过滤。",
+            "sourcePath": "textbooks/v10/c02.md",
+            "sourceSha256": "2614eaa7a00a00f54c484dc9cc36e8ed3bedcc144c5895947fcfe4094d47566d",
+            "version": "textbook-v10",
+            "href": "#learn/agent/c02/s-8057f8ab7d20",
+            "intentId": "retrieval",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "f02",
+              "03-trust-boundary"
+            ]
+          },
+          {
+            "unitId": "e03",
+            "sectionId": "s-ddf2d7f3e96a",
+            "order": 17,
+            "unitTitle": "在数据返回和动作发送前强制执行权限",
+            "sectionTitle": "读取边界比最终答案过滤更早",
+            "title": "读取边界比最终答案过滤更早",
+            "reason": "你表达了“RAG”；这一小节说明检索当前且有权限的资料的具体机制。",
+            "evidenceExcerpt": "第二道闸检查“允许读的内容中，哪些字段允许交给模型或写入工单”。一个被授权读取的测试报告可能包含连接串、访问令牌或个人邮箱。读取授权并不自动授权将整个报告交给另一个处理服务或公开项目。按任务选择失败断言、文件位置和已分类的必要片段；其他字段保持在受控存储，不进入普通上下文与日志。",
+            "sourcePath": "textbooks/v10/e03.md",
+            "sourceSha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a",
+            "version": "textbook-v10",
+            "href": "#learn/agent/e03/s-ddf2d7f3e96a",
+            "intentId": "retrieval",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c02",
+              "c03",
+              "e02",
+              "03-trust-boundary"
+            ]
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "needs_human_inspection"
+    },
+    {
+      "id": "S06",
+      "query": "先不看 ReAct，我只想知道整个任务一共花了多少钱。",
+      "expected": "Coste05, excludeReActprimary",
+      "expectation": "independent_observation",
+      "kind": "independent",
+      "startedAtUtc": "2026-10-11T14:32:38.210Z",
+      "elapsedMs": 39,
+      "request": {
+        "query": "先不看 ReAct，我只想知道整个任务一共花了多少钱。"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "cost",
+            "label": "核算任务性能与费用",
+            "evidence": [
+              "一共花"
+            ],
+            "unitIds": [
+              "e05"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "e05",
+            "sectionId": "s-ae0b34dc0191",
+            "order": 19,
+            "unitTitle": "在质量护栏下比较性能与成本",
+            "sectionTitle": "成本归到逻辑任务 才能看见失败代价",
+            "title": "成本归到逻辑任务 才能看见失败代价",
+            "reason": "你表达了“一共花”；这一小节说明核算任务性能与费用的具体机制。",
+            "evidenceExcerpt": "一次逻辑任务可能有三次模型请求、两次读取、一次写后核对和十分钟人工确认。账本应把这些尝试归到同一 `run_id`，每次物理请求单独记录 `attempt_id`、配置/价格版本、用量、费用确认状态和时间。不能只计成功返回那次模型请求；超时请求可能已经计费，未决费用不能填零。",
+            "sourcePath": "textbooks/v10/e05.md",
+            "sourceSha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d",
+            "version": "textbook-v10",
+            "href": "#learn/agent/e05/s-ae0b34dc0191",
+            "intentId": "cost",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "e02",
+              "e04"
+            ]
+          },
+          {
+            "unitId": "e05",
+            "sectionId": "s-e1d15049880a",
+            "order": 19,
+            "unitTitle": "在质量护栏下比较性能与成本",
+            "sectionTitle": "一个不把失败和未知费用丢掉的汇总器",
+            "title": "一个不把失败和未知费用丢掉的汇总器",
+            "reason": "你表达了“一共花”；这一小节说明核算任务性能与费用的具体机制。",
+            "evidenceExcerpt": "下面是 Python 3.10+ 标准库代码。`TaskAccounting` 是一次分配的逻辑任务账目；输入已经按尝试账本去重汇总，并覆盖该任务所有已发生支出。`cost_confirmed=False` 表示还有未知收费，不表示已知支出是估计值。`elapsed_ms` 是从提交到观察终止或截止观察时刻的等待，不能拿超时值冒充真实业务完成时间。",
+            "sourcePath": "textbooks/v10/e05.md",
+            "sourceSha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d",
+            "version": "textbook-v10",
+            "href": "#learn/agent/e05/s-e1d15049880a",
+            "intentId": "cost",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "e02",
+              "e04"
+            ]
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "needs_human_inspection"
+    },
+    {
+      "id": "S07",
+      "query": "不是 React 前端框架，我指的是 ReAct 智能体方式。",
+      "expected": "ReAct existing mention; explicit positive distinguishes framework",
+      "expectation": "independent_observation",
+      "kind": "independent",
+      "startedAtUtc": "2026-10-11T14:32:38.249Z",
+      "elapsedMs": 40,
+      "request": {
+        "query": "不是 React 前端框架，我指的是 ReAct 智能体方式。"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "selection",
+            "label": "选择最小可用方案",
+            "evidence": [
+              "不是 React 前端框架，我指的是 ReAct 智能体方式"
+            ],
+            "unitIds": [
+              "c01-selection"
+            ]
+          },
+          {
+            "id": "source_term_0",
+            "label": "查找正文中的 ReAct",
+            "evidence": [
+              "ReAct"
+            ],
+            "unitIds": [
+              "00-learning-route"
+            ],
+            "sectionKeys": [
+              "00-learning-route/s-7547e5ce91f8"
+            ],
+            "term": "react"
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "c01-selection",
+            "sectionId": "s-e458cc35eeb7",
+            "order": 8,
+            "unitTitle": "为一个任务选择最小可用方案 程序 单次模型 流程与动态 Agent",
+            "sectionTitle": "同一任务 四种控制权",
+            "title": "同一任务 四种控制权",
+            "reason": "你表达了“不是 React 前端框架，我指的是 ReAct 智能体方式”；这一小节说明选择最小可用方案的具体机制。",
+            "evidenceExcerpt": "这个 workflow/agent 控制权区分与 Anthropic 2024 年文章一致；该文章已注明生态发生变化，因此这里引用架构定义，不把它作为当前框架排名或性能基准。",
+            "sourcePath": "textbooks/v10/c01-selection.md",
+            "sourceSha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f",
+            "version": "textbook-v10",
+            "href": "#learn/agent/c01-selection/s-e458cc35eeb7",
+            "intentId": "selection",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "f02",
+              "02-task-acceptance"
+            ]
+          },
+          {
+            "unitId": "c01-selection",
+            "sectionId": "s-8e723873671f",
+            "order": 8,
+            "unitTitle": "为一个任务选择最小可用方案 程序 单次模型 流程与动态 Agent",
+            "sectionTitle": "用条件做选择的练习",
+            "title": "用条件做选择的练习",
+            "reason": "你表达了“不是 React 前端框架，我指的是 ReAct 智能体方式”；这一小节说明选择最小可用方案的具体机制。",
+            "evidenceExcerpt": "**固定字段还是 Agent？**报告格式稳定、所需说明只有输入/预期/实际，维护者禁止推断根因。参考分析：普通程序加模板满足目标；LLM 和动态调查没有目标内收益。保留错误解析与缺项分支，不能因为不用模型就省掉验收。",
+            "sourcePath": "textbooks/v10/c01-selection.md",
+            "sourceSha256": "355227e0afb68966bbe287db68fb5d3006607b16c8d12bc49a53dbff8ce2e03f",
+            "version": "textbook-v10",
+            "href": "#learn/agent/c01-selection/s-8e723873671f",
+            "intentId": "selection",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "f02",
+              "02-task-acceptance"
+            ]
+          },
+          {
+            "unitId": "00-learning-route",
+            "sectionId": "s-7547e5ce91f8",
+            "order": 1,
+            "unitTitle": "认识 Agent 工程",
+            "sectionTitle": "一次任务怎样形成反馈闭环",
+            "title": "一次任务怎样形成反馈闭环",
+            "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
+            "evidenceExcerpt": "上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。[ReAct](https://arxiv.org/abs/2210.03629)",
+            "sourcePath": "textbooks/v10/00-learning-route.md",
+            "sourceSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+            "version": "textbook-v10",
+            "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
+            "intentId": "source_term_0",
+            "matchingBasis": "source_term",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": []
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "needs_human_inspection"
+    },
+    {
+      "id": "S08",
+      "query": "React 前端框架里的组件和 Hooks 怎么写？",
+      "expected": "No invented frontendReact教材; no_match or properclarification",
+      "expectation": "independent_observation",
+      "kind": "independent",
+      "startedAtUtc": "2026-10-11T14:32:38.289Z",
+      "elapsedMs": 36,
+      "request": {
+        "query": "React 前端框架里的组件和 Hooks 怎么写？"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "no_match",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "needs_human_inspection"
+    },
+    {
+      "id": "S09",
+      "query": "我想学 react，但不是 agent 的推理和行动，而是网页组件。",
+      "expected": "Negation/positive frontend scope does not recommend ReAct as correct answer",
+      "expectation": "independent_observation",
+      "kind": "independent",
+      "startedAtUtc": "2026-10-11T14:32:38.324Z",
+      "elapsedMs": 44,
+      "request": {
+        "query": "我想学 react，但不是 agent 的推理和行动，而是网页组件。"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "source_term_0",
+            "label": "查找正文中的 ReAct",
+            "evidence": [
+              "ReAct"
+            ],
+            "unitIds": [
+              "00-learning-route"
+            ],
+            "sectionKeys": [
+              "00-learning-route/s-7547e5ce91f8"
+            ],
+            "term": "react"
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "00-learning-route",
+            "sectionId": "s-7547e5ce91f8",
+            "order": 1,
+            "unitTitle": "认识 Agent 工程",
+            "sectionTitle": "一次任务怎样形成反馈闭环",
+            "title": "一次任务怎样形成反馈闭环",
+            "reason": "本节正文实际提及“ReAct”；这里只定位已有论述，内容范围请以原文为准。",
+            "evidenceExcerpt": "上下文是模型本次可见的信息，事实记录保存的是已有观察、动作与未决事项。模型可以从工具结果调整调查方向，不能凭摘要覆盖事实。ReAct研究展示了任务动作与推理交错、从环境追加信息的机制；本书把授权、记录和停止另交运行时兑现，不从该研究推导任何供应商或业务保证。[ReAct](https://arxiv.org/abs/2210.03629)",
+            "sourcePath": "textbooks/v10/00-learning-route.md",
+            "sourceSha256": "d340011efd35ac0baade39165b238dda561f0cee19f226768e1538e3fc8be1ac",
+            "version": "textbook-v10",
+            "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
+            "intentId": "source_term_0",
+            "matchingBasis": "source_term",
+            "matchedSourceTerms": [
+              "react"
+            ],
+            "prerequisiteUnitIds": []
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "needs_human_inspection"
+    },
+    {
+      "id": "S10",
+      "query": "RAG 怎么过滤过期文档并控制检索权限？",
+      "expected": "Existing fixedRAGc02(+e03) remains",
+      "expectation": "independent_observation",
+      "kind": "independent",
+      "startedAtUtc": "2026-10-11T14:32:38.368Z",
+      "elapsedMs": 38,
+      "request": {
+        "query": "RAG 怎么过滤过期文档并控制检索权限？"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "recommended",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "retrieval",
+            "label": "检索当前且有权限的资料",
+            "evidence": [
+              "RAG",
+              "过滤过期文档"
+            ],
+            "unitIds": [
+              "c02",
+              "e03"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "c02",
+            "sectionId": "s-cc9f4913923b",
+            "order": 10,
+            "unitTitle": "构造符合版本和权限的证据包",
+            "sectionTitle": "做一个能定位问题的检索比较",
+            "title": "做一个能定位问题的检索比较",
+            "reason": "你表达了“RAG、过滤过期文档”；这一小节说明检索当前且有权限的资料的具体机制。",
+            "evidenceExcerpt": "先冻结合法资料集合和查询集，再为每题独立标出必要支持块，包含精确测试名、自然语言同义、需要实现与报告共同支持、规则缺失和冲突题。词法与语义使用同样的权限/修订过滤、`top_k` 和上下文上限；否则较大候选集的收益会被误归于算法。真实向量输入必须记录嵌入模型、维度、查询改写和编码版本；手工向量只能测排序实现。",
+            "sourcePath": "textbooks/v10/c02.md",
+            "sourceSha256": "2614eaa7a00a00f54c484dc9cc36e8ed3bedcc144c5895947fcfe4094d47566d",
+            "version": "textbook-v10",
+            "href": "#learn/agent/c02/s-cc9f4913923b",
+            "intentId": "retrieval",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "f02",
+              "03-trust-boundary"
+            ]
+          },
+          {
+            "unitId": "e03",
+            "sectionId": "s-ddf2d7f3e96a",
+            "order": 17,
+            "unitTitle": "在数据返回和动作发送前强制执行权限",
+            "sectionTitle": "读取边界比最终答案过滤更早",
+            "title": "读取边界比最终答案过滤更早",
+            "reason": "你表达了“RAG、过滤过期文档”；这一小节说明检索当前且有权限的资料的具体机制。",
+            "evidenceExcerpt": "第一道闸检查“这个身份可否读这个对象”。存储层或读取服务按宿主身份过滤，再返回内容；不能先检索全部组织，放进上下文后让模型选择自己的资料。即使最终答复拒绝，跨组织内容已经进入模型输入，读取边界仍失败。",
+            "sourcePath": "textbooks/v10/e03.md",
+            "sourceSha256": "a3652e73078a43d40d91e1fce38a5c8bc614bf0c0faa77cf39d95ad4d1c0fa3a",
+            "version": "textbook-v10",
+            "href": "#learn/agent/e03/s-ddf2d7f3e96a",
+            "intentId": "retrieval",
+            "matchingBasis": "task_intent",
+            "matchedSourceTerms": [],
+            "prerequisiteUnitIds": [
+              "c02",
+              "c03",
+              "e02",
+              "03-trust-boundary"
+            ]
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "needs_human_inspection"
+    },
+    {
+      "id": "S12",
+      "query": "Replanning",
+      "expected": "At most actual control-loop stopcondition/table mention, no fake independent Replanning chapter or depth",
+      "expectation": "independent_observation",
+      "kind": "independent",
+      "startedAtUtc": "2026-10-11T14:32:38.406Z",
+      "elapsedMs": 37,
+      "request": {
+        "query": "Replanning"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "no_match",
+        "retrievalVersion": "content-retrieval-0.11.1-source-terms",
+        "engineMode": "local_semantic_retrieval",
+        "matchingMethods": [
+          "local_semantic_vectors",
+          "local_task_concepts",
+          "source_term_recall"
+        ],
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [],
+        "excludedIntents": [],
+        "results": [],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "errors": [],
+      "status": "needs_human_inspection"
+    }
+  ]
+}

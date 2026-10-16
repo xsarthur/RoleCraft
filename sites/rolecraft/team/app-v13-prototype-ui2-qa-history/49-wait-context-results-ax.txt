@@ -1,0 +1,43 @@
+Browser tab: 1, Title: "职造 · Agent 学习工作台", URL: "http://127.0.0.1:4475/#records".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 239-242
+~	237 container lw-assistant
+~		238 container Description: 教材内容检索, ID: lw-find-panel
++			239 heading 找对应教材, Value: 2
++				240 text 找对应教材
++			241 text 只推荐当前 v12 教材中的真实内容
++			242 button 收起
++			243 text 学习起点：未限定 在全部 30 篇中查找
++			244 container lw-find-results
++				245 button (collapsed) 最近查询 · 本会话, Secondary Actions: Expand
++					246 text 最近查询 · 本会话
++				247 container
++					248 text 本次表达： 新证据推翻计划后哪些步骤要重做
++				249 text 提交时：未限定起点 · 规划与反思 / 1 三种策略改变的是控制对象
++				250 text 离线语义检索 · 查询留在本机
++				251 heading 推荐阅读, Value: 3
++					252 text 推荐阅读
++				253 text 检索理解：重规划时保留事实并失效依赖假设
++				254 container
++					255 text 第 18 篇 · 规划与反思  重规划时保留事实并失效依赖假设
++					256 heading 4 重规划保留事实，失效的是依赖假设, Value: 4
++						257 text 4 重规划保留事实，失效的是依赖假设
++					258 text 你表达了“新证据推翻计划后哪些步骤要重做”；这一小节说明重规划时保留事实并失效依赖假设的具体机制。 教材原文 触发重规划的信号应具体：新证据否定 assumed_fact；目标版本改变；工具能力或权限不可用；预算余量不足；验收指出缺失产物。临时服务限流通常先按原动作合同重试，不必重新设计整个任务；把每次 429 都变成新计划会增加不确定性。
++					259 link Description: 阅读这一节 →, Value: 127.0.0.1:4475/#learn/agent/n03-planning-reflection/s-7ee14c15626d
++					260 button (collapsed) 查看出处, Secondary Actions: Expand
++						261 text 查看出处
++				262 container
++					263 text 第 18 篇 · 规划与反思  重规划时保留事实并失效依赖假设
++					264 heading 2 从验收产物倒推候选计划, Value: 4
++						265 text 2 从验收产物倒推候选计划
++					266 text 你表达了“新证据推翻计划后哪些步骤要重做”；这一小节说明重规划时保留事实并失效依赖假设的具体机制。 教材原文 候选生成采用逆向展开：对每个验收产物，寻找能够生成它的工具/步骤；对该步骤每个未满足输入继续展开，直到输入来自可信初始材料；合并同身份产物的共同依赖。多个可用生产者不能任意选最先一个，先按允许能力、可信来源、成本与可验证性比较，无法判定则保留分支或询问。没有生产者返回缺口，不能发明工具。
++					267 link Description: 阅读这一节 →, Value: 127.0.0.1:4475/#learn/agent/n03-planning-reflection/s-7b6b3d9e9b99
++					268 button (collapsed) 查看出处, Secondary Actions: Expand
++						269 text 查看出处
++				270 text 使用本机中文向量模型结合任务概念、原文术语查找与否定规则检索；术语提及不等于完整课程。没有调用外部大模型。未知或复杂表达可能需要澄清。
++		271 container lw-find-form
++			272 text 查教材
++			273 text entry area (settable) 查教材, Value: 新证据推翻计划后哪些步骤要重做, ID: lw-query
++			274 button 查找
++			275 button (expanded) Description: 收起检索结果, Secondary Actions: Collapse
+The focused UI element is 273 text entry area (settable) 查教材, Value: 新证据推翻计划后哪些步骤要重做, ID: lw-query

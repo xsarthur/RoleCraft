@@ -1,0 +1,75 @@
+{
+  "version": "app-v14-code-contrast-preview-1",
+  "atUtc": "2026-10-12T02:16:42.947Z",
+  "clientDate": "2026-10-12",
+  "clientTimezone": "Asia/Shanghai",
+  "before": {
+    "listenerAbsent": true,
+    "oldPid": 47895,
+    "oldPidAbsent": true,
+    "sameFormalEntryProcessAbsent": true,
+    "directConnectionError": "ECONNREFUSED",
+    "directReadBypassedProxy": true,
+    "disappearanceCause": "unverified",
+    "noSignalSentToOldOrUnknownProcess": true
+  },
+  "restored": {
+    "pid": 50494,
+    "pty": 7920,
+    "node": "24.16.0",
+    "port": 4318,
+    "origin": "http://127.0.0.1:4318",
+    "workspace": "/Users/shengxiong/Documents/ChatGPT/一人公司建设",
+    "runtimePath": "/Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/.runtime",
+    "retained": true
+  },
+  "health": {
+    "httpStatus": 200,
+    "productVersion": "local-mvp-0.4",
+    "mode": "local-development",
+    "contentRetrieval": {
+      "available": true,
+      "retrievalVersion": "content-retrieval-0.12-v12",
+      "corpusVersion": "textbook-v12",
+      "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+      "units": 30,
+      "localSemanticPrepared": true,
+      "runtimeSupported": true,
+      "requiredNodeMajor": 24,
+      "nodeVersion": "v24.16.0",
+      "providerCalled": false
+    }
+  },
+  "css": {
+    "path": "dist/learning-experience-v13.css",
+    "httpStatus": 200,
+    "sha256": "227e24bfc9c12a6c8254c4fbebfba65f3ddcb4d183a5405e803d5042c9ebe592",
+    "localSha256": "227e24bfc9c12a6c8254c4fbebfba65f3ddcb4d183a5405e803d5042c9ebe592",
+    "expectedFrontendSha256": "227e24bfc9c12a6c8254c4fbebfba65f3ddcb4d183a5405e803d5042c9ebe592",
+    "matchesWorkspace": true,
+    "matchesExpectedFrontend": true
+  },
+  "serviceFiles": [
+    {
+      "path": "sites/rolecraft/server/retrieval/dialog.mjs",
+      "sha256": "db17b415b6d53c82ce933c064dc21c6d0ea00d2567e63b8fb0c20653f6dee4f1"
+    },
+    {
+      "path": "sites/rolecraft/server/retrieval/index.mjs",
+      "sha256": "c87dfde6c1ae60ee7594bf5f033ab4fc2a90554a55deabe8520f1045bfc43530"
+    },
+    {
+      "path": "sites/rolecraft/server/index.mjs",
+      "sha256": "f8c24960d16bedf253baf903ff9ab3973b055c53030a80427e000565f5cdfceb"
+    }
+  ],
+  "databaseRecordsInspected": false,
+  "databaseMigrated": false,
+  "databaseDeleted": false,
+  "backendSourceChanged": false,
+  "semanticTestsRerun": false,
+  "semanticOrExternalPaidModelCalled": false,
+  "uploaded": false,
+  "published": false,
+  "scope": "Only recovery of absent local service and public health/CSS transport. Independent code contrast measurements and UI QA belong to their domain owner. Previous process disappearance cause remains unverified."
+}

@@ -1,0 +1,117 @@
+{
+  "report_id": "AI-GEN-L0-TO-L1-GATE-QA-v12",
+  "date": "2026-10-16",
+  "role": "测试工程师",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "scope": "D0-03 learner-submission-v02, signed learner statement, Chenny receiver replay/dynamic holdout and dynamic runner v0.2 QA",
+  "decision": "remain_L0_guided",
+  "l1_review": "insufficient_evidence",
+  "level_granted": false,
+  "level_state": "pending",
+  "production_permission": false,
+  "inputs": [
+    "ai-generation-real-learner-d0-execution-learner-submission-v02/learner-receipt.json",
+    "ai-generation-real-learner-d0-execution-learner-submission-v02/learner-statement.txt",
+    "ai-generation-real-learner-d0-execution-learner-submission-v02/raw-receipts-retry-02/",
+    "ai-generation-real-learner-d0-execution-learner-submission-v02/receiver-acceptance-v03-dynamic-v02.json",
+    "chenny-receiver-holdout-v02-qa-addendum.md",
+    "chenny-receiver-holdout-v02-qa-addendum.json",
+    "ai-generation-real-learner-d0-execution-qa-v04-dynamic-v02.md",
+    "ai-generation-real-learner-d0-execution-qa-v04-dynamic-v02.json",
+    "ai-generation-l0-to-l1-gate-qa-v11.md/.json"
+  ],
+  "checks": {
+    "learner_submission": {
+      "status": "pass_with_limitations",
+      "learner_id": "learner-7391842650",
+      "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+      "raw_receipt_path": "ai-generation-real-learner-d0-execution-learner-submission-v02/raw-receipts-retry-02/",
+      "manifest_entries_actual": 34,
+      "manifest_entries_declared_in_receipt": 32,
+      "sha256sums_all_listed_files_ok": true,
+      "bytes_manifest_matches_files": true,
+      "entrypoint_sha256_matches": true,
+      "input_snapshot_sha256_matches": true,
+      "learner_statement_sha256_matches": true,
+      "eight_exit_codes_zero": true,
+      "two_round_stdout_byte_equal_by_case": true,
+      "stderr_empty": true,
+      "A_source_claims_bound": true,
+      "B_body_absent_and_stop_before_draft": true,
+      "source_missing_stops_before_draft": true,
+      "source_conflict_stops_before_draft": true,
+      "external_action_null": true,
+      "limitations": [
+        "learner-statement.txt 首行仍写‘待本人签署’，末尾为 signed_by_learner",
+        "receipt.raw_manifest_entries=32 与实际 SHA256SUMS 34 项不一致"
+      ]
+    },
+    "human_receipt": {
+      "status": "pass_with_limitations",
+      "learner_statement_present": true,
+      "learner_statement_signed": true,
+      "signer": "Larry",
+      "receiver_acceptance_status": "accepted_with_evidence",
+      "receiver_identity": "chenny",
+      "receiver_signature": "Chenny",
+      "receiver_accepted": true,
+      "accepted_at": "2026-10-16T12:59:19+08:00",
+      "human_receipt_pending": false,
+      "forbidden_inference": "receipt/签收只证明证据包已提交并接收，不授 D0/L1/L2 或生产权限"
+    },
+    "dynamic_holdout": {
+      "status": "pass_with_limitations",
+      "evidence_status": "pass_dynamic_binding",
+      "qa_status": "met_within_scope",
+      "checks_json_all_true": true,
+      "sha256sums_all_listed_files_ok": true,
+      "bytes_manifest_check_recorded_pass": true,
+      "run_1_exit_zero": true,
+      "run_2_exit_zero": true,
+      "run_1_run_2_stdout_byte_equal": true,
+      "run_1_run_2_exit_code_byte_equal": true,
+      "stderr_empty": true,
+      "variant_metadata_consistent": true,
+      "dynamic_claim_refs_bound": true,
+      "dynamic_receipt_refs_bound": true,
+      "unknowns_preserved": true,
+      "external_action_null": true,
+      "scope_limit": "fixture-only offline evidence; no live model quality, learner outcome or production readiness"
+    },
+    "dynamic_runner_v02_qa": {
+      "status": "met_within_scope",
+      "implementation_self_check_passed": "3/3",
+      "replay_smoke_invocations": 8,
+      "replay_smoke_exit_zero": 8,
+      "replay_smoke_stderr_empty": true,
+      "run_pairs_byte_identical": ["A-normal", "B-tenant-denied", "source-missing", "source-conflict"],
+      "receiver_scripts_shell_syntax_passed": true,
+      "holdout_run_in_this_qa_session": false,
+      "holdout_source": "Chenny independent receiver session/addendum"
+    },
+    "gate": {
+      "D0_03_scope": "met_with_limitations",
+      "D0_aggregate": "not_assessed",
+      "L1": "insufficient_evidence",
+      "L2": "not_assessed",
+      "production": "not_assessed",
+      "reason": "D0 gate requires all five learner submissions plus independent review and handoff; this report covers D0-03 only"
+    }
+  },
+  "unverified_or_unmet": [
+    "D0-01, D0-02, D0-04 and D0-05 learner submissions and independent review",
+    "unknown-task transfer, real failure/recovery and complete handoff capability",
+    "L1 two distinct sandboxes, rework/regression, holdout and independent acceptance as an aggregate gate",
+    "L2 isolated real-shape task, transfer, recovery and complete handoff",
+    "real model/API quality and external source contracts",
+    "real process crash recovery, concurrency/cache consistency, production RPO/RTO, security and operating economics",
+    "human expert review, real learner outcomes, occupational competence and industry advantage"
+  ],
+  "next_gate_requirements": [
+    "修正或解释 signed learner statement 的待签署首行",
+    "修正 receipt.raw_manifest_entries 或记录清单计数口径并由 QA 复验",
+    "补齐 D0-01..05 的本人原始提交、逐项独立审查和 handoff receipt",
+    "按新版本重跑受影响的独立 QA 与整体 gate 复盘"
+  ],
+  "preserved_boundary": "保留 v11/v02 历史与学习者文件；human receipt 和 dynamic holdout 的限定通过不改变 level_granted=false/pending。"
+}

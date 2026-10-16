@@ -1,0 +1,137 @@
+{
+  "report": "qa-v1.0-loading-interaction",
+  "role": "qa-engineer",
+  "testedAt": "2026-10-16",
+  "timezone": "Asia/Shanghai",
+  "target": {
+    "baseUrl": "http://111.231.8.78/",
+    "page": "#learn/agent/e03",
+    "releaseVersion": "rolecraft-1.0",
+    "httpHealth": 200,
+    "readOnly": true
+  },
+  "scope": [
+    "pending visibility",
+    "accessibility pending state",
+    "duplicate submission control",
+    "old answer clearing",
+    "success/no_match/error recovery"
+  ],
+  "conclusion": "fail",
+  "summary": "Remote release contains an older pending UI. It renders static loading text and result aria-busy, but the submit button remains a normal enabled submit control and remote CSS lacks spinner/indeterminate/loading-button styles. Workspace already contains the intended disabled button, aria-busy form, spinner and progress styles; those files are not deployed.",
+  "observed": [
+    {
+      "id": "BROWSER-SUCCESS-01",
+      "query": "ReAct 是什么",
+      "result": "success",
+      "evidence": "Chrome AX tree after submission showed request id, 教材原文提取 · 离线语义检索, 教材简答, source links, and 本题已完成.",
+      "durationApproxSeconds": 2.0
+    },
+    {
+      "id": "REMOTE-SOURCE-01",
+      "evidence": "Remote learning-workbench.js resultHTML pending branch uses static … and text; assistantHTML uses plain <button class=\"primary\" type=\"submit\">发送</button> with no disabled or loading attributes. Remote CSS has no spinner/loading-button selectors."
+    }
+  ],
+  "staticEvidence": {
+    "remoteLearningWorkbenchSha256": "2086c9ae26ee158e1bf4c89a296513b24b9173fb65a098bf03f9cd27c065668e",
+    "remoteLearningWorkbenchCssSha256": "b35eaef44e73a56e2b1df0985fdfe8c960393ca086ffecaeba96b51bf798336c",
+    "workspaceLearningWorkbenchSha256": "8f3c434d9c6ab0daf02d2de69660922d1f04422dd5917528f8cc6bce0c34ceb9",
+    "workspaceLearningWorkbenchCssSha256": "1a53e9fc115513b04404fa9656b626c9945efc483e36f5da30beb36e65b63c52",
+    "remotePendingText": "正在查找教材依据；保留当前阅读位置；你可以收起抽屉继续学习，结果返回后会保留在这里。",
+    "remoteFormState": "plain submit button; result container aria-busy only",
+    "workspaceExpectedState": "disabled aria-disabled=true aria-busy=true button labeled 正在查询…; form aria-busy=true; spinner and indeterminate progress"
+  },
+  "checks": [
+    {
+      "id": "L-01",
+      "name": "visible loading",
+      "status": "fail",
+      "basis": "remote static source; no spinner/progress and no delayed screenshot"
+    },
+    {
+      "id": "L-02",
+      "name": "accessible loading",
+      "status": "insufficient",
+      "basis": "result role=status/aria-live exists, form and submit control do not expose busy/disabled"
+    },
+    {
+      "id": "L-03",
+      "name": "duplicate prevention",
+      "status": "fail",
+      "basis": "submit remains enabled; same-query guard is not equivalent to disabled control"
+    },
+    {
+      "id": "L-04",
+      "name": "old answer clearing",
+      "status": "pass_static",
+      "basis": "find sets response=null before pending render"
+    },
+    {
+      "id": "L-05",
+      "name": "success recovery",
+      "status": "pass_observed",
+      "basis": "Chrome AX success evidence"
+    },
+    {
+      "id": "L-06",
+      "name": "no_match recovery",
+      "status": "insufficient",
+      "basis": "not reproduced in browser this run"
+    },
+    {
+      "id": "L-07",
+      "name": "error recovery",
+      "status": "insufficient",
+      "basis": "timeout/error not induced in isolation"
+    },
+    {
+      "id": "L-08",
+      "name": "collapsed pending state",
+      "status": "insufficient",
+      "basis": "not captured during delayed request"
+    }
+  ],
+  "limitations": [
+    "Remote response was fast; in-flight browser capture was not obtained.",
+    "No code, database, service, or user record was modified.",
+    "Static source and local/remote hash comparison identify a deployment mismatch; they do not replace post-deploy browser verification."
+  ],
+  "nextStep": {
+    "owner": "software-engineer/client + project-manager",
+    "action": "Deploy workspace loading interaction assets to the single remote dev environment, verify hashes, then run independent browser AX and visual checks for pending, success, no_match and error/timeout.",
+    "closeCondition": "New QA evidence shows disabled loading submit control, visible spinner/progress, aria-busy on form/results, no duplicate request, and correct state recovery for all listed outcomes."
+  },
+  "postDeployReverification": {
+    "testedAt": "2026-10-16",
+    "remoteLearningWorkbenchSha256": "9aebdadaab45e47f6f6dcd4d8fa2168f167bdb802ed22e022b087abd039a74d3",
+    "remoteLearningWorkbenchCssSha256": "1a53e9fc115513b04404fa9656b626c9945efc483e36f5da30beb36e65b63c52",
+    "staticKeyMarkersPassed": [
+      "lw-query-spinner",
+      "lw-query-indeterminate",
+      "等待期间不会重复提交",
+      "发送控件已暂时禁用",
+      "disabled aria-disabled=true aria-busy=true",
+      "正在查询…"
+    ],
+    "browserSuccessObserved": [
+      {
+        "query": "解释 Agent 的工具调用失败如何恢复",
+        "status": "answered",
+        "evidence": "AX displayed answer, source section, source link, version identity and 本题已完成."
+      },
+      {
+        "query": "如何验证一次 Agent 改动是否真的变好了？",
+        "status": "answered",
+        "evidence": "AX displayed answer, source section, source link, version identity and 本题已完成."
+      }
+    ],
+    "pendingBrowserEvidence": "not_verified",
+    "limitations": [
+      "Requests returned within approximately 2-4 seconds; no independent in-flight AX snapshot with loading text and disabled attributes was captured.",
+      "no_match, timeout/error, and collapsed pending states were not fully browser-reproduced in this pass."
+    ],
+    "conclusion": "met_with_limitations",
+    "scope": "Loading interaction deployment gap closed by resource/hash and key-marker verification; full product acceptance remains separate."
+  },
+  "currentStatus": "met_with_limitations"
+}

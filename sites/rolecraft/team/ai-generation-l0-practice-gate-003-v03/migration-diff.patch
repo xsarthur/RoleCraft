@@ -1,0 +1,13 @@
+{
+  "changes": [
+    "+ schema_version: v3",
+    "+ status: awaiting_human_approval",
+    "- legacy_status (v2-only removed)",
+    "= source_refs/hash preserved",
+    "= tenant preserved",
+    "= external_action null"
+  ],
+  "unknown_fields_rejected": [
+    "legacy_status"
+  ]
+}

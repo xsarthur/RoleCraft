@@ -1,0 +1,55 @@
+{
+  "record_id": "AI-L0-LEARNER-EVIDENCE-V04-CONTENT-REVIEW-20261015-001",
+  "review_role": "内容审校员",
+  "review_date": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "scope": [
+    "ai-generation-l0-learner-evidence-v04.md",
+    "ai-generation-l0-learner-evidence-v04.json",
+    "ai-generation-l0-learner-evidence-v04/learner_raw.json",
+    "ai-generation-l0-learner-evidence-v04/manifest.json",
+    "ai-generation-l0-learner-evidence-v04/quality/demo-v02-qa.json",
+    "ai-generation-l0-learner-evidence-v04/quality/b-denial-qa.json",
+    "ai-generation-l0-learner-evidence-v04/quality/d6-failure-sample.json",
+    "ai-generation-l0-learner-evidence-v04/u-ai-l0-001/"
+  ],
+  "decision": "reviewed_with_limitations",
+  "level_decision": "no_level_granted",
+  "checks": {
+    "D0_demo_vs_B_denial_identity": {
+      "status": "met_with_limitations",
+      "finding": "v04 clearly separates learner execution from independent QA bindings; B denial QA is scoped evidence and remains unverified in learner_raw, so it must not count as learner pass or level evidence."
+    },
+    "D6_counts_and_failure_sample": {
+      "status": "met_with_limitations",
+      "finding": "claim 0/1 is explicitly a negative B-denial sample; source/version/tenant/schema 1/1 are fixture field counts. Boundaries and failed sample are stated, but these counts cannot support general quality or real-model claims."
+    },
+    "U_unknown_transfer": {
+      "status": "reviewed_with_limitations",
+      "finding": "single checkpoint constraint has local baseline/failure/regression/holdout evidence; unknown-task transfer, real crash recovery, external contract and production RPO/RTO remain unmeasured."
+    },
+    "real_capability_and_receipt": {
+      "status": "reviewed_with_limitations",
+      "finding": "fixture-only evidence does not establish real model quality, production reliability, occupational competence or learning transfer; QA status, self-sign, handoff and human receipt remain pending."
+    },
+    "level_boundary": {
+      "status": "met_within_scope",
+      "finding": "not_assessed/not_granted is retained; no grade or occupational certification is implied."
+    }
+  },
+  "unverified": [
+    "learner-owned B-tenant rejection execution under this diagnostic",
+    "real model quality and supplier/API contract",
+    "real process crash recovery and production persistence/RPO/RTO",
+    "unknown-task and cross-version transfer",
+    "human receipt, expert review, learning effect and occupational competence"
+  ],
+  "required_followups": [
+    "If B denial is to count as learner evidence, add a same-diagnostic learner execution receipt and retain independent QA review.",
+    "Keep D6 denominators/sample definitions explicit when adding cases; do not aggregate negative claim 0/1 with positive field 1/1.",
+    "Run separately designed unknown-task/real-fault transfer tests with independent QA and human signoff before any level decision."
+  ],
+  "learner_files_modified": false,
+  "external_action": null
+}

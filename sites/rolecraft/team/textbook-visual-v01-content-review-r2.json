@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "reviewId": "textbook-visual-v01-content-review-r2",
+  "date": "2026-10-14",
+  "reviewerRole": "内容审校员",
+  "reviewerIdentity": "AI技术内容审校，非真人视觉设计专家、法务、测试工程师、真实学习者或就业评估",
+  "sourceVersion": "textbook-visual-v01-r1",
+  "status": "reviewed_with_limitations",
+  "conclusion": "VCD01、VCD04、VCD05、VCD07在当前静态内容范围内基本闭合；VCD02因第3章仍要求不存在的产品实拍和已确认卖点而部分闭合。岗位层级、J09失效状态、J04页面职位名、I01/I04邻近性和面试题型频率边界已收窄。新增R2-01（第3章输入前提残留）、R2-02（case-board E面板4:5比例/安全区不一致）需作者/设计师修正；R2-03量规分级实例不足交后续实训评估。当前结论不代表视觉渲染、模型调用、平台审核、真人专家认可、学习效果或就业结果。",
+  "reviewScope": [
+    "读取返修版正文、README、assets/README及6个教学输入/示意资产、sources和作者交接",
+    "逐项复核上一轮VCD01、VCD02、VCD04、VCD05、VCD07",
+    "复核岗位层级、J09失效/J04标题、I01/I04邻近性、题型来源ID与频率边界",
+    "执行本地相对链接存在检查与3个SVG XML解析；未渲染、未运行模型、未上传平台"
+  ],
+  "sourceBindings": [
+    {"path":"/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/README.md","sha256":"09b39a4df6101705849a000a1c8a483a5819b47298659a9c5c433f329b7d1220"},
+    {"path":"/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/ai-visual-content-design-textbook.md","sha256":"d105940e9b11f8c3ec0be24108ccfbca219d72525f8a536a2b8ad09e6bd2bbba"},
+    {"path":"/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/sources.md","sha256":"4a07824a426a5da48f75e58d2e660f84ff7f7cad80209aab9c95c7588700b314"},
+    {"path":"/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/assets/README.md","sha256":"e37cd06c788c81f97ff7cb34d9c2501d1e33cb8c6740d7447d9dbe0dbfdae884"},
+    {"path":"/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/assets/brand-swatch-v01.svg","sha256":"4569de8dbcdcf2443b538ed88d8275a7cb4694d5ca5e2e372ef95b7a05d8acf7"},
+    {"path":"/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/assets/case-board-v01.svg","sha256":"f9e080133c0247f3379fd3f59ee46cbaa1dc1204d7083de37462921320a21bea"},
+    {"path":"/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/assets/channel-spec-v01.md","sha256":"c244f89089037a597538f8abb9a69fe86340d89cf15f420efbf22a50613a245e"},
+    {"path":"/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/assets/claim-sheet-v01.md","sha256":"54c5367b9d4983903c8882021b75c650ae91f3a91370a4744aac2599ce1b8e58"},
+    {"path":"/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/assets/feedback-card-v01.md","sha256":"231829c7d0b3f5e2e35fdfb136d1bce55fedbdb218a0dff22ff668b21465a8fc"},
+    {"path":"/Users/shengxiong/Desktop/One People Company/sites/rolecraft/textbooks/visual-design-v01/assets/product-pack-v01.svg","sha256":"5ba7120f0d98c95b46dd8b75430dbb58c0f3caab05e934012c74bcdaece86c68"},
+    {"path":"/Users/shengxiong/Desktop/One People Company/sites/rolecraft/team/textbook-visual-v01-author.md","sha256":"8709096d48d1a2151cf3373d8d52aa0eb47a8c0b61ff52e339e38180b3a420d1"}
+  ],
+  "priorIssueResults": [
+    {
+      "id":"VCD01",
+      "status":"closed_static_with_render_limit",
+      "finding":"新增虚构产品、色卡、案例板、渠道假设、claim状态和冲突反馈输入；案例板A/B/C/D/E与核心章节和最小通过证据绑定；SVG XML可解析。",
+      "evidence":["textbook:113","textbook:240-270","textbook:393-407","textbook:490-504","assets:README","assets:case-board-v01.svg"],
+      "remaining":"未做浏览器/设计软件渲染；E比例问题另列R2-02。"
+    },
+    {
+      "id":"VCD02",
+      "status":"partially_closed",
+      "finding":"资产目录和课堂固定输入已交付，明确虚构、不可商用、教学假设和责任边界；但正文第161行仍要求产品实拍和已确认卖点，与实际矢量占位资产/CL-03待确认不一致。",
+      "evidence":["textbook:39","textbook:161","textbook:490","assets:README","assets:channel-spec-v01.md","assets:claim-sheet-v01.md","assets:feedback-card-v01.md"],
+      "remaining":"R2-01 open。"
+    },
+    {
+      "id":"VCD04",
+      "status":"closed_static_with_runtime_limit",
+      "finding":"新增六步工具无关AI轨迹，包含输入、允许/禁止改动、失败信号、修订、来源/版本、同条件复查和not_run边界；错误输出练习绑定CL-02和三类问题。",
+      "evidence":["textbook:240-253","textbook:268-270","textbook:500","textbook:513"],
+      "remaining":"没有模型或供应商运行证据，工具行为未验证。"
+    },
+    {
+      "id":"VCD05",
+      "status":"closed_static_with_legal_limit",
+      "finding":"第7章将可编辑/可核对条件收窄为本案例高风险产品图策略，分开设计自查、接收岗位确认和业务/法务复核；第9章不提供版权/商用结论。",
+      "evidence":["textbook:278","textbook:296","textbook:344-360"],
+      "remaining":"未核具体工具条款、字体、肖像、商标、合同或地区法律。"
+    },
+    {
+      "id":"VCD07",
+      "status":"closed_static_core_scope_with_practice_limit",
+      "finding":"第10章核心练习表绑定固定输入/反例、参考分析和最小证据；第12章视觉层级、AI边界和渠道重排量规引用A/C/CH-SQ-01/六步轨迹/not_run；开放叙述不能直接通过。",
+      "evidence":["textbook:393-407","textbook:510-517","assets:case-board-v01.svg","assets:feedback-card-v01.md"],
+      "remaining":"品牌与渠道、交付权利、沟通复盘的各分级实例不足，登记R2-03；真实陌生任务和实训评估未发生。"
+    }
+  ],
+  "sourceBoundaryReview": {
+    "status":"closed_static_with_market_evidence_limit",
+    "jobLevels":"正文第22、133行和sources第41-48行分为接近入门J04/J05、有经验/全链路J01/J02/J03、进阶J06/J07/J08、失效J09；J04使用页面实际AIGC视觉设计师标题；J09不再用于当前证据。",
+    "interviewTypes":"正文第424-478行用I01/I02/I03/I05/I06/I07/I08/I09/I10分组，I04单列进阶UI/交互；明确公开样本练习线索、频率未测、不代表统一评分。",
+    "limits":"市场代表性、当前岗位空缺、真实面试概率和就业结果未验证。"
+  },
+  "newIssues": [
+    {
+      "id":"R2-01",
+      "severity":"P2",
+      "status":"open",
+      "subject":"第3章渠道变体练习使用不存在的产品实拍/已确认卖点前提",
+      "evidence":["textbook:161","textbook:39","textbook:490","assets:README","assets:claim-sheet-v01.md"],
+      "impact":"学习者按随书资产无法满足练习前提，可能把矢量占位和待确认卖点误当真实或已确认材料。",
+      "owner":"教材研发员；产品/设计确认课堂输入措辞",
+      "repair":"改为产品占位资产+CL-01/CL-02，或另附有责任人确认的教学照片/卖点并保持虚构边界。"
+    },
+    {
+      "id":"R2-02",
+      "severity":"P2",
+      "status":"open",
+      "subject":"case-board E面板称4:5但内层画布为1:1，安全区未按CH-45-01表达",
+      "evidence":["assets/case-board-v01.svg:52-60","assets/channel-spec-v01.md:8"],
+      "impact":"学习者可能将方形示意当作4:5实例，无法核对安全区重排。",
+      "owner":"设计师与教材研发员；测试工程师渲染复核",
+      "repair":"按4:5绘制并同比例标注，或明确标题为非按比例示意；D面板将产品实拍改为批准资产以匹配课堂输入。"
+    },
+    {
+      "id":"R2-03",
+      "severity":"P2",
+      "status":"open_followup",
+      "subject":"0-3量规的品牌渠道/交付权利/沟通复盘分级实例不足",
+      "evidence":["textbook:397-407","textbook:510-515"],
+      "impact":"核心案例能静态判别，但完整职业评价会受评分者主观判断影响。",
+      "owner":"实训评估员；教材研发员可补课堂实例",
+      "repair":"正式实训另交每级反例、评分者一致性和陌生任务证据；不由作者自查关闭职业能力结论。"
+    }
+  ],
+  "staticChecks": {
+    "lineCounts":{"textbook":535,"readme":35,"sources":48,"authorHandoff":83},
+    "localLinks":"all checked relative local targets exist",
+    "svgXml":"brand-swatch-v01.svg, product-pack-v01.svg, case-board-v01.svg parsed successfully",
+    "rendered":false,
+    "modelRun":false,
+    "platformUpload":false
+  },
+  "limits":[
+    "未进行浏览器/设计软件渲染，不能确认SVG字体、裁切、颜色、缩放可读性或E面板视觉成立。",
+    "未运行模型或生成工具；第6章not_run边界保持诚实。",
+    "未核工具条款、字体、素材、肖像、商标、合同或地区法律。",
+    "未进行真人学习者、陌生任务、真实客户、行业专家或招聘结果验证。"
+  ],
+  "reverificationPlan":[
+    "作者修正R2-01，设计师/作者修正R2-02后提供新hash；内容审校复核第3章和assets的一致性。",
+    "测试工程师实际渲染case-board并检查E的4:5比例、CH-45-01安全区和全部文字；R2-03交实训评估员。",
+    "保留上一轮独立报告不变，本报告只绑定返修版文件。"
+  ]
+}

@@ -1,0 +1,16 @@
+# Local runtime state and credentials
+.runtime/
+.env*
+!.env.example
+
+# Installed dependencies
+node_modules/
+
+# Logs and process files
+*.log
+*.pid
+
+# SQLite runtime sidecars/databases
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal

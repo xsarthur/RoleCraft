@@ -1,0 +1,62 @@
+{
+  "qa_id": "AI-PRACTICE-DURABLE-002-QA-v04",
+  "date": "2026-10-15",
+  "role": "qa-engineer",
+  "scope": "local deterministic fixture artifacts only",
+  "status": "met_with_limitations",
+  "grade_awarded": false,
+  "final_json": {
+    "bytes": 302,
+    "sha256": "ae2cfd3f1ff449f5498fae75b96785086f6e184c1a4123642f9bde5ee8732496",
+    "runs_equal": [
+      "run-1",
+      "run-2",
+      "run-3"
+    ]
+  },
+  "final_output": {
+    "bytes": 218,
+    "sha256": "24d7e9ba06340241e48be76b4ba06e4225c1c2511f09ab7efa972b7cf4bfc28f",
+    "required_fields": {
+      "scope": "fixture-only",
+      "status": "local_draft_ready",
+      "status_scope": "deterministic_local_fixture_only"
+    },
+    "runs": [
+      "run-1",
+      "run-2",
+      "run-3"
+    ]
+  },
+  "checkpoint_manifest_verified": true,
+  "replay": {
+    "event_count": 6,
+    "events_sha256": "3087c33b041fa19354b188dc7dabd757e05fd29a21dc20e2d76bec40a9ef9504",
+    "final_payload_sha256": "21a158013a543426971d344ab71c27fde35c4975a3346a358a85c40f81b0ccd8",
+    "run_byte_replay_equal": true
+  },
+  "first_failures": [
+    "CHECKPOINT_CORRUPT",
+    "INCOMPLETE_RESULT_AFTER_CRASH",
+    "DUPLICATE_CALLBACK_PAYLOAD_MISMATCH",
+    "CHECKPOINT_VERSION_MISMATCH"
+  ],
+  "holdout": {
+    "event_order_only": true,
+    "verified": true
+  },
+  "handoff": {
+    "local_gate_receipt_only": true,
+    "production_approval": false
+  },
+  "external_action": {
+    "run_contracts": null,
+    "holdout_contract": null
+  },
+  "limitations": [
+    "not production database/process crash/RPO/RTO/concurrency proof",
+    "not LangGraph checkpoint proof",
+    "no real provider/network/paid API/cloud/key/user-data/external write",
+    "no learner/expert outcome evidence"
+  ]
+}

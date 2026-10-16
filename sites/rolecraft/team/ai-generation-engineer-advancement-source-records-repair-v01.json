@@ -1,0 +1,71 @@
+{
+  "repair_id": "AI-ADV-20261015-SR-001",
+  "schema": "rolecraft.ai_generation.advancement.source_records_repair",
+  "schema_version": "0.1",
+  "date": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "owner_role": "curriculum-architect",
+  "coordinator_role": "project-manager",
+  "target_role_id": "AI",
+  "finding_id": "QA-AI-ADV-P2-001",
+  "finding_severity": "P2",
+  "finding": "ai-generation-engineer-advancement-v02.json source_records最后一项为裸字符串，前六项为对象。",
+  "repair_scope": {
+    "changed_files": [
+      "sites/rolecraft/team/ai-generation-engineer-advancement-v03.md",
+      "sites/rolecraft/team/ai-generation-engineer-advancement-v03.json"
+    ],
+    "preserved_files": [
+      "sites/rolecraft/team/ai-generation-engineer-advancement-v01.md",
+      "sites/rolecraft/team/ai-generation-engineer-advancement-v01.json",
+      "sites/rolecraft/team/ai-generation-engineer-advancement-v02.md",
+      "sites/rolecraft/team/ai-generation-engineer-advancement-v02.json",
+      "sites/rolecraft/team/ai-generation-engineer-advancement-qa-v02.md",
+      "sites/rolecraft/team/ai-generation-engineer-advancement-qa-v02.json"
+    ],
+    "unchanged_domains": [
+      "training execution",
+      "learner evidence",
+      "level decisions",
+      "practice pack",
+      "application",
+      "user data"
+    ],
+    "first_failure_preserved": true
+  },
+  "old_version": {
+    "plan_id": "AI-ADV-20261015-002",
+    "md_path": "sites/rolecraft/team/ai-generation-engineer-advancement-v02.md",
+    "md_sha256": "d61e2d71eede535e8df4ea25a526650390ce401e453fe63219fe1a8e5fd9e30e",
+    "json_path": "sites/rolecraft/team/ai-generation-engineer-advancement-v02.json",
+    "json_sha256": "0bdf99d6e679ec8755d0e79f29cf26e8df98b377d113a22f8c347d8bd9305f61",
+    "last_source_record": "ai-generation-engineer-advancement-qa-v01.json"
+  },
+  "new_version": {
+    "plan_id": "AI-ADV-20261015-003",
+    "schema_version": "v0.3",
+    "md_path": "sites/rolecraft/team/ai-generation-engineer-advancement-v03.md",
+    "md_sha256": "29fd15a70ba1d590f7e5b4ca347117ba4c61f0077f5d83dabf666f6676364986",
+    "json_path": "sites/rolecraft/team/ai-generation-engineer-advancement-v03.json",
+    "json_sha256": "7135891eb9bf38da3c23022b334e5179ed6b81587116dbaef7ccf1ea4fd82850",
+    "last_source_record": {
+      "path": "sites/rolecraft/team/ai-generation-engineer-advancement-qa-v01.json",
+      "status": "reviewed_with_limitations"
+    }
+  },
+  "retest_contract": {
+    "checks": [
+      "v03 JSON parses",
+      "source_records is a non-empty array",
+      "every source_records item is an object",
+      "every item has non-empty path and status strings",
+      "first-failure and v02 QA hashes remain unchanged",
+      "v03 current_state remains L0_guided/not_assessed/not_granted",
+      "practice_crosswalk remains unchanged from v02",
+      "no training or external action executed"
+    ],
+    "expected_conclusion": "met_within_scope",
+    "independent_reviewer": "QA"
+  },
+  "status": "awaiting_independent_retest"
+}

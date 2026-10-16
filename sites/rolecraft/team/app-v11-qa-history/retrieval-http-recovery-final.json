@@ -1,0 +1,447 @@
+{
+  "executedAtUtc": "2026-10-11T08:08:38.652Z",
+  "scope": "Independent HTTP functional test with isolated temporary database. Hidden queries were frozen before implementation handoff. No paid provider, textbook code, real account or private data execution.",
+  "indexSha256": "98dc7273c9d1d5b27a18b4589f0a540cc9705b326d64bda9689f51574204e4e4",
+  "records": [
+    {
+      "id": "R11-02",
+      "startedAtUtc": "2026-10-11T08:08:38.262Z",
+      "elapsedMs": 251,
+      "request": {
+        "query": "程序崩了以后怎么接着干，又不把已经做过的事情再做一遍？",
+        "corpusVersion": "textbook-v10"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "recommended",
+        "engineMode": "local_semantic_retrieval",
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "recovery",
+            "label": "中断后恢复任务",
+            "evidence": [
+              "崩",
+              "接着干",
+              "做过的事情再做"
+            ],
+            "unitIds": [
+              "e01",
+              "c01-control-primer"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "e01",
+            "sectionId": "s-2cd345377707",
+            "order": 12,
+            "unitTitle": "用持久状态保存动作事实",
+            "sectionTitle": "用一次恢复轨迹读懂提交边界",
+            "title": "用一次恢复轨迹读懂提交边界",
+            "reason": "你表达了“崩、接着干、做过的事情再做”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "先创建run和意图，把意图事务返回的 `action_id/intent_hash`交给可信审批入口；批准必须回送这个入库指纹，不在审批端对显示JSON另算。",
+            "sourcePath": "textbooks/v10/e01.md",
+            "sourceSha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5",
+            "version": "textbook-v10",
+            "href": "#learn/agent/e01/s-2cd345377707",
+            "intentId": "recovery",
+            "prerequisiteUnitIds": [
+              "c03",
+              "c01-control-primer"
+            ]
+          },
+          {
+            "unitId": "c01-control-primer",
+            "sectionId": "s-13bbf9fcf319",
+            "order": 9,
+            "unitTitle": "在重复提议和发送中识别同一个动作",
+            "sectionTitle": "调度与效果分别判断",
+            "title": "调度与效果分别判断",
+            "reason": "你表达了“崩、接着干、做过的事情再做”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "成功、等待和停止也不同。无批准是等待批准；效果未知是等待核对；取消禁止未来发送，但不撤销已发生工单。取消后核对出成功，仍保存该效果并完成停止，不把用户已取消的任务改成正常完成。这里先学判断语言，存储章再把它们落到提交事件。",
+            "sourcePath": "textbooks/v10/c01-control-primer.md",
+            "sourceSha256": "345dd67c5bd8165a9d77dc7de819133f50dfcf39f91f59dec05bf385aba3d8c8",
+            "version": "textbook-v10",
+            "href": "#learn/agent/c01-control-primer/s-13bbf9fcf319",
+            "intentId": "recovery",
+            "prerequisiteUnitIds": [
+              "c01-selection",
+              "03-trust-boundary"
+            ]
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念与否定规则检索；没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "expected": {
+        "id": "R11-02",
+        "query": "程序崩了以后怎么接着干，又不把已经做过的事情再做一遍？",
+        "expectedCoreUnits": [
+          "e01"
+        ],
+        "anyOf": false,
+        "excludedPrimary": [],
+        "expectedStatus": "recommended"
+      },
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "R11-03",
+      "startedAtUtc": "2026-10-11T08:08:38.514Z",
+      "elapsedMs": 42,
+      "request": {
+        "query": "中断后恢复任务时，怎样避免重复外部动作？",
+        "corpusVersion": "textbook-v10"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "recommended",
+        "engineMode": "local_semantic_retrieval",
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "recovery",
+            "label": "中断后恢复任务",
+            "evidence": [
+              "中断后恢复任务时，怎样避免重复外部动作"
+            ],
+            "unitIds": [
+              "e01",
+              "c01-control-primer"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "e01",
+            "sectionId": "s-2cd345377707",
+            "order": 12,
+            "unitTitle": "用持久状态保存动作事实",
+            "sectionTitle": "用一次恢复轨迹读懂提交边界",
+            "title": "用一次恢复轨迹读懂提交边界",
+            "reason": "你表达了“中断后恢复任务时，怎样避免重复外部动作”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "桥接的 `allow_replay=False`使重复begin事件在事务内拒绝，不能从旧DISPATCH再次发送。",
+            "sourcePath": "textbooks/v10/e01.md",
+            "sourceSha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5",
+            "version": "textbook-v10",
+            "href": "#learn/agent/e01/s-2cd345377707",
+            "intentId": "recovery",
+            "prerequisiteUnitIds": [
+              "c03",
+              "c01-control-primer"
+            ]
+          },
+          {
+            "unitId": "c01-control-primer",
+            "sectionId": "s-13bbf9fcf319",
+            "order": 9,
+            "unitTitle": "在重复提议和发送中识别同一个动作",
+            "sectionTitle": "调度与效果分别判断",
+            "title": "调度与效果分别判断",
+            "reason": "你表达了“中断后恢复任务时，怎样避免重复外部动作”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "`status`表达接下来可怎样推进，`effect_resolution`表达业务效果是否确定。发送前是NOT_SENT，可能已发后是UNRESOLVED；操作级证据才能确认成功、无效果或冲突。具备合法同键重发许可时，动作可能可调度为READY而效果仍未决；“现在可以发送”不能推导“上一次没发生”。",
+            "sourcePath": "textbooks/v10/c01-control-primer.md",
+            "sourceSha256": "345dd67c5bd8165a9d77dc7de819133f50dfcf39f91f59dec05bf385aba3d8c8",
+            "version": "textbook-v10",
+            "href": "#learn/agent/c01-control-primer/s-13bbf9fcf319",
+            "intentId": "recovery",
+            "prerequisiteUnitIds": [
+              "c01-selection",
+              "03-trust-boundary"
+            ]
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念与否定规则检索；没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "expected": {
+        "id": "R11-03",
+        "query": "中断后恢复任务时，怎样避免重复外部动作？",
+        "expectedCoreUnits": [
+          "e01"
+        ],
+        "anyOf": false,
+        "excludedPrimary": [],
+        "expectedStatus": "recommended"
+      },
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "R11-08",
+      "startedAtUtc": "2026-10-11T08:08:38.556Z",
+      "elapsedMs": 54,
+      "request": {
+        "query": "让模型自己决定下一步会不会反复折腾，怎么让它该停就停？",
+        "corpusVersion": "textbook-v10"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "recommended",
+        "engineMode": "local_semantic_retrieval",
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "stopping",
+            "label": "设置完成和合理停止条件",
+            "evidence": [
+              "让模型自己决定下一步会不会反复折腾，怎么让它该停就停"
+            ],
+            "unitIds": [
+              "02-task-acceptance",
+              "c01-control-loop"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "02-task-acceptance",
+            "sectionId": "s-bad9fd8617e6",
+            "order": 4,
+            "unitTitle": "动手前定义任务成功与合理停止",
+            "sectionTitle": "用同一份记录限制输入和结果",
+            "title": "用同一份记录限制输入和结果",
+            "reason": "你表达了“让模型自己决定下一步会不会反复折腾，怎么让它该停就停”；这一小节说明设置完成和合理停止条件的具体机制。",
+            "evidenceExcerpt": "这份合同没有把“报告说expected=True”升格为业务政策。若任务只要求报告事实和待核假设，未知根因可如实保留；若目标要求确定根因，缺规则就缺必需证据，应等待。目标的强弱由任务责任人确定，模型不能为了完成自行降级。",
+            "sourcePath": "textbooks/v10/02-task-acceptance.md",
+            "sourceSha256": "73d4157f1db7a146b7f84c7913be05dadbb91d2a256560531a7ae748932bc5fc",
+            "version": "textbook-v10",
+            "href": "#learn/agent/02-task-acceptance/s-bad9fd8617e6",
+            "intentId": "stopping",
+            "prerequisiteUnitIds": [
+              "p01-discovery"
+            ]
+          },
+          {
+            "unitId": "c01-control-loop",
+            "sectionId": "s-25e1914bed1e",
+            "order": 14,
+            "unitTitle": "Agent 控制循环 设计一个可恢复 受控并能验收的运行时",
+            "sectionTitle": "1 先固定完成条件 才能决定循环控制什么",
+            "title": "1 先固定完成条件 才能决定循环控制什么",
+            "reason": "你表达了“让模型自己决定下一步会不会反复折腾，怎么让它该停就停”；这一小节说明设置完成和合理停止条件的具体机制。",
+            "evidenceExcerpt": "模型可能对根因作出错误分析；验收器也可能无法确定某个推断是否真实。循环不能凭这些不确定内容创建一个“验证通过”的事实。可确定部分用确定性规则检查，例如修订号、证据标识、审批指纹和回执绑定；专业判断可以由人工或另外的评估器完成。自动验收失败后允许修正，但不能无限用同一个模型重新评价自己的同一结论。",
+            "sourcePath": "textbooks/v10/c01-control-loop.md",
+            "sourceSha256": "219153f9251e4de8bcfc3500d06c81c49d1fca11b297b0e6c0eafb289c6dca38",
+            "version": "textbook-v10",
+            "href": "#learn/agent/c01-control-loop/s-25e1914bed1e",
+            "intentId": "stopping",
+            "prerequisiteUnitIds": [
+              "c01-fixed-workflow",
+              "c03",
+              "e01"
+            ]
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念与否定规则检索；没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "expected": {
+        "id": "R11-08",
+        "query": "让模型自己决定下一步会不会反复折腾，怎么让它该停就停？",
+        "expectedCoreUnits": [
+          "02-task-acceptance",
+          "c01-control-loop"
+        ],
+        "anyOf": true,
+        "excludedPrimary": [],
+        "expectedStatus": "recommended"
+      },
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "R11-12",
+      "startedAtUtc": "2026-10-11T08:08:38.610Z",
+      "elapsedMs": 41,
+      "request": {
+        "query": "想知道中断后不重复做事，以及整个任务一共花了多少钱。",
+        "corpusVersion": "textbook-v10"
+      },
+      "httpStatus": 200,
+      "output": {
+        "status": "recommended",
+        "engineMode": "local_semantic_retrieval",
+        "providerCalled": false,
+        "corpusVersion": "textbook-v10",
+        "corpusHash": "436ec1edab6c394d0d19ce3769e3a95eadb162d0d2f6564c7442988bd37328e5",
+        "interpretedIntents": [
+          {
+            "id": "recovery",
+            "label": "中断后恢复任务",
+            "evidence": [
+              "想知道中断后不重复做事，整个任务一共花了多少钱"
+            ],
+            "unitIds": [
+              "e01",
+              "c01-control-primer"
+            ]
+          },
+          {
+            "id": "cost",
+            "label": "核算任务性能与费用",
+            "evidence": [
+              "整个任务一共花了多少钱"
+            ],
+            "unitIds": [
+              "e05"
+            ]
+          }
+        ],
+        "excludedIntents": [],
+        "results": [
+          {
+            "unitId": "e01",
+            "sectionId": "s-2cd345377707",
+            "order": 12,
+            "unitTitle": "用持久状态保存动作事实",
+            "sectionTitle": "用一次恢复轨迹读懂提交边界",
+            "title": "用一次恢复轨迹读懂提交边界",
+            "reason": "你表达了“想知道中断后不重复做事，整个任务一共花了多少钱”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "桥接的 `allow_replay=False`使重复begin事件在事务内拒绝，不能从旧DISPATCH再次发送。",
+            "sourcePath": "textbooks/v10/e01.md",
+            "sourceSha256": "cb98666b759b17ade998f6cd29741d91e672e99232f7fac86a6439cf312340e5",
+            "version": "textbook-v10",
+            "href": "#learn/agent/e01/s-2cd345377707",
+            "intentId": "recovery",
+            "prerequisiteUnitIds": [
+              "c03",
+              "c01-control-primer"
+            ]
+          },
+          {
+            "unitId": "c01-control-primer",
+            "sectionId": "s-954a9e8d4527",
+            "order": 9,
+            "unitTitle": "在重复提议和发送中识别同一个动作",
+            "sectionTitle": "一次创建后的超时轨迹",
+            "title": "一次创建后的超时轨迹",
+            "reason": "你表达了“想知道中断后不重复做事，整个任务一共花了多少钱”；这一小节说明中断后恢复任务的具体机制。",
+            "evidenceExcerpt": "3. 新一轮call-create-12重复同槽位同参数。",
+            "sourcePath": "textbooks/v10/c01-control-primer.md",
+            "sourceSha256": "345dd67c5bd8165a9d77dc7de819133f50dfcf39f91f59dec05bf385aba3d8c8",
+            "version": "textbook-v10",
+            "href": "#learn/agent/c01-control-primer/s-954a9e8d4527",
+            "intentId": "recovery",
+            "prerequisiteUnitIds": [
+              "c01-selection",
+              "03-trust-boundary"
+            ]
+          },
+          {
+            "unitId": "e05",
+            "sectionId": "s-ae0b34dc0191",
+            "order": 19,
+            "unitTitle": "在质量护栏下比较性能与成本",
+            "sectionTitle": "成本归到逻辑任务 才能看见失败代价",
+            "title": "成本归到逻辑任务 才能看见失败代价",
+            "reason": "你表达了“整个任务一共花了多少钱”；这一小节说明核算任务性能与费用的具体机制。",
+            "evidenceExcerpt": "一次逻辑任务可能有三次模型请求、两次读取、一次写后核对和十分钟人工确认。账本应把这些尝试归到同一 `run_id`，每次物理请求单独记录 `attempt_id`、配置/价格版本、用量、费用确认状态和时间。不能只计成功返回那次模型请求；超时请求可能已经计费，未决费用不能填零。",
+            "sourcePath": "textbooks/v10/e05.md",
+            "sourceSha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d",
+            "version": "textbook-v10",
+            "href": "#learn/agent/e05/s-ae0b34dc0191",
+            "intentId": "cost",
+            "prerequisiteUnitIds": [
+              "e02",
+              "e04"
+            ]
+          },
+          {
+            "unitId": "e05",
+            "sectionId": "s-e1d15049880a",
+            "order": 19,
+            "unitTitle": "在质量护栏下比较性能与成本",
+            "sectionTitle": "一个不把失败和未知费用丢掉的汇总器",
+            "title": "一个不把失败和未知费用丢掉的汇总器",
+            "reason": "你表达了“整个任务一共花了多少钱”；这一小节说明核算任务性能与费用的具体机制。",
+            "evidenceExcerpt": "“所有支出都已归账”是该汇总器的外部输入契约，不由四个字段证明。实际导入时按任务查所有模型/工具尝试，验证事件序列、账单或供应商用量记录、价格版本与费用确认；丢了一次超时尝试会让结果偏低。代码只拒绝重复逻辑任务和非法数值，不伪称连接过账单服务。",
+            "sourcePath": "textbooks/v10/e05.md",
+            "sourceSha256": "b6600c626ed9be72541857a0c471d526c0011035c4ef4db562ae5e095fb0e97d",
+            "version": "textbook-v10",
+            "href": "#learn/agent/e05/s-e1d15049880a",
+            "intentId": "cost",
+            "prerequisiteUnitIds": [
+              "e02",
+              "e04"
+            ]
+          }
+        ],
+        "clarification": null,
+        "limitations": [
+          "使用本机中文向量模型结合任务概念与否定规则检索；没有调用外部大模型。未知或复杂表达可能需要澄清。"
+        ],
+        "semanticProvenance": {
+          "modelId": "Xenova/bge-small-zh-v1.5",
+          "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+          "dtype": "int8",
+          "pooling": "cls",
+          "dimensions": 512,
+          "modelHash": "b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5",
+          "remoteModelsAllowed": false,
+          "querySentExternally": false
+        }
+      },
+      "expected": {
+        "id": "R11-12",
+        "query": "想知道中断后不重复做事，以及整个任务一共花了多少钱。",
+        "expectedCoreUnits": [
+          "e01",
+          "e05"
+        ],
+        "anyOf": false,
+        "excludedPrimary": [],
+        "expectedStatus": "recommended"
+      },
+      "errors": [],
+      "status": "pass"
+    }
+  ]
+}

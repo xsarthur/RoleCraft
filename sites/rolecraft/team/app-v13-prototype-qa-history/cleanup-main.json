@@ -1,0 +1,46 @@
+{
+  "atUtc": "2026-10-12T00:36:31.657171+00:00",
+  "scope": "Main QA owned4473 only; UI specialist4474 lifecycle separately reported",
+  "services": [
+    {
+      "phase": "seed",
+      "node": "v24.16.0",
+      "port": 4473,
+      "pid": 35651,
+      "ptySession": 96981,
+      "browserLoaded": false,
+      "exitAction": "SIGINT through owned PTY",
+      "exitCode": 0
+    },
+    {
+      "phase": "candidate",
+      "node": "v24.16.0",
+      "port": 4473,
+      "pid": 35703,
+      "ptySession": 73465,
+      "dataDir": "/var/folders/v5/yy0xf3tx1gddnb0qz7skr8wr0000gn/T/rolecraft-qa-v13-HUSpSy",
+      "exitAction": "SIGINT through owned PTY",
+      "exitCode": 0,
+      "generationConfigured": false
+    }
+  ],
+  "finalListenerCheck": {
+    "command": "lsof -nP -iTCP:4473 -sTCP:LISTEN",
+    "exitCode": 1,
+    "stdout": "",
+    "meaning": "no listener"
+  },
+  "failedInitialSeedSandboxAttempt": {
+    "code": "EPERM",
+    "listenSucceeded": false,
+    "processExitCode": 1
+  },
+  "successfulQaTabs": 0,
+  "viewportChanges": 0,
+  "user4318Operated": false,
+  "actualUserDatabaseRead": false,
+  "actualUserBrowserStorageRead": false,
+  "uploaded": false,
+  "published": false,
+  "providerCalled": false
+}

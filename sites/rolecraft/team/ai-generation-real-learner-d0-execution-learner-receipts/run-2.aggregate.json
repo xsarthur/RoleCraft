@@ -1,0 +1,59 @@
+{
+  "derived_by": "QA",
+  "source": "raw stdout/stderr and exit-codes.tsv",
+  "run_id": "run-2",
+  "cases": [
+    {
+      "case_id": "A-normal",
+      "stdout_bytes": 2211,
+      "stdout_sha256": "c4642281524913457c14032f5e3ae02d2fb66495324b6d64e0c89b28133adf4c",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "first_failure": null,
+      "external_action": null,
+      "stop_before_draft": false,
+      "source_refs_count": 2,
+      "b_body_claimed_unread": null
+    },
+    {
+      "case_id": "B-tenant-denied",
+      "stdout_bytes": 633,
+      "stdout_sha256": "2c4c40dc2f1e3837348dcc1ad45302b38ee3a483d309df6b0fcedba95a377d04",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "first_failure": "SOURCE_SCOPE_DENIED",
+      "external_action": null,
+      "stop_before_draft": true,
+      "source_refs_count": 0,
+      "b_body_claimed_unread": true
+    },
+    {
+      "case_id": "source-missing",
+      "stdout_bytes": 559,
+      "stdout_sha256": "fb9abbdccd671a82ea9c8c70dbc6e8fdfff8b9b98942d40895ebe5d0ec316fa7",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "first_failure": "SOURCE_MISSING",
+      "external_action": null,
+      "stop_before_draft": true,
+      "source_refs_count": 0,
+      "b_body_claimed_unread": null
+    },
+    {
+      "case_id": "source-conflict",
+      "stdout_bytes": 1063,
+      "stdout_sha256": "dc391a72f16526934eb9c90dd56305b09776b96461eecebcbac766f9c6760cf4",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "first_failure": "SOURCE_VERSION_MISMATCH",
+      "external_action": null,
+      "stop_before_draft": true,
+      "source_refs_count": 0,
+      "b_body_claimed_unread": null
+    }
+  ]
+}

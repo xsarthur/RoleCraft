@@ -1,0 +1,905 @@
+{
+  "matched": 365,
+  "badCount": 114,
+  "affectedIds": [
+    "Q2",
+    "Q6",
+    "Q10",
+    "Q12",
+    "Q13",
+    "Q14",
+    "Q16",
+    "Q19",
+    "Q20",
+    "Q21",
+    "Q25",
+    "Q26",
+    "Q27",
+    "Q29",
+    "Q31",
+    "Q33",
+    "Q35",
+    "Q37",
+    "Q39",
+    "Q40",
+    "Q42",
+    "Q43",
+    "Q44",
+    "Q45",
+    "Q48",
+    "Q49",
+    "Q51",
+    "Q53",
+    "Q55",
+    "Q56",
+    "Q57",
+    "Q61",
+    "Q66",
+    "Q69",
+    "Q71",
+    "Q72",
+    "Q73",
+    "Q74",
+    "Q79",
+    "Q80",
+    "Q82",
+    "Q83",
+    "Q86",
+    "Q87",
+    "Q90",
+    "Q92",
+    "Q96",
+    "Q97",
+    "Q98",
+    "Q99",
+    "Q100",
+    "M101",
+    "M103",
+    "M114",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P07",
+    "P08",
+    "P09",
+    "P10"
+  ],
+  "unmatched": [
+    {
+      "id": "Q26",
+      "label": "v12 · c01-control-loop.md · 完整模型输出才有资格成为执行计划",
+      "target": "sites/rolecraft/textbooks/v12/c01-control-loop.md"
+    },
+    {
+      "id": "Q99",
+      "label": "控制循环10.3节",
+      "target": "sites/rolecraft/textbooks/v12/c01-control-loop.md"
+    },
+    {
+      "id": "Q99",
+      "label": "写工具“一个意图 多个协议调用与发送尝试”",
+      "target": "sites/rolecraft/textbooks/v12/c03.md"
+    },
+    {
+      "id": "Q99",
+      "label": "持久状态“三个提交点定义可恢复事实”",
+      "target": "sites/rolecraft/textbooks/v12/e01.md"
+    },
+    {
+      "id": "Q99",
+      "label": "控制循环第6节",
+      "target": "sites/rolecraft/textbooks/v12/c01-control-loop.md"
+    },
+    {
+      "id": "Q99",
+      "label": "控制循环第9节",
+      "target": "sites/rolecraft/textbooks/v12/c01-control-loop.md"
+    },
+    {
+      "id": "Q99",
+      "label": "写工具下游合同",
+      "target": "sites/rolecraft/textbooks/v12/c03.md"
+    }
+  ],
+  "bad": [
+    {
+      "id": "Q2",
+      "label": "v12 · c01-selection.md · 怎样做一个公平且能定位原因的比较",
+      "raw": "../../v12/c01-selection.md",
+      "actual": "#learn/agent/c01-selection/s-e458cc35eeb7",
+      "expected": "#learn/agent/c01-selection/s-636fdbf8979e"
+    },
+    {
+      "id": "Q6",
+      "label": "v12 · c01-selection.md · 用条件做选择的练习",
+      "raw": "../../v12/c01-selection.md",
+      "actual": "#learn/agent/c01-selection/s-e458cc35eeb7",
+      "expected": "#learn/agent/c01-selection/s-8e723873671f"
+    },
+    {
+      "id": "Q10",
+      "label": "v12 · p01-mvp.md · 真实反馈改变假设 不能只变宣传",
+      "raw": "../../v12/p01-mvp.md",
+      "actual": "#learn/agent/p01-mvp/s-840a9096f772",
+      "expected": "#learn/agent/p01-mvp/s-8d3141dfb97f"
+    },
+    {
+      "id": "Q12",
+      "label": "v12 · n03-planning-reflection.md · 2 从验收产物倒推候选计划",
+      "raw": "../../v12/n03-planning-reflection.md",
+      "actual": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
+      "expected": "#learn/agent/n03-planning-reflection/s-7b6b3d9e9b99"
+    },
+    {
+      "id": "Q12",
+      "label": "v12 · n03-planning-reflection.md · 4 重规划保留事实，失效的是依赖假设",
+      "raw": "../../v12/n03-planning-reflection.md",
+      "actual": "#learn/agent/n03-planning-reflection/s-da63f3dcff17",
+      "expected": "#learn/agent/n03-planning-reflection/s-7ee14c15626d"
+    },
+    {
+      "id": "Q13",
+      "label": "v12 · c01-control-loop.md · 5 完整模型输出才有资格成为执行计划",
+      "raw": "../../v12/c01-control-loop.md",
+      "actual": "#learn/agent/c01-control-loop/s-d9d6abd6ff04",
+      "expected": "#learn/agent/c01-control-loop/s-76263bf5db11"
+    },
+    {
+      "id": "Q13",
+      "label": "v12 · c01-control-loop.md · 8.1 接口返回的是控制语义 不是任意异常字符串",
+      "raw": "../../v12/c01-control-loop.md",
+      "actual": "#learn/agent/c01-control-loop/s-d9d6abd6ff04",
+      "expected": "#learn/agent/c01-control-loop/s-c9560977ec52"
+    },
+    {
+      "id": "Q13",
+      "label": "v12 · c01-control-loop.md · 11 成功 等待和停止必须保留不同的含义",
+      "raw": "../../v12/c01-control-loop.md",
+      "actual": "#learn/agent/c01-control-loop/s-d9d6abd6ff04",
+      "expected": "#learn/agent/c01-control-loop/s-b79a285166bc"
+    },
+    {
+      "id": "Q14",
+      "label": "v12 · c01-control-loop.md · 10.2 验收拒绝 把失败事实变为决策输入",
+      "raw": "../../v12/c01-control-loop.md",
+      "actual": "#learn/agent/c01-control-loop/s-25e1914bed1e",
+      "expected": "#learn/agent/c01-control-loop/s-50a1b3055072"
+    },
+    {
+      "id": "Q14",
+      "label": "v12 · c01-control-loop.md · 11 成功 等待和停止必须保留不同的含义",
+      "raw": "../../v12/c01-control-loop.md",
+      "actual": "#learn/agent/c01-control-loop/s-25e1914bed1e",
+      "expected": "#learn/agent/c01-control-loop/s-b79a285166bc"
+    },
+    {
+      "id": "Q16",
+      "label": "v12 · n03-planning-reflection.md · 4 重规划保留事实，失效的是依赖假设",
+      "raw": "../../v12/n03-planning-reflection.md",
+      "actual": "#learn/agent/n03-planning-reflection/s-7b6b3d9e9b99",
+      "expected": "#learn/agent/n03-planning-reflection/s-7ee14c15626d"
+    },
+    {
+      "id": "Q19",
+      "label": "v12 · c01-control-loop.md · 8.1 接口返回的是控制语义 不是任意异常字符串",
+      "raw": "../../v12/c01-control-loop.md",
+      "actual": "#learn/agent/c01-control-loop/s-76263bf5db11",
+      "expected": "#learn/agent/c01-control-loop/s-c9560977ec52"
+    },
+    {
+      "id": "Q20",
+      "label": "v12 · c01-control-loop.md · 7 审批 取消和预算都必须跨暂停保留",
+      "raw": "../../v12/c01-control-loop.md",
+      "actual": "#learn/agent/c01-control-loop/s-d9d6abd6ff04",
+      "expected": "#learn/agent/c01-control-loop/s-ac6802a088cb"
+    },
+    {
+      "id": "Q21",
+      "label": "v12 · c01-control-loop.md · 3 用动作账本表达进度 不要只保存聊天文本",
+      "raw": "../../v12/c01-control-loop.md",
+      "actual": "#learn/agent/c01-control-loop/s-76263bf5db11",
+      "expected": "#learn/agent/c01-control-loop/s-d9d6abd6ff04"
+    },
+    {
+      "id": "Q25",
+      "label": "v12 · c01-control-loop.md · 9 并发要分开处理工具依赖与运行推进权",
+      "raw": "../../v12/c01-control-loop.md",
+      "actual": "#learn/agent/c01-control-loop/s-717cb810447d",
+      "expected": "#learn/agent/c01-control-loop/s-adb784ffc605"
+    },
+    {
+      "id": "Q26",
+      "label": "v12 · c03.md · 本地事务和下游接口各承担哪一半",
+      "raw": "../../v12/c03.md",
+      "actual": "#learn/agent/c03/s-34b01e188a3e",
+      "expected": "#learn/agent/c03/s-0e85686769cd"
+    },
+    {
+      "id": "Q27",
+      "label": "v12 · n04-tools-mcp.md · 4 Tools、Resources、Prompts 提供不同对象",
+      "raw": "../../v12/n04-tools-mcp.md",
+      "actual": "#learn/agent/n04-tools-mcp/s-d92d46deed86",
+      "expected": "#learn/agent/n04-tools-mcp/s-4fef23e12a2f"
+    },
+    {
+      "id": "Q27",
+      "label": "v12 · n04-tools-mcp.md · 5 把协议错误、业务失败和效果未知分开",
+      "raw": "../../v12/n04-tools-mcp.md",
+      "actual": "#learn/agent/n04-tools-mcp/s-d92d46deed86",
+      "expected": "#learn/agent/n04-tools-mcp/s-48e105344fce"
+    },
+    {
+      "id": "Q29",
+      "label": "v12 · n04-tools-mcp.md · 5 把协议错误、业务失败和效果未知分开",
+      "raw": "../../v12/n04-tools-mcp.md",
+      "actual": "#learn/agent/n04-tools-mcp/s-d92d46deed86",
+      "expected": "#learn/agent/n04-tools-mcp/s-48e105344fce"
+    },
+    {
+      "id": "Q31",
+      "label": "v12 · n02-context-memory-prompt.md · 2 写入之前先确定这是什么信息",
+      "raw": "../../v12/n02-context-memory-prompt.md",
+      "actual": "#learn/agent/n02-context-memory-prompt/s-e3ca8acc970e",
+      "expected": "#learn/agent/n02-context-memory-prompt/s-e877a22d4ade"
+    },
+    {
+      "id": "Q31",
+      "label": "v12 · n02-context-memory-prompt.md · 4 先过滤作用域，再召回，读回时再核一次",
+      "raw": "../../v12/n02-context-memory-prompt.md",
+      "actual": "#learn/agent/n02-context-memory-prompt/s-e3ca8acc970e",
+      "expected": "#learn/agent/n02-context-memory-prompt/s-cf1a404cbb7d"
+    },
+    {
+      "id": "Q33",
+      "label": "v12 · f02.md · 完成原目标所需的练习证据",
+      "raw": "../../v12/f02.md",
+      "actual": "#learn/agent/f02/s-eef730b30871",
+      "expected": "#learn/agent/f02/s-a11bc0d8244c"
+    },
+    {
+      "id": "Q35",
+      "label": "v12 · n02-context-memory-prompt.md · 4 先过滤作用域，再召回，读回时再核一次",
+      "raw": "../../v12/n02-context-memory-prompt.md",
+      "actual": "#learn/agent/n02-context-memory-prompt/s-735bdf162e41",
+      "expected": "#learn/agent/n02-context-memory-prompt/s-cf1a404cbb7d"
+    },
+    {
+      "id": "Q37",
+      "label": "v12 · n02-context-memory-prompt.md · 4 先过滤作用域，再召回，读回时再核一次",
+      "raw": "../../v12/n02-context-memory-prompt.md",
+      "actual": "#learn/agent/n02-context-memory-prompt/s-e877a22d4ade",
+      "expected": "#learn/agent/n02-context-memory-prompt/s-cf1a404cbb7d"
+    },
+    {
+      "id": "Q39",
+      "label": "v12 · e02.md · 从失败分类到一次能够关闭的回归",
+      "raw": "../../v12/e02.md",
+      "actual": "#learn/agent/e02/s-e39e1f1024a0",
+      "expected": "#learn/agent/e02/s-ef1d4f2780f8"
+    },
+    {
+      "id": "Q40",
+      "label": "v12 · e02.md · 从失败分类到一次能够关闭的回归",
+      "raw": "../../v12/e02.md",
+      "actual": "#learn/agent/e02/s-e39e1f1024a0",
+      "expected": "#learn/agent/e02/s-ef1d4f2780f8"
+    },
+    {
+      "id": "Q42",
+      "label": "v12 · 无答案应能解释是哪一层缺证",
+      "raw": "../../v12/c02.md",
+      "actual": "#learn/agent/c02/s-3b9816bacb55",
+      "expected": "#learn/agent/c02/s-14fcd9327ec8"
+    },
+    {
+      "id": "Q43",
+      "label": "v12 · 做一个能定位问题的检索比较",
+      "raw": "../../v12/c02.md",
+      "actual": "#learn/agent/c02/s-3b9816bacb55",
+      "expected": "#learn/agent/c02/s-cc9f4913923b"
+    },
+    {
+      "id": "Q44",
+      "label": "v12 · 做一个能定位问题的检索比较",
+      "raw": "../../v12/c02.md",
+      "actual": "#learn/agent/c02/s-8057f8ab7d20",
+      "expected": "#learn/agent/c02/s-cc9f4913923b"
+    },
+    {
+      "id": "Q45",
+      "label": "v12 · 做一个能定位问题的检索比较",
+      "raw": "../../v12/c02.md",
+      "actual": "#learn/agent/c02/s-8057f8ab7d20",
+      "expected": "#learn/agent/c02/s-cc9f4913923b"
+    },
+    {
+      "id": "Q48",
+      "label": "v12 · 把关联检查与支持判断分别建模",
+      "raw": "../../v12/c02.md",
+      "actual": "#learn/agent/c02/s-3b9816bacb55",
+      "expected": "#learn/agent/c02/s-98c00b3e6b16"
+    },
+    {
+      "id": "Q48",
+      "label": "v12 · 一个完整的过滤 排序 读回与事实支持链",
+      "raw": "../../v12/c02.md",
+      "actual": "#learn/agent/c02/s-3b9816bacb55",
+      "expected": "#learn/agent/c02/s-b17bea51524c"
+    },
+    {
+      "id": "Q49",
+      "label": "v12 · 本次回答看到的是哪一个资料版本",
+      "raw": "../../v12/c02.md",
+      "actual": "#learn/agent/c02/s-14fcd9327ec8",
+      "expected": "#learn/agent/c02/s-3b9816bacb55"
+    },
+    {
+      "id": "Q49",
+      "label": "v12 · 把关联检查与支持判断分别建模",
+      "raw": "../../v12/c02.md",
+      "actual": "#learn/agent/c02/s-14fcd9327ec8",
+      "expected": "#learn/agent/c02/s-98c00b3e6b16"
+    },
+    {
+      "id": "Q49",
+      "label": "v12 · 一个完整的过滤 排序 读回与事实支持链",
+      "raw": "../../v12/c02.md",
+      "actual": "#learn/agent/c02/s-14fcd9327ec8",
+      "expected": "#learn/agent/c02/s-b17bea51524c"
+    },
+    {
+      "id": "Q51",
+      "label": "v12 · 先定义状态的所有者，再画节点",
+      "raw": "../../v12/n06-graph-orchestration.md",
+      "actual": "#learn/agent/n06-graph-orchestration/s-e5c879245a21",
+      "expected": "#learn/agent/n06-graph-orchestration/s-ebef4d93c675"
+    },
+    {
+      "id": "Q51",
+      "label": "v12 · Checkpoint不是远端事务",
+      "raw": "../../v12/n06-graph-orchestration.md",
+      "actual": "#learn/agent/n06-graph-orchestration/s-e5c879245a21",
+      "expected": "#learn/agent/n06-graph-orchestration/s-e477eeb29ccf"
+    },
+    {
+      "id": "Q51",
+      "label": "v12 · 何时值得自研",
+      "raw": "../../v12/n06-graph-orchestration.md",
+      "actual": "#learn/agent/n06-graph-orchestration/s-e5c879245a21",
+      "expected": "#learn/agent/n06-graph-orchestration/s-f5b63c3363d8"
+    },
+    {
+      "id": "Q53",
+      "label": "v12 · 5 压缩的是证据投影，不是事实账本",
+      "raw": "../../v12/n02-context-memory-prompt.md",
+      "actual": "#learn/agent/n02-context-memory-prompt/s-e3ca8acc970e",
+      "expected": "#learn/agent/n02-context-memory-prompt/s-29dc1c8c557a"
+    },
+    {
+      "id": "Q53",
+      "label": "v12 · 5 压缩的是证据投影，不是事实账本",
+      "raw": "../../v12/n02-context-memory-prompt.md",
+      "actual": "#learn/agent/n02-context-memory-prompt/s-e3ca8acc970e",
+      "expected": "#learn/agent/n02-context-memory-prompt/s-29dc1c8c557a"
+    },
+    {
+      "id": "Q55",
+      "label": "v12 · 三种输入暴露不同的必要性",
+      "raw": "../../v12/c01-selection.md",
+      "actual": "#learn/agent/c01-selection/s-e458cc35eeb7",
+      "expected": "#learn/agent/c01-selection/s-13c081b3bf38"
+    },
+    {
+      "id": "Q56",
+      "label": "v12 · 6 先核对未决动作 再让模型继续",
+      "raw": "../../v12/c01-control-loop.md",
+      "actual": "#learn/agent/c01-control-loop/s-81f9aaeecb60",
+      "expected": "#learn/agent/c01-control-loop/s-717cb810447d"
+    },
+    {
+      "id": "Q56",
+      "label": "v12 · 10.3 最关键的崩溃窗口 工单创建成功 结果尚未提交",
+      "raw": "../../v12/c01-control-loop.md",
+      "actual": "#learn/agent/c01-control-loop/s-81f9aaeecb60",
+      "expected": "#learn/agent/c01-control-loop/s-8261016926be"
+    },
+    {
+      "id": "Q57",
+      "label": "v12 · 10.3 最关键的崩溃窗口 工单创建成功 结果尚未提交",
+      "raw": "../../v12/c01-control-loop.md",
+      "actual": "#learn/agent/c01-control-loop/s-717cb810447d",
+      "expected": "#learn/agent/c01-control-loop/s-8261016926be"
+    },
+    {
+      "id": "Q61",
+      "label": "v12 · 怎样做一个公平且能定位原因的比较",
+      "raw": "../../v12/c01-selection.md",
+      "actual": "#learn/agent/c01-selection/s-8368c310c8e2",
+      "expected": "#learn/agent/c01-selection/s-636fdbf8979e"
+    },
+    {
+      "id": "Q66",
+      "label": "v12 · 多 Agent 的升级点是可分工 而不是人数",
+      "raw": "../../v12/c01-selection.md",
+      "actual": "#learn/agent/c01-selection/s-13c081b3bf38",
+      "expected": "#learn/agent/c01-selection/s-8368c310c8e2"
+    },
+    {
+      "id": "Q66",
+      "label": "v12 · 用条件做选择的练习",
+      "raw": "../../v12/c01-selection.md",
+      "actual": "#learn/agent/c01-selection/s-13c081b3bf38",
+      "expected": "#learn/agent/c01-selection/s-8e723873671f"
+    },
+    {
+      "id": "Q69",
+      "label": "v12 · 预算与限流需要一个共同执行边界",
+      "raw": "../../v12/e05.md",
+      "actual": "#learn/agent/e05/s-ae0b34dc0191",
+      "expected": "#learn/agent/e05/s-c6ebe4cadfe3"
+    },
+    {
+      "id": "Q69",
+      "label": "v12 · 延迟必须注明用户等到的是什么",
+      "raw": "../../v12/e05.md",
+      "actual": "#learn/agent/e05/s-ae0b34dc0191",
+      "expected": "#learn/agent/e05/s-a220d2081fb2"
+    },
+    {
+      "id": "Q71",
+      "label": "v12 · 先冻结比较 再运行所有被分配的任务",
+      "raw": "../../v12/e02.md",
+      "actual": "#learn/agent/e02/s-7426c782eb02",
+      "expected": "#learn/agent/e02/s-b0382f8ba4c6"
+    },
+    {
+      "id": "Q71",
+      "label": "v12 · 一个判定器怎样拒绝把缺证当通过",
+      "raw": "../../v12/e02.md",
+      "actual": "#learn/agent/e02/s-7426c782eb02",
+      "expected": "#learn/agent/e02/s-49c8acfd24ce"
+    },
+    {
+      "id": "Q72",
+      "label": "v12 · Trace 用来定位因果 不能当事实数据库",
+      "raw": "../../v12/e02.md",
+      "actual": "#learn/agent/e02/s-7426c782eb02",
+      "expected": "#learn/agent/e02/s-ab95bf6195dd"
+    },
+    {
+      "id": "Q73",
+      "label": "v12 · 开发 回归和保留部分控制的是信息使用",
+      "raw": "../../v12/e02.md",
+      "actual": "#learn/agent/e02/s-448c091fdce2",
+      "expected": "#learn/agent/e02/s-e39e1f1024a0"
+    },
+    {
+      "id": "Q73",
+      "label": "v12 · 在三个入口放置同一注入",
+      "raw": "../../v12/e03.md",
+      "actual": "#learn/agent/e03/s-6be54445ef14",
+      "expected": "#learn/agent/e03/s-5498d98cf422"
+    },
+    {
+      "id": "Q74",
+      "label": "v12 · 本次回答看到的是哪一个资料版本",
+      "raw": "../../v12/c02.md",
+      "actual": "#learn/agent/c02/s-8057f8ab7d20",
+      "expected": "#learn/agent/c02/s-3b9816bacb55"
+    },
+    {
+      "id": "Q74",
+      "label": "v12 · 无答案应能解释是哪一层缺证",
+      "raw": "../../v12/c02.md",
+      "actual": "#learn/agent/c02/s-8057f8ab7d20",
+      "expected": "#learn/agent/c02/s-14fcd9327ec8"
+    },
+    {
+      "id": "Q79",
+      "label": "v12 · 从失败分类到一次能够关闭的回归",
+      "raw": "../../v12/e02.md",
+      "actual": "#learn/agent/e02/s-b0382f8ba4c6",
+      "expected": "#learn/agent/e02/s-ef1d4f2780f8"
+    },
+    {
+      "id": "Q79",
+      "label": "v12 · 一次发布的控制路径",
+      "raw": "../../v12/e04.md",
+      "actual": "#learn/agent/e04/s-1fa733ddbee2",
+      "expected": "#learn/agent/e04/s-24e3d36a4fd2"
+    },
+    {
+      "id": "Q80",
+      "label": "v12 · 先冻结比较 再运行所有被分配的任务",
+      "raw": "../../v12/e02.md",
+      "actual": "#learn/agent/e02/s-ef1d4f2780f8",
+      "expected": "#learn/agent/e02/s-b0382f8ba4c6"
+    },
+    {
+      "id": "Q80",
+      "label": "v12 · Trace 用来定位因果 不能当事实数据库",
+      "raw": "../../v12/e02.md",
+      "actual": "#learn/agent/e02/s-ef1d4f2780f8",
+      "expected": "#learn/agent/e02/s-ab95bf6195dd"
+    },
+    {
+      "id": "Q82",
+      "label": "威胁模型先确定攻击者能够改变哪一段数据",
+      "raw": "../../v12/e03.md",
+      "actual": "#learn/agent/e03/s-17784b02bb6a",
+      "expected": "#learn/agent/e03/s-6af1c84b52aa"
+    },
+    {
+      "id": "Q82",
+      "label": "读取边界比最终答案过滤更早",
+      "raw": "../../v12/e03.md",
+      "actual": "#learn/agent/e03/s-17784b02bb6a",
+      "expected": "#learn/agent/e03/s-ddf2d7f3e96a"
+    },
+    {
+      "id": "Q83",
+      "label": "精确批准绑定的是一次逻辑意图",
+      "raw": "../../v12/e03.md",
+      "actual": "#learn/agent/e03/s-ddf2d7f3e96a",
+      "expected": "#learn/agent/e03/s-6be54445ef14"
+    },
+    {
+      "id": "Q86",
+      "label": "准入模型能验证什么，不能验证什么",
+      "raw": "../../v12/n08-sandbox-security.md",
+      "actual": "#learn/agent/n08-sandbox-security/s-382f409a8d95",
+      "expected": "#learn/agent/n08-sandbox-security/s-c98a5ecb6e37"
+    },
+    {
+      "id": "Q87",
+      "label": "内容投影需要覆盖四个通道",
+      "raw": "../../v12/e03.md",
+      "actual": "#learn/agent/e03/s-ddf2d7f3e96a",
+      "expected": "#learn/agent/e03/s-9a48c793e571"
+    },
+    {
+      "id": "Q90",
+      "label": "在三个入口放置同一注入",
+      "raw": "../../v12/e03.md",
+      "actual": "#learn/agent/e03/s-6be54445ef14",
+      "expected": "#learn/agent/e03/s-5498d98cf422"
+    },
+    {
+      "id": "Q90",
+      "label": "独立实现 CR03 与 CR04",
+      "raw": "../../v12/e03.md",
+      "actual": "#learn/agent/e03/s-6be54445ef14",
+      "expected": "#learn/agent/e03/s-3f42a42b597d"
+    },
+    {
+      "id": "Q92",
+      "label": "做一个能定位问题的检索比较",
+      "raw": "../../v12/c02.md",
+      "actual": "#learn/agent/c02/s-3b9816bacb55",
+      "expected": "#learn/agent/c02/s-cc9f4913923b"
+    },
+    {
+      "id": "Q96",
+      "label": "延迟必须注明用户等到的是什么",
+      "raw": "../../v12/e05.md",
+      "actual": "#learn/agent/e05/s-ae0b34dc0191",
+      "expected": "#learn/agent/e05/s-a220d2081fb2"
+    },
+    {
+      "id": "Q96",
+      "label": "负载决定并发实验测到了什么",
+      "raw": "../../v12/e05.md",
+      "actual": "#learn/agent/e05/s-ae0b34dc0191",
+      "expected": "#learn/agent/e05/s-1ac7d6b42c4a"
+    },
+    {
+      "id": "Q96",
+      "label": "预算与限流需要一个共同执行边界",
+      "raw": "../../v12/e05.md",
+      "actual": "#learn/agent/e05/s-ae0b34dc0191",
+      "expected": "#learn/agent/e05/s-c6ebe4cadfe3"
+    },
+    {
+      "id": "Q97",
+      "label": "模型路由改变的不只是单价",
+      "raw": "../../v12/e05.md",
+      "actual": "#learn/agent/e05/s-2a6ccb6ea4b3",
+      "expected": "#learn/agent/e05/s-09b04743b8cc"
+    },
+    {
+      "id": "Q97",
+      "label": "成本归到逻辑任务 才能看见失败代价",
+      "raw": "../../v12/e05.md",
+      "actual": "#learn/agent/e05/s-2a6ccb6ea4b3",
+      "expected": "#learn/agent/e05/s-ae0b34dc0191"
+    },
+    {
+      "id": "Q98",
+      "label": "延迟必须注明用户等到的是什么",
+      "raw": "../../v12/e05.md",
+      "actual": "#learn/agent/e05/s-ae0b34dc0191",
+      "expected": "#learn/agent/e05/s-a220d2081fb2"
+    },
+    {
+      "id": "Q98",
+      "label": "负载决定并发实验测到了什么",
+      "raw": "../../v12/e05.md",
+      "actual": "#learn/agent/e05/s-ae0b34dc0191",
+      "expected": "#learn/agent/e05/s-1ac7d6b42c4a"
+    },
+    {
+      "id": "Q99",
+      "label": "先冻结比较 再运行所有被分配的任务",
+      "raw": "../../v12/e02.md",
+      "actual": "#learn/agent/e02/s-ef1d4f2780f8",
+      "expected": "#learn/agent/e02/s-b0382f8ba4c6"
+    },
+    {
+      "id": "Q99",
+      "label": "真实反馈改变假设 不能只变宣传",
+      "raw": "../../v12/p01-mvp.md",
+      "actual": "#learn/agent/p01-mvp/s-840a9096f772",
+      "expected": "#learn/agent/p01-mvp/s-8d3141dfb97f"
+    },
+    {
+      "id": "Q99",
+      "label": "9 并发要分开处理工具依赖与运行推进权",
+      "raw": "../../v12/c01-control-loop.md",
+      "actual": "#learn/agent/c01-control-loop/s-717cb810447d",
+      "expected": "#learn/agent/c01-control-loop/s-adb784ffc605"
+    },
+    {
+      "id": "Q99",
+      "label": "本地事务和下游接口各承担哪一半（结果归约与下游合同）",
+      "raw": "../../v12/c03.md",
+      "actual": "#learn/agent/c03/s-34b01e188a3e",
+      "expected": "#learn/agent/c03/s-0e85686769cd"
+    },
+    {
+      "id": "Q99",
+      "label": "10.3 最关键的崩溃窗口 工单创建成功 结果尚未提交",
+      "raw": "../../v12/c01-control-loop.md",
+      "actual": "#learn/agent/c01-control-loop/s-717cb810447d",
+      "expected": "#learn/agent/c01-control-loop/s-8261016926be"
+    },
+    {
+      "id": "Q100",
+      "label": "预定义公平实验 而不是挑一次演示",
+      "raw": "../../v12/p01-mvp.md",
+      "actual": "#learn/agent/p01-mvp/s-9db7a9dfd7a3",
+      "expected": "#learn/agent/p01-mvp/s-840a9096f772"
+    },
+    {
+      "id": "Q100",
+      "label": "MVP 契约限制的是要验证的机制",
+      "raw": "../../v12/p01-mvp.md",
+      "actual": "#learn/agent/p01-mvp/s-9db7a9dfd7a3",
+      "expected": "#learn/agent/p01-mvp/s-42f816866753"
+    },
+    {
+      "id": "Q100",
+      "label": "架构决定要能解释放弃了什么",
+      "raw": "../../v12/p01-mvp.md",
+      "actual": "#learn/agent/p01-mvp/s-9db7a9dfd7a3",
+      "expected": "#learn/agent/p01-mvp/s-5613a99776a8"
+    },
+    {
+      "id": "Q100",
+      "label": "一次发布的控制路径",
+      "raw": "../../v12/e04.md",
+      "actual": "#learn/agent/e04/s-1fa733ddbee2",
+      "expected": "#learn/agent/e04/s-24e3d36a4fd2"
+    },
+    {
+      "id": "M101",
+      "label": "6 可运行入口与迁移练习",
+      "raw": "../../v12/n01-python-model-foundations.md",
+      "actual": "#learn/agent/n01-python-model-foundations/s-f0f01fbbe638",
+      "expected": "#learn/agent/n01-python-model-foundations/s-580f3506ef08"
+    },
+    {
+      "id": "M103",
+      "label": "6 可运行入口与迁移练习",
+      "raw": "../../v12/n01-python-model-foundations.md",
+      "actual": "#learn/agent/n01-python-model-foundations/s-678ed262c90f",
+      "expected": "#learn/agent/n01-python-model-foundations/s-580f3506ef08"
+    },
+    {
+      "id": "M114",
+      "label": "独立评阅按一条实际任务走完全程",
+      "raw": "../../v12/p02.md",
+      "actual": "#learn/agent/p02/s-84f7fade412d",
+      "expected": "#learn/agent/p02/s-ebe4104b44cb"
+    },
+    {
+      "id": "P02",
+      "label": "10.3 最关键的崩溃窗口 工单创建成功 结果尚未提交",
+      "raw": "../../v12/c01-control-loop.md",
+      "actual": "#learn/agent/c01-control-loop/s-717cb810447d",
+      "expected": "#learn/agent/c01-control-loop/s-8261016926be"
+    },
+    {
+      "id": "P02",
+      "label": "三个提交点定义可恢复事实",
+      "raw": "../../v12/e01.md",
+      "actual": "#learn/agent/e01/s-2cd345377707",
+      "expected": "#learn/agent/e01/s-c2209725ec11"
+    },
+    {
+      "id": "P02",
+      "label": "2 控制权在运行时 聊天上下文只是一种投影",
+      "raw": "../../v12/c01-control-loop.md",
+      "actual": "#learn/agent/c01-control-loop/s-717cb810447d",
+      "expected": "#learn/agent/c01-control-loop/s-81f9aaeecb60"
+    },
+    {
+      "id": "P03",
+      "label": "5 压缩的是证据投影，不是事实账本",
+      "raw": "../../v12/n02-context-memory-prompt.md",
+      "actual": "#learn/agent/n02-context-memory-prompt/s-e3ca8acc970e",
+      "expected": "#learn/agent/n02-context-memory-prompt/s-29dc1c8c557a"
+    },
+    {
+      "id": "P03",
+      "label": "2 写入之前先确定这是什么信息",
+      "raw": "../../v12/n02-context-memory-prompt.md",
+      "actual": "#learn/agent/n02-context-memory-prompt/s-e3ca8acc970e",
+      "expected": "#learn/agent/n02-context-memory-prompt/s-e877a22d4ade"
+    },
+    {
+      "id": "P03",
+      "label": "3 错误记忆要沿来源和依赖撤回",
+      "raw": "../../v12/n02-context-memory-prompt.md",
+      "actual": "#learn/agent/n02-context-memory-prompt/s-e3ca8acc970e",
+      "expected": "#learn/agent/n02-context-memory-prompt/s-735bdf162e41"
+    },
+    {
+      "id": "P03",
+      "label": "4 先过滤作用域，再召回，读回时再核一次",
+      "raw": "../../v12/n02-context-memory-prompt.md",
+      "actual": "#learn/agent/n02-context-memory-prompt/s-e3ca8acc970e",
+      "expected": "#learn/agent/n02-context-memory-prompt/s-cf1a404cbb7d"
+    },
+    {
+      "id": "P04",
+      "label": "7 固定 RAG 与 Agentic RAG 的完整对照",
+      "raw": "../../v12/n05-retrieval-ingestion.md",
+      "actual": "#learn/agent/n05-retrieval-ingestion/s-fd35c6e4f233",
+      "expected": "#learn/agent/n05-retrieval-ingestion/s-8ca120e1769f"
+    },
+    {
+      "id": "P05",
+      "label": "真实反馈改变假设 不能只变宣传",
+      "raw": "../../v12/p01-mvp.md",
+      "actual": "#learn/agent/p01-mvp/s-840a9096f772",
+      "expected": "#learn/agent/p01-mvp/s-8d3141dfb97f"
+    },
+    {
+      "id": "P07",
+      "label": "从失败分类到一次能够关闭的回归",
+      "raw": "../../v12/e02.md",
+      "actual": "#learn/agent/e02/s-e39e1f1024a0",
+      "expected": "#learn/agent/e02/s-ef1d4f2780f8"
+    },
+    {
+      "id": "P07",
+      "label": "把“好”拆成能被不同证据推翻的命题",
+      "raw": "../../v12/e02.md",
+      "actual": "#learn/agent/e02/s-e39e1f1024a0",
+      "expected": "#learn/agent/e02/s-7426c782eb02"
+    },
+    {
+      "id": "P07",
+      "label": "先冻结比较 再运行所有被分配的任务",
+      "raw": "../../v12/e02.md",
+      "actual": "#learn/agent/e02/s-e39e1f1024a0",
+      "expected": "#learn/agent/e02/s-b0382f8ba4c6"
+    },
+    {
+      "id": "P07",
+      "label": "一个判定器怎样拒绝把缺证当通过",
+      "raw": "../../v12/e02.md",
+      "actual": "#learn/agent/e02/s-e39e1f1024a0",
+      "expected": "#learn/agent/e02/s-49c8acfd24ce"
+    },
+    {
+      "id": "P07",
+      "label": "一次发布的控制路径",
+      "raw": "../../v12/e04.md",
+      "actual": "#learn/agent/e04/s-1fa733ddbee2",
+      "expected": "#learn/agent/e04/s-24e3d36a4fd2"
+    },
+    {
+      "id": "P08",
+      "label": "威胁模型先确定攻击者能够改变哪一段数据",
+      "raw": "../../v12/e03.md",
+      "actual": "#learn/agent/e03/s-17784b02bb6a",
+      "expected": "#learn/agent/e03/s-6af1c84b52aa"
+    },
+    {
+      "id": "P08",
+      "label": "读取边界比最终答案过滤更早",
+      "raw": "../../v12/e03.md",
+      "actual": "#learn/agent/e03/s-17784b02bb6a",
+      "expected": "#learn/agent/e03/s-ddf2d7f3e96a"
+    },
+    {
+      "id": "P08",
+      "label": "内容投影需要覆盖四个通道",
+      "raw": "../../v12/e03.md",
+      "actual": "#learn/agent/e03/s-17784b02bb6a",
+      "expected": "#learn/agent/e03/s-9a48c793e571"
+    },
+    {
+      "id": "P08",
+      "label": "精确批准绑定的是一次逻辑意图",
+      "raw": "../../v12/e03.md",
+      "actual": "#learn/agent/e03/s-17784b02bb6a",
+      "expected": "#learn/agent/e03/s-6be54445ef14"
+    },
+    {
+      "id": "P08",
+      "label": "在三个入口放置同一注入",
+      "raw": "../../v12/e03.md",
+      "actual": "#learn/agent/e03/s-17784b02bb6a",
+      "expected": "#learn/agent/e03/s-5498d98cf422"
+    },
+    {
+      "id": "P08",
+      "label": "独立实现 CR03 与 CR04",
+      "raw": "../../v12/e03.md",
+      "actual": "#learn/agent/e03/s-17784b02bb6a",
+      "expected": "#learn/agent/e03/s-3f42a42b597d"
+    },
+    {
+      "id": "P09",
+      "label": "6 先核对未决动作 再让模型继续",
+      "raw": "../../v12/c01-control-loop.md",
+      "actual": "#learn/agent/c01-control-loop/s-81f9aaeecb60",
+      "expected": "#learn/agent/c01-control-loop/s-717cb810447d"
+    },
+    {
+      "id": "P09",
+      "label": "用一次恢复轨迹读懂提交边界",
+      "raw": "../../v12/e01.md",
+      "actual": "#learn/agent/e01/s-c2209725ec11",
+      "expected": "#learn/agent/e01/s-2cd345377707"
+    },
+    {
+      "id": "P10",
+      "label": "延迟必须注明用户等到的是什么",
+      "raw": "../../v12/e05.md",
+      "actual": "#learn/agent/e05/s-ae0b34dc0191",
+      "expected": "#learn/agent/e05/s-a220d2081fb2"
+    },
+    {
+      "id": "P10",
+      "label": "负载决定并发实验测到了什么",
+      "raw": "../../v12/e05.md",
+      "actual": "#learn/agent/e05/s-ae0b34dc0191",
+      "expected": "#learn/agent/e05/s-1ac7d6b42c4a"
+    },
+    {
+      "id": "P10",
+      "label": "缓存应复用证据和候选 不能复用批准",
+      "raw": "../../v12/e05.md",
+      "actual": "#learn/agent/e05/s-ae0b34dc0191",
+      "expected": "#learn/agent/e05/s-2a6ccb6ea4b3"
+    },
+    {
+      "id": "P10",
+      "label": "模型路由改变的不只是单价",
+      "raw": "../../v12/e05.md",
+      "actual": "#learn/agent/e05/s-ae0b34dc0191",
+      "expected": "#learn/agent/e05/s-09b04743b8cc"
+    },
+    {
+      "id": "P10",
+      "label": "预算与限流需要一个共同执行边界",
+      "raw": "../../v12/e05.md",
+      "actual": "#learn/agent/e05/s-ae0b34dc0191",
+      "expected": "#learn/agent/e05/s-c6ebe4cadfe3"
+    }
+  ]
+}

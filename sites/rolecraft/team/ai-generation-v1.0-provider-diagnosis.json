@@ -1,0 +1,48 @@
+{
+  "report_id": "ai-generation-v1.0-provider-diagnosis-20261016",
+  "role": "ai_generation_engineer",
+  "status": "reachable_auth_gated_contract_unverified",
+  "base_url": "https://www.9898.ai/v1",
+  "probe_scope": "unauthenticated network/path probes only; no generation request",
+  "real_provider_generation_called": false,
+  "secret_values_in_artifacts": false,
+  "probes": [
+    {"method": "GET", "path": "/v1/models", "status": 401, "result": "authentication_gate_reached", "model_list_observed": false},
+    {"method": "POST", "path": "/v1/responses", "body": "{}", "status": 401, "result": "authentication_gate_reached", "model_or_schema_validated": false},
+    {"method": "GET", "path": "/v1/", "status": 301, "location": "/v1", "result": "base_route_reachable"},
+    {"method": "GET", "path": "/docs", "status": 200, "result": "New API management UI"},
+    {"method": "GET", "path": "/v1/docs", "status": 404, "result": "no_public_api_docs_route"},
+    {"method": "GET", "path": "/v1/openapi.json", "status": 404, "result": "no_public_openapi_route"}
+  ],
+  "observed_headers": {
+    "server": "openresty/1.29.2.5",
+    "gateway_version_header": "X-New-Api-Version: v1.0.0-rc.30",
+    "request_ids_recorded": true,
+    "request_ids_persisted_in_report": false
+  },
+  "contract_assessment": {
+    "dns_tls_http_reachable": "pass",
+    "responses_path_reaches_auth_layer": "pass_with_limitations",
+    "responses_sync_execution": "unverified",
+    "model_id_gpt_5_5_available": "unverified",
+    "text_format_json_schema_strict": "unverified",
+    "usage_and_output_shape": "unverified",
+    "previous_503_root_cause": "unknown; likely post-auth route/upstream/capacity/transient but not proven"
+  },
+  "public_references": [
+    "https://github.com/QuantumNous/new-api/blob/main/README.en.md",
+    "https://github.com/QuantumNous/new-api-docs-v1/blob/main/content/docs/en/guide/feature-guide/user/api.mdx"
+  ],
+  "retry_policy": {
+    "automatic_retries": false,
+    "provider_unavailable_mapping": "provider_unavailable, retryable=true, external outcome must be preserved",
+    "minimum_next_probe": "one authenticated, low-cost, fixed-input text.format json_schema probe after backend confirms model and budget",
+    "full_generation_allowed_when": ["authenticated probe returns completed response", "model field and usage validate", "output_text parses and local schema validates", "estimated cost <= declared budget", "backend backup and deployment receipt exist"],
+    "stop_on": ["401/403", "model-not-found or routing 400", "schema unsupported 400", "repeat 5xx", "429 without explicit budget/rate-limit decision"]
+  },
+  "handoff": {
+    "backend": "confirm authenticated model list, actual model ID, budget and request timeline; do not sync local secret file",
+    "qa": "run one minimal authenticated structured-output probe; do not repeat full chapter before it passes",
+    "ai_generation": "review response contract and error mapping after probe; no deployment or key handling"
+  }
+}

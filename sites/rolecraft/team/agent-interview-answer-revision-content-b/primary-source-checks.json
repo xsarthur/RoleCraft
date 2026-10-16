@@ -1,0 +1,174 @@
+[
+  {
+    "ids": [
+      "Q70"
+    ],
+    "url": "https://a2a-protocol.org/v0.3.0/specification/",
+    "version": "0.3.0",
+    "sections": [
+      "6.1–6.4",
+      "7.1",
+      "7.3",
+      "7.4"
+    ],
+    "finding": "Agent Card、Message/Task返回、messageId/taskId/contextId、查询取消和终态不可重启与该版规范相符。业务幂等为文章明确另加的应用合同，不误写成A2A承诺。",
+    "checkedAt": "2026-10-14 Asia/Shanghai",
+    "status": "supported_with_scope",
+    "method": "只读访问一手资料；无API、模型、SDK或业务执行"
+  },
+  {
+    "ids": [
+      "M101"
+    ],
+    "url": "https://docs.python.org/3.14/library/asyncio-task.html",
+    "version": "3.14; 页面标3.14.8",
+    "sections": [
+      "Task cancellation",
+      "Task groups",
+      "Running tasks concurrently",
+      "Timeouts",
+      "Running in threads"
+    ],
+    "finding": "TaskGroup普通子异常取消并等待其他任务；gather默认传播首异常而其余继续。取消在下一可机会注入、finally清理和不要吞取消的描述相符；文章对线程/远端效果不作停止保证。",
+    "checkedAt": "2026-10-14 Asia/Shanghai",
+    "status": "supported_with_scope",
+    "method": "只读访问一手资料；无API、模型、SDK或业务执行"
+  },
+  {
+    "ids": [
+      "M102"
+    ],
+    "url": "https://docs.python.org/3.14/library/copy.html",
+    "version": "3.14",
+    "sections": [
+      "Assignment",
+      "Shallow/deep copy"
+    ],
+    "finding": "赋值只建绑定，浅拷贝外层仍共享内部引用；深拷贝边界符合文档。",
+    "checkedAt": "2026-10-14 Asia/Shanghai",
+    "status": "supported_with_scope",
+    "method": "只读访问一手资料；无API、模型、SDK或业务执行"
+  },
+  {
+    "ids": [
+      "M102"
+    ],
+    "url": "https://docs.python.org/3.14/library/functools.html#functools.wraps",
+    "version": "3.14",
+    "sections": [
+      "update_wrapper",
+      "wraps"
+    ],
+    "finding": "wraps保留常用元数据和__wrapped__；不自动保证业务语义。装饰器代码另做静态返回/异常/取消检查，未运行。",
+    "checkedAt": "2026-10-14 Asia/Shanghai",
+    "status": "supported_with_scope",
+    "method": "只读访问一手资料；无API、模型、SDK或业务执行"
+  },
+  {
+    "ids": [
+      "M103"
+    ],
+    "url": "https://docs.python.org/3.14/library/collections.html#ordereddict-objects",
+    "version": "3.14",
+    "sections": [
+      "OrderedDict",
+      "move_to_end",
+      "popitem"
+    ],
+    "finding": "move_to_end移动到端点，popitem(last=False)取最早元素，与文中可替代手写链表的说明相符。",
+    "checkedAt": "2026-10-14 Asia/Shanghai",
+    "status": "supported_with_scope",
+    "method": "只读访问一手资料；无API、模型、SDK或业务执行"
+  },
+  {
+    "ids": [
+      "M105"
+    ],
+    "url": "https://github.com/facebookresearch/faiss/wiki/MetricType-and-distances",
+    "version": "滚动文档，2026-10-14核",
+    "sections": [
+      "METRIC_L2",
+      "METRIC_INNER_PRODUCT"
+    ],
+    "finding": "L2接口返回平方欧氏距离；归一化后内积与余弦关系用于排序，不能将阈值数值混用。",
+    "checkedAt": "2026-10-14 Asia/Shanghai",
+    "status": "supported_with_scope",
+    "method": "只读访问一手资料；无API、模型、SDK或业务执行"
+  },
+  {
+    "ids": [
+      "M106"
+    ],
+    "url": "https://github.com/facebookresearch/faiss/wiki/Faiss-indexes",
+    "version": "滚动文档，2026-10-14核",
+    "sections": [
+      "IndexHNSW variants",
+      "Cell-probe methods"
+    ],
+    "finding": "M、efConstruction、efSearch的含义和IVF聚类/探测机制相符；文中没有把IVF一概当压缩或作未实测性能排名。",
+    "checkedAt": "2026-10-14 Asia/Shanghai",
+    "status": "supported_with_scope",
+    "method": "只读访问一手资料；无API、模型、SDK或业务执行"
+  },
+  {
+    "ids": [
+      "M108"
+    ],
+    "url": "https://pypdf.readthedocs.io/en/stable/user/extract-text.html",
+    "version": "页面标6.20.1",
+    "sections": [
+      "Why Text Extraction is hard",
+      "OCR vs. Text Extraction"
+    ],
+    "finding": "文字定位不直接保存语义结构；扫描/原生/OCR文字层不同；pypdf不是OCR。正文把结构恢复和核验方案写为设计，未冒称运行。",
+    "checkedAt": "2026-10-14 Asia/Shanghai",
+    "status": "supported_with_scope",
+    "method": "只读访问一手资料；无API、模型、SDK或业务执行"
+  },
+  {
+    "ids": [
+      "M109"
+    ],
+    "url": "https://arxiv.org/html/1706.03762v7",
+    "version": "v7",
+    "sections": [
+      "3.1",
+      "3.2.1",
+      "3.2.3",
+      "3.3"
+    ],
+    "finding": "因果mask、缩放点积、多头和逐位置前馈与原论文机制相符；文中明确是decoder-only教学适配，不把原论文整体架构原样归给所有模型。",
+    "checkedAt": "2026-10-14 Asia/Shanghai",
+    "status": "supported_with_scope",
+    "method": "只读访问一手资料；无API、模型、SDK或业务执行"
+  },
+  {
+    "ids": [
+      "M109"
+    ],
+    "url": "https://arxiv.org/abs/2104.09864",
+    "version": "v5",
+    "sections": [
+      "abstract",
+      "version history"
+    ],
+    "finding": "旋转位置编码用作可选位置实现例，有论文与版本；未称所有Transformer同用该方法。",
+    "checkedAt": "2026-10-14 Asia/Shanghai",
+    "status": "supported_with_scope",
+    "method": "只读访问一手资料；无API、模型、SDK或业务执行"
+  },
+  {
+    "ids": [
+      "M110"
+    ],
+    "url": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs",
+    "version": "滚动文档，2026-10-14核",
+    "sections": [
+      "Invalid outputs"
+    ],
+    "finding": "拒绝与max_tokens可不符合schema；当前页另述enum大小写边界。正文只称进一步约束服务支持的结构、要求读当前合同，没有无条件Schema或语义保证；内部信封明确不冒充SDK。",
+    "checkedAt": "2026-10-14 Asia/Shanghai",
+    "status": "supported_with_scope",
+    "method": "只读访问一手资料；无API、模型、SDK或业务执行"
+  }
+]

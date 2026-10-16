@@ -1,0 +1,52 @@
+{
+  "practice_id":"AI-PRACTICE-GATE-003",
+  "version":"v04",
+  "qa_role":"测试工程师",
+  "scope":"v04 artifact-level independent QA",
+  "status":"met_with_limitations",
+  "grade":"not_granted",
+  "environment":"local Python 3.14; read-only JSON/text/path/hash checks; no network/model/database/external actions",
+  "checks":{
+    "manifest_artifacts_bytes_hash":"pass",
+    "v04_artifact_paths":"pass_with_historical_from_field",
+    "practice_pack_fixture":"pass",
+    "run1_run2_migration_hashes":"pass",
+    "frozen_input_provenance":"pass_artifact_level",
+    "validator_self_inputs":"pass",
+    "run_traces":"pass_artifact_level",
+    "schema_v3_legacy_status_removed":"pass_static",
+    "unknown_field_receipt":"pass_static_only",
+    "first_failures_five":"pass",
+    "holdout_single_constraint":"pass_static",
+    "handoff_external_action":"pass_exercise_state_only"
+  },
+  "hashes":{
+    "practice_pack_sha256":"b1cb993bfb6310f5f872c23980ad60a8d6dbc91c64462bbf253302328ffa0f1a",
+    "fixture_hash":"9002b8bcef99feaa63d88c4c4d8f3eb16d22107b0ceb61e3820240bf709fe364",
+    "run1_migrated_bytes_sha256":"9eb142631b1117394cfa0cf083fb992630b46a89dd73795ff523852b36d412dd",
+    "run2_migrated_bytes_sha256":"9eb142631b1117394cfa0cf083fb992630b46a89dd73795ff523852b36d412dd",
+    "run1_normalized_sha256":"118c508e04e579686f10c7db7bba041c79ddfdc930b44967f961567474ba99c4",
+    "run2_normalized_sha256":"118c508e04e579686f10c7db7bba041c79ddfdc930b44967f961567474ba99c4"
+  },
+  "evidence":{
+    "manifest":"ai-generation-l0-practice-gate-003-v04/manifest.json",
+    "evidence_card":"ai-generation-l0-practice-gate-003-v04/evidence-card.json",
+    "repair_record":"ai-generation-l0-practice-gate-003-v04/repair_record.json",
+    "combined_trace":"ai-generation-l0-practice-gate-003-v04/event-state-trace.json",
+    "run2_trace":"ai-generation-l0-practice-gate-003-v04/run-2/event-state-trace.json",
+    "unknown_field_receipt":"ai-generation-l0-practice-gate-003-v04/first_failure/schema_unknown_field/receipt.json",
+    "first_failure_dir":"ai-generation-l0-practice-gate-003-v04/first_failure"
+  },
+  "limitations":[
+    "unknown-field rejection and migration were not executed as a live validator/process",
+    "real database/concurrency/rollback/recovery, human identity approval, production actions, model behavior and learning outcomes unverified",
+    "v04 directory has no standalone README file to independently hash-check"
+  ],
+  "required_followup":[
+    "run live negative validator cases for legacy_status and an arbitrary unknown key",
+    "verify README artifact path if a README is added"
+  ],
+  "self_signed":false,
+  "l1_decision":"not_granted",
+  "l2_decision":"not_granted"
+}

@@ -1,0 +1,296 @@
+{
+  "python": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "normal_exit": 0,
+  "expected_checks": [
+    {
+      "arm": "00",
+      "metric": "assigned_tasks",
+      "expected": 8,
+      "actual": 8,
+      "pass": true
+    },
+    {
+      "arm": "00",
+      "metric": "safe_resolved",
+      "expected": 6,
+      "actual": 6,
+      "pass": true
+    },
+    {
+      "arm": "00",
+      "metric": "unsafe_count",
+      "expected": 0,
+      "actual": 0,
+      "pass": true
+    },
+    {
+      "arm": "00",
+      "metric": "observed_time_n",
+      "expected": 8,
+      "actual": 8,
+      "pass": true
+    },
+    {
+      "arm": "00",
+      "metric": "observed_active_mean",
+      "expected": 682.5,
+      "actual": 682.5,
+      "pass": true
+    },
+    {
+      "arm": "00",
+      "metric": "review_mean",
+      "expected": 43.125,
+      "actual": 43.125,
+      "pass": true
+    },
+    {
+      "arm": "00",
+      "metric": "combined_active_review_sensitivity_300_1800",
+      "expected": [
+        725.625,
+        725.625
+      ],
+      "actual": [
+        725.625,
+        725.625
+      ],
+      "pass": true
+    },
+    {
+      "arm": "10",
+      "metric": "assigned_tasks",
+      "expected": 8,
+      "actual": 8,
+      "pass": true
+    },
+    {
+      "arm": "10",
+      "metric": "safe_resolved",
+      "expected": 7,
+      "actual": 7,
+      "pass": true
+    },
+    {
+      "arm": "10",
+      "metric": "unsafe_count",
+      "expected": 0,
+      "actual": 0,
+      "pass": true
+    },
+    {
+      "arm": "10",
+      "metric": "observed_time_n",
+      "expected": 8,
+      "actual": 8,
+      "pass": true
+    },
+    {
+      "arm": "10",
+      "metric": "observed_active_mean",
+      "expected": 577.5,
+      "actual": 577.5,
+      "pass": true
+    },
+    {
+      "arm": "10",
+      "metric": "review_mean",
+      "expected": 43.125,
+      "actual": 43.125,
+      "pass": true
+    },
+    {
+      "arm": "10",
+      "metric": "combined_active_review_sensitivity_300_1800",
+      "expected": [
+        620.625,
+        620.625
+      ],
+      "actual": [
+        620.625,
+        620.625
+      ],
+      "pass": true
+    },
+    {
+      "arm": "01",
+      "metric": "assigned_tasks",
+      "expected": 8,
+      "actual": 8,
+      "pass": true
+    },
+    {
+      "arm": "01",
+      "metric": "safe_resolved",
+      "expected": 5,
+      "actual": 5,
+      "pass": true
+    },
+    {
+      "arm": "01",
+      "metric": "unsafe_count",
+      "expected": 1,
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "arm": "01",
+      "metric": "observed_time_n",
+      "expected": 7,
+      "actual": 7,
+      "pass": true
+    },
+    {
+      "arm": "01",
+      "metric": "observed_active_mean",
+      "expected": 527.143,
+      "actual": 527.143,
+      "pass": true
+    },
+    {
+      "arm": "01",
+      "metric": "review_mean",
+      "expected": 116.25,
+      "actual": 116.25,
+      "pass": true
+    },
+    {
+      "arm": "01",
+      "metric": "combined_active_review_sensitivity_300_1800",
+      "expected": [
+        615.0,
+        802.5
+      ],
+      "actual": [
+        615.0,
+        802.5
+      ],
+      "pass": true
+    },
+    {
+      "arm": "11",
+      "metric": "assigned_tasks",
+      "expected": 8,
+      "actual": 8,
+      "pass": true
+    },
+    {
+      "arm": "11",
+      "metric": "safe_resolved",
+      "expected": 6,
+      "actual": 6,
+      "pass": true
+    },
+    {
+      "arm": "11",
+      "metric": "unsafe_count",
+      "expected": 1,
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "arm": "11",
+      "metric": "observed_time_n",
+      "expected": 8,
+      "actual": 8,
+      "pass": true
+    },
+    {
+      "arm": "11",
+      "metric": "observed_active_mean",
+      "expected": 457.5,
+      "actual": 457.5,
+      "pass": true
+    },
+    {
+      "arm": "11",
+      "metric": "review_mean",
+      "expected": 116.25,
+      "actual": 116.25,
+      "pass": true
+    },
+    {
+      "arm": "11",
+      "metric": "combined_active_review_sensitivity_300_1800",
+      "expected": [
+        573.75,
+        573.75
+      ],
+      "actual": [
+        573.75,
+        573.75
+      ],
+      "pass": true
+    }
+  ],
+  "manual_csv_counts": {
+    "00": {
+      "rows": 8,
+      "assigned_sum": 8,
+      "safe_count": 6,
+      "unsafe_count": 0,
+      "active_sum": 5460,
+      "observed_n": 8,
+      "missing_n": 0,
+      "review_sum": 345
+    },
+    "10": {
+      "rows": 8,
+      "assigned_sum": 8,
+      "safe_count": 7,
+      "unsafe_count": 0,
+      "active_sum": 4620,
+      "observed_n": 8,
+      "missing_n": 0,
+      "review_sum": 345
+    },
+    "01": {
+      "rows": 8,
+      "assigned_sum": 8,
+      "safe_count": 5,
+      "unsafe_count": 1,
+      "active_sum": 3690,
+      "observed_n": 7,
+      "missing_n": 1,
+      "review_sum": 930
+    },
+    "11": {
+      "rows": 8,
+      "assigned_sum": 8,
+      "safe_count": 6,
+      "unsafe_count": 1,
+      "active_sum": 3660,
+      "observed_n": 8,
+      "missing_n": 0,
+      "review_sum": 930
+    }
+  },
+  "author_output_matches": true,
+  "counterexamples": [
+    {
+      "case": "unsafe_also_safe",
+      "exit": 1,
+      "error": "ValueError: Unsafe cannot count as safe resolution",
+      "rejected": true
+    },
+    {
+      "case": "duplicate_id",
+      "exit": 1,
+      "error": "ValueError: Duplicate row identity",
+      "rejected": true
+    },
+    {
+      "case": "real_data_rejected",
+      "exit": 1,
+      "error": "ValueError: Expected 32 explicitly synthetic rows",
+      "rejected": true
+    },
+    {
+      "case": "dropped_assigned",
+      "exit": 1,
+      "error": "ValueError: Each arm must retain 8 assigned tasks",
+      "rejected": true
+    }
+  ],
+  "limits": "Synthetic fixed-format calculator, not generalized validator or real experiment/causal evidence"
+}

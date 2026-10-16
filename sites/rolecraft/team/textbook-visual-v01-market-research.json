@@ -1,0 +1,115 @@
+{
+  "version": "textbook-visual-v01-market-research-1",
+  "access_date": "2026-10-14",
+  "timezone": "Asia/Shanghai",
+  "role": "竞品研究员",
+  "status": "ready_for_product_and_curriculum_review",
+  "scope": "AI视觉内容设计入门教材的公开岗位、作品集要求、任务与公开面试题型证据",
+  "baseline_sources_file": "sites/rolecraft/textbooks/visual-design-v01/sources.md",
+  "sampling": {
+    "method": "公开页面目的性便利采样与来源分层；不作全国随机抽样",
+    "job_sample_count": 34,
+    "interview_type_count": 10,
+    "access_date_is_not_publication_date": true,
+    "duplicate_policy": "同一岗位的聚合转载、雇主页与项目页不计为多个独立空缺；跨页面仅按岗位样本编号记录一次",
+    "no_employment_claim": true
+  },
+  "source_layers": [
+    {
+      "id": "L1",
+      "name": "雇主官方招聘页",
+      "supports": ["访问日公开的岗位任务", "门槛", "工具和作品集要求"],
+      "limits": ["页面会下线", "单一雇主不代表全国市场"]
+    },
+    {
+      "id": "L1b",
+      "name": "招聘聚合页中保留雇主官网投递入口",
+      "supports": ["公开岗位字段和原始投递入口线索"],
+      "limits": ["聚合页可能滞后或重写，需回雇主页复核"]
+    },
+    {
+      "id": "L2",
+      "name": "招聘平台、招聘转载和人才网",
+      "supports": ["公开出现过的岗位要求和任务样本"],
+      "limits": ["职位状态、重复刊登、公司和日期需独立核验"]
+    },
+    {
+      "id": "L3",
+      "name": "项目、自由职业和远程岗位页面",
+      "supports": ["项目交付、工具、节奏和商业结果描述"],
+      "limits": ["不等于中国全职岗位；报酬和条件不可外推"]
+    },
+    {
+      "id": "L4",
+      "name": "面经、候选人自述、公开题库和面试准备文章",
+      "supports": ["公开资料中出现过或被建议准备的题型"],
+      "limits": ["不是公司固定真题，不能计算频率或声称必问"]
+    }
+  ],
+  "jobs": [
+    {"id":"J01","title":"快手 AIGC美学设计师实习生","location":"北京","industry":"内容产品","seniority":"本科及以上；26/27届；至少4个月实习、每周4天","tasks":["按需求生成和迭代图片","按品类制定提示词/负面词模板","创意策划与趋势洞察"],"tools":["Stable Diffusion","Midjourney","Photoshop","Sketch","Illustrator","Figma","ComfyUI（加分）"],"portfolio_or_data":"必须附设计/AI作品集；风格模型或ComfyUI案例加分","source_type":"L1b","source_date":"2026-08-06（收录）","url":"https://jobs.ultraai.site/jobs/kuaishou_trainee/24145","evidence_limit":"聚合页，页内保留快手官方投递入口；工具和门槛需回雇主页复核"},
+    {"id":"J02","title":"网易严选商详内容设计师","location":"杭州","industry":"快消品电商","seniority":"社招；统一年限未列","tasks":["商品创意和拍摄制片","主图/详情页/营销传播","品牌规范和卖点转译","数据复盘","AIGC商用落地"],"tools":["AIGC工具（未列具体版本）"],"portfolio_or_data":"可复用视觉规范和数据复盘能力","source_type":"L1b","source_date":"2026-08-03（收录）","url":"https://jobs.ultraai.site/jobs/netease/75580","evidence_limit":"聚合页而非网易原始页；招聘状态需复核"},
+    {"id":"J03","title":"青燕和示/洽目 AIGC视觉设计","location":"上海","industry":"AI眼镜品牌","seniority":"约2年品牌/营销平面；能力优秀应届可接受","tasks":["新品KV/视频和节日活动","海报/画册/包装","社媒和电商主图/详情页","门店物料、印刷打样","短视频视觉"],"tools":["Photoshop","Illustrator","剪映","Midjourney","ChatGPT","LiblibAI"],"portfolio_or_data":"摄影/剪辑/动效和品牌升级案例加分","source_type":"L2","source_date":"2026-05-20（更新）","url":"https://www.shushuqiuzhi.com/position/331051","evidence_limit":"招聘简章转载，不是实时雇主数据库"},
+    {"id":"J04","title":"啾咪宠物 创意视觉设计师","location":"郑州","industry":"宠物电商","seniority":"BOSS聚合页出现1—3年和3—5年层级","tasks":["宠物产品场景图、海报、主图、详情页","短视频封面","AIGC创意视觉"],"tools":["AIGC工具（页面未列完整清单）"],"portfolio_or_data":"电商视觉/宠物品类经验倾向","source_type":"L2","source_date":"2026-10-14（访问）","url":"https://www.zhipin.com/zhaopin/e219508d15c3bbca03J83dy9/","evidence_limit":"BOSS聚合页，具体公司和状态需核验"},
+    {"id":"J05","title":"丝路视觉 AIGC视觉创意设计师","location":"上海","industry":"广告/会展","seniority":"3—5年，本科；页面显示10—15K","tasks":["概念设计","风格探索","角色综合生成","商业视觉落地"],"tools":["Stable Diffusion","ComfyUI","Midjourney","Seedance"],"portfolio_or_data":"创意和商业交付能力","source_type":"L2","source_date":"2026-10-14（访问）","url":"https://www.zhipin.com/zhaopin/e219508d15c3bbca03J83dy9/","evidence_limit":"同一BOSS聚合页中的岗位卡片，需雇主复核"},
+    {"id":"J06","title":"AI视觉创意设计师","location":"长沙","industry":"广告创意","seniority":"1—3年，本科；页面显示7—10K","tasks":["AIGC视觉创作","广告和创意应用探索"],"tools":["页面未列完整工具"],"portfolio_or_data":"视觉基础","source_type":"L2","source_date":"2026-10-14（访问）","url":"https://www.zhipin.com/zhaopin/e219508d15c3bbca03J83dy9/","evidence_limit":"聚合页岗位卡片，不能代表当地岗位总量"},
+    {"id":"J07","title":"星耀原创文化 AIGC视觉设计师","location":"深圳","industry":"潮玩/IP","seniority":"5—10年，大专；页面显示15—25K","tasks":["品牌/IP/海报/KV/包装","营销全场景","从创意探索到落地"],"tools":["AIGC全场景工作流"],"portfolio_or_data":"成熟商业作品","source_type":"L2","source_date":"2026-10-14（访问）","url":"https://m.zhipin.com/zhaopin/6b77c1c5af542a0303V93du4/","evidence_limit":"BOSS移动聚合页，具体职位页需核验"},
+    {"id":"J08","title":"溪水网络 AIGC视觉设计师","location":"南京","industry":"电商","seniority":"3—5年，本科；页面显示11—18K","tasks":["电商视觉","AIGC创意与商业化落地"],"tools":["页面未列完整工具"],"portfolio_or_data":"电商视觉经验","source_type":"L2","source_date":"2026-10-14（访问）","url":"https://m.zhipin.com/zhaopin/6b77c1c5af542a0303V93du4/","evidence_limit":"BOSS移动聚合页，具体职位页需核验"},
+    {"id":"J09","title":"上海人工智能实验室 AI创意设计实习生","location":"上海","industry":"AI产品/科研品牌","seniority":"设计类相关专业；实习","tasks":["AI/科研成果视觉化","技术内容视觉转译","创意到落地","趋势探索"],"tools":["Figma","Claude Code","Codex","AI绘图"],"portfolio_or_data":"AI视觉作品、vibe coding、动态/视频、科技品牌经验加分","source_type":"L1","source_date":"2026-08-25","url":"https://www.shlab.org.cn/joinus/detail/7677888764464105770","evidence_limit":"官方实习JD；不代表全部AI设计实习门槛"},
+    {"id":"J10","title":"百度 AIGC创意短片视觉设计实习 J85569","location":"北京","industry":"AI短视频","seniority":"设计/编导/数字媒体优先；3—5个月、每周4天","tasks":["AI脚本和视觉方案","人格化IP/批量素材","视频剪辑和特效","按点赞/转发/完播率迭代"],"tools":["DeepSeek","剪映AI","Photoshop","Illustrator","Premiere"],"portfolio_or_data":"设计岗需作品集；数据指标为点赞、转发、完播率","source_type":"L1","source_date":"2026-07-21（页面标注）","url":"https://talent.baidu.com/jobs/detail/SOCIAL/7b49bc9c-6516-4ee6-95d1-d7680852a6fa","evidence_limit":"官方JD，指标是任务描述而非公开实绩"},
+    {"id":"J11","title":"腾讯开放世界资深角色原画","location":"上海/杭州","industry":"游戏","seniority":"5年以上；商业级开放世界经验优先","tasks":["角色概念和世界观元素","商业化设计","AIGC辅助流程"],"tools":["Photoshop","绘画软件","手绘","造型/空间能力"],"portfolio_or_data":"需游戏商业作品","source_type":"L1","source_date":"2026-10-13（更新）","url":"https://careers.tencent.com/zh-cn/jobdesc.html?postId=2092908183122264064","evidence_limit":"资深游戏美术，不能作为入门岗位样本"},
+    {"id":"J12","title":"腾讯《王者万象棋》2D场景","location":"成都","industry":"游戏","seniority":"3年以上","tasks":["场景/世界观/皮肤氛围","跨模块协作和外包沟通"],"tools":["Photoshop","Blender或其他3D","AIGC辅助"],"portfolio_or_data":"游戏作品和审美","source_type":"L1","source_date":"2026-10-08（更新）","url":"https://careers.tencent.com/jobdesc.html?postId=2107661403639955456","evidence_limit":"资深游戏美术，不能作为普通人第一岗"},
+    {"id":"J13","title":"腾讯视频 AI技术导演（综艺）","location":"北京","industry":"影视内容","seniority":"3年以上","tasks":["剧本/分镜","风格设定","图像/视频生成","剪辑/动效/配音","多角色协作和流程优化"],"tools":["多模态AI工具"],"portfolio_or_data":"风格一致性、节奏和成片经验","source_type":"L1","source_date":"2026-08-31（更新）","url":"https://careers.tencent.com/jobdesc.html?postId=2081948421761183744","evidence_limit":"高级影视AI岗位，不能作为入门承诺"},
+    {"id":"J14","title":"百度视觉设计师 J100692","location":"北京","industry":"AI/互联网产品校招","seniority":"本科；视觉传达/数字媒体优先；互联网UI实习优先","tasks":["AI产品UI","设计规范/图形资产","视觉语言","跨团队落地","探索AIGC"],"tools":["Figma","Photoshop","Illustrator"],"portfolio_or_data":"完整作品集","source_type":"L1b","source_date":"2026-07-21（发布时间）","url":"https://jobs.ultraai.site/jobs/baidu_campus/campus:964932f7-03dc-4423-a1a4-22d8948f52e7","evidence_limit":"聚合页保留百度原始入口，需回百度页核验"},
+    {"id":"J15","title":"百度高级UI设计师 J99117","location":"北京","industry":"AI产品","seniority":"本科及以上；艺术/设计背景；复杂项目经验倾向","tasks":["AI界面","组件化设计系统","动效","规范和项目管理"],"tools":["Figma","AE"],"portfolio_or_data":"AI产品经验、设计系统、多端UX加分","source_type":"L1","source_date":"2026-07-21（页面标注）","url":"https://talent.baidu.com/jobs/detail/SOCIAL/8499e0ab-b8d6-42cf-a316-8e824382740f","evidence_limit":"高级UI岗位，门槛高于入门视觉内容设计"},
+    {"id":"J16","title":"百度 UI设计师 J91103","location":"北京","industry":"AI产品","seniority":"本科及以上","tasks":["AI界面","组件化","动效","跨团队交付和方法论沉淀"],"tools":["Figma","AE"],"portfolio_or_data":"完整设计系统/多端UX加分","source_type":"L1","source_date":"2026-07-21（页面标注）","url":"https://talent.baidu.com/jobs/detail/SOCIAL/88a41d33-d9f1-4853-b3fe-e9afe0e48223","evidence_limit":"官方JD；未提供录用结果或岗位数量外推"},
+    {"id":"J17","title":"百度网盘/文库 UI设计师 J103371","location":"北京","industry":"AI应用/商业增长","seniority":"本科；1年以上视觉设计","tasks":["UI/营销/付费/互动玩法","产品目标拆解","AI工作流提效","关注转化"],"tools":["Figma","AE","Photoshop","AIGC"],"portfolio_or_data":"复杂链路/产品思维加分；转化是业务目标但无公开数值","source_type":"L1","source_date":"2026-07-21（页面标注）","url":"https://talent.baidu.com/jobs/detail/SOCIAL/8972f75c-6815-4cfe-8793-ad3650c9fac9","evidence_limit":"官方JD；业务目标不等于已实现指标"},
+    {"id":"J18","title":"百度海外AI赛道高级UX J97181","location":"北京","industry":"海外AI产品","seniority":"本科；3年以上视觉；海外/小语种优先","tasks":["海外用户UX/UI/调研/动效","多元风格适配"],"tools":["Figma","AE","Illustrator"],"portfolio_or_data":"海外用户或语言能力更有利","source_type":"L1","source_date":"2026-07-21（页面标注）","url":"https://talent.baidu.com/jobs/detail/SOCIAL/37e99a23-6bef-4447-8fd5-54c9e691e54b","evidence_limit":"高级UX岗位，不能代表初级视觉内容设计门槛"},
+    {"id":"J19","title":"百度体验设计实习 J85260","location":"北京","industry":"AI方向B端","seniority":"本科大三或硕士在读；设计类","tasks":["B端UI和专题活动","需求分析","竞品调研","产品思维与协作"],"tools":["页面未限定具体工具"],"portfolio_or_data":"调研报告、沟通表达和产品思维","source_type":"L1","source_date":"2026-07-21（页面标注）","url":"https://talent.baidu.com/jobs/detail/INTERN/24f9253e-9524-4d7a-87f8-ef31f9a3dd40","evidence_limit":"官方实习JD；不代表非学生入口"},
+    {"id":"J20","title":"百度视觉设计实习 J105065","location":"北京","industry":"工程效能Web/官网","seniority":"本科；可持续6个月以上实习","tasks":["多端视觉","风格/规范","需求沟通到设计追踪","Vibe Coding相关AI任务"],"tools":["Sketch","Figma","AE","C4D","Midjourney"],"portfolio_or_data":"需作品集；实习经验/优秀实战项目优先","source_type":"L1","source_date":"2026-09-01（页面标注）","url":"https://talent.baidu.com/jobs/detail/INTERN/e2d04cbc-08d4-4dd0-9fc1-803bb10ef55d","evidence_limit":"官方实习JD，工具清单不应解读为所有岗位硬门槛"},
+    {"id":"J21","title":"上海AI实验室司南平台设计师","location":"上海","industry":"大模型评测产品","seniority":"本科及以上；视觉/交互/工业/数字媒体；复杂产品经验","tasks":["OpenCompass Web/移动UI和交互","模型/数据集/指标转译","模型接入、评测配置、任务监控、异常和结果分析","设计系统和可用性迭代"],"tools":["Figma","Cursor","Codex","Claude Code"],"portfolio_or_data":"高保真原型；需体现UI、交互流程和复杂产品作品集","source_type":"L1","source_date":"2026-09-16","url":"https://www.shlab.org.cn/joinus/detail/7686063101133555994?mode=social","evidence_limit":"官方高级AI产品设计JD，适合作为进阶参考"},
+    {"id":"J22","title":"酷家乐 UX用户体验设计师（AI创新方向）","location":"上海/杭州","industry":"国际化Web工具","seniority":"2026届研究生及以上；设计/心理/计算机等","tasks":["需求、交互/原型、持续优化","规范和动态Demo","海外/PLG实践"],"tools":["Figma","Photoshop","Illustrator","C4D","AIGC/AI Coding"],"portfolio_or_data":"成熟作品或互联网UX实习；需作品链接","source_type":"L1","source_date":"2026-10-14（访问）","url":"https://www.kujiale.com/pub/hr-recruit/campus/postdetail/1373cdf4-7747-49f5-b96c-476a76d86a57","evidence_limit":"官方校招页；研究生和校招条件不能外推为社会招聘门槛"},
+    {"id":"J23","title":"Kirin Freelance Interaction Designer","location":"深圳等","industry":"AI智能体/消费硬件","seniority":"合同制；强AI/消费产品作品集","tasks":["用户流程、线框、高保真、原型","Agent状态/错误恢复","设计系统和工程交付"],"tools":["Figma组件/变量/原型"],"portfolio_or_data":"需AI或消费产品强作品集；英文协作","source_type":"L1","source_date":"2026-10-14（访问）","url":"https://jobs.ashbyhq.com/kirin/1152b34e-66cb-4aa1-834a-4050612a9f3b/","evidence_limit":"自由职业/合同岗，不能代表普通全职入口"},
+    {"id":"J24","title":"AI创业公司UI/视觉设计师","location":"地点未明确/海外AI产品","industry":"AI创业","seniority":"1—3年或优秀应届可投","tasks":["品牌、产品UI、设计系统、运营视觉","与产品/研发共创","面向海外用户和商业化"],"tools":["Figma","ChatGPT","Midjourney","Agent","AIGC"],"portfolio_or_data":"需个人作品集或网页；学习能力/审美为重点","source_type":"L2","source_date":"2026-10-14（访问）","url":"https://bonjour.bio/b30hvp","evidence_limit":"公开岗位页，雇主、地点和状态需复核"},
+    {"id":"J25","title":"亚马逊电商设计实习生（美国站）","location":"深圳","industry":"跨境电商","seniority":"本科；连续6个月实习","tasks":["Amazon主图、A+、详情、卖点/场景图","活动/社媒/广告","拍摄和素材库"],"tools":["Photoshop","Illustrator","Figma","Canva"],"portfolio_or_data":"必须作品集；摄影/短视频加分","source_type":"L2","source_date":"2026-06-13（岗位截止日；访问2026-10-14）","url":"https://www.deizao.net/m/index/shixixq/jobid/155947","evidence_limit":"公开实习详情，岗位期已过，不能证明当前仍在招"},
+    {"id":"J26","title":"亚马逊家纺类目视觉设计师/美工","location":"太仓","industry":"跨境电商","seniority":"大专；页面写经验不限","tasks":["A+、旗舰店模块、主图/图片规范","以美国审美表达家纺卖点"],"tools":["Photoshop","Illustrator","C4D/Blender/KeyShot（加分）"],"portfolio_or_data":"完整电商作品；平台经验和质感表达","source_type":"L2","source_date":"2026-01-20（首次录入；访问2026-10-14）","url":"https://www.tcrcsc.com/zpxx_1090181.html","evidence_limit":"人才网页面，职位状态需核验"},
+    {"id":"J27","title":"跨境电商视觉设计师","location":"北京","industry":"全球电商","seniority":"5—10年，本科；页面显示15—28K","tasks":["Amazon/京东/官网风格","产品场景/细节/海报","全球营销","品牌规范"],"tools":["Photoshop","Illustrator","After Effects","Premiere"],"portfolio_or_data":"国际品牌/出海案例、提案能力","source_type":"L2","source_date":"2026-10-14（访问）","url":"https://zhaodagong.com/job/3319497","evidence_limit":"页面注明来自智联招聘，需原站复核；资深岗位"},
+    {"id":"J28","title":"亚马逊美工设计师","location":"郑州","industry":"跨境电商","seniority":"大专；2年以上Amazon","tasks":["产品图、主图、A+、品牌故事","促销物料","竞品视觉和转化优化"],"tools":["Photoshop","Illustrator"],"portfolio_or_data":"熟悉平台视觉规范；页面无公开实绩数据","source_type":"L2","source_date":"2026-09-28（页面截至；访问2026-10-14）","url":"https://bebee.com/cn/jobs/job--techmap_cn_CCL1524325110J40883672705","evidence_limit":"智联聚合页转载，需雇主核验"},
+    {"id":"J29","title":"高级平面设计师","location":"武汉","industry":"多平台跨境电商","seniority":"1—3年，本科；招2人","tasks":["Amazon/独立站/Walmart主图、详情、A+、品牌故事","社媒/广告/Banner","协作拍摄"],"tools":["Photoshop","Illustrator"],"portfolio_or_data":"平台规范、海外审美和转化思维","source_type":"L2","source_date":"2026-10-14（访问）","url":"https://jobs.zhaopin.com/CC413115810J40095479911.htm","evidence_limit":"公开智联页，需核实时效和岗位数量"},
+    {"id":"J30","title":"旭博贸易电商平面设计师长期兼职","location":"杭州","industry":"跨境项目","seniority":"平面/视觉专业优先或3年经验；按项目","tasks":["Amazon主图/副图精修","场景合成","A+排版","业务沟通和按期交付"],"tools":["Photoshop","Illustrator"],"portfolio_or_data":"可独立对接需求；按项目付费","source_type":"L3","source_date":"2026-08-30（截止日；访问2026-10-14）","url":"https://www.zcool.com.cn/opportunity/project/ZNjAyMA%3D%3D.html","evidence_limit":"项目制兼职，不等于全职岗位或稳定月薪"},
+    {"id":"J31","title":"Amazon Listing Designer","location":"远程","industry":"跨境电商","seniority":"长期项目；学历未列","tasks":["Listing图片和A+","精修/合成","2—3天初稿","快速返修"],"tools":["Photoshop","AI辅助工作流"],"portfolio_or_data":"质量、一致性、速度和沟通；明确交付节奏","source_type":"L3","source_date":"2026-08-03（更新）","url":"https://www.onlinejobs.ph/jobseekers/job/amazon-listing-designer-a-content-photoshop-ai-workflow-long-term-1595162","evidence_limit":"海外远程项目，条件不可直接迁移到中国全职"},
+    {"id":"J32","title":"Senior AI Ecommerce Designer","location":"远程","industry":"宠物跨境电商","seniority":"Senior；学历未列，需日常使用AI","tasks":["Amazon/Chewy/Shopify/TikTok Shop/Walmart图片","A+、品牌故事、广告/落地页","按CTR/CVR评价"],"tools":["Photoshop","Illustrator","生成式AI"],"portfolio_or_data":"商业结果重于只展示作品集；CTR/CVR为雇主描述指标","source_type":"L3","source_date":"2026-10-09（更新）","url":"https://www.onlinejobs.ph/jobseekers/job/senior-ai-ecommerce-designer-amazon-listings-and-ads-1746591","evidence_limit":"海外资深远程岗位，指标不是可验证公开实验结果"},
+    {"id":"J33","title":"Amazon Visual Designer","location":"远程","industry":"跨境电商","seniority":"页面未列学历","tasks":["Listing/A+、Brand Store","信息图和品牌规范","与文案/营销协作","按表现迭代"],"tools":["Photoshop","Illustrator"],"portfolio_or_data":"Amazon A+经验、转化视觉和平台规范","source_type":"L3","source_date":"2026-03-10（发布）","url":"https://www.behance.net/joblist/344451/Graphic-Designer-For-Amazon-A+","evidence_limit":"Behance职位页，雇主条件与当前状态需核验"},
+    {"id":"J34","title":"艾米视觉资深平面设计师","location":"广州","industry":"商业摄影/跨境视觉服务","seniority":"5年以上，大专","tasks":["电商网页、包装、海报","Amazon A+、Shopify/旗舰店","AI生成辅助","团队方案攻关"],"tools":["Photoshop","Illustrator","Figma","Midjourney","DALL-E","Adobe Firefly"],"portfolio_or_data":"电商/品牌作品；AI工具使用经验优先","source_type":"L1","source_date":"2026-10-14（访问）","url":"https://www.airmie.cn/job.html","evidence_limit":"雇主招聘总页，具体岗位状态和人数未统一列出；资深岗位"}
+  ],
+  "interview_types": [
+    {"id":"I01","name":"作品集案例与本人贡献","prompt_examples":["选3—5个项目说明背景、目标、角色、过程和结果","哪些是本人完成，哪些由客户/团队完成"],"sources":[{"url":"https://developer.baidu.com/article/detail.html?id=8352615","type":"公开作品集建议"},{"url":"https://saynow.ai/zh-CN/blog/graphic-design-interview-questions","type":"公开整理"}],"evidence_limit":"支持公开资料中的准备方向，不是面试频率或公司真题"},
+    {"id":"I02","name":"视觉决策解释","prompt_examples":["为什么定这个风格、色彩、字体、图标和栅格","如何平衡美观、可读性和品牌"],"sources":[{"url":"https://www.nowcoder.com/discuss/353157925906620416?sourceSSR=subject","type":"候选人面经"},{"url":"https://mianti.zcmima.cn/qiyemianjing/240688.html","type":"公开题库整理"}],"evidence_limit":"牛客为候选人自述，题库为二次整理，不能声称公司固定问法"},
+    {"id":"I03","name":"Brief到交付的工作流程","prompt_examples":["如何澄清需求、研究、发散、收敛、反馈、修改、导出和验收"],"sources":[{"url":"https://saynow.ai/zh-CN/blog/graphic-design-interview-questions","type":"公开整理"}],"evidence_limit":"公开准备文章，未绑定特定雇主"},
+    {"id":"I04","name":"工具、文件和跨媒介交接","prompt_examples":["如何组织图层和命名文件","如何导出印刷/Web文件并适配多个尺寸"],"sources":[{"url":"https://saynow.ai/zh-CN/blog/graphic-design-interview-questions","type":"公开整理"},{"url":"https://talent.baidu.com/jobs/detail/INTERN/e2d04cbc-08d4-4dd0-9fc1-803bb10ef55d","type":"官方JD任务证据"}],"evidence_limit":"官方JD说明工作要求，不反向证明具体面试题"},
+    {"id":"I05","name":"现场重设计、作品批评或白板题","prompt_examples":["限时重做元素","批评现有界面","为老人设计点外卖流程"],"sources":[{"url":"https://offergo.site/articles/ui-ux-designer-interview-guide","type":"公开整理"},{"url":"https://www.apply.coach/blog/ux-designer-interview-questions","type":"公开整理"}],"evidence_limit":"示例题用于训练拆解和表达，不是特定公司原题"},
+    {"id":"I06","name":"电商平台与商业结果","prompt_examples":["主图/A+如何表达卖点并遵守平台规范","如何用CTR/CVR/完播率复盘"],"sources":[{"url":"https://mianti.zcmima.cn/qiyemianjing/48809.html","type":"公开题库整理"},{"url":"https://jobs.ultraai.site/jobs/netease/75580","type":"聚合JD"},{"url":"https://www.onlinejobs.ph/jobseekers/job/senior-ai-ecommerce-designer-amazon-listings-and-ads-1746591","type":"公开岗位"}],"evidence_limit":"岗位描述中的数据指标不是公开实验结果，题库不是公司原题"},
+    {"id":"I07","name":"AI生成工作流与人工修订","prompt_examples":["提示词/参数/负面词如何迭代","怎样保持风格和产品一致并完成商用精修"],"sources":[{"url":"https://jobs.ultraai.site/jobs/kuaishou_trainee/24145","type":"聚合官方投递入口"},{"url":"https://talent.baidu.com/jobs/detail/SOCIAL/7b49bc9c-6516-4ee6-95d1-d7680852a6fa","type":"官方JD"},{"url":"https://bbs.ggrarea.cn/assets/files/2024-08-21/1724230918-697201-2024202406273.pdf","type":"公开赛题样例"}],"evidence_limit":"JD与赛题支持能力主题，不等于招聘面试原题；工具版本会变"},
+    {"id":"I08","name":"反馈、冲突和跨团队协作","prompt_examples":["产品/运营/研发意见冲突如何对齐","如何区分有效批评与审美偏好并返修"],"sources":[{"url":"https://www.nowcoder.com/discuss/353157925906620416?sourceSSR=subject","type":"候选人面经"},{"url":"https://saynow.ai/zh-CN/blog/graphic-design-interview-questions","type":"公开整理"}],"evidence_limit":"候选人叙述不能独立证明结果；公开文章是建议"},
+    {"id":"I09","name":"截止期、范围和质量权衡","prompt_examples":["提前截止或多轮修改预算不足时砍什么、保什么、如何沟通"],"sources":[{"url":"https://saynow.ai/zh-CN/blog/graphic-design-interview-questions","type":"公开整理"},{"url":"https://clapassist.com/tools/interview-questions/graphic-designer/","type":"公开整理"}],"evidence_limit":"未绑定中国特定公司，不能声称普遍流程"},
+    {"id":"I10","name":"版权、素材许可、平台和AI披露","prompt_examples":["生成素材能否商用、如何留证、如何披露AI参与、如何核查平台政策"],"sources":[{"url":"https://firsthr.app/templates/hiring/illustrator-interview-questions","type":"公开招聘模板"},{"url":"https://www.saybuff.com/en/interview-questions/graphic-designer","type":"公开题库"}],"evidence_limit":"题库不是法律意见；需按地区、产品和版本核查最新规则"}
+  ],
+  "findings": [
+    "最接近普通人第一份工作的样本是跨境电商视觉/Listing与A+实习、AI视觉内容实习、B端或AI产品视觉实习。",
+    "岗位共同要求把传统视觉基础、产品/品牌理解、人工修订、跨团队沟通和商业/数据目标放在生成工具之前；作品集几乎是入场条件。",
+    "AI产品视觉、复杂数据/评测界面、Agent交互、游戏原画和影视AI导演多为进阶岗位，不应写成零基础首岗承诺。",
+    "教材应训练brief—约束—生成—人工修订—交付—复盘的稳定流程，工具版本和平台/商用政策作为需核查字段。"
+  ],
+  "limitations": [
+    "34条是公开便利样本，存在重复刊登、聚合转载、职位下线和地域偏差，不能解释全国空缺数量、就业概率、薪资中位数或政策效果。",
+    "L2/L3页面需回到雇主原页复核；页面显示招聘中不等于访问日仍可申请。",
+    "面经、题库和公开准备文章只支持题型存在或被建议准备，不支持固定真题、频率、评分标准或录用结果；JD只支持任务/门槛。",
+    "尚未完成真实雇主面试题库核验、随机岗位抽样、真人设计专家复核、真实学习者求职结果和真实作品转化数据。",
+    "本报告未修改教材正文、应用、数据库或用户记录，未调用付费模型，未联系外部人员，未上传发布。"
+  ],
+  "handoff": {
+    "to": ["产品经理", "课程架构师", "教材研发员", "内容审校员", "测试工程师"],
+    "recommended_entry_scope": "跨境电商视觉/Listing-A+与AI商业视觉内容；AI产品视觉和复杂AI UX后置",
+    "required_revalidation": ["教材作者核对岗位与sources.md一致性", "内容审校员复核论断与来源", "测试工程师检查条目数量、URL、日期和证据等级", "用户研究员补真实学习/求职反馈"]
+  }
+}

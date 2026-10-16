@@ -1,0 +1,40 @@
+{
+  "review_id": "AI-DURABLE-002-CONTENT-REVIEW-20261015-003",
+  "practice_id": "AI-PRACTICE-DURABLE-002",
+  "version": "v03",
+  "decision": "reviewed_with_limitations",
+  "scope": "local fixture-only content review",
+  "evidence": {
+    "artifact_dir": "sites/rolecraft/team/ai-generation-l0-practice-durable-002-v03",
+    "checkpoint_manifest_sha256": "7a8447a8a4354f00225718a791a815246628cee6a5752317c5e90dbab5926312",
+    "final_outputs_checked": 8,
+    "all_final_status_local_draft_ready": true,
+    "all_final_outputs_fixture_scoped": true,
+    "manifest_entries_rehashed": 12,
+    "manifest_hashes_match": true,
+    "first_failures_preserved": true,
+    "recovery_receipt_present": true,
+    "qa_status": "pending",
+    "self_signed": false
+  },
+  "findings": [
+    "v03 removes the prior holdout final-status ambiguity; final.json and final_output.json use local_draft_ready with fixture-only scope semantics.",
+    "Deterministic local idempotency, single-draft, checkpoint replay, and failure-fixture claims are internally supported.",
+    "No evidence supports production durability, RPO/RTO, real crash recovery, LangGraph checkpoint behavior, human expertise, or certification."
+  ],
+  "limitations": [
+    "No real process kill, durable database/queue, fsync/rename fault injection, concurrency, cross-node, or external-provider replay test.",
+    "Callback dedupe and recovery claims are bounded to the supplied fixture and ordering.",
+    "Independent QA and human/learner evidence remain pending.",
+    "Three final_output.json files use status_scope=deterministic_local_fixture_only rather than a scope field; semantic scope is clear but contract compatibility remains for QA/engineering."
+  ],
+  "decisions": {
+    "l1": "not_granted",
+    "l2": "not_granted",
+    "production_durability": "unverified",
+    "rpo_rto": "unverified",
+    "human_capability": "unverified"
+  },
+  "next_owner": "QA",
+  "recheck": "Independent rerun of all normal, holdout, first-failure, and manifest/hash checks; preserve fixture-only wording and record actual environment."
+}

@@ -1,0 +1,4 @@
+usage: d0_03_runner.py [-h]
+                       --case {A-normal,B-tenant-denied,source-missing,source-conflict}
+                       --run-id {run-1,run-2} --input INPUT
+d0_03_runner.py: error: argument --run-id: invalid choice: 'run-1-learner-7391842650-20261016' (choose from 'run-1', 'run-2')

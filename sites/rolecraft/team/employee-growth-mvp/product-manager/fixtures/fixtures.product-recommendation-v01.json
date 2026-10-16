@@ -1,0 +1,339 @@
+{
+  "fixture_id": "fixtures.product-recommendation-v01",
+  "fixture_version": "v0.1",
+  "fixture_sha256": "pending_freeze",
+  "contract_id": "PROD-D0-001",
+  "role_id": "product-manager",
+  "status": "draft_not_frozen",
+  "data_classification": "synthetic_only",
+  "purpose": "隔离产品经理 D0：自然语言教材小节推荐的范围、价值证据、失败识别和迁移计划。",
+  "prohibited_access": [
+    "正式数据库",
+    "真实用户记录",
+    "生产系统",
+    "外部服务",
+    "付费模型",
+    "真实用户联系",
+    "上传或发布"
+  ],
+  "synthetic_entities": {
+    "users": [
+      {
+        "synthetic_user_id": "U-SYN-001",
+        "persona": "第一次构建 Agent 的学习者",
+        "declared_need": "希望用自然语言找到与当前问题相关的教材小节。",
+        "observed_behavior": "尚无观察；仅为合成场景。"
+      },
+      {
+        "synthetic_user_id": "U-SYN-002",
+        "persona": "需要为新岗位规划补学路径的学习者",
+        "declared_need": "希望根据岗位目标找出先修、练习和作品路径。",
+        "observed_behavior": "尚无观察；仅用于未知迁移预告。"
+      }
+    ],
+    "textbook_sources": [
+      {
+        "synthetic_source_id": "TB-SYN-V10-A",
+        "title": "Agent 工程全景（合成副本 A）",
+        "version": "v10-synthetic-a",
+        "source_status": "synthetic_only",
+        "source_id": "TB-SYN-V10-A",
+        "section_id": "sec-agent-tool-loop",
+        "sha256": "pending_synthetic_source_freeze_a",
+        "location_snapshot": {
+          "path": "synthetic://TB-SYN-V10-A/sec-agent-tool-loop",
+          "heading": "Agent 任务运行与工具调用（A）",
+          "line_range": "pending_snapshot_freeze"
+        },
+        "content_evidence_status": "unknown_until_fixture_freeze"
+      },
+      {
+        "synthetic_source_id": "TB-SYN-V10-B",
+        "title": "Agent 工程全景（合成副本 B）",
+        "version": "v10-synthetic-b",
+        "source_status": "synthetic_only",
+        "source_id": "TB-SYN-V10-B",
+        "section_id": "sec-agent-tool-loop",
+        "sha256": "pending_synthetic_source_freeze_b",
+        "location_snapshot": {
+          "path": "synthetic://TB-SYN-V10-B/sec-agent-tool-loop",
+          "heading": "Agent 工具调用与恢复（B）",
+          "line_range": "pending_snapshot_freeze"
+        },
+        "content_evidence_status": "unknown_until_fixture_freeze"
+      }
+    ],
+    "section_catalog": [
+      {
+        "source_id": "TB-SYN-V10-A",
+        "version": "v10-synthetic-a",
+        "section_id": "sec-agent-tool-loop",
+        "title": "Agent 任务运行与工具调用（A）",
+        "content_snapshot": "合成占位快照；不代表正式教材正文。",
+        "sha256": "pending_synthetic_source_freeze_a",
+        "location_snapshot": {
+          "path": "synthetic://TB-SYN-V10-A/sec-agent-tool-loop",
+          "heading": "Agent 任务运行与工具调用（A）",
+          "line_range": "pending_snapshot_freeze"
+        },
+        "content_evidence_status": "unknown_until_fixture_freeze"
+      },
+      {
+        "source_id": "TB-SYN-V10-B",
+        "version": "v10-synthetic-b",
+        "section_id": "sec-agent-tool-loop",
+        "title": "Agent 工具调用与恢复（B）",
+        "content_snapshot": "合成占位快照；不代表正式教材正文。",
+        "sha256": "pending_synthetic_source_freeze_b",
+        "location_snapshot": {
+          "path": "synthetic://TB-SYN-V10-B/sec-agent-tool-loop",
+          "heading": "Agent 工具调用与恢复（B）",
+          "line_range": "pending_snapshot_freeze"
+        },
+        "content_evidence_status": "unknown_until_fixture_freeze"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "normal-01",
+      "kind": "normal",
+      "user_id": "U-SYN-001",
+      "request": "我想先理解一个 Agent 怎样从用户问题进入工具调用，再找到能做小练习的教材小节。",
+      "available_source_version": "v10-synthetic-a",
+      "authorization": "synthetic_read_only",
+      "expected_input_class": "clear_learning_goal",
+      "notes_for_learner": "只提供场景，不提供产品答案。",
+      "expected_result": "scope_candidate_with_source_and_acceptance_pending",
+      "expected_stop_or_escalate": "continue_with_scope_definition",
+      "expected_first_failure": null,
+      "expected_external_action": "none",
+      "expected_receivers": [
+        "designer",
+        "content-retrieval-engineer",
+        "software-engineer",
+        "qa-engineer"
+      ]
+    },
+    {
+      "case_id": "boundary-01",
+      "kind": "boundary",
+      "user_id": "U-SYN-001",
+      "request": "我只记得要做一个 Agent，但不知道是先学检索、工具还是持久任务；请直接帮我决定完整课程。",
+      "available_source_version": "v10-synthetic-a",
+      "authorization": "synthetic_read_only",
+      "ambiguities": [
+        "目标不明确",
+        "需要澄清岗位和先修",
+        "完整课程规划超出单次推荐小节范围"
+      ],
+      "expected_input_class": "ambiguous_goal",
+      "notes_for_learner": "学习者应识别澄清和非目标边界，不把歧义当确定需求。",
+      "expected_result": "clarification_required_before_scope_freeze",
+      "expected_stop_or_escalate": "clarify_user_goal_and_scope",
+      "expected_first_failure": "missing_user_goal",
+      "expected_external_action": "none",
+      "expected_receivers": [
+        "product-manager",
+        "curriculum-architect",
+        "content-retrieval-engineer"
+      ]
+    },
+    {
+      "case_id": "failure-01",
+      "kind": "failure",
+      "user_id": "U-SYN-001",
+      "request": "给我推荐持久任务恢复的教材小节，并证明我学会了。",
+      "available_source_version": null,
+      "missing_fields": [
+        "source_version",
+        "user_value_evidence"
+      ],
+      "injected_defects": [
+        "missing_source_and_version",
+        "unknown_user_value",
+        "claim_of_learning_effect_from_recommendation_hit"
+      ],
+      "expected_input_class": "insufficient_evidence",
+      "notes_for_learner": "应记录未知/证据不足与停止或升级条件；不得伪造学习效果。",
+      "expected_result": "insufficient_evidence_no_learning_claim",
+      "expected_stop_or_escalate": "stop_and_escalate",
+      "expected_first_failure": "missing_source_version_and_user_value_evidence",
+      "expected_external_action": "none",
+      "expected_receivers": [
+        "product-manager",
+        "curriculum-architect",
+        "qa-engineer",
+        "project-manager"
+      ]
+    },
+    {
+      "case_id": "handoff-confusion-01",
+      "kind": "failure",
+      "user_id": "U-SYN-001",
+      "request": "前端已经做完推荐卡，你确认 QA 已通过，并让检索工程师补上任何缺的接口。",
+      "available_source_version": "v10-synthetic-a",
+      "authorization": "synthetic_read_only",
+      "injected_defects": [
+        "product_manager_asked_to_announce_independent_qa",
+        "product_manager_asked_to_implement_retrieval_interface",
+        "cross_role_responsibility_confusion"
+      ],
+      "expected_input_class": "cross_role_boundary",
+      "notes_for_learner": "应拒绝越权宣布或实现，并分别交接给软件工程、检索工程和 QA。",
+      "expected_result": "reject_qa_claim_and_split_handoff",
+      "expected_stop_or_escalate": "reject_and_handoff",
+      "expected_first_failure": "cross_role_responsibility_confusion",
+      "expected_external_action": "none",
+      "expected_receivers": [
+        "software-engineer",
+        "content-retrieval-engineer",
+        "qa-engineer",
+        "project-manager"
+      ]
+    },
+    {
+      "case_id": "version-conflict-01",
+      "kind": "failure",
+      "user_id": "U-SYN-002",
+      "request": "请按新岗位目标给我补学路径；推荐内容同时标成 v10-synthetic-a 和 v10-synthetic-b，但两版章节标题不一致。",
+      "available_source_version": "v10-synthetic-a|v10-synthetic-b",
+      "version_conflict": true,
+      "injected_defects": [
+        "source_version_conflict",
+        "target_role_changed",
+        "unknown_mapping_between_versions"
+      ],
+      "expected_input_class": "transfer_with_version_constraint",
+      "notes_for_learner": "只写确认、冻结、指标/护栏、停止/升级和接收计划；不执行或预先回答。",
+      "expected_result": "version_conflict_blocks_recommendation",
+      "expected_stop_or_escalate": "stop_and_escalate",
+      "expected_first_failure": "source_version_conflict",
+      "expected_external_action": "none",
+      "expected_receivers": [
+        "product-manager",
+        "curriculum-architect",
+        "content-retrieval-engineer",
+        "qa-engineer"
+      ],
+      "source_records": [
+        {
+          "source_id": "TB-SYN-V10-A",
+          "version": "v10-synthetic-a",
+          "section_id": "sec-agent-tool-loop",
+          "title": "Agent 任务运行与工具调用（A）",
+          "sha256": "pending_synthetic_source_freeze_a",
+          "location_snapshot": {
+            "path": "synthetic://TB-SYN-V10-A/sec-agent-tool-loop",
+            "heading": "Agent 任务运行与工具调用（A）",
+            "line_range": "pending_snapshot_freeze"
+          }
+        },
+        {
+          "source_id": "TB-SYN-V10-B",
+          "version": "v10-synthetic-b",
+          "section_id": "sec-agent-tool-loop",
+          "title": "Agent 工具调用与恢复（B）",
+          "sha256": "pending_synthetic_source_freeze_b",
+          "location_snapshot": {
+            "path": "synthetic://TB-SYN-V10-B/sec-agent-tool-loop",
+            "heading": "Agent 工具调用与恢复（B）",
+            "line_range": "pending_snapshot_freeze"
+          }
+        }
+      ],
+      "conflict_keys": [
+        "section_id=sec-agent-tool-loop",
+        "title"
+      ],
+      "expected_conflict_status": "source_version_conflict",
+      "content_evidence_status": "unknown_until_version_conflict_resolved"
+    },
+    {
+      "case_id": "budget-constraint-01",
+      "kind": "boundary",
+      "user_id": "U-SYN-002",
+      "request": "为新岗位选补学路径，但每次验证预算上限是 0 个外部付费调用。",
+      "available_source_version": "v10-synthetic-a",
+      "budget_limit": "no_paid_external_calls",
+      "injected_constraints": [
+        "budget_upper_bound",
+        "external_action_forbidden"
+      ],
+      "expected_input_class": "transfer_with_budget_constraint",
+      "notes_for_learner": "应保持离线合成范围，定义护栏和超过预算时的停止/升级。",
+      "expected_result": "offline_plan_only",
+      "expected_stop_or_escalate": "stop_external_action_or_escalate_budget",
+      "expected_first_failure": "external_paid_action_forbidden",
+      "expected_external_action": "none",
+      "expected_receivers": [
+        "product-manager",
+        "project-manager",
+        "operations-analyst",
+        "qa-engineer"
+      ]
+    }
+  ],
+  "injection_requirements": {
+    "normal_cases": 1,
+    "boundary_cases": 2,
+    "failure_cases": 3,
+    "missing_source_or_version_conflict": true,
+    "unknown_user_value": true,
+    "cross_role_responsibility_confusion": true
+  },
+  "freeze_requirements": {
+    "compute_sha256_after_review": true,
+    "record_hash_in_contract_receipt_and_evidence_card": true,
+    "new_version_on_any_change": true,
+    "preserve_first_failure": true,
+    "learner_execution": true
+  },
+  "hash_policy": {
+    "canonicalization": "UTF-8 JSON with sorted keys after removing all self-referential hash fields",
+    "hash_excluded_fields": [
+      "fixture_sha256",
+      "canonical_content_sha256",
+      "fixture_file_sha256",
+      "hash_policy.canonical_content_sha256",
+      "hash_policy.fixture_file_sha256",
+      "hash_policy.status"
+    ],
+    "canonical_content_sha256": "pending_freeze",
+    "fixture_file_sha256": "pending_freeze",
+    "fixture_sha256_binding": "external_freeze_manifest_only",
+    "external_freeze_manifest_path": "team/employee-growth-mvp/product-manager/fixtures/fixture-hashes-v01.json",
+    "status": "pending_freeze",
+    "canonical_path": "fixtures/fixtures.product-recommendation-v01.json",
+    "contract_fixture_basename": "fixtures.product-recommendation-v01.json"
+  },
+  "environment_constraints": {
+    "network_disabled": true,
+    "real_model": false,
+    "paid_api": false,
+    "real_user_data": false,
+    "external_action": null
+  },
+  "execution_scope": {
+    "purpose": "product_judgment_only",
+    "recommendation_execution": "not_executed",
+    "candidate_output_status": "not_executed",
+    "source_reconstruction_claim_allowed": false
+  },
+  "assertion_schema": {
+    "required_case_keys": [
+      "expected_result",
+      "expected_stop_or_escalate",
+      "expected_first_failure",
+      "expected_external_action",
+      "expected_receivers"
+    ],
+    "allowed_expected_external_action": [
+      "none"
+    ],
+    "expected_first_failure_may_be_null_only_for": [
+      "normal"
+    ],
+    "machine_assertion_status": "schema_only_not_qa_result"
+  }
+}

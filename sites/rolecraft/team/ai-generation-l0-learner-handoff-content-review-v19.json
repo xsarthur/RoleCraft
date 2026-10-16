@@ -1,0 +1,12 @@
+{
+  "review_id": "ai-generation-l0-learner-handoff-content-review-v19",
+  "review_status": "reviewed_with_limitations",
+  "scope_conclusion": "not_met",
+  "method": {"static_inputs": ["handoff-v19", "all v19 artifacts", "run_bundle.py", "content-review-v18"], "isolated_run": "python3 run_bundle.py in /tmp copy", "isolated_run_result": "pass", "manifest_hash_check": "all registered JSON byte counts and SHA-256 matched"},
+  "findings": {"script_and_manifest": "limited_pass", "version_identity": "fail", "execution_log": "partial", "independent_holdout": "fail", "evidence_card_d0_05_boundary": "partial", "evidence_card_cross_question_boundary": "fail", "matrix_binding": "partial_static", "status_wording": "limited_pass"},
+  "version_mismatch": {"directory_and_ids": "v19/V19", "handoff_json_manifest_cards": "v18"},
+  "cross_question_refs": {"d0-01": ["d0-05/first_failure.json"], "d0-02": ["d0-05/first_failure.json"], "d0-03": ["d0-05/holdout.json"], "d0-04": ["d0-05/first_failure.json"]},
+  "level_decision": {"d0": "not_assessed", "l0": "not_assessed", "l1": "not_granted", "l2": "not_granted"},
+  "required_actions": ["unify all version fields to v19 and assert them", "use distinct holdout source/document identity or withdraw independence claim", "add timestamp, exact environment, runner/workdir, output receipt, hash algorithm and source path", "add per-card assertions/observations/pass conditions and repair shared cross-question references or document isolation rules", "QA rerun in independent writable environment"],
+  "method_limits": ["no real model/API/cloud/paid call", "no unknown migration, persistence, concurrency, external side effect, human receipt, learning outcome, occupational competence, production or cost evidence"]
+}

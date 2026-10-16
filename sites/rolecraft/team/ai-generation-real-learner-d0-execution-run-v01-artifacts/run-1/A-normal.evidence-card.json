@@ -1,0 +1,104 @@
+{
+  "cache_or_context_evidence": "A fixture only; no model context; no external write",
+  "case_id": "A-normal",
+  "claim_source_refs": [
+    {
+      "claim_id": "claim-001",
+      "claim_type": "fact",
+      "source_refs": [
+        {
+          "document_id": "doc-A-refund-v2",
+          "hash": "4a1fa4040c1c2840d176fc35da81c5df23984e68e44ed7e299e9cba2a6a1361d",
+          "location": "fixture://docs/doc-A-refund-v2#rules",
+          "source_version": "refund-policy-v2"
+        }
+      ],
+      "status": "bound",
+      "text": "退款超过14天需人工复核。"
+    },
+    {
+      "claim_id": "claim-002",
+      "claim_type": "fact",
+      "source_refs": [
+        {
+          "document_id": "doc-A-refund-v2",
+          "hash": "4a1fa4040c1c2840d176fc35da81c5df23984e68e44ed7e299e9cba2a6a1361d",
+          "location": "fixture://docs/doc-A-refund-v2#rules",
+          "source_version": "refund-policy-v2"
+        }
+      ],
+      "status": "bound",
+      "text": "重复退款必须拒绝。"
+    }
+  ],
+  "command": "python3 sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/implementation/d0_03_runner.py --case A-normal --run-id run-1 --input sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/input-snapshot.json",
+  "conflict": null,
+  "conflict_keys": [],
+  "contract_id": "AI-REAL-LEARNER-D0-EXEC-20261016-001",
+  "diagnostic_id": "D0-AI-20261015-001",
+  "draft_status": "draft_ready_for_review",
+  "ended_at": "2026-10-16T08:30:55+08:00",
+  "environment": {
+    "cloud": false,
+    "cwd": "/Users/shengxiong/Desktop/One People Company",
+    "execution_role": "AI-generation-engineer local isolated execution",
+    "external_action": null,
+    "human_receipt_pending": true,
+    "learner_execution": false,
+    "network": "disabled",
+    "network_observation": "runner makes no network calls",
+    "paid_api": false,
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "python": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+    "python_version": "3.14.5",
+    "real_model": false,
+    "real_user_data": false
+  },
+  "evidence_card_id": "EC-D0-03-A-normal-run-1",
+  "exit_code": 0,
+  "external_action": null,
+  "first_failure": null,
+  "fixture_file_sha256": "f6cc25edad6403c052f66167adecf666d770f12b82170f2fc996119ef118f446",
+  "fixture_id": "F-AI-SOURCE-CLAIM-v1",
+  "fixture_sha256": "5dc9f33ed3972dbff5118bc6977a66ccbd376bc6fcc54f15c9b1e26fda8db5e0",
+  "handoff_recipient": "QA",
+  "human_receipt_pending": true,
+  "input_bytes": 1474,
+  "input_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/input-snapshot.json",
+  "input_sha256": "33be9e47edd1c9652b59d1bdac0e1fbe33a5f288f110eda1ff114c175f881939",
+  "learner_execution": false,
+  "output_bytes": 2211,
+  "output_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/run-1/A-normal.json",
+  "output_sha256": "c4642281524913457c14032f5e3ae02d2fb66495324b6d64e0c89b28133adf4c",
+  "regression": {
+    "external_action_both_null": true,
+    "first_failure_equal": true,
+    "run_1_run_2_byte_equal": true
+  },
+  "run_id": "run-1",
+  "started_at": "2026-10-16T08:30:55+08:00",
+  "stderr_bytes": 0,
+  "stderr_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/receipts/run-1/A-normal.stderr",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_bytes": 2211,
+  "stdout_path": "sites/rolecraft/team/ai-generation-real-learner-d0-execution-run-v01-artifacts/receipts/run-1/A-normal.stdout",
+  "stdout_sha256": "c4642281524913457c14032f5e3ae02d2fb66495324b6d64e0c89b28133adf4c",
+  "stop_before_draft": false,
+  "stop_reason": "No failure; draft created for QA review",
+  "tool_receipt": {
+    "actor_tenant": "A",
+    "document_id": "doc-A-refund-v2",
+    "hash": "4a1fa4040c1c2840d176fc35da81c5df23984e68e44ed7e299e9cba2a6a1361d",
+    "location": "fixture://docs/doc-A-refund-v2#rules",
+    "requested_tenant": "A",
+    "side_effect": "none",
+    "source_version": "refund-policy-v2",
+    "status": "ok",
+    "text": "退款超过14天需人工复核；重复退款必须拒绝。",
+    "tool": "retrieve_authorized_doc"
+  },
+  "unknowns": [
+    "未提供退款订单状态与客户身份，不能据此判断个案是否应退款。"
+  ],
+  "unvisited_sources": []
+}

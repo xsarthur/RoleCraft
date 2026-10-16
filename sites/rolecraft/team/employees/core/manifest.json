@@ -1,0 +1,84 @@
+{
+  "version": "core-employees-memory-2",
+  "status": "active",
+  "scope": "cross_project_employee_memory",
+  "employees": [
+    {
+      "id": "core-project-manager",
+      "name": "项目经理",
+      "role": "project_coordination",
+      "directory": "project-manager",
+      "memory_source": "project-manager/MEMORY.md",
+      "schema": "project-manager/MEMORY_SCHEMA.md"
+    },
+    {
+      "id": "core-product-manager",
+      "name": "产品经理",
+      "role": "product",
+      "directory": "product-manager",
+      "memory_source": "product-manager/MEMORY.md",
+      "schema": "product-manager/MEMORY_SCHEMA.md"
+    },
+    {
+      "id": "core-product-designer",
+      "name": "产品设计师",
+      "role": "design",
+      "directory": "product-designer",
+      "memory_source": "product-designer/MEMORY.md",
+      "schema": "product-designer/MEMORY_SCHEMA.md"
+    },
+    {
+      "id": "core-software-engineer",
+      "name": "软件工程师",
+      "role": "programming",
+      "directory": "software-engineer",
+      "memory_source": "software-engineer/MEMORY.md",
+      "schema": "software-engineer/MEMORY_SCHEMA.md"
+    },
+    {
+      "id": "core-curriculum-architect",
+      "name": "课程架构师",
+      "role": "teaching_architecture",
+      "directory": "curriculum-architect",
+      "memory_source": "curriculum-architect/MEMORY.md",
+      "schema": "curriculum-architect/MEMORY_SCHEMA.md"
+    },
+    {
+      "id": "core-textbook-developer",
+      "name": "教材研发员",
+      "role": "textbook_development",
+      "directory": "textbook-developer",
+      "memory_source": "textbook-developer/MEMORY.md",
+      "schema": "textbook-developer/MEMORY_SCHEMA.md"
+    },
+    {
+      "id": "core-content-reviewer",
+      "name": "内容审校员",
+      "role": "technical_content_review",
+      "directory": "content-reviewer",
+      "memory_source": "content-reviewer/MEMORY.md",
+      "schema": "content-reviewer/MEMORY_SCHEMA.md"
+    },
+    {
+      "id": "core-qa-engineer",
+      "name": "测试工程师",
+      "role": "quality_verification",
+      "directory": "qa-engineer",
+      "memory_source": "qa-engineer/MEMORY.md",
+      "schema": "qa-engineer/MEMORY_SCHEMA.md"
+    },
+    {
+      "id": "core-practicum-evaluator",
+      "name": "实训评估员",
+      "role": "practicum_evaluation",
+      "directory": "practicum-evaluator",
+      "memory_source": "practicum-evaluator/MEMORY.md",
+      "schema": "practicum-evaluator/MEMORY_SCHEMA.md"
+    }
+  ],
+  "shared_preferences": "user-profile/approved-preferences.md",
+  "project_handoff_pattern": "projects/<project>/handoffs/<employee>.md",
+  "memory_policy": "candidate_then_user_or_pm_approval",
+  "not_a_runtime": true,
+  "not_an_account": true
+}

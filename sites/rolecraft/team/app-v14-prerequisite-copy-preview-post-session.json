@@ -1,0 +1,113 @@
+{
+  "version": "app-v14-prerequisite-copy-preview-post-session-1",
+  "atUtc": "2026-10-12T03:37:39.073Z",
+  "actor": "Independent client engineer read-only check after retrieval engineer session ended",
+  "scope": "Public service metadata and six static assets only; not independent QA/browser/model/DB verification",
+  "transport": "direct Node http; no environment proxy or cookies",
+  "process": {
+    "pid": 59518,
+    "ppid": 1,
+    "pgid": 59518,
+    "tty": "??",
+    "argv": "/Users/shengxiong/.nvm/versions/node/v24.16.0/bin/node /Users/shengxiong/Documents/ChatGPT/一人公司建设/sites/rolecraft/server/index.mjs",
+    "cwd": "/Users/shengxiong/Documents/ChatGPT/一人公司建设"
+  },
+  "listenerReceipt": "COMMAND   PID       USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nnode    59518 shengxiong   17u  IPv4 0x81e3b2698a558d0c      0t0  TCP 127.0.0.1:4318 (LISTEN)",
+  "processLooksExpected": true,
+  "health": {
+    "status": 200,
+    "body": {
+      "productVersion": "local-mvp-0.4",
+      "mode": "local-development",
+      "generation": {
+        "configured": false,
+        "missing": [
+          "OPENAI_API_KEY",
+          "OPENAI_MODEL",
+          "OPENAI_MAX_OUTPUT_TOKENS",
+          "ROLECRAFT_GENERATION_BUDGET_USD",
+          "ROLECRAFT_ESTIMATED_MAX_COST_USD"
+        ]
+      },
+      "contentRetrieval": {
+        "available": true,
+        "retrievalVersion": "content-retrieval-0.12-v12",
+        "corpusVersion": "textbook-v12",
+        "corpusHash": "1a385b179c0cb8a5b838d17b9d2606a0c1a7e27636d97db45dba5e2a52b2840e",
+        "units": 30,
+        "localSemanticPrepared": true,
+        "runtimeSupported": true,
+        "requiredNodeMajor": 24,
+        "nodeVersion": "v24.16.0",
+        "providerCalled": false
+      }
+    }
+  },
+  "assets": [
+    {
+      "file": "dist/index.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "byteLength": 4362,
+      "sourceSha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+      "binding2Sha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+      "httpSha256": "3b25e3fb4dbe7ea26ee04698a0bacc2785fd25a25497bb9c85798244c567446f",
+      "matchesSourceAndBinding2": true
+    },
+    {
+      "file": "dist/app.js",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8",
+      "byteLength": 92350,
+      "sourceSha256": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd",
+      "binding2Sha256": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd",
+      "httpSha256": "c02fccab48bafa2a95d67fa9a0160be9edbfadacc945a311b864aabd52c4b9fd",
+      "matchesSourceAndBinding2": true
+    },
+    {
+      "file": "dist/learning-workbench.js",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8",
+      "byteLength": 64329,
+      "sourceSha256": "9a30a208e9fae48589ab67f9262793d140607d8151d6d3f950382d5a5eba43f8",
+      "binding2Sha256": "9a30a208e9fae48589ab67f9262793d140607d8151d6d3f950382d5a5eba43f8",
+      "httpSha256": "9a30a208e9fae48589ab67f9262793d140607d8151d6d3f950382d5a5eba43f8",
+      "matchesSourceAndBinding2": true
+    },
+    {
+      "file": "dist/learning-experience-v13.js",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8",
+      "byteLength": 33698,
+      "sourceSha256": "903e6092132a979afff36e6201879b53a5aa17c59dcc3dff29be069ead74d376",
+      "binding2Sha256": "903e6092132a979afff36e6201879b53a5aa17c59dcc3dff29be069ead74d376",
+      "httpSha256": "903e6092132a979afff36e6201879b53a5aa17c59dcc3dff29be069ead74d376",
+      "matchesSourceAndBinding2": true
+    },
+    {
+      "file": "dist/learning-experience-v13.css",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8",
+      "byteLength": 25491,
+      "sourceSha256": "cdd014999bccee644072ac3c41fb389f50463e7e0dfcb5dff8976a8afe76aa60",
+      "binding2Sha256": "cdd014999bccee644072ac3c41fb389f50463e7e0dfcb5dff8976a8afe76aa60",
+      "httpSha256": "cdd014999bccee644072ac3c41fb389f50463e7e0dfcb5dff8976a8afe76aa60",
+      "matchesSourceAndBinding2": true
+    },
+    {
+      "file": "dist/learning-v13-data.js",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8",
+      "byteLength": 841206,
+      "sourceSha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "binding2Sha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "httpSha256": "48c20be31392254e0a39c19cacd5054b35d9bd65708f7b48ac8eb22f7e16dccb",
+      "matchesSourceAndBinding2": true
+    }
+  ],
+  "signalsSent": false,
+  "privateDatabaseRead": false,
+  "environmentRead": false,
+  "sourceChanged": false,
+  "status": "met_within_post_session_transport_scope"
+}

@@ -1,0 +1,40 @@
+{
+  "artifact_dir": "ai-generation-l0-practice-gate-003-v06",
+  "practice_id": "AI-PRACTICE-GATE-003",
+  "version": "v06",
+  "decision": "met_with_limitations",
+  "external_action": null,
+  "independent_qa": true,
+  "self_signed": false,
+  "level_grant": {
+    "l1": "not_granted",
+    "l2": "not_granted"
+  },
+  "checks": {
+    "manifest_entries": 16,
+    "manifest_paths_resolve_v06": true,
+    "manifest_bytes_sha256_match": true,
+    "first_failure_schema_unknown_field_receipt_exists": true,
+    "evidence_card_readme_path_bytes_hash_match_manifest": true,
+    "evidence_card_manifest_path_present": true,
+    "logic_and_state_consistent": true,
+    "external_action_null": true,
+    "history_v01_v05_preserved": true,
+    "handoff_pending_and_review_pending_qa": true
+  },
+  "limitations": [
+    "local-only evidence",
+    "真实数据库并发迁移与回滚未验证",
+    "真人QA签收待完成",
+    "真实模型/生产审批/身份认证未验证"
+  ],
+  "readme_title_version_discrepancy": "README 展示标题为 v0.5；本 QA 保留收到状态，未修改源文件。",
+  "evidence": [
+    "ai-generation-l0-practice-gate-003-v06/manifest.json",
+    "ai-generation-l0-practice-gate-003-v06/evidence-card.json",
+    "ai-generation-l0-practice-gate-003-v06/first_failure/schema_unknown_field/receipt.json",
+    "ai-generation-l0-practice-gate-003-v06/event-state-trace.json",
+    "ai-generation-l0-practice-gate-003-v06/validator-output.json",
+    "ai-generation-l0-practice-gate-003-v06/holdout.json"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "version": "app-v14-detail-qa-cases-1",
+  "atUtc": "2026-10-12T01:08:39.711961+00:00",
+  "receivedDialogCandidate": "candidate01/received-binding.json",
+  "receivedSourceSnapshot": "candidate01/snapshot/dist/learning-workbench.js etc",
+  "productSha256": "bcccae952955822e60975d3317e682cef717b551bc59b890926a06d8c7352ce2",
+  "designSha256": "7cd90e6553281b735f6874c1a1b270213dd7279576a3637f2e26cf1eec51e165",
+  "necessaryConditions": [
+    "DD14-01",
+    "DD14-02",
+    "DD14-03",
+    "DD14-04",
+    "DD14-05",
+    "DD14-06"
+  ],
+  "units": [
+    {
+      "unitId": "00-learning-route",
+      "title": "认识 Agent 工程",
+      "prerequisiteUnitIds": [],
+      "sourceSha256": "452129591648ca6c146945fae000e3e905e87c2794315109c727592a7b16dced",
+      "testSectionId": "s-f8fb3240438f"
+    },
+    {
+      "unitId": "n03-planning-reflection",
+      "title": "让计划依据观察前进，而不是在反复规划中空转",
+      "prerequisiteUnitIds": [
+        "c01-control-loop",
+        "02-task-acceptance"
+      ],
+      "sourceSha256": "76b919dbb061348a5bc59b958f714a9fff814be618d390be48eba098751372dd",
+      "testSectionId": "s-da63f3dcff17"
+    },
+    {
+      "unitId": "n09-runtime-delivery",
+      "title": "让长任务在故障、容量和成本约束下交付",
+      "prerequisiteUnitIds": [
+        "e04",
+        "e05",
+        "n08-sandbox-security",
+        "e01"
+      ],
+      "sourceSha256": "b621b838657aaa9915506a5bee6e25f7733b41085b08c50143e5965722157714",
+      "testSectionId": "s-999182dadd4f"
+    }
+  ],
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900,
+      "meaning": "sufficient right prerequisite rail, article680–740 preserving width"
+    },
+    {
+      "width": 1024,
+      "height": 900,
+      "meaning": "single-column prerequisites before full article; no compression"
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "meaning": "small screen before reading and deep-section visible prerequisite state"
+    }
+  ],
+  "historyTest": "textbook-v10 exact source identity and unknown position error, no user records accessed",
+  "sourceIntegrity": "all30 raw body and formal prerequisiteUnitIds preserved; current corpus/hash vs received baseline",
+  "actions": [
+    "prerequisite actual click/back",
+    "no prereq default visible",
+    "deep link/reload section focus",
+    "return full course list",
+    "limited paired question, quote/source and download/note/bookmark unaffected"
+  ],
+  "status": "frozen_before_detail_candidate_not_tested"
+}

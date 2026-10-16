@@ -1,0 +1,61 @@
+{
+  "version": "app-v14-prerequisite-copy-ui-qa-stage2",
+  "date": "2026-10-12",
+  "timezone": "Asia/Shanghai",
+  "status": "candidate03_narrow_verified",
+  "testedScopeResult": "met_within_tested_ui_scope",
+  "actualUiSurface": "official CUA Codex In-app Browser id2",
+  "isolatedOrigin": "http://127.0.0.1:4498/",
+  "evidence": "team/app-v14-prerequisite-copy-ui-qa-history/candidate02-ui-result.json",
+  "evidenceBinding": "team/app-v14-prerequisite-copy-ui-qa-history/candidate02-evidence-binding.json",
+  "sourceBinding": "team/app-v14-prerequisite-copy-frontend-binding2.json",
+  "actualLoadedStylesheetSha256": "cdd014999bccee644072ac3c41fb389f50463e7e0dfcb5dff8976a8afe76aa60",
+  "testedConditions": 7,
+  "passedConditions": 7,
+  "candidate03": {
+    "sourceBinding": "team/app-v14-prerequisite-copy-frontend-binding3.json",
+    "actualBrowserTested": true,
+    "surface": "official Codex In-app Browser id2, self-owned background tab",
+    "scope": [
+      "visited and unvisited node icon/border state",
+      "removal of visible status explanation rows and compact spacing",
+      "knowledge-point expand/collapse",
+      "Tab focus to next chapter link",
+      "Enter keyboard collapse/expand"
+    ],
+    "result": "met_within_tested_ui_scope",
+    "observed": {
+      "visitedNodes": ["认识Agent工程", "基础预备"],
+      "unvisitedNodes": ["Python与模型基础", "问题发现", "任务验收", "信任边界"],
+      "visibleStatusTextRows": false,
+      "knowledgePointExpand": true,
+      "enterCollapse": true,
+      "tabMovesToNextChapter": true,
+      "semanticState": "browsing record only; no mastery/completion/certification claim"
+    },
+    "limitations": [
+      "Narrow candidate-3 UI scope only; candidate-2 seven-condition matrix not rerun.",
+      "No full responsive matrix, dark/high-contrast modes, all record combinations, or real learner comprehension evidence."
+    ],
+    "cleanup": {
+      "selfOwnedTabClosed": true,
+      "formal4318Operated": false,
+      "privateStorageReadOrWrite": false,
+      "serviceRestarted": false
+    }
+  },
+  "cleanup": {
+    "temporaryViewportReset": true,
+    "ownTab1Closed": true,
+    "user4318Untouched": true,
+    "mainQa4498NotOperated": true,
+    "directStorageReadOrWrite": false
+  },
+  "fullProductStatus": "not_met",
+  "limits": [
+    "Only requested changed UI paths, no full old feature matrix.",
+    "375px coverage limited to f01 prerequisite strip/location/horizontal overflow.",
+    "Global export entry observed; export not executed.",
+    "No model call, textbook behavior execution, human expert/user acceptance or real learning/market evidence."
+  ]
+}

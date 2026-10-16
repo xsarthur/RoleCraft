@@ -1,0 +1,24 @@
+{
+  "contract_id":"PROD-D0-001",
+  "contract_version":"product-manager-d0-v01",
+  "role_id":"product-manager",
+  "owner":"learner",
+  "independent_reviewers":["qa-engineer","curriculum-architect/content-reviewer","project-manager-handoff"],
+  "status":"planned",
+  "assessment_status":"not_assessed",
+  "learner_owned_evidence_required":true,
+  "proxy_answering_allowed":false,
+  "default_mode":"sandbox_scaffold",
+  "external_actions_allowed":false,
+  "diagnostics":[
+    {"id":"D0-01","type":"boundary","artifact":"role_contract","fixture":"fixtures.product-recommendation-v01.json","required_observations":["scope_vs_implementation","handoff","stop_on_missing_evidence"]},
+    {"id":"D0-02","type":"mechanism","artifact":"value-hypothesis-experiment-explanation","sources":["product-creation-curriculum.md","product-creation-standard.md"],"required_observations":["facts_assumptions_inferences_unknowns"]},
+    {"id":"D0-03","type":"familiar_task","artifact":"W-PROD-D0-001-product-contract","required_fields":["user_problem","scope","non_goals","version","dependencies","inputs_outputs","acceptance","failure","sources","handoff","stop_line"]},
+    {"id":"D0-04","type":"failure_identification","artifact":"defective-product-contract-review","required_observations":["first_failure","severity","owner","stop_action","retest_order"]},
+    {"id":"D0-05","type":"transfer_preview","artifact":"unknown-variant-plan","required_observations":["changed_constraint","evidence_plan","stop_or_escalate","handoff"]}
+  ],
+  "evidence_card_required_fields":["card_id","claim","evidence_level","source_id","source_version","source_location","artifact_path","artifact_sha256","environment","observed_result","expected_result","failure_first_seen","reviewer","review_status","unknowns","next_action"],
+  "gates":{"d0":"all five learner raw submissions + independent review + handoff receipt","l1":"two distinct sandboxes + rework/regression + holdout + independent acceptance","l2":"isolated real-shape task + transfer + recovery + complete handoff"},
+  "stop_conditions":["missing learner provenance","unknown fixture hash","scope or authorization uncertainty","real external action","fabricated user evidence","proxy answer presented as learner evidence","missing independent review or receipt"],
+  "conclusion":"not_assessed"
+}

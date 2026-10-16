@@ -1,0 +1,109 @@
+{
+  "phase": "candidate02",
+  "status": "met_within_tested_ui_scope",
+  "officialSurface": "Codex In-app Browser id2, self-created tab1 at isolated4498",
+  "receivedSeed": "real node navigation to f01, real verified first section, return course, click old directory + unlearned; no direct storage access",
+  "candidateBinding": "team/app-v14-prerequisite-copy-frontend-binding2.json",
+  "sourceHashes": {
+    "dist/learning-workbench.js": "9a30a208e9fae48589ab67f9262793d140607d8151d6d3f950382d5a5eba43f8",
+    "dist/learning-experience-v13.js": "903e6092132a979afff36e6201879b53a5aa17c59dcc3dff29be069ead74d376",
+    "dist/learning-experience-v13.css": "cdd014999bccee644072ac3c41fb389f50463e7e0dfcb5dff8976a8afe76aa60"
+  },
+  "httpEvidence": "team/app-v14-prerequisite-copy-qa-history/candidate-http.json",
+  "httpReceiptSha256": "d3490a705ca7ffb7ecdb599981f75ce9da61a40194ba0d7b387b363579763fa2",
+  "loadedAssetEvidence": [
+    "final-assets.json",
+    "final-css-bundle.json",
+    "final-loaded-stylesheet-binding.json"
+  ],
+  "actualLoadedCssSha256": "cdd014999bccee644072ac3c41fb389f50463e7e0dfcb5dff8976a8afe76aa60",
+  "checks": [
+    {
+      "id": "UI14-C02-01",
+      "result": "pass",
+      "evidence": [
+        "final-course-dom.txt",
+        "final-course-layout.json",
+        "final-course.jpg"
+      ],
+      "observed": "30 true chapter links; removed controls0 and removed descriptions0; old directory preference ignored; default transform identity."
+    },
+    {
+      "id": "UI14-C02-02",
+      "result": "pass",
+      "evidence": [
+        "final-course-layout.json",
+        "final-course.jpg",
+        "final-f01-dom.txt",
+        "final-f01-layout.json"
+      ],
+      "observed": "resume transparent, no border/shadow/padding, 44px high, sole continue link exact seeded first section; real click arrived and focused correct H1."
+    },
+    {
+      "id": "UI14-C02-03",
+      "result": "pass",
+      "evidence": [
+        "final-f01-dom.txt",
+        "final-f01-layout.json",
+        "final-f01.jpg",
+        "final-prerequisite-click.json"
+      ],
+      "observed": "only prescribed title plus three real prerequisite links and proper aria labelledby,44.5px link height; real foundation navigation; read tools only bookmark."
+    },
+    {
+      "id": "UI14-C02-04",
+      "result": "pass",
+      "evidence": [
+        "final-f01-toc-dom.txt",
+        "final-normal-section.json",
+        "final-hidden-section-dom.txt",
+        "final-hidden-section.json",
+        "final-hidden-section.jpg"
+      ],
+      "observed": "real normal section link focuses correct heading; hidden continuity removed from article/toc; exact hidden URL preserves identity/focus on controlled notice; open article returns true f01."
+    },
+    {
+      "id": "UI14-C02-05",
+      "result": "pass",
+      "evidence": [
+        "final-keyboard-and-zero.json",
+        "final-zero-dom.txt"
+      ],
+      "observed": "real Tab from focusable map reaches chapter01 anchor; Return enters00; no prerequisite chapter and zero empty locate buttons."
+    },
+    {
+      "id": "UI14-C02-06",
+      "result": "pass",
+      "evidence": [
+        "final-settings-dom.txt"
+      ],
+      "observed": "settings export current/history record entry present. No export execution required/performed."
+    },
+    {
+      "id": "UI14-C02-07",
+      "result": "pass",
+      "evidence": [
+        "final-f01-375-dom.txt",
+        "final-f01-375-before.json",
+        "final-f01-375-after-dom.txt",
+        "final-f01-375-after.json",
+        "final-f01-375-deeplink.jpg",
+        "final-f01-375-prerequisites.jpg"
+      ],
+      "observed": "375x812 f01 normal deep-link strip visible; real locate action focuses prerequisite title at y128;3 links;document/body375,0horizontal overflow;URL preserved."
+    }
+  ],
+  "cleanup": {
+    "viewportReset": true,
+    "selfCreatedTab1Closed": true,
+    "user4318Accessed": false,
+    "serverOperationPerformed": false
+  },
+  "limitations": [
+    "Only specified changed UI paths. No full historical feature matrix, model calls, old教材execution or arbitrary-device behavior tested.",
+    "Candidate3 new status-icon change pending. This candidate2 result cannot be treated as final future source pass.",
+    "No actual export download; entry retained only.",
+    "Official browser actual UI does not establish user approval, learning outcomes, human expert review, vocational or market goal."
+  ],
+  "completeProductStatus": "not_met"
+}
