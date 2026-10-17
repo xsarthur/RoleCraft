@@ -5,9 +5,11 @@
  -->
 <!-- Title: AgentRuntime Pages: 1 -->
 <svg width="871pt" height="576pt"
- viewBox="0.00 0.00 871.00 576.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ viewBox="0.00 0.00 871.00 576.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labelledby="v13-title v13-desc">
+<title id="v13-title">Agent 任务运行闭环</title>
+<desc id="v13-desc">目标与允许范围进入上下文，模型提议经运行时准入、参数权限和预算检查后调用工具，观察进入事实记录与任务判定，再继续、完成、等待或停止；效果未知不算完成，图示是概念关系，不是执行证据。</desc>
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(21.6 554.4)">
-<title>AgentRuntime</title>
+<title>AgentRuntime</title><desc>Conceptual task, context, model, runtime and tool relationships; instructional diagram, not execution evidence.</desc>
 <polygon fill="white" stroke="none" points="-21.6,21.6 -21.6,-554.4 849.6,-554.4 849.6,21.6 -21.6,21.6"/>
 <!-- task -->
 <g id="node1" class="node">

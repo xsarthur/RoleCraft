@@ -59,3 +59,37 @@
 - 原专项训练的六阶段、文章列表/详情与练习回流保持独立；题目页仍保留紧凑入口和返回上层按钮。
 
 自检：脚本 `node --check` 通过；三入口、精选题列表、组卷预览/生成、专项训练、文章入口、语音路径、静态 ID 引用和 HTML 标签结构检查通过；未调用 `getUserMedia`。当前子代理无法绑定可见浏览器标签，IGP-01–16 的点击、窄屏和键盘证据需主代理/测试岗位刷新后独立复核。
+
+## Production P0 接入（2026-10-16）
+
+依据 v0.3 产品与课程交接，已将最小可用面试准备模块接入主应用，而非只保留独立原型：
+
+- `sites/rolecraft/dist/app.js` 新增 `interview` 路由和上层面试准备页，提供精选面试题、通用流程专项训练、按范围组卷三个并列入口；文章学习作为独立辅助入口。
+- 精选题页提供三张演示题卡，可直接打开现有语音演示或把指定题目加入组卷；通用流程页提供六阶段、文章和练习/加入试卷入口；文章详情展示来源和“原型草稿/未独立审校”状态。
+- 组卷页支持精选题/通用任务/混合来源、轮次、题量、口述/文字模式和开场/追问/收尾选项；预览显示可用数、项目 ID、来源身份和预计时长，超量显示诚实缺口；确认后保存带状态、创建时间和项目快照的演示卷，并可进入 `in_progress` 后打开语音演示。
+- `sites/rolecraft/dist/index.html` 增加“面试准备”主导航，`interview-prep-v03.css` 提供桌面/窄屏布局。
+- 试卷草稿/范围快照只使用独立 localStorage 键 `rolecraft-interview-v03`，不读取或覆盖原 `rolecraft-v1` 学习记录、课程进度、题库或用户数据。
+
+验证：`node --check sites/rolecraft/dist/app.js` 通过；隔离 VM smoke 覆盖上层→精选题→加入指定 Q17→组卷预览→`ready`→`in_progress`，确认独立 localStorage 键；HTML/CSS 为静态客户端，未接 `getUserMedia`、ASR、模型/API 或上传。浏览器可见点击、刷新/后退、窄屏和 IGP-01–16 独立验收待主代理/测试岗位在主应用刷新后执行。
+
+补充：精选题页支持 ID/标题/关键词和轮次筛选；无匹配显示空态。组卷范围字段变化会清除过期预览/生成结果，必须重新预览并生成，避免把旧范围误认为新快照。
+
+QA 复验反馈后修复：主应用首页“开始组卷”按钮曾遗漏 `interviewAction('paper')` 分支，导致入口无响应；已在 `app.js` 补齐路由，`node --check` 与 VM smoke 复验通过。浏览器需刷新最新脚本后复核。
+
+P1 修复：精选题搜索输入事件此前只写入筛选状态，结果未即时刷新；`app.js` 现于每次输入后轻量重渲染并恢复焦点/光标位置。未清理或迁移任何用户数据；`node --check` 与 VM smoke 复验通过。
+
+P1 组卷标记修复：范围预览此前用任务 ID 误读 `opening/followup/closing` 勾选值，导致开场、追问、收尾可能被静默忽略；已改为分别按三个布尔字段判断。低题量或来源不含通用任务时，预览显示明确“未加入/当前题量已满”警告；关闭不适用勾选后可正常生成。Node 检查与 VM smoke（含显式缺口、清洁预览、`ready → in_progress`）通过。
+
+## Production P1 语音练习（2026-10-17）
+
+用户明确授权后，主应用 `interview` 路由新增应用内语音练习页：精选题“直接练习”进入 `voice` view，开始按钮才调用 `navigator.mediaDevices.getUserMedia({audio:true})`；使用 `MediaRecorder` 支持开始、暂停/继续、停止、试听、重录和删除。录音状态、`Blob` 与 object URL 仅保留当前页面内存，不写入 `rolecraft-interview-v03`、`rolecraft-v1`、账户、题库或教材索引，也不上传、不调用 ASR/AI。
+
+已覆盖权限拒绝、浏览器不支持、录音错误、空音频、停止/离开、异步权限返回后的清理；离开或重录会停止 tracks、撤销 object URL，避免悬挂麦克风。语音页明确显示 questionId、当前状态和“不上传/不分析”边界；文字/独立演示链接仍可用。
+
+验证：`node --check dist/app.js`；VM MediaRecorder smoke 覆盖 Q17 路由、开始、暂停、继续、停止生成内存 Blob、删除释放，并确认 localStorage 中无音频内容。浏览器真实权限、设备编码兼容性和屏幕阅读器状态仍需主代理/测试岗位在用户授权环境独立复核。
+
+QA-VOICE-001 文案修复：精选题列表底部说明已改为“直接练习进入应用内语音练习；不调用 ASR/AI，不上传录音”，与真实麦克风权限和内存录音能力一致。
+
+## P1 设备来源安全兜底（2026-10-16）
+
+真实浏览器证据显示权限弹窗可能默认选中 iPhone 输入。客户端现于 `getUserMedia({audio:true})` 返回后读取实际 audio track 的 `settings.deviceId`，再以 `enumerateDevices()` 的 `kind/label/groupId` 对照；仅允许明确的 Mac 内置/内部麦克风白名单。iPhone、iPad、Continuity、Bluetooth、AirPods、手机/无线外部输入以及未知或缺少识别信息均进入 `device_denied`，先停止 tracks，不创建 `MediaRecorder`。应用不提供设备选择器，界面提示在 macOS 声音设置中切回 Mac 内置麦克风。详细改动和 VM 证据见 `team/interview-voice-p1-frontend-followup.md`；真实不同浏览器识别差异仍需独立复验。

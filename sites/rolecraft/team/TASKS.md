@@ -591,3 +591,22 @@ v13收到六客户端副本已保留，旧UI专项4474与旧报告不覆盖；�
 产品、课程、两教材作者、设计、独立内容审校、独立QA按唯一领域分批执行；资产原作者、字段返修与设计交接分别记录，未以新增代理数声称功能实现。当前内容终审已关闭V02-01至06的既知语义缺陷，V02-07原论文全文核验限制保留；独立QA已核24章/链接/8图和合成计算，最终记录收口中。完整培养与高级任职结论仍需真人学习/专业证据；详见 `uiux-v02-pm.md`。
 
 UIUX-V02收口：24章专业正文与8张SVG交付；内容终审reviewed_with_limitations，V02-01—06闭合、V02-07来源限制保留；当前独立QA met_within_qa_scope。完整培养/高级任职/行业先进目标not_met。具体证据、残留责任见uiux-v02-pm.md；旧稿和历史QA不覆盖。
+
+## AP15 面试模块本地语音链路（2026-10-17）
+
+用户授权先在本地把录音到反馈流程跑通。客户端、AI生成和测试岗位分离交付；本轮不上传音频、不调用云端/付费模型、不接账户持久任务。
+
+| 编号 | 唯一负责人 | 任务与当前状态 |
+| --- | --- | --- |
+| AP15-01 | 软件工程师 | `dist/app.js` 接入录音后的 `transcription_unavailable / transcript_ready / analyzing / feedback`、手动/fixture 转写、规则反馈、编辑、重答和删除；客户端无外发和音频浏览器持久化 |
+| AP15-02 | AI生成工程师 | `server/voice/index.mjs`、自检和本地边界交付；本机无离线 ASR，真实音频诚实返回 `transcription_unavailable`，fixture 使用 `provided_transcript + deterministic-rules-v1` |
+| AP15-03 | 测试工程师 | 当前版本服务自检 8 项、客户端 smoke 11 项、独立 QA 13/0；结论 `met_with_limitations`，报告见 `interview-module-local-voice-qa-v02.md/.json` |
+| AP15-PM | 项目经理 | 本地预览已启动于 `http://127.0.0.1:4320`；本轮复盘见 `interview-module-local-voice-pm.md/.json`，真实 ASR、HTTP 任务路由、来源 bound 和完整浏览器链路保持开放 |
+
+当前证据只证明本地不可用降级和显式 fixture 的规则反馈流程，不证明真实中文 ASR、生成模型质量、教材来源绑定、职业能力、用户效果或完整产品达标。旧面试 P0/P1 QA、历史教材和用户记录保持，不被本轮覆盖。
+
+### AP15-Speech 浏览器语音转写增量
+
+软件工程师增加浏览器 `SpeechRecognition / webkitSpeechRecognition` 作为可选转写候选：默认关闭，用户主动勾选后才启动；实时 interim/final 结果可校对，确认后进入本地规则反馈。页面明确浏览器/系统可能处理语音，网络、供应商和保留期限未知。独立 QA 为 14/0，`met_with_limitations`；真实浏览器兼容性、网络处理、中文准确率和用户理解仍未验证。严格离线要求仍需 `whisper.cpp` 等已安装并验证的本地 ASR。
+
+AP15-Speech 后续修正：点击“开始录音”时，未作选择会先出现浏览器语音隐私引导，用户可启用浏览器识别、只录音后手动转写或取消；不支持的浏览器直接显示回退。最新浏览器 QA 15/0，客户端 smoke 13 项通过。服务侧可选 whisper.cpp 仅使用隔离临时 WAV（目录0700、文件0600、finally清理），本机无命令/模型时保持 `transcription_unavailable`。

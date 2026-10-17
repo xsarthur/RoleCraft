@@ -1026,3 +1026,25 @@ Chenny 已提交 `chenny-receiver-confirmation-v01.txt`，确认时间 `2026-10-
 Gate QA v0.14 仅确认 D0-03 的限定范围证据，不能证明 D0 aggregate 或 L1。现将 D0-03 现状冻结，不再要求用户重跑、重签或继续修补同一收据；下一轮改为内部先完成 D0-01/02/04/05 的单包预检，再安排用户一次性会话，之后由 Chenny 对同一包做一次 replay/holdout，最后生成 D0 aggregate QA。预检未满足路径、哈希、失败停线、EvidenceCard 和 handoff 一致性前，不再请求用户操作。
 
 路线重置方案见 `ai-generation-d0-route-reset-v01.md`。本记录不改变任何学习者原始文件、旧 QA、等级状态或门槛标准。
+
+## R82 面试模块 P1 真实录音与设备来源安全兜底（2026-10-17）
+
+用户授权把面试题的语音练习从演示入口推进到真实浏览器 `getUserMedia` + `MediaRecorder`，范围限定为页面内存录音、暂停/继续、停止、试听、重录、删除和离开清理；不上传、不接 ASR/AI、不写账户。测试工程师在隔离 Chrome 真实复现了旧实现的设备缺陷：权限弹窗默认选中“熊盛的 iPhone (2)”后实际录音成功，证明仅调用 `getUserMedia({audio:true})` 不能满足“禁止手机麦克风”。该证据保留为 QA-VOICE-DEVICE-001，不归因给修复后版本。
+
+软件工程师随后在创建 `MediaRecorder` 前增加 `settings.deviceId` + `enumerateDevices()` 的设备来源检查：只放行明确 Mac 内置/内部白名单，iPhone/iPad/Continuity/Bluetooth/AirPods/手机/无线、未知或缺少 label/deviceId 均停止 tracks 并进入 `device_denied`，页面不提供设备选择器，提示用户在 macOS 系统声音设置切回内置输入。独立 QA 当前工作树 VM/静态检查为 16/16，通过 Mac 内置夹具、iPhone/Bluetooth/空枚举/缺少枚举和未知设备安全拒绝；没有把字符串识别当作硬件身份证明。
+
+修复后 Chrome 会话在请求权限阶段被自动化通道中断，未选择手机、未取得当前版本真实 recorder/Blob；真实 Mac 内置允许、真实外部拒绝和真实 permission_denied 仍开放复验。限定本地实现与 VM/静态证据为 `met_with_limitations`，当前设备来源真实浏览器门槛为 `open_retest`，完整面试/职业产品目标仍 `not_met`。责任、复验方法和版本哈希见 `team/interview-module-voice-p1-pm.md`、`team/interview-voice-p1-frontend-followup.md` 与 `team/interview-module-qa-v05-voice.md/.json`。
+
+## R83 面试模块本地语音链路（2026-10-17）
+
+用户要求先在本地把录音到反馈流程跑通。客户端、AI 生成和测试岗位完成交接：真实录音停止后在无离线 ASR 时明确进入 `transcription_unavailable`，用户可手动确认/粘贴转写；显式 fixture 进入 `provided_transcript → deterministic-rules-v1`，反馈包含可观察亮点、证据缺口、改进动作、追问和重答入口。全程无上传、云调用、付费调用或音频浏览器持久化。
+
+当前证据：服务自检 8 项、客户端 smoke 11 项、独立 QA 13/0、Node 语法和 diff 检查通过；本地预览已启动在 `http://127.0.0.1:4320`。独立 QA 结论为 `met_with_limitations`。本机没有 Whisper/whisper.cpp/ffmpeg 或 Python ASR 运行时，`server/voice` 尚未挂正式 HTTP 任务路由，教材来源最多 `none/mismatch/partial`，完整真实浏览器转写/编辑/重答/删除未在本轮复跑。真实 ASR、HTTP/账户任务、来源 bound、中文准确率和用户效果保持开放，不得用 fixture 或规则反馈升级为完整面试 AI 或职业能力结论。详见 `team/interview-module-local-voice-pm.md`、`team/interview-module-local-voice-qa-v02.md/.json`。
+
+## R84 面试模块浏览器语音转写选型（2026-10-17）
+
+按用户要求补充浏览器 `SpeechRecognition / webkitSpeechRecognition` 作为语音转文字候选。产品默认关闭 `browserSpeechOptIn=false`，用户主动勾选后才创建识别器；识别使用 `zh-CN`、interim/final 结果，停止后进入可编辑转写，再由本地规则反馈处理。页面明确浏览器/系统可能处理语音，网络、供应商和保留期限未知；`providerCalled=false` 只表示 Rolecraft 未调用自己的云端分析。
+
+独立 QA 为 14/0，`met_with_limitations`；支持/前缀、interim/final、错误、停止、MediaRecorder 共存、隐私标签、默认 opt-out 和 browser→local_rules 均通过 VM/静态检查。真实浏览器权限、中文准确率、网络处理和用户隐私理解仍未验证。若要求严格离线，应改用已安装并验证的 `whisper.cpp` 或其他本地 ASR；不能把 SpeechRecognition 当离线模型。
+
+随后发现用户不应自行寻找识别开关，软件工程师增加开始录音前的三选一引导：启用浏览器识别并开始、只录音后手动转写、取消。浏览器不支持时直接说明回退路径。SpeechRecognition QA 更新为 15/0，客户端 smoke 为 13 项通过。服务侧可选 whisper.cpp 路径使用 0700 临时目录、0600 WAV 和 finally 清理；当前无命令/模型，未执行真实本地 ASR。
