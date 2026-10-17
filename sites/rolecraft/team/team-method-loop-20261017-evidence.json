@@ -1,0 +1,489 @@
+{
+  "schema_version": "rolecraft-project-method-loop-evidence-v1",
+  "case_id": "TR-DEF-01",
+  "archive_kind": "historical real correction with later original-context continuation, local DRAFT save and one guided read-only reuse",
+  "created_at_utc": "2026-10-17T12:14:42.894676+00:00",
+  "project_source_version": {
+    "head": "4158efd4641be219c897746cc063d73122f4eeb7",
+    "branch": "integration/peiyu-team-onboarding-20261017",
+    "source_fixed_method_commit": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+    "received_six_file_stage_state": "M  AGENTS.md\nA  sites/rolecraft/team/onboarding/APPLICATION-NOTES.md\nA  sites/rolecraft/team/onboarding/README.md\nA  sites/rolecraft/team/onboarding/ROLE-MAPPING.md\nA  sites/rolecraft/team/onboarding/TASK-LAYOUT3-READING-DIALOGUE.md\nA  sites/rolecraft/team/onboarding/TEAM-ROUTING.md\n",
+    "six_file_hashes": {
+      "AGENTS.md": "2e50fcadad588c60895ce285e4f3e74c191b3107228ccb3bd2f76f6cf5486b3b",
+      "sites/rolecraft/team/onboarding/README.md": "f7bf5088b72f36c4d83d9e3817f278e1702acc5c4b84078ef495496579dab88d",
+      "sites/rolecraft/team/onboarding/ROLE-MAPPING.md": "6fef691401c64a1bf171a87c4d6cc7ec60bacab0560bccb37333f85db901ff5f",
+      "sites/rolecraft/team/onboarding/TEAM-ROUTING.md": "8b06c35fa616ba625c6980d7a93804a752db672fe94cd7eca772b2f3abc00dba",
+      "sites/rolecraft/team/onboarding/TASK-LAYOUT3-READING-DIALOGUE.md": "2c094e940338032a179551503270d927801b1e7e82652126e31280dd4e33bfdc",
+      "sites/rolecraft/team/onboarding/APPLICATION-NOTES.md": "fe62e0fdcf767b8a0aeeac4958d77f8d53f40725de1f796c9cdfbceebb350665"
+    },
+    "index_sha256_at_archive_preparation": "19350c6fb7e1b496430d7299a0c5b5d23e5c1d22c86aa67028c6f758b5468d18",
+    "stage_entries_sha256": "2992efc1864ac606d9b71a1f744fe47a24504bef635295d10a4f4aca904b2b42",
+    "staged_diff_sha256": "c384589e7cff8493a3495d785d23620b8ec31166f933a0e776659566dee67e4d",
+    "snapshot_at_utc": "2026-10-17T12:14:42.894676+00:00",
+    "snapshot_identity": "archive preparation history; HEAD/index/stage values are not the publication state of this revision"
+  },
+  "original_case": {
+    "id": "TR-DEF-01",
+    "found_by": "CASE-QA",
+    "timestamp_utc": "2026-10-17T09:53:54.296353+00:00",
+    "artifact": "CASE-EVIDENCE:product/product-scope.md",
+    "sha256_at_capture": "0d4f02145c6df691327e0370a083c30aa8730f03730f7fe8b42fc3da3ddc508a",
+    "target": "VR-NEXT-03 当前状态",
+    "observed": "当前未实现、未验收。",
+    "needle_still_present_at_capture": true,
+    "reason": "当前快照已有局部outline覆盖，源码不足以判是否现需修；状态应限定本轮未实施和现版本尚未复现/验收，避免断言当前完全未实现。",
+    "requested_owner": "CASE-PRODUCT via CASE-PM",
+    "status": "closed_after_original_author_repair_and_independent_recheck",
+    "qa_changes_to_author_artifact": false,
+    "original_finding_evidence": "QA active cat of product/product-scope.md in current context; original wording preserved here",
+    "author_repair": {
+      "executor_ref": "CASE-PRODUCT",
+      "product_md_sha256": "59a3a4913eaae500f7e39ae92b1d404556f12064a379521d48354653d8e22561",
+      "receipt_sha256": "3feaeda9d0521d2405d26669c393ab91e426e3b3c16897423d370eb48f189330",
+      "revised_text": "本轮未实施；当前是否需修待复现，未验收。",
+      "changes_by_qa": false
+    },
+    "retest": {
+      "executor_ref": "CASE-QA",
+      "timestamp_utc": "2026-10-17T09:58:33.847375+00:00",
+      "scenario": "重新实读VR-NEXT-03状态及产品JSON对应项，再核当前CSS局部覆盖与技术最终消费表",
+      "expected": "只声明本轮未实施/当前待复现与未验收，不断言现源无处理；保留焦点缺陷历史和设计/QA依赖",
+      "actual": "最终MD与JSON均明确本轮未实施，当前是否需修待复现；当前CSS事实与旧失败仍在；技术最终消费表同义",
+      "affected_scope": "VR-NEXT-01当前复现、03状态、技术消费03、旧失败/当前未测/整体not_met未降级",
+      "result": "pass_within_wording_scope",
+      "product_visual_closed": false
+    }
+  },
+  "attribution": {
+    "finder": "CASE-QA (original independent QA)",
+    "editor": "CASE-PRODUCT (original product author)",
+    "coordinator": "CASE-PM (original coordinator)",
+    "rechecker": "CASE-QA (original independent QA)",
+    "owner_reported_this_specific_issue": false,
+    "qa_edited_author_text": false,
+    "automatic_promotion_or_growth_credit": false
+  },
+  "original_artifact_bindings": {
+    "product/product-scope.md": {
+      "sha256": "59a3a4913eaae500f7e39ae92b1d404556f12064a379521d48354653d8e22561",
+      "bytes": 11174,
+      "identity": "historical original task artifact, reread for archive, not rerun"
+    },
+    "product/receipt.json": {
+      "sha256": "3feaeda9d0521d2405d26669c393ab91e426e3b3c16897423d370eb48f189330",
+      "bytes": 35417,
+      "identity": "historical original task artifact, reread for archive, not rerun"
+    },
+    "frontend/frontend-dependencies.md": {
+      "sha256": "5e0afe18eb4b054ddb631d30c8c99183a18b949c894290c17b4266b1f6f6f132",
+      "bytes": 12187,
+      "identity": "historical original task artifact, reread for archive, not rerun"
+    },
+    "frontend/receipt.json": {
+      "sha256": "fb36b2d2709b54c0cbd6e1f286f12740a4d067f1056044014799cf4947c0bf71",
+      "bytes": 23150,
+      "identity": "historical original task artifact, reread for archive, not rerun"
+    },
+    "qa/qa-report.md": {
+      "sha256": "a64c2368fe5b88ec11c395737f11dac9e7547a02c3f54669cdd801733a298bc3",
+      "bytes": 8970,
+      "identity": "historical original task artifact, reread for archive, not rerun"
+    },
+    "qa/receipt.json": {
+      "sha256": "26442637cbecd010dd8bce9d3d835b18e2a87c2bd4bba0c64ab0632177a6ae7e",
+      "bytes": 44872,
+      "identity": "historical original task artifact, reread for archive, not rerun"
+    },
+    "qa/final-binding.json": {
+      "sha256": "a5f19174503d02229a73e36277072f5006778a8558dd48cded03f9f824c1b92c",
+      "bytes": 1754,
+      "identity": "historical original task artifact, reread for archive, not rerun"
+    }
+  },
+  "evidence_scope": {
+    "old_qa_wording_recheck": "pass_within_wording_scope",
+    "product_visual_closed": false,
+    "current_business_tests_run": 0,
+    "voice_product": "historical insufficient, not rerun here",
+    "full_product": "not_met; original gates not reassessed"
+  },
+  "method_candidate": {
+    "theme": "version binding and fact-assertion levels",
+    "state": "DRAFT, one case, not formally adopted",
+    "shared_fixed_reference_changed": false,
+    "candidate_reuse_executed": false,
+    "private_project_evidence_must_not_be_copied_to_shared_candidate": true,
+    "snapshot_at_utc": "2026-10-17T12:14:42.894676+00:00",
+    "later_reuse_result": "guided_reuse below; the false value above is retained only for the archive-preparation snapshot"
+  },
+  "local_method_repository": {
+    "repository": "chennyqian/ai-team-handbook",
+    "visibility": "private per authorized metadata read",
+    "clone_target_created": false,
+    "clone_exit_code": 128,
+    "blocking_reason": "SSH could not resolve github.com",
+    "retry_or_transport_switch": false,
+    "local_head": null,
+    "proposal_saved_in_method_repository": false,
+    "snapshot_at_utc": "2026-10-17T12:14:42.894676+00:00",
+    "later_status": "Later authorized retry and local DRAFT save are recorded in subsequent_events; the failed first attempt is not rewritten."
+  },
+  "next_task": {
+    "scope": "future separate read-only trace of versions/paths and regression dependencies for two named voice scripts",
+    "state": "not executed",
+    "scripts": [
+      "interview-module-browser-speech-qa-v01-check.mjs",
+      "interview-voice-local-client-smoke.mjs"
+    ],
+    "no_product_repair_or_business_execution": true,
+    "snapshot_at_utc": "2026-10-17T12:14:42.894676+00:00",
+    "later_result": "guided_reuse below; not executed describes archive preparation only"
+  },
+  "archive_scope": {
+    "only_two_new_project_records_authorized": true,
+    "TASKS_or_RETROSPECTIVES_changed": false,
+    "ROLE_MEMORY_or_level_changed": false,
+    "index_written": false,
+    "committed_or_pushed": false,
+    "independent_post_save_verification": "separate receipt in outside-repository local-save-stage/qa; this record does not self-certify its filesystem save",
+    "snapshot_at_utc": "2026-10-17T12:14:42.894676+00:00",
+    "snapshot_identity": "original two-record save scope, before either record was committed or pushed; not a statement of this revision publication state",
+    "publication_state_authority": "Git commit/tree and remote ref containing these records; this document does not prefill its own future commit SHA"
+  },
+  "original_artifact_source": {
+    "kind": "historical outside-repository audit package",
+    "package_id": "CASE-EVIDENCE",
+    "binding_key_resolution": "original_artifact_bindings keys are logical artifact keys within CASE-EVIDENCE, NOT RoleCraft-relative paths or download addresses",
+    "availability": "local_only_not_distributed",
+    "remote_readback_verified": false,
+    "originals_retained": true,
+    "project_copy_of_private_method_fulltext": false
+  },
+  "archive_author_revisions": [
+    {
+      "finding_id": "LS-DEF-01",
+      "found_by": "CASE-QA",
+      "author": "CASE-PM",
+      "previous_evidence_sha256": "6e59dc4d050bc0e5e8a36e9d02730db8524cf1c14139d66a58dba90dbe511d50",
+      "change": "Add explicit outside-repository source package base and relative-key semantics; no original artifact, case attribution or product boundary changed",
+      "at_utc": "2026-10-17T12:15:51.647884+00:00",
+      "independent_recheck": "pending",
+      "independent_recheck_snapshot_at_utc": "2026-10-17T12:15:51.647884+00:00",
+      "independent_recheck_later": {
+        "participant": "CASE-QA",
+        "at_utc": "2026-10-17T12:16:40.204459+00:00",
+        "result": "pass_within_archive_path_semantics",
+        "qa_edited_archive": false,
+        "source": "CASE-EVIDENCE:local-save-stage/qa/defects.json"
+      }
+    }
+  ],
+  "evidence_access": {
+    "shared_content": "Only the minimal embedded findings, byte bindings, logical package/artifact keys and existing repository-relative references are distributed in these two files.",
+    "raw_originals": "local_only_not_distributed",
+    "remote_readback_verified": false,
+    "hash_semantics": "SHA256 and bytes identify a retained original; a hash or logical artifact key is not a download address or proof that a colleague can read the original.",
+    "retained_mapping": "Real filesystem/context mappings are retained in the outside-repository author receipt, excluded from this commit.",
+    "repository_relative_references": [
+      "team-method-loop-20261017-archive.md",
+      "team-method-loop-20261017-evidence.json",
+      "onboarding/README.md",
+      "qa-interview-voice-focus-followup.md",
+      "qa-interview-voice-focus-followup.json"
+    ]
+  },
+  "participants": {
+    "CASE-PM": "original-case coordinator and administrative archive author",
+    "CASE-PRODUCT": "original-case product author",
+    "CASE-ENGINEERING": "original-case client dependency executor",
+    "CASE-QA": "original-case independent QA; finder and rechecker",
+    "REUSE-PM": "separate guided-reuse task coordinator",
+    "REUSE-PRODUCT": "separate guided-reuse task product executor",
+    "REUSE-ENGINEERING": "separate guided-reuse task software executor",
+    "REUSE-QA": "separate guided-reuse task independent QA"
+  },
+  "participant_identity_limits": "Aliases are shared identifiers, not new employees or accounts. Each source-package plus original context ref is mapped outside the repository. Matching local ref strings across the original and reuse tasks do not mean the same execution instance. CASE continuation resumes its original contexts; REUSE is a separate task.",
+  "subsequent_events": [
+    {
+      "id": "CONTINUATION",
+      "at_utc": "2026-10-17T12:11:36.319774+00:00",
+      "source": "CASE-EVIDENCE:continuation-loop-prep/final-receipt.json",
+      "result": "met_within_continuation_preparation_scope",
+      "resumed_participants": [
+        "CASE-PM",
+        "CASE-PRODUCT",
+        "CASE-ENGINEERING",
+        "CASE-QA"
+      ],
+      "read_again_not_memory_inheritance": true,
+      "ordinary_chat_auto_update_claimed": false,
+      "second_task_executed_at_this_stage": false
+    },
+    {
+      "id": "LS-DEF-01-RECHECK",
+      "at_utc": "2026-10-17T12:16:40.204459+00:00",
+      "source": "CASE-EVIDENCE:local-save-stage/qa/defects.json",
+      "result": "pass_within_archive_path_semantics",
+      "finding": "external package keys lacked an explicit base in the original draft",
+      "repair_by": "CASE-PM",
+      "recheck_by": "CASE-QA",
+      "qa_edited_archive": false,
+      "original_draft_sha256": "6e59dc4d050bc0e5e8a36e9d02730db8524cf1c14139d66a58dba90dbe511d50",
+      "repaired_evidence_sha256": "bfff0c78ae9f61e3306cdf05089a6dbf4ae00d725890f18e88e67bd0c770ad3c"
+    },
+    {
+      "id": "PROJECT-ARCHIVE-SAVE",
+      "at_utc": "2026-10-17T12:19:08.177156+00:00",
+      "source": "CASE-EVIDENCE:local-save-stage/stage-receipt.json",
+      "result": "met_within_two_file_save_scope; independently verified",
+      "independent_observation_at_utc": "2026-10-17T12:18:24.272880+00:00",
+      "saved_archive_sha256": "eba1d5eabf7200261bc85b29b14cbe2b2d047ddee5a1b37d76a78bdba3bef6c7",
+      "saved_evidence_sha256": "bfff0c78ae9f61e3306cdf05089a6dbf4ae00d725890f18e88e67bd0c770ad3c",
+      "scope": "two then-untracked project records; historical 3553 named-file/hash/byte and index/stage preservation check, not a current full recheck",
+      "overall_stage_state": "partial_blocked; first DNS failure retained"
+    },
+    {
+      "id": "METHOD-LOCAL-SAVE",
+      "retry_at_utc": "2026-10-17T12:20:32.300226+00:00",
+      "completed_at_utc": "2026-10-17T12:24:47.409467+00:00",
+      "source": "CASE-EVIDENCE:local-save-stage/method-save-receipt.json",
+      "first_clone_failure_retained": true,
+      "retry_number": 1,
+      "retry_exit_code": 0,
+      "local_head": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+      "candidate_logical_artifact": "METHOD-DRAFT:proposals/version-bound-fact-claims-v01.md",
+      "candidate_sha256": "4fd8f894297e98072108df4eac2e6dfc53aacfc0d1196f8648733781a6a14552",
+      "candidate_bytes": 2255,
+      "qa_by": "CASE-QA",
+      "qa_observation_at_utc": "2026-10-17T12:24:03.823306+00:00",
+      "qa_result": "met_within_project_archive_and_local_DRAFT_save_scope",
+      "candidate_published_or_adopted": false,
+      "second_task_executed_at_this_stage": false
+    },
+    {
+      "id": "SIX-ENTRY-COMMIT",
+      "at_utc": "2026-10-17T12:25:13.961393+00:00",
+      "source": "INTEGRATION-EVIDENCE:commit-push-20261017T1224Z/local-commit-receipt.json",
+      "commit_sha": "b76ee0fcbafb472ffd13aed29d3bf2aec92c5660",
+      "parent_sha": "4158efd4641be219c897746cc063d73122f4eeb7",
+      "scope": "only the six onboarding entry files; the two loop records were excluded"
+    },
+    {
+      "id": "SIX-ENTRY-FIRST-PUSH-DENIED",
+      "at_utc": "2026-10-17T12:26:20.978962+00:00",
+      "source": "INTEGRATION-EVIDENCE:commit-push-20261017T1224Z/final-receipt.json",
+      "result": "GitHub repository write permission denied; known not pushed; no immediate alternate-route retry"
+    },
+    {
+      "id": "SIX-ENTRY-PUSH",
+      "at_utc": "2026-10-17T13:42:13.624003+00:00",
+      "source": "INTEGRATION-EVIDENCE:push-resume-20261017T1340Z/final-receipt.json",
+      "result": "authorized later branch push completed after new permission evidence",
+      "branch": "integration/peiyu-team-onboarding-20261017",
+      "commit_sha": "b76ee0fcbafb472ffd13aed29d3bf2aec92c5660",
+      "remote_branch_sha": "b76ee0fcbafb472ffd13aed29d3bf2aec92c5660",
+      "main_sha_at_verification": "4158efd4641be219c897746cc063d73122f4eeb7",
+      "merged_to_main": false,
+      "pr_or_deployment": false,
+      "ci": {
+        "state": "no_visible_checks",
+        "counts": {
+          "commit_statuses": 0,
+          "check_runs": 0,
+          "actions_workflow_runs": 0
+        },
+        "not_ci_or_business_qa_pass": true
+      },
+      "two_archive_records_included": false
+    }
+  ],
+  "guided_reuse": {
+    "task_package_id": "REUSE-EVIDENCE",
+    "identity": "separate real read-only voice-script history trace, after original-case continuation and local DRAFT save",
+    "reuse_mode": "guided_once; user explicitly specified the candidate",
+    "project_head": "b76ee0fcbafb472ffd13aed29d3bf2aec92c5660",
+    "candidate": {
+      "logical_artifact_key": "METHOD-DRAFT:proposals/version-bound-fact-claims-v01.md",
+      "sha256": "4fd8f894297e98072108df4eac2e6dfc53aacfc0d1196f8648733781a6a14552",
+      "bytes": 2255,
+      "state": "DRAFT / one source case / not formally adopted"
+    },
+    "actual_preanalysis_reads": [
+      {
+        "participant": "REUSE-PM",
+        "read_time_window_utc": [
+          "2026-10-17T12:26:05+00:00",
+          "2026-10-17T12:26:21.251971+00:00"
+        ],
+        "analysis_started_after_candidate_read": true,
+        "source": "REUSE-EVIDENCE:pm-source-reads.json"
+      },
+      {
+        "participant": "REUSE-PRODUCT",
+        "first_actual_read_at_utc": "2026-10-17T12:27:29.616896+00:00",
+        "receipt_verified_at_utc": "2026-10-17T12:29:19.424558+00:00",
+        "source": "REUSE-EVIDENCE:product-contract.json"
+      },
+      {
+        "participant": "REUSE-ENGINEERING",
+        "read_at_utc": "2026-10-17T12:28:14.529575+00:00",
+        "recorded_at_utc": "2026-10-17T12:28:24.647982+00:00",
+        "source": "REUSE-EVIDENCE:engineering-source-reads.json"
+      },
+      {
+        "participant": "REUSE-QA",
+        "first_hash_recorded_at_utc": "2026-10-17T12:28:49.559526+00:00",
+        "read_status": "full candidate read before subject analysis; exact initial content-read instant is not independently recorded",
+        "source": "REUSE-EVIDENCE:qa-source-reads.json"
+      }
+    ],
+    "observed_application": [
+      {
+        "rule_summary": "version/snapshot binding",
+        "evidence": "Current HEAD, report SHA/blob and report-introduction commit are separated from the unbound original test version."
+      },
+      {
+        "rule_summary": "historical/current/not-run/pending claim layers",
+        "evidence": "Product four-layer contract and engineering F1-F4 distinguish old 13 pass/2 fail and smoke:28 reports, current tree observations, zero business execution and missing future inputs."
+      },
+      {
+        "rule_summary": "bounded negative/closure claims",
+        "evidence": "Two exact script names were not found in the observed tree and 15 locally reachable commits; this does not prove they never existed, are not embedded/renamed, or current behavior fails."
+      },
+      {
+        "rule_summary": "unknown dependency preservation",
+        "evidence": "Without original scripts/invocations, imports, fixtures, side effects and full runtime remain unknown; D1-D11 assign recovery/validation owners, with ASR service only a conditional dependency."
+      }
+    ],
+    "trace_scope": {
+      "scripts": [
+        "interview-module-browser-speech-qa-v01-check.mjs",
+        "interview-voice-local-client-smoke.mjs"
+      ],
+      "current_filename_observation_count": 3555,
+      "current_search_scope": "working-tree filenames excluding .git, including ignored locations; distinct from the named-file preservation baseline",
+      "local_refs_count": 7,
+      "reachable_commits_count": 15,
+      "scope_limits": "No fetch, other working-copy search or unreachable-object scan. Non-shallow does not imply complete project history.",
+      "report_introduction_commit": "cd3c8e26922eeb4014903e779d0336115e5c4ac3",
+      "report_introduction_is_original_test_commit": false,
+      "script_source_and_execution_binding": "missing; blocked_missing_original_source_and_execution_binding",
+      "future_dependency_list": "engineering-trace.md F4 D1-D11 inside REUSE-EVIDENCE, logical key only"
+    },
+    "independent_qa": {
+      "participant": "REUSE-QA",
+      "decision": "pass_within_readonly_trace_scope",
+      "final_narrow_decision": "pass_within_final_administrative_narrow_scope",
+      "final_binding_created_at_utc": "2026-10-17T12:40:41.802213+00:00",
+      "initial_defects": 0,
+      "repairs_required": false,
+      "defect_retest": "not_applicable_no_defect_no_repair",
+      "source": "REUSE-EVIDENCE:qa-final-binding.json",
+      "method_application_actually_checked": true,
+      "business_or_target_script_runs": 0,
+      "historical_preservation": "At 12:35:47 UTC, 3555 named-file SHA256/bytes and method-worktree 11 file hashes matched their endpoint baseline; ignored content and continuous monitoring not covered."
+    },
+    "result": "one guided read-only reuse supported within the recorded scope; not proof of spontaneous discovery, stable mastery, deployed automation or formal adoption",
+    "not_covered": [
+      "original script recovery and exact runtime reproduction",
+      "current voice behavior or visual acceptance",
+      "fresh reassessment of historical insufficient or full-product not_met",
+      "formal method adoption, method publication, automatic loading, permanent memory, levels or growth"
+    ]
+  },
+  "supplemental_artifact_bindings": {
+    "CASE-EVIDENCE": {
+      "qa/defects.json": {
+        "sha256": "b270d909d0a2291507f9a2120514517bdfced87e51ea7f6782bf8efa197455de",
+        "bytes": 2151
+      },
+      "continuation-loop-prep/final-receipt.json": {
+        "sha256": "e28c6f3844481f6faed363f4118b05e35b4930aa201c76935daa80370fdb3032",
+        "bytes": 4698
+      },
+      "continuation-loop-prep/qa/qa-continuation.md": {
+        "sha256": "e9c5ade115e8f1d340f6efad4ae03332dd5732be16e73396abb0f745cff6b642",
+        "bytes": 3892
+      },
+      "local-save-stage/stage-receipt.json": {
+        "sha256": "f7dc7f072423fe7691a137c76005c0f5091d1d6577910f3a99814d00ef4e7f5f",
+        "bytes": 6279
+      },
+      "local-save-stage/qa/defects.json": {
+        "sha256": "c0919c5234cca8e6c398e2df98e0569998dab2858c3ea0ed01ff79787e9660b6",
+        "bytes": 2426
+      },
+      "local-save-stage/qa/qa-local-save.md": {
+        "sha256": "c26ffea705f31660bd8087bba642a1f791bb9340e5b741b7b1ea890fa464f4a0",
+        "bytes": 3391
+      },
+      "local-save-stage/method-save-receipt.json": {
+        "sha256": "184f8baa681f650a70da7e837d19a566335c04042439c88896ee4187f382c4b7",
+        "bytes": 4888
+      },
+      "local-save-stage/qa-method-save/qa-method-save.md": {
+        "sha256": "28f3258b6a87f30f15c5646735c3b64bb014482e34ad6cb62eee1768c5988f9c",
+        "bytes": 2879
+      },
+      "local-save-stage/qa-method-save/final-two-repository-verification.json": {
+        "sha256": "e86742647bbee45384fc8cfa542ac2ea868ed484d7337a97b94b85791c3fed0b",
+        "bytes": 4945
+      }
+    },
+    "REUSE-EVIDENCE": {
+      "REPORT.md": {
+        "sha256": "74324dd44aa5beae0988902d7c227d13cd91e915db36bb142c72df283d17f3fe",
+        "bytes": 12231
+      },
+      "engineering-trace.md": {
+        "sha256": "17614b41673e1fc7170e0d24c5fb3f17688aa26f7f33fdcf0507c183ee061028",
+        "bytes": 11600
+      },
+      "qa-report.md": {
+        "sha256": "3dedeaeb7231937e0b1c13c6435c44b224552ea13d8d05ad7373e10803740468",
+        "bytes": 9558
+      },
+      "qa-final-binding.json": {
+        "sha256": "201880f854cc056cfcea326d07e0da9effc49e4ccbd6f5e4733d0c83399c3c2a",
+        "bytes": 9682
+      },
+      "pm-source-reads.json": {
+        "sha256": "f067325da27d4f7fb9b1aae65d5886dd501d6e2b8d6ba218b2eb1ffd526819ea",
+        "bytes": 8542
+      },
+      "product-contract.json": {
+        "sha256": "bbc41878c26fc91a751052fb034cdfbeb8658fa797ced1c251e32808a5e98c68",
+        "bytes": 24983
+      },
+      "engineering-source-reads.json": {
+        "sha256": "c40930687e5b57cb91c7d3928c249b3ccb7140a01f42c230be37752b34df9ad6",
+        "bytes": 8905
+      },
+      "qa-source-reads.json": {
+        "sha256": "9c84b402b37b00654ce4a9d3443e25dfd10af325c03c498bf7a96213d04f12d6",
+        "bytes": 14509
+      }
+    },
+    "INTEGRATION-EVIDENCE": {
+      "commit-push-20261017T1224Z/local-commit-receipt.json": {
+        "sha256": "2477a80d3fbf7f23c889415bf9488e339882e0d711dea327e7af95cf459c05db",
+        "bytes": 3246
+      },
+      "commit-push-20261017T1224Z/final-receipt.json": {
+        "sha256": "cada4eb5e144d1e04ae53b30571adf7d225b761ad4bdfabf0ab59d0b4595fd5d",
+        "bytes": 5033
+      },
+      "push-resume-20261017T1340Z/final-receipt.json": {
+        "sha256": "41c991f4b889c6f184600d7f0ce8070c97b559d9863f1a48681b9848693c7cc8",
+        "bytes": 6091
+      }
+    }
+  },
+  "revision_scope": {
+    "only_two_project_records": "team-method-loop-20261017-archive.md and team-method-loop-20261017-evidence.json",
+    "prior_six_file_commit_rewritten": false,
+    "TASKS_RETROSPECTIVES_ROLE_MEMORY_levels_growth_or_product_code_changed": false,
+    "new_source_material_copy": "minimal factual summary and byte bindings only; no private method fulltext, raw chat, personal path or private context identifiers",
+    "publication": "This revision records completed historical stages; its own commit/push status is determined from Git, not self-certification."
+  }
+}
