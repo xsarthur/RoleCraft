@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { getContentReadiness, getContentCatalog, getContentChapter, getContentAsset, getContentReference, recommendContent, dialogContent, closeContentRetrieval } from './retrieval/index.mjs';
 import { getExtractor } from './retrieval/semantic.mjs';
 import { loadCareerImports } from './careers.mjs';
+import { analyzeVoiceRequest, probeLocalAsr } from './voice/index.mjs';
 
 export const PRODUCT_VERSION = 'local-mvp-0.4';
 // Public 1.0 release identity. PRODUCT_VERSION remains the legacy account/
@@ -485,6 +486,12 @@ export function createRolecraftServer(options={}) {
       const u=new URL(req.url,origin), pathname=u.pathname, method=req.method;
       if(pathname.startsWith('/api/')) {
         if(method==='GET' && pathname==='/api/health')return send(200,{productVersion:PRODUCT_VERSION,mode:'local-development',generation:await readiness(),contentRetrieval:getContentReadiness()});
+        if(method==='GET' && pathname==='/api/voice/readiness')return send(200,{voice:probeLocalAsr(),limitations:['仅本机配置的 whisper.cpp 与模型可用；不会自动下载模型或调用外部服务。']});
+        if(method==='POST' && pathname==='/api/voice/transcribe'){
+          const b=await body(req);
+          if(!b || typeof b!=='object') reject(400,'input_invalid','需要 JSON 对象');
+          return send(200,analyzeVoiceRequest(b));
+        }
         if(method==='GET' && pathname==='/api/curriculum')return send(200,curriculum());
         // Public read-only current v12 content.
         const contentVersion=u.searchParams.get('version')||'textbook-v12';
