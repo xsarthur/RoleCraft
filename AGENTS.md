@@ -214,3 +214,10 @@ v14限定本地交付已完成，客户端local-workbench-0.14-dialog-detail/前
 用户明确不接受v01的概要式交付，要求每个关键章讲清原理、展示实际设计、解释取舍、分析失败，并加强职业高级设计师能力。沿用Agent成熟正文的因果机制、完整工件、反例/修复/复验及参考解法，不以目录、字数、术语存在或免责声明代替内容达标。当前新稿独立位于 `sites/rolecraft/textbooks/uiux-design-v02/`；v01与历史报告保留。
 
 产品条件见 `team/uiux-v02-product.md`，课程与高级能力映射见 `team/uiux-v02-curriculum.md`，专业写作与审校义务见 `team/UIUX_TEXTBOOK_WRITING_STANDARD.md`（均相对 sites/rolecraft）。两教材研发员分别负责01—12及13—24，设计师负责实际视觉资产，内容审校与测试工程师独立核当前版本；项目经理只协调。当前交付仍进行中，以新内容审校与QA为准。高级能力训练须在正文实际完成，真实高级任职、学习效果、专家/行业认可不能由合成案例或文稿审核推导；本轮不修改应用或数据库，不发布、外联或付费调用。
+
+<!-- peiyu-team-onboarding:v0.2:start -->
+## 培域 / RoleCraft：团队协作入口
+本段仅作用于 `sites/rolecraft/`，保留原岗位、原记忆和现有治理。
+[团队映射、任务分派与接续](sites/rolecraft/team/onboarding/README.md)
+原项目经理只协调；专业执行与独立QA须有真实回执，不以角色标签代替独立执行。
+<!-- peiyu-team-onboarding:v0.2:end -->
