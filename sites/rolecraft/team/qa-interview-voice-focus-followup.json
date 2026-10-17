@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "qa-interview-voice-focus-followup-v01",
+  "date": "2026-10-17",
+  "timezone": "Asia/Shanghai",
+  "role": "qa_engineer",
+  "branch": "codex/speech-context-correction",
+  "status": "insufficient",
+  "scope": "Independent QA of the reported green focus rectangle on interview voice entry and static discoverability of browser SpeechRecognition plus terminology/context correction.",
+  "binding": {
+    "entry": "http://127.0.0.1:4318/#interview",
+    "files": [
+      "sites/rolecraft/dist/app.js",
+      "sites/rolecraft/dist/styles.css",
+      "sites/rolecraft/dist/interview-prep-v03.css"
+    ]
+  },
+  "focusFinding": {
+    "status": "fail_visual",
+    "reproduction": [
+      "Open interview preparation.",
+      "Enter精选面试题 and open Q1 direct practice, or switch interview panels.",
+      "Observe a green rectangle around the page h1."
+    ],
+    "evidence": [
+      "focusTitle() sets tabindex=-1 and calls focus({preventScroll:true}) on app.querySelector('h1').",
+      "Multiple interview navigation and status paths call render();focusTitle().",
+      "styles.css has control :focus-visible rules but no h1 focus visual rule/reset.",
+      "User supplied screenshot shows the resulting green rectangle.",
+      "Minimal VM run reports tabindex=-1, focused=true, focusOptions.preventScroll=true."
+    ],
+    "owner": "software_engineer",
+    "designReviewer": "designer",
+    "retest": "Capture activeElement, accessibility tree and desktop/390px screenshots after navigation and recording-state redraws."
+  },
+  "discoverability": {
+    "speechRecognition": "pass_static",
+    "correction": "pass_static",
+    "limits": [
+      "No real browser click/AX/screenshot was obtained in this run.",
+      "Chinese recognition accuracy and browser external processing were not verified."
+    ]
+  },
+  "regression": {
+    "nodeCheck": "pass_exit_0",
+    "diffCheck": "pass_exit_0",
+    "speechQaScript": {"status": "fail_stale_contract", "pass": 13, "fail": 2, "failures": ["SR-25-consent-prompt", "SR-24-default-opt-out"]},
+    "voiceSmoke": {"status": "fail", "location": "interview-voice-local-client-smoke.mjs:28"},
+    "interpretation": "Current code defaults browserSpeechOptIn=true; the failing checks still assert the previous opt-in contract. Tests must be updated and rerun, not counted as pass."
+  },
+  "acceptance": [
+    "Programmatic title focus remains screen-reader reachable without a large default green rectangle.",
+    "Keyboard focus rings remain visible for interactive controls.",
+    "Voice redraws do not repeatedly steal focus or focus a non-actionable title.",
+    "Default SpeechRecognition product contract and regression tests agree.",
+    "Node, voice smoke, browser speech, AX and screenshot evidence are rerun."
+  ],
+  "preserved": {
+    "applicationCodeChangedByQa": false,
+    "userDataChanged": false,
+    "databaseChanged": false
+  }
+}
