@@ -1,0 +1,340 @@
+{
+  "case_id": "20261017",
+  "event": "closeout.requested",
+  "evidence": {
+    "natural_loading": "FAIL/partial",
+    "observation_basis": "parent_observation/local_trace_not_available",
+    "reading_checklist": [
+      {
+        "application": "仅记录第二阶段首次观察，不替代专业应用或理解证明",
+        "limitations": "parent_observation/local_trace_not_available; subsequent prompted reads excluded",
+        "required": true,
+        "source_id": "onboarding/README.md",
+        "status": "observed",
+        "summary": "父审阅报告首次已读入口",
+        "trace_ref": null
+      },
+      {
+        "application": "仅记录第二阶段首次观察，不替代专业应用或理解证明",
+        "limitations": "parent_observation/local_trace_not_available; subsequent prompted reads excluded",
+        "required": true,
+        "source_id": "onboarding/TASK-LAYOUT3-READING-DIALOGUE.md",
+        "status": "observed",
+        "summary": "父审阅报告首次已读业务候选任务",
+        "trace_ref": null
+      },
+      {
+        "application": "仅记录第二阶段首次观察，不替代专业应用或理解证明",
+        "limitations": "parent_observation/local_trace_not_available; subsequent prompted reads excluded",
+        "required": true,
+        "source_id": "onboarding/ROLE-MAPPING.md",
+        "status": "missing",
+        "summary": "首次未读岗位映射",
+        "trace_ref": null
+      },
+      {
+        "application": "仅记录第二阶段首次观察，不替代专业应用或理解证明",
+        "limitations": "parent_observation/local_trace_not_available; subsequent prompted reads excluded",
+        "required": true,
+        "source_id": "onboarding/TEAM-ROUTING.md",
+        "status": "missing",
+        "summary": "首次未读分派与读取协议",
+        "trace_ref": null
+      },
+      {
+        "application": "仅记录第二阶段首次观察，不替代专业应用或理解证明",
+        "limitations": "parent_observation/local_trace_not_available; subsequent prompted reads excluded",
+        "required": true,
+        "source_id": "onboarding/APPLICATION-NOTES.md",
+        "status": "missing",
+        "summary": "首次未读落地说明",
+        "trace_ref": null
+      },
+      {
+        "application": "仅记录第二阶段首次观察，不替代专业应用或理解证明",
+        "limitations": "parent_observation/local_trace_not_available; subsequent prompted reads excluded",
+        "required": true,
+        "source_id": "latest_archive_body",
+        "status": "missing",
+        "summary": "首次未读叙述归档正文",
+        "trace_ref": null
+      },
+      {
+        "application": "仅记录第二阶段首次观察，不替代专业应用或理解证明",
+        "limitations": "parent_observation/local_trace_not_available; subsequent prompted reads excluded",
+        "required": true,
+        "source_id": "latest_evidence_body",
+        "status": "missing",
+        "summary": "首次未读结构化证据正文",
+        "trace_ref": null
+      },
+      {
+        "application": "仅记录第二阶段首次观察，不替代专业应用或理解证明",
+        "limitations": "parent_observation/local_trace_not_available; subsequent prompted reads excluded",
+        "required": true,
+        "source_id": "fixed_a848_method_body",
+        "status": "missing",
+        "summary": "首次未读固定方法正文",
+        "trace_ref": null
+      },
+      {
+        "application": "仅记录第二阶段首次观察，不替代专业应用或理解证明",
+        "limitations": "parent_observation/local_trace_not_available; subsequent prompted reads excluded",
+        "required": true,
+        "source_id": "PM_MEMORY_SCHEMA",
+        "status": "missing",
+        "summary": "PM首次未读SCHEMA",
+        "trace_ref": null
+      },
+      {
+        "application": "仅记录第二阶段首次观察，不替代专业应用或理解证明",
+        "limitations": "parent_observation/local_trace_not_available; subsequent prompted reads excluded",
+        "required": true,
+        "source_id": "UX_role_memory",
+        "status": "missing",
+        "summary": "UX无角色记忆读回",
+        "trace_ref": null
+      }
+    ],
+    "source_versions": [
+      {
+        "revision_or_sha256": "fed7f3698e4e1395eb88aea29724df7978f5c7b61477b4d9b0d5d2aed7f2778a",
+        "source_id": "sites/rolecraft/team/onboarding/README.md"
+      },
+      {
+        "revision_or_sha256": "0c466400ccc5d531068b1a62030cc2af286e3194acfdba539559e07bba108ce9",
+        "source_id": "sites/rolecraft/team/onboarding/TEAM-ROUTING.md"
+      },
+      {
+        "revision_or_sha256": "d39b582b4c992b319720eae20a58418a9dafeb1277fa57d6be31dbb10f458afd",
+        "source_id": "sites/rolecraft/team/onboarding/APPLICATION-NOTES.md"
+      },
+      {
+        "revision_or_sha256": "2e50fcadad588c60895ce285e4f3e74c191b3107228ccb3bd2f76f6cf5486b3b",
+        "source_id": "AGENTS.md"
+      },
+      {
+        "revision_or_sha256": "d8b0ec8de67b8f17d511e70daa99038859b94b9d8f7ff5ad39cd9560d2085eeb",
+        "source_id": "sites/rolecraft/team/team-method-loop-20261017-archive.md"
+      },
+      {
+        "revision_or_sha256": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+        "source_id": "sites/rolecraft/team/team-method-loop-20261017-evidence.json"
+      },
+      {
+        "revision_or_sha256": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+        "source_id": "fixed_shared_method"
+      },
+      {
+        "revision_or_sha256": "4fd8f894297e98072108df4eac2e6dfc53aacfc0d1196f8648733781a6a14552",
+        "source_id": "existing_method_candidate"
+      },
+      {
+        "revision_or_sha256": "091300384fcd3b83a144e9dca53f37fa1684f88fd76200337556fb65614d20b8",
+        "source_id": "phase1_final_receipt"
+      },
+      {
+        "revision_or_sha256": "fb5d0193a07738359475f8daffb2373a52d76b006260d003fe287406608506b2",
+        "source_id": "phase2_parent_observation"
+      },
+      {
+        "revision_or_sha256": "94c36cd36991e12b319d93bcc5291d929a218ff55febb8f9000dd9cd63e2235b",
+        "source_id": "sites/rolecraft/team/closeout/closeout.py"
+      },
+      {
+        "revision_or_sha256": "7fab95604ba28ff3699344e049689d8e6673f3b47f43a9a834f460d7d83a1335",
+        "source_id": "sites/rolecraft/team/closeout/test_closeout.py"
+      },
+      {
+        "revision_or_sha256": "6319881966b48393dab46dc69abce74549c4aea1a6b36031bd8f8148c43b406a",
+        "source_id": "sites/rolecraft/team/closeout/README.md"
+      }
+    ]
+  },
+  "final_resolution": "closeout tool must verify both layer bytes and private run-journal.json; this snapshot is not the final overall result",
+  "formal_method_adopted": false,
+  "growth_awarded": false,
+  "idempotency_key": "9305ab564b5330c8a000a2c14aa3b8da99aacec5f1d3b35a911377abfbd5eb01",
+  "immutable_receipt": true,
+  "method_at_publication": "not_attempted",
+  "natural_event_connected": false,
+  "project_record": {
+    "case_id": "20261017",
+    "dispatch": "parent_observed_six_actual_role_contexts",
+    "event": "closeout.requested",
+    "expected_method_md_sha256": "2b6b146de13859386b4aa7874d2f0e745f8b05eaf89ab15f0493d6af711565c9",
+    "expected_project_md_sha256": "e0eb6d418d4eef6fd3580c97d8f766d98a8162cf95f4639bf0c14118cb6c8920",
+    "final_resolution": "Read both expected target byte bindings and the local closeout run journal; this snapshot does not pre-certify method persistence.",
+    "fixed_method_revision": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+    "independent_static_qa": "parent_observed_within_static_scope",
+    "method_adoption": "DRAFT_only_awaiting_confirmation",
+    "method_stage_at_publication": "not_attempted",
+    "natural_loading": "FAIL/partial",
+    "not_claimed": [
+      "natural_event_trigger",
+      "full_natural_loading",
+      "model_understanding_from_hashes",
+      "stable_growth",
+      "business_runtime_acceptance",
+      "formal_method_adoption",
+      "cross_repository_atomicity"
+    ],
+    "observation_basis": "parent_observation/local_trace_not_available",
+    "project_source_revision": "33be2f73c893ae6262db359f4a51970bab51f67e",
+    "project_stage_at_publication": "saved_and_read_back",
+    "reading_checklist": [
+      {
+        "application": "仅记录第二阶段首次观察，不替代专业应用或理解证明",
+        "limitations": "parent_observation/local_trace_not_available; subsequent prompted reads excluded",
+        "required": true,
+        "source_id": "onboarding/README.md",
+        "status": "observed",
+        "summary": "父审阅报告首次已读入口",
+        "trace_ref": null
+      },
+      {
+        "application": "仅记录第二阶段首次观察，不替代专业应用或理解证明",
+        "limitations": "parent_observation/local_trace_not_available; subsequent prompted reads excluded",
+        "required": true,
+        "source_id": "onboarding/TASK-LAYOUT3-READING-DIALOGUE.md",
+        "status": "observed",
+        "summary": "父审阅报告首次已读业务候选任务",
+        "trace_ref": null
+      },
+      {
+        "application": "仅记录第二阶段首次观察，不替代专业应用或理解证明",
+        "limitations": "parent_observation/local_trace_not_available; subsequent prompted reads excluded",
+        "required": true,
+        "source_id": "onboarding/ROLE-MAPPING.md",
+        "status": "missing",
+        "summary": "首次未读岗位映射",
+        "trace_ref": null
+      },
+      {
+        "application": "仅记录第二阶段首次观察，不替代专业应用或理解证明",
+        "limitations": "parent_observation/local_trace_not_available; subsequent prompted reads excluded",
+        "required": true,
+        "source_id": "onboarding/TEAM-ROUTING.md",
+        "status": "missing",
+        "summary": "首次未读分派与读取协议",
+        "trace_ref": null
+      },
+      {
+        "application": "仅记录第二阶段首次观察，不替代专业应用或理解证明",
+        "limitations": "parent_observation/local_trace_not_available; subsequent prompted reads excluded",
+        "required": true,
+        "source_id": "onboarding/APPLICATION-NOTES.md",
+        "status": "missing",
+        "summary": "首次未读落地说明",
+        "trace_ref": null
+      },
+      {
+        "application": "仅记录第二阶段首次观察，不替代专业应用或理解证明",
+        "limitations": "parent_observation/local_trace_not_available; subsequent prompted reads excluded",
+        "required": true,
+        "source_id": "latest_archive_body",
+        "status": "missing",
+        "summary": "首次未读叙述归档正文",
+        "trace_ref": null
+      },
+      {
+        "application": "仅记录第二阶段首次观察，不替代专业应用或理解证明",
+        "limitations": "parent_observation/local_trace_not_available; subsequent prompted reads excluded",
+        "required": true,
+        "source_id": "latest_evidence_body",
+        "status": "missing",
+        "summary": "首次未读结构化证据正文",
+        "trace_ref": null
+      },
+      {
+        "application": "仅记录第二阶段首次观察，不替代专业应用或理解证明",
+        "limitations": "parent_observation/local_trace_not_available; subsequent prompted reads excluded",
+        "required": true,
+        "source_id": "fixed_a848_method_body",
+        "status": "missing",
+        "summary": "首次未读固定方法正文",
+        "trace_ref": null
+      },
+      {
+        "application": "仅记录第二阶段首次观察，不替代专业应用或理解证明",
+        "limitations": "parent_observation/local_trace_not_available; subsequent prompted reads excluded",
+        "required": true,
+        "source_id": "PM_MEMORY_SCHEMA",
+        "status": "missing",
+        "summary": "PM首次未读SCHEMA",
+        "trace_ref": null
+      },
+      {
+        "application": "仅记录第二阶段首次观察，不替代专业应用或理解证明",
+        "limitations": "parent_observation/local_trace_not_available; subsequent prompted reads excluded",
+        "required": true,
+        "source_id": "UX_role_memory",
+        "status": "missing",
+        "summary": "UX无角色记忆读回",
+        "trace_ref": null
+      }
+    ],
+    "reading_coverage": "incomplete",
+    "record_kind": "project_layer_publication_snapshot",
+    "schema_version": 1,
+    "scope": "project layer publication before method attempt; immutable snapshot, not final overall state",
+    "source_versions": [
+      {
+        "revision_or_sha256": "fed7f3698e4e1395eb88aea29724df7978f5c7b61477b4d9b0d5d2aed7f2778a",
+        "source_id": "sites/rolecraft/team/onboarding/README.md"
+      },
+      {
+        "revision_or_sha256": "0c466400ccc5d531068b1a62030cc2af286e3194acfdba539559e07bba108ce9",
+        "source_id": "sites/rolecraft/team/onboarding/TEAM-ROUTING.md"
+      },
+      {
+        "revision_or_sha256": "d39b582b4c992b319720eae20a58418a9dafeb1277fa57d6be31dbb10f458afd",
+        "source_id": "sites/rolecraft/team/onboarding/APPLICATION-NOTES.md"
+      },
+      {
+        "revision_or_sha256": "2e50fcadad588c60895ce285e4f3e74c191b3107228ccb3bd2f76f6cf5486b3b",
+        "source_id": "AGENTS.md"
+      },
+      {
+        "revision_or_sha256": "d8b0ec8de67b8f17d511e70daa99038859b94b9d8f7ff5ad39cd9560d2085eeb",
+        "source_id": "sites/rolecraft/team/team-method-loop-20261017-archive.md"
+      },
+      {
+        "revision_or_sha256": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+        "source_id": "sites/rolecraft/team/team-method-loop-20261017-evidence.json"
+      },
+      {
+        "revision_or_sha256": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+        "source_id": "fixed_shared_method"
+      },
+      {
+        "revision_or_sha256": "4fd8f894297e98072108df4eac2e6dfc53aacfc0d1196f8648733781a6a14552",
+        "source_id": "existing_method_candidate"
+      },
+      {
+        "revision_or_sha256": "091300384fcd3b83a144e9dca53f37fa1684f88fd76200337556fb65614d20b8",
+        "source_id": "phase1_final_receipt"
+      },
+      {
+        "revision_or_sha256": "fb5d0193a07738359475f8daffb2373a52d76b006260d003fe287406608506b2",
+        "source_id": "phase2_parent_observation"
+      },
+      {
+        "revision_or_sha256": "94c36cd36991e12b319d93bcc5291d929a218ff55febb8f9000dd9cd63e2235b",
+        "source_id": "sites/rolecraft/team/closeout/closeout.py"
+      },
+      {
+        "revision_or_sha256": "7fab95604ba28ff3699344e049689d8e6673f3b47f43a9a834f460d7d83a1335",
+        "source_id": "sites/rolecraft/team/closeout/test_closeout.py"
+      },
+      {
+        "revision_or_sha256": "6319881966b48393dab46dc69abce74549c4aea1a6b36031bd8f8148c43b406a",
+        "source_id": "sites/rolecraft/team/closeout/README.md"
+      }
+    ],
+    "trigger_source": "explicit_user"
+  },
+  "record_kind": "project_layer_publication_snapshot",
+  "schema_version": 1,
+  "scope": "before_method_attempt"
+}

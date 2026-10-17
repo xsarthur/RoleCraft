@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "status": "REVIEW DRAFT; read checks only, no method adoption",
+  "project_historical_baseline": "33be2f73c893ae6262db359f4a51970bab51f67e",
+  "project_sources": [
+    "AGENTS.md",
+    "sites/rolecraft/team/onboarding/README.md",
+    "sites/rolecraft/team/onboarding/ROLE-MAPPING.md",
+    "sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+    "sites/rolecraft/team/onboarding/APPLICATION-NOTES.md",
+    "sites/rolecraft/team/onboarding/TASK-LAYOUT3-READING-DIALOGUE.md",
+    "sites/rolecraft/team/employees/core/README.md",
+    "sites/rolecraft/team/employees/core/manifest.json",
+    "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+    "sites/rolecraft/team/employees/v12-evidence/manifest.json",
+    "sites/rolecraft/team/team-method-loop-20261017-archive.md",
+    "sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+    "sites/rolecraft/team/task-closeout-20261017.md",
+    "sites/rolecraft/team/task-closeout-20261017.json"
+  ],
+  "role_catalogs": {
+    "core": "sites/rolecraft/team/employees/core/manifest.json",
+    "v12": "sites/rolecraft/team/employees/v12-evidence/manifest.json"
+  },
+  "specialist_sources": {
+    "content-retrieval-engineer": [
+      "sites/rolecraft/team/SPECIALISTS.md",
+      "sites/rolecraft/team/app-v14-dialog-retrieval.md"
+    ]
+  },
+  "method": {
+    "origin": "git@github.com:chennyqian/ai-team-handbook.git",
+    "revision": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+    "files": [
+      "README.md", "SOURCE-MANIFEST.md", "CHANGELOG.md", "roles.md", "methods.md",
+      "adoption-and-change.md", "checklists/startup-receipt.md",
+      "checklists/task-and-evidence.md", "examples/website-adapter.example.md",
+      "examples/learning-product-adapter.example.md"
+    ]
+  }
+}
