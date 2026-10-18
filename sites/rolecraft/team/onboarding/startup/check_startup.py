@@ -24,7 +24,7 @@ LATEST_RECORDS = tuple(BASE + name for name in (
     "task-closeout-20261017.md", "task-closeout-20261017.json")) + (
     PRIOR_VALIDATION + "README.md", PRIOR_VALIDATION + "validation-receipt.json",
     REPAIRED_VALIDATION + "README.md", REPAIRED_VALIDATION + "validation-receipt.json")
-FIXED = "a848db9f9ab6605aa7379dddef3faa918e412f96"
+FIXED = "615ec68815bdd58539bfc6e95d03604d9ca3eb91"
 ORIGIN = "git@github.com:chennyqian/ai-team-handbook.git"
 PROJECT_SOURCES = (
     "AGENTS.md", *(BASE + "onboarding/" + name for name in (

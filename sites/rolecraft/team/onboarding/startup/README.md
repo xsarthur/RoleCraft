@@ -67,7 +67,7 @@ python3 -B sites/rolecraft/team/onboarding/startup/read_source.py --source metho
 
 [local-method-source.json](./local-method-source.json)只记录本轮获准的一个本地方法根、固定origin/revision和只读边界；不是凭据、通用发布配置或他人/跨设备访问证明。未提供旧 `--method-root` 参数时只读取该定位文件，不搜索磁盘、不使用环境变量寻找副本、不联网、不fetch，不尝试其他路径；定位不存在、访问拒绝或固定绑定不符即blocked。保留显式 `--method-root` 兼容入口，使用者另负该路径的有效授权；不自动扩权或修改网络/SSH配置。
 
-共享方法只读该指定本地库，要求固定 origin 和 `a848db9f9ab6605aa7379dddef3faa918e412f96` HEAD、完整十文件树、普通 Git blob 及全部工作树正文与对应 blob 字节一致。实际全文读取十件，包括 README、SOURCE-MANIFEST、方法与两个未应用示例；不读 proposals 充作正式方法。错误版本、缺件、脏正文、软链接不默认通过；不联网 fetch。
+共享方法只读该指定本地库，要求固定 origin 和 `615ec68815bdd58539bfc6e95d03604d9ca3eb91` HEAD、完整十文件树、普通 Git blob 及全部工作树正文与对应 blob 字节一致。实际全文读取十件，包括 README、SOURCE-MANIFEST、方法与两个未应用示例；不读 proposals 充作正式方法。错误版本、缺件、脏正文、软链接不默认通过；不联网 fetch。
 
 相对链接仅核受控树内目标存在性；片段语义仍未核。外部 URL 不抓取，旧个人绝对链接不跟随，不把文件存在称为内容理解。源文件读取使用逐级 O_NOFOLLOW 的目录描述符并核读前后绑定，拒绝路径穿越及软链接。
 
