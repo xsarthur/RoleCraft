@@ -24,7 +24,11 @@ LATEST_RECORDS = tuple(BASE + name for name in (
     "task-closeout-20261017.md", "task-closeout-20261017.json")) + (
     PRIOR_VALIDATION + "README.md", PRIOR_VALIDATION + "validation-receipt.json",
     REPAIRED_VALIDATION + "README.md", REPAIRED_VALIDATION + "validation-receipt.json")
-FIXED = "615ec68815bdd58539bfc6e95d03604d9ca3eb91"
+FIXED = "214ed8f5dc78fb205d77d850a398dbe4e62446fb"
+METHOD_ADOPTION = "approved_scope_with_candidate_extensions"
+APPROVED_SCOPES = ("preview_decision", "source_display_quality", "evidence_integrity_access",
+                   "declared_actual_rendering", "basic_save_discipline")
+CANDIDATE_SCOPES = ("automatic_recovery", "automatic_triggers", "cross_client_continuation")
 ORIGIN = "git@github.com:chennyqian/ai-team-handbook.git"
 PROJECT_SOURCES = (
     "AGENTS.md", *(BASE + "onboarding/" + name for name in (
@@ -37,6 +41,12 @@ METHOD_FILES = ("README.md", "SOURCE-MANIFEST.md", "CHANGELOG.md", "roles.md", "
                 "examples/website-adapter.example.md", "examples/learning-product-adapter.example.md")
 RETRIEVAL_ROLE = "content-retrieval-engineer"
 RETRIEVAL_FILES = (BASE + "SPECIALISTS.md", BASE + "app-v14-dialog-retrieval.md")
+
+
+def method_adoption_state():
+    """Declared Owner-approved scope, not an adoption decision made by this checker."""
+    return {"method_adoption": METHOD_ADOPTION, "approved_scopes": list(APPROVED_SCOPES),
+            "candidate_scopes": list(CANDIDATE_SCOPES)}
 
 
 class Rejected(Exception):
@@ -157,7 +167,9 @@ def verify_config(config):
     if config.get("specialist_sources") != {RETRIEVAL_ROLE: list(RETRIEVAL_FILES)}:
         raise Rejected("specialist_source_whitelist_mismatch")
     method = config.get("method", {})
-    if method.get("origin") != ORIGIN or method.get("revision") != FIXED or set(method.get("files", [])) != set(METHOD_FILES):
+    if (method.get("origin") != ORIGIN or method.get("revision") != FIXED
+            or set(method.get("files", [])) != set(METHOD_FILES)
+            or any(method.get(key) != value for key, value in method_adoption_state().items())):
         raise Rejected("fixed_method_manifest_mismatch")
 
 
@@ -173,7 +185,7 @@ def resolve_method_root(project_root, explicit=None):
             raise Rejected("invalid_local_method_locator_object")
         required = {"schema_version": 1, "binding_scope": "RoleCraft_local_read_only_fixed_method_source",
                     "origin": ORIGIN, "revision": FIXED, "network": "never",
-                    "method_adoption": "not_adopted_REVIEW_DRAFT"}
+                    **method_adoption_state()}
         if any(locator.get(key) != value for key, value in required.items()):
             raise Rejected("invalid_local_method_locator_binding")
         value = locator.get("local_root")
@@ -353,7 +365,8 @@ def check(project_root, roles, method_root=None, evidence=None, include_content=
         if not row["role_material_readable"]:
             problems.append({"role_id": role, "issue": "role_material_unavailable"})
 
-    method_report = {"expected_revision": FIXED, "status": "blocked", "formal_adoption": False}
+    method_report = {"expected_revision": FIXED, "status": "blocked", **method_adoption_state(),
+                     "adoption_granted_by_tool": False}
     method_repo = None
     try:
         method_root, selection = resolve_method_root(project_root, method_root)
@@ -415,7 +428,8 @@ def check(project_root, roles, method_root=None, evidence=None, include_content=
                 "shared_method_readable": method_report["status"] == "fixed_tree_full_content_read",
                 "project_latest_records_readable": not uncovered and all(records["project:" + p]["checker_content_read"] for p in LATEST_RECORDS)},
             "limitations": ["not a natural startup event test", "no platform trace authentication",
-                            "no application quality or understanding certification", "no formal method adoption"]}
+                            "no application quality or understanding certification",
+                            "no automatic adoption or expansion of Owner-approved scope"]}
 
 
 def check_evidence(evidence, roles, role_records, records, bodies, project_root):

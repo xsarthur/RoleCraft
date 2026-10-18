@@ -156,7 +156,8 @@ def read_page(project_root, source_id, page=1, page_bytes=DEFAULT_PAGE_BYTES, ro
                      "all_pages_consumed": "unverified"},
         "next_arguments": next_arguments, "next_command": shlex.join(next_arguments) if next_arguments else None,
         "content": body, "model_understanding": "unverified", "startup_connection": "not_connected",
-        "ownership": "unknown; authorized collaboration reference only", "formal_method_adoption": False,
+        "ownership": "unknown; authorized collaboration reference only", **c.method_adoption_state(),
+        "adoption_granted_by_tool": False,
         "serialized_page_byte_limit": MAX_SERIALIZED_PAGE_BYTES,
     }
     if selection:

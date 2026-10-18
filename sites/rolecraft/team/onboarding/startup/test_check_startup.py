@@ -130,6 +130,20 @@ class StartupTests(StartupFixture):
             self.assertEqual(row["content"], (self.method / row["path"]).read_text())
             self.assertEqual(row["bytes_read"], len(row["content"].encode()))
         self.assertEqual(result["method"]["status"], "fixed_tree_full_content_read")
+        self.assertEqual(result["method"]["method_adoption"], c.METHOD_ADOPTION)
+        self.assertEqual(result["method"]["approved_scopes"], list(c.APPROVED_SCOPES))
+        self.assertEqual(result["method"]["candidate_scopes"], list(c.CANDIDATE_SCOPES))
+        self.assertFalse(result["method"]["adoption_granted_by_tool"])
+
+    def test_adoption_scope_must_match_explicit_config(self):
+        for field, value in (("method_adoption", "not_adopted_REVIEW_DRAFT"),
+                             ("approved_scopes", list(c.APPROVED_SCOPES) + ["automatic_recovery"]),
+                             ("candidate_scopes", [])):
+            with self.subTest(field=field):
+                config = copy.deepcopy(self.config)
+                config["method"][field] = value
+                with self.assertRaisesRegex(c.Rejected, "fixed_method_manifest_mismatch"):
+                    c.verify_config(config)
 
     def test_missing_schema_separate_from_readable_role_material(self):
         (self.project / (c.CORE + "project-manager/MEMORY_SCHEMA.md")).unlink()

@@ -36,7 +36,10 @@ class PageTests(StartupFixture):
     def test_wrong_locator_revision_origin_network_or_scope_blocked(self):
         original = c.read_json(self.project, c.LOCATOR)
         for key, value in (("revision", "0" * 40), ("origin", "wrong"), ("network", "fetch"),
-                           ("binding_scope", "all_projects"), ("local_root", "../method")):
+                           ("binding_scope", "all_projects"), ("local_root", "../method"),
+                           ("method_adoption", "not_adopted_REVIEW_DRAFT"),
+                           ("approved_scopes", list(c.APPROVED_SCOPES) + ["automatic_recovery"]),
+                           ("candidate_scopes", [])):
             with self.subTest(key=key):
                 edited = dict(original, **{key: value})
                 self.write(self.project, c.LOCATOR, json.dumps(edited))
@@ -162,7 +165,11 @@ class PageTests(StartupFixture):
             self.assertEqual(row["version_binding"], "fixed_tree_blob_match")
             self.assertEqual(row["source_revision"], c.FIXED)
             self.assertEqual(row["method_source_selection"]["mode"], "local_locator")
-            self.assertFalse(row["formal_method_adoption"])
+            self.assertEqual(row["method_adoption"], c.METHOD_ADOPTION)
+            self.assertEqual(row["approved_scopes"], list(c.APPROVED_SCOPES))
+            self.assertEqual(row["candidate_scopes"], list(c.CANDIDATE_SCOPES))
+            self.assertFalse(row["adoption_granted_by_tool"])
+            self.assertNotIn("formal_method_adoption", row)
         self.assertEqual(before, self.tree_snapshot())
 
     def test_dirty_or_wrong_pack_blocks_page_even_if_selected_file_matches(self):

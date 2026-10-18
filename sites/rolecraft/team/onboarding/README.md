@@ -1,7 +1,7 @@
 # 培域 / RoleCraft 团队接入
 
 文档版本：v0.3 REVIEW DRAFT；以 FIVE-DOCUMENTS-v0.2.md 为正文基础，仅修订本次团队接入、固定来源和保存边界。
-状态核对日期：2026-10-18。本轮仅本地修复方法定位和正文分页；已推送的接入/保存与首轮验证分别见下文，不由工具修复升级历史结论。共享方法仍为 REVIEW DRAFT。
+状态核对日期：2026-10-18。本次仅更新共享文档 v0.2 的固定引用与分项正式采用范围；既有接入/保存与首轮验证保留原结论，不由引用更新升级历史验证。接入文档版本与共享方法采用状态分别记录。
 
 ## 唯一入口与文档
 
@@ -20,7 +20,7 @@
 
 从根AGENTS进入[完整必读流程](./startup/README.md)，按实际执行岗位运行 `python3 -B sites/rolecraft/team/onboarding/startup/read_source.py --required-flow --roles 本任务原岗位ID --page-bytes 4096`（产品岗为 `product-manager`）。每页正文进入上下文后，独立执行其 `next_command`；同一流程跨来源继续。所选原岗资料是共同基线的增补，不能按“相关/必要”删掉共同必读项，目录清单和metadata检查也不代替正文。产品岗当前34件覆盖旧32件及上轮最新README/最终回执；只有实际全部送达后才开展专业判断，缺件保留未接通，末页不认证此前送达或理解。
 
-[上轮读取修复验证](../validation/natural-read-repair-20261018T0110Z/README.md)和[其最终回执](../validation/natural-read-repair-20261018T0110Z/validation-receipt.json)已入必读：18/32实际完整送达、14件漏读、整体FAIL/partial与有限文稿QA分别保留。后补读取和当前机制修复不能改写历史。已知项目记录按本轮显式清单冻结，validation新目录不自动发现，后续新归档不得追溯当作本轮输入。此次只改变项目入口和显式只读流程，不接事件，不改原员工归属或档案，不正式采纳方法。
+[上轮读取修复验证](../validation/natural-read-repair-20261018T0110Z/README.md)和[其最终回执](../validation/natural-read-repair-20261018T0110Z/validation-receipt.json)已入必读：18/32实际完整送达、14件漏读、整体FAIL/partial与有限文稿QA分别保留。后补读取和当前机制修复不能改写历史。已知项目记录按本轮显式清单冻结，validation新目录不自动发现，后续新归档不得追溯当作本轮输入。该次读取修复只改变项目入口和显式只读流程，不接事件、不改原员工归属或档案，当时未正式采纳方法；本次批准范围见下文。
 
 ## 本地定位与正文分页（2026-10-18）
 
@@ -38,7 +38,7 @@
 
 最新项目输入包括上文入口、下文两份已提交归档，以及本地[任务收尾记录](../task-closeout-20261017.md)和[发布时快照](../task-closeout-20261017.json)。记录实际 HEAD、dirty/untracked 状态和工作树字节，不把 HEAD 当成未提交内容的版本。收尾 JSON 描述方法层执行前的历史发布时点，不单独代表两层最终保存状态。
 
-固定方法须从获准的本地源取得 `615ec68815bdd58539bfc6e95d03604d9ca3eb91` 全文并核版本；失败保持未接通。检查器自身读到全文、岗位读回引用、计划应用点、实际产物应用证据分别报告；普通 trace 字符串不认证平台调用，引用匹配也不证明理解或应用质量。常规使用分页器逐次消费正文；旧 `--include-content` 保持兼容，但其大stdout可能被传输截断，不能据此记作完整岗位读回。私有方法全文或可重组页缓存不保存到项目、业务产物或审计文件。
+固定方法须从获准的本地源取得 `214ed8f5dc78fb205d77d850a398dbe4e62446fb` 全文并核版本；失败保持未接通。检查器自身读到全文、岗位读回引用、计划应用点、实际产物应用证据分别报告；普通 trace 字符串不认证平台调用，引用匹配也不证明理解或应用质量。常规使用分页器逐次消费正文；旧 `--include-content` 保持兼容，但其大stdout可能被传输截断，不能据此记作完整岗位读回。私有方法全文或可重组页缓存不保存到项目、业务产物或审计文件。
 
 这是显式启动约定与检查机制，不是自动触发或新业务任务实测通过；上一轮完整方法自然加载的 FAIL/partial 保留，后补读取不逆改原结论。既有 closeout 案例绑定旧入口字节，本次授权入口变更后不能直接重跑原冻结请求；不得改原请求、journal 或归档来消除版本漂移。
 
@@ -57,7 +57,11 @@
 
 本稿制作基线：`main / 4158efd4641be219c897746cc063d73122f4eeb7`；本轮新工作副本为 `/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft`，不是此前主工程，也不包含其他机器未提交的修改。保存前必须重新核对实际根、分支、HEAD、远端默认分支及目标文件原字节。
 
-共享方法固定来源：[ai-team-handbook](https://github.com/chennyqian/ai-team-handbook)，审查草案提交 [`615ec68815bdd58539bfc6e95d03604d9ca3eb91`](https://github.com/chennyqian/ai-team-handbook/tree/615ec68815bdd58539bfc6e95d03604d9ca3eb91)。本轮 Owner 于 2026-10-18 授权各项目引用本次最新同步版，现固定到上述完整提交。状态仍为 **REVIEW DRAFT**，不代表正式采纳或正式发布；后续不自动跟随会漂移的 main/latest，不因引用存在就宣称运行时已加载。旧归档与单案例收尾工具保留其历史版本绑定。
+共享方法固定来源：[ai-team-handbook](https://github.com/chennyqian/ai-team-handbook)，文档 v0.2 提交 [`214ed8f5dc78fb205d77d850a398dbe4e62446fb`](https://github.com/chennyqian/ai-team-handbook/tree/214ed8f5dc78fb205d77d850a398dbe4e62446fb)。Owner 于 2026-10-18 批准本项目采用下列五项明确范围，状态为 `approved_scope_with_candidate_extensions`。后续不自动跟随会漂移的 main/latest；旧归档与单案例收尾工具保留其历史版本绑定。
+
+正式采用仅限：`preview_decision`（按决策选择预览、避免重复审批）、`source_display_quality`（真实来源到显示清晰度）、`evidence_integrity_access`（字节、元数据与可取得性分开核验）、`declared_actual_rendering`（声明与实际渲染分开）、`basic_save_discipline`（主要写入者、备份、预期版本与写后读回）。
+
+仍为候选：`automatic_recovery`（自动恢复）、`automatic_triggers`（自动触发）、`cross_client_continuation`（跨端接续）。其余 M01—M08、角色定义、治理、模板及示例保持原状态，不因本次采用整体转正；正式检查规则不代表运行时启用、稳定掌握或所有场景验证通过。
 
 访问条件：该方法仓库可能受私有访问控制，执行者须使用自身获准的读取途径；无法访问时标记来源受阻并交接，不扩权或绕过。本项目仅保存固定版本绑定和必要采用记录，不将私有方法仓库全文复制到可能共享或公开的项目；需要复制具体材料时另核授权与范围。
 

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "REVIEW DRAFT; read checks only, no method adoption",
+  "status": "approved_scope_with_candidate_extensions",
   "project_historical_baseline": "33be2f73c893ae6262db359f4a51970bab51f67e",
   "project_sources": [
     "AGENTS.md",
@@ -34,7 +34,7 @@
   },
   "method": {
     "origin": "git@github.com:chennyqian/ai-team-handbook.git",
-    "revision": "615ec68815bdd58539bfc6e95d03604d9ca3eb91",
+    "revision": "214ed8f5dc78fb205d77d850a398dbe4e62446fb",
     "files": [
       "README.md",
       "SOURCE-MANIFEST.md",
@@ -46,6 +46,19 @@
       "checklists/task-and-evidence.md",
       "examples/website-adapter.example.md",
       "examples/learning-product-adapter.example.md"
+    ],
+    "method_adoption": "approved_scope_with_candidate_extensions",
+    "approved_scopes": [
+      "preview_decision",
+      "source_display_quality",
+      "evidence_integrity_access",
+      "declared_actual_rendering",
+      "basic_save_discipline"
+    ],
+    "candidate_scopes": [
+      "automatic_recovery",
+      "automatic_triggers",
+      "cross_client_continuation"
     ]
   }
 }
