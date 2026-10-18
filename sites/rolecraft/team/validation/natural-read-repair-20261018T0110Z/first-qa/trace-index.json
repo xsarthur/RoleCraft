@@ -1,0 +1,1237 @@
+{
+  "schema_version": 1,
+  "scope": "Only authorized fixed-prefix visible tool outputs; no analysis/reasoning/encrypted fields processed",
+  "runtime_prefix": {
+    "prefix_bytes": 1941928,
+    "prefix_sha256": "8af9ee5155cb719cf8e0853a4c860ee069abe7cb282a152ab0ab742c7fd821c2",
+    "line_count": 353,
+    "agent_path": "/root/return_handoff_product",
+    "parent_thread_id": "01a14a89-47ce-7343-a11b-31426601fd84"
+  },
+  "page_objects_found": 30,
+  "source_coverage": {
+    "project:AGENTS.md": {
+      "bytes": 50693,
+      "sha256": "bf2599697f6b6b2504e89700dec5325be815e97b9553bc8c6e30056c9b6c007f",
+      "full_body_visible": true,
+      "page_evidence": [
+        {
+          "page": 1,
+          "total": 13,
+          "byte_start": 0,
+          "byte_end": 4068,
+          "content_matches_fixed_source": true,
+          "page_sha256": "0aeb42b584f4b1442344e70193952459c33bab22c9ebce0cbc3845bcfaf6211e",
+          "previous_page_sha256": null,
+          "output_line": 73,
+          "call_id": "call_fbb32d41e5cc4820b9fa8bbcdc2271a5",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        },
+        {
+          "page": 2,
+          "total": 13,
+          "byte_start": 4068,
+          "byte_end": 8143,
+          "content_matches_fixed_source": true,
+          "page_sha256": "01b2a77cb1d4d7747cf592b30da486cba755e4753e04dc84c786d6af34337484",
+          "previous_page_sha256": "0aeb42b584f4b1442344e70193952459c33bab22c9ebce0cbc3845bcfaf6211e",
+          "output_line": 85,
+          "call_id": "call_3846aed8f0e7487a9b3dd5a1dde59f21",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        },
+        {
+          "page": 3,
+          "total": 13,
+          "byte_start": 8143,
+          "byte_end": 12220,
+          "content_matches_fixed_source": true,
+          "page_sha256": "deb2ceb61847840de6e4ef8a2c61d856d2a11239814ca9e05db8b8e55c386d43",
+          "previous_page_sha256": "01b2a77cb1d4d7747cf592b30da486cba755e4753e04dc84c786d6af34337484",
+          "output_line": 90,
+          "call_id": "call_08184a689b00402aa9bc1806b65449e3",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        },
+        {
+          "page": 4,
+          "total": 13,
+          "byte_start": 12220,
+          "byte_end": 16294,
+          "content_matches_fixed_source": true,
+          "page_sha256": "64d53629f653a89a80116b2bb0c7cd64965f0c9096b2b3c106a1b37dcc52f7bc",
+          "previous_page_sha256": "deb2ceb61847840de6e4ef8a2c61d856d2a11239814ca9e05db8b8e55c386d43",
+          "output_line": 95,
+          "call_id": "call_5690301c073a44ad92814944d67a7769",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        },
+        {
+          "page": 5,
+          "total": 13,
+          "byte_start": 16294,
+          "byte_end": 20374,
+          "content_matches_fixed_source": true,
+          "page_sha256": "66617bbb7dd654f38a982946ff9bc76a07228593bb148085b0516e8b3481e3fc",
+          "previous_page_sha256": "64d53629f653a89a80116b2bb0c7cd64965f0c9096b2b3c106a1b37dcc52f7bc",
+          "output_line": 100,
+          "call_id": "call_380e69bd271e4434b80a80c56fd4e0ae",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        },
+        {
+          "page": 6,
+          "total": 13,
+          "byte_start": 20374,
+          "byte_end": 24450,
+          "content_matches_fixed_source": true,
+          "page_sha256": "0244eb889d7ed266b78776c1882053c00a4d6d3d1d2b2e7da1e524d3b458c45d",
+          "previous_page_sha256": "66617bbb7dd654f38a982946ff9bc76a07228593bb148085b0516e8b3481e3fc",
+          "output_line": 105,
+          "call_id": "call_06a5f30231114956af768215cf66b022",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        },
+        {
+          "page": 7,
+          "total": 13,
+          "byte_start": 24450,
+          "byte_end": 28536,
+          "content_matches_fixed_source": true,
+          "page_sha256": "e1be7b3fa4765a64b53f69e1f7296a1724c3b54cd45888e2d640437a8a560255",
+          "previous_page_sha256": "0244eb889d7ed266b78776c1882053c00a4d6d3d1d2b2e7da1e524d3b458c45d",
+          "output_line": 110,
+          "call_id": "call_7b08cee7e1d94c808cc3ab0c43b88cf1",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        },
+        {
+          "page": 8,
+          "total": 13,
+          "byte_start": 28536,
+          "byte_end": 32615,
+          "content_matches_fixed_source": true,
+          "page_sha256": "859eaea0bebd71ce1289842b12d46455cf27dea4a85bd5a162c45343c643cf14",
+          "previous_page_sha256": "e1be7b3fa4765a64b53f69e1f7296a1724c3b54cd45888e2d640437a8a560255",
+          "output_line": 115,
+          "call_id": "call_1857b21a7e9f4372a2d300f08921179b",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        },
+        {
+          "page": 9,
+          "total": 13,
+          "byte_start": 32615,
+          "byte_end": 36689,
+          "content_matches_fixed_source": true,
+          "page_sha256": "14bff4a4b6f0229debbcbf3c4b2f77bd16e3c17d637f57d88e74fcf5a71e8690",
+          "previous_page_sha256": "859eaea0bebd71ce1289842b12d46455cf27dea4a85bd5a162c45343c643cf14",
+          "output_line": 120,
+          "call_id": "call_f10c6c80ecfb4c6b88ffa8a9db2fc557",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        },
+        {
+          "page": 10,
+          "total": 13,
+          "byte_start": 36689,
+          "byte_end": 40772,
+          "content_matches_fixed_source": true,
+          "page_sha256": "ef6af8f86678e5f991413d02ef229f873e8d718a35a00fba9620467f2aeceeb6",
+          "previous_page_sha256": "14bff4a4b6f0229debbcbf3c4b2f77bd16e3c17d637f57d88e74fcf5a71e8690",
+          "output_line": 125,
+          "call_id": "call_c23b513426104db78885495cbf01f367",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        },
+        {
+          "page": 11,
+          "total": 13,
+          "byte_start": 40772,
+          "byte_end": 44849,
+          "content_matches_fixed_source": true,
+          "page_sha256": "440e64a95b24680d9ff9a0364de304004f235c6692f44c15481e474dc9c2f7f8",
+          "previous_page_sha256": "ef6af8f86678e5f991413d02ef229f873e8d718a35a00fba9620467f2aeceeb6",
+          "output_line": 130,
+          "call_id": "call_72d40b95c55d4259a2739a2ca717e6a7",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        },
+        {
+          "page": 12,
+          "total": 13,
+          "byte_start": 44849,
+          "byte_end": 48923,
+          "content_matches_fixed_source": true,
+          "page_sha256": "50b2b5dd07e8267a529c154fd86fdaba1cb3a6a3380586df5e98a684cb9187b5",
+          "previous_page_sha256": "440e64a95b24680d9ff9a0364de304004f235c6692f44c15481e474dc9c2f7f8",
+          "output_line": 135,
+          "call_id": "call_64dc2c305ce645f090f7ff3a2541ffdb",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        },
+        {
+          "page": 13,
+          "total": 13,
+          "byte_start": 48923,
+          "byte_end": 50693,
+          "content_matches_fixed_source": true,
+          "page_sha256": "6022fa5fd70a93e3b00d9491915dfaf6f9ab0637a1732724b07969046836623c",
+          "previous_page_sha256": "50b2b5dd07e8267a529c154fd86fdaba1cb3a6a3380586df5e98a684cb9187b5",
+          "output_line": 141,
+          "call_id": "call_c9cf75c698f44229b74ccffa1244afec",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        }
+      ],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [],
+      "page_chain_valid": true
+    },
+    "project:sites/rolecraft/team/onboarding/README.md": {
+      "bytes": 11505,
+      "sha256": "1ae35db606a0f893a9f1d6e3efde7560cf318423a167c7124b9a7010989aba98",
+      "full_body_visible": true,
+      "page_evidence": [],
+      "exact_body_evidence": [
+        {
+          "output_line": 66,
+          "call_id": "call_df43c241723442478fe2e540c29f56a1",
+          "outer_truncation_warning": false,
+          "kind": "exact_full_body_visible"
+        }
+      ],
+      "uncovered_ranges": []
+    },
+    "project:sites/rolecraft/team/onboarding/ROLE-MAPPING.md": {
+      "bytes": 9207,
+      "sha256": "6fef691401c64a1bf171a87c4d6cc7ec60bacab0560bccb37333f85db901ff5f",
+      "full_body_visible": false,
+      "page_evidence": [],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [
+        {
+          "start": 0,
+          "end": 9207
+        }
+      ]
+    },
+    "project:sites/rolecraft/team/onboarding/TEAM-ROUTING.md": {
+      "bytes": 8885,
+      "sha256": "15ca65c8a803fbcd7ad51673458c0f46a4728ed1f4a0745d99b614b7bdd54f0f",
+      "full_body_visible": false,
+      "page_evidence": [],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [
+        {
+          "start": 0,
+          "end": 8885
+        }
+      ]
+    },
+    "project:sites/rolecraft/team/onboarding/APPLICATION-NOTES.md": {
+      "bytes": 8647,
+      "sha256": "d39b582b4c992b319720eae20a58418a9dafeb1277fa57d6be31dbb10f458afd",
+      "full_body_visible": false,
+      "page_evidence": [],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [
+        {
+          "start": 0,
+          "end": 8647
+        }
+      ]
+    },
+    "project:sites/rolecraft/team/onboarding/TASK-LAYOUT3-READING-DIALOGUE.md": {
+      "bytes": 6025,
+      "sha256": "2c094e940338032a179551503270d927801b1e7e82652126e31280dd4e33bfdc",
+      "full_body_visible": false,
+      "page_evidence": [],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [
+        {
+          "start": 0,
+          "end": 6025
+        }
+      ]
+    },
+    "project:sites/rolecraft/team/onboarding/startup/README.md": {
+      "bytes": 10633,
+      "sha256": "04864fb3edfbbaa222f9f20f258bef75315912fcadfcf70dac659147e0938400",
+      "full_body_visible": true,
+      "page_evidence": [],
+      "exact_body_evidence": [
+        {
+          "output_line": 66,
+          "call_id": "call_df43c241723442478fe2e540c29f56a1",
+          "outer_truncation_warning": false,
+          "kind": "exact_full_body_visible"
+        }
+      ],
+      "uncovered_ranges": []
+    },
+    "project:sites/rolecraft/team/onboarding/startup/sources.json": {
+      "bytes": 1988,
+      "sha256": "63d8a5443ffe38483b0776d78d46537dd8f7d608b30d9a8fc3c8120d84e59d11",
+      "full_body_visible": false,
+      "page_evidence": [],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [
+        {
+          "start": 0,
+          "end": 1988
+        }
+      ]
+    },
+    "project:sites/rolecraft/team/onboarding/startup/local-method-source.json": {
+      "bytes": 382,
+      "sha256": "0147b66a156d412a659371159fa84a869f7ded2815066850a9d0360f70ed8cd9",
+      "full_body_visible": false,
+      "page_evidence": [],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [
+        {
+          "start": 0,
+          "end": 382
+        }
+      ]
+    },
+    "project:sites/rolecraft/team/employees/core/README.md": {
+      "bytes": 4577,
+      "sha256": "90572c46efdda8333abeaf3458a01774430aa51076220621f384857f71af7a7e",
+      "full_body_visible": false,
+      "page_evidence": [],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [
+        {
+          "start": 0,
+          "end": 4577
+        }
+      ]
+    },
+    "project:sites/rolecraft/team/employees/core/manifest.json": {
+      "bytes": 2736,
+      "sha256": "28227bf1a6c4ac584e28b2a419614368ee539433e929dce60206b8571283aef2",
+      "full_body_visible": false,
+      "page_evidence": [],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [
+        {
+          "start": 0,
+          "end": 2736
+        }
+      ]
+    },
+    "project:sites/rolecraft/team/employees/v12-evidence/manifest.json": {
+      "bytes": 8100,
+      "sha256": "d805bce8111fdc232916da7a982a20791eca47be415afba1227f6819de85e7f7",
+      "full_body_visible": false,
+      "page_evidence": [],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [
+        {
+          "start": 0,
+          "end": 8100
+        }
+      ]
+    },
+    "project:sites/rolecraft/team/employees/core/product-manager/ROLE.md": {
+      "bytes": 5096,
+      "sha256": "56f932f3621b64469b3136ff3d1cafa3af900608f5c82947e33e0012ffd614c7",
+      "full_body_visible": true,
+      "page_evidence": [
+        {
+          "page": 1,
+          "total": 2,
+          "byte_start": 0,
+          "byte_end": 4038,
+          "content_matches_fixed_source": true,
+          "page_sha256": "0bd788a9eadc19ea9a44d50219c046f3fe474c95a27a6336e269aa6bb905f8fb",
+          "previous_page_sha256": null,
+          "output_line": 149,
+          "call_id": "call_6314d6f3641045219464301627f0a488",
+          "response_contains_truncation_warning": true,
+          "page_body_complete_despite_other_response_item_warning": true
+        },
+        {
+          "page": 2,
+          "total": 2,
+          "byte_start": 4038,
+          "byte_end": 5096,
+          "content_matches_fixed_source": true,
+          "page_sha256": "2da50c0edc1bfc4755e5ef1970fac67ee52e50751e7bcefdb539acf38c7e3340",
+          "previous_page_sha256": "0bd788a9eadc19ea9a44d50219c046f3fe474c95a27a6336e269aa6bb905f8fb",
+          "output_line": 158,
+          "call_id": "call_a5fd5b1457ea423faf606916bab46826",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        }
+      ],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [],
+      "page_chain_valid": true
+    },
+    "project:sites/rolecraft/team/employees/core/product-manager/MEMORY.md": {
+      "bytes": 1297,
+      "sha256": "d992070fba035c1d3a5fb6f5734ed0922f011321c717cfb578b9b2e8209e38fe",
+      "full_body_visible": true,
+      "page_evidence": [
+        {
+          "page": 1,
+          "total": 1,
+          "byte_start": 0,
+          "byte_end": 1297,
+          "content_matches_fixed_source": true,
+          "page_sha256": "d992070fba035c1d3a5fb6f5734ed0922f011321c717cfb578b9b2e8209e38fe",
+          "previous_page_sha256": null,
+          "output_line": 158,
+          "call_id": "call_a5fd5b1457ea423faf606916bab46826",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        }
+      ],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [],
+      "page_chain_valid": true
+    },
+    "project:sites/rolecraft/team/employees/core/product-manager/MEMORY_SCHEMA.md": {
+      "bytes": 3349,
+      "sha256": "4026b98355e6fc1332871eaa9d93bf532288125fea200f40c7c78fc041303c07",
+      "full_body_visible": true,
+      "page_evidence": [
+        {
+          "page": 1,
+          "total": 1,
+          "byte_start": 0,
+          "byte_end": 3349,
+          "content_matches_fixed_source": true,
+          "page_sha256": "4026b98355e6fc1332871eaa9d93bf532288125fea200f40c7c78fc041303c07",
+          "previous_page_sha256": null,
+          "output_line": 158,
+          "call_id": "call_a5fd5b1457ea423faf606916bab46826",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        }
+      ],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [],
+      "page_chain_valid": true
+    },
+    "project:sites/rolecraft/team/employees/core/user-profile/approved-preferences.md": {
+      "bytes": 5705,
+      "sha256": "e80f7be22925b043f9071c800b8ba040531a06756b3c3120df479cd94071060b",
+      "full_body_visible": false,
+      "page_evidence": [],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [
+        {
+          "start": 0,
+          "end": 5705
+        }
+      ]
+    },
+    "project:sites/rolecraft/team/team-method-loop-20261017-archive.md": {
+      "bytes": 8666,
+      "sha256": "d8b0ec8de67b8f17d511e70daa99038859b94b9d8f7ff5ad39cd9560d2085eeb",
+      "full_body_visible": false,
+      "page_evidence": [],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [
+        {
+          "start": 0,
+          "end": 8666
+        }
+      ]
+    },
+    "project:sites/rolecraft/team/team-method-loop-20261017-evidence.json": {
+      "bytes": 25287,
+      "sha256": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+      "full_body_visible": false,
+      "page_evidence": [],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [
+        {
+          "start": 0,
+          "end": 25287
+        }
+      ]
+    },
+    "project:sites/rolecraft/team/task-closeout-20261017.md": {
+      "bytes": 2631,
+      "sha256": "e0eb6d418d4eef6fd3580c97d8f766d98a8162cf95f4639bf0c14118cb6c8920",
+      "full_body_visible": true,
+      "page_evidence": [
+        {
+          "page": 1,
+          "total": 1,
+          "byte_start": 0,
+          "byte_end": 2631,
+          "content_matches_fixed_source": true,
+          "page_sha256": "e0eb6d418d4eef6fd3580c97d8f766d98a8162cf95f4639bf0c14118cb6c8920",
+          "previous_page_sha256": null,
+          "output_line": 287,
+          "call_id": "call_b86c422956e64a4e9c9261d2d5c93682",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        }
+      ],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [],
+      "page_chain_valid": true
+    },
+    "project:sites/rolecraft/team/task-closeout-20261017.json": {
+      "bytes": 15006,
+      "sha256": "78e698ed76ef63c2ca603f1730baedcf1c06e3c7b2c7750cf6ca9bd2b7564cba",
+      "full_body_visible": false,
+      "page_evidence": [],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [
+        {
+          "start": 0,
+          "end": 15006
+        }
+      ]
+    },
+    "project:sites/rolecraft/team/validation/natural-read-20261017T1557Z/README.md": {
+      "bytes": 4779,
+      "sha256": "1d89401be043d5f6f957d729b701e245669d0f442ec185a457f3190e57ca90ba",
+      "full_body_visible": true,
+      "page_evidence": [],
+      "exact_body_evidence": [
+        {
+          "output_line": 287,
+          "call_id": "call_b86c422956e64a4e9c9261d2d5c93682",
+          "outer_truncation_warning": false,
+          "kind": "exact_full_body_visible"
+        }
+      ],
+      "uncovered_ranges": []
+    },
+    "project:sites/rolecraft/team/validation/natural-read-20261017T1557Z/validation-receipt.json": {
+      "bytes": 5942,
+      "sha256": "2d42358d9f8540f50651dde7555ac3e660e2bd333db8de2cba322a1005f171af",
+      "full_body_visible": false,
+      "page_evidence": [],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [
+        {
+          "start": 0,
+          "end": 5942
+        }
+      ]
+    },
+    "method:README.md": {
+      "bytes": 2346,
+      "sha256": "7283e2d173c9c44bad7f356f890241efb7693be3a340d456c868df391142f1c1",
+      "full_body_visible": true,
+      "page_evidence": [
+        {
+          "page": 1,
+          "total": 1,
+          "byte_start": 0,
+          "byte_end": 2346,
+          "content_matches_fixed_source": true,
+          "page_sha256": "7283e2d173c9c44bad7f356f890241efb7693be3a340d456c868df391142f1c1",
+          "previous_page_sha256": null,
+          "output_line": 165,
+          "call_id": "call_8293f74d7c8745498e500581b19ad6d6",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        }
+      ],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [],
+      "page_chain_valid": true
+    },
+    "method:SOURCE-MANIFEST.md": {
+      "bytes": 2246,
+      "sha256": "ddf191051d0f7f47ce84097b7b1528f609565b1f287df770a0127ea5ee274cb1",
+      "full_body_visible": true,
+      "page_evidence": [
+        {
+          "page": 1,
+          "total": 1,
+          "byte_start": 0,
+          "byte_end": 2246,
+          "content_matches_fixed_source": true,
+          "page_sha256": "ddf191051d0f7f47ce84097b7b1528f609565b1f287df770a0127ea5ee274cb1",
+          "previous_page_sha256": null,
+          "output_line": 165,
+          "call_id": "call_8293f74d7c8745498e500581b19ad6d6",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        }
+      ],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [],
+      "page_chain_valid": true
+    },
+    "method:CHANGELOG.md": {
+      "bytes": 1147,
+      "sha256": "04fbd3e05f9af5d0432273000b88bacaef328eb314f7234992ec4c1e2ec4e2c4",
+      "full_body_visible": true,
+      "page_evidence": [
+        {
+          "page": 1,
+          "total": 1,
+          "byte_start": 0,
+          "byte_end": 1147,
+          "content_matches_fixed_source": true,
+          "page_sha256": "04fbd3e05f9af5d0432273000b88bacaef328eb314f7234992ec4c1e2ec4e2c4",
+          "previous_page_sha256": null,
+          "output_line": 165,
+          "call_id": "call_8293f74d7c8745498e500581b19ad6d6",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        }
+      ],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [],
+      "page_chain_valid": true
+    },
+    "method:roles.md": {
+      "bytes": 8313,
+      "sha256": "e19e414487dbd03a31824f1f5d3fb1a4ef57cc4076a54d17ddb82d5a64ef5b5a",
+      "full_body_visible": true,
+      "page_evidence": [
+        {
+          "page": 1,
+          "total": 3,
+          "byte_start": 0,
+          "byte_end": 4028,
+          "content_matches_fixed_source": true,
+          "page_sha256": "0f2f57950d7302eaf5c804afe10600eb3d8bc33266d95e8e7b415e45d40b6eaf",
+          "previous_page_sha256": null,
+          "output_line": 172,
+          "call_id": "call_54ee36d6ef3940a2926a2e304027ed05",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        },
+        {
+          "page": 2,
+          "total": 3,
+          "byte_start": 4028,
+          "byte_end": 8058,
+          "content_matches_fixed_source": true,
+          "page_sha256": "552bae49a27f76d30adcb372daee6b97349519b64d815b705dea3d6a789bc609",
+          "previous_page_sha256": "0f2f57950d7302eaf5c804afe10600eb3d8bc33266d95e8e7b415e45d40b6eaf",
+          "output_line": 185,
+          "call_id": "call_1e129b0cbf734b5ba484137cc9d26057",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        },
+        {
+          "page": 3,
+          "total": 3,
+          "byte_start": 8058,
+          "byte_end": 8313,
+          "content_matches_fixed_source": true,
+          "page_sha256": "da87ce5e1473edfd9133c686af4b91b9f05c5566667504137a143ac2b8724ba8",
+          "previous_page_sha256": "552bae49a27f76d30adcb372daee6b97349519b64d815b705dea3d6a789bc609",
+          "output_line": 191,
+          "call_id": "call_86f374bfaa6f4c79a6eb060fbb4d384d",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        }
+      ],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [],
+      "page_chain_valid": true
+    },
+    "method:methods.md": {
+      "bytes": 3052,
+      "sha256": "3346016d6aba70f681cf26467d642f9bc8ebfd45b10ea520fa0cc5de169d879b",
+      "full_body_visible": true,
+      "page_evidence": [
+        {
+          "page": 1,
+          "total": 1,
+          "byte_start": 0,
+          "byte_end": 3052,
+          "content_matches_fixed_source": true,
+          "page_sha256": "3346016d6aba70f681cf26467d642f9bc8ebfd45b10ea520fa0cc5de169d879b",
+          "previous_page_sha256": null,
+          "output_line": 172,
+          "call_id": "call_54ee36d6ef3940a2926a2e304027ed05",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        }
+      ],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [],
+      "page_chain_valid": true
+    },
+    "method:adoption-and-change.md": {
+      "bytes": 2943,
+      "sha256": "cf2bcda816d9384c496ed3432d7db98dee5fa6eaca0f15d733d88938b45e741b",
+      "full_body_visible": true,
+      "page_evidence": [
+        {
+          "page": 1,
+          "total": 1,
+          "byte_start": 0,
+          "byte_end": 2943,
+          "content_matches_fixed_source": true,
+          "page_sha256": "cf2bcda816d9384c496ed3432d7db98dee5fa6eaca0f15d733d88938b45e741b",
+          "previous_page_sha256": null,
+          "output_line": 172,
+          "call_id": "call_54ee36d6ef3940a2926a2e304027ed05",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        }
+      ],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [],
+      "page_chain_valid": true
+    },
+    "method:checklists/startup-receipt.md": {
+      "bytes": 1035,
+      "sha256": "374118279b5fb6e7039784b3cb30482c1f01cf0521ef75c954d8e71b6bf7e48b",
+      "full_body_visible": true,
+      "page_evidence": [
+        {
+          "page": 1,
+          "total": 1,
+          "byte_start": 0,
+          "byte_end": 1035,
+          "content_matches_fixed_source": true,
+          "page_sha256": "374118279b5fb6e7039784b3cb30482c1f01cf0521ef75c954d8e71b6bf7e48b",
+          "previous_page_sha256": null,
+          "output_line": 180,
+          "call_id": "call_4a29e0854ad242a29ff3b7ee0cdb3b63",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        }
+      ],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [],
+      "page_chain_valid": true
+    },
+    "method:checklists/task-and-evidence.md": {
+      "bytes": 3067,
+      "sha256": "0c264ec328c1af6326d759303ddca28d1fc0eb8aa14a2339194e498ca58522f8",
+      "full_body_visible": true,
+      "page_evidence": [
+        {
+          "page": 1,
+          "total": 1,
+          "byte_start": 0,
+          "byte_end": 3067,
+          "content_matches_fixed_source": true,
+          "page_sha256": "0c264ec328c1af6326d759303ddca28d1fc0eb8aa14a2339194e498ca58522f8",
+          "previous_page_sha256": null,
+          "output_line": 180,
+          "call_id": "call_4a29e0854ad242a29ff3b7ee0cdb3b63",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        }
+      ],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [],
+      "page_chain_valid": true
+    },
+    "method:examples/website-adapter.example.md": {
+      "bytes": 1112,
+      "sha256": "242b328b057125eadd9b1f88c140d42d1f1528d1c8918aa555eef21270e94009",
+      "full_body_visible": true,
+      "page_evidence": [
+        {
+          "page": 1,
+          "total": 1,
+          "byte_start": 0,
+          "byte_end": 1112,
+          "content_matches_fixed_source": true,
+          "page_sha256": "242b328b057125eadd9b1f88c140d42d1f1528d1c8918aa555eef21270e94009",
+          "previous_page_sha256": null,
+          "output_line": 180,
+          "call_id": "call_4a29e0854ad242a29ff3b7ee0cdb3b63",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        }
+      ],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [],
+      "page_chain_valid": true
+    },
+    "method:examples/learning-product-adapter.example.md": {
+      "bytes": 2616,
+      "sha256": "cfd5b19c9efdd011619e805f4ac84b7d723eac3e430d35eedaa589e94f85baaf",
+      "full_body_visible": true,
+      "page_evidence": [
+        {
+          "page": 1,
+          "total": 1,
+          "byte_start": 0,
+          "byte_end": 2616,
+          "content_matches_fixed_source": true,
+          "page_sha256": "cfd5b19c9efdd011619e805f4ac84b7d723eac3e430d35eedaa589e94f85baaf",
+          "previous_page_sha256": null,
+          "output_line": 180,
+          "call_id": "call_4a29e0854ad242a29ff3b7ee0cdb3b63",
+          "response_contains_truncation_warning": false,
+          "page_body_complete_despite_other_response_item_warning": true
+        }
+      ],
+      "exact_body_evidence": [],
+      "uncovered_ranges": [],
+      "page_chain_valid": true
+    }
+  },
+  "visible_tool_outputs": [
+    {
+      "call_id": "call_8d8a7eca58ac4928a52ef3840df096ec",
+      "call_line": 16,
+      "output_line": 20,
+      "name": "exec",
+      "output_sha256": "970ebe258c5ab71e77cd552cae29b33e626d2730b7377054755322fecee78a20",
+      "visible_chars": 29248,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_4274301b3a1343e1aee0b5fb7d1b67b2",
+      "call_line": 24,
+      "output_line": 27,
+      "name": "send_message",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "visible_chars": 0,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_89d6c03a0e9541cfac51de16caf80f4f",
+      "call_line": 29,
+      "output_line": 34,
+      "name": "exec",
+      "output_sha256": "1b2a839d34a2e02b9015e9d820ee6d386f9dec0c98b3e808afc220c625091536",
+      "visible_chars": 23378,
+      "contains_truncation_warning": true
+    },
+    {
+      "call_id": "call_bdfb2c325dcb4217b9bf6ef66cec4e05",
+      "call_line": 38,
+      "output_line": 41,
+      "name": "exec",
+      "output_sha256": "47fb502b03d53041adadf423eed2aa86c3de0f8031d2a4e83de1bec52786a802",
+      "visible_chars": 11464,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_47573de56e634bc2ba7492520f4af3c0",
+      "call_line": 43,
+      "output_line": 49,
+      "name": "exec",
+      "output_sha256": "ba8a82279492e4ca0702df68610af89175804c8215dff17d424eab9f521a0ee2",
+      "visible_chars": 28329,
+      "contains_truncation_warning": true
+    },
+    {
+      "call_id": "call_56f64d444cc2437a8613e11496b60816",
+      "call_line": 53,
+      "output_line": 58,
+      "name": "exec",
+      "output_sha256": "9348b5781cbeceb5ab920aaa15c1fa46cca99a627f5efafe50be8afdf595554b",
+      "visible_chars": 18184,
+      "contains_truncation_warning": true
+    },
+    {
+      "call_id": "call_df43c241723442478fe2e540c29f56a1",
+      "call_line": 62,
+      "output_line": 66,
+      "name": "exec",
+      "output_sha256": "61a45272c5901a5d25589d4d1ddebf323c69e25b6dce6a25e7e49110be47c3eb",
+      "visible_chars": 19294,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_fbb32d41e5cc4820b9fa8bbcdc2271a5",
+      "call_line": 70,
+      "output_line": 73,
+      "name": "exec",
+      "output_sha256": "d29e5b47b7e55eee26001901ac187ae832048a067ad33b73398a5eaff5f63084",
+      "visible_chars": 4320,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_ad7e91c3b6754a11b354c767db72a852",
+      "call_line": 77,
+      "output_line": 80,
+      "name": "send_message",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "visible_chars": 0,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_3846aed8f0e7487a9b3dd5a1dde59f21",
+      "call_line": 82,
+      "output_line": 85,
+      "name": "exec",
+      "output_sha256": "e6ef983c1c8c339df5383586241ce1cda1e80c081c65bc7036b8af63f4c31895",
+      "visible_chars": 1888,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_08184a689b00402aa9bc1806b65449e3",
+      "call_line": 87,
+      "output_line": 90,
+      "name": "exec",
+      "output_sha256": "54fbeccc14bd6c29c9c81937470e6e8193a81c4de74eff0a9df6a66add19f990",
+      "visible_chars": 2114,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_5690301c073a44ad92814944d67a7769",
+      "call_line": 92,
+      "output_line": 95,
+      "name": "exec",
+      "output_sha256": "51623f9952ee191385525e57a8b50d37421fd711483da59cf329f4e8c0c395b5",
+      "visible_chars": 2098,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_380e69bd271e4434b80a80c56fd4e0ae",
+      "call_line": 97,
+      "output_line": 100,
+      "name": "exec",
+      "output_sha256": "a075a8c522c54b93d4aa0bc6c400e77fe05c3243635049e02b9f321033f4c4c8",
+      "visible_chars": 2175,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_06a5f30231114956af768215cf66b022",
+      "call_line": 102,
+      "output_line": 105,
+      "name": "exec",
+      "output_sha256": "352c6e5ee649ccabfb514e4bb442fc4a1846e142e935c45f171d933b3e074702",
+      "visible_chars": 2221,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_7b08cee7e1d94c808cc3ab0c43b88cf1",
+      "call_line": 107,
+      "output_line": 110,
+      "name": "exec",
+      "output_sha256": "0041e0af824769a40255328a6b18b3fb65aff0182fefba4d32a87341eccb64ea",
+      "visible_chars": 2252,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_1857b21a7e9f4372a2d300f08921179b",
+      "call_line": 112,
+      "output_line": 115,
+      "name": "exec",
+      "output_sha256": "56475af7384693a18b01b2a00e887ec8f921a8ec9a947330148bfb7d8c9decf3",
+      "visible_chars": 2222,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_f10c6c80ecfb4c6b88ffa8a9db2fc557",
+      "call_line": 117,
+      "output_line": 120,
+      "name": "exec",
+      "output_sha256": "12d0c08273f85093779206a4968ff6686f5bd277d01eb36a54868cfb76475dab",
+      "visible_chars": 2198,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_c23b513426104db78885495cbf01f367",
+      "call_line": 122,
+      "output_line": 125,
+      "name": "exec",
+      "output_sha256": "35584d3118277e68acf891ed1a9f81db3fec664baaa24589adefc59f430632e7",
+      "visible_chars": 2294,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_72d40b95c55d4259a2739a2ca717e6a7",
+      "call_line": 127,
+      "output_line": 130,
+      "name": "exec",
+      "output_sha256": "841829cbf395cb0ac98b13b41d534ee7b9a81f13918b7e2b0ae39a56c95b7196",
+      "visible_chars": 2156,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_64dc2c305ce645f090f7ff3a2541ffdb",
+      "call_line": 132,
+      "output_line": 135,
+      "name": "exec",
+      "output_sha256": "3d46b04880dc43bb10ed95e143b4f9977f38ee470d1a73bdad396f6b17cfcea8",
+      "visible_chars": 2377,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_c9cf75c698f44229b74ccffa1244afec",
+      "call_line": 137,
+      "output_line": 141,
+      "name": "exec",
+      "output_sha256": "a0bbb6ff18d061d5f6640e7bfee315b268b7b55d0672d0dcc7d8f3bd1e23bf4a",
+      "visible_chars": 3521,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_6314d6f3641045219464301627f0a488",
+      "call_line": 145,
+      "output_line": 149,
+      "name": "exec",
+      "output_sha256": "a09be8b94b762d32b92cf72755e628514dafea68bc529e3267ee7af69b1b4e87",
+      "visible_chars": 10855,
+      "contains_truncation_warning": true
+    },
+    {
+      "call_id": "call_a5fd5b1457ea423faf606916bab46826",
+      "call_line": 153,
+      "output_line": 158,
+      "name": "exec",
+      "output_sha256": "2d38df37b54c825efdd88bc7023b8c133e3bf1f132682d423d6d4303b9387df1",
+      "visible_chars": 4157,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_8293f74d7c8745498e500581b19ad6d6",
+      "call_line": 160,
+      "output_line": 165,
+      "name": "exec",
+      "output_sha256": "c9f77f23f089b63256be8325e3f70c74324026c24a7999d7443b2642224d90ea",
+      "visible_chars": 3955,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_54ee36d6ef3940a2926a2e304027ed05",
+      "call_line": 167,
+      "output_line": 172,
+      "name": "exec",
+      "output_sha256": "aa2c2093f101f1025b1f852fbd2dc6619979d2e81e9409260c181874919ba767",
+      "visible_chars": 5145,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_4a29e0854ad242a29ff3b7ee0cdb3b63",
+      "call_line": 174,
+      "output_line": 180,
+      "name": "exec",
+      "output_sha256": "41beeab82a52c15312fab7f34f9bf5e08240bc549a5eab085f2f1270aec4a89b",
+      "visible_chars": 4889,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_1e129b0cbf734b5ba484137cc9d26057",
+      "call_line": 182,
+      "output_line": 185,
+      "name": "exec",
+      "output_sha256": "11ea1b99ebc9a6924c832bd25826865ebb908834ba9501d6aba9905be6471e2b",
+      "visible_chars": 2001,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_86f374bfaa6f4c79a6eb060fbb4d384d",
+      "call_line": 187,
+      "output_line": 191,
+      "name": "exec",
+      "output_sha256": "cf4496992792e30ee64ad46fc421fd186187726c46c4636fe0fb7a617afbce83",
+      "visible_chars": 1585,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_819b9a401f364f0192fe03422e725628",
+      "call_line": 195,
+      "output_line": 200,
+      "name": "exec",
+      "output_sha256": "e45fe20885c9e158d93460d11c67920ec834414c89a9fa9b12e1ed9d1309c72a",
+      "visible_chars": 22785,
+      "contains_truncation_warning": true
+    },
+    {
+      "call_id": "call_912d381306c44e6cab1c946dee02049f",
+      "call_line": 204,
+      "output_line": 208,
+      "name": "exec",
+      "output_sha256": "83de20dbaf72ef6a82580e83b4567375a9cbca2210f2427912ba05fbc0070365",
+      "visible_chars": 14041,
+      "contains_truncation_warning": true
+    },
+    {
+      "call_id": "call_5a503659af31479a883be29c721f7547",
+      "call_line": 212,
+      "output_line": 216,
+      "name": "exec",
+      "output_sha256": "dd70541274fe8a48250d59bf1a08a6f432d1f4568650e69e0cddbe1a4d6c2609",
+      "visible_chars": 5822,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_db8b2f8f1cc442f8bea92e7d0ff4cba8",
+      "call_line": 220,
+      "output_line": 223,
+      "name": "send_message",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "visible_chars": 0,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_1885ce73e25f4b18bec5399cdea66fa4",
+      "call_line": 227,
+      "output_line": 230,
+      "name": "exec",
+      "output_sha256": "ddfab06c9b0fff3b1778cef0f05c680e69553055f69fd31ca1557df691df3ae5",
+      "visible_chars": 16017,
+      "contains_truncation_warning": true
+    },
+    {
+      "call_id": "call_6cc14052f9ce4c559fca7b9f05bc439f",
+      "call_line": 234,
+      "output_line": 237,
+      "name": "exec",
+      "output_sha256": "8c2fbdab5954a3b91ff773b6313370ad140a141ac31335c64a703a7d5126bced",
+      "visible_chars": 12010,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_2b08988e300c4420875866d2381a5b39",
+      "call_line": 241,
+      "output_line": 244,
+      "name": "exec",
+      "output_sha256": "fb0f3f2c4b8867bf76d1930ae1913173ba2025eceaf6105be58b774ce0d169b9",
+      "visible_chars": 16610,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_8280534cee414731a9a96c9c845f1ef0",
+      "call_line": 248,
+      "output_line": 251,
+      "name": "send_message",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "visible_chars": 0,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_c0aa18114ba348d08994bb7130bee0cb",
+      "call_line": 253,
+      "output_line": 256,
+      "name": "exec",
+      "output_sha256": "163ee65f5c724001be83afaeb11bced5f647581450551ec807d4b5ac3aa563cd",
+      "visible_chars": 11469,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_d2a3a65b78cd492f9f7f99e448ab5d1f",
+      "call_line": 262,
+      "output_line": 265,
+      "name": "exec",
+      "output_sha256": "f96703c1e53b354867643b2e8c5945b16d59e2485adda0f24cf6665f7ec5fa4a",
+      "visible_chars": 12051,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_a062fadfd59a453097a5893c69c72086",
+      "call_line": 269,
+      "output_line": 272,
+      "name": "send_message",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "visible_chars": 0,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_c14ba19f901f4f4da6e7d458cce63c09",
+      "call_line": 278,
+      "output_line": 281,
+      "name": "send_message",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "visible_chars": 0,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_b86c422956e64a4e9c9261d2d5c93682",
+      "call_line": 283,
+      "output_line": 287,
+      "name": "exec",
+      "output_sha256": "067df332275b3387f54d2b6019be8af81239db16d2297ebfbbb6da1ec42cfd9f",
+      "visible_chars": 4607,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_a2e6b3a370204e4ebac14d9d1a04b661",
+      "call_line": 291,
+      "output_line": 294,
+      "name": "send_message",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "visible_chars": 0,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_df00e2b682db411fb6055a4e1b001386",
+      "call_line": 298,
+      "output_line": 301,
+      "name": "exec",
+      "output_sha256": "02b87f2ce71f6cb86dc144748cf61a64c69b69528e0791d8ae630882f78e0dea",
+      "visible_chars": 49,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_e0372207e4d74144a50b9ce68ca1896e",
+      "call_line": 305,
+      "output_line": 308,
+      "name": "exec",
+      "output_sha256": "8bebd55d6d6cede5cef1e27d1db6cd5b55178a1ca3afa5758fe955f4b2ad732b",
+      "visible_chars": 3740,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_6c8a5b7185f142a0aa0599c3a14c83d9",
+      "call_line": 312,
+      "output_line": 315,
+      "name": "exec",
+      "output_sha256": "8d27a47de2368b7dbb45a5144698d36bb6480144eb746d1f3d135254814a01f0",
+      "visible_chars": 6050,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_33692fdafb5c4b95b3ff8e6a916695c9",
+      "call_line": 319,
+      "output_line": 322,
+      "name": "exec",
+      "output_sha256": "815cfac0ec7b464eb509f50cc70781267127179183cdf6ffc695f5da7e59b249",
+      "visible_chars": 7317,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_8c93146bb199403eab3ec8a4bbf8559f",
+      "call_line": 326,
+      "output_line": 330,
+      "name": "exec",
+      "output_sha256": "7097eae3405382c162bcc3ffe1edcf47f0f1b24b1ef78598660a8457598cd66c",
+      "visible_chars": 226,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_15a296b524c8494f8e84ffe5ff152f34",
+      "call_line": 334,
+      "output_line": 338,
+      "name": "exec",
+      "output_sha256": "04f89e53a8e322d827a5a945a573819b3df96aac90350ab35a504b4d8479e552",
+      "visible_chars": 4563,
+      "contains_truncation_warning": false
+    },
+    {
+      "call_id": "call_a6e2734159a1473baaea8f909b04f4f9",
+      "call_line": 342,
+      "output_line": 345,
+      "name": "send_message",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "visible_chars": 0,
+      "contains_truncation_warning": false
+    }
+  ],
+  "coverage_result": "FINAL: 18/32 required bodies visibly complete; 14 have insufficient full-body delivery. AGENTS 13 pages and ten fixed method bodies complete; no checker/hash substitution.",
+  "truncation_interpretation": "Warnings in a sibling checker output do not truncate a separately emitted page. Every credited page body exactly matches frozen byte slice and page hash. Earlier large governance output truncated but later 13 pages independently cover full bytes. Missing project documents have no full-body output, not repaired by metadata.",
+  "source_content_saved": false,
+  "summary": {
+    "required_bodies": 32,
+    "visibly_complete_bodies": 18,
+    "incomplete_project_bodies": 14,
+    "AGENTS_pages": 13,
+    "fixed_method_body_files": 10,
+    "fixed_method_pages": 12,
+    "original_product_role_pages": 4,
+    "source_body_or_raw_log_persisted": false
+  }
+}

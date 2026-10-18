@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-18T02:18:50.730456+00:00",
+  "correction_to": "dispatch.json root_actual_tool_call_used_exact_frozen_prompt",
+  "correction": "Same ordinary prompt text; byte-exact claim was too broad because saved prompt has one final newline and root-supplied spawn message does not. Original dispatch snapshot retained unchanged.",
+  "saved_prompt_bytes": 950,
+  "saved_prompt_sha256": "586073cc5e6a842bd0ecde7e44685b197dd99e09a530aeaeedac998d77bf5acb",
+  "root_supplied_spawn_message_bytes": 949,
+  "root_supplied_spawn_message_sha256": "da54a4d72505f9f2f7fb6d990cda02925d265aa21d88d1037b8ce0a607f953de",
+  "difference": "single terminal LF only; no wording, source hints, reading path, version or checklist added",
+  "requested_fork_turns": "none",
+  "provenance": "Root actual supplied tool argument; encrypted child task not reconstructed/decrypted; semantic equivalence does not assert identical child transport bytes",
+  "first_delivery_not_sealed_yet": true
+}

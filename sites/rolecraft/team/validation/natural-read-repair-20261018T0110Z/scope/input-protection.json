@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "record_kind": "independent_repair_and_second_trial_input_protection",
+  "checked_at_utc": "2026-10-18T01:09:25.260624+00:00",
+  "executor_ref": "/root/method_audit",
+  "input_bindings": {
+    "baseline_sha256": "8ff703d9157f9241cc6beace4749aa5f89d96d866f769300228d20b8900c8060",
+    "trial_input_freeze_sha256": "fb04c2bd1263fc255030ea8adcc4e770d2d20bd7f252eb00c882592933f13c9b",
+    "trial_input_freeze_matches_requested": true,
+    "repair_qa_receipt_sha256": "6ec5330bd30cf0a6ede9b108ba35481c1511240aefb28e4d41528ef413c398c8"
+  },
+  "all_project_metadata_comparison": {
+    "scope": "current complete tracked and nonignored untracked worktree file metadata; no file bodies",
+    "frozen_files": 3582,
+    "current_tracked_and_nonignored_untracked_files": 3582,
+    "missing": [],
+    "extra": [],
+    "byte_hash_or_mode_mismatches": [],
+    "nonregular_or_symlink_files": [],
+    "current_paths_metadata_aggregate_sha256": "bbb3a6668e679e918ff9e9833d24a5f95e5667224702d1274d75254345052c82",
+    "all_files_match_frozen_inputs": true
+  },
+  "allowed_repair_scope": {
+    "allowed_files": {
+      "AGENTS.md": {
+        "bytes": 50693,
+        "sha256": "bf2599697f6b6b2504e89700dec5325be815e97b9553bc8c6e30056c9b6c007f"
+      },
+      "sites/rolecraft/team/onboarding/README.md": {
+        "bytes": 11505,
+        "sha256": "1ae35db606a0f893a9f1d6e3efde7560cf318423a167c7124b9a7010989aba98"
+      },
+      "sites/rolecraft/team/onboarding/TEAM-ROUTING.md": {
+        "bytes": 8885,
+        "sha256": "15ca65c8a803fbcd7ad51673458c0f46a4728ed1f4a0745d99b614b7bdd54f0f"
+      },
+      "sites/rolecraft/team/onboarding/startup/README.md": {
+        "bytes": 10633,
+        "sha256": "04864fb3edfbbaa222f9f20f258bef75315912fcadfcf70dac659147e0938400"
+      },
+      "sites/rolecraft/team/onboarding/startup/check_startup.py": {
+        "bytes": 27094,
+        "sha256": "7c8f4096b71853a08d0485c10a4b9144cdcfa7385bbf46e448aa3608366cad7b"
+      },
+      "sites/rolecraft/team/onboarding/startup/sources.json": {
+        "bytes": 1988,
+        "sha256": "63d8a5443ffe38483b0776d78d46537dd8f7d608b30d9a8fc3c8120d84e59d11"
+      },
+      "sites/rolecraft/team/onboarding/startup/test_check_startup.py": {
+        "bytes": 21243,
+        "sha256": "b041cd4932a3ced50775571006ec70a5e17f0a9e37c45f04bd63f57c981518f1"
+      },
+      "sites/rolecraft/team/onboarding/startup/local-method-source.json": {
+        "bytes": 382,
+        "sha256": "0147b66a156d412a659371159fa84a869f7ded2815066850a9d0360f70ed8cd9"
+      },
+      "sites/rolecraft/team/onboarding/startup/read_source.py": {
+        "bytes": 11663,
+        "sha256": "d67fa64f7b206bd732725101e2edaf433531554c4834ceee7031b2bdc9e11632"
+      },
+      "sites/rolecraft/team/onboarding/startup/test_read_source.py": {
+        "bytes": 11349,
+        "sha256": "e3e013fe63584d2c503facc46088d619e9c97a57905cf21699fc862fe62c3d81"
+      }
+    },
+    "allowed_count": 10,
+    "tracked_changed_files": [
+      "AGENTS.md",
+      "sites/rolecraft/team/onboarding/README.md",
+      "sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+      "sites/rolecraft/team/onboarding/startup/README.md",
+      "sites/rolecraft/team/onboarding/startup/check_startup.py",
+      "sites/rolecraft/team/onboarding/startup/sources.json",
+      "sites/rolecraft/team/onboarding/startup/test_check_startup.py"
+    ],
+    "new_repair_files": [
+      "sites/rolecraft/team/onboarding/startup/local-method-source.json",
+      "sites/rolecraft/team/onboarding/startup/read_source.py",
+      "sites/rolecraft/team/onboarding/startup/test_read_source.py"
+    ],
+    "repair_files_match_QA_and_trial_freeze": true,
+    "repair_binding_mismatches": [],
+    "git_changed_and_untracked_set_exactly_allowed_repair_plus_old_first_trial": true,
+    "protected_first_trial_untracked_count": 15,
+    "old_first_trial_hash_mismatches": []
+  },
+  "AGENTS_preservation": {
+    "unique_ordered_marker_pair": true,
+    "original_first_48710_sha256": "5b9ef55c0c0e520ca6ddd7d122a5310fa0ed479c4649657fdd14e3ad13cd1153",
+    "original_first_48710_matches_baseline": true,
+    "before_marker_bytes": 48711,
+    "before_marker_sha256": "565c96a00a580b414536fcacfb4afff7e2f1ca5b977dd3be76c6848b2a637ee6",
+    "before_marker_matches_baseline": true,
+    "after_marker_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "after_marker_matches_baseline": true
+  },
+  "git_protection": {
+    "head": "ba9a55fe39be32e96130ed3df6a9d69cbfc97917",
+    "main": "4158efd4641be219c897746cc063d73122f4eeb7",
+    "branch": "integration/peiyu-team-onboarding-20261017",
+    "refs_match_baseline_and_trial_freeze": true,
+    "staged_diff": "",
+    "index_sha256": "caa3fc706ebda16311a066da855a662f8e7d5d2fb112920159b750fb51eb9f1f",
+    "index_matches_baseline_and_freeze": true,
+    "config_sha256": "fa89354232d96be9723b3b8131b81e33d1dcd90ae07348f0a0839a917ba7e04e",
+    "config_matches_baseline_and_freeze": true,
+    "method_index_sha256": "8cceb73674244c50b95f6e8ae42a670447b279836e29f8a4c107b9ee5f2bfc83",
+    "method_index_matches_baseline": true,
+    "method_config_sha256_current_only": "8e6df4bdad1c7613aefbefff1e96764d7ecffb745ef703c093c97f2fd4445d71",
+    "method_config_limit": "No method-config baseline is specified here; this current hash alone does not prove historical immutability."
+  },
+  "other_source_protection": {
+    "employee_files": 76,
+    "employee_hash_mismatches": [],
+    "old_first_trial_files": 15,
+    "old_first_trial_mismatches": [],
+    "other_protected_project_files": 7,
+    "protected_project_mismatches": [],
+    "method_files": 12,
+    "method_sha256": {
+      "adoption-and-change.md": "cf2bcda816d9384c496ed3432d7db98dee5fa6eaca0f15d733d88938b45e741b",
+      "CHANGELOG.md": "04fbd3e05f9af5d0432273000b88bacaef328eb314f7234992ec4c1e2ec4e2c4",
+      "README.md": "7283e2d173c9c44bad7f356f890241efb7693be3a340d456c868df391142f1c1",
+      "roles.md": "e19e414487dbd03a31824f1f5d3fb1a4ef57cc4076a54d17ddb82d5a64ef5b5a",
+      "methods.md": "3346016d6aba70f681cf26467d642f9bc8ebfd45b10ea520fa0cc5de169d879b",
+      "SOURCE-MANIFEST.md": "ddf191051d0f7f47ce84097b7b1528f609565b1f287df770a0127ea5ee274cb1",
+      "checklists/task-and-evidence.md": "0c264ec328c1af6326d759303ddca28d1fc0eb8aa14a2339194e498ca58522f8",
+      "checklists/startup-receipt.md": "374118279b5fb6e7039784b3cb30482c1f01cf0521ef75c954d8e71b6bf7e48b",
+      "examples/website-adapter.example.md": "242b328b057125eadd9b1f88c140d42d1f1528d1c8918aa555eef21270e94009",
+      "examples/learning-product-adapter.example.md": "cfd5b19c9efdd011619e805f4ac84b7d723eac3e430d35eedaa589e94f85baaf",
+      "proposals/version-bound-fact-claims-v01.md": "4fd8f894297e98072108df4eac2e6dfc53aacfc0d1196f8648733781a6a14552",
+      "proposals/entry-status-and-evidence-links-v01.md": "2b6b146de13859386b4aa7874d2f0e745f8b05eaf89ab15f0493d6af711565c9"
+    },
+    "method_hash_mismatches": [],
+    "method_status": "?? proposals/entry-status-and-evidence-links-v01.md\n?? proposals/version-bound-fact-claims-v01.md",
+    "method_only_original_two_untracked_candidates": true
+  },
+  "limits": [
+    "No current second-trial business artifact or runtime log was opened; no business executor contacted.",
+    "No private method body, original runtime log or hidden analysis/reasoning copied. Only file metadata and hashes recorded.",
+    "No business/service/browser/test/network execution or Git/project/method/employee writes. Only this external protection report is written.",
+    "Checks frozen inputs and endpoint protection only; does not decide implementation quality, second-trial outcome, professional understanding, stable mastery or formal adoption.",
+    "Tracked and nonignored untracked files are covered; ignored runtime files and continuous monitoring are not certified."
+  ],
+  "verdict": "PASS_within_frozen_trial_input_and_source_protection_scope"
+}

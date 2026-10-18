@@ -1,0 +1,379 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-18T01:10:05.492057+00:00",
+  "criteria_freeze_sha256": "863bf04a495171fb0456867df8515bbd126d072920fe65c2eccd5cde04f81530",
+  "criteria_json_sha256": "8536e6f6c5de274f431eb6030f4aebe99de4956ba6f735524af3f7fa9307174f",
+  "trial_freeze": {
+    "path": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-startup-repair-20261018T0054Z/trial-input-freeze.json",
+    "bytes": 800628,
+    "sha256": "fb04c2bd1263fc255030ea8adcc4e770d2d20bd7f252eb00c882592933f13c9b",
+    "frozen_at_utc": "2026-10-18T01:08:02.958495+00:00",
+    "all_project_metadata_entries": 3582
+  },
+  "repair_qa": {
+    "sha256": "6ec5330bd30cf0a6ede9b108ba35481c1511240aefb28e4d41528ef413c398c8",
+    "result": "pass_within_startup_repair_mechanism_scope"
+  },
+  "project": {
+    "root": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft",
+    "head": "ba9a55fe39be32e96130ed3df6a9d69cbfc97917",
+    "branch": "integration/peiyu-team-onboarding-20261017",
+    "version_rule": "HEAD plus the following current working-tree hashes; not HEAD alone",
+    "files": {
+      "AGENTS.md": {
+        "bytes": 50693,
+        "sha256": "bf2599697f6b6b2504e89700dec5325be815e97b9553bc8c6e30056c9b6c007f",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": "23022f1388ee6940095e2be658d4f5fc7e424ac7",
+        "head_blob_sha256": "a859c218c01351f506e878f8d200a1ccc5c638ce26991c6f31ae549fcdfcbfd8",
+        "worktree_equals_head_blob": false
+      },
+      "sites/rolecraft/team/employees/core/README.md": {
+        "bytes": 4577,
+        "sha256": "90572c46efdda8333abeaf3458a01774430aa51076220621f384857f71af7a7e",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": "26060ec2f7b1108ceb138df20f3966a72b6f7ed4",
+        "head_blob_sha256": "90572c46efdda8333abeaf3458a01774430aa51076220621f384857f71af7a7e",
+        "worktree_equals_head_blob": true
+      },
+      "sites/rolecraft/team/employees/core/manifest.json": {
+        "bytes": 2736,
+        "sha256": "28227bf1a6c4ac584e28b2a419614368ee539433e929dce60206b8571283aef2",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": "629d8ae0cb3fbb60067cf7b00dfa3013b66b149c",
+        "head_blob_sha256": "28227bf1a6c4ac584e28b2a419614368ee539433e929dce60206b8571283aef2",
+        "worktree_equals_head_blob": true
+      },
+      "sites/rolecraft/team/employees/core/product-manager/MEMORY.md": {
+        "bytes": 1297,
+        "sha256": "d992070fba035c1d3a5fb6f5734ed0922f011321c717cfb578b9b2e8209e38fe",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": "452035b458f43f42babd73111c71a3e51c893067",
+        "head_blob_sha256": "d992070fba035c1d3a5fb6f5734ed0922f011321c717cfb578b9b2e8209e38fe",
+        "worktree_equals_head_blob": true
+      },
+      "sites/rolecraft/team/employees/core/product-manager/MEMORY_SCHEMA.md": {
+        "bytes": 3349,
+        "sha256": "4026b98355e6fc1332871eaa9d93bf532288125fea200f40c7c78fc041303c07",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": "257b78259aed1418563146a24ac62937d9059717",
+        "head_blob_sha256": "4026b98355e6fc1332871eaa9d93bf532288125fea200f40c7c78fc041303c07",
+        "worktree_equals_head_blob": true
+      },
+      "sites/rolecraft/team/employees/core/product-manager/ROLE.md": {
+        "bytes": 5096,
+        "sha256": "56f932f3621b64469b3136ff3d1cafa3af900608f5c82947e33e0012ffd614c7",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": "c842d168f877420d41330cd91257a3b36cb8a074",
+        "head_blob_sha256": "56f932f3621b64469b3136ff3d1cafa3af900608f5c82947e33e0012ffd614c7",
+        "worktree_equals_head_blob": true
+      },
+      "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md": {
+        "bytes": 5705,
+        "sha256": "e80f7be22925b043f9071c800b8ba040531a06756b3c3120df479cd94071060b",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": "31cec6788d4ad5873aa87c85254407d86288ebbd",
+        "head_blob_sha256": "e80f7be22925b043f9071c800b8ba040531a06756b3c3120df479cd94071060b",
+        "worktree_equals_head_blob": true
+      },
+      "sites/rolecraft/team/employees/v12-evidence/manifest.json": {
+        "bytes": 8100,
+        "sha256": "d805bce8111fdc232916da7a982a20791eca47be415afba1227f6819de85e7f7",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": "b6f469b49b97cff5309bc25ed8b5d9131a3f44f9",
+        "head_blob_sha256": "d805bce8111fdc232916da7a982a20791eca47be415afba1227f6819de85e7f7",
+        "worktree_equals_head_blob": true
+      },
+      "sites/rolecraft/team/onboarding/APPLICATION-NOTES.md": {
+        "bytes": 8647,
+        "sha256": "d39b582b4c992b319720eae20a58418a9dafeb1277fa57d6be31dbb10f458afd",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": "c503d41c0d6f776fe9fad70b41b530b1880d9e71",
+        "head_blob_sha256": "d39b582b4c992b319720eae20a58418a9dafeb1277fa57d6be31dbb10f458afd",
+        "worktree_equals_head_blob": true
+      },
+      "sites/rolecraft/team/onboarding/README.md": {
+        "bytes": 11505,
+        "sha256": "1ae35db606a0f893a9f1d6e3efde7560cf318423a167c7124b9a7010989aba98",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": "fcedbd93a75f1d4642d40537b5a4f8f0df323f33",
+        "head_blob_sha256": "9a0f20c509bce79a6067c4bc9e0368af9c8e26a89b4b4554a2c52e19a81db8ca",
+        "worktree_equals_head_blob": false
+      },
+      "sites/rolecraft/team/onboarding/ROLE-MAPPING.md": {
+        "bytes": 9207,
+        "sha256": "6fef691401c64a1bf171a87c4d6cc7ec60bacab0560bccb37333f85db901ff5f",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": "d546e208e137196becd6ffc7ce30f64f139aaf83",
+        "head_blob_sha256": "6fef691401c64a1bf171a87c4d6cc7ec60bacab0560bccb37333f85db901ff5f",
+        "worktree_equals_head_blob": true
+      },
+      "sites/rolecraft/team/onboarding/TASK-LAYOUT3-READING-DIALOGUE.md": {
+        "bytes": 6025,
+        "sha256": "2c094e940338032a179551503270d927801b1e7e82652126e31280dd4e33bfdc",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": "a5a28e852a47f1ce9d897ac52d95d4580fda4c5e",
+        "head_blob_sha256": "2c094e940338032a179551503270d927801b1e7e82652126e31280dd4e33bfdc",
+        "worktree_equals_head_blob": true
+      },
+      "sites/rolecraft/team/onboarding/TEAM-ROUTING.md": {
+        "bytes": 8885,
+        "sha256": "15ca65c8a803fbcd7ad51673458c0f46a4728ed1f4a0745d99b614b7bdd54f0f",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": "f8daced6f93d1cec2fa3eea41e5b25f6eb0e8ccf",
+        "head_blob_sha256": "310065b56ef9efb7d8cafcfc96e3841f5cad0ac737305a3a398d1c60c87c6806",
+        "worktree_equals_head_blob": false
+      },
+      "sites/rolecraft/team/onboarding/startup/README.md": {
+        "bytes": 10633,
+        "sha256": "04864fb3edfbbaa222f9f20f258bef75315912fcadfcf70dac659147e0938400",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": "47769cd84330fe84872de4d7509b802cdc4cf9c4",
+        "head_blob_sha256": "89687f866453c48196aba3e46f5518d0e6c093c3b00f40f8c4a13b77c11a30f5",
+        "worktree_equals_head_blob": false
+      },
+      "sites/rolecraft/team/onboarding/startup/check_startup.py": {
+        "bytes": 27094,
+        "sha256": "7c8f4096b71853a08d0485c10a4b9144cdcfa7385bbf46e448aa3608366cad7b",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": "0429a892b625c574ebe47b8e5ddf20050a99ddc6",
+        "head_blob_sha256": "f29fad5c3548d3befdba47dc2196b7c7d6d5ae59d9927018597e974ab1ec9012",
+        "worktree_equals_head_blob": false
+      },
+      "sites/rolecraft/team/onboarding/startup/local-method-source.json": {
+        "bytes": 382,
+        "sha256": "0147b66a156d412a659371159fa84a869f7ded2815066850a9d0360f70ed8cd9",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": null,
+        "worktree_equals_head_blob": false
+      },
+      "sites/rolecraft/team/onboarding/startup/read_source.py": {
+        "bytes": 11663,
+        "sha256": "d67fa64f7b206bd732725101e2edaf433531554c4834ceee7031b2bdc9e11632",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": null,
+        "worktree_equals_head_blob": false
+      },
+      "sites/rolecraft/team/onboarding/startup/sources.json": {
+        "bytes": 1988,
+        "sha256": "63d8a5443ffe38483b0776d78d46537dd8f7d608b30d9a8fc3c8120d84e59d11",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": "f0f0cf0c6d8095b68d4dff0d1860062b58832819",
+        "head_blob_sha256": "87ec6cec1e3b7880fc4cd42b4c15beba159cf67081ef6ff74ff2a24736e831a4",
+        "worktree_equals_head_blob": false
+      },
+      "sites/rolecraft/team/onboarding/startup/test_check_startup.py": {
+        "bytes": 21243,
+        "sha256": "b041cd4932a3ced50775571006ec70a5e17f0a9e37c45f04bd63f57c981518f1",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": "2e6e6009aaf8158718994d67c3905349f00b5dfd",
+        "head_blob_sha256": "182eec9f7fe85b7baa3c911760f936b07e45fd729c3634661543f66a2cd5a7d3",
+        "worktree_equals_head_blob": false
+      },
+      "sites/rolecraft/team/onboarding/startup/test_read_source.py": {
+        "bytes": 11349,
+        "sha256": "e3e013fe63584d2c503facc46088d619e9c97a57905cf21699fc862fe62c3d81",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": null,
+        "worktree_equals_head_blob": false
+      },
+      "sites/rolecraft/team/task-closeout-20261017.json": {
+        "bytes": 15006,
+        "sha256": "78e698ed76ef63c2ca603f1730baedcf1c06e3c7b2c7750cf6ca9bd2b7564cba",
+        "mode": "0o600",
+        "matches_trial_freeze": true,
+        "head_blob": "0bc9d81c4d62dc6a8e6e0ed0cca9ba078f4f746a",
+        "head_blob_sha256": "78e698ed76ef63c2ca603f1730baedcf1c06e3c7b2c7750cf6ca9bd2b7564cba",
+        "worktree_equals_head_blob": true
+      },
+      "sites/rolecraft/team/task-closeout-20261017.md": {
+        "bytes": 2631,
+        "sha256": "e0eb6d418d4eef6fd3580c97d8f766d98a8162cf95f4639bf0c14118cb6c8920",
+        "mode": "0o600",
+        "matches_trial_freeze": true,
+        "head_blob": "14e055f45ea42ef3def1d6f76e7ae49cd7391537",
+        "head_blob_sha256": "e0eb6d418d4eef6fd3580c97d8f766d98a8162cf95f4639bf0c14118cb6c8920",
+        "worktree_equals_head_blob": true
+      },
+      "sites/rolecraft/team/team-method-loop-20261017-archive.md": {
+        "bytes": 8666,
+        "sha256": "d8b0ec8de67b8f17d511e70daa99038859b94b9d8f7ff5ad39cd9560d2085eeb",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": "2f6efb29c6caad1b285095ea144434bd6446f817",
+        "head_blob_sha256": "d8b0ec8de67b8f17d511e70daa99038859b94b9d8f7ff5ad39cd9560d2085eeb",
+        "worktree_equals_head_blob": true
+      },
+      "sites/rolecraft/team/team-method-loop-20261017-evidence.json": {
+        "bytes": 25287,
+        "sha256": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": "42d1d8f1fff647430d4264500b8b07988e5ebbd9",
+        "head_blob_sha256": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+        "worktree_equals_head_blob": true
+      },
+      "sites/rolecraft/team/validation/natural-read-20261017T1557Z/README.md": {
+        "bytes": 4779,
+        "sha256": "1d89401be043d5f6f957d729b701e245669d0f442ec185a457f3190e57ca90ba",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": null,
+        "worktree_equals_head_blob": false
+      },
+      "sites/rolecraft/team/validation/natural-read-20261017T1557Z/validation-receipt.json": {
+        "bytes": 5942,
+        "sha256": "2d42358d9f8540f50651dde7555ac3e660e2bd333db8de2cba322a1005f171af",
+        "mode": "0o644",
+        "matches_trial_freeze": true,
+        "head_blob": null,
+        "worktree_equals_head_blob": false
+      }
+    },
+    "direct_closeout_records": [
+      "sites/rolecraft/team/task-closeout-20261017.json",
+      "sites/rolecraft/team/task-closeout-20261017.md"
+    ],
+    "AGENTS": {
+      "bytes": 50693,
+      "lines": 227,
+      "original_line171_nonempty": true,
+      "original_line173_nonempty": true,
+      "business_visible_coverage": "pending actual business outputs; QA bytes do not count"
+    }
+  },
+  "method": {
+    "root": "/Users/liuqian/Documents/Codex/2026-10-17/task-3/ai-team-handbook-loop-review",
+    "origin": "git@github.com:chennyqian/ai-team-handbook.git",
+    "head": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+    "status": "REVIEW DRAFT; not formally adopted",
+    "files": {
+      "adoption-and-change.md": {
+        "bytes": 2943,
+        "sha256": "cf2bcda816d9384c496ed3432d7db98dee5fa6eaca0f15d733d88938b45e741b",
+        "matches_trial_freeze": true,
+        "body_copied": false,
+        "fixed_blob": "59912d64e654e06ae4cb9ff3cf564b02a72f3bcd",
+        "blob_sha256": "cf2bcda816d9384c496ed3432d7db98dee5fa6eaca0f15d733d88938b45e741b",
+        "worktree_equals_fixed_blob": true
+      },
+      "CHANGELOG.md": {
+        "bytes": 1147,
+        "sha256": "04fbd3e05f9af5d0432273000b88bacaef328eb314f7234992ec4c1e2ec4e2c4",
+        "matches_trial_freeze": true,
+        "body_copied": false,
+        "fixed_blob": "94ed83b0b9f914301511c0641f8db0643d97b130",
+        "blob_sha256": "04fbd3e05f9af5d0432273000b88bacaef328eb314f7234992ec4c1e2ec4e2c4",
+        "worktree_equals_fixed_blob": true
+      },
+      "README.md": {
+        "bytes": 2346,
+        "sha256": "7283e2d173c9c44bad7f356f890241efb7693be3a340d456c868df391142f1c1",
+        "matches_trial_freeze": true,
+        "body_copied": false,
+        "fixed_blob": "d976254f4cb0692640828755704f4a6535df7185",
+        "blob_sha256": "7283e2d173c9c44bad7f356f890241efb7693be3a340d456c868df391142f1c1",
+        "worktree_equals_fixed_blob": true
+      },
+      "roles.md": {
+        "bytes": 8313,
+        "sha256": "e19e414487dbd03a31824f1f5d3fb1a4ef57cc4076a54d17ddb82d5a64ef5b5a",
+        "matches_trial_freeze": true,
+        "body_copied": false,
+        "fixed_blob": "1dbf4b8d1db62c00794278cf99e7f6f220b4b1fa",
+        "blob_sha256": "e19e414487dbd03a31824f1f5d3fb1a4ef57cc4076a54d17ddb82d5a64ef5b5a",
+        "worktree_equals_fixed_blob": true
+      },
+      "methods.md": {
+        "bytes": 3052,
+        "sha256": "3346016d6aba70f681cf26467d642f9bc8ebfd45b10ea520fa0cc5de169d879b",
+        "matches_trial_freeze": true,
+        "body_copied": false,
+        "fixed_blob": "f7c78f29baba702ce450623849891276f7afe171",
+        "blob_sha256": "3346016d6aba70f681cf26467d642f9bc8ebfd45b10ea520fa0cc5de169d879b",
+        "worktree_equals_fixed_blob": true
+      },
+      "SOURCE-MANIFEST.md": {
+        "bytes": 2246,
+        "sha256": "ddf191051d0f7f47ce84097b7b1528f609565b1f287df770a0127ea5ee274cb1",
+        "matches_trial_freeze": true,
+        "body_copied": false,
+        "fixed_blob": "99f7e5d2d14e1080a7908b0e0f2b33d133553a48",
+        "blob_sha256": "ddf191051d0f7f47ce84097b7b1528f609565b1f287df770a0127ea5ee274cb1",
+        "worktree_equals_fixed_blob": true
+      },
+      "checklists/task-and-evidence.md": {
+        "bytes": 3067,
+        "sha256": "0c264ec328c1af6326d759303ddca28d1fc0eb8aa14a2339194e498ca58522f8",
+        "matches_trial_freeze": true,
+        "body_copied": false,
+        "fixed_blob": "054933ad5558bd1606941beee9469de564ad24f7",
+        "blob_sha256": "0c264ec328c1af6326d759303ddca28d1fc0eb8aa14a2339194e498ca58522f8",
+        "worktree_equals_fixed_blob": true
+      },
+      "checklists/startup-receipt.md": {
+        "bytes": 1035,
+        "sha256": "374118279b5fb6e7039784b3cb30482c1f01cf0521ef75c954d8e71b6bf7e48b",
+        "matches_trial_freeze": true,
+        "body_copied": false,
+        "fixed_blob": "54f282b126dd5f1a279c7656e69138a3854c4660",
+        "blob_sha256": "374118279b5fb6e7039784b3cb30482c1f01cf0521ef75c954d8e71b6bf7e48b",
+        "worktree_equals_fixed_blob": true
+      },
+      "examples/website-adapter.example.md": {
+        "bytes": 1112,
+        "sha256": "242b328b057125eadd9b1f88c140d42d1f1528d1c8918aa555eef21270e94009",
+        "matches_trial_freeze": true,
+        "body_copied": false,
+        "fixed_blob": "4837c45071f31a0ff861ee378bfcb1d13eb93641",
+        "blob_sha256": "242b328b057125eadd9b1f88c140d42d1f1528d1c8918aa555eef21270e94009",
+        "worktree_equals_fixed_blob": true
+      },
+      "examples/learning-product-adapter.example.md": {
+        "bytes": 2616,
+        "sha256": "cfd5b19c9efdd011619e805f4ac84b7d723eac3e430d35eedaa589e94f85baaf",
+        "matches_trial_freeze": true,
+        "body_copied": false,
+        "fixed_blob": "5e69b6c8e4c5c2363c143cda850fd80fce7cec1b",
+        "blob_sha256": "cfd5b19c9efdd011619e805f4ac84b7d723eac3e430d35eedaa589e94f85baaf",
+        "worktree_equals_fixed_blob": true
+      },
+      "proposals/version-bound-fact-claims-v01.md": {
+        "bytes": 2255,
+        "sha256": "4fd8f894297e98072108df4eac2e6dfc53aacfc0d1196f8648733781a6a14552",
+        "matches_trial_freeze": true,
+        "body_copied": false,
+        "identity": "protected untracked proposal, excluded from method-body count"
+      },
+      "proposals/entry-status-and-evidence-links-v01.md": {
+        "bytes": 2019,
+        "sha256": "2b6b146de13859386b4aa7874d2f0e745f8b05eaf89ab15f0493d6af711565c9",
+        "matches_trial_freeze": true,
+        "body_copied": false,
+        "identity": "protected untracked proposal, excluded from method-body count"
+      }
+    },
+    "business_source_discovery": "pending trial; this QA binding is not a hint to executor"
+  },
+  "scope": "Independent source-identity binding only; no application/service/browser/business tests, no mechanical paging tests and no business result. No body/cache/log copied."
+}

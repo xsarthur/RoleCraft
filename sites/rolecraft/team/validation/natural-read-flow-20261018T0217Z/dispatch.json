@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "recorded_after_dispatch_at_utc": "2026-10-18T02:17:25.924113+00:00",
+  "task_name": "/root/reanalysis_product",
+  "tool": "collaboration.spawn_agent",
+  "requested_fork_turns": "none",
+  "prompt_file": "business-prompt.txt",
+  "prompt_sha256": "586073cc5e6a842bd0ecde7e44685b197dd99e09a530aeaeedac998d77bf5acb",
+  "ordinary_prompt_only_repo_root_and_output_location": true,
+  "root_actual_tool_call_used_exact_frozen_prompt": true,
+  "literal_child_encrypted_task_reconstructed": false,
+  "no_method_role_reading_path_revision_checklist_or_validation_goal_in_prompt": true,
+  "preseal_source_hints_to_be_sent": false,
+  "input_freeze_sha256": "80d75a7d55feeec1b60247f4744fa2e2d0eec83ae5507a505745f651a32be950",
+  "mechanism_qa_sha256": "30879694d0f0544b056c1f30af41c5138032668477638c33c20239d3549cfe35",
+  "input_guard_sha256": "a7fea39a5fd911fa6e70398a39c7f9bf428d211798d6544b9712e1df7992d55e",
+  "business_criteria_sha256": "58c5014516b0dab7388fcf785bd489e06001148c6c37eb8f10ffeb33cf97e0f4",
+  "business_source_binding_sha256": "a800f8335e647c57cb32c539b7c433806d2051e8e16210d9a05068585b391cb2",
+  "first_delivery_to_be_sealed_before_QA": true,
+  "runtime_scope": "read-only static product document, no business execution",
+  "historical_FAIL_partial": "all preserved; no new trial result by this dispatch"
+}

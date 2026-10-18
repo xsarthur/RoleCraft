@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "record_kind": "independent_second_trial_submission_privacy_and_scope_guard",
+  "checked_at_utc": "2026-10-18T01:18:00.956088+00:00",
+  "executor_ref": "/root/method_audit",
+  "stage": "sealed_first_submission_and_existing_repair_summaries_only_not_final_archive",
+  "scanned_artifacts": {
+    "first-submission/product-scope-and-acceptance.md": {
+      "bytes": 7949,
+      "sha256": "18d479bce3be030443294c91c1fa83d817c2a922a027dacc575fe3badd76f4cf",
+      "max_decoded_text_leaf_characters": 3729
+    },
+    "first-submission/product-evidence.json": {
+      "bytes": 16211,
+      "sha256": "752191e39587e0cb18a4e9f4d7d8e47c76525c44ea39399f19cae7512c6c4b16",
+      "max_decoded_text_leaf_characters": 183
+    },
+    "engineering/engineering-receipt.json": {
+      "bytes": 5363,
+      "sha256": "8507a5b8273c7ff6ff879dd683a863c4e9492371b4253b23026a41dc5fddfa96",
+      "max_decoded_text_leaf_characters": 174
+    },
+    "engineering/change-manifest.json": {
+      "bytes": 2395,
+      "sha256": "8f072a08d1ae7ba2f8c9592e5be871dbaf28182f680c46ddd02eb722986b0c22",
+      "max_decoded_text_leaf_characters": 64
+    },
+    "engineering/real-mechanism-self-check.json": {
+      "bytes": 14449,
+      "sha256": "ee5a4a5d508e706978c2e27a0d1383381f01c1722ee4c5d2df57a1a2d40642e4",
+      "max_decoded_text_leaf_characters": 87
+    },
+    "repair-qa/qa-report.md": {
+      "bytes": 2999,
+      "sha256": "762035d28af0b28eb2868d638a754a0818476b9c28cf3bc6a4b38a99ed964252",
+      "max_decoded_text_leaf_characters": 1359
+    },
+    "repair-qa/qa-receipt.json": {
+      "bytes": 7192,
+      "sha256": "6ec5330bd30cf0a6ede9b108ba35481c1511240aefb28e4d41528ef413c398c8",
+      "max_decoded_text_leaf_characters": 99
+    },
+    "repair-qa/execution-note.json": {
+      "bytes": 566,
+      "sha256": "7fbc29cc5743c3195a3f672a1b6cefd0a3a0eea85f03cd02d9df615fc94165e4",
+      "max_decoded_text_leaf_characters": 307
+    },
+    "repair-qa/real-in-memory-mechanism.json": {
+      "bytes": 18876,
+      "sha256": "9ceb72ca062de009691d2f15a2c9de3e574d088f2f274bd83088e50453000cc8",
+      "max_decoded_text_leaf_characters": 78
+    },
+    "repair-qa/real-cli-mechanism.json": {
+      "bytes": 1152,
+      "sha256": "80a2ed09e3582f27784bd03a1a30b5b1be511b7a50a86a8e47bf7d4310c65f05",
+      "max_decoded_text_leaf_characters": 81
+    }
+  },
+  "seal_sha256": "87f4a8d65c5522ee8bcb618fcd0b6c3c08e28df1aa192de9fa502a9e0fa48ace",
+  "seal_checks": [
+    {
+      "artifact": "product-scope-and-acceptance.md",
+      "sealed_binding_matches": true,
+      "sealed_copy_matches_live_original": true
+    },
+    {
+      "artifact": "product-evidence.json",
+      "sealed_binding_matches": true,
+      "sealed_copy_matches_live_original": true
+    }
+  ],
+  "privacy": {
+    "reference_source_counts": {
+      "fixed_method_and_candidates": 12,
+      "employee_source_files": 76
+    },
+    "exact_complete_body_or_whitespace_normalized_body_copies": [],
+    "reconstructable_complete_source_line_sets": [],
+    "contiguous_original_source_blocks_at_least_400_characters": [],
+    "raw_runtime_record_markers": [],
+    "hidden_analysis_reasoning_channel_markers": [],
+    "large_payload_or_cache_fields": [],
+    "body_cache_observation": "Product evidence and mechanism summaries retain page hashes, ranges and counts, not page bodies. No complete body or reconstructable page cache observed in scanned artifacts.",
+    "interpretation": "Short factual summaries, identifiers, page metadata, exclusion declarations and false extraction flags are not treated as original body/log/reasoning copies.",
+    "limits": "Exact/normalized body and 400-character block scans plus decoded artifact structure and complete-line-union check; not a universal semantic leak detector or proof about unscanned future files."
+  },
+  "scope_protection": {
+    "head": "ba9a55fe39be32e96130ed3df6a9d69cbfc97917",
+    "main": "4158efd4641be219c897746cc063d73122f4eeb7",
+    "staged_diff": "",
+    "project_metadata_file_count": 3582,
+    "all_project_file_drift_from_trial_freeze": [],
+    "extra_project_files": [],
+    "method_twelve_hash_mismatches": [],
+    "method_status": "?? proposals/entry-status-and-evidence-links-v01.md\n?? proposals/version-bound-fact-claims-v01.md",
+    "protected_endpoints_unchanged": true,
+    "limits": "No runtime logs inspected; endpoint equality does not establish every filesystem/network action or continuous monitoring. Existing authorized 10 repair files and previous first-trial 15 files remain represented in the unchanged freeze.",
+    "method_head": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+    "method_main": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+    "project_index_sha256": "caa3fc706ebda16311a066da855a662f8e7d5d2fb112920159b750fb51eb9f1f",
+    "project_config_sha256": "fa89354232d96be9723b3b8131b81e33d1dcd90ae07348f0a0839a917ba7e04e",
+    "method_index_sha256": "8cceb73674244c50b95f6e8ae42a670447b279836e29f8a4c107b9ee5f2bfc83",
+    "employee_file_count": 76,
+    "employee_hash_mismatches": [],
+    "old_first_trial_file_count": 15,
+    "old_first_trial_hash_mismatches": [],
+    "git_metadata_matches_frozen_baseline": true
+  },
+  "limits": [
+    "No business quality or reading sufficiency verdict is made. Independent business QA remains separate.",
+    "No original runtime/session log, analysis/reasoning or encrypted content was opened or parsed. No product agent contacted.",
+    "No project/method/employee writes, business/service/browser/test/network execution or Git mutation. Only this guard written.",
+    "Engineering staging, diff/scripts and .log files are not included; final archive candidate must receive a separate guard."
+  ],
+  "verdict": "PASS_within_sealed_submission_privacy_and_scope_guard"
+}

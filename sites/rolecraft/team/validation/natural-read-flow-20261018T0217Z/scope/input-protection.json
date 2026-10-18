@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "record_kind": "independent_required_reading_final_trial_input_protection",
+  "checked_at_utc": "2026-10-18T02:16:36.728338+00:00",
+  "executor_ref": "/root/method_audit",
+  "stage": "final_input_freeze_checked; no business artifacts or logs inspected",
+  "input_bindings": {
+    "baseline_sha256": "b533bed52f9b7c607bf4d0f5aab479e50ab7a9f3dd538c26c9e430116d09296c",
+    "trial_input_freeze_sha256": "80d75a7d55feeec1b60247f4744fa2e2d0eec83ae5507a505745f651a32be950",
+    "final_change_manifest_sha256": "441e4ad2e4532bd9afbf454da425a6a273cd12c77fbef4f1f212ce0098c58695",
+    "pre_freeze_protection_sha256": "5071fe92148044ae9c26cdd5d85923e6d2dd8cb92c1e92291a12d7d511670502"
+  },
+  "input_bindings_match_requested": true,
+  "complete_project_freeze_check": {
+    "frozen_count": 3608,
+    "actual_count": 3608,
+    "missing": [],
+    "extra": [],
+    "bytes_hash_or_mode_mismatches": [],
+    "nonregular_or_symlink_files": [],
+    "all_actual_files_match_freeze": true,
+    "actual_paths_bytes_hash_mode_aggregate_sha256": "6fc8b371121202f5aff5113103a0d984e03021fdf2c7c24e01bb17691c2e4988"
+  },
+  "authorized_repair_check": {
+    "file_count": 9,
+    "baseline_changed_paths": [
+      "AGENTS.md",
+      "sites/rolecraft/team/onboarding/README.md",
+      "sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+      "sites/rolecraft/team/onboarding/startup/README.md",
+      "sites/rolecraft/team/onboarding/startup/check_startup.py",
+      "sites/rolecraft/team/onboarding/startup/sources.json",
+      "sites/rolecraft/team/onboarding/startup/test_check_startup.py",
+      "sites/rolecraft/team/onboarding/startup/read_source.py",
+      "sites/rolecraft/team/onboarding/startup/test_read_source.py"
+    ],
+    "changed_set_exactly_nine_authorized_existing_files": true,
+    "repair_manifest_freeze_and_actual_mismatches": [],
+    "repair_sources": {
+      "AGENTS.md": {
+        "path": "AGENTS.md",
+        "before_sha256": "bf2599697f6b6b2504e89700dec5325be815e97b9553bc8c6e30056c9b6c007f",
+        "final_sha256": "9866da222a09d0124008f49ab079dcaea7e2de61c5bb0d638a73acddf5cbe175",
+        "final_bytes": 51126
+      },
+      "sites/rolecraft/team/onboarding/README.md": {
+        "path": "sites/rolecraft/team/onboarding/README.md",
+        "before_sha256": "1ae35db606a0f893a9f1d6e3efde7560cf318423a167c7124b9a7010989aba98",
+        "final_sha256": "eca0dd5dc665e0a33c52b73fe367bc68d5d7fe0f2256a48dc22c11984c90c194",
+        "final_bytes": 12953
+      },
+      "sites/rolecraft/team/onboarding/TEAM-ROUTING.md": {
+        "path": "sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+        "before_sha256": "15ca65c8a803fbcd7ad51673458c0f46a4728ed1f4a0745d99b614b7bdd54f0f",
+        "final_sha256": "820618c008d0860143dc73033747fbfeef4d06487976beb4e9d81e810d54ff48",
+        "final_bytes": 10347
+      },
+      "sites/rolecraft/team/onboarding/startup/README.md": {
+        "path": "sites/rolecraft/team/onboarding/startup/README.md",
+        "before_sha256": "04864fb3edfbbaa222f9f20f258bef75315912fcadfcf70dac659147e0938400",
+        "final_sha256": "04bc3ffcd5d35bb26e82de9174bc36c28db246472b38d199912144ac38685ed7",
+        "final_bytes": 14714
+      },
+      "sites/rolecraft/team/onboarding/startup/read_source.py": {
+        "path": "sites/rolecraft/team/onboarding/startup/read_source.py",
+        "before_sha256": "d67fa64f7b206bd732725101e2edaf433531554c4834ceee7031b2bdc9e11632",
+        "final_sha256": "840ae5e26107528a5e3411dc4ede9e20f3244a30a8bba4a7e6c05dbf33909236",
+        "final_bytes": 19332
+      },
+      "sites/rolecraft/team/onboarding/startup/test_read_source.py": {
+        "path": "sites/rolecraft/team/onboarding/startup/test_read_source.py",
+        "before_sha256": "e3e013fe63584d2c503facc46088d619e9c97a57905cf21699fc862fe62c3d81",
+        "final_sha256": "bd60879db1ed4c807bb27a63c013763d4dcc473aff13ebda8e156300eba9591b",
+        "final_bytes": 22184
+      },
+      "sites/rolecraft/team/onboarding/startup/check_startup.py": {
+        "path": "sites/rolecraft/team/onboarding/startup/check_startup.py",
+        "before_sha256": "7c8f4096b71853a08d0485c10a4b9144cdcfa7385bbf46e448aa3608366cad7b",
+        "final_sha256": "8aa0e96d9a845d867a62cd938144752ffa4e1def81dfbb57e7f94d24f7a090f5",
+        "final_bytes": 27804
+      },
+      "sites/rolecraft/team/onboarding/startup/sources.json": {
+        "path": "sites/rolecraft/team/onboarding/startup/sources.json",
+        "before_sha256": "63d8a5443ffe38483b0776d78d46537dd8f7d608b30d9a8fc3c8120d84e59d11",
+        "final_sha256": "fffef1c035041b426389ca3ffbf7e8e8c0405c80b837593ab7c361ea02bccfa9",
+        "final_bytes": 2170
+      },
+      "sites/rolecraft/team/onboarding/startup/test_check_startup.py": {
+        "path": "sites/rolecraft/team/onboarding/startup/test_check_startup.py",
+        "before_sha256": "b041cd4932a3ced50775571006ec70a5e17f0a9e37c45f04bd63f57c981518f1",
+        "final_sha256": "45457dd2d6fdb0ae7feb72784161da29dcb0b26e7c638934e5789cd1b7e8715e",
+        "final_bytes": 21867
+      }
+    }
+  },
+  "protected_groups": {
+    "employee_files": {
+      "file_count": 76,
+      "mismatches": []
+    },
+    "old_two_trial_validation_files": {
+      "file_count": 41,
+      "mismatches": []
+    },
+    "old_archives_and_closeout": {
+      "file_count": 7,
+      "mismatches": []
+    }
+  },
+  "AGENTS_protection": {
+    "marker_pair_unique_and_ordered": true,
+    "original_first_48710_sha256": "5b9ef55c0c0e520ca6ddd7d122a5310fa0ed479c4649657fdd14e3ad13cd1153",
+    "original_prefix_preserved": true,
+    "before_marker_preserved": true,
+    "after_marker_preserved": true
+  },
+  "method_protection": {
+    "file_count": 12,
+    "actual_bytes_and_sha256": {
+      "adoption-and-change.md": {
+        "bytes": 2943,
+        "sha256": "cf2bcda816d9384c496ed3432d7db98dee5fa6eaca0f15d733d88938b45e741b"
+      },
+      "CHANGELOG.md": {
+        "bytes": 1147,
+        "sha256": "04fbd3e05f9af5d0432273000b88bacaef328eb314f7234992ec4c1e2ec4e2c4"
+      },
+      "README.md": {
+        "bytes": 2346,
+        "sha256": "7283e2d173c9c44bad7f356f890241efb7693be3a340d456c868df391142f1c1"
+      },
+      "roles.md": {
+        "bytes": 8313,
+        "sha256": "e19e414487dbd03a31824f1f5d3fb1a4ef57cc4076a54d17ddb82d5a64ef5b5a"
+      },
+      "methods.md": {
+        "bytes": 3052,
+        "sha256": "3346016d6aba70f681cf26467d642f9bc8ebfd45b10ea520fa0cc5de169d879b"
+      },
+      "SOURCE-MANIFEST.md": {
+        "bytes": 2246,
+        "sha256": "ddf191051d0f7f47ce84097b7b1528f609565b1f287df770a0127ea5ee274cb1"
+      },
+      "checklists/task-and-evidence.md": {
+        "bytes": 3067,
+        "sha256": "0c264ec328c1af6326d759303ddca28d1fc0eb8aa14a2339194e498ca58522f8"
+      },
+      "checklists/startup-receipt.md": {
+        "bytes": 1035,
+        "sha256": "374118279b5fb6e7039784b3cb30482c1f01cf0521ef75c954d8e71b6bf7e48b"
+      },
+      "examples/website-adapter.example.md": {
+        "bytes": 1112,
+        "sha256": "242b328b057125eadd9b1f88c140d42d1f1528d1c8918aa555eef21270e94009"
+      },
+      "examples/learning-product-adapter.example.md": {
+        "bytes": 2616,
+        "sha256": "cfd5b19c9efdd011619e805f4ac84b7d723eac3e430d35eedaa589e94f85baaf"
+      },
+      "proposals/version-bound-fact-claims-v01.md": {
+        "bytes": 2255,
+        "sha256": "4fd8f894297e98072108df4eac2e6dfc53aacfc0d1196f8648733781a6a14552"
+      },
+      "proposals/entry-status-and-evidence-links-v01.md": {
+        "bytes": 2019,
+        "sha256": "2b6b146de13859386b4aa7874d2f0e745f8b05eaf89ab15f0493d6af711565c9"
+      }
+    },
+    "baseline_or_freeze_mismatches": []
+  },
+  "git_protection": {
+    "actual": {
+      "branch": "integration/peiyu-team-onboarding-20261017",
+      "head": "ba9a55fe39be32e96130ed3df6a9d69cbfc97917",
+      "main": "4158efd4641be219c897746cc063d73122f4eeb7",
+      "staged_diff": "",
+      "index_sha256": "caa3fc706ebda16311a066da855a662f8e7d5d2fb112920159b750fb51eb9f1f",
+      "config_sha256": "fa89354232d96be9723b3b8131b81e33d1dcd90ae07348f0a0839a917ba7e04e",
+      "method_head": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+      "method_main": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+      "method_index_sha256": "8cceb73674244c50b95f6e8ae42a670447b279836e29f8a4c107b9ee5f2bfc83",
+      "method_config_sha256": "8e6df4bdad1c7613aefbefff1e96764d7ecffb745ef703c093c97f2fd4445d71",
+      "method_status": "?? proposals/entry-status-and-evidence-links-v01.md\n?? proposals/version-bound-fact-claims-v01.md"
+    },
+    "refs_indexes_configs_and_staging_match_baseline_and_freeze": true,
+    "existing_untracked_count": 44,
+    "no_new_archive_or_project_file": true
+  },
+  "reference_metadata_not_reexecuted": {
+    "repair_qa": {
+      "sha256": "30879694d0f0544b056c1f30af41c5138032668477638c33c20239d3549cfe35",
+      "verdict": "pass_within_required_reading_flow_mechanism_scope"
+    },
+    "required_product_source_count": 34,
+    "business_prompt_sha256_as_frozen_only": "586073cc5e6a842bd0ecde7e44685b197dd99e09a530aeaeedac998d77bf5acb",
+    "business_criteria_sha256_as_frozen_only": "58c5014516b0dab7388fcf785bd489e06001148c6c37eb8f10ffeb33cf97e0f4",
+    "limits": "Mechanism QA not rerun; future business prompt/artifact/log directories not opened. This report does not assess business outcome or reading completeness."
+  },
+  "future_archive_exclusions": [
+    "cause-audit/cause-audit-receipt.json",
+    "audit-handling-note.LOCAL-ONLY.json"
+  ],
+  "limits": [
+    "Checks source bytes/modes/hashes and Git metadata against the final freeze; no natural loading, professional understanding, growth or formal adoption inferred.",
+    "No raw runtime/session logs, encrypted payloads, local-only cause receipts or future business artifacts opened; no business executor contact.",
+    "No application/service/browser/model/test/network execution or Git mutation. No project/method/employee writes; only this external guard written.",
+    "Tracked and nonignored untracked files are covered; ignored runtime content and continuous monitoring are not certified."
+  ],
+  "verdict": "PASS_within_final_required_reading_trial_input_protection_scope"
+}

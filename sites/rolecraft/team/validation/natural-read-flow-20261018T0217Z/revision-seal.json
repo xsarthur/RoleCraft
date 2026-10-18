@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "sealed_at_utc": "2026-10-18T02:40:31.697778+00:00",
+  "stage": "guided_DQ02_document_only_revision; not_new_natural_reading_or_business_test",
+  "author": "/root/reanalysis_product",
+  "request_sha256": "df469a92d79caf12214df21f174497c83ec72f58d1f853baf1e9306509bc1237",
+  "first_QA_receipt_sha256": "4d352287cbadd82579303f66844e9cb48396170fbf95776713fbdd7cb82821ce",
+  "first_submission_seal_sha256": "b1a7c97edddb21c2e2fba547aede1b51edba55f78d21f79d66070f2e918aa6ca",
+  "first_artifacts_preserved": true,
+  "changed_document_lines": [
+    18
+  ],
+  "artifacts": {
+    "product-review.txt": {
+      "bytes": 8460,
+      "sha256": "2e4904c0379b5d9a60d1b2f4ee83d5f4f2c887302ed9d5660661cad1f7779348"
+    },
+    "product-evidence.json": {
+      "bytes": 24941,
+      "sha256": "166567fee14221385f2848644f405cfaa3bc46a8a3c97c0a866d9efcc5f4f803"
+    },
+    "revision-note.txt": {
+      "bytes": 1671,
+      "sha256": "97f303c80c5fd576e0f97d298512989e4958847f33e828365e680451ac1a0247"
+    }
+  },
+  "runtime": {
+    "path": "/Users/liuqian/.codex/sessions/2026/10/18/rollout-2026-10-18T10-17-19-01a14ccc-985d-74b1-9f67-39f5228f2c7f.jsonl",
+    "prefix_bytes": 2488339,
+    "prefix_sha256": "50231c76b15dbb010d14c9d6fb6f17cd5933e434ce5b39cc51d8369ab12126db",
+    "line_count": 653,
+    "original_prefix_preserved": true,
+    "raw_log_copied": false,
+    "analysis_reasoning_encrypted_content_interpreted": false
+  },
+  "privacy_prescreen": "no tested private method/proposal/employee full body or400char block",
+  "current_independent_revision_QA": "not_yet_performed"
+}

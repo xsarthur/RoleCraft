@@ -220,7 +220,8 @@ v14限定本地交付已完成，客户端local-workbench-0.14-dialog-detail/前
 本段仅作用于 `sites/rolecraft/`，保留原岗位、原记忆和现有治理。
 [团队映射、任务分派与接续](sites/rolecraft/team/onboarding/README.md)
 原项目经理只协调；专业执行与独立QA须有真实回执，不以角色标签代替独立执行。
-本任务执行代理按[只读启动读取检查](sites/rolecraft/team/onboarding/startup/README.md)选择授权范围内必要的岗位资料，取得当前入口、原档案或实际专项资料、最新项目记录和固定版本方法全文；资料不可读取时标缺口。现有资料可读与原长期记忆缺失分别报告，不强制所有岗同格式。
+每项 RoleCraft 项目任务在专业判断前，先按[完整必读启动流程](sites/rolecraft/team/onboarding/startup/README.md)，从工程根运行 `python3 -B sites/rolecraft/team/onboarding/startup/read_source.py --required-flow --roles 本任务实际原岗位ID --page-bytes 4096`（产品岗ID为 `product-manager`）。逐次消费每页正文并独立执行返回的 `next_command`，直至全部共同必读资料、所选原岗资料、最新项目记录及十份固定方法均实际送达；跨来源由同一流程继续，不能把共同基线按“相关/必要”自行省略。产品岗当前至少34件，末页或checker成功不证明完整送达、理解或应用；缺件标未接通。现有资料可读与原长期记忆缺失分别报告，不强制所有岗同格式。
 岗位映射不代表管理归属；原项目岗位、用户自有员工与协作支持分开，归属未证实标unknown，不据此写入或管理对方员工。跨团队资料仅按授权协作必要只读参考。
 检查器只核取得、版本和引用覆盖；本任务代理读回、应用证据与独立QA分别留证，不以文件存在、哈希或自述宣称已掌握，不改变其他团队员工身份、职责、记忆、等级或管理规则。
+治理长正文可从工程根用 `python3 -B sites/rolecraft/team/onboarding/startup/read_source.py --source project:AGENTS.md --page 1` 独立分页读取，不需要先选岗位或取得方法源；消费每页正文后逐次执行返回的下一页命令，不能把哈希或大输出截断当全文交付。固定方法的本机只读源由启动目录的 [local-method-source.json](sites/rolecraft/team/onboarding/startup/local-method-source.json) 定位并核固定版本，常规启动不需协调者另给方法路径；访问拒绝保持缺口，不搜索/联网绕过。私有方法正文只在获准执行上下文逐页消费，不重定向或保存正文/可重组页缓存；回执留版本、范围、摘要及实际应用位置。
 <!-- peiyu-team-onboarding:v0.2:end -->

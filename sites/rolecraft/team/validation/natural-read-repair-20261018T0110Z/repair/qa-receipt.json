@@ -1,0 +1,217 @@
+{
+  "schema_version": "rolecraft-startup-repair-independent-qa-v1",
+  "created_at_utc": "2026-10-18T01:07:06.366680+00:00",
+  "reviewer": "/root/startup_repair_qa",
+  "author": "/root/startup_repair_engineer",
+  "result": "pass_within_startup_repair_mechanism_scope",
+  "criteria_results": [
+    {
+      "id": "R01",
+      "result": "pass_within_scope"
+    },
+    {
+      "id": "R02",
+      "result": "pass_within_scope"
+    },
+    {
+      "id": "R03",
+      "result": "pass_within_scope"
+    },
+    {
+      "id": "R04",
+      "result": "pass_within_scope"
+    },
+    {
+      "id": "R05",
+      "result": "pass_within_scope"
+    },
+    {
+      "id": "R06",
+      "result": "pass_within_scope"
+    },
+    {
+      "id": "R07",
+      "result": "pass_within_scope"
+    },
+    {
+      "id": "R08",
+      "result": "pass_within_scope"
+    },
+    {
+      "id": "R09",
+      "result": "pass_within_scope"
+    },
+    {
+      "id": "R10",
+      "result": "pass_within_scope"
+    },
+    {
+      "id": "R11",
+      "result": "pass_within_scope"
+    }
+  ],
+  "historical_natural_loading": "FAIL/partial unchanged; no new business conclusion by this repair QA",
+  "first_qa": {
+    "tests": 18,
+    "passing_cases": 17,
+    "case_with_5_errors": "Q03",
+    "finding": "RQ-01",
+    "receipt": {
+      "bytes": 1949,
+      "sha256": "10b4582e85911320a829507d9066f45dcd1b649dbc26df6a5abf2c869c5d4b61"
+    },
+    "preserved": true
+  },
+  "author_repair_and_retest": {
+    "finding": "RQ-01",
+    "status": "closed_for_nonobject_locator_rejection",
+    "qa_original_cases": 18,
+    "qa_cases_pass": 18,
+    "qa_original_five_nonobject_subcases": "all pass",
+    "author_suite_run_by_qa": 53,
+    "author_suite_pass": 53,
+    "qa_implementation_edits": 0
+  },
+  "actual_mechanism": {
+    "source_check_count": 29,
+    "checker": "full_content_and_versions_checked",
+    "body_free": true,
+    "AGENTS": {
+      "bytes": 50693,
+      "pages": 25,
+      "exact_memory_reassembly": true
+    },
+    "fixed_method": {
+      "revision": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+      "files": 10,
+      "bytes": 27877,
+      "pages": 20,
+      "all_exact_memory_reassembly": true,
+      "default_locator": true
+    },
+    "max_serialized_page_bytes": 4540,
+    "safe_limit": 8192,
+    "private_text_cache_written": false,
+    "executor_delivery_or_understanding_proved": false
+  },
+  "scope_protection": {
+    "QA_baseline_files": 103,
+    "drift": 0,
+    "AGENTS_48710_prefix_preserved": true,
+    "AGENTS_outside_marker_preserved": true,
+    "git_head": "ba9a55fe39be32e96130ed3df6a9d69cbfc97917",
+    "git_main": "4158efd4641be219c897746cc063d73122f4eeb7",
+    "branch": "integration/peiyu-team-onboarding-20261017",
+    "staged_empty": true,
+    "tracked_diff_paths": [
+      "AGENTS.md",
+      "sites/rolecraft/team/onboarding/README.md",
+      "sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+      "sites/rolecraft/team/onboarding/startup/README.md",
+      "sites/rolecraft/team/onboarding/startup/check_startup.py",
+      "sites/rolecraft/team/onboarding/startup/sources.json",
+      "sites/rolecraft/team/onboarding/startup/test_check_startup.py"
+    ],
+    "app_or_employee_edits_by_qa": 0,
+    "method_or_proposal_edits_by_qa": 0,
+    "business_service_or_network_runs_by_qa": 0,
+    "management_actions": "none",
+    "source_ownership": "unknown; collaboration reference only",
+    "endpoint_not_continuous_monitoring": true
+  },
+  "current_source_bindings": {
+    "AGENTS.md": {
+      "bytes": 50693,
+      "sha256": "bf2599697f6b6b2504e89700dec5325be815e97b9553bc8c6e30056c9b6c007f"
+    },
+    "sites/rolecraft/team/onboarding/README.md": {
+      "bytes": 11505,
+      "sha256": "1ae35db606a0f893a9f1d6e3efde7560cf318423a167c7124b9a7010989aba98"
+    },
+    "sites/rolecraft/team/onboarding/TEAM-ROUTING.md": {
+      "bytes": 8885,
+      "sha256": "15ca65c8a803fbcd7ad51673458c0f46a4728ed1f4a0745d99b614b7bdd54f0f"
+    },
+    "sites/rolecraft/team/onboarding/startup/README.md": {
+      "bytes": 10633,
+      "sha256": "04864fb3edfbbaa222f9f20f258bef75315912fcadfcf70dac659147e0938400"
+    },
+    "sites/rolecraft/team/onboarding/startup/check_startup.py": {
+      "bytes": 27094,
+      "sha256": "7c8f4096b71853a08d0485c10a4b9144cdcfa7385bbf46e448aa3608366cad7b"
+    },
+    "sites/rolecraft/team/onboarding/startup/sources.json": {
+      "bytes": 1988,
+      "sha256": "63d8a5443ffe38483b0776d78d46537dd8f7d608b30d9a8fc3c8120d84e59d11"
+    },
+    "sites/rolecraft/team/onboarding/startup/test_check_startup.py": {
+      "bytes": 21243,
+      "sha256": "b041cd4932a3ced50775571006ec70a5e17f0a9e37c45f04bd63f57c981518f1"
+    },
+    "sites/rolecraft/team/onboarding/startup/local-method-source.json": {
+      "bytes": 382,
+      "sha256": "0147b66a156d412a659371159fa84a869f7ded2815066850a9d0360f70ed8cd9"
+    },
+    "sites/rolecraft/team/onboarding/startup/read_source.py": {
+      "bytes": 11663,
+      "sha256": "d67fa64f7b206bd732725101e2edaf433531554c4834ceee7031b2bdc9e11632"
+    },
+    "sites/rolecraft/team/onboarding/startup/test_read_source.py": {
+      "bytes": 11349,
+      "sha256": "e3e013fe63584d2c503facc46088d619e9c97a57905cf21699fc862fe62c3d81"
+    }
+  },
+  "evidence_bindings": {
+    "criteria.json": {
+      "bytes": 5309,
+      "sha256": "9996cc8c687214929b217733a39c8130accacdbf1c031545a49e496f27b59fe2"
+    },
+    "criteria.md": {
+      "bytes": 3269,
+      "sha256": "079bf6e47f4909d06475d5961e0bd6dd53c2caec184ce48129e9be66e6982e76"
+    },
+    "criteria-addendum.json": {
+      "bytes": 614,
+      "sha256": "d0d3dac6e50cb1201c7a064b49bfcd720ea9ec6ae3aac0606ad354de8144c48d"
+    },
+    "execution-note.json": {
+      "bytes": 566,
+      "sha256": "7fbc29cc5743c3195a3f672a1b6cefd0a3a0eea85f03cd02d9df615fc94165e4"
+    },
+    "protected-baseline.json": {
+      "bytes": 32033,
+      "sha256": "9eb798097e116e058b4a00b277b42b5d07b0d92188e05cc61798dee7b933cc46"
+    },
+    "independent_cases.py": {
+      "bytes": 10212,
+      "sha256": "612343eb260e847a7be6f9f8bcb3c4522894eeb39ddea955bf0519b1f8c0d0a3"
+    },
+    "independent-after-RQ01.log": {
+      "bytes": 1708,
+      "sha256": "6def0b763379592bc1758869dcc9dce52afda849db722d7ee92182ba3100ff8d"
+    },
+    "author-suite-independent-run.log": {
+      "bytes": 4915,
+      "sha256": "7bdab869339c62212e83a27f6f2254f07d61d106091275810ee8525159ee72f2"
+    },
+    "real-in-memory-mechanism.json": {
+      "bytes": 18876,
+      "sha256": "9ceb72ca062de009691d2f15a2c9de3e574d088f2f274bd83088e50453000cc8"
+    },
+    "real-cli-mechanism.json": {
+      "bytes": 1152,
+      "sha256": "80a2ed09e3582f27784bd03a1a30b5b1be511b7a50a86a8e47bf7d4310c65f05"
+    },
+    "qa-report.md": {
+      "bytes": 2999,
+      "sha256": "762035d28af0b28eb2868d638a754a0818476b9c28cf3bc6a4b38a99ed964252"
+    }
+  },
+  "limitations": [
+    "Mechanism tests do not count as fresh unprompted business test, actual application or understanding",
+    "No application/service/browser/ASR/business runtime or CI verification",
+    "No method adoption, end event, commit/push or main merge",
+    "Known-source QA reading does not count toward any new cold executor receipt",
+    "Original first-round failures and later document revision remain separate"
+  ]
+}

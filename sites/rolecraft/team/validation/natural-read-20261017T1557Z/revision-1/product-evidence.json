@@ -1,0 +1,175 @@
+{
+  "schema_version": 2,
+  "task": "voice_trial_product_scope",
+  "revision": "revision-1",
+  "created_at": "2026-10-17T16:16:15.298344+00:00",
+  "executor": "/root/voice_trial_product",
+  "role": "product-manager",
+  "scope": "DQ-01 wording only; trial path selection, current limitation and prospective A4 aligned",
+  "source_root": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft",
+  "head": "ba9a55fe39be32e96130ed3df6a9d69cbfc97917",
+  "branch": "integration/peiyu-team-onboarding-20261017",
+  "git_status_porcelain": "",
+  "first_submission": {
+    "checklist": {
+      "path": "/private/tmp/rolecraft-voice-trial-2vip7e13/试用前核对清单.txt",
+      "sha256": "c3592d37f00e5c786ad33fbc86407c3d9c7787e68b99c099f70f118319b281ec",
+      "bytes": 12030
+    },
+    "product_evidence": {
+      "path": "/private/tmp/rolecraft-voice-trial-2vip7e13/product-evidence.json",
+      "sha256": "83e1f7aedcf5b9577bb776de7fb271adaa8a30f76a0bb356a23933f6b4b3113a",
+      "bytes": 9226
+    },
+    "status": "preserved; never overwritten"
+  },
+  "revision_artifact": {
+    "path": "/private/tmp/rolecraft-voice-trial-2vip7e13/revision-1/试用前核对清单.txt",
+    "sha256": "8b4364c97433dbd31770ab725d5c812ae0cfd38b62b44df0d9bc0b90ac30e9c5",
+    "bytes": 13722
+  },
+  "source_rechecked_this_revision": {
+    "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/dist/app.js",
+    "sha256": "f5eb9db9bb128000abd6216770f07d9515b4aef03d42080417a378638d270d1d",
+    "head_blob": "ed9599165be42ce14fa2b0c39a71158609a01016",
+    "line_reads": [
+      {
+        "start_line": 112,
+        "end_line": 112,
+        "quote": "const interviewVoiceState={questionId:'Q1',status:'ready',stream:null,recorder:null,chunks:[],blob:null,url:'',mime:'',startedAt:0,elapsed:0,timer:null,error:'',requestId:0,transcript:'',transcriptSource:'',transcriptConfidence:null,asrMode:'unavailable',feedback:null,analysisMode:'',analysisError:'',fixture:false,recognition:null,browserSpeechMode:'unsupported',browserSpeechProvider:'unknown',browserSpeechProviderCalled:'unknown',browserSpeechOptIn:true,browserSpeechDecision:'enabled',speechConsentPrompt:false,transcriptConfirmedAt:'',browserSpeechFinal:'',browserSpeechInterim:'',browserSpeechError:'',browserSpeechDone:true,transcriptOriginal:'',correctionSuggestions:[],transcriptConfirmed:false};"
+      },
+      {
+        "start_line": 123,
+        "end_line": 123,
+        "quote": "function interviewVoiceStartSpeech(requestId){const Ctor=interviewVoiceSpeechCtor();if(typeof Ctor!=='function'){interviewVoiceState.browserSpeechMode='unsupported';interviewVoiceState.browserSpeechDone=true;return;}if(!interviewVoiceState.browserSpeechOptIn){interviewVoiceState.browserSpeechMode='opted_out';interviewVoiceState.browserSpeechDone=true;return;}interviewVoiceState.browserSpeechFinal='';interviewVoiceState.browserSpeechInterim='';interviewVoiceState.browserSpeechError='';interviewVoiceState.browserSpeechProvider='unknown';interviewVoiceState.browserSpeechProviderCalled='unknown';interviewVoiceState.browserSpeechDone=true;if(typeof Ctor!=='function'){interviewVoiceState.browserSpeechMode='unsupported';return;}let recognition;try{recognition=new Ctor();}catch(error){interviewVoiceState.browserSpeechMode='error';interviewVoiceState.browserSpeechError=interviewVoiceSpeechError(error?.name||'constructor');return;}interviewVoiceState.recognition=recognition;interviewVoiceState.browserSpeechMode='starting';interviewVoiceState.browserSpeechDone=false;recognition.lang='zh-CN';recognition.continuous=true;recognition.interimResults=true;recognition.maxAlternatives=1;recognition.onstart=()=>{if(interviewVoiceState.recognition!==recognition||requestId!==interviewVoiceState.requestId)return;interviewVoiceState.browserSpeechMode='listening';render();};recognition.onresult=event=>{if(interviewVoiceState.recognition!==recognition||requestId!==interviewVoiceState.requestId)return;let finalText='',interimText='';for(let i=event.resultIndex||0;i<event.results.length;i++){const result=event.results[i],text=String(result?.[0]?.transcript||'');if(result.isFinal)finalText+=text;else interimText+=text;}if(finalText)interviewVoiceState.browserSpeechFinal+=finalText;interviewVoiceState.browserSpeechInterim=interimText;const combined=interviewVoiceSpeechLiveText().trim();if(combined){interviewVoiceState.transcript=interviewVoiceState.browserSpeechFinal.trim();interviewVoiceState.transcriptOriginal=interviewVoiceState.transcript;interviewVoiceRefreshCorrections();interviewVoiceState.transcriptSource='browser_speech';interviewVoiceState.asrMode='browser_speech';}render();};recognition.onerror=event=>{if(interviewVoiceState.recognition!==recognition||requestId!==interviewVoiceState.requestId)return;const code=String(event?.error||'error');interviewVoiceState.browserSpeechMode=code==='not-allowed'||code==='service-not-allowed'?'permission_denied':code==='network'?'network_error':'error';interviewVoiceState.browserSpeechError=interviewVoiceSpeechError(code);interviewVoiceState.browserSpeechDone=true;render();};recognition.onend=()=>{if(interviewVoiceState.recognition!==recognition||requestId!==interviewVoiceState.requestId)return;interviewVoiceState.browserSpeechDone=true;interviewVoiceState.browserSpeechMode=['error','permission_denied','network_error'].includes(interviewVoiceState.browserSpeechMode)?interviewVoiceState.browserSpeechMode:'ended';interviewVoiceState.recognition=null;const text=interviewVoiceState.browserSpeechFinal.trim();if(text&&['stopping','captured','recording','paused'].includes(interviewVoiceState.status)){interviewVoiceState.transcript=text;interviewVoiceState.transcriptSource='browser_speech';interviewVoiceState.asrMode='browser_speech';if(['stopping','captured'].includes(interviewVoiceState.status))interviewVoiceState.status='transcript_ready';}render();focusTitle();};try{recognition.start();}catch(error){interviewVoiceState.recognition=null;interviewVoiceState.browserSpeechDone=true;interviewVoiceState.browserSpeechMode='error';interviewVoiceState.browserSpeechError=interviewVoiceSpeechError(error?.name||'start');}}"
+      },
+      {
+        "start_line": 147,
+        "end_line": 147,
+        "quote": "function interviewVoiceReset(){interviewVoiceState.requestId++;interviewVoiceStopSpeech(true);interviewVoiceClearTimer();const recorder=interviewVoiceState.recorder;interviewVoiceAbortRecorder(recorder);interviewVoiceState.chunks=[];interviewVoiceReleaseUrl();interviewVoiceState.status='ready';interviewVoiceState.elapsed=0;interviewVoiceState.startedAt=0;interviewVoiceState.mime='';interviewVoiceState.error='';interviewVoiceState.transcript='';interviewVoiceState.transcriptSource='';interviewVoiceState.transcriptConfidence=null;interviewVoiceState.asrMode='unavailable';interviewVoiceState.feedback=null;interviewVoiceState.analysisMode='';interviewVoiceState.analysisError='';interviewVoiceState.fixture=false;interviewVoiceState.browserSpeechMode='unsupported';interviewVoiceState.browserSpeechProvider='unknown';interviewVoiceState.browserSpeechProviderCalled='unknown';interviewVoiceState.browserSpeechOptIn=true;interviewVoiceState.browserSpeechDecision='enabled';interviewVoiceState.speechConsentPrompt=false;interviewVoiceState.transcriptConfirmedAt='';interviewVoiceState.browserSpeechFinal='';interviewVoiceState.browserSpeechInterim='';interviewVoiceState.browserSpeechError='';interviewVoiceState.browserSpeechDone=true;}"
+      },
+      {
+        "start_line": 161,
+        "end_line": 161,
+        "quote": "function interviewVoicePage(){const q=interviewVoiceQuestion(),v=interviewVoiceState;const statusText={ready:'准备录音',requesting:'请求麦克风',recording:'正在录音',paused:'已暂停',stopping:'正在结束录音',captured:'录音已完成',transcribing:'正在转写',transcript_ready:'等待确认转写',transcription_unavailable:'转写不可用',analyzing:'正在分析',feedback:'已生成反馈',permission_denied:'权限未授予',device_denied:'麦克风不可用',unsupported:'浏览器不支持',empty:'没有音频',error:'录音失败'}[v.status]||'准备录音';let controls='';if(v.status==='ready'||['permission_denied','device_denied','unsupported','empty','error'].includes(v.status))controls='<button class=\"primary\" data-interview-action=\"voice-start\">开始录音</button>';if(v.status==='requesting')controls='<button class=\"outline\" data-interview-action=\"voice-cancel\">取消</button>';if(v.status==='recording')controls='<button class=\"primary\" data-interview-action=\"voice-pause\">暂停</button><button class=\"outline\" data-interview-action=\"voice-stop\">停止</button>';if(v.status==='paused')controls='<button class=\"primary\" data-interview-action=\"voice-resume\">继续录音</button><button class=\"outline\" data-interview-action=\"voice-stop\">停止</button><button class=\"text-link\" data-interview-action=\"voice-delete\">放弃</button>';if(v.status==='captured')controls='<button class=\"primary\" data-interview-action=\"voice-transcribe\">使用本地转写</button><button class=\"text-link\" data-interview-action=\"voice-rerecord\">重新录音</button>';if(['transcript_ready','transcription_unavailable'].includes(v.status))controls='<button class=\"text-link\" data-interview-action=\"voice-rerecord\">重新录音</button>';if(v.status==='feedback')controls='<button class=\"outline\" data-interview-action=\"voice-rerecord-feedback\">重新录音回答</button>';const audio=v.status!=='ready'&&v.status!=='recording'&&v.status!=='paused'&&v.url?'<audio controls preload=\"metadata\" src=\"'+escapeHTML(v.url)+'\"></audio>':'';const hint=v.status==='requesting'?'请允许麦克风权限':v.status==='recording'?'说完后点击停止':v.status==='captured'?'录音完成，可转写或重录':v.status==='transcription_unavailable'?'请手动输入转写':v.status==='transcript_ready'?'请校对文字后确认':v.status==='feedback'?'可修改转写或重新录音':'点击开始录音';const browserSpeechError=v.browserSpeechError||'';const speechSupported=typeof interviewVoiceSpeechCtor()==='function';const speechSettings=['ready','permission_denied','device_denied','unsupported','empty','error'].includes(v.status)?'<details class=\"interview-voice-advanced\"><summary>识别设置</summary><label class=\"interview-voice-speech-consent\"><input type=\"checkbox\" data-interview-speech-consent '+(v.browserSpeechOptIn?'checked':'')+(speechSupported?'':' disabled')+'> 使用浏览器语音识别</label></details>':'';const extraTranscription=v.status==='captured'?'<details class=\"interview-voice-advanced\"><summary>其他转写方式</summary><div class=\"interview-voice-actions\"><button class=\"outline\" data-interview-action=\"voice-fixture\">载入测试转写</button></div></details>':'';const browserError=browserSpeechError&&!['recording','paused'].includes(v.status)?'<p class=\"interview-voice-error\" role=\"alert\">'+escapeHTML(browserSpeechError)+'</p>':'';return '<div class=\"interview-prep interview-screen interview-voice-page\">'+interviewVoiceConsentDialog(v)+interviewPageHead('精选题 · 语音练习',q.id+' · 说出你的回答','录音后校对文字','')+'<button class=\"outline interview-back\" data-interview-action=\"voice-back\">← 返回精选题</button><section class=\"interview-voice-card\"><div class=\"interview-voice-question\"><span class=\"tag\">'+escapeHTML(q.type)+' · '+escapeHTML(q.round)+'</span><h2>'+escapeHTML(q.title)+'</h2></div><div class=\"interview-voice-status\" aria-live=\"polite\"><span class=\"interview-voice-dot '+escapeHTML(v.status)+'\" aria-hidden=\"true\"></span><strong>'+statusText+'</strong><span id=\"interview-voice-time\">'+interviewFormatDuration(v.elapsed)+'</span></div><p class=\"interview-voice-hint\">'+hint+'</p>'+speechSettings+'<div class=\"interview-voice-actions\">'+controls+'</div>'+audio+browserError+(v.error&& !['transcript_ready','feedback','transcription_unavailable'].includes(v.status)?'<div class=\"interview-voice-error\" role=\"alert\">'+escapeHTML(v.error)+'</div>':'')+extraTranscription+'</section>'+interviewVoiceTranscriptHTML(v)+(v.status==='feedback'?interviewVoiceFeedbackHTML(v.feedback):'')+'</div>';}"
+      },
+      {
+        "start_line": 221,
+        "end_line": 221,
+        "quote": "document.addEventListener('change',e=>{const input=e.target;if(input.dataset.interviewQuestionFilter){interviewReadQuestionFilters();interviewSave();render();return;}if(input.dataset.interviewSpeechConsent){interviewVoiceState.browserSpeechOptIn=Boolean(input.checked);interviewVoiceState.browserSpeechDecision=interviewVoiceState.browserSpeechOptIn?'enabled':'record_only';interviewVoiceState.browserSpeechMode=interviewVoiceState.browserSpeechOptIn?'available':'opted_out';interviewVoiceState.speechConsentPrompt=false;render();focusTitle();return;}if(input.dataset.interviewField){interviewReadFields();interviewState.paperDraft.preview=null;interviewState.paperDraft.generated=null;interviewSave();render();return;}if(input.closest?.('#product-review-form')){onProductInput(input);return;}if(input.closest?.('#reflection-form')){if(['kind','type','artifactId'].includes(input.name))changeReflectionObject(input);else {captureDraft();state.reflectionDraft.dirty=true;save();}return;}if(input.dataset.project){const id=input.dataset.project,p=projects.find(p=>p.id===id),i=Number(input.dataset.check);if(!p||!Number.isInteger(i)||i<0||i>=p.checks.length)return;const list=Array.isArray(state.checks[id])?state.checks[id]:[];state.checks[id]=input.checked?[...new Set([...list,i])]:list.filter(x=>x!==i);document.querySelectorAll('[data-note]').forEach(t=>state.notes[t.dataset.note]=textValue(t.value));save();const scroll=window.scrollY;render();window.scrollTo(0,scroll);app.querySelector(`[data-project=\"${id}\"][data-check=\"${i}\"]`).focus({preventScroll:true});}});"
+      }
+    ],
+    "static_reasoning": [
+      "The checkbox is rendered with a value-less data-interview-speech-consent attribute.",
+      "The change handler tests input.dataset.interviewSpeechConsent for truthiness, so an empty string does not enter the update branch.",
+      "browserSpeechOptIn defaults/resets to true and is read by interviewVoiceStartSpeech.",
+      "Unchecking the visible checkbox is therefore not a reliable guarantee of disabling recognition in the same round; browser reproduction is pending."
+    ],
+    "not_inferred": [
+      "No browser event was executed.",
+      "No network or voice exfiltration was observed or inferred as having happened.",
+      "No application fix was made.",
+      "providerCalled=false does not establish browser external processing."
+    ]
+  },
+  "inherited_source_bindings": [
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/dist/app.js",
+      "sha256": "f5eb9db9bb128000abd6216770f07d9515b4aef03d42080417a378638d270d1d",
+      "bytes": 170162,
+      "lines": 232,
+      "head_blob": "ed9599165be42ce14fa2b0c39a71158609a01016",
+      "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/dist/interview-prep-v03.css",
+      "sha256": "3340a3c647b330aa397724f7126968e140053eed89ccfb942dfb8b063edd8e47",
+      "bytes": 14511,
+      "lines": 21,
+      "head_blob": "515b14b923654fa0c1280136f26e8da3bc95b90b",
+      "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/server/index.mjs",
+      "sha256": "8be0d3a80aca40d6e69004410c9aeededc6cbde31c797da559c7031e142e8165",
+      "bytes": 86842,
+      "lines": 768,
+      "head_blob": "776b9e8338bec00fdb92a513a033710b87362eb3",
+      "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/server/voice/index.mjs",
+      "sha256": "310a4f55f8fcb0a849c65591eaf9e06a76166282d03f6845d2404dbd4fddb801",
+      "bytes": 18313,
+      "lines": 299,
+      "head_blob": "8bc4d4623e9613e00a535be786bdce7ef2fd7766",
+      "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/server/voice/README.md",
+      "sha256": "e3effe6827f07b7582595e4d6be35d72c08b6194f26a7c6499268d82c9406b6f",
+      "bytes": 3747,
+      "lines": 34,
+      "head_blob": "d209820458d021483e90e23af59a26c6e0958741",
+      "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/README.md",
+      "sha256": "dfeb8f58238a31397e2774e6365732ac66b4ae06cd42f22db48b3807d9f56ac2",
+      "bytes": 16920,
+      "lines": 138,
+      "head_blob": "c56c8e8692e77160a68b62162322d73d79961de4",
+      "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/qa-interview-voice-focus-followup.md",
+      "sha256": "bc77c9a8cd3547b1f436990f514417ed2722a02b34c3bc051be5983a7fdad2f9",
+      "bytes": 4987,
+      "lines": 66,
+      "head_blob": "0280136a4eddf8cefa4e46c08626a97040441575",
+      "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/team-method-loop-20261017-archive.md",
+      "sha256": "d8b0ec8de67b8f17d511e70daa99038859b94b9d8f7ff5ad39cd9560d2085eeb",
+      "bytes": 8666,
+      "lines": 70,
+      "head_blob": "2f6efb29c6caad1b285095ea144434bd6446f817",
+      "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+      "sha256": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+      "bytes": 25287,
+      "lines": 489,
+      "head_blob": "42d1d8f1fff647430d4264500b8b07988e5ebbd9",
+      "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/interview-voice-coach-v01-frontend.md",
+      "sha256": "51c0dc7d4759c23d066de2f6d59aebdf80c12b6897495f29fef06e37e432fc45",
+      "bytes": 1543,
+      "lines": 21,
+      "head_blob": "8ea97b5fb67db220094f3c77c17469ec5faca6d3",
+      "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+    }
+  ],
+  "inherited_binding_scope": "Unchanged first-submission source identities only; other source bodies were not reread or retested in this revision.",
+  "fixed_method_reading": {
+    "revision_required": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+    "status": "not obtained; unchanged; no method read this revision; not connected"
+  },
+  "original_natural_reading_result": "FAIL/partial retained; no retrospective upgrade",
+  "runtime_or_business_test_runs": 0,
+  "browser_reproduction_runs": 0,
+  "network_calls": 0,
+  "installations": 0,
+  "project_or_employee_writes": 0,
+  "A1_A9_execution": "not executed; prospective product acceptance conditions only",
+  "independent_document_QA": "first submission needs_revision (DQ-01 P2); this revision pending independent recheck",
+  "limitations": [
+    "This is an author wording repair, not independent verification.",
+    "The application remains unchanged.",
+    "No source reading outside DQ-01 was added."
+  ]
+}

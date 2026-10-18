@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "criteria_id": "rolecraft-required-reading-workflow-mechanism-v1",
+  "frozen_at_utc": "2026-10-18T02:05:01.454185+00:00",
+  "qa_executor": "/root/reading_flow_repair_qa",
+  "stage": "normative criteria frozen before implementation completion and final review",
+  "baseline_sha256": "b533bed52f9b7c607bf4d0f5aab479e50ab7a9f3dd538c26c9e430116d09296c",
+  "required_sources": {
+    "governance": [
+      "AGENTS.md"
+    ],
+    "entry": [
+      "sites/rolecraft/team/onboarding/README.md",
+      "sites/rolecraft/team/onboarding/ROLE-MAPPING.md",
+      "sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+      "sites/rolecraft/team/onboarding/APPLICATION-NOTES.md",
+      "sites/rolecraft/team/onboarding/TASK-LAYOUT3-READING-DIALOGUE.md",
+      "sites/rolecraft/team/onboarding/startup/README.md",
+      "sites/rolecraft/team/onboarding/startup/sources.json",
+      "sites/rolecraft/team/onboarding/startup/local-method-source.json"
+    ],
+    "product_role": [
+      "sites/rolecraft/team/employees/core/README.md",
+      "sites/rolecraft/team/employees/core/manifest.json",
+      "sites/rolecraft/team/employees/v12-evidence/manifest.json",
+      "sites/rolecraft/team/employees/core/product-manager/ROLE.md",
+      "sites/rolecraft/team/employees/core/product-manager/MEMORY.md",
+      "sites/rolecraft/team/employees/core/product-manager/MEMORY_SCHEMA.md",
+      "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md"
+    ],
+    "continuity": [
+      "sites/rolecraft/team/team-method-loop-20261017-archive.md",
+      "sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+      "sites/rolecraft/team/task-closeout-20261017.md",
+      "sites/rolecraft/team/task-closeout-20261017.json",
+      "sites/rolecraft/team/validation/natural-read-20261017T1557Z/README.md",
+      "sites/rolecraft/team/validation/natural-read-20261017T1557Z/validation-receipt.json",
+      "sites/rolecraft/team/validation/natural-read-repair-20261018T0110Z/README.md",
+      "sites/rolecraft/team/validation/natural-read-repair-20261018T0110Z/validation-receipt.json"
+    ],
+    "fixed_method": [
+      "README.md",
+      "SOURCE-MANIFEST.md",
+      "CHANGELOG.md",
+      "roles.md",
+      "methods.md",
+      "adoption-and-change.md",
+      "checklists/startup-receipt.md",
+      "checklists/task-and-evidence.md",
+      "examples/website-adapter.example.md",
+      "examples/learning-product-adapter.example.md"
+    ],
+    "task_evidence": "Current relevant implementation and latest related product/QA records sufficient to trace answer, recording, transcript, feedback and context lifecycles; exact paths are located independently after seal, not invented here.",
+    "notes": "Full current AGENTS includes original nonempty lines171/173. Inspect direct task-closeout filenames for newer uncovered records. Two examples remain unapplied examples. Two proposals are protected, not counted as method bodies."
+  },
+  "minimum_product_scope_count": 34,
+  "count_policy": "All historical 32 sources remain mandatory for product scope, plus previous case README and final validation receipt; new workflow source(s) add rather than replace. Role additions are explicitly selected from existing materials; unknown ownership and missing original memory stay distinct.",
+  "acceptance": [
+    "Entry AGENTS marker + onboarding README + routing clearly distinguish mandatory common inputs and role supplement; whole-list flow, not selective role/method menu, is normal startup.",
+    "From ordinary repository entry, a single discovered read flow crosses every mandatory source and all pages in deterministic order; every nonfinal page has the one explicit next command, including cross-source transition; final response is not all-received proof.",
+    "Freeze exact required-source list, selected roles, method fixed revision and current dirty/untracked source bytes; reject continuation if changed, role-set differs, cursor malformed/nonobject/forged sequence, or source/version changed. No application, employee or historical edits.",
+    "Payload remains bounded for UTF8, escaped controls, long lines and all metadata. No omitted/duplicate/gap bytes, no whole-corpus output that may be cut. Full mechanisms only reassemble privately in memory, save hashes/ranges.",
+    "Flow session/cursor if used is untrusted continuation bookkeeping, not authenticated delivery, understanding, actual application, independent QA or natural-loading success. A caller that constructs a later cursor must not receive an authenticated-consumption claim.",
+    "Access denied, missing local root, wrong method version/origin, dirty method blob or symlink must block without fallback/search/network; catalog whitelist, traversal, arbitrary credential, cross-role and stale-page bindings rejected.",
+    "Existing read_source per-source/list and check_startup interfaces remain compatible; checker0, file/hash or methods alone never earns complete coverage.",
+    "All original FAIL/partial and first submissions retained byte-for-byte; latest 26-file case remains original. at least latest README/validation receipt in current required record set; no historical conclusion upgraded.",
+    "No private full bodies/reconstructable page cache/raw logs/hidden analysis saved to repository/audit/temp. No proposals read as adopted policy, formal adoption, event hook or Git/network/config action.",
+    "Independent actual-source in-memory reconstruction of AGENTS plus all required source bodies exact and bounded verifies mechanics only; later fresh business uses no source/path hints and separate QA evaluates visible delivery, readback/application and artifact."
+  ],
+  "planned_counterexamples": [
+    "missing transition or source skipped at final page",
+    "last page requested without actual earlier delivery; untrusted cursor disclosure",
+    "cursor invalid JSON/nonobject/modified/out of range/role mismatch",
+    "source changed after plan/within read or project HEAD drift",
+    "method revision/origin/worktree mismatch or inaccessible locator",
+    "symlink leaf/ancestor/path traversal/arbitrary credential ID",
+    "long single line/CRLF/nonterminal newline/control escaping/Unicode page boundary",
+    "selected role absent and fallback role lacks original memory",
+    "older catalogue omits latest record or old32",
+    "all metadata succeeds while body not visibly delivered",
+    "old APIs continue working",
+    "runtime stdout redirect/private cache absent"
+  ],
+  "decision_policy": "Any blocking defect produces needs_revision with retained original receipt. Original author fixes; exact counterexample and related scope rerun, version bound. No new business dispatch until mechanism verdict accepted by root. No claim that mechanism pass proves fresh natural reading."
+}

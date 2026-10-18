@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "criteria_id": "rolecraft-transcript-reanalysis-natural-read-v1",
+  "stage": "FIRST RULE FREEZE before business dispatch, business artifact access or business runtime log access; final repaired source bytes will be bound separately",
+  "qa_executor": "/root/reading_flow_business_qa",
+  "project_root": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft",
+  "method_revision": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+  "prompt_sha256": "586073cc5e6a842bd0ecde7e44685b197dd99e09a530aeaeedac998d77bf5acb",
+  "trial_plan_sha256": "ff7dfa345dee8ed74cbf197e68321170011436f8a48e3ef4221d9459907e345c",
+  "business_output": "/private/tmp/rolecraft-reanalysis-t6lyh5vp",
+  "independence": {
+    "freshness": "Actual fork_turns=none dispatch must be corroborated; history_mode, agent name or a new output folder is not proof.",
+    "ordinary_prompt": "Repository root, neutral output location and ordinary read-only product task only. No coordinator/QA source path, method revision, reading checklist, reading reminder or validation objective before first submission seal. Business may discover project instructions itself.",
+    "dispatch_gate": "Independent repair mechanism QA pass, exact repaired source freeze, this immutable first criteria freeze, then fresh ordinary business dispatch. Mechanism pass never fills business reading.",
+    "blind_review": "No future business artifacts, live output directory or business logs inspected before root explicitly provides first seal and fixed authorized log prefix. No contact with business executor or pre-seal hints.",
+    "provenance": "Prompt copy, root actual dispatch receipt and visible child evidence are distinct. Encrypted task/message text is never decoded or reconstructed. Unprompted author corrections before seal are timed and kept in first seal; readiness is not assumed immutable.",
+    "later_work": "Any later reread, hint, revision or new trial has a separate seal/result and cannot replace the first result."
+  },
+  "scope": {
+    "business": "Read-only product review and minimal future acceptance conditions for feedback identity after learner edits a voice-interview transcript and analyzes again. Current implementation and project records support claims; no implementation or runtime business test.",
+    "qa_write_root": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-required-reading-20261018T020320Z/business-qa",
+    "forbidden": [
+      "application/service/browser/microphone/ASR/business test execution",
+      "network/fetch/dependency installation",
+      "real user database/personal browser records/credentials",
+      "engineering, employee ROLE/MEMORY/SCHEMA, method/proposals, historical evidence or business artifact edits",
+      "commit/push/merge/release",
+      "formal method adoption, growth award or startup/end background events",
+      "persisting private fulltext or reconstructable page caches, including temporary directories",
+      "copying raw runtime logs, analysis/reasoning, encrypted fields or unrelated account metadata"
+    ],
+    "authorized_runtime_review": "After explicit first seal, only root-authorized business fixed log prefix and QA own visible evidence; no other sessions or unrelated tasks."
+  },
+  "required_sources": {
+    "fixed_business_baseline_count": 34,
+    "legacy_32_retained": true,
+    "groups": {
+      "governance": [
+        "AGENTS.md"
+      ],
+      "entry": [
+        "sites/rolecraft/team/onboarding/README.md",
+        "sites/rolecraft/team/onboarding/ROLE-MAPPING.md",
+        "sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+        "sites/rolecraft/team/onboarding/APPLICATION-NOTES.md",
+        "sites/rolecraft/team/onboarding/TASK-LAYOUT3-READING-DIALOGUE.md",
+        "sites/rolecraft/team/onboarding/startup/README.md",
+        "sites/rolecraft/team/onboarding/startup/sources.json",
+        "sites/rolecraft/team/onboarding/startup/local-method-source.json"
+      ],
+      "product_role": [
+        "sites/rolecraft/team/employees/core/README.md",
+        "sites/rolecraft/team/employees/core/manifest.json",
+        "sites/rolecraft/team/employees/v12-evidence/manifest.json",
+        "sites/rolecraft/team/employees/core/product-manager/ROLE.md",
+        "sites/rolecraft/team/employees/core/product-manager/MEMORY.md",
+        "sites/rolecraft/team/employees/core/product-manager/MEMORY_SCHEMA.md",
+        "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md"
+      ],
+      "continuity": [
+        "sites/rolecraft/team/team-method-loop-20261017-archive.md",
+        "sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+        "sites/rolecraft/team/task-closeout-20261017.md",
+        "sites/rolecraft/team/task-closeout-20261017.json",
+        "sites/rolecraft/team/validation/natural-read-20261017T1557Z/README.md",
+        "sites/rolecraft/team/validation/natural-read-20261017T1557Z/validation-receipt.json",
+        "sites/rolecraft/team/validation/natural-read-repair-20261018T0110Z/README.md",
+        "sites/rolecraft/team/validation/natural-read-repair-20261018T0110Z/validation-receipt.json"
+      ],
+      "fixed_method": [
+        "README.md",
+        "SOURCE-MANIFEST.md",
+        "CHANGELOG.md",
+        "roles.md",
+        "methods.md",
+        "adoption-and-change.md",
+        "checklists/startup-receipt.md",
+        "checklists/task-and-evidence.md",
+        "examples/website-adapter.example.md",
+        "examples/learning-product-adapter.example.md"
+      ]
+    },
+    "source_ids": [
+      "project:AGENTS.md",
+      "project:sites/rolecraft/team/onboarding/README.md",
+      "project:sites/rolecraft/team/onboarding/ROLE-MAPPING.md",
+      "project:sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+      "project:sites/rolecraft/team/onboarding/APPLICATION-NOTES.md",
+      "project:sites/rolecraft/team/onboarding/TASK-LAYOUT3-READING-DIALOGUE.md",
+      "project:sites/rolecraft/team/onboarding/startup/README.md",
+      "project:sites/rolecraft/team/onboarding/startup/sources.json",
+      "project:sites/rolecraft/team/onboarding/startup/local-method-source.json",
+      "project:sites/rolecraft/team/employees/core/README.md",
+      "project:sites/rolecraft/team/employees/core/manifest.json",
+      "project:sites/rolecraft/team/employees/v12-evidence/manifest.json",
+      "project:sites/rolecraft/team/employees/core/product-manager/ROLE.md",
+      "project:sites/rolecraft/team/employees/core/product-manager/MEMORY.md",
+      "project:sites/rolecraft/team/employees/core/product-manager/MEMORY_SCHEMA.md",
+      "project:sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+      "project:sites/rolecraft/team/team-method-loop-20261017-archive.md",
+      "project:sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+      "project:sites/rolecraft/team/task-closeout-20261017.md",
+      "project:sites/rolecraft/team/task-closeout-20261017.json",
+      "project:sites/rolecraft/team/validation/natural-read-20261017T1557Z/README.md",
+      "project:sites/rolecraft/team/validation/natural-read-20261017T1557Z/validation-receipt.json",
+      "project:sites/rolecraft/team/validation/natural-read-repair-20261018T0110Z/README.md",
+      "project:sites/rolecraft/team/validation/natural-read-repair-20261018T0110Z/validation-receipt.json",
+      "method:README.md",
+      "method:SOURCE-MANIFEST.md",
+      "method:CHANGELOG.md",
+      "method:roles.md",
+      "method:methods.md",
+      "method:adoption-and-change.md",
+      "method:checklists/startup-receipt.md",
+      "method:checklists/task-and-evidence.md",
+      "method:examples/website-adapter.example.md",
+      "method:examples/learning-product-adapter.example.md"
+    ],
+    "old_fourteen_gaps": [
+      "project:sites/rolecraft/team/onboarding/ROLE-MAPPING.md",
+      "project:sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+      "project:sites/rolecraft/team/onboarding/APPLICATION-NOTES.md",
+      "project:sites/rolecraft/team/onboarding/TASK-LAYOUT3-READING-DIALOGUE.md",
+      "project:sites/rolecraft/team/onboarding/startup/sources.json",
+      "project:sites/rolecraft/team/onboarding/startup/local-method-source.json",
+      "project:sites/rolecraft/team/employees/core/README.md",
+      "project:sites/rolecraft/team/employees/core/manifest.json",
+      "project:sites/rolecraft/team/employees/v12-evidence/manifest.json",
+      "project:sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+      "project:sites/rolecraft/team/team-method-loop-20261017-archive.md",
+      "project:sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+      "project:sites/rolecraft/team/task-closeout-20261017.json",
+      "project:sites/rolecraft/team/validation/natural-read-20261017T1557Z/validation-receipt.json"
+    ],
+    "freshness_boundary": "Eight explicit continuity records are frozen for this trial. Do not auto-scan or add future validation directories, including this trial archive. Future records require a later reviewed source-list update; no retrospective input obligation.",
+    "source_binding_later": "Final repaired source-binding.json must bind all 34 bodies individually, current root/branch/HEAD and dirty/untracked bytes; exact new flow/reader/checker/test/guide/locator files are separately bound and protected according to final repair handoff. It cannot delete or relabel any legacy body. This is source binding, not criteria rewrite.",
+    "task_evidence": "After seal independently locate task-relevant current implementation and relevant product/QA/project records. Trace material version/lifecycle/feedback claims; do not demand whole application source reading or unrelated historical expansion.",
+    "method_boundaries": "Ten fixed bodies include both unapplied examples. Protected proposals are not method-body substitutes. QA own method reads never count as business delivery."
+  },
+  "checks": [
+    {
+      "id": "N01",
+      "topic": "Fresh ordinary unprompted trial",
+      "pass": "Criteria/source freeze and repair-QA gate precede actual fork_turns=none dispatch; frozen ordinary prompt and no pre-seal hints are corroborated.",
+      "fail": "Inherited method context or outside reading/source hints contaminate first trial.",
+      "insufficient": "Dispatch/nonintervention provenance cannot be corroborated; report precise limitation."
+    },
+    {
+      "id": "N02",
+      "topic": "Exact source version and drift",
+      "pass": "Separate source binding captures actual project root/branch/HEAD plus each dirty/untracked body SHA/bytes, method origin/fixed HEAD/blob/worktree and protected proposals; QA rechecks endpoints.",
+      "fail": "Wrong source or revision, mixed drifted pages, or HEAD alone asserted as current dirty bytes.",
+      "insufficient": "No stable binding or author metadata alone."
+    },
+    {
+      "id": "N03",
+      "topic": "All 34 actual full bodies delivered",
+      "pass": "Every one of 24 project and ten method bodies has actual visible business tool output matching the exact frozen UTF-8 bytes in memory, continuously from byte0 through EOF; all fourteen old gaps individually checked. Page sequence, hashes and byte ranges corroborate actual text, not substitute it.",
+      "fail": "A required body is omitted, materially mismatched or falsely claimed fully consumed; complete natural reading is FAIL/partial.",
+      "insufficient": "Missing/truncated output, unavailable prefix or ambiguous version/coverage prevents proof. All outer tool/functions truncation is included; terminal page, cursor, checker exit0, file/hash/metadata, summary or self-report cannot pass."
+    },
+    {
+      "id": "N04",
+      "topic": "Entry discovery and complete flow",
+      "pass": "Visible business calls discover governance/entry and permitted local fixed source without root/QA hints and complete the required baseline before substantive product judgment. Actual output chronology is reviewed; flow continuation parameters are untrusted consistency data.",
+      "fail": "Unauthorized alternate-copy search/network/bypass, skip of common sources by relevance, knowingly false completion, or substantive judgment before required bodies are received.",
+      "insufficient": "Only flow plan, cursor, list, metadata checker or discovery assertion; zero-write mechanism QA is a separate layer."
+    },
+    {
+      "id": "N05",
+      "topic": "Source-specific readback",
+      "pass": "Accurate source/section-specific readback for original role/memory/schema/shared preference, governance/entry, eight continuity records and relevant fixed methods states applicability and limits. QA checks meaning, not IDs; PM-MEM-0001 does not invent product priorities. Readback need not mechanically quote every file.",
+      "fail": "Material source/status/preference misreading or unearned ownership, authority, mastery or adoption claim.",
+      "insufficient": "Hashes, all-read assertions, copied text, source IDs or generic boilerplate without specific meaning."
+    },
+    {
+      "id": "N06",
+      "topic": "Selective actual method application",
+      "pass": "One or more relevant fixed-method/checklist principles are accurately used in the actual sealed product artifact and independently located against source meaning. M01 task/information relation, M06 fact/claim source layers and M07 edit/analyze branches may fit; M08 only as relevant state/dynamic-evidence boundary. Plans remain separate.",
+      "fail": "Force every method, treat unapplied examples/candidates as current project facts, or claim transfer without business reading.",
+      "insufficient": "IDs, quotations, planned use, resemblance or author actual_application fields without independent source-to-artifact reasoning. M02/M03/M04/M05 are not mechanically required or granted visual review."
+    },
+    {
+      "id": "N07",
+      "topic": "Static product truth and usefulness",
+      "pass": "For each material current behavior, uncertainty or proposed change, independently trace current source and relevant records. Distinguish original transcription, current edited text, confirmation/analyze input snapshot and feedback identity as applicable. Explain which boundary currently distinguishes versions and which does not; do not force a particular future architecture.",
+      "fail": "Material feedback/version promise conflicts with actual source, history substituted for current implementation, or omitted task-relevant branch makes handoff misleading.",
+      "insufficient": "Missing causal dependencies or runtime-only claims unsupported by execution."
+    },
+    {
+      "id": "N08",
+      "topic": "Task-relevant edit/reanalysis states",
+      "pass": "Review edit before first analysis, edit after feedback, pending analysis, success/failure/retry and old/late response ordering as relevant to the actual code. Consider question/answer context changes only when they affect this task. Clearly label static deductions, risk, intended behavior and unknown runtime outcomes.",
+      "fail": "Old feedback called current new-answer feedback without evidence, stale response risk erased, or static inference reported as observed runtime defect/pass.",
+      "insufficient": "Only happy path or generic state labels with no version/input-to-feedback reasoning."
+    },
+    {
+      "id": "N09",
+      "topic": "Minimal future observable acceptance",
+      "pass": "Conditions specify precondition/version of input, learner action, observable feedback/version state, success and failure signal, relevant pending/error/late outcome, source context and engineering/independent-test handoff. They are minimal for this task, distinguish old/new feedback and remain unexecuted.",
+      "fail": "Vague same-version promise cannot distinguish stale results, conditions imply prior execution, silently alter product standards or impose unrelated feature implementation.",
+      "insufficient": "Headings, slogans or unsupported preserve-everything requirement."
+    },
+    {
+      "id": "N10",
+      "topic": "Independent layered QA",
+      "pass": "QA in a distinct execution context actually reads sealed artifacts and current supporting source, records concrete reasons/counterexamples/findings and limits. Source delivery, readback, planned/actual method use, author self-check, mechanism QA, independent static QA and business runtime are separately judged.",
+      "fail": "Role label substitutes review, author self-check called independent, or static/mechanism evidence upgraded to runtime or full-product pass.",
+      "insufficient": "Separate identity with no actual review evidence."
+    },
+    {
+      "id": "N11",
+      "topic": "Scope, privacy and immutable history",
+      "pass": "Visible authorized actions and protected endpoint hashes are checked. Both historical FAIL/partial first results and later limited document outcomes remain; old voice insufficient,13pass/2fail,smoke failure and full-product not_met are not upgraded. Only permitted safe QA summaries/hash/ranges/positions are saved.",
+      "fail": "Prohibited action, raw-log/private body/cache persistence, altered historical failure, unsupported formal adoption/growth or changed employee management.",
+      "insufficient": "Unobserved actions cannot be excluded; endpoint hashes are not continuous monitoring."
+    }
+  ],
+  "decision_policy": {
+    "separate_layers": [
+      "source accessible",
+      "tool acquired",
+      "actual visible full body delivered",
+      "source-specific readback",
+      "planned application",
+      "actual artifact application",
+      "author self-check",
+      "repair mechanism QA",
+      "independent static business QA",
+      "application/browser/ASR/business runtime"
+    ],
+    "statuses": [
+      "pass_within_scope",
+      "fail",
+      "insufficient",
+      "not_tested",
+      "not_applicable_with_reason"
+    ],
+    "complete_natural_reading": "All frozen34 full bodies, correct fixed version and unprompted discovery are necessary. Report actual-body delivery and startup-before-judgment chronology separately. Good document quality, mechanism pass, author honesty or QA reading cannot fill a missing body.",
+    "business_document": "Independent static quality verdict. Material factual or useful-acceptance defect is needs_revision; do not force a finding or all-method application.",
+    "runtime": "not_tested under this authorization. A static product document can pass while real feedback version behavior remains unverified. No new full-product acceptance.",
+    "claims": "No inference of understanding, stable mastery, automatic runtime loading, cross-device access, formal method adoption, ownership or growth.",
+    "revision": "Preserve first source/artifact hashes, evidence gaps and result. Later rereads, author repairs and narrow retests are separate."
+  },
+  "runtime_log_policy": {
+    "gate": "Only after root explicit first seal plus exact authorized log path, prefix bytes/lines and SHA. Verify prefix without copying the log.",
+    "allow": "Visible tool/function input/output, commentary/final and minimum authorized execution-source identity for provenance; task-related only.",
+    "skip_recursive": [
+      "analysis",
+      "reasoning",
+      "encrypted_content",
+      "encrypted_contents",
+      "unrelated account metadata"
+    ],
+    "skip_behavior": "Never display, explain, interpret, decode or decrypt skipped fields; do not use hidden reasoning as evidence.",
+    "body_verification": "Unescape actual visible tool text and compare each body/page to frozen source slices in memory. Preserve exact gaps and truncation boundaries. Metadata/cursor assertions alone never authenticate earlier calls/delivery.",
+    "persist_only": "Nonreconstructable metadata: hashes, source and page/byte ranges, short summaries, call/output positions, artifact positions and findings. No raw log, private method text or reconstructable text cache."
+  },
+  "qa_preparation": {
+    "pack": "Original QA ROLE/MEMORY/MEMORY_SCHEMA and approved-preferences consumed. QA-MEM-0001 adapted to a brief product review; no textbook-length or irrelevant content gate.",
+    "governance": "AGENTS and current onboarding/startup guides consumed; initial truncation and an expected in-progress source drift are not treated as completion. Current full visible AGENTS output plus bounded115-144 reread covers the omitted middle; final repaired source bytes bind later.",
+    "method": "All ten fixed method bodies consumed only in this authorized QA tool context, including roles three pages. No private body/page cache persisted. Never credited to business.",
+    "history": "Both prior first independent QA reports and second first criteria consumed; historic business raw logs not accessed.",
+    "business_access": "No current/future business artifact or runtime log read; no business executor contact. First-rule freeze precedes result inspection."
+  }
+}

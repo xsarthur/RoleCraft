@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "record_kind": "independent_required_reading_initial_37_target_readback",
+  "checked_at_utc": "2026-10-18T02:48:20.236308+00:00",
+  "executor_ref": "/root/method_audit",
+  "destination": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/validation/natural-read-flow-20261018T0217Z",
+  "target_scope": "Initial 37 archive files only. This report is currently external; its later copy as a 38th file is not pre-certified.",
+  "target_readback": {
+    "file_count": 37,
+    "total_bytes": 461094,
+    "manifest": {
+      "README.md": {
+        "bytes": 6528,
+        "sha256": "ca48d1b8a15a4783895bb9f51efded247814981e2bcaa802628209d5b1aae3f9"
+      },
+      "business-prompt.txt": {
+        "bytes": 950,
+        "sha256": "586073cc5e6a842bd0ecde7e44685b197dd99e09a530aeaeedac998d77bf5acb"
+      },
+      "cause/cause-matrix.json": {
+        "bytes": 17733,
+        "sha256": "738cd4440a490895c5ce645bfd77111033b133fa531d7b99f20c6f1538a55dc1"
+      },
+      "cause/cause-report.md": {
+        "bytes": 4934,
+        "sha256": "527c0e0cac45b18175f0784455efcf52adbad14904fcaf33b5a22465408e67c0"
+      },
+      "dispatch-integrity-addendum.json": {
+        "bytes": 1009,
+        "sha256": "ce0b754c01f76bd15dc8798cd8c862e38aa25d9fcdb2b65d6aa4f8baf4aeac0d"
+      },
+      "dispatch.json": {
+        "bytes": 1339,
+        "sha256": "0d19ffff62386613b702cc4a02e5c176272a62f96b45327914d1d3581482be25"
+      },
+      "first-qa/criteria-freeze.json": {
+        "bytes": 1354,
+        "sha256": "775f62d75df9085e6c208a42fd437affd82c394278071a3c5649f18fb3889e7e"
+      },
+      "first-qa/criteria.json": {
+        "bytes": 20925,
+        "sha256": "58c5014516b0dab7388fcf785bd489e06001148c6c37eb8f10ffeb33cf97e0f4"
+      },
+      "first-qa/criteria.md": {
+        "bytes": 4773,
+        "sha256": "8fae1a748719fa676e094ef5670201c30fef9dabfee3aae1fc398839ed9152bb"
+      },
+      "first-qa/final-binding.json": {
+        "bytes": 6951,
+        "sha256": "d8fd99631289f71faba0717579e4c515f14fc2cb0d30665a4c4ec0cbd11e7460"
+      },
+      "first-qa/qa-receipt.json": {
+        "bytes": 22654,
+        "sha256": "4d352287cbadd82579303f66844e9cb48396170fbf95776713fbdd7cb82821ce"
+      },
+      "first-qa/qa-report.md": {
+        "bytes": 7595,
+        "sha256": "0bf1cf5035c7b357803ef485bc2051fd2a757d3962c103b41d17f32136c06bc4"
+      },
+      "first-qa/source-precheck.json": {
+        "bytes": 16579,
+        "sha256": "8184ed9eed2461b3618182bdc6a905eee782876045fb178a28815e48309e6b24"
+      },
+      "first-qa/trace-index.json": {
+        "bytes": 124733,
+        "sha256": "de1bca7a60a22f5b999d58c6e0f86fd90eb2a513b8e33c911688f80ec2a254f8"
+      },
+      "first-submission/product-evidence.json": {
+        "bytes": 21662,
+        "sha256": "6fc6827e803fc576865b5891f0c6cef31a816001d411d09e7b1e04e674c9ead2"
+      },
+      "first-submission/product-review.txt": {
+        "bytes": 8303,
+        "sha256": "f36c9f8a11059cd451d3e2b1da4d23436b350cc44a89dd4f3dd856a8530104c1"
+      },
+      "first-submission-seal.json": {
+        "bytes": 2128,
+        "sha256": "b1a7c97edddb21c2e2fba547aede1b51edba55f78d21f79d66070f2e918aa6ca"
+      },
+      "input-binding.json": {
+        "bytes": 36578,
+        "sha256": "a800f8335e647c57cb32c539b7c433806d2051e8e16210d9a05068585b391cb2"
+      },
+      "protocol.json": {
+        "bytes": 770,
+        "sha256": "ff7dfa345dee8ed74cbf197e68321170011436f8a48e3ef4221d9459907e345c"
+      },
+      "repair/change-manifest.json": {
+        "bytes": 2699,
+        "sha256": "441e4ad2e4532bd9afbf454da425a6a273cd12c77fbef4f1f212ce0098c58695"
+      },
+      "repair/criteria.json": {
+        "bytes": 6806,
+        "sha256": "bd5b40388c32654936e95ea3c640c023232e369cad35450f427f7853d5295b01"
+      },
+      "repair/criteria.md": {
+        "bytes": 1040,
+        "sha256": "06cab8fd3c9251794062bce35dce248ce1526541a7c383a1825f424807c82278"
+      },
+      "repair/engineering-receipt.json": {
+        "bytes": 4357,
+        "sha256": "fc8dd0b770a54bcbf222cac0490d3b3d3be283cc45a2ead8cd86fe4e1eab643c"
+      },
+      "repair/qa-receipt.json": {
+        "bytes": 9617,
+        "sha256": "30879694d0f0544b056c1f30af41c5138032668477638c33c20239d3549cfe35"
+      },
+      "repair/qa-report.md": {
+        "bytes": 1781,
+        "sha256": "165d9065e2cbc2740c238128c6eb34d3a71438383f95968876bc1573792b7de1"
+      },
+      "repair/real-reconstruction-final.json": {
+        "bytes": 31300,
+        "sha256": "1acdb48ca4e7fb6b8415ae51cb09e0e782533e59fe34e358da29e979733f1661"
+      },
+      "revision-1/product-evidence.json": {
+        "bytes": 24941,
+        "sha256": "166567fee14221385f2848644f405cfaa3bc46a8a3c97c0a866d9efcc5f4f803"
+      },
+      "revision-1/product-review.txt": {
+        "bytes": 8460,
+        "sha256": "2e4904c0379b5d9a60d1b2f4ee83d5f4f2c887302ed9d5660661cad1f7779348"
+      },
+      "revision-1/revision-note.txt": {
+        "bytes": 1671,
+        "sha256": "97f303c80c5fd576e0f97d298512989e4958847f33e828365e680451ac1a0247"
+      },
+      "revision-qa/final-binding.json": {
+        "bytes": 3500,
+        "sha256": "736a7439015f84d11e99c5ffe21a975442bdcded0a098153ed371d933dbff0dc"
+      },
+      "revision-qa/qa-receipt.json": {
+        "bytes": 11772,
+        "sha256": "ef506eb3bc72dd69d4b17d9c3041799d3f26715123ee822c849d12c62eab39be"
+      },
+      "revision-qa/qa-report.md": {
+        "bytes": 2298,
+        "sha256": "25c4f8f35099608b4ef1f2eb79b1a64fc472f24cb39dfdc8098efca7e4b01c4c"
+      },
+      "revision-request.txt": {
+        "bytes": 1567,
+        "sha256": "df469a92d79caf12214df21f174497c83ec72f58d1f853baf1e9306509bc1237"
+      },
+      "revision-seal.json": {
+        "bytes": 1591,
+        "sha256": "959e5a7ead1afbee63844d945c068dba9e69604a4cbf66e57c864a44cbffd5ea"
+      },
+      "scope/input-protection.json": {
+        "bytes": 10115,
+        "sha256": "a7fea39a5fd911fa6e70398a39c7f9bf428d211798d6544b9712e1df7992d55e"
+      },
+      "scope/submission-privacy.json": {
+        "bytes": 10628,
+        "sha256": "ad0dde6da6810599e3dbb5d419757233968a5396317b363a422aa9084bc3eaa9"
+      },
+      "validation-receipt.json": {
+        "bytes": 19453,
+        "sha256": "5cafa04b35836ad588e238e6534e1ef4f85b1ea03acbcd8cacb83c822f94e6bd"
+      }
+    },
+    "missing": [],
+    "extra": [],
+    "manifest_mismatches": [],
+    "candidate_byte_mismatches": [],
+    "precopy_guard_manifest_mismatches": [],
+    "save_receipt_manifest_mismatches": [],
+    "symlinks": [],
+    "paths_bytes_sha256_aggregate": "8d1bd2aa348838c37f5217cbc598a87b77af7cdaa702efbd5752a34bd498c616",
+    "aggregate_matches_precopy_guard": true
+  },
+  "evidence_bindings": {
+    "save_receipt_sha256": "a13cf0e31e6962d006c80492fab531c9296e42f71dd7039f5c49c5002927043c",
+    "archive_manifest_sha256": "06c8ec0a343b97c2628ee04129610b11535d40ca16a1e8a78767d0b95c8729bb",
+    "precopy_independent_guard_sha256": "36dfda2a6f41c2a14c94cbce27a8d823bfcb6e9eaac7f5ec5ca4dc9656d6a4ab",
+    "trial_input_freeze_sha256": "80d75a7d55feeec1b60247f4744fa2e2d0eec83ae5507a505745f651a32be950"
+  },
+  "all_requested_evidence_bindings_match": true,
+  "source_and_git_protection": {
+    "original_frozen_file_count": 3608,
+    "actual_project_file_count": 3645,
+    "old_frozen_bytes_hash_mode_drift": [],
+    "extra_project_file_count": 37,
+    "extra_project_set_exactly_new_archive_37": true,
+    "unexpected_extra_project_files": [],
+    "missing_expected_new_files": [],
+    "irregular_or_symlink_files": [],
+    "frozen_existing_untracked_count": 44,
+    "current_untracked_count": 81,
+    "untracked_exactly_old_44_plus_new_37": true,
+    "tracked_modified_files": [
+      "AGENTS.md",
+      "sites/rolecraft/team/onboarding/README.md",
+      "sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+      "sites/rolecraft/team/onboarding/startup/README.md",
+      "sites/rolecraft/team/onboarding/startup/check_startup.py",
+      "sites/rolecraft/team/onboarding/startup/sources.json",
+      "sites/rolecraft/team/onboarding/startup/test_check_startup.py"
+    ],
+    "tracked_modified_exactly_original_seven": true,
+    "git_metadata": {
+      "branch": "integration/peiyu-team-onboarding-20261017",
+      "head": "ba9a55fe39be32e96130ed3df6a9d69cbfc97917",
+      "main": "4158efd4641be219c897746cc063d73122f4eeb7",
+      "index_sha256": "caa3fc706ebda16311a066da855a662f8e7d5d2fb112920159b750fb51eb9f1f",
+      "config_sha256": "fa89354232d96be9723b3b8131b81e33d1dcd90ae07348f0a0839a917ba7e04e",
+      "staged_diff": "",
+      "method_head": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+      "method_main": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+      "method_index_sha256": "8cceb73674244c50b95f6e8ae42a670447b279836e29f8a4c107b9ee5f2bfc83",
+      "method_config_sha256": "8e6df4bdad1c7613aefbefff1e96764d7ecffb745ef703c093c97f2fd4445d71",
+      "method_status": "?? proposals/entry-status-and-evidence-links-v01.md\n?? proposals/version-bound-fact-claims-v01.md"
+    },
+    "refs_indexes_configs_and_empty_staging_preserved": true,
+    "protected_groups": {
+      "employee_files": {
+        "count": 76,
+        "mismatches": []
+      },
+      "old_two_trial_files": {
+        "count": 41,
+        "mismatches": []
+      },
+      "old_archives_closeout": {
+        "count": 7,
+        "mismatches": []
+      }
+    },
+    "method_twelve_actual_metadata": {
+      "adoption-and-change.md": {
+        "bytes": 2943,
+        "sha256": "cf2bcda816d9384c496ed3432d7db98dee5fa6eaca0f15d733d88938b45e741b"
+      },
+      "CHANGELOG.md": {
+        "bytes": 1147,
+        "sha256": "04fbd3e05f9af5d0432273000b88bacaef328eb314f7234992ec4c1e2ec4e2c4"
+      },
+      "README.md": {
+        "bytes": 2346,
+        "sha256": "7283e2d173c9c44bad7f356f890241efb7693be3a340d456c868df391142f1c1"
+      },
+      "roles.md": {
+        "bytes": 8313,
+        "sha256": "e19e414487dbd03a31824f1f5d3fb1a4ef57cc4076a54d17ddb82d5a64ef5b5a"
+      },
+      "methods.md": {
+        "bytes": 3052,
+        "sha256": "3346016d6aba70f681cf26467d642f9bc8ebfd45b10ea520fa0cc5de169d879b"
+      },
+      "SOURCE-MANIFEST.md": {
+        "bytes": 2246,
+        "sha256": "ddf191051d0f7f47ce84097b7b1528f609565b1f287df770a0127ea5ee274cb1"
+      },
+      "checklists/task-and-evidence.md": {
+        "bytes": 3067,
+        "sha256": "0c264ec328c1af6326d759303ddca28d1fc0eb8aa14a2339194e498ca58522f8"
+      },
+      "checklists/startup-receipt.md": {
+        "bytes": 1035,
+        "sha256": "374118279b5fb6e7039784b3cb30482c1f01cf0521ef75c954d8e71b6bf7e48b"
+      },
+      "examples/website-adapter.example.md": {
+        "bytes": 1112,
+        "sha256": "242b328b057125eadd9b1f88c140d42d1f1528d1c8918aa555eef21270e94009"
+      },
+      "examples/learning-product-adapter.example.md": {
+        "bytes": 2616,
+        "sha256": "cfd5b19c9efdd011619e805f4ac84b7d723eac3e430d35eedaa589e94f85baaf"
+      },
+      "proposals/version-bound-fact-claims-v01.md": {
+        "bytes": 2255,
+        "sha256": "4fd8f894297e98072108df4eac2e6dfc53aacfc0d1196f8648733781a6a14552"
+      },
+      "proposals/entry-status-and-evidence-links-v01.md": {
+        "bytes": 2019,
+        "sha256": "2b6b146de13859386b4aa7874d2f0e745f8b05eaf89ab15f0493d6af711565c9"
+      }
+    },
+    "method_mismatches": [],
+    "all_requested_protections_unchanged": true
+  },
+  "save_operation_boundary": {
+    "precopy_guard_observed_target_absent": true,
+    "root_receipt_reports_no_existing_files_overwritten": true,
+    "auditor_action": "Independent target byte readback plus frozen-source endpoint comparisons. Copy syscalls were not repeated or independently reconstructed.",
+    "root_save_independent_readback_historical_field": "separate subsequent receipt required; not presigned",
+    "historical_field_interpretation": "Save receipt remains its immutable publication snapshot; this subsequent independent report supplies readback result without rewriting it."
+  },
+  "limits": [
+    "Certifies the current initial 37 target files only. A later verbatim copy of this report as file38 needs a separate root byte readback.",
+    "No business QA, source-reading coverage reconstruction, privacy rescanning or raw runtime/session-log access. Prior privacy guard applies by exact unchanged package bytes.",
+    "No author contact, network, application/service/browser/model/test execution or Git mutation. No target/project/method/employee/old-receipt edits; only this external guard written.",
+    "Endpoint comparison covers tracked/nonignored untracked files, not continuous monitoring or all ignored runtime content."
+  ],
+  "verdict": "PASS_within_independent_required_reading_initial_37_archive_readback_scope"
+}

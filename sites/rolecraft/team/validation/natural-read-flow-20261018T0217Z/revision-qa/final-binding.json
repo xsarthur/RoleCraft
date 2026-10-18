@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "bound_at_utc": "2026-10-18T02:42:34.386486+00:00",
+  "stage": "DQ02 guided narrow revision QA; first QA immutable",
+  "verdict": "pass_within_DQ02_document_revision_scope",
+  "QA_files": {
+    "qa-report.md": {
+      "path": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-required-reading-20261018T020320Z/business-qa/revision-qa/qa-report.md",
+      "bytes": 2298,
+      "sha256": "25c4f8f35099608b4ef1f2eb79b1a64fc472f24cb39dfdc8098efca7e4b01c4c"
+    },
+    "qa-receipt.json": {
+      "path": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-required-reading-20261018T020320Z/business-qa/revision-qa/qa-receipt.json",
+      "bytes": 11772,
+      "sha256": "ef506eb3bc72dd69d4b17d9c3041799d3f26715123ee822c849d12c62eab39be"
+    }
+  },
+  "revision_seal": {
+    "path": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-required-reading-20261018T020320Z/revision-seal.json",
+    "bytes": 1591,
+    "sha256": "959e5a7ead1afbee63844d945c068dba9e69604a4cbf66e57c864a44cbffd5ea"
+  },
+  "revision_request": {
+    "path": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-required-reading-20261018T020320Z/revision-request.txt",
+    "bytes": 1567,
+    "sha256": "df469a92d79caf12214df21f174497c83ec72f58d1f853baf1e9306509bc1237"
+  },
+  "revision_artifacts": {
+    "product-review.txt": {
+      "path": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-required-reading-20261018T020320Z/revision-1/product-review.txt",
+      "bytes": 8460,
+      "sha256": "2e4904c0379b5d9a60d1b2f4ee83d5f4f2c887302ed9d5660661cad1f7779348",
+      "matches_seal": true
+    },
+    "product-evidence.json": {
+      "path": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-required-reading-20261018T020320Z/revision-1/product-evidence.json",
+      "bytes": 24941,
+      "sha256": "166567fee14221385f2848644f405cfaa3bc46a8a3c97c0a866d9efcc5f4f803",
+      "matches_seal": true
+    },
+    "revision-note.txt": {
+      "path": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-required-reading-20261018T020320Z/revision-1/revision-note.txt",
+      "bytes": 1671,
+      "sha256": "97f303c80c5fd576e0f97d298512989e4958847f33e828365e680451ac1a0247",
+      "matches_seal": true
+    }
+  },
+  "first_QA_files_preserved": {
+    "qa-report.md": "0bf1cf5035c7b357803ef485bc2051fd2a757d3962c103b41d17f32136c06bc4",
+    "qa-receipt.json": "4d352287cbadd82579303f66844e9cb48396170fbf95776713fbdd7cb82821ce",
+    "trace-index.json": "de1bca7a60a22f5b999d58c6e0f86fd90eb2a513b8e33c911688f80ec2a254f8",
+    "final-binding.json": "d8fd99631289f71faba0717579e4c515f14fc2cb0d30665a4c4ec0cbd11e7460"
+  },
+  "first_original_sealed_artifacts_preserved": {
+    "product-review.txt": {
+      "bytes": 8303,
+      "sha256": "f36c9f8a11059cd451d3e2b1da4d23436b350cc44a89dd4f3dd856a8530104c1"
+    },
+    "product-evidence.json": {
+      "bytes": 21662,
+      "sha256": "6fc6827e803fc576865b5891f0c6cef31a816001d411d09e7b1e04e674c9ead2"
+    }
+  },
+  "criteria_unchanged": true,
+  "source_sha256": "f5eb9db9bb128000abd6216770f07d9515b4aef03d42080417a378638d270d1d",
+  "runtime_prefix": {
+    "bytes": 2488339,
+    "lines": 653,
+    "sha256": "50231c76b15dbb010d14c9d6fb6f17cd5933e434ce5b39cc51d8369ab12126db",
+    "original_prefix_preserved": true
+  },
+  "new_natural_reading_sample": false,
+  "runtime_business": "not_tested",
+  "write_scope": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-required-reading-20261018T020320Z/business-qa/revision-qa"
+}

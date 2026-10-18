@@ -1,0 +1,912 @@
+{
+  "schema_version": 1,
+  "started_at_utc": "2026-10-18T02:13:13.056324+00:00",
+  "finished_at_utc": "2026-10-18T02:14:24.036044+00:00",
+  "scope": "Independent mechanical actual-source reconstruction only; bodies not emitted to agent in this run and this is not business reading or understanding evidence.",
+  "runs": [
+    {
+      "page_bytes": 4096,
+      "sources": 34,
+      "pages": 83,
+      "total_source_bytes": 254272,
+      "max_serialized_page_bytes": 7165,
+      "plan_sha256": "0a0f1c438e360cf80f06f893bbd1d5df5211e0b137b48948f38e248f9dca63a0",
+      "duration_seconds": 70.979,
+      "source_ranges": [
+        {
+          "source_id": "project:AGENTS.md",
+          "bytes": 51126,
+          "sha256": "9866da222a09d0124008f49ab079dcaea7e2de61c5bb0d638a73acddf5cbe175",
+          "pages": 13,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 4068,
+              "sha256": "0aeb42b584f4b1442344e70193952459c33bab22c9ebce0cbc3845bcfaf6211e",
+              "serialized_bytes": 6733
+            },
+            {
+              "page": 2,
+              "start": 4068,
+              "end": 8143,
+              "sha256": "01b2a77cb1d4d7747cf592b30da486cba755e4753e04dc84c786d6af34337484",
+              "serialized_bytes": 6804
+            },
+            {
+              "page": 3,
+              "start": 8143,
+              "end": 12220,
+              "sha256": "deb2ceb61847840de6e4ef8a2c61d856d2a11239814ca9e05db8b8e55c386d43",
+              "serialized_bytes": 6805
+            },
+            {
+              "page": 4,
+              "start": 12220,
+              "end": 16294,
+              "sha256": "64d53629f653a89a80116b2bb0c7cd64965f0c9096b2b3c106a1b37dcc52f7bc",
+              "serialized_bytes": 6808
+            },
+            {
+              "page": 5,
+              "start": 16294,
+              "end": 20374,
+              "sha256": "66617bbb7dd654f38a982946ff9bc76a07228593bb148085b0516e8b3481e3fc",
+              "serialized_bytes": 6807
+            },
+            {
+              "page": 6,
+              "start": 20374,
+              "end": 24450,
+              "sha256": "0244eb889d7ed266b78776c1882053c00a4d6d3d1d2b2e7da1e524d3b458c45d",
+              "serialized_bytes": 6811
+            },
+            {
+              "page": 7,
+              "start": 24450,
+              "end": 28536,
+              "sha256": "e1be7b3fa4765a64b53f69e1f7296a1724c3b54cd45888e2d640437a8a560255",
+              "serialized_bytes": 6812
+            },
+            {
+              "page": 8,
+              "start": 28536,
+              "end": 32615,
+              "sha256": "859eaea0bebd71ce1289842b12d46455cf27dea4a85bd5a162c45343c643cf14",
+              "serialized_bytes": 6812
+            },
+            {
+              "page": 9,
+              "start": 32615,
+              "end": 36689,
+              "sha256": "14bff4a4b6f0229debbcbf3c4b2f77bd16e3c17d637f57d88e74fcf5a71e8690",
+              "serialized_bytes": 6812
+            },
+            {
+              "page": 10,
+              "start": 36689,
+              "end": 40772,
+              "sha256": "ef6af8f86678e5f991413d02ef229f873e8d718a35a00fba9620467f2aeceeb6",
+              "serialized_bytes": 6815
+            },
+            {
+              "page": 11,
+              "start": 40772,
+              "end": 44849,
+              "sha256": "440e64a95b24680d9ff9a0364de304004f235c6692f44c15481e474dc9c2f7f8",
+              "serialized_bytes": 6815
+            },
+            {
+              "page": 12,
+              "start": 44849,
+              "end": 48923,
+              "sha256": "50b2b5dd07e8267a529c154fd86fdaba1cb3a6a3380586df5e98a684cb9187b5",
+              "serialized_bytes": 6816
+            },
+            {
+              "page": 13,
+              "start": 48923,
+              "end": 51126,
+              "sha256": "7e2860680ff4c68661a67f934f5f5e5f29ba85719273d3b78a9d10b9d733c27a",
+              "serialized_bytes": 4961
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/onboarding/README.md",
+          "bytes": 12953,
+          "sha256": "eca0dd5dc665e0a33c52b73fe367bc68d5d7fe0f2256a48dc22c11984c90c194",
+          "pages": 4,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 4062,
+              "sha256": "92e8ac89918989668841c88dca1073a853edf6e123d2b454ce4a2ddb9b17910f",
+              "serialized_bytes": 6799
+            },
+            {
+              "page": 2,
+              "start": 4062,
+              "end": 8133,
+              "sha256": "68afbbe827f2c9c4f33834d484757c3bcf3cbc6b8f8be6735c550cc8f16ceac9",
+              "serialized_bytes": 6868
+            },
+            {
+              "page": 3,
+              "start": 8133,
+              "end": 12198,
+              "sha256": "428cebb9c87d28afd85caa1f7dab7b3797c4a7482747393a3f9ff776aaec7c0e",
+              "serialized_bytes": 6868
+            },
+            {
+              "page": 4,
+              "start": 12198,
+              "end": 12953,
+              "sha256": "c4f53fa4bebeccdfdf8e5977462110bfb3703f7a53d10f408c9a7676d662b9d0",
+              "serialized_bytes": 3543
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/onboarding/ROLE-MAPPING.md",
+          "bytes": 9207,
+          "sha256": "6fef691401c64a1bf171a87c4d6cc7ec60bacab0560bccb37333f85db901ff5f",
+          "pages": 3,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 4068,
+              "sha256": "ba4d2175da0a5b53bb4c99d72e3026482c2d750a726645172a136babab3f54f4",
+              "serialized_bytes": 6798
+            },
+            {
+              "page": 2,
+              "start": 4068,
+              "end": 8132,
+              "sha256": "2d2054e9490a8151021b27902abb7c675e5b2a1433db3c6c49fcaa2ce1b6eef1",
+              "serialized_bytes": 6866
+            },
+            {
+              "page": 3,
+              "start": 8132,
+              "end": 9207,
+              "sha256": "bc57aa3fc4140a8f3f200166442ac71a916d952aadb12c21bd188bebaf688a72",
+              "serialized_bytes": 3859
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+          "bytes": 10347,
+          "sha256": "820618c008d0860143dc73033747fbfeef4d06487976beb4e9d81e810d54ff48",
+          "pages": 3,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 4067,
+              "sha256": "7b36df01e151f416a95da202ff2053aa7b62746f440b14276101a92fba458375",
+              "serialized_bytes": 6809
+            },
+            {
+              "page": 2,
+              "start": 4067,
+              "end": 8069,
+              "sha256": "387321c940533ade43ed01b86dfc7836393ccf9a368940ad51fe9cd561f365b5",
+              "serialized_bytes": 6878
+            },
+            {
+              "page": 3,
+              "start": 8069,
+              "end": 10347,
+              "sha256": "be264084523d4006214bfcdc973e6063dca747fb14492131c17d52c67fd7730b",
+              "serialized_bytes": 5088
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/onboarding/APPLICATION-NOTES.md",
+          "bytes": 8647,
+          "sha256": "d39b582b4c992b319720eae20a58418a9dafeb1277fa57d6be31dbb10f458afd",
+          "pages": 3,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 4049,
+              "sha256": "6b50e24437d4c4982cfd37da9995d8ecc5f081e5f20488cf399fe347f6572682",
+              "serialized_bytes": 6808
+            },
+            {
+              "page": 2,
+              "start": 4049,
+              "end": 8118,
+              "sha256": "e50a856b29d42c4d50a4a1ddc3bc8481340c418f46ce325be36bf68b1595ef46",
+              "serialized_bytes": 6876
+            },
+            {
+              "page": 3,
+              "start": 8118,
+              "end": 8647,
+              "sha256": "ef1775e286879256d238000827f0cca210f88c9fb0abf5af9abdfa3ba6830287",
+              "serialized_bytes": 3328
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/onboarding/TASK-LAYOUT3-READING-DIALOGUE.md",
+          "bytes": 6025,
+          "sha256": "2c094e940338032a179551503270d927801b1e7e82652126e31280dd4e33bfdc",
+          "pages": 2,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 4066,
+              "sha256": "5124155d6d9085ee272e80964242ab4f51a748a1826662fe1423b3d8c0b3fa3a",
+              "serialized_bytes": 6832
+            },
+            {
+              "page": 2,
+              "start": 4066,
+              "end": 6025,
+              "sha256": "dc448546baf3f2ee37373bae91339cbeb916023660dc476db11026d284e0a556",
+              "serialized_bytes": 4771
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/onboarding/startup/README.md",
+          "bytes": 14714,
+          "sha256": "04bc3ffcd5d35bb26e82de9174bc36c28db246472b38d199912144ac38685ed7",
+          "pages": 4,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 4071,
+              "sha256": "f2762b1e5cb9f0b285e02f767ca53e2b0baed9cd6b9277e836cba29926526b71",
+              "serialized_bytes": 6815
+            },
+            {
+              "page": 2,
+              "start": 4071,
+              "end": 8136,
+              "sha256": "d9cbaa7c7b56c69d84c490788dd4c42a21e12beac163d8ab6b6f169842a4177f",
+              "serialized_bytes": 6885
+            },
+            {
+              "page": 3,
+              "start": 8136,
+              "end": 12203,
+              "sha256": "8504ecded5577ce8bcf6b48112a5f2eea0e99187f092444e40cd702b66bace90",
+              "serialized_bytes": 6887
+            },
+            {
+              "page": 4,
+              "start": 12203,
+              "end": 14714,
+              "sha256": "5030324862a41544b00f4b1719ba3761518fa68bfb617bc93a15f3fc22431000",
+              "serialized_bytes": 5385
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/onboarding/startup/sources.json",
+          "bytes": 2170,
+          "sha256": "fffef1c035041b426389ca3ffbf7e8e8c0405c80b837593ab7c361ea02bccfa9",
+          "pages": 1,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 2170,
+              "sha256": "fffef1c035041b426389ca3ffbf7e8e8c0405c80b837593ab7c361ea02bccfa9",
+              "serialized_bytes": 5055
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/onboarding/startup/local-method-source.json",
+          "bytes": 382,
+          "sha256": "0147b66a156d412a659371159fa84a869f7ded2815066850a9d0360f70ed8cd9",
+          "pages": 1,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 382,
+              "sha256": "0147b66a156d412a659371159fa84a869f7ded2815066850a9d0360f70ed8cd9",
+              "serialized_bytes": 3131
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/employees/core/README.md",
+          "bytes": 4577,
+          "sha256": "90572c46efdda8333abeaf3458a01774430aa51076220621f384857f71af7a7e",
+          "pages": 2,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 4051,
+              "sha256": "83ac7bd1e4719721b069425e6d6dc305963a9f5657b7128c5e2c547770faf8f0",
+              "serialized_bytes": 6794
+            },
+            {
+              "page": 2,
+              "start": 4051,
+              "end": 4577,
+              "sha256": "a4cc27be18da2d90393aeac45c32afb0eae02feb18a81d29d1bc7c788c75a10e",
+              "serialized_bytes": 3307
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/employees/core/manifest.json",
+          "bytes": 2736,
+          "sha256": "28227bf1a6c4ac584e28b2a419614368ee539433e929dce60206b8571283aef2",
+          "pages": 1,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 2736,
+              "sha256": "28227bf1a6c4ac584e28b2a419614368ee539433e929dce60206b8571283aef2",
+              "serialized_bytes": 5781
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/employees/v12-evidence/manifest.json",
+          "bytes": 8100,
+          "sha256": "d805bce8111fdc232916da7a982a20791eca47be415afba1227f6819de85e7f7",
+          "pages": 3,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 3731,
+              "sha256": "704ec95d8b3eccf8f5a21bfce9dab2f9b343a07482b1f36703e79356e5c2e388",
+              "serialized_bytes": 6819
+            },
+            {
+              "page": 2,
+              "start": 3731,
+              "end": 7504,
+              "sha256": "53bface84838813941cd86ecb3aeb19d1e72604c83049733f631aac38d7e3c1e",
+              "serialized_bytes": 6890
+            },
+            {
+              "page": 3,
+              "start": 7504,
+              "end": 8100,
+              "sha256": "0f582ca5e0a81671a242a172925426446b1013fab37c55fb15af728214f5f026",
+              "serialized_bytes": 3445
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+          "bytes": 5705,
+          "sha256": "e80f7be22925b043f9071c800b8ba040531a06756b3c3120df479cd94071060b",
+          "pages": 2,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 4047,
+              "sha256": "22cc308cef462d5f313a764fda66a39f76fcf88baec8ace709c70c35907da71a",
+              "serialized_bytes": 6848
+            },
+            {
+              "page": 2,
+              "start": 4047,
+              "end": 5705,
+              "sha256": "367b866bb0ec996f14223cdc4288710370a451f13c89641a88399812b0c92c1a",
+              "serialized_bytes": 4481
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/employees/core/product-manager/ROLE.md",
+          "bytes": 5096,
+          "sha256": "56f932f3621b64469b3136ff3d1cafa3af900608f5c82947e33e0012ffd614c7",
+          "pages": 2,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 4038,
+              "sha256": "0bd788a9eadc19ea9a44d50219c046f3fe474c95a27a6336e269aa6bb905f8fb",
+              "serialized_bytes": 6823
+            },
+            {
+              "page": 2,
+              "start": 4038,
+              "end": 5096,
+              "sha256": "2da50c0edc1bfc4755e5ef1970fac67ee52e50751e7bcefdb539acf38c7e3340",
+              "serialized_bytes": 3869
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/employees/core/product-manager/MEMORY.md",
+          "bytes": 1297,
+          "sha256": "d992070fba035c1d3a5fb6f5734ed0922f011321c717cfb578b9b2e8209e38fe",
+          "pages": 1,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 1297,
+              "sha256": "d992070fba035c1d3a5fb6f5734ed0922f011321c717cfb578b9b2e8209e38fe",
+              "serialized_bytes": 4054
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/employees/core/product-manager/MEMORY_SCHEMA.md",
+          "bytes": 3349,
+          "sha256": "4026b98355e6fc1332871eaa9d93bf532288125fea200f40c7c78fc041303c07",
+          "pages": 1,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 3349,
+              "sha256": "4026b98355e6fc1332871eaa9d93bf532288125fea200f40c7c78fc041303c07",
+              "serialized_bytes": 6150
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/team-method-loop-20261017-archive.md",
+          "bytes": 8666,
+          "sha256": "d8b0ec8de67b8f17d511e70daa99038859b94b9d8f7ff5ad39cd9560d2085eeb",
+          "pages": 3,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 4061,
+              "sha256": "a1f34bfc98171d380d13e02add1d79a1a221766d3ae8c8691da731d60f7ec039",
+              "serialized_bytes": 6819
+            },
+            {
+              "page": 2,
+              "start": 4061,
+              "end": 8127,
+              "sha256": "014be71a28964993d541522ac8593bce4bfb629b1bdf1ecbb0f98f0d0c43a95a",
+              "serialized_bytes": 6888
+            },
+            {
+              "page": 3,
+              "start": 8127,
+              "end": 8666,
+              "sha256": "ede9ff916a1f04ac55b3eebe802e9a85b2efeecf222f70f69a5367b0312c3930",
+              "serialized_bytes": 3339
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+          "bytes": 25287,
+          "sha256": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+          "pages": 7,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 3867,
+              "sha256": "0e2240b035278e8bcaaee1a363bfd7e1db5cc836afb7d6624f29fc1e75206ce0",
+              "serialized_bytes": 6826
+            },
+            {
+              "page": 2,
+              "start": 3867,
+              "end": 7673,
+              "sha256": "518ea4830a527eef5f2e4a76b0fe4423ed6fc8d737c3f22f630da9d6e67e2520",
+              "serialized_bytes": 6897
+            },
+            {
+              "page": 3,
+              "start": 7673,
+              "end": 11514,
+              "sha256": "204a5e9dbe6c13baab400d801784ad2f597075843552ff3d8e8406132fa44bb9",
+              "serialized_bytes": 6902
+            },
+            {
+              "page": 4,
+              "start": 11514,
+              "end": 15334,
+              "sha256": "50ec1ed12e62cdbe7d381a3e472ad844298645531aac6aaf8d08274deed206c9",
+              "serialized_bytes": 6905
+            },
+            {
+              "page": 5,
+              "start": 15334,
+              "end": 19155,
+              "sha256": "05f4bfe9ee145068950d0b90dbfc8b3859b8c400f9cc0888fce9d0fa64ab91e8",
+              "serialized_bytes": 6904
+            },
+            {
+              "page": 6,
+              "start": 19155,
+              "end": 23005,
+              "sha256": "eda0410ef5cd239b03f461236b19d19c61a4351d092395624182c6c5d6afc8cc",
+              "serialized_bytes": 6905
+            },
+            {
+              "page": 7,
+              "start": 23005,
+              "end": 25287,
+              "sha256": "4ed5cd5a51ac40c97d38a9e8f99630c6ef21e5bb43f3ad6533acbf7d10749310",
+              "serialized_bytes": 5234
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/task-closeout-20261017.md",
+          "bytes": 2631,
+          "sha256": "e0eb6d418d4eef6fd3580c97d8f766d98a8162cf95f4639bf0c14118cb6c8920",
+          "pages": 1,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 2631,
+              "sha256": "e0eb6d418d4eef6fd3580c97d8f766d98a8162cf95f4639bf0c14118cb6c8920",
+              "serialized_bytes": 5363
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/task-closeout-20261017.json",
+          "bytes": 15006,
+          "sha256": "78e698ed76ef63c2ca603f1730baedcf1c06e3c7b2c7750cf6ca9bd2b7564cba",
+          "pages": 4,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 3785,
+              "sha256": "963e466625150d6d72f138829ff57529cb47f6ae8242c49f5cb60955557771f4",
+              "serialized_bytes": 6804
+            },
+            {
+              "page": 2,
+              "start": 3785,
+              "end": 7605,
+              "sha256": "e8253f1aaf0c9c713bcc9e1c24b48db92865967ecb0c1242545beb3df2568365",
+              "serialized_bytes": 6874
+            },
+            {
+              "page": 3,
+              "start": 7605,
+              "end": 11395,
+              "sha256": "c0571db3d8be38327b270a384207472ab7991fa5f22c227177e7a4a855bf1ba6",
+              "serialized_bytes": 6878
+            },
+            {
+              "page": 4,
+              "start": 11395,
+              "end": 15006,
+              "sha256": "3098114c66ef638c4ad4dfb2a1da617f948f92bd7c068ac328ef7b92fdb45d39",
+              "serialized_bytes": 6699
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/validation/natural-read-20261017T1557Z/README.md",
+          "bytes": 4779,
+          "sha256": "1d89401be043d5f6f957d729b701e245669d0f442ec185a457f3190e57ca90ba",
+          "pages": 2,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 4061,
+              "sha256": "a5921c010625b053a4af031e389a4990727fa67726fc5a409602e38aee35475c",
+              "serialized_bytes": 6844
+            },
+            {
+              "page": 2,
+              "start": 4061,
+              "end": 4779,
+              "sha256": "e118170b7851988f29f3030bb6f289a2e0857714620eb3582da416daf6d6b814",
+              "serialized_bytes": 3556
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/validation/natural-read-20261017T1557Z/validation-receipt.json",
+          "bytes": 5942,
+          "sha256": "2d42358d9f8540f50651dde7555ac3e660e2bd333db8de2cba322a1005f171af",
+          "pages": 2,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 3790,
+              "sha256": "83d3420eda6dea9b92c3ef3be312b69adc71cb18b4707ef6b0e9d1284418412c",
+              "serialized_bytes": 6875
+            },
+            {
+              "page": 2,
+              "start": 3790,
+              "end": 5942,
+              "sha256": "0f791f3b0d65967eb4148575b007e19a7fa1f836f413caa77f6bf1e1dedf9c7c",
+              "serialized_bytes": 5145
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/validation/natural-read-repair-20261018T0110Z/README.md",
+          "bytes": 4391,
+          "sha256": "2ae6973b680e8d1e9fac0e0679099a7015d8082f9b80ed3e1a9e9455a4ef8fb1",
+          "pages": 2,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 4061,
+              "sha256": "02a2ea33d76e4af772451d4e3e7fe8889aa749861373e17ff44279b396011ec6",
+              "serialized_bytes": 6859
+            },
+            {
+              "page": 2,
+              "start": 4061,
+              "end": 4391,
+              "sha256": "c209327fa02e46ab44929309b4bafbbefa049581223c442023c7c635bdc72116",
+              "serialized_bytes": 3180
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "project:sites/rolecraft/team/validation/natural-read-repair-20261018T0110Z/validation-receipt.json",
+          "bytes": 13262,
+          "sha256": "28345be1a96affd44c0a21b1967910623657a88327f7a06ec3772d0f5e0aac17",
+          "pages": 4,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 3826,
+              "sha256": "6e0bce7fe197c22a2735be88a6ceefa4fa3882595ded2c07a197e81e47d4b876",
+              "serialized_bytes": 6891
+            },
+            {
+              "page": 2,
+              "start": 3826,
+              "end": 7671,
+              "sha256": "92a4b62de7b109caf3458689f3e021d47162dc547e6fae2438d522f47e9dcfb6",
+              "serialized_bytes": 6961
+            },
+            {
+              "page": 3,
+              "start": 7671,
+              "end": 11461,
+              "sha256": "eacb56b6f34cbb71d4b6deb0f8195314e3287ed1ec211ad25ecb241b272103fa",
+              "serialized_bytes": 6965
+            },
+            {
+              "page": 4,
+              "start": 11461,
+              "end": 13262,
+              "sha256": "ecd432e8019af75f6e9c86ca611aca56e981e897580033d1f1683eba860beef5",
+              "serialized_bytes": 4702
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "method:README.md",
+          "bytes": 2346,
+          "sha256": "7283e2d173c9c44bad7f356f890241efb7693be3a340d456c868df391142f1c1",
+          "pages": 1,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 2346,
+              "sha256": "7283e2d173c9c44bad7f356f890241efb7693be3a340d456c868df391142f1c1",
+              "serialized_bytes": 5389
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "method:SOURCE-MANIFEST.md",
+          "bytes": 2246,
+          "sha256": "ddf191051d0f7f47ce84097b7b1528f609565b1f287df770a0127ea5ee274cb1",
+          "pages": 1,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 2246,
+              "sha256": "ddf191051d0f7f47ce84097b7b1528f609565b1f287df770a0127ea5ee274cb1",
+              "serialized_bytes": 5285
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "method:CHANGELOG.md",
+          "bytes": 1147,
+          "sha256": "04fbd3e05f9af5d0432273000b88bacaef328eb314f7234992ec4c1e2ec4e2c4",
+          "pages": 1,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 1147,
+              "sha256": "04fbd3e05f9af5d0432273000b88bacaef328eb314f7234992ec4c1e2ec4e2c4",
+              "serialized_bytes": 4164
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "method:roles.md",
+          "bytes": 8313,
+          "sha256": "e19e414487dbd03a31824f1f5d3fb1a4ef57cc4076a54d17ddb82d5a64ef5b5a",
+          "pages": 3,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 4028,
+              "sha256": "0f2f57950d7302eaf5c804afe10600eb3d8bc33266d95e8e7b415e45d40b6eaf",
+              "serialized_bytes": 7095
+            },
+            {
+              "page": 2,
+              "start": 4028,
+              "end": 8058,
+              "sha256": "552bae49a27f76d30adcb372daee6b97349519b64d815b705dea3d6a789bc609",
+              "serialized_bytes": 7165
+            },
+            {
+              "page": 3,
+              "start": 8058,
+              "end": 8313,
+              "sha256": "da87ce5e1473edfd9133c686af4b91b9f05c5566667504137a143ac2b8724ba8",
+              "serialized_bytes": 3331
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "method:methods.md",
+          "bytes": 3052,
+          "sha256": "3346016d6aba70f681cf26467d642f9bc8ebfd45b10ea520fa0cc5de169d879b",
+          "pages": 1,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 3052,
+              "sha256": "3346016d6aba70f681cf26467d642f9bc8ebfd45b10ea520fa0cc5de169d879b",
+              "serialized_bytes": 6118
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "method:adoption-and-change.md",
+          "bytes": 2943,
+          "sha256": "cf2bcda816d9384c496ed3432d7db98dee5fa6eaca0f15d733d88938b45e741b",
+          "pages": 1,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 2943,
+              "sha256": "cf2bcda816d9384c496ed3432d7db98dee5fa6eaca0f15d733d88938b45e741b",
+              "serialized_bytes": 6011
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "method:checklists/startup-receipt.md",
+          "bytes": 1035,
+          "sha256": "374118279b5fb6e7039784b3cb30482c1f01cf0521ef75c954d8e71b6bf7e48b",
+          "pages": 1,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 1035,
+              "sha256": "374118279b5fb6e7039784b3cb30482c1f01cf0521ef75c954d8e71b6bf7e48b",
+              "serialized_bytes": 4091
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "method:checklists/task-and-evidence.md",
+          "bytes": 3067,
+          "sha256": "0c264ec328c1af6326d759303ddca28d1fc0eb8aa14a2339194e498ca58522f8",
+          "pages": 1,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 3067,
+              "sha256": "0c264ec328c1af6326d759303ddca28d1fc0eb8aa14a2339194e498ca58522f8",
+              "serialized_bytes": 6157
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "method:examples/website-adapter.example.md",
+          "bytes": 1112,
+          "sha256": "242b328b057125eadd9b1f88c140d42d1f1528d1c8918aa555eef21270e94009",
+          "pages": 1,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 1112,
+              "sha256": "242b328b057125eadd9b1f88c140d42d1f1528d1c8918aa555eef21270e94009",
+              "serialized_bytes": 4185
+            }
+          ],
+          "exact_in_memory": true
+        },
+        {
+          "source_id": "method:examples/learning-product-adapter.example.md",
+          "bytes": 2616,
+          "sha256": "cfd5b19c9efdd011619e805f4ac84b7d723eac3e430d35eedaa589e94f85baaf",
+          "pages": 1,
+          "ranges": [
+            {
+              "page": 1,
+              "start": 0,
+              "end": 2616,
+              "sha256": "cfd5b19c9efdd011619e805f4ac84b7d723eac3e430d35eedaa589e94f85baaf",
+              "serialized_bytes": 5032
+            }
+          ],
+          "exact_in_memory": true
+        }
+      ],
+      "exact_in_memory": true
+    }
+  ],
+  "private_source_or_page_cache_written": false,
+  "raw_logs_read_or_written": false,
+  "actual_business_executed": false,
+  "reader_sha256": "840ae5e26107528a5e3411dc4ede9e20f3244a30a8bba4a7e6c05dbf33909236",
+  "checker_sha256": "8aa0e96d9a845d867a62cd938144752ffa4e1def81dfbb57e7f94d24f7a090f5"
+}

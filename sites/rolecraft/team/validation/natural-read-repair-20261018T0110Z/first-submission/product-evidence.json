@@ -1,0 +1,411 @@
+{
+  "task": "voice_interview_return_product_handoff",
+  "recorded_date": "2026-10-18",
+  "role": "product-manager",
+  "status": "draft_product_handoff_only_not_business_test",
+  "project": {
+    "branch": "integration/peiyu-team-onboarding-20261017",
+    "head": "ba9a55fe39be32e96130ed3df6a9d69cbfc97917",
+    "origin": "git@github.com:xsarthur/RoleCraft.git"
+  },
+  "source_basis": "current_worktree_bytes_not_HEAD_alone",
+  "observed_existing_tracked_changes": [
+    "AGENTS.md",
+    "sites/rolecraft/team/onboarding/README.md",
+    "sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+    "sites/rolecraft/team/onboarding/startup/README.md",
+    "sites/rolecraft/team/onboarding/startup/check_startup.py",
+    "sites/rolecraft/team/onboarding/startup/sources.json",
+    "sites/rolecraft/team/onboarding/startup/test_check_startup.py"
+  ],
+  "boundaries": {
+    "writes": "only /private/tmp/rolecraft-return-handoff-x07v4lep/product-scope-and-acceptance.md and product-evidence.json",
+    "application_started": false,
+    "service_started": false,
+    "browser_used": false,
+    "business_tests_run": false,
+    "network_used": false,
+    "user_database_read": false,
+    "credentials_read": false,
+    "employee_material_modified": false,
+    "git_write": false
+  },
+  "source_snapshots": [
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/dist/app.js",
+      "sha256": "f5eb9db9bb128000abd6216770f07d9515b4aef03d42080417a378638d270d1d",
+      "bytes": 170162,
+      "lines": 232,
+      "read_scope": "112–159, 163, 190–194, 210–216, 221–222, 228–231"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/server/index.mjs",
+      "sha256": "8be0d3a80aca40d6e69004410c9aeededc6cbde31c797da559c7031e142e8165",
+      "bytes": 86842,
+      "lines": 768,
+      "read_scope": "478–494"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/server/voice/index.mjs",
+      "sha256": "310a4f55f8fcb0a849c65591eaf9e06a76166282d03f6845d2404dbd4fddb801",
+      "bytes": 18313,
+      "lines": 299,
+      "read_scope": "1–100"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/interview-voice-prototype-product.md",
+      "sha256": "b6bb5a8ebf91728b11993657d282a82053cbae89e3271c1e455ccef1bca3fe73",
+      "bytes": 9236,
+      "lines": 117,
+      "read_scope": "1–30; prior large output was not counted as a full-file read"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/interview-general-training-v03-product.md",
+      "sha256": "ba87bee4b5c5bfc228665b9db810093f881cb6502529b965bb7f42e0f5779e23",
+      "bytes": 17080,
+      "lines": 259,
+      "read_scope": "150–225"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/RETROSPECTIVES.md",
+      "sha256": "689817d58299cb77077aca9eaaf563760c480faf1e770e159e4fe1ca8773cb78",
+      "bytes": 184406,
+      "lines": 1050,
+      "read_scope": "1030–1050"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/qa-interview-voice-focus-followup.md",
+      "sha256": "bc77c9a8cd3547b1f436990f514417ed2722a02b34c3bc051be5983a7fdad2f9",
+      "bytes": 4987,
+      "lines": 66,
+      "read_scope": "full"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/validation/natural-read-20261017T1557Z/README.md",
+      "sha256": "1d89401be043d5f6f957d729b701e245669d0f442ec185a457f3190e57ca90ba",
+      "bytes": 4779,
+      "lines": 38,
+      "read_scope": "full"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/task-closeout-20261017.md",
+      "sha256": "e0eb6d418d4eef6fd3580c97d8f766d98a8162cf95f4639bf0c14118cb6c8920",
+      "bytes": 2631,
+      "lines": 29,
+      "read_scope": "full via read_source page 1/1"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/onboarding/README.md",
+      "sha256": "1ae35db606a0f893a9f1d6e3efde7560cf318423a167c7124b9a7010989aba98",
+      "bytes": 11505,
+      "lines": 89,
+      "read_scope": "full"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/onboarding/startup/README.md",
+      "sha256": "04864fb3edfbbaa222f9f20f258bef75315912fcadfcf70dac659147e0938400",
+      "bytes": 10633,
+      "lines": 78,
+      "read_scope": "full"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/AGENTS.md",
+      "sha256": "bf2599697f6b6b2504e89700dec5325be815e97b9553bc8c6e30056c9b6c007f",
+      "bytes": 50693,
+      "lines": 227,
+      "read_scope": "full; read_source 13 consecutive pages, UTF-8 bytes 0–50693"
+    }
+  ],
+  "historical_references_existence": [
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/interview-module-local-voice-pm.md",
+      "exists": false
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/interview-module-local-voice-qa-v02.md",
+      "exists": false
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/interview-module-browser-speech-qa-v01-check.mjs",
+      "exists": false
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/ai-generation-interview-voice-browser-speech-v01.md",
+      "exists": false
+    }
+  ],
+  "startup_receipt": {
+    "applicable_role": "product-manager",
+    "source_team": "original_project_team",
+    "ownership": "unknown",
+    "management_actions": "none",
+    "verified_user_owned_employees": [],
+    "readability": {
+      "original_long_term_memory": {
+        "product-manager": "available"
+      },
+      "project_latest_records_readable": true,
+      "role_material_readable": true,
+      "shared_method_readable": true
+    },
+    "checker_result": {
+      "mechanical_readiness": "full_content_and_versions_checked",
+      "problems": [],
+      "uncovered_project_records": [],
+      "startup_connection": "not_connected"
+    },
+    "agent_readback": {
+      "AGENTS": {
+        "sha256": "bf2599697f6b6b2504e89700dec5325be815e97b9553bc8c6e30056c9b6c007f",
+        "pages": "1–13 consecutive separate calls",
+        "utf8_byte_range": [
+          0,
+          50693
+        ],
+        "lines": 227
+      },
+      "original_role_files": [
+        "ROLE.md full 2 pages",
+        "MEMORY.md full 1 page",
+        "MEMORY_SCHEMA.md full 1 page"
+      ],
+      "confirmed_memory_application": "PM-MEM-0001 preserves role-specific memory and per-project authorization. It does not imply product or visual preferences; no new employee files were created.",
+      "latest_records_actual_read": [
+        "onboarding README full",
+        "onboarding startup README full",
+        "task-closeout-20261017.md full",
+        "validation/natural-read-20261017T1557Z/README.md full",
+        "RETROSPECTIVES.md R82–R84 excerpt"
+      ],
+      "catalog_caveat": "Checker read all controlled bytes. This receipt only claims model delivery for the items and ranges expressly listed; other catalog files were not all delivered to this product agent."
+    },
+    "shared_method": {
+      "revision": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+      "state": "REVIEW DRAFT",
+      "origin": "git@github.com:chennyqian/ai-team-handbook.git",
+      "formal_adoption": false,
+      "actual_fulltext_delivery": [
+        {
+          "source_id": "method:README.md",
+          "sha": "7283e2d173c9c44bad7f356f890241efb7693be3a340d456c868df391142f1c1",
+          "bytes": 2346,
+          "page": {
+            "number": 1,
+            "total": 1,
+            "body_byte_limit": 4096,
+            "byte_start": 0,
+            "byte_end": 2346,
+            "character_start": 0,
+            "character_end": 1083,
+            "start_line": 1,
+            "end_line": 32,
+            "sha256": "7283e2d173c9c44bad7f356f890241efb7693be3a340d456c868df391142f1c1",
+            "previous_page_sha256": null
+          },
+          "coverage": "all pages individually consumed; no body saved"
+        },
+        {
+          "source_id": "method:SOURCE-MANIFEST.md",
+          "sha": "ddf191051d0f7f47ce84097b7b1528f609565b1f287df770a0127ea5ee274cb1",
+          "bytes": 2246,
+          "page": {
+            "number": 1,
+            "total": 1,
+            "body_byte_limit": 4096,
+            "byte_start": 0,
+            "byte_end": 2246,
+            "character_start": 0,
+            "character_end": 1090,
+            "start_line": 1,
+            "end_line": 25,
+            "sha256": "ddf191051d0f7f47ce84097b7b1528f609565b1f287df770a0127ea5ee274cb1",
+            "previous_page_sha256": null
+          },
+          "coverage": "all pages individually consumed; no body saved"
+        },
+        {
+          "source_id": "method:CHANGELOG.md",
+          "sha": "04fbd3e05f9af5d0432273000b88bacaef328eb314f7234992ec4c1e2ec4e2c4",
+          "bytes": 1147,
+          "page": {
+            "number": 1,
+            "total": 1,
+            "body_byte_limit": 4096,
+            "byte_start": 0,
+            "byte_end": 1147,
+            "character_start": 0,
+            "character_end": 532,
+            "start_line": 1,
+            "end_line": 16,
+            "sha256": "04fbd3e05f9af5d0432273000b88bacaef328eb314f7234992ec4c1e2ec4e2c4",
+            "previous_page_sha256": null
+          },
+          "coverage": "all pages individually consumed; no body saved"
+        },
+        {
+          "source_id": "method:roles.md",
+          "sha": "e19e414487dbd03a31824f1f5d3fb1a4ef57cc4076a54d17ddb82d5a64ef5b5a",
+          "bytes": 8313,
+          "page": {
+            "number": 3,
+            "total": 3,
+            "body_byte_limit": 4096,
+            "byte_start": 8058,
+            "byte_end": 8313,
+            "character_start": 3036,
+            "character_end": 3123,
+            "start_line": 133,
+            "end_line": 135,
+            "sha256": "da87ce5e1473edfd9133c686af4b91b9f05c5566667504137a143ac2b8724ba8",
+            "previous_page_sha256": "552bae49a27f76d30adcb372daee6b97349519b64d815b705dea3d6a789bc609"
+          },
+          "coverage": "all pages individually consumed; no body saved"
+        },
+        {
+          "source_id": "method:methods.md",
+          "sha": "3346016d6aba70f681cf26467d642f9bc8ebfd45b10ea520fa0cc5de169d879b",
+          "bytes": 3052,
+          "page": {
+            "number": 1,
+            "total": 1,
+            "body_byte_limit": 4096,
+            "byte_start": 0,
+            "byte_end": 3052,
+            "character_start": 0,
+            "character_end": 1155,
+            "start_line": 1,
+            "end_line": 51,
+            "sha256": "3346016d6aba70f681cf26467d642f9bc8ebfd45b10ea520fa0cc5de169d879b",
+            "previous_page_sha256": null
+          },
+          "coverage": "all pages individually consumed; no body saved"
+        },
+        {
+          "source_id": "method:adoption-and-change.md",
+          "sha": "cf2bcda816d9384c496ed3432d7db98dee5fa6eaca0f15d733d88938b45e741b",
+          "bytes": 2943,
+          "page": {
+            "number": 1,
+            "total": 1,
+            "body_byte_limit": 4096,
+            "byte_start": 0,
+            "byte_end": 2943,
+            "character_start": 0,
+            "character_end": 1143,
+            "start_line": 1,
+            "end_line": 34,
+            "sha256": "cf2bcda816d9384c496ed3432d7db98dee5fa6eaca0f15d733d88938b45e741b",
+            "previous_page_sha256": null
+          },
+          "coverage": "all pages individually consumed; no body saved"
+        },
+        {
+          "source_id": "method:checklists/startup-receipt.md",
+          "sha": "374118279b5fb6e7039784b3cb30482c1f01cf0521ef75c954d8e71b6bf7e48b",
+          "bytes": 1035,
+          "page": {
+            "number": 1,
+            "total": 1,
+            "body_byte_limit": 4096,
+            "byte_start": 0,
+            "byte_end": 1035,
+            "character_start": 0,
+            "character_end": 385,
+            "start_line": 1,
+            "end_line": 15,
+            "sha256": "374118279b5fb6e7039784b3cb30482c1f01cf0521ef75c954d8e71b6bf7e48b",
+            "previous_page_sha256": null
+          },
+          "coverage": "all pages individually consumed; no body saved"
+        },
+        {
+          "source_id": "method:checklists/task-and-evidence.md",
+          "sha": "0c264ec328c1af6326d759303ddca28d1fc0eb8aa14a2339194e498ca58522f8",
+          "bytes": 3067,
+          "page": {
+            "number": 1,
+            "total": 1,
+            "body_byte_limit": 4096,
+            "byte_start": 0,
+            "byte_end": 3067,
+            "character_start": 0,
+            "character_end": 1207,
+            "start_line": 1,
+            "end_line": 41,
+            "sha256": "0c264ec328c1af6326d759303ddca28d1fc0eb8aa14a2339194e498ca58522f8",
+            "previous_page_sha256": null
+          },
+          "coverage": "all pages individually consumed; no body saved"
+        },
+        {
+          "source_id": "method:examples/website-adapter.example.md",
+          "sha": "242b328b057125eadd9b1f88c140d42d1f1528d1c8918aa555eef21270e94009",
+          "bytes": 1112,
+          "page": {
+            "number": 1,
+            "total": 1,
+            "body_byte_limit": 4096,
+            "byte_start": 0,
+            "byte_end": 1112,
+            "character_start": 0,
+            "character_end": 477,
+            "start_line": 1,
+            "end_line": 13,
+            "sha256": "242b328b057125eadd9b1f88c140d42d1f1528d1c8918aa555eef21270e94009",
+            "previous_page_sha256": null
+          },
+          "coverage": "all pages individually consumed; no body saved"
+        },
+        {
+          "source_id": "method:examples/learning-product-adapter.example.md",
+          "sha": "cfd5b19c9efdd011619e805f4ac84b7d723eac3e430d35eedaa589e94f85baaf",
+          "bytes": 2616,
+          "page": {
+            "number": 1,
+            "total": 1,
+            "body_byte_limit": 4096,
+            "byte_start": 0,
+            "byte_end": 2616,
+            "character_start": 0,
+            "character_end": 1083,
+            "start_line": 1,
+            "end_line": 28,
+            "sha256": "cfd5b19c9efdd011619e805f4ac84b7d723eac3e430d35eedaa589e94f85baaf",
+            "previous_page_sha256": null
+          },
+          "coverage": "all pages individually consumed; no body saved"
+        }
+      ],
+      "raw_method_body_saved": false
+    },
+    "actual_application": [
+      {
+        "method": "M01",
+        "location": "product-scope-and-acceptance.md first table and next-round scope",
+        "application": "Separates page pause, leaving a route, unloading, and revisiting from mere setting persistence."
+      },
+      {
+        "method": "M04",
+        "location": "first table, RH5, RH7",
+        "application": "Covers local voice state, navigation relationships, and browser/storage boundary; does not claim full application verification."
+      },
+      {
+        "method": "M06",
+        "location": "service/history paragraph and evidence limitations",
+        "application": "Keeps current HTTP source, old absent-HTTP record, and missing historical reports separate."
+      },
+      {
+        "method": "M07",
+        "location": "RH2–RH6",
+        "application": "Defines cancel/retain/discard, pending transcript/feedback, late return, retry, and deletion as observable branches."
+      },
+      {
+        "method": "M08",
+        "location": "RH5 and RH7",
+        "application": "Requires runtime evidence for cleanup and timing; no static source reading is labeled as dynamic pass."
+      }
+    ],
+    "independent_review": "not performed by this product agent; parent coordinates a separate review",
+    "limitations": "Mechanical readiness and these self-reported locators do not certify understanding, natural startup, full team connection, or method mastery."
+  }
+}

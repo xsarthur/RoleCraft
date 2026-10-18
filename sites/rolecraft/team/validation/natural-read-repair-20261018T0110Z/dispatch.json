@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "recorded_after_dispatch_at_utc": "2026-10-18T01:10:22.408720+00:00",
+  "task_name": "/root/return_handoff_product",
+  "tool": "collaboration.spawn_agent",
+  "requested_fork_turns": "none",
+  "prompt_file": "next-business-prompt.txt",
+  "prompt_sha256": "d84f04a3753042b5c6967820dadb8b6a6234545bdd8c7238c90cf349954adf48",
+  "exact_prompt_text_in_root_tool_call": true,
+  "literal_prompt_from_child_log": "not_claimed; child task body may be encrypted; no decryption",
+  "normal_business_scope": "return to incomplete or feedback-complete voice interview practice; static product handoff",
+  "first_delivery_before_root_reading_followup_required": true,
+  "no_reading_hints_sent": true,
+  "input_freeze_sha256": "fb04c2bd1263fc255030ea8adcc4e770d2d20bd7f252eb00c882592933f13c9b",
+  "qa_criteria_sha256": "8536e6f6c5de274f431eb6030f4aebe99de4956ba6f735524af3f7fa9307174f",
+  "qa_rules_freeze_sha256": "863bf04a495171fb0456867df8515bbd126d072920fe65c2eccd5cde04f81530",
+  "qa_source_binding_sha256": "9eb724b2a1d4c0127f4e5c152fe0b47803a8a25514355d44e78fac7f36aa165a",
+  "limits": "no application/service/runtime business test; no repo or employee write, method adoption, event connection, network, commit/push or merge"
+}

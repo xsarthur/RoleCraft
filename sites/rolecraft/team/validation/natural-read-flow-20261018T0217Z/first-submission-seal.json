@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "sealed_at_utc": "2026-10-18T02:30:08.660118+00:00",
+  "stage": "first_unprompted_submission_before_independent_QA_or_root_reading_hints",
+  "author": "/root/reanalysis_product",
+  "source_directory": "/private/tmp/rolecraft-reanalysis-t6lyh5vp",
+  "snapshot_directory": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-required-reading-20261018T020320Z/first-submission",
+  "artifacts": {
+    "product-review.txt": {
+      "bytes": 8303,
+      "sha256": "f36c9f8a11059cd451d3e2b1da4d23436b350cc44a89dd4f3dd856a8530104c1"
+    },
+    "product-evidence.json": {
+      "bytes": 21662,
+      "sha256": "6fc6827e803fc576865b5891f0c6cef31a816001d411d09e7b1e04e674c9ead2"
+    }
+  },
+  "root_privacy_prescreen": "no method/proposal/employee full body, normalized full body or tested400char block in text and JSON values; independent final package guard required",
+  "runtime": {
+    "path": "/Users/liuqian/.codex/sessions/2026/10/18/rollout-2026-10-18T10-17-19-01a14ccc-985d-74b1-9f67-39f5228f2c7f.jsonl",
+    "session_id": "01a14ccc-985d-74b1-9f67-39f5228f2c7f",
+    "agent_path": "/root/reanalysis_product",
+    "parent_thread_id": "01a14a89-47ce-7343-a11b-31426601fd84",
+    "prefix_bytes": 2361106,
+    "prefix_sha256": "e0fc406e3a3a88b4f317d7b37f7b32309fc3d08ec963331f4f44ad636bf0ce43",
+    "line_count": 614,
+    "terminal_newline": true,
+    "raw_log_copied": false,
+    "hidden_reasoning_analysis_or_encrypted_fields_interpreted": false
+  },
+  "root_preseal_observation": "session header and visible call-header metadata only, not output bodies; attempted call count not used as proof",
+  "root_preseal_source_hints_sent": false,
+  "dispatch_sha256": "0d19ffff62386613b702cc4a02e5c176272a62f96b45327914d1d3581482be25",
+  "dispatch_integrity_addendum_sha256": "ce0b754c01f76bd15dc8798cd8c862e38aa25d9fcdb2b65d6aa4f8baf4aeac0d",
+  "input_freeze_sha256": "80d75a7d55feeec1b60247f4744fa2e2d0eec83ae5507a505745f651a32be950",
+  "qa_may_parse": "authorized fixed prefix visible tool input/output and commentary/final only; skip hidden/encrypted fields, never copy raw log or private body cache"
+}

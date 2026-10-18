@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "test_id": "rolecraft-natural-read-20261017T1557Z",
+  "created_at_utc": "2026-10-17T16:20:03.491520+00:00",
+  "project_head": "ba9a55fe39be32e96130ed3df6a9d69cbfc97917",
+  "branch": "integration/peiyu-team-onboarding-20261017",
+  "main": "4158efd4641be219c897746cc063d73122f4eeb7",
+  "method_revision": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+  "historical_natural_reading": "FAIL/partial unchanged",
+  "first_trial_results": {
+    "natural_reading": "FAIL/partial",
+    "business_document": "needs_revision_DQ-01_open",
+    "independent_qa": "completed_with_one_product_document_finding",
+    "voice_runtime": "not_tested; historical insufficient retained",
+    "full_product": "not_met retained; not reassessed",
+    "formal_method_adoption": false,
+    "stable_mastery_or_growth_awarded": false
+  },
+  "fixed_method_fulltext_business_coverage": {
+    "received": 0,
+    "required": 10,
+    "actual_method_application": false
+  },
+  "AGENTS_visible_coverage": "partial; nonempty lines171/173 absent; hashes do not replace body delivery",
+  "latest_project_archive_coverage": "two team-method-loop and two task-closeout records fully delivered",
+  "actual_application_scope": "product role/program boundaries and project archive version/evidence distinctions in A1-A9 product conditions; no fixed-method application claim",
+  "guided_revision": {
+    "finding": "DQ-01",
+    "first_document": "needs_revision",
+    "result": "pass_within_DQ-01_document_revision_scope",
+    "implementation_risk": "unfixed and runtime unverified",
+    "new_blind_trial": false,
+    "fixed_method_path_supplied": false
+  },
+  "executors": {
+    "business": "/root/voice_trial_product",
+    "independent_qa": "/root/natural_read_qa"
+  },
+  "dispatch": {
+    "business_fork_turns_parameter": "none in actual root tool call",
+    "root_source_hints_before_first_seal": 0,
+    "encrypted_child_task_body_independently_reconstructed": false,
+    "runtime_history_mode_not_used_as_fork_proof": true
+  },
+  "first_submission_seal_utc": "2026-10-17T16:04:27.169194Z",
+  "unprompted_pre_seal_citation_correction_preserved": true,
+  "scope_controls": {
+    "business_runtime_test_runs": 0,
+    "network_calls": 0,
+    "employee_edits": false,
+    "method_body_or_candidate_edits": false,
+    "formal_method_adoption": false,
+    "natural_end_event_connected": false,
+    "main_merge": false,
+    "new_commit_or_push": false,
+    "ownership": "unknown; authorized collaboration reference only"
+  },
+  "source_protection_at_packaging": {
+    "repo_worktree_clean_before_manual_archive": true,
+    "protocol_project_hashes_unchanged": true,
+    "method_twelve_hashes_unchanged": true,
+    "method_status": "?? proposals/entry-status-and-evidence-links-v01.md\n?? proposals/version-bound-fact-claims-v01.md"
+  },
+  "archive_mode": "manual_project_only; no closeout invocation; no method-layer write",
+  "project_destination": "sites/rolecraft/team/validation/natural-read-20261017T1557Z",
+  "files_excluding_this_receipt": {
+    "README.md": {
+      "bytes": 4779,
+      "sha256": "1d89401be043d5f6f957d729b701e245669d0f442ec185a457f3190e57ca90ba"
+    },
+    "business-prompt.txt": {
+      "bytes": 903,
+      "sha256": "c0b8fa36c128f2d9631630bbc1455eb2c5d0afa2bb138732a8080685dd9d96c3"
+    },
+    "dispatch.json": {
+      "bytes": 541,
+      "sha256": "a806434c6418ada05c1645f65e0cb433af2612a0d9e09e9ce1aee31f8606396f"
+    },
+    "first-qa/qa-receipt.json": {
+      "bytes": 19646,
+      "sha256": "61bf43e2e8411f50ff78af08fd9982b7342e443c8eff8cbfee09f924a28b9b1b"
+    },
+    "first-qa/qa-report.md": {
+      "bytes": 5948,
+      "sha256": "f9366498e55acf26b96daa8a4edb01af266ebf1872705ae24740233b109ef119"
+    },
+    "first-qa/trace-index.json": {
+      "bytes": 39876,
+      "sha256": "40e98057a5b6489e3c8cefd4e8165fc2634cdbd092bbed43a3eff50961058f6d"
+    },
+    "first-submission/product-evidence.json": {
+      "bytes": 9226,
+      "sha256": "83e1f7aedcf5b9577bb776de7fb271adaa8a30f76a0bb356a23933f6b4b3113a"
+    },
+    "first-submission/试用前核对清单.txt": {
+      "bytes": 12030,
+      "sha256": "c3592d37f00e5c786ad33fbc86407c3d9c7787e68b99c099f70f118319b281ec"
+    },
+    "protocol.json": {
+      "bytes": 3980,
+      "sha256": "f3b92038586dd277cdf31c687f666da672573fc377a47c7a9d47605beb7df80c"
+    },
+    "revision-1/product-evidence.json": {
+      "bytes": 19755,
+      "sha256": "c22391fabe53f9364f491b4a69cff4dc4bf833b1cac751c60f001c5b72c5d320"
+    },
+    "revision-1/修订说明.txt": {
+      "bytes": 1754,
+      "sha256": "3b16cdc93e364284fc561363e34d864aa0828818407e940cbc2fed70bdcf82e3"
+    },
+    "revision-1/试用前核对清单.txt": {
+      "bytes": 13722,
+      "sha256": "8b4364c97433dbd31770ab725d5c812ae0cfd38b62b44df0d9bc0b90ac30e9c5"
+    },
+    "revision-qa/qa-receipt.json": {
+      "bytes": 7388,
+      "sha256": "1cbcb8816927b2aa3abff68cbe32c40915bb8c0d41b1156d3d01cda9e82cb6de"
+    },
+    "revision-qa/qa-report.md": {
+      "bytes": 2640,
+      "sha256": "74e76c24478f34ffae9cbc7453262c0924f2afd8959338701fc6048747e45781"
+    }
+  },
+  "external_local_evidence": {
+    "audit_directory": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-natural-read-20261017T1557Z",
+    "protocol_sha256": "f3b92038586dd277cdf31c687f666da672573fc377a47c7a9d47605beb7df80c",
+    "first_log_prefix_sha256": "84d49bac1f8d5fdb8d6d6e26a805bbc8922057c4b1cb2a1d4c92dc8fdebe15e1",
+    "final_guard": "final-archive-guard.json",
+    "post_save_readback": "final-save-receipt.json",
+    "availability": "local evidence paths are not GitHub-downloadable; raw logs and private fulltext not copied"
+  },
+  "limitations": [
+    "single cold subagent context; not ordinary ChatGPT conversation or cross-device proof",
+    "no voice/browser/ASR execution",
+    "not stable automatic loading or understanding certification",
+    "first natural-reading and first document QA results cannot be overwritten by revision"
+  ]
+}

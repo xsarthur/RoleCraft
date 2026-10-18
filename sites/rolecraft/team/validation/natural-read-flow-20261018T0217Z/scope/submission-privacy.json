@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "record_kind": "independent_required_reading_first_submission_privacy_guard",
+  "checked_at_utc": "2026-10-18T02:32:36.486402+00:00",
+  "executor_ref": "/root/method_audit",
+  "stage": "sealed_submission_and_current_incomplete_22_file_candidate_only; final archive review still required",
+  "scanned_candidate_count": 22,
+  "scanned_candidate_manifest": {
+    "business-prompt.txt": {
+      "bytes": 950,
+      "sha256": "586073cc5e6a842bd0ecde7e44685b197dd99e09a530aeaeedac998d77bf5acb"
+    },
+    "cause/cause-matrix.json": {
+      "bytes": 17733,
+      "sha256": "738cd4440a490895c5ce645bfd77111033b133fa531d7b99f20c6f1538a55dc1"
+    },
+    "cause/cause-report.md": {
+      "bytes": 4934,
+      "sha256": "527c0e0cac45b18175f0784455efcf52adbad14904fcaf33b5a22465408e67c0"
+    },
+    "dispatch-integrity-addendum.json": {
+      "bytes": 1009,
+      "sha256": "ce0b754c01f76bd15dc8798cd8c862e38aa25d9fcdb2b65d6aa4f8baf4aeac0d"
+    },
+    "dispatch.json": {
+      "bytes": 1339,
+      "sha256": "0d19ffff62386613b702cc4a02e5c176272a62f96b45327914d1d3581482be25"
+    },
+    "first-qa/criteria-freeze.json": {
+      "bytes": 1354,
+      "sha256": "775f62d75df9085e6c208a42fd437affd82c394278071a3c5649f18fb3889e7e"
+    },
+    "first-qa/criteria.json": {
+      "bytes": 20925,
+      "sha256": "58c5014516b0dab7388fcf785bd489e06001148c6c37eb8f10ffeb33cf97e0f4"
+    },
+    "first-qa/criteria.md": {
+      "bytes": 4773,
+      "sha256": "8fae1a748719fa676e094ef5670201c30fef9dabfee3aae1fc398839ed9152bb"
+    },
+    "first-qa/source-precheck.json": {
+      "bytes": 16579,
+      "sha256": "8184ed9eed2461b3618182bdc6a905eee782876045fb178a28815e48309e6b24"
+    },
+    "first-submission-seal.json": {
+      "bytes": 2128,
+      "sha256": "b1a7c97edddb21c2e2fba547aede1b51edba55f78d21f79d66070f2e918aa6ca"
+    },
+    "first-submission/product-evidence.json": {
+      "bytes": 21662,
+      "sha256": "6fc6827e803fc576865b5891f0c6cef31a816001d411d09e7b1e04e674c9ead2"
+    },
+    "first-submission/product-review.txt": {
+      "bytes": 8303,
+      "sha256": "f36c9f8a11059cd451d3e2b1da4d23436b350cc44a89dd4f3dd856a8530104c1"
+    },
+    "input-binding.json": {
+      "bytes": 36578,
+      "sha256": "a800f8335e647c57cb32c539b7c433806d2051e8e16210d9a05068585b391cb2"
+    },
+    "protocol.json": {
+      "bytes": 770,
+      "sha256": "ff7dfa345dee8ed74cbf197e68321170011436f8a48e3ef4221d9459907e345c"
+    },
+    "repair/change-manifest.json": {
+      "bytes": 2699,
+      "sha256": "441e4ad2e4532bd9afbf454da425a6a273cd12c77fbef4f1f212ce0098c58695"
+    },
+    "repair/criteria.json": {
+      "bytes": 6806,
+      "sha256": "bd5b40388c32654936e95ea3c640c023232e369cad35450f427f7853d5295b01"
+    },
+    "repair/criteria.md": {
+      "bytes": 1040,
+      "sha256": "06cab8fd3c9251794062bce35dce248ce1526541a7c383a1825f424807c82278"
+    },
+    "repair/engineering-receipt.json": {
+      "bytes": 4357,
+      "sha256": "fc8dd0b770a54bcbf222cac0490d3b3d3be283cc45a2ead8cd86fe4e1eab643c"
+    },
+    "repair/qa-receipt.json": {
+      "bytes": 9617,
+      "sha256": "30879694d0f0544b056c1f30af41c5138032668477638c33c20239d3549cfe35"
+    },
+    "repair/qa-report.md": {
+      "bytes": 1781,
+      "sha256": "165d9065e2cbc2740c238128c6eb34d3a71438383f95968876bc1573792b7de1"
+    },
+    "repair/real-reconstruction-final.json": {
+      "bytes": 31300,
+      "sha256": "1acdb48ca4e7fb6b8415ae51cb09e0e782533e59fe34e358da29e979733f1661"
+    },
+    "scope/input-protection.json": {
+      "bytes": 10115,
+      "sha256": "a7fea39a5fd911fa6e70398a39c7f9bf428d211798d6544b9712e1df7992d55e"
+    }
+  },
+  "forbidden_local_only_files_in_candidate": [],
+  "excluded_source_files_not_opened": [
+    "cause-audit/cause-audit-receipt.json",
+    "audit-handling-note.LOCAL-ONLY.json"
+  ],
+  "first_submission_seal_sha256": "b1a7c97edddb21c2e2fba547aede1b51edba55f78d21f79d66070f2e918aa6ca",
+  "seal_and_live_endpoint_checks": [
+    {
+      "artifact": "product-review.txt",
+      "bytes": 8303,
+      "sha256": "f36c9f8a11059cd451d3e2b1da4d23436b350cc44a89dd4f3dd856a8530104c1",
+      "matches_seal": true,
+      "matches_original_authorized_live_endpoint": true,
+      "candidate_matches_sealed_copy": true
+    },
+    {
+      "artifact": "product-evidence.json",
+      "bytes": 21662,
+      "sha256": "6fc6827e803fc576865b5891f0c6cef31a816001d411d09e7b1e04e674c9ead2",
+      "matches_seal": true,
+      "matches_original_authorized_live_endpoint": true,
+      "candidate_matches_sealed_copy": true
+    }
+  ],
+  "live_endpoint_scope": "Only this privacy guard compares the two authorized live output files. No business QA access to live output is inferred.",
+  "dispatch_integrity": {
+    "original_dispatch_snapshot_preserved": true,
+    "independent_addendum_preserved": true,
+    "saved_prompt_has_exactly_one_terminal_LF": true,
+    "saved_prompt_bytes_hash_match_addendum": true,
+    "prompt_without_terminal_LF_bytes_hash_match_addendum_spawn_argument": true,
+    "correction_targets_original_byte_exact_claim": true,
+    "broad_byte_exact_claim_not_adopted_by_guard": true,
+    "interpretation": "Original true claim is retained as a historical snapshot but corrected by the addendum: ordinary prompt wording agrees, exact bytes differ by one terminal LF. This guard verifies the recorded byte relation only; it does not reconstruct/decrypt child transport or independently read the actual spawn argument from logs."
+  },
+  "privacy": {
+    "reference_source_counts": {
+      "fixed_methods_and_original_candidates": 12,
+      "employee_files": 76
+    },
+    "exact_or_whitespace_normalized_fullbody_copies": [],
+    "reconstructable_complete_source_line_sets": [],
+    "contiguous_original_source_blocks_at_least_400_characters": [],
+    "raw_runtime_record_markers": [],
+    "hidden_analysis_reasoning_channel_markers": [],
+    "encrypted_payload_fields": [],
+    "large_payload_or_cache_fields": [],
+    "observations": "Current candidate holds summaries, source/page metadata and hashes. No original method/employee body, reconstructable page cache, raw runtime log, hidden analysis or encrypted message payload observed. Metadata flags, identifiers and exclusion declarations are not body copies.",
+    "limits": "Exact/normalized body, complete-line-union and 400-character block scans plus decoded artifact structure review; not a universal semantic leak detector or proof about future unscanned files.",
+    "opaque_encoded_text_runs_at_least_400_characters": [],
+    "structured_raw_runtime_record_objects": [],
+    "structured_hidden_analysis_channel_objects": []
+  },
+  "source_protection": {
+    "frozen_project_files": 3608,
+    "current_project_files": 3608,
+    "bytes_hash_or_mode_drift": [],
+    "extra_project_files": [],
+    "irregular_or_symlink_files": [],
+    "employee_count_preserved_by_unchanged_freeze": 76,
+    "old_two_round_validation_count_preserved_by_unchanged_freeze": 41,
+    "method_twelve_metadata": {
+      "adoption-and-change.md": {
+        "bytes": 2943,
+        "sha256": "cf2bcda816d9384c496ed3432d7db98dee5fa6eaca0f15d733d88938b45e741b"
+      },
+      "CHANGELOG.md": {
+        "bytes": 1147,
+        "sha256": "04fbd3e05f9af5d0432273000b88bacaef328eb314f7234992ec4c1e2ec4e2c4"
+      },
+      "README.md": {
+        "bytes": 2346,
+        "sha256": "7283e2d173c9c44bad7f356f890241efb7693be3a340d456c868df391142f1c1"
+      },
+      "roles.md": {
+        "bytes": 8313,
+        "sha256": "e19e414487dbd03a31824f1f5d3fb1a4ef57cc4076a54d17ddb82d5a64ef5b5a"
+      },
+      "methods.md": {
+        "bytes": 3052,
+        "sha256": "3346016d6aba70f681cf26467d642f9bc8ebfd45b10ea520fa0cc5de169d879b"
+      },
+      "SOURCE-MANIFEST.md": {
+        "bytes": 2246,
+        "sha256": "ddf191051d0f7f47ce84097b7b1528f609565b1f287df770a0127ea5ee274cb1"
+      },
+      "checklists/task-and-evidence.md": {
+        "bytes": 3067,
+        "sha256": "0c264ec328c1af6326d759303ddca28d1fc0eb8aa14a2339194e498ca58522f8"
+      },
+      "checklists/startup-receipt.md": {
+        "bytes": 1035,
+        "sha256": "374118279b5fb6e7039784b3cb30482c1f01cf0521ef75c954d8e71b6bf7e48b"
+      },
+      "examples/website-adapter.example.md": {
+        "bytes": 1112,
+        "sha256": "242b328b057125eadd9b1f88c140d42d1f1528d1c8918aa555eef21270e94009"
+      },
+      "examples/learning-product-adapter.example.md": {
+        "bytes": 2616,
+        "sha256": "cfd5b19c9efdd011619e805f4ac84b7d723eac3e430d35eedaa589e94f85baaf"
+      },
+      "proposals/version-bound-fact-claims-v01.md": {
+        "bytes": 2255,
+        "sha256": "4fd8f894297e98072108df4eac2e6dfc53aacfc0d1196f8648733781a6a14552"
+      },
+      "proposals/entry-status-and-evidence-links-v01.md": {
+        "bytes": 2019,
+        "sha256": "2b6b146de13859386b4aa7874d2f0e745f8b05eaf89ab15f0493d6af711565c9"
+      }
+    },
+    "method_mismatches": [],
+    "git_metadata": {
+      "head": "ba9a55fe39be32e96130ed3df6a9d69cbfc97917",
+      "main": "4158efd4641be219c897746cc063d73122f4eeb7",
+      "branch": "integration/peiyu-team-onboarding-20261017",
+      "index_sha256": "caa3fc706ebda16311a066da855a662f8e7d5d2fb112920159b750fb51eb9f1f",
+      "config_sha256": "fa89354232d96be9723b3b8131b81e33d1dcd90ae07348f0a0839a917ba7e04e",
+      "staged_diff": "",
+      "method_head": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+      "method_main": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+      "method_index_sha256": "8cceb73674244c50b95f6e8ae42a670447b279836e29f8a4c107b9ee5f2bfc83",
+      "method_config_sha256": "8e6df4bdad1c7613aefbefff1e96764d7ecffb745ef703c093c97f2fd4445d71",
+      "method_status": "?? proposals/entry-status-and-evidence-links-v01.md\n?? proposals/version-bound-fact-claims-v01.md"
+    },
+    "metadata_matches_baseline_and_freeze": true,
+    "existing_untracked_count": 44,
+    "all_requested_protections_unchanged": true
+  },
+  "limits": [
+    "No business quality, source-reading coverage or natural-loading verdict made; independent business QA remains separate.",
+    "No raw runtime/session logs, hidden analysis/reasoning, encrypted fields or excluded local-only source receipts opened; no product-author contact.",
+    "No business/service/browser/model/test/network execution, Git mutation or project/method/employee edits. Only this external guard written.",
+    "Current 22-file copy candidate is incomplete: first-QA final files, README and summary receipt await separate final package review before copy.",
+    "Endpoint protection covers tracked/nonignored untracked files, not continuous monitoring or all ignored runtime content."
+  ],
+  "verdict": "PASS_within_sealed_submission_and_current_candidate_privacy_scope"
+}

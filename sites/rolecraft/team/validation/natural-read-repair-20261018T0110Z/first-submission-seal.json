@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "sealed_at_utc": "2026-10-18T01:15:51.640138+00:00",
+  "stage": "first_unprompted_submission_before_QA_or_root_reading_hints",
+  "author": "/root/return_handoff_product",
+  "source_directory": "/private/tmp/rolecraft-return-handoff-x07v4lep",
+  "snapshot_directory": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-startup-repair-20261018T0054Z/first-submission",
+  "artifacts": {
+    "product-scope-and-acceptance.md": {
+      "bytes": 7949,
+      "sha256": "18d479bce3be030443294c91c1fa83d817c2a922a027dacc575fe3badd76f4cf"
+    },
+    "product-evidence.json": {
+      "bytes": 16211,
+      "sha256": "752191e39587e0cb18a4e9f4d7d8e47c76525c44ea39399f19cae7512c6c4b16"
+    }
+  },
+  "artifact_privacy_prescreen": "no fixed full body or >=400-char contiguous method-body block in text or JSON strings; independent guard still required",
+  "runtime": {
+    "path": "/Users/liuqian/.codex/sessions/2026/10/18/rollout-2026-10-18T09-10-15-01a14c8f-314d-7df0-8428-86ee5285b80a.jsonl",
+    "session_id": "01a14c8f-314d-7df0-8428-86ee5285b80a",
+    "agent_path": "/root/return_handoff_product",
+    "parent_thread_id": "01a14a89-47ce-7343-a11b-31426601fd84",
+    "prefix_bytes": 1941928,
+    "prefix_sha256": "8af9ee5155cb719cf8e0853a4c860ee069abe7cb282a152ab0ab742c7fd821c2",
+    "line_count": 353,
+    "terminal_newline": true,
+    "raw_log_copied": false,
+    "analysis_reasoning_or_encrypted_content_parsed": false
+  },
+  "qa_may_parse_only_visible_tool_input_output_and_commentary_final": true,
+  "root_preseal_reading_hints_sent": false,
+  "dispatch_sha256": "0494a26bedc3abed22e9ddf78b3e120871954453c3a044f187918f53f5eada00",
+  "input_freeze_sha256": "fb04c2bd1263fc255030ea8adcc4e770d2d20bd7f252eb00c882592933f13c9b"
+}

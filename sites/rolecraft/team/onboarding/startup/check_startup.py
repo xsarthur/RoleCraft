@@ -16,6 +16,14 @@ BASE = "sites/rolecraft/team/"
 CORE = BASE + "employees/core/"
 V12 = BASE + "employees/v12-evidence/"
 CONFIG = BASE + "onboarding/startup/sources.json"
+LOCATOR = BASE + "onboarding/startup/local-method-source.json"
+PRIOR_VALIDATION = BASE + "validation/natural-read-20261017T1557Z/"
+REPAIRED_VALIDATION = BASE + "validation/natural-read-repair-20261018T0110Z/"
+LATEST_RECORDS = tuple(BASE + name for name in (
+    "team-method-loop-20261017-archive.md", "team-method-loop-20261017-evidence.json",
+    "task-closeout-20261017.md", "task-closeout-20261017.json")) + (
+    PRIOR_VALIDATION + "README.md", PRIOR_VALIDATION + "validation-receipt.json",
+    REPAIRED_VALIDATION + "README.md", REPAIRED_VALIDATION + "validation-receipt.json")
 FIXED = "a848db9f9ab6605aa7379dddef3faa918e412f96"
 ORIGIN = "git@github.com:chennyqian/ai-team-handbook.git"
 PROJECT_SOURCES = (
@@ -23,8 +31,7 @@ PROJECT_SOURCES = (
         "README.md", "ROLE-MAPPING.md", "TEAM-ROUTING.md", "APPLICATION-NOTES.md",
         "TASK-LAYOUT3-READING-DIALOGUE.md")), CORE + "README.md", CORE + "manifest.json",
     CORE + "user-profile/approved-preferences.md", V12 + "manifest.json",
-    *(BASE + name for name in ("team-method-loop-20261017-archive.md",
-       "team-method-loop-20261017-evidence.json", "task-closeout-20261017.md", "task-closeout-20261017.json")))
+    *LATEST_RECORDS)
 METHOD_FILES = ("README.md", "SOURCE-MANIFEST.md", "CHANGELOG.md", "roles.md", "methods.md",
                 "adoption-and-change.md", "checklists/startup-receipt.md", "checklists/task-and-evidence.md",
                 "examples/website-adapter.example.md", "examples/learning-product-adapter.example.md")
@@ -141,6 +148,8 @@ def read_json(root, path):
 
 
 def verify_config(config):
+    if not isinstance(config, dict):
+        raise Rejected("invalid_source_config_object")
     if config.get("schema_version") != 1 or set(config.get("project_sources", [])) != set(PROJECT_SOURCES):
         raise Rejected("project_source_whitelist_mismatch")
     if config.get("role_catalogs") != {"core": CORE + "manifest.json", "v12": V12 + "manifest.json"}:
@@ -150,6 +159,57 @@ def verify_config(config):
     method = config.get("method", {})
     if method.get("origin") != ORIGIN or method.get("revision") != FIXED or set(method.get("files", [])) != set(METHOD_FILES):
         raise Rejected("fixed_method_manifest_mismatch")
+
+
+def resolve_method_root(project_root, explicit=None):
+    """One explicit root or one approved local locator; never search, fetch or fall back."""
+    if explicit is not None:
+        root = Path(explicit).absolute()
+        selection = {"mode": "explicit_cli", "root": str(root)}
+    else:
+        raw = full_read(project_root, LOCATOR)
+        locator = json.loads(raw.decode("utf-8"))
+        if not isinstance(locator, dict):
+            raise Rejected("invalid_local_method_locator_object")
+        required = {"schema_version": 1, "binding_scope": "RoleCraft_local_read_only_fixed_method_source",
+                    "origin": ORIGIN, "revision": FIXED, "network": "never",
+                    "method_adoption": "not_adopted_REVIEW_DRAFT"}
+        if any(locator.get(key) != value for key, value in required.items()):
+            raise Rejected("invalid_local_method_locator_binding")
+        value = locator.get("local_root")
+        if not isinstance(value, str) or not value or not Path(value).is_absolute():
+            raise Rejected("invalid_local_method_root")
+        root = Path(value)
+        selection = {"mode": "local_locator", "locator": LOCATOR,
+                     "locator_sha256": sha(raw), "root": str(root),
+                     "scope": "this_authorized_local_source_only_not_other_user_access_proof"}
+    fd = open_directory(root)
+    os.close(fd)
+    return root, selection
+
+
+def verified_method_bodies(root, repository=GitRepository):
+    """Validate the fixed pack before returning any body; no body is persisted here."""
+    repo = repository(root)
+    meta = repo.metadata()
+    if meta["origin"] != ORIGIN or meta["head"] != FIXED:
+        raise Rejected("wrong_method_origin_or_revision")
+    tree = repo.tree(FIXED)
+    if set(tree) != set(METHOD_FILES):
+        raise Rejected("fixed_tree_file_set_mismatch")
+    bodies = {}
+    for path in METHOD_FILES:
+        entry = tree[path]
+        if entry["kind"] != "blob" or entry["mode"] not in ("100644", "100755"):
+            raise Rejected("non_regular_git_entry")
+        raw = full_read(root, path)
+        raw.decode("utf-8")
+        if raw != repo.blob(entry["blob"]):
+            raise Rejected("method_body_not_fixed_blob")
+        bodies[path] = raw
+    if repo.metadata() != meta:
+        raise Rejected("method_version_changed_during_check")
+    return bodies, meta, tree
 
 
 def local_links(text, origin_path, root, selected):
@@ -194,11 +254,11 @@ def local_links(text, origin_path, root, selected):
     return result
 
 
-def check(project_root, roles, method_root, evidence=None, include_content=False, repository=GitRepository):
+def check(project_root, roles, method_root=None, evidence=None, include_content=False, repository=GitRepository):
     """Repository injection is only a synthetic-test seam, never a CLI bypass."""
     if not roles or len(set(roles)) != len(roles) or any(not re.fullmatch(r"[a-z0-9-]+", r) for r in roles):
         raise Rejected("explicit_distinct_task_roles_required")
-    project_root, method_root = Path(project_root).absolute(), Path(method_root).absolute()
+    project_root = Path(project_root).absolute()
     config = read_json(project_root, CONFIG)
     verify_config(config)
     project = repository(project_root)
@@ -296,6 +356,8 @@ def check(project_root, roles, method_root, evidence=None, include_content=False
     method_report = {"expected_revision": FIXED, "status": "blocked", "formal_adoption": False}
     method_repo = None
     try:
+        method_root, selection = resolve_method_root(project_root, method_root)
+        method_report["source_selection"] = selection
         method_repo = repository(method_root)
         meta = method_repo.metadata()
         method_report["observed"] = meta
@@ -310,7 +372,7 @@ def check(project_root, roles, method_root, evidence=None, include_content=False
             method_report["status"] = "fixed_tree_full_content_read"
         if method_repo.metadata() != meta:
             raise Rejected("method_version_changed_during_check")
-    except (OSError, Rejected, subprocess.CalledProcessError) as exc:
+    except (OSError, Rejected, ValueError, TypeError, subprocess.CalledProcessError) as exc:
         method_report.update(status="blocked", reason=str(exc))
         problems.append({"source_id": "method", "issue": "method_binding_failed"})
 
@@ -340,12 +402,18 @@ def check(project_root, roles, method_root, evidence=None, include_content=False
             "startup_connection": "not_connected", "model_understanding": "unverified",
             "agent_readback": "unverified; checker reads and optional stdout are not professional-agent receipt evidence",
             "include_content": include_content, "evidence": proof, "problems": problems,
+            "normal_body_reading": {"mode": "required_flow", "command":
+                "python3 -B " + BASE + "onboarding/startup/read_source.py --required-flow --roles " + ",".join(roles),
+                "metadata_is_not_body_delivery": True},
             "reference_integrity": reference_summary, "uncovered_project_records": uncovered,
+            "record_scope": {"status": "explicit_frozen_known_record_set_only",
+                "records": list(LATEST_RECORDS), "validation_directory_autodiscovery": False,
+                "project_latest_records_readable_means": "only the explicit current record list; not permanently latest"},
             "readability": {
                 "role_material_readable": all(row["role_material_readable"] for row in role_records),
                 "original_long_term_memory": {row["role_id"]: row["original_long_term_memory"] for row in role_records},
                 "shared_method_readable": method_report["status"] == "fixed_tree_full_content_read",
-                "project_latest_records_readable": not uncovered and all(records["project:" + p]["checker_content_read"] for p in PROJECT_SOURCES[-4:])},
+                "project_latest_records_readable": not uncovered and all(records["project:" + p]["checker_content_read"] for p in LATEST_RECORDS)},
             "limitations": ["not a natural startup event test", "no platform trace authentication",
                             "no application quality or understanding certification", "no formal method adoption"]}
 
@@ -419,7 +487,7 @@ def check_evidence(evidence, roles, role_records, records, bodies, project_root)
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--roles", required=True, help="comma-separated original manifest role ids; no all-roles default")
-    parser.add_argument("--method-root", required=True)
+    parser.add_argument("--method-root", help="explicit authorized local override; default uses local-method-source.json only")
     parser.add_argument("--evidence", help="explicit local JSON only; no external trace/log fetching")
     parser.add_argument("--include-content", action="store_true", help="emit ALL selected UTF-8 bodies to stdout, including private method text")
     args = parser.parse_args()
@@ -429,7 +497,7 @@ def main():
         if args.evidence:
             path = Path(args.evidence).absolute()
             evidence = read_json(path.parent, path.name)
-        result = check(project_root, args.roles.split(","), Path(args.method_root), evidence, args.include_content)
+        result = check(project_root, args.roles.split(","), args.method_root, evidence, args.include_content)
         print(json.dumps(result, ensure_ascii=False, sort_keys=True))
         return 2 if result["problems"] else 0
     except (OSError, Rejected, ValueError, KeyError, TypeError, subprocess.CalledProcessError) as exc:

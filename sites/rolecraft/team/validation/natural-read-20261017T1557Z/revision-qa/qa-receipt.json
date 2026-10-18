@@ -1,0 +1,224 @@
+{
+  "schema_version": "rolecraft-DQ01-document-revision-qa-v1",
+  "created_at_utc": "2026-10-17T16:18:58.754188+00:00",
+  "reviewer": "/root/natural_read_qa",
+  "author": "/root/voice_trial_product",
+  "stage": "guided_document_revision_DQ-01_only_not_new_blind_trial",
+  "seal_binding": {
+    "file": "revision-seal.json",
+    "sha256": "e35dfc3b13e4e5adca28a4292b333707e22727a924855044b950d0f0ea4a393c",
+    "bytes": 763
+  },
+  "sealed_at_utc": "2026-10-17T16:17:10.364960+00:00",
+  "input_bindings": [
+    {
+      "file": "revision-1/product-evidence.json",
+      "sha256": "c22391fabe53f9364f491b4a69cff4dc4bf833b1cac751c60f001c5b72c5d320",
+      "bytes": 19755
+    },
+    {
+      "file": "revision-1/修订说明.txt",
+      "sha256": "3b16cdc93e364284fc561363e34d864aa0828818407e940cbc2fed70bdcf82e3",
+      "bytes": 1754
+    },
+    {
+      "file": "revision-1/试用前核对清单.txt",
+      "sha256": "8b4364c97433dbd31770ab725d5c812ae0cfd38b62b44df0d9bc0b90ac30e9c5",
+      "bytes": 13722
+    }
+  ],
+  "report_binding": {
+    "file": "revision-qa-report.md",
+    "sha256": "74e76c24478f34ffae9cbc7453262c0924f2afd8959338701fc6048747e45781",
+    "bytes": 2640
+  },
+  "result": "pass_within_DQ-01_document_revision_scope",
+  "finding_status": {
+    "id": "DQ-01",
+    "first_review": "open; needs_revision retained",
+    "later_revision": "closed_document_omission_only",
+    "implementation": "unfixed; static risk still open; browser reproduction not performed",
+    "voice_business_runtime": "not_tested; historical insufficient retained"
+  },
+  "checks": [
+    {
+      "id": "DQ01-R1",
+      "artifact_line": 18,
+      "expected": "路径选择不能依赖当前取消勾选，保持静态风险和处理未知边界",
+      "actual": "明确同一轮冲突、重录重置、待工程修复和独立复验，不声称外发",
+      "result": "pass_within_scope"
+    },
+    {
+      "id": "DQ01-R2",
+      "artifact_line": 48,
+      "expected": "限制5准确陈述属性→守卫→默认状态→启动消费",
+      "actual": "静态链准确，限定API可用/录音前置，未称运行或修复完成",
+      "result": "pass_within_scope"
+    },
+    {
+      "id": "DQ01-R3",
+      "artifact_line": 60,
+      "expected": "A4仍为未来接受条件，核控件/状态/调用并保留原覆盖",
+      "actual": "明确未执行，不能靠外观或providerCalled=false认证，原错误与时序覆盖保留",
+      "result": "pass_within_scope"
+    },
+    {
+      "id": "DQ01-R4",
+      "expected": "新增证据绑定准确",
+      "actual": "app整件SHA/blob匹配；5处quote逐字匹配；新稿SHA及首交身份准确",
+      "result": "pass_within_scope"
+    },
+    {
+      "id": "DQ01-R5",
+      "expected": "不扩范围、不改首次结论",
+      "actual": "diff只有版本/18行/限制5/A4，其他文字相同，继承来源仅身份；首次三QA件hash一致",
+      "result": "pass_within_scope"
+    }
+  ],
+  "source_binding_verification": {
+    "path": "sites/rolecraft/dist/app.js",
+    "sha256": "f5eb9db9bb128000abd6216770f07d9515b4aef03d42080417a378638d270d1d",
+    "head_blob": "ed9599165be42ce14fa2b0c39a71158609a01016",
+    "current_source_hash_matches": true,
+    "current_blob_matches": true,
+    "quote_checks": [
+      {
+        "start_line": 112,
+        "end_line": 112,
+        "matches_current_source": true,
+        "quote_sha256": "c271cdcfa3e56ed7251133e6db421295bb2edf7d85270a299bb7eca4bf2b3381"
+      },
+      {
+        "start_line": 123,
+        "end_line": 123,
+        "matches_current_source": true,
+        "quote_sha256": "e22f2903ad99865dba941aeda52ef847118ed88eb04891c25db534142444863f"
+      },
+      {
+        "start_line": 147,
+        "end_line": 147,
+        "matches_current_source": true,
+        "quote_sha256": "9d3a532c81138a0bd171211199c4bc7063633366c7151ea855e41774d96c18b3"
+      },
+      {
+        "start_line": 161,
+        "end_line": 161,
+        "matches_current_source": true,
+        "quote_sha256": "b59b1d85acca7a08b2227762b57aeedccc23262546db5765252f2e9a5f7374bc"
+      },
+      {
+        "start_line": 221,
+        "end_line": 221,
+        "matches_current_source": true,
+        "quote_sha256": "72f04e03053de664ba9c30d4216a59057d290d23839569f40cd5093e01235153"
+      }
+    ],
+    "inherited_source_bindings_equal_first": true,
+    "inherited_other_bodies_reread_or_retested": false,
+    "verification_kind": "actual read-only source bytes and five quote comparisons; not browser execution"
+  },
+  "diff_hunks": [
+    {
+      "tag": "replace",
+      "old_lines": [
+        2,
+        2
+      ],
+      "new_lines": [
+        2,
+        2
+      ]
+    },
+    {
+      "tag": "replace",
+      "old_lines": [
+        18,
+        18
+      ],
+      "new_lines": [
+        18,
+        18
+      ]
+    },
+    {
+      "tag": "insert",
+      "old_lines": [
+        48,
+        47
+      ],
+      "new_lines": [
+        48,
+        49
+      ]
+    },
+    {
+      "tag": "replace",
+      "old_lines": [
+        58,
+        58
+      ],
+      "new_lines": [
+        60,
+        60
+      ]
+    }
+  ],
+  "preserved_first_qa": [
+    {
+      "file": "qa-report.md",
+      "sha256": "f9366498e55acf26b96daa8a4edb01af266ebf1872705ae24740233b109ef119",
+      "bytes": 5948
+    },
+    {
+      "file": "qa-receipt.json",
+      "sha256": "61bf43e2e8411f50ff78af08fd9982b7342e443c8eff8cbfee09f924a28b9b1b",
+      "bytes": 19646
+    },
+    {
+      "file": "trace-index.json",
+      "sha256": "40e98057a5b6489e3c8cefd4e8165fc2634cdbd092bbed43a3eff50961058f6d",
+      "bytes": 39876
+    }
+  ],
+  "preserved_first_submission": [
+    {
+      "file": "first-submission/product-evidence.json",
+      "sha256": "83e1f7aedcf5b9577bb776de7fb271adaa8a30f76a0bb356a23933f6b4b3113a",
+      "bytes": 9226
+    },
+    {
+      "file": "first-submission/试用前核对清单.txt",
+      "sha256": "c3592d37f00e5c786ad33fbc86407c3d9c7787e68b99c099f70f118319b281ec",
+      "bytes": 12030
+    }
+  ],
+  "original_results_unchanged": {
+    "natural_reading": "FAIL/partial",
+    "first_business_document": "needs_revision_DQ-01_open as historical first review",
+    "current_voice": "historical insufficient; no new runtime acceptance",
+    "full_product": "not_met; not reassessed"
+  },
+  "scope": {
+    "qa_only_reads": "sealed revision three files, first submission comparison, and DQ-01 source quote/hash binding",
+    "live_directory_opened": false,
+    "full_natural_test_repeated": false,
+    "fixed_method_reread_for_business": false,
+    "application_service_business_test_runs": 0,
+    "browser_or_VM_runs": 0,
+    "network_calls": 0,
+    "author_artifact_changes_by_qa": 0,
+    "project_employee_method_changes_by_qa": 0,
+    "first_qa_files_modified": false,
+    "original_source_ownership": "unknown",
+    "management_actions": "none",
+    "raw_logs_or_private_method_fulltext_copied": false
+  },
+  "limits": [
+    "Only the document omission is closed.",
+    "Engineering switch implementation remains unchanged and unverified at runtime.",
+    "Browser recognition, external processing and actual voice trial remain unverified.",
+    "This is guided author wording repair, not a new natural loading sample.",
+    "Project pack persistence is not certified; pack not yet saved."
+  ],
+  "next_owner": "software engineer only after separate implementation authorization; independent QA on new source for original counterexample and A4"
+}

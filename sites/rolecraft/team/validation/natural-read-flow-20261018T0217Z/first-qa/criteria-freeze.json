@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "frozen_at_utc": "2026-10-18T02:12:02.813478+00:00",
+  "stage": "immutable first rule freeze; source-binding pending final repair QA and source freeze; no business artifact/log access",
+  "qa_executor": "/root/reading_flow_business_qa",
+  "files": {
+    "criteria.json": {
+      "bytes": 20925,
+      "sha256": "58c5014516b0dab7388fcf785bd489e06001148c6c37eb8f10ffeb33cf97e0f4"
+    },
+    "criteria.md": {
+      "bytes": 4773,
+      "sha256": "8fae1a748719fa676e094ef5670201c30fef9dabfee3aae1fc398839ed9152bb"
+    }
+  },
+  "business_prompt_sha256": "586073cc5e6a842bd0ecde7e44685b197dd99e09a530aeaeedac998d77bf5acb",
+  "trial_plan_sha256": "ff7dfa345dee8ed74cbf197e68321170011436f8a48e3ef4221d9459907e345c",
+  "required_source_count": 34,
+  "legacy_source_count": 32,
+  "legacy_source_ids_retained": true,
+  "old_gaps_count": 14,
+  "source_binding": "pending; separate receipt only; first rules not overwritten",
+  "current_business_artifacts_or_runtime_logs_inspected": false,
+  "business_executor_contacted": false,
+  "raw_logs_private_bodies_or_reconstructable_caches_saved": false,
+  "prior_first_results_preserved": "Both historical FAIL/partial; future reread/repair cannot replace first trial",
+  "write_scope": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-required-reading-20261018T020320Z/business-qa"
+}

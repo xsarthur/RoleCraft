@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-10-18T02:42:34.386486+00:00",
+  "qa_executor": "/root/reading_flow_business_qa",
+  "author": "/root/reanalysis_product",
+  "stage": "Guided DQ-02 narrow document retest; not a new blind/natural-loading trial",
+  "verdict": "pass_within_DQ02_document_revision_scope",
+  "finding": {
+    "id": "DQ-02",
+    "first_result": "open_in_first_submission; first document needs_revision preserved",
+    "revision_result": "closed_within_document_only_static_scope",
+    "original_app_changed": false,
+    "runtime_verified": false
+  },
+  "revised_document_status": "pass_within_static_product_handoff_scope_after_DQ02_narrow_revision; other45 unchanged lines retain first review scope",
+  "revision_seal": {
+    "path": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-required-reading-20261018T020320Z/revision-seal.json",
+    "sha256": "959e5a7ead1afbee63844d945c068dba9e69604a4cbf66e57c864a44cbffd5ea",
+    "sealed_at_utc": "2026-10-18T02:40:31.697778+00:00",
+    "artifacts": {
+      "product-review.txt": {
+        "path": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-required-reading-20261018T020320Z/revision-1/product-review.txt",
+        "bytes": 8460,
+        "sha256": "2e4904c0379b5d9a60d1b2f4ee83d5f4f2c887302ed9d5660661cad1f7779348",
+        "matches_seal": true
+      },
+      "product-evidence.json": {
+        "path": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-required-reading-20261018T020320Z/revision-1/product-evidence.json",
+        "bytes": 24941,
+        "sha256": "166567fee14221385f2848644f405cfaa3bc46a8a3c97c0a866d9efcc5f4f803",
+        "matches_seal": true
+      },
+      "revision-note.txt": {
+        "path": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-required-reading-20261018T020320Z/revision-1/revision-note.txt",
+        "bytes": 1671,
+        "sha256": "97f303c80c5fd576e0f97d298512989e4958847f33e828365e680451ac1a0247",
+        "matches_seal": true
+      }
+    }
+  },
+  "revision_request": {
+    "path": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-required-reading-20261018T020320Z/revision-request.txt",
+    "sha256": "df469a92d79caf12214df21f174497c83ec72f58d1f853baf1e9306509bc1237",
+    "scope": "Only normal confirm sequence and dependent inference/evidence identity; no source/startup/method reread, business test or app change."
+  },
+  "checks": [
+    {
+      "id": "R01",
+      "result": "pass",
+      "actual": "All3 revised artifacts exact bytes/SHA match revision seal; new evidence artifact path/bytes/chars/46lines/SHA points to revised8460-byte review."
+    },
+    {
+      "id": "R02",
+      "result": "pass",
+      "actual": "Byte-line comparison shows only line18 changed; other45 lines and A1-A6 unchanged."
+    },
+    {
+      "id": "R03",
+      "result": "pass",
+      "actual": "Correct normal path: app213 ReadTranscript -> confirmed=true -> Analyze; app136/133 only changed-text read refreshes false, prior to true. Analyze138 rereads same unchanged field, so ordinary A-state/B-field click does not by itself clear the flag after true. Unsupported first causal claim explicitly withdrawn, not relabelled as untested."
+    },
+    {
+      "id": "R04",
+      "result": "pass",
+      "actual": "Still separates unused internal confirmation from visible answer-version binding. Existing hand-edit/correction overwrite risk and callback/lifecycle/feedback-identity limits remain; no runtime repair/pass claimed."
+    },
+    {
+      "id": "R05",
+      "result": "pass",
+      "actual": "Evidence P1/P2 and revision-note agree with corrected source fact. Existing source metadata/read34 evidence retained with explicit first-submission/guided phase; no new natural-reading credit."
+    },
+    {
+      "id": "R06",
+      "result": "pass_within_visible_scope",
+      "actual": "Guided extension has3 visible exec calls: cited-source/original metadata read, create3 revision files, self-check. No new startup/method flow, app/service/business test/network action or original-file modification observed."
+    },
+    {
+      "id": "R07",
+      "result": "pass",
+      "actual": "All4 first-QA files and sealed original2 artifacts retain exact prior SHA; original first runtime prefix remains exact. First needs_revision and first34/34 natural-reading PASS remain immutable."
+    }
+  ],
+  "static_counterexample": {
+    "setup": "StoredA, textarea editedB, ordinary confirmation click",
+    "expected_source_sequence": "First read capturesB and may refreshfalse; button then sets true; second synchronous read seesB==B and does not refresh/clear.",
+    "proof": "Actual frozen app source order and conditional; no execution performed."
+  },
+  "source": {
+    "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/dist/app.js",
+    "bytes": 170162,
+    "sha256": "f5eb9db9bb128000abd6216770f07d9515b4aef03d42080417a378638d270d1d",
+    "reviewed_lines": [
+      133,
+      136,
+      138,
+      213
+    ],
+    "unchanged_from_first_QA": true,
+    "guided_visible_source_binding": [
+      {
+        "source_line": 133,
+        "exact_current_full_line_visible_in_guided_read": true,
+        "output_locations": [
+          {
+            "line": 629,
+            "block": 1
+          }
+        ]
+      },
+      {
+        "source_line": 136,
+        "exact_current_full_line_visible_in_guided_read": true,
+        "output_locations": [
+          {
+            "line": 629,
+            "block": 1
+          }
+        ]
+      },
+      {
+        "source_line": 138,
+        "exact_current_full_line_visible_in_guided_read": true,
+        "output_locations": [
+          {
+            "line": 629,
+            "block": 1
+          }
+        ]
+      },
+      {
+        "source_line": 213,
+        "exact_current_full_line_visible_in_guided_read": true,
+        "output_locations": [
+          {
+            "line": 629,
+            "block": 1
+          }
+        ]
+      }
+    ],
+    "remaining_display_limit": "Feedback/transcript/page renderers158/159/161 do not consume transcriptConfirmed; no answer-revision guarantee."
+  },
+  "guided_runtime_prefix": {
+    "path": "/Users/liuqian/.codex/sessions/2026/10/18/rollout-2026-10-18T10-17-19-01a14ccc-985d-74b1-9f67-39f5228f2c7f.jsonl",
+    "bytes": 2488339,
+    "lines": 653,
+    "sha256": "50231c76b15dbb010d14c9d6fb6f17cd5933e434ce5b39cc51d8369ab12126db",
+    "original_bytes": 2361106,
+    "original_sha256": "e0fc406e3a3a88b4f317d7b37f7b32309fc3d08ec963331f4f44ad636bf0ce43",
+    "original_prefix_preserved": true,
+    "new_lines_only_reviewed": [
+      615,
+      653
+    ],
+    "raw_log_copied": false,
+    "hidden_analysis_reasoning_or_encrypted_fields_used": false,
+    "visible_call_metadata": [
+      {
+        "line": 625,
+        "at_utc": "2026-10-18T02:39:09.332Z",
+        "call_id": "call_b77e636db20d4607a3668a85e912990c",
+        "input_sha256": "a91db2a4fcd3afa47b7abb594a98840680b4ba080005c80948080597c6b7c89b",
+        "summary": "Read only already-cited app133-138/213 and original artifact metadata."
+      },
+      {
+        "line": 633,
+        "at_utc": "2026-10-18T02:39:47.385Z",
+        "call_id": "call_0af137edc1e34e018f0e65184206ebd1",
+        "input_sha256": "d23cc1d20c2db103f4cd88b579c82bb87ad4f7e35d37f6cf96fee5b94459c1e7",
+        "summary": "Create only three revision-1 files after original SHA assertions; change review line18 and evidence identity/phase/P1/P2; original files rehashed unchanged."
+      },
+      {
+        "line": 642,
+        "at_utc": "2026-10-18T02:39:58.456Z",
+        "call_id": "call_4a3945c6d3b04177acaf7390632ceaa1",
+        "input_sha256": "b653e44c3b96e93133f7dbc9366eac2894356106769cdf6652fd5797359288e9",
+        "summary": "Author self-check: revised line/note/identity/only18 change and original hash/first-evidence phase."
+      }
+    ],
+    "visible_output_metadata": [
+      {
+        "line": 629,
+        "block": 0,
+        "text_sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+        "characters": 47,
+        "truncated": false
+      },
+      {
+        "line": 629,
+        "block": 1,
+        "text_sha256": "bc5e7021925a187bd856e587efdb1a25be3541c76b5834301040092282525707",
+        "characters": 12280,
+        "truncated": false
+      },
+      {
+        "line": 629,
+        "block": 2,
+        "text_sha256": "045627d254d569f7c43a0779363fb8ecca9f0743d5479c1411e63b7c4799f95a",
+        "characters": 3422,
+        "truncated": false
+      },
+      {
+        "line": 636,
+        "block": 0,
+        "text_sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+        "characters": 47,
+        "truncated": false
+      },
+      {
+        "line": 636,
+        "block": 1,
+        "text_sha256": "a869031a3fe3d2b4e3fee824e6ed58870f5955271ba6c479bf9510aa25829a63",
+        "characters": 777,
+        "truncated": false
+      },
+      {
+        "line": 645,
+        "block": 0,
+        "text_sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+        "characters": 47,
+        "truncated": false
+      },
+      {
+        "line": 645,
+        "block": 1,
+        "text_sha256": "eef6cf900cfb65e3cd27fcddb6620accb9c1260e567b2974694b2551930ede84",
+        "characters": 1895,
+        "truncated": false
+      }
+    ],
+    "call_outputs_untruncated": true,
+    "limit": "Only authorized extension visible tools and commentary/final; encrypted corrective task is not reconstructed."
+  },
+  "preservation": {
+    "first_QA_file_sha256": {
+      "qa-report.md": "0bf1cf5035c7b357803ef485bc2051fd2a757d3962c103b41d17f32136c06bc4",
+      "qa-receipt.json": "4d352287cbadd82579303f66844e9cb48396170fbf95776713fbdd7cb82821ce",
+      "trace-index.json": "de1bca7a60a22f5b999d58c6e0f86fd90eb2a513b8e33c911688f80ec2a254f8",
+      "final-binding.json": "d8fd99631289f71faba0717579e4c515f14fc2cb0d30665a4c4ec0cbd11e7460"
+    },
+    "first_original_sealed_artifacts": {
+      "product-review.txt": {
+        "bytes": 8303,
+        "sha256": "f36c9f8a11059cd451d3e2b1da4d23436b350cc44a89dd4f3dd856a8530104c1"
+      },
+      "product-evidence.json": {
+        "bytes": 21662,
+        "sha256": "6fc6827e803fc576865b5891f0c6cef31a816001d411d09e7b1e04e674c9ead2"
+      }
+    },
+    "live_originals": "Root seal states unchanged; QA did not open live directory. Visible author SHA assertions/readback support original hashes; sealed originals independently checked.",
+    "criteria_unchanged": true,
+    "source_binding_sha256": "a800f8335e647c57cb32c539b7c433806d2051e8e16210d9a05068585b391cb2",
+    "first_static_document": "needs_revision retained",
+    "first_complete_natural_reading": "PASS_within_this_fresh_business_visible_fullbody_scope retained, not rerun",
+    "historical_previous_trials": "FAIL/partial retained"
+  },
+  "scope": {
+    "business_executor_contacted": false,
+    "author_artifact_modified_by_QA": false,
+    "new_natural_reading_sample": false,
+    "method_or_startup_reread": false,
+    "application_service_browser_ASR_business_runtime": "not_tested",
+    "method_adoption_growth_or_automatic_events": false,
+    "raw_log_private_body_or_reconstructable_cache_saved": false,
+    "protected_global_guard": "No repeat broad mechanism/all-source suite; relevant unchanged app SHA and immutable first evidence checked, final global package guard belongs to separate root process."
+  },
+  "limitations": [
+    "Document-only correction closes DQ-02 wording/causal fact, not app behavior or feedback version implementation.",
+    "All original untested Chinese input/correction/timing/late response/browser/user-effect conditions remain.",
+    "Guided repair is not a new independent natural-loading sample and does not rewrite first needs_revision or historical FAIL/partial."
+  ]
+}

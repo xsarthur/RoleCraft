@@ -1,0 +1,3974 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-18T02:37:48.703607+00:00",
+  "qa_executor": "/root/reading_flow_business_qa",
+  "policy": "Authorized prefix visible tool input/output and commentary/final only; hidden/encrypted/unrelated fields skipped. In-memory content comparison, metadata only persisted.",
+  "runtime": {
+    "path": "/Users/liuqian/.codex/sessions/2026/10/18/rollout-2026-10-18T10-17-19-01a14ccc-985d-74b1-9f67-39f5228f2c7f.jsonl",
+    "session_id": "01a14ccc-985d-74b1-9f67-39f5228f2c7f",
+    "agent_path": "/root/reanalysis_product",
+    "parent_thread_id": "01a14a89-47ce-7343-a11b-31426601fd84",
+    "prefix_bytes": 2361106,
+    "prefix_sha256": "e0fc406e3a3a88b4f317d7b37f7b32309fc3d08ec963331f4f44ad636bf0ce43",
+    "line_count": 614,
+    "terminal_newline": true,
+    "raw_log_copied": false,
+    "hidden_reasoning_analysis_or_encrypted_fields_interpreted": false,
+    "hash_bytes_lines_verified": true,
+    "selected_execution_identity": {
+      "session_id": "01a14ccc-985d-74b1-9f67-39f5228f2c7f",
+      "parent_thread_id": "01a14a89-47ce-7343-a11b-31426601fd84",
+      "agent_path": "/root/reanalysis_product"
+    }
+  },
+  "coverage": {
+    "required_sources": 34,
+    "project_sources": 24,
+    "method_sources": 10,
+    "actual_page_outputs": 83,
+    "actual_exact_bytes": 254272,
+    "all_pages_exact_frozen_slices": true,
+    "steps_exactly_1_to_83": true,
+    "cross_source_order_matches_frozen_guides": true,
+    "old_fourteen_gaps_all_fullbody": true,
+    "AGENTS_original171_173_byte_ranges": {
+      "171": [
+        37045,
+        37869
+      ],
+      "173": [
+        37870,
+        38442
+      ]
+    },
+    "actual_final_page_output_line": 487,
+    "first_business_source_call_line": 496,
+    "startup_finished_before_substantive_business_source_review": true,
+    "not_inferred_from_cursor_or_self_report": true
+  },
+  "flow_start_metadata": {
+    "plan_sha256": "0a0f1c438e360cf80f06f893bbd1d5df5211e0b137b48948f38e248f9dca63a0",
+    "position_sha256": "51b61cf0e7ab35fb159c5dd39d9534dca1f36392caf495632a22b1dc56531308",
+    "selected_roles": [
+      "product-manager"
+    ],
+    "sources_total": 34,
+    "step": 1,
+    "steps_total": 83,
+    "prior_delivery_authenticated": false,
+    "all_required_bodies_received": "unverified",
+    "continuation": "untrusted consistency parameters; reproducible by caller, not signed delivery evidence"
+  },
+  "flow_chain_limit": "Page2-83 outputs preserve actual source/page/global-step/content but suppress helper metadata. Exact body comparison against frozen bytes proves coverage independently; actual continuation code stores only next-command and safe read metadata. Cursor parameters are not authentication.",
+  "source_aggregates": [
+    {
+      "source_id": "project:AGENTS.md",
+      "file_sha256": "9866da222a09d0124008f49ab079dcaea7e2de61c5bb0d638a73acddf5cbe175",
+      "file_bytes": 51126,
+      "received_bytes": 51126,
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "steps": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "output_lines": [
+        43,
+        57,
+        62,
+        67,
+        72,
+        86,
+        91,
+        96,
+        101,
+        106,
+        111,
+        120,
+        125
+      ],
+      "continuous_byte_range": [
+        0,
+        51126
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": false
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/README.md",
+      "file_sha256": "eca0dd5dc665e0a33c52b73fe367bc68d5d7fe0f2256a48dc22c11984c90c194",
+      "file_bytes": 12953,
+      "received_bytes": 12953,
+      "pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "steps": [
+        14,
+        15,
+        16,
+        17
+      ],
+      "output_lines": [
+        130,
+        135,
+        140,
+        145
+      ],
+      "continuous_byte_range": [
+        0,
+        12953
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": false
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/ROLE-MAPPING.md",
+      "file_sha256": "6fef691401c64a1bf171a87c4d6cc7ec60bacab0560bccb37333f85db901ff5f",
+      "file_bytes": 9207,
+      "received_bytes": 9207,
+      "pages": [
+        1,
+        2,
+        3
+      ],
+      "steps": [
+        18,
+        19,
+        20
+      ],
+      "output_lines": [
+        150,
+        155,
+        160
+      ],
+      "continuous_byte_range": [
+        0,
+        9207
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+      "file_sha256": "820618c008d0860143dc73033747fbfeef4d06487976beb4e9d81e810d54ff48",
+      "file_bytes": 10347,
+      "received_bytes": 10347,
+      "pages": [
+        1,
+        2,
+        3
+      ],
+      "steps": [
+        21,
+        22,
+        23
+      ],
+      "output_lines": [
+        165,
+        170,
+        175
+      ],
+      "continuous_byte_range": [
+        0,
+        10347
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/APPLICATION-NOTES.md",
+      "file_sha256": "d39b582b4c992b319720eae20a58418a9dafeb1277fa57d6be31dbb10f458afd",
+      "file_bytes": 8647,
+      "received_bytes": 8647,
+      "pages": [
+        1,
+        2,
+        3
+      ],
+      "steps": [
+        24,
+        25,
+        26
+      ],
+      "output_lines": [
+        180,
+        185,
+        190
+      ],
+      "continuous_byte_range": [
+        0,
+        8647
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/TASK-LAYOUT3-READING-DIALOGUE.md",
+      "file_sha256": "2c094e940338032a179551503270d927801b1e7e82652126e31280dd4e33bfdc",
+      "file_bytes": 6025,
+      "received_bytes": 6025,
+      "pages": [
+        1,
+        2
+      ],
+      "steps": [
+        27,
+        28
+      ],
+      "output_lines": [
+        195,
+        200
+      ],
+      "continuous_byte_range": [
+        0,
+        6025
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/startup/README.md",
+      "file_sha256": "04bc3ffcd5d35bb26e82de9174bc36c28db246472b38d199912144ac38685ed7",
+      "file_bytes": 14714,
+      "received_bytes": 14714,
+      "pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "steps": [
+        29,
+        30,
+        31,
+        32
+      ],
+      "output_lines": [
+        205,
+        210,
+        215,
+        220
+      ],
+      "continuous_byte_range": [
+        0,
+        14714
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": false
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/startup/sources.json",
+      "file_sha256": "fffef1c035041b426389ca3ffbf7e8e8c0405c80b837593ab7c361ea02bccfa9",
+      "file_bytes": 2170,
+      "received_bytes": 2170,
+      "pages": [
+        1
+      ],
+      "steps": [
+        33
+      ],
+      "output_lines": [
+        227
+      ],
+      "continuous_byte_range": [
+        0,
+        2170
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/startup/local-method-source.json",
+      "file_sha256": "0147b66a156d412a659371159fa84a869f7ded2815066850a9d0360f70ed8cd9",
+      "file_bytes": 382,
+      "received_bytes": 382,
+      "pages": [
+        1
+      ],
+      "steps": [
+        34
+      ],
+      "output_lines": [
+        232
+      ],
+      "continuous_byte_range": [
+        0,
+        382
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/README.md",
+      "file_sha256": "90572c46efdda8333abeaf3458a01774430aa51076220621f384857f71af7a7e",
+      "file_bytes": 4577,
+      "received_bytes": 4577,
+      "pages": [
+        1,
+        2
+      ],
+      "steps": [
+        35,
+        36
+      ],
+      "output_lines": [
+        237,
+        242
+      ],
+      "continuous_byte_range": [
+        0,
+        4577
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/manifest.json",
+      "file_sha256": "28227bf1a6c4ac584e28b2a419614368ee539433e929dce60206b8571283aef2",
+      "file_bytes": 2736,
+      "received_bytes": 2736,
+      "pages": [
+        1
+      ],
+      "steps": [
+        37
+      ],
+      "output_lines": [
+        247
+      ],
+      "continuous_byte_range": [
+        0,
+        2736
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/v12-evidence/manifest.json",
+      "file_sha256": "d805bce8111fdc232916da7a982a20791eca47be415afba1227f6819de85e7f7",
+      "file_bytes": 8100,
+      "received_bytes": 8100,
+      "pages": [
+        1,
+        2,
+        3
+      ],
+      "steps": [
+        38,
+        39,
+        40
+      ],
+      "output_lines": [
+        252,
+        257,
+        262
+      ],
+      "continuous_byte_range": [
+        0,
+        8100
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/product-manager/ROLE.md",
+      "file_sha256": "56f932f3621b64469b3136ff3d1cafa3af900608f5c82947e33e0012ffd614c7",
+      "file_bytes": 5096,
+      "received_bytes": 5096,
+      "pages": [
+        1,
+        2
+      ],
+      "steps": [
+        43,
+        44
+      ],
+      "output_lines": [
+        277,
+        282
+      ],
+      "continuous_byte_range": [
+        0,
+        5096
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": false
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/product-manager/MEMORY.md",
+      "file_sha256": "d992070fba035c1d3a5fb6f5734ed0922f011321c717cfb578b9b2e8209e38fe",
+      "file_bytes": 1297,
+      "received_bytes": 1297,
+      "pages": [
+        1
+      ],
+      "steps": [
+        45
+      ],
+      "output_lines": [
+        287
+      ],
+      "continuous_byte_range": [
+        0,
+        1297
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": false
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/product-manager/MEMORY_SCHEMA.md",
+      "file_sha256": "4026b98355e6fc1332871eaa9d93bf532288125fea200f40c7c78fc041303c07",
+      "file_bytes": 3349,
+      "received_bytes": 3349,
+      "pages": [
+        1
+      ],
+      "steps": [
+        46
+      ],
+      "output_lines": [
+        292
+      ],
+      "continuous_byte_range": [
+        0,
+        3349
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": false
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+      "file_sha256": "e80f7be22925b043f9071c800b8ba040531a06756b3c3120df479cd94071060b",
+      "file_bytes": 5705,
+      "received_bytes": 5705,
+      "pages": [
+        1,
+        2
+      ],
+      "steps": [
+        41,
+        42
+      ],
+      "output_lines": [
+        267,
+        272
+      ],
+      "continuous_byte_range": [
+        0,
+        5705
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/team-method-loop-20261017-archive.md",
+      "file_sha256": "d8b0ec8de67b8f17d511e70daa99038859b94b9d8f7ff5ad39cd9560d2085eeb",
+      "file_bytes": 8666,
+      "received_bytes": 8666,
+      "pages": [
+        1,
+        2,
+        3
+      ],
+      "steps": [
+        47,
+        48,
+        49
+      ],
+      "output_lines": [
+        299,
+        304,
+        309
+      ],
+      "continuous_byte_range": [
+        0,
+        8666
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+      "file_sha256": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+      "file_bytes": 25287,
+      "received_bytes": 25287,
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "steps": [
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56
+      ],
+      "output_lines": [
+        316,
+        321,
+        326,
+        331,
+        336,
+        341,
+        346
+      ],
+      "continuous_byte_range": [
+        0,
+        25287
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/task-closeout-20261017.md",
+      "file_sha256": "e0eb6d418d4eef6fd3580c97d8f766d98a8162cf95f4639bf0c14118cb6c8920",
+      "file_bytes": 2631,
+      "received_bytes": 2631,
+      "pages": [
+        1
+      ],
+      "steps": [
+        57
+      ],
+      "output_lines": [
+        353
+      ],
+      "continuous_byte_range": [
+        0,
+        2631
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": false
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/task-closeout-20261017.json",
+      "file_sha256": "78e698ed76ef63c2ca603f1730baedcf1c06e3c7b2c7750cf6ca9bd2b7564cba",
+      "file_bytes": 15006,
+      "received_bytes": 15006,
+      "pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "steps": [
+        58,
+        59,
+        60,
+        61
+      ],
+      "output_lines": [
+        358,
+        365,
+        370,
+        375
+      ],
+      "continuous_byte_range": [
+        0,
+        15006
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/validation/natural-read-20261017T1557Z/README.md",
+      "file_sha256": "1d89401be043d5f6f957d729b701e245669d0f442ec185a457f3190e57ca90ba",
+      "file_bytes": 4779,
+      "received_bytes": 4779,
+      "pages": [
+        1,
+        2
+      ],
+      "steps": [
+        62,
+        63
+      ],
+      "output_lines": [
+        380,
+        385
+      ],
+      "continuous_byte_range": [
+        0,
+        4779
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": false
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/validation/natural-read-20261017T1557Z/validation-receipt.json",
+      "file_sha256": "2d42358d9f8540f50651dde7555ac3e660e2bd333db8de2cba322a1005f171af",
+      "file_bytes": 5942,
+      "received_bytes": 5942,
+      "pages": [
+        1,
+        2
+      ],
+      "steps": [
+        64,
+        65
+      ],
+      "output_lines": [
+        390,
+        395
+      ],
+      "continuous_byte_range": [
+        0,
+        5942
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/validation/natural-read-repair-20261018T0110Z/README.md",
+      "file_sha256": "2ae6973b680e8d1e9fac0e0679099a7015d8082f9b80ed3e1a9e9455a4ef8fb1",
+      "file_bytes": 4391,
+      "received_bytes": 4391,
+      "pages": [
+        1,
+        2
+      ],
+      "steps": [
+        66,
+        67
+      ],
+      "output_lines": [
+        400,
+        405
+      ],
+      "continuous_byte_range": [
+        0,
+        4391
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": false
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/validation/natural-read-repair-20261018T0110Z/validation-receipt.json",
+      "file_sha256": "28345be1a96affd44c0a21b1967910623657a88327f7a06ec3772d0f5e0aac17",
+      "file_bytes": 13262,
+      "received_bytes": 13262,
+      "pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "steps": [
+        68,
+        69,
+        70,
+        71
+      ],
+      "output_lines": [
+        410,
+        415,
+        420,
+        425
+      ],
+      "continuous_byte_range": [
+        0,
+        13262
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": false
+    },
+    {
+      "source_id": "method:README.md",
+      "file_sha256": "7283e2d173c9c44bad7f356f890241efb7693be3a340d456c868df391142f1c1",
+      "file_bytes": 2346,
+      "received_bytes": 2346,
+      "pages": [
+        1
+      ],
+      "steps": [
+        72
+      ],
+      "output_lines": [
+        430
+      ],
+      "continuous_byte_range": [
+        0,
+        2346
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": false
+    },
+    {
+      "source_id": "method:SOURCE-MANIFEST.md",
+      "file_sha256": "ddf191051d0f7f47ce84097b7b1528f609565b1f287df770a0127ea5ee274cb1",
+      "file_bytes": 2246,
+      "received_bytes": 2246,
+      "pages": [
+        1
+      ],
+      "steps": [
+        73
+      ],
+      "output_lines": [
+        435
+      ],
+      "continuous_byte_range": [
+        0,
+        2246
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": false
+    },
+    {
+      "source_id": "method:CHANGELOG.md",
+      "file_sha256": "04fbd3e05f9af5d0432273000b88bacaef328eb314f7234992ec4c1e2ec4e2c4",
+      "file_bytes": 1147,
+      "received_bytes": 1147,
+      "pages": [
+        1
+      ],
+      "steps": [
+        74
+      ],
+      "output_lines": [
+        440
+      ],
+      "continuous_byte_range": [
+        0,
+        1147
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": false
+    },
+    {
+      "source_id": "method:roles.md",
+      "file_sha256": "e19e414487dbd03a31824f1f5d3fb1a4ef57cc4076a54d17ddb82d5a64ef5b5a",
+      "file_bytes": 8313,
+      "received_bytes": 8313,
+      "pages": [
+        1,
+        2,
+        3
+      ],
+      "steps": [
+        75,
+        76,
+        77
+      ],
+      "output_lines": [
+        445,
+        450,
+        455
+      ],
+      "continuous_byte_range": [
+        0,
+        8313
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": false
+    },
+    {
+      "source_id": "method:methods.md",
+      "file_sha256": "3346016d6aba70f681cf26467d642f9bc8ebfd45b10ea520fa0cc5de169d879b",
+      "file_bytes": 3052,
+      "received_bytes": 3052,
+      "pages": [
+        1
+      ],
+      "steps": [
+        78
+      ],
+      "output_lines": [
+        460
+      ],
+      "continuous_byte_range": [
+        0,
+        3052
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": false
+    },
+    {
+      "source_id": "method:adoption-and-change.md",
+      "file_sha256": "cf2bcda816d9384c496ed3432d7db98dee5fa6eaca0f15d733d88938b45e741b",
+      "file_bytes": 2943,
+      "received_bytes": 2943,
+      "pages": [
+        1
+      ],
+      "steps": [
+        79
+      ],
+      "output_lines": [
+        467
+      ],
+      "continuous_byte_range": [
+        0,
+        2943
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": false
+    },
+    {
+      "source_id": "method:checklists/startup-receipt.md",
+      "file_sha256": "374118279b5fb6e7039784b3cb30482c1f01cf0521ef75c954d8e71b6bf7e48b",
+      "file_bytes": 1035,
+      "received_bytes": 1035,
+      "pages": [
+        1
+      ],
+      "steps": [
+        80
+      ],
+      "output_lines": [
+        472
+      ],
+      "continuous_byte_range": [
+        0,
+        1035
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": false
+    },
+    {
+      "source_id": "method:checklists/task-and-evidence.md",
+      "file_sha256": "0c264ec328c1af6326d759303ddca28d1fc0eb8aa14a2339194e498ca58522f8",
+      "file_bytes": 3067,
+      "received_bytes": 3067,
+      "pages": [
+        1
+      ],
+      "steps": [
+        81
+      ],
+      "output_lines": [
+        477
+      ],
+      "continuous_byte_range": [
+        0,
+        3067
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": false
+    },
+    {
+      "source_id": "method:examples/website-adapter.example.md",
+      "file_sha256": "242b328b057125eadd9b1f88c140d42d1f1528d1c8918aa555eef21270e94009",
+      "file_bytes": 1112,
+      "received_bytes": 1112,
+      "pages": [
+        1
+      ],
+      "steps": [
+        82
+      ],
+      "output_lines": [
+        482
+      ],
+      "continuous_byte_range": [
+        0,
+        1112
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": false
+    },
+    {
+      "source_id": "method:examples/learning-product-adapter.example.md",
+      "file_sha256": "cfd5b19c9efdd011619e805f4ac84b7d723eac3e430d35eedaa589e94f85baaf",
+      "file_bytes": 2616,
+      "received_bytes": 2616,
+      "pages": [
+        1
+      ],
+      "steps": [
+        83
+      ],
+      "output_lines": [
+        487
+      ],
+      "continuous_byte_range": [
+        0,
+        2616
+      ],
+      "exact_full_body": true,
+      "old_fourteen_gap": false
+    }
+  ],
+  "page_evidence": [
+    {
+      "source_id": "project:AGENTS.md",
+      "page": 1,
+      "step": 1,
+      "output_line": 43,
+      "output_block": 1,
+      "call_id": "call_12cce38c31cc4496bc7e4b69863e6c13",
+      "actual_output_text_sha256": "bcc478f74fdaca115096e99d60638c343cf21054e3cc0c7eb3d2e21ad904cb4b",
+      "advertised_first_page": {
+        "number": 1,
+        "total": 13,
+        "body_byte_limit": 4096,
+        "byte_start": 0,
+        "byte_end": 4068,
+        "character_start": 0,
+        "character_end": 1931,
+        "start_line": 1,
+        "end_line": 27,
+        "sha256": "0aeb42b584f4b1442344e70193952459c33bab22c9ebce0cbc3845bcfaf6211e",
+        "previous_page_sha256": null
+      },
+      "utf8_byte_range": [
+        0,
+        4068
+      ],
+      "body_bytes": 4068,
+      "body_sha256": "0aeb42b584f4b1442344e70193952459c33bab22c9ebce0cbc3845bcfaf6211e",
+      "frozen_file_sha256": "9866da222a09d0124008f49ab079dcaea7e2de61c5bb0d638a73acddf5cbe175",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:AGENTS.md",
+      "page": 2,
+      "step": 2,
+      "output_line": 57,
+      "output_block": 1,
+      "call_id": "call_20e1cda2d214404db46019a7479a6857",
+      "actual_output_text_sha256": "abbd97beee323fbac6386e9bd76acc73d6a97606301b2382aef0973662bdf4ae",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        4068,
+        8143
+      ],
+      "body_bytes": 4075,
+      "body_sha256": "01b2a77cb1d4d7747cf592b30da486cba755e4753e04dc84c786d6af34337484",
+      "frozen_file_sha256": "9866da222a09d0124008f49ab079dcaea7e2de61c5bb0d638a73acddf5cbe175",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:AGENTS.md",
+      "page": 3,
+      "step": 3,
+      "output_line": 62,
+      "output_block": 1,
+      "call_id": "call_17d4e8feec5248dcb392c4475bd61656",
+      "actual_output_text_sha256": "1ed71bfca3018106b9e69f0485597fdb3eb0b460f908977249de6f1a51a5ded2",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        8143,
+        12220
+      ],
+      "body_bytes": 4077,
+      "body_sha256": "deb2ceb61847840de6e4ef8a2c61d856d2a11239814ca9e05db8b8e55c386d43",
+      "frozen_file_sha256": "9866da222a09d0124008f49ab079dcaea7e2de61c5bb0d638a73acddf5cbe175",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:AGENTS.md",
+      "page": 4,
+      "step": 4,
+      "output_line": 67,
+      "output_block": 1,
+      "call_id": "call_9876794740cc48dc8ef50826f279dc2f",
+      "actual_output_text_sha256": "e1cc3ecb52864b3c38cfbcfba297ecbab0b8b878b2412a337d01a564c2c7b5e8",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        12220,
+        16294
+      ],
+      "body_bytes": 4074,
+      "body_sha256": "64d53629f653a89a80116b2bb0c7cd64965f0c9096b2b3c106a1b37dcc52f7bc",
+      "frozen_file_sha256": "9866da222a09d0124008f49ab079dcaea7e2de61c5bb0d638a73acddf5cbe175",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:AGENTS.md",
+      "page": 5,
+      "step": 5,
+      "output_line": 72,
+      "output_block": 1,
+      "call_id": "call_d9d03a36c54440cd82714260c6767c36",
+      "actual_output_text_sha256": "a49ac5470e13f777265b197bf23a70f953c35e5694591874072ef39cd258b033",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        16294,
+        20374
+      ],
+      "body_bytes": 4080,
+      "body_sha256": "66617bbb7dd654f38a982946ff9bc76a07228593bb148085b0516e8b3481e3fc",
+      "frozen_file_sha256": "9866da222a09d0124008f49ab079dcaea7e2de61c5bb0d638a73acddf5cbe175",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:AGENTS.md",
+      "page": 6,
+      "step": 6,
+      "output_line": 86,
+      "output_block": 1,
+      "call_id": "call_cd24fde919d244aea83b31930aedf3d6",
+      "actual_output_text_sha256": "24dd38de32fa08bf3426f52a8aaa9aeabe89767da0789a804a96ebb4b489b80d",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        20374,
+        24450
+      ],
+      "body_bytes": 4076,
+      "body_sha256": "0244eb889d7ed266b78776c1882053c00a4d6d3d1d2b2e7da1e524d3b458c45d",
+      "frozen_file_sha256": "9866da222a09d0124008f49ab079dcaea7e2de61c5bb0d638a73acddf5cbe175",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:AGENTS.md",
+      "page": 7,
+      "step": 7,
+      "output_line": 91,
+      "output_block": 1,
+      "call_id": "call_45f1e9938cd745ea8a7f5290fcf58ed2",
+      "actual_output_text_sha256": "8cfa574b631b6aa5bd542e240e0d5fd7823f5ed47da11e100e49ef60c4c2980d",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        24450,
+        28536
+      ],
+      "body_bytes": 4086,
+      "body_sha256": "e1be7b3fa4765a64b53f69e1f7296a1724c3b54cd45888e2d640437a8a560255",
+      "frozen_file_sha256": "9866da222a09d0124008f49ab079dcaea7e2de61c5bb0d638a73acddf5cbe175",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:AGENTS.md",
+      "page": 8,
+      "step": 8,
+      "output_line": 96,
+      "output_block": 1,
+      "call_id": "call_f924cd05098c4d0c94dddecdc44adce3",
+      "actual_output_text_sha256": "54f5a21a5911fded15af0f17d8811c11a522808f0af1357120571c6d904a1d31",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        28536,
+        32615
+      ],
+      "body_bytes": 4079,
+      "body_sha256": "859eaea0bebd71ce1289842b12d46455cf27dea4a85bd5a162c45343c643cf14",
+      "frozen_file_sha256": "9866da222a09d0124008f49ab079dcaea7e2de61c5bb0d638a73acddf5cbe175",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:AGENTS.md",
+      "page": 9,
+      "step": 9,
+      "output_line": 101,
+      "output_block": 1,
+      "call_id": "call_faf57319e944488b8145a4458f819c7e",
+      "actual_output_text_sha256": "2f56a6cfbf8542403bab06ee8e34500a579e7daee3ac6d3675382770f864665e",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        32615,
+        36689
+      ],
+      "body_bytes": 4074,
+      "body_sha256": "14bff4a4b6f0229debbcbf3c4b2f77bd16e3c17d637f57d88e74fcf5a71e8690",
+      "frozen_file_sha256": "9866da222a09d0124008f49ab079dcaea7e2de61c5bb0d638a73acddf5cbe175",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:AGENTS.md",
+      "page": 10,
+      "step": 10,
+      "output_line": 106,
+      "output_block": 1,
+      "call_id": "call_d11bfb995d6743feac43926c3986811e",
+      "actual_output_text_sha256": "dd4346d927993a7bc4e394a9e785d9d47a655dcbdd788056a7e99416a3b5fc41",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        36689,
+        40772
+      ],
+      "body_bytes": 4083,
+      "body_sha256": "ef6af8f86678e5f991413d02ef229f873e8d718a35a00fba9620467f2aeceeb6",
+      "frozen_file_sha256": "9866da222a09d0124008f49ab079dcaea7e2de61c5bb0d638a73acddf5cbe175",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:AGENTS.md",
+      "page": 11,
+      "step": 11,
+      "output_line": 111,
+      "output_block": 1,
+      "call_id": "call_cd1be6cc9b4f4ecab45b1abdd222dd8b",
+      "actual_output_text_sha256": "ef2499630af503b692ddcf15967476c0bb33b6847b1b74552847e97a2dcab995",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        40772,
+        44849
+      ],
+      "body_bytes": 4077,
+      "body_sha256": "440e64a95b24680d9ff9a0364de304004f235c6692f44c15481e474dc9c2f7f8",
+      "frozen_file_sha256": "9866da222a09d0124008f49ab079dcaea7e2de61c5bb0d638a73acddf5cbe175",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:AGENTS.md",
+      "page": 12,
+      "step": 12,
+      "output_line": 120,
+      "output_block": 1,
+      "call_id": "call_98368e31fadd4d4c84952454de2dd963",
+      "actual_output_text_sha256": "54c9b410e76fd0101b0900d05bfa308998ca2cd8ca1941cd2fbf8226046a0397",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        44849,
+        48923
+      ],
+      "body_bytes": 4074,
+      "body_sha256": "50b2b5dd07e8267a529c154fd86fdaba1cb3a6a3380586df5e98a684cb9187b5",
+      "frozen_file_sha256": "9866da222a09d0124008f49ab079dcaea7e2de61c5bb0d638a73acddf5cbe175",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:AGENTS.md",
+      "page": 13,
+      "step": 13,
+      "output_line": 125,
+      "output_block": 1,
+      "call_id": "call_580a48e1ef54498283584e8e9f840f24",
+      "actual_output_text_sha256": "ad458dcd0442b6fdc3b5f8f3d986649da12ab28a008398444e23b19c2a2b4b7c",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        48923,
+        51126
+      ],
+      "body_bytes": 2203,
+      "body_sha256": "7e2860680ff4c68661a67f934f5f5e5f29ba85719273d3b78a9d10b9d733c27a",
+      "frozen_file_sha256": "9866da222a09d0124008f49ab079dcaea7e2de61c5bb0d638a73acddf5cbe175",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/README.md",
+      "page": 1,
+      "step": 14,
+      "output_line": 130,
+      "output_block": 1,
+      "call_id": "call_2c5585a327274842a74b0637adb9b4b6",
+      "actual_output_text_sha256": "7188d2a2953f290be189653637ffd2877c101a3e722f0bd45aaa3e798e795c8d",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        4062
+      ],
+      "body_bytes": 4062,
+      "body_sha256": "92e8ac89918989668841c88dca1073a853edf6e123d2b454ce4a2ddb9b17910f",
+      "frozen_file_sha256": "eca0dd5dc665e0a33c52b73fe367bc68d5d7fe0f2256a48dc22c11984c90c194",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/README.md",
+      "page": 2,
+      "step": 15,
+      "output_line": 135,
+      "output_block": 1,
+      "call_id": "call_df21d00961b84f6fa90721ac464ab9b0",
+      "actual_output_text_sha256": "75a81a4a2019b26a447c675c7c9b6d62a82891ea6b2effcb9b96e52238426e95",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        4062,
+        8133
+      ],
+      "body_bytes": 4071,
+      "body_sha256": "68afbbe827f2c9c4f33834d484757c3bcf3cbc6b8f8be6735c550cc8f16ceac9",
+      "frozen_file_sha256": "eca0dd5dc665e0a33c52b73fe367bc68d5d7fe0f2256a48dc22c11984c90c194",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/README.md",
+      "page": 3,
+      "step": 16,
+      "output_line": 140,
+      "output_block": 1,
+      "call_id": "call_55d591730291459fbce49303322d8eeb",
+      "actual_output_text_sha256": "df9be10d6d7c8993275b12587b730a9d7719cc78b3843a1fcbe0d32f97871082",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        8133,
+        12198
+      ],
+      "body_bytes": 4065,
+      "body_sha256": "428cebb9c87d28afd85caa1f7dab7b3797c4a7482747393a3f9ff776aaec7c0e",
+      "frozen_file_sha256": "eca0dd5dc665e0a33c52b73fe367bc68d5d7fe0f2256a48dc22c11984c90c194",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/README.md",
+      "page": 4,
+      "step": 17,
+      "output_line": 145,
+      "output_block": 1,
+      "call_id": "call_41039e9cf0da402a84943bf879a523ee",
+      "actual_output_text_sha256": "7b2cd37a50b789a015fb43157176f72722743e5cbd2617d4bfeb4e1be561bd2b",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        12198,
+        12953
+      ],
+      "body_bytes": 755,
+      "body_sha256": "c4f53fa4bebeccdfdf8e5977462110bfb3703f7a53d10f408c9a7676d662b9d0",
+      "frozen_file_sha256": "eca0dd5dc665e0a33c52b73fe367bc68d5d7fe0f2256a48dc22c11984c90c194",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/ROLE-MAPPING.md",
+      "page": 1,
+      "step": 18,
+      "output_line": 150,
+      "output_block": 1,
+      "call_id": "call_1fc00b40e0f14bdeadb6fd3e968aab60",
+      "actual_output_text_sha256": "e1b8637d594d8bfbb4abe7c2c1ac8754cc24a80c5470a37ae1336c431433adbd",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        4068
+      ],
+      "body_bytes": 4068,
+      "body_sha256": "ba4d2175da0a5b53bb4c99d72e3026482c2d750a726645172a136babab3f54f4",
+      "frozen_file_sha256": "6fef691401c64a1bf171a87c4d6cc7ec60bacab0560bccb37333f85db901ff5f",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/ROLE-MAPPING.md",
+      "page": 2,
+      "step": 19,
+      "output_line": 155,
+      "output_block": 1,
+      "call_id": "call_5ab5a2f62fe0454b8291ac68551ca9ea",
+      "actual_output_text_sha256": "1433ec1041816b10303c7306b24210b794f486b2fed7bd61b0c2c11a5f01c43e",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        4068,
+        8132
+      ],
+      "body_bytes": 4064,
+      "body_sha256": "2d2054e9490a8151021b27902abb7c675e5b2a1433db3c6c49fcaa2ce1b6eef1",
+      "frozen_file_sha256": "6fef691401c64a1bf171a87c4d6cc7ec60bacab0560bccb37333f85db901ff5f",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/ROLE-MAPPING.md",
+      "page": 3,
+      "step": 20,
+      "output_line": 160,
+      "output_block": 1,
+      "call_id": "call_aa3b1a198f734f0e98e2cc50e2e21cbc",
+      "actual_output_text_sha256": "209119c585b19d8f3d8085a86ca6fa77bb5592ce36bcd2dbc91c1446f5e6117b",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        8132,
+        9207
+      ],
+      "body_bytes": 1075,
+      "body_sha256": "bc57aa3fc4140a8f3f200166442ac71a916d952aadb12c21bd188bebaf688a72",
+      "frozen_file_sha256": "6fef691401c64a1bf171a87c4d6cc7ec60bacab0560bccb37333f85db901ff5f",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+      "page": 1,
+      "step": 21,
+      "output_line": 165,
+      "output_block": 1,
+      "call_id": "call_3dc606bf2f784204aca748be8b2e3f1c",
+      "actual_output_text_sha256": "2c282fed351a4cca046a54b3ae26740b42208e951af8f00ee153b8246e3cacdf",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        4067
+      ],
+      "body_bytes": 4067,
+      "body_sha256": "7b36df01e151f416a95da202ff2053aa7b62746f440b14276101a92fba458375",
+      "frozen_file_sha256": "820618c008d0860143dc73033747fbfeef4d06487976beb4e9d81e810d54ff48",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+      "page": 2,
+      "step": 22,
+      "output_line": 170,
+      "output_block": 1,
+      "call_id": "call_c4573a2afed542f4971061f83998f24a",
+      "actual_output_text_sha256": "ff528a89d90997c74be37c502cbecb8f87eeba1e133207e55410a52b7e3fce7e",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        4067,
+        8069
+      ],
+      "body_bytes": 4002,
+      "body_sha256": "387321c940533ade43ed01b86dfc7836393ccf9a368940ad51fe9cd561f365b5",
+      "frozen_file_sha256": "820618c008d0860143dc73033747fbfeef4d06487976beb4e9d81e810d54ff48",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+      "page": 3,
+      "step": 23,
+      "output_line": 175,
+      "output_block": 1,
+      "call_id": "call_4a27bcf16cf44b31840a3a30422b6807",
+      "actual_output_text_sha256": "e34ff7440cd369586ccb28fb32b3f77461b5b7d751ddfb0370ef9a7206015e47",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        8069,
+        10347
+      ],
+      "body_bytes": 2278,
+      "body_sha256": "be264084523d4006214bfcdc973e6063dca747fb14492131c17d52c67fd7730b",
+      "frozen_file_sha256": "820618c008d0860143dc73033747fbfeef4d06487976beb4e9d81e810d54ff48",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/APPLICATION-NOTES.md",
+      "page": 1,
+      "step": 24,
+      "output_line": 180,
+      "output_block": 1,
+      "call_id": "call_ed8fe68fb032478bb86a48ddea6e18c6",
+      "actual_output_text_sha256": "0e31ad4ba827f05c81a23d680dca391aa01b95cddf43fa1b3a0f098193efca41",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        4049
+      ],
+      "body_bytes": 4049,
+      "body_sha256": "6b50e24437d4c4982cfd37da9995d8ecc5f081e5f20488cf399fe347f6572682",
+      "frozen_file_sha256": "d39b582b4c992b319720eae20a58418a9dafeb1277fa57d6be31dbb10f458afd",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/APPLICATION-NOTES.md",
+      "page": 2,
+      "step": 25,
+      "output_line": 185,
+      "output_block": 1,
+      "call_id": "call_2c549b376ece4e7a90787f22a9a3af35",
+      "actual_output_text_sha256": "7445473aeba2c7f3bfb98e4c77ea759372abaf9c2f16a31a79955a3d957b1e04",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        4049,
+        8118
+      ],
+      "body_bytes": 4069,
+      "body_sha256": "e50a856b29d42c4d50a4a1ddc3bc8481340c418f46ce325be36bf68b1595ef46",
+      "frozen_file_sha256": "d39b582b4c992b319720eae20a58418a9dafeb1277fa57d6be31dbb10f458afd",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/APPLICATION-NOTES.md",
+      "page": 3,
+      "step": 26,
+      "output_line": 190,
+      "output_block": 1,
+      "call_id": "call_ea18514c1547498f8c8fbafdde2ab5e8",
+      "actual_output_text_sha256": "b768f9bd757d1062913efef05889e4b6c124f3a550ce0529eee29f145781d2c4",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        8118,
+        8647
+      ],
+      "body_bytes": 529,
+      "body_sha256": "ef1775e286879256d238000827f0cca210f88c9fb0abf5af9abdfa3ba6830287",
+      "frozen_file_sha256": "d39b582b4c992b319720eae20a58418a9dafeb1277fa57d6be31dbb10f458afd",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/TASK-LAYOUT3-READING-DIALOGUE.md",
+      "page": 1,
+      "step": 27,
+      "output_line": 195,
+      "output_block": 1,
+      "call_id": "call_3fa763c29e554288afc5938b3381ccc5",
+      "actual_output_text_sha256": "2078e64ae3d9228ebd4e629796c97c2cbb21f808b2407edfa8f32381f53d502d",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        4066
+      ],
+      "body_bytes": 4066,
+      "body_sha256": "5124155d6d9085ee272e80964242ab4f51a748a1826662fe1423b3d8c0b3fa3a",
+      "frozen_file_sha256": "2c094e940338032a179551503270d927801b1e7e82652126e31280dd4e33bfdc",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/TASK-LAYOUT3-READING-DIALOGUE.md",
+      "page": 2,
+      "step": 28,
+      "output_line": 200,
+      "output_block": 1,
+      "call_id": "call_61fb208128664e11901118ce140efda9",
+      "actual_output_text_sha256": "f3f171bb63e956f653ed1ab65bf9823d4a1b841a4a10726f436d5367ff50a1ce",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        4066,
+        6025
+      ],
+      "body_bytes": 1959,
+      "body_sha256": "dc448546baf3f2ee37373bae91339cbeb916023660dc476db11026d284e0a556",
+      "frozen_file_sha256": "2c094e940338032a179551503270d927801b1e7e82652126e31280dd4e33bfdc",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/startup/README.md",
+      "page": 1,
+      "step": 29,
+      "output_line": 205,
+      "output_block": 1,
+      "call_id": "call_31b849ba12074bcfbb045f1f45635dd7",
+      "actual_output_text_sha256": "980987d474949ba078c23dbd99c9d03ee9bcec880cbf642edc69f7e30bfb4b1b",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        4071
+      ],
+      "body_bytes": 4071,
+      "body_sha256": "f2762b1e5cb9f0b285e02f767ca53e2b0baed9cd6b9277e836cba29926526b71",
+      "frozen_file_sha256": "04bc3ffcd5d35bb26e82de9174bc36c28db246472b38d199912144ac38685ed7",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/startup/README.md",
+      "page": 2,
+      "step": 30,
+      "output_line": 210,
+      "output_block": 1,
+      "call_id": "call_12999f179b4541549c10428b9cbba8dc",
+      "actual_output_text_sha256": "e011452d9f222e510832f9b919b4786723fd0d6d7743a459ad3953e20ea5c0a2",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        4071,
+        8136
+      ],
+      "body_bytes": 4065,
+      "body_sha256": "d9cbaa7c7b56c69d84c490788dd4c42a21e12beac163d8ab6b6f169842a4177f",
+      "frozen_file_sha256": "04bc3ffcd5d35bb26e82de9174bc36c28db246472b38d199912144ac38685ed7",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/startup/README.md",
+      "page": 3,
+      "step": 31,
+      "output_line": 215,
+      "output_block": 1,
+      "call_id": "call_ef42ba6bcdef4e09a1da2db09fb6b246",
+      "actual_output_text_sha256": "104e75cc13b69935020db8e37dd79f898c3eeaa5f9096a29ab6cf355925cbc3f",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        8136,
+        12203
+      ],
+      "body_bytes": 4067,
+      "body_sha256": "8504ecded5577ce8bcf6b48112a5f2eea0e99187f092444e40cd702b66bace90",
+      "frozen_file_sha256": "04bc3ffcd5d35bb26e82de9174bc36c28db246472b38d199912144ac38685ed7",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/startup/README.md",
+      "page": 4,
+      "step": 32,
+      "output_line": 220,
+      "output_block": 1,
+      "call_id": "call_c78d91ebd6db48f092841e761067fc4d",
+      "actual_output_text_sha256": "d08bbad655a67cca62d3df2032ec3c57651b666277f068570e44d280ea8aca65",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        12203,
+        14714
+      ],
+      "body_bytes": 2511,
+      "body_sha256": "5030324862a41544b00f4b1719ba3761518fa68bfb617bc93a15f3fc22431000",
+      "frozen_file_sha256": "04bc3ffcd5d35bb26e82de9174bc36c28db246472b38d199912144ac38685ed7",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/startup/sources.json",
+      "page": 1,
+      "step": 33,
+      "output_line": 227,
+      "output_block": 1,
+      "call_id": "call_371633c1ad3342cfa1f20e7694177468",
+      "actual_output_text_sha256": "432b24a1077283f622b7444c33b25f3bf1c712c2c7ed4f78e9a68a7a67a63890",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        2170
+      ],
+      "body_bytes": 2170,
+      "body_sha256": "fffef1c035041b426389ca3ffbf7e8e8c0405c80b837593ab7c361ea02bccfa9",
+      "frozen_file_sha256": "fffef1c035041b426389ca3ffbf7e8e8c0405c80b837593ab7c361ea02bccfa9",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/startup/local-method-source.json",
+      "page": 1,
+      "step": 34,
+      "output_line": 232,
+      "output_block": 1,
+      "call_id": "call_0f549dfcf92e4119a6b38e0a22fb73b8",
+      "actual_output_text_sha256": "4227de711e9423b8f2b98c7c5e4e6c588197712f4eede73a2f9575415b36b9b3",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        382
+      ],
+      "body_bytes": 382,
+      "body_sha256": "0147b66a156d412a659371159fa84a869f7ded2815066850a9d0360f70ed8cd9",
+      "frozen_file_sha256": "0147b66a156d412a659371159fa84a869f7ded2815066850a9d0360f70ed8cd9",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/README.md",
+      "page": 1,
+      "step": 35,
+      "output_line": 237,
+      "output_block": 1,
+      "call_id": "call_53ae5765b6b9422baf117db9e589a7fe",
+      "actual_output_text_sha256": "3ce2ce58f3b08374b8eee2da81a222a31dce49f3ee903ba98b041d9ca70d5089",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        4051
+      ],
+      "body_bytes": 4051,
+      "body_sha256": "83ac7bd1e4719721b069425e6d6dc305963a9f5657b7128c5e2c547770faf8f0",
+      "frozen_file_sha256": "90572c46efdda8333abeaf3458a01774430aa51076220621f384857f71af7a7e",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/README.md",
+      "page": 2,
+      "step": 36,
+      "output_line": 242,
+      "output_block": 1,
+      "call_id": "call_a6de568d1b5444fb9c723608468f3e9c",
+      "actual_output_text_sha256": "96d7ee6a144b6868760d20e7397e4b1591810d671b423ffceeb11b22abd14be4",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        4051,
+        4577
+      ],
+      "body_bytes": 526,
+      "body_sha256": "a4cc27be18da2d90393aeac45c32afb0eae02feb18a81d29d1bc7c788c75a10e",
+      "frozen_file_sha256": "90572c46efdda8333abeaf3458a01774430aa51076220621f384857f71af7a7e",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/manifest.json",
+      "page": 1,
+      "step": 37,
+      "output_line": 247,
+      "output_block": 1,
+      "call_id": "call_e40c26f3f3bc4966884a178cd016c5f0",
+      "actual_output_text_sha256": "0e08853612e36785729f94676e42805fee9158d7fa621cbe37b7d3531a851236",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        2736
+      ],
+      "body_bytes": 2736,
+      "body_sha256": "28227bf1a6c4ac584e28b2a419614368ee539433e929dce60206b8571283aef2",
+      "frozen_file_sha256": "28227bf1a6c4ac584e28b2a419614368ee539433e929dce60206b8571283aef2",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/v12-evidence/manifest.json",
+      "page": 1,
+      "step": 38,
+      "output_line": 252,
+      "output_block": 1,
+      "call_id": "call_d0c3be09dc264629966100885dc3ef0c",
+      "actual_output_text_sha256": "ead9ab9f19c06904ca8d2c0d1b9152536a10e7354d1bd4a0e28b72eb7cce2d49",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        3731
+      ],
+      "body_bytes": 3731,
+      "body_sha256": "704ec95d8b3eccf8f5a21bfce9dab2f9b343a07482b1f36703e79356e5c2e388",
+      "frozen_file_sha256": "d805bce8111fdc232916da7a982a20791eca47be415afba1227f6819de85e7f7",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/v12-evidence/manifest.json",
+      "page": 2,
+      "step": 39,
+      "output_line": 257,
+      "output_block": 1,
+      "call_id": "call_89c648eb6f5648848e81866a66f120c0",
+      "actual_output_text_sha256": "2f8b2abab3fde1addd4350856167067d52463790139342fac9ab1e5edab44ed1",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        3731,
+        7504
+      ],
+      "body_bytes": 3773,
+      "body_sha256": "53bface84838813941cd86ecb3aeb19d1e72604c83049733f631aac38d7e3c1e",
+      "frozen_file_sha256": "d805bce8111fdc232916da7a982a20791eca47be415afba1227f6819de85e7f7",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/v12-evidence/manifest.json",
+      "page": 3,
+      "step": 40,
+      "output_line": 262,
+      "output_block": 1,
+      "call_id": "call_9d072abcc82f44a5baf8a0a80bd58f62",
+      "actual_output_text_sha256": "88f6dce6f7823e2c6706c53606703773284bb9fc95bbb05312a864e25a8c6204",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        7504,
+        8100
+      ],
+      "body_bytes": 596,
+      "body_sha256": "0f582ca5e0a81671a242a172925426446b1013fab37c55fb15af728214f5f026",
+      "frozen_file_sha256": "d805bce8111fdc232916da7a982a20791eca47be415afba1227f6819de85e7f7",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+      "page": 1,
+      "step": 41,
+      "output_line": 267,
+      "output_block": 1,
+      "call_id": "call_4c6fd79186c54283ac0a4e33a61486ce",
+      "actual_output_text_sha256": "c492d9f6804a3e9ac0422403174fd440c9e78ead6e139e7764db123f4a5c7d32",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        4047
+      ],
+      "body_bytes": 4047,
+      "body_sha256": "22cc308cef462d5f313a764fda66a39f76fcf88baec8ace709c70c35907da71a",
+      "frozen_file_sha256": "e80f7be22925b043f9071c800b8ba040531a06756b3c3120df479cd94071060b",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+      "page": 2,
+      "step": 42,
+      "output_line": 272,
+      "output_block": 1,
+      "call_id": "call_02e6b107d24f4259a26bbdc60d0b9632",
+      "actual_output_text_sha256": "87f0306b9ea6cfd8398c0e4548f2368aa56e4908c1c522815f226ca039d82f6e",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        4047,
+        5705
+      ],
+      "body_bytes": 1658,
+      "body_sha256": "367b866bb0ec996f14223cdc4288710370a451f13c89641a88399812b0c92c1a",
+      "frozen_file_sha256": "e80f7be22925b043f9071c800b8ba040531a06756b3c3120df479cd94071060b",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/product-manager/ROLE.md",
+      "page": 1,
+      "step": 43,
+      "output_line": 277,
+      "output_block": 1,
+      "call_id": "call_3b41decd978645619258dea2f124e06d",
+      "actual_output_text_sha256": "a63ea81190aae7a698188016d05b43576ec5c6d0a7d10dd7ba9e21ae47131060",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        4038
+      ],
+      "body_bytes": 4038,
+      "body_sha256": "0bd788a9eadc19ea9a44d50219c046f3fe474c95a27a6336e269aa6bb905f8fb",
+      "frozen_file_sha256": "56f932f3621b64469b3136ff3d1cafa3af900608f5c82947e33e0012ffd614c7",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/product-manager/ROLE.md",
+      "page": 2,
+      "step": 44,
+      "output_line": 282,
+      "output_block": 1,
+      "call_id": "call_a587010d732f433b97bf94308461a08c",
+      "actual_output_text_sha256": "c66eaa391cdff8e85375f05ded05c81594d32c1cc0432b04438f56f02e628bec",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        4038,
+        5096
+      ],
+      "body_bytes": 1058,
+      "body_sha256": "2da50c0edc1bfc4755e5ef1970fac67ee52e50751e7bcefdb539acf38c7e3340",
+      "frozen_file_sha256": "56f932f3621b64469b3136ff3d1cafa3af900608f5c82947e33e0012ffd614c7",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/product-manager/MEMORY.md",
+      "page": 1,
+      "step": 45,
+      "output_line": 287,
+      "output_block": 1,
+      "call_id": "call_f89d84180d3342829ddeb21d8ebf008d",
+      "actual_output_text_sha256": "d279954d53627f200714f31f93d64c51b2ae6ffea473b67ee6e2491914e447f1",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        1297
+      ],
+      "body_bytes": 1297,
+      "body_sha256": "d992070fba035c1d3a5fb6f5734ed0922f011321c717cfb578b9b2e8209e38fe",
+      "frozen_file_sha256": "d992070fba035c1d3a5fb6f5734ed0922f011321c717cfb578b9b2e8209e38fe",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/product-manager/MEMORY_SCHEMA.md",
+      "page": 1,
+      "step": 46,
+      "output_line": 292,
+      "output_block": 1,
+      "call_id": "call_6a5f9af12b6c4931aaa8e4fca49c2e79",
+      "actual_output_text_sha256": "c4d1e6ce468ec9c5d106798cf394d83f9e23da324a4c6580202efbaef7e2f5c3",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        3349
+      ],
+      "body_bytes": 3349,
+      "body_sha256": "4026b98355e6fc1332871eaa9d93bf532288125fea200f40c7c78fc041303c07",
+      "frozen_file_sha256": "4026b98355e6fc1332871eaa9d93bf532288125fea200f40c7c78fc041303c07",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/team-method-loop-20261017-archive.md",
+      "page": 1,
+      "step": 47,
+      "output_line": 299,
+      "output_block": 1,
+      "call_id": "call_8ded8e84091749a7966d8b1b7257b5b0",
+      "actual_output_text_sha256": "ecc09c03a75031f2e56da519fec65b32659daaaae5f577b10f01d43729fca52a",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        4061
+      ],
+      "body_bytes": 4061,
+      "body_sha256": "a1f34bfc98171d380d13e02add1d79a1a221766d3ae8c8691da731d60f7ec039",
+      "frozen_file_sha256": "d8b0ec8de67b8f17d511e70daa99038859b94b9d8f7ff5ad39cd9560d2085eeb",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/team-method-loop-20261017-archive.md",
+      "page": 2,
+      "step": 48,
+      "output_line": 304,
+      "output_block": 1,
+      "call_id": "call_e4dcf249a86b4ef7838954ddfea7a7c9",
+      "actual_output_text_sha256": "ddfa0157d7c1c3b4898d65c197e9b4595e91abddfc17da051e0490ff05f10898",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        4061,
+        8127
+      ],
+      "body_bytes": 4066,
+      "body_sha256": "014be71a28964993d541522ac8593bce4bfb629b1bdf1ecbb0f98f0d0c43a95a",
+      "frozen_file_sha256": "d8b0ec8de67b8f17d511e70daa99038859b94b9d8f7ff5ad39cd9560d2085eeb",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/team-method-loop-20261017-archive.md",
+      "page": 3,
+      "step": 49,
+      "output_line": 309,
+      "output_block": 1,
+      "call_id": "call_65248be247934e47904b4d147bbc184b",
+      "actual_output_text_sha256": "fe89a69d9199fab419be7a452f4f66283bb22bcc4404440868ed8e950cfddf10",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        8127,
+        8666
+      ],
+      "body_bytes": 539,
+      "body_sha256": "ede9ff916a1f04ac55b3eebe802e9a85b2efeecf222f70f69a5367b0312c3930",
+      "frozen_file_sha256": "d8b0ec8de67b8f17d511e70daa99038859b94b9d8f7ff5ad39cd9560d2085eeb",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+      "page": 1,
+      "step": 50,
+      "output_line": 316,
+      "output_block": 1,
+      "call_id": "call_d1f60bb9b26740b09e5877db883743fd",
+      "actual_output_text_sha256": "079451c73f55fd0d7a32e41d6f9f8e3c5fe43a9030fb2bdcfd53fd931d862a0d",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        3867
+      ],
+      "body_bytes": 3867,
+      "body_sha256": "0e2240b035278e8bcaaee1a363bfd7e1db5cc836afb7d6624f29fc1e75206ce0",
+      "frozen_file_sha256": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+      "page": 2,
+      "step": 51,
+      "output_line": 321,
+      "output_block": 1,
+      "call_id": "call_303bf26de6ff48c1afc4a89b9accacb9",
+      "actual_output_text_sha256": "d56f65c35360ab4f22f4197d39751d1a864a3ecd63bfb85bea5e020e8a80d385",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        3867,
+        7673
+      ],
+      "body_bytes": 3806,
+      "body_sha256": "518ea4830a527eef5f2e4a76b0fe4423ed6fc8d737c3f22f630da9d6e67e2520",
+      "frozen_file_sha256": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+      "page": 3,
+      "step": 52,
+      "output_line": 326,
+      "output_block": 1,
+      "call_id": "call_217d832b7b534a65a6cdf7f54ae910b4",
+      "actual_output_text_sha256": "374dcf88919bba63d749bcef53064015ba2057349f6dd190ec3d2bcb511ae04c",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        7673,
+        11514
+      ],
+      "body_bytes": 3841,
+      "body_sha256": "204a5e9dbe6c13baab400d801784ad2f597075843552ff3d8e8406132fa44bb9",
+      "frozen_file_sha256": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+      "page": 4,
+      "step": 53,
+      "output_line": 331,
+      "output_block": 1,
+      "call_id": "call_8e5f4449c93e482190cf8d0cf7e15629",
+      "actual_output_text_sha256": "b50c93986001a0068e37fb04c4dd1d322efdeb0944f2c5ad365d0824268f27a0",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        11514,
+        15334
+      ],
+      "body_bytes": 3820,
+      "body_sha256": "50ec1ed12e62cdbe7d381a3e472ad844298645531aac6aaf8d08274deed206c9",
+      "frozen_file_sha256": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+      "page": 5,
+      "step": 54,
+      "output_line": 336,
+      "output_block": 1,
+      "call_id": "call_5af831d458f94df4b67df5b7410750d0",
+      "actual_output_text_sha256": "4b75c556e62ca3c449c091a7aafd34cdeb0c7e75342d990b200816012f1cefb1",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        15334,
+        19155
+      ],
+      "body_bytes": 3821,
+      "body_sha256": "05f4bfe9ee145068950d0b90dbfc8b3859b8c400f9cc0888fce9d0fa64ab91e8",
+      "frozen_file_sha256": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+      "page": 6,
+      "step": 55,
+      "output_line": 341,
+      "output_block": 1,
+      "call_id": "call_3cbf76f583f04a49a75c37b8619d6c38",
+      "actual_output_text_sha256": "97128c8f8fbe4827e8e2a3f9686b57fe163d5b46a4a042c0c4d27e1f17fb479c",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        19155,
+        23005
+      ],
+      "body_bytes": 3850,
+      "body_sha256": "eda0410ef5cd239b03f461236b19d19c61a4351d092395624182c6c5d6afc8cc",
+      "frozen_file_sha256": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+      "page": 7,
+      "step": 56,
+      "output_line": 346,
+      "output_block": 1,
+      "call_id": "call_208a8e435160400795f033ce9da589f9",
+      "actual_output_text_sha256": "efad0913c0fb9358bb84d724fc37bfe4fd9c704e601d7b2e5284c470807fb7ac",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        23005,
+        25287
+      ],
+      "body_bytes": 2282,
+      "body_sha256": "4ed5cd5a51ac40c97d38a9e8f99630c6ef21e5bb43f3ad6533acbf7d10749310",
+      "frozen_file_sha256": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/task-closeout-20261017.md",
+      "page": 1,
+      "step": 57,
+      "output_line": 353,
+      "output_block": 1,
+      "call_id": "call_340a141bcdeb47a1a4bdd332f94cb989",
+      "actual_output_text_sha256": "8314389feea045c115d44470ffcadc0836f9e86063bd222594a4fb123bb96574",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        2631
+      ],
+      "body_bytes": 2631,
+      "body_sha256": "e0eb6d418d4eef6fd3580c97d8f766d98a8162cf95f4639bf0c14118cb6c8920",
+      "frozen_file_sha256": "e0eb6d418d4eef6fd3580c97d8f766d98a8162cf95f4639bf0c14118cb6c8920",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/task-closeout-20261017.json",
+      "page": 1,
+      "step": 58,
+      "output_line": 358,
+      "output_block": 1,
+      "call_id": "call_c77cd75c91994337ade9a9c84934042b",
+      "actual_output_text_sha256": "db0d54d2892ede9ae21cb4fcb905ea286c78def7b633f456bc9c2f8f04c69490",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        3785
+      ],
+      "body_bytes": 3785,
+      "body_sha256": "963e466625150d6d72f138829ff57529cb47f6ae8242c49f5cb60955557771f4",
+      "frozen_file_sha256": "78e698ed76ef63c2ca603f1730baedcf1c06e3c7b2c7750cf6ca9bd2b7564cba",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/task-closeout-20261017.json",
+      "page": 2,
+      "step": 59,
+      "output_line": 365,
+      "output_block": 1,
+      "call_id": "call_928fe329c0e84c7b8354899c7f431df3",
+      "actual_output_text_sha256": "c36134eca5c9200ba97daa590a15e92072aa5fdcd4290c57a973a8a3d2df6ff2",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        3785,
+        7605
+      ],
+      "body_bytes": 3820,
+      "body_sha256": "e8253f1aaf0c9c713bcc9e1c24b48db92865967ecb0c1242545beb3df2568365",
+      "frozen_file_sha256": "78e698ed76ef63c2ca603f1730baedcf1c06e3c7b2c7750cf6ca9bd2b7564cba",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/task-closeout-20261017.json",
+      "page": 3,
+      "step": 60,
+      "output_line": 370,
+      "output_block": 1,
+      "call_id": "call_be56668c3b2d4cde8820e2bc886dad3b",
+      "actual_output_text_sha256": "9ffbdf9dc34f4a2e548fbb7078fc512046a7de80157b2c8c7762257a08e567fa",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        7605,
+        11395
+      ],
+      "body_bytes": 3790,
+      "body_sha256": "c0571db3d8be38327b270a384207472ab7991fa5f22c227177e7a4a855bf1ba6",
+      "frozen_file_sha256": "78e698ed76ef63c2ca603f1730baedcf1c06e3c7b2c7750cf6ca9bd2b7564cba",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/task-closeout-20261017.json",
+      "page": 4,
+      "step": 61,
+      "output_line": 375,
+      "output_block": 1,
+      "call_id": "call_b92babd978494bb68b0c84fde49764bb",
+      "actual_output_text_sha256": "ed77515b1826d341033e94e992fb056c6fc7f83d6974dee5bd481d8417e0f6fa",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        11395,
+        15006
+      ],
+      "body_bytes": 3611,
+      "body_sha256": "3098114c66ef638c4ad4dfb2a1da617f948f92bd7c068ac328ef7b92fdb45d39",
+      "frozen_file_sha256": "78e698ed76ef63c2ca603f1730baedcf1c06e3c7b2c7750cf6ca9bd2b7564cba",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/validation/natural-read-20261017T1557Z/README.md",
+      "page": 1,
+      "step": 62,
+      "output_line": 380,
+      "output_block": 1,
+      "call_id": "call_568157852db249418026b2dae20124af",
+      "actual_output_text_sha256": "203594779245e7586dd5e041fa0577e3a46ec8ccc929f3455e71041fe40a0e0d",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        4061
+      ],
+      "body_bytes": 4061,
+      "body_sha256": "a5921c010625b053a4af031e389a4990727fa67726fc5a409602e38aee35475c",
+      "frozen_file_sha256": "1d89401be043d5f6f957d729b701e245669d0f442ec185a457f3190e57ca90ba",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/validation/natural-read-20261017T1557Z/README.md",
+      "page": 2,
+      "step": 63,
+      "output_line": 385,
+      "output_block": 1,
+      "call_id": "call_247e62fa9c564931a7aa1cf766e5aecd",
+      "actual_output_text_sha256": "9532f5693c9c4aaf62081bdcce53a7ac272eb48d902b04ad0d3c8629427dcece",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        4061,
+        4779
+      ],
+      "body_bytes": 718,
+      "body_sha256": "e118170b7851988f29f3030bb6f289a2e0857714620eb3582da416daf6d6b814",
+      "frozen_file_sha256": "1d89401be043d5f6f957d729b701e245669d0f442ec185a457f3190e57ca90ba",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/validation/natural-read-20261017T1557Z/validation-receipt.json",
+      "page": 1,
+      "step": 64,
+      "output_line": 390,
+      "output_block": 1,
+      "call_id": "call_2f4431d4c430477593c7ca374b5c3e7a",
+      "actual_output_text_sha256": "7b48cd9f7c44ebe5334e50c8f4f1672ca6716ed3528cd31d9156733f4b72ae89",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        3790
+      ],
+      "body_bytes": 3790,
+      "body_sha256": "83d3420eda6dea9b92c3ef3be312b69adc71cb18b4707ef6b0e9d1284418412c",
+      "frozen_file_sha256": "2d42358d9f8540f50651dde7555ac3e660e2bd333db8de2cba322a1005f171af",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/validation/natural-read-20261017T1557Z/validation-receipt.json",
+      "page": 2,
+      "step": 65,
+      "output_line": 395,
+      "output_block": 1,
+      "call_id": "call_67d59063684340b4aa615bbdbae8ef5d",
+      "actual_output_text_sha256": "b41ab5d8064ce5fc0daf0f4e76c8828d3e2c77b61bf194500d6886f09290e0d1",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        3790,
+        5942
+      ],
+      "body_bytes": 2152,
+      "body_sha256": "0f791f3b0d65967eb4148575b007e19a7fa1f836f413caa77f6bf1e1dedf9c7c",
+      "frozen_file_sha256": "2d42358d9f8540f50651dde7555ac3e660e2bd333db8de2cba322a1005f171af",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/validation/natural-read-repair-20261018T0110Z/README.md",
+      "page": 1,
+      "step": 66,
+      "output_line": 400,
+      "output_block": 1,
+      "call_id": "call_4aef2297081942eb80c1e49e5dcf02a0",
+      "actual_output_text_sha256": "652e63445a38d1181021757e37c508aa3f9a8c6dc0b8ef6dc8f7d58af2a55b9b",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        4061
+      ],
+      "body_bytes": 4061,
+      "body_sha256": "02a2ea33d76e4af772451d4e3e7fe8889aa749861373e17ff44279b396011ec6",
+      "frozen_file_sha256": "2ae6973b680e8d1e9fac0e0679099a7015d8082f9b80ed3e1a9e9455a4ef8fb1",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/validation/natural-read-repair-20261018T0110Z/README.md",
+      "page": 2,
+      "step": 67,
+      "output_line": 405,
+      "output_block": 1,
+      "call_id": "call_e09df7bed68044939a9226f032b5b8a8",
+      "actual_output_text_sha256": "5203c305f1015710bae84eca0de50325409e548fb7323afd84a08dd3307251d9",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        4061,
+        4391
+      ],
+      "body_bytes": 330,
+      "body_sha256": "c209327fa02e46ab44929309b4bafbbefa049581223c442023c7c635bdc72116",
+      "frozen_file_sha256": "2ae6973b680e8d1e9fac0e0679099a7015d8082f9b80ed3e1a9e9455a4ef8fb1",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/validation/natural-read-repair-20261018T0110Z/validation-receipt.json",
+      "page": 1,
+      "step": 68,
+      "output_line": 410,
+      "output_block": 1,
+      "call_id": "call_e7220acdc7244cd094a8171e850e4a57",
+      "actual_output_text_sha256": "ab18af7d1351973f5c58b0f0f3f0312f60166736d6db7cbe679e29e86e37c3a1",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        3826
+      ],
+      "body_bytes": 3826,
+      "body_sha256": "6e0bce7fe197c22a2735be88a6ceefa4fa3882595ded2c07a197e81e47d4b876",
+      "frozen_file_sha256": "28345be1a96affd44c0a21b1967910623657a88327f7a06ec3772d0f5e0aac17",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/validation/natural-read-repair-20261018T0110Z/validation-receipt.json",
+      "page": 2,
+      "step": 69,
+      "output_line": 415,
+      "output_block": 1,
+      "call_id": "call_81c6c7e2769d48d2a0774e5db2bf9c17",
+      "actual_output_text_sha256": "4831067ff29e4eed7f9c0f43fe9aa15ae362f832e17c87c3be3f32d688c5bf1b",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        3826,
+        7671
+      ],
+      "body_bytes": 3845,
+      "body_sha256": "92a4b62de7b109caf3458689f3e021d47162dc547e6fae2438d522f47e9dcfb6",
+      "frozen_file_sha256": "28345be1a96affd44c0a21b1967910623657a88327f7a06ec3772d0f5e0aac17",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/validation/natural-read-repair-20261018T0110Z/validation-receipt.json",
+      "page": 3,
+      "step": 70,
+      "output_line": 420,
+      "output_block": 1,
+      "call_id": "call_ff9e811b79ab4b66aff6308648c4ed55",
+      "actual_output_text_sha256": "403d25d595c581fa5d4529386bdfbc2e6b9da8fdf2c90ca65e23ac1638bc5470",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        7671,
+        11461
+      ],
+      "body_bytes": 3790,
+      "body_sha256": "eacb56b6f34cbb71d4b6deb0f8195314e3287ed1ec211ad25ecb241b272103fa",
+      "frozen_file_sha256": "28345be1a96affd44c0a21b1967910623657a88327f7a06ec3772d0f5e0aac17",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/validation/natural-read-repair-20261018T0110Z/validation-receipt.json",
+      "page": 4,
+      "step": 71,
+      "output_line": 425,
+      "output_block": 1,
+      "call_id": "call_e446789da39c48ee9b1a9b538590d9a3",
+      "actual_output_text_sha256": "564a677c35493543290ec54a7adfe12d1a0083e5bf256a9d20d13acc9f3c44ad",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        11461,
+        13262
+      ],
+      "body_bytes": 1801,
+      "body_sha256": "ecd432e8019af75f6e9c86ca611aca56e981e897580033d1f1683eba860beef5",
+      "frozen_file_sha256": "28345be1a96affd44c0a21b1967910623657a88327f7a06ec3772d0f5e0aac17",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "method:README.md",
+      "page": 1,
+      "step": 72,
+      "output_line": 430,
+      "output_block": 1,
+      "call_id": "call_9eca442adc2b495882c0043e06e4d150",
+      "actual_output_text_sha256": "26452b32f721a40cffe37bffd1b82bc754e788f7900f8a5ef8f0d9fca456e1f4",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        2346
+      ],
+      "body_bytes": 2346,
+      "body_sha256": "7283e2d173c9c44bad7f356f890241efb7693be3a340d456c868df391142f1c1",
+      "frozen_file_sha256": "7283e2d173c9c44bad7f356f890241efb7693be3a340d456c868df391142f1c1",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "method:SOURCE-MANIFEST.md",
+      "page": 1,
+      "step": 73,
+      "output_line": 435,
+      "output_block": 1,
+      "call_id": "call_4d0cf49cb89d4bed94e1f3ff025d5efc",
+      "actual_output_text_sha256": "f7b4e9f8cc5b0a466097316a836c9f5cce9d2fef58dfd245aa40fac9d63acdfc",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        2246
+      ],
+      "body_bytes": 2246,
+      "body_sha256": "ddf191051d0f7f47ce84097b7b1528f609565b1f287df770a0127ea5ee274cb1",
+      "frozen_file_sha256": "ddf191051d0f7f47ce84097b7b1528f609565b1f287df770a0127ea5ee274cb1",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "method:CHANGELOG.md",
+      "page": 1,
+      "step": 74,
+      "output_line": 440,
+      "output_block": 1,
+      "call_id": "call_94b8071aa72e4720b298d0396392d8a3",
+      "actual_output_text_sha256": "5f5631cd17b2ce9e33bcf7113609346c2d549374f885ffc08ddde38684b3fb2e",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        1147
+      ],
+      "body_bytes": 1147,
+      "body_sha256": "04fbd3e05f9af5d0432273000b88bacaef328eb314f7234992ec4c1e2ec4e2c4",
+      "frozen_file_sha256": "04fbd3e05f9af5d0432273000b88bacaef328eb314f7234992ec4c1e2ec4e2c4",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "method:roles.md",
+      "page": 1,
+      "step": 75,
+      "output_line": 445,
+      "output_block": 1,
+      "call_id": "call_4e0c18d7a42c49bab18387899226f717",
+      "actual_output_text_sha256": "accdcf336de991e4b029d42d1b485a4fa14a9e242e862fa0889c0c8d260ec3fc",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        4028
+      ],
+      "body_bytes": 4028,
+      "body_sha256": "0f2f57950d7302eaf5c804afe10600eb3d8bc33266d95e8e7b415e45d40b6eaf",
+      "frozen_file_sha256": "e19e414487dbd03a31824f1f5d3fb1a4ef57cc4076a54d17ddb82d5a64ef5b5a",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "method:roles.md",
+      "page": 2,
+      "step": 76,
+      "output_line": 450,
+      "output_block": 1,
+      "call_id": "call_d8f50fc629c94010a9b7c4bc95005d1c",
+      "actual_output_text_sha256": "a6ce768bf8ee72f65c7c246e2ff681ab0a57c9026d2a929e29de4ca569a0526a",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        4028,
+        8058
+      ],
+      "body_bytes": 4030,
+      "body_sha256": "552bae49a27f76d30adcb372daee6b97349519b64d815b705dea3d6a789bc609",
+      "frozen_file_sha256": "e19e414487dbd03a31824f1f5d3fb1a4ef57cc4076a54d17ddb82d5a64ef5b5a",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "method:roles.md",
+      "page": 3,
+      "step": 77,
+      "output_line": 455,
+      "output_block": 1,
+      "call_id": "call_6c7295542c534077b4057cddde832eae",
+      "actual_output_text_sha256": "9a176efe10f16d7490c3452e3997bc0fd7a53016f4c429cb77b6174cb75494ef",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        8058,
+        8313
+      ],
+      "body_bytes": 255,
+      "body_sha256": "da87ce5e1473edfd9133c686af4b91b9f05c5566667504137a143ac2b8724ba8",
+      "frozen_file_sha256": "e19e414487dbd03a31824f1f5d3fb1a4ef57cc4076a54d17ddb82d5a64ef5b5a",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "method:methods.md",
+      "page": 1,
+      "step": 78,
+      "output_line": 460,
+      "output_block": 1,
+      "call_id": "call_d4d184ca0793424dad50e40939f7f3e4",
+      "actual_output_text_sha256": "42357f643dfab83940cf8bbf5de3267b8d6dd8b97c2e4686120e140f7c504bb4",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        3052
+      ],
+      "body_bytes": 3052,
+      "body_sha256": "3346016d6aba70f681cf26467d642f9bc8ebfd45b10ea520fa0cc5de169d879b",
+      "frozen_file_sha256": "3346016d6aba70f681cf26467d642f9bc8ebfd45b10ea520fa0cc5de169d879b",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "method:adoption-and-change.md",
+      "page": 1,
+      "step": 79,
+      "output_line": 467,
+      "output_block": 1,
+      "call_id": "call_166487825b7f4ac7abba1e8cb16b2ad8",
+      "actual_output_text_sha256": "ef32ab42658d0a087105e5809b6f483d4b4d4168e06c446f1b1dd4a5c7b2b3db",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        2943
+      ],
+      "body_bytes": 2943,
+      "body_sha256": "cf2bcda816d9384c496ed3432d7db98dee5fa6eaca0f15d733d88938b45e741b",
+      "frozen_file_sha256": "cf2bcda816d9384c496ed3432d7db98dee5fa6eaca0f15d733d88938b45e741b",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "method:checklists/startup-receipt.md",
+      "page": 1,
+      "step": 80,
+      "output_line": 472,
+      "output_block": 1,
+      "call_id": "call_bcc95c34f4814678835e40403bbcf616",
+      "actual_output_text_sha256": "c7541add576cc9c0bf804300058fda23f469ceddcf90cbb666e92df8af537c68",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        1035
+      ],
+      "body_bytes": 1035,
+      "body_sha256": "374118279b5fb6e7039784b3cb30482c1f01cf0521ef75c954d8e71b6bf7e48b",
+      "frozen_file_sha256": "374118279b5fb6e7039784b3cb30482c1f01cf0521ef75c954d8e71b6bf7e48b",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "method:checklists/task-and-evidence.md",
+      "page": 1,
+      "step": 81,
+      "output_line": 477,
+      "output_block": 1,
+      "call_id": "call_1b8a3e7fbdac415bb84cec7d7da9f0f4",
+      "actual_output_text_sha256": "e9f69e6f16b69572fb828cb52ba18411881dad497974c6a41cb118521b37368f",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        3067
+      ],
+      "body_bytes": 3067,
+      "body_sha256": "0c264ec328c1af6326d759303ddca28d1fc0eb8aa14a2339194e498ca58522f8",
+      "frozen_file_sha256": "0c264ec328c1af6326d759303ddca28d1fc0eb8aa14a2339194e498ca58522f8",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "method:examples/website-adapter.example.md",
+      "page": 1,
+      "step": 82,
+      "output_line": 482,
+      "output_block": 1,
+      "call_id": "call_a48d47a63b4f43e4952568c8be97fa92",
+      "actual_output_text_sha256": "3add83e76583be4536c19579288d4769aebf4768caa44737b5128ec0c23d5e3f",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        1112
+      ],
+      "body_bytes": 1112,
+      "body_sha256": "242b328b057125eadd9b1f88c140d42d1f1528d1c8918aa555eef21270e94009",
+      "frozen_file_sha256": "242b328b057125eadd9b1f88c140d42d1f1528d1c8918aa555eef21270e94009",
+      "exact_frozen_body_slice": true
+    },
+    {
+      "source_id": "method:examples/learning-product-adapter.example.md",
+      "page": 1,
+      "step": 83,
+      "output_line": 487,
+      "output_block": 1,
+      "call_id": "call_9f4db25b337041f6ac97ed5289744c29",
+      "actual_output_text_sha256": "5be2afab4b3fd47ec7ba4828c316b5d74cf8b5ba00bfb6563ecf2aa9ee4af9e7",
+      "advertised_first_page": null,
+      "utf8_byte_range": [
+        0,
+        2616
+      ],
+      "body_bytes": 2616,
+      "body_sha256": "cfd5b19c9efdd011619e805f4ac84b7d723eac3e430d35eedaa589e94f85baaf",
+      "frozen_file_sha256": "cfd5b19c9efdd011619e805f4ac84b7d723eac3e430d35eedaa589e94f85baaf",
+      "exact_frozen_body_slice": true
+    }
+  ],
+  "nonrequired_truncated_outputs": [
+    {
+      "output_line": 29,
+      "block": 1,
+      "text_sha256": "5cf40a724f6b687ccbdb3a7abf15f8a86b04a3c2fea198ec1785f500b22d8957",
+      "required_flow_page": false,
+      "note": "Initial AGENTS cat truncated; later all13 actual page bodies exact."
+    },
+    {
+      "output_line": 501,
+      "block": 1,
+      "text_sha256": "d740e3a67779fedc9aa3079e027fd13673fd71f3104a8cbff12ca0291dd91387",
+      "required_flow_page": false,
+      "note": "Initial business discovery aggregate truncated; not counted as full-source delivery."
+    },
+    {
+      "output_line": 510,
+      "block": 1,
+      "text_sha256": "f0f863bf307cf1dc9425553951237192b58e19ea1d0419944b08630d01a2c2e9",
+      "required_flow_page": false,
+      "note": "Initial business source aggregate truncated; later targeted reads and surviving exact full source lines bound separately."
+    }
+  ],
+  "task_critical_app_line_evidence": [
+    {
+      "source_line": 112,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 510,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        }
+      ]
+    },
+    {
+      "source_line": 119,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 510,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        }
+      ]
+    },
+    {
+      "source_line": 123,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 510,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        }
+      ]
+    },
+    {
+      "source_line": 125,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 510,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        }
+      ]
+    },
+    {
+      "source_line": 126,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 510,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        }
+      ]
+    },
+    {
+      "source_line": 133,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 510,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        },
+        {
+          "output_line": 531,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        }
+      ]
+    },
+    {
+      "source_line": 134,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 510,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        }
+      ]
+    },
+    {
+      "source_line": 135,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 510,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        }
+      ]
+    },
+    {
+      "source_line": 136,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 510,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        },
+        {
+          "output_line": 531,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        }
+      ]
+    },
+    {
+      "source_line": 137,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 510,
+          "block": 1,
+          "JSON_escaping_depth": 1
+        }
+      ]
+    },
+    {
+      "source_line": 138,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 517,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        }
+      ]
+    },
+    {
+      "source_line": 139,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 517,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        }
+      ]
+    },
+    {
+      "source_line": 147,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 517,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        }
+      ]
+    },
+    {
+      "source_line": 158,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 522,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        },
+        {
+          "output_line": 522,
+          "block": 1,
+          "JSON_escaping_depth": 1
+        }
+      ]
+    },
+    {
+      "source_line": 159,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 522,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        },
+        {
+          "output_line": 522,
+          "block": 1,
+          "JSON_escaping_depth": 1
+        }
+      ]
+    },
+    {
+      "source_line": 161,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 522,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        },
+        {
+          "output_line": 522,
+          "block": 1,
+          "JSON_escaping_depth": 1
+        }
+      ]
+    },
+    {
+      "source_line": 213,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 522,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        }
+      ]
+    },
+    {
+      "source_line": 215,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 531,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        }
+      ]
+    },
+    {
+      "source_line": 216,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 531,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        }
+      ]
+    },
+    {
+      "source_line": 217,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 531,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        }
+      ]
+    },
+    {
+      "source_line": 218,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 531,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        }
+      ]
+    },
+    {
+      "source_line": 219,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 531,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        }
+      ]
+    },
+    {
+      "source_line": 220,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 531,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        },
+        {
+          "output_line": 531,
+          "block": 1,
+          "JSON_escaping_depth": 1
+        }
+      ]
+    },
+    {
+      "source_line": 221,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 531,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        },
+        {
+          "output_line": 531,
+          "block": 1,
+          "JSON_escaping_depth": 1
+        }
+      ]
+    },
+    {
+      "source_line": 222,
+      "exact_full_line_visible": true,
+      "matches": [
+        {
+          "output_line": 531,
+          "block": 1,
+          "JSON_escaping_depth": 0
+        },
+        {
+          "output_line": 531,
+          "block": 1,
+          "JSON_escaping_depth": 1
+        }
+      ]
+    }
+  ],
+  "visible_custom_tool_calls": [
+    {
+      "call_line": 18,
+      "at_utc": "2026-10-18T02:17:30.517Z",
+      "call_id": "call_3373713ce9754ba082086fc9cef41ad2",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "e22e3b7fd187e940d4471a1a64f149fb7930e02fff969f0b00c0c644c3419d91",
+      "category": "read-only-discovery/source/self-check"
+    },
+    {
+      "call_line": 26,
+      "at_utc": "2026-10-18T02:17:32.972Z",
+      "call_id": "call_a7ea74860ebc4dbd93cc1c68ce580265",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "a37afee90e7c80a127f50f8a7db61aa4391a89f7dc23c0eb7b282b7e0c352fd6",
+      "category": "read-only-discovery/source/self-check"
+    },
+    {
+      "call_line": 33,
+      "at_utc": "2026-10-18T02:17:36.582Z",
+      "call_id": "call_20a1f5c97983491fb5092bcc01155201",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "1c0bba77701b522efae24863bc8bbe97bfa31033415fd39b415791798f978bca",
+      "category": "read-only-discovery/source/self-check"
+    },
+    {
+      "call_line": 40,
+      "at_utc": "2026-10-18T02:17:41.458Z",
+      "call_id": "call_12cce38c31cc4496bc7e4b69863e6c13",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "e659846d506adc1bd0065cf9df0b3451b9487dde19ac7c02f94d6b8b9d4c5684",
+      "category": "required-flow-explicit"
+    },
+    {
+      "call_line": 54,
+      "at_utc": "2026-10-18T02:17:56.327Z",
+      "call_id": "call_20e1cda2d214404db46019a7479a6857",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "7488196359f2e7ce6ce3bb24dc5328c74c46f80543ef5f6a9d449a99b1a9c480",
+      "category": "required-flow-explicit"
+    },
+    {
+      "call_line": 59,
+      "at_utc": "2026-10-18T02:18:00.078Z",
+      "call_id": "call_17d4e8feec5248dcb392c4475bd61656",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 64,
+      "at_utc": "2026-10-18T02:18:03.469Z",
+      "call_id": "call_9876794740cc48dc8ef50826f279dc2f",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 69,
+      "at_utc": "2026-10-18T02:18:06.878Z",
+      "call_id": "call_d9d03a36c54440cd82714260c6767c36",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 83,
+      "at_utc": "2026-10-18T02:18:28.609Z",
+      "call_id": "call_cd24fde919d244aea83b31930aedf3d6",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 88,
+      "at_utc": "2026-10-18T02:18:31.826Z",
+      "call_id": "call_45f1e9938cd745ea8a7f5290fcf58ed2",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 93,
+      "at_utc": "2026-10-18T02:18:35.442Z",
+      "call_id": "call_f924cd05098c4d0c94dddecdc44adce3",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 98,
+      "at_utc": "2026-10-18T02:18:38.719Z",
+      "call_id": "call_faf57319e944488b8145a4458f819c7e",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 103,
+      "at_utc": "2026-10-18T02:18:42.639Z",
+      "call_id": "call_d11bfb995d6743feac43926c3986811e",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 108,
+      "at_utc": "2026-10-18T02:18:46.143Z",
+      "call_id": "call_cd1be6cc9b4f4ecab45b1abdd222dd8b",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 117,
+      "at_utc": "2026-10-18T02:18:50.822Z",
+      "call_id": "call_98368e31fadd4d4c84952454de2dd963",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 122,
+      "at_utc": "2026-10-18T02:18:54.713Z",
+      "call_id": "call_580a48e1ef54498283584e8e9f840f24",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 127,
+      "at_utc": "2026-10-18T02:18:58.429Z",
+      "call_id": "call_2c5585a327274842a74b0637adb9b4b6",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 132,
+      "at_utc": "2026-10-18T02:19:02.108Z",
+      "call_id": "call_df21d00961b84f6fa90721ac464ab9b0",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 137,
+      "at_utc": "2026-10-18T02:19:05.508Z",
+      "call_id": "call_55d591730291459fbce49303322d8eeb",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 142,
+      "at_utc": "2026-10-18T02:19:08.921Z",
+      "call_id": "call_41039e9cf0da402a84943bf879a523ee",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 147,
+      "at_utc": "2026-10-18T02:19:12.510Z",
+      "call_id": "call_1fc00b40e0f14bdeadb6fd3e968aab60",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 152,
+      "at_utc": "2026-10-18T02:19:16.160Z",
+      "call_id": "call_5ab5a2f62fe0454b8291ac68551ca9ea",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 157,
+      "at_utc": "2026-10-18T02:19:22.945Z",
+      "call_id": "call_aa3b1a198f734f0e98e2cc50e2e21cbc",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 162,
+      "at_utc": "2026-10-18T02:19:27.175Z",
+      "call_id": "call_3dc606bf2f784204aca748be8b2e3f1c",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 167,
+      "at_utc": "2026-10-18T02:19:30.714Z",
+      "call_id": "call_c4573a2afed542f4971061f83998f24a",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 172,
+      "at_utc": "2026-10-18T02:19:35.859Z",
+      "call_id": "call_4a27bcf16cf44b31840a3a30422b6807",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 177,
+      "at_utc": "2026-10-18T02:19:39.929Z",
+      "call_id": "call_ed8fe68fb032478bb86a48ddea6e18c6",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 182,
+      "at_utc": "2026-10-18T02:19:43.548Z",
+      "call_id": "call_2c549b376ece4e7a90787f22a9a3af35",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 187,
+      "at_utc": "2026-10-18T02:19:46.947Z",
+      "call_id": "call_ea18514c1547498f8c8fbafdde2ab5e8",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 192,
+      "at_utc": "2026-10-18T02:19:52.759Z",
+      "call_id": "call_3fa763c29e554288afc5938b3381ccc5",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 197,
+      "at_utc": "2026-10-18T02:19:56.213Z",
+      "call_id": "call_61fb208128664e11901118ce140efda9",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 202,
+      "at_utc": "2026-10-18T02:19:59.513Z",
+      "call_id": "call_31b849ba12074bcfbb045f1f45635dd7",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 207,
+      "at_utc": "2026-10-18T02:20:03.799Z",
+      "call_id": "call_12999f179b4541549c10428b9cbba8dc",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 212,
+      "at_utc": "2026-10-18T02:20:07.325Z",
+      "call_id": "call_ef42ba6bcdef4e09a1da2db09fb6b246",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 217,
+      "at_utc": "2026-10-18T02:20:11.053Z",
+      "call_id": "call_c78d91ebd6db48f092841e761067fc4d",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 224,
+      "at_utc": "2026-10-18T02:20:16.452Z",
+      "call_id": "call_371633c1ad3342cfa1f20e7694177468",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 229,
+      "at_utc": "2026-10-18T02:20:20.350Z",
+      "call_id": "call_0f549dfcf92e4119a6b38e0a22fb73b8",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 234,
+      "at_utc": "2026-10-18T02:20:23.613Z",
+      "call_id": "call_53ae5765b6b9422baf117db9e589a7fe",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 239,
+      "at_utc": "2026-10-18T02:20:27.086Z",
+      "call_id": "call_a6de568d1b5444fb9c723608468f3e9c",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 244,
+      "at_utc": "2026-10-18T02:20:30.654Z",
+      "call_id": "call_e40c26f3f3bc4966884a178cd016c5f0",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 249,
+      "at_utc": "2026-10-18T02:20:34.368Z",
+      "call_id": "call_d0c3be09dc264629966100885dc3ef0c",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 254,
+      "at_utc": "2026-10-18T02:20:37.952Z",
+      "call_id": "call_89c648eb6f5648848e81866a66f120c0",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 259,
+      "at_utc": "2026-10-18T02:20:41.520Z",
+      "call_id": "call_9d072abcc82f44a5baf8a0a80bd58f62",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 264,
+      "at_utc": "2026-10-18T02:20:45.622Z",
+      "call_id": "call_4c6fd79186c54283ac0a4e33a61486ce",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 269,
+      "at_utc": "2026-10-18T02:20:49.347Z",
+      "call_id": "call_02e6b107d24f4259a26bbdc60d0b9632",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 274,
+      "at_utc": "2026-10-18T02:20:53.626Z",
+      "call_id": "call_3b41decd978645619258dea2f124e06d",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 279,
+      "at_utc": "2026-10-18T02:20:59.213Z",
+      "call_id": "call_a587010d732f433b97bf94308461a08c",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 284,
+      "at_utc": "2026-10-18T02:21:03.321Z",
+      "call_id": "call_f89d84180d3342829ddeb21d8ebf008d",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 289,
+      "at_utc": "2026-10-18T02:21:07.143Z",
+      "call_id": "call_6a5f9af12b6c4931aaa8e4fca49c2e79",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 296,
+      "at_utc": "2026-10-18T02:21:11.054Z",
+      "call_id": "call_8ded8e84091749a7966d8b1b7257b5b0",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 301,
+      "at_utc": "2026-10-18T02:21:14.916Z",
+      "call_id": "call_e4dcf249a86b4ef7838954ddfea7a7c9",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 306,
+      "at_utc": "2026-10-18T02:21:18.251Z",
+      "call_id": "call_65248be247934e47904b4d147bbc184b",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 313,
+      "at_utc": "2026-10-18T02:21:22.832Z",
+      "call_id": "call_d1f60bb9b26740b09e5877db883743fd",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 318,
+      "at_utc": "2026-10-18T02:21:26.261Z",
+      "call_id": "call_303bf26de6ff48c1afc4a89b9accacb9",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 323,
+      "at_utc": "2026-10-18T02:21:29.767Z",
+      "call_id": "call_217d832b7b534a65a6cdf7f54ae910b4",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 328,
+      "at_utc": "2026-10-18T02:21:33.147Z",
+      "call_id": "call_8e5f4449c93e482190cf8d0cf7e15629",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 333,
+      "at_utc": "2026-10-18T02:21:37.701Z",
+      "call_id": "call_5af831d458f94df4b67df5b7410750d0",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 338,
+      "at_utc": "2026-10-18T02:21:41.399Z",
+      "call_id": "call_3cbf76f583f04a49a75c37b8619d6c38",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 343,
+      "at_utc": "2026-10-18T02:21:44.681Z",
+      "call_id": "call_208a8e435160400795f033ce9da589f9",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 350,
+      "at_utc": "2026-10-18T02:21:48.471Z",
+      "call_id": "call_340a141bcdeb47a1a4bdd332f94cb989",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 355,
+      "at_utc": "2026-10-18T02:21:51.920Z",
+      "call_id": "call_c77cd75c91994337ade9a9c84934042b",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 362,
+      "at_utc": "2026-10-18T02:21:56.800Z",
+      "call_id": "call_928fe329c0e84c7b8354899c7f431df3",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 367,
+      "at_utc": "2026-10-18T02:22:00.938Z",
+      "call_id": "call_be56668c3b2d4cde8820e2bc886dad3b",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 372,
+      "at_utc": "2026-10-18T02:22:04.612Z",
+      "call_id": "call_b92babd978494bb68b0c84fde49764bb",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 377,
+      "at_utc": "2026-10-18T02:22:08.319Z",
+      "call_id": "call_568157852db249418026b2dae20124af",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 382,
+      "at_utc": "2026-10-18T02:22:12.076Z",
+      "call_id": "call_247e62fa9c564931a7aa1cf766e5aecd",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 387,
+      "at_utc": "2026-10-18T02:22:18.072Z",
+      "call_id": "call_2f4431d4c430477593c7ca374b5c3e7a",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 392,
+      "at_utc": "2026-10-18T02:22:21.894Z",
+      "call_id": "call_67d59063684340b4aa615bbdbae8ef5d",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 397,
+      "at_utc": "2026-10-18T02:22:26.665Z",
+      "call_id": "call_4aef2297081942eb80c1e49e5dcf02a0",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 402,
+      "at_utc": "2026-10-18T02:22:30.495Z",
+      "call_id": "call_e09df7bed68044939a9226f032b5b8a8",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 407,
+      "at_utc": "2026-10-18T02:22:33.790Z",
+      "call_id": "call_e7220acdc7244cd094a8171e850e4a57",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 412,
+      "at_utc": "2026-10-18T02:22:37.204Z",
+      "call_id": "call_81c6c7e2769d48d2a0774e5db2bf9c17",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 417,
+      "at_utc": "2026-10-18T02:22:41.468Z",
+      "call_id": "call_ff9e811b79ab4b66aff6308648c4ed55",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 422,
+      "at_utc": "2026-10-18T02:22:44.941Z",
+      "call_id": "call_e446789da39c48ee9b1a9b538590d9a3",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 427,
+      "at_utc": "2026-10-18T02:22:49.164Z",
+      "call_id": "call_9eca442adc2b495882c0043e06e4d150",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 432,
+      "at_utc": "2026-10-18T02:22:52.839Z",
+      "call_id": "call_4d0cf49cb89d4bed94e1f3ff025d5efc",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 437,
+      "at_utc": "2026-10-18T02:22:56.764Z",
+      "call_id": "call_94b8071aa72e4720b298d0396392d8a3",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 442,
+      "at_utc": "2026-10-18T02:23:00.507Z",
+      "call_id": "call_4e0c18d7a42c49bab18387899226f717",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 447,
+      "at_utc": "2026-10-18T02:23:04.373Z",
+      "call_id": "call_d8f50fc629c94010a9b7c4bc95005d1c",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 452,
+      "at_utc": "2026-10-18T02:23:07.948Z",
+      "call_id": "call_6c7295542c534077b4057cddde832eae",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 457,
+      "at_utc": "2026-10-18T02:23:13.096Z",
+      "call_id": "call_d4d184ca0793424dad50e40939f7f3e4",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 464,
+      "at_utc": "2026-10-18T02:23:17.129Z",
+      "call_id": "call_166487825b7f4ac7abba1e8cb16b2ad8",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 469,
+      "at_utc": "2026-10-18T02:23:20.860Z",
+      "call_id": "call_bcc95c34f4814678835e40403bbcf616",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 474,
+      "at_utc": "2026-10-18T02:23:24.479Z",
+      "call_id": "call_1b8a3e7fbdac415bb84cec7d7da9f0f4",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 479,
+      "at_utc": "2026-10-18T02:23:31.734Z",
+      "call_id": "call_a48d47a63b4f43e4952568c8be97fa92",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ad61812b5edfdd1f220143f6896b8ecd93f7daafa529f2a574871c672ce8338e",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 484,
+      "at_utc": "2026-10-18T02:23:35.994Z",
+      "call_id": "call_9f4db25b337041f6ac97ed5289744c29",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "48e12c04d8e97af6dfb6bb11ee22aef21731289e762313b235f6a1ef31b16d14",
+      "category": "required-flow-continuation"
+    },
+    {
+      "call_line": 496,
+      "at_utc": "2026-10-18T02:23:50.511Z",
+      "call_id": "call_e6f80ac41f3d46ecaec4e3918491661c",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "ee053cf93b85c62957aae344a6d6aa3974850f3bcbb1237ea3cd7e389048e630",
+      "category": "read-only-discovery/source/self-check"
+    },
+    {
+      "call_line": 505,
+      "at_utc": "2026-10-18T02:23:57.439Z",
+      "call_id": "call_0d83f680a24447ffbdd29c9eb3fd0a6e",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "4e5c2943ad82fecffd1d117c04693a63b0615fb2082b73358ff0cccba2e2594b",
+      "category": "read-only-discovery/source/self-check"
+    },
+    {
+      "call_line": 514,
+      "at_utc": "2026-10-18T02:24:01.048Z",
+      "call_id": "call_71fb44b615564cbea276c1de5cf66384",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "8f9c312639344da01b7e34307166526f3c7a50410a1d05173540a1ea5e5e4d45",
+      "category": "read-only-discovery/source/self-check"
+    },
+    {
+      "call_line": 519,
+      "at_utc": "2026-10-18T02:24:03.686Z",
+      "call_id": "call_04efeb06eb014af8a4d0b518571dcf79",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "0891cc87b9a8543bfae8c40be92a60b56ccd362279f59f82d11b9aa4f06af028",
+      "category": "read-only-discovery/source/self-check"
+    },
+    {
+      "call_line": 526,
+      "at_utc": "2026-10-18T02:24:10.337Z",
+      "call_id": "call_d196694812e64c749c7888cf42fdfb17",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "5f238741df0b66780b20cd256090d1d89b1f43e66c51d993fad8c52578b72f0a",
+      "category": "read-only-discovery/source/self-check"
+    },
+    {
+      "call_line": 537,
+      "at_utc": "2026-10-18T02:24:19.555Z",
+      "call_id": "call_a2bb06793cfd46feb1340fa7b04f8e5f",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "04cd73e7f79f1a5babbc035ff3fb5f39ad3b00870f4f404b6103ff0d9ca8f26d",
+      "category": "read-only-discovery/source/self-check"
+    },
+    {
+      "call_line": 546,
+      "at_utc": "2026-10-18T02:24:34.630Z",
+      "call_id": "call_c2ff3b35fdbc4425bf528582200212b6",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "50f3c76ced37e2e2d7cac18c180d0aaee24c774a35e74915cd73c1c9a813b434",
+      "category": "read-only-discovery/source/self-check"
+    },
+    {
+      "call_line": 559,
+      "at_utc": "2026-10-18T02:24:56.592Z",
+      "call_id": "call_63a536ddb9324535a062e9a92d4941f1",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "b45f1d85648543ef4ffa5e670cca6ba6ced922da66fa80dfcbd6ff66aa5e4323",
+      "category": "read-only-discovery/source/self-check"
+    },
+    {
+      "call_line": 566,
+      "at_utc": "2026-10-18T02:25:04.168Z",
+      "call_id": "call_9e5403f1ddb5456290d953dade4dabcd",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "f5c9f53a24a6bfe0d2cd90b810f209e7e8d04678f78d455c46e9df28fd6d47ab",
+      "category": "authorized-output-directory-creation-and-safe-metadata"
+    },
+    {
+      "call_line": 573,
+      "at_utc": "2026-10-18T02:25:57.006Z",
+      "call_id": "call_5b7d0b2aff59473b88adf77a1247220e",
+      "tool": "exec",
+      "nested_methods": [
+        "apply_patch"
+      ],
+      "input_sha256": "c2e51b13fee9a9ea4319f1a27eed21a6a33c74dd07add5a6d0bd452a60b1f4a5",
+      "category": "authorized-business-artifact-creation"
+    },
+    {
+      "call_line": 580,
+      "at_utc": "2026-10-18T02:26:13.913Z",
+      "call_id": "call_1f787f0e72a8404297c94a6fb73f5c7a",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "000f5d5b08b1930d5de505a342811fe7e9c4b11b0d0585369419988182f3678d",
+      "category": "read-only-discovery/source/self-check"
+    },
+    {
+      "call_line": 590,
+      "at_utc": "2026-10-18T02:29:15.704Z",
+      "call_id": "call_af7830bcb8e9412b9d0aa7a8fc8ca405",
+      "tool": "exec",
+      "nested_methods": [
+        "apply_patch"
+      ],
+      "input_sha256": "e9af1ccb5a660d8c8f88c8aed1e6554eabf1f52abd340fd4a9c42d961ddf7198",
+      "category": "authorized-business-artifact-creation"
+    },
+    {
+      "call_line": 597,
+      "at_utc": "2026-10-18T02:29:29.612Z",
+      "call_id": "call_e904a85a01214570a00a0d4b87b4519c",
+      "tool": "exec",
+      "nested_methods": [
+        "exec_command"
+      ],
+      "input_sha256": "9742e7b3fdb47e15a4bae8c5b7ccfb9326d81b8c1bebb3e84a789f319cfb7d16",
+      "category": "read-only-discovery/source/self-check"
+    }
+  ],
+  "outgoing_message_call_metadata_only": [
+    {
+      "line": 47,
+      "at_utc": "2026-10-18T02:17:48.458Z",
+      "name": "send_message",
+      "call_id": "call_80e647836db74d8c8fc84dbf9b0fc2b9",
+      "message_content_interpreted": false
+    },
+    {
+      "line": 76,
+      "at_utc": "2026-10-18T02:18:22.126Z",
+      "name": "send_message",
+      "call_id": "call_7913386e388b4b738c05944370106f58",
+      "message_content_interpreted": false
+    },
+    {
+      "line": 491,
+      "at_utc": "2026-10-18T02:23:44.029Z",
+      "name": "send_message",
+      "call_id": "call_6e65be994ef0417c92c125ce5af3dab1",
+      "message_content_interpreted": false
+    },
+    {
+      "line": 554,
+      "at_utc": "2026-10-18T02:24:48.363Z",
+      "name": "send_message",
+      "call_id": "call_c83b598387f247e48aba89156d11ed22",
+      "message_content_interpreted": false
+    },
+    {
+      "line": 605,
+      "at_utc": "2026-10-18T02:29:37.410Z",
+      "name": "send_message",
+      "call_id": "call_db87c23bacea4c6f9fa715a46664efc4",
+      "message_content_interpreted": false
+    }
+  ],
+  "visible_assistant_messages": [
+    {
+      "line": 17,
+      "at_utc": "2026-10-18T02:17:26.838Z",
+      "phase": "commentary",
+      "text_sha256": "0219c10d0db6338ade86ae6a96057e3d2f3effefb659c3a9add59c92f2c72cb2",
+      "summary": "Initial task scope and planned read-only review."
+    },
+    {
+      "line": 116,
+      "at_utc": "2026-10-18T02:18:49.648Z",
+      "phase": "commentary",
+      "text_sha256": "3dd18c607f2c27d07bf2e90aee1a0333b03590a7b441f554bff049be97529967",
+      "summary": "Startup required-reading progress; static versus runtime boundary."
+    },
+    {
+      "line": 361,
+      "at_utc": "2026-10-18T02:21:55.624Z",
+      "phase": "commentary",
+      "text_sha256": "6d9922ff46a4bdbea7eb1aab2b7a1e9a76d6ff7ca96c7cc7c23e9c1a8a7e6a83",
+      "summary": "History/current/untested distinctions from records; no product-source judgment yet."
+    },
+    {
+      "line": 536,
+      "at_utc": "2026-10-18T02:24:14.522Z",
+      "phase": "commentary",
+      "text_sha256": "9f8846ac2f9db22c02c0789c098a1af2bd255942021314ea7300bcd49965d16b",
+      "summary": "After flow completion, current reanalysis entry/version visibility findings."
+    },
+    {
+      "line": 589,
+      "at_utc": "2026-10-18T02:28:42.731Z",
+      "phase": "commentary",
+      "text_sha256": "de160aad31c38abed26d2288c9b49f0f8d523f53520f0291c01b91fec617da41",
+      "summary": "Draft formed and future acceptance scope described."
+    },
+    {
+      "line": 611,
+      "at_utc": "2026-10-18T02:29:40.857Z",
+      "phase": "final_answer",
+      "text_sha256": "cc7cd297dec26705d6b9adc1adff40d789612be1b68afe01a4a080128afab8cd",
+      "summary": "Final delivery and explicit not-run/independent-QA limitation."
+    }
+  ],
+  "scope_review": "99 custom exec calls contain required-flow/read/discovery/hash operations, allowed directory creation and two apply_patch writes to authorized business files. No application/service/browser/ASR/business-test/network/install/real DB/credential action seen. No body cache store observed; only next-command/read metadata/source groups persisted in orchestration memory.",
+  "author_artifacts": {
+    "product_created_call_line": 573,
+    "evidence_created_call_line": 590,
+    "selfcheck_call_line": 597,
+    "selfcheck_output_line": 601,
+    "selfcheck_review_exact_sealed_body": true,
+    "selfcheck_output_locations": [
+      {
+        "output_line": 601,
+        "block": 1,
+        "text_sha256": "8d61a1a39bb62cfe2fb9ec642ea174da863d2fb137e9d3622400012c445c0db8"
+      }
+    ],
+    "final_line": 611,
+    "final_at_utc": "2026-10-18T02:29:40.857Z",
+    "preseal_author_revision_after_creation_seen": false
+  },
+  "guard": {
+    "all_project_files": 3608,
+    "path_set_bytes_modes_match": true,
+    "method10_plus2_match": true,
+    "HEAD_main_refs_index_config_match": true,
+    "sealed_artifacts_match": true,
+    "criteria_source_binding_unchanged": true,
+    "privacy_fullbody_or400block_hits": [],
+    "limit": "Visible calls and current endpoints only, not continuous ignored/private-file monitoring."
+  }
+}

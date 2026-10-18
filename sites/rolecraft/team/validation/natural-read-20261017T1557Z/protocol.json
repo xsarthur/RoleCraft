@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "test_id": "rolecraft-natural-read-20261017T1557Z",
+  "created_at_utc": "2026-10-17T15:58:46.210741+00:00",
+  "baseline": "ba9a55fe39be32e96130ed3df6a9d69cbfc97917",
+  "main": "4158efd4641be219c897746cc063d73122f4eeb7",
+  "branch": "integration/peiyu-team-onboarding-20261017",
+  "business_prompt_sha256": "c0b8fa36c128f2d9631630bbc1455eb2c5d0afa2bb138732a8080685dd9d96c3",
+  "business_output": "/private/tmp/rolecraft-voice-trial-2vip7e13",
+  "fresh_context": "fork_turns=none; no parent conversation or method paths supplied",
+  "method_revision": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+  "protected_project_sha256": {
+    "AGENTS.md": "a859c218c01351f506e878f8d200a1ccc5c638ce26991c6f31ae549fcdfcbfd8",
+    "sites/rolecraft/team/onboarding/README.md": "9a0f20c509bce79a6067c4bc9e0368af9c8e26a89b4b4554a2c52e19a81db8ca",
+    "sites/rolecraft/team/onboarding/ROLE-MAPPING.md": "6fef691401c64a1bf171a87c4d6cc7ec60bacab0560bccb37333f85db901ff5f",
+    "sites/rolecraft/team/onboarding/TEAM-ROUTING.md": "310065b56ef9efb7d8cafcfc96e3841f5cad0ac737305a3a398d1c60c87c6806",
+    "sites/rolecraft/team/onboarding/startup/README.md": "89687f866453c48196aba3e46f5518d0e6c093c3b00f40f8c4a13b77c11a30f5",
+    "sites/rolecraft/team/onboarding/startup/sources.json": "87ec6cec1e3b7880fc4cd42b4c15beba159cf67081ef6ff74ff2a24736e831a4",
+    "sites/rolecraft/team/team-method-loop-20261017-archive.md": "d8b0ec8de67b8f17d511e70daa99038859b94b9d8f7ff5ad39cd9560d2085eeb",
+    "sites/rolecraft/team/team-method-loop-20261017-evidence.json": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+    "sites/rolecraft/team/task-closeout-20261017.md": "e0eb6d418d4eef6fd3580c97d8f766d98a8162cf95f4639bf0c14118cb6c8920",
+    "sites/rolecraft/team/task-closeout-20261017.json": "78e698ed76ef63c2ca603f1730baedcf1c06e3c7b2c7750cf6ca9bd2b7564cba"
+  },
+  "method_file_sha256": {
+    "adoption-and-change.md": "cf2bcda816d9384c496ed3432d7db98dee5fa6eaca0f15d733d88938b45e741b",
+    "CHANGELOG.md": "04fbd3e05f9af5d0432273000b88bacaef328eb314f7234992ec4c1e2ec4e2c4",
+    "README.md": "7283e2d173c9c44bad7f356f890241efb7693be3a340d456c868df391142f1c1",
+    "roles.md": "e19e414487dbd03a31824f1f5d3fb1a4ef57cc4076a54d17ddb82d5a64ef5b5a",
+    "methods.md": "3346016d6aba70f681cf26467d642f9bc8ebfd45b10ea520fa0cc5de169d879b",
+    "SOURCE-MANIFEST.md": "ddf191051d0f7f47ce84097b7b1528f609565b1f287df770a0127ea5ee274cb1",
+    "checklists/task-and-evidence.md": "0c264ec328c1af6326d759303ddca28d1fc0eb8aa14a2339194e498ca58522f8",
+    "checklists/startup-receipt.md": "374118279b5fb6e7039784b3cb30482c1f01cf0521ef75c954d8e71b6bf7e48b",
+    "examples/website-adapter.example.md": "242b328b057125eadd9b1f88c140d42d1f1528d1c8918aa555eef21270e94009",
+    "examples/learning-product-adapter.example.md": "cfd5b19c9efdd011619e805f4ac84b7d723eac3e430d35eedaa589e94f85baaf",
+    "proposals/version-bound-fact-claims-v01.md": "4fd8f894297e98072108df4eac2e6dfc53aacfc0d1196f8648733781a6a14552",
+    "proposals/entry-status-and-evidence-links-v01.md": "2b6b146de13859386b4aa7874d2f0e745f8b05eaf89ab15f0493d6af711565c9"
+  },
+  "prior_history_result": "FAIL/partial preserved",
+  "non_intervention": "No follow-up reading reminders before first delivery; omissions are not repaired inside original trial",
+  "evaluation_layers": [
+    "source acquired",
+    "full content delivered to execution context",
+    "source-specific readback",
+    "actual business artifact application",
+    "independent QA"
+  ],
+  "out_of_scope": [
+    "employee files and ownership changes",
+    "formal method adoption",
+    "natural end events",
+    "merge main",
+    "commit or push",
+    "method candidate edits or publication",
+    "new application execution or business runtime testing"
+  ],
+  "evidence_limits": [
+    "Subagent identifier proves dispatch, not every read; evaluate tool/receipt provenance separately",
+    "Do not copy private method full text into shared project artifacts"
+  ]
+}

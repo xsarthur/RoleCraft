@@ -1,0 +1,392 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-10-18T01:20:00.466539+00:00",
+  "review_id": "rolecraft-return-handoff-first-independent-qa",
+  "qa_executor": "/root/natural_read2_qa",
+  "author": "/root/return_handoff_product",
+  "criteria": {
+    "json_sha256": "8536e6f6c5de274f431eb6030f4aebe99de4956ba6f735524af3f7fa9307174f",
+    "md_sha256": "aa3f93d47019cd3d25b0151cf1764b065f7f14c8ef6adfc0652df65579e4db72",
+    "first_freeze_sha256": "863bf04a495171fb0456867df8515bbd126d072920fe65c2eccd5cde04f81530",
+    "first_freeze_not_overwritten": true,
+    "source_binding_sha256": "9eb724b2a1d4c0127f4e5c152fe0b47803a8a25514355d44e78fac7f36aa165a"
+  },
+  "first_submission_seal": {
+    "path": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-startup-repair-20261018T0054Z/first-submission-seal.json",
+    "sha256": "87f4a8d65c5522ee8bcb618fcd0b6c3c08e28df1aa192de9fa502a9e0fa48ace",
+    "sealed_at_utc": "2026-10-18T01:15:51.640138+00:00",
+    "artifacts": {
+      "product-scope-and-acceptance.md": {
+        "bytes": 7949,
+        "sha256": "18d479bce3be030443294c91c1fa83d817c2a922a027dacc575fe3badd76f4cf",
+        "matches_seal": true
+      },
+      "product-evidence.json": {
+        "bytes": 16211,
+        "sha256": "752191e39587e0cb18a4e9f4d7d8e47c76525c44ea39399f19cae7512c6c4b16",
+        "matches_seal": true
+      }
+    }
+  },
+  "runtime_prefix": {
+    "path": "/Users/liuqian/.codex/sessions/2026/10/18/rollout-2026-10-18T09-10-15-01a14c8f-314d-7df0-8428-86ee5285b80a.jsonl",
+    "prefix_bytes": 1941928,
+    "prefix_sha256": "8af9ee5155cb719cf8e0853a4c860ee069abe7cb282a152ab0ab742c7fd821c2",
+    "line_count": 353,
+    "hash_bytes_lines_verified": true,
+    "raw_log_copied": false,
+    "analysis_reasoning_interpreted": false,
+    "encrypted_contents_decrypted_or_interpreted": false,
+    "scope": "visible tool inputs and outputs plus final only; unrelated account metadata not used"
+  },
+  "dispatch": {
+    "dispatch_json_sha256": "0494a26bedc3abed22e9ddf78b3e120871954453c3a044f187918f53f5eada00",
+    "prompt_sha256": "d84f04a3753042b5c6967820dadb8b6a6234545bdd8c7238c90cf349954adf48",
+    "fork_turns": "none per root actual dispatch receipt, not inferred from runtime history_mode",
+    "literal_child_task_reconstructed": false,
+    "root_preseal_hints": "none per root dispatch/seal observation; child fixed prefix includes no externally supplied method/role reading hint",
+    "limits": "Root actual spawn tool call not independently extracted from a separate root runtime log. Encrypted send-message contents not interpreted; only target and time support provenance."
+  },
+  "first_results": {
+    "complete_natural_reading": "FAIL/partial",
+    "target_breakpoint_AGENTS": "pass_within_visible_fullbody_scope",
+    "target_breakpoint_fixed_method_location_and_ten_bodies": "pass_within_this_fresh_task_scope",
+    "source_specific_readback": "partial; accurate original product memory and relevant method meaning, not all required project-source readback",
+    "actual_selective_method_application": "pass_within_static_handoff_scope_with_M04_limit",
+    "product_document": "pass_within_static_product_handoff_scope",
+    "major_product_document_findings": 0,
+    "author_self_check": "performed; separate from independent QA",
+    "independent_static_qa": "completed; distinct execution context and actual source/artifact review",
+    "application_browser_ASR_business_runtime": "not_tested",
+    "full_product": "not_met historical retained; not reassessed",
+    "method_adoption": false,
+    "stable_mastery_or_growth_awarded": false
+  },
+  "full_body_coverage": {
+    "required": 32,
+    "received": 18,
+    "project_bodies_required": 22,
+    "project_bodies_received": 8,
+    "fixed_method_required": 10,
+    "fixed_method_received": 10,
+    "AGENTS": {
+      "bytes": 50693,
+      "pages": 13,
+      "continuous_byte_range": [
+        0,
+        50693
+      ],
+      "original_lines171_173_covered": true,
+      "source_sha256": "bf2599697f6b6b2504e89700dec5325be815e97b9553bc8c6e30056c9b6c007f",
+      "output_lines": [
+        73,
+        85,
+        90,
+        95,
+        100,
+        105,
+        110,
+        115,
+        120,
+        125,
+        130,
+        135,
+        141
+      ]
+    },
+    "ten_methods": "All 12 visible pages compared in memory to exact fixed source slices and page hashes; corresponding fixed Git blobs/worktree bound in source-binding.json. No private source copied.",
+    "incomplete_source_ids": [
+      "project:sites/rolecraft/team/onboarding/ROLE-MAPPING.md",
+      "project:sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+      "project:sites/rolecraft/team/onboarding/APPLICATION-NOTES.md",
+      "project:sites/rolecraft/team/onboarding/TASK-LAYOUT3-READING-DIALOGUE.md",
+      "project:sites/rolecraft/team/onboarding/startup/sources.json",
+      "project:sites/rolecraft/team/onboarding/startup/local-method-source.json",
+      "project:sites/rolecraft/team/employees/core/README.md",
+      "project:sites/rolecraft/team/employees/core/manifest.json",
+      "project:sites/rolecraft/team/employees/v12-evidence/manifest.json",
+      "project:sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+      "project:sites/rolecraft/team/team-method-loop-20261017-archive.md",
+      "project:sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+      "project:sites/rolecraft/team/task-closeout-20261017.json",
+      "project:sites/rolecraft/team/validation/natural-read-20261017T1557Z/validation-receipt.json"
+    ],
+    "claim_boundary": "Author explicitly says checker acquired bytes but other catalog bodies were not all delivered; no false all-source reading claim found."
+  },
+  "readback_checks": [
+    {
+      "source": "original product ROLE and PM-MEM-0001",
+      "artifact": "product-evidence.json startup_receipt.agent_readback.confirmed_memory_application and product-scope-and-acceptance.md lines3,23,45",
+      "result": "accurate limited application: product scope/future acceptance, no engineering implementation or independent-test substitution, no invented product preference"
+    },
+    {
+      "source": "MEMORY_SCHEMA and original role",
+      "artifact": "product-evidence.json boundaries/startup_receipt; document23/45",
+      "result": "one-task facts remain project evidence; no memory update, attribution/growth or authority inflation"
+    },
+    {
+      "source": "fixed method relevant principles",
+      "artifact": "product-evidence.json actual_application and document9-35",
+      "result": "source-specific meanings largely accurate, independently checked against actual artifact rather than IDs"
+    },
+    {
+      "source": "continuity records and shared preference",
+      "result": "incomplete body delivery/readback for mandatory sources; checker readability is not model readback"
+    }
+  ],
+  "method_application_checks": [
+    {
+      "method": "M01",
+      "artifact_lines": [
+        9,
+        15,
+        17,
+        23
+      ],
+      "result": "pass_within_scope",
+      "reason": "Separates learner task/continuation relationship, navigation and persistent settings instead of equating any saved object with recovered answer."
+    },
+    {
+      "method": "M06",
+      "artifact_lines": [
+        19,
+        43,
+        45
+      ],
+      "result": "pass_within_scope",
+      "reason": "Current HTTP routes, historical absent-HTTP description, missing original reports and not-run claims separated; current route rechecked by QA."
+    },
+    {
+      "method": "M07",
+      "artifact_lines": [
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "result": "pass_within_scope",
+      "reason": "Cancel/retain/discard, edited versus confirmed text, feedback identity, late result and deletion branches explicit and observable; no diagram demanded."
+    },
+    {
+      "method": "M08",
+      "artifact_lines": [
+        31,
+        33,
+        45
+      ],
+      "result": "pass_within_evidence_boundary_scope",
+      "reason": "Dynamic cleanup/late-result and browser conclusions assigned future runtime evidence; static source is not called dynamic pass."
+    },
+    {
+      "method": "M04",
+      "artifact_lines": [
+        9,
+        15,
+        31,
+        33
+      ],
+      "result": "limited_adaptation_only",
+      "reason": "Local state/navigation/storage observation scopes present; no rendered local/combination/page three-scale visual review occurred or is certified."
+    },
+    {
+      "method": "M02/M03/M05",
+      "result": "not_required_for_this_narrow_product_document",
+      "reason": "No approved layout/text replacement or token/composition implementation to verify; not mechanically forced."
+    }
+  ],
+  "static_product_checks": [
+    {
+      "id": "PQ01",
+      "artifact_lines": [
+        3,
+        9,
+        10,
+        12,
+        13
+      ],
+      "source": "app.js112,115-116,138-139,147-152,213,216,228-231",
+      "counterexample": "Pause within same document versus voice-back and reenter, reload/reopen; settings save does not restore answer.",
+      "result": "pass_within_static_scope",
+      "actual": "Temporary recorder/blob/transcript/feedback and reset chain support loss distinction; same-page pause/resume only claims source path, not runtime."
+    },
+    {
+      "id": "PQ02",
+      "artifact_lines": [
+        11,
+        13,
+        35
+      ],
+      "source": "app.js133-134,136-137,147,159,213-214,221-222,231",
+      "counterexample": "Edit textarea then unrelated render; cancel beforeunload; late transcribe/analyze after reset.",
+      "result": "pass_within_static_scope",
+      "actual": "Uncaptured text, residual original/corrections/confirmed fields and missing request-id guard correctly retained as risks, not effective recovery or proved runtime defects."
+    },
+    {
+      "id": "PQ03",
+      "artifact_lines": [
+        14,
+        15
+      ],
+      "source": "app.js137,163,190-194,210-213",
+      "counterexample": "Generate paper and return versus retry from feedback; localStorage failure.",
+      "result": "pass_within_static_scope",
+      "actual": "Retry prompt copied before reset; paper and answer states separate. Failed setItem is caught but not surfaced as saved=false UI by the inspected caller."
+    },
+    {
+      "id": "PQ04",
+      "artifact_lines": [
+        19,
+        41,
+        42,
+        45
+      ],
+      "source": "server/index.mjs478-507; server/voice/index.mjs81-100; original product docs16-30 and150-225",
+      "counterexample": "Historical no-HTTP statement used as current fact; temporary ASR file treated as recovery archive.",
+      "result": "pass_within_static_scope",
+      "actual": "Current readiness/transcribe exist, temporary execution cleanup attempted in finally, and contract/prototype states are not implementation evidence. No server endpoint invoked."
+    },
+    {
+      "id": "PQ05",
+      "artifact_lines": [
+        23,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "source": "sealed document RH1-RH7, current lifecycle paths",
+      "counterexample": "Feedback for old text shown as new, abandoned answer resurrected, automatic microphone reopening or deleted state restored.",
+      "result": "pass_within_draft_acceptance_scope",
+      "actual": "Future minimum scope, states, observable failures, version/context and engineering/independent-test handoff are concrete. Audio-versus-text retention decision remains explicit before freezing implementation."
+    },
+    {
+      "id": "PQ06",
+      "artifact_lines": [
+        35,
+        43,
+        45
+      ],
+      "source": "old natural-read README, current consent branch app.js123/161/221, historical voice QA",
+      "counterexample": "DQ-01 document closure treated as fixed consent implementation or old13pass2fail treated as fresh pass.",
+      "result": "pass_within_static_scope",
+      "actual": "Consent guard risk and runtime limitations retained; old failure/insufficient not upgraded."
+    }
+  ],
+  "findings": [
+    {
+      "id": "NR-01",
+      "category": "required_reading_incomplete",
+      "severity": "natural-trial-fail-not-product-document-defect",
+      "status": "open_in_first_trial_preserved",
+      "evidence": "14/32 required sources lack visible full-body delivery; exact source IDs and safe call metadata in trace-index.json",
+      "owner": "future coordination/startup task, not remedied inside this blind trial",
+      "retest": "A future independent task if authorized; no pre-seal or post-hoc reread may replace first result."
+    }
+  ],
+  "product_findings": [],
+  "author_self_check": {
+    "output_line": 338,
+    "observed": "Author reread own draft and checked two artifact hashes, ten method metadata count and explicit non-test boundary. This is author self-check only.",
+    "preseal_correction": {
+      "call_line": 326,
+      "at_utc": "2026-10-18T01:15:18.912Z",
+      "summary": "Removed unguaranteed recorded chunks from paused-row wording; source recorder.start has no timeslice. Also restricted prototype read_scope to1-30 instead of full. Before readiness at01:15:30.746Z, before QA and before seal.",
+      "qa_prompted": false
+    }
+  },
+  "current_source_binding": {
+    "sites/rolecraft/dist/app.js": {
+      "bytes": 170162,
+      "sha256": "f5eb9db9bb128000abd6216770f07d9515b4aef03d42080417a378638d270d1d",
+      "author_snapshot_and_input_freeze_match": true,
+      "qa_review": "task-relevant source ranges and causal paths, not full-app execution"
+    },
+    "sites/rolecraft/server/index.mjs": {
+      "bytes": 86842,
+      "sha256": "8be0d3a80aca40d6e69004410c9aeededc6cbde31c797da559c7031e142e8165",
+      "author_snapshot_and_input_freeze_match": true,
+      "qa_review": "task-relevant source ranges and causal paths, not full-app execution"
+    },
+    "sites/rolecraft/server/voice/index.mjs": {
+      "bytes": 18313,
+      "sha256": "310a4f55f8fcb0a849c65591eaf9e06a76166282d03f6845d2404dbd4fddb801",
+      "author_snapshot_and_input_freeze_match": true,
+      "qa_review": "task-relevant source ranges and causal paths, not full-app execution"
+    },
+    "sites/rolecraft/team/interview-voice-prototype-product.md": {
+      "bytes": 9236,
+      "sha256": "b6bb5a8ebf91728b11993657d282a82053cbae89e3271c1e455ccef1bca3fe73",
+      "author_snapshot_and_input_freeze_match": true,
+      "qa_review": "task-relevant source ranges and causal paths, not full-app execution"
+    },
+    "sites/rolecraft/team/interview-general-training-v03-product.md": {
+      "bytes": 17080,
+      "sha256": "ba87bee4b5c5bfc228665b9db810093f881cb6502529b965bb7f42e0f5779e23",
+      "author_snapshot_and_input_freeze_match": true,
+      "qa_review": "task-relevant source ranges and causal paths, not full-app execution"
+    },
+    "sites/rolecraft/team/RETROSPECTIVES.md": {
+      "bytes": 184406,
+      "sha256": "689817d58299cb77077aca9eaaf563760c480faf1e770e159e4fe1ca8773cb78",
+      "author_snapshot_and_input_freeze_match": true,
+      "qa_review": "task-relevant source ranges and causal paths, not full-app execution"
+    },
+    "sites/rolecraft/team/qa-interview-voice-focus-followup.md": {
+      "bytes": 4987,
+      "sha256": "bc77c9a8cd3547b1f436990f514417ed2722a02b34c3bc051be5983a7fdad2f9",
+      "author_snapshot_and_input_freeze_match": true,
+      "qa_review": "task-relevant source ranges and causal paths, not full-app execution"
+    },
+    "sites/rolecraft/team/validation/natural-read-20261017T1557Z/README.md": {
+      "bytes": 4779,
+      "sha256": "1d89401be043d5f6f957d729b701e245669d0f442ec185a457f3190e57ca90ba",
+      "author_snapshot_and_input_freeze_match": true,
+      "qa_review": "task-relevant source ranges and causal paths, not full-app execution"
+    },
+    "sites/rolecraft/team/task-closeout-20261017.md": {
+      "bytes": 2631,
+      "sha256": "e0eb6d418d4eef6fd3580c97d8f766d98a8162cf95f4639bf0c14118cb6c8920",
+      "author_snapshot_and_input_freeze_match": true,
+      "qa_review": "task-relevant source ranges and causal paths, not full-app execution"
+    },
+    "sites/rolecraft/team/onboarding/README.md": {
+      "bytes": 11505,
+      "sha256": "1ae35db606a0f893a9f1d6e3efde7560cf318423a167c7124b9a7010989aba98",
+      "author_snapshot_and_input_freeze_match": true,
+      "qa_review": "task-relevant source ranges and causal paths, not full-app execution"
+    },
+    "sites/rolecraft/team/onboarding/startup/README.md": {
+      "bytes": 10633,
+      "sha256": "04864fb3edfbbaa222f9f20f258bef75315912fcadfcf70dac659147e0938400",
+      "author_snapshot_and_input_freeze_match": true,
+      "qa_review": "task-relevant source ranges and causal paths, not full-app execution"
+    },
+    "AGENTS.md": {
+      "bytes": 50693,
+      "sha256": "bf2599697f6b6b2504e89700dec5325be815e97b9553bc8c6e30056c9b6c007f",
+      "author_snapshot_and_input_freeze_match": true,
+      "qa_review": "task-relevant source ranges and causal paths, not full-app execution"
+    }
+  },
+  "scope_guard": {
+    "criteria_and_source_bound_files_unchanged_at_review": true,
+    "method_ten_plus_two_hashes_unchanged": true,
+    "sealed_artifacts_match": true,
+    "visible_business_writes": "Only authorized two business output files; call298 creation and326 author correction/evidence creation.",
+    "business_commands": "Only read/discovery/source-pagination/checker and output creation/self-check observed; no application/service/browser/API/business test/network/install/git write observed.",
+    "guard_limit": "Relevant endpoint checks, visible fixed-prefix calls and separate root guard are not continuous monitoring of ignored/private files.",
+    "qa_changes": "Only natural-qa evidence files; no business artifact/source edits.",
+    "raw_log_or_private_fulltext_copied": false
+  },
+  "limitations": [
+    "One fresh product execution; not ordinary old chat or cross-device proof.",
+    "Root dispatch/no-hint claim has parent receipt provenance, not independently reconstructed encrypted task.",
+    "Current static product handoff pass does not verify browser/voice/storage behavior or complete product.",
+    "Full-source reading remains FAIL/partial despite repaired target paths and honest missing-source disclosure.",
+    "No formal method adoption, new source hints, reread repair or product revision required by this review."
+  ]
+}

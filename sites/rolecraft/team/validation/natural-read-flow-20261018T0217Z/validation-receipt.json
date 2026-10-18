@@ -1,0 +1,452 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-18T02:44:14.066656+00:00",
+  "case": "required-reading-flow-repair-and-fresh-reanalysis-product-task",
+  "repo": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft",
+  "branch": "integration/peiyu-team-onboarding-20261017",
+  "head": "ba9a55fe39be32e96130ed3df6a9d69cbfc97917",
+  "main": "4158efd4641be219c897746cc063d73122f4eeb7",
+  "version_basis": "HEAD plus exact frozen dirty/untracked bytes",
+  "input_freeze_local": {
+    "path": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-required-reading-20261018T020320Z/trial-input-freeze.json",
+    "sha256": "80d75a7d55feeec1b60247f4744fa2e2d0eec83ae5507a505745f651a32be950",
+    "project_files": 3608,
+    "required_product_sources": 34
+  },
+  "repair": {
+    "verdict": "pass_within_required_reading_flow_mechanism_scope",
+    "independent_author_suite": 71,
+    "independent_counterexamples": 20,
+    "changed_files": [
+      {
+        "path": "AGENTS.md",
+        "before_sha256": "bf2599697f6b6b2504e89700dec5325be815e97b9553bc8c6e30056c9b6c007f",
+        "final_sha256": "9866da222a09d0124008f49ab079dcaea7e2de61c5bb0d638a73acddf5cbe175",
+        "final_bytes": 51126
+      },
+      {
+        "path": "sites/rolecraft/team/onboarding/README.md",
+        "before_sha256": "1ae35db606a0f893a9f1d6e3efde7560cf318423a167c7124b9a7010989aba98",
+        "final_sha256": "eca0dd5dc665e0a33c52b73fe367bc68d5d7fe0f2256a48dc22c11984c90c194",
+        "final_bytes": 12953
+      },
+      {
+        "path": "sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+        "before_sha256": "15ca65c8a803fbcd7ad51673458c0f46a4728ed1f4a0745d99b614b7bdd54f0f",
+        "final_sha256": "820618c008d0860143dc73033747fbfeef4d06487976beb4e9d81e810d54ff48",
+        "final_bytes": 10347
+      },
+      {
+        "path": "sites/rolecraft/team/onboarding/startup/README.md",
+        "before_sha256": "04864fb3edfbbaa222f9f20f258bef75315912fcadfcf70dac659147e0938400",
+        "final_sha256": "04bc3ffcd5d35bb26e82de9174bc36c28db246472b38d199912144ac38685ed7",
+        "final_bytes": 14714
+      },
+      {
+        "path": "sites/rolecraft/team/onboarding/startup/read_source.py",
+        "before_sha256": "d67fa64f7b206bd732725101e2edaf433531554c4834ceee7031b2bdc9e11632",
+        "final_sha256": "840ae5e26107528a5e3411dc4ede9e20f3244a30a8bba4a7e6c05dbf33909236",
+        "final_bytes": 19332
+      },
+      {
+        "path": "sites/rolecraft/team/onboarding/startup/test_read_source.py",
+        "before_sha256": "e3e013fe63584d2c503facc46088d619e9c97a57905cf21699fc862fe62c3d81",
+        "final_sha256": "bd60879db1ed4c807bb27a63c013763d4dcc473aff13ebda8e156300eba9591b",
+        "final_bytes": 22184
+      },
+      {
+        "path": "sites/rolecraft/team/onboarding/startup/check_startup.py",
+        "before_sha256": "7c8f4096b71853a08d0485c10a4b9144cdcfa7385bbf46e448aa3608366cad7b",
+        "final_sha256": "8aa0e96d9a845d867a62cd938144752ffa4e1def81dfbb57e7f94d24f7a090f5",
+        "final_bytes": 27804
+      },
+      {
+        "path": "sites/rolecraft/team/onboarding/startup/sources.json",
+        "before_sha256": "63d8a5443ffe38483b0776d78d46537dd8f7d608b30d9a8fc3c8120d84e59d11",
+        "final_sha256": "fffef1c035041b426389ca3ffbf7e8e8c0405c80b837593ab7c361ea02bccfa9",
+        "final_bytes": 2170
+      },
+      {
+        "path": "sites/rolecraft/team/onboarding/startup/test_check_startup.py",
+        "before_sha256": "b041cd4932a3ced50775571006ec70a5e17f0a9e37c45f04bd63f57c981518f1",
+        "final_sha256": "45457dd2d6fdb0ae7feb72784161da29dcb0b26e7c638934e5789cd1b7e8715e",
+        "final_bytes": 21867
+      }
+    ],
+    "mechanism_not_business_proof": true
+  },
+  "first_trial_results": {
+    "complete_natural_reading": "PASS_within_this_fresh_business_visible_fullbody_scope",
+    "required_full_bodies": 34,
+    "received_full_bodies": 34,
+    "actual_pages": 83,
+    "exact_body_bytes": 254272,
+    "old_fourteen_gaps_in_this_new_trial": "all14 fullbody; historical NR-01/FAILpartial remains unchanged",
+    "source_specific_readback": "pass_within_task_scope",
+    "actual_selective_method_application": "pass_within_static_product_scope_with_DQ02_limit",
+    "product_document": "needs_revision",
+    "product_document_findings": 1,
+    "author_self_check": "performed; not independent",
+    "independent_static_QA": "completed; first factual defect preserved",
+    "application_service_browser_ASR_business_runtime": "not_tested",
+    "complete_product": "not_reassessed; historical_not_met_retained",
+    "stable_mastery_growth_automatic_loading_or_formal_adoption": false
+  },
+  "coverage": {
+    "required_sources": 34,
+    "project_sources": 24,
+    "method_sources": 10,
+    "actual_page_outputs": 83,
+    "actual_exact_bytes": 254272,
+    "all_pages_exact_frozen_slices": true,
+    "steps_exactly_1_to_83": true,
+    "cross_source_order_matches_frozen_guides": true,
+    "old_fourteen_gaps_all_fullbody": true,
+    "AGENTS_original171_173_byte_ranges": {
+      "171": [
+        37045,
+        37869
+      ],
+      "173": [
+        37870,
+        38442
+      ]
+    },
+    "actual_final_page_output_line": 487,
+    "first_business_source_call_line": 496,
+    "startup_finished_before_substantive_business_source_review": true,
+    "not_inferred_from_cursor_or_self_report": true
+  },
+  "source_specific_readback": [
+    {
+      "source": "Original product ROLE/MEMORY/SCHEMA",
+      "artifact": "product-evidence.json startup.group_readback[3]; product-review.txt8,45-46",
+      "result": "pass_within_task_scope",
+      "reason": "Correctly retains product requirements/observable conditions only; PM-MEM-0001 is independent role memory/reuse, no invented product priority or professional authority; one-task facts not made long-term memory."
+    },
+    {
+      "source": "AGENTS/onboarding/startup/catalogs/shared preference",
+      "artifact": "startup.group_readback[0-2]; product-review.txt5,8,45-46",
+      "result": "pass_within_task_scope",
+      "reason": "Baseline cannot be selected away; ownership unknown and roles preserved. Evidence/actual user benefit differ from document completion. Brief product request is respected without textbook-length or answer-authoring expansion."
+    },
+    {
+      "source": "Two method-loop and two closeout records",
+      "artifact": "startup.group_readback[4]; product-review.txt5,17-21,32,46",
+      "result": "pass_within_task_scope",
+      "reason": "Retains existing source handling and limits denial/closure; explicit closeout and guided reuse not automatic runtime/natural loading. Four records all actual full bodies before business."
+    },
+    {
+      "source": "Prior two validation README and final receipts",
+      "artifact": "startup.group_readback[5]; product-review.txt21,32,46",
+      "result": "pass_within_task_scope",
+      "reason": "First FAIL/partial/DQ-01 document-only repair and second18/32/NR-01 preserved; new mechanism/reading does not revise history or establish actual browser behavior."
+    },
+    {
+      "source": "Ten fixed method documents",
+      "artifact": "startup.group_readback[6] and method_application; product-review.txt8,17-29,32,46",
+      "result": "pass_within_selective_application_scope",
+      "reason": "Draft/templates/unapplied examples remain distinct; accurate relevant method meanings, no formal adoption/understanding/stable mastery inferred."
+    }
+  ],
+  "selective_application_first_review": [
+    {
+      "id": "M01",
+      "artifact_lines": [
+        5,
+        8,
+        11,
+        12,
+        14,
+        24,
+        25
+      ],
+      "result": "pass_within_product_reasoning_scope",
+      "reason": "Distinguishes draft/confirmed answer snapshot, analysis event, new recording attempt and question/model/content versions."
+    },
+    {
+      "id": "M06",
+      "artifact_lines": [
+        5,
+        11,
+        12,
+        17,
+        19,
+        20,
+        21,
+        32,
+        46
+      ],
+      "result": "pass_within_evidence_boundary_scope",
+      "reason": "Current existing handling, proposed fixes, static risk, dated no-HTTP/default-off records and actual current route are separated. DQ-02 remains a local factual exception, not hidden by general method use."
+    },
+    {
+      "id": "M07",
+      "artifact_lines": [
+        11,
+        12,
+        17,
+        18,
+        19,
+        20,
+        21,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "result": "pass_within_branch_mapping_scope_with_DQ02",
+      "reason": "Edit/confirm/analyze/feedback/unavailable/fallback/reset/late-result paths and observable future outcomes concrete. One confirmation ordering sentence is wrong; branch structure does not certify that sentence."
+    },
+    {
+      "id": "M08",
+      "artifact_lines": [
+        20,
+        28,
+        29,
+        46
+      ],
+      "result": "pass_within_dynamic_evidence_limit_scope",
+      "reason": "Timing, Chinese editing/keyboard/narrow-screen questions remain future actual evidence, not static-as-runtime pass."
+    },
+    {
+      "id": "M04",
+      "result": "not_performed_visual_three_scale_review",
+      "reason": "No rendered local/composition/page review authorized or claimed."
+    },
+    {
+      "id": "M02/M03/M05",
+      "result": "not_applicable_with_reason",
+      "reason": "No layout/token/comparison design artifact or implementation in this narrow static product task."
+    },
+    {
+      "id": "Templates/two examples",
+      "result": "read_not_adopted_or_installed",
+      "reason": "Metadata receipt use is not actual runtime configuration or formal adoption."
+    }
+  ],
+  "first_findings_preserved": [
+    {
+      "id": "DQ-02",
+      "status": "open_in_first_submission",
+      "severity": "material_local_static_factual_error_requires_narrow_revision",
+      "artifact": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-required-reading-20261018T020320Z/first-submission/product-review.txt",
+      "artifact_line": 18,
+      "claim_summary": "Ordinary confirm button said to set true before changed-text readback resets false.",
+      "expected": "Describe actual normal button call order and avoid deriving a confirmation-reset defect from a sequence that the normal path does not execute.",
+      "actual_source": {
+        "path": "sites/rolecraft/dist/app.js",
+        "sha256": "f5eb9db9bb128000abd6216770f07d9515b4aef03d42080417a378638d270d1d",
+        "lines": [
+          136,
+          138,
+          213
+        ],
+        "visible_business_output_lines": [
+          510,
+          517,
+          522,
+          531
+        ]
+      },
+      "static_counterexample": "Textarea B differs from stored A, learner clicks ordinary确认并分析. app.js213 first calls ReadTranscript (which may refresh/set false), then explicitly sets true, then Analyze. Analyze138 synchronously rereads the same unchanged textarea; this read does not reset the flag. No intervening edit is present in that ordinary synchronous path.",
+      "impact": "The incorrect causal sequence can misdirect product/engineering into fixing a confirmation-reset problem not established by current ordinary-button source. It does not negate the real absence of an explicit answer-revision binding or the hand-edit/correction risk.",
+      "runtime_reproduced": false,
+      "owner": "Original product author, coordinated by root",
+      "requested_revision_scope": "Only correct line18 normal button order and dependent inference; preserve valid unbound-revision/unused-confirmation-field limitation, all other first results, no app or source changes and no reread/new blind trial.",
+      "retest": "Separate revision seal then independent static recheck of corrected sentence against136/138/213 plus immediately related claims; keep first needs_revision."
+    }
+  ],
+  "guided_revision": {
+    "verdict": "pass_within_DQ02_document_revision_scope",
+    "revised_document_status": "pass_within_static_product_handoff_scope_after_DQ02_narrow_revision; other45 unchanged lines retain first review scope",
+    "finding": {
+      "id": "DQ-02",
+      "first_result": "open_in_first_submission; first document needs_revision preserved",
+      "revision_result": "closed_within_document_only_static_scope",
+      "original_app_changed": false,
+      "runtime_verified": false
+    },
+    "seal_sha256": "959e5a7ead1afbee63844d945c068dba9e69604a4cbf66e57c864a44cbffd5ea",
+    "no_new_natural_trial": true,
+    "only_document_line18_changed": true
+  },
+  "current_runtime": "not_tested",
+  "history": {
+    "old_two_cases_files": 41,
+    "all_historical_FAIL_partial_and_first_submissions_preserved": true,
+    "first_current_needs_revision_preserved": true,
+    "old_Nr01_not_rewritten_as_pass": true,
+    "DQ01_engineering_not_closed": true
+  },
+  "boundaries": {
+    "entry_and_startup_existing_files_changed": 9,
+    "application_files_changed": false,
+    "employee_files_changed": false,
+    "method_library_or_candidates_changed": false,
+    "private_method_or_employee_fulltext_cached_or_archived": false,
+    "formal_method_adoption": false,
+    "end_event": false,
+    "closeout_or_method_layer_save": false,
+    "committed_pushed_merged_PR_or_deployed": false,
+    "installed_or_permission_credential_network_SSH_config_changed": false,
+    "ownership": "unknown; authorized collaboration reference only"
+  },
+  "evidence": {
+    "README.md": {
+      "bytes": 6528,
+      "sha256": "ca48d1b8a15a4783895bb9f51efded247814981e2bcaa802628209d5b1aae3f9"
+    },
+    "business-prompt.txt": {
+      "bytes": 950,
+      "sha256": "586073cc5e6a842bd0ecde7e44685b197dd99e09a530aeaeedac998d77bf5acb"
+    },
+    "cause/cause-matrix.json": {
+      "bytes": 17733,
+      "sha256": "738cd4440a490895c5ce645bfd77111033b133fa531d7b99f20c6f1538a55dc1"
+    },
+    "cause/cause-report.md": {
+      "bytes": 4934,
+      "sha256": "527c0e0cac45b18175f0784455efcf52adbad14904fcaf33b5a22465408e67c0"
+    },
+    "dispatch-integrity-addendum.json": {
+      "bytes": 1009,
+      "sha256": "ce0b754c01f76bd15dc8798cd8c862e38aa25d9fcdb2b65d6aa4f8baf4aeac0d"
+    },
+    "dispatch.json": {
+      "bytes": 1339,
+      "sha256": "0d19ffff62386613b702cc4a02e5c176272a62f96b45327914d1d3581482be25"
+    },
+    "first-qa/criteria-freeze.json": {
+      "bytes": 1354,
+      "sha256": "775f62d75df9085e6c208a42fd437affd82c394278071a3c5649f18fb3889e7e"
+    },
+    "first-qa/criteria.json": {
+      "bytes": 20925,
+      "sha256": "58c5014516b0dab7388fcf785bd489e06001148c6c37eb8f10ffeb33cf97e0f4"
+    },
+    "first-qa/criteria.md": {
+      "bytes": 4773,
+      "sha256": "8fae1a748719fa676e094ef5670201c30fef9dabfee3aae1fc398839ed9152bb"
+    },
+    "first-qa/final-binding.json": {
+      "bytes": 6951,
+      "sha256": "d8fd99631289f71faba0717579e4c515f14fc2cb0d30665a4c4ec0cbd11e7460"
+    },
+    "first-qa/qa-receipt.json": {
+      "bytes": 22654,
+      "sha256": "4d352287cbadd82579303f66844e9cb48396170fbf95776713fbdd7cb82821ce"
+    },
+    "first-qa/qa-report.md": {
+      "bytes": 7595,
+      "sha256": "0bf1cf5035c7b357803ef485bc2051fd2a757d3962c103b41d17f32136c06bc4"
+    },
+    "first-qa/source-precheck.json": {
+      "bytes": 16579,
+      "sha256": "8184ed9eed2461b3618182bdc6a905eee782876045fb178a28815e48309e6b24"
+    },
+    "first-qa/trace-index.json": {
+      "bytes": 124733,
+      "sha256": "de1bca7a60a22f5b999d58c6e0f86fd90eb2a513b8e33c911688f80ec2a254f8"
+    },
+    "first-submission/product-evidence.json": {
+      "bytes": 21662,
+      "sha256": "6fc6827e803fc576865b5891f0c6cef31a816001d411d09e7b1e04e674c9ead2"
+    },
+    "first-submission/product-review.txt": {
+      "bytes": 8303,
+      "sha256": "f36c9f8a11059cd451d3e2b1da4d23436b350cc44a89dd4f3dd856a8530104c1"
+    },
+    "first-submission-seal.json": {
+      "bytes": 2128,
+      "sha256": "b1a7c97edddb21c2e2fba547aede1b51edba55f78d21f79d66070f2e918aa6ca"
+    },
+    "input-binding.json": {
+      "bytes": 36578,
+      "sha256": "a800f8335e647c57cb32c539b7c433806d2051e8e16210d9a05068585b391cb2"
+    },
+    "protocol.json": {
+      "bytes": 770,
+      "sha256": "ff7dfa345dee8ed74cbf197e68321170011436f8a48e3ef4221d9459907e345c"
+    },
+    "repair/change-manifest.json": {
+      "bytes": 2699,
+      "sha256": "441e4ad2e4532bd9afbf454da425a6a273cd12c77fbef4f1f212ce0098c58695"
+    },
+    "repair/criteria.json": {
+      "bytes": 6806,
+      "sha256": "bd5b40388c32654936e95ea3c640c023232e369cad35450f427f7853d5295b01"
+    },
+    "repair/criteria.md": {
+      "bytes": 1040,
+      "sha256": "06cab8fd3c9251794062bce35dce248ce1526541a7c383a1825f424807c82278"
+    },
+    "repair/engineering-receipt.json": {
+      "bytes": 4357,
+      "sha256": "fc8dd0b770a54bcbf222cac0490d3b3d3be283cc45a2ead8cd86fe4e1eab643c"
+    },
+    "repair/qa-receipt.json": {
+      "bytes": 9617,
+      "sha256": "30879694d0f0544b056c1f30af41c5138032668477638c33c20239d3549cfe35"
+    },
+    "repair/qa-report.md": {
+      "bytes": 1781,
+      "sha256": "165d9065e2cbc2740c238128c6eb34d3a71438383f95968876bc1573792b7de1"
+    },
+    "repair/real-reconstruction-final.json": {
+      "bytes": 31300,
+      "sha256": "1acdb48ca4e7fb6b8415ae51cb09e0e782533e59fe34e358da29e979733f1661"
+    },
+    "revision-1/product-evidence.json": {
+      "bytes": 24941,
+      "sha256": "166567fee14221385f2848644f405cfaa3bc46a8a3c97c0a866d9efcc5f4f803"
+    },
+    "revision-1/product-review.txt": {
+      "bytes": 8460,
+      "sha256": "2e4904c0379b5d9a60d1b2f4ee83d5f4f2c887302ed9d5660661cad1f7779348"
+    },
+    "revision-1/revision-note.txt": {
+      "bytes": 1671,
+      "sha256": "97f303c80c5fd576e0f97d298512989e4958847f33e828365e680451ac1a0247"
+    },
+    "revision-qa/final-binding.json": {
+      "bytes": 3500,
+      "sha256": "736a7439015f84d11e99c5ffe21a975442bdcded0a098153ed371d933dbff0dc"
+    },
+    "revision-qa/qa-receipt.json": {
+      "bytes": 11772,
+      "sha256": "ef506eb3bc72dd69d4b17d9c3041799d3f26715123ee822c849d12c62eab39be"
+    },
+    "revision-qa/qa-report.md": {
+      "bytes": 2298,
+      "sha256": "25c4f8f35099608b4ef1f2eb79b1a64fc472f24cb39dfdc8098efca7e4b01c4c"
+    },
+    "revision-request.txt": {
+      "bytes": 1567,
+      "sha256": "df469a92d79caf12214df21f174497c83ec72f58d1f853baf1e9306509bc1237"
+    },
+    "revision-seal.json": {
+      "bytes": 1591,
+      "sha256": "959e5a7ead1afbee63844d945c068dba9e69604a4cbf66e57c864a44cbffd5ea"
+    },
+    "scope/input-protection.json": {
+      "bytes": 10115,
+      "sha256": "a7fea39a5fd911fa6e70398a39c7f9bf428d211798d6544b9712e1df7992d55e"
+    },
+    "scope/submission-privacy.json": {
+      "bytes": 10628,
+      "sha256": "ad0dde6da6810599e3dbb5d419757233968a5396317b363a422aa9084bc3eaa9"
+    }
+  },
+  "save_provenance": "Validation results are immutable pre-save snapshots; independent target readback is a separate subsequent receipt, not inferred from queue/checker or a pending state",
+  "limits": [
+    "single local fresh execution only; not stable mastery, platform hooks, old chats, other devices or coworkers",
+    "source list explicitly frozen, not permanently latest validation discovery",
+    "unit/counterexamples are mechanism tests; CI, actual app/voice/storage and complete product unassessed",
+    "scope guards are endpoint checks, not continuous monitoring",
+    "dispatch terminal-LF difference kept in separate addendum, encrypted child task not reconstructed",
+    "repair QA explicitly notes one pre-final auxiliary protection file overwritten locally; no claim those original bytes survive"
+  ]
+}

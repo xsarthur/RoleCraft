@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "record_kind": "independent_second_trial_initial_25_target_readback",
+  "checked_at_utc": "2026-10-18T01:25:05.877170+00:00",
+  "executor_ref": "/root/method_audit",
+  "destination": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/validation/natural-read-repair-20261018T0110Z",
+  "target_scope": "Exactly the initial 25 archive files at this observation; this report itself is not yet a target file and does not pre-certify a later 26th-file copy.",
+  "target_readback": {
+    "file_count": 25,
+    "total_bytes": 192511,
+    "manifest": {
+      "README.md": {
+        "bytes": 4391,
+        "sha256": "2ae6973b680e8d1e9fac0e0679099a7015d8082f9b80ed3e1a9e9455a4ef8fb1"
+      },
+      "business-prompt.txt": {
+        "bytes": 894,
+        "sha256": "d84f04a3753042b5c6967820dadb8b6a6234545bdd8c7238c90cf349954adf48"
+      },
+      "dispatch.json": {
+        "bytes": 1246,
+        "sha256": "0494a26bedc3abed22e9ddf78b3e120871954453c3a044f187918f53f5eada00"
+      },
+      "first-qa/criteria-freeze.json": {
+        "bytes": 465,
+        "sha256": "863bf04a495171fb0456867df8515bbd126d072920fe65c2eccd5cde04f81530"
+      },
+      "first-qa/criteria.json": {
+        "bytes": 11884,
+        "sha256": "8536e6f6c5de274f431eb6030f4aebe99de4956ba6f735524af3f7fa9307174f"
+      },
+      "first-qa/criteria.md": {
+        "bytes": 3980,
+        "sha256": "aa3f93d47019cd3d25b0151cf1764b065f7f14c8ef6adfc0652df65579e4db72"
+      },
+      "first-qa/final-binding.json": {
+        "bytes": 715,
+        "sha256": "3a044bb5abe7735ce25430cd5bb6666ee49fd987ef871d8ac12e952ec7d21b9c"
+      },
+      "first-qa/qa-receipt.json": {
+        "bytes": 18329,
+        "sha256": "f30367b38f5635210ba45dc58472110e0ba4adad039c7df2bc26ecbc52f5154b"
+      },
+      "first-qa/qa-report.md": {
+        "bytes": 7582,
+        "sha256": "60fc50d8916eeaf6cb12d2266705e640a95cf444c2d7df8fb29f226235e045c1"
+      },
+      "first-qa/trace-index.json": {
+        "bytes": 44745,
+        "sha256": "0de922ae3844b5e442615831db6f60be8588a4a912260901ba1ad7133248582f"
+      },
+      "first-submission/product-evidence.json": {
+        "bytes": 16211,
+        "sha256": "752191e39587e0cb18a4e9f4d7d8e47c76525c44ea39399f19cae7512c6c4b16"
+      },
+      "first-submission/product-scope-and-acceptance.md": {
+        "bytes": 7949,
+        "sha256": "18d479bce3be030443294c91c1fa83d817c2a922a027dacc575fe3badd76f4cf"
+      },
+      "first-submission-seal.json": {
+        "bytes": 1756,
+        "sha256": "87f4a8d65c5522ee8bcb618fcd0b6c3c08e28df1aa192de9fa502a9e0fa48ace"
+      },
+      "input-binding.json": {
+        "bytes": 18005,
+        "sha256": "9eb724b2a1d4c0127f4e5c152fe0b47803a8a25514355d44e78fac7f36aa165a"
+      },
+      "protocol.json": {
+        "bytes": 766,
+        "sha256": "1b943c7e391624f11678987afd66dd0b31bd10ca1087ef9b2f075c2fc990e71d"
+      },
+      "repair/criteria-addendum.json": {
+        "bytes": 614,
+        "sha256": "d0d3dac6e50cb1201c7a064b49bfcd720ea9ec6ae3aac0606ad354de8144c48d"
+      },
+      "repair/criteria.json": {
+        "bytes": 5309,
+        "sha256": "9996cc8c687214929b217733a39c8130accacdbf1c031545a49e496f27b59fe2"
+      },
+      "repair/criteria.md": {
+        "bytes": 3269,
+        "sha256": "079bf6e47f4909d06475d5961e0bd6dd53c2caec184ce48129e9be66e6982e76"
+      },
+      "repair/engineering-receipt.json": {
+        "bytes": 5363,
+        "sha256": "8507a5b8273c7ff6ff879dd683a863c4e9492371b4253b23026a41dc5fddfa96"
+      },
+      "repair/first-review-receipt.json": {
+        "bytes": 1949,
+        "sha256": "10b4582e85911320a829507d9066f45dcd1b649dbc26df6a5abf2c869c5d4b61"
+      },
+      "repair/qa-receipt.json": {
+        "bytes": 7192,
+        "sha256": "6ec5330bd30cf0a6ede9b108ba35481c1511240aefb28e4d41528ef413c398c8"
+      },
+      "repair/qa-report.md": {
+        "bytes": 2999,
+        "sha256": "762035d28af0b28eb2868d638a754a0818476b9c28cf3bc6a4b38a99ed964252"
+      },
+      "scope/input-protection.json": {
+        "bytes": 7885,
+        "sha256": "3e4d2871dc0d735dd44350e6d9ed0cd1f8ca818fa43c37c1675ef1cc20994968"
+      },
+      "scope/submission-privacy.json": {
+        "bytes": 5751,
+        "sha256": "a9b1076ae67a92a806c0144f3cf50b93e3ce981c08c2d914ff51211aa32cf37a"
+      },
+      "validation-receipt.json": {
+        "bytes": 13262,
+        "sha256": "28345be1a96affd44c0a21b1967910623657a88327f7a06ec3772d0f5e0aac17"
+      }
+    },
+    "missing": [],
+    "extra": [],
+    "manifest_mismatches": [],
+    "candidate_byte_mismatches": [],
+    "precopy_guard_manifest_mismatches": [],
+    "save_receipt_manifest_mismatches": [],
+    "symlinks": [],
+    "paths_bytes_sha256_aggregate": "2f2b56a749067acef5c63d0086a919d69978a961f641cafd4821e2d098d6f333",
+    "aggregate_matches_precopy_guard": true
+  },
+  "evidence_bindings": {
+    "save_receipt_sha256": "1fa5a18c34981df29f8886bacbb45f313c7f3bed6a399998395f3e811c58d8fa",
+    "archive_manifest_sha256": "3409ae3c7c4770c950a85dedb5e3d8463b1f36c1a96d675ce6a2160453dc33dc",
+    "precopy_independent_guard_sha256": "08b42d502298093c51c90f42b86dd641e5673250d1fc2273491790022a14015e",
+    "trial_input_freeze_sha256": "fb04c2bd1263fc255030ea8adcc4e770d2d20bd7f252eb00c882592933f13c9b"
+  },
+  "all_evidence_bindings_match_requested": true,
+  "source_and_git_protection": {
+    "frozen_original_project_files": 3582,
+    "current_project_files": 3607,
+    "old_frozen_file_hash_bytes_or_mode_drift": [],
+    "new_project_file_count": 25,
+    "new_project_files_exactly_target_25": true,
+    "unexpected_extra_project_files": [],
+    "missing_expected_new_project_files": [],
+    "irregular_or_symlink_project_files": [],
+    "tracked_modified_files": [
+      "AGENTS.md",
+      "sites/rolecraft/team/onboarding/README.md",
+      "sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+      "sites/rolecraft/team/onboarding/startup/README.md",
+      "sites/rolecraft/team/onboarding/startup/check_startup.py",
+      "sites/rolecraft/team/onboarding/startup/sources.json",
+      "sites/rolecraft/team/onboarding/startup/test_check_startup.py"
+    ],
+    "tracked_modified_exactly_original_seven": true,
+    "new_repair_untracked_files": [
+      "sites/rolecraft/team/onboarding/startup/local-method-source.json",
+      "sites/rolecraft/team/onboarding/startup/read_source.py",
+      "sites/rolecraft/team/onboarding/startup/test_read_source.py"
+    ],
+    "old_first_trial_untracked_count": 15,
+    "new_archive_untracked_count": 25,
+    "actual_untracked_count": 43,
+    "untracked_exactly_original_three_plus_old_fifteen_plus_new_twentyfive": true,
+    "staged_diff": "",
+    "git_metadata": {
+      "head": "ba9a55fe39be32e96130ed3df6a9d69cbfc97917",
+      "main": "4158efd4641be219c897746cc063d73122f4eeb7",
+      "branch": "integration/peiyu-team-onboarding-20261017",
+      "index_sha256": "caa3fc706ebda16311a066da855a662f8e7d5d2fb112920159b750fb51eb9f1f",
+      "config_sha256": "fa89354232d96be9723b3b8131b81e33d1dcd90ae07348f0a0839a917ba7e04e",
+      "method_head": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+      "method_main": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+      "method_index_sha256": "8cceb73674244c50b95f6e8ae42a670447b279836e29f8a4c107b9ee5f2bfc83",
+      "method_status": "?? proposals/entry-status-and-evidence-links-v01.md\n?? proposals/version-bound-fact-claims-v01.md"
+    },
+    "metadata_matches_frozen_baseline": true,
+    "method_twelve_sha256": {
+      "adoption-and-change.md": "cf2bcda816d9384c496ed3432d7db98dee5fa6eaca0f15d733d88938b45e741b",
+      "CHANGELOG.md": "04fbd3e05f9af5d0432273000b88bacaef328eb314f7234992ec4c1e2ec4e2c4",
+      "README.md": "7283e2d173c9c44bad7f356f890241efb7693be3a340d456c868df391142f1c1",
+      "roles.md": "e19e414487dbd03a31824f1f5d3fb1a4ef57cc4076a54d17ddb82d5a64ef5b5a",
+      "methods.md": "3346016d6aba70f681cf26467d642f9bc8ebfd45b10ea520fa0cc5de169d879b",
+      "SOURCE-MANIFEST.md": "ddf191051d0f7f47ce84097b7b1528f609565b1f287df770a0127ea5ee274cb1",
+      "checklists/task-and-evidence.md": "0c264ec328c1af6326d759303ddca28d1fc0eb8aa14a2339194e498ca58522f8",
+      "checklists/startup-receipt.md": "374118279b5fb6e7039784b3cb30482c1f01cf0521ef75c954d8e71b6bf7e48b",
+      "examples/website-adapter.example.md": "242b328b057125eadd9b1f88c140d42d1f1528d1c8918aa555eef21270e94009",
+      "examples/learning-product-adapter.example.md": "cfd5b19c9efdd011619e805f4ac84b7d723eac3e430d35eedaa589e94f85baaf",
+      "proposals/version-bound-fact-claims-v01.md": "4fd8f894297e98072108df4eac2e6dfc53aacfc0d1196f8648733781a6a14552",
+      "proposals/entry-status-and-evidence-links-v01.md": "2b6b146de13859386b4aa7874d2f0e745f8b05eaf89ab15f0493d6af711565c9"
+    },
+    "method_mismatches": [],
+    "employee_files": 76,
+    "employee_mismatches": [],
+    "old_first_trial_mismatches": [],
+    "other_protected_project_files": 7,
+    "other_protected_project_mismatches": [],
+    "all_requested_protections_unchanged": true
+  },
+  "save_operation_boundary": {
+    "precopy_guard_observed_destination_absent": true,
+    "root_save_receipt_reports_exclusive_creation": true,
+    "auditor_action": "Independent endpoint target-byte readback and frozen-source comparisons; copy syscalls were not repeated or independently reconstructed."
+  },
+  "limits": [
+    "Certifies the initial 25 target files only. Copying this report verbatim as a new 26th file requires a separate later byte readback; that operation is not pre-signed.",
+    "No business QA, privacy rescanning, source-reading reconstruction or raw runtime/session log access performed. Prior privacy guard applies through exact unchanged package bytes.",
+    "No target/project/method/employee/old-receipt edits or Git mutations; only this external report written. No business/service/browser/test/network execution.",
+    "Endpoint checks cover tracked and nonignored untracked project files, not continuous monitoring or all ignored runtime files."
+  ],
+  "verdict": "PASS_within_independent_initial_25_file_archive_save_and_readback_scope"
+}

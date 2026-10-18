@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "task": "voice_trial_product_scope",
+  "created_at": "2026-10-17T16:03:58.093777+00:00",
+  "executor": "/root/voice_trial_product",
+  "role": "product-manager",
+  "source_team": "original_project_team",
+  "ownership": "unknown",
+  "management_actions": "none",
+  "root": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft",
+  "head": "ba9a55fe39be32e96130ed3df6a9d69cbfc97917",
+  "branch": "integration/peiyu-team-onboarding-20261017",
+  "git_status_porcelain": "",
+  "runtime_or_business_test_runs": 0,
+  "network_calls": 0,
+  "product_sources": [
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/dist/app.js",
+      "sha256": "f5eb9db9bb128000abd6216770f07d9515b4aef03d42080417a378638d270d1d",
+      "bytes": 170162,
+      "lines": 232,
+      "head_blob": "ed9599165be42ce14fa2b0c39a71158609a01016",
+      "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/dist/interview-prep-v03.css",
+      "sha256": "3340a3c647b330aa397724f7126968e140053eed89ccfb942dfb8b063edd8e47",
+      "bytes": 14511,
+      "lines": 21,
+      "head_blob": "515b14b923654fa0c1280136f26e8da3bc95b90b",
+      "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/server/index.mjs",
+      "sha256": "8be0d3a80aca40d6e69004410c9aeededc6cbde31c797da559c7031e142e8165",
+      "bytes": 86842,
+      "lines": 768,
+      "head_blob": "776b9e8338bec00fdb92a513a033710b87362eb3",
+      "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/server/voice/index.mjs",
+      "sha256": "310a4f55f8fcb0a849c65591eaf9e06a76166282d03f6845d2404dbd4fddb801",
+      "bytes": 18313,
+      "lines": 299,
+      "head_blob": "8bc4d4623e9613e00a535be786bdce7ef2fd7766",
+      "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/server/voice/README.md",
+      "sha256": "e3effe6827f07b7582595e4d6be35d72c08b6194f26a7c6499268d82c9406b6f",
+      "bytes": 3747,
+      "lines": 34,
+      "head_blob": "d209820458d021483e90e23af59a26c6e0958741",
+      "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/README.md",
+      "sha256": "dfeb8f58238a31397e2774e6365732ac66b4ae06cd42f22db48b3807d9f56ac2",
+      "bytes": 16920,
+      "lines": 138,
+      "head_blob": "c56c8e8692e77160a68b62162322d73d79961de4",
+      "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/qa-interview-voice-focus-followup.md",
+      "sha256": "bc77c9a8cd3547b1f436990f514417ed2722a02b34c3bc051be5983a7fdad2f9",
+      "bytes": 4987,
+      "lines": 66,
+      "head_blob": "0280136a4eddf8cefa4e46c08626a97040441575",
+      "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/team-method-loop-20261017-archive.md",
+      "sha256": "d8b0ec8de67b8f17d511e70daa99038859b94b9d8f7ff5ad39cd9560d2085eeb",
+      "bytes": 8666,
+      "lines": 70,
+      "head_blob": "2f6efb29c6caad1b285095ea144434bd6446f817",
+      "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+      "sha256": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+      "bytes": 25287,
+      "lines": 489,
+      "head_blob": "42d1d8f1fff647430d4264500b8b07988e5ebbd9",
+      "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+    },
+    {
+      "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/interview-voice-coach-v01-frontend.md",
+      "sha256": "51c0dc7d4759c23d066de2f6d59aebdf80c12b6897495f29fef06e37e432fc45",
+      "bytes": 1543,
+      "lines": 21,
+      "head_blob": "8ea97b5fb67db220094f3c77c17469ec5faca6d3",
+      "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+    }
+  ],
+  "governance_read_bindings": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "a859c218c01351f506e878f8d200a1ccc5c638ce26991c6f31ae549fcdfcbfd8"
+    },
+    {
+      "path": "sites/rolecraft/team/onboarding/README.md",
+      "sha256": "9a0f20c509bce79a6067c4bc9e0368af9c8e26a89b4b4554a2c52e19a81db8ca"
+    },
+    {
+      "path": "sites/rolecraft/team/onboarding/ROLE-MAPPING.md",
+      "sha256": "6fef691401c64a1bf171a87c4d6cc7ec60bacab0560bccb37333f85db901ff5f"
+    },
+    {
+      "path": "sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+      "sha256": "310065b56ef9efb7d8cafcfc96e3841f5cad0ac737305a3a398d1c60c87c6806"
+    },
+    {
+      "path": "sites/rolecraft/team/onboarding/APPLICATION-NOTES.md",
+      "sha256": "d39b582b4c992b319720eae20a58418a9dafeb1277fa57d6be31dbb10f458afd"
+    },
+    {
+      "path": "sites/rolecraft/team/onboarding/TASK-LAYOUT3-READING-DIALOGUE.md",
+      "sha256": "2c094e940338032a179551503270d927801b1e7e82652126e31280dd4e33bfdc"
+    },
+    {
+      "path": "sites/rolecraft/team/onboarding/startup/README.md",
+      "sha256": "89687f866453c48196aba3e46f5518d0e6c093c3b00f40f8c4a13b77c11a30f5"
+    },
+    {
+      "path": "sites/rolecraft/team/onboarding/startup/sources.json",
+      "sha256": "87ec6cec1e3b7880fc4cd42b4c15beba159cf67081ef6ff74ff2a24736e831a4"
+    },
+    {
+      "path": "sites/rolecraft/team/employees/core/README.md",
+      "sha256": "90572c46efdda8333abeaf3458a01774430aa51076220621f384857f71af7a7e"
+    },
+    {
+      "path": "sites/rolecraft/team/employees/core/manifest.json",
+      "sha256": "28227bf1a6c4ac584e28b2a419614368ee539433e929dce60206b8571283aef2"
+    },
+    {
+      "path": "sites/rolecraft/team/employees/core/product-manager/ROLE.md",
+      "sha256": "56f932f3621b64469b3136ff3d1cafa3af900608f5c82947e33e0012ffd614c7"
+    },
+    {
+      "path": "sites/rolecraft/team/employees/core/product-manager/MEMORY.md",
+      "sha256": "d992070fba035c1d3a5fb6f5734ed0922f011321c717cfb578b9b2e8209e38fe"
+    },
+    {
+      "path": "sites/rolecraft/team/employees/core/product-manager/MEMORY_SCHEMA.md",
+      "sha256": "4026b98355e6fc1332871eaa9d93bf532288125fea200f40c7c78fc041303c07"
+    },
+    {
+      "path": "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+      "sha256": "e80f7be22925b043f9071c800b8ba040531a06756b3c3120df479cd94071060b"
+    },
+    {
+      "path": "sites/rolecraft/team/task-closeout-20261017.md",
+      "sha256": "e0eb6d418d4eef6fd3580c97d8f766d98a8162cf95f4639bf0c14118cb6c8920"
+    },
+    {
+      "path": "sites/rolecraft/team/task-closeout-20261017.json",
+      "sha256": "78e698ed76ef63c2ca603f1730baedcf1c06e3c7b2c7750cf6ca9bd2b7564cba"
+    }
+  ],
+  "source_readback": [
+    {
+      "source": "sites/rolecraft/team/employees/core/product-manager/ROLE.md",
+      "anchor": "明确边界",
+      "summary": "产品岗定义可观察接受条件，不替测试执行独立验收。",
+      "application": "清单将下一轮A1-A9保留为未执行产品条件；将静态发现与历史QA分开。"
+    },
+    {
+      "source": "sites/rolecraft/team/employees/core/product-manager/MEMORY.md",
+      "anchor": "PM-MEM-0001",
+      "summary": "确认的是可跨项目读取独立岗位记忆，不能据此推断预算、设计或当前产品取舍。",
+      "application": "仅消费职责/证据边界；不改任何员工档案或记忆。"
+    },
+    {
+      "source": "sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+      "anchor": "每次真实执行的读取顺序/交接和独立QA",
+      "summary": "版本和工作树字节绑定；专业交接与独立QA分开，缺方法不报已接通。",
+      "application": "报告当前HEAD及源码哈希，待独立文档检查，不冒称运行质量或团队接通。"
+    },
+    {
+      "source": "sites/rolecraft/team/team-method-loop-20261017-archive.md",
+      "anchor": "另一真实任务的一次 guided reuse",
+      "summary": "旧两语音脚本未恢复精确源和调用绑定；历史失败不等于本轮运行结果。",
+      "application": "清单限制3/4及A9保留旧失败、当前源码变化和未来运行依赖。"
+    }
+  ],
+  "fixed_method_reading": {
+    "revision_required": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+    "status": "pending_local_root_from_coordinator; not connected; no fulltext copied"
+  },
+  "limitations": [
+    "Source inspection only; no app/service/browser/API/ASR execution.",
+    "No private method fulltext saved.",
+    "Source hash and self-reported readback do not certify professional understanding.",
+    "Independent document QA pending; business acceptance not performed."
+  ]
+}

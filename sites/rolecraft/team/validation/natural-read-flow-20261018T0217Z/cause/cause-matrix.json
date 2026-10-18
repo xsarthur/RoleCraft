@@ -1,0 +1,318 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-18T02:07:32.675203+00:00",
+  "historical_trial": "natural-read-repair-20261018T0110Z",
+  "historical_result_preserved": "FAIL/partial;18/32 full bodies,14 incomplete",
+  "items": [
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/ROLE-MAPPING.md",
+      "group": "onboarding",
+      "historical_required": true,
+      "bytes": 9207,
+      "sha256": "6fef691401c64a1bf171a87c4d6cc7ec60bacab0560bccb37333f85db901ff5f",
+      "entry_requirement": "onboarding README11-15 lists four links; TEAM-ROUTING28 requires mapping/routing readback; APPLICATION-NOTES requires new-task readback of all six entry documents.",
+      "tool_acquisition": "Listed in controlled project source catalog. Prior QA source binding and checker successful acquisition cover availability; no mechanical availability failure recorded.",
+      "actual_delivery": {
+        "full_body_visible": false,
+        "page_evidence_count": 0,
+        "exact_full_body_evidence_count": 0,
+        "unproved_complete_coverage_ranges": [
+          {
+            "start": 0,
+            "end": 9207
+          }
+        ]
+      },
+      "observed_breakpoint": "No explicit body-page request for this source in fixed pre-seal visible tool calls. Catalog/checker was followed by selected-role/method subset and business source work; no later full body before first seal.",
+      "cause_status": "observed_incomplete_delivery; model_intent_not_inferred"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+      "group": "onboarding",
+      "historical_required": true,
+      "bytes": 8885,
+      "sha256": "15ca65c8a803fbcd7ad51673458c0f46a4728ed1f4a0745d99b614b7bdd54f0f",
+      "entry_requirement": "onboarding README11-15 lists four links; TEAM-ROUTING28 requires mapping/routing readback; APPLICATION-NOTES requires new-task readback of all six entry documents.",
+      "tool_acquisition": "Listed in controlled project source catalog. Prior QA source binding and checker successful acquisition cover availability; no mechanical availability failure recorded.",
+      "actual_delivery": {
+        "full_body_visible": false,
+        "page_evidence_count": 0,
+        "exact_full_body_evidence_count": 0,
+        "unproved_complete_coverage_ranges": [
+          {
+            "start": 0,
+            "end": 8885
+          }
+        ]
+      },
+      "observed_breakpoint": "No explicit body-page request for this source in fixed pre-seal visible tool calls. Catalog/checker was followed by selected-role/method subset and business source work; no later full body before first seal.",
+      "cause_status": "observed_incomplete_delivery; model_intent_not_inferred"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/APPLICATION-NOTES.md",
+      "group": "onboarding",
+      "historical_required": true,
+      "bytes": 8647,
+      "sha256": "d39b582b4c992b319720eae20a58418a9dafeb1277fa57d6be31dbb10f458afd",
+      "entry_requirement": "onboarding README11-15 lists four links; TEAM-ROUTING28 requires mapping/routing readback; APPLICATION-NOTES requires new-task readback of all six entry documents.",
+      "tool_acquisition": "Listed in controlled project source catalog. Prior QA source binding and checker successful acquisition cover availability; no mechanical availability failure recorded.",
+      "actual_delivery": {
+        "full_body_visible": false,
+        "page_evidence_count": 0,
+        "exact_full_body_evidence_count": 0,
+        "unproved_complete_coverage_ranges": [
+          {
+            "start": 0,
+            "end": 8647
+          }
+        ]
+      },
+      "observed_breakpoint": "No explicit body-page request for this source in fixed pre-seal visible tool calls. Catalog/checker was followed by selected-role/method subset and business source work; no later full body before first seal.",
+      "cause_status": "observed_incomplete_delivery; model_intent_not_inferred"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/TASK-LAYOUT3-READING-DIALOGUE.md",
+      "group": "onboarding",
+      "historical_required": true,
+      "bytes": 6025,
+      "sha256": "2c094e940338032a179551503270d927801b1e7e82652126e31280dd4e33bfdc",
+      "entry_requirement": "onboarding README11-15 lists four links; TEAM-ROUTING28 requires mapping/routing readback; APPLICATION-NOTES requires new-task readback of all six entry documents.",
+      "tool_acquisition": "Listed in controlled project source catalog. Prior QA source binding and checker successful acquisition cover availability; no mechanical availability failure recorded.",
+      "actual_delivery": {
+        "full_body_visible": false,
+        "page_evidence_count": 0,
+        "exact_full_body_evidence_count": 0,
+        "unproved_complete_coverage_ranges": [
+          {
+            "start": 0,
+            "end": 6025
+          }
+        ]
+      },
+      "observed_breakpoint": "No explicit body-page request for this source in fixed pre-seal visible tool calls. Catalog/checker was followed by selected-role/method subset and business source work; no later full body before first seal.",
+      "cause_status": "observed_incomplete_delivery; model_intent_not_inferred"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/startup/sources.json",
+      "group": "startup_metadata",
+      "historical_required": true,
+      "bytes": 1988,
+      "sha256": "63d8a5443ffe38483b0776d78d46537dd8f7d608b30d9a8fc3c8120d84e59d11",
+      "entry_requirement": "startup README22 and44-48 points to sources/locator; read_source BOOTSTRAP_SOURCES lists both JSONs, but no required queue drives delivery.",
+      "tool_acquisition": "Consumed internally by successful default checker/pager as source catalog or method locator; JSON body delivery remains separate.",
+      "actual_delivery": {
+        "full_body_visible": false,
+        "page_evidence_count": 0,
+        "exact_full_body_evidence_count": 0,
+        "unproved_complete_coverage_ranges": [
+          {
+            "start": 0,
+            "end": 1988
+          }
+        ]
+      },
+      "observed_breakpoint": "No explicit body-page request for this source in fixed pre-seal visible tool calls. Catalog/checker was followed by selected-role/method subset and business source work; no later full body before first seal.",
+      "cause_status": "observed_incomplete_delivery; model_intent_not_inferred"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/startup/local-method-source.json",
+      "group": "startup_metadata",
+      "historical_required": true,
+      "bytes": 382,
+      "sha256": "0147b66a156d412a659371159fa84a869f7ded2815066850a9d0360f70ed8cd9",
+      "entry_requirement": "startup README22 and44-48 points to sources/locator; read_source BOOTSTRAP_SOURCES lists both JSONs, but no required queue drives delivery.",
+      "tool_acquisition": "Consumed internally by successful default checker/pager as source catalog or method locator; JSON body delivery remains separate.",
+      "actual_delivery": {
+        "full_body_visible": false,
+        "page_evidence_count": 0,
+        "exact_full_body_evidence_count": 0,
+        "unproved_complete_coverage_ranges": [
+          {
+            "start": 0,
+            "end": 382
+          }
+        ]
+      },
+      "observed_breakpoint": "No explicit body-page request for this source in fixed pre-seal visible tool calls. Catalog/checker was followed by selected-role/method subset and business source work; no later full body before first seal.",
+      "cause_status": "observed_incomplete_delivery; model_intent_not_inferred"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/README.md",
+      "group": "original_catalogs_and_preferences",
+      "historical_required": true,
+      "bytes": 4577,
+      "sha256": "90572c46efdda8333abeaf3458a01774430aa51076220621f384857f71af7a7e",
+      "entry_requirement": "TEAM-ROUTING reading-order2-3 requires existing source catalogs/shared preferences; original product ROLE independently requests shared preferences.",
+      "tool_acquisition": "Listed in controlled project source catalog. Prior QA source binding and checker successful acquisition cover availability; no mechanical availability failure recorded.",
+      "actual_delivery": {
+        "full_body_visible": false,
+        "page_evidence_count": 0,
+        "exact_full_body_evidence_count": 0,
+        "unproved_complete_coverage_ranges": [
+          {
+            "start": 0,
+            "end": 4577
+          }
+        ]
+      },
+      "observed_breakpoint": "No explicit body-page request for this source in fixed pre-seal visible tool calls. Catalog/checker was followed by selected-role/method subset and business source work; no later full body before first seal.",
+      "cause_status": "observed_incomplete_delivery; model_intent_not_inferred"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/manifest.json",
+      "group": "original_catalogs_and_preferences",
+      "historical_required": true,
+      "bytes": 2736,
+      "sha256": "28227bf1a6c4ac584e28b2a419614368ee539433e929dce60206b8571283aef2",
+      "entry_requirement": "TEAM-ROUTING reading-order2-3 requires existing source catalogs/shared preferences; original product ROLE independently requests shared preferences.",
+      "tool_acquisition": "Listed in controlled project source catalog. Prior QA source binding and checker successful acquisition cover availability; no mechanical availability failure recorded.",
+      "actual_delivery": {
+        "full_body_visible": false,
+        "page_evidence_count": 0,
+        "exact_full_body_evidence_count": 0,
+        "unproved_complete_coverage_ranges": [
+          {
+            "start": 0,
+            "end": 2736
+          }
+        ]
+      },
+      "observed_breakpoint": "No explicit body-page request for this source in fixed pre-seal visible tool calls. Catalog/checker was followed by selected-role/method subset and business source work; no later full body before first seal.",
+      "cause_status": "observed_incomplete_delivery; model_intent_not_inferred"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/v12-evidence/manifest.json",
+      "group": "original_catalogs_and_preferences",
+      "historical_required": true,
+      "bytes": 8100,
+      "sha256": "d805bce8111fdc232916da7a982a20791eca47be415afba1227f6819de85e7f7",
+      "entry_requirement": "TEAM-ROUTING reading-order2-3 requires existing source catalogs/shared preferences; original product ROLE independently requests shared preferences.",
+      "tool_acquisition": "Listed in controlled project source catalog. Prior QA source binding and checker successful acquisition cover availability; no mechanical availability failure recorded.",
+      "actual_delivery": {
+        "full_body_visible": false,
+        "page_evidence_count": 0,
+        "exact_full_body_evidence_count": 0,
+        "unproved_complete_coverage_ranges": [
+          {
+            "start": 0,
+            "end": 8100
+          }
+        ]
+      },
+      "observed_breakpoint": "No explicit body-page request for this source in fixed pre-seal visible tool calls. Catalog/checker was followed by selected-role/method subset and business source work; no later full body before first seal.",
+      "cause_status": "observed_incomplete_delivery; model_intent_not_inferred"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+      "group": "original_catalogs_and_preferences",
+      "historical_required": true,
+      "bytes": 5705,
+      "sha256": "e80f7be22925b043f9071c800b8ba040531a06756b3c3120df479cd94071060b",
+      "entry_requirement": "TEAM-ROUTING reading-order2-3 requires existing source catalogs/shared preferences; original product ROLE independently requests shared preferences.",
+      "tool_acquisition": "Listed in controlled project source catalog. Prior QA source binding and checker successful acquisition cover availability; no mechanical availability failure recorded.",
+      "actual_delivery": {
+        "full_body_visible": false,
+        "page_evidence_count": 0,
+        "exact_full_body_evidence_count": 0,
+        "unproved_complete_coverage_ranges": [
+          {
+            "start": 0,
+            "end": 5705
+          }
+        ]
+      },
+      "observed_breakpoint": "No explicit body-page request for this source in fixed pre-seal visible tool calls. Catalog/checker was followed by selected-role/method subset and business source work; no later full body before first seal.",
+      "cause_status": "observed_incomplete_delivery; model_intent_not_inferred"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/team-method-loop-20261017-archive.md",
+      "group": "loop_records",
+      "historical_required": true,
+      "bytes": 8666,
+      "sha256": "d8b0ec8de67b8f17d511e70daa99038859b94b9d8f7ff5ad39cd9560d2085eeb",
+      "entry_requirement": "onboarding latest-input paragraph and TEAM-ROUTING36 preserve both original loop archives; PROJECT_SOURCES/LATEST_RECORDS includes both.",
+      "tool_acquisition": "Listed in controlled project source catalog. Prior QA source binding and checker successful acquisition cover availability; no mechanical availability failure recorded.",
+      "actual_delivery": {
+        "full_body_visible": false,
+        "page_evidence_count": 0,
+        "exact_full_body_evidence_count": 0,
+        "unproved_complete_coverage_ranges": [
+          {
+            "start": 0,
+            "end": 8666
+          }
+        ]
+      },
+      "observed_breakpoint": "No explicit body-page request for this source in fixed pre-seal visible tool calls. Catalog/checker was followed by selected-role/method subset and business source work; no later full body before first seal.",
+      "cause_status": "observed_incomplete_delivery; model_intent_not_inferred"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+      "group": "loop_records",
+      "historical_required": true,
+      "bytes": 25287,
+      "sha256": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+      "entry_requirement": "onboarding latest-input paragraph and TEAM-ROUTING36 preserve both original loop archives; PROJECT_SOURCES/LATEST_RECORDS includes both.",
+      "tool_acquisition": "Listed in controlled project source catalog. Prior QA source binding and checker successful acquisition cover availability; no mechanical availability failure recorded.",
+      "actual_delivery": {
+        "full_body_visible": false,
+        "page_evidence_count": 0,
+        "exact_full_body_evidence_count": 0,
+        "unproved_complete_coverage_ranges": [
+          {
+            "start": 0,
+            "end": 25287
+          }
+        ]
+      },
+      "observed_breakpoint": "No explicit body-page request for this source in fixed pre-seal visible tool calls. Catalog/checker was followed by selected-role/method subset and business source work; no later full body before first seal.",
+      "cause_status": "observed_incomplete_delivery; model_intent_not_inferred"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/task-closeout-20261017.json",
+      "group": "closeout_snapshot",
+      "historical_required": true,
+      "bytes": 15006,
+      "sha256": "78e698ed76ef63c2ca603f1730baedcf1c06e3c7b2c7750cf6ca9bd2b7564cba",
+      "entry_requirement": "onboarding requires closeout Markdown and publication JSON separately; PROJECT_SOURCES/LATEST_RECORDS includes JSON.",
+      "tool_acquisition": "Listed in controlled project source catalog. Prior QA source binding and checker successful acquisition cover availability; no mechanical availability failure recorded.",
+      "actual_delivery": {
+        "full_body_visible": false,
+        "page_evidence_count": 0,
+        "exact_full_body_evidence_count": 0,
+        "unproved_complete_coverage_ranges": [
+          {
+            "start": 0,
+            "end": 15006
+          }
+        ]
+      },
+      "observed_breakpoint": "No explicit body-page request for this source in fixed pre-seal visible tool calls. Catalog/checker was followed by selected-role/method subset and business source work; no later full body before first seal.",
+      "cause_status": "observed_incomplete_delivery; model_intent_not_inferred"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/validation/natural-read-20261017T1557Z/validation-receipt.json",
+      "group": "first_trial_receipt",
+      "historical_required": true,
+      "bytes": 5942,
+      "sha256": "2d42358d9f8540f50651dde7555ac3e660e2bd333db8de2cba322a1005f171af",
+      "entry_requirement": "TEAM-ROUTING36 explicitly requires first README AND validation receipt; startup README44 lists both.",
+      "tool_acquisition": "Listed in controlled project source catalog. Prior QA source binding and checker successful acquisition cover availability; no mechanical availability failure recorded.",
+      "actual_delivery": {
+        "full_body_visible": false,
+        "page_evidence_count": 0,
+        "exact_full_body_evidence_count": 0,
+        "unproved_complete_coverage_ranges": [
+          {
+            "start": 0,
+            "end": 5942
+          }
+        ]
+      },
+      "observed_breakpoint": "No explicit body-page request for this source in fixed pre-seal visible tool calls. Catalog/checker was followed by selected-role/method subset and business source work; no later full body before first seal.",
+      "cause_status": "observed_incomplete_delivery; model_intent_not_inferred"
+    }
+  ],
+  "count": 14,
+  "not_a_new_business_test": true
+}

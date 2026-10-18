@@ -1,0 +1,686 @@
+{
+  "schema_version": 1,
+  "task": "RoleCraft voice transcript reanalysis product review — revision-1 DQ-02 narrow document repair",
+  "date": "2026-10-18",
+  "executor": "/root/reanalysis_product",
+  "role": "product-manager",
+  "artifact": {
+    "path": "/private/tmp/rolecraft-reanalysis-t6lyh5vp/revision-1/product-review.txt",
+    "artifact_bytes": 8460,
+    "characters": 3706,
+    "lines": 46,
+    "sha256": "2e4904c0379b5d9a60d1b2f4ee83d5f4f2c887302ed9d5660661cad1f7779348"
+  },
+  "project": {
+    "root": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft",
+    "head": "ba9a55fe39be32e96130ed3df6a9d69cbfc97917",
+    "branch": "integration/peiyu-team-onboarding-20261017",
+    "version_basis": "HEAD plus current worktree source SHA256; startup/governance files have existing dirty/untracked states",
+    "ownership": "unknown; authorized collaboration reference only",
+    "management_actions": "none"
+  },
+  "scope": {
+    "authorized": "Read-only product facts, ambiguity, next observable acceptance conditions; own artifacts only in task temporary directory",
+    "not_performed": [
+      "application/service/browser/microphone/ASR/interface/model/business test execution",
+      "network or dependency installation",
+      "real user database, personal browser history or credential reads",
+      "repository, employee, memory, method or source edits",
+      "commit, push, publication, hooks, background or closeout event"
+    ],
+    "runtime_runs": 0,
+    "independent_qa": "not performed by this product author; separate review required",
+    "full_product": "not reassessed; prior not_met/insufficient preserved"
+  },
+  "startup": {
+    "entry": "Root AGENTS.md -> onboarding/startup/README.md -> required-flow product-manager",
+    "command": "python3 -B sites/rolecraft/team/onboarding/startup/read_source.py --required-flow --roles product-manager --page-bytes 4096",
+    "flow_sha256": "0a0f1c438e360cf80f06f893bbd1d5df5211e0b137b48948f38e248f9dca63a0",
+    "required_sources": 34,
+    "required_pages": 83,
+    "visible_pages_consumed_self_report": 83,
+    "sequence": "First-submission evidence only: Each next_command executed in a separate functions.exec tool invocation after current page content was received. Page 1 full JSON; pages 2-83 emitted full content without saving raw output.",
+    "missing_required_bodies_self_report": [],
+    "role_material_readable": true,
+    "original_long_term_memory_missing": false,
+    "fixed_shared_method_readable": true,
+    "project_latest_records_readable": "eight explicitly frozen records only; not permanent latest-record discovery",
+    "coverage_claim": "Inherited first-submission source delivery. Parent reports original independent QA granted limited 34/34-source and 83-page coverage; no new natural-reading flow or blind trial performed for this repair. Independent QA must separately review the new document revision.",
+    "startup_connection": "not independently certified",
+    "method": {
+      "revision": "a848db9f9ab6605aa7379dddef3faa918e412f96",
+      "status": "REVIEW DRAFT; not formally adopted",
+      "body_copy_saved": false,
+      "raw_page_or_log_saved": false
+    },
+    "sources": [
+      {
+        "source_id": "project:AGENTS.md",
+        "sha256": "9866da222a09d0124008f49ab079dcaea7e2de61c5bb0d638a73acddf5cbe175",
+        "received_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/onboarding/README.md",
+        "sha256": "eca0dd5dc665e0a33c52b73fe367bc68d5d7fe0f2256a48dc22c11984c90c194",
+        "received_pages": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/onboarding/ROLE-MAPPING.md",
+        "sha256": "6fef691401c64a1bf171a87c4d6cc7ec60bacab0560bccb37333f85db901ff5f",
+        "received_pages": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+        "sha256": "820618c008d0860143dc73033747fbfeef4d06487976beb4e9d81e810d54ff48",
+        "received_pages": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/onboarding/APPLICATION-NOTES.md",
+        "sha256": "d39b582b4c992b319720eae20a58418a9dafeb1277fa57d6be31dbb10f458afd",
+        "received_pages": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/onboarding/TASK-LAYOUT3-READING-DIALOGUE.md",
+        "sha256": "2c094e940338032a179551503270d927801b1e7e82652126e31280dd4e33bfdc",
+        "received_pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/onboarding/startup/README.md",
+        "sha256": "04bc3ffcd5d35bb26e82de9174bc36c28db246472b38d199912144ac38685ed7",
+        "received_pages": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/onboarding/startup/sources.json",
+        "sha256": "fffef1c035041b426389ca3ffbf7e8e8c0405c80b837593ab7c361ea02bccfa9",
+        "received_pages": [
+          1
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/onboarding/startup/local-method-source.json",
+        "sha256": "0147b66a156d412a659371159fa84a869f7ded2815066850a9d0360f70ed8cd9",
+        "received_pages": [
+          1
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/employees/core/README.md",
+        "sha256": "90572c46efdda8333abeaf3458a01774430aa51076220621f384857f71af7a7e",
+        "received_pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/employees/core/manifest.json",
+        "sha256": "28227bf1a6c4ac584e28b2a419614368ee539433e929dce60206b8571283aef2",
+        "received_pages": [
+          1
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/employees/v12-evidence/manifest.json",
+        "sha256": "d805bce8111fdc232916da7a982a20791eca47be415afba1227f6819de85e7f7",
+        "received_pages": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+        "sha256": "e80f7be22925b043f9071c800b8ba040531a06756b3c3120df479cd94071060b",
+        "received_pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/employees/core/product-manager/ROLE.md",
+        "sha256": "56f932f3621b64469b3136ff3d1cafa3af900608f5c82947e33e0012ffd614c7",
+        "received_pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/employees/core/product-manager/MEMORY.md",
+        "sha256": "d992070fba035c1d3a5fb6f5734ed0922f011321c717cfb578b9b2e8209e38fe",
+        "received_pages": [
+          1
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/employees/core/product-manager/MEMORY_SCHEMA.md",
+        "sha256": "4026b98355e6fc1332871eaa9d93bf532288125fea200f40c7c78fc041303c07",
+        "received_pages": [
+          1
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/team-method-loop-20261017-archive.md",
+        "sha256": "d8b0ec8de67b8f17d511e70daa99038859b94b9d8f7ff5ad39cd9560d2085eeb",
+        "received_pages": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+        "sha256": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+        "received_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/task-closeout-20261017.md",
+        "sha256": "e0eb6d418d4eef6fd3580c97d8f766d98a8162cf95f4639bf0c14118cb6c8920",
+        "received_pages": [
+          1
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/task-closeout-20261017.json",
+        "sha256": "78e698ed76ef63c2ca603f1730baedcf1c06e3c7b2c7750cf6ca9bd2b7564cba",
+        "received_pages": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/validation/natural-read-20261017T1557Z/README.md",
+        "sha256": "1d89401be043d5f6f957d729b701e245669d0f442ec185a457f3190e57ca90ba",
+        "received_pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/validation/natural-read-20261017T1557Z/validation-receipt.json",
+        "sha256": "2d42358d9f8540f50651dde7555ac3e660e2bd333db8de2cba322a1005f171af",
+        "received_pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/validation/natural-read-repair-20261018T0110Z/README.md",
+        "sha256": "2ae6973b680e8d1e9fac0e0679099a7015d8082f9b80ed3e1a9e9455a4ef8fb1",
+        "received_pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "source_id": "project:sites/rolecraft/team/validation/natural-read-repair-20261018T0110Z/validation-receipt.json",
+        "sha256": "28345be1a96affd44c0a21b1967910623657a88327f7a06ec3772d0f5e0aac17",
+        "received_pages": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "source_id": "method:README.md",
+        "sha256": "7283e2d173c9c44bad7f356f890241efb7693be3a340d456c868df391142f1c1",
+        "received_pages": [
+          1
+        ]
+      },
+      {
+        "source_id": "method:SOURCE-MANIFEST.md",
+        "sha256": "ddf191051d0f7f47ce84097b7b1528f609565b1f287df770a0127ea5ee274cb1",
+        "received_pages": [
+          1
+        ]
+      },
+      {
+        "source_id": "method:CHANGELOG.md",
+        "sha256": "04fbd3e05f9af5d0432273000b88bacaef328eb314f7234992ec4c1e2ec4e2c4",
+        "received_pages": [
+          1
+        ]
+      },
+      {
+        "source_id": "method:roles.md",
+        "sha256": "e19e414487dbd03a31824f1f5d3fb1a4ef57cc4076a54d17ddb82d5a64ef5b5a",
+        "received_pages": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "source_id": "method:methods.md",
+        "sha256": "3346016d6aba70f681cf26467d642f9bc8ebfd45b10ea520fa0cc5de169d879b",
+        "received_pages": [
+          1
+        ]
+      },
+      {
+        "source_id": "method:adoption-and-change.md",
+        "sha256": "cf2bcda816d9384c496ed3432d7db98dee5fa6eaca0f15d733d88938b45e741b",
+        "received_pages": [
+          1
+        ]
+      },
+      {
+        "source_id": "method:checklists/startup-receipt.md",
+        "sha256": "374118279b5fb6e7039784b3cb30482c1f01cf0521ef75c954d8e71b6bf7e48b",
+        "received_pages": [
+          1
+        ]
+      },
+      {
+        "source_id": "method:checklists/task-and-evidence.md",
+        "sha256": "0c264ec328c1af6326d759303ddca28d1fc0eb8aa14a2339194e498ca58522f8",
+        "received_pages": [
+          1
+        ]
+      },
+      {
+        "source_id": "method:examples/website-adapter.example.md",
+        "sha256": "242b328b057125eadd9b1f88c140d42d1f1528d1c8918aa555eef21270e94009",
+        "received_pages": [
+          1
+        ]
+      },
+      {
+        "source_id": "method:examples/learning-product-adapter.example.md",
+        "sha256": "cfd5b19c9efdd011619e805f4ac84b7d723eac3e430d35eedaa589e94f85baaf",
+        "received_pages": [
+          1
+        ]
+      }
+    ],
+    "group_readback": [
+      {
+        "group": "AGENTS and five onboarding sources",
+        "summary": "One domain per independent executor; product defines observable conditions, QA independently validates. Preserve previous partial/fail and distinguish read/file/integration/execution facts; source ownership remains unknown.",
+        "application": "product-review.txt:3-8 and 43-46; no implementation or QA pass claimed"
+      },
+      {
+        "group": "Startup README, sources and local-method locator",
+        "summary": "All common baseline plus product role and frozen eight records are mandatory. Follow bounded next_command pages; fixed local methods are read-only, no raw private body/page/log copies. Metadata is not proof of understanding.",
+        "application": "This receipt startup.source list; 83 visible page calls consumed before product judgement; no checker run or private cache saved"
+      },
+      {
+        "group": "Core/v12 catalogs and shared preferences",
+        "summary": "Existing role identities and boundaries persist; no new employees or management ownership implied. Evidence, actual user benefit and document completion remain distinct. Shared editor depth preferences do not authorize writing answer content here.",
+        "application": "product-review.txt:5-8,43-46"
+      },
+      {
+        "group": "Product ROLE/MEMORY/SCHEMA",
+        "summary": "Product owns problem, scope and acceptance; does not implement or independently test. PM-MEM-0001 supports separate role memory/reuse only, not inferred visual taste or product tradeoffs. New observations are task facts, not approved long-term memory.",
+        "application": "product-review.txt:5-8,26-33,43-46; no memory proposal or employee edit"
+      },
+      {
+        "group": "Two method-loop and two closeout records",
+        "summary": "Version-bound current observations differ from historical reports and missing evidence. Previous wording correction required retaining existing local handling; absent files do not prove never existed. Explicit closeout is not automatic runtime connection.",
+        "application": "product-review.txt:3,10-24,35-37; no closeout invoked"
+      },
+      {
+        "group": "Two prior validation README and two final receipts",
+        "summary": "First natural read was FAIL/partial, DQ-01 document repair did not close engineering risk. Second trial read 18/32 and left NR-01; later mechanism fixes do not rewrite those outcomes. Static product pass did not prove browser behavior.",
+        "application": "product-review.txt:23-24,35-37,46; this read does not revise prior validation"
+      },
+      {
+        "group": "Ten fixed method files",
+        "summary": "Method library is a draft reference and templates/examples are not execution or adoption proof; task/source facts stay local. Relevant principles separate task relationships, current source facts, state branches and dynamic evidence.",
+        "application": "Selective method application below; no formal method adoption"
+      }
+    ],
+    "method_application": [
+      {
+        "id": "M01",
+        "status": "applied within product reasoning",
+        "application": "product-review.txt:5-8,10-15,26-33; distinguish answer text revision, draft, analysis event, recording attempt and question/model versions"
+      },
+      {
+        "id": "M06",
+        "status": "applied within evidence scope",
+        "application": "product-review.txt:3,10-24,35-37; existing source handling and historical limited QA separated from current untested claims"
+      },
+      {
+        "id": "M07",
+        "status": "applied within state review",
+        "application": "product-review.txt:10-24,26-33; edit/confirm/analyze/success/failure/reset/late-result branches mapped"
+      },
+      {
+        "id": "M08",
+        "status": "applied to limits and future evidence",
+        "application": "product-review.txt:23,32-33,46; callback/timing and keyboard/IME risks assigned future actual evidence, no static-as-runtime pass"
+      },
+      {
+        "id": "M04",
+        "status": "not performed as visual three-scale review",
+        "reason": "Source relations considered, but no rendered local/composition/page inspection authorized or performed"
+      },
+      {
+        "id": "M02/M03/M05",
+        "status": "not applied as design methods",
+        "reason": "No UI layout/token implementation or comparison artifact in scope"
+      },
+      {
+        "id": "Templates and two examples",
+        "status": "read; not adopted or applied as actual configuration",
+        "reason": "Only necessary receipt metadata and task facts saved; examples retain their unimplemented identity"
+      }
+    ],
+    "evidence_phase": "Original first-submission 34-source/83-page reads reused; not a new natural-reading run"
+  },
+  "business_sources": {
+    "S1": {
+      "path": "sites/rolecraft/dist/app.js",
+      "sha256": "f5eb9db9bb128000abd6216770f07d9515b4aef03d42080417a378638d270d1d",
+      "bytes": 170162
+    },
+    "entry": {
+      "path": "sites/rolecraft/dist/index.html",
+      "sha256": "4a77487dc7c8efb4b43992a071c8eac9ad328bbbb3c3a79bf8cea89a3daf707e",
+      "bytes": 5110
+    },
+    "S2": {
+      "path": "sites/rolecraft/server/voice/index.mjs",
+      "sha256": "310a4f55f8fcb0a849c65591eaf9e06a76166282d03f6845d2404dbd4fddb801",
+      "bytes": 18313
+    },
+    "S3": {
+      "path": "sites/rolecraft/server/index.mjs",
+      "sha256": "8be0d3a80aca40d6e69004410c9aeededc6cbde31c797da559c7031e142e8165",
+      "bytes": 86842
+    },
+    "voice-readme": {
+      "path": "sites/rolecraft/server/voice/README.md",
+      "sha256": "e3effe6827f07b7582595e4d6be35d72c08b6194f26a7c6499268d82c9406b6f",
+      "bytes": 3747
+    },
+    "S4": {
+      "path": "sites/rolecraft/team/validation/natural-read-repair-20261018T0110Z/first-submission/product-scope-and-acceptance.md",
+      "sha256": "18d479bce3be030443294c91c1fa83d817c2a922a027dacc575fe3badd76f4cf",
+      "bytes": 7949
+    },
+    "S5-retro": {
+      "path": "sites/rolecraft/team/RETROSPECTIVES.md",
+      "sha256": "689817d58299cb77077aca9eaaf563760c480faf1e770e159e4fe1ca8773cb78",
+      "bytes": 184406
+    },
+    "S5-tasks": {
+      "path": "sites/rolecraft/team/TASKS.md",
+      "sha256": "acc34ff3339f75237aa2e3ca62a175078e45b0c5f0fbb3a00913764b22a5edf7",
+      "bytes": 84319
+    },
+    "S6": {
+      "path": "sites/rolecraft/team/qa-interview-voice-focus-followup.md",
+      "sha256": "bc77c9a8cd3547b1f436990f514417ed2722a02b34c3bc051be5983a7fdad2f9",
+      "bytes": 4987
+    },
+    "S7": {
+      "path": "sites/rolecraft/team/ai-generation-interview-voice-v01.md",
+      "sha256": "05a36db0f2b28d668bb38acaa31cd495e1e0f1e962073ff91fde9dd7131daf0a",
+      "bytes": 12785
+    }
+  },
+  "business_read_ranges": {
+    "S1": [
+      [
+        112,
+        138
+      ],
+      [
+        139,
+        150
+      ],
+      [
+        156,
+        161
+      ],
+      [
+        213,
+        213
+      ],
+      [
+        215,
+        222
+      ]
+    ],
+    "entry": [
+      [
+        3,
+        9
+      ]
+    ],
+    "S2": [
+      [
+        200,
+        298
+      ]
+    ],
+    "S3": [
+      [
+        480,
+        520
+      ]
+    ],
+    "voice-readme": [
+      [
+        1,
+        34
+      ]
+    ],
+    "S4": [
+      [
+        1,
+        45
+      ]
+    ],
+    "S5-retro": [
+      [
+        1032,
+        1050
+      ]
+    ],
+    "S5-tasks": [
+      [
+        590,
+        612
+      ]
+    ],
+    "S6": [
+      [
+        1,
+        66
+      ]
+    ],
+    "S7": [
+      [
+        35,
+        65
+      ],
+      [
+        72,
+        94
+      ],
+      [
+        154,
+        172
+      ]
+    ],
+    "note": "Ranges list main source portions actually delivered and used; broad initial searches were truncated and are not claimed as full delivery. AGENTS initial cat was truncated; full 13-page required flow supplied complete body later.",
+    "evidence_phase": "Original business reading ranges retained; revision-1 only reread S1 lines133-138 and213 as already cited"
+  },
+  "findings": [
+    {
+      "id": "P1",
+      "classification": "current static behavior",
+      "claim": "Edit state hides old feedback; the normal confirm button first reads textarea, then sets transcriptConfirmed=true, then calls Analyze. Analyze synchronously rereads the same unchanged field, so the ordinary A-state/B-field click path does not clear the flag back to false solely due to that hand edit. Feedback state displays read-only transcript.",
+      "sources": [
+        "S1:133-138",
+        "S1:158-161",
+        "S1:213"
+      ]
+    },
+    {
+      "id": "P2",
+      "classification": "product gap visible in source",
+      "claim": "No user-visible answer-text revision identity or displayed confirmation time in reviewed rendering. The internal confirmation flag is not consumed by result display and does not replace visible text-version binding; ordinary confirm-button ordering is not evidence that the flag is cleared after confirmation.",
+      "sources": [
+        "S1:112",
+        "S1:133-138",
+        "S1:158-161"
+      ]
+    },
+    {
+      "id": "R1",
+      "classification": "static risk, runtime not reproduced",
+      "claim": "Correction actions use state text without first reading live textarea; hand edits before correction may be overwritten",
+      "sources": [
+        "S1:134-136",
+        "S1:213",
+        "S1:222"
+      ]
+    },
+    {
+      "id": "R2",
+      "classification": "static risk, runtime not reproduced",
+      "claim": "Reviewed transcription/analysis Promise callbacks and returned feedback adoption do not check request/question/confirmed-text association",
+      "sources": [
+        "S1:126",
+        "S1:138",
+        "S1:147"
+      ]
+    },
+    {
+      "id": "R3",
+      "classification": "static lifecycle observation and risk",
+      "claim": "Reset clears main text/feedback/time but retains auxiliary original/suggestions/confirmation fields; residuals are not recovery or version history",
+      "sources": [
+        "S1:112",
+        "S1:147",
+        "S4:35"
+      ]
+    },
+    {
+      "id": "H1",
+      "classification": "historical contract/evidence only",
+      "claim": "Prior QA and attempt/version proposals do not independently verify current reanalysis behavior",
+      "sources": [
+        "S5-retro:1038-1050",
+        "S6:11,39-49",
+        "S7:63,161",
+        "S4:29-35"
+      ]
+    }
+  ],
+  "self_check": {
+    "domain_only": true,
+    "source_vs_inference_vs_future_conditions_separated": true,
+    "current_runtime_accepted": false,
+    "independent_test_report_written": false,
+    "private_fulltext_or_employee_body_copied": false,
+    "artifact_format": "UTF-8 plain text plus evidence metadata JSON; no app/code changes"
+  },
+  "revision": {
+    "id": "revision-1",
+    "finding": "DQ-02",
+    "reason": "Independent QA found the first document reversed normal confirmation ordering and inferred an unsupported flag reset.",
+    "first_submission_preserved": {
+      "product-review.txt": {
+        "path": "/private/tmp/rolecraft-reanalysis-t6lyh5vp/product-review.txt",
+        "sha256": "f36c9f8a11059cd451d3e2b1da4d23436b350cc44a89dd4f3dd856a8530104c1"
+      },
+      "product-evidence.json": {
+        "path": "/private/tmp/rolecraft-reanalysis-t6lyh5vp/product-evidence.json",
+        "sha256": "6fc6827e803fc576865b5891f0c6cef31a816001d411d09e7b1e04e674c9ead2"
+      }
+    },
+    "document_changed_lines": [
+      18
+    ],
+    "corrected_source_fact": {
+      "normal_path": "S1:213 ReadTranscript -> transcriptConfirmed=true -> Analyze; S1:138 synchronously reads the same field again",
+      "static_counterexample": "State text A, field edited to B: first ReadTranscript updates state to B and may clear the flag through RefreshCorrections; button then sets true; second ReadTranscript sees B==B and does not refresh/clear.",
+      "withdrawn_claim": "The normal button sets true before first readback, so hand-edit readback then clears it to false.",
+      "not_merely_relabelled_as_unverified": true
+    },
+    "preserved_limits": [
+      "Internal confirmation field is not user-visible answer-version binding and is not used in feedback display",
+      "Correction actions read state text without first capturing live textarea; hand-edit overwrite risk remains untested",
+      "Existing callback/response binding and lifecycle risks retain their original untested status",
+      "A1-A6 scope, historical results and no-runtime limits unchanged"
+    ],
+    "new_source_reads": [
+      {
+        "source_id": "S1",
+        "path": "sites/rolecraft/dist/app.js",
+        "lines": [
+          133,
+          138
+        ]
+      },
+      {
+        "source_id": "S1",
+        "path": "sites/rolecraft/dist/app.js",
+        "lines": [
+          213,
+          213
+        ]
+      }
+    ],
+    "new_natural_reading_run": false,
+    "startup_or_method_rereads": false,
+    "business_runtime_runs": 0,
+    "network_calls": 0,
+    "qa_history": "First static document verdict needs revision for DQ-02 remains; revised artifact awaits original independent QA narrow recheck.",
+    "revision_note": "/private/tmp/rolecraft-reanalysis-t6lyh5vp/revision-1/revision-note.txt"
+  }
+}

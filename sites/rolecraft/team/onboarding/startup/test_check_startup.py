@@ -9,16 +9,19 @@ from unittest.mock import patch
 
 import check_startup as c
 
-FIXTURES = Path(__file__).absolute().parents[6] / "review/startup-read-check-20261017/fixtures"
+FIXTURES = Path(tempfile.gettempdir()).resolve()
 
 
-class StartupTests(unittest.TestCase):
+class StartupFixture(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory(prefix="author-synthetic-", dir=FIXTURES)
         self.root = Path(self.temp.name)
         self.project, self.method = self.root / "project", self.root / "method"
         self.project.mkdir()
         self.method.mkdir()
+        locator = json.loads((Path(__file__).parent / "local-method-source.json").read_text())
+        locator["local_root"] = str(self.method)
+        self.write(self.project, c.LOCATOR, json.dumps(locator))
         self.config = json.loads((Path(__file__).parent / "sources.json").read_text())
         self.write(self.project, c.CONFIG, json.dumps(self.config))
         for rel in c.PROJECT_SOURCES:
@@ -36,6 +39,9 @@ class StartupTests(unittest.TestCase):
             self.write(self.project, c.V12 + "backend-data-engineer/" + file, "# Backend original fallback fixture\n")
         for rel in c.RETRIEVAL_FILES:
             self.write(self.project, rel, "# Original retrieval specialist identity and handoff fixture\n")
+        for rel in (c.BASE + "onboarding/startup/README.md", c.BASE + "onboarding/startup/read_source.py",
+                    c.BASE + "onboarding/startup/check_startup.py"):
+            self.write(self.project, rel, "# Synthetic workflow input\n")
         for rel in c.METHOD_FILES:
             self.write(self.method, rel, "# Synthetic method " + rel + "\nFull method fixture body.\n")
         self.metadata = {"project": {"head": "3" * 40, "origin": "git@github.com:xsarthur/RoleCraft.git", "branch": "synthetic"},
@@ -87,6 +93,8 @@ class StartupTests(unittest.TestCase):
                                   "sha256": c.sha(raw), "start_line": 1, "end_line": 1, "quote": raw.decode().splitlines()[0],
                                   "summary": "fixture", "application": "planned"}]}
 
+
+class StartupTests(StartupFixture):
     def test_no_roles_does_not_default_all(self):
         with self.assertRaisesRegex(c.Rejected, "explicit_distinct"):
             self.run_check(roles=[])
@@ -332,6 +340,12 @@ class StartupTests(unittest.TestCase):
         links = c.local_links(invalid, "AGENTS.md", self.project, set())
         self.assertEqual(links[0]["target"], "still-real-missing.md")
         self.assertEqual(links[0]["status"], "broken_or_unsafe")
+
+    def test_record_scope_is_known_frozen_set_not_permanent_latest_discovery(self):
+        result = self.run_check()
+        self.assertEqual(len(result["record_scope"]["records"]), 8)
+        self.assertFalse(result["record_scope"]["validation_directory_autodiscovery"])
+        self.assertEqual(result["record_scope"]["status"], "explicit_frozen_known_record_set_only")
 
     def test_config_cannot_omit_latest_required_records(self):
         self.config["project_sources"].remove(c.BASE + "task-closeout-20261017.json")

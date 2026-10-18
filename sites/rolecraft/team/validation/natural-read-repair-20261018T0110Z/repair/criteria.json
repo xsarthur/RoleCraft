@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "qa_role": "/root/startup_repair_qa",
+  "frozen_at_utc": "2026-10-18T00:56:44.244803+00:00",
+  "scope": "startup locator and bounded content repair only; independent from later blind business trial",
+  "historical_result": "FAIL/partial unchanged",
+  "criteria": [
+    {
+      "id": "R01",
+      "title": "Authorization and preservation",
+      "rule": "Only marker-scoped AGENTS/onboarding/startup changes; app, original employees, old case and method including proposals unchanged. No event/network/config/Git write or ownership expansion."
+    },
+    {
+      "id": "R02",
+      "title": "Local method discovery",
+      "rule": "Normal documented invocation finds exactly the explicitly authorized local repository without --method-root hint. Locator is metadata only; absent/malformed/wrong locator fails closed with no filesystem search or fallback network."
+    },
+    {
+      "id": "R03",
+      "title": "Method identity",
+      "rule": "Continue fixed origin a848db9 HEAD, exact ten-file tree, regular Git blob and worktree byte equality. Wrong origin/revision, dirty body, missing/extra tracked file, permission denial and symlink/ancestor substitution cannot produce readable fixed-method PASS."
+    },
+    {
+      "id": "R04",
+      "title": "Bounded full content",
+      "rule": "Provide manifest and individually requestable bounded page for every selected input. Split by character/UTF8 bytes rather than line count; a single giant line must cross pages without omission or duplication. Entire serialized page remains under documented safe maximum."
+    },
+    {
+      "id": "R05",
+      "title": "Coverage and binding",
+      "rule": "Each page stably identifies source/version/full-source hash, page index/count, byte/character range and page hash. Reassembling all pages exactly matches original bytes, including UTF8, CRLF, no terminal newline and long single lines. Manifest-only/hash-only is not fulltext delivery."
+    },
+    {
+      "id": "R06",
+      "title": "Drift and invalid page",
+      "rule": "Out-of-range/invalid selection or changed content/version between manifest and page must be explicit; no stale page silently substitutes. Wrong source, traversal, absolute path and unsafe locator are rejected."
+    },
+    {
+      "id": "R07",
+      "title": "Compatibility",
+      "rule": "Preserve explicit --method-root and --include-content behavior and prior supported role/evidence semantics. Metadata-only default stays body-free; ownership unknown, understanding unverified, no automatic adoption or connection claim; exit0 only mechanical."
+    },
+    {
+      "id": "R08",
+      "title": "Current project history",
+      "rule": "At least prior validation README and validation-receipt selected and fully readable alongside existing two archives/two closeout files. Preserve old FAIL/partial, AGENTS truncation/method0-of10 and document-first-failure history."
+    },
+    {
+      "id": "R09",
+      "title": "Zero writes and private content",
+      "rule": "Checker performs no writes, no pyc under -B, no private fulltext saved to shared project or audit evidence. Fixtures contain synthetic text only, no init/clone, app/service/business execution, network or real DB/credential reads."
+    },
+    {
+      "id": "R10",
+      "title": "Independent evidence and limits",
+      "rule": "Author tests and QA independent adversarial cases separately recorded, findings kept with author repair/retest. File hashes/current version bound; mechanism tests do not count as new blind business success or platform/global automatic loading."
+    }
+  ],
+  "adversarial_minimum": [
+    "long single-line UTF8 > several pages, CRLF and no terminal newline exact reassembly",
+    "all ten synthetic methods page coverage",
+    "bad/missing/malformed locator, symlink locator and symlink ancestor",
+    "wrong origin/revision, dirty/missing/blob-mode mismatch, denied read",
+    "invalid page/source/range/hash, version drift between page requests",
+    "snapshot bytes/modes/mtime for zero writes"
+  ],
+  "initial_read_bindings": {
+    "AGENTS.md": {
+      "bytes": 49945,
+      "sha256": "a859c218c01351f506e878f8d200a1ccc5c638ce26991c6f31ae549fcdfcbfd8"
+    },
+    "sites/rolecraft/team/onboarding/startup/README.md": {
+      "bytes": 6580,
+      "sha256": "89687f866453c48196aba3e46f5518d0e6c093c3b00f40f8c4a13b77c11a30f5"
+    },
+    "sites/rolecraft/team/onboarding/startup/check_startup.py": {
+      "bytes": 24195,
+      "sha256": "f29fad5c3548d3befdba47dc2196b7c7d6d5ae59d9927018597e974ab1ec9012"
+    },
+    "sites/rolecraft/team/onboarding/startup/test_check_startup.py": {
+      "bytes": 21042,
+      "sha256": "182eec9f7fe85b7baa3c911760f936b07e45fd729c3634661543f66a2cd5a7d3"
+    },
+    "sites/rolecraft/team/onboarding/startup/sources.json": {
+      "bytes": 1784,
+      "sha256": "87ec6cec1e3b7880fc4cd42b4c15beba159cf67081ef6ff74ff2a24736e831a4"
+    },
+    "sites/rolecraft/team/validation/natural-read-20261017T1557Z/README.md": {
+      "bytes": 4779,
+      "sha256": "1d89401be043d5f6f957d729b701e245669d0f442ec185a457f3190e57ca90ba"
+    },
+    "sites/rolecraft/team/validation/natural-read-20261017T1557Z/validation-receipt.json": {
+      "bytes": 5942,
+      "sha256": "2d42358d9f8540f50651dde7555ac3e660e2bd333db8de2cba322a1005f171af"
+    }
+  }
+}

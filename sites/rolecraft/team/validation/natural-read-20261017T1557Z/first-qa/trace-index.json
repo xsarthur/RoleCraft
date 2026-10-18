@@ -1,0 +1,1252 @@
+{
+  "schema_version": 1,
+  "kind": "minimal_visible_tool_trace_index",
+  "raw_logs_copied": false,
+  "analysis_reasoning_or_account_metadata_extracted": false,
+  "business_prefix": {
+    "bytes": 1527281,
+    "sha256": "84d49bac1f8d5fdb8d6d6e26a805bbc8922057c4b1cb2a1d4c92dc8fdebe15e1",
+    "lines": 243,
+    "ends_with_newline": true
+  },
+  "business_session_binding": [
+    {
+      "line": 1,
+      "kind": "session_binding",
+      "parent_thread_id": "01a14a89-47ce-7343-a11b-31426601fd84",
+      "agent_path": "/root/voice_trial_product"
+    }
+  ],
+  "qa_session_binding": [
+    {
+      "line": 1,
+      "kind": "session_binding",
+      "parent_thread_id": "01a14a89-47ce-7343-a11b-31426601fd84",
+      "agent_path": "/root/natural_read_qa"
+    }
+  ],
+  "initial_task_visible_metadata": [
+    {
+      "line": 13,
+      "time": "2026-10-17T15:58:55.742Z",
+      "kind": "agent_message_metadata",
+      "author": "/root",
+      "recipient": "/root/voice_trial_product",
+      "encrypted_body": true
+    }
+  ],
+  "literal_prompt_limit": "Initial task body is encrypted_content; no decryption. Plaintext prompt is a root-frozen copy, not independently recovered from child log. history_mode paginated is not fork_turns=none proof.",
+  "business_tool_events": [
+    {
+      "line": 13,
+      "time": "2026-10-17T15:58:55.742Z",
+      "kind": "agent_message_metadata",
+      "author": "/root",
+      "recipient": "/root/voice_trial_product",
+      "encrypted_body": true
+    },
+    {
+      "line": 18,
+      "time": "2026-10-17T15:59:04.161Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_dc3ed200729b46c680124cbfc080a30f",
+      "input_sha256": "7ce4d08fcd21123d610ac2f0ace20572add3fc2167fea71eaca268315a27779b"
+    },
+    {
+      "line": 23,
+      "time": "2026-10-17T15:59:04.274Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_dc3ed200729b46c680124cbfc080a30f",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 202,
+          "sha256": "4faaf91b4e6800603d68faa7e5811ceee1e200e01a46ee16e5c58106aecab969",
+          "truncated": false
+        },
+        {
+          "bytes": 9874,
+          "sha256": "8ca0f902100da4784d76cbda80fdbf8f4c492a956fbcfd89b6d6a4b1a44fd484",
+          "truncated": false
+        },
+        {
+          "bytes": 141,
+          "sha256": "4827de18f48cdc9bf92bf8d4af65bf96084485e766cad079b1ab1f1908bc1eec",
+          "truncated": false
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 25,
+      "time": "2026-10-17T15:59:11.303Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_d824aed2094a45bcbc92afb914fdbc88",
+      "input_sha256": "156c9e424cfa0f7c2e7080e0e3e402c4db213406ad8250d7e40f44278869edbe"
+    },
+    {
+      "line": 32,
+      "time": "2026-10-17T15:59:11.403Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_d824aed2094a45bcbc92afb914fdbc88",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 24375,
+          "sha256": "76f598e9456aac7f4004f59415f879b4d4a23351f12f472bd16c8d97b6d1c52b",
+          "truncated": true
+        },
+        {
+          "bytes": 141,
+          "sha256": "361f418889ef573fe17715028135a745f7b1a023384a220d463c89f89dd9a1ba",
+          "truncated": false
+        },
+        {
+          "bytes": 278,
+          "sha256": "9b39ffa0622b43508675993269dd97a00f15d0c8c285576c606ce37f7ed62247",
+          "truncated": false
+        },
+        {
+          "bytes": 3948,
+          "sha256": "4aacc0fd83c6f33feba3f20a59ed3154f698ac35aa43b3d5910446cb5921e089",
+          "truncated": false
+        },
+        {
+          "bytes": 8557,
+          "sha256": "7255a06fda33369f31221e17d38f2022c14137bed72bb451c29de90bfbd17b99",
+          "truncated": false
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 36,
+      "time": "2026-10-17T15:59:21.218Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_3c9877fcae0849e5a0c14e28a5beef1d",
+      "input_sha256": "fd38cbfc5b0a076081b65a13d8b46d3f4abaa940221fb25a11604f8776833528"
+    },
+    {
+      "line": 43,
+      "time": "2026-10-17T15:59:21.314Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_3c9877fcae0849e5a0c14e28a5beef1d",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 40104,
+          "sha256": "77193d2716328ac2b5450ab1fba5a091079ec326cb7ff19bd8fea61d263627f4",
+          "truncated": true
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 47,
+      "time": "2026-10-17T15:59:28.430Z",
+      "kind": "function_call",
+      "name": "send_message",
+      "call_id": "call_677dd912264b4b3ebbd366df688d926e",
+      "input_sha256": "d42c815d7b11ac60382c3c337b1edd1a3430b7ef44ff5633fd3a706ab7ba6fb2"
+    },
+    {
+      "line": 50,
+      "time": "2026-10-17T15:59:28.583Z",
+      "kind": "function_call_output",
+      "call_id": "call_677dd912264b4b3ebbd366df688d926e",
+      "plaintext_blocks": [],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 52,
+      "time": "2026-10-17T15:59:33.256Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_a4540b770e0044e897208454b8af4762",
+      "input_sha256": "c6898cdfe69b82b8364026347b84563aa316e62b5c6bc7e21601be605c985794"
+    },
+    {
+      "line": 57,
+      "time": "2026-10-17T15:59:33.332Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_a4540b770e0044e897208454b8af4762",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 2058,
+          "sha256": "fc56b7ed89241e52369deb6c84388fc8aeb493c070d7119485a83e583b87c83e",
+          "truncated": false
+        },
+        {
+          "bytes": 19609,
+          "sha256": "c1eef4d64d3b1da5951cdac7096db0654aab76dae15e55acfb779be2945d423d",
+          "truncated": false
+        },
+        {
+          "bytes": 10045,
+          "sha256": "f6375a997286ac848662379d75df2b4f4b6a0a8b96892e15b5a61e89cd71ed7a",
+          "truncated": false
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 61,
+      "time": "2026-10-17T15:59:45.680Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_8723c6f8dfc64d54a3a8ce6ce684be75",
+      "input_sha256": "c8ff65fca6e714bac88ae31cdbbe064ff7f394a3cc157b6a064bd7170daa81ad"
+    },
+    {
+      "line": 67,
+      "time": "2026-10-17T15:59:45.748Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_8723c6f8dfc64d54a3a8ce6ce684be75",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 40107,
+          "sha256": "a06556a5df7e20073105043db3de80df29647c7d369f5c4c3a621937aeb5551e",
+          "truncated": true
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 73,
+      "time": "2026-10-17T15:59:57.902Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_779d8c01c33640da8e5c1cf9a201a15c",
+      "input_sha256": "7e17bb884daccdaf3ccfca13b93508b0913a4d6a1f6cd5f476b455cdea5bfadf"
+    },
+    {
+      "line": 79,
+      "time": "2026-10-17T15:59:58.011Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_779d8c01c33640da8e5c1cf9a201a15c",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 40105,
+          "sha256": "29291cf98121ff9292c03007dce07d08edb6af8a52a9b3b995e573bd13cfa5dd",
+          "truncated": true
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 83,
+      "time": "2026-10-17T16:00:04.976Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_a73b4ea0aa8d474290cceefd861dcf52",
+      "input_sha256": "8289e1816bd09a61112d888dc5e51ed6040b45be15e898c9d462bcf07d9049c6"
+    },
+    {
+      "line": 86,
+      "time": "2026-10-17T16:00:05.046Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_a73b4ea0aa8d474290cceefd861dcf52",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 22689,
+          "sha256": "c46482191e04a39d69a0a9392cb816a4474b85b63600d6231cb2bf96a82927b1",
+          "truncated": false
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 92,
+      "time": "2026-10-17T16:00:08.205Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_caf19453bd2c4f4a91c0a184f7765024",
+      "input_sha256": "ad1069d8f1b84e2b31deec11ecd7116e538ed4ed3c26869e8d176cea895321a5"
+    },
+    {
+      "line": 95,
+      "time": "2026-10-17T16:00:08.362Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_caf19453bd2c4f4a91c0a184f7765024",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 11184,
+          "sha256": "6b1f0a2575141e6b3f257cadc3b573c7ce0ec9e25d2e7401bd2fc78c1a0f2b58",
+          "truncated": false
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 99,
+      "time": "2026-10-17T16:00:21.562Z",
+      "kind": "function_call",
+      "name": "send_message",
+      "call_id": "call_f51bb67aaa2b488dabb408c5ddb99b7b",
+      "input_sha256": "853093d6aa134a02db63e5aad66d442357e1313082a5268dc1f9fe70950fb7db"
+    },
+    {
+      "line": 102,
+      "time": "2026-10-17T16:00:21.887Z",
+      "kind": "function_call_output",
+      "call_id": "call_f51bb67aaa2b488dabb408c5ddb99b7b",
+      "plaintext_blocks": [],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 104,
+      "time": "2026-10-17T16:00:29.093Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_8c02575158c0487e91c4695be4a13643",
+      "input_sha256": "acbbf0053721997ec4fc744fe0307a3a7b8a36bb766ce481876d29e3d0789361"
+    },
+    {
+      "line": 110,
+      "time": "2026-10-17T16:00:29.232Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_8c02575158c0487e91c4695be4a13643",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 40104,
+          "sha256": "b4ffb8ecdb5e4974c33cb1ab4dc65d042844779a5f3a708094e6acbd4025b421",
+          "truncated": true
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 114,
+      "time": "2026-10-17T16:00:38.467Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_23d84d88fc56423f8d38ace4555c0aaa",
+      "input_sha256": "c7246dc5393aadf577cdc554aff5a4d414f4ea4d50cbd24d13401a9407553b14"
+    },
+    {
+      "line": 120,
+      "time": "2026-10-17T16:00:38.615Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_23d84d88fc56423f8d38ace4555c0aaa",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 22915,
+          "sha256": "22092cd9b132ac41d6a52ecd23d01e7b2e37e9e776850568a6da90b8ab372615",
+          "truncated": false
+        },
+        {
+          "bytes": 2651,
+          "sha256": "2dd8aea57e7a2c6ac13ec50e3990546c427b9bef65a5a188bc3cb2770f81ace0",
+          "truncated": false
+        },
+        {
+          "bytes": 186,
+          "sha256": "379891a7acdb612058de47e5489134327483e11bda753e2d23e86d65b286aa9f",
+          "truncated": false
+        },
+        {
+          "bytes": 884,
+          "sha256": "25fb6d72a3bd2decf90a1dc8dc685d7290ad90989ee26f4b00153a482a606bf3",
+          "truncated": false
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 124,
+      "time": "2026-10-17T16:00:44.081Z",
+      "kind": "function_call",
+      "name": "send_message",
+      "call_id": "call_08ce14633f154c4d869b135a76672a26",
+      "input_sha256": "65c2edd0da0aac9ca39ed7500558f6f95db4796549ae4ad2017db4ae91c339d3"
+    },
+    {
+      "line": 127,
+      "time": "2026-10-17T16:00:44.223Z",
+      "kind": "function_call_output",
+      "call_id": "call_08ce14633f154c4d869b135a76672a26",
+      "plaintext_blocks": [],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 131,
+      "time": "2026-10-17T16:00:54.301Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_c744f2b67aad481f89d6c0a860c2d31e",
+      "input_sha256": "163de2cb78cb6a0944691a2fc43ecb8de8ee1367a95e4bf57b07da4a00bd8a77"
+    },
+    {
+      "line": 137,
+      "time": "2026-10-17T16:00:54.429Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_c744f2b67aad481f89d6c0a860c2d31e",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 40104,
+          "sha256": "f78a19bddf6f897ed4e6c05dd934cccf2470069ff18fc50517f79f087ba670ab",
+          "truncated": true
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 141,
+      "time": "2026-10-17T16:01:00.677Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_16e089a43ae747ab87962178577035bf",
+      "input_sha256": "46cae2c2dd97b8bf67915e9298f5c70ad0ab1cf45574c2282598df98b8a5d6fa"
+    },
+    {
+      "line": 144,
+      "time": "2026-10-17T16:01:00.747Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_16e089a43ae747ab87962178577035bf",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 1502,
+          "sha256": "ea5255d273a005e39de0a9d62048de8563eb384057a017ddbd938c9827c4e21f",
+          "truncated": false
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 150,
+      "time": "2026-10-17T16:01:12.364Z",
+      "kind": "function_call",
+      "name": "send_message",
+      "call_id": "call_fcde361bf25d4e2ab0575ec9d7e6280c",
+      "input_sha256": "031502d1a509e8dedeb457f3aa0c9b700751749cc5c443cc9a79d1653bee09bc"
+    },
+    {
+      "line": 153,
+      "time": "2026-10-17T16:01:12.492Z",
+      "kind": "function_call_output",
+      "call_id": "call_fcde361bf25d4e2ab0575ec9d7e6280c",
+      "plaintext_blocks": [],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 155,
+      "time": "2026-10-17T16:01:15.644Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_10b6df4ec72d4b70aaa452d878a71fe2",
+      "input_sha256": "0655dcf329aca1a86500df838c622cf8dd6d74c0506e5e70f40e2f954e5bb7ce"
+    },
+    {
+      "line": 158,
+      "time": "2026-10-17T16:01:15.728Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_10b6df4ec72d4b70aaa452d878a71fe2",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 8843,
+          "sha256": "8f5408a9adea0817be3dc2d03bafdf7f4af1e08d738ac091dfd0826943231f2d",
+          "truncated": false
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 162,
+      "time": "2026-10-17T16:01:20.921Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_bcf31645dcf946b69baa55464454981e",
+      "input_sha256": "6bbf8623e66fbb61169e770c853c22f7d740cfd9fc9b93b795ecd093b571158c"
+    },
+    {
+      "line": 165,
+      "time": "2026-10-17T16:01:21.017Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_bcf31645dcf946b69baa55464454981e",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 458,
+          "sha256": "4cacaa2ee4cad9ed4051af06ffa1bb1db36d5f2c8f81a9976ff1eab8dd685863",
+          "truncated": false
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 169,
+      "time": "2026-10-17T16:01:27.619Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_8b90c365e47942feba70290c4343c3c5",
+      "input_sha256": "ea8d8ebfff6f9fee394b7c421871f543b2203f564f66ed9e39c97a1f3509766e"
+    },
+    {
+      "line": 172,
+      "time": "2026-10-17T16:01:27.802Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_8b90c365e47942feba70290c4343c3c5",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 20545,
+          "sha256": "e7224aa16b3fd6bea2a285fea0d57ff7b8fa2aa6572039a8384894ce01c46b65",
+          "truncated": false
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 176,
+      "time": "2026-10-17T16:01:31.060Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_88bd2679547c4675abc885ab90ae603e",
+      "input_sha256": "e2279b7e72d4aba19ee9adbbf3bf6de3b6ca4c5c4d9f71494950dbe04a776e73"
+    },
+    {
+      "line": 179,
+      "time": "2026-10-17T16:01:31.191Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_88bd2679547c4675abc885ab90ae603e",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 8534,
+          "sha256": "3b4c9d9e30cbd73f66eea7f9e14fc08263651211785c2920d1ecb7a8f94c133b",
+          "truncated": false
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 183,
+      "time": "2026-10-17T16:01:35.428Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_4df867a2b2e34b25b12ff44db0d4c641",
+      "input_sha256": "dd27cd6078710c1f4f0b696efa59c1a80065c52f770c67d5cd0963e732d5df12"
+    },
+    {
+      "line": 186,
+      "time": "2026-10-17T16:01:35.532Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_4df867a2b2e34b25b12ff44db0d4c641",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 27119,
+          "sha256": "9a11e21a625adcf6ea7b5040d503abd82f8e6896ce0926a684bedf37db56bf2a",
+          "truncated": false
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 190,
+      "time": "2026-10-17T16:01:39.388Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_6d42b386ea4642a08c83c17caf698d8a",
+      "input_sha256": "0bfb7f0dabd2fb98d5713f6d6bb8437e6ab54b79ba0e9e655db28737e2d65a46"
+    },
+    {
+      "line": 193,
+      "time": "2026-10-17T16:01:39.474Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_6d42b386ea4642a08c83c17caf698d8a",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 16289,
+          "sha256": "4bcec12293560d44af7bd7701846114ab5280602080fceceb329c8af3a4b9261",
+          "truncated": false
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 197,
+      "time": "2026-10-17T16:01:44.134Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_c05727cb66514c6aab035160ec77d54e",
+      "input_sha256": "8224ff9d9d1819f30c7345292339d5e848c55bf34cfc550f3655e63d23089969"
+    },
+    {
+      "line": 200,
+      "time": "2026-10-17T16:01:44.288Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_c05727cb66514c6aab035160ec77d54e",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 200,
+          "sha256": "7e4772baaf327592fa3a694c4353a73d510992d4fcebae33bac09b0457167ff6",
+          "truncated": false
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 204,
+      "time": "2026-10-17T16:01:54.728Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_8c975171f3d34fbdb3cab4798676370d",
+      "input_sha256": "f39e37cd359f7b09744743992d348bfb7cc478da5d0c0101b57b46ce0c0c04b3"
+    },
+    {
+      "line": 207,
+      "time": "2026-10-17T16:01:54.840Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_8c975171f3d34fbdb3cab4798676370d",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 7802,
+          "sha256": "3049a4a88ccb03d745f42454ea2d5a5ea87daaa4e6f5c56593ed6a1fcfb6b7d4",
+          "truncated": false
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 211,
+      "time": "2026-10-17T16:01:59.850Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_bdce4e736f40405e9cf1f3696ed0e8ee",
+      "input_sha256": "06a5d32256c80263e5c49fb18a63a4032d5d24377633c107877c4f343fb69574"
+    },
+    {
+      "line": 214,
+      "time": "2026-10-17T16:01:59.930Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_bdce4e736f40405e9cf1f3696ed0e8ee",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 6282,
+          "sha256": "16fb4e7deda7eed631a8f661013ffad50b7ed9d790b9bf03acb7818d6a937557",
+          "truncated": false
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 218,
+      "time": "2026-10-17T16:03:27.124Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_4a83f546bc924a03bb15f3d8eb34469f",
+      "input_sha256": "8fa459df0df9f0bdc2bc4ee32807258a6a61ebe9f099389019e356ae723972f7"
+    },
+    {
+      "line": 221,
+      "time": "2026-10-17T16:03:27.200Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_4a83f546bc924a03bb15f3d8eb34469f",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "8b11000664d9ae152d68a38d254a291c11ce04af19938de744eb6923727c2629",
+          "truncated": false
+        },
+        {
+          "bytes": 2,
+          "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "truncated": false
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 225,
+      "time": "2026-10-17T16:03:57.904Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_8944828bd1364a1fa51e88958b7c9ae0",
+      "input_sha256": "d990e9578bf797f1ba8fc171b5595022cf01f3b06ac6f53b75767a5b906744fc"
+    },
+    {
+      "line": 228,
+      "time": "2026-10-17T16:03:58.444Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_8944828bd1364a1fa51e88958b7c9ae0",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "acca4205edb492a93404f6c3083e605902a9a33c6f2cfcad2ca3e203d31984f0",
+          "truncated": false
+        },
+        {
+          "bytes": 361,
+          "sha256": "3d6ce14f133b69dba2f69d88ea94a2655d2a03498dfa4fb9a5f7c191c840e47e",
+          "truncated": false
+        }
+      ],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 232,
+      "time": "2026-10-17T16:04:04.158Z",
+      "kind": "function_call",
+      "name": "send_message",
+      "call_id": "call_b847f0f21f1649818af928501401a5b4",
+      "input_sha256": "4d7eaabd95cad1427d3ae19b7b37afa142e9fd3beed2013f5435421bf5fc379c"
+    },
+    {
+      "line": 235,
+      "time": "2026-10-17T16:04:04.297Z",
+      "kind": "function_call_output",
+      "call_id": "call_b847f0f21f1649818af928501401a5b4",
+      "plaintext_blocks": [],
+      "encrypted_blocks": 0
+    },
+    {
+      "line": 239,
+      "time": "2026-10-17T16:04:25.555Z",
+      "kind": "custom_tool_call",
+      "name": "exec",
+      "call_id": "call_708acee761f84f458287e4a7bbee7b58",
+      "input_sha256": "e5c4f037e29aa0cf8c67299ecaddf145864ab597804982300a87c7aecfa7dfb7"
+    },
+    {
+      "line": 242,
+      "time": "2026-10-17T16:04:25.731Z",
+      "kind": "custom_tool_call_output",
+      "call_id": "call_708acee761f84f458287e4a7bbee7b58",
+      "plaintext_blocks": [
+        {
+          "bytes": 47,
+          "sha256": "b5f7a7aa304b9f47f3043a3ce24ece3433e73e45531c2fde5131b981ec94b9ab",
+          "truncated": false
+        },
+        {
+          "bytes": 2,
+          "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "truncated": false
+        }
+      ],
+      "encrypted_blocks": 0
+    }
+  ],
+  "required_business_project_coverage": [
+    {
+      "source_id": "project:AGENTS.md",
+      "sha256": "a859c218c01351f506e878f8d200a1ccc5c638ce26991c6f31ae549fcdfcbfd8",
+      "bytes": 49945,
+      "lines": 226,
+      "business_exact_fulltext_output": [],
+      "status": "complete_delivery_not_established",
+      "missing_nonblank_lines_across_all_visible_outputs": [
+        171,
+        173
+      ],
+      "note": "Commands attempted full cat and 1-90/91-170/171-260; inner/outer truncation remains; hashing later does not repair delivery. Individual-line search is only a gap detector, not proof of full delivery."
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/README.md",
+      "sha256": "9a0f20c509bce79a6067c4bc9e0368af9c8e26a89b4b4554a2c52e19a81db8ca",
+      "bytes": 10105,
+      "lines": 81,
+      "business_exact_fulltext_output": [
+        {
+          "log_line": 57,
+          "call_id": "call_a4540b770e0044e897208454b8af4762"
+        }
+      ],
+      "status": "fulltext_delivered"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/ROLE-MAPPING.md",
+      "sha256": "6fef691401c64a1bf171a87c4d6cc7ec60bacab0560bccb37333f85db901ff5f",
+      "bytes": 9207,
+      "lines": 72,
+      "business_exact_fulltext_output": [
+        {
+          "log_line": 57,
+          "call_id": "call_a4540b770e0044e897208454b8af4762"
+        }
+      ],
+      "status": "fulltext_delivered"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+      "sha256": "310065b56ef9efb7d8cafcfc96e3841f5cad0ac737305a3a398d1c60c87c6806",
+      "bytes": 7839,
+      "lines": 85,
+      "business_exact_fulltext_output": [
+        {
+          "log_line": 120,
+          "call_id": "call_23d84d88fc56423f8d38ace4555c0aaa"
+        }
+      ],
+      "status": "fulltext_delivered"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/APPLICATION-NOTES.md",
+      "sha256": "d39b582b4c992b319720eae20a58418a9dafeb1277fa57d6be31dbb10f458afd",
+      "bytes": 8647,
+      "lines": 79,
+      "business_exact_fulltext_output": [
+        {
+          "log_line": 120,
+          "call_id": "call_23d84d88fc56423f8d38ace4555c0aaa"
+        }
+      ],
+      "status": "fulltext_delivered"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/TASK-LAYOUT3-READING-DIALOGUE.md",
+      "sha256": "2c094e940338032a179551503270d927801b1e7e82652126e31280dd4e33bfdc",
+      "bytes": 6025,
+      "lines": 52,
+      "business_exact_fulltext_output": [
+        {
+          "log_line": 120,
+          "call_id": "call_23d84d88fc56423f8d38ace4555c0aaa"
+        }
+      ],
+      "status": "fulltext_delivered"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/startup/README.md",
+      "sha256": "89687f866453c48196aba3e46f5518d0e6c093c3b00f40f8c4a13b77c11a30f5",
+      "bytes": 6580,
+      "lines": 53,
+      "business_exact_fulltext_output": [
+        {
+          "log_line": 43,
+          "call_id": "call_3c9877fcae0849e5a0c14e28a5beef1d"
+        }
+      ],
+      "status": "fulltext_delivered"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/onboarding/startup/sources.json",
+      "sha256": "87ec6cec1e3b7880fc4cd42b4c15beba159cf67081ef6ff74ff2a24736e831a4",
+      "bytes": 1784,
+      "lines": 41,
+      "business_exact_fulltext_output": [
+        {
+          "log_line": 57,
+          "call_id": "call_a4540b770e0044e897208454b8af4762"
+        }
+      ],
+      "status": "fulltext_delivered"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/README.md",
+      "sha256": "90572c46efdda8333abeaf3458a01774430aa51076220621f384857f71af7a7e",
+      "bytes": 4577,
+      "lines": 53,
+      "business_exact_fulltext_output": [
+        {
+          "log_line": 137,
+          "call_id": "call_c744f2b67aad481f89d6c0a860c2d31e"
+        }
+      ],
+      "status": "fulltext_delivered"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/manifest.json",
+      "sha256": "28227bf1a6c4ac584e28b2a419614368ee539433e929dce60206b8571283aef2",
+      "bytes": 2736,
+      "lines": 84,
+      "business_exact_fulltext_output": [
+        {
+          "log_line": 137,
+          "call_id": "call_c744f2b67aad481f89d6c0a860c2d31e"
+        }
+      ],
+      "status": "fulltext_delivered"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+      "sha256": "e80f7be22925b043f9071c800b8ba040531a06756b3c3120df479cd94071060b",
+      "bytes": 5705,
+      "lines": 62,
+      "business_exact_fulltext_output": [
+        {
+          "log_line": 179,
+          "call_id": "call_88bd2679547c4675abc885ab90ae603e"
+        }
+      ],
+      "status": "fulltext_delivered"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/product-manager/ROLE.md",
+      "sha256": "56f932f3621b64469b3136ff3d1cafa3af900608f5c82947e33e0012ffd614c7",
+      "bytes": 5096,
+      "lines": 71,
+      "business_exact_fulltext_output": [
+        {
+          "log_line": 57,
+          "call_id": "call_a4540b770e0044e897208454b8af4762"
+        }
+      ],
+      "status": "fulltext_delivered"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/product-manager/MEMORY.md",
+      "sha256": "d992070fba035c1d3a5fb6f5734ed0922f011321c717cfb578b9b2e8209e38fe",
+      "bytes": 1297,
+      "lines": 21,
+      "business_exact_fulltext_output": [
+        {
+          "log_line": 57,
+          "call_id": "call_a4540b770e0044e897208454b8af4762"
+        }
+      ],
+      "status": "fulltext_delivered"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/employees/core/product-manager/MEMORY_SCHEMA.md",
+      "sha256": "4026b98355e6fc1332871eaa9d93bf532288125fea200f40c7c78fc041303c07",
+      "bytes": 3349,
+      "lines": 67,
+      "business_exact_fulltext_output": [
+        {
+          "log_line": 57,
+          "call_id": "call_a4540b770e0044e897208454b8af4762"
+        }
+      ],
+      "status": "fulltext_delivered"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/team-method-loop-20261017-archive.md",
+      "sha256": "d8b0ec8de67b8f17d511e70daa99038859b94b9d8f7ff5ad39cd9560d2085eeb",
+      "bytes": 8666,
+      "lines": 70,
+      "business_exact_fulltext_output": [
+        {
+          "log_line": 158,
+          "call_id": "call_10b6df4ec72d4b70aaa452d878a71fe2"
+        }
+      ],
+      "status": "fulltext_delivered"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+      "sha256": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+      "bytes": 25287,
+      "lines": 489,
+      "business_exact_fulltext_output": [
+        {
+          "log_line": 186,
+          "call_id": "call_4df867a2b2e34b25b12ff44db0d4c641"
+        }
+      ],
+      "status": "fulltext_delivered"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/task-closeout-20261017.md",
+      "sha256": "e0eb6d418d4eef6fd3580c97d8f766d98a8162cf95f4639bf0c14118cb6c8920",
+      "bytes": 2631,
+      "lines": 29,
+      "business_exact_fulltext_output": [
+        {
+          "log_line": 179,
+          "call_id": "call_88bd2679547c4675abc885ab90ae603e"
+        }
+      ],
+      "status": "fulltext_delivered"
+    },
+    {
+      "source_id": "project:sites/rolecraft/team/task-closeout-20261017.json",
+      "sha256": "78e698ed76ef63c2ca603f1730baedcf1c06e3c7b2c7750cf6ca9bd2b7564cba",
+      "bytes": 15006,
+      "lines": 340,
+      "business_exact_fulltext_output": [
+        {
+          "log_line": 193,
+          "call_id": "call_6d42b386ea4642a08c83c17caf698d8a"
+        }
+      ],
+      "status": "fulltext_delivered"
+    }
+  ],
+  "fixed_method_coverage": [
+    {
+      "source_id": "method:README.md",
+      "sha256": "7283e2d173c9c44bad7f356f890241efb7693be3a340d456c868df391142f1c1",
+      "bytes": 2346,
+      "business_fulltext_output": [],
+      "qa_fulltext_output": [
+        {
+          "log_line": 76,
+          "call_id": "call_284f4d217dc94b3bba2d6800594a3dd9"
+        }
+      ],
+      "business_status": "not_read_before_first_seal; source unresolved",
+      "qa_status": "fulltext_delivered"
+    },
+    {
+      "source_id": "method:SOURCE-MANIFEST.md",
+      "sha256": "ddf191051d0f7f47ce84097b7b1528f609565b1f287df770a0127ea5ee274cb1",
+      "bytes": 2246,
+      "business_fulltext_output": [],
+      "qa_fulltext_output": [
+        {
+          "log_line": 76,
+          "call_id": "call_284f4d217dc94b3bba2d6800594a3dd9"
+        }
+      ],
+      "business_status": "not_read_before_first_seal; source unresolved",
+      "qa_status": "fulltext_delivered"
+    },
+    {
+      "source_id": "method:CHANGELOG.md",
+      "sha256": "04fbd3e05f9af5d0432273000b88bacaef328eb314f7234992ec4c1e2ec4e2c4",
+      "bytes": 1147,
+      "business_fulltext_output": [],
+      "qa_fulltext_output": [
+        {
+          "log_line": 76,
+          "call_id": "call_284f4d217dc94b3bba2d6800594a3dd9"
+        }
+      ],
+      "business_status": "not_read_before_first_seal; source unresolved",
+      "qa_status": "fulltext_delivered"
+    },
+    {
+      "source_id": "method:roles.md",
+      "sha256": "e19e414487dbd03a31824f1f5d3fb1a4ef57cc4076a54d17ddb82d5a64ef5b5a",
+      "bytes": 8313,
+      "business_fulltext_output": [],
+      "qa_fulltext_output": [
+        {
+          "log_line": 76,
+          "call_id": "call_284f4d217dc94b3bba2d6800594a3dd9"
+        }
+      ],
+      "business_status": "not_read_before_first_seal; source unresolved",
+      "qa_status": "fulltext_delivered"
+    },
+    {
+      "source_id": "method:methods.md",
+      "sha256": "3346016d6aba70f681cf26467d642f9bc8ebfd45b10ea520fa0cc5de169d879b",
+      "bytes": 3052,
+      "business_fulltext_output": [],
+      "qa_fulltext_output": [
+        {
+          "log_line": 76,
+          "call_id": "call_284f4d217dc94b3bba2d6800594a3dd9"
+        }
+      ],
+      "business_status": "not_read_before_first_seal; source unresolved",
+      "qa_status": "fulltext_delivered"
+    },
+    {
+      "source_id": "method:adoption-and-change.md",
+      "sha256": "cf2bcda816d9384c496ed3432d7db98dee5fa6eaca0f15d733d88938b45e741b",
+      "bytes": 2943,
+      "business_fulltext_output": [],
+      "qa_fulltext_output": [
+        {
+          "log_line": 86,
+          "call_id": "call_3641ceaac804498e9f6e9707e751fff8"
+        }
+      ],
+      "business_status": "not_read_before_first_seal; source unresolved",
+      "qa_status": "fulltext_delivered"
+    },
+    {
+      "source_id": "method:checklists/startup-receipt.md",
+      "sha256": "374118279b5fb6e7039784b3cb30482c1f01cf0521ef75c954d8e71b6bf7e48b",
+      "bytes": 1035,
+      "business_fulltext_output": [],
+      "qa_fulltext_output": [
+        {
+          "log_line": 86,
+          "call_id": "call_3641ceaac804498e9f6e9707e751fff8"
+        }
+      ],
+      "business_status": "not_read_before_first_seal; source unresolved",
+      "qa_status": "fulltext_delivered"
+    },
+    {
+      "source_id": "method:checklists/task-and-evidence.md",
+      "sha256": "0c264ec328c1af6326d759303ddca28d1fc0eb8aa14a2339194e498ca58522f8",
+      "bytes": 3067,
+      "business_fulltext_output": [],
+      "qa_fulltext_output": [
+        {
+          "log_line": 86,
+          "call_id": "call_3641ceaac804498e9f6e9707e751fff8"
+        }
+      ],
+      "business_status": "not_read_before_first_seal; source unresolved",
+      "qa_status": "fulltext_delivered"
+    },
+    {
+      "source_id": "method:examples/website-adapter.example.md",
+      "sha256": "242b328b057125eadd9b1f88c140d42d1f1528d1c8918aa555eef21270e94009",
+      "bytes": 1112,
+      "business_fulltext_output": [],
+      "qa_fulltext_output": [
+        {
+          "log_line": 86,
+          "call_id": "call_3641ceaac804498e9f6e9707e751fff8"
+        }
+      ],
+      "business_status": "not_read_before_first_seal; source unresolved",
+      "qa_status": "fulltext_delivered"
+    },
+    {
+      "source_id": "method:examples/learning-product-adapter.example.md",
+      "sha256": "cfd5b19c9efdd011619e805f4ac84b7d723eac3e430d35eedaa589e94f85baaf",
+      "bytes": 2616,
+      "business_fulltext_output": [],
+      "qa_fulltext_output": [
+        {
+          "log_line": 86,
+          "call_id": "call_3641ceaac804498e9f6e9707e751fff8"
+        }
+      ],
+      "business_status": "not_read_before_first_seal; source unresolved",
+      "qa_status": "fulltext_delivered"
+    }
+  ],
+  "qa_trace_snapshot": {
+    "bytes": 1642740,
+    "sha256": "1b306ca4864399183c9e3da123cc99463f1f70202f5762a07a03c8f06c5afcdf",
+    "lines": 238,
+    "scope": "snapshot taken before receipt generation; not final turn log"
+  },
+  "qa_first_business_artifact_read_calls": [
+    {
+      "line": 152,
+      "time": "2026-10-17T16:04:53.783Z",
+      "call_id": "call_38886a1e57ad4bab8e426d26959f240a"
+    }
+  ],
+  "qa_original_role_fulltext": {
+    "sites/rolecraft/team/employees/core/qa-engineer/ROLE.md": [
+      {
+        "log_line": 65,
+        "call_id": "call_e34e443bdec9467fa85f5ff5c95c66de"
+      }
+    ],
+    "sites/rolecraft/team/employees/core/qa-engineer/MEMORY.md": [
+      {
+        "log_line": 65,
+        "call_id": "call_e34e443bdec9467fa85f5ff5c95c66de"
+      }
+    ],
+    "sites/rolecraft/team/employees/core/qa-engineer/MEMORY_SCHEMA.md": [
+      {
+        "log_line": 65,
+        "call_id": "call_e34e443bdec9467fa85f5ff5c95c66de"
+      }
+    ]
+  },
+  "before_seal_self_correction": {
+    "ready_notice_call_line": 232,
+    "ready_notice_body": "encrypted in child log; literal ready wording from coordinator observation only",
+    "patch_call_line": 239,
+    "patch_call_id": "call_708acee761f84f458287e4a7bbee7b58",
+    "patch_at_utc": "2026-10-17T16:04:25.555Z",
+    "patch_output_line": 242,
+    "change_summary": "Author corrected prototype reference from S7 to S10 and added S10 source row, before 16:04:27Z seal; no QA repair; do not claim continuous unchanged bytes since ready notice."
+  }
+}

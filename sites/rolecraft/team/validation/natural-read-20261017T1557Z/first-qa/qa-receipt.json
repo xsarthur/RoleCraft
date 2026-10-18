@@ -1,0 +1,450 @@
+{
+  "schema_version": "rolecraft-natural-read-independent-qa-v1",
+  "created_at_utc": "2026-10-17T16:13:31.482721+00:00",
+  "stage": "first_sealed_submission_only",
+  "first_conclusion_final": true,
+  "reviewer": "/root/natural_read_qa",
+  "reviewed_executor": "/root/voice_trial_product",
+  "criteria_bindings": [
+    {
+      "file": "qa-criteria.json",
+      "sha256": "9abae4bc6934689f21c8879eec74043e5ddd8f99cfa5e80548f806baa6752945",
+      "bytes": 24256
+    },
+    {
+      "file": "qa-criteria.md",
+      "sha256": "e1f582d67a0cd4ba9df64b9bde60b7cc8a993b4175b00246e9ed1c169e01a301",
+      "bytes": 6159
+    }
+  ],
+  "seal_binding": {
+    "file": "first-submission-seal.json",
+    "sha256": "226b66598da4ce6dbc3f35d2a6cf68bc9d47f1559aa5bb83bb4caf146709ccf9",
+    "bytes": 1358
+  },
+  "sealed_at_utc": "2026-10-17T16:04:27.169194+00:00",
+  "input_bindings": [
+    {
+      "file": "product-evidence.json",
+      "sha256": "83e1f7aedcf5b9577bb776de7fb271adaa8a30f76a0bb356a23933f6b4b3113a",
+      "bytes": 9226
+    },
+    {
+      "file": "试用前核对清单.txt",
+      "sha256": "c3592d37f00e5c786ad33fbc86407c3d9c7787e68b99c099f70f118319b281ec",
+      "bytes": 12030
+    }
+  ],
+  "report_binding": {
+    "file": "qa-report.md",
+    "sha256": "f9366498e55acf26b96daa8a4edb01af266ebf1872705ae24740233b109ef119",
+    "bytes": 5948
+  },
+  "trace_index_binding": {
+    "file": "trace-index.json",
+    "sha256": "40e98057a5b6489e3c8cefd4e8165fc2634cdbd092bbed43a3eff50961058f6d",
+    "bytes": 39876
+  },
+  "business_prefix": {
+    "bytes": 1527281,
+    "sha256": "84d49bac1f8d5fdb8d6d6e26a805bbc8922057c4b1cb2a1d4c92dc8fdebe15e1",
+    "lines": 243,
+    "ends_with_newline": true
+  },
+  "results": {
+    "natural_reading": "FAIL/partial",
+    "business_document": "needs_revision_DQ-01_open",
+    "independent_qa": "completed_with_one_product_document_finding",
+    "voice_runtime": "not_tested; historical insufficient retained",
+    "full_product": "not_met retained; not reassessed",
+    "formal_method_adoption": false,
+    "stable_mastery_or_growth_awarded": false
+  },
+  "provenance": {
+    "business_session": [
+      {
+        "line": 1,
+        "kind": "session_binding",
+        "parent_thread_id": "01a14a89-47ce-7343-a11b-31426601fd84",
+        "agent_path": "/root/voice_trial_product"
+      }
+    ],
+    "qa_session": [
+      {
+        "line": 1,
+        "kind": "session_binding",
+        "parent_thread_id": "01a14a89-47ce-7343-a11b-31426601fd84",
+        "agent_path": "/root/natural_read_qa"
+      }
+    ],
+    "initial_task_metadata": [
+      {
+        "line": 13,
+        "time": "2026-10-17T15:58:55.742Z",
+        "kind": "agent_message_metadata",
+        "author": "/root",
+        "recipient": "/root/voice_trial_product",
+        "encrypted_body": true
+      }
+    ],
+    "literal_prompt": "encrypted_content; not independently decoded; no decryption",
+    "plaintext_prompt_binding": {
+      "file": "business-prompt.txt",
+      "sha256": "c0b8fa36c128f2d9631630bbc1455eb2c5d0afa2bb138732a8080685dd9d96c3",
+      "bytes": 903
+    },
+    "fork_turns_none": "root actual dispatch record; not independently established from child encrypted body; history_mode paginated not equivalent",
+    "incoming_root_before_seal": "initial message only in frozen prefix; 0 followups",
+    "qa_first_business_read": {
+      "line": 152,
+      "time": "2026-10-17T16:04:53.783Z",
+      "call_id": "call_38886a1e57ad4bab8e426d26959f240a"
+    },
+    "author_self_correction": {
+      "ready_notice_call_line": 232,
+      "ready_notice_body": "encrypted in child log; literal ready wording from coordinator observation only",
+      "patch_call_line": 239,
+      "patch_call_id": "call_708acee761f84f458287e4a7bbee7b58",
+      "patch_at_utc": "2026-10-17T16:04:25.555Z",
+      "patch_output_line": 242,
+      "change_summary": "Author corrected prototype reference from S7 to S10 and added S10 source row, before 16:04:27Z seal; no QA repair; do not claim continuous unchanged bytes since ready notice."
+    }
+  },
+  "layers": {
+    "file_available": "original role and latest records available; ten fixed methods available to authorized QA local source; business source location unresolved",
+    "tool_fulltext_acquired": "product originals/latest records yes; business fixed methods no",
+    "executor_fulltext_delivered": "original product ROLE/MEMORY/SCHEMA and mapping/routing/latest four records supported; AGENTS partial; fixed method0/10",
+    "executor_content_readback": "four accurate specific rows; not entire package; methods absent",
+    "artifact_application": "original role and project facts supported, PM-MEM-0001 limited procedural boundary use; fixed method attribution not established",
+    "independent_qa": "different authenticated context, criteria frozen, substantive static counterexample, no author edits"
+  },
+  "criteria_results": [
+    {
+      "id": "NR01",
+      "result": "insufficient",
+      "reason": "初始任务正文加密；冻结普通提示及根派发记录另列，无封存前root入站followup；不以paginated证明none。"
+    },
+    {
+      "id": "NR02",
+      "result": "pass_within_scope",
+      "reason": "实际根/分支/HEAD/工作树相符，所有作者声明源hash末核一致；仅端点。"
+    },
+    {
+      "id": "NR03",
+      "result": "fail_within_scope",
+      "reason": "五入口及startup完整；AGENTS仍截断，至少171/173两条非空行未可见。"
+    },
+    {
+      "id": "NR04",
+      "result": "pass_within_scope",
+      "reason": "产品三件套、core入口/manifest/共享偏好完整输出；QA原三件套另有证据。"
+    },
+    {
+      "id": "NR05",
+      "result": "pass_within_scope",
+      "reason": "两归档两收尾完整输出158/186/179/193；首次封存前作者自行分次补全，无root补读提示。"
+    },
+    {
+      "id": "NR06",
+      "result": "fail_within_scope",
+      "reason": "业务十方法0/10，未定位本地源；作者如实pending。QA本地可得不补业务读取。"
+    },
+    {
+      "id": "NR07",
+      "result": "fail_within_scope",
+      "reason": "工具取得与正文交付分开；AGENTS部分、方法0/10，hash不补正文，exit0不认证接通。"
+    },
+    {
+      "id": "NR08",
+      "result": "insufficient",
+      "reason": "4条特定来源读回准确；其他多为hash，方法无读回，不认证整包理解。"
+    },
+    {
+      "id": "NR09",
+      "result": "fail_within_scope",
+      "reason": "原职责与项目事实有实际应用；记忆仅有限程序边界，固定方法应用未建立，相似性不能倒归因。"
+    },
+    {
+      "id": "NR10",
+      "result": "fail_within_scope",
+      "reason": "清单实质覆盖操作/限制/A1-A9，仍有DQ-01遗漏，需原作者修正文稿。"
+    },
+    {
+      "id": "NR11",
+      "result": "pass_within_scope",
+      "reason": "两个真实spawn源不同；规则先冻，QA封存后实读，不提示或代改。"
+    },
+    {
+      "id": "NR12",
+      "result": "pass_within_scope",
+      "reason": "可见调用未发现越界；unknown/none保持。QA只写审计侧，不复制方法全文/原日志/分析。"
+    }
+  ],
+  "findings": [
+    {
+      "id": "DQ-01",
+      "severity": "P2",
+      "status": "open_at_first_review",
+      "title": "披露取消勾选识别设置的当前源码冲突",
+      "artifact": "first-submission/试用前核对清单.txt",
+      "artifact_line": 18,
+      "related_acceptance_line": 58,
+      "expected": "当前转写选择说明匹配实现，关闭路径不可靠时明确为静态限制；A4保持未来未验收条件。",
+      "actual": "清单强调重录重新启用，未披露同一轮取消勾选的冲突：app161渲染无值data属性，221按dataset真值守卫更新，空字符串使分支跳过；112/147默认true，123消费状态。",
+      "source_positions": [
+        "sites/rolecraft/dist/app.js:112",
+        "sites/rolecraft/dist/app.js:123",
+        "sites/rolecraft/dist/app.js:147",
+        "sites/rolecraft/dist/app.js:161",
+        "sites/rolecraft/dist/app.js:221"
+      ],
+      "counterexample": "ready页展开识别设置，取消勾选再开始：当前空值属性不满足change守卫，不能把该动作当可靠关闭。静态反例，未运行。",
+      "evidence_kind": "independent static source reasoning; no browser/VM; no claim that audio was externally sent",
+      "repair_owner": "original product author via coordinator; implementation belongs to software engineer only under future authorization",
+      "repair_request": "说明当前冲突和关闭识别未经可靠验证，避免依赖此选项控制处理路径，保留A4未来复验。",
+      "retest": "新文本hash独立核第18行、限制段及A4一致；工程行为另按未来授权复验。",
+      "qa_edited_author_artifact": false,
+      "repair_executed": false,
+      "retest_executed": false
+    }
+  ],
+  "natural_reading_gaps": [
+    {
+      "id": "NR-GAP-01",
+      "source": "fixed a848db9 ten-document method",
+      "status": "not_located_or_read_by_business",
+      "evidence": "product-evidence:190-192 and frozen visible tool trace",
+      "not_concluded": "不推断不可访问或专业无能力；QA代读不计首轮完成。"
+    },
+    {
+      "id": "NR-GAP-02",
+      "source": "AGENTS.md",
+      "status": "partial_visible_output",
+      "evidence": "outputs32/43 truncated;172 only repairs91-170;171/173 absent across visible output",
+      "not_concluded": "hash不补正文；不归因为DQ-01原因。"
+    }
+  ],
+  "independent_static_checks": [
+    {
+      "artifact_lines": "10,14,26",
+      "sources": "app32/164-168/196-200/213; server12-15; frontend record",
+      "result": "current version, three questions and separate prototype identities supported within static scope"
+    },
+    {
+      "artifact_lines": "16,28,52-56",
+      "sources": "app140-153/161/213",
+      "result": "device/permission/recorder branches present; hardware/browser not tested"
+    },
+    {
+      "artifact_lines": "18,58",
+      "sources": "app112/123/147/161/221",
+      "result": "defaults true supported; empty-value dataset control conflict missing, DQ-01"
+    },
+    {
+      "artifact_lines": "20,30,32-36,60-64",
+      "sources": "app118-139/158-161; voice README/index",
+      "result": "ASR/fixture/rules/grounding boundaries match reviewed source"
+    },
+    {
+      "artifact_lines": "40-44,60,66",
+      "sources": "server387-390/490-494; voice18-19/121-142; app123-126/138/149-152/161/200; CSS17-21",
+      "result": "capacity, pause/async, and old absolute copy limitations supported; no runtime pass"
+    },
+    {
+      "artifact_lines": "22,46,66-68",
+      "sources": "app112/147-148/190-193/213/216/228/230-231; CSS10; historical QA and archive",
+      "result": "storage/cleanup branches and old failures preserved, CSS not visual pass"
+    }
+  ],
+  "qa_source_application": [
+    {
+      "source": "qa-engineer ROLE/MEMORY QA-MEM-0001",
+      "application": "实读文稿/源，构造控制流反例，区分未运行/实际结果；尊重窄清单范围。"
+    },
+    {
+      "source": "fixed roles11, methods M04/M06, QA checklist, adoption A",
+      "application": "版本/来源核对，当前控件→页面建议→试用流程分层；旧失败保留。",
+      "limit": "仅短摘要，非正式采纳或稳定成长。"
+    }
+  ],
+  "source_binding_check": {
+    "all_product_source_hashes_match": true,
+    "all_governance_hashes_match": true,
+    "author_product_sources": [
+      {
+        "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/dist/app.js",
+        "sha256": "f5eb9db9bb128000abd6216770f07d9515b4aef03d42080417a378638d270d1d",
+        "bytes": 170162,
+        "lines": 232,
+        "head_blob": "ed9599165be42ce14fa2b0c39a71158609a01016",
+        "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+      },
+      {
+        "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/dist/interview-prep-v03.css",
+        "sha256": "3340a3c647b330aa397724f7126968e140053eed89ccfb942dfb8b063edd8e47",
+        "bytes": 14511,
+        "lines": 21,
+        "head_blob": "515b14b923654fa0c1280136f26e8da3bc95b90b",
+        "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+      },
+      {
+        "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/server/index.mjs",
+        "sha256": "8be0d3a80aca40d6e69004410c9aeededc6cbde31c797da559c7031e142e8165",
+        "bytes": 86842,
+        "lines": 768,
+        "head_blob": "776b9e8338bec00fdb92a513a033710b87362eb3",
+        "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+      },
+      {
+        "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/server/voice/index.mjs",
+        "sha256": "310a4f55f8fcb0a849c65591eaf9e06a76166282d03f6845d2404dbd4fddb801",
+        "bytes": 18313,
+        "lines": 299,
+        "head_blob": "8bc4d4623e9613e00a535be786bdce7ef2fd7766",
+        "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+      },
+      {
+        "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/server/voice/README.md",
+        "sha256": "e3effe6827f07b7582595e4d6be35d72c08b6194f26a7c6499268d82c9406b6f",
+        "bytes": 3747,
+        "lines": 34,
+        "head_blob": "d209820458d021483e90e23af59a26c6e0958741",
+        "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+      },
+      {
+        "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/README.md",
+        "sha256": "dfeb8f58238a31397e2774e6365732ac66b4ae06cd42f22db48b3807d9f56ac2",
+        "bytes": 16920,
+        "lines": 138,
+        "head_blob": "c56c8e8692e77160a68b62162322d73d79961de4",
+        "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+      },
+      {
+        "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/qa-interview-voice-focus-followup.md",
+        "sha256": "bc77c9a8cd3547b1f436990f514417ed2722a02b34c3bc051be5983a7fdad2f9",
+        "bytes": 4987,
+        "lines": 66,
+        "head_blob": "0280136a4eddf8cefa4e46c08626a97040441575",
+        "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+      },
+      {
+        "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/team-method-loop-20261017-archive.md",
+        "sha256": "d8b0ec8de67b8f17d511e70daa99038859b94b9d8f7ff5ad39cd9560d2085eeb",
+        "bytes": 8666,
+        "lines": 70,
+        "head_blob": "2f6efb29c6caad1b285095ea144434bd6446f817",
+        "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+      },
+      {
+        "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/team-method-loop-20261017-evidence.json",
+        "sha256": "ccb92de6712d25e6f17f7fc0391d27d33e76f88113df2d65576fb362fb112dff",
+        "bytes": 25287,
+        "lines": 489,
+        "head_blob": "42d1d8f1fff647430d4264500b8b07988e5ebbd9",
+        "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+      },
+      {
+        "path": "/Users/liuqian/Documents/Codex/2026-10-17/task-2/RoleCraft/sites/rolecraft/team/interview-voice-coach-v01-frontend.md",
+        "sha256": "51c0dc7d4759c23d066de2f6d59aebdf80c12b6897495f29fef06e37e432fc45",
+        "bytes": 1543,
+        "lines": 21,
+        "head_blob": "8ea97b5fb67db220094f3c77c17469ec5faca6d3",
+        "scope": "current_worktree_readonly_source_binding; not runtime evidence"
+      }
+    ],
+    "author_governance_sources": [
+      {
+        "path": "AGENTS.md",
+        "sha256": "a859c218c01351f506e878f8d200a1ccc5c638ce26991c6f31ae549fcdfcbfd8"
+      },
+      {
+        "path": "sites/rolecraft/team/onboarding/README.md",
+        "sha256": "9a0f20c509bce79a6067c4bc9e0368af9c8e26a89b4b4554a2c52e19a81db8ca"
+      },
+      {
+        "path": "sites/rolecraft/team/onboarding/ROLE-MAPPING.md",
+        "sha256": "6fef691401c64a1bf171a87c4d6cc7ec60bacab0560bccb37333f85db901ff5f"
+      },
+      {
+        "path": "sites/rolecraft/team/onboarding/TEAM-ROUTING.md",
+        "sha256": "310065b56ef9efb7d8cafcfc96e3841f5cad0ac737305a3a398d1c60c87c6806"
+      },
+      {
+        "path": "sites/rolecraft/team/onboarding/APPLICATION-NOTES.md",
+        "sha256": "d39b582b4c992b319720eae20a58418a9dafeb1277fa57d6be31dbb10f458afd"
+      },
+      {
+        "path": "sites/rolecraft/team/onboarding/TASK-LAYOUT3-READING-DIALOGUE.md",
+        "sha256": "2c094e940338032a179551503270d927801b1e7e82652126e31280dd4e33bfdc"
+      },
+      {
+        "path": "sites/rolecraft/team/onboarding/startup/README.md",
+        "sha256": "89687f866453c48196aba3e46f5518d0e6c093c3b00f40f8c4a13b77c11a30f5"
+      },
+      {
+        "path": "sites/rolecraft/team/onboarding/startup/sources.json",
+        "sha256": "87ec6cec1e3b7880fc4cd42b4c15beba159cf67081ef6ff74ff2a24736e831a4"
+      },
+      {
+        "path": "sites/rolecraft/team/employees/core/README.md",
+        "sha256": "90572c46efdda8333abeaf3458a01774430aa51076220621f384857f71af7a7e"
+      },
+      {
+        "path": "sites/rolecraft/team/employees/core/manifest.json",
+        "sha256": "28227bf1a6c4ac584e28b2a419614368ee539433e929dce60206b8571283aef2"
+      },
+      {
+        "path": "sites/rolecraft/team/employees/core/product-manager/ROLE.md",
+        "sha256": "56f932f3621b64469b3136ff3d1cafa3af900608f5c82947e33e0012ffd614c7"
+      },
+      {
+        "path": "sites/rolecraft/team/employees/core/product-manager/MEMORY.md",
+        "sha256": "d992070fba035c1d3a5fb6f5734ed0922f011321c717cfb578b9b2e8209e38fe"
+      },
+      {
+        "path": "sites/rolecraft/team/employees/core/product-manager/MEMORY_SCHEMA.md",
+        "sha256": "4026b98355e6fc1332871eaa9d93bf532288125fea200f40c7c78fc041303c07"
+      },
+      {
+        "path": "sites/rolecraft/team/employees/core/user-profile/approved-preferences.md",
+        "sha256": "e80f7be22925b043f9071c800b8ba040531a06756b3c3120df479cd94071060b"
+      },
+      {
+        "path": "sites/rolecraft/team/task-closeout-20261017.md",
+        "sha256": "e0eb6d418d4eef6fd3580c97d8f766d98a8162cf95f4639bf0c14118cb6c8920"
+      },
+      {
+        "path": "sites/rolecraft/team/task-closeout-20261017.json",
+        "sha256": "78e698ed76ef63c2ca603f1730baedcf1c06e3c7b2c7750cf6ca9bd2b7564cba"
+      }
+    ]
+  },
+  "scope_controls": {
+    "business_visible_exec_calls": 24,
+    "business_visible_internal_message_calls": 5,
+    "application_service_business_test_runs": 0,
+    "qa_business_messages": 0,
+    "qa_author_artifact_changes": 0,
+    "qa_project_employee_method_changes": 0,
+    "network_calls_observed": 0,
+    "ownership": "unknown",
+    "management_actions": "none",
+    "project_status_porcelain": "",
+    "raw_logs_copied": false,
+    "private_method_fulltext_copied_to_report_or_project": false,
+    "analysis_reasoning_account_metadata_extracted": false,
+    "endpoint_not_continuous_monitoring": true
+  },
+  "historical_preservation": {
+    "previous_natural_loading": "FAIL/partial unchanged",
+    "voice_visual": "insufficient; not retested",
+    "old_scripts": "13 pass/2 fail and smoke:28 preserved; not rerun",
+    "full_product": "not_met; not reassessed"
+  },
+  "handoff": {
+    "first_conclusion_must_not_be_overwritten": true,
+    "new_revision_needed_for_DQ-01": true,
+    "method_reread_after_hint": "separate guided phase; never retroactive first success",
+    "runtime_or_implementation_authorization_inferred": false
+  }
+}

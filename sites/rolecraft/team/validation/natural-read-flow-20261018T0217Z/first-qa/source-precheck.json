@@ -1,0 +1,464 @@
+{
+  "schema_version": 1,
+  "prepared_at_utc": "2026-10-18T02:21:17.295673+00:00",
+  "qa_executor": "/root/reading_flow_business_qa",
+  "stage": "preseal static source preparation only; no business artifact/log inspection and no verdict on unseen business work",
+  "criteria_preserved": {
+    "json_sha256": "58c5014516b0dab7388fcf785bd489e06001148c6c37eb8f10ffeb33cf97e0f4",
+    "md_sha256": "8fae1a748719fa676e094ef5670201c30fef9dabfee3aae1fc398839ed9152bb",
+    "freeze_sha256": "775f62d75df9085e6c208a42fd437affd82c394278071a3c5649f18fb3889e7e"
+  },
+  "source_binding_sha256": "a800f8335e647c57cb32c539b7c433806d2051e8e16210d9a05068585b391cb2",
+  "trial_input_freeze_sha256": "80d75a7d55feeec1b60247f4744fa2e2d0eec83ae5507a505745f651a32be950",
+  "source_scope": {
+    "sites/rolecraft/dist/app.js": {
+      "ranges": [
+        [
+          112,
+          119
+        ],
+        [
+          125,
+          138
+        ],
+        [
+          147,
+          159
+        ],
+        [
+          161,
+          161
+        ],
+        [
+          163,
+          163
+        ],
+        [
+          190,
+          194
+        ],
+        [
+          210,
+          210
+        ],
+        [
+          213,
+          214
+        ],
+        [
+          216,
+          216
+        ],
+        [
+          221,
+          222
+        ],
+        [
+          228,
+          231
+        ]
+      ],
+      "visible_output_chunks": [
+        "2f94fe",
+        "31f15c",
+        "569e46",
+        "21e72a",
+        "f9d39a"
+      ],
+      "bytes": 170162,
+      "sha256": "f5eb9db9bb128000abd6216770f07d9515b4aef03d42080417a378638d270d1d",
+      "lines": 232,
+      "matches_trial_input_freeze": true,
+      "review_scope": "only stated static ranges; not full-file behavior or runtime acceptance"
+    },
+    "sites/rolecraft/server/index.mjs": {
+      "ranges": [
+        [
+          478,
+          507
+        ]
+      ],
+      "visible_output_chunks": [
+        "c4b8d3"
+      ],
+      "bytes": 86842,
+      "sha256": "8be0d3a80aca40d6e69004410c9aeededc6cbde31c797da559c7031e142e8165",
+      "lines": 768,
+      "matches_trial_input_freeze": true,
+      "review_scope": "only stated static ranges; not full-file behavior or runtime acceptance"
+    },
+    "sites/rolecraft/server/voice/index.mjs": {
+      "ranges": [
+        [
+          160,
+          238
+        ],
+        [
+          256,
+          299
+        ]
+      ],
+      "visible_output_chunks": [
+        "8c517c",
+        "024a29"
+      ],
+      "bytes": 18313,
+      "sha256": "310a4f55f8fcb0a849c65591eaf9e06a76166282d03f6845d2404dbd4fddb801",
+      "lines": 299,
+      "matches_trial_input_freeze": true,
+      "review_scope": "only stated static ranges; not full-file behavior or runtime acceptance"
+    },
+    "sites/rolecraft/team/interview-voice-prototype-product.md": {
+      "ranges": [
+        [
+          59,
+          88
+        ]
+      ],
+      "visible_output_chunks": [
+        "4a9126"
+      ],
+      "bytes": 9236,
+      "sha256": "b6bb5a8ebf91728b11993657d282a82053cbae89e3271c1e455ccef1bca3fe73",
+      "lines": 117,
+      "matches_trial_input_freeze": true,
+      "review_scope": "only stated static ranges; not full-file behavior or runtime acceptance"
+    },
+    "sites/rolecraft/team/interview-general-training-v03-product.md": {
+      "ranges": [
+        [
+          150,
+          195
+        ],
+        [
+          208,
+          225
+        ]
+      ],
+      "visible_output_chunks": [
+        "60e5a5"
+      ],
+      "bytes": 17080,
+      "sha256": "ba87bee4b5c5bfc228665b9db810093f881cb6502529b965bb7f42e0f5779e23",
+      "lines": 259,
+      "matches_trial_input_freeze": true,
+      "review_scope": "only stated static ranges; not full-file behavior or runtime acceptance"
+    },
+    "sites/rolecraft/team/ai-generation-interview-voice-v01.md": {
+      "ranges": [
+        [
+          1,
+          96
+        ],
+        [
+          95,
+          145
+        ],
+        [
+          150,
+          173
+        ]
+      ],
+      "visible_output_chunks": [
+        "7a6bd2",
+        "023112"
+      ],
+      "bytes": 12785,
+      "sha256": "05a36db0f2b28d668bb38acaa31cd495e1e0f1e962073ff91fde9dd7131daf0a",
+      "lines": 175,
+      "matches_trial_input_freeze": true,
+      "review_scope": "only stated static ranges; not full-file behavior or runtime acceptance"
+    },
+    "sites/rolecraft/team/qa-interview-voice-focus-followup.md": {
+      "ranges": [
+        [
+          1,
+          66
+        ]
+      ],
+      "visible_output_chunks": [
+        "d9a973"
+      ],
+      "bytes": 4987,
+      "sha256": "bc77c9a8cd3547b1f436990f514417ed2722a02b34c3bc051be5983a7fdad2f9",
+      "lines": 66,
+      "matches_trial_input_freeze": true,
+      "review_scope": "only stated static ranges; not full-file behavior or runtime acceptance"
+    }
+  },
+  "facts": [
+    {
+      "id": "SP01",
+      "source": "sites/rolecraft/dist/app.js",
+      "ranges": [
+        [
+          112,
+          119
+        ],
+        [
+          125,
+          136
+        ]
+      ],
+      "fact": "Voice state separately has current transcript, transcriptOriginal, correction suggestions, transcriptConfirmed/ConfirmedAt and feedback. Fixture and ASR completion populate original/current text; correction application changes current text and refresh marks confirmation false. No answer-revision field appears in these inspected state/edit functions.",
+      "boundary": "Static current object semantics; not a persistence or reliable version-identity guarantee."
+    },
+    {
+      "id": "SP02",
+      "source": "sites/rolecraft/dist/app.js",
+      "ranges": [
+        [
+          136,
+          138
+        ],
+        [
+          213,
+          214
+        ],
+        [
+          221,
+          222
+        ]
+      ],
+      "fact": "Textarea changes enter voice state when interviewVoiceReadTranscript runs; the general input handler does not capture this textarea. The analyze action reads it, marks confirmed and invokes analysis; analysis reads again and stamps current confirmation time.",
+      "boundary": "Text exists in the DOM before capture. Unrelated render replaces app HTML, so loss of unconfirmed edits is a static path risk; no browser reproduction done."
+    },
+    {
+      "id": "SP03",
+      "source": "sites/rolecraft/dist/app.js",
+      "ranges": [
+        [
+          137,
+          138
+        ]
+      ],
+      "fact": "No-adapter local rules receive current text at analysis and return the trimmed text inside feedback.transcript.text plus derived summary/evidence and provenance. Adapter invocation is given a primitive transcript value, question ID/version/context and rubric from that call.",
+      "boundary": "Input-to-feedback association is explicit for local rules; adapter request parameters do not themselves validate what returned feedback belongs to. Optional runtime adapter installation was not evaluated."
+    },
+    {
+      "id": "SP04",
+      "source": "sites/rolecraft/dist/app.js",
+      "ranges": [
+        [
+          138,
+          138
+        ],
+        [
+          158,
+          159
+        ],
+        [
+          161,
+          161
+        ],
+        [
+          213,
+          213
+        ]
+      ],
+      "fact": "Edit-from-feedback copies feedback.transcript.text when truthy, otherwise retains current transcript, and sets transcript_ready without clearing the stored feedback object. Transcript is editable only in transcript_ready/transcription_unavailable. Page renders feedback only when status is feedback; editing and analyzing hide the old feedback.",
+      "boundary": "Old object retained in memory is distinct from old feedback visible as current. No user-observed version label/behaviour certified."
+    },
+    {
+      "id": "SP05",
+      "source": "sites/rolecraft/dist/app.js",
+      "ranges": [
+        [
+          138,
+          138
+        ],
+        [
+          158,
+          159
+        ]
+      ],
+      "fact": "Feedback renderer shows summary, evidence, question source, measurements and ASR/analysis/model fields; it does not render the full feedback transcript or transcriptConfirmedAt as an explicit answer revision. The transcript panel in feedback state uses current shared transcript with label已确认的转写.",
+      "boundary": "Same current state and an echoed input snapshot are not a separately checked response-to-answer revision binding. UI comprehension remains untested."
+    },
+    {
+      "id": "SP06",
+      "source": "sites/rolecraft/dist/app.js",
+      "ranges": [
+        [
+          138,
+          138
+        ],
+        [
+          147,
+          149
+        ],
+        [
+          213,
+          213
+        ],
+        [
+          216,
+          216
+        ],
+        [
+          228,
+          231
+        ]
+      ],
+      "fact": "Analysis runs only from transcript_ready/transcription_unavailable. Pending UI has readonly transcript/no reanalysis control but retains return navigation. Reset increments requestId and clears current transcript/feedback; recording callbacks check requestId, analysis promise handlers do not check it, source revision or active question before mutating shared voice state.",
+      "boundary": "Late analysis after leave/reset/new question can mutate shared state by this static path. A same-page duplicate analyze while pending is guarded; no fabricated ordinary concurrent-click scenario or actual timing defect claimed."
+    },
+    {
+      "id": "SP07",
+      "source": "sites/rolecraft/dist/app.js",
+      "ranges": [
+        [
+          138,
+          138
+        ]
+      ],
+      "fact": "Adapter sync throw falls back to local rules, marks partial and adds analysis-unavailable uncertainty. Async result marked unavailable/error sets transcription_unavailable and preserves text for retry; async reject falls back to local partial rules. A value with answerAnalysis is accepted without checking returned transcript/question against the sent input.",
+      "boundary": "Failure, partial fallback and unavailable are distinct branches. Async fallback/response provenance reads mutable current state; exact visible user outcomes require runtime tests."
+    },
+    {
+      "id": "SP08",
+      "source": "sites/rolecraft/dist/app.js",
+      "ranges": [
+        [
+          147,
+          148
+        ],
+        [
+          163,
+          163
+        ],
+        [
+          190,
+          194
+        ],
+        [
+          213,
+          213
+        ],
+        [
+          216,
+          216
+        ],
+        [
+          228,
+          231
+        ]
+      ],
+      "fact": "Voice transcript/feedback are in the separate in-memory voice state. interviewSave serializes interviewState containing screen/filter/paper draft, not interviewVoiceState. Voice-back/new voice/navigation/hash/pagehide/beforeunload invoke reset paths; reset clears current transcript/feedback and confirmation time but not every auxiliary original/correction/confirmed field.",
+      "boundary": "No claim of durable answer revision history, restored feedback or effective recovery. Residual auxiliary state is not a valid saved answer version."
+    },
+    {
+      "id": "SP09",
+      "source": "sites/rolecraft/server/index.mjs",
+      "ranges": [
+        [
+          478,
+          507
+        ]
+      ],
+      "fact": "Current server contains actual local voice readiness and POST/api/voice/transcribe routes; transcribe invokes analyzeVoiceRequest.",
+      "boundary": "A historical planned-HTTP description or source comment is not current route evidence. No HTTP request invoked."
+    },
+    {
+      "id": "SP10",
+      "source": "sites/rolecraft/server/voice/index.mjs",
+      "ranges": [
+        [
+          192,
+          238
+        ],
+        [
+          256,
+          299
+        ]
+      ],
+      "fact": "Voice module supports explicit local_fixture text analysis; returned fixture result includes normalized transcript and question/version provenance. The ordinary audio path validates audio, probes configured whisper.cpp, transcribes and returns local-rule feedback.",
+      "boundary": "These are source branches, not proof of configured local runtime or actual reanalysis service linkage. Frontend analyze optional adapter remains distinct from frontend transcribe fetch."
+    },
+    {
+      "id": "SP11",
+      "source": "sites/rolecraft/team/interview-voice-prototype-product.md",
+      "ranges": [
+        [
+          59,
+          88
+        ]
+      ],
+      "fact": "Historical clickable prototype contract requires editable confirmation, source-based feedback, honest analysis state and fixture-only retry comparison.",
+      "boundary": "Prototype contract/demonstration, not current ASR/real model implementation or current feedback-version proof."
+    },
+    {
+      "id": "SP12",
+      "source": "sites/rolecraft/team/interview-general-training-v03-product.md",
+      "ranges": [
+        [
+          150,
+          195
+        ],
+        [
+          208,
+          225
+        ]
+      ],
+      "fact": "Product contract separates paper scope/version from paper_attempt and answer_attempt/transcript/feedback, requires checked transcription before analysis, and separates unavailable/low-confidence/self-evaluation states.",
+      "boundary": "Contract objects and desired persistence are not automatically current app implementation."
+    },
+    {
+      "id": "SP13",
+      "source": "sites/rolecraft/team/ai-generation-interview-voice-v01.md",
+      "ranges": [
+        [
+          1,
+          96
+        ],
+        [
+          95,
+          145
+        ],
+        [
+          150,
+          173
+        ]
+      ],
+      "fact": "Service handoff proposes request/attempt IDs and frozen question/rubric/content versions, preserving original transcription separately from corrections and validating feedback evidence; retry/unknown completion and downstream version snapshots have explicit responsibilities.",
+      "boundary": "Proposal/handoff scope; not evidence that the proposed two-stage endpoint or version snapshot already runs. Historical absent-audio/ASR statements are dated and do not negate current route source."
+    },
+    {
+      "id": "SP14",
+      "source": "sites/rolecraft/team/qa-interview-voice-focus-followup.md",
+      "ranges": [
+        [
+          1,
+          66
+        ]
+      ],
+      "fact": "Historical current-version QA retains insufficient overall, visual focus failure,13pass/2fail outdated-consent regression and local smoke failure, with runtime/browser/Chinese recognition limits.",
+      "boundary": "No historical pass/fail retest executed or upgraded in this precheck; complete product remains historical not_met."
+    }
+  ],
+  "discovery_limit": "An initial broad rg discovery response truncated; it is not used as complete-body evidence. Facts use later explicitly read ranges and full function outputs; no whole-app or whole-document runtime acceptance.",
+  "dispatch_integrity_addendum": {
+    "path": "/Users/liuqian/Documents/ChatGPT/AI Team/review/rolecraft-required-reading-20261018T020320Z/dispatch-integrity-addendum.json",
+    "sha256": "ce0b754c01f76bd15dc8798cd8c862e38aa25d9fcdb2b65d6aa4f8baf4aeac0d",
+    "saved_prompt_bytes": 950,
+    "saved_prompt_sha256": "586073cc5e6a842bd0ecde7e44685b197dd99e09a530aeaeedac998d77bf5acb",
+    "root_supplied_message_bytes": 949,
+    "root_supplied_message_sha256": "da54a4d72505f9f2f7fb6d990cda02925d265aa21d88d1037b8ce0a607f953de",
+    "difference": "Exactly one terminal LF in saved copy; wording unchanged, no source hint/version/path/checklist added. Root-tool-argument provenance only; child encrypted task never reconstructed or decoded.",
+    "original_dispatch_snapshot_preserved": true,
+    "criteria_not_rewritten": true
+  },
+  "not_performed": [
+    "Business artifact or output-directory inspection",
+    "Business runtime-log access",
+    "Contact/hint/feedback to business executor",
+    "Natural34-body business delivery/readback/application judgment",
+    "Application/service/browser/ASR/business test execution",
+    "Network/dependency install",
+    "Source/employee/method/proposal/business artifact or first-criteria edit",
+    "Raw log/private body/reconstructable cache persistence",
+    "Git write, formal adoption, growth or background event"
+  ],
+  "future_review": "After root provides first-submission seal and authorized fixed log prefix, independently judge actual34 visible bodies against frozen bytes, source-specific readback, selective actual method use and sealed business quality. This preparation cannot fill business reading.",
+  "runtime_status": "not_tested"
+}

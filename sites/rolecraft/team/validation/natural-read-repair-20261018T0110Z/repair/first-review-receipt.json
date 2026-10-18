@@ -1,0 +1,41 @@
+{
+  "created_at_utc": "2026-10-18T01:04:59.142557+00:00",
+  "stage": "first_independent_repair_qa_before_author_RQ01_fix",
+  "test_command": "python3 -B independent_cases.py",
+  "tool_output_chunk_id": "1bff6b",
+  "suite_cases": 18,
+  "passing_cases": 17,
+  "case_with_errors": "Q03",
+  "subcase_errors": 5,
+  "exit_code": 1,
+  "findings": [
+    {
+      "id": "RQ-01",
+      "severity": "P2",
+      "status": "open_at_first_review",
+      "file": "sites/rolecraft/team/onboarding/startup/check_startup.py",
+      "line": 171,
+      "input": "synthetic locator top-level [], null, string, number, boolean",
+      "expected": "controlled Rejected/blocked before method read, CLI structured error exit2",
+      "actual": "AttributeError from locator.get, absent explicit type validation; not caught by CLI exception set",
+      "source_root": "synthetic fixtures only",
+      "repair_owner": "/root/startup_repair_engineer",
+      "qa_edited_implementation": false
+    }
+  ],
+  "source_hashes": {
+    "sources.json": "63d8a5443ffe38483b0776d78d46537dd8f7d608b30d9a8fc3c8120d84e59d11",
+    "read_source.py": "d67fa64f7b206bd732725101e2edaf433531554c4834ceee7031b2bdc9e11632",
+    "test_read_source.py": "1aebeac1aeca98fa1f43063735f1a05891b3cac0de846bae56ff1a8b46d92df2",
+    "check_startup.py": "a0c6495777b566498c5999d2c34ab1ff7c80af9c537562106f252f65eb4e8bd6",
+    "README.md": "04864fb3edfbbaa222f9f20f258bef75315912fcadfcf70dac659147e0938400",
+    "test_check_startup.py": "b041cd4932a3ced50775571006ec70a5e17f0a9e37c45f04bd63f57c981518f1",
+    "local-method-source.json": "0147b66a156d412a659371159fa84a869f7ded2815066850a9d0360f70ed8cd9"
+  },
+  "independent_test_sha256": "612343eb260e847a7be6f9f8bcb3c4522894eeb39ddea955bf0519b1f8c0d0a3",
+  "limitations": [
+    "Synthetic mechanism tests only, not actual business incident",
+    "No fresh-context business result inferred",
+    "Original failing case will remain even after author repair"
+  ]
+}
