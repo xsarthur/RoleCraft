@@ -1,4 +1,9 @@
 {
+  "productionDatabaseCorrection": {
+    "recordedAt": "2026-10-21",
+    "productionStore": "Tencent Cloud CloudBase",
+    "note": "The rolecraft.sqlite backup in this record is a process-local file, not the production database. See deploy/deploy-guide.md."
+  },
   "report_id": "backend-v1.0-real-model-deployment-20261016",
   "role": "backend_data_engineer",
   "target": "ubuntu@111.231.8.78:/opt/rolecraft",

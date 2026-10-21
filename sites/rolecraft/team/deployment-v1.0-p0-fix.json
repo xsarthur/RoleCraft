@@ -1,4 +1,9 @@
 {
+  "productionDatabaseCorrection": {
+    "recordedAt": "2026-10-21",
+    "productionStore": "Tencent Cloud CloudBase",
+    "note": "rolecraft.sqlite paths in this record are process-local files on the Lighthouse disk, not the production database. See deploy/deploy-guide.md."
+  },
   "schemaVersion": "1.0",
   "status": "deployed_verified",
   "deployedAt": "2026-10-15T19:55:33Z",
