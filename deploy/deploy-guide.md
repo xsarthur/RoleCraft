@@ -41,6 +41,7 @@
 | 生产数据库 | **腾讯云 CloudBase**。不要把生产写成 SQLite，也不要备份 `/opt/rolecraft/.runtime` 来代替生产库 |
 | HTTPS / 域名 | 尚未配置。当前是明文 HTTP + IP |
 | 同机邻居 | OpenClaw 仍以自己的 node 进程监听 `0.0.0.0:37088`，不经过本 PM2。80 只给职造的 Nginx，两边不冲突。更新职造时不要改 OpenClaw |
+| 职业目录 | `ROLECRAFT_CAREERS_DIR=/opt/rolecraft/sites/rolecraft/server/careers`（绝对路径）。不要写成相对的 `server/careers` |
 
 CloudBase 的环境 ID、密钥和其他连接参数只存在于服务器 `/opt/rolecraft/deploy/.env`。本文只记录变量名占位，不记录任何密钥值。更新时保留这份已有 `.env`，不要用示例文件覆盖，也不要重新生成已有密钥。
 
@@ -66,7 +67,8 @@ ssh -i ~/.ssh/id_rsa ubuntu@111.231.8.78
 cd /opt/rolecraft
 # setup.sh 发现已有 deploy/.env 时不会覆盖、不会重新生成密钥
 bash deploy/setup.sh
-pm2 restart rolecraft
+# 改过 deploy/.env 时必须 --update-env。ROLECRAFT_CAREERS_DIR 必须是绝对路径。
+pm2 restart rolecraft --update-env
 curl -fsS http://127.0.0.1:4318/api/health
 curl -fsS http://127.0.0.1/api/health
 ```
@@ -237,6 +239,16 @@ nano deploy/.env
 
 生产账户数据走 CloudBase，连接参数写在这份服务器本地 `.env` 里。`ROLECRAFT_DATA_DIR` 只是进程本地目录，默认 `/opt/rolecraft/.runtime`，里面的 sqlite 文件不是生产库。
 
+`ROLECRAFT_CAREERS_DIR` 在 Lighthouse 上必须是绝对路径：
+
+```bash
+ROLECRAFT_CAREERS_DIR=/opt/rolecraft/sites/rolecraft/server/careers
+```
+
+PM2 进程 `rolecraft` 的 cwd 是 `/opt/rolecraft`。相对值 `server/careers` 会指到 `/opt/rolecraft/server/careers`，那里没有职业 JSON。真正的文件在 `sites/rolecraft/server/careers/*.json`。目录读不到时，进程不会导入 `uiux-product-designer` 等职业；SQLite 里只剩已经种入的 `agent-developer`。访客引导 `POST /api/guest/bootstrap` 对 `uiux-product-designer` 返回 `career_not_found`，对应教材也不加载。
+
+2026-10-21 晚（Asia/Shanghai）生产上就是这个配置。修正是把服务器 `deploy/.env` 改成上面的绝对路径，然后执行 `pm2 restart rolecraft --update-env`（必须带 `--update-env`，否则 PM2 继续用旧环境）。修正后 `GET /api/careers` 列出 `uiux-product-designer` 为可用，`POST /api/guest/bootstrap` 返回 201，`activeCareer` 为 `uiux-product-designer`。不要把 `.env` 内容或密钥写进仓库。
+
 ### 5.6 部署 Nginx 配置
 
 ```bash
@@ -321,7 +333,7 @@ certbot renew --dry-run
 ```bash
 pm2 status              # 查看进程状态
 pm2 logs rolecraft      # 实时日志
-pm2 restart rolecraft   # 重启服务
+pm2 restart rolecraft --update-env   # 重启并加载当前环境。改过 .env 时不要省略 --update-env
 pm2 stop rolecraft      # 停止服务
 pm2 monit               # 监控面板（CPU/内存）
 ```
@@ -354,7 +366,8 @@ CloudBase 凭据只留在服务器 `deploy/.env`。不要把环境 ID、密钥�
 ssh -i ~/.ssh/id_rsa ubuntu@111.231.8.78
 cd /opt/rolecraft
 bash deploy/setup.sh          # 已有 .env 会保留
-pm2 restart rolecraft         # 只重启职造，不要动 OpenClaw :37088
+# 若改过 deploy/.env（尤其是 ROLECRAFT_CAREERS_DIR），必须加 --update-env
+pm2 restart rolecraft --update-env   # 只重启职造，不要动 OpenClaw :37088
 curl -fsS http://127.0.0.1:4318/api/health
 curl -fsS http://127.0.0.1/api/health
 curl -fsS http://111.231.8.78/api/health
@@ -376,7 +389,7 @@ pm2 logs rolecraft --lines 50   # 查看最近日志
 - **Node 版本不对**：`node -v` 必须是 v24.x，检查 PM2 的 interpreter 路径
 - **端口被占**：`lsof -i :4318` 查看占用
 - **本地数据目录不存在**：`mkdir -p /opt/rolecraft/.runtime`。这只解决进程本地文件，不能代替 CloudBase
-- **环境变量未加载**：确认服务器上已有 `deploy/.env` 且已 `source`。缺少文件时不要凭空重新生成生产密钥
+- **环境变量未加载**：确认服务器上已有 `deploy/.env` 且已 `source`。改过 `.env` 后用 `pm2 restart rolecraft --update-env`。缺少文件时不要凭空重新生成生产密钥
 
 ### 9.2 检索不可用（返回 unavailable）
 
@@ -412,7 +425,22 @@ nginx -t
 cat /var/log/nginx/error.log | tail -20
 ```
 
-### 9.4 内存不足
+### 9.4 访客引导 `career_not_found`，或新职业教材没有加载
+
+2026-10-21 晚（Asia/Shanghai）生产症状：`uiux-product-designer` 的访客引导返回 `career_not_found`。当时 `deploy/.env` 里是 `ROLECRAFT_CAREERS_DIR=server/careers`。PM2 的 cwd 是 `/opt/rolecraft`，相对路径对不上 `sites/rolecraft/server/careers/*.json`，导入为空，SQLite 里只剩已种入的 `agent-developer`。
+
+在服务器上把该变量改成绝对路径后重启：
+
+```bash
+# 只改这一项。不要打印或提交 deploy/.env。
+# ROLECRAFT_CAREERS_DIR=/opt/rolecraft/sites/rolecraft/server/careers
+pm2 restart rolecraft --update-env
+curl -fsS http://127.0.0.1:4318/api/careers
+```
+
+修正后的核对：`/api/careers` 中 `uiux-product-designer` 为可用；`POST /api/guest/bootstrap` 返回 201，且 `activeCareer` 为 `uiux-product-designer`。不要把相对值 `server/careers` 写回去。
+
+### 9.5 内存不足
 
 向量模型推理与 Node.js 在 2GB 内存机器上可能紧张。同机还有 OpenClaw 的 node 进程，排查内存时不要把它停掉。解决方案：
 
@@ -446,6 +474,7 @@ echo '/swapfile none swap sw 0 0' >> /etc/fstab
 | `HOST` | `127.0.0.1` | 绑定地址（保持 127.0.0.1） |
 | `PUBLIC_DEPLOYMENT` | `true` | 接受 Nginx 转发的请求 |
 | `ROLECRAFT_DATA_DIR` | `/opt/rolecraft/.runtime` | 进程本地目录。当前代码会在这里打开 sqlite 文件；**生产数据在 CloudBase，不在这个目录** |
+| `ROLECRAFT_CAREERS_DIR` | `/opt/rolecraft/sites/rolecraft/server/careers` | **Lighthouse 必须用这个绝对路径。** 相对值 `server/careers` 在 PM2 cwd `/opt/rolecraft` 下找不到职业 JSON，访客引导报 `career_not_found`，教材不加载。改完后 `pm2 restart rolecraft --update-env` |
 | `ROLECRAFT_RETRIEVAL_MODE` | `semantic` | 检索模式（semantic / concept） |
 | `OPENAI_API_KEY` | — | OpenAI 密钥（可选） |
 | `OPENAI_MODEL` | — | 模型名称（可选） |

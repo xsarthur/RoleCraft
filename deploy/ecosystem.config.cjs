@@ -29,7 +29,11 @@ module.exports = {
       HOST: process.env.HOST || '127.0.0.1',
       PUBLIC_DEPLOYMENT: process.env.PUBLIC_DEPLOYMENT || 'true',
       ROLECRAFT_DATA_DIR: process.env.ROLECRAFT_DATA_DIR || path.join(PROJECT_ROOT, '.runtime'),
-      ROLECRAFT_CAREERS_DIR: process.env.ROLECRAFT_CAREERS_DIR || 'server/careers',
+      // Lighthouse 上 PM2 cwd 是 /opt/rolecraft。相对值 server/careers 会解析成
+      // /opt/rolecraft/server/careers，职业 JSON 实际在 sites/rolecraft/server/careers。
+      // 相对路径会导致访客引导 career_not_found，教材除已种入的 agent-developer 外不加载。
+      // 服务器 deploy/.env 必须写成下面这个绝对路径，改完后 pm2 restart rolecraft --update-env。
+      ROLECRAFT_CAREERS_DIR: process.env.ROLECRAFT_CAREERS_DIR || path.join(PROJECT_ROOT, 'sites/rolecraft/server/careers'),
       ROLECRAFT_RETRIEVAL_MODE: process.env.ROLECRAFT_RETRIEVAL_MODE || 'semantic',
       // OpenAI 配置（可选）
       OPENAI_API_KEY: process.env.OPENAI_API_KEY || '',
