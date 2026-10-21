@@ -51,6 +51,7 @@
   });
   const empty = () => ({ corpusVersion: CURRENT, startingPoint: null, visits: [], bookmarks: [], notes: {}, project: { title: '', problem: '', evidence: '', result: '', gap: '', next: '' }, practice: emptyPractice(), task: { state: 'not_started', unitId: '', sectionId: '', reason: '', updatedAt: '' } });
   let local = empty(), storageError = '', activeView = '', assistantOpen = false, query = '', response = null, submission = null, pending = false, requestId = 0, controller = null;
+  let careerPractice = { draft: '', saved: false, submitted: false, feedback: '练习反馈：尚未提交。提交后只回显本页草稿，不表示通过或等级。' };
   // The public page keeps the original Agent corpus for anonymous reading. Once an
   // account has an active career, the reader must use that career's API catalog and
   // chapters; it must never silently fall back to Agent content.
@@ -99,8 +100,9 @@
     if (!c || c.corpusVersion !== CURRENT || !Array.isArray(c.units) || c.units.length !== count || new Set(c.units.map(u => u.unitId)).size !== count || c.units.some((u, i) => u.order !== i + 1 || !u.bodyMarkdown || !Array.isArray(u.sections))) return null;
     return c;
   }
-  function validCareerCatalog(c) {
-    if (!c || typeof c !== 'object' || c.corpusVersion !== CURRENT || typeof c.corpusHash !== 'string' || !Array.isArray(c.units) || !c.units.length) return false;
+  function validCareerCatalog(c, expectedVersion) {
+    const version = expectedVersion || CURRENT;
+    if (!c || typeof c !== 'object' || c.corpusVersion !== version || typeof c.corpusHash !== 'string' || !Array.isArray(c.units) || !c.units.length) return false;
     const ids = new Set();
     return c.units.every(u => u && typeof u.unitId === 'string' && !ids.has(u.unitId) && ids.add(u.unitId) && Number.isInteger(Number(u.order)) && Number(u.order) > 0 && typeof u.title === 'string' && typeof u.navigationLabel === 'string' && typeof u.sourceSha256 === 'string' && Array.isArray(u.sections) && u.sections.every(s => s && typeof s.sectionId === 'string' && typeof s.title === 'string'));
   }
@@ -108,29 +110,47 @@
   function careerContentState() {
     return { status: careerState.status, phase: careerState.phase, active: careerState.active, dynamic: dynamicCareer(), careerId: careerState.careerId, career: careerState.career ? { ...careerState.career } : null, error: careerState.error, startedAt: careerState.startedAt, firstLoad: careerState.firstLoad, loadingChapterId: careerState.loadingChapterId, loadedChapterIds: [...careerState.chapters.keys()] };
   }
-  function corpus(version = CURRENT) {
+  function corpus(version) {
     if (careerState.active) {
       if (careerState.status !== 'ready') return null;
       // Agent remains backed by the verified bundled corpus after its API catalog
       // has been checked. Other careers are assembled from their catalog plus any
       // full chapters fetched on demand.
-      if (!dynamicCareer()) return version === CURRENT ? staticCorpus() : null;
-      if (version !== CURRENT || careerState.career?.contentVersion !== CURRENT || !validCareerCatalog(careerState.catalog)) return null;
+      if (!dynamicCareer()) {
+        const requested = version || CURRENT;
+        return requested === CURRENT ? staticCorpus() : null;
+      }
+      const expected = careerState.career?.contentVersion || '';
+      if (version && version !== expected) return null;
+      if (!validCareerCatalog(careerState.catalog, expected)) return null;
       const units = careerState.catalog.units.map(meta => careerState.chapters.get(meta.unitId)?.unit || meta);
       return { ...careerState.catalog, units };
     }
-    return version === CURRENT ? staticCorpus() : null;
+    const requested = version || CURRENT;
+    return requested === CURRENT ? staticCorpus() : null;
   }
   function unit(id, version = CURRENT) { return corpus(version)?.units.find(u => u.unitId === id); }
   function unitVersion() { return CURRENT; }
   function section(u, id) { return u?.sections.find(s => s.sectionId === id); }
   function currentRecord(v) { return v?.corpusVersion === CURRENT && v.corpusHash === corpus()?.corpusHash && unit(v.unitId)?.sourceSha256 === v.sourceSha256 && (!v.sectionId || section(unit(v.unitId), v.sectionId)); }
   function noteText(u) { const n = local.notes[u?.unitId]; return n?.corpusVersion === CURRENT && n.sourceSha256 === u?.sourceSha256 ? asText(n.text) : ''; }
+  function careerRoute() {
+    const [path] = location.hash.slice(1).split('?'), p = path.split('/');
+    if (p[0] === 'learn' && p[1] === 'career' && /^[a-z0-9][a-z0-9-]{0,127}$/.test(p[2] || '')) return { careerId: p[2], unitId: p[3] || '', sectionId: p[4] || '' };
+    return null;
+  }
   function loc() {
     const [path, search = ''] = location.hash.slice(1).split('?'), p = path.split('/');
-    return { unitId: p[0] === 'learn' && p[1] === 'agent' ? p[2] || '' : '', sectionId: p[0] === 'learn' && p[1] === 'agent' ? p[3] || '' : '', version: CURRENT, resume: new URLSearchParams(search).get('resume') === '1' };
+    const resume = new URLSearchParams(search).get('resume') === '1';
+    const routed = careerRoute();
+    if (routed) return { careerId: routed.careerId, unitId: routed.unitId, sectionId: routed.sectionId, version: careerState.career?.contentVersion || '', resume };
+    return { careerId: '', unitId: p[0] === 'learn' && p[1] === 'agent' ? p[2] || '' : '', sectionId: p[0] === 'learn' && p[1] === 'agent' ? p[3] || '' : '', version: CURRENT, resume };
   }
-  function href(u, s = '') { return '#learn/agent/' + u.unitId + (s ? '/' + s : ''); }
+  function href(u, s = '') {
+    const careerId = careerState.careerId || careerRoute()?.careerId;
+    if ((dynamicCareer() || careerRoute()) && careerId) return '#learn/career/' + careerId + '/' + u.unitId + (s ? '/' + s : '');
+    return '#learn/agent/' + u.unitId + (s ? '/' + s : '');
+  }
   function save() {
     try { localStorage.setItem(STORE, JSON.stringify(local)); storageError = ''; return true; }
     catch { storageError = '浏览器无法保存。输入还在当前页面；关闭前可导出学习记录。'; return false; }
@@ -250,6 +270,26 @@
     careerState = { ...careerState, ...next };
     if (previous.status !== careerState.status || previous.careerId !== careerState.careerId || previous.error !== careerState.error) redrawCareerView();
   }
+  async function loadPublicCareerCatalog(careerId) {
+    const requestId = careerState.requestId + 1;
+    careerState = { status: 'loading', phase: 'catalog', active: true, careerId, career: { careerId, title: '', summary: '', contentVersion: '' }, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), error: '', requestId, startedAt: Date.now(), firstLoad: false, loadingChapterId: '' };
+    redrawCareerView();
+    try {
+      if (location.protocol === 'file:') throw Error('当前页面需要通过本地服务加载职业教材。');
+      const http = await fetch('/api/careers/' + encodeURIComponent(careerId) + '/content/catalog', { credentials: 'omit' });
+      if (!http.ok) throw Error('职业教材目录没有返回。');
+      const result = await http.json();
+      if (careerState.requestId !== requestId) return;
+      const version = result?.career?.contentVersion || result?.catalog?.corpusVersion || '';
+      if (result?.career?.careerId !== careerId || !validCareerCatalog(result.catalog, version) || result.catalog.matchesManifest !== true) throw Error('职业教材来源与清单不一致，已停止显示正文。');
+      careerState = { ...careerState, status: 'ready', phase: 'ready', career: result.career, catalog: result.catalog, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), error: '', startedAt: 0, loadingChapterId: '' };
+      redrawCareerView();
+    } catch (error) {
+      if (careerState.requestId !== requestId) return;
+      careerState = { ...careerState, status: 'error', phase: 'error', error: error?.message || '职业教材目录加载失败。', catalog: null, chapters: new Map(), startedAt: 0, loadingChapterId: '' };
+      redrawCareerView();
+    }
+  }
   async function loadCareerContent(session) {
     const career = session?.activeCareer;
     const careerId = career?.careerId || '';
@@ -259,6 +299,8 @@
     careerController = null;
     clearTimeout(careerPhaseTimer);
     if (!careerId) {
+      const route = careerRoute();
+      if (route && !session?.user) { await loadPublicCareerCatalog(route.careerId); return; }
       const authenticated = Boolean(session?.user);
       careerState = { status: authenticated ? 'error' : 'anonymous', phase: 'idle', active: authenticated, careerId: '', career: null, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), error: authenticated ? '当前账户没有可用职业，无法加载课程内容。' : '', requestId: careerState.requestId + 1, startedAt: 0, firstLoad: false, loadingChapterId: '' };
       redrawCareerView();
@@ -277,7 +319,9 @@
       const result = await api('/api/careers/' + encodeURIComponent(careerId) + '/content', { signal: careerController?.signal });
       if (careerState.requestId !== requestId) return;
       const catalog = result?.catalog;
-      if (!validCareerCatalog(catalog) || result?.career?.careerId !== careerId || result.career.contentVersion !== CURRENT) throw Error('当前职业教材目录不完整或版本不受支持。');
+      const contentVersion = result?.career?.contentVersion || '';
+      if (!validCareerCatalog(catalog, contentVersion) || result?.career?.careerId !== careerId) throw Error('当前职业教材目录不完整或版本不受支持。');
+      if (contentVersion !== CURRENT && catalog.matchesManifest !== true) throw Error('当前职业教材来源与清单不一致，已停止显示正文。');
       const chapters = new Map();
       for (const u of catalog.units) if (u.bodyMarkdown && Array.isArray(u.sections) && u.sections.some(s => s.bodyMarkdown)) chapters.set(u.unitId, { unit: u });
       careerState = { ...careerState, status: 'ready', phase: 'ready', career: { ...career, ...result.career }, catalog, chapters, chapterRequests: new Map(), chapterErrors: new Map(), error: '', startedAt: 0, loadingChapterId: '' };
@@ -304,12 +348,15 @@
       const chapterController = typeof AbortController === 'function' ? new AbortController() : null;
       const timeout = setTimeout(() => chapterController?.abort(), CAREER_LOAD_TIMEOUT);
       try {
+        const endpoint = '/api/careers/' + encodeURIComponent(careerId) + '/content/chapter/' + encodeURIComponent(unitId);
         const api = globalThis.RolecraftAuthCareer?.api;
-        if (typeof api !== 'function') throw Error('职业账户服务尚未就绪。');
-        const result = await api('/api/careers/' + encodeURIComponent(careerId) + '/content/chapter/' + encodeURIComponent(unitId), { signal: chapterController?.signal });
+        const result = typeof api === 'function'
+          ? await api(endpoint, { signal: chapterController?.signal })
+          : await fetch(endpoint, { credentials: 'omit', signal: chapterController?.signal }).then(async http => { if (!http.ok) throw Error('当前章节没有返回'); return http.json(); });
         const chapter = result?.chapter;
         if (careerState.requestId !== requestId) return;
-        if (!chapter?.unit || chapter.unit.unitId !== unitId || chapter.corpusVersion !== CURRENT || chapter.corpusHash !== careerState.catalog?.corpusHash || typeof chapter.unit.bodyMarkdown !== 'string' || !Array.isArray(chapter.unit.sections)) throw Error('当前章节内容不完整，无法显示。');
+        const expectedVersion = careerState.career?.contentVersion || CURRENT;
+        if (!chapter?.unit || chapter.unit.unitId !== unitId || chapter.corpusVersion !== expectedVersion || chapter.corpusHash !== careerState.catalog?.corpusHash || typeof chapter.unit.bodyMarkdown !== 'string' || !Array.isArray(chapter.unit.sections)) throw Error('当前章节内容不完整，无法显示。');
         careerState.chapters.set(unitId, chapter);
         careerState.chapterErrors.delete(unitId);
         careerState.loadingChapterId = '';
@@ -397,7 +444,16 @@
   });
   // auth-career-v15 is loaded after this file; give it one turn to publish its
   // session API, then establish the anonymous/public or account-backed state.
-  setTimeout(() => { if (globalThis.RolecraftAuthCareer) loadCareerContent(accountSession()); }, 0);
+  setTimeout(() => {
+    if (globalThis.RolecraftAuthCareer) loadCareerContent(accountSession());
+    else if (careerRoute()) loadPublicCareerCatalog(careerRoute().careerId);
+  }, 0);
+  globalThis.addEventListener?.('hashchange', () => {
+    const route = careerRoute();
+    if (!route || accountSession()?.activeCareer?.careerId) return;
+    if (careerState.careerId === route.careerId && (careerState.status === 'ready' || careerState.status === 'loading')) return;
+    loadPublicCareerCatalog(route.careerId);
+  });
   function notify(message) {
     const node = document.getElementById('lw-status');
     if (node) node.textContent = message;
@@ -541,7 +597,7 @@
     return heading('教材阅读', '教材资源暂不可用', esc(message)) + retry + '<a class="outline" href="#home">返回工作台</a>';
   }
   function startSelect() {
-    return '<div class="lw-start"><label for="lw-starting-point">我的学习起点</label><select id="lw-starting-point"><option value="">尚未选择</option>' + Object.entries(STARTS).map(([id, label]) => '<option value="' + id + '"' + (local.startingPoint === id ? ' selected' : '') + '>' + label + '</option>').join('') + '</select><span>自选起点，诊断需实际完成</span></div>';
+    return '<div class="lw-start"><label for="lw-starting-point">我的学习起点</label><select id="lw-starting-point"><option value="">尚未选择</option>' + Object.entries(STARTS).map(([id, label]) => '<option value="' + id + '"' + (local.startingPoint === id ? ' selected' : '') + '>' + label + '</option>').join('') + '</select><span>自选起点只记录阅读偏好</span></div>';
   }
   function unitLink(u, klass = '') { return '<a class="' + klass + '" href="' + href(u) + '"><span class="lw-num">' + String(u.order).padStart(2, '0') + '</span><span>' + esc(u.navigationLabel) + '</span></a>'; }
   function catalog() {
@@ -556,8 +612,12 @@
     const latest = local.visits.filter(currentRecord).at(-1);
     return { total: units.length, count: units.filter(u => visited.has(u.unitId)).length, latest, first: units[0], completed: Boolean(units.length && units.every(u => visited.has(u.unitId))) };
   }
+  function practiceLoopCard() {
+    return '<section class="lw-p01-card lw-career-practice" id="lw-career-practice" aria-labelledby="lw-career-practice-title"><div class="lw-p01-head"><div><span class="lw-kicker">静态阅读 · 练习</span><h2 id="lw-career-practice-title">练习草稿、提交与反馈</h2><p>当前入口提供静态教材阅读。自动评分未接入。先保存草稿，再提交练习。练习反馈只回显你写下的内容，不表示通过或等级。</p></div></div><form id="lw-career-practice-form" class="lw-p01-form"><label for="lw-career-draft">练习草稿<small>写在本页，关闭前请自行保留。</small><textarea id="lw-career-draft" name="careerDraft" rows="4" maxlength="4000">' + esc(careerPractice.draft) + '</textarea></label><div class="lw-p01-actions"><button class="outline" type="button" data-lw-career-draft-save>保存草稿</button><button class="primary" type="button" data-lw-career-practice-submit>提交练习</button></div><p id="lw-career-practice-feedback" class="lw-small" role="status" aria-live="polite">' + esc(careerPractice.feedback) + '</p></form></section>';
+  }
   function homePage(routeOnly = false) {
     if (!corpus()) {
+      if (careerRoute()) return practiceLoopCard() + (careerState.status === 'error' ? errorPage(careerState.error || '当前职业教材没有完整加载。') : loadingPage());
       if (careerState.active && careerState.status === 'loading') return loadingPage();
       return errorPage(careerState.active ? (careerState.error || '当前职业教材没有完整加载；不会用 Agent 教材替代。') : '当前 v12 教材包没有完整加载；不会使用其他版本替代。');
     }
@@ -568,11 +628,13 @@
     const countLabel = dynamicCareer() ? String(corpus().units.length) + ' 篇' : '30 篇';
     const entryState = progress.completed ? { label: '当前课程已完整浏览', title: '回顾最近学习', description: latest ? esc(unit(latest.unitId).navigationLabel) + ' · 已浏览 ' + progress.count + '/' + progress.total + ' 篇' : '课程记录已完成，可从最近位置复习。', action: '回顾学习' } : latest ? { label: '学习进行中', title: '继续学习', description: esc(unit(latest.unitId).navigationLabel) + ' · 已浏览 ' + progress.count + '/' + progress.total + ' 篇', action: '继续学习' } : { label: '尚未开始', title: '开始你的第一步', description: '从当前职业课程的第一篇开始，按路线建立阅读记录。', action: '开始学习' };
     const entryUnit = latest ? unit(latest.unitId) : first;
-    return '<div class="lw-home">' + heading('职业学习 · ' + esc(careerTitle), esc(careerTitle), esc(careerSummary)) + startSelect() + '<section class="lw-entry" aria-labelledby="lw-entry-title"><div class="lw-entry-copy"><span class="lw-entry-status">' + entryState.label + '</span><h2 id="lw-entry-title">' + entryState.title + '</h2><p>' + entryState.description + '</p><small>学习记录仅表示浏览位置，不等于能力认证</small></div><a class="primary" href="' + href(entryUnit, latest?.sectionId || '') + '">' + entryState.action + ' →</a></section>' + (local.startingPoint === 'beginner' && !dynamicCareer() ? '<div class="lw-route-hint">零基础起步：先读开篇，再做<a href="' + href(unit('01-foundation'), unit('01-foundation').sections.find(s => s.title === '先做入口诊断')?.sectionId) + '">基础诊断</a>，按实际缺项补学。</div>' : local.startingPoint && !dynamicCareer() ? '<div class="lw-route-hint">已有基础：可直接查具体问题。正式先修保留在各篇说明中，不锁住阅读。</div>' : '') + '<div class="lw-tabs" aria-label="教材浏览方式"><a href="#path"' + (!showCatalog ? ' aria-current="page"' : '') + '>学习路线</a><a href="#learn"' + (showCatalog ? ' aria-current="page"' : '') + '>课程目录 <small>' + countLabel + '</small></a></div>' + (showCatalog ? catalog() : stages()) + (!routeOnly && !showCatalog ? '<section class="lw-panorama"><div><span class="lw-kicker">先看全貌</span><h2>Agent 工程不止是一次模型调用</h2><p>从问题、组件到验证与交付，找到章节所处的环节。组件按需求采用，图中分组不替代正式阅读顺序。</p><a href="' + href(first, graphSection?.sectionId) + '">查看工程全景与章节位置 →</a></div><button type="button" data-lw-image="' + esc(asset('agent-engineering-landscape-v12.png')) + '" data-lw-alt="Agent工程全景与30篇章节位置"><img src="' + esc(asset('agent-engineering-landscape-v12.png')) + '" alt="Agent工程全景与30篇章节位置" loading="lazy"><span>放大工程全景</span></button></section>' : '') + '</div>';
+    const practice = careerRoute() ? practiceLoopCard() : '';
+    return '<div class="lw-home">' + practice + heading('职业学习 · ' + esc(careerTitle), esc(careerTitle), esc(careerSummary)) + startSelect() + '<section class="lw-entry" aria-labelledby="lw-entry-title"><div class="lw-entry-copy"><span class="lw-entry-status">' + entryState.label + '</span><h2 id="lw-entry-title">' + entryState.title + '</h2><p>' + entryState.description + '</p><small>学习记录只表示浏览位置，不表示通过或等级</small></div><a class="primary" href="' + href(entryUnit, latest?.sectionId || '') + '">' + entryState.action + ' →</a></section>' + (local.startingPoint === 'beginner' && !dynamicCareer() ? '<div class="lw-route-hint">零基础起步：先读开篇，再做<a href="' + href(unit('01-foundation'), unit('01-foundation').sections.find(s => s.title === '先做入口诊断')?.sectionId) + '">基础诊断</a>，按实际缺项补学。</div>' : local.startingPoint && !dynamicCareer() ? '<div class="lw-route-hint">已有基础：可直接查具体问题。正式先修保留在各篇说明中，不锁住阅读。</div>' : '') + '<div class="lw-tabs" aria-label="教材浏览方式"><a href="#path"' + (!showCatalog ? ' aria-current="page"' : '') + '>学习路线</a><a href="#learn"' + (showCatalog ? ' aria-current="page"' : '') + '>课程目录 <small>' + countLabel + '</small></a></div>' + (showCatalog ? catalog() : stages()) + (!routeOnly && !showCatalog ? '<section class="lw-panorama"><div><span class="lw-kicker">先看全貌</span><h2>Agent 工程不止是一次模型调用</h2><p>从问题、组件到验证与交付，找到章节所处的环节。组件按需求采用，图中分组不替代正式阅读顺序。</p><a href="' + href(first, graphSection?.sectionId) + '">查看工程全景与章节位置 →</a></div><button type="button" data-lw-image="' + esc(asset('agent-engineering-landscape-v12.png')) + '" data-lw-alt="Agent工程全景与30篇章节位置"><img src="' + esc(asset('agent-engineering-landscape-v12.png')) + '" alt="Agent工程全景与30篇章节位置" loading="lazy"><span>放大工程全景</span></button></section>' : '') + '</div>';
   }
   function readerPage() {
     const location = loc(), c = corpus(location.version);
     if (!c) {
+      if (careerRoute()) return practiceLoopCard() + (careerState.status === 'error' ? errorPage(careerState.error || '当前职业教材没有完整加载。') : loadingPage());
       if (careerState.active && careerState.status === 'loading') return loadingPage();
       return errorPage('当前 v12 教材没有完整加载；不会替换为其他来源。');
     }
@@ -798,7 +860,13 @@
     activeView = view;
     const isWorkbench = ['home', 'path', 'learn', 'records', 'projects'].includes(view);
     document.body.classList.toggle('lw-active', isWorkbench);
-    const banner = document.getElementById('save-status'); if (isWorkbench && banner) banner.textContent = storageError || '当前教材 v12；新记录独立保存于本浏览器，未同步账户。';
+    const banner = document.getElementById('save-status'); if (isWorkbench && banner) banner.textContent = storageError || (dynamicCareer() ? '当前教材 ' + (careerState.career?.contentVersion || '') + '；阅读记录保存在此浏览器。自动评分未接入。' : '当前教材 v12；新记录独立保存于本浏览器，未同步账户。');
+    if (dynamicCareer() && careerState.career?.title) {
+      const brand = document.querySelector('.brand strong span');
+      if (brand) brand.textContent = careerState.career.title + '学习';
+      const side = document.querySelector('.side-note strong');
+      if (side) side.textContent = careerState.career.title;
+    }
     let host = document.getElementById('lw-assistant-host');
     if (!host) { host = document.createElement('div'); host.id = 'lw-assistant-host'; document.body.appendChild(host); }
     host.hidden = view === 'generation' || view === 'settings'; refreshAssistant();
@@ -876,6 +944,22 @@
     if (el.hasAttribute('data-lw-clarify')) { const c = response?.clarification, o = c?.options?.[Number(el.dataset.lwClarify)]; if (o) { const complete = typeof o === 'string' ? (submission?.query || query) + '；我指的是：' + o : o.query || (submission?.query || query) + '；我指的是：' + (o.label || o.title); find(complete, submission?.context || currentContext()); } return; }
     if (el.hasAttribute('data-lw-reload')) { location.reload(); return; }
     if (el.hasAttribute('data-lw-interrupt')) { const l = loc(); setTask('interrupted', l.unitId, l.sectionId, '学习者主动中断，位置已保存；恢复后从该位置继续。'); notify('已保存当前位置并标记为“已中断”；可从首页恢复任务。'); return; }
+    if (el.hasAttribute('data-lw-career-draft-save') || el.hasAttribute('data-lw-career-practice-submit')) {
+      const value = asText(document.getElementById('lw-career-draft')?.value, 4000);
+      careerPractice.draft = value;
+      if (el.hasAttribute('data-lw-career-draft-save')) {
+        careerPractice.saved = Boolean(value.trim());
+        careerPractice.feedback = value.trim() ? '练习反馈：草稿已保存在此页面。尚未提交，也不表示通过或等级。' : '练习反馈：草稿是空的，尚未保存有效内容。';
+      } else if (!value.trim()) {
+        careerPractice.feedback = '练习反馈：提交前需要先写下练习草稿。未写入通过或等级。';
+      } else {
+        careerPractice.saved = true;
+        careerPractice.submitted = true;
+        careerPractice.feedback = '练习反馈：已提交本次练习草稿。这只是本页回显，自动评分未接入，不表示通过或等级。';
+      }
+      if (typeof render === 'function') render();
+      return;
+    }
     if (el.hasAttribute('data-lw-save-note')) { captureNotes(); const saved = save(); if (saved) syncAccountRecords(); notify(saved ? (accountSession() ? '阅读笔记已保存并同步账户。' : '阅读笔记已保存在此浏览器。') : storageError); return; }
     if (el.hasAttribute('data-lw-p01-save')) { recordPracticeDraft(); return; }
     if (el.hasAttribute('data-lw-p01-submit')) { if (submitPractice() && typeof render === 'function') render(); return; }
