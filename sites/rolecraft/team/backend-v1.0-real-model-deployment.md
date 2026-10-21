@@ -1,5 +1,9 @@
 # 后端数据工程师：1.0 真实模型部署记录
 
+> **2026-10-21 更正：** 回滚段里的 `.runtime/rolecraft.sqlite` 是实例上的进程本地文件。生产数据库是腾讯云 CloudBase，不能靠恢复该 sqlite 文件回滚生产数据。现行主机与更新步骤见 `deploy/deploy-guide.md`。
+
+
+
 版本：`backend-v1.0-real-model-deployment-20261016`
 角色：后端数据工程师
 目标：按用户授权把真实模型配置部署到唯一远程开发环境，并交由 AI 生成工程师核对参数、测试工程师验收真实调用。
@@ -41,6 +45,6 @@ AI 生成工程师先发现端点/变量不一致，随后交付最小适配并�
 
 ## 回滚
 
-本次未产生远程应用变更。若后续部署后需回滚，先停止当前服务，再使用上述备份恢复 `.runtime/rolecraft.sqlite`、`deploy/.env` 与 `ecosystem.config.cjs`，恢复原服务启动方式并重新检查 `/api/health`；不得删除用户数据库或覆盖历史验收记录。
+本次未产生远程应用变更。若回滚当时的应用配置，先停止 PM2 进程 `rolecraft`，再恢复备份里的 `deploy/.env` 与 `ecosystem.config.cjs`，并重新检查 `/api/health`。同目录的 `rolecraft.sqlite` 是进程本地文件，不是生产库；生产数据在 CloudBase，不要靠恢复该文件回滚账户数据，也不要覆盖历史验收记录。
 
 本记录不包含密钥、私有端点值、模型私有响应或请求正文。

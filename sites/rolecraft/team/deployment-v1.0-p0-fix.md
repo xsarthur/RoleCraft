@@ -1,5 +1,9 @@
 # Rolecraft 1.0 P0 静态资源部署记录
 
+> **2026-10-21 更正：** 下文的 `rolecraft.sqlite` 备份是实例上的进程本地文件。生产数据库是腾讯云 CloudBase，不是该文件。不要用它恢复生产账户数据。现行说明见 `deploy/deploy-guide.md`。
+
+
+
 ## 结果
 
 - 状态：`deployed_verified`
@@ -40,7 +44,7 @@
 
 ## 回滚
 
-如 P0 资源需要回退：停止 `rolecraft`，从上述 `static-p0-before.tar.gz` 解出两个文件到 `/opt/rolecraft`，按服务启动配置重新启动 PM2，并复验 health 与两个静态资源。数据库备份只用于数据库恢复演练或明确的数据回滚，不在本次静态回滚中触碰。
+如 P0 资源需要回退：停止 PM2 进程 `rolecraft`，从上述 `static-p0-before.tar.gz` 解出两个文件到 `/opt/rolecraft`，按服务启动配置重新启动该进程，并复验 health 与两个静态资源。同次备份里的 `rolecraft.sqlite` 是进程本地文件，不是 CloudBase 生产库；静态回滚不要触碰它，也不要用它恢复生产账户数据。
 
 ## 限制
 

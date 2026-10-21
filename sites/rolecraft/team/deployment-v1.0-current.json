@@ -1,6 +1,11 @@
 {
   "reportVersion": "deployment-v1.0-current",
   "recordedAt": "2026-10-15T19:10:55Z",
+  "productionDatabaseCorrection": {
+    "recordedAt": "2026-10-21",
+    "productionStore": "Tencent Cloud CloudBase",
+    "note": "SQLite paths in this 2026-10-15 record are process-local files on the Lighthouse disk. They are not the production database. See deploy/deploy-guide.md."
+  },
   "environment": "remote-single-development",
   "target": {
     "host": "111.231.8.78",
@@ -52,15 +57,17 @@
     {"name": "retrieval_self_check_v12", "status": "pass", "cases": 12, "passed": 12}
   ],
   "limitations": [
-    "单一远程开发环境，没有 staging/production 隔离",
+    "2026-10-15 记录的是当时的单一远程环境。生产数据以 2026-10-21 更正为准：腾讯云 CloudBase，不是磁盘 SQLite",
     "生成服务缺少供应商配置，未调用付费模型",
     "本记录不替代测试工程师独立浏览器验收、真实用户或专家证据",
     "部署期间的模型缺失与 v12 源失配已修复；PM2 当前在线，重启计数为 3"
   ],
   "rollback": {
-    "requiresCurrentDatabaseBackup": true,
+    "requiresCurrentDatabaseBackup": false,
+    "productionStore": "Tencent Cloud CloudBase",
     "codeArchive": "/opt/rolecraft/.runtime/backups/20261015T190023Z/app-before.tar.gz",
-    "sqlite": "/opt/rolecraft/.runtime/backups/20261015T190023Z/rolecraft.sqlite",
-    "restart": "PATH=/home/ubuntu/.nvm/versions/node/v24.20.0/bin:$PATH pm2 restart rolecraft"
+    "processLocalSqliteNotProduction": "/opt/rolecraft/.runtime/backups/20261015T190023Z/rolecraft.sqlite",
+    "restart": "PATH=/home/ubuntu/.nvm/versions/node/v24.20.0/bin:$PATH pm2 restart rolecraft",
+    "note": "Restore the code archive only. Do not restore the sqlite file as production data."
   }
 }

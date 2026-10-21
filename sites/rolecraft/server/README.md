@@ -4,7 +4,9 @@ Requires Node.js 24.16.0 (built-in `node:sqlite` used; no installed dependencies
 
 From workspace root: `node scripts/start-local.mjs`, then `http://127.0.0.1:4318`. Stop with Ctrl-C. Bind is always 127.0.0.1; `ROLECRAFT_PORT` optionally changes the port. Do not expose this development service publicly. New users register their own local development accounts; no seed accounts or production authentication claim.
 
-Default SQLite path: `sites/rolecraft/.runtime/rolecraft.sqlite`, ignored by Git, with WAL/SHM companions in the same directory. `ROLECRAFT_DATA_DIR` sets an alternative location; independent QA must use a disposable temporary directory. No automatic import from browser storage, no read of old browser records, no source upload or external deployment.
+Default SQLite path for **local development**: `sites/rolecraft/.runtime/rolecraft.sqlite`, ignored by Git, with WAL/SHM companions in the same directory. `ROLECRAFT_DATA_DIR` sets an alternative location; independent QA must use a disposable temporary directory. No automatic import from browser storage, no read of old browser records.
+
+The public production store is Tencent Cloud **CloudBase**, not this SQLite file. A copy under `/opt/rolecraft/.runtime` on the Lighthouse host is a process-local file and is not the production database. Host, SSH, Nginx, PM2, and the rsync update flow are in `deploy/deploy-guide.md`. Do not put CloudBase credentials in this tree.
 
 Real generation configuration is read exclusively by `server/generation/index.mjs` from environment. Required: `OPENAI_API_KEY`, `OPENAI_MODEL`, `OPENAI_MAX_OUTPUT_TOKENS`, `ROLECRAFT_GENERATION_BUDGET_USD`, `ROLECRAFT_ESTIMATED_MAX_COST_USD`. Optional timeout: `OPENAI_TIMEOUT_MS`. Do not put secrets in the browser, HTTP request, command history, source or report. Missing configuration explicitly blocks generation. No default provider model, cost estimate, budget or mock success is selected. Declared estimated cost is not a provider-enforced spending cap or an invoice.
 
