@@ -1,15 +1,24 @@
 {
-  "version": "core-employees-memory-2",
+  "version": "core-employees-memory-3",
   "status": "active",
   "scope": "cross_project_employee_memory",
+  "pm_release_acceptance": {
+    "owner": "core-project-manager",
+    "playbook": "project-manager/ACCEPTANCE.md",
+    "independent_quality_verification_owner": "core-qa-engineer",
+    "note": "项目/发布验收与独立质量验证分开记录，不得互相冒充。"
+  },
   "employees": [
     {
       "id": "core-project-manager",
       "name": "项目经理",
       "role": "project_coordination",
+      "release_acceptance": "project_and_release",
       "directory": "project-manager",
+      "acceptance_playbook": "project-manager/ACCEPTANCE.md",
       "memory_source": "project-manager/MEMORY.md",
-      "schema": "project-manager/MEMORY_SCHEMA.md"
+      "schema": "project-manager/MEMORY_SCHEMA.md",
+      "boundary": "对照已约定验收条件实际行使交付面并给出通过或阻断。独立质量验证仍属测试工程师。不代写产品需求、教材、界面或基础设施，不把项目验收写成 QA 签核。"
     },
     {
       "id": "core-product-manager",
