@@ -1,15 +1,29 @@
 {
-  "version": "core-employees-memory-2",
+  "version": "core-employees-memory-3",
   "status": "active",
   "scope": "cross_project_employee_memory",
+  "pm_release_acceptance": {
+    "owner": "core-project-manager",
+    "playbook": "project-manager/ACCEPTANCE.md",
+    "domain_acceptance": {
+      "product": "core-product-manager",
+      "design": "core-product-designer",
+      "test_functional": "core-qa-engineer"
+    },
+    "pass_rule": "产品验收、设计验收、测试/功能验收均已由各自岗位完成并有记录，协调已收口，且没有未关闭阻断。",
+    "note": "项目经理只做协调和项目/发布总闸，不代签产品、设计或测试/功能验收。各结论分开记录，互不联署。"
+  },
   "employees": [
     {
       "id": "core-project-manager",
       "name": "项目经理",
       "role": "project_coordination",
+      "release_acceptance": "project_and_release",
       "directory": "project-manager",
+      "acceptance_playbook": "project-manager/ACCEPTANCE.md",
       "memory_source": "project-manager/MEMORY.md",
-      "schema": "project-manager/MEMORY_SCHEMA.md"
+      "schema": "project-manager/MEMORY_SCHEMA.md",
+      "boundary": "协调产品验收、设计验收和测试/功能验收。三份领域验收齐备且没有未关闭阻断时，才标记项目/发布通过。不代签任何领域验收，不代写产品需求、教材、界面或基础设施。"
     },
     {
       "id": "core-product-manager",
