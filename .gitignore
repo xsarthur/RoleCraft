@@ -1,7 +1,9 @@
 # Rolecraft local service data and credentials
 sites/rolecraft/.runtime/
+.runtime/
 sites/rolecraft/.env
 sites/rolecraft/.env.*
+deploy/.env
 # Isolated offline content retrieval dependencies and downloaded model resources
 sites/rolecraft/server/retrieval/node_modules/
 sites/rolecraft/server/retrieval/models/

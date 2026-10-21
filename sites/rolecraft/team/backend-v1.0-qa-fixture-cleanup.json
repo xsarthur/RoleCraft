@@ -1,4 +1,9 @@
 {
+  "productionDatabaseCorrection": {
+    "recordedAt": "2026-10-21",
+    "productionStore": "Tencent Cloud CloudBase",
+    "note": "remote.database below is a process-local SQLite file from 2026-10-15, not the production database. See deploy/deploy-guide.md."
+  },
   "report": "backend-v1.0-qa-fixture-cleanup",
   "role": "backend-data-engineer",
   "status": "executed_and_verified",

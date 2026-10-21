@@ -62,7 +62,7 @@ echo "[4/6] 检查项目文件..."
 if [ ! -d "${PROJECT_ROOT}/sites/rolecraft/server" ]; then
     echo "  [警告] ${PROJECT_ROOT}/sites/rolecraft/server 不存在"
     echo "  请先将项目代码同步到 ${PROJECT_ROOT}"
-    echo "  例如：rsync -avz --exclude node_modules --exclude .runtime ./ root@SERVER_IP:${PROJECT_ROOT}/"
+    echo "  例如：rsync -avz --exclude node_modules --exclude .runtime --exclude .git --exclude deploy/.env ./ ubuntu@111.231.8.78:${PROJECT_ROOT}/"
     echo "  或在服务器上 git clone 后软链接到 ${PROJECT_ROOT}"
     exit 1
 fi
@@ -108,8 +108,11 @@ DEPLOY_DIR="${PROJECT_ROOT}/deploy"
 if [ ! -f "${DEPLOY_DIR}/.env" ]; then
     if [ -f "${DEPLOY_DIR}/.env.example" ]; then
         cp "${DEPLOY_DIR}/.env.example" "${DEPLOY_DIR}/.env"
-        echo "  已创建 ${DEPLOY_DIR}/.env，请编辑填写实际配置"
+        echo "  已从示例创建 ${DEPLOY_DIR}/.env。生产机若已有该文件，脚本不会覆盖。"
+        echo "  CloudBase 与其他密钥只写在服务器上的这个文件里，不要提交到仓库，也不要重新生成已有密钥。"
     fi
+else
+    echo "  保留已有 ${DEPLOY_DIR}/.env，不重新生成密钥"
 fi
 
 if [ -f "${DEPLOY_DIR}/nginx-rolecraft.conf" ]; then

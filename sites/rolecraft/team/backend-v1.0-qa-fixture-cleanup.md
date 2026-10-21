@@ -1,5 +1,9 @@
 # Rolecraft 1.0 远程 QA fixture 清理记录
 
+> **2026-10-21 更正：** 本记录操作的 `/opt/rolecraft/.runtime/rolecraft.sqlite` 是当时实例上的进程本地文件，不是生产数据库。生产数据在腾讯云 CloudBase。现行说明见 `deploy/deploy-guide.md`。
+
+
+
 - **责任岗位**：后端数据工程师
 - **执行时间**：2026-10-16 04:17–04:18（Asia/Shanghai；UTC 2026-10-15 20:17–20:18）
 - **远程单环境**：`ubuntu@111.231.8.78:/opt/rolecraft`

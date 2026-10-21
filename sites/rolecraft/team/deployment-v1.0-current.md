@@ -1,5 +1,9 @@
 # Rolecraft 1.0 远程单环境部署记录
 
+> **2026-10-21 更正：** 生产账户与业务数据在腾讯云 **CloudBase**。下文出现的 `/opt/rolecraft/.runtime/rolecraft.sqlite` 是当时实例上的进程本地文件，不是生产数据库。不要按本文的 sqlite 路径备份或回滚生产数据。现行主机、SSH、Nginx、PM2、OpenClaw 共存和更新步骤见 `deploy/deploy-guide.md`。本文件保留 2026-10-15 的部署经过，不改写当时的哈希和备份路径。
+
+
+
 更新时间：2026-10-15T19:10:55Z（服务器 UTC）  
 部署目标：`ubuntu@111.231.8.78:/opt/rolecraft`  
 环境策略：按用户授权，远程服务器作为唯一开发环境；代码、接口和数据库更新直接部署到此环境。
@@ -26,11 +30,11 @@
 
 ## 当前限制与下一步
 
-- 这是单一开发环境，没有独立 staging/production 隔离；后续每次直接部署前必须先创建新的 SQLite 和代码回滚包。
+- 这是 2026-10-15 的单一远程环境记录。生产数据现已明确为腾讯云 CloudBase；更新前要保留的是服务器 `deploy/.env` 与 CloudBase 数据，不是磁盘上的 SQLite。代码回滚仍使用当时的 `app-before.tar.gz`。
 - 生成服务没有配置供应商密钥、模型和预算，因此健康接口会明确标记 generation 未配置；本轮没有付费调用，也没有上传或广泛发布。
 - 本记录是部署与 TCP/API 冒烟证据，不替代测试工程师的独立浏览器验收、真实用户理解、真人专家审核或完整职业/行业目标判断。当前完整产品仍需按既有门槛独立复核。
 - 部署过程中曾出现两次可恢复启动阻力：模型目录原先缺少 ONNX 文件，以及远程 `textbooks/v12/c01-selection.md` 与新索引不一致；补齐本地模型并同步当前 v12 源后已复验通过。PM2 当前重启计数为 3，状态为 online。
 
 ## 回滚点
 
-在服务停止后，先为当前数据库创建新的备份，再从 `/opt/rolecraft/.runtime/backups/20261015T190023Z/` 恢复 `rolecraft.sqlite`，并用 `tar -xzf app-before.tar.gz -C /opt/rolecraft` 恢复应用代码；随后以 Node 24 执行 `pm2 restart rolecraft` 并重新跑 health/catalog/recommend 检查。不得在未备份当前数据库时覆盖运行时文件。
+2026-10-15 的代码包仍在 `/opt/rolecraft/.runtime/backups/20261015T190023Z/app-before.tar.gz`，可用 `tar -xzf app-before.tar.gz -C /opt/rolecraft` 恢复当时的应用文件，再以 Node 24 执行 `pm2 restart rolecraft` 并重跑 health/catalog/recommend。同目录的 `rolecraft.sqlite` 只是当时的进程本地文件。生产数据在 CloudBase，不要用这个 sqlite 备份恢复或覆盖生产账户数据。

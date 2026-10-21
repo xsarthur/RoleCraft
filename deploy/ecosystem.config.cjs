@@ -29,7 +29,11 @@ module.exports = {
       HOST: process.env.HOST || '127.0.0.1',
       PUBLIC_DEPLOYMENT: process.env.PUBLIC_DEPLOYMENT || 'true',
       ROLECRAFT_DATA_DIR: process.env.ROLECRAFT_DATA_DIR || path.join(PROJECT_ROOT, '.runtime'),
-      ROLECRAFT_CAREERS_DIR: process.env.ROLECRAFT_CAREERS_DIR || 'server/careers',
+      // Lighthouse 上 PM2 cwd 是 /opt/rolecraft。相对值 server/careers 会解析成
+      // /opt/rolecraft/server/careers，职业 JSON 实际在 sites/rolecraft/server/careers。
+      // 相对路径会导致访客引导 career_not_found，教材除已种入的 agent-developer 外不加载。
+      // 服务器 deploy/.env 必须写成下面这个绝对路径，改完后 pm2 restart rolecraft --update-env。
+      ROLECRAFT_CAREERS_DIR: process.env.ROLECRAFT_CAREERS_DIR || path.join(PROJECT_ROOT, 'sites/rolecraft/server/careers'),
       ROLECRAFT_RETRIEVAL_MODE: process.env.ROLECRAFT_RETRIEVAL_MODE || 'semantic',
       // OpenAI 配置（可选）
       OPENAI_API_KEY: process.env.OPENAI_API_KEY || '',
@@ -40,7 +44,9 @@ module.exports = {
       OPENAI_TIMEOUT_MS: process.env.OPENAI_TIMEOUT_MS || '',
     },
 
-    // 实例数：单实例，因 SQLite + 内存态检索不支持多进程并发写
+    // 单实例：进程内检索模型，以及 ROLECRAFT_DATA_DIR 下的本地 SQLite 文件，
+    // 都不支持多进程并发写。生产账户与业务数据在腾讯云 CloudBase，
+    // 不在该本地 sqlite 文件中；不要把这个文件当作生产库备份或回滚对象。
     instances: 1,
     exec_mode: 'fork',
 
@@ -56,7 +62,8 @@ module.exports = {
     log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
     merge_logs: true,
 
-    // 优雅关闭：给 SQLite WAL checkpoint 和检索模型释放 10 秒
+    // 优雅关闭：给本地 SQLite WAL checkpoint 和检索模型释放 10 秒。
+    // 生产数据在 CloudBase，不由这次关闭刷盘。
     kill_timeout: 10000,
     listen_timeout: 8000,
   }],
