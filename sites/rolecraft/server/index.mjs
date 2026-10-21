@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { getContentReadiness, getContentCatalog, getContentChapter, getContentAsset, getContentReference, recommendContent, dialogContent, closeContentRetrieval } from './retrieval/index.mjs';
 import { getExtractor } from './retrieval/semantic.mjs';
 import { loadCareerImports } from './careers.mjs';
+import { loadUiuxCareer, presentUiuxCatalog, uiuxChapter, queryUiuxLearning, UIUX_CAREER_ID } from './uiux-catalog.mjs';
 import { analyzeVoiceRequest, probeLocalAsr } from './voice/index.mjs';
 
 export const PRODUCT_VERSION = 'local-mvp-0.4';
@@ -149,6 +150,8 @@ export function createRolecraftServer(options={}) {
   // Data-layer imports are read at startup. The client has no write path for this catalog.
   const importDir=options.careersDir || process.env.ROLECRAFT_CAREERS_DIR || path.join(serverDir,'careers');
   for(const imported of loadCareerImports(importDir)) registerCareer(imported,imported.corpus);
+  const uiuxCareer=loadUiuxCareer(projectDir);
+  registerCareer(uiuxCareer.meta, uiuxCareer.corpus);
   // Keep the earlier single-file metadata import compatible, but only allow the two
   // source-verified corpora exposed by retrieval/index.mjs.
   const importedCareerFile=options.careersFile || process.env.ROLECRAFT_CAREERS_FILE;
@@ -508,7 +511,16 @@ export function createRolecraftServer(options={}) {
           const career=careerRow(careerContent[1]);
           const catalog=careerCatalogFor(career);
           if(!catalog) reject(409,'career_content_unavailable','该职业尚未配置独立教材内容');
-          if(!careerContent[2]||careerContent[2]==='catalog') return send(200,{career:careerView(career),catalog});
+          if(!careerContent[2]||careerContent[2]==='catalog') {
+            const publicCatalog=career.career_id===UIUX_CAREER_ID ? presentUiuxCatalog(projectDir) : catalog;
+            return send(200,{career:careerView({...career,corpus_hash:publicCatalog.corpusHash||career.corpus_hash,content_version:publicCatalog.corpusVersion||career.content_version,textbook_version_id:publicCatalog.textbookVersionId||career.textbook_version_id,index_version:publicCatalog.indexVersion||career.index_version}),catalog:publicCatalog});
+          }
+          if(career.career_id===UIUX_CAREER_ID) {
+            const fresh=uiuxChapter(projectDir,careerContent[3]);
+            if(!fresh) reject(404,'not_found','所选职业教材没有这个章节');
+            if(fresh.stale) reject(409,'content_stale','该章节来源与清单不一致，已停止作为当前发布正文提供');
+            return send(200,{career:careerView(career),chapter:fresh});
+          }
           const found=careerChapterFor(career,careerContent[3]); if(!found)reject(404,'not_found','所选职业教材没有这个章节');
           return send(200,{career:careerView(career),chapter:found});
         }
@@ -547,6 +559,11 @@ export function createRolecraftServer(options={}) {
           if(useCurrentContext){
             const target=validateContentTarget(career.career_id,snapshot.textbookVersionId,currentUnitId,currentSectionId);
             context={currentUnitId:target.chapter.unitId,currentSectionId:currentSectionId||null};
+          }
+          if(career.career_id===UIUX_CAREER_ID) {
+            const retrieval=queryUiuxLearning(projectDir,query);
+            const results=(retrieval.results||[]).slice(0,3).map(r=>learningResultView(r,career));
+            return send(200,{requestId,status:retrieval.status,agentVersion:AGENT_VERSION,engineMode:'local_lexical_retrieval',providerCalled:false,resultType:learningResultType(query),...snapshot,corpusVersion:snapshot.contentVersion,corpusHash:snapshot.corpusHash,results,dialog:null,clarification:null,limitations:retrieval.limitations||[]});
           }
           if(career.career_id!==seededCareer.careerId) return send(200,{requestId,status:'unavailable',agentVersion:AGENT_VERSION,engineMode:'local_semantic_retrieval',providerCalled:false,resultType:learningResultType(query),...snapshot,corpusVersion:snapshot.contentVersion,results:[],dialog:null,clarification:null,limitations:['当前职业的教材已发布，但 v0.12 本地检索适配器尚未为该职业准备独立索引；可以打开课程目录。']});
           const retrieval=await dialogContent({query,corpusVersion:snapshot.contentVersion,...context});
