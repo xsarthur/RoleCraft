@@ -34,7 +34,9 @@ const v12Frames=[
  {id:'transfer_evaluation',label:'用跨场景实验与技术移交检验能力',units:['n10-evaluation-projects'],patterns:[/跨场景|客服知识|研究任务|跨语(?:排错|诊断)|技术移交|迁移.{0,8}(?:任务|评价)|(?:证据|轨迹).{0,8}(?:偏离|分歧)|(?:交给|移交).{0,16}(?:工程师|接收者).{0,8}复现/i]}
 ];
 const frameById=new Map([...frames,...v12Frames].map(f=>[f.id,f]));
-const expectedUnits={'textbook-v12':30};
+const expectedUnits={'textbook-v12':30,'textbook-v13':30};
+const agentCorpora=new Set(['textbook-v12','textbook-v13']);
+function retrievalVersionFor(corpus){return corpus?.corpusVersion==='textbook-v13'?'content-retrieval-0.13-v13':'content-retrieval-0.12-v12';}
 const norm=s=>s.normalize('NFKC').toLowerCase().replace(/\s+/g,' ').trim();
 function tokenize(s){const n=norm(s),out=n.match(/[a-z0-9_]{2,}/g)||[];for(const run of n.match(/[\p{Script=Han}]+/gu)||[])for(let i=0;i<run.length-1;i++)out.push(run.slice(i,i+2));return [...new Set(out)].filter(t=>!['怎么','怎样','一个','什么','我想','想学','可以','如何','不是','但是','知道','内容','详细','解法'].includes(t));}
 function clauses(query){return query.split(/[，,。；;！？!?\n]|(?:但是|但(?=不是|不想|不要|不看|不学)|而是|我只想|我只要|只想学|以及|同时|还有|还想|还得)/).map(text=>({text:text.trim(),excluded:/^(?:先|暂时|暂且|暂)?(?:不看|不学|不讨论|不谈|不要(?:学|看|讨论|推荐|介绍)|不推荐|别推荐|跳过|不想学|不是要学|不是想学|不是\s*(?:react\b|agent\b|智能体|前端)|不想看|不用看|不需要学|不需要看)/i.test(text.trim())})).filter(x=>x.text);}
@@ -66,7 +68,7 @@ function interpret(input,options={}){
   if(explicitIds.has('recovery')&&!explicitIds.has('stopping'))interpretedIntents=interpretedIntents.filter(i=>i.id!=='stopping');
   // New specialist topics have explicit source-backed cues. A weaker inferred
   // broad class must not consume the three-topic budget before these clear needs.
-  if((options.corpusVersion||input.corpusVersion)==='textbook-v12'){
+  if(agentCorpora.has(options.corpusVersion||input.corpusVersion)){
    const specialistIds=new Set(v12Frames.filter(f=>explicitIds.has(f.id)).map(f=>f.id));
    interpretedIntents=[...interpretedIntents.filter(i=>specialistIds.has(i.id)),...interpretedIntents.filter(i=>!specialistIds.has(i.id))];
   }
@@ -93,7 +95,7 @@ function excerpt(section,query,exactTerms=[]){
  // Keep a complete source paragraph if it contains an unusually long technical sentence.
  return original;
 }
-function base(corpus){return {status:'no_match',retrievalVersion:'content-retrieval-0.12-v12',engineMode:'local_concept_retrieval',matchingMethods:['local_task_concepts','source_term_recall'],providerCalled:false,corpusVersion:corpus?.corpusVersion||'textbook-v12',corpusHash:corpus?.corpusHash||null,interpretedIntents:[],excludedIntents:[],results:[],clarification:null,limitations:['本地任务概念规则与原文术语查找只覆盖所选 Agent 教材；没有调用大模型。']};}
+function base(corpus){return {status:'no_match',retrievalVersion:retrievalVersionFor(corpus),engineMode:'local_concept_retrieval',matchingMethods:['local_task_concepts','source_term_recall'],providerCalled:false,corpusVersion:corpus?.corpusVersion||'textbook-v13',corpusHash:corpus?.corpusHash||null,interpretedIntents:[],excludedIntents:[],results:[],clarification:null,limitations:['本地任务概念规则与原文术语查找只覆盖所选 Agent 教材；没有调用大模型。']};}
 function validate(corpus,input){
  if(!corpus||!expectedUnits[corpus.corpusVersion]||!Array.isArray(corpus.units)||corpus.units.length!==expectedUnits[corpus.corpusVersion])return 'unavailable';
  if(!input||typeof input!=='object'||Array.isArray(input)||Object.keys(input).some(k=>!['query','startingPoint','currentUnitId','currentSectionId','corpusVersion'].includes(k)))return 'invalid_input';
@@ -121,7 +123,7 @@ function recommend(corpus,input,options={}){
   result.status='needs_clarification';result.clarification=clarification('你想找哪个方向的内容？当前教材讲解 Agent ReAct，不提供前端 React 教程。',[['Agent 的 ReAct 方法','ReAct 的推理和行动是怎样交错的？'],['前端 React 框架','React 前端框架的 JSX 和 Hooks']]);return result;
  }
  if(!positive){result.limitations=['你排除了所提内容；请补充一个希望学习的目标。'];return result;}
- if(/记忆|记住/.test(input.query)&&!/(上下文|资料|任务|持久|重启|中断|恢复|检索|动作|效果|工单|执行)/.test(input.query)&&!(corpus.corpusVersion==='textbook-v12'&&result.interpretedIntents.some(i=>i.id==='context_memory'))){
+ if(/记忆|记住/.test(input.query)&&!/(上下文|资料|任务|持久|重启|中断|恢复|检索|动作|效果|工单|执行)/.test(input.query)&&!(agentCorpora.has(corpus.corpusVersion)&&result.interpretedIntents.some(i=>i.id==='context_memory'))){
   result.status='needs_clarification';result.clarification=clarification('你希望解决哪一种记忆问题？',[['模型上下文与资料证据','模型回答时怎样找到合适的资料证据'],['中断后继续任务','程序中断以后怎样恢复任务并避免重复动作']]);return result;
  }
  if(!result.interpretedIntents.length&&/agent/i.test(input.query)&&/(做好|帮助|帮我|更好|优化)/.test(input.query)){

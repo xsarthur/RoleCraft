@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   const VERSION = 'rolecraft-1.0';
-  const CURRENT = 'textbook-v12';
+  const CURRENT = 'textbook-v13';
   const CUTOVER_SNOOZE_KEY = 'rolecraft-content-update-snooze';
   const CUTOVER_SNOOZE_MS = 30 * 60 * 1000;
   const CUTOVER_PROBE_MS = 7 * 60 * 1000;
@@ -14,9 +14,9 @@
   const P01 = Object.freeze({
     practiceId: 'V1-PILOT-P01-MVP-001',
     unitId: 'p01-mvp',
-    textbookVersion: 'textbook-v12',
-    sourcePath: 'sites/rolecraft/textbooks/v12/p01-mvp.md',
-    sourceSha256: 'deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9',
+    textbookVersion: 'textbook-v13',
+    sourcePath: 'sites/rolecraft/textbooks/v13/p01-mvp.md',
+    sourceSha256: '1462df664a2c3d31dc54957f47c3ddf3508ee0eb364f898c309171e3d520b916',
     fixtureId: 'defect-mvp-contract-01',
     reviewScope: 'limited_to_constructed_fixture'
   });
@@ -101,7 +101,7 @@
   } catch (error) { storageError = error?.message === 'Record version mismatch' ? '已有阅读记录与当前教材版本不一致，已停止据此显示。不会把旧记录并入新教材。原值仍可导出。' : '读取本浏览器学习记录失败。新输入仍可留在页面并导出。'; }
   let cutover = { comparison: null, apiMismatch: null, lastProbeAt: 0, probing: false, inflight: null, timer: 0 };
   function staticCorpus() {
-    const c = globalThis.RolecraftContentV12, count = 30;
+    const c = globalThis.RolecraftContentV13, count = 30;
     if (!c || c.corpusVersion !== CURRENT || !Array.isArray(c.units) || c.units.length !== count || new Set(c.units.map(u => u.unitId)).size !== count || c.units.some((u, i) => u.order !== i + 1 || !u.bodyMarkdown || !Array.isArray(u.sections))) return null;
     return c;
   }
@@ -255,10 +255,10 @@
     local.task = { ...currentTask(), state, unitId: unitId || local.task?.unitId || '', sectionId: sectionId || local.task?.sectionId || '', reason: asText(reason, 400), updatedAt: new Date().toISOString() };
     save();
   }
-  // Per-career task states live outside the v12 reading store. That store rejects
-  // any corpusVersion other than textbook-v12, so UIUX progress cannot be written
-  // there. This key is local-browser only and is the documented fixture for
-  // not_started / in_progress / interrupted / browsed. It does not touch SQLite.
+  // Per-career task states live outside the Agent reading store. That store
+  // accepts only the current Agent textbook version, so UIUX progress cannot be
+  // written there. This key is local-browser only and is the documented fixture
+  // for not_started / in_progress / interrupted / browsed. It does not touch SQLite.
   const CAREER_TASK_KEY = 'rolecraft-career-task-v1';
   const TASK_STATES = ['not_started', 'in_progress', 'interrupted', 'browsed'];
   function emptyCareerTasks() { return { schema: 1, careers: {} }; }
@@ -573,7 +573,7 @@
     return error;
   }
   function localContentIdentity() {
-    const bundled = globalThis.RolecraftContentV12;
+    const bundled = globalThis.RolecraftContentV13;
     // Compare the in-memory bundled package. A soft refresh can keep this copy
     // after the server has shipped a newer textbook.
     return { contentVersion: CURRENT, corpusHash: typeof bundled?.corpusHash === 'string' ? bundled.corpusHash : '' };
@@ -950,7 +950,7 @@
     if (!corpus()) {
       if (careerRoute()) return practiceLoopCard() + (careerState.status === 'error' ? errorPage(careerState.error || '当前职业教材没有完整加载。', careerErrorAction()) : loadingPage());
       if (careerState.active && careerState.status === 'loading') return loadingPage();
-      return errorPage(careerState.active ? (careerState.error || '当前职业教材没有完整加载；不会用 Agent 教材替代。') : '当前 v12 教材包没有完整加载；不会使用其他版本替代。', careerState.active ? careerErrorAction() : 'reload');
+      return errorPage(careerState.active ? (careerState.error || '当前职业教材没有完整加载；不会用 Agent 教材替代。') : '当前 v13 教材包没有完整加载；不会使用其他版本替代。', careerState.active ? careerErrorAction() : 'reload');
     }
     const progress = learningProgress(), latest = progress.latest, first = progress.first;
     const graphSection = first.sections.find(s => s.title === '一套可交付系统还需要哪些工程工作');
@@ -971,7 +971,7 @@
     if (!c) {
       if (careerRoute()) return practiceLoopCard() + (careerState.status === 'error' ? errorPage(careerState.error || '当前职业教材没有完整加载。', careerErrorAction()) : loadingPage());
       if (careerState.active && careerState.status === 'loading') return loadingPage();
-      return errorPage('当前 v12 教材没有完整加载；不会替换为其他来源。');
+      return errorPage('当前 v13 教材没有完整加载；不会替换为其他来源。');
     }
     if (!location.unitId) return homePage(true);
     const u = unit(location.unitId, location.version); if (!u) return errorPage('请求的章节不属于所选教材版本。');
@@ -1044,7 +1044,7 @@
   function isRuleFallback(r) { return /concept|rule|static_rules/i.test(String(r?.engineMode || '')); }
   function resultHTML() {
     if (pending) return '<div class="lw-assistant-state lw-state-loading" role="status" aria-live="polite" aria-atomic="true"><span class="lw-state-mark lw-query-spinner" aria-hidden="true"><span></span></span><div><h3>正在查找教材依据</h3><p>请求 ' + esc(submission?.requestId || '生成中') + ' · 正在向当前教材检索服务查询；完成后会显示原文和出处。等待期间不会重复提交。</p><div class="lw-query-indeterminate" aria-hidden="true"><span></span></div></div></div>';
-    if (!response) return '<div class="lw-find-empty"><h3>把学习或项目问题说出来</h3><p>根据 v12 教材简答，并提供对应章节入口。职业知识以外的问题会被过滤。</p><div class="lw-examples"><button data-lw-example="ReAct是什么">ReAct 是什么</button><button data-lw-example="程序改了一版，怎么判断效果真的变好了">怎样比较改动后的效果</button></div></div>';
+    if (!response) return '<div class="lw-find-empty"><h3>把学习或项目问题说出来</h3><p>根据 v13 教材简答，并提供对应章节入口。职业知识以外的问题会被过滤。</p><div class="lw-examples"><button data-lw-example="ReAct是什么">ReAct 是什么</button><button data-lw-example="程序改了一版，怎么判断效果真的变好了">怎样比较改动后的效果</button></div></div>';
     const d = response.dialog || {}, status = d.status || response.status;
     const identity = { contentVersion: response?.contentVersion || response?.corpusVersion || '', textbookVersionId: response?.textbookVersionId || '', indexVersion: response?.indexVersion || '', corpusHash: response?.corpusHash || '' };
     const identityValue = value => esc(value || '服务未提供');
@@ -1190,7 +1190,7 @@
   function exportRecords() {
     captureNotes();
     const data = { schemaVersion: '1', clientVersion: VERSION, exportedAt: new Date().toISOString(), scope: '本浏览器当前记录与本人自述，不是独立能力评价', current: { corpusVersion: CURRENT, corpusHash: corpus()?.corpusHash || null, storageKey: STORE, records: local } };
-    download(JSON.stringify(data, null, 2), '职造-学习记录-rolecraft-1.0-v12.json', 'application/json;charset=utf-8'); notify('已导出当前 v12 学习记录；自述未独立评价。');
+    download(JSON.stringify(data, null, 2), '职造-学习记录-rolecraft-1.0-v13.json', 'application/json;charset=utf-8'); notify('已导出当前 v13 学习记录；自述未独立评价。');
   }
   let focusFrame = 0, readerObserver = null;
   function readerGeometry() {

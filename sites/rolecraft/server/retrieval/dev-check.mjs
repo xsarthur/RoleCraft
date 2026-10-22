@@ -10,8 +10,10 @@ try{
  app=createRolecraftServer({dataDir});await new Promise(resolve=>app.server.listen(0,'127.0.0.1',resolve));const origin='http://127.0.0.1:'+app.server.address().port;
  globalThis.fetch=(url,opts)=>{if(!String(url).startsWith(origin+'/')){externalAttempts++;throw Error('External request prohibited');}return realFetch(url,opts);};
  const request=async(route,input)=>{const r=await fetch(origin+route,input===undefined?{}:{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(input)});return {status:r.status,data:await r.json()};};
- const catalog=await request('/api/content/catalog');assert.equal(catalog.status,200);assert.equal(catalog.data.units.length,30);assert.equal(catalog.data.corpusVersion,'textbook-v12');
- const corpus=JSON.parse(readFileSync(path.join(here,'content-v12-index.json'),'utf8'));
+ const catalog=await request('/api/content/catalog');assert.equal(catalog.status,200);assert.equal(catalog.data.units.length,30);assert.equal(catalog.data.corpusVersion,'textbook-v13');
+ const rejected=await request('/api/content/catalog?version=textbook-v11');assert.equal(rejected.status,400);assert.equal(rejected.data.error.code,'content_version_invalid');
+ const rollback=await request('/api/content/catalog?version=textbook-v12');assert.equal(rollback.status,200);assert.equal(rollback.data.corpusVersion,'textbook-v12');
+ const corpus=JSON.parse(readFileSync(path.join(here,'content-v13-index.json'),'utf8'));
  for(const u of corpus.units){const response=await request('/api/content/chapter/'+u.unitId);assert.equal(response.status,200);assert.equal(response.data.unit.bodyMarkdown,u.bodyMarkdown);assert.equal(response.data.unit.sourceSha256,sha(u.bodyMarkdown));}
  checks.push({check:'catalog_and_all_30_current_chapters',passed:true});
  const cases=[

@@ -1,0 +1,335 @@
+{
+  "schemaVersion": "1.0",
+  "version": "textbook-v13-workbench-curriculum",
+  "status": "formal_agent_reading_contract",
+  "role": "workbench reading order and prerequisites for textbook-v13",
+  "note": "Unit ids, order, and prerequisites are carried from team/textbook-v12-curriculum.json with paths rewritten to textbooks/v13. This file is the workbench binding, not a new pedagogical review and not a replacement of the frozen v12 curriculum.",
+  "baseCurriculum": "team/textbook-v12-curriculum.json",
+  "readingOrder": [
+    "00-learning-route",
+    "01-foundation",
+    "n01-python-model-foundations",
+    "p01-discovery",
+    "02-task-acceptance",
+    "03-trust-boundary",
+    "f01",
+    "f02",
+    "n02-context-memory-prompt",
+    "c01-selection",
+    "c01-control-primer",
+    "c02",
+    "c03",
+    "n04-tools-mcp",
+    "e01",
+    "c01-fixed-workflow",
+    "c01-control-loop",
+    "n03-planning-reflection",
+    "n05-retrieval-ingestion",
+    "n06-graph-orchestration",
+    "n07-multiagent-a2a",
+    "e02",
+    "n10-evaluation-projects",
+    "p01-mvp",
+    "e03",
+    "n08-sandbox-security",
+    "e04",
+    "e05",
+    "n09-runtime-delivery",
+    "p02"
+  ],
+  "units": [
+    {
+      "id": "00-learning-route",
+      "path": "textbooks/v13/00-learning-route.md",
+      "prerequisites": []
+    },
+    {
+      "id": "01-foundation",
+      "path": "textbooks/v13/01-foundation.md",
+      "prerequisites": [
+        "00-learning-route"
+      ]
+    },
+    {
+      "id": "p01-discovery",
+      "path": "textbooks/v13/p01-discovery.md",
+      "prerequisites": [
+        "00-learning-route"
+      ]
+    },
+    {
+      "id": "02-task-acceptance",
+      "path": "textbooks/v13/02-task-acceptance.md",
+      "prerequisites": [
+        "p01-discovery"
+      ]
+    },
+    {
+      "id": "03-trust-boundary",
+      "path": "textbooks/v13/03-trust-boundary.md",
+      "prerequisites": [
+        "02-task-acceptance"
+      ]
+    },
+    {
+      "id": "f01",
+      "path": "textbooks/v13/f01.md",
+      "prerequisites": [
+        "01-foundation",
+        "02-task-acceptance",
+        "03-trust-boundary"
+      ]
+    },
+    {
+      "id": "f02",
+      "path": "textbooks/v13/f02.md",
+      "prerequisites": [
+        "f01"
+      ]
+    },
+    {
+      "id": "c01-selection",
+      "path": "textbooks/v13/c01-selection.md",
+      "prerequisites": [
+        "f02",
+        "02-task-acceptance"
+      ]
+    },
+    {
+      "id": "c01-control-primer",
+      "path": "textbooks/v13/c01-control-primer.md",
+      "prerequisites": [
+        "c01-selection",
+        "03-trust-boundary"
+      ]
+    },
+    {
+      "id": "c02",
+      "path": "textbooks/v13/c02.md",
+      "prerequisites": [
+        "f02",
+        "03-trust-boundary"
+      ]
+    },
+    {
+      "id": "c03",
+      "path": "textbooks/v13/c03.md",
+      "prerequisites": [
+        "f01",
+        "c01-selection",
+        "c01-control-primer"
+      ]
+    },
+    {
+      "id": "e01",
+      "path": "textbooks/v13/e01.md",
+      "prerequisites": [
+        "c03",
+        "c01-control-primer"
+      ]
+    },
+    {
+      "id": "c01-fixed-workflow",
+      "path": "textbooks/v13/c01-fixed-workflow.md",
+      "prerequisites": [
+        "f02",
+        "c02",
+        "c03",
+        "e01"
+      ]
+    },
+    {
+      "id": "c01-control-loop",
+      "path": "textbooks/v13/c01-control-loop.md",
+      "prerequisites": [
+        "c01-fixed-workflow",
+        "c03",
+        "e01"
+      ]
+    },
+    {
+      "id": "e02",
+      "path": "textbooks/v13/e02.md",
+      "prerequisites": [
+        "c02",
+        "c03",
+        "c01-control-loop"
+      ]
+    },
+    {
+      "id": "p01-mvp",
+      "path": "textbooks/v13/p01-mvp.md",
+      "prerequisites": [
+        "p01-discovery",
+        "c01-selection",
+        "e02"
+      ]
+    },
+    {
+      "id": "e03",
+      "path": "textbooks/v13/e03.md",
+      "prerequisites": [
+        "c02",
+        "c03",
+        "e02",
+        "03-trust-boundary"
+      ]
+    },
+    {
+      "id": "e04",
+      "path": "textbooks/v13/e04.md",
+      "prerequisites": [
+        "e01",
+        "e02",
+        "e03"
+      ]
+    },
+    {
+      "id": "e05",
+      "path": "textbooks/v13/e05.md",
+      "prerequisites": [
+        "e02",
+        "e04"
+      ]
+    },
+    {
+      "id": "p02",
+      "path": "textbooks/v13/p02.md",
+      "prerequisites": [
+        "e01",
+        "e03",
+        "e04",
+        "e05",
+        "p01-mvp"
+      ]
+    },
+    {
+      "id": "n01-python-model-foundations",
+      "path": "textbooks/v13/n01-python-model-foundations.md",
+      "prerequisites": [
+        "01-foundation"
+      ]
+    },
+    {
+      "id": "n02-context-memory-prompt",
+      "path": "textbooks/v13/n02-context-memory-prompt.md",
+      "prerequisites": [
+        "f02",
+        "03-trust-boundary"
+      ]
+    },
+    {
+      "id": "n03-planning-reflection",
+      "path": "textbooks/v13/n03-planning-reflection.md",
+      "prerequisites": [
+        "c01-control-loop",
+        "02-task-acceptance"
+      ]
+    },
+    {
+      "id": "n04-tools-mcp",
+      "path": "textbooks/v13/n04-tools-mcp.md",
+      "prerequisites": [
+        "c03",
+        "f01",
+        "c01-control-primer"
+      ]
+    },
+    {
+      "id": "n05-retrieval-ingestion",
+      "path": "textbooks/v13/n05-retrieval-ingestion.md",
+      "prerequisites": [
+        "c02",
+        "n01-python-model-foundations",
+        "n03-planning-reflection"
+      ]
+    },
+    {
+      "id": "n06-graph-orchestration",
+      "path": "textbooks/v13/n06-graph-orchestration.md",
+      "prerequisites": [
+        "e01",
+        "c01-control-loop",
+        "n03-planning-reflection"
+      ]
+    },
+    {
+      "id": "n07-multiagent-a2a",
+      "path": "textbooks/v13/n07-multiagent-a2a.md",
+      "prerequisites": [
+        "n06-graph-orchestration",
+        "n02-context-memory-prompt",
+        "n04-tools-mcp"
+      ]
+    },
+    {
+      "id": "n08-sandbox-security",
+      "path": "textbooks/v13/n08-sandbox-security.md",
+      "prerequisites": [
+        "e03",
+        "n01-python-model-foundations"
+      ]
+    },
+    {
+      "id": "n09-runtime-delivery",
+      "path": "textbooks/v13/n09-runtime-delivery.md",
+      "prerequisites": [
+        "e04",
+        "e05",
+        "n08-sandbox-security",
+        "e01"
+      ]
+    },
+    {
+      "id": "n10-evaluation-projects",
+      "path": "textbooks/v13/n10-evaluation-projects.md",
+      "prerequisites": [
+        "e02",
+        "n05-retrieval-ingestion",
+        "n07-multiagent-a2a"
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "id": "n01-python-model-foundations",
+      "core": "为什么同一段调用逻辑会阻塞、串改状态或收下无效模型结果，以及怎样重建机制"
+    },
+    {
+      "id": "n02-context-memory-prompt",
+      "core": "哪些信息应进入当前上下文，跨任务保存哪些记忆，以及错误和话题切换怎样恢复"
+    },
+    {
+      "id": "n03-planning-reflection",
+      "core": "在观察逐步揭示依赖和风险时，怎样选择、执行并修订决策策略"
+    },
+    {
+      "id": "n04-tools-mcp",
+      "core": "当工具来自不同服务且数量增长时，怎样让模型选得准、宿主接得稳"
+    },
+    {
+      "id": "n05-retrieval-ingestion",
+      "core": "检索失败发生在入库、召回、排序还是调查策略，以及如何用基线定位"
+    },
+    {
+      "id": "n06-graph-orchestration",
+      "core": "怎样用LangGraph表达已知运行不变量，并识别框架承担和未承担的职责"
+    },
+    {
+      "id": "n07-multiagent-a2a",
+      "core": "何时分工产生净收益，以及跨角色和跨系统如何交接不失真"
+    },
+    {
+      "id": "n08-sandbox-security",
+      "core": "为什么提示规则不能约束代码的系统能力，以及限制必须落在哪一层"
+    },
+    {
+      "id": "n09-runtime-delivery",
+      "core": "失败、资源增长和未知效果出现时，怎样恢复服务而不虚报完成"
+    },
+    {
+      "id": "n10-evaluation-projects",
+      "core": "怎样把已学组件用于新业务并把结果交给独立者复现"
+    }
+  ]
+}

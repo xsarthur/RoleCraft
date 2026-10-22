@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" role="img" aria-labelledby="title desc">
+<title id="title">状态、动作账本与恢复核对</title>
+<desc id="desc">中段卡片：状态和上下文用于当前决策，动作账本保存稳定的业务动作身份和尝试，恢复时先查原操作效果，再决定是否继续；未知不能改写成未发送。</desc>
+<defs><style>.t{font:700 30px 'PingFang SC','Microsoft YaHei',sans-serif;fill:#182230}.h{font:700 21px 'PingFang SC','Microsoft YaHei',sans-serif;fill:#182230}.b{font:600 17px 'PingFang SC','Microsoft YaHei',sans-serif;fill:#182230}.s{font:500 15px 'PingFang SC','Microsoft YaHei',sans-serif;fill:#526174}.line{stroke:#3c6e9e;stroke-width:3;fill:none;marker-end:url(#a)}.loop{stroke:#7955a3;stroke-width:3;fill:none;stroke-dasharray:8 6;marker-end:url(#p)}</style><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3c6e9e"/></marker><marker id="p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#7955a3"/></marker></defs>
+<rect width="1100" height="520" fill="#f6f8fb"/><rect x="24" y="24" width="1052" height="472" rx="20" fill="#fff" stroke="#d5dee8" stroke-width="2"/>
+<text x="58" y="66" class="t">恢复时先查账本，再决定下一步</text><text x="58" y="94" class="s">中段卡片：上下文会变化，权威动作身份和尝试记录不能被摘要覆盖。</text>
+<rect x="58" y="138" width="300" height="190" rx="16" fill="#f5f1fb" stroke="#c4b1df" stroke-width="2"/><text x="208" y="178" text-anchor="middle" class="h">State / Context</text><text x="88" y="218" class="b">当前状态：READY / WAIT / UNKNOWN</text><text x="88" y="250" class="b">本轮观察与模型提议</text><text x="88" y="292" class="s">可被重新投影；不是业务事实账本</text>
+<rect x="400" y="138" width="300" height="190" rx="16" fill="#eaf3fb" stroke="#9dc1dd" stroke-width="2"/><text x="550" y="178" text-anchor="middle" class="h">Action ledger</text><text x="430" y="218" class="b">action_id：固定业务意图</text><text x="430" y="250" class="b">attempt_id：每次物理发送</text><text x="430" y="282" class="b">operation_id：原操作查询/去重</text>
+<rect x="742" y="138" width="300" height="190" rx="16" fill="#eef8f4" stroke="#9dcbb7" stroke-width="2"/><text x="892" y="178" text-anchor="middle" class="h">恢复核对</text><text x="772" y="218" class="b">先查原 operation_id</text><text x="772" y="250" class="b">确认成功、无效果或仍未知</text><text x="772" y="292" class="s">确认后才决定是否继续</text>
+<path d="M358 233H392" class="line"/><path d="M700 233H734" class="line"/>
+<path d="M892 334V382H550V334" class="loop"/><text x="721" y="371" text-anchor="middle" class="s">未知 → 回到账本核对；不要把未知改成 NOT_SENT</text>
+<rect x="58" y="406" width="984" height="48" rx="14" fill="#fff8df" stroke="#e7c45d" stroke-width="2"/><text x="550" y="437" text-anchor="middle" class="b">同槽位同指纹：复用原 action / operation；不同意图：停止并重新确认</text>
+<text x="58" y="480" class="s">来源：v12/c01-control-primer.md　｜　静态卡片，未验证浏览器渲染、窄屏布局、真实外部回执与真人理解。</text>
+</svg>

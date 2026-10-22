@@ -17,8 +17,8 @@ function learningBody(extra = {}) {
     requestId: crypto.randomUUID(),
     query: 'ReAct 是什么',
     careerId: 'agent-developer',
-    contentVersion: 'textbook-v12',
-    textbookVersionId: 'agent-engineering-v12',
+    contentVersion: 'textbook-v13',
+    textbookVersionId: 'agent-engineering-v13',
     useCurrentContext: false,
     locale: 'zh-CN',
     workbenchVersion: 'local-workbench-0.11',
@@ -57,7 +57,7 @@ function browserContext(fetchImpl, clock) {
   };
   const footer = makeEl('span');
   footer.id = 'rc-textbook-version';
-  footer.textContent = '本机会话教材 textbook-v12 · 本浏览器保存 · rolecraft-1.0';
+  footer.textContent = '本机会话教材 textbook-v13 · 本浏览器保存 · rolecraft-1.0';
   elements.set(footer.id, footer);
   const save = makeEl('div');
   save.id = 'save-status';
@@ -114,7 +114,7 @@ function browserContext(fetchImpl, clock) {
   };
   context.globalThis = context;
   context.window = context;
-  context.RolecraftContentV12 = { corpusVersion: 'textbook-v12', corpusHash: localHash };
+  context.RolecraftContentV13 = { corpusVersion: 'textbook-v13', corpusHash: localHash };
   return context;
 }
 
@@ -126,7 +126,8 @@ try {
   const health = await fetch(base + '/api/health');
   const healthBody = await health.json();
   assert.equal(identity.status, 200);
-  assert.equal(identityBody.contentVersion, 'textbook-v12');
+  assert.equal(identityBody.contentVersion, 'textbook-v13');
+  assert.equal(identityBody.textbookVersionId, 'agent-engineering-v13');
   assert.equal(identityBody.corpusVersion, healthBody.contentRetrieval.corpusVersion);
   assert.equal(identityBody.corpusHash, healthBody.contentRetrieval.corpusHash);
   assert.equal(identityBody.textbookVersionId, healthBody.contentRetrieval.textbookVersionId);
@@ -136,7 +137,7 @@ try {
   const stale = await fetch(base + '/api/agent/learning/query', {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
-    body: JSON.stringify(learningBody({ contentVersion: 'textbook-v11' })),
+    body: JSON.stringify(learningBody({ contentVersion: 'textbook-v12', textbookVersionId: 'agent-engineering-v12' })),
   });
   const staleBody = await stale.json();
   assert.equal(stale.status, 409);
@@ -146,7 +147,7 @@ try {
   const staleTextbook = await fetch(base + '/api/agent/learning/query', {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
-    body: JSON.stringify(learningBody({ textbookVersionId: 'agent-engineering-v11' })),
+    body: JSON.stringify(learningBody({ textbookVersionId: 'agent-engineering-v12' })),
   });
   const staleTextbookBody = await staleTextbook.json();
   assert.equal(staleTextbook.status, 409);
@@ -154,8 +155,12 @@ try {
 
   const serverSource = readFileSync(path.join(project, 'server/index.mjs'), 'utf8');
   const clientSource = readFileSync(path.join(project, 'dist/learning-workbench.js'), 'utf8');
-  assert.match(serverSource, /contentVersion:'textbook-v12'/);
-  assert.match(clientSource, /const CURRENT = 'textbook-v12'/);
+  assert.match(serverSource, /contentVersion:'textbook-v13'/);
+  assert.match(serverSource, /'textbook-v12':\{corpusHash:rollbackContentIndex\.corpusHash/);
+  assert.match(clientSource, /const CURRENT = 'textbook-v13'/);
+  assert.equal(clientSource.includes("const CURRENT = 'textbook-v12'"), false);
+  assert.match(clientSource, /RolecraftContentV13/);
+  assert.equal(clientSource.includes('RolecraftContentV12'), false);
   assert.equal(serverSource.includes('openclaw') || serverSource.includes('OpenClaw'), false);
 
   let identityMode = 'new';
@@ -164,39 +169,42 @@ try {
     context.fetchLog.push(String(url));
     if (String(url).includes('/api/content/identity')) {
       if (identityMode === 'missing') return { ok: false, status: 404, json: async () => ({}) };
-      return { ok: true, status: 200, json: async () => ({ contentVersion: 'textbook-v13', corpusVersion: 'textbook-v13', corpusHash: 'serverhash', textbookVersionId: 'agent-engineering-v13', available: true }) };
+      return { ok: true, status: 200, json: async () => ({ contentVersion: 'textbook-v14', corpusVersion: 'textbook-v14', corpusHash: 'serverhash', textbookVersionId: 'agent-engineering-v14', available: true }) };
     }
     if (String(url).includes('/api/health')) {
-      return { ok: true, status: 200, json: async () => ({ contentRetrieval: { contentVersion: 'textbook-v13', corpusVersion: 'textbook-v13', corpusHash: 'from-health', textbookVersionId: 'agent-engineering-v13', available: true } }) };
+      return { ok: true, status: 200, json: async () => ({ contentRetrieval: { contentVersion: 'textbook-v14', corpusVersion: 'textbook-v14', corpusHash: 'from-health', textbookVersionId: 'agent-engineering-v14', available: true } }) };
     }
     return { ok: false, status: 404, json: async () => ({}) };
   }, clock);
   vm.createContext(context);
   vm.runInContext(readFileSync(path.join(project, 'dist/learning-workbench.js'), 'utf8'), context, { filename: 'learning-workbench.js' });
   const workbench = context.LearningWorkbench;
-  assert.equal(workbench.localContentIdentity().contentVersion, 'textbook-v12');
+  assert.equal(workbench.localContentIdentity().contentVersion, 'textbook-v13');
   assert.equal(workbench.localContentIdentity().corpusHash, localHash);
   assert.equal(workbench.contentCutoverState().probeMs, 7 * 60 * 1000);
   assert.equal(workbench.contentCutoverState().snoozeMs, 30 * 60 * 1000);
 
-  const same = workbench.compareContentIdentity({ contentVersion: 'textbook-v12', corpusHash: localHash }, { contentVersion: 'textbook-v12', corpusHash: localHash, available: true });
+  const same = workbench.compareContentIdentity({ contentVersion: 'textbook-v13', corpusHash: localHash }, { contentVersion: 'textbook-v13', corpusHash: localHash, available: true });
   assert.equal(same.status, 'match');
-  const versionDrift = workbench.compareContentIdentity({ contentVersion: 'textbook-v12', corpusHash: localHash }, { contentVersion: 'textbook-v13', corpusHash: 'serverhash', available: true });
+  const staleClient = workbench.compareContentIdentity({ contentVersion: 'textbook-v12', corpusHash: localHash }, { contentVersion: 'textbook-v13', corpusHash: 'serverhash', available: true });
+  assert.equal(staleClient.status, 'mismatch');
+  assert.equal(staleClient.versionMismatch, true);
+  const versionDrift = workbench.compareContentIdentity({ contentVersion: 'textbook-v13', corpusHash: localHash }, { contentVersion: 'textbook-v14', corpusHash: 'serverhash', available: true });
   assert.equal(versionDrift.status, 'mismatch');
   assert.equal(versionDrift.versionMismatch, true);
-  const hashDrift = workbench.compareContentIdentity({ contentVersion: 'textbook-v12', corpusHash: localHash }, { contentVersion: 'textbook-v12', corpusHash: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', available: true });
+  const hashDrift = workbench.compareContentIdentity({ contentVersion: 'textbook-v13', corpusHash: localHash }, { contentVersion: 'textbook-v13', corpusHash: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', available: true });
   assert.equal(hashDrift.status, 'mismatch');
   assert.equal(hashDrift.hashMismatch, true);
   assert.equal(hashDrift.versionMismatch, false);
 
-  const shown = workbench.applyServerIdentity({ contentVersion: 'textbook-v13', corpusHash: 'serverhash', available: true });
+  const shown = workbench.applyServerIdentity({ contentVersion: 'textbook-v14', corpusHash: 'serverhash', available: true });
   const banner = context.elements.get('lw-content-update');
   assert.equal(shown.visible, true);
   assert.equal(shown.comparison.status, 'mismatch');
   assert.equal(banner.hidden, false);
   assert.equal(banner.role, 'region');
   assert.equal(banner.tag, 'div');
-  assert.match(banner.innerHTML, /教材已更新（textbook-v12 → textbook-v13）/);
+  assert.match(banner.innerHTML, /教材已更新（textbook-v13 → textbook-v14）/);
   assert.match(banner.innerHTML, /当前打开的页面可能仍显示旧正文/);
   assert.match(banner.innerHTML, /不会自动重载，提问仍可继续/);
   assert.match(banner.innerHTML, /data-lw-content-refresh>刷新到新版/);
@@ -205,7 +213,7 @@ try {
   assert.equal(banner.innerHTML.includes('<dialog'), false);
   assert.equal(banner.innerHTML.includes('showModal'), false);
   assert.equal(banner.innerHTML.includes('aria-modal'), false);
-  assert.match(context.elements.get('rc-textbook-version').textContent, /本机会话教材 textbook-v12 · 服务端 textbook-v13/);
+  assert.match(context.elements.get('rc-textbook-version').textContent, /本机会话教材 textbook-v13 · 服务端 textbook-v14/);
 
   const alertHtml = workbench.contentUpdateMarkup('alert');
   assert.match(alertHtml, /data-lw-content-refresh>立即刷新/);
@@ -213,10 +221,10 @@ try {
   assert.equal(alertHtml.includes('<dialog'), false);
   assert.match(alertHtml, /role="alert"/);
 
-  const hashShown = workbench.applyServerIdentity({ contentVersion: 'textbook-v12', corpusHash: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', available: true });
+  const hashShown = workbench.applyServerIdentity({ contentVersion: 'textbook-v13', corpusHash: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', available: true });
   assert.equal(hashShown.comparison.hashMismatch, true);
-  assert.match(banner.innerHTML, /教材已更新（textbook-v12，内容已更换）/);
-  workbench.applyServerIdentity({ contentVersion: 'textbook-v13', corpusHash: 'serverhash', available: true });
+  assert.match(banner.innerHTML, /教材已更新（textbook-v13，内容已更换）/);
+  workbench.applyServerIdentity({ contentVersion: 'textbook-v14', corpusHash: 'serverhash', available: true });
 
   assert.equal(workbench.snoozeContentUpdate(), true);
   assert.equal(workbench.contentCutoverState().visible, false);
@@ -224,7 +232,7 @@ try {
   assert.equal(workbench.contentCutoverState().snoozed, true);
   assert.equal(banner.hidden, true);
   context.storage.set('rolecraft-content-update-snooze', JSON.stringify({ until: clock.now - 1000, fingerprint: 'expired' }));
-  workbench.applyServerIdentity({ contentVersion: 'textbook-v13', corpusHash: 'serverhash', available: true });
+  workbench.applyServerIdentity({ contentVersion: 'textbook-v14', corpusHash: 'serverhash', available: true });
   assert.equal(workbench.contentCutoverState().visible, true);
   assert.equal(banner.hidden, false);
 
@@ -241,7 +249,7 @@ try {
   identityMode = 'new';
   const probed = await workbench.probeContentIdentity({ force: true, reason: 'enter' });
   assert.equal(probed.comparison.status, 'mismatch');
-  assert.equal(probed.comparison.server.contentVersion, 'textbook-v13');
+  assert.equal(probed.comparison.server.contentVersion, 'textbook-v14');
   assert.equal(context.fetchLog.some(url => url.includes('/api/content/identity')), true);
 
   identityMode = 'missing';
@@ -266,7 +274,7 @@ try {
   assert.match(banner.innerHTML, /data-lw-content-refresh>刷新到新版/);
   assert.equal(banner.hidden, false);
 
-  const matched = workbench.applyServerIdentity({ contentVersion: 'textbook-v12', corpusHash: localHash, available: true });
+  const matched = workbench.applyServerIdentity({ contentVersion: 'textbook-v13', corpusHash: localHash, available: true });
   assert.equal(matched.comparison.status, 'match');
   assert.match(context.elements.get('rc-textbook-version').textContent, /与服务端一致/);
   workbench.stopContentProbes();

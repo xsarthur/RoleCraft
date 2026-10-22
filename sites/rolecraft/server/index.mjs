@@ -16,6 +16,11 @@ export const PRODUCT_VERSION = 'local-mvp-0.4';
 export const RELEASE_VERSION = 'rolecraft-1.0';
 const serverDir = path.dirname(fileURLToPath(import.meta.url));
 const projectDir = path.dirname(serverDir);
+const fileSha = relative => createHash('sha256').update(readFileSync(path.join(projectDir, relative))).digest('hex');
+const agentContentIndex = JSON.parse(readFileSync(path.join(serverDir, 'retrieval/content-v13-index.json'), 'utf8'));
+const rollbackContentIndex = JSON.parse(readFileSync(path.join(serverDir, 'retrieval/content-v12-index.json'), 'utf8'));
+if (agentContentIndex.corpusVersion !== 'textbook-v13' || agentContentIndex.bookSha256 !== fileSha('textbooks/v13/agent-engineering-textbook.md') || agentContentIndex.corpusHash !== createHash('sha256').update(JSON.stringify(agentContentIndex.units.map(unit => [unit.unitId, unit.sourceSha256]))).digest('hex')) throw Error('textbook-v13 index does not match the book');
+if (rollbackContentIndex.corpusVersion !== 'textbook-v12' || rollbackContentIndex.bookSha256 !== fileSha('textbooks/v12/agent-engineering-textbook.md')) throw Error('textbook-v12 rollback index does not match the book');
 const hash = value => createHash('sha256').update(typeof value === 'string' ? value : JSON.stringify(value)).digest('hex');
 const now = () => new Date().toISOString();
 const parse = value => value ? JSON.parse(value) : null;
@@ -50,8 +55,8 @@ const CLIENT_VERDICT_FIELDS = new Set([
 const P01_IDENTITY = Object.freeze({
   practiceId:'V1-PILOT-P01-MVP-001',
   unitId:'p01-mvp',
-  textbookVersion:'textbook-v12',
-  sourceSha:'deb98fa616e7d670108c86eca3b2a137e1183cf69bc3a5f5799a0b08f19b57d9',
+  textbookVersion:'textbook-v13',
+  sourceSha:fileSha('textbooks/v13/p01-mvp.md'),
   reviewScope:'limited_to_constructed_fixture',
 });
 function recordTypes(value, name='recordTypes') {
@@ -130,9 +135,10 @@ export function createRolecraftServer(options={}) {
     'previous_submission_id','practice_id','unit_id','textbook_version','textbook_version_id','source_sha','source_sha256','artifact_version','workflow_status','record_types','evidence_refs','review_scope'];
   const submissionBoundaryFields=['previousSubmissionId','practiceId','unitId','textbookVersion','textbookVersionId','sourceSha','sourceSha256','artifactVersion','workflowStatus','recordTypes','evidenceRefs','reviewScope',
     'previous_submission_id','practice_id','unit_id','textbook_version','textbook_version_id','source_sha','source_sha256','artifact_version','workflow_status','record_types','evidence_refs','review_scope'];
-  const seededCareer={careerId:'agent-developer',slug:'agent-developer',title:'Agent 开发者',summary:'从需求、检索到可靠交付的 Agent 工程学习空间',status:'published',contentVersion:'textbook-v12',indexVersion:'content-retrieval-0.12-v12',textbookId:'agent-engineering',textbookVersionId:'agent-engineering-v12',corpusHash:'c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757',bookSha256:'25ce2aaa1be0ba0f2814dd1247ac6299d106c3d2e48f43867c49055490c280e1',keywords:['agent','ai','智能体','大模型','模型','检索','工具','工作流'],semanticExamples:['设计和开发能使用工具完成任务的 Agent 应用','学习大模型、检索增强、工作流和智能体运行时工程','让模型根据新观察规划下一步并调用外部工具']};
+  const seededCareer={careerId:'agent-developer',slug:'agent-developer',title:'Agent 开发者',summary:'从需求、检索到可靠交付的 Agent 工程学习空间',status:'published',contentVersion:'textbook-v13',indexVersion:'content-retrieval-0.13-v13',textbookId:'agent-engineering',textbookVersionId:'agent-engineering-v13',corpusHash:agentContentIndex.corpusHash,bookSha256:agentContentIndex.bookSha256,keywords:['agent','ai','智能体','大模型','模型','检索','工具','工作流'],semanticExamples:['设计和开发能使用工具完成任务的 Agent 应用','学习大模型、检索增强、工作流和智能体运行时工程','让模型根据新观察规划下一步并调用外部工具']};
   const verifiedContentIdentity={
-    'textbook-v12':{corpusHash:seededCareer.corpusHash,bookSha256:seededCareer.bookSha256},
+    'textbook-v13':{corpusHash:agentContentIndex.corpusHash,bookSha256:agentContentIndex.bookSha256},
+    'textbook-v12':{corpusHash:rollbackContentIndex.corpusHash,bookSha256:rollbackContentIndex.bookSha256},
   };
   run(`INSERT INTO careers(career_id,slug,title,summary,status,content_version,index_version,textbook_id,textbook_version_id,corpus_hash,book_sha256,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(career_id) DO UPDATE SET title=excluded.title,summary=excluded.summary,status=excluded.status,content_version=excluded.content_version,index_version=excluded.index_version,textbook_id=excluded.textbook_id,textbook_version_id=excluded.textbook_version_id,corpus_hash=excluded.corpus_hash,book_sha256=excluded.book_sha256,updated_at=excluded.updated_at`,seededCareer.careerId,seededCareer.slug,seededCareer.title,seededCareer.summary,seededCareer.status,seededCareer.contentVersion,seededCareer.indexVersion,seededCareer.textbookId,seededCareer.textbookVersionId,seededCareer.corpusHash,seededCareer.bookSha256,now(),now());
   const careerCatalog = new Map();
@@ -166,7 +172,7 @@ export function createRolecraftServer(options={}) {
     if(!Array.isArray(items)||items.length>500)throw Error('ROLECRAFT_CAREERS_FILE 必须是最多500项职业数组');
     for(const item of items){
       if(!item||typeof item!=='object'||!/^[a-z0-9][a-z0-9-]{1,127}$/.test(String(item.careerId||''))||!String(item.title||'').trim())throw Error('ROLECRAFT_CAREERS_FILE 含有无效职业记录');
-      if(String(item.contentVersion||'')!=='textbook-v12')throw Error('导入职业的 contentVersion 必须是已验证的 textbook-v12');
+      if(!verifiedContentIdentity[String(item.contentVersion||'')])throw Error('导入职业的 contentVersion 必须是已验证的 textbook-v13 或 textbook-v12');
       const identity=verifiedContentIdentity[String(item.contentVersion)];
       if((item.corpusHash&&String(item.corpusHash)!==identity.corpusHash)||(item.bookSha256&&String(item.bookSha256)!==identity.bookSha256))throw Error('导入职业的教材 hash 与已验证版本不一致');
       registerCareer({...item,careerId:String(item.careerId),slug:String(item.slug||item.careerId),title:String(item.title).trim().slice(0,200),summary:String(item.summary||'').trim().slice(0,2000),status:['preparing','published','retired'].includes(item.status)?item.status:'preparing',contentVersion:String(item.contentVersion),semanticExamples:Array.isArray(item.semanticExamples)?item.semanticExamples:[],keywords:Array.isArray(item.keywords)?item.keywords:[]});
@@ -513,12 +519,12 @@ export function createRolecraftServer(options={}) {
           return send(200,analyzeVoiceRequest(b));
         }
         if(method==='GET' && pathname==='/api/curriculum')return send(200,curriculum());
-        // Public read-only textbook figures. Agent stays on textbook-v12.
+        // Public read-only Agent content. textbook-v13 is current; textbook-v12 stays available for rollback.
         // UI/UX figures use the same asset route with their published content version.
-        const contentVersion=u.searchParams.get('version')||'textbook-v12';
+        const contentVersion=u.searchParams.get('version')||'textbook-v13';
         const contentAsset=pathname.match(/^\/api\/content\/assets\/([A-Za-z0-9][A-Za-z0-9_-]*\.(?:png|svg|dot))$/);
         const uiuxPublicAsset=method==='GET' && contentAsset && contentVersion===UIUX_CONTENT_VERSION;
-        if(pathname.startsWith('/api/content/')&&contentVersion!=='textbook-v12'&&!uiuxPublicAsset)reject(400,'content_version_invalid','请选择当前v12教材');
+        if(pathname.startsWith('/api/content/')&&!verifiedContentIdentity[contentVersion]&&!uiuxPublicAsset)reject(400,'content_version_invalid','请使用 textbook-v13（当前 Agent 教材）或 textbook-v12（回滚）。其他版本未接入。');
         if(method==='GET' && pathname==='/api/content/catalog')return send(200,getContentCatalog(contentVersion));
         const contentChapter=pathname.match(/^\/api\/content\/chapter\/([-a-z0-9]+)$/);
         if(method==='GET' && contentChapter){const found=getContentChapter(contentChapter[1],contentVersion);if(!found)reject(404,'not_found','所选教材没有这个章节');return send(200,found);}

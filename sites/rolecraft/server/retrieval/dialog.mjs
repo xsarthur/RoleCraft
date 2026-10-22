@@ -77,7 +77,7 @@ const literalOutside=/红烧肉|菜谱|食谱|做饭|烹饪|炒菜|天气|气温
 const deictic=/^(?:那|它|这个|这里|这(?:一)?节|刚才|上面|继续|还有|有(?:什么|哪些)|怎么|如何|为什么|什么时候|失败模式|缺点|优点|举(?:个)?例)/;
 const shortFollowup=text=>text.length<=36&&deictic.test(text)&&!mechanism.test(text)&&!literalOutside.test(text);
 const plain=text=>text.replace(/```[^\n]*\n[\s\S]*?```/g,'').replace(/!\[[^\]]*\]\([^)]*\)/g,'').replace(/\[([^\]]+)\]\([^)]*\)/g,'$1').replace(/`([^`]+)`/g,'$1');
-function shell(corpus){return {status:'no_match',retrievalVersion:'content-retrieval-0.12-v12',dialogVersion:DIALOG_VERSION,engineMode:'local_dialog_rules',providerCalled:false,corpusVersion:corpus?.corpusVersion||'textbook-v12',corpusHash:corpus?.corpusHash||null,interpretedIntents:[],excludedIntents:[],results:[],clarification:null,limitations:[],dialog:{status:'related_uncovered',answerMode:'extractive',sentences:[],citations:[],scope:{relatedSegments:[],filteredSegments:[],contextUsed:null},message:'当前教材中尚未找到足够依据。',context:null}};}
+function shell(corpus){const version=corpus?.corpusVersion||'textbook-v13';return {status:'no_match',retrievalVersion:version==='textbook-v12'?'content-retrieval-0.12-v12':'content-retrieval-0.13-v13',dialogVersion:DIALOG_VERSION,engineMode:'local_dialog_rules',providerCalled:false,corpusVersion:version,corpusHash:corpus?.corpusHash||null,interpretedIntents:[],excludedIntents:[],results:[],clarification:null,limitations:[],dialog:{status:'related_uncovered',answerMode:'extractive',sentences:[],citations:[],scope:{relatedSegments:[],filteredSegments:[],contextUsed:null},message:'当前教材中尚未找到足够依据。',context:null}};}
 function finish(base,status,message){base.dialog.status=status;base.dialog.message=message;base.status=({answered:'recommended',related_uncovered:'no_match',unrelated:'no_match'})[status]||status;if(status!=='answered'){base.results=[];base.dialog.sentences=[];base.dialog.citations=[];base.dialog.context=null;}delete base.dialogTopic;return base;}
 function verifyContext(corpus,input){
  if(input==null)return {context:null};
@@ -93,7 +93,7 @@ function ambiguous(text){
  const barePlanning=/^(?:请|解释|讲讲|说说|我想了解|什么是)?\s*(?:规划|计划|planning)(?:是什么|怎么用|怎么做|如何做)?$/i.test(text);
  return bareReact||barePlanning;
 }
-const administrative=/v\d+\s*学习衔接|来源与版本|审校|本轮|历史验证|原版验证|代码运行说明|导航|学习路线|从演算到作品/;
+const administrative=/v\d+\s*学习衔接|编辑交接说明|来源与版本|审校|本轮|历史验证|原版验证|代码运行说明|导航|学习路线|从演算到作品/;
 function sentencePool(section){
  if(administrative.test(section.title))return [];
  const withoutCode=section.bodyMarkdown.replace(/```[^\n]*\n[\s\S]*?```/g,'');
