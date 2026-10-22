@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0",
-  "id": "agent-developer-textbook-v13-isolated-preview",
+  "id": "agent-developer-textbook-v13",
   "version": "textbook-v13",
-  "updatedAt": "2026-10-16",
-  "status": "isolated_preview_only",
-  "purpose": "Readonly assembly manifest for v13 optimized Agent textbook; does not replace v12 runtime corpus.",
+  "updatedAt": "2026-10-22",
+  "status": "formal_agent_textbook",
+  "purpose": "Formal Agent textbook assembly. textbook-v13 is the active workbench corpus. textbook-v12 sources and derived artifacts stay on disk as the rollback corpus and are not CURRENT.",
   "sourceRoot": "sites/rolecraft/textbooks/v13/",
   "baseVersion": "textbook-v12",
   "baseManifestPath": "sites/rolecraft/textbooks/v12/assembly-manifest.json",
@@ -903,18 +903,17 @@
     "deploymentPerformed": false
   },
   "integrationPolicy": {
-    "runtimeCorpus": "v12 remains active; v13 is not wired into formal learning-workbench content endpoint",
-    "readOnly": "manifest and assets are descriptive build inputs only",
-    "nextOwner": "project-manager coordinates product/design/development/QA decision before any deployment",
-    "requiredBeforeDeployment": [
-      "product scope and acceptance",
-      "design responsive/accessibility review",
-      "developer renderer and details behavior",
-      "content review",
-      "independent QA",
-      "versioned rollback plan"
-    ]
+    "runtimeCorpus": "textbook-v13 is the formal Agent learning-workbench corpus",
+    "rollbackCorpus": "textbook-v12 artifacts remain for explicit rollback and are not the active CURRENT",
+    "uiuxIsolation": "uiux-design-v02 stays on its own contentVersion and is not replaced by this corpus",
+    "deploymentPerformed": false
+  },
+  "formalDecision": {
+    "date": "2026-10-22",
+    "owner": "Sheng",
+    "decision": "Agent production textbook is textbook-v13"
   },
   "contentSetSha256": "1029d3b53dff2ac8222d7dee78896ee5211ef40d74d035f03106b6704e000414",
+  "contentSetSha256Scope": "Historical fingerprint of the preview chapter and asset bytes. Status and integration fields were updated for the 2026-10-22 formal decision; chapter and asset sha256 values are still checked individually by the workbench build.",
   "manifestRevision": "v03"
 }

@@ -40,18 +40,20 @@ const v12Descriptions={
  long_runtime:['长任务受到容量、费用和故障约束，使用补偿、熔断、内存诊断与可恢复交付，但不能撤销已发生的事实。','推理服务需要批处理和显存预算，在吞吐、延迟和质量之间核对真实运行证据，故障后继续保持任务身份。'],
  transfer_evaluation:['把工程能力迁移到客服知识和研究任务，用分层实验、跨语言排错与独立技术移交检验真实作品。','使用新场景和未知任务评价交付，冻结比较条件，报告资料来源、实现、失败和专业判断的证据边界。']
 };
+const SUPPORTED_CORPORA={'textbook-v12':'v12','textbook-v13':'v13'};
+function corpusFolder(corpusVersion){const folder=SUPPORTED_CORPORA[corpusVersion];if(!folder)throw Error('Unsupported semantic corpus');return folder;}
 const intentVectorsPromises=new Map();
-async function intentVectors(corpusVersion='textbook-v12'){
- if(corpusVersion!=='textbook-v12')throw Error('Unsupported semantic corpus');
+async function intentVectors(corpusVersion='textbook-v13'){
+ const folder=corpusFolder(corpusVersion);
  if(!intentVectorsPromises.has(corpusVersion))intentVectorsPromises.set(corpusVersion,(async()=>{
   const extractor=await getExtractor();const metadata={...intentDescriptions,...v12Descriptions};
-  const descriptions=Object.entries(metadata).flatMap(([id,list])=>list.map(text=>({id,text})));const key=sha(JSON.stringify(descriptions));const cachePath=path.join(here,'intent-vectors-v12.json');
+  const descriptions=Object.entries(metadata).flatMap(([id,list])=>list.map(text=>({id,text})));const key=sha(JSON.stringify(descriptions));const cachePath=path.join(here,'intent-vectors-'+folder+'.json');
   if(existsSync(cachePath)){const cache=JSON.parse(readFileSync(cachePath,'utf8'));if(cache.descriptionHash===key&&cache.revision===MODEL_REVISION&&cache.items.length===descriptions.length&&cache.items.every((x,i)=>x.id===descriptions[i].id&&x.vector.length===512&&x.vector.every(Number.isFinite))&&cache.corpusVersion===corpusVersion)return cache.items;throw Error('Task vector identity differs; explicitly prepare current resources');}
   const vectors=await extractor(descriptions.map(x=>x.text));const items=descriptions.map((x,i)=>({id:x.id,vector:vectors[i]}));
   writeFileSync(cachePath,JSON.stringify({corpusVersion,descriptionHash:key,revision:MODEL_REVISION,items})+'\n');return items;
  })().catch(e=>{intentVectorsPromises.delete(corpusVersion);throw e;}));return intentVectorsPromises.get(corpusVersion);
 }
-export async function semanticIntents(parts,corpusVersion='textbook-v12'){
+export async function semanticIntents(parts,corpusVersion='textbook-v13'){
  const [extractor,prototypes]=await Promise.all([getExtractor(),intentVectors(corpusVersion)]);const texts=parts.map(p=>p.text);if(!texts.length)return [];
  const positive=parts.filter(p=>!p.excluded).map(p=>p.text).join('，');
  const scopes=[...(positive?[{text:positive,excluded:false,scope:'whole'}]:[]),...parts];
@@ -93,9 +95,9 @@ function passages(corpus){return corpus.units.flatMap(u=>u.sections.flatMap(s=>{
  const chunks=[];for(let i=0;i<text.length;i+=340)chunks.push({key:u.unitId+'/'+s.sectionId,text:u.title+'。'+s.title+'。'+text.slice(i,i+450)});return chunks;
 }));}
 export async function prepareVectors(corpus,{persist=true,onProgress,rebuild=false}={}){
- if(corpus.corpusVersion!=='textbook-v12')throw Error('Unsupported semantic corpus');
+ const folder=corpusFolder(corpus.corpusVersion);
  const record=lock();const modelHash=record.files.find(f=>f.name==='onnx/model_int8.onnx').sha256;
- const chunks=passages(corpus),chunkHash=sha(JSON.stringify(chunks));const cachePath=path.join(here,'vectors-v12.json');
+ const chunks=passages(corpus),chunkHash=sha(JSON.stringify(chunks));const cachePath=path.join(here,'vectors-'+folder+'.json');
  if(existsSync(cachePath)){
   const cache=JSON.parse(readFileSync(cachePath,'utf8'));
   if(cache.corpusHash===corpus.corpusHash&&cache.modelHash===modelHash&&cache.chunkHash===chunkHash&&cache.items.length===chunks.length&&cache.items.every((x,i)=>x.key===chunks[i].key&&x.vector.length===512&&x.vector.every(Number.isFinite))&&cache.corpusVersion===corpus.corpusVersion)return cache;
@@ -114,7 +116,8 @@ export async function semanticScores(corpus,text){
 }
 
 if(process.argv[1]===fileURLToPath(import.meta.url)){
- const corpus=JSON.parse(readFileSync(path.join(here,'content-v12-index.json'),'utf8'));
+ const requested=process.argv[2]||'textbook-v13';
+ const corpus=JSON.parse(readFileSync(path.join(here,'content-'+corpusFolder(requested)+'-index.json'),'utf8'));
  const start=Date.now();const cache=await prepareVectors(corpus,{rebuild:true,onProgress:(n,total)=>{if(n%100===0)console.log(JSON.stringify({embedded:n,total}));}});await intentVectors(corpus.corpusVersion);
  console.log(JSON.stringify({prepared:true,corpusVersion:corpus.corpusVersion,passages:cache.items.length,dimensions:cache.dimensions,durationMs:Date.now()-start,corpusHash:cache.corpusHash,chunkHash:cache.chunkHash,modelHash:cache.modelHash}));await disposeSemantic();
 }

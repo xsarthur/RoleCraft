@@ -174,7 +174,7 @@ function grounding(sourceContext) {
   // is bound until the retrieval service has independently validated it.
   const requestedContentVersion = sourceContext.contentVersion ? String(sourceContext.contentVersion).slice(0, 128) : null;
   const requestedIndexVersion = sourceContext.indexVersion ? String(sourceContext.indexVersion).slice(0, 160) : null;
-  const versionMismatch = (requestedContentVersion && requestedContentVersion !== 'textbook-v12')
+  const versionMismatch = (requestedContentVersion && !['textbook-v13','textbook-v12'].includes(requestedContentVersion))
     || (requestedIndexVersion && !requestedIndexVersion.startsWith('content-retrieval-'));
   const sections = Array.isArray(sourceContext.sections) ? sourceContext.sections.slice(0, 6).map((s, i) => ({
     unitId: String(s?.unitId || '').slice(0, 128), sectionId: String(s?.sectionId || '').slice(0, 128),

@@ -25,7 +25,7 @@ const staleManifest = [
   '26cd2c9e837733e5880a1810f6012c06bb2248857a0759b0bfb813ad7855c99a',
   '52e9eacd776d2bbb398eec81e60a4ea7bbc0dc1afc0c55b2d9630611c7f27246',
 ];
-const agentCorpus = 'c56def0f8eaf17207c10bc794a771650b0c9f52207815ce11aa7a7a00f29f757';
+const agentCorpus = JSON.parse(readFileSync(path.join(project, 'server/retrieval/content-v13-index.json'), 'utf8')).corpusHash;
 
 await new Promise(resolve => app.server.listen(0, '127.0.0.1', resolve));
 const base = `http://127.0.0.1:${app.server.address().port}`;
@@ -119,7 +119,7 @@ try {
 
   const agent = await request('/api/careers/agent-developer/content/catalog');
   assert.equal(agent.status, 200);
-  assert.equal(agent.body.catalog.corpusVersion, 'textbook-v12');
+  assert.equal(agent.body.catalog.corpusVersion, 'textbook-v13');
   assert.equal(agent.body.catalog.corpusHash, agentCorpus);
   assert.equal(JSON.stringify(agent.body).includes('uiux-design-v02'), false);
 
