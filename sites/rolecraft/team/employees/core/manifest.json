@@ -1,5 +1,5 @@
 {
-  "version": "core-employees-memory-3",
+  "version": "core-employees-memory-4",
   "status": "active",
   "scope": "cross_project_employee_memory",
   "pm_release_acceptance": {
@@ -11,7 +11,7 @@
       "test_functional": "core-qa-engineer"
     },
     "pass_rule": "产品验收、设计验收、测试/功能验收均已由各自岗位完成并有记录，协调已收口，且没有未关闭阻断。",
-    "note": "项目经理只做协调和项目/发布总闸，不代签产品、设计或测试/功能验收。各结论分开记录，互不联署。"
+    "note": "项目经理只做协调和项目/发布总闸，不代签产品、设计或测试/功能验收。各结论分开记录，互不联署。AI 产品经理与 AI 设计师不接替产品验收与设计验收的签发人。"
   },
   "employees": [
     {
@@ -40,6 +40,22 @@
       "directory": "product-designer",
       "memory_source": "product-designer/MEMORY.md",
       "schema": "product-designer/MEMORY_SCHEMA.md"
+    },
+    {
+      "id": "core-ai-product-manager",
+      "name": "AI 产品经理",
+      "role": "ai_product_manager",
+      "directory": "ai-product-manager",
+      "memory_source": "ai-product-manager/MEMORY.md",
+      "schema": "ai-product-manager/MEMORY_SCHEMA.md"
+    },
+    {
+      "id": "core-ai-designer",
+      "name": "AI 设计师",
+      "role": "ai_designer",
+      "directory": "ai-designer",
+      "memory_source": "ai-designer/MEMORY.md",
+      "schema": "ai-designer/MEMORY_SCHEMA.md"
     },
     {
       "id": "core-software-engineer",
