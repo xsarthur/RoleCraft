@@ -103,11 +103,15 @@
 
 用户授权为项目经理、产品经理、产品设计师、软件工程师，以及课程架构师、教材研发员、内容审校员和实训评估员建立独立、可跨项目复用的长期记忆包。稳定角色、已确认偏好、记忆条目格式和项目交接模板统一位于[核心员工长期记忆系统](employees/core/README.md)。
 
-2026-10-14后续增补：用户明确要求测试长期记住编辑质量标准，已增加下列测试记忆包；当前共九个核心记忆包，旧八岗配置QA保留其历史范围，团队职业岗位总数仍为十五。
+2026-10-14后续增补：用户明确要求测试长期记住编辑质量标准，已增加下列测试记忆包；当时共九个核心记忆包，旧八岗配置QA保留其历史范围，团队职业岗位总数仍为十五。
+
+2026-10-22 并列新增 AI 产品经理与 AI 设计师，不替换产品经理或产品设计师。发布总闸的产品验收与设计验收仍由原产品经理、产品设计师签发。
 
 - [项目经理](employees/core/project-manager/ROLE.md)：范围、依赖、任务状态、交接、证据和复盘。
 - [产品经理](employees/core/product-manager/ROLE.md)：用户问题、范围、流程、验收条件和产品门槛。
 - [产品设计师](employees/core/product-designer/ROLE.md)：信息架构、交互、视觉、可访问性和响应式表达。
+- [AI 产品经理](employees/core/ai-product-manager/ROLE.md)：AI/Agent 产品范围、模型能力边界、AI 功能验收、不确定性的产品要求，以及交给生成、检索和客户端的交接。不负责非 AI 范围，不写界面规格，不实现模型。
+- [AI 设计师](employees/core/ai-designer/ROLE.md)：生成式界面的提示与交互、空/等待/错误/不确定状态、信任与引用呈现、AI 流程可访问性，以及 AI 表面的设计令牌。不改产品范围，不写生产代码，不负责非 AI 界面。
 - [软件工程师](employees/core/software-engineer/ROLE.md)：网站客户端、前端状态和前端接口消费。
 - [课程架构师](employees/core/curriculum-architect/ROLE.md)：能力矩阵、课程结构、教材规格和教学交接。
 - [教材研发员](employees/core/textbook-developer/ROLE.md)：教材正文、案例、练习和参考解法。
