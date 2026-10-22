@@ -295,10 +295,13 @@ curl http://111.231.8.78/api/health
 ```json
 {
   "productVersion": "local-mvp-0.4",
-  "mode": "local-development",
-  "generation": { "configured": false, "missing": [...] }
+  "mode": "public-deployment",
+  "releaseVersion": "rolecraft-1.0",
+  "generation": { "configured": true, "missing": [] }
 }
 ```
+
+`mode` 只由环境变量 `PUBLIC_DEPLOYMENT` 决定：PM2 配置 `deploy/ecosystem.config.cjs` 对公网进程默认写 `true`，因此这里是 `public-deployment`。本机 `node scripts/start-local.mjs` 不设置该变量，同一接口返回 `local-development`。`generation.configured` 仍只表示模型供应商配置是否齐备，不随 `mode` 改变，也不选择 CloudBase 或本地 SQLite。
 
 ### 6.3 浏览器访问
 
