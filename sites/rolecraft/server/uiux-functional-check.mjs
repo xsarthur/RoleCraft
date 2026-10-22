@@ -1,5 +1,6 @@
 // Isolated loopback checks for UIUX catalog integrity, antifabrication, and practice copy.
-import { mkdtempSync, rmSync, readFileSync } from 'node:fs';
+import { mkdtempSync, readdirSync, rmSync, readFileSync } from 'node:fs';
+import vm from 'node:vm';
 import { createHash } from 'node:crypto';
 import os from 'node:os';
 import path from 'node:path';
@@ -122,6 +123,155 @@ try {
   assert.equal(agent.body.catalog.corpusVersion, 'textbook-v13');
   assert.equal(agent.body.catalog.corpusHash, agentCorpus);
   assert.equal(JSON.stringify(agent.body).includes('uiux-design-v02'), false);
+
+  const assets = catalog.body.catalog.assets;
+  assert.equal(Array.isArray(assets), true);
+  const requiredAssets = ['01-workbench-before-after.svg', 'v02-batch-a-01-role-evidence.svg', 'VA01-focus-scan.svg', 'VA02-composition-study.svg'];
+  for (const name of requiredAssets) {
+    const entry = assets.find(asset => asset.name === name);
+    assert.ok(entry, name);
+    assert.match(entry.sha256, /^[a-f0-9]{64}$/, name);
+    assert.match(entry.sourcePath, /^textbooks\/uiux-design-v0[23]\/assets\/[^/]+$/, name);
+    assert.equal(entry.href, `/api/content/assets/${name}?version=uiux-design-v02`, name);
+    assert.equal(entry.staticHref, `content-uiux-assets/${name}`, name);
+    assert.equal(entry.sourcePath.endsWith('/' + name), true, name);
+  }
+  assert.equal(new Set(assets.map(asset => asset.name)).size, assets.length);
+  assert.equal(assets.length >= requiredAssets.length, true);
+  const chapterAssets = chapter.body.chapter.assets;
+  assert.equal(chapterAssets.some(asset => asset.name === '03-refund-state-board.svg'), true);
+
+  async function readAsset(url) {
+    const response = await fetch(base + url);
+    const buffer = Buffer.from(await response.arrayBuffer());
+    return { status: response.status, type: response.headers.get('content-type'), buffer, text: buffer.toString('utf8') };
+  }
+  const figure = await readAsset('/api/content/assets/01-workbench-before-after.svg?version=uiux-design-v02');
+  assert.equal(figure.status, 200);
+  assert.equal(figure.type, 'image/svg+xml');
+  assert.equal(figure.text.startsWith('<svg'), true);
+  assert.equal(sha256(figure.buffer), assets.find(asset => asset.name === '01-workbench-before-after.svg').sha256);
+  assert.equal(figure.text.includes('OPENAI_API_KEY'), false);
+  const visual = await readAsset('/api/content/assets/VA01-focus-scan.svg?version=uiux-design-v02');
+  assert.equal(visual.status, 200);
+  assert.equal(visual.type, 'image/svg+xml');
+  const uppercase = await readAsset('/api/content/assets/VA01-proportion-scale.svg?version=uiux-design-v02');
+  assert.equal(uppercase.status, 200);
+  assert.equal(uppercase.type, 'image/svg+xml');
+  assert.equal(uppercase.text.includes('<svg'), true);
+  const agentLoop = await readAsset('/api/content/assets/agent-runtime-loop.png?version=textbook-v12');
+  assert.equal(agentLoop.status, 200);
+  assert.equal(agentLoop.type, 'image/png');
+  const agentLandscape = await readAsset('/api/content/assets/agent-engineering-landscape-v12.png?version=textbook-v12');
+  assert.equal(agentLandscape.status, 200);
+  assert.equal(agentLandscape.type, 'image/png');
+  const copied = await readAsset('/content-uiux-assets/01-workbench-before-after.svg');
+  assert.equal(copied.status, 200);
+  assert.match(copied.type, /^image\/svg\+xml/);
+  assert.equal(sha256(copied.buffer), sha256(figure.buffer));
+  const agentFigure = await readAsset('/api/content/assets/agent-runtime-loop.svg?version=textbook-v12');
+  assert.equal(agentFigure.status, 200);
+  assert.equal(agentFigure.type, 'image/svg+xml');
+  assert.equal(agentFigure.text.includes('<svg'), true);
+  const agentOnUiux = await readAsset('/api/content/assets/agent-runtime-loop.svg?version=uiux-design-v02');
+  assert.equal(agentOnUiux.status, 404);
+  const uiuxOnAgent = await readAsset('/api/content/assets/01-workbench-before-after.svg?version=textbook-v12');
+  assert.equal(uiuxOnAgent.status, 404);
+  const missingFigure = await readAsset('/api/content/assets/not-a-published-figure.svg?version=uiux-design-v02');
+  assert.equal(missingFigure.status, 404);
+  const lockedCatalog = await request('/api/content/catalog?version=uiux-design-v02');
+  assert.equal(lockedCatalog.status, 400);
+  assert.equal(lockedCatalog.body.error.code, 'content_version_invalid');
+  for (const blocked of ['/api/content/assets/..%2F..%2Fpackage.json?version=uiux-design-v02', '/api/content/assets/%2e%2e%2fpackage.json?version=uiux-design-v02', '/api/content/assets/01-workbench-before-after.svg/../../package.json?version=uiux-design-v02']) {
+    const escaped = await readAsset(blocked);
+    assert.ok([400, 403, 404].includes(escaped.status), blocked + ' -> ' + escaped.status);
+    assert.equal(escaped.text.includes('"dependencies"'), false, blocked);
+    assert.equal(escaped.text.includes('OPENAI_API_KEY'), false, blocked);
+  }
+
+  const imageRefs = { direct: new Set(), parent: new Set() };
+  const chapterDir = path.join(project, 'textbooks/uiux-design-v02/chapters');
+  const vaDir = path.join(project, 'textbooks/uiux-design-v03');
+  for (const file of [...readdirSync(chapterDir).filter(name => name.endsWith('.md')).map(name => path.join(chapterDir, name)), ...readdirSync(vaDir).filter(name => name.endsWith('.md')).map(name => path.join(vaDir, name))]) {
+    const text = readFileSync(file, 'utf8');
+    for (const match of text.matchAll(/!\[[^\]]*\]\(([^)\s]+)\)/g)) {
+      if (/^assets\/[^/]+$/.test(match[1])) imageRefs.direct.add(match[1].slice('assets/'.length));
+      else if (/^\.\.\/assets\/[^/]+$/.test(match[1])) imageRefs.parent.add(match[1].slice('../assets/'.length));
+    }
+  }
+  assert.equal(imageRefs.direct.size > 0, true);
+  assert.equal(imageRefs.parent.size > 0, true);
+  for (const name of [...imageRefs.direct, ...imageRefs.parent]) assert.equal(assets.some(asset => asset.name === name), true, name);
+
+  const storage = new Map();
+  const clientContext = {
+    console,
+    setTimeout,
+    clearTimeout,
+    URL,
+    URLSearchParams,
+    Map,
+    Set,
+    crypto,
+    fetch: (url, options) => fetch(String(url).startsWith('/') ? base + url : url, options),
+    document: {
+      addEventListener() {},
+      getElementById() { return null; },
+      querySelector() { return null; },
+      createElement() { return { hidden: false, setAttribute() {}, appendChild() {}, classList: { toggle() {} }, addEventListener() {} }; },
+      body: { appendChild() {}, classList: { toggle() {} } },
+      documentElement: { style: { setProperty() {} } },
+    },
+    localStorage: { getItem: key => storage.get(key) ?? null, setItem: (key, value) => storage.set(key, String(value)) },
+    location: { hash: '#learn/career/uiux-product-designer/08-wireframe-prototyping', protocol: 'http:', href: base + '/' },
+  };
+  clientContext.globalThis = clientContext;
+  clientContext.window = clientContext;
+  vm.createContext(clientContext);
+  vm.runInContext(readFileSync(path.join(project, 'dist/learning-workbench.js'), 'utf8'), clientContext, { filename: 'learning-workbench.js' });
+  let reader = '';
+  for (let attempt = 0; attempt < 40 && !reader.includes('01-workbench-before-after.svg'); attempt += 1) {
+    reader = clientContext.LearningWorkbench.page('learn');
+    await new Promise(resolve => setTimeout(resolve, 50));
+  }
+  assert.match(reader, /<figure class="lw-figure"><button[^>]*><img src="\/api\/content\/assets\/01-workbench-before-after\.svg\?version=uiux-design-v02"/);
+  assert.equal(reader.includes('从功能堆叠到围绕当前工单组织的结构 <small>（参考位置暂未提供）'), false);
+  const probeUnit = {
+    unitId: '08-wireframe-prototyping',
+    sourcePath: 'textbooks/uiux-design-v02/chapters/08-wireframe-prototyping.md',
+    sections: [],
+    prerequisiteUnitIds: [],
+    bodyMarkdown: [
+      '![parent](../assets/01-workbench-before-after.svg)',
+      '![direct](assets/VA01-proportion-scale.svg)',
+      '![escape](../../assets/01-workbench-before-after.svg)',
+      '![dotdot](../assets/../01-workbench-before-after.svg)',
+    ].join('\n\n'),
+  };
+  const probe = clientContext.LearningWorkbench.markdown(probeUnit, false);
+  assert.equal((probe.match(/<figure class="lw-figure">/g) || []).length, 2);
+  assert.match(probe, /<img src="\/api\/content\/assets\/01-workbench-before-after\.svg\?version=uiux-design-v02" alt="parent"/);
+  assert.match(probe, /<img src="\/api\/content\/assets\/VA01-proportion-scale\.svg\?version=uiux-design-v02" alt="direct"/);
+  assert.match(probe, /class="lw-unavailable-link">escape /);
+  assert.match(probe, /class="lw-unavailable-link">dotdot /);
+
+  const agentStorage = new Map();
+  const agentContext = {
+    console, setTimeout, clearTimeout, URL, URLSearchParams, Map, Set, crypto,
+    fetch: (url, options) => fetch(String(url).startsWith('/') ? base + url : url, options),
+    document: clientContext.document,
+    localStorage: { getItem: key => agentStorage.get(key) ?? null, setItem: (key, value) => agentStorage.set(key, String(value)) },
+    location: { hash: '#learn/agent/00-learning-route', protocol: 'http:', href: base + '/' },
+  };
+  agentContext.globalThis = agentContext;
+  agentContext.window = agentContext;
+  vm.createContext(agentContext);
+  vm.runInContext(readFileSync(path.join(project, 'dist/content-v12-data.js'), 'utf8'), agentContext, { filename: 'content-v12-data.js' });
+  vm.runInContext(readFileSync(path.join(project, 'dist/learning-workbench.js'), 'utf8'), agentContext, { filename: 'learning-workbench.js' });
+  const agentReader = agentContext.LearningWorkbench.page('learn');
+  assert.match(agentReader, /<figure class="lw-figure"><button[^>]*><img src="\/api\/content\/assets\/agent-runtime-loop\.png\?version=textbook-v12"/);
+  assert.match(agentReader, /<img src="\/api\/content\/assets\/agent-engineering-landscape-v12\.png\?version=textbook-v12"/);
+  assert.equal(agentReader.includes('uiux-design-v02'), false);
 
   const client = readFileSync(path.join(project, 'dist/learning-workbench.js'), 'utf8');
   for (const marker of ['保存草稿', '提交练习', '练习反馈', 'data-lw-career-practice-submit', '当前入口提供静态教材阅读']) assert.equal(client.includes(marker), true, marker);

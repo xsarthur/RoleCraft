@@ -130,10 +130,11 @@
     return requested === CURRENT ? staticCorpus() : null;
   }
   function unit(id, version = CURRENT) { return corpus(version)?.units.find(u => u.unitId === id); }
-  function unitVersion(target) {
-    if (dynamicCareer()) return careerState.career?.contentVersion || '';
-    if (target && typeof target === 'object' && typeof target.corpusVersion === 'string') return target.corpusVersion;
-    return CURRENT;
+  function unitVersion(u) {
+    const expected = dynamicCareer() && careerState.status === 'ready' ? careerState.career?.contentVersion : '';
+    if (!expected) return CURRENT;
+    if (u && typeof u.unitId === 'string' && !careerState.catalog?.units?.some(item => item.unitId === u.unitId)) return CURRENT;
+    return expected;
   }
   function section(u, id) { return u?.sections.find(s => s.sectionId === id); }
   function currentRecord(v) { return v?.corpusVersion === CURRENT && v.corpusHash === corpus()?.corpusHash && unit(v.unitId)?.sourceSha256 === v.sourceSha256 && (!v.sectionId || section(unit(v.unitId), v.sectionId)); }
@@ -552,10 +553,23 @@
     if (node) node.textContent = message;
     else if (typeof toast === 'function') toast(message);
   }
-  function asset(name, version = CURRENT) {
-    const a = corpus(version)?.assets?.find(a => a.name === name);
-    if (!a) return '';
-    return location.protocol === 'file:' ? a.staticHref : a.href || a.staticHref;
+  function asset(name, version) {
+    const resolved = version || unitVersion();
+    const entry = corpus(resolved)?.assets?.find(item => item.name === name);
+    if (!entry) return '';
+    return location.protocol === 'file:' ? entry.staticHref : entry.href || entry.staticHref;
+  }
+  function linkedAssetName(value) {
+    const pathOnly = String(value || '').split(/[?#]/)[0];
+    if (!pathOnly || /[\\\0]/.test(pathOnly) || pathOnly.startsWith('/') || /^[a-z][a-z0-9+.-]*:/i.test(pathOnly)) return '';
+    const parts = pathOnly.split('/');
+    if (parts.some(part => part === '')) return '';
+    const name = parts[parts.length - 1];
+    if (!/^[A-Za-z0-9][A-Za-z0-9_-]*\.(?:png|svg|dot)$/.test(name)) return '';
+    const dirs = parts.slice(0, -1).filter(part => part !== '.');
+    const direct = dirs.length === 1 && dirs[0] === 'assets';
+    const fromChapter = dirs.length === 2 && dirs[0] === '..' && dirs[1] === 'assets';
+    return direct || fromChapter ? name : '';
   }
   function slug(value) { return value.toLowerCase().replace(/[^\p{L}\p{N}\s_-]/gu, '').trim().replace(/\s+/g, '-'); }
   function resolveLink(raw, current, image = false) {
@@ -564,7 +578,8 @@
     if (/^(https?:)\/\//i.test(value)) return image ? '' : value;
     if (/^(javascript|data|file|vbscript):/i.test(value) || value.startsWith('//')) return '';
     const version = unitVersion(current), c = corpus(version);
-    if (value.startsWith('assets/')) return asset(value.split('/').pop(), version);
+    const assetName = linkedAssetName(value);
+    if (assetName) return asset(assetName, version);
     if (image) return '';
     if (value.startsWith('#')) {
       const target = current.sections.find(s => slug(s.title) === value.slice(1) || s.title === value.slice(1) || s.sectionId === value.slice(1));
@@ -587,6 +602,7 @@
     const values = [], token = html => '\u0001' + (values.push(html) - 1) + '\u0002';
     // Text is always escaped; only code, emphasis and whitelisted public links gain markup.
     let t = String(text).replace(/`([^`\n]+)`/g, (_, content) => token('<code>' + esc(content) + '</code>'));
+    t = t.replace(/\[!\[([^\]\n]*)\]\(([^)\s]+)\)\]\([^)\s]+\)/g, '![$1]($2)');
     t = t.replace(/(!?)\[([^\]\n]*)\]\(([^\s)]+)(?:\s+"[^"]*")?\)/g, (_, img, label, raw) => {
       const url = resolveLink(raw, u, !!img);
       if (!url) return token('<span class="lw-unavailable-link">' + esc(label) + ' <small>（参考位置暂未提供）</small></span>');
