@@ -6,11 +6,13 @@ import '../../dist/content-retrieval-core.js';
 const here=path.dirname(fileURLToPath(import.meta.url)),project=path.resolve(here,'../..');
 const sha=s=>createHash('sha256').update(s).digest('hex');
 const core=globalThis.RolecraftContentRetrieval;
-const CURRENT_VERSION='textbook-v12',versions={'textbook-v12':{folder:'v12',units:30}};
+const CURRENT_VERSION='textbook-v13',versions={'textbook-v13':{folder:'v13',units:30},'textbook-v12':{folder:'v12',units:30}};
 // Response identities are derived from the loaded corpus. They are metadata
 // for clients and do not replace source/hash verification in loadCorpus().
-const RETRIEVAL_VERSION='content-retrieval-0.12-v12';
-const TEXTBOOK_IDS={'textbook-v12':'agent-engineering-v12'};
+const RETRIEVAL_VERSIONS={'textbook-v13':'content-retrieval-0.13-v13','textbook-v12':'content-retrieval-0.12-v12'};
+const RETRIEVAL_VERSION=RETRIEVAL_VERSIONS[CURRENT_VERSION];
+const TEXTBOOK_IDS={'textbook-v13':'agent-engineering-v13','textbook-v12':'agent-engineering-v12'};
+function retrievalVersionFor(version){return RETRIEVAL_VERSIONS[version]||RETRIEVAL_VERSION;}
 const cachedCorpora=new Map();let active=0,dialogActive=0;
 function loadCorpus(version=CURRENT_VERSION){
  const definition=versions[version];if(!definition)throw Error('Content version unsupported');
@@ -25,7 +27,11 @@ function loadCorpus(version=CURRENT_VERSION){
  }
  if(sha(JSON.stringify(corpus.units.map(u=>[u.unitId,u.sourceSha256])))!==corpus.corpusHash)throw Error('Corpus version differs');
  if(sha(readFileSync(path.join(textbookRoot,'agent-engineering-textbook.md')))!==corpus.bookSha256)throw Error('Book source differs');
- if(version===CURRENT_VERSION&&(sha(readFileSync(path.join(textbookRoot,'assembly-manifest.json')))!==corpus.sourceBinding.assemblyManifestSha256||sha(readFileSync(path.join(project,'team/textbook-v12-curriculum.json')))!==corpus.sourceBinding.curriculumSha256))throw Error('Curriculum source binding differs');
+ const binding=corpus.sourceBinding||{};
+ const manifestPath=binding.assemblyManifestPath||(version==='textbook-v12'?'textbooks/v12/assembly-manifest.json':null);
+ const curriculumPath=binding.curriculumPath||(version==='textbook-v12'?'team/textbook-v12-curriculum.json':null);
+ if(manifestPath&&sha(readFileSync(path.join(project,manifestPath)))!==binding.assemblyManifestSha256)throw Error('Assembly manifest binding differs');
+ if(curriculumPath&&sha(readFileSync(path.join(project,curriculumPath)))!==binding.curriculumSha256)throw Error('Curriculum source binding differs');
  return corpus;
 }
 function resultTypeFor(status,dialog=false){
@@ -63,7 +69,7 @@ function enrichResponse(response,corpus,{dialog=false}={}){
  const first=results[0]||response.dialog?.citations?.[0]||null;
  const contentVersion=response.contentVersion||response.corpusVersion||corpus?.corpusVersion||CURRENT_VERSION;
  const parent={...response,
-  retrievalVersion:response.retrievalVersion||RETRIEVAL_VERSION,
+  retrievalVersion:retrievalVersionFor(contentVersion),
   resultType:dialog?resultTypeFor(effectiveStatus,true):(response.resultType||resultTypeFor(effectiveStatus,false)),
   intent:response.intent??response.interpretedIntents?.[0]?.id??null,
   intents:Array.isArray(response.interpretedIntents)?response.interpretedIntents.map(item=>item.id||item.intentId).filter(Boolean):[],
@@ -96,15 +102,15 @@ function enrichResponse(response,corpus,{dialog=false}={}){
  return parent;
 }
 export function getContentReadiness(version=CURRENT_VERSION){
- try{const corpus=loadCorpus(version);return {available:true,retrievalVersion:RETRIEVAL_VERSION,contentVersion:corpus.corpusVersion,textbookVersionId:TEXTBOOK_IDS[corpus.corpusVersion],indexVersion:RETRIEVAL_VERSION,corpusVersion:corpus.corpusVersion,corpusHash:corpus.corpusHash,units:corpus.units.length,localSemanticPrepared:existsSync(path.join(here,'model-lock.json'))&&existsSync(path.join(here,'vectors-'+versions[version].folder+'.json')),runtimeSupported:Number(process.versions.node.split('.')[0])===24,requiredNodeMajor:24,nodeVersion:process.version,providerCalled:false};}
- catch{return {available:false,contentVersion:version,textbookVersionId:TEXTBOOK_IDS[version]||null,indexVersion:RETRIEVAL_VERSION,corpusVersion:version,localSemanticPrepared:false,providerCalled:false};}
+ try{const corpus=loadCorpus(version);const retrievalVersion=retrievalVersionFor(version);return {available:true,retrievalVersion,contentVersion:corpus.corpusVersion,textbookVersionId:TEXTBOOK_IDS[corpus.corpusVersion],indexVersion:retrievalVersion,corpusVersion:corpus.corpusVersion,corpusHash:corpus.corpusHash,bookSha256:corpus.bookSha256,units:corpus.units.length,localSemanticPrepared:existsSync(path.join(here,'model-lock.json'))&&existsSync(path.join(here,'vectors-'+versions[version].folder+'.json')),runtimeSupported:Number(process.versions.node.split('.')[0])===24,requiredNodeMajor:24,nodeVersion:process.version,providerCalled:false};}
+ catch{return {available:false,retrievalVersion:retrievalVersionFor(version),contentVersion:version,textbookVersionId:TEXTBOOK_IDS[version]||null,indexVersion:retrievalVersionFor(version),corpusVersion:version,localSemanticPrepared:false,providerCalled:false};}
 }
 const versionedResource=(entry,version)=>({...entry,href:entry.href.includes('?')?entry.href:entry.href+'?version='+version});
 export function getContentCatalog(version=CURRENT_VERSION){const c=loadCorpus(version);return {corpusVersion:c.corpusVersion,corpusHash:c.corpusHash,bookSha256:c.bookSha256,units:c.units.map(({bodyMarkdown,...u})=>({...u,sections:u.sections.map(({bodyMarkdown,searchText,...s})=>s)})),assets:c.assets.map(e=>versionedResource(e,version)),references:c.references.map(e=>versionedResource(e,version)),compatibility:c.compatibility||null,readiness:getContentReadiness(version)};}
 export function getContentChapter(unitId,version=CURRENT_VERSION){const c=loadCorpus(version);const unit=c.units.find(u=>u.unitId===unitId);return unit?{corpusVersion:c.corpusVersion,corpusHash:c.corpusHash,unit}:null;}
 export function getContentAsset(name,version=CURRENT_VERSION){const c=loadCorpus(version);const entry=c.assets.find(a=>a.name===name);if(!entry)return null;const buffer=readFileSync(path.join(project,entry.sourcePath));if(sha(buffer)!==entry.sha256)throw Error('Diagram source changed');return {buffer,mime:name.endsWith('.png')?'image/png':name.endsWith('.svg')?'image/svg+xml':'text/plain; charset=utf-8'};}
 export function getContentReference(name,version=CURRENT_VERSION){const c=loadCorpus(version);const entry=c.references.find(a=>a.name===name);if(!entry)return null;const buffer=readFileSync(path.join(project,entry.sourcePath));if(sha(buffer)!==entry.sha256)throw Error('Public reference source changed');return {buffer,mime:name.endsWith('.json')?'application/json; charset=utf-8':'text/plain; charset=utf-8'};}
-function unavailable(message,version=CURRENT_VERSION){return enrichResponse({status:'unavailable',retrievalVersion:RETRIEVAL_VERSION,engineMode:'local_semantic_retrieval',providerCalled:false,corpusVersion:version,corpusHash:null,interpretedIntents:[],excludedIntents:[],results:[],clarification:null,limitations:[message]},null);}
+function unavailable(message,version=CURRENT_VERSION){return enrichResponse({status:'unavailable',retrievalVersion:retrievalVersionFor(version),engineMode:'local_semantic_retrieval',providerCalled:false,corpusVersion:version,corpusHash:null,interpretedIntents:[],excludedIntents:[],results:[],clarification:null,limitations:[message]},null);}
 export async function recommendContent(input,options={}){
  const version=versions[input?.corpusVersion]?input.corpusVersion:CURRENT_VERSION;
  let corpus;try{corpus=loadCorpus(version);}catch{return unavailable('所选教材索引与源文件不可用或不一致，请重新准备资源。',version);}

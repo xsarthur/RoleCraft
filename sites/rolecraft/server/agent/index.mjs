@@ -238,7 +238,7 @@ export function createReadOnlyAgentSpec(overrides = {}) {
     stateSchemaId: 'agent-state-v1',
     budget: { maxSteps: 8, timeoutMs: 30_000, maxCostUsd: 0 },
     allowedTools: [],
-    allowedSources: ['textbook-v12'],
+    allowedSources: ['textbook-v13', 'textbook-v12'],
     outputContract: { type: 'json', schemaId: 'content-evidence-v1' },
     ...overrides,
   });

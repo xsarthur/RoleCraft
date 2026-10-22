@@ -26,7 +26,7 @@ const sandbox = {
   },
 };
 vm.createContext(sandbox);
-for (const file of ['content-v12-data.js', 'learning-v13-data.js', 'learning-experience-v13.js']) {
+for (const file of ['content-v13-data.js', 'learning-v13-data.js', 'learning-experience-v13.js']) {
   vm.runInContext(readFileSync(path.join(dist, file), 'utf8'), sandbox, { filename: file });
 }
 

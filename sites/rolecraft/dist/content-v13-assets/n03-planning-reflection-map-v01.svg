@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">规划与反思的受控循环</title>
+  <desc id="desc">任务目标进入规划，规划经过约束检查后执行；观察结果进入反思，反思只在有新证据时提出有限修订，否则结束或请求人工判断。</desc>
+  <defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#475569"/></marker></defs>
+  <rect width="1200" height="560" rx="24" fill="#F8FAFC"/>
+  <text x="48" y="54" font-family="system-ui,sans-serif" font-size="28" font-weight="700" fill="#0F172A">规划不是自由发挥：每次改变都要有新证据</text>
+  <text x="48" y="84" font-family="system-ui,sans-serif" font-size="16" fill="#475569">从目标到计划，再到执行观察；反思只能提出可验证的局部修订。</text>
+  <g font-family="system-ui,sans-serif" font-size="17">
+    <rect x="48" y="150" width="220" height="122" rx="16" fill="#E0F2FE" stroke="#0284C7" stroke-width="2"/><text x="72" y="188" fill="#075985" font-weight="700">1 目标与约束</text><text x="72" y="218" fill="#0F172A">验收条件</text><text x="72" y="244" fill="#0F172A">预算 / 权限 / 截止时间</text>
+    <rect x="330" y="150" width="220" height="122" rx="16" fill="#EDE9FE" stroke="#7C3AED" stroke-width="2"/><text x="354" y="188" fill="#5B21B6" font-weight="700">2 生成计划</text><text x="354" y="218" fill="#0F172A">步骤、依赖、停止点</text><text x="354" y="244" fill="#0F172A">标出未知与假设</text>
+    <rect x="612" y="150" width="220" height="122" rx="16" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/><text x="636" y="188" fill="#92400E" font-weight="700">3 约束检查</text><text x="636" y="218" fill="#0F172A">是否越权或超预算？</text><text x="636" y="244" fill="#0F172A">不通过 → 等待 / 拒绝</text>
+    <rect x="894" y="150" width="220" height="122" rx="16" fill="#DCFCE7" stroke="#16A34A" stroke-width="2"/><text x="918" y="188" fill="#166534" font-weight="700">4 执行与观察</text><text x="918" y="218" fill="#0F172A">记录动作与结果</text><text x="918" y="244" fill="#0F172A">保留未确定状态</text>
+  </g>
+  <path d="M270 211 H322" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/><path d="M552 211 H604" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/><path d="M834 211 H886" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="330" y="360" width="500" height="112" rx="16" fill="#FFF7ED" stroke="#EA580C" stroke-width="2"/><text x="354" y="398" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#9A3412">5 反思：只根据新证据定位偏差</text><text x="354" y="428" font-family="system-ui,sans-serif" font-size="16" fill="#0F172A">证据足够 → 提出一个可验证修订</text><text x="354" y="452" font-family="system-ui,sans-serif" font-size="16" fill="#0F172A">证据不足 → 保持未知或请求人工判断</text>
+  <path d="M1004 282 V330 H830" fill="none" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/><path d="M330 416 H236 V330 H160 V282" fill="none" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="862" y="324" font-family="system-ui,sans-serif" font-size="15" fill="#475569">观察结果</text><text x="185" y="322" font-family="system-ui,sans-serif" font-size="15" fill="#475569">有限修订回到计划</text>
+  <rect x="48" y="505" width="1104" height="30" rx="8" fill="#E2E8F0"/><text x="64" y="526" font-family="system-ui,sans-serif" font-size="14" fill="#334155">图例：蓝=输入与约束　紫=计划　黄=宿主检查　绿=执行观察　橙=反思与证据　示意构造，未表示真实运行结果</text>
+</svg>

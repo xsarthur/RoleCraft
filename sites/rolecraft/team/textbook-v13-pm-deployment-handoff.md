@@ -1,9 +1,20 @@
 # Agent 教材 v13 部署交接（项目经理）
 
+## 2026-10-22 正式版决定
+
+Sheng（产品负责人）决定：Agent 教材正式版是 `textbook-v13`，工作台不再把 `textbook-v12` 当作 `CURRENT`。
+
+- 活跃语料：`textbook-v13`（索引、客户端包、检索向量、健康检查身份）。
+- 回滚语料：`textbook-v12` 文件保留，不删除；需要时用显式 `version=textbook-v12` 读取，而不是把它留在生产默认值上。
+- UI/UX 职业仍使用 `uiux-design-v02`，不并入本语料。
+- 本决定授权本地代码切换。它不包含合并后的线上发布，也不把文稿审核写成职业认证或行业先进。
+
+下文 2026-10-16 的隔离预览交接保留为当时记录。其中“不替换 v12”已被本节取代。
+
 日期：2026-10-16（Asia/Shanghai）  
 交付来源：课程架构师、教材研发员、设计师  
 接收岗位：项目经理  
-当前状态：`content_complete_pending_cross_functional_qa`
+当时状态：`content_complete_pending_cross_functional_qa`
 
 ## 接收结论
 
