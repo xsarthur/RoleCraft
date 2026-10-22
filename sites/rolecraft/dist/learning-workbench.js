@@ -131,8 +131,10 @@
   }
   function unit(id, version = CURRENT) { return corpus(version)?.units.find(u => u.unitId === id); }
   function unitVersion(u) {
-    if (dynamicCareer() && careerState.status === 'ready' && u && typeof u.unitId === 'string' && careerState.catalog?.units?.some(item => item.unitId === u.unitId)) return careerState.career?.contentVersion || CURRENT;
-    return CURRENT;
+    const expected = dynamicCareer() && careerState.status === 'ready' ? careerState.career?.contentVersion : '';
+    if (!expected) return CURRENT;
+    if (u && typeof u.unitId === 'string' && !careerState.catalog?.units?.some(item => item.unitId === u.unitId)) return CURRENT;
+    return expected;
   }
   function section(u, id) { return u?.sections.find(s => s.sectionId === id); }
   function currentRecord(v) { return v?.corpusVersion === CURRENT && v.corpusHash === corpus()?.corpusHash && unit(v.unitId)?.sourceSha256 === v.sourceSha256 && (!v.sectionId || section(unit(v.unitId), v.sectionId)); }
@@ -551,15 +553,23 @@
     if (node) node.textContent = message;
     else if (typeof toast === 'function') toast(message);
   }
-  function asset(name, version = CURRENT) {
-    const entry = corpus(version)?.assets?.find(item => item.name === name);
+  function asset(name, version) {
+    const resolved = version || unitVersion();
+    const entry = corpus(resolved)?.assets?.find(item => item.name === name);
     if (!entry) return '';
     return location.protocol === 'file:' ? entry.staticHref : entry.href || entry.staticHref;
   }
   function linkedAssetName(value) {
     const pathOnly = String(value || '').split(/[?#]/)[0];
-    const match = pathOnly.match(/^(?:\.\/|\.\.\/)*assets\/([A-Za-z0-9][A-Za-z0-9_-]*\.(?:png|svg|dot))$/);
-    return match ? match[1] : '';
+    if (!pathOnly || /[\\\0]/.test(pathOnly) || pathOnly.startsWith('/') || /^[a-z][a-z0-9+.-]*:/i.test(pathOnly)) return '';
+    const parts = pathOnly.split('/');
+    if (parts.some(part => part === '')) return '';
+    const name = parts[parts.length - 1];
+    if (!/^[A-Za-z0-9][A-Za-z0-9_-]*\.(?:png|svg|dot)$/.test(name)) return '';
+    const dirs = parts.slice(0, -1).filter(part => part !== '.');
+    const direct = dirs.length === 1 && dirs[0] === 'assets';
+    const fromChapter = dirs.length === 2 && dirs[0] === '..' && dirs[1] === 'assets';
+    return direct || fromChapter ? name : '';
   }
   function slug(value) { return value.toLowerCase().replace(/[^\p{L}\p{N}\s_-]/gu, '').trim().replace(/\s+/g, '-'); }
   function resolveLink(raw, current, image = false) {
