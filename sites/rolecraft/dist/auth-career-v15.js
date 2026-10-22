@@ -421,7 +421,7 @@
     if (!dialog.open) {
       state.careerOpen = true;
       dialog.showModal();
-      setTimeout(() => input.focus({ preventScroll: true, focusVisible: true }), 0);
+      setTimeout(() => input.focus({ preventScroll: true }), 0);
     }
     if (!state.careers.length && !state.busy && state.query.trim()) searchCareers();
     return dialog;
