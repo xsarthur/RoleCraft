@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { getContentReadiness, getContentCatalog, getContentChapter, getContentAsset, getContentReference, recommendContent, dialogContent, closeContentRetrieval } from './retrieval/index.mjs';
 import { getExtractor } from './retrieval/semantic.mjs';
 import { loadCareerImports } from './careers.mjs';
-import { loadUiuxCareer, presentUiuxCatalog, uiuxChapter, queryUiuxLearning, UIUX_CAREER_ID } from './uiux-catalog.mjs';
+import { loadUiuxCareer, presentUiuxCatalog, uiuxChapter, queryUiuxLearning, getUiuxAsset, UIUX_CAREER_ID, UIUX_CONTENT_VERSION } from './uiux-catalog.mjs';
 import { analyzeVoiceRequest, probeLocalAsr } from './voice/index.mjs';
 
 export const PRODUCT_VERSION = 'local-mvp-0.4';
@@ -508,14 +508,16 @@ export function createRolecraftServer(options={}) {
           return send(200,analyzeVoiceRequest(b));
         }
         if(method==='GET' && pathname==='/api/curriculum')return send(200,curriculum());
-        // Public read-only current v12 content.
+        // Public read-only textbook figures. Agent stays on textbook-v12.
+        // UI/UX figures use the same asset route with their published content version.
         const contentVersion=u.searchParams.get('version')||'textbook-v12';
-        if(pathname.startsWith('/api/content/')&&contentVersion!=='textbook-v12')reject(400,'content_version_invalid','请选择当前v12教材');
+        const contentAsset=pathname.match(/^\/api\/content\/assets\/([A-Za-z0-9][A-Za-z0-9_-]*\.(?:png|svg|dot))$/);
+        const uiuxPublicAsset=method==='GET' && contentAsset && contentVersion===UIUX_CONTENT_VERSION;
+        if(pathname.startsWith('/api/content/')&&contentVersion!=='textbook-v12'&&!uiuxPublicAsset)reject(400,'content_version_invalid','请选择当前v12教材');
         if(method==='GET' && pathname==='/api/content/catalog')return send(200,getContentCatalog(contentVersion));
         const contentChapter=pathname.match(/^\/api\/content\/chapter\/([-a-z0-9]+)$/);
         if(method==='GET' && contentChapter){const found=getContentChapter(contentChapter[1],contentVersion);if(!found)reject(404,'not_found','所选教材没有这个章节');return send(200,found);}
-        const contentAsset=pathname.match(/^\/api\/content\/assets\/([-a-z0-9]+\.(?:png|svg|dot))$/);
-        if(method==='GET' && contentAsset){const found=getContentAsset(contentAsset[1],contentVersion);if(!found)reject(404,'not_found','所选教材没有这个公开图');res.writeHead(200,{'Content-Type':found.mime,'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','X-Rolecraft-Release-Version':RELEASE_VERSION});return res.end(found.buffer);}
+        if(method==='GET' && contentAsset){const found=uiuxPublicAsset?getUiuxAsset(projectDir,contentAsset[1]):getContentAsset(contentAsset[1],contentVersion);if(!found)reject(404,'not_found','所选教材没有这个公开图');const headers={'Content-Type':found.mime,'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','X-Rolecraft-Release-Version':RELEASE_VERSION};if(uiuxPublicAsset&&found.mime==='image/svg+xml')headers['Content-Security-Policy']="default-src 'none'; style-src 'unsafe-inline'; sandbox";res.writeHead(200,headers);return res.end(found.buffer);}
         const contentReference=pathname.match(/^\/api\/content\/reference\/([-a-zA-Z0-9_]+\.(?:md|json|py))$/);
         if(method==='GET' && contentReference){const found=getContentReference(contentReference[1],contentVersion);if(!found)reject(404,'not_found','所选教材没有这个公开引用');res.writeHead(200,{'Content-Type':found.mime,'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','X-Rolecraft-Release-Version':RELEASE_VERSION});return res.end(found.buffer);}
         const careerContent=pathname.match(/^\/api\/careers\/([-a-z0-9]+)\/content(?:\/(catalog|chapter\/([-a-z0-9]+)))?$/);

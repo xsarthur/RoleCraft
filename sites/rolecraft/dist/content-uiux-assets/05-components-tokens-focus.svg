@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1370" viewBox="0 0 1800 1370" role="img" aria-labelledby="title desc"><title id="title">05 / 组件的外观、语义与焦点是一份共同契约｜教学合成设计稿</title><desc id="desc">数值是本教学系统的设计选择；视觉稿表达预期，真实浏览器与辅助技术行为需另行实现并验证。 所有姓名、订单、金额、政策与业务证据均为教学合成。静态可编辑SVG，不代表可操作产品、真实交易或无障碍合规验证。</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#52627A"/></marker></defs>
+<rect x="0" y="0" width="1800" height="1370" rx="0" fill="#F3F5F9"/>
+<text x="40" y="51" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="700" text-anchor="start" fill="#172B4D">05 / 组件的外观、语义与焦点是一份共同契约</text>
+<text x="40" y="84" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#52627A">数值是本教学系统的设计选择；视觉稿表达预期，真实浏览器与辅助技术行为需另行实现并验证。</text>
+<rect x="40" y="125" width="800" height="409" rx="14" fill="#FFFFFF" stroke="#CDD6E3" stroke-width="1"/>
+<text x="60" y="157" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700" text-anchor="start" fill="#172B4D">语义 token：含义先于颜色</text>
+<text x="60" y="183" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="400" text-anchor="start" fill="#52627A">相同状态同时使用短标签、边框/图标；不靠红绿区别结果。</text>
+<rect x="62" y="194" width="24" height="24" rx="5" fill="#172B4D"/>
+<text x="99" y="213" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="600" text-anchor="start" fill="#172B4D">color.text.primary</text>
+<text x="424" y="213" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#172B4D">主要正文 / 标题</text>
+<text x="801" y="213" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="400" text-anchor="end" fill="#52627A">#172B4D</text>
+<rect x="62" y="239" width="24" height="24" rx="5" fill="#284DB4"/>
+<text x="99" y="258" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="600" text-anchor="start" fill="#172B4D">color.action.primary</text>
+<text x="424" y="258" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#172B4D">当前安全主动作</text>
+<text x="801" y="258" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="400" text-anchor="end" fill="#52627A">#284DB4</text>
+<rect x="62" y="284" width="24" height="24" rx="5" fill="#126E58"/>
+<text x="99" y="303" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="600" text-anchor="start" fill="#172B4D">color.status.verified</text>
+<text x="424" y="303" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#172B4D">已经核验的事实</text>
+<text x="801" y="303" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="400" text-anchor="end" fill="#52627A">#126E58</text>
+<rect x="62" y="329" width="24" height="24" rx="5" fill="#865100"/>
+<text x="99" y="348" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="600" text-anchor="start" fill="#172B4D">color.status.pending</text>
+<text x="424" y="348" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#172B4D">待核验 / 效果未知</text>
+<text x="801" y="348" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="400" text-anchor="end" fill="#52627A">#865100</text>
+<rect x="62" y="374" width="24" height="24" rx="5" fill="#AC2634"/>
+<text x="99" y="393" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="600" text-anchor="start" fill="#172B4D">color.status.danger</text>
+<text x="424" y="393" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#172B4D">风险 / 明确失败</text>
+<text x="801" y="393" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="400" text-anchor="end" fill="#52627A">#AC2634</text>
+<rect x="62" y="419" width="24" height="24" rx="5" fill="#8D2CE2"/>
+<text x="99" y="438" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="600" text-anchor="start" fill="#172B4D">color.focus.ring</text>
+<text x="424" y="438" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#172B4D">键盘焦点，不等于选中</text>
+<text x="801" y="438" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="400" text-anchor="end" fill="#52627A">#8D2CE2</text>
+<rect x="868" y="125" width="892" height="409" rx="14" fill="#FFFFFF" stroke="#CDD6E3" stroke-width="1"/>
+<text x="888" y="157" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700" text-anchor="start" fill="#172B4D">控件状态：选中、聚焦、禁用分别画</text>
+<text x="888" y="183" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="400" text-anchor="start" fill="#52627A">案例按钮目标高度采用44；WCAG 2.5.8 AA的最低尺寸另有例外，不等于44。</text>
+<text x="890" y="229" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="600" text-anchor="start" fill="#172B4D">默认</text>
+<rect x="890" y="252" width="184" height="44" rx="8" fill="#FFFFFF" stroke="#CDD6E3" stroke-width="1"/>
+<text x="982.0" y="279.0" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#172B4D">查询退款状态</text>
+<text x="1100" y="229" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="600" text-anchor="start" fill="#172B4D">主要</text>
+<rect x="1100" y="252" width="184" height="44" rx="8" fill="#284DB4"/>
+<text x="1192.0" y="279.0" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#FFFFFF">查询退款状态</text>
+<text x="1310" y="229" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="600" text-anchor="start" fill="#172B4D">键盘聚焦</text>
+<rect x="1306" y="248" width="192" height="52" rx="12" fill="none" stroke="#8D2CE2" stroke-width="3"/>
+<rect x="1310" y="252" width="184" height="44" rx="8" fill="#284DB4"/>
+<text x="1402.0" y="279.0" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#FFFFFF">查询退款状态</text>
+<text x="1520" y="229" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="600" text-anchor="start" fill="#172B4D">禁用</text>
+<rect x="1520" y="252" width="184" height="44" rx="8" fill="#E9EDF3"/>
+<text x="1612.0" y="279.0" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#617087">查询退款状态</text>
+<rect x="891" y="336" width="132" height="28" rx="14" fill="#E4F4EE"/>
+<text x="957.0" y="355" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#126E58">✓ 已核验</text>
+<rect x="1037" y="336" width="144" height="28" rx="14" fill="#FFF2D4"/>
+<text x="1109.0" y="355" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#865100">? 效果未知</text>
+<rect x="1195" y="336" width="139" height="28" rx="14" fill="#FDEBEF"/>
+<text x="1264.5" y="355" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#AC2634">! 明确失败</text>
+<rect x="1348" y="336" width="149" height="28" rx="14" fill="#E9EDF3"/>
+<text x="1422.5" y="355" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#52627A">草稿 · 未发送</text>
+<rect x="891" y="395" width="340" height="86" rx="8" fill="#FFFFFF" stroke="#284DB4" stroke-width="2"/>
+<text x="907" y="426" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" text-anchor="start" fill="#172B4D">已选中工单 T-1042</text>
+<text x="907" y="453" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" text-anchor="start" fill="#52627A">蓝色边框保留选择上下文</text>
+<rect x="1249" y="395" width="478" height="86" rx="8" fill="#FFFFFF" stroke="#CDD6E3" stroke-width="1"/>
+<rect x="1245" y="391" width="486" height="94" rx="12" fill="none" stroke="#8D2CE2" stroke-width="3"/>
+<text x="1265" y="426" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" text-anchor="start" fill="#172B4D">当前焦点：查看来源</text>
+<text x="1265" y="453" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" text-anchor="start" fill="#52627A">紫色外环随Tab移动，不改变选中工单</text>
+<rect x="40" y="562" width="910" height="600" rx="14" fill="#FFFFFF" stroke="#CDD6E3" stroke-width="1"/>
+<text x="60" y="594" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700" text-anchor="start" fill="#172B4D">键盘任务轨迹与错误恢复</text>
+<text x="60" y="620" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="400" text-anchor="start" fill="#52627A">编号是建议顺序；实施应优先使用自然DOM顺序，不用任意正tabindex伪造顺序。</text>
+<circle cx="73" cy="661" r="13" fill="#284DB4"/>
+<text x="73" y="665" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#FFFFFF">1</text>
+<text x="102" y="668" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="700" text-anchor="start" fill="#172B4D">跳到当前工单</text>
+<text x="102" y="695" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#52627A">略过重复导航，抵达主内容</text>
+<circle cx="73" cy="733" r="13" fill="#284DB4"/>
+<text x="73" y="737" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#FFFFFF">2</text>
+<text x="102" y="740" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="700" text-anchor="start" fill="#172B4D">租户选择与工单列表</text>
+<text x="102" y="767" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#52627A">有完整名称；切换前处理草稿</text>
+<circle cx="73" cy="805" r="13" fill="#284DB4"/>
+<text x="73" y="809" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#FFFFFF">3</text>
+<text x="102" y="812" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="700" text-anchor="start" fill="#172B4D">逐条来源 / 人工修改</text>
+<text x="102" y="839" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#52627A">展开内联区域，不偷走焦点</text>
+<circle cx="73" cy="877" r="13" fill="#284DB4"/>
+<text x="73" y="881" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#FFFFFF">4</text>
+<text x="102" y="884" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="700" text-anchor="start" fill="#172B4D">打开退款审批</text>
+<text x="102" y="911" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#52627A">弹层打开后进入其内部</text>
+<circle cx="73" cy="949" r="13" fill="#284DB4"/>
+<text x="73" y="953" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#FFFFFF">5</text>
+<text x="102" y="956" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="700" text-anchor="start" fill="#172B4D">错误定位</text>
+<text x="102" y="983" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#52627A">错误摘要链接到对应字段</text>
+<circle cx="73" cy="1021" r="13" fill="#284DB4"/>
+<text x="73" y="1025" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#FFFFFF">6</text>
+<text x="102" y="1028" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="700" text-anchor="start" fill="#172B4D">关闭后返回原入口</text>
+<text x="102" y="1055" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#52627A">返回T-1042发起控件；列表保留选中</text>
+<rect x="980" y="562" width="780" height="600" rx="14" fill="#FFFFFF" stroke="#CDD6E3" stroke-width="1"/>
+<text x="1000" y="594" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700" text-anchor="start" fill="#172B4D">审批弹层：初始焦点与返回路径</text>
+<text x="1000" y="620" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="400" text-anchor="start" fill="#52627A">绘制一次错误后的状态，供前端与QA执行T08。</text>
+<rect x="1006" y="642" width="728" height="457" rx="8" fill="#F0F3F8" stroke="#CDD6E3" stroke-width="1"/>
+<rect x="1088" y="674" width="565" height="384" rx="13" fill="#FFFFFF" stroke="#CDD6E3" stroke-width="1"/>
+<text x="1112" y="711" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700" text-anchor="start" fill="#172B4D">确认审批 · R-81@v4</text>
+<rect x="1586" y="689" width="42" height="40" rx="8" fill="#FFFFFF" stroke="#CDD6E3" stroke-width="1"/>
+<text x="1607.0" y="714.0" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#172B4D">×</text>
+<rect x="1112" y="730" width="517" height="76" rx="8" fill="#FDEBEF" stroke="#AC2634" stroke-width="1"/>
+<text x="1128" y="758" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="700" text-anchor="start" fill="#AC2634">无法提交：审批理由尚未填写</text>
+<text x="1128" y="784" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" text-anchor="start" fill="#AC2634">转到审批理由 ↓</text>
+<text x="1112" y="832" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="600" text-anchor="start" fill="#172B4D">tenant=t-lotus · R-81@v4 · O-7819</text>
+<text x="1112" y="855" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" text-anchor="start" fill="#172B4D">CNY 268.00 · 政策 P-07@v3</text>
+<text x="1112" y="878" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" text-anchor="start" fill="#172B4D">申请理由：破损核验完成</text>
+<text x="1112" y="906" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="600" text-anchor="start" fill="#172B4D">审批理由（必填）</text>
+<rect x="1112" y="920" width="517" height="50" rx="8" fill="#FFFFFF" stroke="#AC2634" stroke-width="2"/>
+<text x="1128" y="950" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" text-anchor="start" fill="#52627A">请填写可复核的批准理由</text>
+<rect x="1108" y="989" width="254" height="52" rx="12" fill="none" stroke="#8D2CE2" stroke-width="3"/>
+<rect x="1112" y="993" width="246" height="44" rx="8" fill="#FFFFFF" stroke="#CDD6E3" stroke-width="1"/>
+<text x="1235.0" y="1020.0" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#172B4D">返回检查</text>
+<rect x="1375" y="993" width="254" height="44" rx="8" fill="#AC2634"/>
+<text x="1502.0" y="1020.0" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#FFFFFF">批准当前版本</text>
+<text x="1009" y="1136" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#52627A">提交错误进入摘要；关闭后回到原审批入口。</text>
+<rect x="40" y="1191" width="1720" height="115" rx="12" fill="#FFF2D4"/>
+<text x="62" y="1225" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="700" text-anchor="start" fill="#865100">不可从这张图推出的结论</text>
+<text x="62" y="1256" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#865100">图中外环不是实际键盘测试；按钮高度不是实际命中区域；可见文字不是读屏名称。</text>
+<text x="62" y="1282" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#865100">实施后检查名称/角色/值、焦点陷阱与返回、状态宣告、200%文本、320重排、减弱动态效果；本交付不宣称符合WCAG。</text>
+<text x="40" y="1348" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="400" text-anchor="start" fill="#52627A">tokens.json提供基础token与对比度自查配对；实际渲染、主题、禁用态及叠层仍需逐项独立核验。</text>
+</svg>

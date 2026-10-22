@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, realpathSync, unlinkSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
 const CONTENT_VERSION = 'uiux-design-v02';
@@ -14,8 +14,105 @@ const VA_FILES = [
   ['va03-visual-language-system', 'VA03-visual-language-system.md'],
   ['va04-polish-motion-delivery', 'VA04-polish-motion-delivery.md'],
 ];
+const ASSET_NAME = /^[A-Za-z0-9][A-Za-z0-9_-]*\.(?:png|svg|dot)$/;
+const ASSET_ROOTS = ['textbooks/uiux-design-v02/assets', 'textbooks/uiux-design-v03/assets'];
+const STATIC_ASSET_DIR = ['dist', 'content-uiux-assets'];
+const MARKDOWN_LINK = /\[[^\]\n]*\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g;
 
 const sha256 = value => createHash('sha256').update(value).digest('hex');
+let publishedAssetFingerprint = '';
+
+function assetMime(name) {
+  if (name.endsWith('.png')) return 'image/png';
+  if (name.endsWith('.svg')) return 'image/svg+xml';
+  return 'text/plain; charset=utf-8';
+}
+
+function confinedAssetFile(projectDir, sourcePath) {
+  if (typeof sourcePath !== 'string' || sourcePath.includes('\0') || path.isAbsolute(sourcePath)) throw Error('UIUX asset path rejected');
+  const normalized = sourcePath.split('\\').join('/');
+  const parent = path.posix.dirname(normalized);
+  const name = path.posix.basename(normalized);
+  if (!ASSET_ROOTS.includes(parent) || !ASSET_NAME.test(name) || normalized !== `${parent}/${name}`) throw Error('UIUX asset path rejected');
+  const root = path.resolve(projectDir);
+  const allowedDir = path.resolve(root, ...parent.split('/'));
+  const filename = path.resolve(root, ...normalized.split('/'));
+  if (!filename.startsWith(allowedDir + path.sep)) throw Error('UIUX asset escaped textbook assets directory');
+  if (!existsSync(filename)) return null;
+  const realDir = realpathSync(allowedDir);
+  const realFile = realpathSync(filename);
+  const relative = path.relative(realDir, realFile);
+  if (!relative || relative.startsWith('..') || path.isAbsolute(relative) || relative.includes(path.sep)) throw Error('UIUX asset escaped textbook assets directory');
+  return realFile;
+}
+
+function referencedAssets(projectDir, units) {
+  const found = new Map();
+  for (const unit of units) {
+    if (unit.availability && unit.availability !== 'available') continue;
+    const markdown = unit.bodyMarkdown || '';
+    for (const match of markdown.matchAll(new RegExp(MARKDOWN_LINK.source, 'g'))) {
+      const raw = match[1].split(/[?#]/)[0];
+      if (!raw || raw.includes('\\') || raw.includes('\0') || /^[a-z][a-z0-9+.-]*:/i.test(raw)) continue;
+      const unitDir = path.posix.dirname(String(unit.sourcePath || '').split('\\').join('/'));
+      const resolved = path.posix.normalize(path.posix.join(unitDir, raw));
+      const parent = path.posix.dirname(resolved);
+      const name = path.posix.basename(resolved);
+      if (!ASSET_ROOTS.includes(parent) || !ASSET_NAME.test(name)) continue;
+      const sourcePath = `${parent}/${name}`;
+      const previous = found.get(name);
+      if (previous && previous !== sourcePath) throw Error(`UIUX asset basename collision: ${name}`);
+      found.set(name, sourcePath);
+    }
+  }
+  const assets = [];
+  for (const [name, sourcePath] of [...found.entries()].sort((left, right) => left[0].localeCompare(right[0]))) {
+    const file = confinedAssetFile(projectDir, sourcePath);
+    if (!file) continue;
+    assets.push({
+      name,
+      sourcePath,
+      sha256: sha256(readFileSync(file)),
+      href: `/api/content/assets/${name}?version=${CONTENT_VERSION}`,
+      staticHref: `content-uiux-assets/${name}`,
+    });
+  }
+  return assets;
+}
+
+function publishUiuxStaticAssets(projectDir, assets) {
+  const fingerprint = assets.map(asset => `${asset.name}:${asset.sha256}`).join('|');
+  const distRoot = path.resolve(projectDir, 'dist');
+  const destDir = path.resolve(projectDir, ...STATIC_ASSET_DIR);
+  if (!destDir.startsWith(distRoot + path.sep)) throw Error('UIUX static asset directory escaped dist');
+  mkdirSync(destDir, { recursive: true });
+  const realDist = realpathSync(distRoot);
+  const realDest = realpathSync(destDir);
+  if (!realDest.startsWith(realDist + path.sep)) throw Error('UIUX static asset directory escaped dist');
+  const alreadyPublished = fingerprint === publishedAssetFingerprint && assets.every(asset => {
+    const target = path.join(realDest, asset.name);
+    return path.dirname(target) === realDest && existsSync(target);
+  });
+  if (alreadyPublished) return;
+  const keep = new Set(assets.map(asset => asset.name));
+  for (const entry of readdirSync(realDest)) {
+    if (!ASSET_NAME.test(entry) || keep.has(entry)) continue;
+    const stale = path.join(realDest, entry);
+    if (path.dirname(stale) !== realDest) continue;
+    unlinkSync(stale);
+  }
+  for (const asset of assets) {
+    if (!ASSET_NAME.test(asset.name)) throw Error('UIUX asset name rejected');
+    const target = path.join(realDest, asset.name);
+    if (path.dirname(target) !== realDest) throw Error('UIUX static asset name escaped directory');
+    const source = confinedAssetFile(projectDir, asset.sourcePath);
+    if (!source) throw Error('UIUX asset disappeared before publish');
+    const bytes = readFileSync(source);
+    if (sha256(bytes) !== asset.sha256) throw Error('UIUX diagram source changed');
+    writeFileSync(target, bytes);
+  }
+  publishedAssetFingerprint = fingerprint;
+}
 
 function readBytes(projectDir, relativePath) {
   const root = path.resolve(projectDir);
@@ -137,6 +234,8 @@ function assemble(projectDir) {
   });
   const units = [...visualUnits.map(unit => ({ ...unit, availability: 'available' })), ...chapterUnits];
   const mismatches = integrity.filter(item => !item.matches);
+  const assets = referencedAssets(projectDir, units);
+  publishUiuxStaticAssets(projectDir, assets);
   const corpusHash = sha256(JSON.stringify(units.map(unit => [unit.unitId, unit.sourceSha256])));
   const sourceBinding = {
     matchesManifest: mismatches.length === 0,
@@ -155,6 +254,7 @@ function assemble(projectDir) {
       matchesManifest: sourceBinding.matchesManifest,
       sourceBinding,
       units,
+      assets,
     },
   };
 }
@@ -168,6 +268,7 @@ export function presentUiuxCatalog(projectDir) {
     corpusHash: corpus.corpusHash,
     matchesManifest: corpus.matchesManifest,
     sourceBinding: corpus.sourceBinding,
+    assets: corpus.assets,
     units: corpus.units.map(unit => ({
       unitId: unit.unitId,
       order: unit.order,
@@ -189,7 +290,19 @@ export function uiuxChapter(projectDir, unitId) {
   const unit = corpus.units.find(item => item.unitId === unitId);
   if (!unit) return null;
   if (unit.availability !== 'available') return { stale: true, unitId: unit.unitId, availability: 'stale' };
-  return { corpusVersion: corpus.corpusVersion, corpusHash: corpus.corpusHash, unit };
+  return { corpusVersion: corpus.corpusVersion, corpusHash: corpus.corpusHash, assets: corpus.assets, unit };
+}
+
+export function getUiuxAsset(projectDir, name) {
+  if (typeof name !== 'string' || !ASSET_NAME.test(name)) return null;
+  const { corpus } = assemble(projectDir);
+  const entry = corpus.assets.find(asset => asset.name === name);
+  if (!entry) return null;
+  const file = confinedAssetFile(projectDir, entry.sourcePath);
+  if (!file) return null;
+  const buffer = readFileSync(file);
+  if (sha256(buffer) !== entry.sha256) throw Error('UIUX diagram source changed');
+  return { buffer, mime: assetMime(name) };
 }
 
 function cjkRuns(text) {
