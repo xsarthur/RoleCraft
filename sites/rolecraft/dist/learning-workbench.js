@@ -245,6 +245,93 @@
     local.task = { ...currentTask(), state, unitId: unitId || local.task?.unitId || '', sectionId: sectionId || local.task?.sectionId || '', reason: asText(reason, 400), updatedAt: new Date().toISOString() };
     save();
   }
+  // Per-career task states live outside the v12 reading store. That store rejects
+  // any corpusVersion other than textbook-v12, so UIUX progress cannot be written
+  // there. This key is local-browser only and is the documented fixture for
+  // not_started / in_progress / interrupted / browsed. It does not touch SQLite.
+  const CAREER_TASK_KEY = 'rolecraft-career-task-v1';
+  const TASK_STATES = ['not_started', 'in_progress', 'interrupted', 'browsed'];
+  function emptyCareerTasks() { return { schema: 1, careers: {} }; }
+  function loadCareerTasks() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(CAREER_TASK_KEY) || 'null');
+      if (!parsed || parsed.schema !== 1 || !parsed.careers || typeof parsed.careers !== 'object' || Array.isArray(parsed.careers)) return emptyCareerTasks();
+      return parsed;
+    } catch { return emptyCareerTasks(); }
+  }
+  function taskCareerId() { return careerState.careerId || careerRoute()?.careerId || AGENT_CAREER_ID; }
+  function readCareerTask(careerId = taskCareerId()) {
+    const row = loadCareerTasks().careers[careerId] || {};
+    return {
+      state: TASK_STATES.includes(row.state) ? row.state : 'not_started',
+      unitId: typeof row.unitId === 'string' ? row.unitId : '',
+      sectionId: typeof row.sectionId === 'string' ? row.sectionId : '',
+      reason: typeof row.reason === 'string' ? row.reason : '',
+      contentVersion: typeof row.contentVersion === 'string' ? row.contentVersion : '',
+      openedUnitIds: Array.isArray(row.openedUnitIds) ? row.openedUnitIds.filter(id => typeof id === 'string').slice(0, 200) : [],
+      updatedAt: typeof row.updatedAt === 'string' ? row.updatedAt : ''
+    };
+  }
+  function writeCareerTask(careerId, patch) {
+    if (!careerId) return null;
+    const book = loadCareerTasks();
+    const previous = readCareerTask(careerId);
+    const next = {
+      state: TASK_STATES.includes(patch.state) ? patch.state : previous.state,
+      unitId: patch.unitId != null ? String(patch.unitId) : previous.unitId,
+      sectionId: patch.sectionId != null ? String(patch.sectionId) : previous.sectionId,
+      reason: patch.reason != null ? asText(patch.reason, 400) : previous.reason,
+      contentVersion: patch.contentVersion != null ? String(patch.contentVersion) : previous.contentVersion,
+      openedUnitIds: Array.isArray(patch.openedUnitIds) ? patch.openedUnitIds.filter(id => typeof id === 'string').slice(0, 200) : previous.openedUnitIds,
+      updatedAt: new Date().toISOString()
+    };
+    book.careers[careerId] = next;
+    try { localStorage.setItem(CAREER_TASK_KEY, JSON.stringify(book)); } catch { /* The in-memory page still shows the last rendered state. */ }
+    return next;
+  }
+  function noteDynamicReading(location) {
+    const careerId = taskCareerId();
+    const units = corpus()?.units || [];
+    if (!location.unitId || !units.some(item => item.unitId === location.unitId)) return;
+    const current = readCareerTask(careerId);
+    const openedUnitIds = [...new Set([...current.openedUnitIds, location.unitId])];
+    const allOpened = units.length > 0 && units.every(item => openedUnitIds.includes(item.unitId));
+    const holdInterrupt = current.state === 'interrupted' && !location.resume && current.unitId === location.unitId && (current.sectionId || '') === (location.sectionId || '');
+    const state = holdInterrupt ? 'interrupted' : (allOpened ? 'browsed' : 'in_progress');
+    const contentVersion = location.version || careerState.career?.contentVersion || '';
+    const same = current.state === state && current.unitId === location.unitId && (current.sectionId || '') === (location.sectionId || '') && current.openedUnitIds.length === openedUnitIds.length && current.contentVersion === contentVersion;
+    if (same) return;
+    writeCareerTask(careerId, { state, unitId: location.unitId, sectionId: location.sectionId || '', openedUnitIds, contentVersion, reason: holdInterrupt ? current.reason : '' });
+  }
+  function induceCareerTask(state, options = {}) {
+    if (!TASK_STATES.includes(state)) return null;
+    const careerId = options.careerId || taskCareerId();
+    const units = corpus()?.units || [];
+    const unitId = state === 'not_started' ? '' : (options.unitId || units[0]?.unitId || '');
+    const openedUnitIds = state === 'browsed' ? units.map(item => item.unitId) : (state === 'not_started' || !unitId ? [] : [unitId]);
+    return writeCareerTask(careerId, {
+      state,
+      unitId,
+      sectionId: state === 'not_started' ? '' : (options.sectionId || ''),
+      reason: state === 'interrupted' ? 'local-dev fixture：已中断，刷新后从保存位置恢复。' : 'local-dev fixture',
+      contentVersion: options.contentVersion || careerState.career?.contentVersion || '',
+      openedUnitIds
+    });
+  }
+  function entryForCareer(first) {
+    const task = readCareerTask();
+    const copy = {
+      not_started: { label: '尚未开始', title: '开始你的第一步', action: '开始学习', description: '从当前职业课程的第一篇开始，按路线建立阅读记录。' },
+      in_progress: { label: '学习进行中', title: '继续学习', action: '继续学习', description: '阅读位置已保存，可从上次章节继续。' },
+      interrupted: { label: '已中断', title: '恢复未完成的任务', action: '恢复任务', description: task.reason || '上次位置已保存，恢复后从中断处继续。' },
+      browsed: { label: '已浏览', title: '回顾最近学习', action: '回顾学习', description: '当前课程已浏览。浏览只表示打开过，不表示通过或等级。' }
+    }[task.state];
+    const known = unit(task.unitId);
+    const target = known || first;
+    const sectionId = known ? task.sectionId : '';
+    const place = known ? known.navigationLabel : '';
+    return { ...copy, state: task.state, description: place && task.state !== 'not_started' ? place + ' · ' + copy.description : copy.description, href: href(target, sectionId) + (task.state === 'interrupted' ? '?resume=1' : ''), showInterrupt: task.state === 'in_progress' };
+  }
 
   let accountSyncToken = 0, accountSyncPromise = null;
   function accountSession() { return globalThis.RolecraftAuthCareer?.getSession?.() || null; }
@@ -342,8 +429,8 @@
   function requestCareerChapter(unitId) {
     if (!dynamicCareer() || !unitId || careerState.chapters.has(unitId) || careerState.chapterRequests.has(unitId)) return;
     const careerId = careerState.careerId, requestId = careerState.requestId;
-    careerState = { ...careerState, phase: 'chapter', loadingChapterId: unitId };
-    redrawCareerView();
+    // Record the in-flight request before redraw. readerPage asks for the chapter
+    // during render, and redrawing first would re-enter this function forever.
     const request = (async () => {
       const chapterController = typeof AbortController === 'function' ? new AbortController() : null;
       const timeout = setTimeout(() => chapterController?.abort(), CAREER_LOAD_TIMEOUT);
@@ -372,6 +459,8 @@
       }
     })();
     careerState.chapterRequests.set(unitId, request);
+    careerState = { ...careerState, phase: 'chapter', loadingChapterId: unitId };
+    redrawCareerView();
   }
   function accountRecordTarget(unitId, sectionId = '') {
     const u = unit(unitId), career = accountSession()?.activeCareer, careerId = career?.careerId || '', textbookVersionId = career?.textbookVersionId || '';
@@ -626,10 +715,14 @@
     const showCatalog = dynamicCareer() || location.hash === '#learn' || location.hash === '#learn/agent';
     const careerTitle = careerState.career?.title || 'Agent 开发者', careerSummary = careerState.career?.summary || '读懂一个系统怎样工作，再用实际作品验证你的想法。';
     const countLabel = dynamicCareer() ? String(corpus().units.length) + ' 篇' : '30 篇';
-    const entryState = progress.completed ? { label: '当前课程已完整浏览', title: '回顾最近学习', description: latest ? esc(unit(latest.unitId).navigationLabel) + ' · 已浏览 ' + progress.count + '/' + progress.total + ' 篇' : '课程记录已完成，可从最近位置复习。', action: '回顾学习' } : latest ? { label: '学习进行中', title: '继续学习', description: esc(unit(latest.unitId).navigationLabel) + ' · 已浏览 ' + progress.count + '/' + progress.total + ' 篇', action: '继续学习' } : { label: '尚未开始', title: '开始你的第一步', description: '从当前职业课程的第一篇开始，按路线建立阅读记录。', action: '开始学习' };
+    const careerEntry = (dynamicCareer() || careerRoute()) ? entryForCareer(first) : null;
+    const entryState = careerEntry || (progress.completed ? { label: '当前课程已完整浏览', title: '回顾最近学习', description: latest ? esc(unit(latest.unitId).navigationLabel) + ' · 已浏览 ' + progress.count + '/' + progress.total + ' 篇' : '课程记录已完成，可从最近位置复习。', action: '回顾学习' } : latest ? { label: '学习进行中', title: '继续学习', description: esc(unit(latest.unitId).navigationLabel) + ' · 已浏览 ' + progress.count + '/' + progress.total + ' 篇', action: '继续学习' } : { label: '尚未开始', title: '开始你的第一步', description: '从当前职业课程的第一篇开始，按路线建立阅读记录。', action: '开始学习' });
     const entryUnit = latest ? unit(latest.unitId) : first;
+    const entryHref = careerEntry ? careerEntry.href : href(entryUnit, latest?.sectionId || '');
+    const entryAttrs = careerEntry ? ' data-task-state="' + esc(careerEntry.state) + '" data-task-cta="' + esc(careerEntry.action) + '"' : '';
+    const interruptControl = careerEntry?.showInterrupt ? '<button class="outline" type="button" data-lw-interrupt>中断并保存位置</button>' : '';
     const practice = careerRoute() ? practiceLoopCard() : '';
-    return '<div class="lw-home">' + practice + heading('职业学习 · ' + esc(careerTitle), esc(careerTitle), esc(careerSummary)) + startSelect() + '<section class="lw-entry" aria-labelledby="lw-entry-title"><div class="lw-entry-copy"><span class="lw-entry-status">' + entryState.label + '</span><h2 id="lw-entry-title">' + entryState.title + '</h2><p>' + entryState.description + '</p><small>学习记录只表示浏览位置，不表示通过或等级</small></div><a class="primary" href="' + href(entryUnit, latest?.sectionId || '') + '">' + entryState.action + ' →</a></section>' + (local.startingPoint === 'beginner' && !dynamicCareer() ? '<div class="lw-route-hint">零基础起步：先读开篇，再做<a href="' + href(unit('01-foundation'), unit('01-foundation').sections.find(s => s.title === '先做入口诊断')?.sectionId) + '">基础诊断</a>，按实际缺项补学。</div>' : local.startingPoint && !dynamicCareer() ? '<div class="lw-route-hint">已有基础：可直接查具体问题。正式先修保留在各篇说明中，不锁住阅读。</div>' : '') + '<div class="lw-tabs" aria-label="教材浏览方式"><a href="#path"' + (!showCatalog ? ' aria-current="page"' : '') + '>学习路线</a><a href="#learn"' + (showCatalog ? ' aria-current="page"' : '') + '>课程目录 <small>' + countLabel + '</small></a></div>' + (showCatalog ? catalog() : stages()) + (!routeOnly && !showCatalog ? '<section class="lw-panorama"><div><span class="lw-kicker">先看全貌</span><h2>Agent 工程不止是一次模型调用</h2><p>从问题、组件到验证与交付，找到章节所处的环节。组件按需求采用，图中分组不替代正式阅读顺序。</p><a href="' + href(first, graphSection?.sectionId) + '">查看工程全景与章节位置 →</a></div><button type="button" data-lw-image="' + esc(asset('agent-engineering-landscape-v12.png')) + '" data-lw-alt="Agent工程全景与30篇章节位置"><img src="' + esc(asset('agent-engineering-landscape-v12.png')) + '" alt="Agent工程全景与30篇章节位置" loading="lazy"><span>放大工程全景</span></button></section>' : '') + '</div>';
+    return '<div class="lw-home">' + practice + heading('职业学习 · ' + esc(careerTitle), esc(careerTitle), esc(careerSummary)) + startSelect() + '<section class="lw-entry"' + (careerEntry ? ' data-task-state="' + esc(careerEntry.state) + '"' : '') + ' aria-labelledby="lw-entry-title"><div class="lw-entry-copy"><span class="lw-entry-status">' + esc(entryState.label) + '</span><h2 id="lw-entry-title">' + esc(entryState.title) + '</h2><p>' + (careerEntry ? esc(entryState.description) : entryState.description) + '</p><small>学习记录只表示浏览位置，不表示通过或等级</small></div><a class="primary"' + entryAttrs + ' href="' + entryHref + '">' + esc(entryState.action) + ' →</a>' + interruptControl + '</section>' + (local.startingPoint === 'beginner' && !dynamicCareer() ? '<div class="lw-route-hint">零基础起步：先读开篇，再做<a href="' + href(unit('01-foundation'), unit('01-foundation').sections.find(s => s.title === '先做入口诊断')?.sectionId) + '">基础诊断</a>，按实际缺项补学。</div>' : local.startingPoint && !dynamicCareer() ? '<div class="lw-route-hint">已有基础：可直接查具体问题。正式先修保留在各篇说明中，不锁住阅读。</div>' : '') + '<div class="lw-tabs" aria-label="教材浏览方式"><a href="#path"' + (!showCatalog ? ' aria-current="page"' : '') + '>学习路线</a><a href="#learn"' + (showCatalog ? ' aria-current="page"' : '') + '>课程目录 <small>' + countLabel + '</small></a></div>' + (showCatalog ? catalog() : stages()) + (!routeOnly && !showCatalog ? '<section class="lw-panorama"><div><span class="lw-kicker">先看全貌</span><h2>Agent 工程不止是一次模型调用</h2><p>从问题、组件到验证与交付，找到章节所处的环节。组件按需求采用，图中分组不替代正式阅读顺序。</p><a href="' + href(first, graphSection?.sectionId) + '">查看工程全景与章节位置 →</a></div><button type="button" data-lw-image="' + esc(asset('agent-engineering-landscape-v12.png')) + '" data-lw-alt="Agent工程全景与30篇章节位置"><img src="' + esc(asset('agent-engineering-landscape-v12.png')) + '" alt="Agent工程全景与30篇章节位置" loading="lazy"><span>放大工程全景</span></button></section>' : '') + '</div>';
   }
   function readerPage() {
     const location = loc(), c = corpus(location.version);
@@ -739,7 +832,7 @@
     const careerLabel = careerState.active ? (careerState.career?.title || '当前职业') : 'Agent 开发者';
     const dialogDescription = dynamicCareer() ? '当前职业教材是否支持问答由服务返回；未接入时会明确显示不可用。' : '根据当前教材简答，并提供原文入口。';
     const sendButton = pending ? '<button id="lw-query-submit" class="primary lw-query-submit is-loading" type="submit" disabled aria-disabled="true" aria-busy="true"><span class="lw-query-submit-spinner" aria-hidden="true"></span><span>正在查询…</span></button>' : '<button id="lw-query-submit" class="primary lw-query-submit" type="submit">发送</button>';
-    return '<div class="lw-assistant is-open" id="lw-assistant"><aside class="lw-assistant-drawer" id="lw-find-panel" role="dialog" aria-label="Agent 学习问答" aria-modal="false"><div class="lw-assistant-head"><div><h2>Agent 学习问答</h2><p>' + esc(dialogDescription) + '</p></div><button class="outline" data-lw-collapse aria-expanded="true" aria-controls="lw-find-panel">收起</button></div><div class="lw-context"><span>职业：' + esc(careerLabel) + '</span><span>' + (u ? '章节上下文：' + esc(u.navigationLabel) + (s ? ' / ' + esc(s.title) : '') : '全部教材') + '</span>' + (u ? '<button data-lw-clear-context>清除章节上下文</button>' : activeView === 'learn' && loc().version === CURRENT && unit(loc().unitId) ? '<button data-lw-use-context>结合当前阅读</button>' : '') + (tu ? '<span>问答主题：' + esc(tu.navigationLabel) + ' / ' + esc(ts.title) + '</span>' : '<span>尚无问答主题</span>') + '<button data-lw-clear-topic>清除问答主题</button></div><div class="lw-find-results" id="lw-find-results" aria-busy="' + pending + '">' + resultHTML() + (queryHistory.length ? '<details class="lw-query-history"><summary>最近问题 · 本会话</summary>' + queryHistory.map((h,i) => '<button class="outline" data-lw-history="' + i + '">' + esc(h.query) + '</button>').join('') + '</details>' : '') + '</div><form id="lw-find-form"' + (pending ? ' aria-busy="true"' : '') + '><label for="lw-query">问教材</label><textarea id="lw-query" rows="1" placeholder="' + esc(globalThis.LearningExperienceV13?.inputHint?.() || '描述 Agent 开发、学习或项目中的问题') + '" aria-describedby="lw-query-feedback"' + (invalid ? ' aria-invalid="true"' : '') + '>' + esc(query) + '</textarea>' + sendButton + '<button class="lw-open-toggle" type="button" data-lw-toggle aria-expanded="true" aria-controls="lw-find-panel" aria-label="收起学习问答">⌄</button><p id="lw-query-feedback" class="lw-query-feedback" role="status" aria-live="polite" aria-atomic="true">' + esc(feedback) + '</p></form></aside></div>';
+    return '<div class="lw-assistant is-open" id="lw-assistant"><aside class="lw-assistant-drawer" id="lw-find-panel" role="dialog" aria-label="Agent 学习问答" aria-modal="true"><div class="lw-assistant-head"><div><h2>Agent 学习问答</h2><p>' + esc(dialogDescription) + '</p></div><button class="outline" data-lw-collapse aria-expanded="true" aria-controls="lw-find-panel">收起</button></div><div class="lw-context"><span>职业：' + esc(careerLabel) + '</span><span>' + (u ? '章节上下文：' + esc(u.navigationLabel) + (s ? ' / ' + esc(s.title) : '') : '全部教材') + '</span>' + (u ? '<button data-lw-clear-context>清除章节上下文</button>' : activeView === 'learn' && loc().version === CURRENT && unit(loc().unitId) ? '<button data-lw-use-context>结合当前阅读</button>' : '') + (tu ? '<span>问答主题：' + esc(tu.navigationLabel) + ' / ' + esc(ts.title) + '</span>' : '<span>尚无问答主题</span>') + '<button data-lw-clear-topic>清除问答主题</button></div><div class="lw-find-results" id="lw-find-results" aria-busy="' + pending + '">' + resultHTML() + (queryHistory.length ? '<details class="lw-query-history"><summary>最近问题 · 本会话</summary>' + queryHistory.map((h,i) => '<button class="outline" data-lw-history="' + i + '">' + esc(h.query) + '</button>').join('') + '</details>' : '') + '</div><form id="lw-find-form"' + (pending ? ' aria-busy="true"' : '') + '><label for="lw-query">问教材</label><textarea id="lw-query" rows="1" placeholder="' + esc(globalThis.LearningExperienceV13?.inputHint?.() || '描述 Agent 开发、学习或项目中的问题') + '" aria-describedby="lw-query-feedback"' + (invalid ? ' aria-invalid="true"' : '') + '>' + esc(query) + '</textarea>' + sendButton + '<button class="lw-open-toggle" type="button" data-lw-toggle aria-expanded="true" aria-controls="lw-find-panel" aria-label="收起学习问答">⌄</button><p id="lw-query-feedback" class="lw-query-feedback" role="status" aria-live="polite" aria-atomic="true">' + esc(feedback) + '</p></form></aside></div>';
   }
   function validateSource(result) {
     const c = corpus(), u = unit(result?.unitId), s = section(u, result?.sectionId);
@@ -827,6 +920,20 @@
     const nextResults = document.getElementById('lw-find-results'); if (nextResults) nextResults.scrollTop = assistantScroll;
     if (focused) { const next = document.getElementById('lw-query'); next?.focus({ preventScroll: true }); if (range && next?.setSelectionRange) next.setSelectionRange(range[0], range[1]); }
     else if (submitFocused) { const next = document.getElementById(pending ? 'lw-query' : 'lw-query-submit'); next?.focus({ preventScroll: true }); }
+    syncBackgroundInert();
+  }
+  function drawerFocusables() {
+    const panel = document.getElementById('lw-find-panel');
+    if (!panel) return [];
+    return [...panel.querySelectorAll('a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), summary, [tabindex]:not([tabindex="-1"])')].filter(el => !el.hasAttribute('disabled') && el.getAttribute('aria-hidden') !== 'true' && el.getClientRects().length > 0);
+  }
+  function syncBackgroundInert() {
+    const sidebar = document.getElementById('primary-sidebar');
+    const app = document.getElementById('app');
+    const topbar = document.querySelector('.topbar');
+    if (app) app.inert = assistantOpen;
+    if (topbar) topbar.inert = assistantOpen;
+    if (sidebar) sidebar.inert = assistantOpen || globalThis.innerWidth <= 760;
   }
   function collapse() { const results = document.getElementById('lw-find-results'); if (results) assistantScroll = results.scrollTop; assistantOpen = false; refreshAssistant(); document.getElementById('lw-assistant-launcher')?.focus({ preventScroll: true }); }
   function captureNotes() {
@@ -885,6 +992,7 @@
     const l = loc(), u = view === 'learn' ? unit(l.unitId, l.version) : null;
     activeReadingUnitId = u?.unitId || '';
     activeReadingVersion = u ? l.version : '';
+    if (dynamicCareer() && l.unitId) noteDynamicReading(l);
     if (u && (!dynamicCareer() || u.bodyMarkdown) && (!l.sectionId || section(u, l.sectionId))) {
       const last = local.visits.at(-1);
       if (l.version === CURRENT && (!last || last.unitId !== u.unitId || last.sectionId !== l.sectionId || !currentRecord(last))) { local.visits.push({ unitId: u.unitId, sectionId: l.sectionId, corpusVersion: CURRENT, corpusHash: corpus().corpusHash, sourceSha256: u.sourceSha256, at: new Date().toISOString() }); local.visits = local.visits.slice(-200); save(); syncAccountEvent('recent', u.unitId, l.sectionId); syncAccountEvent('progress', u.unitId, l.sectionId); }
@@ -943,7 +1051,19 @@
     }
     if (el.hasAttribute('data-lw-clarify')) { const c = response?.clarification, o = c?.options?.[Number(el.dataset.lwClarify)]; if (o) { const complete = typeof o === 'string' ? (submission?.query || query) + '；我指的是：' + o : o.query || (submission?.query || query) + '；我指的是：' + (o.label || o.title); find(complete, submission?.context || currentContext()); } return; }
     if (el.hasAttribute('data-lw-reload')) { location.reload(); return; }
-    if (el.hasAttribute('data-lw-interrupt')) { const l = loc(); setTask('interrupted', l.unitId, l.sectionId, '学习者主动中断，位置已保存；恢复后从该位置继续。'); notify('已保存当前位置并标记为“已中断”；可从首页恢复任务。'); return; }
+    if (el.hasAttribute('data-lw-interrupt')) {
+      const l = loc();
+      const reason = '学习者主动中断，位置已保存；恢复后从该位置继续。';
+      if (dynamicCareer()) {
+        const patch = { state: 'interrupted', reason, contentVersion: l.version || careerState.career?.contentVersion || '' };
+        if (l.unitId) { patch.unitId = l.unitId; patch.sectionId = l.sectionId || ''; }
+        writeCareerTask(taskCareerId(), patch);
+      }
+      else setTask('interrupted', l.unitId, l.sectionId, reason);
+      notify('已保存当前位置并标记为“已中断”；可从首页恢复任务。');
+      if (typeof render === 'function') render();
+      return;
+    }
     if (el.hasAttribute('data-lw-career-draft-save') || el.hasAttribute('data-lw-career-practice-submit')) {
       const value = asText(document.getElementById('lw-career-draft')?.value, 4000);
       careerPractice.draft = value;
@@ -981,7 +1101,16 @@
   document.addEventListener('compositionend', e => { if (e.target.id === 'lw-query') composing = false; });
   document.addEventListener('keydown', e => {
     if (e.target.id === 'lw-query' && e.key === 'Enter' && !e.shiftKey && !e.isComposing && !composing) { e.preventDefault(); if (pending) return; query = e.target.value; find(); }
-    if (e.key === 'Escape' && assistantOpen && !document.getElementById('lw-image-dialog')?.open) { e.preventDefault(); collapse(); }
+    const imageOpen = document.getElementById('lw-image-dialog')?.open;
+    if (e.key === 'Escape' && assistantOpen && !imageOpen) { e.preventDefault(); collapse(); return; }
+    if (e.key === 'Tab' && assistantOpen && !imageOpen) {
+      const items = drawerFocusables();
+      if (!items.length) return;
+      const first = items[0], last = items[items.length - 1], active = document.activeElement;
+      const inside = items.includes(active);
+      if (e.shiftKey) { if (!inside || active === first) { e.preventDefault(); last.focus(); } }
+      else if (!inside || active === last) { e.preventDefault(); first.focus(); }
+    }
   });
   document.addEventListener('submit', e => { if (e.target.id === 'lw-find-form') { e.preventDefault(); if (pending) return; query = document.getElementById('lw-query').value; find(); } });
   try {
@@ -1000,7 +1129,7 @@
       if (topic && queryHistory.some(h => h.response?.dialog?.status === 'answered' && JSON.stringify(canonicalTopic(h.response.dialog.context)) === JSON.stringify(topic))) dialogTopic = topic;
     }
   } catch { /* A damaged query cache is not used as a recommendation. */ }
-  globalThis.LearningWorkbench = { version: VERSION, agentVersion: DIALOG_AGENT_VERSION, workbenchVersion: WORKBENCH_VERSION, page, mount, beforeRender, markdown, validateResponse, currentContext, refreshAssistant, careerContentState, shouldDelegateView, currentTask, setTask, practice: () => local.practice, readingRecords: () => local, recordIsCurrent: currentRecord, recordsExportData: () => { captureNotes(); return { current: local }; } };
+  globalThis.LearningWorkbench = { version: VERSION, agentVersion: DIALOG_AGENT_VERSION, workbenchVersion: WORKBENCH_VERSION, page, mount, beforeRender, markdown, validateResponse, currentContext, refreshAssistant, careerContentState, shouldDelegateView, currentTask, setTask, induceCareerTask, careerTask: careerId => readCareerTask(careerId), careerTaskKey: CAREER_TASK_KEY, practice: () => local.practice, readingRecords: () => local, recordIsCurrent: currentRecord, recordsExportData: () => { captureNotes(); return { current: local }; } };
   globalThis.addEventListener?.('resize', readerGeometry);
   document.addEventListener('click', e => { if (assistantOpen && !e.target.closest('#lw-assistant-host,button,a,input,textarea,select,summary,dialog')) collapse(); });
 })();
