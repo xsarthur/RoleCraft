@@ -3,7 +3,7 @@
 Version `local-mvp-0.4`; local development only. JSON camelCase. All private resources derive owner from server session, never caller owner IDs. Cookie `rolecraftSession`, HttpOnly, SameSite=Strict, Path=/; same-origin mutations only. API errors `{error:{code,message}}`. Body max 128 KiB. No external URL fetching.
 
 ## HTTP
-- `GET /api/health` → `{productVersion,mode:"local-development",generation:{configured,missing[]}}` (no secrets).
+- `GET /api/health` → `{productVersion,mode,generation:{configured,missing[]},releaseVersion}` (no secrets). `mode` is `public-deployment` when `PUBLIC_DEPLOYMENT=true` (the public Lighthouse process) and `local-development` otherwise. `generation.configured` stays an independent readiness check.
 - `POST /api/auth/register` `{email,password}` → 201 `{user:{id,email},csrfToken}` and session cookie. Password 12–128 chars. New local accounts only; not production identity.
 - `POST /api/auth/login` same → 200 same; `GET /api/auth/me` → same. `POST /api/auth/logout` → `{ok:true}`. Authenticated mutation sends `X-CSRF-Token`; Origin, if present, must equal request origin. Foreign resources return 404.
 - `GET /api/curriculum` → frozen curriculum package (public approved source snippets/schema, no credentials).

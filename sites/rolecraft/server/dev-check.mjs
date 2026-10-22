@@ -16,6 +16,14 @@ async function request(endpoint,{method='GET',data,cookie='',csrf,headers={}}={}
   const text=await r.text();let b;try{b=JSON.parse(text);}catch{b=text;}return {status:r.status,b,cookie:r.headers.get('set-cookie')?.split(';')[0]};
 }
 try {
+  const previousDeployment=process.env.PUBLIC_DEPLOYMENT;
+  delete process.env.PUBLIC_DEPLOYMENT;
+  const localHealth=await request('/api/health');
+  check(localHealth.status===200&&localHealth.b.mode==='local-development'&&localHealth.b.releaseVersion==='rolecraft-1.0'&&typeof localHealth.b.generation?.configured==='boolean','local health stays local-development');
+  process.env.PUBLIC_DEPLOYMENT='true';
+  const publicHealth=await request('/api/health');
+  check(publicHealth.status===200&&publicHealth.b.mode==='public-deployment'&&publicHealth.b.generation?.configured===localHealth.b.generation.configured&&publicHealth.b.releaseVersion==='rolecraft-1.0','public health does not claim local-development');
+  if(previousDeployment===undefined)delete process.env.PUBLIC_DEPLOYMENT;else process.env.PUBLIC_DEPLOYMENT=previousDeployment;
   check((await request('/api/auth/me')).status===401,'private unauthenticated denied');
   const a=await request('/api/auth/register',{method:'POST',data:{email:'a@dev.invalid',password:'isolated-development-password-a'}});
   const b=await request('/api/auth/register',{method:'POST',data:{email:'b@dev.invalid',password:'isolated-development-password-b'}});

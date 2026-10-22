@@ -485,7 +485,14 @@ export function createRolecraftServer(options={}) {
     let requestIdForError='';
     try {
       const host=req.headers.host || '';
+      // Mode follows PUBLIC_DEPLOYMENT, the same switch that accepts a
+      // non-loopback Host. deploy/ecosystem.config.cjs sets it true for the
+      // public Lighthouse process. scripts/start-local.mjs does not, so a
+      // local run stays local-development. generation.configured is unchanged
+      // and still comes only from readiness(); this label does not select
+      // CloudBase versus the local SQLite file.
       const publicDeployment=process.env.PUBLIC_DEPLOYMENT==='true';
+      const deploymentMode=publicDeployment?'public-deployment':'local-development';
       if(!publicDeployment && !/^127\.0\.0\.1:\d+$/.test(host)) reject(400,'host_invalid','仅接受127.0.0.1本地地址');
       const forwardedProto=String(req.headers['x-forwarded-proto']||'http').split(',')[0].trim();
       const origin=`${forwardedProto==='https'?'https':'http'}://${host}`;
@@ -493,7 +500,7 @@ export function createRolecraftServer(options={}) {
       if(req.headers['sec-fetch-site']==='cross-site')reject(403,'origin_rejected','拒绝跨站请求');
       const u=new URL(req.url,origin), pathname=u.pathname, method=req.method;
       if(pathname.startsWith('/api/')) {
-        if(method==='GET' && pathname==='/api/health')return send(200,{productVersion:PRODUCT_VERSION,mode:'local-development',generation:await readiness(),contentRetrieval:getContentReadiness()});
+        if(method==='GET' && pathname==='/api/health')return send(200,{productVersion:PRODUCT_VERSION,mode:deploymentMode,generation:await readiness(),contentRetrieval:getContentReadiness()});
         if(method==='GET' && pathname==='/api/voice/readiness')return send(200,{voice:probeLocalAsr(),limitations:['仅本机配置的 whisper.cpp 与模型可用；不会自动下载模型或调用外部服务。']});
         if(method==='POST' && pathname==='/api/voice/transcribe'){
           const b=await body(req);
