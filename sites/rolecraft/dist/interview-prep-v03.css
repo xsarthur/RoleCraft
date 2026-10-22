@@ -6,8 +6,7 @@
 .interview-voice-speech-consent{display:flex;gap:8px;align-items:flex-start;padding:10px 12px;border:1px solid #e4c995;border-radius:8px;background:#fff8eb;color:#765224;font-size:11px;line-height:1.6}.interview-voice-speech-consent input{margin-top:3px;accent-color:#8b6231}
 .interview-voice-speech-support{padding:9px 11px;border:1px solid #cde4d8;border-radius:8px;background:#f1faf5;color:#28644f;font-size:11px;line-height:1.6}.interview-voice-speech-support.interview-voice-speech-unsupported{border-color:#edd9c3;background:#fff6ed;color:#9a552b}.interview-voice-speech-consent input:disabled{cursor:not-allowed;opacity:.55}.interview-voice-speech-consent:has(input:disabled){cursor:not-allowed;opacity:.8}
 .interview-voice-consent-prompt{display:grid;gap:10px;padding:18px;border:2px solid #9c7440;border-radius:12px;background:#fff8eb;box-shadow:0 10px 28px rgba(62,46,25,.12)}.interview-voice-consent-prompt h2{margin:0;font-size:18px}.interview-voice-consent-prompt p{color:#5f574c;font-size:12px;line-height:1.7}.interview-voice-consent-actions{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
-/* 语音练习：首屏只保留题目、状态、核心操作与转写；标题程序焦点保持可达但不绘制装饰框。 */
-.interview-voice-page h1:focus{outline:none!important;outline-offset:0}
+/* 语音练习标题与其他页一样：键盘焦点用壳体棕色描边，不再单独抹掉焦点样式。 */
 .interview-voice-advanced{margin:0;padding:0;border:0;color:#766e62;font-size:11px}
 .interview-voice-advanced summary{padding:4px 0;min-height:0;font-size:11px}
 .interview-voice-advanced .interview-voice-speech-consent{margin-top:5px}
