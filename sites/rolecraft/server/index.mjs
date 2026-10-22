@@ -501,6 +501,11 @@ export function createRolecraftServer(options={}) {
       const u=new URL(req.url,origin), pathname=u.pathname, method=req.method;
       if(pathname.startsWith('/api/')) {
         if(method==='GET' && pathname==='/api/health')return send(200,{productVersion:PRODUCT_VERSION,mode:deploymentMode,generation:await readiness(),contentRetrieval:getContentReadiness()});
+        // Thin read for mid-session textbook identity. Does not change the pinned corpus.
+        if(method==='GET' && pathname==='/api/content/identity'){
+          const readiness=getContentReadiness();
+          return send(200,{contentVersion:readiness.contentVersion||null,corpusVersion:readiness.corpusVersion||readiness.contentVersion||null,textbookVersionId:readiness.textbookVersionId||null,corpusHash:readiness.corpusHash||null,indexVersion:readiness.indexVersion||null,retrievalVersion:readiness.retrievalVersion||null,available:readiness.available===true,units:Number.isInteger(readiness.units)?readiness.units:null});
+        }
         if(method==='GET' && pathname==='/api/voice/readiness')return send(200,{voice:probeLocalAsr(),limitations:['仅本机配置的 whisper.cpp 与模型可用；不会自动下载模型或调用外部服务。']});
         if(method==='POST' && pathname==='/api/voice/transcribe'){
           const b=await body(req);
