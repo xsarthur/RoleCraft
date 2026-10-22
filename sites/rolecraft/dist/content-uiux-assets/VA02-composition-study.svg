@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="va02-title va02-desc">
+  <title id="va02-title">VA02 Composition Study — T-1042</title>
+  <desc id="va02-desc">T-1042 的列表、详情、审批三屏构图研究，比较三种构图方向，标出放弃方案与响应式规则。教学构造/未验证。</desc>
+  <rect width="1200" height="760" fill="#f5f7fb"/>
+  <text x="56" y="54" font-family="sans-serif" font-size="30" font-weight="700" fill="#17223b">T-1042 · 构图研究</text>
+  <text x="56" y="84" font-family="sans-serif" font-size="16" fill="#52617a">列表 / 详情 / 审批三屏｜三种方向｜教学构造 / 未验证</text>
+  <line x1="56" y1="106" x2="1144" y2="106" stroke="#ccd4e2"/>
+  <g font-family="sans-serif">
+    <!-- direction headers -->
+    <rect x="56" y="130" width="340" height="560" rx="14" fill="#fff" stroke="#b6c4e5"/>
+    <rect x="430" y="130" width="340" height="560" rx="14" fill="#fff" stroke="#b6c4e5"/>
+    <rect x="804" y="130" width="340" height="560" rx="14" fill="#fff" stroke="#b6c4e5"/>
+    <text x="80" y="166" font-size="20" font-weight="700" fill="#3457a6">方向 1 · 侧栏主导</text>
+    <text x="454" y="166" font-size="20" font-weight="700" fill="#3457a6">方向 2 · 分栏平衡</text>
+    <text x="828" y="166" font-size="20" font-weight="700" fill="#3457a6">方向 3 · 单列聚焦</text>
+    <!-- screen helper function represented manually -->
+    <!-- dir1 screens -->
+    <rect x="80" y="194" width="292" height="106" rx="8" fill="#eef3ff" stroke="#9db1e7"/>
+    <rect x="80" y="194" width="62" height="106" fill="#3457a6"/><rect x="154" y="212" width="190" height="12" fill="#7890cf"/><rect x="154" y="240" width="156" height="9" fill="#c2cee9"/><rect x="154" y="263" width="180" height="9" fill="#c2cee9"/>
+    <text x="88" y="323" font-size="15" fill="#52617a">列表：侧栏固定筛选</text>
+    <rect x="80" y="350" width="292" height="106" rx="8" fill="#fff7ec" stroke="#e8c28d"/>
+    <rect x="80" y="350" width="62" height="106" fill="#c97a2f"/><rect x="154" y="368" width="196" height="16" fill="#c97a2f"/><rect x="154" y="400" width="170" height="9" fill="#efd2ad"/><rect x="154" y="424" width="190" height="9" fill="#efd2ad"/>
+    <text x="88" y="479" font-size="15" fill="#52617a">详情：操作靠右上角</text>
+    <rect x="80" y="506" width="292" height="106" rx="8" fill="#f0f7f1" stroke="#a9c9ad"/>
+    <rect x="98" y="524" width="256" height="14" fill="#5c9563"/><rect x="98" y="552" width="180" height="9" fill="#b9d6bd"/><rect x="98" y="574" width="218" height="9" fill="#b9d6bd"/>
+    <text x="88" y="634" font-size="15" fill="#52617a">审批：状态带贯穿页首</text>
+    <text x="80" y="666" font-size="14" fill="#3457a6">适合：大量筛选；代价：窄屏拥挤</text>
+    <!-- dir2 -->
+    <rect x="454" y="194" width="292" height="106" rx="8" fill="#eef3ff" stroke="#9db1e7"/><rect x="474" y="212" width="82" height="68" fill="#7890cf"/><rect x="574" y="212" width="144" height="12" fill="#3457a6"/><rect x="574" y="240" width="120" height="9" fill="#c2cee9"/><rect x="574" y="263" width="136" height="9" fill="#c2cee9"/>
+    <text x="462" y="323" font-size="15" fill="#52617a">列表：结果与摘要对半</text>
+    <rect x="454" y="350" width="292" height="106" rx="8" fill="#fff7ec" stroke="#e8c28d"/><rect x="474" y="368" width="112" height="70" fill="#c97a2f"/><rect x="604" y="368" width="116" height="16" fill="#c97a2f"/><rect x="604" y="400" width="104" height="9" fill="#efd2ad"/><rect x="604" y="424" width="114" height="9" fill="#efd2ad"/>
+    <text x="462" y="479" font-size="15" fill="#52617a">详情：证据与动作同屏</text>
+    <rect x="454" y="506" width="292" height="106" rx="8" fill="#f0f7f1" stroke="#a9c9ad"/><rect x="474" y="524" width="240" height="14" fill="#5c9563"/><rect x="474" y="552" width="144" height="9" fill="#b9d6bd"/><rect x="634" y="552" width="80" height="30" fill="#79a981"/>
+    <text x="462" y="634" font-size="15" fill="#52617a">审批：证据列 + 决策列</text>
+    <text x="454" y="666" font-size="14" fill="#3457a6">适合：教学演示；代价：中屏需折叠</text>
+    <!-- dir3 -->
+    <rect x="828" y="194" width="292" height="106" rx="8" fill="#eef3ff" stroke="#9db1e7"/><rect x="848" y="212" width="252" height="14" fill="#3457a6"/><rect x="848" y="244" width="212" height="9" fill="#c2cee9"/><rect x="848" y="266" width="232" height="9" fill="#c2cee9"/>
+    <text x="836" y="323" font-size="15" fill="#52617a">列表：单列卡片与明确排序</text>
+    <rect x="828" y="350" width="292" height="106" rx="8" fill="#fff7ec" stroke="#e8c28d"/><rect x="848" y="368" width="252" height="16" fill="#c97a2f"/><rect x="848" y="400" width="224" height="9" fill="#efd2ad"/><rect x="848" y="424" width="242" height="9" fill="#efd2ad"/>
+    <text x="836" y="479" font-size="15" fill="#52617a">详情：证据先于动作</text>
+    <rect x="828" y="506" width="292" height="106" rx="8" fill="#f0f7f1" stroke="#a9c9ad"/><rect x="848" y="524" width="252" height="14" fill="#5c9563"/><rect x="848" y="552" width="224" height="9" fill="#b9d6bd"/><rect x="848" y="574" width="118" height="22" fill="#79a981"/>
+    <text x="836" y="634" font-size="15" fill="#52617a">审批：底部单一决策区</text>
+    <text x="828" y="666" font-size="14" fill="#3457a6">采用：响应式稳健；放弃：侧栏固定</text>
+  </g>
+  <g font-family="sans-serif">
+    <rect x="56" y="708" width="1088" height="32" rx="8" fill="#e9edf5"/>
+    <text x="72" y="730" font-size="14" fill="#52617a">响应式标注：≥1024px 三屏并列；768–1023px 详情/审批折叠；≤767px 单列，筛选与操作进入抽屉。放弃方案：固定侧栏（窄屏拥挤）｜教学构造 / 未验证</text>
+  </g>
+</svg>

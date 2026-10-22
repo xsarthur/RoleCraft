@@ -123,6 +123,61 @@ try {
   assert.equal(agent.body.catalog.corpusHash, agentCorpus);
   assert.equal(JSON.stringify(agent.body).includes('uiux-design-v02'), false);
 
+  const assets = catalog.body.catalog.assets;
+  assert.equal(Array.isArray(assets), true);
+  const requiredAssets = ['01-workbench-before-after.svg', 'v02-batch-a-01-role-evidence.svg', 'VA01-focus-scan.svg', 'VA02-composition-study.svg'];
+  for (const name of requiredAssets) {
+    const entry = assets.find(asset => asset.name === name);
+    assert.ok(entry, name);
+    assert.match(entry.sha256, /^[a-f0-9]{64}$/, name);
+    assert.match(entry.sourcePath, /^textbooks\/uiux-design-v0[23]\/assets\/[^/]+$/, name);
+    assert.equal(entry.href, `/api/content/assets/${name}?version=uiux-design-v02`, name);
+    assert.equal(entry.staticHref, `content-uiux-assets/${name}`, name);
+    assert.equal(entry.sourcePath.endsWith('/' + name), true, name);
+  }
+  assert.equal(new Set(assets.map(asset => asset.name)).size, assets.length);
+  assert.equal(assets.length >= requiredAssets.length, true);
+  const chapterAssets = chapter.body.chapter.assets;
+  assert.equal(chapterAssets.some(asset => asset.name === '03-refund-state-board.svg'), true);
+
+  async function readAsset(url) {
+    const response = await fetch(base + url);
+    const buffer = Buffer.from(await response.arrayBuffer());
+    return { status: response.status, type: response.headers.get('content-type'), buffer, text: buffer.toString('utf8') };
+  }
+  const figure = await readAsset('/api/content/assets/01-workbench-before-after.svg?version=uiux-design-v02');
+  assert.equal(figure.status, 200);
+  assert.equal(figure.type, 'image/svg+xml');
+  assert.equal(figure.text.startsWith('<svg'), true);
+  assert.equal(sha256(figure.buffer), assets.find(asset => asset.name === '01-workbench-before-after.svg').sha256);
+  assert.equal(figure.text.includes('OPENAI_API_KEY'), false);
+  const visual = await readAsset('/api/content/assets/VA01-focus-scan.svg?version=uiux-design-v02');
+  assert.equal(visual.status, 200);
+  assert.equal(visual.type, 'image/svg+xml');
+  const copied = await readAsset('/content-uiux-assets/01-workbench-before-after.svg');
+  assert.equal(copied.status, 200);
+  assert.match(copied.type, /^image\/svg\+xml/);
+  assert.equal(sha256(copied.buffer), sha256(figure.buffer));
+  const agentFigure = await readAsset('/api/content/assets/agent-runtime-loop.svg?version=textbook-v12');
+  assert.equal(agentFigure.status, 200);
+  assert.equal(agentFigure.type, 'image/svg+xml');
+  assert.equal(agentFigure.text.includes('<svg'), true);
+  const agentOnUiux = await readAsset('/api/content/assets/agent-runtime-loop.svg?version=uiux-design-v02');
+  assert.equal(agentOnUiux.status, 404);
+  const uiuxOnAgent = await readAsset('/api/content/assets/01-workbench-before-after.svg?version=textbook-v12');
+  assert.equal(uiuxOnAgent.status, 404);
+  const missingFigure = await readAsset('/api/content/assets/not-a-published-figure.svg?version=uiux-design-v02');
+  assert.equal(missingFigure.status, 404);
+  const lockedCatalog = await request('/api/content/catalog?version=uiux-design-v02');
+  assert.equal(lockedCatalog.status, 400);
+  assert.equal(lockedCatalog.body.error.code, 'content_version_invalid');
+  for (const blocked of ['/api/content/assets/..%2F..%2Fpackage.json?version=uiux-design-v02', '/api/content/assets/%2e%2e%2fpackage.json?version=uiux-design-v02', '/api/content/assets/01-workbench-before-after.svg/../../package.json?version=uiux-design-v02']) {
+    const escaped = await readAsset(blocked);
+    assert.ok([400, 403, 404].includes(escaped.status), blocked + ' -> ' + escaped.status);
+    assert.equal(escaped.text.includes('"dependencies"'), false, blocked);
+    assert.equal(escaped.text.includes('OPENAI_API_KEY'), false, blocked);
+  }
+
   const client = readFileSync(path.join(project, 'dist/learning-workbench.js'), 'utf8');
   for (const marker of ['保存草稿', '提交练习', '练习反馈', 'data-lw-career-practice-submit', '当前入口提供静态教材阅读']) assert.equal(client.includes(marker), true, marker);
   for (const banned of ['不等于能力认证', '职业认证', '诊断需实际完成']) assert.equal(client.includes(banned), false, banned);
