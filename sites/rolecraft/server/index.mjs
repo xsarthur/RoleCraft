@@ -110,6 +110,11 @@ export function createRolecraftServer(options={}) {
     if (!submissionColumns.has(name)) db.exec(`ALTER TABLE submissions ADD COLUMN ${name} ${type}`);
   }
   db.exec("CREATE UNIQUE INDEX IF NOT EXISTS submissions_version_identity ON submissions(user_id,practice_id,artifact_version) WHERE practice_id IS NOT NULL AND artifact_version IS NOT NULL");
+  // Live databases may already have users.account_type. Add it when missing so
+  // both the fresh 5-column schema and the extended schema accept the same INSERT.
+  // Existing rows keep their data; the default fills the new column.
+  const userColumns = new Set(db.prepare('PRAGMA table_info(users)').all().map(row=>row.name));
+  if (!userColumns.has('account_type')) db.exec("ALTER TABLE users ADD COLUMN account_type TEXT NOT NULL DEFAULT 'member'");
   const workerId=randomUUID();
   const leaseMs=Math.max(1000,Number(options.leaseMs || process.env.ROLECRAFT_LEASE_MS || 15000));
   let closed=false, busy=false;
@@ -585,7 +590,9 @@ export function createRolecraftServer(options={}) {
           if(pathname.endsWith('/register')) {
             const salt=randomBytes(16).toString('hex'), passwordHash=scryptSync(c.password,salt,64).toString('hex');
             if(one('SELECT id FROM users WHERE email=?',c.email))reject(409,'account_exists','该研发账户已存在');
-            const user={id:randomUUID(),email:c.email};run('INSERT INTO users VALUES(?,?,?,?,?)',user.id,user.email,passwordHash,salt,now());return send(201,newSession(user,res));
+            const user={id:randomUUID(),email:c.email};
+            run('INSERT INTO users(id,email,password_hash,salt,created_at,account_type) VALUES(?,?,?,?,?,?)',user.id,user.email,passwordHash,salt,now(),'member');
+            return send(201,newSession(user,res));
           }
           const user=one('SELECT * FROM users WHERE email=?',c.email);
           const candidate=scryptSync(c.password,user?.salt||'invalid-login-placeholder',64);
