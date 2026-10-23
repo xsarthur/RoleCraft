@@ -10,6 +10,7 @@
     mode: 'login',
     busy: false,
     searchError: '',
+    searchErrorCode: '',
     searchSeq: 0,
     searchTimer: null,
     searchController: null,
@@ -50,6 +51,10 @@
     user: state.me.user ? { ...state.me.user } : null,
     activeCareer: state.me.activeCareer ? { ...state.me.activeCareer } : null
   } : null;
+
+  function isContentVersionMismatch(error) {
+    return error?.code === 'content_version_mismatch' || error?.code === 'career_version_mismatch';
+  }
 
   function friendlyError(error) {
     if (isAbort(error)) return '请求已取消。';
@@ -185,7 +190,9 @@
     try { payload = await response.json(); } catch { /* an empty response is handled below */ }
     if (!response.ok) {
       const message = payload?.error?.message || (response.status >= 500 ? '服务暂时不可用，请稍后再试。' : '请求未完成，请稍后再试。');
-      throw Object.assign(new Error(message), { status: response.status, code: payload?.error?.code, payload });
+      const error = Object.assign(new Error(message), { status: response.status, code: payload?.error?.code, payload });
+      if (isContentVersionMismatch(error)) globalThis.LearningWorkbench?.noteContentVersionMismatch?.({ code: error.code, message });
+      throw error;
     }
     return payload;
   }
@@ -351,6 +358,7 @@
         if (!selected || state.selectionRequestId !== state.searchSeq || !state.careers.some(c => c.careerId === selected.careerId && c.contentVersion === selected.contentVersion && c.indexVersion === selected.indexVersion)) {
           resetCareerSelection();
           state.searchError = '';
+          state.searchErrorCode = '';
           notify('推荐结果已更新，请重新选择职业。');
           renderCareers();
           return;
@@ -392,6 +400,12 @@
         } catch (err) {
           confirm.disabled = false;
           confirm.textContent = '确认并切换职业';
+          if (isContentVersionMismatch(err)) {
+            state.searchError = friendlyError(err);
+            state.searchErrorCode = err.code;
+            state.careerStatus = 'unavailable';
+            renderCareers();
+          }
           notify(friendlyError(err));
         }
       });
@@ -403,6 +417,7 @@
         state.searchController = null;
         state.careers = [];
         state.searchError = '';
+        state.searchErrorCode = '';
         state.careerStatus = 'idle';
         state.careerClarification = null;
         state.lastCareerResult = null;
@@ -431,6 +446,7 @@
     const area = document.getElementById('rc-career-results');
     if (!area) return;
     if (state.busy) { area.innerHTML = '<div class="rc-agent-state rc-agent-loading" role="status"><span class="rc-agent-mark" aria-hidden="true">…</span><div><strong>Agent 正在理解你的目标</strong><p>正在检索已发布职业；旧结果不会覆盖本次请求。</p></div></div>'; return; }
+    if (state.searchError && isContentVersionMismatch({ code: state.searchErrorCode })) { area.innerHTML = globalThis.LearningWorkbench?.contentUpdateMarkup?.('alert') || '<div class="rc-agent-state rc-agent-update" role="alert"><span class="rc-agent-mark" aria-hidden="true">新</span><div><strong>教材已更新</strong><p>' + esc(state.searchError) + '</p><p>当前打开的页面可能仍显示旧正文，直到刷新。不会自动重载，提问仍可继续。</p><div class="lw-content-update-actions"><button type="button" class="primary" data-lw-content-refresh>刷新到新版</button><button type="button" class="outline" data-lw-content-export>先导出本机记录</button></div></div></div>'; return; }
     if (state.searchError) { area.innerHTML = '<div class="rc-agent-state rc-agent-error" role="alert"><span class="rc-agent-mark" aria-hidden="true">!</span><div><strong>职业推荐暂时不可用</strong><p>' + esc(state.searchError) + '</p><button type="button" class="outline" data-rc-retry-search>重试</button></div></div>'; return; }
     if (state.careerStatus === 'invalid_input') { area.innerHTML = '<div class="rc-agent-state rc-agent-error" role="alert"><span class="rc-agent-mark" aria-hidden="true">!</span><div><strong>请检查职业描述</strong><p>请输入 1—1200 字的职业目标或已有能力。</p></div></div>'; return; }
     if (state.careerStatus === 'needs_clarification' && state.careerClarification) {
@@ -463,6 +479,7 @@
     state.searchController = typeof AbortController === 'function' ? new AbortController() : null;
     state.busy = true;
     state.searchError = '';
+    state.searchErrorCode = '';
     state.careerStatus = 'retrieving';
     state.careerClarification = null;
     resetCareerSelection();
@@ -491,6 +508,7 @@
       if (isAbort(error) || sequence !== state.searchSeq) return;
       state.careers = [];
       state.careerStatus = error?.code === 'input_invalid' ? 'invalid_input' : 'unavailable';
+      state.searchErrorCode = error?.code || '';
       state.searchError = error?.code === 'input_invalid' ? '' : friendlyError(error);
       state.careerClarification = null;
       state.lastCareerResult = { requestId: requestKey, query: state.query.trim(), status: state.careerStatus, label: '职业目录匹配' };

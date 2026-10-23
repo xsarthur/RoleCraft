@@ -3,6 +3,10 @@
   'use strict';
   const VERSION = 'rolecraft-1.0';
   const CURRENT = 'textbook-v13';
+  const CUTOVER_SNOOZE_KEY = 'rolecraft-content-update-snooze';
+  const CUTOVER_SNOOZE_MS = 30 * 60 * 1000;
+  const CUTOVER_PROBE_MS = 7 * 60 * 1000;
+  const CUTOVER_MIN_GAP_MS = 20 * 1000;
   const STORE = 'rolecraft-reading-v13', PREVIOUS_STORE = 'rolecraft-learning-v12';
   const SESSION = 'rolecraft-content-dialog-v14';
   const DIALOG_AGENT_VERSION = 'agent-system-v0.12';
@@ -94,7 +98,8 @@
         local.task = { ...empty().task, ...t, state: ['not_started', 'in_progress', 'interrupted', 'browsed'].includes(t.state) ? t.state : 'not_started' };
       }
     }
-  } catch { storageError = '读取本浏览器学习记录失败。新输入仍可留在页面并导出。'; }
+  } catch (error) { storageError = error?.message === 'Record version mismatch' ? '已有阅读记录与当前教材版本不一致，已停止据此显示。不会把旧记录并入新教材。原值仍可导出。' : '读取本浏览器学习记录失败。新输入仍可留在页面并导出。'; }
+  let cutover = { comparison: null, apiMismatch: null, lastProbeAt: 0, probing: false, inflight: null, timer: 0 };
   function staticCorpus() {
     const c = globalThis.RolecraftContentV13, count = 30;
     if (!c || c.corpusVersion !== CURRENT || !Array.isArray(c.units) || c.units.length !== count || new Set(c.units.map(u => u.unitId)).size !== count || c.units.some((u, i) => u.order !== i + 1 || !u.bodyMarkdown || !Array.isArray(u.sections))) return null;
@@ -369,16 +374,18 @@
     try {
       if (location.protocol === 'file:') throw Error('当前页面需要通过本地服务加载职业教材。');
       const http = await fetch('/api/careers/' + encodeURIComponent(careerId) + '/content/catalog', { credentials: 'omit' });
-      if (!http.ok) throw Error('职业教材目录没有返回。');
+      if (!http.ok) throw await httpError(http, '职业教材目录没有返回。');
       const result = await http.json();
       if (careerState.requestId !== requestId) return;
       const version = result?.career?.contentVersion || result?.catalog?.corpusVersion || '';
       if (result?.career?.careerId !== careerId || !validCareerCatalog(result.catalog, version) || result.catalog.matchesManifest !== true) throw Error('职业教材来源与清单不一致，已停止显示正文。');
-      careerState = { ...careerState, status: 'ready', phase: 'ready', career: result.career, catalog: result.catalog, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), error: '', startedAt: 0, loadingChapterId: '' };
+      careerState = { ...careerState, status: 'ready', phase: 'ready', career: result.career, catalog: result.catalog, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), error: '', contentMismatch: false, startedAt: 0, loadingChapterId: '' };
       redrawCareerView();
     } catch (error) {
       if (careerState.requestId !== requestId) return;
-      careerState = { ...careerState, status: 'error', phase: 'error', error: error?.message || '职业教材目录加载失败。', catalog: null, chapters: new Map(), startedAt: 0, loadingChapterId: '' };
+      const mismatch = isContentVersionMismatch(error);
+      if (mismatch) noteContentVersionMismatch({ code: error.code, message: error.message });
+      careerState = { ...careerState, status: 'error', phase: 'error', error: mismatch ? contentUpdateCopy().detail : (error?.message || '职业教材目录加载失败。'), contentMismatch: mismatch, catalog: null, chapters: new Map(), startedAt: 0, loadingChapterId: '' };
       redrawCareerView();
     }
   }
@@ -416,14 +423,16 @@
       if (contentVersion !== CURRENT && catalog.matchesManifest !== true) throw Error('当前职业教材来源与清单不一致，已停止显示正文。');
       const chapters = new Map();
       for (const u of catalog.units) if (u.bodyMarkdown && Array.isArray(u.sections) && u.sections.some(s => s.bodyMarkdown)) chapters.set(u.unitId, { unit: u });
-      careerState = { ...careerState, status: 'ready', phase: 'ready', career: { ...career, ...result.career }, catalog, chapters, chapterRequests: new Map(), chapterErrors: new Map(), error: '', startedAt: 0, loadingChapterId: '' };
+      careerState = { ...careerState, status: 'ready', phase: 'ready', career: { ...career, ...result.career }, catalog, chapters, chapterRequests: new Map(), chapterErrors: new Map(), error: '', contentMismatch: false, startedAt: 0, loadingChapterId: '' };
       markLoaded(careerId);
       redrawCareerView();
       syncAccountRecords();
     } catch (error) {
       if (careerState.requestId !== requestId) return;
-      const message = error?.name === 'AbortError' ? '学习服务响应时间较长，请确认本地服务仍在运行后重试。' : (error?.message || '当前职业教材加载失败。');
-      careerState = { ...careerState, status: 'error', phase: 'error', error: message, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), startedAt: 0, loadingChapterId: '' };
+      const mismatch = isContentVersionMismatch(error);
+      if (mismatch) noteContentVersionMismatch({ code: error.code, message: error.message });
+      const message = error?.name === 'AbortError' ? '学习服务响应时间较长，请确认本地服务仍在运行后重试。' : (mismatch ? contentUpdateCopy().detail : (error?.message || '当前职业教材加载失败。'));
+      careerState = { ...careerState, status: 'error', phase: 'error', error: message, contentMismatch: mismatch, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), startedAt: 0, loadingChapterId: '' };
       redrawCareerView();
     } finally {
       clearTimeout(timeout);
@@ -444,7 +453,7 @@
         const api = globalThis.RolecraftAuthCareer?.api;
         const result = typeof api === 'function'
           ? await api(endpoint, { signal: chapterController?.signal })
-          : await fetch(endpoint, { credentials: 'omit', signal: chapterController?.signal }).then(async http => { if (!http.ok) throw Error('当前章节没有返回'); return http.json(); });
+          : await fetch(endpoint, { credentials: 'omit', signal: chapterController?.signal }).then(async http => { if (!http.ok) throw await httpError(http, '当前章节没有返回'); return http.json(); });
         const chapter = result?.chapter;
         if (careerState.requestId !== requestId) return;
         const expectedVersion = careerState.career?.contentVersion || CURRENT;
@@ -455,7 +464,11 @@
         redrawCareerView();
       } catch (error) {
         if (careerState.requestId !== requestId) return;
-        careerState.chapterErrors.set(unitId, error?.name === 'AbortError' ? '本章响应时间较长，请重试。' : (error?.message || '当前章节加载失败。'));
+        if (isContentVersionMismatch(error)) {
+          noteContentVersionMismatch({ code: error.code, message: error.message });
+          careerState.contentMismatch = true;
+          careerState.chapterErrors.set(unitId, contentUpdateCopy().detail);
+        } else careerState.chapterErrors.set(unitId, error?.name === 'AbortError' ? '本章响应时间较长，请重试。' : (error?.message || '当前章节加载失败。'));
         careerState.loadingChapterId = '';
         redrawCareerView();
       } finally {
@@ -548,6 +561,217 @@
     if (careerState.careerId === route.careerId && (careerState.status === 'ready' || careerState.status === 'loading')) return;
     loadPublicCareerCatalog(route.careerId);
   });
+  function isContentVersionMismatch(error) {
+    return error?.code === 'content_version_mismatch' || error?.code === 'career_version_mismatch' || error?.message === '问答与阅读资源的版本不一致，请重新加载。';
+  }
+  function careerErrorAction() { return careerState.contentMismatch ? 'content-refresh' : 'reload'; }
+  async function httpError(http, fallback) {
+    const payload = await http.json().catch(() => null);
+    const error = Error(payload?.error?.message || fallback);
+    error.status = http.status;
+    error.code = payload?.error?.code || '';
+    return error;
+  }
+  function localContentIdentity() {
+    const bundled = globalThis.RolecraftContentV13;
+    // Compare the in-memory bundled package. A soft refresh can keep this copy
+    // after the server has shipped a newer textbook.
+    return { contentVersion: CURRENT, corpusHash: typeof bundled?.corpusHash === 'string' ? bundled.corpusHash : '' };
+  }
+  function normalizeServerIdentity(payload) {
+    if (!payload || typeof payload !== 'object') return null;
+    const source = payload.contentRetrieval && typeof payload.contentRetrieval === 'object' ? payload.contentRetrieval : payload;
+    const contentVersion = typeof source.contentVersion === 'string' ? source.contentVersion : (typeof source.corpusVersion === 'string' ? source.corpusVersion : '');
+    if (!contentVersion && typeof source.corpusHash !== 'string') return null;
+    return {
+      contentVersion,
+      corpusVersion: typeof source.corpusVersion === 'string' ? source.corpusVersion : contentVersion,
+      textbookVersionId: typeof source.textbookVersionId === 'string' ? source.textbookVersionId : '',
+      corpusHash: typeof source.corpusHash === 'string' ? source.corpusHash : '',
+      indexVersion: typeof source.indexVersion === 'string' ? source.indexVersion : '',
+      available: source.available !== false
+    };
+  }
+  function compareContentIdentity(localIdentity, serverIdentity) {
+    const server = normalizeServerIdentity(serverIdentity);
+    if (!server || (!server.contentVersion && !server.corpusHash)) return { status: 'unknown', versionMismatch: false, hashMismatch: false, server };
+    const localVersion = String(localIdentity?.contentVersion || '');
+    const serverVersion = server.contentVersion || '';
+    const localHash = String(localIdentity?.corpusHash || '');
+    const serverHash = server.corpusHash || '';
+    const versionMismatch = Boolean(localVersion && serverVersion && localVersion !== serverVersion);
+    const hashMismatch = Boolean(localHash && serverHash && localHash !== serverHash);
+    return { status: versionMismatch || hashMismatch ? 'mismatch' : 'match', versionMismatch, hashMismatch, server };
+  }
+  function currentFingerprint() {
+    const server = cutover.comparison?.server || {};
+    return [cutover.comparison?.status || '', server.contentVersion || '', server.corpusHash || '', cutover.apiMismatch?.code || ''].join('|');
+  }
+  function readSnooze() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(CUTOVER_SNOOZE_KEY) || 'null');
+      if (!parsed || typeof parsed.until !== 'number' || typeof parsed.fingerprint !== 'string') return null;
+      return parsed;
+    } catch { return null; }
+  }
+  function snoozeActive() {
+    const snooze = readSnooze();
+    const fingerprint = currentFingerprint();
+    return Boolean(snooze && Date.now() < snooze.until && snooze.fingerprint === fingerprint && fingerprint !== '|||');
+  }
+  function contentUpdateVisible() {
+    return (cutover.comparison?.status === 'mismatch' || Boolean(cutover.apiMismatch)) && !snoozeActive();
+  }
+  function learnerEditionLabel(version) {
+    const match = /^textbook-v(\d+)$/.exec(String(version || ''));
+    return match ? '第 ' + match[1] + ' 版' : String(version || '');
+  }
+  function contentUpdateCopy() {
+    const local = localContentIdentity();
+    const server = cutover.comparison?.server;
+    const oldLabel = local.contentVersion || '当前会话';
+    const newLabel = server?.contentVersion || server?.corpusVersion || '';
+    const hashOnly = cutover.comparison?.status === 'mismatch' && !cutover.comparison.versionMismatch && cutover.comparison.hashMismatch;
+    const oldText = learnerEditionLabel(oldLabel) || '当前会话';
+    const newText = learnerEditionLabel(newLabel);
+    const title = newLabel && newLabel !== oldLabel ? '教材已更新（' + oldText + ' → ' + newText + '）' : hashOnly ? '教材已更新（' + oldText + '，内容已更换）' : '教材已更新';
+    const identity = newLabel && newLabel !== oldLabel ? '本机会话 ' + oldLabel + '，服务端 ' + newLabel + '。' : hashOnly ? '本机会话 ' + oldLabel + '，内容标识已更换。' : '';
+    const detail = identity + '当前打开的页面可能仍显示旧正文，直到刷新。不会自动重载，提问仍可继续。旧阅读记录不会并入新教材，可先导出。';
+    return { title, detail, oldLabel, newLabel };
+  }
+  function contentUpdateMarkup(kind) {
+    const copy = contentUpdateCopy();
+    const snooze = kind === 'banner' ? '<button class="outline" type="button" data-lw-content-snooze aria-label="稍后提醒，30 分钟后再显示">稍后提醒</button>' : '';
+    const actions = '<div class="lw-content-update-actions"><button class="primary" type="button" data-lw-content-refresh>刷新到新版</button><button class="outline" type="button" data-lw-content-export>先导出本机记录</button>' + snooze + '</div>';
+    if (kind === 'alert') return '<div class="lw-assistant-state lw-state-update" role="alert"><span class="lw-state-mark" aria-hidden="true">新</span><div><h3>' + esc(copy.title) + '</h3><p>' + esc(copy.detail) + '</p>' + actions + '</div></div>';
+    return '<span class="lw-content-update-mark" aria-hidden="true">新</span><div class="lw-content-update-copy"><strong>' + esc(copy.title) + '</strong><p>' + esc(copy.detail) + '</p></div>' + actions;
+  }
+  function ensureContentUpdateBanner() {
+    let node = document.getElementById('lw-content-update');
+    if (node) return node;
+    node = document.createElement('div');
+    node.id = 'lw-content-update';
+    node.className = 'lw-content-update';
+    node.setAttribute('role', 'region');
+    node.setAttribute('aria-label', '教材更新');
+    node.hidden = true;
+    const anchor = document.getElementById('save-status');
+    if (anchor?.parentNode) anchor.parentNode.insertBefore(node, anchor.nextSibling);
+    else if (document.body?.insertBefore) document.body.insertBefore(node, document.body.firstChild || null);
+    else document.body?.appendChild?.(node);
+    return node;
+  }
+  function syncTextbookFooter() {
+    const node = document.getElementById('rc-textbook-version');
+    if (!node) return;
+    const local = localContentIdentity();
+    const server = cutover.comparison?.server;
+    if (cutover.comparison?.status === 'mismatch' && server?.contentVersion) node.textContent = '本机会话教材 ' + local.contentVersion + ' · 服务端 ' + server.contentVersion + ' · 本浏览器保存 · ' + VERSION;
+    else if (cutover.comparison?.status === 'match' && server?.contentVersion) node.textContent = '本机会话教材 ' + local.contentVersion + ' · 与服务端一致 · 本浏览器保存 · ' + VERSION;
+  }
+  function renderContentUpdateBanner() {
+    const node = ensureContentUpdateBanner();
+    const visible = contentUpdateVisible();
+    node.hidden = !visible;
+    node.innerHTML = visible ? contentUpdateMarkup('banner') : '';
+    syncTextbookFooter();
+    return node;
+  }
+  function contentCutoverState() {
+    return { visible: contentUpdateVisible(), comparison: cutover.comparison ? { ...cutover.comparison, server: cutover.comparison.server ? { ...cutover.comparison.server } : null } : null, apiMismatch: cutover.apiMismatch ? { ...cutover.apiMismatch } : null, probeMs: CUTOVER_PROBE_MS, snoozeMs: CUTOVER_SNOOZE_MS, snoozed: snoozeActive() };
+  }
+  function applyServerIdentity(payload) {
+    const server = normalizeServerIdentity(payload);
+    if (!server) return contentCutoverState();
+    cutover.comparison = { ...compareContentIdentity(localContentIdentity(), server), at: Date.now() };
+    renderContentUpdateBanner();
+    return contentCutoverState();
+  }
+  function noteContentVersionMismatch(detail = {}) {
+    const code = detail?.code || 'content_version_mismatch';
+    if (code !== 'content_version_mismatch' && code !== 'career_version_mismatch' && detail?.message !== '问答与阅读资源的版本不一致，请重新加载。') return contentCutoverState();
+    cutover.apiMismatch = { code: code === 'career_version_mismatch' ? code : 'content_version_mismatch', message: typeof detail.message === 'string' ? detail.message : '', at: Date.now() };
+    renderContentUpdateBanner();
+    probeContentIdentity({ reason: 'api', force: true });
+    return contentCutoverState();
+  }
+  function unavailableFromError(error, requestId) {
+    if (isContentVersionMismatch(error)) {
+      noteContentVersionMismatch({ code: error?.code || 'content_version_mismatch', message: error?.message || '' });
+      const detail = contentUpdateCopy().detail;
+      return { status: 'unavailable', code: error?.code || 'content_version_mismatch', contentVersionMismatch: true, requestId: requestId || '', providerCalled: false, message: detail, dialog: { status: 'unavailable', answerMode: 'extractive', sentences: [], citations: [], scope: { relatedSegments: [], filteredSegments: [], contextUsed: null }, message: detail, context: null } };
+    }
+    return { status: 'unavailable', requestId: requestId || '', engineMode: location.protocol === 'file:' ? 'static_rules' : '', providerCalled: false, message: error?.name === 'AbortError' ? '本题未在限定时间内完成，可重试；不会用旧答代替。' : (error?.message || '教材问答资源没有就绪。你仍可通过目录阅读。') };
+  }
+  function snoozeContentUpdate() {
+    const fingerprint = currentFingerprint();
+    if (!fingerprint || fingerprint === '|||') return false;
+    try { localStorage.setItem(CUTOVER_SNOOZE_KEY, JSON.stringify({ until: Date.now() + CUTOVER_SNOOZE_MS, fingerprint })); }
+    catch { return false; }
+    renderContentUpdateBanner();
+    return true;
+  }
+  function hardRefreshToNewContent() {
+    // Changes the document URL so this navigation is not a silent reuse of the open page.
+    // Hash-busted learning-workbench.js / content-v*-data.js URLs are a follow-up:
+    // this process sends Cache-Control: no-store, but a front proxy can still keep those scripts.
+    try {
+      const next = new URL(location.href);
+      next.searchParams.set('rc_content', String(Date.now()));
+      location.replace(next.href);
+    } catch { location.reload(); }
+  }
+  function exportLocalLearningRecords() {
+    if (typeof globalThis.LearningExperienceV13?.exportAll === 'function') {
+      globalThis.LearningExperienceV13.exportAll();
+      notify('已导出本机阅读与练习记录。旧记录不会并入新教材。');
+      return;
+    }
+    captureNotes();
+    const keys = {};
+    try {
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && (key.startsWith('rolecraft-reading-') || key.startsWith('rolecraft-experience-') || key === STORE || key === PREVIOUS_STORE)) keys[key] = localStorage.getItem(key);
+      }
+    } catch { /* fall through to the in-memory record */ }
+    if (!Object.keys(keys).length) keys[STORE] = JSON.stringify(local);
+    const data = { schemaVersion: '1', clientVersion: VERSION, exportedAt: new Date().toISOString(), scope: '本浏览器阅读与练习记录，不是独立能力评价', keys, current: { corpusVersion: CURRENT, corpusHash: localContentIdentity().corpusHash || null, records: local } };
+    download(JSON.stringify(data, null, 2), '职造-本机学习记录.json', 'application/json;charset=utf-8');
+    notify('已导出本机阅读记录。旧记录不会并入新教材。');
+  }
+  function probeContentIdentity(options = {}) {
+    if (typeof location === 'undefined' || location.protocol === 'file:') return Promise.resolve(null);
+    const now = Date.now();
+    if (cutover.probing) return cutover.inflight || Promise.resolve(null);
+    if (!options.force && now - cutover.lastProbeAt < CUTOVER_MIN_GAP_MS) return cutover.inflight || Promise.resolve(null);
+    cutover.lastProbeAt = now;
+    cutover.probing = true;
+    const run = (async () => {
+      try {
+        let payload = null;
+        const identityHttp = await fetch('/api/content/identity', { cache: 'no-store', credentials: 'omit' });
+        if (identityHttp?.ok) payload = await identityHttp.json();
+        else if (identityHttp?.status === 404) {
+          const health = await fetch('/api/health', { cache: 'no-store', credentials: 'omit' });
+          if (health?.ok) payload = await health.json();
+        }
+        const server = normalizeServerIdentity(payload);
+        if (server && (server.contentVersion || server.corpusHash)) {
+          cutover.comparison = { ...compareContentIdentity(localContentIdentity(), server), at: Date.now() };
+          renderContentUpdateBanner();
+        }
+      } catch { /* a failed probe does not clear an existing mismatch */ }
+      finally { cutover.probing = false; }
+      return contentCutoverState();
+    })();
+    cutover.inflight = run;
+    return run;
+  }
+  function stopContentProbes() {
+    if (cutover.timer) clearInterval(cutover.timer);
+    cutover.timer = 0;
+  }
   function notify(message) {
     const node = document.getElementById('lw-status');
     if (node) node.textContent = message;
@@ -702,8 +926,12 @@
     return heading('职业学习', title, esc(description)) + '<section class="lw-loading-card" role="status" aria-live="polite" aria-atomic="true"><div class="lw-loading-mark" aria-hidden="true"><span></span></div><div class="lw-loading-copy"><strong>' + esc(labels[activeIndex]) + '…</strong><p>' + esc(firstLoad && !chapter ? '这是首次准备教材，内容较多，等待期间可以先不要操作。' : '连接保持中，完成后会自动显示内容。') + '</p><div class="lw-loading-track" aria-hidden="true"><span></span></div><ol class="lw-loading-steps">' + steps + '</ol></div></section><p class="lw-loading-note">如果超过两分钟仍没有变化，请确认本地学习服务正在运行，再使用失败页上的重试。</p>';
   }
   function errorPage(message, action = 'reload') {
-    const retry = action === 'chapter' ? '<button class="outline" data-lw-retry-chapter="' + esc(careerState.loadingChapterId || loc().unitId) + '">重试本章</button>' : '<button class="outline" data-lw-reload>重新加载</button>';
-    return heading('教材阅读', '教材资源暂不可用', esc(message)) + retry + '<a class="outline" href="#home">返回工作台</a>';
+    const retry = action === 'chapter'
+      ? '<button class="outline" data-lw-retry-chapter="' + esc(careerState.loadingChapterId || loc().unitId) + '">重试本章</button>'
+      : action === 'content-refresh'
+        ? contentUpdateMarkup('alert')
+        : '<button class="outline" data-lw-reload>重新加载</button>';
+    return heading('教材阅读', action === 'content-refresh' ? '教材已更新' : '教材资源暂不可用', esc(message)) + retry + (action === 'content-refresh' ? '' : '<a class="outline" href="#home">返回工作台</a>');
   }
   function startSelect() {
     return '<div class="lw-start"><label for="lw-starting-point">我的学习起点</label><select id="lw-starting-point"><option value="">尚未选择</option>' + Object.entries(STARTS).map(([id, label]) => '<option value="' + id + '"' + (local.startingPoint === id ? ' selected' : '') + '>' + label + '</option>').join('') + '</select><span>自选起点只记录阅读偏好</span></div>';
@@ -726,9 +954,9 @@
   }
   function homePage(routeOnly = false) {
     if (!corpus()) {
-      if (careerRoute()) return practiceLoopCard() + (careerState.status === 'error' ? errorPage(careerState.error || '当前职业教材没有完整加载。') : loadingPage());
+      if (careerRoute()) return practiceLoopCard() + (careerState.status === 'error' ? errorPage(careerState.error || '当前职业教材没有完整加载。', careerErrorAction()) : loadingPage());
       if (careerState.active && careerState.status === 'loading') return loadingPage();
-      return errorPage(careerState.active ? (careerState.error || '当前职业教材没有完整加载；不会用 Agent 教材替代。') : '当前 v13 教材包没有完整加载；不会使用其他版本替代。');
+      return errorPage(careerState.active ? (careerState.error || '当前职业教材没有完整加载；不会用 Agent 教材替代。') : '当前 v13 教材包没有完整加载；不会使用其他版本替代。', careerState.active ? careerErrorAction() : 'reload');
     }
     const progress = learningProgress(), latest = progress.latest, first = progress.first;
     const graphSection = first.sections.find(s => s.title === '一套可交付系统还需要哪些工程工作');
@@ -747,7 +975,7 @@
   function readerPage() {
     const location = loc(), c = corpus(location.version);
     if (!c) {
-      if (careerRoute()) return practiceLoopCard() + (careerState.status === 'error' ? errorPage(careerState.error || '当前职业教材没有完整加载。') : loadingPage());
+      if (careerRoute()) return practiceLoopCard() + (careerState.status === 'error' ? errorPage(careerState.error || '当前职业教材没有完整加载。', careerErrorAction()) : loadingPage());
       if (careerState.active && careerState.status === 'loading') return loadingPage();
       return errorPage('当前 v13 教材没有完整加载；不会替换为其他来源。');
     }
@@ -756,7 +984,7 @@
     if (dynamicCareer() && (!u.bodyMarkdown || !Array.isArray(u.sections) || u.sections.some(s => !s.bodyMarkdown))) {
       const chapterError = careerState.chapterErrors.get(location.unitId);
       if (!chapterError) requestCareerChapter(location.unitId);
-      return chapterError ? errorPage(chapterError, 'chapter') : loadingPage('chapter');
+      return chapterError ? errorPage(chapterError, careerState.contentMismatch ? 'content-refresh' : 'chapter') : loadingPage('chapter');
     }
     const s = section(u, location.sectionId), index = c.units.indexOf(u);
     const hiddenRanges = hiddenLearningContinuity(u), hiddenSection = id => hiddenRanges.some(range => range.sectionIds.includes(id));
@@ -790,11 +1018,11 @@
     return heading('实作与作品', '项目工坊', '先从一个版本化练习开始，再把证据、反馈和下一步分开保存。') + p01Form + '<div class="lw-project-layout"><section class="lw-project-form"><h2>我的项目档案</h2><p>记录保存在此浏览器，链接不自动访问或运行。</p><div class="lw-evidence-status" aria-label="项目证据状态"><span class="lw-evidence-chip self">' + selfReport + '</span><span class="lw-evidence-chip ' + (runtimeEvidence.endsWith('已提供') ? 'present' : 'missing') + '">' + runtimeEvidence + '</span><span class="lw-evidence-chip pending">独立评价：未开始</span></div>' + Object.entries(labels).map(([id, label]) => '<label for="lw-project-' + id + '">' + label + '</label>' + (id === 'title' ? '<input id="lw-project-' + id + '" data-lw-project="' + id + '" maxlength="12000" value="' + esc(local.project[id]) + '">' : '<textarea id="lw-project-' + id + '" data-lw-project="' + id + '" rows="4" maxlength="12000">' + esc(local.project[id]) + '</textarea>')).join('') + '<button class="primary" data-lw-save-project>保存项目档案</button><button class="outline" data-lw-export>导出记录</button><p class="lw-small">自述资料与运行证据分别记录；独立评价和专业审核不会由本页面自动完成。</p></section><aside class="lw-project-guide"><h2>按教材推进实作</h2>' + STAGES.map(st => '<section><h3>' + st.title + '</h3><p>' + st.output + '</p>' + st.ids.map(id => unitLink(unit(id))).join('') + '</section>').join('') + '<a href="#product-review">进入产品达标复盘 →</a><a href="#projects-history">查看历史项目记录 →</a></aside></div>';
   }
   function recordsPage() {
-    if (!corpus()) return careerState.active && careerState.status === 'loading' ? loadingPage() : errorPage(careerState.active ? (careerState.error || '当前职业教材没有完整加载，暂时无法核对学习记录。') : '教材版本未加载，无法核对记录中的阅读位置。');
+    if (!corpus()) return careerState.active && careerState.status === 'loading' ? loadingPage() : errorPage(careerState.active ? (careerState.error || '当前职业教材没有完整加载，暂时无法核对学习记录。') : '教材版本未加载，无法核对记录中的阅读位置。', careerState.active ? careerErrorAction() : 'reload');
     const visits = local.visits.filter(currentRecord).slice(-20).reverse(), bookmarks = local.bookmarks.filter(currentRecord);
     const link = v => '<a href="' + href(unit(v.unitId), v.sectionId) + '">' + esc(unit(v.unitId).navigationLabel) + (v.sectionId ? ' · ' + esc(section(unit(v.unitId), v.sectionId)?.title) : '') + '</a>';
     const history = dynamicCareer() ? '<p class="lw-small">当前职业记录按职业隔离；切换回原职业后再查看其他职业的记录。</p>' : '';
-    return heading('本浏览器的足迹', '学习记录', dynamicCareer() ? '当前职业的阅读、收藏和笔记按职业保存。' : '当前教材 v13。阅读、收藏和笔记不换算成完成率或能力等级。') + '<div class="lw-record-toolbar"><button class="outline" data-lw-export>导出当前学习记录</button><a href="#reflections">打开学习与员工复盘 →</a></div><section class="lw-record-section"><h2>当前职业收藏的位置</h2>' + (bookmarks.length ? '<ul>' + bookmarks.map(v => '<li>' + link(v) + '</li>').join('') + '</ul>' : '<p>还没有收藏。阅读时可以收藏当前章或小节。</p>') + '</section><section class="lw-record-section"><h2>当前职业最近阅读</h2>' + (visits.length ? '<ul>' + visits.map(v => '<li>' + link(v) + '<time>' + esc(new Date(v.at).toLocaleString('zh-CN')) + '</time></li>').join('') + '</ul>' : '<p>还没有打开过当前职业教材正文。</p>') + '</section><section class="lw-record-section"><h2>当前职业阅读笔记</h2>' + corpus().units.filter(u => noteText(u).trim()).map(u => '<details><summary>' + esc(u.navigationLabel) + '</summary><p class="lw-user-text">' + esc(noteText(u)) + '</p><a href="' + href(u) + '">回到本篇</a></details>').join('') + '</section>' + history + '<p class="lw-small">保存范围：本浏览器。记录不会换算成完成率或能力等级。</p>';
+    return heading('本浏览器的足迹', '学习记录', dynamicCareer() ? '当前职业的阅读、收藏和笔记按职业保存。' : '本机会话教材 ' + CURRENT + '。阅读、收藏和笔记不换算成完成率或能力等级。') + '<div class="lw-record-toolbar"><button class="outline" data-lw-export>导出当前学习记录</button><a href="#reflections">打开学习与员工复盘 →</a></div><section class="lw-record-section"><h2>当前职业收藏的位置</h2>' + (bookmarks.length ? '<ul>' + bookmarks.map(v => '<li>' + link(v) + '</li>').join('') + '</ul>' : '<p>还没有收藏。阅读时可以收藏当前章或小节。</p>') + '</section><section class="lw-record-section"><h2>当前职业最近阅读</h2>' + (visits.length ? '<ul>' + visits.map(v => '<li>' + link(v) + '<time>' + esc(new Date(v.at).toLocaleString('zh-CN')) + '</time></li>').join('') + '</ul>' : '<p>还没有打开过当前职业教材正文。</p>') + '</section><section class="lw-record-section"><h2>当前职业阅读笔记</h2>' + corpus().units.filter(u => noteText(u).trim()).map(u => '<details><summary>' + esc(u.navigationLabel) + '</summary><p class="lw-user-text">' + esc(noteText(u)) + '</p><a href="' + href(u) + '">回到本篇</a></details>').join('') + '</section>' + history + '<p class="lw-small">保存范围：本浏览器。记录不会换算成完成率或能力等级。</p>';
   }
   function canonicalTopic(value) {
     if (!value || value.corpusVersion !== CURRENT) return null;
@@ -827,6 +1055,7 @@
     const identity = { contentVersion: response?.contentVersion || response?.corpusVersion || '', textbookVersionId: response?.textbookVersionId || '', indexVersion: response?.indexVersion || '', corpusHash: response?.corpusHash || '' };
     const identityValue = value => esc(value || '服务未提供');
     const head = '<div class="lw-result-meta">' + (restoredResponse ? '<p class="lw-small">本会话此前问题' + (status === 'answered' ? ' · 已重新核对当前教材出处' : '') + '</p>' : '') + '<p><strong>已提交问题：</strong>' + esc(submission?.query || query) + '</p><span class="lw-mode">请求 ' + esc(response?.requestId || submission?.requestId || '未知') + ' · ' + esc(modeLabel(response)) + '</span><details class="lw-result-identity"><summary>查看本次版本身份</summary><p>教材版本：' + identityValue(identity.contentVersion) + '<br>教材身份：' + identityValue(identity.textbookVersionId) + '<br>索引版本：' + identityValue(identity.indexVersion) + '<br>语料 SHA256：' + identityValue(identity.corpusHash) + '</p></details></div>';
+    if (response?.contentVersionMismatch) return head + contentUpdateMarkup('alert');
     if (status === 'unavailable') return head + (isRuleFallback(response) ? '<div class="lw-fallback-notice" role="note"><strong>规则降级</strong><span>当前未调用外部模型；规则检索也未返回可核对结果。</span></div>' : '') + '<div class="lw-assistant-state lw-state-error" role="alert"><span class="lw-state-mark" aria-hidden="true">!</span><div><h3>检索暂时失败</h3><p>' + esc(d.message || response.message || response.error?.message || '教材问答资源没有就绪。你仍可通过目录阅读。') + '</p><div class="lw-state-actions"><button class="outline" data-lw-retry>重试本题</button><a href="#learn">打开课程目录</a></div></div></div>';
     if (status === 'invalid_input') return head + '<div class="lw-message"><h3>请检查输入</h3><p>' + esc(d.message || response.message || '请输入 1—1200 字的问题描述。') + '</p></div>';
     if (status === 'unrelated' || status === 'related_uncovered') return head + (isRuleFallback(response) ? '<div class="lw-fallback-notice" role="note"><strong>规则降级</strong><span>语义检索当前不可用，本次使用本地规则检查；没有匹配时不会编造教材答案。</span></div>' : '') + '<div class="lw-assistant-state lw-state-empty"><span class="lw-state-mark" aria-hidden="true">?</span><div><h3>没有找到匹配的教材内容</h3><p>' + esc(d.message || (status === 'unrelated' ? '这里只回答 Agent 职业学习相关问题。' : '当前教材没有足够依据回答这个问题。')) + '</p><p class="lw-small">可以换一种说法，或从课程目录确认教材覆盖范围。</p><div class="lw-examples"><button data-lw-example="ReAct是什么">换问：ReAct 是什么</button><button data-lw-example="如何验证 Agent 改动后的效果">换问：如何验证改动效果</button></div><a href="#learn">打开课程目录 →</a></div></div>';
@@ -922,7 +1151,7 @@
       if (response.dialog.status === 'answered') dialogTopic = canonicalTopic(response.dialog.context);
     } catch (error) {
       if (id !== requestId) return;
-      response = { status: 'unavailable', requestId: submitted.requestId, engineMode: location.protocol === 'file:' ? 'static_rules' : '', providerCalled: false, message: error.name === 'AbortError' ? '本题未在限定时间内完成，可重试；不会用旧答代替。' : error.message };
+      response = unavailableFromError(error, submitted.requestId);
     } finally {
       if (id === requestId) { pending = false; queryHistory = [{query: submitted.query, context: submitted.context, response, at: new Date().toISOString()}, ...queryHistory].slice(0,5); refreshAssistant(); }
     }
@@ -931,6 +1160,28 @@
   function clarificationRetryResponse() {
     return {status:'unavailable',engineMode:'',providerCalled:false,results:[],clarification:null,dialog:{status:'unavailable',answerMode:'extractive',sentences:[],citations:[],scope:{relatedSegments:[],filteredSegments:[],contextUsed:null},message:'此前澄清需要向当前服务重新确认。请点击“重试本题”获取当前选项。',context:null}};
   }
+  function revealContentUpdateActions(results) {
+    const actions = results?.querySelector?.('.lw-state-update .lw-content-update-actions');
+    const target = actions?.querySelector?.('[data-lw-content-refresh]') || actions;
+    if (!target || !results || typeof target.getBoundingClientRect !== 'function' || typeof results.getBoundingClientRect !== 'function') return;
+    const form = results.parentElement?.querySelector?.('form');
+    const limit = () => {
+      const box = results.getBoundingClientRect();
+      const formTop = typeof form?.getBoundingClientRect === 'function' ? form.getBoundingClientRect().top : box.bottom;
+      return { top: box.top, bottom: Math.min(box.bottom, formTop) };
+    };
+    const edge = limit();
+    if (!(edge.bottom > edge.top)) return;
+    const place = () => {
+      const bounds = limit();
+      const rect = target.getBoundingClientRect();
+      const overflow = rect.bottom - (bounds.bottom - 16);
+      if (overflow > 0) results.scrollTop += overflow;
+      const next = target.getBoundingClientRect();
+      if (next.top < bounds.top + 8) results.scrollTop -= bounds.top + 8 - next.top;
+    };
+    place();
+  }
   function refreshAssistant(preserveScroll = true) {
     const previousResults = document.getElementById('lw-find-results'); if (preserveScroll && previousResults && assistantOpen) assistantScroll = previousResults.scrollTop;
     try { sessionStorage.setItem(SESSION, JSON.stringify(sessionValue())); } catch { /* Reading and in-memory questions remain available. */ }
@@ -938,6 +1189,7 @@
     const focused = document.activeElement?.id === 'lw-query', submitFocused = document.activeElement?.id === 'lw-query-submit', input = focused ? document.getElementById('lw-query') : null, range = input ? [input.selectionStart, input.selectionEnd] : null;
     if (host) host.innerHTML = assistantHTML();
     const nextResults = document.getElementById('lw-find-results'); if (nextResults) nextResults.scrollTop = assistantScroll;
+    revealContentUpdateActions(nextResults);
     if (focused) { const next = document.getElementById('lw-query'); next?.focus({ preventScroll: true }); if (range && next?.setSelectionRange) next.setSelectionRange(range[0], range[1]); }
     else if (submitFocused) { const next = document.getElementById(pending ? 'lw-query' : 'lw-query-submit'); next?.focus({ preventScroll: true }); }
     syncBackgroundInert();
@@ -987,7 +1239,8 @@
     activeView = view;
     const isWorkbench = ['home', 'path', 'learn', 'records', 'projects'].includes(view);
     document.body.classList.toggle('lw-active', isWorkbench);
-    const banner = document.getElementById('save-status'); if (isWorkbench && banner) banner.textContent = storageError || (dynamicCareer() ? '当前教材 ' + (careerState.career?.contentVersion || '') + '；阅读记录保存在此浏览器。自动评分未接入。' : '当前教材 v13；新记录独立保存于本浏览器，未同步账户。');
+    const banner = document.getElementById('save-status'); if (isWorkbench && banner) banner.textContent = storageError || (dynamicCareer() ? '当前教材 ' + (careerState.career?.contentVersion || '') + '；阅读记录保存在此浏览器。自动评分未接入。' : '本机会话教材 ' + CURRENT + '；新记录独立保存于本浏览器，未同步账户。');
+    if (isWorkbench) probeContentIdentity({ reason: 'enter' });
     if (dynamicCareer() && careerState.career?.title) {
       const brand = document.querySelector('.brand strong span');
       if (brand) brand.textContent = careerState.career.title + '学习';
@@ -1037,6 +1290,9 @@
   }
   document.addEventListener('click', e => {
     const el = e.target.closest('button,a'); if (!el) return;
+    if (el.hasAttribute('data-lw-content-refresh')) { e.preventDefault(); hardRefreshToNewContent(); return; }
+    if (el.hasAttribute('data-lw-content-export')) { e.preventDefault(); exportLocalLearningRecords(); return; }
+    if (el.hasAttribute('data-lw-content-snooze')) { e.preventDefault(); snoozeContentUpdate(); return; }
     if (el.hasAttribute('data-lw-citation')) { e.preventDefault(); const card = document.getElementById('lw-citation-' + el.dataset.lwCitation); card?.focus({preventScroll:true}); card?.scrollIntoView({block:'nearest'}); return; }
     if (el.hasAttribute('data-lw-prereq-location')) { const title = document.getElementById('lw-prereq-title'); title?.focus({preventScroll:true}); title?.scrollIntoView({block:'start'}); return; }
     if (el.hasAttribute('data-lw-result')) { const results = document.getElementById('lw-find-results'); if (results) assistantScroll = results.scrollTop; assistantOpen = false; refreshAssistant(); return; }
@@ -1056,7 +1312,7 @@
       if (h) {
         if (h.response?.dialog?.status === 'needs_clarification' || h.response?.status === 'needs_clarification') { find(h.query, h.context); return; }
         ++requestId; controller?.abort(); pending = false; query = h.query; submission = {query: h.query, context: h.context};
-        try { response = validateResponse(h.response,submission); if (response.dialog.status === 'answered') dialogTopic = canonicalTopic(response.dialog.context); } catch(error) { response = {status:'unavailable',message:error.message}; }
+        try { response = validateResponse(h.response,submission); if (response.dialog.status === 'answered') dialogTopic = canonicalTopic(response.dialog.context); } catch(error) { response = unavailableFromError(error, submission?.requestId); }
         restoredResponse = true; assistantOpen = true; assistantScroll = 0; refreshAssistant(false);
       }
       return;
@@ -1137,19 +1393,24 @@
     const received = JSON.parse(sessionStorage.getItem(SESSION) || 'null');
     if (received && typeof received === 'object') {
       query = asText(received.query, 20000);
-      queryHistory = Array.isArray(received.queryHistory) ? received.queryHistory.filter(h=>h && typeof h.query==='string' && h.context?.corpusVersion===CURRENT && h.response).slice(0,5).map(h => { try { return {...h,response:validateResponse(h.response,{query:h.query,context:h.context})}; } catch(error) { return {...h,response:{status:'unavailable',message:error.message}}; } }) : [];
+      queryHistory = Array.isArray(received.queryHistory) ? received.queryHistory.filter(h=>h && typeof h.query==='string' && h.context?.corpusVersion===CURRENT && h.response).slice(0,5).map(h => { try { return {...h,response:validateResponse(h.response,{query:h.query,context:h.context})}; } catch(error) { return {...h,response:unavailableFromError(error)}; } }) : [];
       assistantOpen = received.assistantOpen === true;
       contextEnabled = received.contextEnabled === true; startingEnabled = received.startingEnabled !== false;
       submission = received.submission && typeof received.submission.query === 'string' && received.submission.context && typeof received.submission.context === 'object' ? received.submission : null;
       if (received.response && submission) {
         try { response = validateResponse(received.response, submission); if (response.dialog.status === 'needs_clarification') response = clarificationRetryResponse(); restoredResponse = true; }
-        catch (error) { response = { status: 'unavailable', message: error.message, providerCalled: false }; }
+        catch (error) { response = unavailableFromError(error, submission?.requestId); }
       }
       const topic = canonicalTopic(received.dialogTopic);
       if (topic && queryHistory.some(h => h.response?.dialog?.status === 'answered' && JSON.stringify(canonicalTopic(h.response.dialog.context)) === JSON.stringify(topic))) dialogTopic = topic;
     }
   } catch { /* A damaged query cache is not used as a recommendation. */ }
-  globalThis.LearningWorkbench = { version: VERSION, agentVersion: DIALOG_AGENT_VERSION, workbenchVersion: WORKBENCH_VERSION, page, mount, beforeRender, markdown, validateResponse, currentContext, refreshAssistant, careerContentState, shouldDelegateView, currentTask, setTask, induceCareerTask, careerTask: careerId => readCareerTask(careerId), careerTaskKey: CAREER_TASK_KEY, practice: () => local.practice, readingRecords: () => local, recordIsCurrent: currentRecord, recordsExportData: () => { captureNotes(); return { current: local }; } };
+  globalThis.LearningWorkbench = { version: VERSION, agentVersion: DIALOG_AGENT_VERSION, workbenchVersion: WORKBENCH_VERSION, page, mount, beforeRender, markdown, validateResponse, currentContext, refreshAssistant, careerContentState, shouldDelegateView, currentTask, setTask, induceCareerTask, careerTask: careerId => readCareerTask(careerId), careerTaskKey: CAREER_TASK_KEY, practice: () => local.practice, readingRecords: () => local, recordIsCurrent: currentRecord, recordsExportData: () => { captureNotes(); return { current: local }; }, compareContentIdentity, localContentIdentity, applyServerIdentity, noteContentVersionMismatch, probeContentIdentity, snoozeContentUpdate, hardRefreshToNewContent, exportLocalLearningRecords, contentUpdateMarkup, contentCutoverState, stopContentProbes };
   globalThis.addEventListener?.('resize', readerGeometry);
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') probeContentIdentity({ reason: 'visible' }); });
+  if (typeof setInterval === 'function') {
+    cutover.timer = setInterval(() => probeContentIdentity({ reason: 'interval' }), CUTOVER_PROBE_MS);
+    if (cutover.timer && typeof cutover.timer.unref === 'function') cutover.timer.unref();
+  }
   document.addEventListener('click', e => { if (assistantOpen && !e.target.closest('#lw-assistant-host,button,a,input,textarea,select,summary,dialog')) collapse(); });
 })();
