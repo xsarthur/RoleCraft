@@ -266,11 +266,11 @@ try {
   agentContext.globalThis = agentContext;
   agentContext.window = agentContext;
   vm.createContext(agentContext);
-  vm.runInContext(readFileSync(path.join(project, 'dist/content-v12-data.js'), 'utf8'), agentContext, { filename: 'content-v12-data.js' });
+  vm.runInContext(readFileSync(path.join(project, 'dist/content-v13-data.js'), 'utf8'), agentContext, { filename: 'content-v13-data.js' });
   vm.runInContext(readFileSync(path.join(project, 'dist/learning-workbench.js'), 'utf8'), agentContext, { filename: 'learning-workbench.js' });
   const agentReader = agentContext.LearningWorkbench.page('learn');
-  assert.match(agentReader, /<figure class="lw-figure"><button[^>]*><img src="\/api\/content\/assets\/agent-runtime-loop\.png\?version=textbook-v12"/);
-  assert.match(agentReader, /<img src="\/api\/content\/assets\/agent-engineering-landscape-v12\.png\?version=textbook-v12"/);
+  assert.match(agentReader, /<figure class="lw-figure"><button[^>]*><img src="\/api\/content\/assets\/agent-runtime-loop\.png\?version=textbook-v13"/);
+  assert.match(agentReader, /<img src="\/api\/content\/assets\/agent-engineering-landscape-v12\.png\?version=textbook-v13"/);
   assert.equal(agentReader.includes('uiux-design-v02'), false);
 
   const client = readFileSync(path.join(project, 'dist/learning-workbench.js'), 'utf8');
