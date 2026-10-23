@@ -1,17 +1,17 @@
 {
   "kind": "engineering_binding_not_independent_acceptance",
-  "builtAt": "2026-10-22T12:34:24.529Z",
+  "builtAt": "2026-10-23T12:03:53.496Z",
   "retrievalVersion": "content-retrieval-0.13-v13",
   "corpusVersion": "textbook-v13",
-  "corpusHash": "2fd680cb809aa2e3355222d4ce3ca09c06fdc361a21da4bb5afcbe09134035a5",
-  "bookSha256": "3824d796ccc4255e5572ce838e5215829268eac781ff8bb93df04b3ffb5b8964",
+  "corpusHash": "2d48b32b3337ee7d6499cd12b5f68b3f232a6fc142cedb2f65097559852bd032",
+  "bookSha256": "4aadd6f81c937dee45e94373ecace8b114e1455480075fa4f936a5f5f8498c3a",
   "units": 30,
   "sections": 349,
   "rollbackCorpus": "textbook-v12",
   "activeCurrent": "textbook-v13",
   "sourceBinding": {
     "assemblyManifestPath": "textbooks/v13/assembly-manifest.json",
-    "assemblyManifestSha256": "cba084776311e2cbdd3e72c878246b845d650024946b840186acf69f8bf3c6cb",
+    "assemblyManifestSha256": "6856b14464b182ea09eef7b804e1bdf3f334d7fba16e6590586e960e1e3fc8ef",
     "curriculumPath": "team/textbook-v13-workbench-curriculum.json",
     "curriculumSha256": "c1a76ab0f06837490dde7dd4a1d5635c3b6139b3aba61ebf18801f0e562f1499",
     "baseCurriculumPath": "team/textbook-v12-curriculum.json",
@@ -28,8 +28,8 @@
   },
   "passageVectors": {
     "corpusVersion": "textbook-v13",
-    "corpusHash": "2fd680cb809aa2e3355222d4ce3ca09c06fdc361a21da4bb5afcbe09134035a5",
-    "chunkHash": "c002081dcfd8b6201709daecca3abf20a85d36c2ff002a55d204da3ce9ff1b83",
+    "corpusHash": "2d48b32b3337ee7d6499cd12b5f68b3f232a6fc142cedb2f65097559852bd032",
+    "chunkHash": "025c503cb5b970cfedf7ac4db6f163bf298ce653d5d9bf0a2c6e78731c02d23e",
     "count": 679
   },
   "taskVectors": {
@@ -40,8 +40,8 @@
   "files": [
     {
       "path": "server/index.mjs",
-      "bytes": 90668,
-      "sha256": "3e0128c4bcd169225164d94a1ef7fe729c315edf10a63a2153697f6339fbea8b"
+      "bytes": 91790,
+      "sha256": "b914c3d812eb5eba11999a91279edc5e5df1f395af1a5125d2144a92c7932a39"
     },
     {
       "path": "server/careers.mjs",
@@ -101,27 +101,27 @@
     {
       "path": "dist/content-v13-data.js",
       "bytes": 1742883,
-      "sha256": "24c04d56a34230e8f9e3f06b47b64d577a8da1e3742e73f325aaf27d7e214b2b"
+      "sha256": "ac8192cfd6dfb727326546b56e20dab6e64775129f8a698a89050dc5a8929205"
     },
     {
       "path": "dist/learning-v13-data.js",
       "bytes": 848753,
-      "sha256": "2852d06e0c1ef5f9dcacdcd2d673c30568f41de58eca4a9b7e22ace0e53c42f1"
+      "sha256": "83e96b6df8b5dcb1e046b4934d8af49f488ef613a58a49d4611c7ffbffaef33c"
     },
     {
       "path": "dist/learning-workbench.js",
-      "bytes": 122723,
-      "sha256": "880ccb8034b1e49d26d180ec9036b76593352b80d4596feb7120f6de541431d8"
+      "bytes": 140913,
+      "sha256": "2b9de761d280fa86559c40157ce0e82f2c62e6740d915572ca6f84f49b62cb33"
     },
     {
       "path": "dist/learning-experience-v13.js",
-      "bytes": 37564,
-      "sha256": "f8f2005775f54e11c081b878efa7053dff3666bd82c71e1fc1150296af4f05fd"
+      "bytes": 38179,
+      "sha256": "e8f6b3ed564e07fe6841ccf6dae8dd98b0f70190f1cb7347ce21402743ee4618"
     },
     {
       "path": "dist/index.html",
-      "bytes": 5061,
-      "sha256": "d0e12a951909539346f8688d68496d7b46bebfabffe107c63515b3456d7210a2"
+      "bytes": 5107,
+      "sha256": "4ecca1af20cb7b319f76177468387d0d343f1245b7e9da2ee5e90237cb5a7d58"
     },
     {
       "path": "dist/app.js",
@@ -131,12 +131,12 @@
     {
       "path": "server/retrieval/content-v13-index.json",
       "bytes": 1785917,
-      "sha256": "2122892cb2e31d2c89e57aa3d9d2f0f2806824214f2bab421c77fb2697824271"
+      "sha256": "e9e125386458cb71e32c8bcc379046941bc147e2aac3e3e6d125711fd444aa3e"
     },
     {
       "path": "server/retrieval/vectors-v13.json",
-      "bytes": 7364053,
-      "sha256": "e735905e06c7033d3c635ecb3e063c44a344185b732b5ec14a0f5f0944b71da4"
+      "bytes": 7363759,
+      "sha256": "5c4a58551c674228dec22581ac5d31441074ec6f72983f74e08e791cb8bb8d8f"
     },
     {
       "path": "server/retrieval/intent-vectors-v13.json",
@@ -151,7 +151,7 @@
     {
       "path": "textbooks/v13/assembly-manifest.json",
       "bytes": 29931,
-      "sha256": "cba084776311e2cbdd3e72c878246b845d650024946b840186acf69f8bf3c6cb"
+      "sha256": "6856b14464b182ea09eef7b804e1bdf3f334d7fba16e6590586e960e1e3fc8ef"
     },
     {
       "path": "textbooks/v13/README.md",
@@ -161,7 +161,7 @@
     {
       "path": "textbooks/v13/agent-engineering-textbook.md",
       "bytes": 588291,
-      "sha256": "3824d796ccc4255e5572ce838e5215829268eac781ff8bb93df04b3ffb5b8964"
+      "sha256": "4aadd6f81c937dee45e94373ecace8b114e1455480075fa4f936a5f5f8498c3a"
     },
     {
       "path": "team/textbook-v13-workbench-curriculum.json",
@@ -176,22 +176,22 @@
     {
       "path": "textbooks/v13/00-learning-route.md",
       "bytes": 19002,
-      "sha256": "32b7312e4a15145d0fe17f542ae41753e4b7b4c1f897dc85cf758693a8b561ca"
+      "sha256": "e00ad4fbfb2726a0537e46afd92dbed664faa283b0d385b4fb9fdc0c5cd86211"
     },
     {
       "path": "textbooks/v13/01-foundation.md",
       "bytes": 12768,
-      "sha256": "4875c0ca7a8e7101f35d0674b4bd38aaca3151c1b3dcccb76dd0a9705b01df1d"
+      "sha256": "a955699e35de0ff89a6afa8306a9389b7afde4365283856fde7364864ac9c6c4"
     },
     {
       "path": "textbooks/v13/n01-python-model-foundations.md",
       "bytes": 19762,
-      "sha256": "bfa703048bd63e6694ed60c6f3da85eb889bf8a5a0e92629ab7b00b3a6ac7a4d"
+      "sha256": "2bd3e449eee97c98736ae8be757b7cd3f3eddc429b51c0afa79201213cce12be"
     },
     {
       "path": "textbooks/v13/p01-discovery.md",
       "bytes": 14641,
-      "sha256": "61a01b4eb21142ff09da2fcda93abbc188092b89c7bec79560a2d59b8238e9c9"
+      "sha256": "46dbed646fe1b032461b8e36988eb45aa1cc972e43ecd8f81a0cf153950fea0c"
     },
     {
       "path": "textbooks/v13/02-task-acceptance.md",
@@ -231,12 +231,12 @@
     {
       "path": "textbooks/v13/c02.md",
       "bytes": 24101,
-      "sha256": "a7fb8c3649a3394f818527bf9f3ea73b6f873fc78a16a7a913e2eedaf4efde74"
+      "sha256": "177e1a403b0998cdb49bef3afd66975c0945de308aba407efcaba2dbbcefb7bb"
     },
     {
       "path": "textbooks/v13/c03.md",
       "bytes": 26777,
-      "sha256": "686c9cb56f4b2841ac403c718841468e399753363e3af8b61de7642047907565"
+      "sha256": "c22f992ac6ba60c1fef559ee451a8d01359b9d8cf16c25128c8e310f1479da22"
     },
     {
       "path": "textbooks/v13/n04-tools-mcp.md",
@@ -324,24 +324,24 @@
       "sha256": "9308af07289f6bff79572cf21ffc57f0de86f4a0995e12cdc20031bb33786cc4"
     },
     {
-      "path": "textbooks/v13/assets/00-learning-route-demand-control-evidence-v01.svg",
-      "bytes": 1731,
-      "sha256": "66c449c243dda4081062a69a95564c41b9c8e1ebcafa937a35f5411ff1c4f4e7"
+      "path": "textbooks/v13/assets/00-learning-route-demand-control-evidence-v02.svg",
+      "bytes": 1892,
+      "sha256": "3937a6b1867b954a445e3025f0979dd6f0745c2af00a1db4a8e14bf5c36805e2"
     },
     {
-      "path": "dist/content-v13-assets/00-learning-route-demand-control-evidence-v01.svg",
-      "bytes": 1731,
-      "sha256": "66c449c243dda4081062a69a95564c41b9c8e1ebcafa937a35f5411ff1c4f4e7"
+      "path": "dist/content-v13-assets/00-learning-route-demand-control-evidence-v02.svg",
+      "bytes": 1892,
+      "sha256": "3937a6b1867b954a445e3025f0979dd6f0745c2af00a1db4a8e14bf5c36805e2"
     },
     {
-      "path": "textbooks/v13/assets/01-foundation-input-failure-map-v01.svg",
-      "bytes": 2074,
-      "sha256": "4ee9083580b572a39a4ccf2f5c223161c2307962fec967601bb961f3de290544"
+      "path": "textbooks/v13/assets/01-foundation-input-failure-map-v02.svg",
+      "bytes": 2224,
+      "sha256": "630e1012b8db5d6a554271de0658259703de94a19235a1cbdfcdc608e01bdac2"
     },
     {
-      "path": "dist/content-v13-assets/01-foundation-input-failure-map-v01.svg",
-      "bytes": 2074,
-      "sha256": "4ee9083580b572a39a4ccf2f5c223161c2307962fec967601bb961f3de290544"
+      "path": "dist/content-v13-assets/01-foundation-input-failure-map-v02.svg",
+      "bytes": 2224,
+      "sha256": "630e1012b8db5d6a554271de0658259703de94a19235a1cbdfcdc608e01bdac2"
     },
     {
       "path": "textbooks/v13/assets/02-task-acceptance-contract-map-v01.svg",
@@ -484,24 +484,24 @@
       "sha256": "a0b303ec96da491b7dfd9d49c5a44163a861a3af70e2972f854546f4eb86ce6e"
     },
     {
-      "path": "textbooks/v13/assets/c02-evidence-package-chain-v01.svg",
-      "bytes": 1762,
-      "sha256": "ef23436d8892c8bf9c2d66a9bdebf143b2c115e2e79dd2db1dac2eb94954bb21"
+      "path": "textbooks/v13/assets/c02-evidence-package-chain-v02.svg",
+      "bytes": 1909,
+      "sha256": "af7b1745d63ee669f77728a0ff1223fb5891d6295242c2c7d1c5cac26ad5d350"
     },
     {
-      "path": "dist/content-v13-assets/c02-evidence-package-chain-v01.svg",
-      "bytes": 1762,
-      "sha256": "ef23436d8892c8bf9c2d66a9bdebf143b2c115e2e79dd2db1dac2eb94954bb21"
+      "path": "dist/content-v13-assets/c02-evidence-package-chain-v02.svg",
+      "bytes": 1909,
+      "sha256": "af7b1745d63ee669f77728a0ff1223fb5891d6295242c2c7d1c5cac26ad5d350"
     },
     {
-      "path": "textbooks/v13/assets/c03-write-tool-authorization-ledger-v01.svg",
-      "bytes": 2068,
-      "sha256": "56bf2e7fe097245013ae342b63096c29b03854d41cd6d866a8b524e7c2fe9bff"
+      "path": "textbooks/v13/assets/c03-write-tool-authorization-ledger-v02.svg",
+      "bytes": 2218,
+      "sha256": "9642ad022dabcc3d3adbac0cf157e67d6d2eda27139c3e7d5a275f6c2cf67ba0"
     },
     {
-      "path": "dist/content-v13-assets/c03-write-tool-authorization-ledger-v01.svg",
-      "bytes": 2068,
-      "sha256": "56bf2e7fe097245013ae342b63096c29b03854d41cd6d866a8b524e7c2fe9bff"
+      "path": "dist/content-v13-assets/c03-write-tool-authorization-ledger-v02.svg",
+      "bytes": 2218,
+      "sha256": "9642ad022dabcc3d3adbac0cf157e67d6d2eda27139c3e7d5a275f6c2cf67ba0"
     },
     {
       "path": "textbooks/v13/assets/e01-overview-v01.svg",
@@ -594,14 +594,14 @@
       "sha256": "3f034c3acac3dd82fd67c6123a40560852cabbf421ce7cf040b465983f4849e3"
     },
     {
-      "path": "textbooks/v13/assets/n01-python-model-foundations-runtime-boundary-v01.svg",
-      "bytes": 1773,
-      "sha256": "c05c8452fdeab54e73a7b3465380b7a5ebd0b1213afb24d52c55351413521a49"
+      "path": "textbooks/v13/assets/n01-python-model-foundations-runtime-boundary-v02.svg",
+      "bytes": 1921,
+      "sha256": "a85ed4787246cc684b8c49b15ba9afb936f9d6833985a92d5aadf308e93b1a33"
     },
     {
-      "path": "dist/content-v13-assets/n01-python-model-foundations-runtime-boundary-v01.svg",
-      "bytes": 1773,
-      "sha256": "c05c8452fdeab54e73a7b3465380b7a5ebd0b1213afb24d52c55351413521a49"
+      "path": "dist/content-v13-assets/n01-python-model-foundations-runtime-boundary-v02.svg",
+      "bytes": 1921,
+      "sha256": "a85ed4787246cc684b8c49b15ba9afb936f9d6833985a92d5aadf308e93b1a33"
     },
     {
       "path": "textbooks/v13/assets/n02-context-memory-layers-map-v01.svg",
@@ -744,14 +744,14 @@
       "sha256": "1aa89312a96790e6a89647fa40399428c498f53dac2479793f81af9517d59657"
     },
     {
-      "path": "textbooks/v13/assets/p01-discovery-evidence-chain-v01.svg",
-      "bytes": 1744,
-      "sha256": "fcbf9eac310841386e406dc37ced3041d5bbb7c5110fb2ec29a5ac25c4de32cb"
+      "path": "textbooks/v13/assets/p01-discovery-evidence-chain-v02.svg",
+      "bytes": 1895,
+      "sha256": "68080b02228b891603c803437699c6614e5de771c404c52d2b4e073ae9a36374"
     },
     {
-      "path": "dist/content-v13-assets/p01-discovery-evidence-chain-v01.svg",
-      "bytes": 1744,
-      "sha256": "fcbf9eac310841386e406dc37ced3041d5bbb7c5110fb2ec29a5ac25c4de32cb"
+      "path": "dist/content-v13-assets/p01-discovery-evidence-chain-v02.svg",
+      "bytes": 1895,
+      "sha256": "68080b02228b891603c803437699c6614e5de771c404c52d2b4e073ae9a36374"
     },
     {
       "path": "textbooks/v13/assets/p01-mvp-visual-map-v01.svg",
@@ -826,7 +826,7 @@
     {
       "path": "dist/content-v13-references/agent-engineering-textbook.md",
       "bytes": 588291,
-      "sha256": "3824d796ccc4255e5572ce838e5215829268eac781ff8bb93df04b3ffb5b8964"
+      "sha256": "4aadd6f81c937dee45e94373ecace8b114e1455480075fa4f936a5f5f8498c3a"
     },
     {
       "path": "textbooks/v13/examples/README.md",
