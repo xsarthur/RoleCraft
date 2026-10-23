@@ -622,21 +622,27 @@
   function contentUpdateVisible() {
     return (cutover.comparison?.status === 'mismatch' || Boolean(cutover.apiMismatch)) && !snoozeActive();
   }
+  function learnerEditionLabel(version) {
+    const match = /^textbook-v(\d+)$/.exec(String(version || ''));
+    return match ? '第 ' + match[1] + ' 版' : String(version || '');
+  }
   function contentUpdateCopy() {
     const local = localContentIdentity();
     const server = cutover.comparison?.server;
     const oldLabel = local.contentVersion || '当前会话';
     const newLabel = server?.contentVersion || server?.corpusVersion || '';
     const hashOnly = cutover.comparison?.status === 'mismatch' && !cutover.comparison.versionMismatch && cutover.comparison.hashMismatch;
-    const title = newLabel && newLabel !== oldLabel ? '教材已更新（' + oldLabel + ' → ' + newLabel + '）' : hashOnly ? '教材已更新（' + oldLabel + '，内容已更换）' : '教材已更新';
-    const detail = '当前打开的页面可能仍显示旧正文，直到刷新。不会自动重载，提问仍可继续。旧阅读记录不会并入新教材，可先导出。';
+    const oldText = learnerEditionLabel(oldLabel) || '当前会话';
+    const newText = learnerEditionLabel(newLabel);
+    const title = newLabel && newLabel !== oldLabel ? '教材已更新（' + oldText + ' → ' + newText + '）' : hashOnly ? '教材已更新（' + oldText + '，内容已更换）' : '教材已更新';
+    const identity = newLabel && newLabel !== oldLabel ? '本机会话 ' + oldLabel + '，服务端 ' + newLabel + '。' : hashOnly ? '本机会话 ' + oldLabel + '，内容标识已更换。' : '';
+    const detail = identity + '当前打开的页面可能仍显示旧正文，直到刷新。不会自动重载，提问仍可继续。旧阅读记录不会并入新教材，可先导出。';
     return { title, detail, oldLabel, newLabel };
   }
   function contentUpdateMarkup(kind) {
     const copy = contentUpdateCopy();
-    const primary = kind === 'alert' ? '立即刷新' : '刷新到新版';
-    const snooze = kind === 'banner' ? '<button class="outline" type="button" data-lw-content-snooze>30 分钟后再提醒</button>' : '';
-    const actions = '<div class="lw-content-update-actions"><button class="primary" type="button" data-lw-content-refresh>' + esc(primary) + '</button><button class="outline" type="button" data-lw-content-export>先导出本机记录</button>' + snooze + '</div>';
+    const snooze = kind === 'banner' ? '<button class="outline" type="button" data-lw-content-snooze aria-label="稍后提醒，30 分钟后再显示">稍后提醒</button>' : '';
+    const actions = '<div class="lw-content-update-actions"><button class="primary" type="button" data-lw-content-refresh>刷新到新版</button><button class="outline" type="button" data-lw-content-export>先导出本机记录</button>' + snooze + '</div>';
     if (kind === 'alert') return '<div class="lw-assistant-state lw-state-update" role="alert"><span class="lw-state-mark" aria-hidden="true">新</span><div><h3>' + esc(copy.title) + '</h3><p>' + esc(copy.detail) + '</p>' + actions + '</div></div>';
     return '<span class="lw-content-update-mark" aria-hidden="true">新</span><div class="lw-content-update-copy"><strong>' + esc(copy.title) + '</strong><p>' + esc(copy.detail) + '</p></div>' + actions;
   }

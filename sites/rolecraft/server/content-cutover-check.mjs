@@ -204,26 +204,28 @@ try {
   assert.equal(banner.hidden, false);
   assert.equal(banner.role, 'region');
   assert.equal(banner.tag, 'div');
-  assert.match(banner.innerHTML, /教材已更新（textbook-v13 → textbook-v14）/);
+  assert.match(banner.innerHTML, /教材已更新（第 13 版 → 第 14 版）/);
+  assert.match(banner.innerHTML, /本机会话 textbook-v13，服务端 textbook-v14/);
   assert.match(banner.innerHTML, /当前打开的页面可能仍显示旧正文/);
   assert.match(banner.innerHTML, /不会自动重载，提问仍可继续/);
   assert.match(banner.innerHTML, /data-lw-content-refresh>刷新到新版/);
   assert.match(banner.innerHTML, /data-lw-content-export>先导出本机记录/);
-  assert.match(banner.innerHTML, /data-lw-content-snooze>30 分钟后再提醒/);
+  assert.match(banner.innerHTML, /data-lw-content-snooze[^>]*>稍后提醒/);
   assert.equal(banner.innerHTML.includes('<dialog'), false);
   assert.equal(banner.innerHTML.includes('showModal'), false);
   assert.equal(banner.innerHTML.includes('aria-modal'), false);
   assert.match(context.elements.get('rc-textbook-version').textContent, /本机会话教材 textbook-v13 · 服务端 textbook-v14/);
 
   const alertHtml = workbench.contentUpdateMarkup('alert');
-  assert.match(alertHtml, /data-lw-content-refresh>立即刷新/);
+  assert.match(alertHtml, /data-lw-content-refresh>刷新到新版/);
+  assert.equal(alertHtml.includes('立即刷新'), false);
   assert.equal(alertHtml.includes('data-lw-content-snooze'), false);
   assert.equal(alertHtml.includes('<dialog'), false);
   assert.match(alertHtml, /role="alert"/);
 
   const hashShown = workbench.applyServerIdentity({ contentVersion: 'textbook-v13', corpusHash: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', available: true });
   assert.equal(hashShown.comparison.hashMismatch, true);
-  assert.match(banner.innerHTML, /教材已更新（textbook-v13，内容已更换）/);
+  assert.match(banner.innerHTML, /教材已更新（第 13 版，内容已更换）/);
   workbench.applyServerIdentity({ contentVersion: 'textbook-v14', corpusHash: 'serverhash', available: true });
 
   assert.equal(workbench.snoozeContentUpdate(), true);
