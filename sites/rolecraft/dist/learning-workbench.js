@@ -1160,6 +1160,28 @@
   function clarificationRetryResponse() {
     return {status:'unavailable',engineMode:'',providerCalled:false,results:[],clarification:null,dialog:{status:'unavailable',answerMode:'extractive',sentences:[],citations:[],scope:{relatedSegments:[],filteredSegments:[],contextUsed:null},message:'此前澄清需要向当前服务重新确认。请点击“重试本题”获取当前选项。',context:null}};
   }
+  function revealContentUpdateActions(results) {
+    const actions = results?.querySelector?.('.lw-state-update .lw-content-update-actions');
+    const target = actions?.querySelector?.('[data-lw-content-refresh]') || actions;
+    if (!target || !results || typeof target.getBoundingClientRect !== 'function' || typeof results.getBoundingClientRect !== 'function') return;
+    const form = results.parentElement?.querySelector?.('form');
+    const limit = () => {
+      const box = results.getBoundingClientRect();
+      const formTop = typeof form?.getBoundingClientRect === 'function' ? form.getBoundingClientRect().top : box.bottom;
+      return { top: box.top, bottom: Math.min(box.bottom, formTop) };
+    };
+    const edge = limit();
+    if (!(edge.bottom > edge.top)) return;
+    const place = () => {
+      const bounds = limit();
+      const rect = target.getBoundingClientRect();
+      const overflow = rect.bottom - (bounds.bottom - 16);
+      if (overflow > 0) results.scrollTop += overflow;
+      const next = target.getBoundingClientRect();
+      if (next.top < bounds.top + 8) results.scrollTop -= bounds.top + 8 - next.top;
+    };
+    place();
+  }
   function refreshAssistant(preserveScroll = true) {
     const previousResults = document.getElementById('lw-find-results'); if (preserveScroll && previousResults && assistantOpen) assistantScroll = previousResults.scrollTop;
     try { sessionStorage.setItem(SESSION, JSON.stringify(sessionValue())); } catch { /* Reading and in-memory questions remain available. */ }
@@ -1167,6 +1189,7 @@
     const focused = document.activeElement?.id === 'lw-query', submitFocused = document.activeElement?.id === 'lw-query-submit', input = focused ? document.getElementById('lw-query') : null, range = input ? [input.selectionStart, input.selectionEnd] : null;
     if (host) host.innerHTML = assistantHTML();
     const nextResults = document.getElementById('lw-find-results'); if (nextResults) nextResults.scrollTop = assistantScroll;
+    revealContentUpdateActions(nextResults);
     if (focused) { const next = document.getElementById('lw-query'); next?.focus({ preventScroll: true }); if (range && next?.setSelectionRange) next.setSelectionRange(range[0], range[1]); }
     else if (submitFocused) { const next = document.getElementById(pending ? 'lw-query' : 'lw-query-submit'); next?.focus({ preventScroll: true }); }
     syncBackgroundInert();
