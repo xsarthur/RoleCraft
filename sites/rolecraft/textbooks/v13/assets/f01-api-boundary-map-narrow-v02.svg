@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 582" role="img" aria-labelledby="title desc">
+<title id="title">外部 API 四道边界（窄屏纵栈）</title>
+<desc id="desc">输入校验、授权、响应和业务一致性依次通过。窄屏一列一道边界。</desc>
+<defs><marker id="arr-n" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#64748b"/></marker></defs>
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="24" y="32" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="17" font-weight="700" fill="#17324d">先过边界，再成证据</text>
+<text x="24" y="54" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="13" fill="#475569">四道边界 · 纵栈</text>
+<rect x="36" y="80" width="328" height="88" rx="14" fill="#e8f1ff" stroke="#3973c6" stroke-width="2"/>
+<text x="200" y="114" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="17" font-weight="700" fill="#17324d">1 输入</text>
+<text x="200" y="142" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="13" fill="#17324d">类型、字段、范围 · 不合格：拒绝</text>
+<rect x="36" y="198" width="328" height="88" rx="14" fill="#fff3d6" stroke="#b7791f" stroke-width="2"/>
+<text x="200" y="232" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="17" font-weight="700" fill="#5f370e">2 授权</text>
+<text x="200" y="260" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="13" fill="#5f370e">身份与资源范围 · 不合格：拒绝</text>
+<rect x="36" y="316" width="328" height="88" rx="14" fill="#eee6ff" stroke="#7652a8" stroke-width="2"/>
+<text x="200" y="350" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="17" font-weight="700" fill="#3f2a61">3 响应</text>
+<text x="200" y="378" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="13" fill="#3f2a61">状态、大小、协议 · 超时：未知</text>
+<rect x="36" y="434" width="328" height="88" rx="14" fill="#e8f7ef" stroke="#2f855a" stroke-width="2"/>
+<text x="200" y="468" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="17" font-weight="700" fill="#174b2b">4 业务一致性</text>
+<text x="200" y="496" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="13" fill="#174b2b">对象、版本、哈希 · 通过：可引用</text>
+<line x1="200" y1="172" x2="200" y2="190" stroke="#64748b" stroke-width="3" marker-end="url(#arr-n)"/>
+<line x1="200" y1="290" x2="200" y2="308" stroke="#64748b" stroke-width="3" marker-end="url(#arr-n)"/>
+<line x1="200" y1="408" x2="200" y2="426" stroke="#64748b" stroke-width="3" marker-end="url(#arr-n)"/>
+<text x="24" y="566" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="13" fill="#64748b">设计稿 narrow-v02｜教学构造</text>
+</svg>

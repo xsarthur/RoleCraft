@@ -77,3 +77,19 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:none;text-dec
 input:focus,input:focus-visible,select:focus,select:focus-visible,textarea:focus,textarea:focus-visible{outline:none;border-color:var(--ink)}
 input[type=checkbox]:focus,input[type=checkbox]:focus-visible,input[type=radio]:focus,input[type=radio]:focus-visible,input[type=range]:focus,input[type=range]:focus-visible{outline:none;border-color:transparent;box-shadow:0 2px 0 0 var(--ink)}
 pre[tabindex]:focus-visible,.lw-table:focus-visible,.ia-table:focus-visible,.v13-map-viewport:focus-visible{outline:none;box-shadow:inset 3px 0 0 var(--ink)}
+
+/* VC1 inline readability: wide flows pan inside the figure on desk/tablet.
+   min-width follows the SVG viewBox so label size is not faked with min-height.
+   <=640px keeps the vertical-stack asset at the column width. */
+.lw-figure>button{width:100%}
+.lw-figure picture{display:block;width:100%}
+@media (min-width:641px){
+  .lw-figure.lw-figure-pan>button{overflow-x:auto;overflow-y:hidden;max-width:100%}
+  .lw-figure.lw-figure-pan>button picture,
+  .lw-figure.lw-figure-pan>button img{width:var(--lw-figure-min,1200px);min-width:var(--lw-figure-min,1200px);max-width:none;height:auto}
+}
+@media (max-width:640px){
+  .lw-figure.lw-figure-pan>button{overflow:hidden}
+  .lw-figure.lw-figure-pan>button picture,
+  .lw-figure.lw-figure-pan>button img{width:100%;min-width:0;max-width:100%;height:auto}
+}

@@ -16,7 +16,7 @@
     unitId: 'p01-mvp',
     textbookVersion: 'textbook-v13',
     sourcePath: 'sites/rolecraft/textbooks/v13/p01-mvp.md',
-    sourceSha256: '1462df664a2c3d31dc54957f47c3ddf3508ee0eb364f898c309171e3d520b916',
+    sourceSha256: '472be4f44db9d5900542dfa8602ab430e2dc2b8f286679381bf913642da2e620',
     fixtureId: 'defect-mvp-contract-01',
     reviewScope: 'limited_to_constructed_fixture'
   });
@@ -822,6 +822,25 @@
     const reference = c?.references?.find(r => r.name === name && !value.includes('/'));
     return reference ? (location.protocol === 'file:' ? reference.staticHref : reference.href || reference.staticHref) : '';
   }
+  function narrowSiblingName(name) {
+    if (!name || !/-v\d+\.svg$/i.test(name) || /-narrow-v\d+\.svg$/i.test(name)) return '';
+    return name.replace(/-v\d+\.svg$/i, '-narrow-v02.svg');
+  }
+  function figureMarkup(url, label, assetName, version) {
+    const entry = corpus(version)?.assets?.find(item => item.name === assetName);
+    const narrowUrl = asset(narrowSiblingName(assetName), version);
+    const width = Number(entry?.viewBoxWidth) || 0;
+    const height = Number(entry?.viewBoxHeight) || 0;
+    // Desk/tablet pan is temporary for wide flows. Narrow pass uses the vertical-stack asset.
+    const wide = width >= 1200 || (width > 0 && height > 0 && width / height >= 4);
+    const figureClass = wide ? 'lw-figure lw-figure-pan' : 'lw-figure';
+    const style = wide ? ' style="--lw-figure-min:' + Math.round(width) + 'px"' : '';
+    const narrowAttr = narrowUrl ? ' data-lw-image-narrow="' + esc(narrowUrl) + '"' : '';
+    const image = narrowUrl
+      ? '<picture><source media="(max-width: 640px)" srcset="' + esc(narrowUrl) + '"><img src="' + esc(url) + '" alt="' + esc(label) + '" loading="lazy"></picture>'
+      : '<img src="' + esc(url) + '" alt="' + esc(label) + '" loading="lazy">';
+    return '<figure class="' + figureClass + '"' + style + '><button type="button" data-lw-image="' + esc(url) + '"' + narrowAttr + ' data-lw-alt="' + esc(label) + '" aria-label="查看原图（可选）：' + esc(label) + '">' + image + '</button><figcaption><button type="button" data-lw-image="' + esc(url) + '"' + narrowAttr + ' data-lw-alt="' + esc(label) + '">查看原图</button></figcaption></figure>';
+  }
   function inline(text, u) {
     const values = [], token = html => '\u0001' + (values.push(html) - 1) + '\u0002';
     // Text is always escaped; only code, emphasis and whitelisted public links gain markup.
@@ -830,7 +849,7 @@
     t = t.replace(/(!?)\[([^\]\n]*)\]\(([^\s)]+)(?:\s+"[^"]*")?\)/g, (_, img, label, raw) => {
       const url = resolveLink(raw, u, !!img);
       if (!url) return token('<span class="lw-unavailable-link">' + esc(label) + ' <small>（参考位置暂未提供）</small></span>');
-      if (img) return token('<figure class="lw-figure"><button type="button" data-lw-image="' + esc(url) + '" data-lw-alt="' + esc(label) + '" aria-label="放大查看：' + esc(label) + '"><img src="' + esc(url) + '" alt="' + esc(label) + '" loading="lazy"></button><figcaption><button type="button" data-lw-image="' + esc(url) + '" data-lw-alt="' + esc(label) + '">放大查看</button></figcaption></figure>');
+      if (img) return token(figureMarkup(url, label, linkedAssetName(raw), unitVersion(u)));
       return token('<a href="' + esc(url) + '"' + (/^https?:/.test(url) ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' + esc(label) + '</a>');
     });
     t = esc(t).replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/(?<!\*)\*([^*]+)\*(?!\*)/g, '<em>$1</em>');
@@ -1252,7 +1271,7 @@
     host.hidden = view === 'generation' || view === 'settings'; refreshAssistant();
     let status = document.getElementById('lw-status'); if (!status) { status = document.createElement('div'); status.id = 'lw-status'; status.className = 'lw-status'; status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite'); document.body.appendChild(status); }
     if (!document.getElementById('lw-image-dialog')) {
-      const d = document.createElement('dialog'); d.id = 'lw-image-dialog'; d.setAttribute('aria-label', '放大教学图'); d.innerHTML = '<div class="lw-image-top"><strong>教学图原图</strong><div><button class="outline" data-lw-image-size>切换原尺寸</button><button class="outline" data-lw-close-image>关闭</button></div></div><div class="lw-image-scroll"><img alt=""></div><p>默认查看全貌；切换原尺寸后可横向与纵向滚动查看细节。按 Esc 关闭。</p>'; document.body.appendChild(d);
+      const d = document.createElement('dialog'); d.id = 'lw-image-dialog'; d.setAttribute('aria-label', '教学图原图（可选）'); d.innerHTML = '<div class="lw-image-top"><strong>教学图原图</strong><div><button class="outline" data-lw-image-size>切换原尺寸</button><button class="outline" data-lw-close-image>关闭</button></div></div><div class="lw-image-scroll"><img alt=""></div><p>可选增强，正文里的图不依赖此窗口。切换原尺寸后可滚动查看细节。按 Esc 关闭。</p>'; document.body.appendChild(d);
       d.addEventListener('close', () => trigger?.isConnected && trigger.focus({ preventScroll: true }));
     }
     cancelAnimationFrame(focusFrame);
@@ -1296,7 +1315,7 @@
     if (el.hasAttribute('data-lw-citation')) { e.preventDefault(); const card = document.getElementById('lw-citation-' + el.dataset.lwCitation); card?.focus({preventScroll:true}); card?.scrollIntoView({block:'nearest'}); return; }
     if (el.hasAttribute('data-lw-prereq-location')) { const title = document.getElementById('lw-prereq-title'); title?.focus({preventScroll:true}); title?.scrollIntoView({block:'start'}); return; }
     if (el.hasAttribute('data-lw-result')) { const results = document.getElementById('lw-find-results'); if (results) assistantScroll = results.scrollTop; assistantOpen = false; refreshAssistant(); return; }
-    if (el.hasAttribute('data-lw-image')) { trigger = el; const d = document.getElementById('lw-image-dialog'), image = d.querySelector('img'); image.src = el.dataset.lwImage; image.alt = el.dataset.lwAlt || 'Agent 教学图'; d.classList.remove('is-original'); d.querySelector('[data-lw-image-size]').textContent = '切换原尺寸'; d.showModal(); d.querySelector('[data-lw-close-image]').focus(); return; }
+    if (el.hasAttribute('data-lw-image')) { trigger = el; const d = document.getElementById('lw-image-dialog'), image = d.querySelector('img'); const narrow = el.dataset.lwImageNarrow; const useNarrow = Boolean(narrow && globalThis.matchMedia && globalThis.matchMedia('(max-width: 640px)').matches); image.src = useNarrow ? narrow : el.dataset.lwImage; image.alt = el.dataset.lwAlt || 'Agent 教学图'; d.classList.remove('is-original'); d.querySelector('[data-lw-image-size]').textContent = '切换原尺寸'; d.showModal(); d.querySelector('[data-lw-close-image]').focus(); return; }
     if (el.hasAttribute('data-lw-image-size')) { const d = document.getElementById('lw-image-dialog'); d.classList.toggle('is-original'); el.textContent = d.classList.contains('is-original') ? '适配全貌' : '切换原尺寸'; return; }
     if (el.hasAttribute('data-lw-close-image')) { document.getElementById('lw-image-dialog').close(); return; }
     if (el.hasAttribute('data-lw-toggle')) { trigger = el; assistantOpen = !assistantOpen; refreshAssistant(); if (assistantOpen) document.getElementById('lw-query')?.focus(); return; }

@@ -53,13 +53,18 @@ const units=assembly.order.map((unitId,index)=>{
 const bundlePath='textbooks/v13/agent-engineering-textbook.md',bookSha256=sha(readSource(bundlePath));
 const referencedAssets=new Set();
 for(const unit of units){for(const match of unit.bodyMarkdown.matchAll(/(?:^|[(\s`])assets\/([-a-z0-9]+\.(?:png|svg|dot))(?=$|[)\s`])/gm))referencedAssets.add(match[1]);}
+// Narrow siblings are published from the assembly manifest even when the chapter
+// markdown keeps a single desk image. The workbench switches them at <=640px.
+for(const asset of assembly.assets){const name=path.posix.basename(asset.path);if(/-narrow-v02\.svg$/.test(name))referencedAssets.add(name);}
 if(!referencedAssets.size)throw Error('v13 corpus has no publishable figures');
+const svgViewBox=raw=>{const match=raw.toString('utf8').match(/viewBox\s*=\s*["']\s*[-\d.]+\s+[-\d.]+\s+([-\d.]+)\s+([-\d.]+)\s*["']/);if(!match)return null;const viewBoxWidth=Number(match[1]),viewBoxHeight=Number(match[2]);return Number.isFinite(viewBoxWidth)&&Number.isFinite(viewBoxHeight)&&viewBoxWidth>0&&viewBoxHeight>0?{viewBoxWidth,viewBoxHeight}:null;};
 mkdirSync(path.join(project,'dist/content-v13-assets'),{recursive:true});
 const assets=[...referencedAssets].sort().map(name=>{
  const sourcePath='textbooks/v13/assets/'+name,raw=readSource(sourcePath),digest=sha(raw);
  if(assetHash.has(name)&&assetHash.get(name)!==digest)throw Error('v13 asset hash differs: '+name);
  copyFileSync(path.join(project,sourcePath),path.join(project,'dist/content-v13-assets',name));
- return {name,sourcePath,sha256:digest,href:'/api/content/assets/'+name+'?version=textbook-v13',staticHref:'content-v13-assets/'+name};
+ const box=name.endsWith('.svg')?svgViewBox(raw):null;
+ return {name,sourcePath,sha256:digest,...(box||{}),href:'/api/content/assets/'+name+'?version=textbook-v13',staticHref:'content-v13-assets/'+name};
 });
 const exampleNames=['n01-runtime-boundaries.py','n02-memory-routing.py','n03-plan-execution.py','n04-tool-catalog.py','n05-index-lifecycle.py','n06-graph-contracts.py','n06-graph.py','n07-delegation.py','n08-sandbox-policy.py','n09-memory-diagnostic.py','n09-runtime-recovery.py','n10-evaluation-matrix.py'];
 const resources=[

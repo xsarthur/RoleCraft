@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 740" role="img" aria-labelledby="t d">
+<title id="t">固定流程如何完成受控交付：阅读总览（窄屏纵栈）</title>
+<desc id="d">报告 → 固定映射 → 候选 → 批准 → 写入 → 核对。窄屏一列一主节点，自上而下推进。颜色辅助区分起点、处理中间步骤和结论。箭头完全落在节点间距内，不被节点遮盖。</desc>
+<defs>
+  <marker id="arrow-n" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+    <path d="M0,0 L8,4 L0,8 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<!-- title / subtitle -->
+<text x="24" y="34" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">固定流程如何完成受控交付</text>
+<text x="24" y="56" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="12" fill="#475569">先看证据推进，再阅读正文机制与失败分支</text>
+<!-- nodes first; column x=40 w=320; node h=64; vertical gutter=44 -->
+<!-- 1 报告 y=80 -->
+<rect x="40" y="80" width="320" height="64" rx="14" fill="#0f766e" stroke="#334155" stroke-width="2"/>
+<text x="64" y="118" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" font-weight="700" fill="#99f6e4">1</text>
+<text x="200" y="120" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="18" font-weight="600" fill="#fff">报告</text>
+<!-- 2 固定映射 y=188 -->
+<rect x="40" y="188" width="320" height="64" rx="14" fill="#e0f2fe" stroke="#334155" stroke-width="2"/>
+<text x="64" y="226" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" font-weight="700" fill="#0369a1">2</text>
+<text x="200" y="228" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">固定映射</text>
+<!-- 3 候选 y=296 -->
+<rect x="40" y="296" width="320" height="64" rx="14" fill="#e0f2fe" stroke="#334155" stroke-width="2"/>
+<text x="64" y="334" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" font-weight="700" fill="#0369a1">3</text>
+<text x="200" y="336" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">候选</text>
+<!-- 4 批准 y=404 -->
+<rect x="40" y="404" width="320" height="64" rx="14" fill="#e0f2fe" stroke="#334155" stroke-width="2"/>
+<text x="64" y="442" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" font-weight="700" fill="#0369a1">4</text>
+<text x="200" y="444" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">批准</text>
+<!-- 5 写入 y=512 -->
+<rect x="40" y="512" width="320" height="64" rx="14" fill="#e0f2fe" stroke="#334155" stroke-width="2"/>
+<text x="64" y="550" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" font-weight="700" fill="#0369a1">5</text>
+<text x="200" y="552" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">写入</text>
+<!-- 6 核对 y=620 -->
+<rect x="40" y="620" width="320" height="64" rx="14" fill="#0f766e" stroke="#334155" stroke-width="2"/>
+<text x="64" y="658" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" font-weight="700" fill="#99f6e4">6</text>
+<text x="200" y="660" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="18" font-weight="600" fill="#fff">核对</text>
+<!-- arrows last; vertical gutters; y2 = next.top - 8 -->
+<!-- gutter 144→188 (=44); arrow from 144+4 to 188-8=180 -->
+<line x1="200" y1="148" x2="200" y2="180" stroke="#64748b" stroke-width="3" marker-end="url(#arrow-n)"/>
+<line x1="200" y1="256" x2="200" y2="288" stroke="#64748b" stroke-width="3" marker-end="url(#arrow-n)"/>
+<line x1="200" y1="364" x2="200" y2="396" stroke="#64748b" stroke-width="3" marker-end="url(#arrow-n)"/>
+<line x1="200" y1="472" x2="200" y2="504" stroke="#64748b" stroke-width="3" marker-end="url(#arrow-n)"/>
+<line x1="200" y1="580" x2="200" y2="612" stroke="#64748b" stroke-width="3" marker-end="url(#arrow-n)"/>
+<!-- footer -->
+<text x="24" y="720" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="11" fill="#475569">图示为教学结构；执行状态以本章记录与独立验证为准。</text>
+</svg>

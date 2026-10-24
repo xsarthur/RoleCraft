@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 390" role="img" aria-labelledby="title desc">
+<title id="title">Sandbox security map</title>
+<desc id="desc">Shows isolation, permissions, execution boundaries and failure handling; instructional diagram.</desc>
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#64748B"/></marker></defs>
+<rect width="100%" height="100%" fill="#FAFAF9"/>
+<text x="30" y="40" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="22" font-weight="700" fill="#1F2937">把生成代码限制在可验证边界</text>
+<text x="30" y="68" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="15" fill="#475569">把提示注入、执行权限、资源限制和结果回传放进同一条可信链。</text>
+<rect x="30" y="110" width="200" height="120" rx="16" fill="#E8F1FF" stroke="#2563EB" stroke-width="2"/>
+<text x="130.0" y="148" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="17" font-weight="700" fill="#173B70">不可信输入</text>
+<text x="130.0" y="176" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="15" fill="#173B70">隔离执行</text>
+<text x="130.0" y="200" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#173B70">状态/证据</text>
+<rect x="270" y="110" width="200" height="120" rx="16" fill="#FFF7DB" stroke="#D97706" stroke-width="2"/>
+<text x="370.0" y="148" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="17" font-weight="700" fill="#7A4100">资源限制</text>
+<text x="370.0" y="176" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="15" fill="#7A4100">结果审查</text>
+<text x="370.0" y="200" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#7A4100">状态/证据</text>
+<rect x="510" y="110" width="200" height="120" rx="16" fill="#E9F8EF" stroke="#15803D" stroke-width="2"/>
+<text x="610.0" y="148" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="17" font-weight="700" fill="#14532D">代码与提示</text>
+<text x="610.0" y="176" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="15" fill="#14532D">文件/网络/时间</text>
+<text x="610.0" y="200" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#14532D">状态/证据</text>
+<rect x="750" y="110" width="200" height="120" rx="16" fill="#FDECEC" stroke="#DC2626" stroke-width="2"/>
+<text x="850.0" y="148" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="17" font-weight="700" fill="#7F1D1D">谁执行与上限</text>
+<text x="850.0" y="176" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="15" fill="#7F1D1D">输出可用性</text>
+<text x="850.0" y="200" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#7F1D1D">状态/证据</text>
+<line x1="230" y1="170.0" x2="262" y2="170.0" stroke="#64748B" stroke-width="3" marker-end="url(#arr)"/>
+<line x1="470" y1="170.0" x2="502" y2="170.0" stroke="#64748B" stroke-width="3" marker-end="url(#arr)"/>
+<line x1="710" y1="170.0" x2="742" y2="170.0" stroke="#64748B" stroke-width="3" marker-end="url(#arr)"/>
+<rect x="30" y="268" width="920" height="56" rx="12" fill="#F1F5F9" stroke="#CBD5E1"/>
+<text x="48" y="302" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#334155">阅读任务：沿四步检查输入、控制、证据与停止条件；颜色只是分组，文字和形状提供完整含义。</text>
+<text x="30" y="360" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#64748B">设计稿 v02｜来源：对应单元正文｜窄屏见 *-narrow-v02</text>
+</svg>
