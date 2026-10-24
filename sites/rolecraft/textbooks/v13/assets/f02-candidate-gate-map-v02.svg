@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" role="img" aria-labelledby="title desc">
+<title id="title">模型响应四层闸门</title>
+<desc id="desc">模型响应依次经过协议、结构、事实和引用校验，形成候选或拒绝。</desc>
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#64748b"/></marker></defs>
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="30" y="40" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="22" font-weight="700" fill="#17324d">模型响应不是答案：四层闸门</text>
+<rect x="30" y="90" width="200" height="130" rx="16" fill="#e8f1ff" stroke="#3973c6" stroke-width="2"/>
+<text x="130.0" y="128" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="18" font-weight="700" fill="#17324d">1 协议完成</text>
+<text x="130.0" y="160" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" fill="#17324d">状态、拒绝、截断</text>
+<text x="130.0" y="188" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" fill="#17324d">不完整：停止</text>
+<rect x="270" y="90" width="200" height="130" rx="16" fill="#fff3d6" stroke="#b7791f" stroke-width="2"/>
+<text x="370.0" y="128" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="18" font-weight="700" fill="#5f370e">2 结构可解析</text>
+<text x="370.0" y="160" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" fill="#5f370e">字段、类型、Schema</text>
+<text x="370.0" y="188" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" fill="#5f370e">错误：拒绝</text>
+<rect x="510" y="90" width="200" height="130" rx="16" fill="#eee6ff" stroke="#7652a8" stroke-width="2"/>
+<text x="610.0" y="128" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="18" font-weight="700" fill="#3f2a61">3 事实一致</text>
+<text x="610.0" y="160" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" fill="#3f2a61">报告、修订、证据</text>
+<text x="610.0" y="188" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" fill="#3f2a61">错位：拒绝</text>
+<rect x="750" y="90" width="200" height="130" rx="16" fill="#e8f7ef" stroke="#2f855a" stroke-width="2"/>
+<text x="850.0" y="128" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="18" font-weight="700" fill="#174b2b">4 候选保存</text>
+<text x="850.0" y="160" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" fill="#174b2b">等待业务核证</text>
+<text x="850.0" y="188" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" fill="#174b2b">不获得写权</text>
+<line x1="230" y1="155.0" x2="262" y2="155.0" stroke="#64748b" stroke-width="3" marker-end="url(#arr)"/>
+<line x1="470" y1="155.0" x2="502" y2="155.0" stroke="#64748b" stroke-width="3" marker-end="url(#arr)"/>
+<line x1="710" y1="155.0" x2="742" y2="155.0" stroke="#64748b" stroke-width="3" marker-end="url(#arr)"/>
+<text x="500" y="270" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="15" fill="#475569">颜色辅助分层；每个状态由文字和位置共同表达。教学构造，未验证真实服务。</text>
+<text x="30" y="300" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" fill="#64748b">设计稿 v02｜窄屏见 *-narrow-v02</text>
+</svg>

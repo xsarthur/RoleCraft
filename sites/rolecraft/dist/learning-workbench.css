@@ -53,3 +53,19 @@
 .lw-assistant-drawer .lw-find-results{padding-bottom:28px;scroll-padding-bottom:20px}
 .lw-assistant-drawer .lw-state-update{margin-bottom:8px}
 .lw-assistant-drawer form{position:relative;z-index:2;background:#fff}
+
+/* VC1 inline readability: wide flows pan inside the figure on desk/tablet.
+   min-width follows the SVG viewBox so label size is not faked with min-height.
+   <=640px keeps the vertical-stack asset at the column width. */
+.lw-figure>button{width:100%}
+.lw-figure picture{display:block;width:100%}
+@media (min-width:641px){
+  .lw-figure.lw-figure-pan>button{overflow-x:auto;overflow-y:hidden;max-width:100%}
+  .lw-figure.lw-figure-pan>button picture,
+  .lw-figure.lw-figure-pan>button img{width:var(--lw-figure-min,1200px);min-width:var(--lw-figure-min,1200px);max-width:none;height:auto}
+}
+@media (max-width:640px){
+  .lw-figure.lw-figure-pan>button{overflow:hidden}
+  .lw-figure.lw-figure-pan>button picture,
+  .lw-figure.lw-figure-pan>button img{width:100%;min-width:0;max-width:100%;height:auto}
+}

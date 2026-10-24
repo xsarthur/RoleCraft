@@ -4,7 +4,7 @@
 
 <div class="textbook-summary" data-tone="blue"><strong>本章阅读方法</strong>　先读彩色总览图，再按“机制 → 失败 → 练习”阅读；图中颜色只辅助区分状态，结论仍以正文和证据为准。</div>
 
-![工程能力要在新场景和独立证据中成立](assets/n10-evaluation-projects-visual-map-v01.svg)
+![工程能力要在新场景和独立证据中成立](assets/n10-evaluation-projects-visual-map-v02.svg)
 
 **读图任务**：用一句话说明图中控制权在哪里、哪一步可能失败、失败后应保留什么证据。图片无法加载时，以本段文字和后续正文降级阅读。
 能复述同一份退款工单案例，不等于能处理新的用户任务。本章把已学机制迁移到客服知识与长研究两个场景：先给任务和证据合同，再定位失败、做有控制的比较，最后让未参与实现的人重建环境并复现结论。先修为[版本评价](e02.md)、[检索链](n05-retrieval-ingestion.md)与[协作](n07-multiagent-a2a.md)。本章出现的数字和输入是教学构造，不代表真实用户成绩；真实部署前还须完成后续安全与交付单元。
@@ -23,7 +23,7 @@
 
 
 
-![工程能力要在新场景和独立证据中成立](assets/n10-evaluation-projects-visual-map-v01.svg)
+![工程能力要在新场景和独立证据中成立](assets/n10-evaluation-projects-visual-map-v02.svg)
 
 > **中段读图停顿**：先用图定位控制边界，再回到下一节核对机制、失败条件和证据。图示是教学辅助资产，未替代真实接口、浏览器、生产负载或真人专家验证。
 

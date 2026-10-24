@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
+<title id="title">版本实验如何保留分组并拒绝缺证通过</title>
+<desc id="desc">先冻结案例分组和成功定义，再让旧版与新版对同一案例配对运行并保留超时和缺失轨迹。判定器区分 PASS、FAIL、INSUFFICIENT 和 HARNESS_ERROR，缺证不进入通过分子。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#64748B"/></marker></defs>
+<rect width="100%" height="100%" fill="#FAFAF9"/>
+<text x="28" y="36" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="22" font-weight="700" fill="#1F2937">同一案例配对运行，缺证保留在分母里</text>
+<text x="28" y="62" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="15" fill="#475569">比较“被分配的一次运行”，不是只比较成功返回的请求。</text>
+<!-- nodes first -->
+<rect x="28" y="96" width="180" height="100" rx="15" fill="#E8F1FF" stroke="#2563EB" stroke-width="2"/>
+<text x="118" y="128" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="700" fill="#1E3A8A">冻结案例集</text>
+<text x="118" y="154" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#334155">正常 / 缺证 / 恢复</text>
+<text x="118" y="176" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#334155">成功定义 + 重复次数</text>
+<rect x="248" y="90" width="280" height="112" rx="15" fill="#FFFFFF" stroke="#64748B" stroke-width="2"/>
+<text x="388" y="120" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="700" fill="#334155">共同案例的配对运行</text>
+<rect x="270" y="138" width="108" height="40" rx="9" fill="#F1F5F9" stroke="#94A3B8"/>
+<text x="324" y="164" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#334155">旧版 × n</text>
+<rect x="398" y="138" width="108" height="40" rx="9" fill="#F1F5F9" stroke="#94A3B8"/>
+<text x="452" y="164" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#334155">新版 × n</text>
+<rect x="568" y="90" width="180" height="112" rx="15" fill="#FFF7DB" stroke="#D97706" stroke-width="2"/>
+<text x="658" y="120" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="700" fill="#7A4100">完整记录</text>
+<text x="658" y="146" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#7A4100">版本 / 输入 / 预算</text>
+<text x="658" y="168" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#7A4100">超时 / 轨迹 / 理由</text>
+<text x="658" y="190" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#7A4100">缺失不删除</text>
+<rect x="788" y="84" width="180" height="250" rx="15" fill="#F3E8FF" stroke="#7C3AED" stroke-width="2"/>
+<text x="878" y="114" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="700" fill="#5B21B6">判定器</text>
+<rect x="808" y="132" width="140" height="36" rx="8" fill="#E9F8EF" stroke="#15803D"/>
+<text x="878" y="156" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" font-weight="700" fill="#14532D">PASS</text>
+<rect x="808" y="178" width="140" height="36" rx="8" fill="#FDECEC" stroke="#DC2626"/>
+<text x="878" y="202" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" font-weight="700" fill="#7F1D1D">FAIL</text>
+<rect x="808" y="224" width="140" height="36" rx="8" fill="#FFF7DB" stroke="#D97706"/>
+<text x="878" y="248" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" font-weight="700" fill="#7A4100">INSUFFICIENT</text>
+<rect x="808" y="270" width="140" height="36" rx="8" fill="#F1F5F9" stroke="#64748B"/>
+<text x="878" y="294" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" font-weight="700" fill="#334155">HARNESS_ERROR</text>
+<!-- arrows last -->
+<line x1="208" y1="146" x2="240" y2="146" stroke="#64748B" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="528" y1="146" x2="560" y2="146" stroke="#64748B" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="748" y1="146" x2="780" y2="146" stroke="#64748B" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M748 190 C770 220 778 240 780 250" fill="none" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<text x="28" y="260" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="700" fill="#334155">结论边界</text>
+<text x="28" y="286" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#475569">缺证、评估故障、超时和未决外部效果不能进入通过分子。</text>
+<text x="28" y="310" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#475569">总通过次数增加，只支持“这些分配中观察到增加”；不能冲掉关键安全反证。</text>
+<text x="28" y="350" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#64748B">颜色与文字同时编码状态；示意数字为教学构造，未做真实模型或行业效果结论。</text>
+<text x="28" y="390" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#64748B">设计稿 v02｜窄屏见 *-narrow-v02</text>
+</svg>

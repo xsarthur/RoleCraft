@@ -7,7 +7,7 @@
 
 > **本篇先看结论**：先区分固定状态机、ReAct 与 Plan-and-Execute，再用验收产物、依赖图和进展证据决定是否规划或停止。
 
-![计划怎样根据证据前进](assets/n03-planning-reflection-overview-v01.svg)
+![计划怎样根据证据前进](assets/n03-planning-reflection-overview-v02.svg)
 
 **读图提示**：蓝色表示输入或约束，黄色表示候选动作，绿色表示证据判定，红色表示需要保留的失败现场。图中内容是教学结构，不代表外部服务已实测。
 
@@ -89,7 +89,7 @@ invalid := 直接失效节点集合
 计划删除 write 节点不等于撤销工单。已成功效果进入更正/补偿，未知效果先按原逻辑动作查询；新计划必须引用这条未决事实，不能换节点 ID 躲掉去重。只有核实尚未发送且无效果时，才可直接放弃。完整生产恢复依据仍见 [控制循环](c01-control-loop.md)与 [n09](n09-runtime-delivery.md)。
 
 
-![中段失败与处理卡](assets/n03-planning-reflection-mid-card-v01.svg)
+![中段失败与处理卡](assets/n03-planning-reflection-mid-card-v02.svg)
 
 **中段阅读任务**：读完本图后，写出当前系统需要保留的三类证据，并说明哪一种情况必须等待或交接；图示未验证真实浏览器、窄屏和读屏表现。
 
