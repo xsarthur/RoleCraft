@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" role="img" aria-labelledby="title desc">
+<title id="title">Tools and MCP overview</title>
+<desc id="desc">Maps tool discovery, authorization, invocation and evidence handling; instructional diagram.</desc>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#64748B"/></marker></defs>
+<rect width="100%" height="100%" fill="#FAFAF9"/>
+<text x="36" y="38" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="22" font-weight="700" fill="#1F2937">工具怎样被发现、选择并安全执行</text>
+<text x="36" y="66" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="15" fill="#475569">工具描述解决选择问题，运行时契约解决执行问题；MCP 负责连接，不替代权限、业务验收或效果核对。</text>
+<rect x="40" y="110" width="220" height="100" rx="16" fill="#E8F1FF" stroke="#2563EB" stroke-width="2"/>
+<text x="150.0" y="150" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="18" font-weight="700" fill="#173B70">输入与目标</text>
+<text x="150.0" y="180" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="15" fill="#173B70">约束、版本、预算</text>
+<rect x="340" y="110" width="220" height="100" rx="16" fill="#FFF7DB" stroke="#D97706" stroke-width="2"/>
+<text x="450.0" y="150" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="18" font-weight="700" fill="#7A4100">候选步骤</text>
+<text x="450.0" y="180" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="15" fill="#7A4100">工具、计划或查询</text>
+<rect x="640" y="110" width="220" height="100" rx="16" fill="#E9F8EF" stroke="#15803D" stroke-width="2"/>
+<text x="750.0" y="150" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="18" font-weight="700" fill="#14532D">证据判定</text>
+<text x="750.0" y="180" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="15" fill="#14532D">继续、等待或停止</text>
+<line x1="260" y1="160.0" x2="332" y2="160.0" stroke="#64748B" stroke-width="3" marker-end="url(#a)"/>
+<line x1="560" y1="160.0" x2="632" y2="160.0" stroke="#64748B" stroke-width="3" marker-end="url(#a)"/>
+<text x="36" y="260" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="15" fill="#64748B">颜色用于分组；文字与箭头保持分离，图像不可用时以正文和代码降级。</text>
+<text x="36" y="286" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="15" fill="#94A3B8">设计稿 v02｜窄屏见 *-narrow-v02</text>
+</svg>

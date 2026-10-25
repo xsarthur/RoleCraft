@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" role="img" aria-labelledby="title desc">
+<title id="title">父图与子图如何按事件顺序交接</title>
+<desc id="desc">父图并行读取报告和源码，汇合后把必要字段投影给子图审阅；子图只返回摘要，父图暂停等待批准，再按批准或拒绝分支结束。下方事件序列强调节点更新不等于最终成功。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#64748B"/></marker></defs>
+<rect width="100%" height="100%" fill="#FAFAF9"/>
+<text x="28" y="34" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="20" font-weight="700" fill="#1F2937">父图把控制权留在运行时，子图只交回有界摘要</text>
+<text x="28" y="58" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#475569">先并行读取，再投影必要字段；事件顺序可重放，工具开始不等于最终成功。</text>
+<rect x="24" y="78" width="952" height="220" rx="18" fill="#E8F1FF" stroke="#2563EB" stroke-width="2"/>
+<text x="44" y="104" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="700" fill="#1E40AF">父图：状态所有者与批准者</text>
+<!-- nodes -->
+<rect x="48" y="124" width="150" height="66" rx="12" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+<text x="123" y="150" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="700" fill="#1E3A8A">read_report</text>
+<text x="123" y="172" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#475569">来源/版本</text>
+<rect x="48" y="206" width="150" height="58" rx="12" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+<text x="123" y="230" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="700" fill="#1E3A8A">read_source</text>
+<text x="123" y="250" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#475569">代码/事实</text>
+<rect x="248" y="164" width="140" height="70" rx="12" fill="#FFF7DB" stroke="#D97706" stroke-width="2"/>
+<text x="318" y="192" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="700" fill="#7A4100">merge_findings</text>
+<text x="318" y="214" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#7A4100">冲突即停止</text>
+<rect x="438" y="128" width="200" height="150" rx="14" fill="#F3E8FF" stroke="#7C3AED" stroke-width="2"/>
+<text x="538" y="156" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="700" fill="#5B21B6">子图 review</text>
+<text x="538" y="182" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#6B21A8">输入：evidence 投影</text>
+<text x="538" y="204" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#6B21A8">输出：summary</text>
+<text x="538" y="232" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#7C3AED">不覆盖 request_id</text>
+<text x="538" y="252" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#7C3AED">/ approved</text>
+<rect x="688" y="164" width="110" height="70" rx="12" fill="#FFF7DB" stroke="#D97706" stroke-width="2"/>
+<text x="743" y="192" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="700" fill="#7A4100">interrupt</text>
+<text x="743" y="214" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#7A4100">等待批准</text>
+<rect x="848" y="130" width="100" height="44" rx="10" fill="#E9F8EF" stroke="#15803D" stroke-width="2"/>
+<text x="898" y="158" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" font-weight="700" fill="#14532D">approved</text>
+<rect x="848" y="210" width="100" height="44" rx="10" fill="#FDECEC" stroke="#DC2626" stroke-width="2"/>
+<text x="898" y="238" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" font-weight="700" fill="#7F1D1D">stopped</text>
+<!-- arrows -->
+<line x1="198" y1="157" x2="240" y2="157" stroke="#64748B" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="198" y1="235" x2="240" y2="199" stroke="#64748B" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="388" y1="199" x2="430" y2="199" stroke="#64748B" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="638" y1="199" x2="680" y2="199" stroke="#64748B" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="798" y1="182" x2="840" y2="152" stroke="#64748B" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M798 214 C830 250 838 250 840 232" fill="none" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<!-- event strip -->
+<text x="28" y="332" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="700" fill="#334155">事件顺序（可核对的最小封套）</text>
+<rect x="40" y="350" width="160" height="44" rx="10" fill="#FFFFFF" stroke="#94A3B8"/>
+<text x="120" y="378" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#334155">1 node_update</text>
+<rect x="230" y="350" width="160" height="44" rx="10" fill="#FFFFFF" stroke="#94A3B8"/>
+<text x="310" y="378" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#334155">2 child_summary</text>
+<rect x="420" y="350" width="160" height="44" rx="10" fill="#FFF7DB" stroke="#D97706"/>
+<text x="500" y="378" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#7A4100">3 approval_wait</text>
+<rect x="610" y="350" width="160" height="44" rx="10" fill="#FFFFFF" stroke="#94A3B8"/>
+<text x="690" y="378" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#334155">4 final / stop</text>
+<line x1="200" y1="372" x2="222" y2="372" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<line x1="390" y1="372" x2="412" y2="372" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<line x1="580" y1="372" x2="602" y2="372" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="790" y="378" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#64748B">示意；未验证浏览器流式重连</text>
+<text x="28" y="430" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#64748B">设计稿 v02｜窄屏见 *-narrow-v02</text>
+</svg>

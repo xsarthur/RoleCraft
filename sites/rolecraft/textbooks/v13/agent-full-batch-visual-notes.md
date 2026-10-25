@@ -4,12 +4,12 @@
 
 ## 图稿清单
 
-- `f01-api-boundary-map-v01.svg`：外部 API 四道边界开篇总览。
-- `f01-retry-state-card-v01.svg`：请求状态与重试边界中段卡。
-- `f02-candidate-gate-map-v01.svg`：模型响应四层闸门开篇总览。
-- `f02-failure-routing-card-v01.svg`：合法 JSON 仍可能失败的分流中段卡。
-- `n02-context-memory-layers-map-v01.svg`：四种保存对象开篇总览。
-- `n02-revocation-recheck-card-v01.svg`：来源失效与依赖复核中段卡。
+- `f01-api-boundary-map-v02.svg`、`f01-api-boundary-map-narrow-v02.svg`：外部 API 四道边界开篇总览。窄屏用纵栈。
+- `f01-retry-state-card-v01.svg`、`f01-retry-state-card-narrow-v02.svg`：请求状态与重试边界中段卡。桌面沿用 v01，窄屏用纵栈。
+- `f02-candidate-gate-map-v02.svg`、`f02-candidate-gate-map-narrow-v02.svg`：模型响应四层闸门开篇总览。窄屏用纵栈。
+- `f02-failure-routing-card-v01.svg`、`f02-failure-routing-card-narrow-v02.svg`：合法 JSON 仍可能失败的分流中段卡。桌面沿用 v01，窄屏用纵栈。
+- `n02-context-memory-layers-map-v02.svg`、`n02-context-memory-layers-map-narrow-v02.svg`：四种保存对象开篇总览。窄屏用纵栈。
+- `n02-revocation-recheck-card-v01.svg`、`n02-revocation-recheck-card-narrow-v02.svg`：来源失效与依赖复核中段卡。桌面沿用 v01，窄屏用纵栈。
 
 ## 设计验收输入
 

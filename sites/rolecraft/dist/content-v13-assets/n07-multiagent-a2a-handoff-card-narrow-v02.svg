@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 660" role="img" aria-labelledby="title desc">
+<title id="title">多 Agent 责任交接与缺席传播（窄屏）</title>
+<desc id="desc">交接可验收契约；缺席向上传播。窄屏纵栈。</desc>
+<defs><marker id="arr-n" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#64748B"/></marker></defs>
+<rect width="100%" height="100%" fill="#FAFAF9"/>
+<text x="24" y="30" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="700" fill="#1F2937">可验收契约交接</text>
+<text x="24" y="52" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="13" fill="#475569">协调者控令牌 · 缺席不伪完成</text>
+<rect x="36" y="80" width="328" height="84" rx="14" fill="#E8F1FF" stroke="#2563EB" stroke-width="2"/>
+<text x="54" y="108" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" font-weight="700" fill="#1E3A8A">1</text>
+<text x="200" y="110" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="700" fill="#1E3A8A">协调者</text>
+<text x="200" y="136" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="13" fill="#1E3A8A">目标/禁止 · 对象版本 · 证据预算</text>
+<rect x="36" y="190" width="328" height="84" rx="14" fill="#FFFFFF" stroke="#64748B" stroke-width="2"/>
+<text x="54" y="218" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" font-weight="700" fill="#334155">2</text>
+<text x="200" y="220" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="700" fill="#334155">政策 Agent</text>
+<text x="200" y="246" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="13" fill="#334155">claim + 来源/版本 + limitations</text>
+<rect x="36" y="300" width="328" height="84" rx="14" fill="#FFFFFF" stroke="#64748B" stroke-width="2"/>
+<text x="54" y="328" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" font-weight="700" fill="#334155">3</text>
+<text x="200" y="330" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="700" fill="#334155">源码 Agent</text>
+<text x="200" y="356" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="13" fill="#334155">可定位证据 · 不扩大权限</text>
+<rect x="36" y="410" width="328" height="84" rx="14" fill="#FFF7DB" stroke="#D97706" stroke-width="2"/>
+<text x="54" y="438" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" font-weight="700" fill="#7A4100">4</text>
+<text x="200" y="440" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="700" fill="#7A4100">对齐 / 汇总</text>
+<text x="200" y="466" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="13" fill="#7A4100">版本对象冲突 · 只纳入 completed</text>
+<rect x="36" y="520" width="328" height="84" rx="14" fill="#E9F8EF" stroke="#15803D" stroke-width="2"/>
+<text x="54" y="548" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" font-weight="700" fill="#14532D">5</text>
+<text x="200" y="550" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="700" fill="#14532D">可验收 或 缺席上传</text>
+<text x="200" y="576" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="13" fill="#14532D">绿=证据齐 · 红=need_input/conflict</text>
+<line x1="200" y1="168" x2="200" y2="182" stroke="#64748B" stroke-width="3" marker-end="url(#arr-n)"/>
+<line x1="200" y1="278" x2="200" y2="292" stroke="#64748B" stroke-width="3" marker-end="url(#arr-n)"/>
+<line x1="200" y1="388" x2="200" y2="402" stroke="#64748B" stroke-width="3" marker-end="url(#arr-n)"/>
+<line x1="200" y1="498" x2="200" y2="512" stroke="#64748B" stroke-width="3" marker-end="url(#arr-n)"/>
+<text x="24" y="644" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="12" fill="#64748B">设计稿 narrow-v02｜示意非实测 A2A</text>
+</svg>

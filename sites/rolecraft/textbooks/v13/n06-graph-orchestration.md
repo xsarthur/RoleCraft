@@ -6,7 +6,7 @@
 
 > **本章先看结论**：状态所有者、可重放更新和恢复版本必须先被定义；图只编排路径，不能替证据、授权或远端动作回执背书。
 
-![可恢复状态图的主图占位](assets/n03-planning-reflection-map-v01.svg)
+![可恢复状态图的主图占位](assets/n03-planning-reflection-map-v02.svg)
 
 **读图提示**：此处沿用 v13 的状态/前沿视觉语义；当前资产用于帮助读者建立“状态—节点—证据—恢复”关系，图示未验证真实框架运行、浏览器窄屏或读屏体验。设计师后续可替换为专属状态图。
 
@@ -83,7 +83,7 @@ compiled = graph.compile(checkpointer=InMemorySaver())
 
 [流消费者策略例](examples/n06-graph-contracts.py)把上述sequence/event_type缩写为seq/kind：先验证task_id，再按序接受；同序同内容丢弃，同序异内容拒绝，遇序号缺口返回replay_required且不消费后来的final。待缺失事件补齐，重送final才形成终态。断线时没有final只能展示已收到的预览，不能把网络结束作为任务成功；该例只做内存事件校验，没有真实网络重连。
 
-![父图与子图的状态边界、恢复和人工接管路径](assets/n06-graph-orchestration-parent-child-card-v01.svg)
+![父图与子图的状态边界、恢复和人工接管路径](assets/n06-graph-orchestration-parent-child-card-v02.svg)
 
 *图：父图只投影子图所需字段；恢复、冲突和未知外部效果回到人工接管或效果复核。该图是 v13 教学资产，未验证真实 LangGraph 运行、持久后端或浏览器无障碍表现。*
 

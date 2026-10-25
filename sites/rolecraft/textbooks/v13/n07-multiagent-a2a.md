@@ -4,7 +4,7 @@
 
 > **本章先看结论**：多Agent的价值来自可验收的分工与独立证据，不来自角色数量；宿主保留任务、预算、权限和最终动作责任，A2A只表达跨系统交接。
 
-![多Agent协作边界主图占位](assets/n04-tools-mcp-overview-v01.svg)
+![多Agent协作边界主图占位](assets/n04-tools-mcp-overview-v02.svg)
 
 **读图提示**：现有资产用于提示“能力发现—受限调用—结果回传”的边界；它不是 A2A 互操作实测，也不表示 MCP 与 A2A 可互换。后续可替换为专属协作拓扑图。
 
@@ -90,7 +90,7 @@ JSON-RPC id对应一次RPC响应，messageId标识消息，服务端Task id标�
 
 本章客户端处理流程的边界是：先从可信发现渠道获取Card并核端点/版本/能力；取得与当前用户授权匹配的凭据；提交最小资料；若返回直接Message则校验内容合同，若返回Task则保存映射；遇到input-required向用户收集所缺信息，auth-required转认证流程；任务完成后取artifact并校验业务成果。failed/rejected/canceled分别保留原因。终态之后的新工作使用新任务，不篡改旧完成记录。这里的权限判断、证据校验、重试策略是应用责任，协议只提供交换语义。
 
-![跨Agent交接中的任务身份、版本、预算和失败分流](assets/n07-multiagent-a2a-handoff-card-v01.svg)
+![跨Agent交接中的任务身份、版本、预算和失败分流](assets/n07-multiagent-a2a-handoff-card-v02.svg)
 
 *图：交接保留父任务与子任务身份、来源版本和预算；超时、迟到结果与冲突进入分流，不得覆盖新修订。该图是 v13 教学资产，未验证真实 A2A 服务、认证、取消或 webhook 互操作。*
 

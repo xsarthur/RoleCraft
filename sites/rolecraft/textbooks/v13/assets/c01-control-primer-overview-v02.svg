@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280" role="img" aria-labelledby="t d">
+<title id="t">动作身份与效果状态：阅读总览</title>
+<desc id="d">提议 → 固定 action → 发送 attempt → 观察回执 → 判定效果。颜色辅助区分起点、处理中间步骤和结论。箭头完全落在节点间距内，不被节点遮盖。</desc>
+<defs>
+  <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+    <path d="M0,0 L8,4 L0,8 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="28" y="36" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="20" font-weight="700" fill="#0f172a">动作身份与效果状态</text>
+<text x="28" y="60" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#475569">先看证据推进，再阅读正文中的机制与失败分支</text>
+<rect x="40" y="100" width="148" height="72" rx="14" fill="#2563eb" stroke="#334155" stroke-width="2"/>
+<text x="114.0" y="142" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="20" font-weight="600" fill="#fff">提议</text>
+<rect x="228" y="100" width="148" height="72" rx="14" fill="#e0f2fe" stroke="#334155" stroke-width="2"/>
+<text x="302.0" y="142" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="20" font-weight="600" fill="#0f172a">固定 action</text>
+<rect x="416" y="100" width="148" height="72" rx="14" fill="#e0f2fe" stroke="#334155" stroke-width="2"/>
+<text x="490.0" y="142" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="20" font-weight="600" fill="#0f172a">发送 attempt</text>
+<rect x="604" y="100" width="148" height="72" rx="14" fill="#e0f2fe" stroke="#334155" stroke-width="2"/>
+<text x="678.0" y="142" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="20" font-weight="600" fill="#0f172a">观察回执</text>
+<rect x="792" y="100" width="148" height="72" rx="14" fill="#2563eb" stroke="#334155" stroke-width="2"/>
+<text x="866.0" y="142" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="20" font-weight="600" fill="#fff">判定效果</text>
+<line x1="188" y1="136.0" x2="220" y2="136.0" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="376" y1="136.0" x2="408" y2="136.0" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="564" y1="136.0" x2="596" y2="136.0" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="752" y1="136.0" x2="784" y2="136.0" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="28" y="220" font-family="Noto Sans CJK SC, Noto Sans SC, Arial, sans-serif" font-size="14" fill="#475569">图示为教学结构；具体执行状态以本章记录和独立验证为准。</text>
+</svg>
