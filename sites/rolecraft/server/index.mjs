@@ -190,6 +190,28 @@ export function createRolecraftServer(options={}) {
       return {configured:false,missing:['generation_readiness_interface']};
     } catch { return {configured:false,missing:['generation_service']}; }
   }
+  // login-cn-eng-1.2. SMS, WeChat, and QQ are separate channels. This build
+  // loads no gateway or OAuth provider for any of them, so each flag stays
+  // false. Environment variables are not a provider and are not read here;
+  // a missing implementation must not be reported as enabled (config_missing).
+  function authChannelFlags() {
+    const smsEnabled = false;
+    const wechatEnabled = false;
+    const qqEnabled = false;
+    return {
+      smsEnabled,
+      wechatEnabled,
+      qqEnabled,
+      sms: { code: 'sms_not_configured', configured: smsEnabled },
+      wechat: { code: 'wechat_not_configured', configured: wechatEnabled },
+      qq: { code: 'qq_not_configured', configured: qqEnabled }
+    };
+  }
+  function pendingAuthRefusal(kind) {
+    if (kind === 'sms') return { code: 'sms_not_configured', message: '短信登录暂未开通，请使用「其他登录方式」。' };
+    if (kind === 'wechat') return { code: 'wechat_not_configured', message: '微信登录即将支持，请使用「其他登录方式」。' };
+    return { code: 'qq_not_configured', message: 'QQ 登录即将支持，请使用「其他登录方式」。' };
+  }
   function profile(uid) { const p=one('SELECT * FROM profiles WHERE user_id=?',uid); return p ? {...parse(p.data),version:p.version} : null; }
   function owned(table,id,uid) { const v=one(`SELECT * FROM ${table} WHERE id=? AND user_id=?`,id,uid); if (!v) reject(404,'not_found','记录不存在'); return v; }
   function versionedSubmissionInput(body,{previousId=null,forceVersioned=false}={}) {
@@ -506,7 +528,7 @@ export function createRolecraftServer(options={}) {
       if(req.headers['sec-fetch-site']==='cross-site')reject(403,'origin_rejected','拒绝跨站请求');
       const u=new URL(req.url,origin), pathname=u.pathname, method=req.method;
       if(pathname.startsWith('/api/')) {
-        if(method==='GET' && pathname==='/api/health')return send(200,{productVersion:PRODUCT_VERSION,mode:deploymentMode,generation:await readiness(),contentRetrieval:getContentReadiness()});
+        if(method==='GET' && pathname==='/api/health')return send(200,{productVersion:PRODUCT_VERSION,mode:deploymentMode,generation:await readiness(),contentRetrieval:getContentReadiness(),authChannels:authChannelFlags()});
         // Thin read for mid-session textbook identity. Does not change the pinned corpus.
         if(method==='GET' && pathname==='/api/content/identity'){
           const readiness=getContentReadiness();
@@ -602,6 +624,15 @@ export function createRolecraftServer(options={}) {
           const query=u.searchParams.get('q')||'';
           const result=await availableCareers(query);
           return send(200,{query,...result,importedCareerCount:Math.max(0,careerCatalog.size-1)});
+        }
+        // Pending phone / WeChat / QQ routes never call newSession and never
+        // set a cookie. /api/health authChannels reports readiness. This build
+        // has no provider, so these routes always answer *_not_configured.
+        if(method==='POST' && ['/api/auth/sms/send','/api/auth/sms/verify','/api/auth/wechat/start','/api/auth/qq/start'].includes(pathname)) {
+          const kind=pathname.includes('/sms/')?'sms':pathname.includes('/wechat/')?'wechat':'qq';
+          try { await body(req); } catch { /* any payload still must not authenticate */ }
+          const refusal=pendingAuthRefusal(kind);
+          reject(409,refusal.code,refusal.message);
         }
         if(method==='POST' && ['/api/auth/register','/api/auth/login'].includes(pathname)) {
           const key=req.socket.remoteAddress;const current=authRate.get(key)||{count:0,reset:Date.now()+60000};

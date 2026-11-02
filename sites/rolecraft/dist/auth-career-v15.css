@@ -24,3 +24,24 @@
   .rc-account-career .rc-login-trigger{font-size:12px;padding-left:10px;padding-right:10px}
 }
 .rc-agent-update{border-color:#e2d7b8;background:#f7f4ea;color:#24352c}.rc-agent-update .rc-agent-mark{background:#f3ead2;color:#6b5018;border:1px solid #8a6a2f}.rc-agent-update button:focus-visible{outline:none;box-shadow:none;text-decoration:underline;text-underline-offset:.18em;text-decoration-thickness:2px}
+
+/* login-cn-ia-1.2: phone + code is the default path; WeChat and QQ are peers; email stays folded. */
+#rc-login-dialog{border:0;padding:0;background:transparent;color:#39352b}
+#rc-login-dialog::backdrop{background:rgba(176,190,164,.55)}
+#rc-login-dialog .rc-dialog-form{width:min(440px,calc(100vw - 32px));border-radius:18px;background:#f6f3ec;box-shadow:0 24px 60px rgba(70,80,60,.16)}
+#rc-login-dialog .rc-dialog-head h2{font-size:26px;font-weight:700;letter-spacing:-.02em}
+#rc-login-dialog .rc-eyebrow{letter-spacing:.02em;font-weight:600;color:#8a8174}
+#rc-login-dialog [data-rc-auth-phone]{display:block}
+#rc-login-dialog .rc-sms-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center}
+#rc-login-dialog .rc-sms-send{background:#e6e0d4;color:#3f3a32;border:1px solid #ddd6c8;border-radius:10px;padding:0 16px;font-weight:600;white-space:nowrap}
+#rc-login-dialog .rc-sms-send:not([data-rc-auth-pending]){background:#fff;border-color:#cfc6b6}
+#rc-login-dialog .rc-auth-pending{margin:8px 0 0;color:#d06a1a;font-size:13px;line-height:1.5;min-height:1.45em}
+#rc-login-dialog .rc-auth-channel-status:empty{min-height:0;margin:0}
+#rc-login-dialog .primary{margin-top:14px;background:#24362c;color:#fff;border:0;border-radius:10px;font-weight:700;width:100%}
+#rc-login-dialog .rc-auth-peers{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+#rc-login-dialog .rc-auth-peers button{background:#fff;color:#2c2924;border:1px solid #e3dcd0;border-radius:10px;font-weight:600;padding:0 10px}
+#rc-login-dialog .rc-auth-other{margin-top:14px}
+#rc-login-dialog .rc-auth-other>summary{cursor:pointer;color:#2f6fed;font-weight:600;padding:6px 0}
+#rc-login-dialog .rc-auth-other[open]>summary{margin-bottom:4px}
+#rc-login-dialog .rc-switch-mode{color:#2f6fed;font-weight:600}
+@media(max-width:380px){#rc-login-dialog .rc-auth-peers{gap:6px}#rc-login-dialog .rc-auth-peers button{padding:0 6px;font-size:13px}#rc-login-dialog .rc-sms-send{padding:0 10px;font-size:13px}}

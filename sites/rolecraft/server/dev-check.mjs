@@ -20,6 +20,19 @@ try {
   delete process.env.PUBLIC_DEPLOYMENT;
   const localHealth=await request('/api/health');
   check(localHealth.status===200&&localHealth.b.mode==='local-development'&&localHealth.b.releaseVersion==='rolecraft-1.0'&&typeof localHealth.b.generation?.configured==='boolean','local health stays local-development');
+  check(localHealth.b.authChannels?.smsEnabled===false&&localHealth.b.authChannels?.wechatEnabled===false&&localHealth.b.authChannels?.qqEnabled===false,'auth channel flags default false');
+  process.env.ROLECRAFT_SMS_ENABLED='true';
+  process.env.ROLECRAFT_WECHAT_ENABLED='true';
+  process.env.ROLECRAFT_QQ_ENABLED='1';
+  const forcedChannels=await request('/api/health');
+  check(forcedChannels.b.authChannels?.smsEnabled===false&&forcedChannels.b.authChannels?.wechatEnabled===false&&forcedChannels.b.authChannels?.qqEnabled===false,'env cannot enable unimplemented auth channels');
+  delete process.env.ROLECRAFT_SMS_ENABLED;
+  delete process.env.ROLECRAFT_WECHAT_ENABLED;
+  delete process.env.ROLECRAFT_QQ_ENABLED;
+  for (const [pendingPath,pendingCode] of [['/api/auth/sms/send','sms_not_configured'],['/api/auth/sms/verify','sms_not_configured'],['/api/auth/wechat/start','wechat_not_configured'],['/api/auth/qq/start','qq_not_configured']]) {
+    const pending=await request(pendingPath,{method:'POST',data:{phone:'13800138000',code:'123456'}});
+    check(pending.status===409&&pending.b.error?.code===pendingCode&&!pending.cookie&&!JSON.stringify(pending.b).includes('csrfToken'),'pending auth does not create a session: '+pendingCode);
+  }
   process.env.PUBLIC_DEPLOYMENT='true';
   const publicHealth=await request('/api/health');
   check(publicHealth.status===200&&publicHealth.b.mode==='public-deployment'&&publicHealth.b.generation?.configured===localHealth.b.generation.configured&&publicHealth.b.releaseVersion==='rolecraft-1.0','public health does not claim local-development');
