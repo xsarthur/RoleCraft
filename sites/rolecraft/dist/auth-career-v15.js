@@ -27,7 +27,9 @@
     lastFocus: null,
     originalProfileHTML: null,
     originalCareerTitle: null,
-    toastTimer: null
+    toastTimer: null,
+    // Fail closed until /api/health says otherwise. Only a strict true counts.
+    authChannels: { smsEnabled: false, wechatEnabled: false, qqEnabled: false }
   };
 
   const CAREER_QUERY_LIMIT = 1200;
@@ -268,22 +270,180 @@
   }
   function closeDialog(dialog) { if (dialog?.open) dialog.close(); }
 
+  const CHANNEL_COPY = {
+    sms: '短信登录暂未开通，请使用「其他登录方式」。',
+    wechat: '微信登录即将支持，请使用「其他登录方式」。',
+    qq: 'QQ 登录即将支持，请使用「其他登录方式」。'
+  };
+
+  function channelEnabled(name) {
+    return state.authChannels[name] === true;
+  }
+
+  function announceAlert(node, message) {
+    if (!node) return;
+    node.textContent = '';
+    node.textContent = message;
+  }
+
+  function setPendingControl(node, pending, token) {
+    if (!node) return;
+    node.setAttribute('aria-disabled', pending ? 'true' : 'false');
+    if (pending) node.setAttribute('data-rc-auth-pending', token);
+    else node.removeAttribute('data-rc-auth-pending');
+  }
+
+  async function loadAuthChannels() {
+    if (isStatic()) {
+      state.authChannels = { smsEnabled: false, wechatEnabled: false, qqEnabled: false };
+      return state.authChannels;
+    }
+    try {
+      const health = await api('/api/health');
+      const channels = health && typeof health.authChannels === 'object' && health.authChannels ? health.authChannels : {};
+      state.authChannels = {
+        smsEnabled: channels.smsEnabled === true,
+        wechatEnabled: channels.wechatEnabled === true,
+        qqEnabled: channels.qqEnabled === true
+      };
+    } catch {
+      state.authChannels = { smsEnabled: false, wechatEnabled: false, qqEnabled: false };
+    }
+    return state.authChannels;
+  }
+
+  function paintChannelAffordances(dialog) {
+    const smsOn = channelEnabled('smsEnabled');
+    const wechatOn = channelEnabled('wechatEnabled');
+    const qqOn = channelEnabled('qqEnabled');
+    const send = dialog.querySelector('[data-rc-sms-send]');
+    const submit = dialog.querySelector('[data-rc-sms-submit]');
+    const wechat = dialog.querySelector('[data-rc-auth-wechat]');
+    const qq = dialog.querySelector('[data-rc-auth-qq]');
+    const smsStatus = dialog.querySelector('#rc-sms-status');
+    setPendingControl(send, !smsOn, '暂未开通');
+    setPendingControl(submit, !smsOn, '暂未开通');
+    setPendingControl(wechat, !wechatOn, '即将支持');
+    setPendingControl(qq, !qqOn, '即将支持');
+    if (wechat) wechat.textContent = wechatOn ? '微信登录' : '微信 · 即将支持';
+    if (qq) qq.textContent = qqOn ? 'QQ 登录' : 'QQ · 即将支持';
+    if (smsStatus && !smsOn && !smsStatus.textContent) smsStatus.textContent = CHANNEL_COPY.sms;
+    if (smsStatus && smsOn && smsStatus.textContent === CHANNEL_COPY.sms) smsStatus.textContent = '';
+    const phoneBlock = dialog.querySelector('[data-rc-auth-phone]');
+    if (phoneBlock) phoneBlock.hidden = false;
+  }
+
+  async function requestPendingChannel(dialog, action) {
+    const smsStatus = dialog.querySelector('#rc-sms-status');
+    const oauthStatus = dialog.querySelector('#rc-auth-channel-status');
+    if (action === 'sms-send' || action === 'sms-verify') {
+      if (!channelEnabled('smsEnabled')) {
+        announceAlert(smsStatus, CHANNEL_COPY.sms);
+        return;
+      }
+      const phone = dialog.querySelector('#rc-phone')?.value.trim() || '';
+      if (!/^1[3-9]\d{9}$/.test(phone)) {
+        announceAlert(smsStatus, '请输入正确的手机号');
+        return;
+      }
+      const code = dialog.querySelector('#rc-sms-code')?.value.trim() || '';
+      if (action === 'sms-verify' && !/^\d{6}$/.test(code)) {
+        announceAlert(smsStatus, '请输入验证码');
+        return;
+      }
+      try {
+        await api(action === 'sms-send' ? '/api/auth/sms/send' : '/api/auth/sms/verify', {
+          method: 'POST',
+          body: action === 'sms-send' ? { phone } : { phone, code }
+        });
+        // An unexpected 2xx is not a session. Do not store a csrf token or cookie.
+        announceAlert(smsStatus, CHANNEL_COPY.sms);
+      } catch (err) {
+        announceAlert(smsStatus, err?.code === 'sms_not_configured' ? CHANNEL_COPY.sms : friendlyError(err));
+      }
+      return;
+    }
+    const kind = action === 'wechat' ? 'wechat' : 'qq';
+    if (!channelEnabled(kind + 'Enabled')) {
+      announceAlert(oauthStatus, CHANNEL_COPY[kind]);
+      return;
+    }
+    try {
+      const result = await api('/api/auth/' + kind + '/start', { method: 'POST', body: {} });
+      const url = result && typeof result.url === 'string' ? result.url : '';
+      if (result?.enabled === true && /^https:\/\//.test(url)) {
+        location.assign(url);
+        return;
+      }
+      announceAlert(oauthStatus, CHANNEL_COPY[kind]);
+    } catch (err) {
+      const code = kind === 'wechat' ? 'wechat_not_configured' : 'qq_not_configured';
+      announceAlert(oauthStatus, err?.code === code ? CHANNEL_COPY[kind] : friendlyError(err));
+    }
+  }
+
   function loginDialog() {
     let dialog = document.getElementById('rc-login-dialog');
     if (!dialog) {
       dialog = document.createElement('dialog');
       dialog.id = 'rc-login-dialog';
       dialog.setAttribute('aria-labelledby', 'rc-login-title');
-      dialog.innerHTML = '<form class="rc-dialog-form" id="rc-login-form"><div class="rc-dialog-head"><div><span class="rc-eyebrow">学习账户</span><h2 id="rc-login-title"></h2></div><button type="button" class="rc-close" data-rc-close aria-label="关闭">×</button></div><p class="rc-dialog-copy">登录后可保存职业和学习记录。</p><label for="rc-email">邮箱</label><input id="rc-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"><label for="rc-password">密码</label><input id="rc-password" name="password" type="password" autocomplete="current-password" minlength="12" maxlength="128" required placeholder="至少 12 个字符"><p class="rc-form-hint">使用邮箱和密码。</p><p class="rc-form-error" id="rc-login-error" role="alert"></p><button class="primary full" type="submit" id="rc-login-submit"></button><button class="rc-switch-mode" type="button" data-rc-switch></button></form>';
+      dialog.innerHTML = [
+        '<div class="rc-dialog-form" id="rc-login-panel">',
+        '<div class="rc-dialog-head"><div><span class="rc-eyebrow">学习账户</span><h2 id="rc-login-title"></h2></div><button type="button" class="rc-close" data-rc-close aria-label="关闭">×</button></div>',
+        '<p class="rc-dialog-copy">登录后可保存职业和学习记录。</p>',
+        '<div data-rc-auth-phone>',
+        '<label for="rc-phone">手机号</label>',
+        '<input id="rc-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="请输入手机号">',
+        '<label for="rc-sms-code">验证码</label>',
+        '<div class="rc-sms-row">',
+        '<input id="rc-sms-code" name="code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="6 位验证码" aria-describedby="rc-sms-status">',
+        '<button type="button" class="rc-sms-send" data-rc-sms-send aria-describedby="rc-sms-status">获取验证码</button>',
+        '</div>',
+        '<p class="rc-auth-pending" id="rc-sms-status" role="alert" data-rc-auth-pending="暂未开通">短信登录暂未开通，请使用「其他登录方式」。</p>',
+        '<button type="button" class="primary full" id="rc-login-submit" data-rc-sms-submit aria-describedby="rc-sms-status"></button>',
+        '</div>',
+        '<div class="rc-auth-peers" role="group" aria-label="微信与 QQ 登录">',
+        '<button type="button" data-rc-auth-wechat data-rc-auth-pending="即将支持" aria-disabled="true">微信 · 即将支持</button>',
+        '<button type="button" data-rc-auth-qq data-rc-auth-pending="即将支持" aria-disabled="true">QQ · 即将支持</button>',
+        '</div>',
+        '<p class="rc-auth-pending rc-auth-channel-status" id="rc-auth-channel-status" role="alert"></p>',
+        '<details class="rc-auth-other" data-rc-auth-other>',
+        '<summary>其他登录方式（邮箱+密码，可完成）</summary>',
+        '<form id="rc-login-form">',
+        '<label for="rc-email">邮箱</label>',
+        '<input id="rc-email" name="email" type="email" autocomplete="email" required placeholder="你的邮箱">',
+        '<label for="rc-password">密码</label>',
+        '<input id="rc-password" name="password" type="password" autocomplete="current-password" minlength="12" maxlength="128" required placeholder="至少 12 个字符">',
+        '<p class="rc-form-hint">使用邮箱和密码。</p>',
+        '<p class="rc-form-error" id="rc-login-error" role="alert"></p>',
+        '<button class="primary full" type="submit" id="rc-email-submit"></button>',
+        '</form>',
+        '</details>',
+        '<button class="rc-switch-mode" type="button" data-rc-switch></button>',
+        '</div>'
+      ].join('');
       document.body.appendChild(dialog);
       const form = dialog.querySelector('#rc-login-form');
-      dialog.addEventListener('click', event => { if (event.target === dialog || event.target.closest('[data-rc-close]')) closeDialog(dialog); });
+      dialog.addEventListener('click', event => {
+        if (event.target === dialog || event.target.closest('[data-rc-close]')) { closeDialog(dialog); return; }
+        if (event.target.closest('[data-rc-sms-send]')) { requestPendingChannel(dialog, 'sms-send'); return; }
+        if (event.target.closest('[data-rc-sms-submit]')) { requestPendingChannel(dialog, 'sms-verify'); return; }
+        if (event.target.closest('[data-rc-auth-wechat]')) { requestPendingChannel(dialog, 'wechat'); return; }
+        if (event.target.closest('[data-rc-auth-qq]')) { requestPendingChannel(dialog, 'qq'); return; }
+      });
+      dialog.addEventListener('keydown', event => {
+        if (event.key !== 'Enter' || event.target.closest('#rc-login-form')) return;
+        if (!event.target.closest('[data-rc-auth-phone]')) return;
+        event.preventDefault();
+        requestPendingChannel(dialog, 'sms-verify');
+      });
       dialog.addEventListener('cancel', () => { state.loginOpen = false; });
       dialog.addEventListener('close', () => { state.loginOpen = false; restoreFocus(); });
       form.addEventListener('submit', async event => {
         event.preventDefault();
         const error = dialog.querySelector('#rc-login-error');
-        const button = dialog.querySelector('#rc-login-submit');
+        const button = dialog.querySelector('#rc-email-submit');
         error.textContent = '';
         button.disabled = true;
         button.textContent = '处理中…';
@@ -304,22 +464,30 @@
       });
     }
     updateLoginDialog(dialog);
-    rememberFocus();
+    paintChannelAffordances(dialog);
     if (!dialog.open) {
+      rememberFocus();
       state.loginOpen = true;
       dialog.showModal();
-      setTimeout(() => dialog.querySelector('#rc-email')?.focus(), 0);
+      setTimeout(() => dialog.querySelector('#rc-phone')?.focus(), 0);
     }
+    loadAuthChannels().then(() => { if (dialog.isConnected) paintChannelAffordances(dialog); });
     return dialog;
   }
 
   function updateLoginDialog(dialog) {
     const isLogin = state.mode === 'login';
     dialog.querySelector('#rc-login-title').textContent = isLogin ? '登录学习账户' : '创建学习账户';
-    dialog.querySelector('#rc-password').autocomplete = isLogin ? 'current-password' : 'new-password';
-    dialog.querySelector('#rc-login-submit').textContent = isLogin ? '登录' : '创建账户';
+    const password = dialog.querySelector('#rc-password');
+    if (password) password.autocomplete = isLogin ? 'current-password' : 'new-password';
+    const label = isLogin ? '登录' : '创建账户';
+    const phoneSubmit = dialog.querySelector('#rc-login-submit');
+    const emailSubmit = dialog.querySelector('#rc-email-submit');
+    if (phoneSubmit) phoneSubmit.textContent = label;
+    if (emailSubmit && !emailSubmit.disabled) emailSubmit.textContent = label;
     dialog.querySelector('[data-rc-switch]').textContent = isLogin ? '还没有账户？创建账户' : '已有账户？直接登录';
-    if (!dialog.querySelector('#rc-login-submit').disabled) dialog.querySelector('#rc-login-error').textContent = '';
+    const emailError = dialog.querySelector('#rc-login-error');
+    if (emailSubmit && !emailSubmit.disabled && emailError) emailError.textContent = '';
   }
 
   function careerDialog() {
@@ -563,7 +731,7 @@
       if (event.target.closest('[data-rc-account]')) { accountMenu(); return; }
       if (event.target.closest('[data-rc-open-careers]')) { menu?.remove(); careerDialog(); return; }
       if (event.target.closest('[data-rc-retry-search]')) { searchCareers(); return; }
-      if (event.target.closest('[data-rc-switch]')) { state.mode = state.mode === 'login' ? 'register' : 'login'; const dialog = loginDialog(); dialog.querySelector('#rc-email')?.focus(); return; }
+      if (event.target.closest('[data-rc-switch]')) { state.mode = state.mode === 'login' ? 'register' : 'login'; const dialog = loginDialog(); dialog.querySelector('#rc-phone')?.focus(); return; }
       if (event.target.closest('[data-rc-logout]')) { menu?.remove(); logout(); return; }
       if (menu && !event.target.closest('#rc-account-menu')) { menu.remove(); render(); }
     });
