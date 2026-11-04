@@ -53,7 +53,7 @@
     reviewScope: P01.reviewScope, workflowStatus: '未开始', draftSaved: false, draft: null,
     currentSubmissionId: '', submissions: [], updatedAt: ''
   });
-  const empty = () => ({ corpusVersion: CURRENT, startingPoint: null, visits: [], bookmarks: [], notes: {}, project: { title: '', problem: '', evidence: '', result: '', gap: '', next: '' }, practice: emptyPractice(), task: { state: 'not_started', unitId: '', sectionId: '', reason: '', updatedAt: '' } });
+  const empty = () => ({ pendingNoteIds: [], corpusVersion: CURRENT, startingPoint: null, visits: [], bookmarks: [], notes: {}, project: { title: '', problem: '', evidence: '', result: '', gap: '', next: '' }, practice: emptyPractice(), task: { state: 'not_started', unitId: '', sectionId: '', reason: '', updatedAt: '' } });
   let local = empty(), storageError = '', activeView = '', assistantOpen = false, query = '', response = null, submission = null, pending = false, requestId = 0, controller = null;
   let careerPractice = { draft: '', saved: false, submitted: false, feedback: '练习反馈：尚未提交。提交后只回显本页草稿，不表示通过或等级。' };
   // The public page keeps the original Agent corpus for anonymous reading. Once an
@@ -78,11 +78,24 @@
     const hex = [...bytes].map(v => v.toString(16).padStart(2, '0')).join('');
     return hex.slice(0,8) + '-' + hex.slice(8,12) + '-' + hex.slice(12,16) + '-' + hex.slice(16,20) + '-' + hex.slice(20);
   }
-  try {
-    const raw = localStorage.getItem(STORE) || localStorage.getItem(PREVIOUS_STORE);
+  const RECORD_NAMESPACE = 'rolecraft-reading-owned-v1';
+  let recordScope = scopeFor(null), renderedRecordScope = '', recordNotice = '', legacyRecordsPresent = false;
+  function scopeFor(session, publicCareer = null) {
+    const userId = session?.user?.id || session?.user?.userId || '';
+    const career = publicCareer || session?.activeCareer;
+    const owner = userId ? 'account:' + userId : 'guest';
+    const identity = career ? [career.careerId || '', career.textbookVersionId || '', career.contentVersion || '', career.corpusHash || ''].join('|') : ['agent-developer', CURRENT, globalThis.RolecraftContentV13?.corpusHash || ''].join('|');
+    return { owner, identity, key: RECORD_NAMESPACE + ':' + encodeURIComponent(owner) + ':' + encodeURIComponent(identity) };
+  }
+  function scopedAuxKey(base) { return base + ':owned:' + encodeURIComponent(recordScope.owner) + ':' + encodeURIComponent(recordScope.identity); }
+  function readScopedRecords() {
+    local = empty(); storageError = '';
+    try {
+    const raw = localStorage.getItem(recordScope.key);
     if (raw) {
       const parsed = JSON.parse(raw);
-      if (parsed.corpusVersion !== CURRENT) throw Error('Record version mismatch');
+      if (parsed.recordScope?.owner !== recordScope.owner || parsed.recordScope?.identity !== recordScope.identity) throw Error('Record version mismatch');
+      local.pendingNoteIds = Array.isArray(parsed.pendingNoteIds) ? parsed.pendingNoteIds.filter(id => typeof id === 'string') : [];
       local.startingPoint = Object.hasOwn(STARTS, parsed.startingPoint) ? parsed.startingPoint : null;
       local.visits = Array.isArray(parsed.visits) ? parsed.visits.filter(v => v && typeof v.unitId === 'string' && typeof v.at === 'string').slice(-200) : [];
       local.bookmarks = Array.isArray(parsed.bookmarks) ? parsed.bookmarks.filter(v => v && typeof v.unitId === 'string' && typeof v.sectionId === 'string').slice(0, 200) : [];
@@ -99,7 +112,22 @@
         local.task = { ...empty().task, ...t, state: ['not_started', 'in_progress', 'interrupted', 'browsed'].includes(t.state) ? t.state : 'not_started' };
       }
     }
-  } catch (error) { storageError = error?.message === 'Record version mismatch' ? '已有阅读记录与当前教材版本不一致，已停止据此显示。不会把旧记录并入新教材。原值仍可导出。' : '读取本浏览器学习记录失败。新输入仍可留在页面并导出。'; }
+    } catch (error) { storageError = error?.message === 'Record version mismatch' ? '已有阅读记录与当前教材版本不一致，已停止据此显示。不会把旧记录并入新教材。原值仍可导出。' : '读取本浏览器学习记录失败。新输入仍可留在页面并导出。'; }
+  }
+  function useRecordScope(session, publicCareer = null) {
+    const next = scopeFor(session, publicCareer);
+    if (next.key === recordScope.key) return false;
+    captureNotes(); save();
+    recordScope = next; renderedRecordScope = '';
+    activeReadingUnitId = ''; activeReadingVersion = '';
+    readScopedRecords();
+    careerPractice = { draft: '', saved: false, submitted: false, feedback: '练习反馈：尚未提交。' };
+    ++requestId; controller?.abort(); pending = false;
+    query = ''; response = null; submission = null; dialogTopic = null; queryHistory = []; restoredResponse = false; assistantOpen = false;
+    return true;
+  }
+  readScopedRecords();
+  try { if (localStorage.getItem(STORE) || localStorage.getItem(PREVIOUS_STORE)) { legacyRecordsPresent = true; recordNotice = '旧版共享记录已保留隔离，归属未核验前不会显示或上传。'; } } catch { /* Storage failure is already reported by scoped loading. */ }
   let cutover = { comparison: null, apiMismatch: null, lastProbeAt: 0, probing: false, inflight: null, timer: 0 };
   function staticCorpus() {
     const c = globalThis.RolecraftContentV13, count = 30;
@@ -144,7 +172,7 @@
   }
   function section(u, id) { return u?.sections.find(s => s.sectionId === id); }
   function currentRecord(v) { return v?.corpusVersion === CURRENT && v.corpusHash === corpus()?.corpusHash && unit(v.unitId)?.sourceSha256 === v.sourceSha256 && (!v.sectionId || section(unit(v.unitId), v.sectionId)); }
-  function noteText(u) { const n = local.notes[u?.unitId]; return n?.corpusVersion === CURRENT && n.sourceSha256 === u?.sourceSha256 ? asText(n.text) : ''; }
+  function noteText(u) { const n = local.notes[u?.unitId]; return n?.corpusVersion === unitVersion(u) && n.sourceSha256 === u?.sourceSha256 ? asText(n.text) : ''; }
   function careerRoute() {
     const [path] = location.hash.slice(1).split('?'), p = path.split('/');
     if (p[0] === 'learn' && p[1] === 'career' && /^[a-z0-9][a-z0-9-]{0,127}$/.test(p[2] || '')) return { careerId: p[2], unitId: p[3] || '', sectionId: p[4] || '' };
@@ -163,7 +191,7 @@
     return '#learn/agent/' + u.unitId + (s ? '/' + s : '');
   }
   function save() {
-    try { localStorage.setItem(STORE, JSON.stringify(local)); storageError = ''; return true; }
+    try { localStorage.setItem(recordScope.key, JSON.stringify({ ...local, recordScope: { owner: recordScope.owner, identity: recordScope.identity } })); storageError = ''; return true; }
     catch { storageError = '浏览器无法保存。输入还在当前页面；关闭前可导出学习记录。'; return false; }
   }
   function practiceSource() {
@@ -265,7 +293,7 @@
   function emptyCareerTasks() { return { schema: 1, careers: {} }; }
   function loadCareerTasks() {
     try {
-      const parsed = JSON.parse(localStorage.getItem(CAREER_TASK_KEY) || 'null');
+      const parsed = JSON.parse(localStorage.getItem(scopedAuxKey(CAREER_TASK_KEY)) || 'null');
       if (!parsed || parsed.schema !== 1 || !parsed.careers || typeof parsed.careers !== 'object' || Array.isArray(parsed.careers)) return emptyCareerTasks();
       return parsed;
     } catch { return emptyCareerTasks(); }
@@ -297,7 +325,7 @@
       updatedAt: new Date().toISOString()
     };
     book.careers[careerId] = next;
-    try { localStorage.setItem(CAREER_TASK_KEY, JSON.stringify(book)); } catch { /* The in-memory page still shows the last rendered state. */ }
+    try { localStorage.setItem(scopedAuxKey(CAREER_TASK_KEY), JSON.stringify(book)); } catch { /* The in-memory page still shows the last rendered state. */ }
     return next;
   }
   function noteDynamicReading(location) {
@@ -368,6 +396,16 @@
     careerState = { ...careerState, ...next };
     if (previous.status !== careerState.status || previous.careerId !== careerState.careerId || previous.error !== careerState.error) redrawCareerView();
   }
+  function matchesBundledAgentCatalog(career, catalog) {
+    const bundled = staticCorpus();
+    if (!bundled || !career || !catalog || career.careerId !== AGENT_CAREER_ID || career.status !== 'published' || career.available !== true || career.contentVersion !== CURRENT || catalog.corpusVersion !== CURRENT || career.corpusHash !== bundled.corpusHash || catalog.corpusHash !== bundled.corpusHash || career.bookSha256 !== bundled.bookSha256 || catalog.bookSha256 !== bundled.bookSha256 || !Array.isArray(catalog.units) || catalog.units.length !== bundled.units.length) return false;
+    const unitKeys = ['unitId', 'order', 'title', 'navigationLabel', 'sourcePath', 'sourceSha256', 'coreQuestion', 'href'];
+    const sectionKeys = ['sectionId', 'title', 'level', 'startLine', 'href'];
+    return catalog.units.every((unit, index) => {
+      const expected = bundled.units[index];
+      return unit && unitKeys.every(key => unit[key] === expected[key]) && JSON.stringify(unit.prerequisiteUnitIds) === JSON.stringify(expected.prerequisiteUnitIds) && Array.isArray(unit.sections) && unit.sections.length === expected.sections.length && unit.sections.every((section, sectionIndex) => section && sectionKeys.every(key => section[key] === expected.sections[sectionIndex][key]));
+    });
+  }
   async function loadPublicCareerCatalog(careerId) {
     const requestId = careerState.requestId + 1;
     careerState = { status: 'loading', phase: 'catalog', active: true, careerId, career: { careerId, title: '', summary: '', contentVersion: '' }, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), chapterErrorKinds: new Map(), error: '', errorKind: '', requestId, startedAt: Date.now(), firstLoad: false, loadingChapterId: '' };
@@ -378,7 +416,13 @@
       const result = await readLearningPayload(http, '职业教材目录没有返回。');
       if (careerState.requestId !== requestId) return;
       const version = result?.career?.contentVersion || result?.catalog?.corpusVersion || '';
-      if (result?.career?.careerId !== careerId || !validCareerCatalog(result.catalog, version) || result.catalog.matchesManifest !== true) throw Object.assign(Error('职业教材来源与清单不一致，已停止显示正文。'), { kind: 'missing' });
+      const catalog = result?.catalog;
+      const bundledAgent = careerId === AGENT_CAREER_ID;
+      const sourceVerified = bundledAgent
+        ? (catalog?.matchesManifest === true || catalog?.matchesManifest === undefined) && matchesBundledAgentCatalog(result?.career, catalog)
+        : catalog?.matchesManifest === true;
+      if (result?.career?.careerId !== careerId || !validCareerCatalog(catalog, version) || !sourceVerified) throw Object.assign(Error('职业教材来源与清单不一致，已停止显示正文。'), { kind: 'missing' });
+      useRecordScope(accountSession(), result.career);
       noteFixtureSession(false);
       careerState = { ...careerState, status: 'ready', phase: 'ready', career: result.career, catalog: result.catalog, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), chapterErrorKinds: new Map(), error: '', errorKind: '', contentMismatch: false, startedAt: 0, loadingChapterId: '' };
       redrawCareerView();
@@ -429,6 +473,7 @@
       for (const u of catalog.units) if (u.bodyMarkdown && Array.isArray(u.sections) && u.sections.some(s => s.bodyMarkdown)) chapters.set(u.unitId, { unit: u });
       noteFixtureSession(false);
       careerState = { ...careerState, status: 'ready', phase: 'ready', career: { ...career, ...result.career }, catalog, chapters, chapterRequests: new Map(), chapterErrors: new Map(), chapterErrorKinds: new Map(), error: '', errorKind: '', contentMismatch: false, startedAt: 0, loadingChapterId: '' };
+      useRecordScope(session, result.career);
       markLoaded(careerId);
       redrawCareerView();
       syncAccountRecords();
@@ -495,52 +540,64 @@
     redrawCareerView();
   }
   function accountRecordTarget(unitId, sectionId = '') {
-    const u = unit(unitId), career = accountSession()?.activeCareer, careerId = career?.careerId || '', textbookVersionId = career?.textbookVersionId || '';
+    const u = unit(unitId, careerState.career?.contentVersion || CURRENT), career = accountSession()?.activeCareer, careerId = career?.careerId || '', textbookVersionId = career?.textbookVersionId || '';
     if (!u || !careerId || !textbookVersionId) return null;
     return { careerId, textbookVersionId, unitId: u.unitId, sectionId: sectionId || '' };
   }
   async function syncAccountRecords() {
-    const session = accountSession(); if (!session || !globalThis.RolecraftAuthCareer?.api) return;
-    const careerId = session.activeCareer?.careerId, textbookVersionId = session.activeCareer?.textbookVersionId || '';
-    if (!careerId || !textbookVersionId) return;
-    const token = ++accountSyncToken;
+    const session = accountSession();
+    const careerId = session?.activeCareer?.careerId, textbookVersionId = session?.activeCareer?.textbookVersionId;
+    if (!session?.user || !careerId || !textbookVersionId || careerState.status !== 'ready') return { status: 'unavailable' };
+    const scope = recordScope.key, token = accountSyncToken;
     if (accountSyncPromise) return accountSyncPromise;
-    accountSyncPromise = (async () => {
+    const operation = (async () => {
       try {
-        const current = local.bookmarks.filter(currentRecord).slice(-80);
-        const visits = local.visits.filter(currentRecord).slice(-40);
-        const notes = Object.entries(local.notes).map(([unitId, note]) => ({ unitId, note })).filter(({ unitId, note }) => unit(unitId) && note?.corpusVersion === CURRENT && note.sourceSha256 === unit(unitId).sourceSha256 && asText(note.text).trim()).slice(-80);
-        await Promise.allSettled([
-          ...current.map(b => accountApi('/api/me/favorites', { method: 'POST', body: { ...accountRecordTarget(b.unitId, b.sectionId), sectionId: b.sectionId || '' } })),
-          ...visits.map(v => Promise.allSettled([
-            accountApi('/api/me/recent', { method: 'POST', body: accountRecordTarget(v.unitId, v.sectionId) }),
-            accountApi('/api/me/progress', { method: 'POST', body: { ...accountRecordTarget(v.unitId, v.sectionId), state: 'opened' } })
-          ])),
-          ...notes.map(({ unitId, note }) => accountApi('/api/me/notes', { method: 'PUT', body: { ...accountRecordTarget(unitId), sectionId: '', noteText: asText(note.text) } }))
-        ]);
         const [favoriteResult, recentResult, noteResult] = await Promise.all([
           accountApi('/api/me/favorites?careerId=' + encodeURIComponent(careerId)),
           accountApi('/api/me/recent?careerId=' + encodeURIComponent(careerId)),
           accountApi('/api/me/notes?careerId=' + encodeURIComponent(careerId))
         ]);
-        if (token !== accountSyncToken) return;
+        if (token !== accountSyncToken || scope !== recordScope.key) return { status: 'stale' };
         for (const f of favoriteResult?.favorites || []) {
-          const u = unit(f.unitId); if (!u || f.sourceSha256 !== u.sourceSha256 || f.textbookVersionId !== textbookVersionId) continue;
-          if (!local.bookmarks.some(b => currentRecord(b) && b.unitId === f.unitId && (b.sectionId || '') === (f.sectionId || ''))) local.bookmarks.push({ unitId: f.unitId, sectionId: f.sectionId || '', corpusVersion: CURRENT, corpusHash: corpus().corpusHash, sourceSha256: u.sourceSha256 });
+          const u = unit(f.unitId, careerState.career?.contentVersion || CURRENT); if (!u || f.sourceSha256 !== u.sourceSha256 || f.textbookVersionId !== textbookVersionId) continue;
+          if (!local.bookmarks.some(b => b.unitId === f.unitId && (b.sectionId || '') === (f.sectionId || ''))) local.bookmarks.push({ unitId: f.unitId, sectionId: f.sectionId || '', corpusVersion: unitVersion(u), corpusHash: corpus()?.corpusHash, sourceSha256: u.sourceSha256 });
         }
         for (const v of recentResult?.recent || []) {
-          const u = unit(v.unitId); if (!u || v.sourceSha256 !== u.sourceSha256 || v.textbookVersionId !== textbookVersionId) continue;
-          if (!local.visits.some(x => currentRecord(x) && x.unitId === v.unitId && (x.sectionId || '') === (v.sectionId || '') && x.at === v.visitedAt)) local.visits.push({ unitId: v.unitId, sectionId: v.sectionId || '', corpusVersion: CURRENT, corpusHash: corpus().corpusHash, sourceSha256: u.sourceSha256, at: v.visitedAt });
+          const u = unit(v.unitId, careerState.career?.contentVersion || CURRENT); if (!u || v.sourceSha256 !== u.sourceSha256 || v.textbookVersionId !== textbookVersionId) continue;
+          if (!local.visits.some(x => x.unitId === v.unitId && x.at === v.visitedAt)) local.visits.push({ unitId: v.unitId, sectionId: v.sectionId || '', corpusVersion: unitVersion(u), corpusHash: corpus()?.corpusHash, sourceSha256: u.sourceSha256, at: v.visitedAt });
         }
+        const newestNotes = new Map();
+        const noteTime = note => [String(note.updatedAt || ''), String(note.createdAt || '')].join('|');
         for (const n of noteResult?.notes || []) {
-          const u = unit(n.unitId); if (!u || n.sourceSha256 !== u.sourceSha256 || n.textbookVersionId !== textbookVersionId) continue;
-          const localNote = local.notes[n.unitId]; if (!localNote || String(n.updatedAt) > String(localNote.updatedAt || '')) local.notes[n.unitId] = { text: n.noteText, corpusVersion: CURRENT, sourceSha256: u.sourceSha256, updatedAt: n.updatedAt };
+          const u = unit(n.unitId, careerState.career?.contentVersion || CURRENT);
+          if (!u || (n.sectionId || '') !== '' || n.sourceSha256 !== u.sourceSha256 || n.textbookVersionId !== textbookVersionId || local.pendingNoteIds.includes(n.unitId)) continue;
+          const previous = newestNotes.get(n.unitId);
+          if (!previous || noteTime(n) > noteTime(previous)) newestNotes.set(n.unitId, n);
         }
-        local.bookmarks = local.bookmarks.filter(currentRecord).slice(-200); local.visits = local.visits.filter(currentRecord).slice(-200); save();
-      } catch { /* Account sync is additive; local reading remains available when service is offline. */ }
-      finally { accountSyncPromise = null; }
+        for (const n of newestNotes.values()) {
+          const u = unit(n.unitId, careerState.career?.contentVersion || CURRENT);
+          local.notes[n.unitId] = { text: n.noteText, corpusVersion: unitVersion(u), sourceSha256: u.sourceSha256, updatedAt: n.updatedAt };
+        }
+        local.bookmarks = local.bookmarks.slice(-200); local.visits = local.visits.slice(-200); save();
+        renderedRecordScope = '';
+        if (typeof render === 'function') render();
+        return { status: 'loaded' };
+      } catch (error) { return { status: error?.status === 401 ? 'expired' : 'failed' }; }
+      finally { if (accountSyncPromise === operation) accountSyncPromise = null; }
     })();
-    return accountSyncPromise;
+    accountSyncPromise = operation;
+    return operation;
+  }
+  async function syncAccountNote(unitId) {
+    const target = accountRecordTarget(unitId), note = local.notes[unitId];
+    if (!accountSession()?.user || !target || !note) return { status: 'local' };
+    const scope = recordScope.key, token = accountSyncToken, text = asText(note.text);
+    try {
+      await accountApi('/api/me/notes', { method: 'PUT', body: { ...target, sectionId: '', noteText: text } });
+      if (scope !== recordScope.key || token !== accountSyncToken) return { status: 'stale' };
+      if (local.notes[unitId]?.text === text) { local.pendingNoteIds = local.pendingNoteIds.filter(id => id !== unitId); save(); }
+      return { status: 'synced' };
+    } catch (error) { return { status: error?.status === 401 ? 'expired' : scope !== recordScope.key ? 'stale' : 'failed' }; }
   }
   function syncAccountEvent(kind, unitId, sectionId = '', extra = {}) {
     if (!accountSession()?.activeCareer?.careerId || !unit(unitId)) return;
@@ -549,24 +606,28 @@
     request?.catch?.(() => {});
   }
   async function syncAccountFavorite(unitId, sectionId, exists) {
+    const scope = recordScope.key, token = accountSyncToken;
     if (!accountSession()?.activeCareer?.careerId) return;
     const target = accountRecordTarget(unitId, sectionId); if (!target) return;
     try {
       if (!exists) { await accountApi('/api/me/favorites', { method: 'POST', body: target }); return; }
       const listed = await accountApi('/api/me/favorites?careerId=' + encodeURIComponent(target.careerId));
+      if (scope !== recordScope.key || token !== accountSyncToken) return;
       const current = listed?.favorites?.find(f => f.unitId === target.unitId && (f.sectionId || '') === (target.sectionId || ''));
       if (current?.favoriteId) await accountApi('/api/me/favorites/' + encodeURIComponent(current.favoriteId), { method: 'DELETE' });
     } catch { /* Local removal remains authoritative when the service is offline. */ }
   }
   globalThis.addEventListener?.('rolecraft:authchange', event => {
-    accountSyncToken++;
-    loadCareerContent(event.detail?.session || null);
-    if (event.detail?.session) syncAccountRecords();
+    accountSyncToken++; accountSyncPromise = null;
+    const session = event.detail?.session || null;
+    useRecordScope(session);
+    recordNotice = event.detail?.reason === 'expired' ? '登录已失效，草稿仅保存在原账户的本机记录中。登录原账户后可重试同步。' : legacyRecordsPresent ? '旧版共享记录保留隔离；当前仅显示本次访客或已验证账户的记录。' : '';
+    loadCareerContent(session);
   });
   // auth-career-v15 is loaded after this file; give it one turn to publish its
   // session API, then establish the anonymous/public or account-backed state.
   setTimeout(() => {
-    if (globalThis.RolecraftAuthCareer) loadCareerContent(accountSession());
+    if (globalThis.RolecraftAuthCareer) { useRecordScope(accountSession()); loadCareerContent(accountSession()); }
     else if (careerRoute()) loadPublicCareerCatalog(careerRoute().careerId);
   }, 0);
   globalThis.addEventListener?.('hashchange', () => {
@@ -752,8 +813,18 @@
     if (!node) return;
     const local = localContentIdentity();
     const server = cutover.comparison?.server;
-    if (cutover.comparison?.status === 'mismatch' && server?.contentVersion) node.textContent = '本机会话教材 ' + local.contentVersion + ' · 服务端 ' + server.contentVersion + ' · 本浏览器保存 · ' + VERSION;
-    else if (cutover.comparison?.status === 'match' && server?.contentVersion) node.textContent = '本机会话教材 ' + local.contentVersion + ' · 与服务端一致 · 本浏览器保存 · ' + VERSION;
+    const footer = document.querySelector('footer');
+    const title = careerState.status === 'ready' ? careerState.career?.title : !careerState.active && staticCorpus() ? 'Agent 开发' : '';
+    if (footer?.firstChild?.nodeType === 3) footer.firstChild.textContent = '职造 · ' + (title ? title + '学习' : '职业学习') + ' ';
+    const label = value => String(value || '').match(/(?:^|-)(v\d[\d.]*)$/)?.[1] || '当前版本';
+    if (careerState.active && careerState.status !== 'ready') { node.textContent = ''; return; }
+    if (dynamicCareer() && careerState.career?.contentVersion) {
+      node.textContent = (careerState.career.title ? careerState.career.title + ' · ' : '') + '教材 ' + label(careerState.career.contentVersion) + ' · 本浏览器保存';
+      return;
+    }
+    if (cutover.comparison?.status === 'mismatch' && server?.contentVersion) node.textContent = '教材 ' + label(local.contentVersion) + ' · 服务端 ' + label(server.contentVersion) + ' · 本浏览器保存';
+    else if (cutover.comparison?.status === 'match' && server?.contentVersion) node.textContent = '教材 ' + label(local.contentVersion) + ' · 与服务端一致 · 本浏览器保存';
+    else node.textContent = '教材 ' + label(local.contentVersion) + ' · 本浏览器保存';
   }
   function renderContentUpdateBanner() {
     const node = ensureContentUpdateBanner();
@@ -808,20 +879,8 @@
     } catch { location.reload(); }
   }
   function exportLocalLearningRecords() {
-    if (typeof globalThis.LearningExperienceV13?.exportAll === 'function') {
-      globalThis.LearningExperienceV13.exportAll();
-      notify('已导出本机阅读与练习记录。旧记录不会并入新教材。');
-      return;
-    }
     captureNotes();
-    const keys = {};
-    try {
-      for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        if (key && (key.startsWith('rolecraft-reading-') || key.startsWith('rolecraft-experience-') || key === STORE || key === PREVIOUS_STORE)) keys[key] = localStorage.getItem(key);
-      }
-    } catch { /* fall through to the in-memory record */ }
-    if (!Object.keys(keys).length) keys[STORE] = JSON.stringify(local);
+    const keys = { [recordScope.key]: JSON.stringify(local) };
     const data = { schemaVersion: '1', clientVersion: VERSION, exportedAt: new Date().toISOString(), scope: '本浏览器阅读与练习记录，不是独立能力评价', keys, current: { corpusVersion: CURRENT, corpusHash: localContentIdentity().corpusHash || null, records: local } };
     download(JSON.stringify(data, null, 2), '职造-本机学习记录.json', 'application/json;charset=utf-8');
     notify('已导出本机阅读记录。旧记录不会并入新教材。');
@@ -934,13 +993,19 @@
     const height = Number(entry?.viewBoxHeight) || 0;
     // Desk/tablet pan is temporary for wide flows. Narrow pass uses the vertical-stack asset.
     const wide = width >= 1200 || (width > 0 && height > 0 && width / height >= 4);
-    const figureClass = wide ? 'lw-figure lw-figure-pan' : 'lw-figure';
+    const denseDiagram = version === CURRENT && ({
+      'agent-runtime-loop.png': { name: '任务运行闭环图', asset: 'agent-runtime-loop.svg', width: 871, height: 576, start: 'center' },
+      'agent-engineering-landscape-v12.png': { name: '工程全景图', asset: 'agent-engineering-landscape-v12.svg', width: 1120, height: 950, start: 'left' }
+    })[assetName];
+    const diagramUrl = denseDiagram ? asset(denseDiagram.asset, version) : '';
+    const figureClass = (wide ? 'lw-figure lw-figure-pan' : 'lw-figure') + (diagramUrl ? ' lw-dense-diagram' : '');
     const style = wide ? ' style="--lw-figure-min:' + Math.round(width) + 'px"' : '';
     const narrowAttr = narrowUrl ? ' data-lw-image-narrow="' + esc(narrowUrl) + '"' : '';
     const image = narrowUrl
       ? '<picture><source media="(max-width: 640px)" srcset="' + esc(narrowUrl) + '"><img src="' + esc(url) + '" alt="' + esc(label) + '" loading="lazy"></picture>'
       : '<img src="' + esc(url) + '" alt="' + esc(label) + '" loading="lazy">';
-    return '<figure class="' + figureClass + '"' + style + '><button type="button" data-lw-image="' + esc(url) + '"' + narrowAttr + ' data-lw-alt="' + esc(label) + '" aria-label="查看原图（可选）：' + esc(label) + '">' + image + '</button><figcaption><button type="button" data-lw-image="' + esc(url) + '"' + narrowAttr + ' data-lw-alt="' + esc(label) + '">查看原图</button></figcaption></figure>';
+    const inlineDiagram = diagramUrl ? '<div class="lw-inline-diagram" data-lw-inline-diagram="' + denseDiagram.start + '" role="group" tabindex="0" aria-label="' + esc(denseDiagram.name) + '，可左右滚动" style="--lw-diagram-width:' + denseDiagram.width + 'px;--lw-diagram-height:' + denseDiagram.height + 'px"><img src="' + esc(diagramUrl) + '" width="' + denseDiagram.width + '" height="' + denseDiagram.height + '" alt="' + esc(label) + '" loading="lazy"></div><p class="lw-inline-diagram-hint">↔ 左右滑动查看完整图</p>' : '';
+    return '<figure class="' + figureClass + '"' + style + '><button type="button" data-lw-image="' + esc(url) + '"' + narrowAttr + ' data-lw-alt="' + esc(label) + '" aria-label="查看原图（可选）：' + esc(label) + '">' + image + '</button>' + inlineDiagram + '<figcaption><button type="button" data-lw-image="' + esc(url) + '"' + narrowAttr + ' data-lw-alt="' + esc(label) + '">查看原图</button></figcaption></figure>';
   }
   function inline(text, u) {
     const values = [], token = html => '\u0001' + (values.push(html) - 1) + '\u0002';
@@ -968,7 +1033,17 @@
     const lines = u.bodyMarkdown.replace(/\r\n?/g, '\n').split('\n'), out = [], byLine = new Map(u.sections.map(s => [s.startLine, s]));
     const hiddenRanges = hideLearningContinuity ? hiddenLearningContinuity(u) : [];
     let para = [], code = null, lang = '', list = [], listStack = [], quote = [];
-    const flushPara = () => { if (para.length) { out.push('<p>' + para.map(l => inline(l, u)).join('\n') + '</p>'); para = []; } };
+    const flushPara = () => {
+      if (!para.length) return;
+      // Generated figures are block content. Keep surrounding text in its own
+      // paragraphs instead of asking the browser to repair a figure inside p.
+      const rendered = para.map(l => inline(l, u)).join('\n');
+      for (const block of rendered.split(/(<figure\b[\s\S]*?<\/figure>)/)) {
+        if (!block.trim()) continue;
+        out.push(block.startsWith('<figure') ? block : '<p>' + block + '</p>');
+      }
+      para = [];
+    };
     const listHTML = node => '<' + node.type + (node.type === 'ol' && node.start !== 1 ? ' start="' + node.start + '"' : '') + '>' + node.items.map(item => '<li>' + inline(item.text, u) + item.children.map(listHTML).join('') + '</li>').join('') + '</' + node.type + '>';
     const flushList = () => { if (list.length) out.push(list.map(listHTML).join('')); list = []; listStack = []; };
     const appendListItem = (indent, type, text, start) => {
@@ -990,19 +1065,39 @@
       const lines = source.length ? source.length : 1;
       const open = lines <= 10 ? ' open' : '';
       const label = language || '代码';
-      return '<details class="lw-code lw-code-details"' + open + '><summary>' + inline(summary || ('展开' + label + '代码'), u) + '<span class="lw-code-meta">' + esc(label) + ' · ' + lines + ' 行 · 网页不执行代码</span></summary><pre tabindex="0"><code>' + esc(source.join('\n')) + '</code></pre></details>';
+      return '<details class="lw-code lw-code-details"' + open + '><summary>' + esc(summary || ('展开' + label + '代码')) + '<span class="lw-code-meta">' + esc(label) + ' · ' + lines + ' 行 · 网页不执行代码</span></summary><pre tabindex="0"><code>' + esc(source.join('\n')) + '</code></pre></details>';
     };
     const detailsCode = start => {
-      if (lines[start]?.trim() !== '<details>') return null;
-      const summaryMatch = (lines[start + 1] || '').match(/^\s*<summary>([\s\S]*)<\/summary>\s*$/i);
-      if (!summaryMatch) return null;
-      const fence = (lines[start + 2] || '').match(/^\s*```([^`]*)$/);
-      if (!fence) return null;
+      const opening = (lines[start] || '').match(/^\s*<details>\s*(?:<summary>(.*?)<\/summary>\s*)?$/i);
+      if (!opening) return null;
+      let cursor = start + 1, summary = opening[1];
+      const skipBlankLines = () => { while (cursor < lines.length && !lines[cursor].trim()) cursor++; };
+      if (summary === undefined) {
+        skipBlankLines();
+        const summaryMatch = (lines[cursor] || '').match(/^\s*<summary>(.*?)<\/summary>\s*$/i);
+        if (!summaryMatch) return null;
+        summary = summaryMatch[1];
+        cursor++;
+      }
+      const bodyStart = cursor;
+      skipBlankLines();
+      const fence = (lines[cursor] || '').match(/^\s*```([^`]*)$/);
+      if (!fence) {
+        // A complete controlled wrapper may contain literal editorial text,
+        // including escaped fences. Preserve it verbatim, never execute HTML
+        // or silently unescape it into another code sample.
+        while (cursor < lines.length && lines[cursor].trim().toLowerCase() !== '</details>') cursor++;
+        if (cursor >= lines.length) return null;
+        return { html: collapsedCodeHTML(summary, '原文', lines.slice(bodyStart, cursor)), end: cursor };
+      }
       const source = [];
-      let close = start + 3;
-      while (close < lines.length && !/^\s*```\s*$/.test(lines[close])) { source.push(lines[close]); close++; }
-      if (close >= lines.length || (lines[close + 1] || '').trim().toLowerCase() !== '</details>') return null;
-      return { html: collapsedCodeHTML(summaryMatch[1], fence[1].trim(), source), end: close + 1 };
+      cursor++;
+      while (cursor < lines.length && !/^\s*```\s*$/.test(lines[cursor])) { source.push(lines[cursor]); cursor++; }
+      if (cursor >= lines.length) return null;
+      cursor++;
+      skipBlankLines();
+      if ((lines[cursor] || '').trim().toLowerCase() !== '</details>') return null;
+      return { html: collapsedCodeHTML(summary, fence[1].trim(), source), end: cursor };
     };
     const flush = () => { flushPara(); flushList(); flushQuote(); };
     const cells = l => l.trim().replace(/^\|/, '').replace(/\|$/, '').split(/(?<!\\)\|/).map(c => c.trim().replace(/\\\|/g, '|'));
@@ -1127,8 +1222,8 @@
     if (!prerequisites || prerequisites.some(p => !p)) return errorPage('本篇前置章节来源无法核对，请重新加载教材。', 'reload', 'missing');
     const prereqLabel = prerequisites.length ? '需掌握的前置 · ' + prerequisites.length + ' 篇' : '需掌握的前置：无';
     const priorHTML = '<aside class="lw-prerequisites" id="lw-prerequisites" aria-labelledby="lw-prereq-title"><h2 id="lw-prereq-title" tabindex="-1">需掌握的前置</h2>' + (prerequisites.length ? '<ul>' + prerequisites.map(p => '<li><a href="' + esc(href(p)) + '">' + esc(p.navigationLabel) + '</a></li>').join('') + '</ul>' : '<p>无前置章节</p>') + '</aside>';
-    const noteArea = '<section class="lw-note-area"><h2>我的阅读笔记</h2><p>只保存在此浏览器，记录本篇疑问与实际尝试。</p><label for="lw-note">本篇笔记</label><textarea id="lw-note" rows="5" maxlength="12000">' + esc(noteText(u)) + '</textarea><button class="primary" data-lw-save-note>保存笔记</button></section>';
-    return '<div class="lw-reader-layout lw-detail"><div class="lw-reader-top" id="lw-reader-start" tabindex="-1"><a href="#learn">← 返回课程</a><span>' + esc(u.navigationLabel) + '</span></div>' + missingLocation + hiddenNotice + '<div class="lw-prereq-strip" id="lw-prereq-strip"><span>' + esc(prereqLabel) + '</span>' + (prerequisites.length ? '<button type="button" data-lw-prereq-location aria-label="查看需掌握的前置章节">查看章节</button>' : '') + '</div><div class="lw-reader-columns">' + priorHTML + '<div class="lw-reading"><details class="lw-section-toc"><summary>本篇小节</summary><ul>' + u.sections.filter(s => s.level > 1 && !hiddenSection(s.sectionId)).map(s => '<li class="lw-level-' + s.level + '"><a href="' + href(u, s.sectionId) + '">' + esc(s.title) + '</a></li>').join('') + '</ul></details><article class="lw-prose" aria-label="' + esc(u.title) + '">' + markdown(u, true) + '</article><div class="lw-reader-tools"><button class="outline" data-lw-bookmark>' + (bookmark ? '已收藏此位置 · 取消' : '收藏当前阅读位置') + '</button><button class="outline" type="button" data-lw-interrupt>中断并保存位置</button></div>' + noteArea + '<nav class="lw-pagination" aria-label="相邻篇章">' + (index > 0 ? '<a href="' + href(c.units[index - 1]) + '">← 上一篇<br><strong>' + esc(c.units[index - 1].navigationLabel) + '</strong></a>' : '<a href="#learn">返回课程</a>') + (index < c.units.length - 1 ? '<a href="' + href(c.units[index + 1]) + '">下一篇 →<br><strong>' + esc(c.units[index + 1].navigationLabel) + '</strong></a>' : '<a href="#projects">带着作品复盘 →</a>') + '</nav></div></div></div>';
+    const noteArea = '<section class="lw-note-area"><h2>我的阅读笔记</h2><p>只保存在此浏览器，记录本篇疑问与实际尝试。</p><label for="lw-note">本篇笔记</label><textarea id="lw-note" rows="5" maxlength="12000">' + esc(noteText(u)) + '</textarea><button class="primary" data-lw-save-note>保存笔记</button>' + (local.pendingNoteIds.includes(u.unitId) && accountSession()?.user ? '<p class="lw-small">有仅保存在本机的草稿。确认内容后点击保存笔记，重试同步到当前账户。</p>' : '') + '</section>';
+    return '<div class="lw-reader-layout lw-detail"><div class="lw-reader-top" id="lw-reader-start" tabindex="-1"><a href="#learn">← 返回课程</a><span>' + esc(u.navigationLabel) + '</span></div>' + missingLocation + hiddenNotice + '<div class="lw-prereq-strip" id="lw-prereq-strip" hidden><span>' + esc(prereqLabel) + '</span>' + (prerequisites.length ? '<button type="button" data-lw-prereq-location aria-label="查看需掌握的前置章节">查看章节</button>' : '') + '</div><div class="lw-reader-columns">' + priorHTML + '<div class="lw-reading"><details class="lw-section-toc"><summary>本篇小节</summary><ul>' + u.sections.filter(s => s.level > 1 && !hiddenSection(s.sectionId)).map(s => '<li class="lw-level-' + s.level + '"><a href="' + href(u, s.sectionId) + '">' + esc(s.title) + '</a></li>').join('') + '</ul></details><article class="lw-prose" aria-label="' + esc(u.title) + '">' + markdown(u, true) + '</article><div class="lw-reader-tools"><button class="outline" data-lw-bookmark>' + (bookmark ? '已收藏此位置 · 取消' : '收藏当前阅读位置') + '</button><button class="outline" type="button" data-lw-interrupt>中断并保存位置</button></div>' + noteArea + '<nav class="lw-pagination" aria-label="相邻篇章">' + (index > 0 ? '<a href="' + href(c.units[index - 1]) + '">← 上一篇<br><strong>' + esc(c.units[index - 1].navigationLabel) + '</strong></a>' : '<a href="#learn">返回课程</a>') + (index < c.units.length - 1 ? '<a href="' + href(c.units[index + 1]) + '">下一篇 →<br><strong>' + esc(c.units[index + 1].navigationLabel) + '</strong></a>' : '<a href="#projects">带着作品复盘 →</a>') + '</nav></div></div></div>';
   }
   function projectsPage() {
     if (!corpus()) return careerState.active && careerState.status === 'loading' ? loadingPage() : errorPage('项目章节指引尚未加载。', careerState.errorKind === 'content-refresh' ? 'content-refresh' : 'reload', careerState.errorKind || 'missing');
@@ -1141,12 +1236,12 @@
     const recordLayers = [
       ['self_report', '本人自述', values.learnerClaims.trim() ? '已填写' : '未开始', values.learnerClaims.trim() ? 'self' : 'pending'],
       ['run_receipt', '运行证据', values.evidenceRefs.trim() ? '已提供' : '未提供', values.evidenceRefs.trim() ? 'present' : 'missing'],
-      ['ai_suggestion', 'AI 建议', '未生成（not_run）', 'pending'],
+      ['ai_suggestion', 'AI 建议', '未生成', 'pending'],
       ['professional_review', '专业评审', currentSubmission ? (status === '发现问题' ? '复验发现问题' : status === '证据不足' ? '证据不足' : '待独立复验') : '未开始', 'pending'],
       ['human_review', '真人评审', '未验证', 'pending']
     ];
     const submissionHistory = practice.submissions.length ? '<details class="lw-p01-history"><summary>历史提交 · ' + practice.submissions.length + ' 个版本（旧提交只读保留）</summary><ol>' + [...practice.submissions].reverse().map(s => '<li><strong>' + esc(s.artifact_version) + '</strong><span>' + esc(P01_STATUS_LABELS[s.workflow_status] || s.workflow_status || '未开始') + '</span><small>submission_id：' + esc(s.submission_id) + ' · previous_submission_id：' + esc(s.previous_submission_id || '无') + ' · ' + esc(s.created_at) + '</small></li>').join('') + '</ol></details>' : '<p class="lw-small">尚未提交作品包；保存草稿不会生成提交版本。</p>';
-    const p01Form = '<section class="lw-p01-card" aria-labelledby="lw-p01-title"><div class="lw-p01-head"><div><span class="lw-kicker">V1-PILOT · P01-MVP</span><h2 id="lw-p01-title">最小可交付练习：缺陷契约</h2><p>固定构造输入只用于学习练习，不是真实客户问题、退款规则或用户反馈。先保存版本化草稿，再主动提交作品包。</p></div><a class="outline" href="' + esc(p.sourceHref) + '">回到教材来源 →</a></div><div class="lw-p01-identity" aria-label="P01来源身份"><span>练习：' + esc(P01.practiceId) + '</span><span>教材：' + esc(P01.textbookVersion) + '</span><span>来源：' + esc(P01.sourcePath) + '</span><span>fixture：' + esc(P01.fixtureId) + '</span><span class="lw-hash">sourceSha256：' + esc(p.sourceSha256) + '</span><span>submission_id：' + esc(currentSubmission?.submission_id || '未提交') + '</span><span>previous_submission_id：' + esc(currentSubmission?.previous_submission_id || '无') + '</span></div><div class="lw-p01-status-row"><span class="lw-p01-status status-' + esc(status) + '"><b>作品状态</b> · ' + esc(P01_STATUS_LABELS[status]) + '</span><span class="lw-p01-status-note">' + (practice.draftSaved ? '草稿已保存，提交后才进入独立复验队列。' : '尚无当前版本草稿。') + '</span></div><form id="lw-p01-form" class="lw-p01-form">' + P01_ITEMS.map(([id, label, hint]) => '<label for="lw-p01-' + id + '">' + esc(label) + '<small>' + esc(hint) + '</small><textarea id="lw-p01-' + id + '" name="' + id + '" rows="4" maxlength="12000">' + esc(values[id]) + '</textarea></label>').join('') + '<label for="lw-p01-claims">本人自述（目标、困难、未知）<small>只表示你的陈述，不转换为独立评价。</small><textarea id="lw-p01-claims" name="learnerClaims" rows="4" maxlength="12000">' + esc(values.learnerClaims) + '</textarea></label><label for="lw-p01-evidence">证据引用（每行一条路径、命令或 receipt ID）<small>未执行请写 not_run；不要补写预期输出。</small><textarea id="lw-p01-evidence" name="evidenceRefs" rows="3" maxlength="6000">' + esc(values.evidenceRefs) + '</textarea></label><div class="lw-p01-actions"><button class="outline" type="button" data-lw-p01-save>保存版本化草稿</button><button class="primary" type="button" data-lw-p01-submit>提交新作品版本</button><button class="outline" type="button" data-lw-export>导出记录</button></div><p id="lw-p01-feedback" class="lw-small" role="status" aria-live="polite">提交会生成新的 submission_id；不会覆盖旧提交、旧意见或首失败记录。</p></form><div class="lw-p01-layers" aria-label="五类记录层级">' + recordLayers.map(([id, label, value, klass]) => '<div class="lw-p01-layer ' + klass + '"><span aria-hidden="true">' + (klass === 'present' || klass === 'self' ? '●' : '○') + '</span><strong>' + esc(label) + '</strong><em>' + esc(value) + '</em><small>' + (id === 'ai_suggestion' ? '机器建议，不是审核' : id === 'professional_review' ? '独立课程/实训评阅' : id === 'human_review' ? '1.0暂无真人记录' : '事实记录') + '</small></div>').join('') + '</div><div class="lw-p01-review-control"><label for="lw-p01-status">记录当前工作流状态（本人记录，不是独立评审）</label><select id="lw-p01-status" data-lw-p01-status>' + statusOptions + '</select><button class="outline" type="button" data-lw-p01-status-save>保存状态记录</button></div>' + submissionHistory + '</section>';
+    const p01Form = '<section class="lw-p01-card" aria-labelledby="lw-p01-title"><div class="lw-p01-head"><div><span class="lw-kicker">P01-MVP 练习</span><h2 id="lw-p01-title">最小可交付练习：缺陷契约</h2><p>固定构造输入只用于学习练习，不是真实客户问题、退款规则或用户反馈。先保存版本化草稿，再主动提交作品包。</p></div><a class="outline" href="' + esc(p.sourceHref) + '">回到教材来源 →</a></div><details class="lw-p01-provenance"><summary>练习版本与出处</summary><div class="lw-p01-identity" aria-label="P01来源身份"><span>练习：' + esc(P01.practiceId) + '</span><span>教材：' + esc(P01.textbookVersion) + '</span><span>来源：' + esc(P01.sourcePath) + '</span><span>fixture：' + esc(P01.fixtureId) + '</span><span class="lw-hash">sourceSha256：' + esc(p.sourceSha256) + '</span><span>submission_id：' + esc(currentSubmission?.submission_id || '未提交') + '</span><span>previous_submission_id：' + esc(currentSubmission?.previous_submission_id || '无') + '</span></div></details><div class="lw-p01-status-row"><span class="lw-p01-status status-' + esc(status) + '"><b>作品状态</b> · ' + esc(P01_STATUS_LABELS[status]) + '</span><span class="lw-p01-status-note">' + (practice.draftSaved ? '草稿已保存，提交后才进入独立复验队列。' : '尚无当前版本草稿。') + '</span></div><form id="lw-p01-form" class="lw-p01-form">' + P01_ITEMS.map(([id, label, hint]) => '<label for="lw-p01-' + id + '">' + esc(label) + '<small>' + esc(hint) + '</small><textarea id="lw-p01-' + id + '" name="' + id + '" rows="4" maxlength="12000">' + esc(values[id]) + '</textarea></label>').join('') + '<label for="lw-p01-claims">本人自述（目标、困难、未知）<small>只表示你的陈述，不转换为独立评价。</small><textarea id="lw-p01-claims" name="learnerClaims" rows="4" maxlength="12000">' + esc(values.learnerClaims) + '</textarea></label><label for="lw-p01-evidence">证据引用（每行一条路径、命令或 receipt ID）<small>未执行请写 not_run；不要补写预期输出。</small><textarea id="lw-p01-evidence" name="evidenceRefs" rows="3" maxlength="6000">' + esc(values.evidenceRefs) + '</textarea></label><div class="lw-p01-actions"><button class="outline" type="button" data-lw-p01-save>保存版本化草稿</button><button class="primary" type="button" data-lw-p01-submit>提交新作品版本</button><button class="outline" type="button" data-lw-export>导出记录</button></div><p id="lw-p01-feedback" class="lw-small" role="status" aria-live="polite">提交会生成新的作品版本；不会覆盖旧提交、旧意见或首失败记录。</p></form><div class="lw-p01-layers" aria-label="五类记录层级">' + recordLayers.map(([id, label, value, klass]) => '<div class="lw-p01-layer ' + klass + '"><span aria-hidden="true">' + (klass === 'present' || klass === 'self' ? '●' : '○') + '</span><strong>' + esc(label) + '</strong><em>' + esc(value) + '</em><small>' + (id === 'ai_suggestion' ? '机器建议，不是审核' : id === 'professional_review' ? '独立课程/实训评阅' : id === 'human_review' ? '1.0暂无真人记录' : '事实记录') + '</small></div>').join('') + '</div><div class="lw-p01-review-control"><label for="lw-p01-status">记录当前工作流状态（本人记录，不是独立评审）</label><select id="lw-p01-status" data-lw-p01-status>' + statusOptions + '</select><button class="outline" type="button" data-lw-p01-status-save>保存状态记录</button></div>' + submissionHistory + '</section>';
     return heading('实作与作品', '项目工坊', '先从一个版本化练习开始，再把证据、反馈和下一步分开保存。') + p01Form + '<div class="lw-project-layout"><section class="lw-project-form"><h2>我的项目档案</h2><p>记录保存在此浏览器，链接不自动访问或运行。</p><div class="lw-evidence-status" aria-label="项目证据状态"><span class="lw-evidence-chip self">' + selfReport + '</span><span class="lw-evidence-chip ' + (runtimeEvidence.endsWith('已提供') ? 'present' : 'missing') + '">' + runtimeEvidence + '</span><span class="lw-evidence-chip pending">独立评价：未开始</span></div>' + Object.entries(labels).map(([id, label]) => '<label for="lw-project-' + id + '">' + label + '</label>' + (id === 'title' ? '<input id="lw-project-' + id + '" data-lw-project="' + id + '" maxlength="12000" value="' + esc(local.project[id]) + '">' : '<textarea id="lw-project-' + id + '" data-lw-project="' + id + '" rows="4" maxlength="12000">' + esc(local.project[id]) + '</textarea>')).join('') + '<button class="primary" data-lw-save-project>保存项目档案</button><button class="outline" data-lw-export>导出记录</button><p class="lw-small">自述资料与运行证据分别记录；独立评价和专业审核不会由本页面自动完成。</p></section><aside class="lw-project-guide"><h2>按教材推进实作</h2>' + STAGES.map(st => '<section><h3>' + st.title + '</h3><p>' + st.output + '</p>' + st.ids.map(id => unitLink(unit(id))).join('') + '</section>').join('') + '<a href="#product-review">进入产品达标复盘 →</a><a href="#projects-history">查看历史项目记录 →</a></aside></div>';
   }
   function recordsPage() {
@@ -1316,10 +1411,12 @@
   }
   function refreshAssistant(preserveScroll = true) {
     const previousResults = document.getElementById('lw-find-results'); if (preserveScroll && previousResults && assistantOpen) assistantScroll = previousResults.scrollTop;
-    try { sessionStorage.setItem(SESSION, JSON.stringify(sessionValue())); } catch { /* Reading and in-memory questions remain available. */ }
+    try { sessionStorage.setItem(scopedAuxKey(SESSION), JSON.stringify(sessionValue())); } catch { /* Reading and in-memory questions remain available. */ }
     const host = document.getElementById('lw-assistant-host');
     const focused = document.activeElement?.id === 'lw-query', submitFocused = document.activeElement?.id === 'lw-query-submit', input = focused ? document.getElementById('lw-query') : null, range = input ? [input.selectionStart, input.selectionEnd] : null;
-    if (host) host.innerHTML = assistantHTML();
+    const entry = document.getElementById('lw-assistant-entry');
+    if (entry) entry.innerHTML = '<button class="lw-assistant-launcher" id="lw-assistant-launcher" type="button" data-lw-toggle aria-expanded="' + assistantOpen + '" aria-controls="lw-find-panel"><span class="lw-launcher-icon" aria-hidden="true">⌕</span><span>问教材</span>' + (pending || response ? '<span class="lw-launcher-status">' + esc(pending ? '检索中' : '有结果') + '</span>' : '') + '</button>';
+    if (host) host.innerHTML = assistantOpen ? assistantHTML() : '';
     const nextResults = document.getElementById('lw-find-results'); if (nextResults) nextResults.scrollTop = assistantScroll;
     revealContentUpdateActions(nextResults);
     if (focused) { const next = document.getElementById('lw-query'); next?.focus({ preventScroll: true }); if (range && next?.setSelectionRange) next.setSelectionRange(range[0], range[1]); }
@@ -1335,43 +1432,79 @@
     const sidebar = document.getElementById('primary-sidebar');
     const app = document.getElementById('app');
     const topbar = document.querySelector('.topbar');
+    const main = document.getElementById('main-content');
+    if (main) main.inert = assistantOpen;
     if (app) app.inert = assistantOpen;
     if (topbar) topbar.inert = assistantOpen;
-    if (sidebar) sidebar.inert = assistantOpen || globalThis.innerWidth <= 760;
+    if (sidebar) {
+      sidebar.inert = assistantOpen || document.body.classList.contains('lw-detail-active') || globalThis.innerWidth <= 760;
+      sidebar.setAttribute('aria-hidden', String(sidebar.inert));
+    }
   }
-  function collapse() { const results = document.getElementById('lw-find-results'); if (results) assistantScroll = results.scrollTop; assistantOpen = false; refreshAssistant(); document.getElementById('lw-assistant-launcher')?.focus({ preventScroll: true }); }
+  function collapse() {
+    const results = document.getElementById('lw-find-results'); if (results) assistantScroll = results.scrollTop;
+    assistantOpen = false; refreshAssistant();
+    const visible = node => { const r = node?.getBoundingClientRect?.(); return node?.isConnected && r && r.bottom > 0 && r.top < innerHeight; };
+    const replacement = trigger?.id ? document.getElementById(trigger.id) : null;
+    const target = visible(trigger) ? trigger : visible(replacement) ? replacement : document.getElementById('main-content');
+    target?.focus({ preventScroll: true });
+  }
   function captureNotes() {
+    if (renderedRecordScope !== recordScope.key) return;
     const note = document.getElementById('lw-note');
-    const u = unit(activeReadingUnitId);
-    if (note && activeReadingVersion === CURRENT && u) local.notes[activeReadingUnitId] = { text: note.value.slice(0, 12000), corpusVersion: CURRENT, sourceSha256: u.sourceSha256, updatedAt: new Date().toISOString() };
+    const u = unit(activeReadingUnitId, activeReadingVersion || CURRENT);
+    if (note && activeReadingVersion === unitVersion(u) && u) {
+      const text = note.value.slice(0, 12000);
+      if (local.notes[activeReadingUnitId]?.text !== text && !local.pendingNoteIds.includes(activeReadingUnitId)) local.pendingNoteIds.push(activeReadingUnitId);
+      local.notes[activeReadingUnitId] = { text, corpusVersion: unitVersion(u), sourceSha256: u.sourceSha256, updatedAt: new Date().toISOString() };
+    }
     document.querySelectorAll('[data-lw-project]').forEach(n => { if (Object.hasOwn(local.project, n.dataset.lwProject)) local.project[n.dataset.lwProject] = n.value.slice(0, 12000); });
     capturePracticeDraft();
   }
   function download(text, name, type = 'text/markdown;charset=utf-8') { const blob = new Blob([text], { type }), url = URL.createObjectURL(blob), a = document.createElement('a'); a.href = url; a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); }
   function exportRecords() {
     captureNotes();
-    const data = { schemaVersion: '1', clientVersion: VERSION, exportedAt: new Date().toISOString(), scope: '本浏览器当前记录与本人自述，不是独立能力评价', current: { corpusVersion: CURRENT, corpusHash: corpus()?.corpusHash || null, storageKey: STORE, records: local } };
+    const data = { schemaVersion: '1', clientVersion: VERSION, exportedAt: new Date().toISOString(), scope: '本浏览器当前记录与本人自述，不是独立能力评价', current: { corpusVersion: CURRENT, corpusHash: corpus()?.corpusHash || null, storageKey: recordScope.key, records: local } };
     download(JSON.stringify(data, null, 2), '职造-学习记录-rolecraft-1.0-v13.json', 'application/json;charset=utf-8'); notify('已导出当前 v13 学习记录；自述未独立评价。');
   }
-  let focusFrame = 0, readerObserver = null;
+  let focusFrame = 0, geometryFrame = 0, readerObserver = null;
   function readerGeometry() {
     const detail = document.querySelector('.lw-detail');
     if (!detail) return;
     const bar = document.querySelector('.topbar'), strip = document.getElementById('lw-prereq-strip'), prior = document.getElementById('lw-prerequisites');
-    const top = bar?.getBoundingClientRect?.().height || (globalThis.innerWidth <= 760 ? 70 : 60);
-    const twoColumns = globalThis.innerWidth >= 1280 && (detail.getBoundingClientRect?.().width || 0) >= 932;
-    detail.classList.toggle('lw-prereq-two-columns', twoColumns);
-    const stripHeight = !twoColumns ? strip?.getBoundingClientRect?.().height || 44 : 0;
+    const top = bar?.getBoundingClientRect?.().bottom || (globalThis.innerWidth <= 760 ? 70 : 60);
+    detail.classList.remove('lw-prereq-two-columns');
+    if (strip) strip.hidden = !prior || prior.getBoundingClientRect().bottom > top;
+    const stripHeight = strip && !strip.hidden ? strip.getBoundingClientRect().height : 0;
     document.documentElement.style.setProperty('--lw-reader-top', top + 'px');
     document.documentElement.style.setProperty('--lw-reader-scroll-offset', (top + stripHeight + 12) + 'px');
-    const bottom = document.getElementById('lw-find-form')?.getBoundingClientRect?.().height || 100;
-    prior?.classList.toggle('lw-prereq-sticky', twoColumns && (prior.getBoundingClientRect?.().height || 0) <= globalThis.innerHeight - top - bottom - 32);
+    prior?.classList.remove('lw-prereq-sticky');
+    const launcherHeight = document.getElementById('lw-assistant-launcher')?.getBoundingClientRect?.().height || 48;
+    document.body.style.setProperty('--lw-reader-bottom-clearance', Math.max(105, launcherHeight + 32) + 'px');
+    if (globalThis.innerWidth <= 760) for (const diagram of document.querySelectorAll('[data-lw-inline-diagram]')) {
+      if (diagram.dataset.lwDiagramPositioned || !diagram.clientWidth) continue;
+      diagram.scrollLeft = diagram.dataset.lwInlineDiagram === 'center' ? Math.max(0, (diagram.scrollWidth - diagram.clientWidth) / 2) : 0;
+      diagram.dataset.lwDiagramPositioned = 'true';
+    }
+  }
+  function focusReaderTarget(target) {
+    if (!target) return;
+    target.focus({ preventScroll: true });
+    target.scrollIntoView({ block: 'start' });
+    readerGeometry();
+    const offset = parseFloat(document.documentElement.style.getPropertyValue('--lw-reader-scroll-offset')) || 0;
+    const top = target.getBoundingClientRect().top;
+    if (top < offset) globalThis.scrollBy({ top: top - offset, left: 0, behavior: 'instant' });
+    readerGeometry();
   }
   function mount(view) {
     activeView = view;
+    renderedRecordScope = recordScope.key;
+    syncTextbookFooter();
+    document.body.classList.toggle('lw-detail-active', !!document.querySelector('.lw-detail'));
     const isWorkbench = ['home', 'path', 'learn', 'records', 'projects'].includes(view);
     document.body.classList.toggle('lw-active', isWorkbench);
-    const banner = document.getElementById('save-status'); if (isWorkbench && banner) banner.textContent = storageError || (dynamicCareer() ? '当前教材 ' + (careerState.career?.contentVersion || '') + '；阅读记录保存在此浏览器。自动评分未接入。' : '本机会话教材 ' + CURRENT + '；新记录独立保存于本浏览器，未同步账户。');
+    const banner = document.getElementById('save-status'); if (isWorkbench && banner) banner.textContent = storageError || recordNotice || (dynamicCareer() ? '当前教材 ' + (careerState.career?.contentVersion || '') + '；阅读记录保存在此浏览器。自动评分未接入。' : '本机会话教材 ' + CURRENT + '；新记录独立保存于本浏览器，未同步账户。');
     if (isWorkbench) probeContentIdentity({ reason: 'enter' });
     if (dynamicCareer() && careerState.career?.title) {
       const brand = document.querySelector('.brand strong span');
@@ -1379,6 +1512,9 @@
       const side = document.querySelector('.side-note strong');
       if (side) side.textContent = careerState.career.title;
     }
+    let entry = document.getElementById('lw-assistant-entry');
+    if (!entry) { entry = document.createElement('div'); entry.id = 'lw-assistant-entry'; entry.className = 'lw-assistant-entry'; document.getElementById('app')?.prepend(entry); }
+    entry.hidden = view === 'generation' || view === 'settings';
     let host = document.getElementById('lw-assistant-host');
     if (!host) { host = document.createElement('div'); host.id = 'lw-assistant-host'; document.body.appendChild(host); }
     host.hidden = view === 'generation' || view === 'settings'; refreshAssistant();
@@ -1410,7 +1546,11 @@
         readerGeometry();
         const hidden = hiddenLearningContinuity(u).some(range => range.sectionIds.includes(l.sectionId));
         const target = document.getElementById(hidden ? 'lw-hidden-section' : l.sectionId || 'lw-reader-start');
-        if (target) { target.focus({ preventScroll: true }); target.scrollIntoView({ block: 'start' }); }
+        if (!l.sectionId && !l.resume) {
+          globalThis.scrollTo?.({ top: 0, left: 0, behavior: 'instant' });
+          target?.focus({ preventScroll: true });
+          readerGeometry();
+        } else focusReaderTarget(target);
       });
     }
   }
@@ -1424,18 +1564,18 @@
     }
     return ({ home: () => homePage(), path: () => homePage(true), learn: readerPage, records: recordsPage, projects: projectsPage }[view] || (() => errorPage('页面暂不可用。', 'route', 'route')))();
   }
-  document.addEventListener('click', e => {
+  document.addEventListener('click', async e => {
     const el = e.target.closest('button,a'); if (!el) return;
     if (el.hasAttribute('data-lw-content-refresh')) { e.preventDefault(); hardRefreshToNewContent(); return; }
     if (el.hasAttribute('data-lw-content-export')) { e.preventDefault(); exportLocalLearningRecords(); return; }
     if (el.hasAttribute('data-lw-content-snooze')) { e.preventDefault(); snoozeContentUpdate(); return; }
     if (el.hasAttribute('data-lw-citation')) { e.preventDefault(); const card = document.getElementById('lw-citation-' + el.dataset.lwCitation); card?.focus({preventScroll:true}); card?.scrollIntoView({block:'nearest'}); return; }
-    if (el.hasAttribute('data-lw-prereq-location')) { const title = document.getElementById('lw-prereq-title'); title?.focus({preventScroll:true}); title?.scrollIntoView({block:'start'}); return; }
+    if (el.hasAttribute('data-lw-prereq-location')) { focusReaderTarget(document.getElementById('lw-prereq-title')); return; }
     if (el.hasAttribute('data-lw-result')) { const results = document.getElementById('lw-find-results'); if (results) assistantScroll = results.scrollTop; assistantOpen = false; refreshAssistant(); return; }
     if (el.hasAttribute('data-lw-image')) { trigger = el; const d = document.getElementById('lw-image-dialog'), image = d.querySelector('img'); const narrow = el.dataset.lwImageNarrow; const useNarrow = Boolean(narrow && globalThis.matchMedia && globalThis.matchMedia('(max-width: 640px)').matches); image.src = useNarrow ? narrow : el.dataset.lwImage; image.alt = el.dataset.lwAlt || 'Agent 教学图'; d.classList.remove('is-original'); d.querySelector('[data-lw-image-size]').textContent = '切换原尺寸'; d.showModal(); d.querySelector('[data-lw-close-image]').focus(); return; }
     if (el.hasAttribute('data-lw-image-size')) { const d = document.getElementById('lw-image-dialog'); d.classList.toggle('is-original'); el.textContent = d.classList.contains('is-original') ? '适配全貌' : '切换原尺寸'; return; }
     if (el.hasAttribute('data-lw-close-image')) { document.getElementById('lw-image-dialog').close(); return; }
-    if (el.hasAttribute('data-lw-toggle')) { trigger = el; assistantOpen = !assistantOpen; refreshAssistant(); if (assistantOpen) document.getElementById('lw-query')?.focus(); return; }
+    if (el.hasAttribute('data-lw-toggle')) { if (assistantOpen) { collapse(); return; } trigger = el; assistantOpen = true; refreshAssistant(); document.getElementById('lw-query')?.focus(); return; }
     if (el.hasAttribute('data-lw-collapse')) { collapse(); return; }
     if (el.hasAttribute('data-lw-example')) { query = el.dataset.lwExample; refreshAssistant(); document.getElementById('lw-query')?.focus(); return; }
     if (el.hasAttribute('data-lw-clear-start')) { startingEnabled = false; refreshAssistant(); return; }
@@ -1499,7 +1639,17 @@
       if (typeof render === 'function') render();
       return;
     }
-    if (el.hasAttribute('data-lw-save-note')) { captureNotes(); const saved = save(); if (saved) syncAccountRecords(); notify(saved ? (accountSession() ? '阅读笔记已保存并同步账户。' : '阅读笔记已保存在此浏览器。') : storageError); return; }
+    if (el.hasAttribute('data-lw-save-note')) {
+      if (el.disabled) return;
+      const unitId = activeReadingUnitId, scope = recordScope.key;
+      captureNotes(); if (!save()) { notify(storageError); return; }
+      el.disabled = true;
+      const result = await syncAccountNote(unitId);
+      el.disabled = false;
+      if (result.status === 'expired') notify('登录已失效，草稿仅保存在本机。请登录原账户后重试同步。');
+      else if (scope === recordScope.key && result.status !== 'stale') notify(result.status === 'synced' ? '阅读笔记已保存并同步账户。' : result.status === 'local' ? '阅读笔记仅保存在本机；登录后不会自动上传。' : '同步未完成，草稿仅保存在本机，可再次保存重试。');
+      return;
+    }
     if (el.hasAttribute('data-lw-p01-save')) { recordPracticeDraft(); return; }
     if (el.hasAttribute('data-lw-p01-submit')) { if (submitPractice() && typeof render === 'function') render(); return; }
     if (el.hasAttribute('data-lw-p01-status-save')) { updatePracticeStatus(document.getElementById('lw-p01-status')?.value || '未开始'); if (typeof render === 'function') render(); return; }
@@ -1509,16 +1659,32 @@
     if (el.hasAttribute('data-lw-bookmark')) { const l = loc(), u = unit(l.unitId), s = section(u, l.sectionId); if (!u || l.version !== CURRENT || l.sectionId && !s) return; const id = s?.sectionId || '', exists = local.bookmarks.some(b => currentRecord(b) && b.unitId === u.unitId && b.sectionId === id); local.bookmarks = local.bookmarks.filter(b => !(currentRecord(b) && b.unitId === u.unitId && b.sectionId === id)); if (!exists) local.bookmarks.push({ unitId: u.unitId, sectionId: id, corpusVersion: CURRENT, corpusHash: corpus().corpusHash, sourceSha256: u.sourceSha256 }); save(); syncAccountFavorite(u.unitId, id, exists); syncAccountRecords(); el.textContent = exists ? '收藏当前阅读位置' : '已收藏此位置 · 取消'; notify(exists ? '已取消收藏。' : '已收藏当前阅读位置。'); return; }
     if (el.hasAttribute('data-lw-copy')) { if (navigator.clipboard?.writeText) navigator.clipboard.writeText(location.href).then(() => notify('已复制当前定位链接。')).catch(() => notify('无法自动复制，可从地址栏复制当前链接。')); else notify('请从地址栏复制当前定位链接。'); }
   });
+  document.addEventListener('error', e => {
+    const img = e.target;
+    if (img?.tagName !== 'IMG') return;
+    const region = img.closest('.lw-inline-diagram') || img.closest('.lw-dense-diagram>button');
+    if (!region || region.classList.contains('is-failed')) return;
+    region.classList.add('is-failed'); region.removeAttribute('tabindex'); img.hidden = true;
+    const message = document.createElement('p'); message.className = 'lw-diagram-error';
+    message.textContent = '图示暂时无法加载。' + (img.alt || '请阅读图后文字说明。');
+    region.appendChild(message);
+  }, true);
   document.addEventListener('change', e => {
     if (e.target.id === 'lw-starting-point') { local.startingPoint = Object.hasOwn(STARTS, e.target.value) ? e.target.value : null; startingEnabled = true; save(); if (typeof render === 'function') render(); }
   });
   document.addEventListener('input', e => {
-    if (e.target.id === 'lw-query') { query = e.target.value; e.target.removeAttribute('aria-invalid'); try { sessionStorage.setItem(SESSION, JSON.stringify(sessionValue())); } catch {} }
+    if (e.target.id === 'lw-query') { query = e.target.value; e.target.removeAttribute('aria-invalid'); try { sessionStorage.setItem(scopedAuxKey(SESSION), JSON.stringify(sessionValue())); } catch {} }
     if (e.target.id === 'lw-note' || e.target.hasAttribute('data-lw-project') || e.target.closest?.('#lw-p01-form')) { captureNotes(); save(); }
   });
   document.addEventListener('compositionstart', e => { if (e.target.id === 'lw-query') composing = true; });
   document.addEventListener('compositionend', e => { if (e.target.id === 'lw-query') composing = false; });
   document.addEventListener('keydown', e => {
+    const diagram = e.target.closest?.('[data-lw-inline-diagram]');
+    if (diagram && globalThis.innerWidth <= 760 && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+      e.preventDefault();
+      diagram.scrollLeft += (e.key === 'ArrowRight' ? 1 : -1) * Math.max(80, diagram.clientWidth * .6);
+      return;
+    }
     if (e.target.id === 'lw-query' && e.key === 'Enter' && !e.shiftKey && !e.isComposing && !composing) { e.preventDefault(); if (pending) return; query = e.target.value; find(); }
     const imageOpen = document.getElementById('lw-image-dialog')?.open;
     if (e.key === 'Escape' && assistantOpen && !imageOpen) { e.preventDefault(); collapse(); return; }
@@ -1531,9 +1697,15 @@
       else if (!inside || active === last) { e.preventDefault(); first.focus(); }
     }
   });
+  document.addEventListener('wheel', e => {
+    const diagram = e.target.closest?.('[data-lw-inline-diagram]');
+    if (!diagram || globalThis.innerWidth > 760 || !e.shiftKey || !(e.deltaX || e.deltaY)) return;
+    e.preventDefault();
+    diagram.scrollLeft += e.deltaX || e.deltaY;
+  }, { passive: false });
   document.addEventListener('submit', e => { if (e.target.id === 'lw-find-form') { e.preventDefault(); if (pending) return; query = document.getElementById('lw-query').value; find(); } });
   try {
-    const received = JSON.parse(sessionStorage.getItem(SESSION) || 'null');
+    const received = JSON.parse(sessionStorage.getItem(scopedAuxKey(SESSION)) || 'null');
     if (received && typeof received === 'object') {
       query = asText(received.query, 20000);
       queryHistory = Array.isArray(received.queryHistory) ? received.queryHistory.filter(h=>h && typeof h.query==='string' && h.context?.corpusVersion===CURRENT && h.response).slice(0,5).map(h => { try { return {...h,response:validateResponse(h.response,{query:h.query,context:h.context})}; } catch(error) { return {...h,response:unavailableFromError(error)}; } }) : [];
@@ -1550,6 +1722,10 @@
   } catch { /* A damaged query cache is not used as a recommendation. */ }
   globalThis.LearningWorkbench = { version: VERSION, agentVersion: DIALOG_AGENT_VERSION, workbenchVersion: WORKBENCH_VERSION, page, mount, beforeRender, markdown, validateResponse, currentContext, refreshAssistant, careerContentState, shouldDelegateView, currentTask, setTask, induceCareerTask, careerTask: careerId => readCareerTask(careerId), careerTaskKey: CAREER_TASK_KEY, practice: () => local.practice, readingRecords: () => local, recordIsCurrent: currentRecord, recordsExportData: () => { captureNotes(); return { current: local }; }, compareContentIdentity, localContentIdentity, applyServerIdentity, noteContentVersionMismatch, probeContentIdentity, snoozeContentUpdate, hardRefreshToNewContent, exportLocalLearningRecords, contentUpdateMarkup, contentCutoverState, stopContentProbes, isFixtureResponse, noteFixtureSession, fixtureSession: () => fixtureSession, learningErrorCard };
   globalThis.addEventListener?.('resize', readerGeometry);
+  globalThis.addEventListener?.('scroll', () => {
+    if (geometryFrame) return;
+    geometryFrame = requestAnimationFrame(() => { geometryFrame = 0; readerGeometry(); });
+  }, { passive: true });
   document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') probeContentIdentity({ reason: 'visible' }); });
   if (typeof setInterval === 'function') {
     cutover.timer = setInterval(() => probeContentIdentity({ reason: 'interval' }), CUTOVER_PROBE_MS);

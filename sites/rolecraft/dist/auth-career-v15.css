@@ -45,3 +45,42 @@
 #rc-login-dialog .rc-auth-other[open]>summary{margin-bottom:4px}
 #rc-login-dialog .rc-switch-mode{color:#2f6fed;font-weight:600}
 @media(max-width:380px){#rc-login-dialog .rc-auth-peers{gap:6px}#rc-login-dialog .rc-auth-peers button{padding:0 6px;font-size:13px}#rc-login-dialog .rc-sms-send{padding:0 10px;font-size:13px}}
+
+/* CD-D1: this dialog owns its outer size; only its body scrolls. */
+#rc-career-dialog{box-sizing:border-box;width:min(680px,calc(100vw - 32px));max-width:none;min-width:0;max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);padding:0;overflow:hidden;border:1px solid #ded5c7;border-radius:16px;background:#fffdf9;color:#39352b}
+#rc-career-dialog::backdrop{background:rgba(44,39,30,.32)}
+#rc-career-dialog .rc-career-form{display:flex;flex-direction:column;box-sizing:border-box;width:100%;max-width:100%;min-width:0;max-height:calc(100vh - 34px);max-height:calc(100dvh - 34px);padding:0;overflow:hidden}
+#rc-career-dialog .rc-dialog-head{flex:0 0 auto;gap:16px;padding:24px 24px 12px}
+#rc-career-dialog .rc-dialog-head>div{min-width:0;overflow-wrap:anywhere}
+#rc-career-dialog .rc-dialog-head h2{font-size:24px}
+#rc-career-dialog .rc-close{flex:0 0 44px;width:44px;height:44px;min-width:44px;min-height:44px}
+#rc-career-dialog .rc-career-body{flex:1 1 auto;min-width:0;min-height:0;padding:0 24px 24px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;overflow-wrap:anywhere}
+#rc-career-dialog #rc-career-results{max-height:none;overflow:visible;min-width:0}
+#rc-career-dialog .rc-search-row{display:grid;grid-template-columns:minmax(0,1fr) auto;min-width:0}
+#rc-career-dialog .rc-search-row input{min-width:0}
+#rc-career-dialog .rc-search-row .primary{min-height:44px;white-space:normal}
+#rc-career-dialog .rc-career-card>div{flex:1;min-width:0}
+#rc-career-dialog .rc-career-card>button{flex:0 0 auto;max-width:100%}
+#rc-career-dialog .rc-career-title{flex-wrap:wrap;min-width:0}
+#rc-career-dialog .rc-career-title strong,#rc-career-dialog .rc-career-evidence,#rc-career-dialog .rc-agent-state>div{min-width:0;overflow-wrap:anywhere}
+#rc-career-dialog .rc-career-match-basis{color:#6c614e;font-size:12px;line-height:1.6}
+#rc-career-dialog .rc-career-match-basis span{font-weight:700}
+#rc-career-dialog .rc-career-provenance{min-width:0;margin-top:4px}
+#rc-career-dialog .rc-career-provenance summary{display:list-item;min-height:44px;align-content:center;cursor:pointer;color:#6c614e;font-size:13px;line-height:1.6}
+#rc-career-dialog .rc-career-provenance summary:focus-visible{outline:2px solid #6c614e;outline-offset:2px;border-radius:3px}
+#rc-career-dialog .rc-career-provenance .rc-career-evidence{margin-top:0;padding:0 0 8px;font-size:12px;overflow-wrap:anywhere}
+#rc-career-dialog .rc-career-signals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#rc-career-dialog .rc-career-signals>div{min-width:0}
+#rc-career-dialog .rc-career-signals ul{padding-left:1.5em}
+#rc-career-dialog .rc-career-actions{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:10px}
+#rc-career-dialog .rc-confirm-actions{min-width:0}
+#rc-career-dialog .rc-confirm-actions button{max-width:100%;white-space:normal}
+@media(max-width:760px){
+  #rc-career-dialog{width:min(680px,calc(100vw - 24px));max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px)}
+  #rc-career-dialog .rc-career-form{max-height:calc(100vh - 26px);max-height:calc(100dvh - 26px)}
+  #rc-career-dialog .rc-dialog-head{padding:20px 16px 12px}
+  #rc-career-dialog .rc-dialog-head h2{font-size:21px}
+  #rc-career-dialog .rc-career-body{padding:0 16px 16px}
+  #rc-career-dialog .rc-search-row,#rc-career-dialog .rc-career-signals{grid-template-columns:minmax(0,1fr)}
+  #rc-career-dialog .rc-confirm-actions{display:grid;grid-template-columns:minmax(0,1fr)}
+}

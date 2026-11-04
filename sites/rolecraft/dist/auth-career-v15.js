@@ -4,6 +4,7 @@
 
   const state = {
     me: null,
+    sessionRevision: 0,
     csrf: '',
     careers: [],
     query: '',
@@ -19,6 +20,7 @@
     switchRequestId: 0,
     lastCareerResult: null,
     careerStatus: 'idle',
+    careerOperation: 'catalog',
     careerClarification: null,
     sessionPromise: null,
     initializing: true,
@@ -74,6 +76,8 @@
       typeof career.summary === 'string' && typeof career.reason === 'string' && career.reason.trim() &&
       typeof career.contentVersion === 'string' && career.contentVersion.trim() &&
       typeof career.indexVersion === 'string' && career.indexVersion.trim() &&
+      typeof career.textbookVersionId === 'string' && career.textbookVersionId.trim() &&
+      typeof career.corpusHash === 'string' && /^[a-f0-9]{64}$/i.test(career.corpusHash) &&
       career.available === true && career.status === 'published');
   }
 
@@ -89,6 +93,9 @@
   function normalizeCareerCandidate(candidate) {
     if (!candidate || typeof candidate !== 'object') return null;
     const content = candidate.careerContent || candidate.career_content || {};
+    for (const key of ['contentVersion', 'indexVersion', 'textbookVersionId', 'corpusHash', 'available']) {
+      if (candidate[key] !== undefined && content[key] !== undefined && candidate[key] !== content[key]) return null;
+    }
     const contentVersion = candidate.contentVersion || content.contentVersion || candidate.version || '';
     const indexVersion = candidate.indexVersion || content.indexVersion || '';
     const reason = candidate.matchReason || candidate.reason || '';
@@ -113,16 +120,28 @@
       textbookVersionId: candidate.textbookVersionId || content.textbookVersionId || '',
       corpusHash: candidate.corpusHash || content.corpusHash || '',
       available,
-      status: candidate.status || (available ? 'published' : ''),
+      status: candidate.status || '',
       careerContent: { ...content, contentVersion, indexVersion, textbookVersionId: candidate.textbookVersionId || content.textbookVersionId || '', corpusHash: candidate.corpusHash || content.corpusHash || '', available }
     };
   }
 
-  function normalizeCareerResult(result, requestId, query) {
-    const candidates = (Array.isArray(result?.candidates) ? result.candidates : Array.isArray(result?.careers) ? result.careers : [])
-      .map(normalizeCareerCandidate).filter(validCareerCandidate).slice(0, 3);
-    const status = ['recommended','needs_clarification','no_match','unavailable','invalid_input'].includes(result?.status)
-      ? result.status : (candidates.length ? 'recommended' : 'no_match');
+  function normalizeCareerResult(result, requestId, query, operation) {
+    if (!result || typeof result !== 'object' || Array.isArray(result)) throw Error('职业服务返回了无法识别的数据，请重试。');
+    if (result.agentVersion !== undefined && result.agentVersion !== CAREER_AGENT_VERSION || result.workbenchVersion !== undefined && result.workbenchVersion !== WORKBENCH_VERSION || isContentVersionMismatch(result.error)) {
+      throw Object.assign(new Error('职业服务版本与当前页面不一致，请刷新后重试。'), { code: 'career_version_mismatch' });
+    }
+    const raw = Array.isArray(result.candidates) ? result.candidates : Array.isArray(result.careers) ? result.careers : null;
+    const allowed = ['recommended','needs_clarification','no_match','unavailable','invalid_input'];
+    if (result.status !== undefined && !allowed.includes(result.status)) throw Error('职业服务返回了无法识别的状态，请重试。');
+    let status = result.status || (raw ? (raw.length ? 'recommended' : 'no_match') : '');
+    if (!raw && !['unavailable','invalid_input','needs_clarification'].includes(status)) throw Error('职业服务未返回合法的候选列表，请重试。');
+    const valid = (raw || []).map(normalizeCareerCandidate).filter(validCareerCandidate);
+    if (raw?.length && !valid.length) throw Error('返回的职业未通过教材身份或可用性校验，请重试。');
+    if (status === 'no_match' && valid.length) throw Error('职业服务的状态与候选列表不一致，请重试。');
+    if (status === 'needs_clarification' && (!result.clarification || !Array.isArray(result.clarification.options) || !result.clarification.options.length || result.clarification.options.some(option => typeof option === 'string' ? !option.trim() : !option || typeof option !== 'object' || ![option.query, option.label, option.title].some(value => typeof value === 'string' && value.trim())))) throw Error('职业服务未返回可用的澄清选项，请重试。');
+    if (operation === 'catalog' && raw && !raw.length && ['recommended','no_match'].includes(status)) status = 'catalog_empty';
+    else if (status === 'recommended' && !valid.length) throw Error('职业推荐没有返回可校验的候选，请重试。');
+    const candidates = operation === 'catalog' ? valid : valid.slice(0, 3);
     return {
       requestId: result?.requestId || requestId,
       query,
@@ -134,7 +153,8 @@
       engineMode: result?.engineMode || '',
       providerCalled: result?.providerCalled === true,
       limitations: Array.isArray(result?.limitations) ? result.limitations : [],
-      label: careerMatchLabel(result),
+      message: typeof result.message === 'string' ? result.message : (typeof result.error?.message === 'string' ? result.error.message : ''),
+      label: operation === 'catalog' ? '职业目录' : careerMatchLabel(result),
       receivedAt: new Date().toISOString()
     };
   }
@@ -164,6 +184,7 @@
   }
 
   function setSession(session, reason) {
+    state.sessionRevision++;
     state.me = session ? {
       user: session.user ? { ...session.user } : null,
       activeCareer: session.activeCareer ? { ...session.activeCareer } : null
@@ -175,6 +196,7 @@
 
   async function api(path, options = {}) {
     if (isStatic()) throw Object.assign(new Error('当前页面需要通过本地服务访问账户功能。'), { code: 'static_page', kind: 'network' });
+    const authRevision = state.sessionRevision;
     const config = { ...options };
     const headers = { ...(options.headers || {}) };
     if (config.body && typeof config.body === 'object' && !(config.body instanceof Blob) && !(config.body instanceof ArrayBuffer) && !(config.body instanceof URLSearchParams)) {
@@ -202,6 +224,11 @@
       const message = payload?.error?.message || (response.status >= 500 ? '服务暂时不可用，请稍后再试。' : '请求未完成，请稍后再试。');
       const kind = response.status >= 500 ? 'network' : response.status === 404 ? 'missing' : response.status === 405 ? 'route' : '';
       const error = Object.assign(new Error(message), { status: response.status, code: payload?.error?.code, payload, kind });
+      if (response.status === 401 && state.me?.user && state.sessionRevision === authRevision) {
+        state.csrf = '';
+        setSession(null, 'expired');
+        notify('登录已失效，草稿仅保存在本机。请登录原账户后重试。');
+      }
       if (isContentVersionMismatch(error)) globalThis.LearningWorkbench?.noteContentVersionMismatch?.({ code: error.code, message });
       throw error;
     }
@@ -212,7 +239,9 @@
     if (state.sessionPromise) return state.sessionPromise;
     state.sessionPromise = (async () => {
       try {
+        const revision = state.sessionRevision;
         const result = await api('/api/auth/me', { signal: options.signal });
+        if (state.sessionRevision !== revision) return cloneSession();
         state.csrf = result?.csrfToken || state.csrf || '';
         return setSession({ user: result?.user || null, activeCareer: result?.activeCareer || null }, 'refresh');
       } catch (error) {
@@ -505,14 +534,25 @@
       dialog = document.createElement('dialog');
       dialog.id = 'rc-career-dialog';
       dialog.setAttribute('aria-labelledby', 'rc-career-title');
-      dialog.innerHTML = '<div class="rc-dialog-form rc-career-form"><div class="rc-dialog-head"><div><span class="rc-eyebrow">职业探索 Agent · ' + CAREER_AGENT_VERSION + '</span><h2 id="rc-career-title">选择你的职业方向</h2></div><button type="button" class="rc-close" data-rc-close aria-label="关闭">×</button></div><p class="rc-dialog-copy">用自然语言描述你想做的工作、已有基础或目标。Agent 只会推荐当前已发布的职业；确认后才切换当前学习方向。</p><form class="rc-search-row" id="rc-career-search"><label class="sr-only" for="rc-career-query">描述职业目标</label><input id="rc-career-query" type="search" maxlength="1200" placeholder="例如：我想做能调用工具的智能体应用" autocomplete="off"><button class="primary" type="submit" data-rc-search>推荐职业</button></form><div class="rc-agent-boundary">推荐依据当前职业目录和关键词/本机语义匹配；不会生成新的职业或承诺就业结果。</div><div id="rc-career-results" class="rc-career-results" aria-live="polite"></div></div>';
+      dialog.innerHTML = '<div class="rc-dialog-form rc-career-form"><div class="rc-dialog-head"><div><span class="rc-eyebrow">职业探索</span><h2 id="rc-career-title">选择你的职业方向</h2></div><button type="button" class="rc-close" data-rc-close aria-label="关闭">×</button></div><div class="rc-career-body"><p class="rc-dialog-copy">用自然语言描述你想做的工作、已有基础或目标。Agent 只会推荐当前已发布的职业；确认后才切换当前学习方向。</p><form class="rc-search-row" id="rc-career-search"><label class="sr-only" for="rc-career-query">描述职业目标</label><input id="rc-career-query" type="search" maxlength="1200" placeholder="例如：我想做能调用工具的智能体应用" autocomplete="off"><button class="primary" type="submit" data-rc-search>推荐职业</button></form><div class="rc-agent-boundary">推荐依据当前职业目录和关键词/本机语义匹配；不会生成新的职业或承诺就业结果。</div><div id="rc-career-results" class="rc-career-results" aria-live="polite"></div></div></div>';
       document.body.appendChild(dialog);
       dialog.addEventListener('click', async event => {
         if (event.target === dialog || event.target.closest('[data-rc-close]')) { closeDialog(dialog); return; }
+        const browse = event.target.closest('[data-rc-browse-content]');
+        if (browse) {
+          event.preventDefault();
+          const candidate = state.careers.find(c => c.careerId === browse.dataset.rcBrowseContent);
+          if (!validCareerCandidate(candidate) || state.me?.user && candidate.careerId !== state.me?.activeCareer?.careerId) return;
+          const target = '#learn/career/' + candidate.careerId;
+          closeDialog(dialog);
+          location.hash = target;
+          return;
+        }
         const choose = event.target.closest('[data-rc-select-career]');
         const clarify = event.target.closest('[data-rc-clarify]');
         const confirm = event.target.closest('[data-rc-confirm-career]');
         const cancel = event.target.closest('[data-rc-cancel-career]');
+        if (event.target.closest('[data-rc-show-directory]')) { state.query = ''; dialog.querySelector('#rc-career-query').value = ''; clearTimeout(state.searchTimer); searchCareers(); return; }
         if (cancel) { resetCareerSelection(); renderCareers(); return; }
         if (clarify) {
           const option = state.careerClarification?.options?.[Number(clarify.dataset.rcClarify)];
@@ -595,36 +635,38 @@
         state.careers = [];
         state.searchError = '';
         state.searchErrorCode = '';
-        state.careerStatus = 'idle';
+        state.careerStatus = 'retrieving';
+        state.careerOperation = state.query.trim() ? 'recommend' : 'catalog';
         state.careerClarification = null;
         state.lastCareerResult = null;
         state.busy = true;
         resetCareerSelection();
         renderCareers();
         clearTimeout(state.searchTimer);
-        state.searchTimer = setTimeout(() => searchCareers(), 220);
+        state.searchTimer = setTimeout(() => { if (dialog.open) searchCareers(); }, 220);
       });
-      dialog.addEventListener('close', () => { state.careerOpen = false; ++state.searchSeq; if (state.searchController) state.searchController.abort(); state.searchController = null; state.busy = false; state.careerStatus = 'idle'; state.careerClarification = null; resetCareerSelection(); restoreFocus(); });
+      dialog.addEventListener('close', () => { state.careerOpen = false; ++state.searchSeq; clearTimeout(state.searchTimer); state.searchTimer = null; if (state.searchController) state.searchController.abort(); state.searchController = null; state.busy = false; state.careerStatus = 'idle'; state.careerClarification = null; resetCareerSelection(); restoreFocus(); });
     }
     const input = dialog.querySelector('#rc-career-query');
     input.value = state.query;
-    renderCareers();
-    rememberFocus();
     if (!dialog.open) {
+      rememberFocus();
       state.careerOpen = true;
       dialog.showModal();
       setTimeout(() => input.focus({ preventScroll: true }), 0);
+      searchCareers();
+    } else {
+      renderCareers();
     }
-    if (!state.careers.length && !state.busy && state.query.trim()) searchCareers();
     return dialog;
   }
 
   function renderCareers() {
     const area = document.getElementById('rc-career-results');
     if (!area) return;
-    if (state.busy) { area.innerHTML = '<div class="rc-agent-state rc-agent-loading" role="status"><span class="rc-agent-mark" aria-hidden="true">…</span><div><strong>Agent 正在理解你的目标</strong><p>正在检索已发布职业；旧结果不会覆盖本次请求。</p></div></div>'; return; }
+    if (state.busy || state.careerStatus === 'idle') { area.innerHTML = '<div class="rc-agent-state rc-agent-loading" role="status"><span class="rc-agent-mark" aria-hidden="true">…</span><div><strong>' + (state.careerOperation === 'catalog' ? '正在加载职业目录' : 'Agent 正在理解你的目标') + '</strong><p>' + (state.careerOperation === 'catalog' ? '正在读取当前已发布职业。' : '正在检索已发布职业；旧结果不会覆盖本次请求。') + '</p></div></div>'; return; }
     if (state.searchError && isContentVersionMismatch({ code: state.searchErrorCode })) { area.innerHTML = globalThis.LearningWorkbench?.contentUpdateMarkup?.('alert') || '<div class="rc-agent-state rc-agent-update" role="alert"><span class="rc-agent-mark" aria-hidden="true">新</span><div><strong>教材已更新</strong><p>' + esc(state.searchError) + '</p><p>当前打开的页面可能仍显示旧正文，直到刷新。不会自动重载，提问仍可继续。</p><div class="lw-content-update-actions"><button type="button" class="primary" data-lw-content-refresh>刷新到新版</button><button type="button" class="outline" data-lw-content-export>先导出本机记录</button></div></div></div>'; return; }
-    if (state.searchError) { area.innerHTML = '<div class="rc-agent-state rc-agent-error" role="alert"><span class="rc-agent-mark" aria-hidden="true">!</span><div><strong>职业推荐暂时不可用</strong><p>' + esc(state.searchError) + '</p><button type="button" class="outline" data-rc-retry-search>重试</button></div></div>'; return; }
+    if (state.searchError || state.careerStatus === 'unavailable') { area.innerHTML = '<div class="rc-agent-state rc-agent-error" role="alert"><span class="rc-agent-mark" aria-hidden="true">!</span><div><strong>' + (state.careerOperation === 'catalog' ? '职业目录暂时不可用' : '职业推荐暂时不可用') + '</strong><p>' + esc(state.searchError || state.lastCareerResult?.message || '服务未能返回可用结果，请重试。') + '</p><button type="button" class="outline" data-rc-retry-search>重试</button></div></div>'; return; }
     if (state.careerStatus === 'invalid_input') { area.innerHTML = '<div class="rc-agent-state rc-agent-error" role="alert"><span class="rc-agent-mark" aria-hidden="true">!</span><div><strong>请检查职业描述</strong><p>请输入 1—1200 字的职业目标或已有能力。</p></div></div>'; return; }
     if (state.careerStatus === 'needs_clarification' && state.careerClarification) {
       const clarification = state.careerClarification;
@@ -632,50 +674,59 @@
       area.innerHTML = '<section class="rc-agent-state rc-agent-clarify" aria-live="polite"><span class="rc-agent-mark" aria-hidden="true">?</span><div><strong>请补充职业方向</strong><p>' + esc(clarification.question || clarification.message || '你想选择哪一类职业方向？') + '</p><div class="rc-clarifications">' + options.map((option, index) => '<button type="button" class="outline" data-rc-clarify="' + index + '">' + esc(typeof option === 'string' ? option : option.label || option.title || option.query) + '</button>').join('') + '</div></div></section>';
       return;
     }
-    if (!state.careers.length) { area.innerHTML = '<div class="rc-agent-state rc-agent-empty"><span class="rc-agent-mark" aria-hidden="true">?</span><div><strong>' + (state.query.trim() ? '没有匹配的已发布职业' : '暂无可选职业') + '</strong><p>' + (state.query.trim() ? '换一种目标描述，或补充你想做的具体工作。' : '当前职业目录还没有可供选择的公开内容。') + '</p></div></div>'; return; }
+    if (!state.careers.length) { const emptyCatalog = state.careerStatus === 'catalog_empty'; area.innerHTML = '<div class="rc-agent-state rc-agent-empty"><span class="rc-agent-mark" aria-hidden="true">?</span><div><strong>' + (emptyCatalog ? '暂无可选职业' : '没有匹配的已发布职业') + '</strong><p>' + (emptyCatalog ? '当前职业目录还没有可供选择的公开内容。' : '换一种目标描述，或补充你想做的具体工作。') + '</p><button type="button" class="outline" ' + (emptyCatalog ? 'data-rc-retry-search>重试目录' : 'data-rc-show-directory>查看全部职业') + '</button></div></div>'; return; }
     const meta = state.lastCareerResult || {};
     const cards = state.careers.map((career, index) => {
       if (!validCareerCandidate(career)) return '';
       const active = career.careerId === state.me?.activeCareer?.careerId;
       const selected = state.selectedCareer?.careerId === career.careerId && state.selectedCareer?.contentVersion === career.contentVersion;
-      const signals = career.hasMatchedSignals && career.matchedSignals.length ? career.matchedSignals.map(signal => '<li>' + esc(signal) + '</li>').join('') : '<li>服务未提供</li>';
-      const gaps = career.hasGaps && career.gaps.length ? career.gaps.map(gap => '<li>' + esc(gap) + '</li>').join('') : '<li>服务未提供</li>';
+      const signals = career.hasMatchedSignals && career.matchedSignals.length ? '<div><strong>匹配信号</strong><ul>' + career.matchedSignals.map(signal => '<li>' + esc(signal) + '</li>').join('') + '</ul></div>' : '';
+      const gaps = career.hasGaps && career.gaps.length ? '<div><strong>待补能力</strong><ul>' + career.gaps.map(gap => '<li>' + esc(gap) + '</li>').join('') + '</ul></div>' : '';
+      const signalPanel = signals || gaps ? '<div class="rc-career-signals">' + signals + gaps + '</div>' : '';
       const actions = career.actions || [];
-      const readOnlyActions = '<div class="rc-career-actions"><span>只读入口</span>' + (actions.includes('browse_content') ? '<a class="outline" href="#learn" data-rc-browse-content="' + esc(career.careerId) + '">浏览教材</a>' : '') + (actions.includes('compare') ? '<span class="rc-career-action">可比较</span>' : '') + (actions.length ? '' : '<span class="rc-career-action">服务未提供</span>') + '</div>';
-      return '<article class="rc-career-card ' + (active ? 'is-active' : '') + (selected ? ' is-selected' : '') + '"><div><div class="rc-career-title"><strong>' + esc(career.title) + '</strong>' + (index === 0 && state.query ? '<span class="rc-match">首选</span>' : '') + (active ? '<span class="rc-current">当前</span>' : '') + '</div><p>' + esc(career.summary || '') + '</p><small>' + esc(career.reason || '') + '</small><div class="rc-career-evidence"><span>教材版本</span> ' + esc(career.contentVersion || '服务未提供') + ' · <span>索引</span> ' + esc(career.indexVersion || '服务未提供') + '<br><span>教材身份</span> ' + esc(career.textbookVersionId || '服务未提供') + ' · <span>语料 SHA256</span> ' + esc(career.corpusHash || '服务未提供') + '<br><span>依据</span> ' + esc(meta.label || careerMatchLabel(meta)) + '</div><div class="rc-career-signals"><div><strong>匹配信号</strong><ul>' + signals + '</ul></div><div><strong>待补能力</strong><ul>' + gaps + '</ul></div></div>' + readOnlyActions + '</div><button type="button" class="outline" data-rc-select-career="' + esc(career.careerId) + '" ' + (active ? 'disabled' : '') + '>' + (active ? '当前职业' : selected ? '已选' : '查看并确认') + '</button></article>';
+      const canBrowse = !state.me?.user || active;
+      const browseHref = '#learn/career/' + career.careerId;
+      const readOnlyActions = '<div class="rc-career-actions"><span>只读入口</span>' + (canBrowse ? '<a class="outline" href="' + esc(browseHref) + '" data-rc-browse-content="' + esc(career.careerId) + '">' + (active ? '继续学习' : '浏览教材') + '</a>' : '<span class="rc-career-action">确认切换后可打开教材</span>') + (actions.includes('compare') ? '<span class="rc-career-action">可比较</span>' : '') + '</div>';
+      return '<article class="rc-career-card ' + (active ? 'is-active' : '') + (selected ? ' is-selected' : '') + '"><div><div class="rc-career-title"><strong>' + esc(career.title) + '</strong>' + (index === 0 && state.query ? '<span class="rc-match">首选</span>' : '') + (active ? '<span class="rc-current">当前</span>' : '') + '</div><p>' + esc(career.summary || '') + '</p><small>' + esc(career.reason || '') + '</small><p class="rc-career-match-basis"><span>匹配依据</span> ' + esc(meta.label || careerMatchLabel(meta)) + '</p><details class="rc-career-provenance"><summary>版本与出处</summary><div class="rc-career-evidence"><span>教材版本</span> ' + esc(career.contentVersion || '服务未提供') + '<br><span>索引版本</span> ' + esc(career.indexVersion || '服务未提供') + '<br><span>教材身份</span> ' + esc(career.textbookVersionId || '服务未提供') + '<br><span>语料 SHA256</span> ' + esc(career.corpusHash || '服务未提供') + '<br><span>职业服务版本</span> ' + esc(CAREER_AGENT_VERSION) + '<br><span>本次请求</span> ' + esc(meta.requestId || state.searchSeq) + '</div></details>' + signalPanel + readOnlyActions + '</div><button type="button" class="outline" data-rc-select-career="' + esc(career.careerId) + '" ' + (active ? 'disabled' : '') + '>' + (active ? '当前职业' : selected ? '已选' : '查看并确认') + '</button></article>';
     }).join('');
     const selected = state.selectedCareer && state.careers.find(c => c.careerId === state.selectedCareer.careerId && c.contentVersion === state.selectedCareer.contentVersion);
     const confirmation = selected ? '<section class="rc-career-confirm" aria-live="polite"><strong>确认你的职业选择</strong><p><b>' + esc(selected.title) + '</b> · ' + esc(selected.summary || '') + '</p><p class="rc-confirm-note">确认后才会写入当前账户的职业方向，并按该职业教材加载学习工作台。</p><div class="rc-confirm-actions"><button type="button" class="primary" data-rc-confirm-career>确认并切换职业</button><button type="button" class="outline" data-rc-cancel-career>换一个</button></div></section>' : '';
-    area.innerHTML = '<div class="rc-agent-result-meta"><span>请求 #' + esc(meta.requestId || state.searchSeq) + '</span><span>' + esc(meta.label || careerMatchLabel(meta)) + '</span><span>共 ' + state.careers.length + ' 个候选</span></div>' + cards + confirmation;
+    area.innerHTML = '<div class="rc-agent-result-meta"><span>' + esc(meta.label || careerMatchLabel(meta)) + '</span><span>共 ' + state.careers.length + ' 个候选</span></div>' + cards + confirmation;
   }
 
   async function searchCareers() {
+    const expression = state.query.trim();
+    const operation = expression ? 'recommend' : 'catalog';
     const sequence = ++state.searchSeq;
     const requestKey = uuid();
     if (state.searchController) state.searchController.abort();
     state.searchController = typeof AbortController === 'function' ? new AbortController() : null;
+    const controller = state.searchController;
     state.busy = true;
     state.searchError = '';
     state.searchErrorCode = '';
     state.careerStatus = 'retrieving';
+    state.careerOperation = operation;
     state.careerClarification = null;
     resetCareerSelection();
     renderCareers();
     try {
-      const expression = state.query.trim();
-      if (!expression || expression.length > CAREER_QUERY_LIMIT) throw Object.assign(new Error(!expression ? '请输入职业目标或已有能力。' : '职业描述不能超过 1200 字。'), { code: 'input_invalid' });
+      if (expression.length > CAREER_QUERY_LIMIT) throw Object.assign(new Error('职业描述不能超过 1200 字。'), { code: 'input_invalid' });
       let result;
-      try {
-        result = await api('/api/agent/career/recommend', { method: 'POST', signal: state.searchController?.signal, headers: { 'X-Rolecraft-Agent-Request-Id': requestKey, 'X-Rolecraft-Agent-Version': CAREER_AGENT_VERSION }, body: { requestId: requestKey, query: expression, activeCareerId: state.me?.activeCareer?.careerId || null, locale: 'zh-CN', workbenchVersion: WORKBENCH_VERSION, agentVersion: CAREER_AGENT_VERSION } });
-      } catch (error) {
-        if (!routeUnavailable(error)) throw error;
-        const legacy = await api('/api/careers?q=' + encodeURIComponent(expression), { signal: state.searchController?.signal, headers: { 'X-Rolecraft-Agent-Request-Id': requestKey, 'X-Rolecraft-Agent-Version': CAREER_AGENT_VERSION } });
-        result = { ...legacy, requestId: legacy?.requestId || requestKey, status: Array.isArray(legacy?.careers) && legacy.careers.length ? 'recommended' : 'no_match' };
+      if (operation === 'catalog') {
+        result = await api('/api/careers', { signal: controller?.signal });
+      } else {
+        try {
+          result = await api('/api/agent/career/recommend', { method: 'POST', signal: controller?.signal, headers: { 'X-Rolecraft-Agent-Request-Id': requestKey, 'X-Rolecraft-Agent-Version': CAREER_AGENT_VERSION }, body: { requestId: requestKey, query: expression, activeCareerId: state.me?.activeCareer?.careerId || null, locale: 'zh-CN', workbenchVersion: WORKBENCH_VERSION, agentVersion: CAREER_AGENT_VERSION } });
+        } catch (error) {
+          if (!routeUnavailable(error) || sequence !== state.searchSeq) throw error;
+          result = await api('/api/careers?q=' + encodeURIComponent(expression), { signal: controller?.signal, headers: { 'X-Rolecraft-Agent-Request-Id': requestKey, 'X-Rolecraft-Agent-Version': CAREER_AGENT_VERSION } });
+        }
       }
       if (sequence !== state.searchSeq) return;
       if (result?.query != null && result.query !== expression) throw Error('职业推荐响应与本次输入不一致，请重试。');
       if (result?.requestId && result.requestId !== requestKey) throw Error('职业推荐响应与本次请求不一致，请重试。');
-      const normalized = normalizeCareerResult(result, requestKey, expression);
+      const normalized = normalizeCareerResult(result, requestKey, expression, operation);
       normalized.requestId = requestKey;
       state.careers = normalized.candidates;
       state.careerStatus = normalized.status;
@@ -753,6 +804,13 @@
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
   else init();
+
+  globalThis.addEventListener?.('pageshow', event => {
+    if (!event.persisted) return;
+    state.csrf = '';
+    setSession(null, 'revalidate');
+    refresh({ silent: true }).catch(() => {});
+  });
 
   globalThis.RolecraftAuthCareer = {
     agentVersion: CAREER_AGENT_VERSION,
