@@ -50,7 +50,7 @@
 16. [用固定路径完成同一受控任务](c01-fixed-workflow.md)  
    `c01-fixed-workflow.md` · 1 个图示引用 · 1 个折叠块 · 4 个长代码折叠块
 17. [Agent 控制循环：设计一个可恢复、受控并能验收的运行时](c01-control-loop.md)  
-   `c01-control-loop.md` · 2 个图示引用 · 6 个折叠块 · 7 个长代码折叠块
+   `c01-control-loop.md` · 12 个图示引用 · 3 个折叠块 · 3 个长代码折叠块
 18. [让计划依据观察前进，而不是在反复规划中空转](n03-planning-reflection.md)  
    `n03-planning-reflection.md` · 2 个图示引用 · 0 个折叠块 · 0 个长代码折叠块
 19. [从原始文档到可比较的自适应检索链](n05-retrieval-ingestion.md)  

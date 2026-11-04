@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 620" role="img" aria-labelledby="t d">
+<title id="t">崩溃窗口：正确路径 vs 错误路径</title>
+<desc id="d">正确：查原 operation→SUCCEEDED。错误：IN_FLIGHT→READY→新键→可能 ISSUE-219。</desc>
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0L10 5L0 10z" fill="#3c6e9e"/>
+  </marker>
+  <marker id="loop" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0L10 5L0 10z" fill="#7955a3"/>
+  </marker>
+  <marker id="deny" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0L10 5L0 10z" fill="#c55b5b"/>
+  </marker>
+  <marker id="ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0L10 5L0 10z" fill="#2f6b55"/>
+  </marker>
+
+</defs>
+<rect width="100%" height="100%" fill="#f6f8fb"/>
+
+<text x="28" y="34" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="700" fill="#182230">最危险崩溃窗口 · 改前改后</text>
+<text x="28" y="56" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">读图：错误实现在哪一步制造第二条工单</text>
+<rect x="28" y="74" width="1024" height="56" rx="10" fill="#eef3f8" stroke="#b7c7d8" stroke-width="2"/>
+<text x="540" y="98" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#182230">共同前序：尝试已提交 · 外部已建 ISSUE-218 · RecordOutcome 前崩溃 · 本地仍 IN_FLIGHT</text>
+<text x="540" y="118" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">恢复者不能解释为「未创建」</text>
+<rect x="28" y="150" width="500" height="380" rx="14" fill="#eef8f4" stroke="#2f6b55" stroke-width="2"/>
+<text x="278" y="182" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#2f6b55">✓ 正确路径</text>
+<rect x="52" y="210" width="452" height="32" rx="8" fill="#ffffff" stroke="#9dcbb7" stroke-width="1.5"/>
+<text x="68" y="232" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#182230">1 新租约 · BeginLookup</text>
+<line x1="278" y1="242" x2="278" y2="248" stroke="#2f6b55" stroke-width="2"/>
+<rect x="52" y="248" width="452" height="32" rx="8" fill="#ffffff" stroke="#9dcbb7" stroke-width="1.5"/>
+<text x="68" y="270" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#182230">2 按原 operation_id 查询</text>
+<line x1="278" y1="280" x2="278" y2="286" stroke="#2f6b55" stroke-width="2"/>
+<rect x="52" y="286" width="452" height="32" rx="8" fill="#ffffff" stroke="#9dcbb7" stroke-width="1.5"/>
+<text x="68" y="308" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#182230">3 返回匹配 ISSUE-218</text>
+<line x1="278" y1="318" x2="278" y2="324" stroke="#2f6b55" stroke-width="2"/>
+<rect x="52" y="324" width="452" height="32" rx="8" fill="#ffffff" stroke="#9dcbb7" stroke-width="1.5"/>
+<text x="68" y="346" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#182230">4 RecordLookup.success</text>
+<line x1="278" y1="356" x2="278" y2="362" stroke="#2f6b55" stroke-width="2"/>
+<rect x="52" y="362" width="452" height="32" rx="8" fill="#ffffff" stroke="#9dcbb7" stroke-width="1.5"/>
+<text x="68" y="384" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#182230">5 原动作 → SUCCEEDED</text>
+<line x1="278" y1="394" x2="278" y2="400" stroke="#2f6b55" stroke-width="2"/>
+<rect x="52" y="400" width="452" height="32" rx="8" fill="#ffffff" stroke="#9dcbb7" stroke-width="1.5"/>
+<text x="68" y="422" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#182230">6 无需二次创建</text>
+<line x1="278" y1="432" x2="278" y2="438" stroke="#2f6b55" stroke-width="2"/>
+<rect x="52" y="438" width="452" height="32" rx="8" fill="#ffffff" stroke="#9dcbb7" stroke-width="1.5"/>
+<text x="68" y="460" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#182230">7 计划完成 → 验收</text>
+<rect x="552" y="150" width="500" height="380" rx="14" fill="#fff0f0" stroke="#c55b5b" stroke-width="2"/>
+<text x="802" y="182" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#c55b5b">✗ 错误路径</text>
+<rect x="576" y="210" width="452" height="32" rx="8" fill="#ffffff" stroke="#db9a9a" stroke-width="1.5"/>
+<text x="592" y="232" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" fill="#182230">1 把 IN_FLIGHT 改回 READY</text>
+<rect x="576" y="248" width="452" height="32" rx="8" fill="#ffffff" stroke="#db9a9a" stroke-width="1.5"/>
+<text x="592" y="270" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" fill="#182230">2 再问模型「怎么办」</text>
+<rect x="576" y="286" width="452" height="32" rx="8" fill="#ffe4e6" stroke="#c55b5b" stroke-width="2.5"/>
+<text x="592" y="308" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#c55b5b">3 ⚠ 用新幂等键调用</text>
+<rect x="576" y="324" width="452" height="32" rx="8" fill="#ffe4e6" stroke="#c55b5b" stroke-width="2.5"/>
+<text x="592" y="346" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#c55b5b">4 外部再建 ISSUE-219</text>
+<rect x="576" y="362" width="452" height="32" rx="8" fill="#ffe4e6" stroke="#c55b5b" stroke-width="2.5"/>
+<text x="592" y="384" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#c55b5b">5 出现第二条工单</text>
+<rect x="576" y="400" width="452" height="32" rx="8" fill="#ffffff" stroke="#db9a9a" stroke-width="1.5"/>
+<text x="592" y="422" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" fill="#182230">6 内容相等 ≠ 同一操作</text>
+<rect x="576" y="438" width="452" height="32" rx="8" fill="#ffffff" stroke="#db9a9a" stroke-width="1.5"/>
+<text x="592" y="460" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" fill="#182230">7 账本身份分裂</text>
+<rect x="28" y="548" width="1024" height="40" rx="8" fill="#fff8df" stroke="#e7c45d" stroke-width="2"/>
+<text x="540" y="574" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#182230">制造第二条工单的步骤：错误路径第 3–4 步（新键 → ISSUE-219）</text>
+<text x="28" y="610" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">教学构造 · 未实测 · 隔离稿 · Hold 合入生产</text>
+</svg>

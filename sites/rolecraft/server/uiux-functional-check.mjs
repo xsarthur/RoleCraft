@@ -17,7 +17,7 @@ const knownCurrent = {
   '06-task-flows': '635823faac296f4ff88a4c61b940b211c5fc3c8c73ea15bc012644978ff2b606',
   '07-interaction-state-contracts': '9cc809f28c5f0b4b19c6908c58965bad30b537529efce75be852b2065e256eae',
   '08-wireframe-prototyping': 'ad45b8ece80ddaca052146e1a078bdfcd76f4cec82367d26c8e436de8dd3b40c',
-  '12-design-system-governance': '44bca0c7d50f2dab9db7b55b5fc52dc88106a1883b4f47c330e1f06ca65f76b7',
+  '12-design-system-governance': 'c0c2ea11ca6382c0840eaa83176ca2a62967be6cf0ea162be71a9df4f354545c',
 };
 const staleManifest = [
   '66253bef4a653d8eb57ba1af450d54ded9d05786e38a443ee4fe0b2c81f57d41',

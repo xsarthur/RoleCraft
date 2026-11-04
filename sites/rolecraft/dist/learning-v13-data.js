@@ -3,7 +3,7 @@ globalThis.RolecraftLearningV13={
   "schemaVersion": "1",
   "version": "app-v13-textbook-v13-learning-data-1",
   "corpusVersion": "textbook-v13",
-  "corpusHash": "fe53e75a2950535f536eb709805f657a547887c9dec4fb5b22467c13310ca344",
+  "corpusHash": "2c416778a23517596e6e2cac7a2d70c2f7720f20ca0324de53ec6c764b395a3f",
   "bookSha256": "10fbf9a57b6a5c26ae0d096c40646c9b869e460def557e1b34538b8408ff15f4",
   "sourceBindings": [
     {
@@ -23,15 +23,15 @@ globalThis.RolecraftLearningV13={
     {
       "path": "sites/rolecraft/server/retrieval/content-v13-index.json",
       "sourcePath": "server/retrieval/content-v13-index.json",
-      "sha256": "230140c8c24e1772f57223439629e93f9f41329d2ea70c2e36fe4230ab3ac13e",
-      "bytes": 1805409,
+      "sha256": "e8b377cda1b0e26b6ec4cb9355e4c18ac592c133a4559e93267e652b59657418",
+      "bytes": 1724456,
       "kind": "same_corpus_derived_input"
     },
     {
       "path": "sites/rolecraft/dist/content-v13-data.js",
       "sourcePath": "dist/content-v13-data.js",
-      "sha256": "8efaefa4e93fc8a35cd617992b3a172fc9a63f65a230a110d36e06a5a4b482b7",
-      "bytes": 1759525,
+      "sha256": "5e62bd64ca2e4a4800692f36692f25e470d2e841b9c456cf6eef078c5350699e",
+      "bytes": 1673088,
       "kind": "same_corpus_derived_input"
     },
     {
@@ -44,15 +44,15 @@ globalThis.RolecraftLearningV13={
     {
       "path": "sites/rolecraft/textbooks/v13/README.md",
       "sourcePath": "textbooks/v13/README.md",
-      "sha256": "4208df0fc4292e70fbcbd0241d2c93324195e655eab20957b29adc9e00ccdc9f",
-      "bytes": 8418,
+      "sha256": "2357332fa4db7d422a2b5e058623ebd0b14a9bf56ef661379f93a4acf1162556",
+      "bytes": 8419,
       "kind": "frozen_teaching_input"
     },
     {
       "path": "sites/rolecraft/textbooks/v13/assembly-manifest.json",
       "sourcePath": "textbooks/v13/assembly-manifest.json",
-      "sha256": "b8308eaa11ba15cd53337516b81a59769f42a9a864bd44d30fde82c218da9db6",
-      "bytes": 37906,
+      "sha256": "eb0f92e7ed9efcb336cbf0d3f52f0a8758444a250e818c2d8abf83b278c02d68",
+      "bytes": 41518,
       "kind": "frozen_teaching_input"
     },
     {
@@ -170,8 +170,8 @@ globalThis.RolecraftLearningV13={
     {
       "path": "sites/rolecraft/textbooks/v13/c01-control-loop.md",
       "sourcePath": "textbooks/v13/c01-control-loop.md",
-      "sha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-      "bytes": 88055,
+      "sha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+      "bytes": 50516,
       "kind": "frozen_teaching_input"
     },
     {
@@ -269,13 +269,13 @@ globalThis.RolecraftLearningV13={
   "metadata": {
     "version": "app-v13-textbook-v13-learning-data-1",
     "corpusVersion": "textbook-v13",
-    "corpusHash": "fe53e75a2950535f536eb709805f657a547887c9dec4fb5b22467c13310ca344",
-    "generatedAt": "2026-10-24T07:04:16.313Z",
+    "corpusHash": "2c416778a23517596e6e2cac7a2d70c2f7720f20ca0324de53ec6c764b395a3f",
+    "generatedAt": "2026-11-04T08:29:06.335Z",
     "role": "课程架构师",
     "status": "rebound_to_textbook_v13_pending_independent_qa",
     "counts": {
       "units": 30,
-      "indexedSections": 349,
+      "indexedSections": 395,
       "knowledgePoints": 240,
       "knowledgePointKinds": {
         "unit_introduction": 30,
@@ -312,15 +312,15 @@ globalThis.RolecraftLearningV13={
       {
         "path": "sites/rolecraft/server/retrieval/content-v13-index.json",
         "sourcePath": "server/retrieval/content-v13-index.json",
-        "sha256": "230140c8c24e1772f57223439629e93f9f41329d2ea70c2e36fe4230ab3ac13e",
-        "bytes": 1805409,
+        "sha256": "e8b377cda1b0e26b6ec4cb9355e4c18ac592c133a4559e93267e652b59657418",
+        "bytes": 1724456,
         "kind": "same_corpus_derived_input"
       },
       {
         "path": "sites/rolecraft/dist/content-v13-data.js",
         "sourcePath": "dist/content-v13-data.js",
-        "sha256": "8efaefa4e93fc8a35cd617992b3a172fc9a63f65a230a110d36e06a5a4b482b7",
-        "bytes": 1759525,
+        "sha256": "5e62bd64ca2e4a4800692f36692f25e470d2e841b9c456cf6eef078c5350699e",
+        "bytes": 1673088,
         "kind": "same_corpus_derived_input"
       },
       {
@@ -333,15 +333,15 @@ globalThis.RolecraftLearningV13={
       {
         "path": "sites/rolecraft/textbooks/v13/README.md",
         "sourcePath": "textbooks/v13/README.md",
-        "sha256": "4208df0fc4292e70fbcbd0241d2c93324195e655eab20957b29adc9e00ccdc9f",
-        "bytes": 8418,
+        "sha256": "2357332fa4db7d422a2b5e058623ebd0b14a9bf56ef661379f93a4acf1162556",
+        "bytes": 8419,
         "kind": "frozen_teaching_input"
       },
       {
         "path": "sites/rolecraft/textbooks/v13/assembly-manifest.json",
         "sourcePath": "textbooks/v13/assembly-manifest.json",
-        "sha256": "b8308eaa11ba15cd53337516b81a59769f42a9a864bd44d30fde82c218da9db6",
-        "bytes": 37906,
+        "sha256": "eb0f92e7ed9efcb336cbf0d3f52f0a8758444a250e818c2d8abf83b278c02d68",
+        "bytes": 41518,
         "kind": "frozen_teaching_input"
       },
       {
@@ -459,8 +459,8 @@ globalThis.RolecraftLearningV13={
       {
         "path": "sites/rolecraft/textbooks/v13/c01-control-loop.md",
         "sourcePath": "textbooks/v13/c01-control-loop.md",
-        "sha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-        "bytes": 88055,
+        "sha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+        "bytes": 50516,
         "kind": "frozen_teaching_input"
       },
       {
@@ -1347,11 +1347,11 @@ globalThis.RolecraftLearningV13={
     {
       "unitId": "c01-control-loop",
       "order": 17,
-      "title": "Agent 控制循环：设计一个可恢复、受控并能验收的运行时",
+      "title": "Agent 控制循环：让模型只提议，让运行时决定能不能执行",
       "navigationLabel": "Agent 控制循环：设计一个可恢复、受控并能验收的运行时",
-      "coreQuestion": "Agent 控制循环：设计一个可恢复、受控并能验收的运行时",
+      "coreQuestion": "Agent 控制循环：让模型只提议，让运行时决定能不能执行",
       "sourcePath": "textbooks/v13/c01-control-loop.md",
-      "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+      "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
       "prerequisiteUnitIds": [
         "c01-fixed-workflow",
         "c03",
@@ -3965,32 +3965,32 @@ globalThis.RolecraftLearningV13={
     {
       "id": "c01-control-loop:s-bcd387a0c196",
       "unitId": "c01-control-loop",
-      "sectionId": "s-5d352c7f0691",
-      "title": "Agent 控制循环：设计一个可恢复、受控并能验收的运行时",
+      "sectionId": "s-b15ccb311fcc",
+      "title": "Agent 控制循环：让模型只提议，让运行时决定能不能执行",
       "level": 1,
       "kind": "unit_introduction",
       "order": 1,
       "startLine": 1,
-      "endLine": 4,
+      "endLine": 12,
       "sourcePath": "textbooks/v13/c01-control-loop.md",
-      "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-      "href": "#learn/agent/c01-control-loop/s-5d352c7f0691",
+      "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+      "href": "#learn/agent/c01-control-loop/s-b15ccb311fcc",
       "childSectionIds": [],
       "questionIds": []
     },
     {
       "id": "c01-control-loop:s-25e1914bed1e",
       "unitId": "c01-control-loop",
-      "sectionId": "s-25e1914bed1e",
-      "title": "1 先固定完成条件 才能决定循环控制什么",
+      "sectionId": "s-47a47cb897db",
+      "title": "1 先固定完成条件，才能决定循环控制什么",
       "level": 2,
       "kind": "core",
       "order": 2,
-      "startLine": 47,
-      "endLine": 73,
+      "startLine": 80,
+      "endLine": 81,
       "sourcePath": "textbooks/v13/c01-control-loop.md",
-      "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-      "href": "#learn/agent/c01-control-loop/s-25e1914bed1e",
+      "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+      "href": "#learn/agent/c01-control-loop/s-47a47cb897db",
       "childSectionIds": [],
       "questionIds": [
         "Q7",
@@ -4000,16 +4000,16 @@ globalThis.RolecraftLearningV13={
     {
       "id": "c01-control-loop:s-81f9aaeecb60",
       "unitId": "c01-control-loop",
-      "sectionId": "s-81f9aaeecb60",
-      "title": "2 控制权在运行时 聊天上下文只是一种投影",
-      "level": 2,
+      "sectionId": "s-cc580afe300e",
+      "title": "2.3 小案例：摘要漏工单",
+      "level": 3,
       "kind": "core",
       "order": 3,
-      "startLine": 74,
-      "endLine": 101,
+      "startLine": 167,
+      "endLine": 188,
       "sourcePath": "textbooks/v13/c01-control-loop.md",
-      "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-      "href": "#learn/agent/c01-control-loop/s-81f9aaeecb60",
+      "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+      "href": "#learn/agent/c01-control-loop/s-cc580afe300e",
       "childSectionIds": [],
       "questionIds": [
         "Q7",
@@ -4022,16 +4022,16 @@ globalThis.RolecraftLearningV13={
     {
       "id": "c01-control-loop:s-d9d6abd6ff04",
       "unitId": "c01-control-loop",
-      "sectionId": "s-d9d6abd6ff04",
-      "title": "3 用动作账本表达进度 不要只保存聊天文本",
+      "sectionId": "s-8b2a83b8b159",
+      "title": "3 用动作账本表达进度，不要只保存聊天文本",
       "level": 2,
       "kind": "core",
       "order": 4,
-      "startLine": 102,
-      "endLine": 235,
+      "startLine": 201,
+      "endLine": 202,
       "sourcePath": "textbooks/v13/c01-control-loop.md",
-      "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-      "href": "#learn/agent/c01-control-loop/s-d9d6abd6ff04",
+      "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+      "href": "#learn/agent/c01-control-loop/s-8b2a83b8b159",
       "childSectionIds": [],
       "questionIds": [
         "Q20",
@@ -4041,16 +4041,16 @@ globalThis.RolecraftLearningV13={
     {
       "id": "c01-control-loop:s-3fc2cc4e8f7e",
       "unitId": "c01-control-loop",
-      "sectionId": "s-3fc2cc4e8f7e",
-      "title": "4 提交边界决定哪些事情可以在崩溃后重做",
+      "sectionId": "s-70d563b8a8c7",
+      "title": "4 提交边界决定崩溃后哪些能重做",
       "level": 2,
       "kind": "core",
       "order": 5,
-      "startLine": 236,
-      "endLine": 270,
+      "startLine": 298,
+      "endLine": 299,
       "sourcePath": "textbooks/v13/c01-control-loop.md",
-      "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-      "href": "#learn/agent/c01-control-loop/s-3fc2cc4e8f7e",
+      "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+      "href": "#learn/agent/c01-control-loop/s-70d563b8a8c7",
       "childSectionIds": [],
       "questionIds": []
     },
@@ -4062,10 +4062,10 @@ globalThis.RolecraftLearningV13={
       "level": 2,
       "kind": "core",
       "order": 6,
-      "startLine": 271,
-      "endLine": 292,
+      "startLine": 349,
+      "endLine": 350,
       "sourcePath": "textbooks/v13/c01-control-loop.md",
-      "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+      "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
       "href": "#learn/agent/c01-control-loop/s-76263bf5db11",
       "childSectionIds": [],
       "questionIds": [
@@ -4076,16 +4076,16 @@ globalThis.RolecraftLearningV13={
     {
       "id": "c01-control-loop:s-717cb810447d",
       "unitId": "c01-control-loop",
-      "sectionId": "s-717cb810447d",
-      "title": "6 先核对未决动作 再让模型继续",
+      "sectionId": "s-decb1cf43bb9",
+      "title": "6 先核对未决动作，再让模型继续",
       "level": 2,
       "kind": "core",
       "order": 7,
-      "startLine": 293,
-      "endLine": 314,
+      "startLine": 385,
+      "endLine": 386,
       "sourcePath": "textbooks/v13/c01-control-loop.md",
-      "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-      "href": "#learn/agent/c01-control-loop/s-717cb810447d",
+      "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+      "href": "#learn/agent/c01-control-loop/s-decb1cf43bb9",
       "childSectionIds": [],
       "questionIds": [
         "Q25",
@@ -4097,16 +4097,16 @@ globalThis.RolecraftLearningV13={
     {
       "id": "c01-control-loop:s-ac6802a088cb",
       "unitId": "c01-control-loop",
-      "sectionId": "s-ac6802a088cb",
-      "title": "7 审批 取消和预算都必须跨暂停保留",
+      "sectionId": "s-3acf2cb13400",
+      "title": "7 审批、取消和预算都必须跨暂停保留",
       "level": 2,
       "kind": "core",
       "order": 8,
-      "startLine": 315,
-      "endLine": 349,
+      "startLine": 436,
+      "endLine": 437,
       "sourcePath": "textbooks/v13/c01-control-loop.md",
-      "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-      "href": "#learn/agent/c01-control-loop/s-ac6802a088cb",
+      "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+      "href": "#learn/agent/c01-control-loop/s-3acf2cb13400",
       "childSectionIds": [],
       "questionIds": [
         "Q15",
@@ -4116,16 +4116,16 @@ globalThis.RolecraftLearningV13={
     {
       "id": "c01-control-loop:s-de2c83d4eb9e",
       "unitId": "c01-control-loop",
-      "sectionId": "s-de2c83d4eb9e",
-      "title": "8 把这些约束落实到完整控制骨架",
+      "sectionId": "s-5523294afc90",
+      "title": "8 把约束落到完整控制骨架（深读）",
       "level": 2,
       "kind": "core",
       "order": 9,
-      "startLine": 350,
-      "endLine": 353,
+      "startLine": 485,
+      "endLine": 486,
       "sourcePath": "textbooks/v13/c01-control-loop.md",
-      "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-      "href": "#learn/agent/c01-control-loop/s-de2c83d4eb9e",
+      "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+      "href": "#learn/agent/c01-control-loop/s-5523294afc90",
       "childSectionIds": [],
       "questionIds": [
         "Q13",
@@ -4140,10 +4140,10 @@ globalThis.RolecraftLearningV13={
       "level": 2,
       "kind": "core",
       "order": 10,
-      "startLine": 764,
-      "endLine": 781,
+      "startLine": 548,
+      "endLine": 549,
       "sourcePath": "textbooks/v13/c01-control-loop.md",
-      "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+      "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
       "href": "#learn/agent/c01-control-loop/s-adb784ffc605",
       "childSectionIds": [],
       "questionIds": [
@@ -4159,10 +4159,10 @@ globalThis.RolecraftLearningV13={
       "level": 2,
       "kind": "core",
       "order": 11,
-      "startLine": 782,
-      "endLine": 783,
+      "startLine": 585,
+      "endLine": 586,
       "sourcePath": "textbooks/v13/c01-control-loop.md",
-      "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+      "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
       "href": "#learn/agent/c01-control-loop/s-342c46cf81a2",
       "childSectionIds": [],
       "questionIds": [
@@ -4175,16 +4175,16 @@ globalThis.RolecraftLearningV13={
     {
       "id": "c01-control-loop:s-b79a285166bc",
       "unitId": "c01-control-loop",
-      "sectionId": "s-b79a285166bc",
-      "title": "11 成功 等待和停止必须保留不同的含义",
-      "level": 2,
+      "sectionId": "s-0c5a904fcd63",
+      "title": "11.2 概念地图：状态含义表",
+      "level": 3,
       "kind": "core",
       "order": 12,
-      "startLine": 860,
-      "endLine": 879,
+      "startLine": 651,
+      "endLine": 668,
       "sourcePath": "textbooks/v13/c01-control-loop.md",
-      "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-      "href": "#learn/agent/c01-control-loop/s-b79a285166bc",
+      "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+      "href": "#learn/agent/c01-control-loop/s-0c5a904fcd63",
       "childSectionIds": [],
       "questionIds": [
         "Q13",
@@ -4195,48 +4195,48 @@ globalThis.RolecraftLearningV13={
     {
       "id": "c01-control-loop:s-5adf0c6c9187",
       "unitId": "c01-control-loop",
-      "sectionId": "s-5adf0c6c9187",
-      "title": "12 选择最小足够的循环 而不是先选最复杂框架",
+      "sectionId": "s-683c18197093",
+      "title": "12 选择最小足够的循环，而不是先选最复杂框架",
       "level": 2,
       "kind": "core",
       "order": 13,
-      "startLine": 880,
-      "endLine": 892,
+      "startLine": 680,
+      "endLine": 681,
       "sourcePath": "textbooks/v13/c01-control-loop.md",
-      "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-      "href": "#learn/agent/c01-control-loop/s-5adf0c6c9187",
+      "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+      "href": "#learn/agent/c01-control-loop/s-683c18197093",
       "childSectionIds": [],
       "questionIds": []
     },
     {
       "id": "c01-control-loop:s-9b659b4dbfe6",
       "unitId": "c01-control-loop",
-      "sectionId": "s-9b659b4dbfe6",
-      "title": "13 观测要能重建决定 评估要有分母",
+      "sectionId": "s-d6b6be13b648",
+      "title": "13 观测要能重建决定，评估要有分母",
       "level": 2,
       "kind": "core",
       "order": 14,
-      "startLine": 893,
-      "endLine": 923,
+      "startLine": 713,
+      "endLine": 714,
       "sourcePath": "textbooks/v13/c01-control-loop.md",
-      "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-      "href": "#learn/agent/c01-control-loop/s-9b659b4dbfe6",
+      "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+      "href": "#learn/agent/c01-control-loop/s-d6b6be13b648",
       "childSectionIds": [],
       "questionIds": []
     },
     {
       "id": "c01-control-loop:s-e98017a54a2b",
       "unitId": "c01-control-loop",
-      "sectionId": "s-e98017a54a2b",
-      "title": "14 练习 用反例检验设计判断",
+      "sectionId": "s-9fabfb2e8168",
+      "title": "14 练习：用反例检验设计判断",
       "level": 2,
       "kind": "exercise",
       "order": 15,
-      "startLine": 950,
-      "endLine": 951,
+      "startLine": 759,
+      "endLine": 760,
       "sourcePath": "textbooks/v13/c01-control-loop.md",
-      "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-      "href": "#learn/agent/c01-control-loop/s-e98017a54a2b",
+      "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+      "href": "#learn/agent/c01-control-loop/s-9fabfb2e8168",
       "childSectionIds": [],
       "questionIds": []
     },
@@ -4245,13 +4245,13 @@ globalThis.RolecraftLearningV13={
       "unitId": "c01-control-loop",
       "sectionId": "s-7abbcb1b419d",
       "title": "v12 学习衔接",
-      "level": 2,
+      "level": 3,
       "kind": "navigation",
       "order": 16,
-      "startLine": 982,
-      "endLine": 987,
+      "startLine": 838,
+      "endLine": 841,
       "sourcePath": "textbooks/v13/c01-control-loop.md",
-      "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+      "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
       "href": "#learn/agent/c01-control-loop/s-7abbcb1b419d",
       "childSectionIds": [],
       "questionIds": []
@@ -6882,27 +6882,27 @@ globalThis.RolecraftLearningV13={
       "knowledgeRefs": [
         {
           "unitId": "c01-control-loop",
-          "sectionId": "s-25e1914bed1e",
+          "sectionId": "s-47a47cb897db",
           "knowledgePointId": "c01-control-loop:s-25e1914bed1e",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "1 先固定完成条件 才能决定循环控制什么",
-          "href": "#learn/agent/c01-control-loop/s-25e1914bed1e",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "1 先固定完成条件，才能决定循环控制什么",
+          "href": "#learn/agent/c01-control-loop/s-47a47cb897db",
           "quote": "",
-          "startLine": 47,
-          "endLine": 73
+          "startLine": 80,
+          "endLine": 81
         },
         {
           "unitId": "c01-control-loop",
-          "sectionId": "s-81f9aaeecb60",
+          "sectionId": "s-cc580afe300e",
           "knowledgePointId": "c01-control-loop:s-81f9aaeecb60",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "2 控制权在运行时 聊天上下文只是一种投影",
-          "href": "#learn/agent/c01-control-loop/s-81f9aaeecb60",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "2.3 小案例：摘要漏工单",
+          "href": "#learn/agent/c01-control-loop/s-cc580afe300e",
           "quote": "",
-          "startLine": 74,
-          "endLine": 101
+          "startLine": 167,
+          "endLine": 188
         },
         {
           "unitId": "c01-selection",
@@ -6921,39 +6921,39 @@ globalThis.RolecraftLearningV13={
         {
           "id": "Q7-E1",
           "unitId": "c01-control-loop",
-          "sectionId": "s-25e1914bed1e",
+          "sectionId": "s-47a47cb897db",
           "knowledgePointId": "c01-control-loop:s-25e1914bed1e",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "1 先固定完成条件 才能决定循环控制什么",
-          "href": "#learn/agent/c01-control-loop/s-25e1914bed1e",
-          "quote": "工具注册表先定义执行契约，再把可用工具说明给模型：",
-          "startLine": 64,
-          "endLine": 64,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "1 先固定完成条件，才能决定循环控制什么",
+          "href": "#learn/agent/c01-control-loop/s-47a47cb897db",
+          "quote": "## 1 先固定完成条件，才能决定循环控制什么",
+          "startLine": 80,
+          "endLine": 80,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 64,
-            "endLine": 64,
-            "section": "## 1 先固定完成条件 才能决定循环控制什么"
+            "startLine": 80,
+            "endLine": 80,
+            "section": "## 1 先固定完成条件，才能决定循环控制什么"
           }
         },
         {
           "id": "Q7-E2",
           "unitId": "c01-control-loop",
-          "sectionId": "s-81f9aaeecb60",
+          "sectionId": "s-cc580afe300e",
           "knowledgePointId": "c01-control-loop:s-81f9aaeecb60",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "2 控制权在运行时 聊天上下文只是一种投影",
-          "href": "#learn/agent/c01-control-loop/s-81f9aaeecb60",
-          "quote": "模型决定“下一步看哪个文件”“如何组织缺陷说明”，这些决定依赖语义判断。运行时决定工具是否注册、参数是否符合契约、身份能否访问对象、内容是否已获审批、现在是否还有预算。执行器决定如何隔离调用、施加超时、接收实际结果。验收器决定提交的产物是否满足本次目标。每一项都只有一个权威责任者；模型的文字不能覆盖策略或执行记录。",
-          "startLine": 86,
-          "endLine": 86,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "2.3 小案例：摘要漏工单",
+          "href": "#learn/agent/c01-control-loop/s-cc580afe300e",
+          "quote": "**State** 是恢复与授权依据：目标版本、运行修订号、动作账本、尝试、审批、取消、预算、验收反馈。",
+          "startLine": 173,
+          "endLine": 173,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 86,
-            "endLine": 86,
-            "section": "## 2 控制权在运行时 聊天上下文只是一种投影"
+            "startLine": 173,
+            "endLine": 173,
+            "section": "### 2.3 小案例：摘要漏工单"
           }
         },
         {
@@ -7544,97 +7544,97 @@ globalThis.RolecraftLearningV13={
       "knowledgeRefs": [
         {
           "unitId": "c01-control-loop",
-          "sectionId": "s-81f9aaeecb60",
+          "sectionId": "s-cc580afe300e",
           "knowledgePointId": "c01-control-loop:s-81f9aaeecb60",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "2 控制权在运行时 聊天上下文只是一种投影",
-          "href": "#learn/agent/c01-control-loop/s-81f9aaeecb60",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "2.3 小案例：摘要漏工单",
+          "href": "#learn/agent/c01-control-loop/s-cc580afe300e",
           "quote": "",
-          "startLine": 74,
-          "endLine": 101
+          "startLine": 167,
+          "endLine": 188
         },
         {
           "unitId": "c01-control-loop",
-          "sectionId": "s-de2c83d4eb9e",
+          "sectionId": "s-5523294afc90",
           "knowledgePointId": "c01-control-loop:s-de2c83d4eb9e",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "8 把这些约束落实到完整控制骨架",
-          "href": "#learn/agent/c01-control-loop/s-de2c83d4eb9e",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "8 把约束落到完整控制骨架（深读）",
+          "href": "#learn/agent/c01-control-loop/s-5523294afc90",
           "quote": "",
-          "startLine": 350,
-          "endLine": 353
+          "startLine": 485,
+          "endLine": 486
         },
         {
           "unitId": "c01-control-loop",
-          "sectionId": "s-b79a285166bc",
+          "sectionId": "s-0c5a904fcd63",
           "knowledgePointId": "c01-control-loop:s-b79a285166bc",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "11 成功 等待和停止必须保留不同的含义",
-          "href": "#learn/agent/c01-control-loop/s-b79a285166bc",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "11.2 概念地图：状态含义表",
+          "href": "#learn/agent/c01-control-loop/s-0c5a904fcd63",
           "quote": "",
-          "startLine": 860,
-          "endLine": 879
+          "startLine": 651,
+          "endLine": 668
         }
       ],
       "evidence": [
         {
           "id": "Q13-E1",
           "unitId": "c01-control-loop",
-          "sectionId": "s-81f9aaeecb60",
+          "sectionId": "s-cc580afe300e",
           "knowledgePointId": "c01-control-loop:s-81f9aaeecb60",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "2 控制权在运行时 聊天上下文只是一种投影",
-          "href": "#learn/agent/c01-control-loop/s-81f9aaeecb60",
-          "quote": "一轮决策可以写成：",
-          "startLine": 76,
-          "endLine": 76,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "2.3 小案例：摘要漏工单",
+          "href": "#learn/agent/c01-control-loop/s-cc580afe300e",
+          "quote": "**State** 是恢复与授权依据：目标版本、运行修订号、动作账本、尝试、审批、取消、预算、验收反馈。",
+          "startLine": 173,
+          "endLine": 173,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 76,
-            "endLine": 76,
-            "section": "## 2 控制权在运行时 聊天上下文只是一种投影"
+            "startLine": 173,
+            "endLine": 173,
+            "section": "### 2.3 小案例：摘要漏工单"
           }
         },
         {
           "id": "Q13-E2",
           "unitId": "c01-control-loop",
-          "sectionId": "s-de2c83d4eb9e",
+          "sectionId": "s-5523294afc90",
           "knowledgePointId": "c01-control-loop:s-de2c83d4eb9e",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "8 把这些约束落实到完整控制骨架",
-          "href": "#learn/agent/c01-control-loop/s-de2c83d4eb9e",
-          "quote": "下面的伪代码选择**单运行、单推进者、串行执行工具**作为基线。并发工具将在下一节按契约扩展。模型、数据库、工单服务和策略服务都通过接口接入；不假定它们共享事务。本篇伪代码未运行，实际外部服务契约也未实测。",
-          "startLine": 352,
-          "endLine": 352,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "8 把约束落到完整控制骨架（深读）",
+          "href": "#learn/agent/c01-control-loop/s-5523294afc90",
+          "quote": "## 8 把约束落到完整控制骨架（深读）",
+          "startLine": 485,
+          "endLine": 485,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 352,
-            "endLine": 352,
-            "section": "## 8 把这些约束落实到完整控制骨架"
+            "startLine": 485,
+            "endLine": 485,
+            "section": "## 8 把约束落到完整控制骨架（深读）"
           }
         },
         {
           "id": "Q13-E3",
           "unitId": "c01-control-loop",
-          "sectionId": "s-b79a285166bc",
+          "sectionId": "s-0c5a904fcd63",
           "knowledgePointId": "c01-control-loop:s-b79a285166bc",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "11 成功 等待和停止必须保留不同的含义",
-          "href": "#learn/agent/c01-control-loop/s-b79a285166bc",
-          "quote": "模型最终回答是一个候选；运行时终态是一次已提交的决定；业务成功是有证据支持的结果。这三者不相等。",
-          "startLine": 862,
-          "endLine": 862,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "11.2 概念地图：状态含义表",
+          "href": "#learn/agent/c01-control-loop/s-0c5a904fcd63",
+          "quote": "**读图任务**：找出哪个状态禁止「绕开未知动作生成替代副作用」；哪个停止态仍可能列出已发生工单。",
+          "startLine": 653,
+          "endLine": 653,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 862,
-            "endLine": 862,
-            "section": "## 11 成功 等待和停止必须保留不同的含义"
+            "startLine": 653,
+            "endLine": 653,
+            "section": "### 11.2 概念地图：状态含义表"
           }
         }
       ],
@@ -7675,59 +7675,59 @@ globalThis.RolecraftLearningV13={
       "knowledgeRefs": [
         {
           "unitId": "c01-control-loop",
-          "sectionId": "s-25e1914bed1e",
+          "sectionId": "s-47a47cb897db",
           "knowledgePointId": "c01-control-loop:s-25e1914bed1e",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "1 先固定完成条件 才能决定循环控制什么",
-          "href": "#learn/agent/c01-control-loop/s-25e1914bed1e",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "1 先固定完成条件，才能决定循环控制什么",
+          "href": "#learn/agent/c01-control-loop/s-47a47cb897db",
           "quote": "",
-          "startLine": 47,
-          "endLine": 73
+          "startLine": 80,
+          "endLine": 81
         },
         {
           "unitId": "c01-control-loop",
           "sectionId": "s-342c46cf81a2",
           "knowledgePointId": "c01-control-loop:s-342c46cf81a2",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
           "sectionTitle": "10 用逐事件轨迹检查代码有没有兑现语义",
           "href": "#learn/agent/c01-control-loop/s-342c46cf81a2",
           "quote": "",
-          "startLine": 782,
-          "endLine": 783
+          "startLine": 585,
+          "endLine": 586
         },
         {
           "unitId": "c01-control-loop",
-          "sectionId": "s-b79a285166bc",
+          "sectionId": "s-0c5a904fcd63",
           "knowledgePointId": "c01-control-loop:s-b79a285166bc",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "11 成功 等待和停止必须保留不同的含义",
-          "href": "#learn/agent/c01-control-loop/s-b79a285166bc",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "11.2 概念地图：状态含义表",
+          "href": "#learn/agent/c01-control-loop/s-0c5a904fcd63",
           "quote": "",
-          "startLine": 860,
-          "endLine": 879
+          "startLine": 651,
+          "endLine": 668
         }
       ],
       "evidence": [
         {
           "id": "Q14-E1",
           "unitId": "c01-control-loop",
-          "sectionId": "s-25e1914bed1e",
+          "sectionId": "s-47a47cb897db",
           "knowledgePointId": "c01-control-loop:s-25e1914bed1e",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "1 先固定完成条件 才能决定循环控制什么",
-          "href": "#learn/agent/c01-control-loop/s-25e1914bed1e",
-          "quote": "本次验收需要同时满足：",
-          "startLine": 55,
-          "endLine": 55,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "1 先固定完成条件，才能决定循环控制什么",
+          "href": "#learn/agent/c01-control-loop/s-47a47cb897db",
+          "quote": "## 1 先固定完成条件，才能决定循环控制什么",
+          "startLine": 80,
+          "endLine": 80,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 55,
-            "endLine": 55,
-            "section": "## 1 先固定完成条件 才能决定循环控制什么"
+            "startLine": 80,
+            "endLine": 80,
+            "section": "## 1 先固定完成条件，才能决定循环控制什么"
           }
         },
         {
@@ -7736,36 +7736,36 @@ globalThis.RolecraftLearningV13={
           "sectionId": "s-342c46cf81a2",
           "knowledgePointId": "c01-control-loop:s-342c46cf81a2",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
           "sectionTitle": "10 用逐事件轨迹检查代码有没有兑现语义",
           "href": "#learn/agent/c01-control-loop/s-342c46cf81a2",
           "quote": "## 10 用逐事件轨迹检查代码有没有兑现语义",
-          "startLine": 782,
-          "endLine": 782,
+          "startLine": 585,
+          "endLine": 585,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 782,
-            "endLine": 782,
+            "startLine": 585,
+            "endLine": 585,
             "section": "## 10 用逐事件轨迹检查代码有没有兑现语义"
           }
         },
         {
           "id": "Q14-E3",
           "unitId": "c01-control-loop",
-          "sectionId": "s-b79a285166bc",
+          "sectionId": "s-0c5a904fcd63",
           "knowledgePointId": "c01-control-loop:s-b79a285166bc",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "11 成功 等待和停止必须保留不同的含义",
-          "href": "#learn/agent/c01-control-loop/s-b79a285166bc",
-          "quote": "模型最终回答是一个候选；运行时终态是一次已提交的决定；业务成功是有证据支持的结果。这三者不相等。",
-          "startLine": 862,
-          "endLine": 862,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "11.2 概念地图：状态含义表",
+          "href": "#learn/agent/c01-control-loop/s-0c5a904fcd63",
+          "quote": "**读图任务**：找出哪个状态禁止「绕开未知动作生成替代副作用」；哪个停止态仍可能列出已发生工单。",
+          "startLine": 653,
+          "endLine": 653,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 862,
-            "endLine": 862,
-            "section": "## 11 成功 等待和停止必须保留不同的含义"
+            "startLine": 653,
+            "endLine": 653,
+            "section": "### 11.2 概念地图：状态含义表"
           }
         }
       ],
@@ -7806,66 +7806,66 @@ globalThis.RolecraftLearningV13={
       "knowledgeRefs": [
         {
           "unitId": "c01-control-loop",
-          "sectionId": "s-ac6802a088cb",
+          "sectionId": "s-3acf2cb13400",
           "knowledgePointId": "c01-control-loop:s-ac6802a088cb",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "7 审批 取消和预算都必须跨暂停保留",
-          "href": "#learn/agent/c01-control-loop/s-ac6802a088cb",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "7 审批、取消和预算都必须跨暂停保留",
+          "href": "#learn/agent/c01-control-loop/s-3acf2cb13400",
           "quote": "",
-          "startLine": 315,
-          "endLine": 349
+          "startLine": 436,
+          "endLine": 437
         },
         {
           "unitId": "c01-control-loop",
-          "sectionId": "s-b79a285166bc",
+          "sectionId": "s-0c5a904fcd63",
           "knowledgePointId": "c01-control-loop:s-b79a285166bc",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "11 成功 等待和停止必须保留不同的含义",
-          "href": "#learn/agent/c01-control-loop/s-b79a285166bc",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "11.2 概念地图：状态含义表",
+          "href": "#learn/agent/c01-control-loop/s-0c5a904fcd63",
           "quote": "",
-          "startLine": 860,
-          "endLine": 879
+          "startLine": 651,
+          "endLine": 668
         }
       ],
       "evidence": [
         {
           "id": "Q15-E1",
           "unitId": "c01-control-loop",
-          "sectionId": "s-ac6802a088cb",
+          "sectionId": "s-3acf2cb13400",
           "knowledgePointId": "c01-control-loop:s-ac6802a088cb",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "7 审批 取消和预算都必须跨暂停保留",
-          "href": "#learn/agent/c01-control-loop/s-ac6802a088cb",
-          "quote": "暂停后恢复的是同一个运行和预算账本。预算至少拆成：",
-          "startLine": 331,
-          "endLine": 331,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "7 审批、取消和预算都必须跨暂停保留",
+          "href": "#learn/agent/c01-control-loop/s-3acf2cb13400",
+          "quote": "## 7 审批、取消和预算都必须跨暂停保留",
+          "startLine": 436,
+          "endLine": 436,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 331,
-            "endLine": 331,
-            "section": "## 7 审批 取消和预算都必须跨暂停保留"
+            "startLine": 436,
+            "endLine": 436,
+            "section": "## 7 审批、取消和预算都必须跨暂停保留"
           }
         },
         {
           "id": "Q15-E2",
           "unitId": "c01-control-loop",
-          "sectionId": "s-b79a285166bc",
+          "sectionId": "s-0c5a904fcd63",
           "knowledgePointId": "c01-control-loop:s-b79a285166bc",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "11 成功 等待和停止必须保留不同的含义",
-          "href": "#learn/agent/c01-control-loop/s-b79a285166bc",
-          "quote": "模型最终回答是一个候选；运行时终态是一次已提交的决定；业务成功是有证据支持的结果。这三者不相等。",
-          "startLine": 862,
-          "endLine": 862,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "11.2 概念地图：状态含义表",
+          "href": "#learn/agent/c01-control-loop/s-0c5a904fcd63",
+          "quote": "**读图任务**：找出哪个状态禁止「绕开未知动作生成替代副作用」；哪个停止态仍可能列出已发生工单。",
+          "startLine": 653,
+          "endLine": 653,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 862,
-            "endLine": 862,
-            "section": "## 11 成功 等待和停止必须保留不同的含义"
+            "startLine": 653,
+            "endLine": 653,
+            "section": "### 11.2 概念地图：状态含义表"
           }
         }
       ],
@@ -8116,36 +8116,36 @@ globalThis.RolecraftLearningV13={
           "sectionId": "s-76263bf5db11",
           "knowledgePointId": "c01-control-loop:s-76263bf5db11",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
           "sectionTitle": "5 完整模型输出才有资格成为执行计划",
           "href": "#learn/agent/c01-control-loop/s-76263bf5db11",
           "quote": "",
-          "startLine": 271,
-          "endLine": 292
+          "startLine": 349,
+          "endLine": 350
         },
         {
           "unitId": "c01-control-loop",
-          "sectionId": "s-de2c83d4eb9e",
+          "sectionId": "s-5523294afc90",
           "knowledgePointId": "c01-control-loop:s-de2c83d4eb9e",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "8 把这些约束落实到完整控制骨架",
-          "href": "#learn/agent/c01-control-loop/s-de2c83d4eb9e",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "8 把约束落到完整控制骨架（深读）",
+          "href": "#learn/agent/c01-control-loop/s-5523294afc90",
           "quote": "",
-          "startLine": 350,
-          "endLine": 353
+          "startLine": 485,
+          "endLine": 486
         },
         {
           "unitId": "c01-control-loop",
           "sectionId": "s-342c46cf81a2",
           "knowledgePointId": "c01-control-loop:s-342c46cf81a2",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
           "sectionTitle": "10 用逐事件轨迹检查代码有没有兑现语义",
           "href": "#learn/agent/c01-control-loop/s-342c46cf81a2",
           "quote": "",
-          "startLine": 782,
-          "endLine": 783
+          "startLine": 585,
+          "endLine": 586
         },
         {
           "unitId": "n03-planning-reflection",
@@ -8167,36 +8167,36 @@ globalThis.RolecraftLearningV13={
           "sectionId": "s-76263bf5db11",
           "knowledgePointId": "c01-control-loop:s-76263bf5db11",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
           "sectionTitle": "5 完整模型输出才有资格成为执行计划",
           "href": "#learn/agent/c01-control-loop/s-76263bf5db11",
-          "quote": "在 `TOOLS` 分支，先对整批提议预检，再发出任何调用：检查工具、参数、对象授权、调用 ID 唯一性、依赖合法性和批次规模。预检发现错误，整批暂不执行，给模型结构化反馈。对于一批需要审批的合法动作，则先持久化计划，再等待批准；不是因为未批准就丢掉计划、重问模型。",
-          "startLine": 289,
-          "endLine": 289,
+          "quote": "## 5 完整模型输出才有资格成为执行计划",
+          "startLine": 349,
+          "endLine": 349,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 289,
-            "endLine": 289,
+            "startLine": 349,
+            "endLine": 349,
             "section": "## 5 完整模型输出才有资格成为执行计划"
           }
         },
         {
           "id": "Q19-E2",
           "unitId": "c01-control-loop",
-          "sectionId": "s-de2c83d4eb9e",
+          "sectionId": "s-5523294afc90",
           "knowledgePointId": "c01-control-loop:s-de2c83d4eb9e",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "8 把这些约束落实到完整控制骨架",
-          "href": "#learn/agent/c01-control-loop/s-de2c83d4eb9e",
-          "quote": "下面的伪代码选择**单运行、单推进者、串行执行工具**作为基线。",
-          "startLine": 352,
-          "endLine": 352,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "8 把约束落到完整控制骨架（深读）",
+          "href": "#learn/agent/c01-control-loop/s-5523294afc90",
+          "quote": "## 8 把约束落到完整控制骨架（深读）",
+          "startLine": 485,
+          "endLine": 485,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 352,
-            "endLine": 352,
-            "section": "## 8 把这些约束落实到完整控制骨架"
+            "startLine": 485,
+            "endLine": 485,
+            "section": "## 8 把约束落到完整控制骨架（深读）"
           }
         },
         {
@@ -8205,16 +8205,16 @@ globalThis.RolecraftLearningV13={
           "sectionId": "s-342c46cf81a2",
           "knowledgePointId": "c01-control-loop:s-342c46cf81a2",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
           "sectionTitle": "10 用逐事件轨迹检查代码有没有兑现语义",
           "href": "#learn/agent/c01-control-loop/s-342c46cf81a2",
           "quote": "## 10 用逐事件轨迹检查代码有没有兑现语义",
-          "startLine": 782,
-          "endLine": 782,
+          "startLine": 585,
+          "endLine": 585,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 782,
-            "endLine": 782,
+            "startLine": 585,
+            "endLine": 585,
             "section": "## 10 用逐事件轨迹检查代码有没有兑现语义"
           }
         },
@@ -8275,15 +8275,15 @@ globalThis.RolecraftLearningV13={
       "knowledgeRefs": [
         {
           "unitId": "c01-control-loop",
-          "sectionId": "s-d9d6abd6ff04",
+          "sectionId": "s-8b2a83b8b159",
           "knowledgePointId": "c01-control-loop:s-d9d6abd6ff04",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "3 用动作账本表达进度 不要只保存聊天文本",
-          "href": "#learn/agent/c01-control-loop/s-d9d6abd6ff04",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "3 用动作账本表达进度，不要只保存聊天文本",
+          "href": "#learn/agent/c01-control-loop/s-8b2a83b8b159",
           "quote": "",
-          "startLine": 102,
-          "endLine": 235
+          "startLine": 201,
+          "endLine": 202
         },
         {
           "unitId": "00-learning-route",
@@ -8302,24 +8302,24 @@ globalThis.RolecraftLearningV13={
           "sectionId": "s-342c46cf81a2",
           "knowledgePointId": "c01-control-loop:s-342c46cf81a2",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
           "sectionTitle": "10 用逐事件轨迹检查代码有没有兑现语义",
           "href": "#learn/agent/c01-control-loop/s-342c46cf81a2",
           "quote": "",
-          "startLine": 782,
-          "endLine": 783
+          "startLine": 585,
+          "endLine": 586
         },
         {
           "unitId": "c01-control-loop",
-          "sectionId": "s-ac6802a088cb",
+          "sectionId": "s-3acf2cb13400",
           "knowledgePointId": "c01-control-loop:s-ac6802a088cb",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "7 审批 取消和预算都必须跨暂停保留",
-          "href": "#learn/agent/c01-control-loop/s-ac6802a088cb",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "7 审批、取消和预算都必须跨暂停保留",
+          "href": "#learn/agent/c01-control-loop/s-3acf2cb13400",
           "quote": "",
-          "startLine": 315,
-          "endLine": 349
+          "startLine": 436,
+          "endLine": 437
         },
         {
           "unitId": "n03-planning-reflection",
@@ -8338,20 +8338,20 @@ globalThis.RolecraftLearningV13={
         {
           "id": "Q20-E1",
           "unitId": "c01-control-loop",
-          "sectionId": "s-d9d6abd6ff04",
+          "sectionId": "s-8b2a83b8b159",
           "knowledgePointId": "c01-control-loop:s-d9d6abd6ff04",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "3 用动作账本表达进度 不要只保存聊天文本",
-          "href": "#learn/agent/c01-control-loop/s-d9d6abd6ff04",
-          "quote": "不能简单用参数哈希作为 `action_id`。相同参数可能代表用户真正希望创建两条相同工单，也可能代表同一操作重试。AWS 的幂等 API 设计同样强调调用者表达意图的请求 ID，并处理同一个 ID 的参数冲突。这里采用相同原则，具体槽位规则由本次业务目标定义。[AWS：Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/m",
-          "startLine": 222,
-          "endLine": 222,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "3 用动作账本表达进度，不要只保存聊天文本",
+          "href": "#learn/agent/c01-control-loop/s-8b2a83b8b159",
+          "quote": "## 3 用动作账本表达进度，不要只保存聊天文本",
+          "startLine": 201,
+          "endLine": 201,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 222,
-            "endLine": 222,
-            "section": "## 3 用动作账本表达进度 不要只保存聊天文本"
+            "startLine": 201,
+            "endLine": 201,
+            "section": "## 3 用动作账本表达进度，不要只保存聊天文本"
           }
         },
         {
@@ -8379,36 +8379,36 @@ globalThis.RolecraftLearningV13={
           "sectionId": "s-342c46cf81a2",
           "knowledgePointId": "c01-control-loop:s-342c46cf81a2",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
           "sectionTitle": "10 用逐事件轨迹检查代码有没有兑现语义",
           "href": "#learn/agent/c01-control-loop/s-342c46cf81a2",
           "quote": "## 10 用逐事件轨迹检查代码有没有兑现语义",
-          "startLine": 782,
-          "endLine": 782,
+          "startLine": 585,
+          "endLine": 585,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 782,
-            "endLine": 782,
+            "startLine": 585,
+            "endLine": 585,
             "section": "## 10 用逐事件轨迹检查代码有没有兑现语义"
           }
         },
         {
           "id": "Q20-E4",
           "unitId": "c01-control-loop",
-          "sectionId": "s-ac6802a088cb",
+          "sectionId": "s-3acf2cb13400",
           "knowledgePointId": "c01-control-loop:s-ac6802a088cb",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "7 审批 取消和预算都必须跨暂停保留",
-          "href": "#learn/agent/c01-control-loop/s-ac6802a088cb",
-          "quote": "暂停后恢复的是同一个运行和预算账本。预算至少拆成：",
-          "startLine": 331,
-          "endLine": 331,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "7 审批、取消和预算都必须跨暂停保留",
+          "href": "#learn/agent/c01-control-loop/s-3acf2cb13400",
+          "quote": "## 7 审批、取消和预算都必须跨暂停保留",
+          "startLine": 436,
+          "endLine": 436,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 331,
-            "endLine": 331,
-            "section": "## 7 审批 取消和预算都必须跨暂停保留"
+            "startLine": 436,
+            "endLine": 436,
+            "section": "## 7 审批、取消和预算都必须跨暂停保留"
           }
         },
         {
@@ -8483,24 +8483,24 @@ globalThis.RolecraftLearningV13={
           "sectionId": "s-76263bf5db11",
           "knowledgePointId": "c01-control-loop:s-76263bf5db11",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
           "sectionTitle": "5 完整模型输出才有资格成为执行计划",
           "href": "#learn/agent/c01-control-loop/s-76263bf5db11",
           "quote": "",
-          "startLine": 271,
-          "endLine": 292
+          "startLine": 349,
+          "endLine": 350
         },
         {
           "unitId": "c01-control-loop",
-          "sectionId": "s-d9d6abd6ff04",
+          "sectionId": "s-8b2a83b8b159",
           "knowledgePointId": "c01-control-loop:s-d9d6abd6ff04",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "3 用动作账本表达进度 不要只保存聊天文本",
-          "href": "#learn/agent/c01-control-loop/s-d9d6abd6ff04",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "3 用动作账本表达进度，不要只保存聊天文本",
+          "href": "#learn/agent/c01-control-loop/s-8b2a83b8b159",
           "quote": "",
-          "startLine": 102,
-          "endLine": 235
+          "startLine": 201,
+          "endLine": 202
         }
       ],
       "evidence": [
@@ -8529,36 +8529,36 @@ globalThis.RolecraftLearningV13={
           "sectionId": "s-76263bf5db11",
           "knowledgePointId": "c01-control-loop:s-76263bf5db11",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
           "sectionTitle": "5 完整模型输出才有资格成为执行计划",
           "href": "#learn/agent/c01-control-loop/s-76263bf5db11",
-          "quote": "运行时在流式过程中可以显示文本，也可以增量拼接参数；默认不能提前执行副作用。一个看上去完整的 JSON 对象仍可能只是半轮响应：后续会追加另一动作、修正参数或以错误结束。本文规定适配器只在收到协议规定的完整响应结束信号、所有调用均完整且结束原因允许消费时，返回 `CompleteResponse`。",
-          "startLine": 273,
-          "endLine": 273,
+          "quote": "## 5 完整模型输出才有资格成为执行计划",
+          "startLine": 349,
+          "endLine": 349,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 273,
-            "endLine": 273,
+            "startLine": 349,
+            "endLine": 349,
             "section": "## 5 完整模型输出才有资格成为执行计划"
           }
         },
         {
           "id": "Q21-E3",
           "unitId": "c01-control-loop",
-          "sectionId": "s-d9d6abd6ff04",
+          "sectionId": "s-8b2a83b8b159",
           "knowledgePointId": "c01-control-loop:s-d9d6abd6ff04",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "3 用动作账本表达进度 不要只保存聊天文本",
-          "href": "#learn/agent/c01-control-loop/s-d9d6abd6ff04",
-          "quote": "首次合法提议创建槽位记录和 `action_id`。后续同槽位同指纹提议映射到已有动作，不创建新的工单；同槽位不同指纹返回 `INTENT_CONFLICT`，不能静默替换已经审批、在途或已完成的动作。若用户确实要求另一条工单，必须以新的目标版本或明确的新槽位表达。数据库对槽位实施唯一约束，不能仅靠应用先查后写。",
-          "startLine": 230,
-          "endLine": 230,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "3 用动作账本表达进度，不要只保存聊天文本",
+          "href": "#learn/agent/c01-control-loop/s-8b2a83b8b159",
+          "quote": "## 3 用动作账本表达进度，不要只保存聊天文本",
+          "startLine": 201,
+          "endLine": 201,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 230,
-            "endLine": 230,
-            "section": "## 3 用动作账本表达进度 不要只保存聊天文本"
+            "startLine": 201,
+            "endLine": 201,
+            "section": "## 3 用动作账本表达进度，不要只保存聊天文本"
           }
         }
       ],
@@ -8896,27 +8896,27 @@ globalThis.RolecraftLearningV13={
         },
         {
           "unitId": "c01-control-loop",
-          "sectionId": "s-717cb810447d",
+          "sectionId": "s-decb1cf43bb9",
           "knowledgePointId": "c01-control-loop:s-717cb810447d",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "6 先核对未决动作 再让模型继续",
-          "href": "#learn/agent/c01-control-loop/s-717cb810447d",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "6 先核对未决动作，再让模型继续",
+          "href": "#learn/agent/c01-control-loop/s-decb1cf43bb9",
           "quote": "",
-          "startLine": 293,
-          "endLine": 314
+          "startLine": 385,
+          "endLine": 386
         },
         {
           "unitId": "c01-control-loop",
           "sectionId": "s-adb784ffc605",
           "knowledgePointId": "c01-control-loop:s-adb784ffc605",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
           "sectionTitle": "9 并发要分开处理工具依赖与运行推进权",
           "href": "#learn/agent/c01-control-loop/s-adb784ffc605",
           "quote": "",
-          "startLine": 764,
-          "endLine": 781
+          "startLine": 548,
+          "endLine": 549
         }
       ],
       "evidence": [
@@ -8961,20 +8961,20 @@ globalThis.RolecraftLearningV13={
         {
           "id": "Q25-E3",
           "unitId": "c01-control-loop",
-          "sectionId": "s-717cb810447d",
+          "sectionId": "s-decb1cf43bb9",
           "knowledgePointId": "c01-control-loop:s-717cb810447d",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "6 先核对未决动作 再让模型继续",
-          "href": "#learn/agent/c01-control-loop/s-717cb810447d",
-          "quote": "恢复顺序必须把事实核对放在新决策之前。模型不知道一个丢失回执的远端调用到底有没有成功。重新问模型，最多产生另一个看上去合理的提议，不能消除执行不确定性。",
-          "startLine": 295,
-          "endLine": 295,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "6 先核对未决动作，再让模型继续",
+          "href": "#learn/agent/c01-control-loop/s-decb1cf43bb9",
+          "quote": "## 6 先核对未决动作，再让模型继续",
+          "startLine": 385,
+          "endLine": 385,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 295,
-            "endLine": 295,
-            "section": "## 6 先核对未决动作 再让模型继续"
+            "startLine": 385,
+            "endLine": 385,
+            "section": "## 6 先核对未决动作，再让模型继续"
           }
         },
         {
@@ -8983,16 +8983,16 @@ globalThis.RolecraftLearningV13={
           "sectionId": "s-adb784ffc605",
           "knowledgePointId": "c01-control-loop:s-adb784ffc605",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
           "sectionTitle": "9 并发要分开处理工具依赖与运行推进权",
           "href": "#learn/agent/c01-control-loop/s-adb784ffc605",
-          "quote": "并行化减少等待链长度，同时提高瞬时请求压力、费用预留和失败组合数量。只有在轨迹证明工具等待构成主要延迟、工具契约能表达独立性时才值得升级。否则串行基线更容易审查恢复行为。无论是否并发，重试应由一层拥有：执行器内部若重试，必须把实际尝试暴露给账本；调度器和 SDK 各自独立重试会使实际请求数超过预算。退避与抖动用于减轻相关重试压力，不会把非幂等调用变为安全调用。[AWS：Timeouts, retries, and backoff wit",
-          "startLine": 772,
-          "endLine": 772,
+          "quote": "## 9 并发要分开处理工具依赖与运行推进权",
+          "startLine": 548,
+          "endLine": 548,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 772,
-            "endLine": 772,
+            "startLine": 548,
+            "endLine": 548,
             "section": "## 9 并发要分开处理工具依赖与运行推进权"
           }
         }
@@ -9047,27 +9047,27 @@ globalThis.RolecraftLearningV13={
         },
         {
           "unitId": "c01-control-loop",
-          "sectionId": "s-717cb810447d",
+          "sectionId": "s-decb1cf43bb9",
           "knowledgePointId": "c01-control-loop:s-717cb810447d",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "6 先核对未决动作 再让模型继续",
-          "href": "#learn/agent/c01-control-loop/s-717cb810447d",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "6 先核对未决动作，再让模型继续",
+          "href": "#learn/agent/c01-control-loop/s-decb1cf43bb9",
           "quote": "",
-          "startLine": 293,
-          "endLine": 314
+          "startLine": 385,
+          "endLine": 386
         },
         {
           "unitId": "c01-control-loop",
           "sectionId": "s-342c46cf81a2",
           "knowledgePointId": "c01-control-loop:s-342c46cf81a2",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
           "sectionTitle": "10 用逐事件轨迹检查代码有没有兑现语义",
           "href": "#learn/agent/c01-control-loop/s-342c46cf81a2",
           "quote": "",
-          "startLine": 782,
-          "endLine": 783
+          "startLine": 585,
+          "endLine": 586
         }
       ],
       "evidence": [
@@ -9093,20 +9093,20 @@ globalThis.RolecraftLearningV13={
         {
           "id": "Q26-E2",
           "unitId": "c01-control-loop",
-          "sectionId": "s-717cb810447d",
+          "sectionId": "s-decb1cf43bb9",
           "knowledgePointId": "c01-control-loop:s-717cb810447d",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "6 先核对未决动作 再让模型继续",
-          "href": "#learn/agent/c01-control-loop/s-717cb810447d",
-          "quote": "恢复顺序必须把事实核对放在新决策之前。模型不知道一个丢失回执的远端调用到底有没有成功。重新问模型，最多产生另一个看上去合理的提议，不能消除执行不确定性。",
-          "startLine": 295,
-          "endLine": 295,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "6 先核对未决动作，再让模型继续",
+          "href": "#learn/agent/c01-control-loop/s-decb1cf43bb9",
+          "quote": "## 6 先核对未决动作，再让模型继续",
+          "startLine": 385,
+          "endLine": 385,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 295,
-            "endLine": 295,
-            "section": "## 6 先核对未决动作 再让模型继续"
+            "startLine": 385,
+            "endLine": 385,
+            "section": "## 6 先核对未决动作，再让模型继续"
           }
         },
         {
@@ -9115,16 +9115,16 @@ globalThis.RolecraftLearningV13={
           "sectionId": "s-342c46cf81a2",
           "knowledgePointId": "c01-control-loop:s-342c46cf81a2",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
           "sectionTitle": "10 用逐事件轨迹检查代码有没有兑现语义",
           "href": "#learn/agent/c01-control-loop/s-342c46cf81a2",
           "quote": "## 10 用逐事件轨迹检查代码有没有兑现语义",
-          "startLine": 782,
-          "endLine": 782,
+          "startLine": 585,
+          "endLine": 585,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 782,
-            "endLine": 782,
+            "startLine": 585,
+            "endLine": 585,
             "section": "## 10 用逐事件轨迹检查代码有没有兑现语义"
           }
         }
@@ -9559,15 +9559,15 @@ globalThis.RolecraftLearningV13={
         },
         {
           "unitId": "c01-control-loop",
-          "sectionId": "s-81f9aaeecb60",
+          "sectionId": "s-cc580afe300e",
           "knowledgePointId": "c01-control-loop:s-81f9aaeecb60",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "2 控制权在运行时 聊天上下文只是一种投影",
-          "href": "#learn/agent/c01-control-loop/s-81f9aaeecb60",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "2.3 小案例：摘要漏工单",
+          "href": "#learn/agent/c01-control-loop/s-cc580afe300e",
           "quote": "",
-          "startLine": 74,
-          "endLine": 101
+          "startLine": 167,
+          "endLine": 188
         },
         {
           "unitId": "n02-context-memory-prompt",
@@ -9605,20 +9605,20 @@ globalThis.RolecraftLearningV13={
         {
           "id": "Q32-E2",
           "unitId": "c01-control-loop",
-          "sectionId": "s-81f9aaeecb60",
+          "sectionId": "s-cc580afe300e",
           "knowledgePointId": "c01-control-loop:s-81f9aaeecb60",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "2 控制权在运行时 聊天上下文只是一种投影",
-          "href": "#learn/agent/c01-control-loop/s-81f9aaeecb60",
-          "quote": "这里最重要的分离是 `State` 与 `Context`。",
-          "startLine": 88,
-          "endLine": 88,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "2.3 小案例：摘要漏工单",
+          "href": "#learn/agent/c01-control-loop/s-cc580afe300e",
+          "quote": "**State** 是恢复与授权依据：目标版本、运行修订号、动作账本、尝试、审批、取消、预算、验收反馈。",
+          "startLine": 173,
+          "endLine": 173,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 88,
-            "endLine": 88,
-            "section": "## 2 控制权在运行时 聊天上下文只是一种投影"
+            "startLine": 173,
+            "endLine": 173,
+            "section": "### 2.3 小案例：摘要漏工单"
           }
         },
         {
@@ -9678,15 +9678,15 @@ globalThis.RolecraftLearningV13={
       "knowledgeRefs": [
         {
           "unitId": "c01-control-loop",
-          "sectionId": "s-81f9aaeecb60",
+          "sectionId": "s-cc580afe300e",
           "knowledgePointId": "c01-control-loop:s-81f9aaeecb60",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "2 控制权在运行时 聊天上下文只是一种投影",
-          "href": "#learn/agent/c01-control-loop/s-81f9aaeecb60",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "2.3 小案例：摘要漏工单",
+          "href": "#learn/agent/c01-control-loop/s-cc580afe300e",
           "quote": "",
-          "startLine": 74,
-          "endLine": 101
+          "startLine": 167,
+          "endLine": 188
         },
         {
           "unitId": "f02",
@@ -9729,20 +9729,20 @@ globalThis.RolecraftLearningV13={
         {
           "id": "Q33-E1",
           "unitId": "c01-control-loop",
-          "sectionId": "s-81f9aaeecb60",
+          "sectionId": "s-cc580afe300e",
           "knowledgePointId": "c01-control-loop:s-81f9aaeecb60",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "2 控制权在运行时 聊天上下文只是一种投影",
-          "href": "#learn/agent/c01-control-loop/s-81f9aaeecb60",
-          "quote": "这里最重要的分离是 `State` 与 `Context`。",
-          "startLine": 88,
-          "endLine": 88,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "2.3 小案例：摘要漏工单",
+          "href": "#learn/agent/c01-control-loop/s-cc580afe300e",
+          "quote": "**State** 是恢复与授权依据：目标版本、运行修订号、动作账本、尝试、审批、取消、预算、验收反馈。",
+          "startLine": 173,
+          "endLine": 173,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 88,
-            "endLine": 88,
-            "section": "## 2 控制权在运行时 聊天上下文只是一种投影"
+            "startLine": 173,
+            "endLine": 173,
+            "section": "### 2.3 小案例：摘要漏工单"
           }
         },
         {
@@ -11880,15 +11880,15 @@ globalThis.RolecraftLearningV13={
         },
         {
           "unitId": "c01-control-loop",
-          "sectionId": "s-81f9aaeecb60",
+          "sectionId": "s-cc580afe300e",
           "knowledgePointId": "c01-control-loop:s-81f9aaeecb60",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "2 控制权在运行时 聊天上下文只是一种投影",
-          "href": "#learn/agent/c01-control-loop/s-81f9aaeecb60",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "2.3 小案例：摘要漏工单",
+          "href": "#learn/agent/c01-control-loop/s-cc580afe300e",
           "quote": "",
-          "startLine": 74,
-          "endLine": 101
+          "startLine": 167,
+          "endLine": 188
         },
         {
           "unitId": "n06-graph-orchestration",
@@ -11964,20 +11964,20 @@ globalThis.RolecraftLearningV13={
         {
           "id": "Q56-E4",
           "unitId": "c01-control-loop",
-          "sectionId": "s-81f9aaeecb60",
+          "sectionId": "s-cc580afe300e",
           "knowledgePointId": "c01-control-loop:s-81f9aaeecb60",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "2 控制权在运行时 聊天上下文只是一种投影",
-          "href": "#learn/agent/c01-control-loop/s-81f9aaeecb60",
-          "quote": "未决动作不能因为上下文压缩而消失，审批不能因为模型在对话里写了“用户已同意”而产生。",
-          "startLine": 90,
-          "endLine": 90,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "2.3 小案例：摘要漏工单",
+          "href": "#learn/agent/c01-control-loop/s-cc580afe300e",
+          "quote": "**State** 是恢复与授权依据：目标版本、运行修订号、动作账本、尝试、审批、取消、预算、验收反馈。",
+          "startLine": 173,
+          "endLine": 173,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 90,
-            "endLine": 90,
-            "section": "## 2 控制权在运行时 聊天上下文只是一种投影"
+            "startLine": 173,
+            "endLine": 173,
+            "section": "### 2.3 小案例：摘要漏工单"
           }
         },
         {
@@ -12037,15 +12037,15 @@ globalThis.RolecraftLearningV13={
       "knowledgeRefs": [
         {
           "unitId": "c01-control-loop",
-          "sectionId": "s-717cb810447d",
+          "sectionId": "s-decb1cf43bb9",
           "knowledgePointId": "c01-control-loop:s-717cb810447d",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "6 先核对未决动作 再让模型继续",
-          "href": "#learn/agent/c01-control-loop/s-717cb810447d",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "6 先核对未决动作，再让模型继续",
+          "href": "#learn/agent/c01-control-loop/s-decb1cf43bb9",
           "quote": "",
-          "startLine": 293,
-          "endLine": 314
+          "startLine": 385,
+          "endLine": 386
         },
         {
           "unitId": "e01",
@@ -12076,39 +12076,39 @@ globalThis.RolecraftLearningV13={
         {
           "id": "Q57-E1",
           "unitId": "c01-control-loop",
-          "sectionId": "s-717cb810447d",
+          "sectionId": "s-decb1cf43bb9",
           "knowledgePointId": "c01-control-loop:s-717cb810447d",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "6 先核对未决动作 再让模型继续",
-          "href": "#learn/agent/c01-control-loop/s-717cb810447d",
-          "quote": "幂等也有条件：键的命名范围、参数一致性、保留时间、并发重复请求处理和失败响应的语义都要来自下游契约。以 Stripe 的官方说明为例，API v1 对首次开始执行的请求保存响应，同键重试可能仍得到保存的 `500`；键可以在至少 24 小时后清理。API v2 对失败或部分失败重试的处理不同。因此不能把“支持幂等键”泛化成永久去重或必然恢复成功。[Strip",
-          "startLine": 309,
-          "endLine": 309,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "6 先核对未决动作，再让模型继续",
+          "href": "#learn/agent/c01-control-loop/s-decb1cf43bb9",
+          "quote": "## 6 先核对未决动作，再让模型继续",
+          "startLine": 385,
+          "endLine": 385,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 309,
-            "endLine": 309,
-            "section": "## 6 先核对未决动作 再让模型继续"
+            "startLine": 385,
+            "endLine": 385,
+            "section": "## 6 先核对未决动作，再让模型继续"
           }
         },
         {
           "id": "Q57-E2",
           "unitId": "c01-control-loop",
-          "sectionId": "s-717cb810447d",
+          "sectionId": "s-decb1cf43bb9",
           "knowledgePointId": "c01-control-loop:s-717cb810447d",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "6 先核对未决动作 再让模型继续",
-          "href": "#learn/agent/c01-control-loop/s-717cb810447d",
-          "quote": "运行时可以保证自己不故意重复提交一个逻辑动作，但只有下游把去重记录与实际效果可靠绑定，才能保证重复传输不会重复产生业务效果。AWS 的服务端示例明确把记录幂等 token 与相关变更纳入原子操作；客户端自己的 checkpoint 不能代替这部分。[AWS：服务端 token 与变更的原子性](https://aws.amazon.com/builders-",
-          "startLine": 313,
-          "endLine": 313,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "6 先核对未决动作，再让模型继续",
+          "href": "#learn/agent/c01-control-loop/s-decb1cf43bb9",
+          "quote": "## 6 先核对未决动作，再让模型继续",
+          "startLine": 385,
+          "endLine": 385,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 313,
-            "endLine": 313,
-            "section": "## 6 先核对未决动作 再让模型继续"
+            "startLine": 385,
+            "endLine": 385,
+            "section": "## 6 先核对未决动作，再让模型继续"
           }
         },
         {
@@ -12830,12 +12830,12 @@ globalThis.RolecraftLearningV13={
           "sectionId": "s-adb784ffc605",
           "knowledgePointId": "c01-control-loop:s-adb784ffc605",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
           "sectionTitle": "9 并发要分开处理工具依赖与运行推进权",
           "href": "#learn/agent/c01-control-loop/s-adb784ffc605",
           "quote": "",
-          "startLine": 764,
-          "endLine": 781
+          "startLine": 548,
+          "endLine": 549
         }
       ],
       "evidence": [
@@ -12864,16 +12864,16 @@ globalThis.RolecraftLearningV13={
           "sectionId": "s-adb784ffc605",
           "knowledgePointId": "c01-control-loop:s-adb784ffc605",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
           "sectionTitle": "9 并发要分开处理工具依赖与运行推进权",
           "href": "#learn/agent/c01-control-loop/s-adb784ffc605",
-          "quote": "上面的基线串行执行，但不能据此推断并发一定危险。读取固定修订的源文件与读取已有报告，彼此没有数据依赖，允许并发；“根据报告生成正文”依赖报告；创建工单依赖最终正文和批准，不能提前并行。",
-          "startLine": 766,
-          "endLine": 766,
+          "quote": "## 9 并发要分开处理工具依赖与运行推进权",
+          "startLine": 548,
+          "endLine": 548,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 766,
-            "endLine": 766,
+            "startLine": 548,
+            "endLine": 548,
             "section": "## 9 并发要分开处理工具依赖与运行推进权"
           }
         },
@@ -12883,16 +12883,16 @@ globalThis.RolecraftLearningV13={
           "sectionId": "s-adb784ffc605",
           "knowledgePointId": "c01-control-loop:s-adb784ffc605",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
           "sectionTitle": "9 并发要分开处理工具依赖与运行推进权",
           "href": "#learn/agent/c01-control-loop/s-adb784ffc605",
-          "quote": "并发调度从 `ready_actions` 扩成**可执行波次**：前置动作都已成功、当前授权已满足、没有同一可变对象写冲突，且批次预留没有超过资源额度。为每个波次先持久化各自的尝试及预留，再分发；结果按 `attempt_id → action_id → CallBinding` 关联。不能用返回列表下标代替调用身份。一个只读任务先返回、另一个超时，必须各",
-          "startLine": 768,
-          "endLine": 768,
+          "quote": "## 9 并发要分开处理工具依赖与运行推进权",
+          "startLine": 548,
+          "endLine": 548,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 768,
-            "endLine": 768,
+            "startLine": 548,
+            "endLine": 548,
             "section": "## 9 并发要分开处理工具依赖与运行推进权"
           }
         }
@@ -16144,15 +16144,15 @@ globalThis.RolecraftLearningV13={
       "knowledgeRefs": [
         {
           "unitId": "c01-control-loop",
-          "sectionId": "s-717cb810447d",
+          "sectionId": "s-decb1cf43bb9",
           "knowledgePointId": "c01-control-loop:s-717cb810447d",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "6 先核对未决动作 再让模型继续",
-          "href": "#learn/agent/c01-control-loop/s-717cb810447d",
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "6 先核对未决动作，再让模型继续",
+          "href": "#learn/agent/c01-control-loop/s-decb1cf43bb9",
           "quote": "",
-          "startLine": 293,
-          "endLine": 314
+          "startLine": 385,
+          "endLine": 386
         },
         {
           "unitId": "c03",
@@ -16171,77 +16171,77 @@ globalThis.RolecraftLearningV13={
         {
           "id": "Q88-E1",
           "unitId": "c01-control-loop",
-          "sectionId": "s-717cb810447d",
+          "sectionId": "s-decb1cf43bb9",
           "knowledgePointId": "c01-control-loop:s-717cb810447d",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "6 先核对未决动作 再让模型继续",
-          "href": "#learn/agent/c01-control-loop/s-717cb810447d",
-          "quote": "恢复顺序必须把事实核对放在新决策之前。模型不知道一个丢失回执的远端调用到底有没有成功。重新问模型，最多产生另一个看上去合理的提议，不能消除执行不确定性。",
-          "startLine": 295,
-          "endLine": 295,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "6 先核对未决动作，再让模型继续",
+          "href": "#learn/agent/c01-control-loop/s-decb1cf43bb9",
+          "quote": "## 6 先核对未决动作，再让模型继续",
+          "startLine": 385,
+          "endLine": 385,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 295,
-            "endLine": 295,
-            "section": "## 6 先核对未决动作 再让模型继续"
+            "startLine": 385,
+            "endLine": 385,
+            "section": "## 6 先核对未决动作，再让模型继续"
           }
         },
         {
           "id": "Q88-E2",
           "unitId": "c01-control-loop",
-          "sectionId": "s-717cb810447d",
+          "sectionId": "s-decb1cf43bb9",
           "knowledgePointId": "c01-control-loop:s-717cb810447d",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "6 先核对未决动作 再让模型继续",
-          "href": "#learn/agent/c01-control-loop/s-717cb810447d",
-          "quote": "本例中的 `create_issue` 在 `IN_FLIGHT` 或 `UNKNOWN` 状态时，恢复者按 `action_id` 对应的客户端操作 ID 查询：",
-          "startLine": 297,
-          "endLine": 297,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "6 先核对未决动作，再让模型继续",
+          "href": "#learn/agent/c01-control-loop/s-decb1cf43bb9",
+          "quote": "## 6 先核对未决动作，再让模型继续",
+          "startLine": 385,
+          "endLine": 385,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 297,
-            "endLine": 297,
-            "section": "## 6 先核对未决动作 再让模型继续"
+            "startLine": 385,
+            "endLine": 385,
+            "section": "## 6 先核对未决动作，再让模型继续"
           }
         },
         {
           "id": "Q88-E3",
           "unitId": "c01-control-loop",
-          "sectionId": "s-717cb810447d",
+          "sectionId": "s-decb1cf43bb9",
           "knowledgePointId": "c01-control-loop:s-717cb810447d",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "6 先核对未决动作 再让模型继续",
-          "href": "#learn/agent/c01-control-loop/s-717cb810447d",
-          "quote": "1. **确认成功且内容指纹一致**：提交原工单回执，标为 `SUCCEEDED`，不再创建。",
-          "startLine": 299,
-          "endLine": 299,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "6 先核对未决动作，再让模型继续",
+          "href": "#learn/agent/c01-control-loop/s-decb1cf43bb9",
+          "quote": "## 6 先核对未决动作，再让模型继续",
+          "startLine": 385,
+          "endLine": 385,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 299,
-            "endLine": 299,
-            "section": "## 6 先核对未决动作 再让模型继续"
+            "startLine": 385,
+            "endLine": 385,
+            "section": "## 6 先核对未决动作，再让模型继续"
           }
         },
         {
           "id": "Q88-E4",
           "unitId": "c01-control-loop",
-          "sectionId": "s-717cb810447d",
+          "sectionId": "s-decb1cf43bb9",
           "knowledgePointId": "c01-control-loop:s-717cb810447d",
           "sourcePath": "textbooks/v13/c01-control-loop.md",
-          "sourceSha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-          "sectionTitle": "6 先核对未决动作 再让模型继续",
-          "href": "#learn/agent/c01-control-loop/s-717cb810447d",
-          "quote": "运行时可以保证自己不故意重复提交一个逻辑动作，但只有下游把去重记录与实际效果可靠绑定，才能保证重复传输不会重复产生业务效果。AWS 的服务端示例明确把记录幂等 token 与相关变更纳入原子操作；客户端自己的 checkpoint 不能代替这部分。[AWS：服务端 token 与变更的原子性](https://aws.amazon.com/builders-",
-          "startLine": 313,
-          "endLine": 313,
+          "sourceSha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+          "sectionTitle": "6 先核对未决动作，再让模型继续",
+          "href": "#learn/agent/c01-control-loop/s-decb1cf43bb9",
+          "quote": "## 6 先核对未决动作，再让模型继续",
+          "startLine": 385,
+          "endLine": 385,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 313,
-            "endLine": 313,
-            "section": "## 6 先核对未决动作 再让模型继续"
+            "startLine": 385,
+            "endLine": 385,
+            "section": "## 6 先核对未决动作，再让模型继续"
           }
         },
         {

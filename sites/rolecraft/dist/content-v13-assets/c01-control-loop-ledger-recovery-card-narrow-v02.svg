@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 770" role="img" aria-labelledby="t d">
+<title id="t">账本与恢复卡（窄屏纵卡）</title>
+<desc id="d">窄屏纵向四卡；黄条同槽同指纹不裁切。</desc>
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0L10 5L0 10z" fill="#3c6e9e"/>
+  </marker>
+  <marker id="loop" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0L10 5L0 10z" fill="#7955a3"/>
+  </marker>
+  <marker id="deny" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0L10 5L0 10z" fill="#c55b5b"/>
+  </marker>
+  <marker id="ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0L10 5L0 10z" fill="#2f6b55"/>
+  </marker>
+
+</defs>
+<rect width="100%" height="100%" fill="#f6f8fb"/>
+
+<text x="20" y="32" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#182230">恢复先查账本</text>
+<text x="20" y="54" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#526174">四卡各答一问 · 未知禁推断</text>
+<rect x="16" y="66" width="368" height="24" rx="6" fill="#f5f1fb" stroke="#7955a3" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="200" y="83" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="600" fill="#7955a3">未知 → 回账本 · 禁 NOT_SENT</text>
+<rect x="20" y="100" width="360" height="116" rx="12" fill="#f5f1fb" stroke="#c4b1df" stroke-width="2"/>
+<text x="36" y="126" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#182230">1 · State / Context</text>
+<text x="36" y="148" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="600" fill="#3c6e9e">本轮看见什么？</text>
+<text x="36" y="170" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#182230">· 状态 READY/WAIT/UNKNOWN</text>
+<text x="36" y="188" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#182230">· 观察与提议可重投影</text>
+<text x="36" y="206" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#182230">· 不是业务事实账本</text>
+<line x1="200" y1="216" x2="200" y2="230" stroke="#3c6e9e" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="20" y="230" width="360" height="116" rx="12" fill="#eaf3fb" stroke="#9dc1dd" stroke-width="2"/>
+<text x="36" y="256" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#182230">2 · action_id</text>
+<text x="36" y="278" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="600" fill="#3c6e9e">业务意图是谁？</text>
+<text x="36" y="300" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#182230">· 固定意图，摘要不可覆盖</text>
+<text x="36" y="318" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#182230">· 同槽同指纹可复用</text>
+<line x1="200" y1="346" x2="200" y2="360" stroke="#3c6e9e" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="20" y="360" width="360" height="116" rx="12" fill="#eef3f8" stroke="#b7c7d8" stroke-width="2"/>
+<text x="36" y="386" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#182230">3 · attempt_id</text>
+<text x="36" y="408" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="600" fill="#3c6e9e">这次物理发送？</text>
+<text x="36" y="430" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#182230">· 每次尝试一条</text>
+<text x="36" y="448" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#182230">· 绑定授权与预算</text>
+<line x1="200" y1="476" x2="200" y2="490" stroke="#3c6e9e" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="20" y="490" width="360" height="116" rx="12" fill="#eef8f4" stroke="#9dcbb7" stroke-width="2"/>
+<text x="36" y="516" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#182230">4 · 恢复核对</text>
+<text x="36" y="538" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="600" fill="#3c6e9e">原操作效果？</text>
+<text x="36" y="560" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#182230">· 先查原 operation_id</text>
+<text x="36" y="578" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#182230">· 成功/无效果/仍未知</text>
+<text x="36" y="596" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#182230">· 禁改写未发送</text>
+<rect x="16" y="628" width="368" height="72" rx="10" fill="#fff8df" stroke="#e7c45d" stroke-width="2"/>
+<text x="200" y="656" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#182230">同槽位 · 同指纹</text>
+<text x="200" y="678" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#526174">复用原 action/operation · 不同意图停确认</text>
+<text x="20" y="754" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#526174">教学构造 · 未实测 · 隔离稿 · Hold 合入生产</text>
+</svg>

@@ -9,7 +9,7 @@
   "baseVersion": "textbook-v12",
   "baseManifestPath": "sites/rolecraft/textbooks/v12/assembly-manifest.json",
   "chapterCount": 30,
-  "assetCount": 95,
+  "assetCount": 107,
   "order": [
     "00-learning-route",
     "01-foundation",
@@ -300,29 +300,38 @@
     },
     {
       "path": "sites/rolecraft/textbooks/v13/c01-control-loop.md",
-      "sha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4",
-      "lineCount": 1027,
+      "sha256": "ca135969edd0e650b10cd376d79c04f2a998898038bfe70cb734d61ff3249849",
+      "lineCount": 849,
       "imageRefs": [
-        "assets/c01-control-loop-observe-effect-map-v01.svg",
-        "assets/c01-control-loop-ledger-recovery-card-v01.svg"
+        "assets/c01-control-loop-observe-effect-map-v02.svg",
+        "assets/c01-control-loop-observe-effect-map-narrow-v02.svg",
+        "assets/c01-control-loop-ledger-recovery-card-v02.svg",
+        "assets/c01-control-loop-ledger-recovery-card-narrow-v02.svg",
+        "assets/c01-control-loop-four-commit-swimlane-v01.svg",
+        "assets/c01-control-loop-four-commit-steps-narrow-v01.svg",
+        "assets/c01-control-loop-recovery-six-branch-v01.svg",
+        "assets/c01-control-loop-recovery-six-branch-narrow-v01.svg",
+        "assets/c01-control-loop-mainloop-priority-v01.svg",
+        "assets/c01-control-loop-mainloop-priority-narrow-v01.svg",
+        "assets/c01-control-loop-crash-window-compare-v01.svg",
+        "assets/c01-control-loop-crash-window-compare-narrow-v01.svg"
       ],
-      "detailsBlocks": 6,
-      "codeBlocks": 14,
-      "longCodeBlocks": 7,
+      "detailsBlocks": 3,
+      "codeBlocks": 13,
+      "longCodeBlocks": 3,
       "codeLineCounts": [
         11,
         3,
+        7,
         5,
-        96,
+        6,
         1,
-        11,
+        26,
+        7,
+        7,
         5,
-        32,
-        152,
-        64,
-        60,
-        5,
-        5,
+        12,
+        7,
         5
       ]
     },
@@ -611,15 +620,87 @@
       "extension": ".svg"
     },
     {
+      "path": "sites/rolecraft/textbooks/v13/assets/c01-control-loop-crash-window-compare-narrow-v01.svg",
+      "sha256": "b51df20210c4deec7c1141bab186440bf55961b4c88211074265ab1ff4806125",
+      "bytes": 5297,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c01-control-loop-crash-window-compare-v01.svg",
+      "sha256": "fcf25632b560b44be4e92d8806da8989fd1822874ddd8f38be782b9f6bf3c75f",
+      "bytes": 7681,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c01-control-loop-four-commit-steps-narrow-v01.svg",
+      "sha256": "36ffb1a5af75e945338a914e28ce90d6e41bfff24105dc05ef5dd793bdb05f84",
+      "bytes": 6762,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c01-control-loop-four-commit-swimlane-v01.svg",
+      "sha256": "e2f7692a2391241134ba99ce177f67bcaa914fa1090be8c564c46a4f89c2deda",
+      "bytes": 7707,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c01-control-loop-ledger-recovery-card-narrow-v02.svg",
+      "sha256": "a7e4c77cd15d58ce6b22f76d768a31452733eae1d67eb0cf5450737e057c62a9",
+      "bytes": 6324,
+      "extension": ".svg"
+    },
+    {
       "path": "sites/rolecraft/textbooks/v13/assets/c01-control-loop-ledger-recovery-card-v01.svg",
       "sha256": "02d15fe2fe7ad3291621fffb6dcaf144edb91b8bd41facdd84e8b9167755688a",
       "bytes": 3409,
       "extension": ".svg"
     },
     {
+      "path": "sites/rolecraft/textbooks/v13/assets/c01-control-loop-ledger-recovery-card-v02.svg",
+      "sha256": "4cf1f35f5eab46c39b40fedac62ce8685fdfd9d5f7c6f1692fe25968ae1e7f6c",
+      "bytes": 7770,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c01-control-loop-mainloop-priority-narrow-v01.svg",
+      "sha256": "3a5a9e68f606f77fc1e015da02cd0e83e97b71dc89c08e8eed2138fc0110ca02",
+      "bytes": 10799,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c01-control-loop-mainloop-priority-v01.svg",
+      "sha256": "a6b4e278cca420e182a0b3f72b19798bd473ff270af7f1515c76dcc0c1b1ef18",
+      "bytes": 10968,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c01-control-loop-observe-effect-map-narrow-v02.svg",
+      "sha256": "11d9356d4d973a03102eea978197acf995b47931eacba6b224da47608a8f49c5",
+      "bytes": 7383,
+      "extension": ".svg"
+    },
+    {
       "path": "sites/rolecraft/textbooks/v13/assets/c01-control-loop-observe-effect-map-v01.svg",
       "sha256": "877fd916de96e39322f48e5bf59adbf5c764a143ebcc429e16fab8c8f4ef4c0e",
       "bytes": 5278,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c01-control-loop-observe-effect-map-v02.svg",
+      "sha256": "d5cad5d3e7fe1685e01bb385a6720306202c9e9038cea0a98fa737351ad0af7a",
+      "bytes": 8803,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c01-control-loop-recovery-six-branch-narrow-v01.svg",
+      "sha256": "4e47fe0d32bcf616b2659ec3133dfaf1d36ece126370dc433ec469e19c488c63",
+      "bytes": 10445,
+      "extension": ".svg"
+    },
+    {
+      "path": "sites/rolecraft/textbooks/v13/assets/c01-control-loop-recovery-six-branch-v01.svg",
+      "sha256": "db2b26eea2a2d2e0b1f228ebd910996b6dc03373ffc0b733601a407abc019917",
+      "bytes": 10712,
       "extension": ".svg"
     },
     {
