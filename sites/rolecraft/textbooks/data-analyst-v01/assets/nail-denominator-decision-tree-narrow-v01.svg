@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 1680" role="img" aria-labelledby="t d">
+<title id="t">钉分母决策树（窄屏纵栈）</title>
+<desc id="d">纵栈决策；两档绿灯分开。教学合成。</desc>
+<defs><marker id="a02n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#64748b"/></marker><marker id="a02n-risk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#AC2634"/></marker><marker id="a02n-pass" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#16675D"/></marker></defs>
+<rect width="100%" height="100%" fill="#F3F5F9"/>
+<text x="16" y="30" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="700" fill="#172B4D">钉分母决策树</text>
+<text x="16" y="52" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#52627A">DR-DA01-02 · 窄屏纵栈 · 两档绿灯</text>
+<rect x="16" y="68" width="368" height="90" rx="12" fill="#FFFFFF" stroke="#CDD6E3" stroke-width="2"/>
+<rect x="28" y="80" width="48" height="26" rx="12" fill="#E9EEFF"/>
+<text x="52" y="98" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#284DB4">根</text>
+<text x="28" y="124" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#172B4D">要报转化率 / 已提升？</text>
+<text x="28" y="150" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#172B4D">根问题 · 先选路径</text>
+<line x1="200" y1="158" x2="200" y2="178" stroke="#64748b" stroke-width="2.5" marker-end="url(#a02n)"/>
+<rect x="16" y="182" width="368" height="100" rx="12" fill="#FFF2D4" stroke="#E7C45D" stroke-width="2"/>
+<rect x="28" y="194" width="48" height="26" rx="12" fill="#FFE8A3"/>
+<text x="52" y="212" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#865100">旁</text>
+<text x="28" y="238" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#865100">旁支 · 仅探讨人数变</text>
+<text x="28" y="264" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#865100">可以写人数事实</text>
+<text x="28" y="286" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#865100">不得冒充转化 / 禁已提升</text>
+<line x1="200" y1="278" x2="200" y2="298" stroke="#64748b" stroke-width="2.5" marker-end="url(#a02n)"/>
+<rect x="16" y="302" width="368" height="110" rx="12" fill="#FFFFFF" stroke="#CDD6E3" stroke-width="2"/>
+<rect x="28" y="314" width="48" height="26" rx="12" fill="#E9EEFF"/>
+<text x="52" y="332" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#284DB4">1</text>
+<text x="28" y="358" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#172B4D">分母定义写清？</text>
+<text x="28" y="384" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#172B4D">否 → 停：人数+「分母未钉」</text>
+<text x="28" y="406" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#172B4D">是 → 继续</text>
+<line x1="200" y1="412" x2="200" y2="430" stroke="#64748b" stroke-width="2.5" marker-end="url(#a02n)"/>
+<rect x="16" y="432" width="368" height="110" rx="12" fill="#FFFFFF" stroke="#CDD6E3" stroke-width="2"/>
+<rect x="28" y="444" width="48" height="26" rx="12" fill="#E9EEFF"/>
+<text x="52" y="462" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#284DB4">2</text>
+<text x="28" y="488" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#172B4D">两边分母定义相同？</text>
+<text x="28" y="514" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#172B4D">否 → 停：禁并排提升%</text>
+<text x="28" y="536" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#172B4D">是 → 继续</text>
+<line x1="200" y1="542" x2="200" y2="560" stroke="#64748b" stroke-width="2.5" marker-end="url(#a02n)"/>
+<rect x="16" y="562" width="368" height="110" rx="12" fill="#FFFFFF" stroke="#CDD6E3" stroke-width="2"/>
+<rect x="28" y="574" width="48" height="26" rx="12" fill="#E9EEFF"/>
+<text x="52" y="592" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#284DB4">3</text>
+<text x="28" y="618" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#172B4D">截止 + 时区相同？</text>
+<text x="28" y="644" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#172B4D">否 → 停或换算后再算</text>
+<text x="28" y="666" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#172B4D">是 → 继续</text>
+<line x1="200" y1="672" x2="200" y2="690" stroke="#64748b" stroke-width="2.5" marker-end="url(#a02n)"/>
+<rect x="16" y="692" width="368" height="110" rx="12" fill="#FFFFFF" stroke="#CDD6E3" stroke-width="2"/>
+<rect x="28" y="704" width="48" height="26" rx="12" fill="#E9EEFF"/>
+<text x="52" y="722" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#284DB4">4</text>
+<text x="28" y="748" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#172B4D">筛选相同？</text>
+<text x="28" y="774" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#172B4D">否 → 停：先重跑同筛选</text>
+<text x="28" y="796" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#172B4D">是 → 进入两档绿灯</text>
+<line x1="200" y1="802" x2="200" y2="820" stroke="#64748b" stroke-width="2.5" marker-end="url(#a02n)"/>
+<rect x="16" y="824" width="368" height="120" rx="12" fill="#FDEBEF" stroke="#AC2634" stroke-width="2"/>
+<rect x="28" y="836" width="48" height="26" rx="12" fill="#F8D7DA"/>
+<text x="52" y="854" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#AC2634">停</text>
+<text x="28" y="880" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#AC2634">任否 → 停</text>
+<text x="28" y="906" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#AC2634">未定义 / 跨周不同 /</text>
+<text x="28" y="928" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#AC2634">时区不同 / 筛选不同</text>
+<text x="28" y="950" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#AC2634">均不得报「已提升」</text>
+<line x1="200" y1="952" x2="200" y2="970" stroke="#16675D" stroke-width="2.5" marker-end="url(#a02n-pass)"/>
+<rect x="16" y="974" width="368" height="120" rx="12" fill="#EDF5F4" stroke="#16675D" stroke-width="2"/>
+<rect x="28" y="986" width="48" height="26" rx="12" fill="#D1E7DD"/>
+<text x="52" y="1004" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#16675D">A</text>
+<text x="28" y="1030" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#16675D">绿灯 A · 可算比率</text>
+<text x="28" y="1056" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#16675D">对齐后可写比率事实</text>
+<text x="28" y="1078" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#16675D">例 4.8%→4.0%（附分母）</text>
+<line x1="200" y1="1102" x2="200" y2="1120" stroke="#16675D" stroke-width="2.5" marker-end="url(#a02n-pass)"/>
+<rect x="16" y="1124" width="368" height="130" rx="12" fill="#E8F5E9" stroke="#1B5E20" stroke-width="2"/>
+<rect x="28" y="1136" width="48" height="26" rx="12" fill="#C8E6C9"/>
+<text x="52" y="1154" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#1B5E20">B</text>
+<text x="28" y="1180" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#1B5E20">绿灯 B · 可报已提升？</text>
+<text x="28" y="1206" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#1B5E20">仍须复算证据+负责人</text>
+<text x="28" y="1228" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#1B5E20">A 通过 ≠ 自动等于 B</text>
+<text x="28" y="1250" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#1B5E20">无证据 → 禁「已提升」</text>
+<text x="16" y="1655" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="11" fill="#52627A">教学合成 · 非真实职造业务 · 不代表已开通 / 已提升</text>
+</svg>

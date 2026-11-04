@@ -36,6 +36,8 @@ const renamed=new Map([
  ['c01-selection\0多 Agent 的升级点是可分工 而不是人数','多 Agent 的升级点是可分工，不是人数'],
  ['c01-selection\0怎样做一个公平且能定位原因的比较','怎样做公平且能定位原因的比较'],
  ['c01-selection\0用条件做选择的练习','练习：从最小方案开始推理'],
+ ['c01-control-loop\u00004 提交边界决定哪些事情可以在崩溃后重做','4 提交边界决定崩溃后哪些能重做'],
+ ['c01-control-loop\u00008 把这些约束落实到完整控制骨架','8 把约束落到完整控制骨架（深读）'],
 ]);
 function grams(text){const n=normTitle(String(text||'')).slice(0,800);const set=new Set();for(let i=0;i<n.length-1;i++)set.add(n.slice(i,i+2));return set;}
 function similarity(a,b){const left=grams(a),right=grams(b);let hit=0;for(const item of left)if(right.has(item))hit++;return left.size?hit/left.size:0;}

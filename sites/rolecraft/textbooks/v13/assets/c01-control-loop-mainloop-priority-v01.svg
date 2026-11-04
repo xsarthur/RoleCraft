@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 860" role="img" aria-labelledby="t d">
+<title id="t">主循环优先序</title>
+<desc id="d">单列决策流：租约→关孤儿→loop 内优先序；有未决时不调模型；与开篇总图同构、本图强调优先序。</desc>
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0L10 5L0 10z" fill="#3c6e9e"/>
+  </marker>
+  <marker id="loop" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0L10 5L0 10z" fill="#7955a3"/>
+  </marker>
+  <marker id="deny" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0L10 5L0 10z" fill="#c55b5b"/>
+  </marker>
+  <marker id="ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0L10 5L0 10z" fill="#2f6b55"/>
+  </marker>
+
+</defs>
+<rect width="100%" height="100%" fill="#f6f8fb"/>
+
+<text x="28" y="34" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="700" fill="#182230">主循环优先序</text>
+<text x="28" y="56" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">与开篇总图同构 · 本图强调「先事实，再决策」</text>
+<rect x="28" y="70" width="664" height="40" rx="8" fill="#fff8df" stroke="#e7c45d" stroke-width="2"/>
+<text x="360" y="96" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="600" fill="#182230">读图：有未决时会不会调模型？→ 否，先 reconcile</text>
+<rect x="80" y="130" width="560" height="48" rx="10" fill="#ffffff" stroke="#3c6e9e" stroke-width="2"/>
+<circle cx="56" cy="154" r="16" fill="#3c6e9e"/>
+<text x="56" y="159" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#fff">1</text>
+<text x="100" y="152" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#182230">取得租约</text>
+<text x="100" y="170" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">单推进者</text>
+<line x1="56" y1="178" x2="56" y2="188" stroke="#3c6e9e" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="80" y="188" width="560" height="48" rx="10" fill="#ffffff" stroke="#3c6e9e" stroke-width="2"/>
+<circle cx="56" cy="212" r="16" fill="#3c6e9e"/>
+<text x="56" y="217" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#fff">2</text>
+<text x="100" y="210" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#182230">关闭孤儿模型尝试</text>
+<text x="100" y="228" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">保留未知费用</text>
+<line x1="56" y1="236" x2="56" y2="246" stroke="#3c6e9e" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="80" y="246" width="560" height="48" rx="10" fill="#ffffff" stroke="#3c6e9e" stroke-width="2"/>
+<circle cx="56" cy="270" r="16" fill="#3c6e9e"/>
+<text x="56" y="275" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#fff">3</text>
+<text x="100" y="268" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#182230">终态？→ 返回</text>
+<text x="100" y="286" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">已完成则停</text>
+<line x1="56" y1="294" x2="56" y2="304" stroke="#3c6e9e" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="80" y="304" width="560" height="48" rx="10" fill="#ffffff" stroke="#3c6e9e" stroke-width="2"/>
+<circle cx="56" cy="328" r="16" fill="#3c6e9e"/>
+<text x="56" y="333" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#fff">4</text>
+<text x="100" y="326" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#182230">全局取消/期限</text>
+<text x="100" y="344" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">提交 stop_intent</text>
+<line x1="56" y1="352" x2="56" y2="362" stroke="#3c6e9e" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="80" y="362" width="560" height="48" rx="10" fill="#f5f1fb" stroke="#7955a3" stroke-width="2"/>
+<circle cx="56" cy="386" r="16" fill="#7955a3"/>
+<text x="56" y="391" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#fff">5</text>
+<text x="100" y="384" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#182230">有未决效果/尝试？</text>
+<text x="100" y="402" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">→ reconcile（先于模型）</text>
+<line x1="56" y1="410" x2="56" y2="420" stroke="#3c6e9e" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="80" y="420" width="560" height="48" rx="10" fill="#ffffff" stroke="#3c6e9e" stroke-width="2"/>
+<circle cx="56" cy="444" r="16" fill="#3c6e9e"/>
+<text x="56" y="449" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#fff">6</text>
+<text x="100" y="442" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#182230">有 stop_intent 且无未决？</text>
+<text x="100" y="460" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">→ FinishStopped</text>
+<line x1="56" y1="468" x2="56" y2="478" stroke="#3c6e9e" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="80" y="478" width="560" height="48" rx="10" fill="#ffffff" stroke="#3c6e9e" stroke-width="2"/>
+<circle cx="56" cy="502" r="16" fill="#3c6e9e"/>
+<text x="56" y="507" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#fff">7</text>
+<text x="100" y="500" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#182230">有等待？</text>
+<text x="100" y="518" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">未满足则返回；满足则清等待</text>
+<line x1="56" y1="526" x2="56" y2="536" stroke="#3c6e9e" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="80" y="536" width="560" height="48" rx="10" fill="#ffffff" stroke="#3c6e9e" stroke-width="2"/>
+<circle cx="56" cy="560" r="16" fill="#3c6e9e"/>
+<text x="56" y="565" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#fff">8</text>
+<text x="100" y="558" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#182230">有活跃计划？</text>
+<text x="100" y="576" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">→ drive_plan（发送前再过闸）</text>
+<line x1="56" y1="584" x2="56" y2="594" stroke="#3c6e9e" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="80" y="594" width="560" height="48" rx="10" fill="#ffffff" stroke="#3c6e9e" stroke-width="2"/>
+<circle cx="56" cy="618" r="16" fill="#3c6e9e"/>
+<text x="56" y="623" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#fff">9</text>
+<text x="100" y="616" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#182230">有候选？</text>
+<text x="100" y="634" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">验收 → Complete / 拒绝 / FAIL</text>
+<line x1="56" y1="642" x2="56" y2="652" stroke="#3c6e9e" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="80" y="652" width="560" height="48" rx="10" fill="#ffffff" stroke="#3c6e9e" stroke-width="2"/>
+<circle cx="56" cy="676" r="16" fill="#3c6e9e"/>
+<text x="56" y="681" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#fff">10</text>
+<text x="100" y="674" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#182230">有未消费完整响应？</text>
+<text x="100" y="692" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">解析互斥决策</text>
+<line x1="56" y1="700" x2="56" y2="710" stroke="#3c6e9e" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="80" y="710" width="560" height="48" rx="10" fill="#fff8df" stroke="#e7c45d" stroke-width="2"/>
+<circle cx="56" cy="734" r="16" fill="#e7c45d"/>
+<text x="56" y="739" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#fff">11</text>
+<text x="100" y="732" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#182230">否则 BeginModel</text>
+<text x="100" y="750" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">才调用模型</text>
+<rect x="28" y="790" width="664" height="40" rx="8" fill="#f5f1fb" stroke="#7955a3" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="360" y="816" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="600" fill="#7955a3">stop_intent 存在但效果未清算 → 走 reconcile，不 FinishStopped</text>
+<text x="28" y="844" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">教学构造 · 未实测 · 隔离稿 · Hold 合入生产</text>
+</svg>

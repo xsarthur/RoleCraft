@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 756" role="img" aria-labelledby="t d">
+<title id="t">四提交点（窄屏分步卡）</title>
+<desc id="d">分步卡：四提交点 + 两危险窗口。</desc>
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0L10 5L0 10z" fill="#3c6e9e"/>
+  </marker>
+  <marker id="loop" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0L10 5L0 10z" fill="#7955a3"/>
+  </marker>
+  <marker id="deny" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0L10 5L0 10z" fill="#c55b5b"/>
+  </marker>
+  <marker id="ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0L10 5L0 10z" fill="#2f6b55"/>
+  </marker>
+
+</defs>
+<rect width="100%" height="100%" fill="#f6f8fb"/>
+
+<text x="20" y="30" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#182230">四提交点 · 危险窗口</text>
+<text x="20" y="52" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#526174">恢复者不能推断的结论已标红/紫</text>
+<text x="20" y="72" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#526174">泳道压缩为分步：运行时→网络→外部→库</text>
+<rect x="20" y="90" width="360" height="72" rx="10" fill="#eaf3fb" stroke="#3c6e9e" stroke-width="2"/>
+<text x="36" y="114" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#3c6e9e">① 意图提交点</text>
+<text x="36" y="134" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#182230">校验并原子提交动作计划</text>
+<text x="36" y="152" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#526174">为何允许发出</text>
+<line x1="200" y1="162" x2="200" y2="178" stroke="#3c6e9e" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="20" y="178" width="360" height="72" rx="10" fill="#eaf3fb" stroke="#3c6e9e" stroke-width="2"/>
+<text x="36" y="202" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#3c6e9e">② 尝试提交点</text>
+<text x="36" y="222" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#182230">工具尝试·授权·预算预留</text>
+<text x="36" y="240" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#526174">可能已经发出</text>
+<line x1="200" y1="250" x2="200" y2="266" stroke="#3c6e9e" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="20" y="266" width="360" height="72" rx="10" fill="#fff0f0" stroke="#c55b5b" stroke-width="2"/>
+<text x="36" y="290" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#c55b5b">⚠ 窗口 A</text>
+<text x="36" y="310" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#182230">尝试已提交 · 未发送</text>
+<text x="36" y="328" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#526174">不能推断「未执行」</text>
+<line x1="200" y1="338" x2="200" y2="354" stroke="#3c6e9e" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="20" y="354" width="360" height="72" rx="10" fill="#fff3ec" stroke="#526174" stroke-width="2"/>
+<text x="36" y="378" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#526174">网络 → 外部</text>
+<text x="36" y="398" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#182230">向外部工具发送 / 执行</text>
+<text x="36" y="416" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#526174">无共同原子点</text>
+<line x1="200" y1="426" x2="200" y2="442" stroke="#3c6e9e" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="20" y="442" width="360" height="72" rx="10" fill="#eef8f4" stroke="#2f6b55" stroke-width="2"/>
+<text x="36" y="466" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#2f6b55">③ 结果提交点</text>
+<text x="36" y="486" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#182230">原子提交结果与状态迁移</text>
+<text x="36" y="504" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#526174">运行时已知什么</text>
+<line x1="200" y1="514" x2="200" y2="530" stroke="#3c6e9e" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="20" y="530" width="360" height="72" rx="10" fill="#f5f1fb" stroke="#7955a3" stroke-width="2"/>
+<text x="36" y="554" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#7955a3">⚠ 窗口 B</text>
+<text x="36" y="574" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#182230">外部已成功 · 本地未提交</text>
+<text x="36" y="592" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#526174">不能二次创建；查原 operation</text>
+<line x1="200" y1="602" x2="200" y2="618" stroke="#3c6e9e" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="20" y="618" width="360" height="72" rx="10" fill="#eef8f4" stroke="#2f6b55" stroke-width="2"/>
+<text x="36" y="642" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#2f6b55">④ 终态提交点</text>
+<text x="36" y="662" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#182230">验收证据与任务终态</text>
+<text x="36" y="680" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#526174">观察者何时可见完成</text>
+<text x="20" y="740" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#526174">教学构造 · 未实测 · 隔离稿 · Hold 合入生产</text>
+</svg>

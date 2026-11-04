@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 720" role="img" aria-labelledby="t d">
+<title id="t">控制循环：资格与效果总图</title>
+<desc id="d">模型区提出候选；运行时区做身份权限批准预算准入；效果未知带着原 action/operation 回观察；记录链 tool_call→action→attempt→operation。</desc>
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0L10 5L0 10z" fill="#3c6e9e"/>
+  </marker>
+  <marker id="loop" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0L10 5L0 10z" fill="#7955a3"/>
+  </marker>
+  <marker id="deny" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0L10 5L0 10z" fill="#c55b5b"/>
+  </marker>
+  <marker id="ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0L10 5L0 10z" fill="#2f6b55"/>
+  </marker>
+
+</defs>
+<rect width="100%" height="100%" fill="#f6f8fb"/>
+
+<text x="36" y="40" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#182230">控制循环：每次提议都要经过准入</text>
+<text x="36" y="66" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">读图：(1)谁提出候选 (2)谁做准入 (3)未知箭头回哪 (4)身份链</text>
+<rect x="36" y="84" width="1008" height="44" rx="12" fill="#eef8f4" stroke="#9dcbb7" stroke-width="2"/>
+<text x="56" y="112" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="600" fill="#182230">不变量：模型提议 ≠ 执行事实；发送超时 ≠ 无效果事实</text>
+<rect x="36" y="148" width="320" height="400" rx="16" fill="#f5f1fb" stroke="#c4b1df" stroke-width="2"/>
+<text x="56" y="180" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#182230">模型区</text>
+<text x="56" y="204" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">只读投影 · 无执行权</text>
+<rect x="372" y="148" width="672" height="400" rx="16" fill="#f7fafc" stroke="#c6d2df" stroke-width="2"/>
+<text x="392" y="180" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#182230">运行时区</text>
+<text x="392" y="204" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">身份 · 权限 · 批准 · 预算 · 停止</text>
+<rect x="60" y="230" width="272" height="88" rx="14" fill="#ffffff" stroke="#c4b1df" stroke-width="2"/>
+<text x="196" y="266" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#182230">观察</text>
+<text x="196" y="294" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">报告 / 回执 / 未知</text>
+<rect x="60" y="360" width="272" height="88" rx="14" fill="#fff8df" stroke="#e7c45d" stroke-width="2"/>
+<text x="196" y="396" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#182230">① 提出候选</text>
+<text x="196" y="424" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">工具 · 参数 · 下一步</text>
+<rect x="400" y="230" width="260" height="88" rx="14" fill="#eaf3fb" stroke="#9dc1dd" stroke-width="2"/>
+<text x="530" y="266" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#182230">② 准入</text>
+<text x="530" y="294" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">身份·权限·批准·预算</text>
+<rect x="720" y="230" width="288" height="88" rx="14" fill="#eef8f4" stroke="#9dcbb7" stroke-width="2"/>
+<text x="864" y="266" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#182230">动作</text>
+<text x="864" y="294" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">固定 action · 记 attempt</text>
+<rect x="720" y="360" width="288" height="88" rx="14" fill="#fff3ec" stroke="#e8b28d" stroke-width="2"/>
+<text x="864" y="396" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#182230">效果 / 未知</text>
+<text x="864" y="424" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">确认 · 无效果 · UNRESOLVED</text>
+<rect x="400" y="360" width="260" height="64" rx="12" fill="#fff0f0" stroke="#db9a9a" stroke-width="2"/>
+<text x="530" y="400" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="600" fill="#c55b5b">拒绝/等待：不发送</text>
+<line x1="196" y1="318" x2="196" y2="350" stroke="#3c6e9e" stroke-width="3" marker-end="url(#arr)"/>
+<line x1="332" y1="404" x2="390" y2="274" stroke="#3c6e9e" stroke-width="3" marker-end="url(#arr)"/>
+<line x1="660" y1="274" x2="710" y2="274" stroke="#3c6e9e" stroke-width="3" marker-end="url(#arr)"/>
+<line x1="864" y1="318" x2="864" y2="350" stroke="#3c6e9e" stroke-width="3" marker-end="url(#arr)"/>
+<line x1="530" y1="318" x2="530" y2="350" stroke="#c55b5b" stroke-width="3" marker-end="url(#deny)"/>
+<path d="M720 404 H670 V500 H280 V404 H332" fill="none" stroke="#7955a3" stroke-width="3" stroke-dasharray="10 7" marker-end="url(#loop)"/>
+<text x="500" y="488" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="600" fill="#7955a3">③ 未知 → 回观察（原 action / operation；禁改写「未发送」）</text>
+<rect x="36" y="568" width="1008" height="72" rx="12" fill="#eef3f8" stroke="#b7c7d8" stroke-width="2"/>
+<text x="56" y="598" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#182230">④ 记录链</text>
+<text x="56" y="626" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="600" fill="#3c6e9e">tool_call_id</text>
+<text x="196" y="626" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">（协议调用）</text>
+<text x="286" y="626" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">→</text>
+<text x="290" y="626" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="600" fill="#3c6e9e">action_id</text>
+<text x="430" y="626" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">（业务意图）</text>
+<text x="520" y="626" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">→</text>
+<text x="530" y="626" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="600" fill="#3c6e9e">attempt_id</text>
+<text x="670" y="626" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">（物理尝试）</text>
+<text x="760" y="626" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">→</text>
+<text x="770" y="626" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="600" fill="#3c6e9e">operation_id</text>
+<text x="910" y="626" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">（下游操作）</text>
+<text x="36" y="680" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="16" fill="#526174">教学构造 · 未实测 · 隔离稿 · Hold 合入生产</text>
+</svg>
