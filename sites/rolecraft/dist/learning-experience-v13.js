@@ -69,7 +69,7 @@ function continuation(){
  return '<section class="v13-current-task state-'+stateName+'" data-task-state="'+stateName+'" aria-labelledby="v13-current-task-title"><div class="v13-current-task-copy"><span class="v13-task-kicker">当前任务 · '+esc(status)+'</span><h2 id="v13-current-task-title">'+esc(title)+'</h2><p>'+esc(description)+'</p><div class="v13-task-evidence"><span>输入：教材上下文</span><span>产物：练习或运行记录</span><span>验证：本人提交，待独立评价</span></div></div><a class="primary" href="#learn/agent/'+esc(target)+(targetSection?'/'+esc(targetSection):'')+resumeSuffix+'" aria-label="'+esc(action+'：'+(u?.navigationLabel||'当前教材'))+'">'+esc(action)+' →</a></section><div class="v13-task-tools" aria-label="学习动作"><span>需要查缺或回顾？</span><a href="#questions">题库</a><a href="#projects">进入 P01 练习</a></div>';
 }
 function coursePage(compact=false){
- const c=corpus();if(!c)return issue('教材资源暂不可用。');
+ const c=corpus();if(!c){const card=globalThis.LearningWorkbench?.learningErrorCard;if(typeof card==='function')return card(globalThis.LearningWorkbench.fixtureSession?.()?'fixture':'missing');return '<section class="lw-error-card lw-error-missing" role="alert" data-lw-error="missing"><h1>这篇教材暂时找不到</h1><p>可能尚未发布或链接失效。这不是登录问题。</p><div class="lw-error-actions"><a class="primary" href="#learn">返回课程学习</a><button type="button" class="outline" data-lw-reload>重新加载</button></div></section>';}
  const d=data(),stages=d?.routeStages||[{title:'Agent 工程学习路线',unitIds:c.units.map(u=>u.unitId)}];
  // Former view/filter preferences remain stored; this page always presents the full route.
  scale=1;routeFilter='all';

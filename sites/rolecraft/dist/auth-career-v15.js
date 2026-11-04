@@ -59,6 +59,7 @@
   }
 
   function friendlyError(error) {
+    if (error?.kind === 'fixture' || error?.fixture === true || error?.code === 'qa_fixture') return '当前连到验收夹具';
     if (isAbort(error)) return '请求已取消。';
     if (error?.status >= 500 || error?.code === 'network_error') return '服务暂时不可用，请稍后再试。';
     if (error?.status === 401) return '登录已失效，请重新登录。';
@@ -138,7 +139,10 @@
     };
   }
 
-  function routeUnavailable(error) { return error?.status === 404 || error?.status === 405 || error?.code === 'not_found'; }
+  function routeUnavailable(error) {
+    if (error?.kind === 'fixture' || error?.fixture === true || error?.code === 'qa_fixture') return false;
+    return error?.status === 404 || error?.status === 405 || error?.code === 'not_found';
+  }
 
   function notify(message) {
     const node = document.getElementById('toast') || document.getElementById('save-status') || document.getElementById('lw-status');
@@ -170,7 +174,7 @@
   }
 
   async function api(path, options = {}) {
-    if (isStatic()) throw Object.assign(new Error('当前页面需要通过本地服务访问账户功能。'), { code: 'static_page' });
+    if (isStatic()) throw Object.assign(new Error('当前页面需要通过本地服务访问账户功能。'), { code: 'static_page', kind: 'network' });
     const config = { ...options };
     const headers = { ...(options.headers || {}) };
     if (config.body && typeof config.body === 'object' && !(config.body instanceof Blob) && !(config.body instanceof ArrayBuffer) && !(config.body instanceof URLSearchParams)) {
@@ -186,13 +190,18 @@
     try { response = await fetch(path, config); }
     catch (error) {
       if (isAbort(error)) throw error;
-      throw Object.assign(new Error('服务暂时不可用，请检查本地服务。'), { code: 'network_error', cause: error });
+      throw Object.assign(new Error('服务暂时不可用，请检查本地服务。'), { code: 'network_error', kind: 'network', cause: error });
     }
     let payload = null;
     try { payload = await response.json(); } catch { /* an empty response is handled below */ }
+    if (globalThis.LearningWorkbench?.isFixtureResponse?.(payload, response.headers)) {
+      globalThis.LearningWorkbench.noteFixtureSession?.(true);
+      throw Object.assign(new Error('当前连到验收夹具'), { status: response.status, code: 'qa_fixture', kind: 'fixture', fixture: true, payload });
+    }
     if (!response.ok) {
       const message = payload?.error?.message || (response.status >= 500 ? '服务暂时不可用，请稍后再试。' : '请求未完成，请稍后再试。');
-      const error = Object.assign(new Error(message), { status: response.status, code: payload?.error?.code, payload });
+      const kind = response.status >= 500 ? 'network' : response.status === 404 ? 'missing' : response.status === 405 ? 'route' : '';
+      const error = Object.assign(new Error(message), { status: response.status, code: payload?.error?.code, payload, kind });
       if (isContentVersionMismatch(error)) globalThis.LearningWorkbench?.noteContentVersionMismatch?.({ code: error.code, message });
       throw error;
     }

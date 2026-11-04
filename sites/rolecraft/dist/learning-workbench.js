@@ -63,7 +63,8 @@
   const CAREER_LOAD_MARKER = 'rolecraft-career-content-ready-v1';
   const CAREER_LOAD_TIMEOUT = 120000;
   let careerController = null, careerPhaseTimer = null;
-  let careerState = { status: 'anonymous', phase: 'idle', active: false, careerId: '', career: null, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), error: '', requestId: 0, startedAt: 0, firstLoad: false, loadingChapterId: '' };
+  let careerState = { status: 'anonymous', phase: 'idle', active: false, careerId: '', career: null, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), chapterErrorKinds: new Map(), error: '', errorKind: '', requestId: 0, startedAt: 0, firstLoad: false, loadingChapterId: '' };
+  let fixtureSession = false;
   let queryHistory = [];
   let contextEnabled = false, startingEnabled = true, composing = false, trigger = null, activeReadingUnitId = '', activeReadingVersion = '';
   let dialogTopic = null, restoredResponse = false, assistantScroll = 0;
@@ -369,23 +370,25 @@
   }
   async function loadPublicCareerCatalog(careerId) {
     const requestId = careerState.requestId + 1;
-    careerState = { status: 'loading', phase: 'catalog', active: true, careerId, career: { careerId, title: '', summary: '', contentVersion: '' }, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), error: '', requestId, startedAt: Date.now(), firstLoad: false, loadingChapterId: '' };
+    careerState = { status: 'loading', phase: 'catalog', active: true, careerId, career: { careerId, title: '', summary: '', contentVersion: '' }, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), chapterErrorKinds: new Map(), error: '', errorKind: '', requestId, startedAt: Date.now(), firstLoad: false, loadingChapterId: '' };
     redrawCareerView();
     try {
-      if (location.protocol === 'file:') throw Error('当前页面需要通过本地服务加载职业教材。');
+      if (location.protocol === 'file:') throw Object.assign(Error('当前页面需要通过本地服务加载职业教材。'), { kind: 'network', code: 'static_page' });
       const http = await fetch('/api/careers/' + encodeURIComponent(careerId) + '/content/catalog', { credentials: 'omit' });
-      if (!http.ok) throw await httpError(http, '职业教材目录没有返回。');
-      const result = await http.json();
+      const result = await readLearningPayload(http, '职业教材目录没有返回。');
       if (careerState.requestId !== requestId) return;
       const version = result?.career?.contentVersion || result?.catalog?.corpusVersion || '';
-      if (result?.career?.careerId !== careerId || !validCareerCatalog(result.catalog, version) || result.catalog.matchesManifest !== true) throw Error('职业教材来源与清单不一致，已停止显示正文。');
-      careerState = { ...careerState, status: 'ready', phase: 'ready', career: result.career, catalog: result.catalog, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), error: '', contentMismatch: false, startedAt: 0, loadingChapterId: '' };
+      if (result?.career?.careerId !== careerId || !validCareerCatalog(result.catalog, version) || result.catalog.matchesManifest !== true) throw Object.assign(Error('职业教材来源与清单不一致，已停止显示正文。'), { kind: 'missing' });
+      noteFixtureSession(false);
+      careerState = { ...careerState, status: 'ready', phase: 'ready', career: result.career, catalog: result.catalog, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), chapterErrorKinds: new Map(), error: '', errorKind: '', contentMismatch: false, startedAt: 0, loadingChapterId: '' };
       redrawCareerView();
     } catch (error) {
       if (careerState.requestId !== requestId) return;
       const mismatch = isContentVersionMismatch(error);
       if (mismatch) noteContentVersionMismatch({ code: error.code, message: error.message });
-      careerState = { ...careerState, status: 'error', phase: 'error', error: mismatch ? contentUpdateCopy().detail : (error?.message || '职业教材目录加载失败。'), contentMismatch: mismatch, catalog: null, chapters: new Map(), startedAt: 0, loadingChapterId: '' };
+      const kind = mismatch ? 'content-refresh' : classifyLearningError(error);
+      if (kind === 'fixture') noteFixtureSession(true);
+      careerState = { ...careerState, status: 'error', phase: 'error', error: mismatch ? contentUpdateCopy().detail : (error?.message || '职业教材目录加载失败。'), errorKind: kind, contentMismatch: mismatch, catalog: null, chapters: new Map(), chapterErrorKinds: new Map(), startedAt: 0, loadingChapterId: '' };
       redrawCareerView();
     }
   }
@@ -401,29 +404,31 @@
       const route = careerRoute();
       if (route && !session?.user) { await loadPublicCareerCatalog(route.careerId); return; }
       const authenticated = Boolean(session?.user);
-      careerState = { status: authenticated ? 'error' : 'anonymous', phase: 'idle', active: authenticated, careerId: '', career: null, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), error: authenticated ? '当前账户没有可用职业，无法加载课程内容。' : '', requestId: careerState.requestId + 1, startedAt: 0, firstLoad: false, loadingChapterId: '' };
+      careerState = { status: authenticated ? 'error' : 'anonymous', phase: 'idle', active: authenticated, careerId: '', career: null, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), chapterErrorKinds: new Map(), error: authenticated ? '当前账户没有可用职业，无法加载课程内容。' : '', errorKind: '', requestId: careerState.requestId + 1, startedAt: 0, firstLoad: false, loadingChapterId: '' };
       redrawCareerView();
       return;
     }
     const requestId = careerState.requestId + 1;
     careerController = typeof AbortController === 'function' ? new AbortController() : null;
-    careerState = { status: 'loading', phase: 'connecting', active: true, careerId, career: { ...career }, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), error: '', requestId, startedAt: Date.now(), firstLoad: !loadMarker(careerId), loadingChapterId: '' };
+    careerState = { status: 'loading', phase: 'connecting', active: true, careerId, career: { ...career }, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), chapterErrorKinds: new Map(), error: '', errorKind: '', requestId, startedAt: Date.now(), firstLoad: !loadMarker(careerId), loadingChapterId: '' };
     redrawCareerView();
     scheduleCareerPhase(requestId);
     const timeout = setTimeout(() => careerController?.abort(), CAREER_LOAD_TIMEOUT);
     try {
-      if (location.protocol === 'file:') throw Error('当前页面需要通过本地服务加载当前职业教材。');
+      if (location.protocol === 'file:') throw Object.assign(Error('当前页面需要通过本地服务加载当前职业教材。'), { kind: 'network', code: 'static_page' });
       const api = globalThis.RolecraftAuthCareer?.api;
-      if (typeof api !== 'function') throw Error('职业账户服务尚未就绪。');
+      if (typeof api !== 'function') throw Object.assign(Error('职业账户服务尚未就绪。'), { kind: 'network' });
       const result = await api('/api/careers/' + encodeURIComponent(careerId) + '/content', { signal: careerController?.signal });
+      if (isFixtureResponse(result)) throw Object.assign(Error('当前连到验收夹具'), { kind: 'fixture', code: 'qa_fixture', fixture: true, payload: result });
       if (careerState.requestId !== requestId) return;
       const catalog = result?.catalog;
       const contentVersion = result?.career?.contentVersion || '';
-      if (!validCareerCatalog(catalog, contentVersion) || result?.career?.careerId !== careerId) throw Error('当前职业教材目录不完整或版本不受支持。');
-      if (contentVersion !== CURRENT && catalog.matchesManifest !== true) throw Error('当前职业教材来源与清单不一致，已停止显示正文。');
+      if (!validCareerCatalog(catalog, contentVersion) || result?.career?.careerId !== careerId) throw Object.assign(Error('当前职业教材目录不完整或版本不受支持。'), { kind: 'missing' });
+      if (contentVersion !== CURRENT && catalog.matchesManifest !== true) throw Object.assign(Error('当前职业教材来源与清单不一致，已停止显示正文。'), { kind: 'missing' });
       const chapters = new Map();
       for (const u of catalog.units) if (u.bodyMarkdown && Array.isArray(u.sections) && u.sections.some(s => s.bodyMarkdown)) chapters.set(u.unitId, { unit: u });
-      careerState = { ...careerState, status: 'ready', phase: 'ready', career: { ...career, ...result.career }, catalog, chapters, chapterRequests: new Map(), chapterErrors: new Map(), error: '', contentMismatch: false, startedAt: 0, loadingChapterId: '' };
+      noteFixtureSession(false);
+      careerState = { ...careerState, status: 'ready', phase: 'ready', career: { ...career, ...result.career }, catalog, chapters, chapterRequests: new Map(), chapterErrors: new Map(), chapterErrorKinds: new Map(), error: '', errorKind: '', contentMismatch: false, startedAt: 0, loadingChapterId: '' };
       markLoaded(careerId);
       redrawCareerView();
       syncAccountRecords();
@@ -432,7 +437,9 @@
       const mismatch = isContentVersionMismatch(error);
       if (mismatch) noteContentVersionMismatch({ code: error.code, message: error.message });
       const message = error?.name === 'AbortError' ? '学习服务响应时间较长，请确认本地服务仍在运行后重试。' : (mismatch ? contentUpdateCopy().detail : (error?.message || '当前职业教材加载失败。'));
-      careerState = { ...careerState, status: 'error', phase: 'error', error: message, contentMismatch: mismatch, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), startedAt: 0, loadingChapterId: '' };
+      const kind = mismatch ? 'content-refresh' : classifyLearningError(error);
+      if (kind === 'fixture') noteFixtureSession(true);
+      careerState = { ...careerState, status: 'error', phase: 'error', error: message, errorKind: kind, contentMismatch: mismatch, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), chapterErrorKinds: new Map(), startedAt: 0, loadingChapterId: '' };
       redrawCareerView();
     } finally {
       clearTimeout(timeout);
@@ -453,13 +460,16 @@
         const api = globalThis.RolecraftAuthCareer?.api;
         const result = typeof api === 'function'
           ? await api(endpoint, { signal: chapterController?.signal })
-          : await fetch(endpoint, { credentials: 'omit', signal: chapterController?.signal }).then(async http => { if (!http.ok) throw await httpError(http, '当前章节没有返回'); return http.json(); });
+          : await fetch(endpoint, { credentials: 'omit', signal: chapterController?.signal }).then(http => readLearningPayload(http, '当前章节没有返回'));
+        if (isFixtureResponse(result)) throw Object.assign(Error('当前连到验收夹具'), { kind: 'fixture', code: 'qa_fixture', fixture: true, payload: result });
         const chapter = result?.chapter;
         if (careerState.requestId !== requestId) return;
         const expectedVersion = careerState.career?.contentVersion || CURRENT;
-        if (!chapter?.unit || chapter.unit.unitId !== unitId || chapter.corpusVersion !== expectedVersion || chapter.corpusHash !== careerState.catalog?.corpusHash || typeof chapter.unit.bodyMarkdown !== 'string' || !Array.isArray(chapter.unit.sections)) throw Error('当前章节内容不完整，无法显示。');
+        if (!chapter?.unit || chapter.unit.unitId !== unitId || chapter.corpusVersion !== expectedVersion || chapter.corpusHash !== careerState.catalog?.corpusHash || typeof chapter.unit.bodyMarkdown !== 'string' || !Array.isArray(chapter.unit.sections)) throw Object.assign(Error('当前章节内容不完整，无法显示。'), { kind: 'missing' });
+        noteFixtureSession(false);
         careerState.chapters.set(unitId, chapter);
         careerState.chapterErrors.delete(unitId);
+        careerState.chapterErrorKinds?.delete(unitId);
         careerState.loadingChapterId = '';
         redrawCareerView();
       } catch (error) {
@@ -467,8 +477,12 @@
         if (isContentVersionMismatch(error)) {
           noteContentVersionMismatch({ code: error.code, message: error.message });
           careerState.contentMismatch = true;
-          careerState.chapterErrors.set(unitId, contentUpdateCopy().detail);
-        } else careerState.chapterErrors.set(unitId, error?.name === 'AbortError' ? '本章响应时间较长，请重试。' : (error?.message || '当前章节加载失败。'));
+          rememberChapterError(unitId, 'content-refresh', contentUpdateCopy().detail);
+        } else {
+          const kind = classifyLearningError(error);
+          if (kind === 'fixture') noteFixtureSession(true);
+          rememberChapterError(unitId, kind, error?.name === 'AbortError' ? '本章响应时间较长，请重试。' : (error?.message || '当前章节加载失败。'));
+        }
         careerState.loadingChapterId = '';
         redrawCareerView();
       } finally {
@@ -565,12 +579,84 @@
     return error?.code === 'content_version_mismatch' || error?.code === 'career_version_mismatch' || error?.message === '问答与阅读资源的版本不一致，请重新加载。';
   }
   function careerErrorAction() { return careerState.contentMismatch ? 'content-refresh' : 'reload'; }
-  async function httpError(http, fallback) {
+  function isFixtureResponse(payload, headers) {
+    const headerValue = typeof headers?.get === 'function' ? headers.get('X-RoleCraft-QA-Fixture') : '';
+    if (String(headerValue || '').trim() === '1') return true;
+    if (!payload || typeof payload !== 'object') return false;
+    if (payload.fixture === true || payload.error === 'qa_fixture' || payload.code === 'qa_fixture' || payload.marker === 'ISOLATED QA FIXTURE') return true;
+    const err = payload.error;
+    if (typeof err === 'string') return err === 'qa_fixture' || err === 'qa_route_unavailable' || err.includes('ISOLATED QA FIXTURE');
+    if (err && typeof err === 'object') {
+      if (err.fixture === true || err.code === 'qa_fixture' || err.code === 'qa_route_unavailable' || err.error === 'qa_fixture') return true;
+      const message = String(err.message || '');
+      if (message.includes('Not provided by isolated QA fixture') || message.includes('ISOLATED QA FIXTURE')) return true;
+    }
+    return false;
+  }
+  function noteFixtureSession(active) {
+    fixtureSession = Boolean(active);
+    syncFixtureBanner();
+  }
+  function classifyLearningError(error) {
+    if (!error) return 'missing';
+    if (error.kind === 'fixture' || error.fixture === true || error.code === 'qa_fixture' || isFixtureResponse(error.payload, error.headers)) return 'fixture';
+    if (error.kind === 'content-refresh' || isContentVersionMismatch(error)) return 'content-refresh';
+    if (error.kind === 'network' || error.name === 'AbortError' || error.code === 'network_error' || error.code === 'static_page') return 'network';
+    if (error.kind === 'route' || error.status === 405 || error.code === 'method_not_allowed') return 'route';
+    if (error.kind === 'missing' || error.status === 404 || error.code === 'not_found' || error.code === 'unit_not_found' || error.code === 'section_not_found') return 'missing';
+    if (error.status >= 500) return 'network';
+    return inferLearningErrorKind(error.message) || (error.status ? 'missing' : 'network');
+  }
+  function inferLearningErrorKind(message) {
+    const text = String(message || '');
+    if (/验收夹具|qa_fixture|ISOLATED QA FIXTURE|qa_route_unavailable/.test(text)) return 'fixture';
+    if (/暂未接入|页面暂不可用|即将支持|未开放/.test(text)) return 'route';
+    if (/本地服务|响应时间较长|网络|连不上|超时/.test(text)) return 'network';
+    if (/没有完整加载|章节不属于|前置章节|尚未加载|无法核对|没有返回|不完整|找不到/.test(text)) return 'missing';
+    return '';
+  }
+  async function readLearningPayload(http, fallback) {
     const payload = await http.json().catch(() => null);
-    const error = Error(payload?.error?.message || fallback);
-    error.status = http.status;
-    error.code = payload?.error?.code || '';
-    return error;
+    if (isFixtureResponse(payload, http.headers)) {
+      noteFixtureSession(true);
+      throw Object.assign(Error('当前连到验收夹具'), { status: http.status, code: 'qa_fixture', kind: 'fixture', fixture: true, payload });
+    }
+    if (!http.ok) {
+      const code = payload?.error?.code || '';
+      const kind = http.status === 405 || code === 'method_not_allowed' ? 'route' : http.status >= 500 ? 'network' : 'missing';
+      throw Object.assign(Error(payload?.error?.message || fallback), { status: http.status, code, payload, kind });
+    }
+    return payload;
+  }
+  function rememberChapterError(unitId, kind, message) {
+    if (!careerState.chapterErrorKinds) careerState.chapterErrorKinds = new Map();
+    careerState.chapterErrors.set(unitId, message);
+    careerState.chapterErrorKinds.set(unitId, kind);
+  }
+  function ensureFixtureBanner() {
+    let node = document.getElementById('lw-fixture-banner');
+    if (node) return node;
+    if (!document.body) return null;
+    node = document.createElement('div');
+    node.id = 'lw-fixture-banner';
+    node.className = 'lw-fixture-banner';
+    node.setAttribute('role', 'status');
+    node.setAttribute('aria-live', 'polite');
+    node.hidden = true;
+    node.innerHTML = '<strong>验收夹具 · 非学习环境</strong><span>当前响应来自隔离验收夹具，不是正式教材服务。</span>';
+    const topbar = document.querySelector('main .topbar');
+    if (topbar?.parentNode) topbar.parentNode.insertBefore(node, topbar.nextSibling);
+    else document.body.insertBefore(node, document.body.firstChild || null);
+    return node;
+  }
+  function syncFixtureBanner() {
+    const node = ensureFixtureBanner();
+    if (!node) return;
+    node.hidden = !fixtureSession;
+  }
+  async function httpError(http, fallback) {
+    try { return await readLearningPayload(http, fallback); }
+    catch (error) { throw error; }
   }
   function localContentIdentity() {
     const bundled = globalThis.RolecraftContentV13;
@@ -751,10 +837,25 @@
       try {
         let payload = null;
         const identityHttp = await fetch('/api/content/identity', { cache: 'no-store', credentials: 'omit' });
-        if (identityHttp?.ok) payload = await identityHttp.json();
-        else if (identityHttp?.status === 404) {
+        const identityPayload = await identityHttp.json().catch(() => null);
+        if (isFixtureResponse(identityPayload, identityHttp.headers)) {
+          noteFixtureSession(true);
+          return contentCutoverState();
+        }
+        if (identityHttp?.ok) {
+          payload = identityPayload;
+          noteFixtureSession(false);
+        } else if (identityHttp?.status === 404) {
           const health = await fetch('/api/health', { cache: 'no-store', credentials: 'omit' });
-          if (health?.ok) payload = await health.json();
+          const healthPayload = await health.json().catch(() => null);
+          if (isFixtureResponse(healthPayload, health.headers)) {
+            noteFixtureSession(true);
+            return contentCutoverState();
+          }
+          if (health?.ok) {
+            payload = healthPayload;
+            noteFixtureSession(false);
+          }
         }
         const server = normalizeServerIdentity(payload);
         if (server && (server.contentVersion || server.corpusHash)) {
@@ -944,13 +1045,24 @@
     const steps = labels.map((label, index) => '<li class="' + (index < activeIndex ? 'is-done ' : '') + (index === activeIndex ? 'is-active' : '') + '"><span aria-hidden="true">' + (index < activeIndex ? '✓' : String(index + 1)) + '</span>' + label + '</li>').join('');
     return heading('职业学习', title, esc(description)) + '<section class="lw-loading-card" role="status" aria-live="polite" aria-atomic="true"><div class="lw-loading-mark" aria-hidden="true"><span></span></div><div class="lw-loading-copy"><strong>' + esc(labels[activeIndex]) + '…</strong><p>' + esc(firstLoad && !chapter ? '这是首次准备教材，内容较多，等待期间可以先不要操作。' : '连接保持中，完成后会自动显示内容。') + '</p><div class="lw-loading-track" aria-hidden="true"><span></span></div><ol class="lw-loading-steps">' + steps + '</ol></div></section><p class="lw-loading-note">如果超过两分钟仍没有变化，请确认本地学习服务正在运行，再使用失败页上的重试。</p>';
   }
-  function errorPage(message, action = 'reload') {
-    const retry = action === 'chapter'
-      ? '<button class="outline" data-lw-retry-chapter="' + esc(careerState.loadingChapterId || loc().unitId) + '">重试本章</button>'
-      : action === 'content-refresh'
-        ? contentUpdateMarkup('alert')
-        : '<button class="outline" data-lw-reload>重新加载</button>';
-    return heading('教材阅读', action === 'content-refresh' ? '教材已更新' : '教材资源暂不可用', esc(message)) + retry + (action === 'content-refresh' ? '' : '<a class="outline" href="#learn">返回课程学习</a>');
+  function learningErrorCard(kind) {
+    const states = {
+      missing: { title: '这篇教材暂时找不到', body: '可能尚未发布或链接失效。这不是登录问题。', primary: '<a class="primary" href="#learn">返回课程学习</a>', secondary: '<button type="button" class="outline" data-lw-reload>重新加载</button>' },
+      network: { title: '暂时连不上学习服务', body: '请检查网络后重试。若刚换过地址，确认学习服务基址。', primary: '<button type="button" class="primary" data-lw-reload>重新加载</button>', secondary: '<a class="outline" href="#learn">返回课程学习</a>' },
+      fixture: { title: '当前连到验收夹具', body: '这不是正式学习内容。夹具响应不能当作教材缺失。请改回学习服务地址，或联系验收同学清理夹具。', primary: '<button type="button" class="primary" data-lw-fixture-help>查看如何改回学习服务</button>', secondary: '<button type="button" class="outline" data-lw-reload>仍要重新加载</button><small class="lw-error-note">通常无效</small>' },
+      route: { title: '暂未开放', body: '即将支持。当前不能在这里完成该功能，也不会记为已开通。', primary: '<a class="primary" href="#learn">前往课程学习</a>', secondary: '<a class="outline" href="#questions">前往题库</a>' }
+    };
+    const spec = states[kind];
+    if (!spec) return '';
+    if (typeof console !== 'undefined' && console.info) console.info('[rolecraft] internal_label=教材资源暂不可用 state=%s', kind);
+    const help = kind === 'fixture' ? '<section id="lw-fixture-help" class="lw-fixture-help" hidden tabindex="-1"><h2>改回学习服务</h2><ol><li>确认地址栏基址是学习服务。本地默认是 http://127.0.0.1:4318（ROLECRAFT_PORT）。不要把页面开在验收夹具端口上。</li><li>已知残留端口是 4556 和 4557。允许启动的夹具只绑定 127.0.0.1，并使用随机高端口；启动输出会标明 ISOLATED QA FIXTURE、端口和 PID。</li><li>请验收同学停止命令行含 qa-isolated 的进程，并运行 sites/rolecraft/scripts/qa-env-guard.sh 确认端口和进程已清空。</li><li>改回学习服务基址后再打开教材。在夹具端口上重新加载通常无效。</li></ol></section>' : '';
+    return '<section class="lw-error-card lw-error-' + kind + '" role="alert" data-lw-error="' + kind + '"><h1>' + esc(spec.title) + '</h1><p>' + esc(spec.body) + '</p><div class="lw-error-actions">' + spec.primary + spec.secondary + '</div>' + help + '</section>';
+  }
+  function errorPage(message, action = 'reload', kind) {
+    if (action === 'content-refresh' || kind === 'content-refresh') return heading('教材阅读', '教材已更新', esc(message)) + contentUpdateMarkup('alert');
+    const resolved = ['missing', 'network', 'fixture', 'route'].includes(kind) ? kind : inferLearningErrorKind(message);
+    if (resolved) return learningErrorCard(resolved);
+    return '<section class="lw-error-card" role="status"><h1>' + esc(message || '当前内容无法显示') + '</h1><div class="lw-error-actions"><a class="primary" href="#learn">返回课程学习</a></div></section>';
   }
   function startSelect() {
     return '<div class="lw-start"><label for="lw-starting-point">我的学习起点</label><select id="lw-starting-point"><option value="">尚未选择</option>' + Object.entries(STARTS).map(([id, label]) => '<option value="' + id + '"' + (local.startingPoint === id ? ' selected' : '') + '>' + label + '</option>').join('') + '</select><span>自选起点只记录阅读偏好</span></div>';
@@ -973,9 +1085,9 @@
   }
   function homePage(routeOnly = false) {
     if (!corpus()) {
-      if (careerRoute()) return practiceLoopCard() + (careerState.status === 'error' ? errorPage(careerState.error || '当前职业教材没有完整加载。', careerErrorAction()) : loadingPage());
+      if (careerRoute()) return practiceLoopCard() + (careerState.status === 'error' ? errorPage(careerState.error || '当前职业教材没有完整加载。', careerErrorAction(), careerState.errorKind || 'missing') : loadingPage());
       if (careerState.active && careerState.status === 'loading') return loadingPage();
-      return errorPage(careerState.active ? (careerState.error || '当前职业教材没有完整加载；不会用 Agent 教材替代。') : '当前 v13 教材包没有完整加载；不会使用其他版本替代。', careerState.active ? careerErrorAction() : 'reload');
+      return errorPage(careerState.active ? (careerState.error || '当前职业教材没有完整加载；不会用 Agent 教材替代。') : '当前 v13 教材包没有完整加载；不会使用其他版本替代。', careerState.active ? careerErrorAction() : 'reload', careerState.active ? (careerState.errorKind || 'missing') : 'missing');
     }
     const progress = learningProgress(), latest = progress.latest, first = progress.first;
     const graphSection = first.sections.find(s => s.title === '一套可交付系统还需要哪些工程工作');
@@ -994,16 +1106,17 @@
   function readerPage() {
     const location = loc(), c = corpus(location.version);
     if (!c) {
-      if (careerRoute()) return practiceLoopCard() + (careerState.status === 'error' ? errorPage(careerState.error || '当前职业教材没有完整加载。', careerErrorAction()) : loadingPage());
+      if (careerRoute()) return practiceLoopCard() + (careerState.status === 'error' ? errorPage(careerState.error || '当前职业教材没有完整加载。', careerErrorAction(), careerState.errorKind || 'missing') : loadingPage());
       if (careerState.active && careerState.status === 'loading') return loadingPage();
-      return errorPage('当前 v13 教材没有完整加载；不会替换为其他来源。');
+      return errorPage('当前 v13 教材没有完整加载；不会替换为其他来源。', 'reload', 'missing');
     }
     if (!location.unitId) return homePage(true);
-    const u = unit(location.unitId, location.version); if (!u) return errorPage('请求的章节不属于所选教材版本。');
+    const u = unit(location.unitId, location.version); if (!u) return errorPage('请求的章节不属于所选教材版本。', 'reload', 'missing');
     if (dynamicCareer() && (!u.bodyMarkdown || !Array.isArray(u.sections) || u.sections.some(s => !s.bodyMarkdown))) {
       const chapterError = careerState.chapterErrors.get(location.unitId);
+      const chapterKind = careerState.chapterErrorKinds?.get(location.unitId) || 'missing';
       if (!chapterError) requestCareerChapter(location.unitId);
-      return chapterError ? errorPage(chapterError, careerState.contentMismatch ? 'content-refresh' : 'chapter') : loadingPage('chapter');
+      return chapterError ? errorPage(chapterError, careerState.contentMismatch ? 'content-refresh' : 'chapter', careerState.contentMismatch ? 'content-refresh' : chapterKind) : loadingPage('chapter');
     }
     const s = section(u, location.sectionId), index = c.units.indexOf(u);
     const hiddenRanges = hiddenLearningContinuity(u), hiddenSection = id => hiddenRanges.some(range => range.sectionIds.includes(id));
@@ -1011,14 +1124,14 @@
     const bookmark = local.bookmarks.some(b => currentRecord(b) && b.unitId === u.unitId && b.sectionId === (s?.sectionId || ''));
     const missingLocation = location.sectionId && !s ? '<div class="lw-message" role="alert">这处教材位置在当前版本中不可用。可<a href="' + href(u) + '">打开本章</a>。</div>' : '';
     const prerequisites = Array.isArray(u.prerequisiteUnitIds) ? u.prerequisiteUnitIds.map(id => unit(id, location.version)) : dynamicCareer() ? [] : null;
-    if (!prerequisites || prerequisites.some(p => !p)) return errorPage('本篇前置章节来源无法核对，请重新加载教材。');
+    if (!prerequisites || prerequisites.some(p => !p)) return errorPage('本篇前置章节来源无法核对，请重新加载教材。', 'reload', 'missing');
     const prereqLabel = prerequisites.length ? '需掌握的前置 · ' + prerequisites.length + ' 篇' : '需掌握的前置：无';
     const priorHTML = '<aside class="lw-prerequisites" id="lw-prerequisites" aria-labelledby="lw-prereq-title"><h2 id="lw-prereq-title" tabindex="-1">需掌握的前置</h2>' + (prerequisites.length ? '<ul>' + prerequisites.map(p => '<li><a href="' + esc(href(p)) + '">' + esc(p.navigationLabel) + '</a></li>').join('') + '</ul>' : '<p>无前置章节</p>') + '</aside>';
     const noteArea = '<section class="lw-note-area"><h2>我的阅读笔记</h2><p>只保存在此浏览器，记录本篇疑问与实际尝试。</p><label for="lw-note">本篇笔记</label><textarea id="lw-note" rows="5" maxlength="12000">' + esc(noteText(u)) + '</textarea><button class="primary" data-lw-save-note>保存笔记</button></section>';
     return '<div class="lw-reader-layout lw-detail"><div class="lw-reader-top" id="lw-reader-start" tabindex="-1"><a href="#learn">← 返回课程</a><span>' + esc(u.navigationLabel) + '</span></div>' + missingLocation + hiddenNotice + '<div class="lw-prereq-strip" id="lw-prereq-strip"><span>' + esc(prereqLabel) + '</span>' + (prerequisites.length ? '<button type="button" data-lw-prereq-location aria-label="查看需掌握的前置章节">查看章节</button>' : '') + '</div><div class="lw-reader-columns">' + priorHTML + '<div class="lw-reading"><details class="lw-section-toc"><summary>本篇小节</summary><ul>' + u.sections.filter(s => s.level > 1 && !hiddenSection(s.sectionId)).map(s => '<li class="lw-level-' + s.level + '"><a href="' + href(u, s.sectionId) + '">' + esc(s.title) + '</a></li>').join('') + '</ul></details><article class="lw-prose" aria-label="' + esc(u.title) + '">' + markdown(u, true) + '</article><div class="lw-reader-tools"><button class="outline" data-lw-bookmark>' + (bookmark ? '已收藏此位置 · 取消' : '收藏当前阅读位置') + '</button><button class="outline" type="button" data-lw-interrupt>中断并保存位置</button></div>' + noteArea + '<nav class="lw-pagination" aria-label="相邻篇章">' + (index > 0 ? '<a href="' + href(c.units[index - 1]) + '">← 上一篇<br><strong>' + esc(c.units[index - 1].navigationLabel) + '</strong></a>' : '<a href="#learn">返回课程</a>') + (index < c.units.length - 1 ? '<a href="' + href(c.units[index + 1]) + '">下一篇 →<br><strong>' + esc(c.units[index + 1].navigationLabel) + '</strong></a>' : '<a href="#projects">带着作品复盘 →</a>') + '</nav></div></div></div>';
   }
   function projectsPage() {
-    if (!corpus()) return careerState.active && careerState.status === 'loading' ? loadingPage() : errorPage('项目章节指引尚未加载。');
+    if (!corpus()) return careerState.active && careerState.status === 'loading' ? loadingPage() : errorPage('项目章节指引尚未加载。', careerState.errorKind === 'content-refresh' ? 'content-refresh' : 'reload', careerState.errorKind || 'missing');
     const labels = { title: '我的项目名称', problem: '要解决的真实问题', evidence: '用户、现有方案与比较证据', result: '已取得的实际结果与作品位置', gap: '未达标准的部分与原因', next: '下一步、责任人与复验方法' };
     const selfReport = Object.values(local.project).some(value => asText(value).trim()) ? '自述已填写' : '自述待填写';
     const runtimeEvidence = asText(local.project.evidence).trim() || asText(local.project.result).trim() ? '运行证据：已提供' : '运行证据：缺失';
@@ -1037,7 +1150,7 @@
     return heading('实作与作品', '项目工坊', '先从一个版本化练习开始，再把证据、反馈和下一步分开保存。') + p01Form + '<div class="lw-project-layout"><section class="lw-project-form"><h2>我的项目档案</h2><p>记录保存在此浏览器，链接不自动访问或运行。</p><div class="lw-evidence-status" aria-label="项目证据状态"><span class="lw-evidence-chip self">' + selfReport + '</span><span class="lw-evidence-chip ' + (runtimeEvidence.endsWith('已提供') ? 'present' : 'missing') + '">' + runtimeEvidence + '</span><span class="lw-evidence-chip pending">独立评价：未开始</span></div>' + Object.entries(labels).map(([id, label]) => '<label for="lw-project-' + id + '">' + label + '</label>' + (id === 'title' ? '<input id="lw-project-' + id + '" data-lw-project="' + id + '" maxlength="12000" value="' + esc(local.project[id]) + '">' : '<textarea id="lw-project-' + id + '" data-lw-project="' + id + '" rows="4" maxlength="12000">' + esc(local.project[id]) + '</textarea>')).join('') + '<button class="primary" data-lw-save-project>保存项目档案</button><button class="outline" data-lw-export>导出记录</button><p class="lw-small">自述资料与运行证据分别记录；独立评价和专业审核不会由本页面自动完成。</p></section><aside class="lw-project-guide"><h2>按教材推进实作</h2>' + STAGES.map(st => '<section><h3>' + st.title + '</h3><p>' + st.output + '</p>' + st.ids.map(id => unitLink(unit(id))).join('') + '</section>').join('') + '<a href="#product-review">进入产品达标复盘 →</a><a href="#projects-history">查看历史项目记录 →</a></aside></div>';
   }
   function recordsPage() {
-    if (!corpus()) return careerState.active && careerState.status === 'loading' ? loadingPage() : errorPage(careerState.active ? (careerState.error || '当前职业教材没有完整加载，暂时无法核对学习记录。') : '教材版本未加载，无法核对记录中的阅读位置。', careerState.active ? careerErrorAction() : 'reload');
+    if (!corpus()) return careerState.active && careerState.status === 'loading' ? loadingPage() : errorPage(careerState.active ? (careerState.error || '当前职业教材没有完整加载，暂时无法核对学习记录。') : '教材版本未加载，无法核对记录中的阅读位置。', careerState.active ? careerErrorAction() : 'reload', careerState.active ? (careerState.errorKind || 'missing') : 'missing');
     const visits = local.visits.filter(currentRecord).slice(-20).reverse(), bookmarks = local.bookmarks.filter(currentRecord);
     const link = v => '<a href="' + href(unit(v.unitId), v.sectionId) + '">' + esc(unit(v.unitId).navigationLabel) + (v.sectionId ? ' · ' + esc(section(unit(v.unitId), v.sectionId)?.title) : '') + '</a>';
     const history = dynamicCareer() ? '<p class="lw-small">当前职业记录按职业隔离；切换回原职业后再查看其他职业的记录。</p>' : '';
@@ -1301,11 +1414,15 @@
       });
     }
   }
-  function beforeRender() { captureNotes(); }
+  function beforeRender() { captureNotes(); syncFixtureBanner(); }
   function shouldDelegateView(view) { return careerState.active && (dynamicCareer() || careerState.status !== 'ready') && ['home', 'path', 'learn', 'records', 'projects', 'settings'].includes(view); }
   function page(view) {
-    if (careerState.active && (dynamicCareer() || careerState.status !== 'ready') && !['home', 'path', 'learn', 'records'].includes(view)) return errorPage('当前职业教材已加载；该区域暂未接入当前职业内容。');
-    return ({ home: () => homePage(), path: () => homePage(true), learn: readerPage, records: recordsPage, projects: projectsPage }[view] || (() => errorPage('页面暂不可用。')))();
+    if (careerState.active && (dynamicCareer() || careerState.status !== 'ready') && !['home', 'path', 'learn', 'records'].includes(view)) {
+      if (careerState.errorKind === 'fixture' || fixtureSession) return errorPage(careerState.error, 'reload', 'fixture');
+      if (careerState.status !== 'ready' && ['network', 'missing', 'content-refresh'].includes(careerState.errorKind)) return errorPage(careerState.error, careerErrorAction(), careerState.errorKind);
+      return errorPage('当前职业教材已加载；该区域暂未接入当前职业内容。', 'route', 'route');
+    }
+    return ({ home: () => homePage(), path: () => homePage(true), learn: readerPage, records: recordsPage, projects: projectsPage }[view] || (() => errorPage('页面暂不可用。', 'route', 'route')))();
   }
   document.addEventListener('click', e => {
     const el = e.target.closest('button,a'); if (!el) return;
@@ -1337,9 +1454,16 @@
       return;
     }
     if (el.hasAttribute('data-lw-retry')) { find(submission?.query, submission?.context || currentContext()); return; }
+    if (el.hasAttribute('data-lw-fixture-help')) {
+      e.preventDefault();
+      const panel = document.getElementById('lw-fixture-help');
+      if (panel) { panel.hidden = false; try { panel.focus({ preventScroll: true }); } catch { panel.focus(); } }
+      return;
+    }
     if (el.hasAttribute('data-lw-retry-chapter')) {
       const unitId = el.dataset.lwRetryChapter || loc().unitId;
       careerState.chapterErrors.delete(unitId);
+      careerState.chapterErrorKinds?.delete(unitId);
       careerState.loadingChapterId = '';
       requestCareerChapter(unitId);
       return;
@@ -1424,7 +1548,7 @@
       if (topic && queryHistory.some(h => h.response?.dialog?.status === 'answered' && JSON.stringify(canonicalTopic(h.response.dialog.context)) === JSON.stringify(topic))) dialogTopic = topic;
     }
   } catch { /* A damaged query cache is not used as a recommendation. */ }
-  globalThis.LearningWorkbench = { version: VERSION, agentVersion: DIALOG_AGENT_VERSION, workbenchVersion: WORKBENCH_VERSION, page, mount, beforeRender, markdown, validateResponse, currentContext, refreshAssistant, careerContentState, shouldDelegateView, currentTask, setTask, induceCareerTask, careerTask: careerId => readCareerTask(careerId), careerTaskKey: CAREER_TASK_KEY, practice: () => local.practice, readingRecords: () => local, recordIsCurrent: currentRecord, recordsExportData: () => { captureNotes(); return { current: local }; }, compareContentIdentity, localContentIdentity, applyServerIdentity, noteContentVersionMismatch, probeContentIdentity, snoozeContentUpdate, hardRefreshToNewContent, exportLocalLearningRecords, contentUpdateMarkup, contentCutoverState, stopContentProbes };
+  globalThis.LearningWorkbench = { version: VERSION, agentVersion: DIALOG_AGENT_VERSION, workbenchVersion: WORKBENCH_VERSION, page, mount, beforeRender, markdown, validateResponse, currentContext, refreshAssistant, careerContentState, shouldDelegateView, currentTask, setTask, induceCareerTask, careerTask: careerId => readCareerTask(careerId), careerTaskKey: CAREER_TASK_KEY, practice: () => local.practice, readingRecords: () => local, recordIsCurrent: currentRecord, recordsExportData: () => { captureNotes(); return { current: local }; }, compareContentIdentity, localContentIdentity, applyServerIdentity, noteContentVersionMismatch, probeContentIdentity, snoozeContentUpdate, hardRefreshToNewContent, exportLocalLearningRecords, contentUpdateMarkup, contentCutoverState, stopContentProbes, isFixtureResponse, noteFixtureSession, fixtureSession: () => fixtureSession, learningErrorCard };
   globalThis.addEventListener?.('resize', readerGeometry);
   document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') probeContentIdentity({ reason: 'visible' }); });
   if (typeof setInterval === 'function') {
