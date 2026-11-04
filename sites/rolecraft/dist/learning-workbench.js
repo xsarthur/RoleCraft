@@ -950,7 +950,7 @@
       : action === 'content-refresh'
         ? contentUpdateMarkup('alert')
         : '<button class="outline" data-lw-reload>重新加载</button>';
-    return heading('教材阅读', action === 'content-refresh' ? '教材已更新' : '教材资源暂不可用', esc(message)) + retry + (action === 'content-refresh' ? '' : '<a class="outline" href="#home">返回工作台</a>');
+    return heading('教材阅读', action === 'content-refresh' ? '教材已更新' : '教材资源暂不可用', esc(message)) + retry + (action === 'content-refresh' ? '' : '<a class="outline" href="#learn">返回课程学习</a>');
   }
   function startSelect() {
     return '<div class="lw-start"><label for="lw-starting-point">我的学习起点</label><select id="lw-starting-point"><option value="">尚未选择</option>' + Object.entries(STARTS).map(([id, label]) => '<option value="' + id + '"' + (local.startingPoint === id ? ' selected' : '') + '>' + label + '</option>').join('') + '</select><span>自选起点只记录阅读偏好</span></div>';

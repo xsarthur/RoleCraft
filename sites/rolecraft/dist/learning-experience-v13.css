@@ -93,3 +93,8 @@ pre[tabindex]:focus-visible,.lw-table:focus-visible,.ia-table:focus-visible,.v13
   .lw-figure.lw-figure-pan>button picture,
   .lw-figure.lw-figure-pan>button img{width:100%;min-width:0;max-width:100%;height:auto}
 }
+.v13-pending{max-width:640px;margin:8px auto 0;padding:28px 24px;background:#fff;border:1px dashed #dcd7cc;border-radius:14px}
+.v13-pending-kicker{margin:0 0 8px;color:#87672d;font-size:12px;letter-spacing:.08em}
+.v13-pending h1{margin:0 0 10px;font-size:26px;font-weight:600}
+.v13-pending p{margin:0;color:var(--muted);line-height:1.7}
+.v13-pending .v13-actions{margin-top:18px}
