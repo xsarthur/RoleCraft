@@ -88,3 +88,74 @@
   .lw-figure.lw-figure-pan>button picture,
   .lw-figure.lw-figure-pan>button img{width:100%;min-width:0;max-width:100%;height:auto}
 }
+
+/* Click the figure itself. Ink stroke is the product focus; not a debug outline. */
+.lw-figure>button[data-lw-image]{cursor:pointer}
+.lw-figure>button[data-lw-image]:focus-visible{outline:none;text-decoration:none;box-shadow:inset 0 0 0 3px var(--ink)}
+
+/* Shared lightbox: dark field is the close target. Image panel keeps the paper frame.
+   display:flex must not override the closed dialog, or the panel covers the lesson. */
+#lw-image-dialog:not([open]){display:none}
+#lw-image-dialog[open]{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100dvh;
+  max-width:none;
+  max-height:none;
+  margin:0;
+  padding:max(48px, env(safe-area-inset-top, 0px)) max(32px, env(safe-area-inset-right, 0px)) max(88px, calc(48px + env(safe-area-inset-bottom, 0px))) max(32px, env(safe-area-inset-left, 0px));
+  border:0;
+  border-radius:0;
+  background:#183b2f99;
+  box-sizing:border-box;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  color:var(--ink)
+}
+#lw-image-dialog::backdrop{background:#183b2f99}
+#lw-image-dialog .lw-image-close{
+  position:absolute;
+  width:1px;
+  height:1px;
+  min-width:0;
+  min-height:0;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  clip-path:inset(50%);
+  white-space:nowrap;
+  border:0
+}
+#lw-image-dialog .lw-image-scroll{
+  flex:1 1 auto;
+  min-height:0;
+  max-height:none;
+  overflow:auto;
+  overscroll-behavior:contain;
+  background:#fff;
+  border:1px solid #dce4d7;
+  border-radius:8px;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px
+}
+#lw-image-dialog .lw-image-close:focus-visible+.lw-image-scroll,
+#lw-image-dialog .lw-image-scroll:focus-visible{outline:none;box-shadow:inset 0 0 0 3px var(--ink)}
+#lw-image-dialog .lw-image-scroll img{
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:calc(100dvh - max(48px, env(safe-area-inset-top, 0px)) - max(88px, calc(48px + env(safe-area-inset-bottom, 0px))) - 28px);
+  margin:auto;
+  object-fit:contain
+}
+#lw-image-dialog.is-original .lw-image-scroll img{max-width:100%;max-height:calc(100dvh - max(48px, env(safe-area-inset-top, 0px)) - max(88px, calc(48px + env(safe-area-inset-bottom, 0px))) - 28px);margin:auto}
+@media (prefers-reduced-motion:reduce){
+  #lw-image-dialog,#lw-image-dialog::backdrop{animation:none!important;transition:none!important}
+}
