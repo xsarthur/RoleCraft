@@ -15,21 +15,21 @@ const sandbox={};
 vm.createContext(sandbox);
 vm.runInContext(readFileSync(learningPath,'utf8'),sandbox,{filename:learningPath});
 const data=sandbox.RolecraftLearningV13;
-if(!data||data.questions.length!==114||data.knowledgePoints.length!==240||data.units.length!==30)throw Error('Received learning package shape differs');
+if(!data||data.questions.length!==114||data.knowledgePoints.length!==238||data.units.length!==30)throw Error('Received learning package shape differs');
 const units=new Map(corpus.units.map(unit=>[unit.unitId,unit]));
 const previousUnits=new Map(previous.units.map(unit=>[unit.unitId,unit]));
-const stats={title:0,quote:0,shortened:0,replaced:0,cleared:0,child:0,unmatched:[]};
+const stats={title:0,quote:0,shortened:0,replaced:0,cleared:0,child:0,dropped:0,unmatched:[]};
 const normTitle=value=>value.normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,'');
 const renamed=new Map([
  ['02-task-acceptance\0用同一份记录限制输入和结果','一个统一任务合同'],
  ['02-task-acceptance\0演算四种不同结局','四种结局，用同一张状态卡表达'],
  ['02-task-acceptance\0分开检查产物和过程','三类证据要分开'],
  ['02-task-acceptance\0用反例修任务记录','练习'],
- ['02-task-acceptance\0v12 学习衔接','v13 编辑交接说明'],
+ ['02-task-acceptance\0v12 学习衔接','练习'],
  ['03-trust-boundary\0攻击者能够改什么','统一案例：报告里的越权指令'],
  ['03-trust-boundary\0给每种来源一个具体权限解释','每种来源能做什么'],
  ['03-trust-boundary\0检测与阻断发生在不同位置','机制：在两个边界分别检查'],
- ['03-trust-boundary\0v12 学习衔接','v13 编辑交接说明'],
+ ['03-trust-boundary\0v12 学习衔接','机制：在两个边界分别检查'],
  ['c01-selection\0同一任务 四种控制权','四种方案的控制权'],
  ['c01-selection\0先固定共同任务条件','本章的任务和边界'],
  ['c01-selection\0三种输入暴露不同的必要性','三种输入情形：同一个“缺陷任务”会得到不同结论'],
@@ -42,6 +42,7 @@ const renamed=new Map([
 function grams(text){const n=normTitle(String(text||'')).slice(0,800);const set=new Set();for(let i=0;i<n.length-1;i++)set.add(n.slice(i,i+2));return set;}
 function similarity(a,b){const left=grams(a),right=grams(b);let hit=0;for(const item of left)if(right.has(item))hit++;return left.size?hit/left.size:0;}
 function chooseSection(point,unit){
+ if(/编辑交接说明|易读修订交接/.test(point.title))return null;
  const exact=unit.sections.filter(section=>section.title===point.title);
  if(exact.length)return exact[0];
  const fuzzy=unit.sections.filter(section=>normTitle(section.title)===normTitle(point.title));
@@ -49,7 +50,7 @@ function chooseSection(point,unit){
  const forced=renamed.get(point.unitId+'\0'+point.title);
  if(forced){const section=unit.sections.find(item=>item.title===forced);if(!section)throw Error('Rename target missing: '+forced);return section;}
  if(point.kind==='unit_introduction')return unit.sections.find(section=>section.level===1);
- if(point.kind==='navigation'&&/学习衔接/.test(point.title))return unit.sections.find(section=>/编辑交接|学习衔接/.test(section.title));
+ if(point.kind==='navigation'&&/学习衔接/.test(point.title))return unit.sections.find(section=>section.title==='学习衔接');
  const old=previousUnits.get(point.unitId)?.sections.find(section=>section.sectionId===point.sectionId);
  const ranked=unit.sections.map(section=>({section,score:similarity(old?.searchText||old?.bodyMarkdown||point.title,section.searchText||section.bodyMarkdown)})).sort((a,b)=>b.score-a.score);
  if(ranked[0]&&ranked[0].score>=0.35&&ranked[0].score-(ranked[1]?.score||0)>=0.08)return ranked[0].section;
@@ -90,7 +91,10 @@ for(const point of data.knowledgePoints){
   const alternate=unit.sections.find(item=>item.title===section.title&&!claimed.has(point.unitId+'\0'+item.sectionId));
   if(alternate)section=alternate;
  }
- if(!section){stats.unmatched.push(point.id+':'+point.title);continue;}
+ if(!section){
+  if(/编辑交接说明|易读修订交接/.test(point.title)){point._drop=true;stats.dropped++;continue;}
+  stats.unmatched.push(point.id+':'+point.title);continue;
+ }
  claimed.add(point.unitId+'\0'+section.sectionId);
  const span=sectionSpan(unit,section);
  point.sectionId=section.sectionId;
@@ -105,6 +109,18 @@ for(const point of data.knowledgePoints){
  stats.title++;
 }
 if(stats.unmatched.length)throw Error('Knowledge points did not match v13 headings: '+stats.unmatched.slice(0,12).join(' | '));
+const droppedIds=new Set(data.knowledgePoints.filter(point=>point._drop).map(point=>point.id));
+data.knowledgePoints=data.knowledgePoints.filter(point=>!point._drop);
+for(const record of data.units){
+ if(Array.isArray(record.knowledgePointIds))record.knowledgePointIds=record.knowledgePointIds.filter(id=>!droppedIds.has(id));
+ if(Array.isArray(record.coreKnowledgePointIds))record.coreKnowledgePointIds=record.coreKnowledgePointIds.filter(id=>!droppedIds.has(id));
+}
+for(const question of data.questions){
+ for(const key of ['knowledgeRefs','evidence']){
+  if(!Array.isArray(question[key]))continue;
+  question[key]=question[key].filter(record=>!droppedIds.has(record.knowledgePointId));
+ }
+}
 const points=new Map(data.knowledgePoints.map(point=>[point.id,point]));
 
 function sectionExcerpt(section){

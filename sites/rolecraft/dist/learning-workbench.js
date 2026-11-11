@@ -16,7 +16,7 @@
     unitId: 'p01-mvp',
     textbookVersion: 'textbook-v13',
     sourcePath: 'sites/rolecraft/textbooks/v13/p01-mvp.md',
-    sourceSha256: '472be4f44db9d5900542dfa8602ab430e2dc2b8f286679381bf913642da2e620',
+    sourceSha256: '9a0388bbee78c36a471d293d17a56b7644742955220c481a497d8263974d8214',
     fixtureId: 'defect-mvp-contract-01',
     reviewScope: 'limited_to_constructed_fixture'
   });
@@ -61,7 +61,7 @@
   // chapters; it must never silently fall back to Agent content.
   const AGENT_CAREER_ID = 'agent-developer';
   const CAREER_LOAD_MARKER = 'rolecraft-career-content-ready-v1';
-  const CAREER_LOAD_TIMEOUT = 120000;
+  const CAREER_LOAD_TIMEOUT = 180000;
   let careerController = null, careerPhaseTimer = null;
   let careerState = { status: 'anonymous', phase: 'idle', active: false, careerId: '', career: null, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), chapterErrorKinds: new Map(), error: '', errorKind: '', requestId: 0, startedAt: 0, firstLoad: false, loadingChapterId: '' };
   let fixtureSession = false;
@@ -145,6 +145,13 @@
     return { status: careerState.status, phase: careerState.phase, active: careerState.active, dynamic: dynamicCareer(), careerId: careerState.careerId, career: careerState.career ? { ...careerState.career } : null, error: careerState.error, startedAt: careerState.startedAt, firstLoad: careerState.firstLoad, loadingChapterId: careerState.loadingChapterId, loadedChapterIds: [...careerState.chapters.keys()] };
   }
   function corpus(version) {
+    // A bundled Agent pack is already readable. Do not hide it behind another loader
+    // while the catalog check is still in flight.
+    if (careerState.active && careerState.status === 'loading' && !dynamicCareer() && careerState.careerId === AGENT_CAREER_ID) {
+      const bundled = staticCorpus();
+      const requested = version || CURRENT;
+      if (bundled && requested === CURRENT) return bundled;
+    }
     if (careerState.active) {
       if (careerState.status !== 'ready') return null;
       // Agent remains backed by the verified bundled corpus after its API catalog
@@ -383,13 +390,19 @@
   function markLoaded(careerId) {
     try { localStorage.setItem(CAREER_LOAD_MARKER + ':' + careerId + ':' + CURRENT, '1'); } catch { /* The visible loading state does not depend on storage. */ }
   }
-  function scheduleCareerPhase(requestId) {
+  function watchLoadingCopy() {
     clearTimeout(careerPhaseTimer);
-    careerPhaseTimer = setTimeout(() => {
-      if (careerState.requestId !== requestId || careerState.status !== 'loading') return;
-      careerState = { ...careerState, phase: 'catalog' };
-      redrawCareerView();
-    }, 900);
+    const tick = () => {
+      const loading = careerState.status === 'loading' || Boolean(careerState.loadingChapterId);
+      if (!loading) return;
+      const aux = document.querySelector('[data-lw-load-aux]');
+      const started = careerState.loadingChapterId ? careerState.chapterStartedAt : careerState.startedAt;
+      if (aux && started && Date.now() - started >= 120000 && aux.textContent !== '若等待超过两分钟仍无变化，请检查网络后重试。') {
+        aux.textContent = '若等待超过两分钟仍无变化，请检查网络后重试。';
+      }
+      careerPhaseTimer = setTimeout(tick, 4000);
+    };
+    careerPhaseTimer = setTimeout(tick, 4000);
   }
   function setCareerState(next) {
     const previous = careerState;
@@ -410,6 +423,7 @@
     const requestId = careerState.requestId + 1;
     careerState = { status: 'loading', phase: 'catalog', active: true, careerId, career: { careerId, title: '', summary: '', contentVersion: '' }, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), chapterErrorKinds: new Map(), error: '', errorKind: '', requestId, startedAt: Date.now(), firstLoad: false, loadingChapterId: '' };
     redrawCareerView();
+    watchLoadingCopy();
     try {
       if (location.protocol === 'file:') throw Object.assign(Error('当前页面需要通过本地服务加载职业教材。'), { kind: 'network', code: 'static_page' });
       const http = await fetch('/api/careers/' + encodeURIComponent(careerId) + '/content/catalog', { credentials: 'omit' });
@@ -456,7 +470,7 @@
     careerController = typeof AbortController === 'function' ? new AbortController() : null;
     careerState = { status: 'loading', phase: 'connecting', active: true, careerId, career: { ...career }, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), chapterErrorKinds: new Map(), error: '', errorKind: '', requestId, startedAt: Date.now(), firstLoad: !loadMarker(careerId), loadingChapterId: '' };
     redrawCareerView();
-    scheduleCareerPhase(requestId);
+    watchLoadingCopy();
     const timeout = setTimeout(() => careerController?.abort(), CAREER_LOAD_TIMEOUT);
     try {
       if (location.protocol === 'file:') throw Object.assign(Error('当前页面需要通过本地服务加载当前职业教材。'), { kind: 'network', code: 'static_page' });
@@ -481,7 +495,7 @@
       if (careerState.requestId !== requestId) return;
       const mismatch = isContentVersionMismatch(error);
       if (mismatch) noteContentVersionMismatch({ code: error.code, message: error.message });
-      const message = error?.name === 'AbortError' ? '学习服务响应时间较长，请确认本地服务仍在运行后重试。' : (mismatch ? contentUpdateCopy().detail : (error?.message || '当前职业教材加载失败。'));
+      const message = error?.name === 'AbortError' ? '学习服务响应时间较长，请检查网络后重试。' : (mismatch ? contentUpdateCopy().detail : (error?.message || '当前职业教材加载失败。'));
       const kind = mismatch ? 'content-refresh' : classifyLearningError(error);
       if (kind === 'fixture') noteFixtureSession(true);
       careerState = { ...careerState, status: 'error', phase: 'error', error: message, errorKind: kind, contentMismatch: mismatch, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), chapterErrorKinds: new Map(), startedAt: 0, loadingChapterId: '' };
@@ -536,8 +550,9 @@
       }
     })();
     careerState.chapterRequests.set(unitId, request);
-    careerState = { ...careerState, phase: 'chapter', loadingChapterId: unitId };
+    careerState = { ...careerState, phase: 'chapter', loadingChapterId: unitId, chapterStartedAt: Date.now() };
     redrawCareerView();
+    watchLoadingCopy();
   }
   function accountRecordTarget(unitId, sectionId = '') {
     const u = unit(unitId, careerState.career?.contentVersion || CURRENT), career = accountSession()?.activeCareer, careerId = career?.careerId || '', textbookVersionId = career?.textbookVersionId || '';
@@ -769,22 +784,15 @@
   function contentUpdateVisible() {
     return (cutover.comparison?.status === 'mismatch' || Boolean(cutover.apiMismatch)) && !snoozeActive();
   }
-  function learnerEditionLabel(version) {
-    const match = /^textbook-v(\d+)$/.exec(String(version || ''));
-    return match ? '第 ' + match[1] + ' 版' : String(version || '');
-  }
   function contentUpdateCopy() {
     const local = localContentIdentity();
     const server = cutover.comparison?.server;
-    const oldLabel = local.contentVersion || '当前会话';
-    const newLabel = server?.contentVersion || server?.corpusVersion || '';
-    const hashOnly = cutover.comparison?.status === 'mismatch' && !cutover.comparison.versionMismatch && cutover.comparison.hashMismatch;
-    const oldText = learnerEditionLabel(oldLabel) || '当前会话';
-    const newText = learnerEditionLabel(newLabel);
-    const title = newLabel && newLabel !== oldLabel ? '教材已更新（' + oldText + ' → ' + newText + '）' : hashOnly ? '教材已更新（' + oldText + '，内容已更换）' : '教材已更新';
-    const identity = newLabel && newLabel !== oldLabel ? '本机会话 ' + oldLabel + '，服务端 ' + newLabel + '。' : hashOnly ? '本机会话 ' + oldLabel + '，内容标识已更换。' : '';
-    const detail = identity + '当前打开的页面可能仍显示旧正文，直到刷新。不会自动重载，提问仍可继续。旧阅读记录不会并入新教材，可先导出。';
-    return { title, detail, oldLabel, newLabel };
+    return {
+      title: '教材已更新',
+      detail: '正在阅读的教材与学习服务不一致，请更新后再读。',
+      oldLabel: local.contentVersion || '',
+      newLabel: server?.contentVersion || server?.corpusVersion || ''
+    };
   }
   function contentUpdateMarkup(kind) {
     const copy = contentUpdateCopy();
@@ -809,22 +817,12 @@
     return node;
   }
   function syncTextbookFooter() {
-    const node = document.getElementById('rc-textbook-version');
-    if (!node) return;
-    const local = localContentIdentity();
-    const server = cutover.comparison?.server;
     const footer = document.querySelector('footer');
-    const title = careerState.status === 'ready' ? careerState.career?.title : !careerState.active && staticCorpus() ? 'Agent 开发' : '';
-    if (footer?.firstChild?.nodeType === 3) footer.firstChild.textContent = '职造 · ' + (title ? title + '学习' : '职业学习') + ' ';
-    const label = value => String(value || '').match(/(?:^|-)(v\d[\d.]*)$/)?.[1] || '当前版本';
-    if (careerState.active && careerState.status !== 'ready') { node.textContent = ''; return; }
-    if (dynamicCareer() && careerState.career?.contentVersion) {
-      node.textContent = (careerState.career.title ? careerState.career.title + ' · ' : '') + '教材 ' + label(careerState.career.contentVersion) + ' · 本浏览器保存';
-      return;
-    }
-    if (cutover.comparison?.status === 'mismatch' && server?.contentVersion) node.textContent = '教材 ' + label(local.contentVersion) + ' · 服务端 ' + label(server.contentVersion) + ' · 本浏览器保存';
-    else if (cutover.comparison?.status === 'match' && server?.contentVersion) node.textContent = '教材 ' + label(local.contentVersion) + ' · 与服务端一致 · 本浏览器保存';
-    else node.textContent = '教材 ' + label(local.contentVersion) + ' · 本浏览器保存';
+    if (!footer) return;
+    const careerTitle = careerState.career?.title || '';
+    const agentPack = staticCorpus() && (!careerState.active || (!dynamicCareer() && careerState.careerId === AGENT_CAREER_ID));
+    const name = careerTitle ? careerTitle + '学习' : (agentPack ? 'Agent 开发者学习' : '职业学习');
+    footer.textContent = '职造 · ' + name + ' · 本浏览器保存';
   }
   function renderContentUpdateBanner() {
     const node = ensureContentUpdateBanner();
@@ -1021,13 +1019,8 @@
     t = esc(t).replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/(?<!\*)\*([^*]+)\*(?!\*)/g, '<em>$1</em>');
     return t.replace(/\u0001(\d+)\u0002/g, (_, i) => values[Number(i)] || '');
   }
-  function hiddenLearningContinuity(u) {
-    if (unitVersion(u) !== CURRENT) return [];
-    const lines = u.bodyMarkdown.replace(/\r\n?/g, '\n').split('\n');
-    return u.sections.filter(s => s.level === 2 && s.title === 'v12 学习衔接' && lines[s.startLine - 1] === '## v12 学习衔接').map(s => {
-      const endLine = u.sections.find(next => next.startLine > s.startLine && next.level <= s.level)?.startLine || lines.length + 1;
-      return {startLine:s.startLine,endLine,sectionIds:u.sections.filter(child => child.startLine >= s.startLine && child.startLine < endLine).map(child => child.sectionId)};
-    });
+  function hiddenLearningContinuity() {
+    return [];
   }
   function markdown(u, hideLearningContinuity = false) {
     const lines = u.bodyMarkdown.replace(/\r\n?/g, '\n').split('\n'), out = [], byLine = new Map(u.sections.map(s => [s.startLine, s]));
@@ -1130,15 +1123,21 @@
   }
   const heading = (label, name, desc) => '<div class="lw-page-head"><span class="lw-kicker">' + label + '</span><h1 tabindex="-1">' + name + '</h1><p>' + desc + '</p></div>';
   function loadingPage(scope = 'catalog') {
-    const firstLoad = careerState.firstLoad;
     const chapter = scope === 'chapter';
-    const phase = chapter ? 'chapter' : (careerState.phase === 'catalog' ? 'catalog' : 'connecting');
-    const labels = chapter ? ['已连接学习服务', '正在读取本章正文', '准备进入阅读'] : ['连接学习服务', '读取教材目录', '准备课程入口'];
-    const activeIndex = chapter ? 1 : (phase === 'catalog' ? 1 : 0);
+    const firstLoad = Boolean(careerState.firstLoad);
+    const started = chapter ? careerState.chapterStartedAt : careerState.startedAt;
+    const longWait = Boolean(started && Date.now() - started >= 120000);
     const title = chapter ? '正在打开本章' : '正在准备教材';
-    const description = chapter ? '章节内容正在从学习服务读取，页面会自动更新。' : firstLoad ? '首次使用需要下载并整理教材内容，可能需要几十秒。请保持页面打开，不要重复点击。' : '正在读取当前职业教材，通常需要几秒。请保持页面打开。';
-    const steps = labels.map((label, index) => '<li class="' + (index < activeIndex ? 'is-done ' : '') + (index === activeIndex ? 'is-active' : '') + '"><span aria-hidden="true">' + (index < activeIndex ? '✓' : String(index + 1)) + '</span>' + label + '</li>').join('');
-    return heading('职业学习', title, esc(description)) + '<section class="lw-loading-card" role="status" aria-live="polite" aria-atomic="true"><div class="lw-loading-mark" aria-hidden="true"><span></span></div><div class="lw-loading-copy"><strong>' + esc(labels[activeIndex]) + '…</strong><p>' + esc(firstLoad && !chapter ? '这是首次准备教材，内容较多，等待期间可以先不要操作。' : '连接保持中，完成后会自动显示内容。') + '</p><div class="lw-loading-track" aria-hidden="true"><span></span></div><ol class="lw-loading-steps">' + steps + '</ol></div></section><p class="lw-loading-note">如果超过两分钟仍没有变化，请确认本地学习服务正在运行，再使用失败页上的重试。</p>';
+    const main = chapter ? '正在读取本章正文，页面会自动更新。' : (firstLoad ? '首次打开需要下载并整理教材，请保持页面打开。' : '正在读取教材，通常只需几秒。');
+    const aux = longWait ? '若等待超过两分钟仍无变化，请检查网络后重试。' : (chapter ? '' : '完成后会自动进入课程。');
+    const labels = chapter ? ['已连接', '正在读取本章正文', '准备进入阅读'] : ['下载教材', '整理目录', '准备入口'];
+    const activeIndex = chapter ? 1 : 0;
+    const steps = labels.map((label, index) => {
+      const done = index < activeIndex;
+      const active = index === activeIndex;
+      return '<li class="' + (done ? 'is-done ' : '') + (active ? 'is-active' : '') + '"><span aria-hidden="true">' + (done ? '✓' : String(index + 1)) + '</span>' + esc(label) + '</li>';
+    }).join('');
+    return '<section class="lw-loading-card" data-lw-loading="' + (chapter ? 'chapter' : 'pack') + '" role="status" aria-live="polite" aria-atomic="true"><div class="lw-loading-mark" aria-hidden="true"><span></span></div><div class="lw-loading-copy"><strong>' + esc(title) + '</strong><p>' + esc(main) + '</p><p data-lw-load-aux>' + esc(aux) + '</p><div class="lw-loading-track" aria-hidden="true"><span></span></div><ol class="lw-loading-steps">' + steps + '</ol></div></section>';
   }
   function learningErrorCard(kind) {
     const states = {
@@ -1182,7 +1181,7 @@
     if (!corpus()) {
       if (careerRoute()) return practiceLoopCard() + (careerState.status === 'error' ? errorPage(careerState.error || '当前职业教材没有完整加载。', careerErrorAction(), careerState.errorKind || 'missing') : loadingPage());
       if (careerState.active && careerState.status === 'loading') return loadingPage();
-      return errorPage(careerState.active ? (careerState.error || '当前职业教材没有完整加载；不会用 Agent 教材替代。') : '当前 v13 教材包没有完整加载；不会使用其他版本替代。', careerState.active ? careerErrorAction() : 'reload', careerState.active ? (careerState.errorKind || 'missing') : 'missing');
+      return errorPage(careerState.active ? (careerState.error || '当前职业教材没有完整加载。') : '当前教材没有完整加载。', careerState.active ? careerErrorAction() : 'reload', careerState.active ? (careerState.errorKind || 'missing') : (globalThis.__rcPackFailed ? 'network' : 'missing'));
     }
     const progress = learningProgress(), latest = progress.latest, first = progress.first;
     const graphSection = first.sections.find(s => s.title === '一套可交付系统还需要哪些工程工作');
@@ -1203,7 +1202,7 @@
     if (!c) {
       if (careerRoute()) return practiceLoopCard() + (careerState.status === 'error' ? errorPage(careerState.error || '当前职业教材没有完整加载。', careerErrorAction(), careerState.errorKind || 'missing') : loadingPage());
       if (careerState.active && careerState.status === 'loading') return loadingPage();
-      return errorPage('当前 v13 教材没有完整加载；不会替换为其他来源。', 'reload', 'missing');
+      return errorPage('当前教材没有完整加载。', 'reload', globalThis.__rcPackFailed ? 'network' : 'missing');
     }
     if (!location.unitId) return homePage(true);
     const u = unit(location.unitId, location.version); if (!u) return errorPage('请求的章节不属于所选教材版本。', 'reload', 'missing');
@@ -1249,7 +1248,7 @@
     const visits = local.visits.filter(currentRecord).slice(-20).reverse(), bookmarks = local.bookmarks.filter(currentRecord);
     const link = v => '<a href="' + href(unit(v.unitId), v.sectionId) + '">' + esc(unit(v.unitId).navigationLabel) + (v.sectionId ? ' · ' + esc(section(unit(v.unitId), v.sectionId)?.title) : '') + '</a>';
     const history = dynamicCareer() ? '<p class="lw-small">当前职业记录按职业隔离；切换回原职业后再查看其他职业的记录。</p>' : '';
-    return heading('本浏览器的足迹', '学习记录', dynamicCareer() ? '当前职业的阅读、收藏和笔记按职业保存。' : '本机会话教材 ' + CURRENT + '。阅读、收藏和笔记不换算成完成率或能力等级。') + '<div class="lw-record-toolbar"><button class="outline" data-lw-export>导出当前学习记录</button><a href="#reflections">打开学习与员工复盘 →</a></div><section class="lw-record-section"><h2>当前职业收藏的位置</h2>' + (bookmarks.length ? '<ul>' + bookmarks.map(v => '<li>' + link(v) + '</li>').join('') + '</ul>' : '<p>还没有收藏。阅读时可以收藏当前章或小节。</p>') + '</section><section class="lw-record-section"><h2>当前职业最近阅读</h2>' + (visits.length ? '<ul>' + visits.map(v => '<li>' + link(v) + '<time>' + esc(new Date(v.at).toLocaleString('zh-CN')) + '</time></li>').join('') + '</ul>' : '<p>还没有打开过当前职业教材正文。</p>') + '</section><section class="lw-record-section"><h2>当前职业阅读笔记</h2>' + corpus().units.filter(u => noteText(u).trim()).map(u => '<details><summary>' + esc(u.navigationLabel) + '</summary><p class="lw-user-text">' + esc(noteText(u)) + '</p><a href="' + href(u) + '">回到本篇</a></details>').join('') + '</section>' + history + '<p class="lw-small">保存范围：本浏览器。记录不会换算成完成率或能力等级。</p>';
+    return heading('本浏览器的足迹', '学习记录', dynamicCareer() ? '当前职业的阅读、收藏和笔记按职业保存。' : '阅读、收藏和笔记不换算成完成率或能力等级。') + '<div class="lw-record-toolbar"><button class="outline" data-lw-export>导出当前学习记录</button><a href="#reflections">打开学习与员工复盘 →</a></div><section class="lw-record-section"><h2>当前职业收藏的位置</h2>' + (bookmarks.length ? '<ul>' + bookmarks.map(v => '<li>' + link(v) + '</li>').join('') + '</ul>' : '<p>还没有收藏。阅读时可以收藏当前章或小节。</p>') + '</section><section class="lw-record-section"><h2>当前职业最近阅读</h2>' + (visits.length ? '<ul>' + visits.map(v => '<li>' + link(v) + '<time>' + esc(new Date(v.at).toLocaleString('zh-CN')) + '</time></li>').join('') + '</ul>' : '<p>还没有打开过当前职业教材正文。</p>') + '</section><section class="lw-record-section"><h2>当前职业阅读笔记</h2>' + corpus().units.filter(u => noteText(u).trim()).map(u => '<details><summary>' + esc(u.navigationLabel) + '</summary><p class="lw-user-text">' + esc(noteText(u)) + '</p><a href="' + href(u) + '">回到本篇</a></details>').join('') + '</section>' + history + '<p class="lw-small">保存范围：本浏览器。记录不会换算成完成率或能力等级。</p>';
   }
   function canonicalTopic(value) {
     if (!value || value.corpusVersion !== CURRENT) return null;
@@ -1277,7 +1276,7 @@
   function isRuleFallback(r) { return /concept|rule|static_rules/i.test(String(r?.engineMode || '')); }
   function resultHTML() {
     if (pending) return '<div class="lw-assistant-state lw-state-loading" role="status" aria-live="polite" aria-atomic="true"><span class="lw-state-mark lw-query-spinner" aria-hidden="true"><span></span></span><div><h3>正在查找教材依据</h3><p>请求 ' + esc(submission?.requestId || '生成中') + ' · 正在向当前教材检索服务查询；完成后会显示原文和出处。等待期间不会重复提交。</p><div class="lw-query-indeterminate" aria-hidden="true"><span></span></div></div></div>';
-    if (!response) return '<div class="lw-find-empty"><h3>把学习或项目问题说出来</h3><p>根据 v13 教材简答，并提供对应章节入口。职业知识以外的问题会被过滤。</p><div class="lw-examples"><button data-lw-example="ReAct是什么">ReAct 是什么</button><button data-lw-example="程序改了一版，怎么判断效果真的变好了">怎样比较改动后的效果</button></div></div>';
+    if (!response) return '<div class="lw-find-empty"><h3>把学习或项目问题说出来</h3><p>根据教材简答，并提供对应章节入口。职业知识以外的问题会被过滤。</p><div class="lw-examples"><button data-lw-example="ReAct是什么">ReAct 是什么</button><button data-lw-example="程序改了一版，怎么判断效果真的变好了">怎样比较改动后的效果</button></div></div>';
     const d = response.dialog || {}, status = d.status || response.status;
     const identity = { contentVersion: response?.contentVersion || response?.corpusVersion || '', textbookVersionId: response?.textbookVersionId || '', indexVersion: response?.indexVersion || '', corpusHash: response?.corpusHash || '' };
     const identityValue = value => esc(value || '服务未提供');
@@ -1465,7 +1464,7 @@
   function exportRecords() {
     captureNotes();
     const data = { schemaVersion: '1', clientVersion: VERSION, exportedAt: new Date().toISOString(), scope: '本浏览器当前记录与本人自述，不是独立能力评价', current: { corpusVersion: CURRENT, corpusHash: corpus()?.corpusHash || null, storageKey: recordScope.key, records: local } };
-    download(JSON.stringify(data, null, 2), '职造-学习记录-rolecraft-1.0-v13.json', 'application/json;charset=utf-8'); notify('已导出当前 v13 学习记录；自述未独立评价。');
+    download(JSON.stringify(data, null, 2), '职造-本机学习记录.json', 'application/json;charset=utf-8'); notify('已导出当前学习记录；自述未独立评价。');
   }
   let focusFrame = 0, geometryFrame = 0, readerObserver = null;
   function readerGeometry() {
@@ -1498,13 +1497,14 @@
     readerGeometry();
   }
   function mount(view) {
+    if (globalThis.__rcBoot) globalThis.__rcBoot.takenOver = true;
     activeView = view;
     renderedRecordScope = recordScope.key;
     syncTextbookFooter();
     document.body.classList.toggle('lw-detail-active', !!document.querySelector('.lw-detail'));
     const isWorkbench = ['home', 'path', 'learn', 'records', 'projects'].includes(view);
     document.body.classList.toggle('lw-active', isWorkbench);
-    const banner = document.getElementById('save-status'); if (isWorkbench && banner) banner.textContent = storageError || recordNotice || (dynamicCareer() ? '当前教材 ' + (careerState.career?.contentVersion || '') + '；阅读记录保存在此浏览器。自动评分未接入。' : '本机会话教材 ' + CURRENT + '；新记录独立保存于本浏览器，未同步账户。');
+    const banner = document.getElementById('save-status'); if (isWorkbench && banner) banner.textContent = storageError || recordNotice || (dynamicCareer() ? '阅读记录保存在此浏览器。自动评分未接入。' : '阅读记录保存在此浏览器，未同步账户。');
     if (isWorkbench) probeContentIdentity({ reason: 'enter' });
     if (dynamicCareer() && careerState.career?.title) {
       const brand = document.querySelector('.brand strong span');

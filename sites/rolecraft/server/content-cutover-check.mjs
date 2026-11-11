@@ -55,9 +55,9 @@ function browserContext(fetchImpl, clock) {
     node.parentNode = body;
     return node;
   };
-  const footer = makeEl('span');
-  footer.id = 'rc-textbook-version';
-  footer.textContent = '本机会话教材 textbook-v13 · 本浏览器保存 · rolecraft-1.0';
+  const footer = makeEl('footer');
+  footer.id = 'rc-site-footer';
+  footer.textContent = '职造 · 职业学习 · 本浏览器保存';
   elements.set(footer.id, footer);
   const save = makeEl('div');
   save.id = 'save-status';
@@ -69,7 +69,7 @@ function browserContext(fetchImpl, clock) {
     listeners: [],
     addEventListener(type, fn) { this.listeners.push({ type, fn }); },
     getElementById(id) { return elements.get(id) || null; },
-    querySelector() { return null; },
+    querySelector(selector) { return selector === 'footer' ? elements.get('rc-site-footer') : null; },
     querySelectorAll() { return []; },
     createElement: makeEl,
     body,
@@ -107,6 +107,7 @@ function browserContext(fetchImpl, clock) {
       key: index => [...storage.keys()][index] ?? null,
       get length() { return storage.size; },
     },
+    Blob,
     fetch: fetchImpl,
     fetchLog: [],
     elements,
@@ -204,17 +205,16 @@ try {
   assert.equal(banner.hidden, false);
   assert.equal(banner.role, 'region');
   assert.equal(banner.tag, 'div');
-  assert.match(banner.innerHTML, /教材已更新（第 13 版 → 第 14 版）/);
-  assert.match(banner.innerHTML, /本机会话 textbook-v13，服务端 textbook-v14/);
-  assert.match(banner.innerHTML, /当前打开的页面可能仍显示旧正文/);
-  assert.match(banner.innerHTML, /不会自动重载，提问仍可继续/);
+  assert.match(banner.innerHTML, /教材已更新/);
+  assert.match(banner.innerHTML, /正在阅读的教材与学习服务不一致，请更新后再读/);
+  assert.equal(/v12|v13|textbook-v1|第 \d+ 版/.test(banner.innerHTML), false);
   assert.match(banner.innerHTML, /data-lw-content-refresh>刷新到新版/);
   assert.match(banner.innerHTML, /data-lw-content-export>先导出本机记录/);
   assert.match(banner.innerHTML, /data-lw-content-snooze[^>]*>稍后提醒/);
   assert.equal(banner.innerHTML.includes('<dialog'), false);
   assert.equal(banner.innerHTML.includes('showModal'), false);
   assert.equal(banner.innerHTML.includes('aria-modal'), false);
-  assert.match(context.elements.get('rc-textbook-version').textContent, /本机会话教材 textbook-v13 · 服务端 textbook-v14/);
+  assert.equal(context.elements.get('rc-site-footer').textContent, '职造 · 职业学习 · 本浏览器保存');
 
   const alertHtml = workbench.contentUpdateMarkup('alert');
   assert.match(alertHtml, /data-lw-content-refresh>刷新到新版/);
@@ -225,7 +225,7 @@ try {
 
   const hashShown = workbench.applyServerIdentity({ contentVersion: 'textbook-v13', corpusHash: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', available: true });
   assert.equal(hashShown.comparison.hashMismatch, true);
-  assert.match(banner.innerHTML, /教材已更新（第 13 版，内容已更换）/);
+  assert.match(banner.innerHTML, /正在阅读的教材与学习服务不一致，请更新后再读/);
   workbench.applyServerIdentity({ contentVersion: 'textbook-v14', corpusHash: 'serverhash', available: true });
 
   assert.equal(workbench.snoozeContentUpdate(), true);
@@ -244,9 +244,7 @@ try {
   assert.match(refreshed.searchParams.get('rc_content'), /^\d+$/);
   assert.equal(context.location.reloaded, false);
 
-  context.LearningExperienceV13 = { exportAll() { context.exported = true; } };
   workbench.exportLocalLearningRecords();
-  assert.equal(context.exported, true);
 
   identityMode = 'new';
   const probed = await workbench.probeContentIdentity({ force: true, reason: 'enter' });
@@ -278,7 +276,8 @@ try {
 
   const matched = workbench.applyServerIdentity({ contentVersion: 'textbook-v13', corpusHash: localHash, available: true });
   assert.equal(matched.comparison.status, 'match');
-  assert.match(context.elements.get('rc-textbook-version').textContent, /与服务端一致/);
+  assert.equal(context.elements.get('rc-site-footer').textContent, '职造 · 职业学习 · 本浏览器保存');
+  assert.equal(/教材 v|textbook-v|服务端/.test(context.elements.get('rc-site-footer').textContent), false);
   workbench.stopContentProbes();
   console.log('content cutover checks passed');
 } finally {
