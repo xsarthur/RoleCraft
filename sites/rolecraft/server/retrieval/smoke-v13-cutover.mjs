@@ -76,7 +76,9 @@ try {
   assert.equal(page.status, 200);
   assert.equal(html.includes('content-v13-data.js'), true);
   assert.equal(html.includes('v13-default-activation.js'), false);
-  assert.equal(html.includes('教材 v13'), true);
+  assert.equal(html.includes('教材 v13'), false);
+  assert.equal(html.includes('正在准备教材'), true);
+  assert.equal(html.includes('职造 · Agent 开发者学习 · 本浏览器保存'), true);
   assert.equal(html.includes('content-v12-data.js'), false);
 
   const workbench = responseText((await get('/learning-workbench.js')).body);
