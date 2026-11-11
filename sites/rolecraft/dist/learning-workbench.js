@@ -421,7 +421,7 @@
   }
   async function loadPublicCareerCatalog(careerId) {
     const requestId = careerState.requestId + 1;
-    careerState = { status: 'loading', phase: 'catalog', active: true, careerId, career: { careerId, title: '', summary: '', contentVersion: '' }, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), chapterErrorKinds: new Map(), error: '', errorKind: '', requestId, startedAt: Date.now(), firstLoad: false, loadingChapterId: '' };
+    careerState = { status: 'loading', phase: 'catalog', active: true, careerId, career: { careerId, title: '', summary: '', contentVersion: '' }, catalog: null, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), chapterErrorKinds: new Map(), error: '', errorKind: '', requestId, startedAt: Date.now(), firstLoad: !loadMarker(careerId), loadingChapterId: '' };
     redrawCareerView();
     watchLoadingCopy();
     try {
@@ -439,6 +439,7 @@
       useRecordScope(accountSession(), result.career);
       noteFixtureSession(false);
       careerState = { ...careerState, status: 'ready', phase: 'ready', career: result.career, catalog: result.catalog, chapters: new Map(), chapterRequests: new Map(), chapterErrors: new Map(), chapterErrorKinds: new Map(), error: '', errorKind: '', contentMismatch: false, startedAt: 0, loadingChapterId: '' };
+      markLoaded(careerId);
       redrawCareerView();
     } catch (error) {
       if (careerState.requestId !== requestId) return;
@@ -1179,7 +1180,7 @@
   }
   function homePage(routeOnly = false) {
     if (!corpus()) {
-      if (careerRoute()) return practiceLoopCard() + (careerState.status === 'error' ? errorPage(careerState.error || '当前职业教材没有完整加载。', careerErrorAction(), careerState.errorKind || 'missing') : loadingPage());
+      if (careerRoute()) return careerState.status === 'error' ? errorPage(careerState.error || '当前职业教材没有完整加载。', careerErrorAction(), careerState.errorKind || 'missing') : loadingPage();
       if (careerState.active && careerState.status === 'loading') return loadingPage();
       return errorPage(careerState.active ? (careerState.error || '当前职业教材没有完整加载。') : '当前教材没有完整加载。', careerState.active ? careerErrorAction() : 'reload', careerState.active ? (careerState.errorKind || 'missing') : (globalThis.__rcPackFailed ? 'network' : 'missing'));
     }
@@ -1200,7 +1201,7 @@
   function readerPage() {
     const location = loc(), c = corpus(location.version);
     if (!c) {
-      if (careerRoute()) return practiceLoopCard() + (careerState.status === 'error' ? errorPage(careerState.error || '当前职业教材没有完整加载。', careerErrorAction(), careerState.errorKind || 'missing') : loadingPage());
+      if (careerRoute()) return careerState.status === 'error' ? errorPage(careerState.error || '当前职业教材没有完整加载。', careerErrorAction(), careerState.errorKind || 'missing') : loadingPage();
       if (careerState.active && careerState.status === 'loading') return loadingPage();
       return errorPage('当前教材没有完整加载。', 'reload', globalThis.__rcPackFailed ? 'network' : 'missing');
     }
