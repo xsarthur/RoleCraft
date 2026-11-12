@@ -1598,13 +1598,40 @@
       document.documentElement.style.setProperty('--lw-reader-top', Math.max(0, Math.round(bottom)) + 'px');
     }
   }
+  function yieldCapsuleReading(visible) {
+    const prose = document.querySelector('.lw-prose');
+    const paragraphs = prose ? [...prose.querySelectorAll(':scope > p')] : [];
+    for (const paragraph of paragraphs) paragraph.classList.remove('lw-capsule-yield');
+    const launcher = document.getElementById('lw-assistant-launcher');
+    const narrow = (window.innerWidth || 0) < 760;
+    if (!visible || !narrow || !prose || !launcher) {
+      document.documentElement.style.setProperty('--lw-capsule-inline-inset', '0px');
+      return;
+    }
+    const cap = launcher.getBoundingClientRect();
+    const box = prose.getBoundingClientRect();
+    const pad = parseFloat(getComputedStyle(prose).paddingRight) || 0;
+    const contentRight = box.right - pad;
+    const inset = cap.width > 0 ? Math.max(0, Math.ceil(contentRight - cap.left + 8)) : 0;
+    document.documentElement.style.setProperty('--lw-capsule-inline-inset', inset + 'px');
+    if (!inset) return;
+    for (const paragraph of paragraphs) if ((paragraph.textContent || '').includes('读图任务')) paragraph.classList.add('lw-capsule-yield');
+  }
   function syncCapsuleClearance() {
     const host = document.getElementById('lw-assistant-host');
     const visible = Boolean(host && !host.hidden && !assistantOpen);
     let height = 0;
-    if (visible) for (const node of host.querySelectorAll('.lw-assistant-launcher, .lw-ask-return')) height = Math.max(height, Math.ceil(node.getBoundingClientRect().height || 0));
+    let bandTop = window.innerHeight || 0;
+    if (visible) for (const node of host.querySelectorAll('.lw-assistant-launcher, .lw-ask-return')) {
+      const rect = node.getBoundingClientRect();
+      if (!(rect.height > 0)) continue;
+      height = Math.max(height, Math.ceil(rect.height));
+      bandTop = Math.min(bandTop, rect.top);
+    }
+    const occupied = height ? Math.min(window.innerHeight || height, Math.max(height, Math.ceil((window.innerHeight || 0) - bandTop))) : 0;
     document.body.classList.toggle('lw-ask-capsule', visible && height > 0);
-    document.documentElement.style.setProperty('--lw-capsule-clearance', (height ? height + 12 : 0) + 'px');
+    document.documentElement.style.setProperty('--lw-capsule-clearance', occupied + 'px');
+    yieldCapsuleReading(visible && height > 0);
   }
   function refreshAssistant(preserveScroll = true) {
     const previousResults = document.getElementById('lw-find-results'); if (preserveScroll && previousResults && assistantOpen) assistantScroll = previousResults.scrollTop;
@@ -1920,7 +1947,7 @@
   globalThis.addEventListener?.('resize', () => { readerGeometry(); syncAskLayout(); syncCapsuleClearance(); syncBackgroundInert(); });
   globalThis.addEventListener?.('scroll', () => {
     if (geometryFrame) return;
-    geometryFrame = requestAnimationFrame(() => { geometryFrame = 0; readerGeometry(); if (document.body.classList.contains('lw-ask-side')) syncAskLayout(); });
+    geometryFrame = requestAnimationFrame(() => { geometryFrame = 0; readerGeometry(); if (document.body.classList.contains('lw-ask-side')) syncAskLayout(); syncCapsuleClearance(); });
   }, { passive: true });
   document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') probeContentIdentity({ reason: 'visible' }); });
   if (typeof setInterval === 'function') {
