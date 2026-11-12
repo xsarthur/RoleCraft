@@ -1601,8 +1601,7 @@
   function yieldCapsuleReading(visible) {
     const prose = document.querySelector('.lw-prose');
     const launcher = document.getElementById('lw-assistant-launcher');
-    const narrow = (window.innerWidth || 0) < 760;
-    if (!visible || !narrow || !prose || !launcher) {
+    if (!visible || !prose || !launcher) {
       document.documentElement.style.setProperty('--lw-capsule-inline-inset', '0px');
       return;
     }
