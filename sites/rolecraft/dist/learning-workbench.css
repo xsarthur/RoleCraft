@@ -159,3 +159,6 @@
 @media (prefers-reduced-motion:reduce){
   #lw-image-dialog,#lw-image-dialog::backdrop{animation:none!important;transition:none!important}
 }
+.lw-browse-note{margin:0 0 14px;padding:10px 12px;border-left:3px solid #b18b43;background:#fcf8ef;color:#3f3a32;font-size:14px;line-height:1.6}
+.lw-browse-note button{border:0;background:transparent;color:#39352b;text-decoration:underline;text-underline-offset:.18em;font:inherit;min-height:44px;padding:0 4px;cursor:pointer}
+.lw-browse-note button:focus-visible{outline:2px solid #6c614e;outline-offset:2px}
