@@ -1600,8 +1600,6 @@
   }
   function yieldCapsuleReading(visible) {
     const prose = document.querySelector('.lw-prose');
-    const paragraphs = prose ? [...prose.querySelectorAll(':scope > p')] : [];
-    for (const paragraph of paragraphs) paragraph.classList.remove('lw-capsule-yield');
     const launcher = document.getElementById('lw-assistant-launcher');
     const narrow = (window.innerWidth || 0) < 760;
     if (!visible || !narrow || !prose || !launcher) {
@@ -1610,12 +1608,11 @@
     }
     const cap = launcher.getBoundingClientRect();
     const box = prose.getBoundingClientRect();
+    const applied = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--lw-capsule-inline-inset')) || 0;
     const pad = parseFloat(getComputedStyle(prose).paddingRight) || 0;
-    const contentRight = box.right - pad;
+    const contentRight = box.right - Math.max(0, pad - applied);
     const inset = cap.width > 0 ? Math.max(0, Math.ceil(contentRight - cap.left + 8)) : 0;
     document.documentElement.style.setProperty('--lw-capsule-inline-inset', inset + 'px');
-    if (!inset) return;
-    for (const paragraph of paragraphs) if ((paragraph.textContent || '').includes('读图任务')) paragraph.classList.add('lw-capsule-yield');
   }
   function syncCapsuleClearance() {
     const host = document.getElementById('lw-assistant-host');
