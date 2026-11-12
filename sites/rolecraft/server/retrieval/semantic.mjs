@@ -1,4 +1,4 @@
-import { readFileSync,writeFileSync,existsSync } from 'node:fs';
+import { readFileSync,writeFileSync,existsSync,statSync,openSync,readSync,closeSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -94,13 +94,66 @@ function passages(corpus){return corpus.units.flatMap(u=>u.sections.flatMap(s=>{
  if(text.length<35||/下一步|来源与版本|审校|本轮|历史验证|原版验证|原文验证|代码运行说明/.test(s.title))return [];
  const chunks=[];for(let i=0;i<text.length;i+=340)chunks.push({key:u.unitId+'/'+s.sectionId,text:u.title+'。'+s.title+'。'+text.slice(i,i+450)});return chunks;
 }));}
+// Identity uses the lock record only. Do not read or initialize the ONNX model here.
+function modelHashFromLock(){
+ const record=JSON.parse(readFileSync(path.join(here,'model-lock.json'),'utf8'));
+ if(record.modelId!==MODEL_ID||record.revision!==MODEL_REVISION||record.dtype!=='int8')throw Error('Semantic model lock differs');
+ const file=(record.files||[]).find(entry=>entry.name==='onnx/model_int8.onnx');
+ if(!file||!/^[a-f0-9]{64}$/.test(file.sha256||''))throw Error('Semantic model lock differs');
+ return file.sha256;
+}
+export function passageVectorMismatches(cache,corpus,chunks,chunkHash,modelHash){
+ const mismatches=[];
+ if(!cache||cache.corpusVersion!==corpus.corpusVersion)mismatches.push('corpusVersion');
+ if(!cache||cache.corpusHash!==corpus.corpusHash)mismatches.push('corpusHash');
+ if(!cache||cache.modelHash!==modelHash)mismatches.push('modelHash');
+ if(!cache||cache.chunkHash!==chunkHash)mismatches.push('chunkHash');
+ let itemsMatch=false;
+ if(cache&&Array.isArray(cache.items)&&cache.items.length===chunks.length){
+  itemsMatch=cache.items.every((item,index)=>{
+   const chunk=chunks[index];
+   return !!item&&item.key===chunk.key&&Array.isArray(item.vector)&&item.vector.length===512&&item.vector.every(Number.isFinite);
+  });
+ }
+ if(!itemsMatch)mismatches.push('items');
+ return mismatches;
+}
+const assessedIdentities=new Map();
+export function assessVectorIdentity(corpus){
+ try{
+  const folder=SUPPORTED_CORPORA[corpus?.corpusVersion];
+  if(!folder)return {prepared:false,reason:'unsupported_corpus'};
+  let modelHash;
+  try{modelHash=modelHashFromLock();}catch(error){return {prepared:false,reason:'model_lock_differs',message:error.message};}
+  const chunks=passages(corpus),chunkHash=sha(JSON.stringify(chunks));
+  const cachePath=path.join(here,'vectors-'+folder+'.json');
+  const expected={corpusVersion:corpus.corpusVersion,corpusHash:corpus.corpusHash,modelHash,chunkHash,passages:chunks.length};
+  let fileStat;
+  try{fileStat=statSync(cachePath);}catch{return {prepared:false,reason:'vectors_missing',expected};}
+  const prefix=Buffer.alloc(512);const descriptor=openSync(cachePath,'r');
+  try{readSync(descriptor,prefix,0,prefix.length,0);}finally{closeSync(descriptor);}
+  const stamp=`${fileStat.mtimeNs??fileStat.mtimeMs}:${fileStat.size}:${sha(prefix)}:${corpus.corpusHash}:${modelHash}:${chunkHash}`;
+  const remembered=assessedIdentities.get(folder);
+  if(remembered?.stamp===stamp)return remembered.identity;
+  let parsed;
+  try{parsed=JSON.parse(readFileSync(cachePath,'utf8'));}catch(error){
+   const identity={prepared:false,reason:'vectors_unreadable',message:error.message,expected};
+   assessedIdentities.set(folder,{stamp,identity});
+   return identity;
+  }
+  const mismatches=passageVectorMismatches(parsed,corpus,chunks,chunkHash,modelHash);
+  const identity=mismatches.length?{prepared:false,reason:'vector_identity_differs',mismatches,expected,actual:{corpusVersion:parsed?.corpusVersion??null,corpusHash:parsed?.corpusHash??null,modelHash:parsed?.modelHash??null,chunkHash:parsed?.chunkHash??null,passages:Array.isArray(parsed?.items)?parsed.items.length:null}}:{prepared:true,corpusVersion:corpus.corpusVersion,corpusHash:parsed.corpusHash,modelHash:parsed.modelHash,chunkHash:parsed.chunkHash,passages:parsed.items.length};
+  assessedIdentities.set(folder,{stamp,identity});
+  return identity;
+ }catch(error){return {prepared:false,reason:'vector_identity_unreadable',message:error.message};}
+}
 export async function prepareVectors(corpus,{persist=true,onProgress,rebuild=false}={}){
  const folder=corpusFolder(corpus.corpusVersion);
  const record=lock();const modelHash=record.files.find(f=>f.name==='onnx/model_int8.onnx').sha256;
  const chunks=passages(corpus),chunkHash=sha(JSON.stringify(chunks));const cachePath=path.join(here,'vectors-'+folder+'.json');
  if(existsSync(cachePath)){
   const cache=JSON.parse(readFileSync(cachePath,'utf8'));
-  if(cache.corpusHash===corpus.corpusHash&&cache.modelHash===modelHash&&cache.chunkHash===chunkHash&&cache.items.length===chunks.length&&cache.items.every((x,i)=>x.key===chunks[i].key&&x.vector.length===512&&x.vector.every(Number.isFinite))&&cache.corpusVersion===corpus.corpusVersion)return cache;
+  if(passageVectorMismatches(cache,corpus,chunks,chunkHash,modelHash).length===0)return cache;
   if(!rebuild)throw Error('Passage vector identity differs; explicitly prepare current resources');
  }
  const extractor=await getExtractor();const items=[];

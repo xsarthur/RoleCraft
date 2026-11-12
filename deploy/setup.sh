@@ -101,6 +101,11 @@ else
     echo "  内容索引已就绪"
 fi
 
+# 向量文件存在但 corpus/model/chunk 身份过期时，问教材会失败而健康检查仍像正常。
+# 这里只比对已提交的哈希，不加载 ONNX。失败则停止部署。
+echo "  核对教材与 vectors-*.json 身份..."
+node "${RETRIEVAL_DIR}/check-vector-identity.mjs"
+
 # ---------- 6. 环境变量与 Nginx ----------
 echo "[6/6] 配置环境变量与 Nginx..."
 
