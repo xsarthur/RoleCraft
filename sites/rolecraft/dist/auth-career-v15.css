@@ -84,3 +84,23 @@
   #rc-career-dialog .rc-search-row,#rc-career-dialog .rc-career-signals{grid-template-columns:minmax(0,1fr)}
   #rc-career-dialog .rc-confirm-actions{display:grid;grid-template-columns:minmax(0,1fr)}
 }
+
+.rc-career-helper{margin:0 0 14px;color:#6c614e;font-size:13px;line-height:1.6}
+.rc-career-sync-note{flex:1 0 100%;margin:0;color:#6c614e;font-size:12px;line-height:1.5}
+.rc-career-sync-note button{border:0;background:transparent;color:#39352b;text-decoration:underline;text-underline-offset:.18em;font:inherit;min-height:44px;padding:0 2px;cursor:pointer}
+#rc-career-dialog .rc-career-card>button:disabled{cursor:default;opacity:.72}
+#rc-career-conflict-dialog{padding:0;border:0;background:transparent;max-width:calc(100vw - 24px)}
+#rc-career-conflict-dialog .rc-dialog-form{width:min(440px,calc(100vw - 24px));padding-bottom:max(28px,calc(16px + env(safe-area-inset-bottom)))}
+#rc-career-conflict-dialog .rc-conflict-options{display:grid;gap:8px}
+#rc-career-conflict-dialog .rc-conflict-options button,#rc-career-conflict-dialog .rc-conflict-later{width:100%;white-space:normal;text-align:center}
+.rc-conflict-kicker{display:inline-block;margin-right:8px;padding:0 6px;border:1px solid currentColor;border-radius:999px;font-size:12px;font-weight:700;line-height:1.6}
+.rc-conflict-later{margin-top:8px;border:0;background:transparent;color:#6c614e;text-decoration:underline;text-underline-offset:.18em;font:inherit;cursor:pointer}
+#rc-career-conflict-dialog button:focus-visible,.rc-career-sync-note button:focus-visible{outline:2px solid #6c614e;outline-offset:2px;text-decoration:underline}
+@media (max-width:760px){
+  .rc-account-career{display:grid}
+  .rc-career-sync-note{grid-column:1 / -1}
+  #rc-career-conflict-dialog .rc-dialog-form{max-height:calc(100dvh - 16px - env(safe-area-inset-bottom));overflow:auto}
+}
+@media (prefers-reduced-motion:reduce){
+  #rc-career-conflict-dialog,#rc-career-conflict-dialog::backdrop{animation:none!important;transition:none!important}
+}

@@ -189,7 +189,18 @@
     const [path, search = ''] = location.hash.slice(1).split('?'), p = path.split('/');
     const resume = new URLSearchParams(search).get('resume') === '1';
     const routed = careerRoute();
-    if (routed) return { careerId: routed.careerId, unitId: routed.unitId, sectionId: routed.sectionId, version: careerState.career?.contentVersion || '', resume };
+    const loadedVersion = careerState.career?.contentVersion || '';
+    if (routed && (!careerState.careerId || careerState.careerId === routed.careerId)) return { careerId: routed.careerId, unitId: routed.unitId, sectionId: routed.sectionId, version: loadedVersion, resume };
+    // A switch replaces the surface without changing a stale browse hash.
+    if (careerState.active && careerState.careerId && routed && routed.careerId !== careerState.careerId) return { careerId: careerState.careerId, unitId: '', sectionId: '', version: loadedVersion, resume: false };
+    // Empty hash and #learn are the current-career home. Use that career's own
+    // content version. Agent textbook-v13 must not be applied to another book.
+    if (careerState.active && careerState.careerId) {
+      const version = loadedVersion || (careerState.careerId === AGENT_CAREER_ID ? CURRENT : '');
+      const agentChapter = p[0] === 'learn' && p[1] === 'agent' && !dynamicCareer();
+      if (agentChapter) return { careerId: careerState.careerId, unitId: p[2] || '', sectionId: p[3] || '', version: version || CURRENT, resume };
+      return { careerId: careerState.careerId, unitId: '', sectionId: '', version, resume: false };
+    }
     return { careerId: '', unitId: p[0] === 'learn' && p[1] === 'agent' ? p[2] || '' : '', sectionId: p[0] === 'learn' && p[1] === 'agent' ? p[3] || '' : '', version: CURRENT, resume };
   }
   function href(u, s = '') {
@@ -382,6 +393,13 @@
   let accountSyncToken = 0, accountSyncPromise = null;
   function accountSession() { return globalThis.RolecraftAuthCareer?.getSession?.() || null; }
   function accountCareerId() { return accountSession()?.activeCareer?.careerId || ''; }
+  function maySyncAccountCareer() {
+    const session = accountSession();
+    if (!session?.user || !session.activeCareer?.careerId) return false;
+    if (globalThis.RolecraftAuthCareer?.hasCareerConflict?.()) return false;
+    if (careerState.careerId && careerState.careerId !== session.activeCareer.careerId) return false;
+    return true;
+  }
   function accountApi(path, options) { return globalThis.RolecraftAuthCareer?.api?.(path, options); }
   function redrawCareerView() { if (typeof render === 'function') render(); }
   function loadMarker(careerId) {
@@ -563,7 +581,7 @@
   async function syncAccountRecords() {
     const session = accountSession();
     const careerId = session?.activeCareer?.careerId, textbookVersionId = session?.activeCareer?.textbookVersionId;
-    if (!session?.user || !careerId || !textbookVersionId || careerState.status !== 'ready') return { status: 'unavailable' };
+    if (!maySyncAccountCareer() || !textbookVersionId || careerState.status !== 'ready') return { status: 'unavailable' };
     const scope = recordScope.key, token = accountSyncToken;
     if (accountSyncPromise) return accountSyncPromise;
     const operation = (async () => {
@@ -606,7 +624,7 @@
   }
   async function syncAccountNote(unitId) {
     const target = accountRecordTarget(unitId), note = local.notes[unitId];
-    if (!accountSession()?.user || !target || !note) return { status: 'local' };
+    if (!maySyncAccountCareer() || !target || !note) return { status: 'local' };
     const scope = recordScope.key, token = accountSyncToken, text = asText(note.text);
     try {
       await accountApi('/api/me/notes', { method: 'PUT', body: { ...target, sectionId: '', noteText: text } });
@@ -616,14 +634,14 @@
     } catch (error) { return { status: error?.status === 401 ? 'expired' : scope !== recordScope.key ? 'stale' : 'failed' }; }
   }
   function syncAccountEvent(kind, unitId, sectionId = '', extra = {}) {
-    if (!accountSession()?.activeCareer?.careerId || !unit(unitId)) return;
+    if (!maySyncAccountCareer() || !unit(unitId)) return;
     const target = accountRecordTarget(unitId, sectionId); if (!target) return;
     const request = kind === 'progress' ? accountApi('/api/me/progress', { method: 'POST', body: { ...target, state: extra.state || 'opened' } }) : accountApi('/api/me/recent', { method: 'POST', body: target });
     request?.catch?.(() => {});
   }
   async function syncAccountFavorite(unitId, sectionId, exists) {
     const scope = recordScope.key, token = accountSyncToken;
-    if (!accountSession()?.activeCareer?.careerId) return;
+    if (!maySyncAccountCareer()) return;
     const target = accountRecordTarget(unitId, sectionId); if (!target) return;
     try {
       if (!exists) { await accountApi('/api/me/favorites', { method: 'POST', body: target }); return; }
@@ -633,25 +651,51 @@
       if (current?.favoriteId) await accountApi('/api/me/favorites/' + encodeURIComponent(current.favoriteId), { method: 'DELETE' });
     } catch { /* Local removal remains authoritative when the service is offline. */ }
   }
+  function followCareerRoute(reason) {
+    const session = accountSession();
+    const route = careerRoute();
+    const currentId = session?.activeCareer?.careerId || '';
+    const routeId = route?.careerId || '';
+    const showing = careerState.careerId || '';
+    const stable = careerState.status === 'ready' || careerState.status === 'loading';
+    if (reason === 'career_switch') {
+      if (currentId && showing === currentId && stable) return;
+      loadCareerContent(session);
+      return;
+    }
+    if (routeId && routeId !== currentId) {
+      if (showing === routeId && stable) return;
+      loadPublicCareerCatalog(routeId);
+      return;
+    }
+    if (currentId) {
+      if (showing === currentId && stable) return;
+      loadCareerContent(session);
+      return;
+    }
+    if (routeId) {
+      if (showing === routeId && stable) return;
+      loadPublicCareerCatalog(routeId);
+      return;
+    }
+    if (careerState.status !== 'anonymous' || careerState.active) loadCareerContent(session);
+  }
   globalThis.addEventListener?.('rolecraft:authchange', event => {
     accountSyncToken++; accountSyncPromise = null;
     const session = event.detail?.session || null;
+    const reason = event.detail?.reason || '';
     useRecordScope(session);
-    recordNotice = event.detail?.reason === 'expired' ? '登录已失效，草稿仅保存在原账户的本机记录中。登录原账户后可重试同步。' : legacyRecordsPresent ? '旧版共享记录保留隔离；当前仅显示本次访客或已验证账户的记录。' : '';
-    loadCareerContent(session);
+    recordNotice = reason === 'expired' ? '登录已失效，草稿仅保存在原账户的本机记录中。登录原账户后可重试同步。' : legacyRecordsPresent ? '旧版共享记录保留隔离；当前仅显示本次访客或已验证账户的记录。' : '';
+    followCareerRoute(reason === 'career_switch' ? 'career_switch' : reason);
   });
   // auth-career-v15 is loaded after this file; give it one turn to publish its
   // session API, then establish the anonymous/public or account-backed state.
+  // A deep link is browse: it loads that textbook and does not require login.
   setTimeout(() => {
-    if (globalThis.RolecraftAuthCareer) { useRecordScope(accountSession()); loadCareerContent(accountSession()); }
+    if (globalThis.RolecraftAuthCareer) { useRecordScope(accountSession()); followCareerRoute('boot'); }
     else if (careerRoute()) loadPublicCareerCatalog(careerRoute().careerId);
   }, 0);
-  globalThis.addEventListener?.('hashchange', () => {
-    const route = careerRoute();
-    if (!route || accountSession()?.activeCareer?.careerId) return;
-    if (careerState.careerId === route.careerId && (careerState.status === 'ready' || careerState.status === 'loading')) return;
-    loadPublicCareerCatalog(route.careerId);
-  });
+  globalThis.addEventListener?.('hashchange', () => followCareerRoute('hash'));
   function isContentVersionMismatch(error) {
     return error?.code === 'content_version_mismatch' || error?.code === 'career_version_mismatch' || error?.message === '问答与阅读资源的版本不一致，请重新加载。';
   }
@@ -1179,6 +1223,31 @@
   function practiceLoopCard() {
     return '<section class="lw-p01-card lw-career-practice" id="lw-career-practice" aria-labelledby="lw-career-practice-title"><div class="lw-p01-head"><div><span class="lw-kicker">静态阅读 · 练习</span><h2 id="lw-career-practice-title">练习草稿、提交与反馈</h2><p>当前入口提供静态教材阅读。自动评分未接入。先保存草稿，再提交练习。练习反馈只回显你写下的内容，不表示通过或等级。</p></div></div><form id="lw-career-practice-form" class="lw-p01-form"><label for="lw-career-draft">练习草稿<small>写在本页，关闭前请自行保留。</small><textarea id="lw-career-draft" name="careerDraft" rows="4" maxlength="4000">' + esc(careerPractice.draft) + '</textarea></label><div class="lw-p01-actions"><button class="outline" type="button" data-lw-career-draft-save>保存草稿</button><button class="primary" type="button" data-lw-career-practice-submit>提交练习</button></div><p id="lw-career-practice-feedback" class="lw-small" role="status" aria-live="polite">' + esc(careerPractice.feedback) + '</p></form></section>';
   }
+  let originalBrandLabel = '';
+  function paintLearningChrome() {
+    const brand = document.querySelector('.brand strong span');
+    if (brand && !originalBrandLabel) originalBrandLabel = brand.textContent || 'Agent 开发学习';
+    const current = globalThis.RolecraftAuthCareer?.currentCareer?.() || null;
+    const side = document.querySelector('.side-note strong');
+    if (side) {
+      if (current?.title) side.textContent = current.title;
+      else if (!globalThis.RolecraftAuthCareer && dynamicCareer() && careerState.career?.title) side.textContent = careerState.career.title;
+    }
+    const loadedIsCurrent = !current?.careerId || !careerState.careerId || careerState.careerId === current.careerId;
+    if (brand) {
+      if (loadedIsCurrent && dynamicCareer() && careerState.career?.title) brand.textContent = careerState.career.title + '学习';
+      else if (originalBrandLabel) brand.textContent = originalBrandLabel;
+    }
+  }
+  function browseNoteHTML() {
+    const route = careerRoute();
+    const current = globalThis.RolecraftAuthCareer?.currentCareer?.() || null;
+    if (!route || !current?.careerId || !current.title || route.careerId === current.careerId) return '';
+    if (careerState.careerId !== route.careerId || careerState.status !== 'ready') return '';
+    const reading = careerState.career?.title || '';
+    if (!reading) return '';
+    return '<p class="lw-browse-note" role="status">当前职业是「' + esc(current.title) + '」，正在看「' + esc(reading) + '」的教材。 <button type="button" data-rc-switch-reading>切换到该职业</button></p>';
+  }
   function homePage(routeOnly = false) {
     if (!corpus()) {
       if (careerRoute()) return careerState.status === 'error' ? errorPage(careerState.error || '当前职业教材没有完整加载。', careerErrorAction(), careerState.errorKind || 'missing') : loadingPage();
@@ -1197,7 +1266,8 @@
     const entryAttrs = careerEntry ? ' data-task-state="' + esc(careerEntry.state) + '" data-task-cta="' + esc(careerEntry.action) + '"' : '';
     const interruptControl = careerEntry?.showInterrupt ? '<button class="outline" type="button" data-lw-interrupt>中断并保存位置</button>' : '';
     const practice = careerRoute() ? practiceLoopCard() : '';
-    return '<div class="lw-home">' + practice + heading('职业学习 · ' + esc(careerTitle), esc(careerTitle), esc(careerSummary)) + startSelect() + '<section class="lw-entry"' + (careerEntry ? ' data-task-state="' + esc(careerEntry.state) + '"' : '') + ' aria-labelledby="lw-entry-title"><div class="lw-entry-copy"><span class="lw-entry-status">' + esc(entryState.label) + '</span><h2 id="lw-entry-title">' + esc(entryState.title) + '</h2><p>' + (careerEntry ? esc(entryState.description) : entryState.description) + '</p><small>学习记录只表示浏览位置，不表示通过或等级</small></div><a class="primary"' + entryAttrs + ' href="' + entryHref + '">' + esc(entryState.action) + ' →</a>' + interruptControl + '</section>' + (local.startingPoint === 'beginner' && !dynamicCareer() ? '<div class="lw-route-hint">零基础起步：先读开篇，再做<a href="' + href(unit('01-foundation'), unit('01-foundation').sections.find(s => s.title === '先做入口诊断')?.sectionId) + '">基础诊断</a>，按实际缺项补学。</div>' : local.startingPoint && !dynamicCareer() ? '<div class="lw-route-hint">已有基础：可直接查具体问题。正式先修保留在各篇说明中，不锁住阅读。</div>' : '') + '<div class="lw-tabs" aria-label="教材浏览方式"><a href="#path"' + (!showCatalog ? ' aria-current="page"' : '') + '>学习路线</a><a href="#learn"' + (showCatalog ? ' aria-current="page"' : '') + '>课程目录 <small>' + countLabel + '</small></a></div>' + (showCatalog ? catalog() : stages()) + (!routeOnly && !showCatalog ? '<section class="lw-panorama"><div><span class="lw-kicker">先看全貌</span><h2>Agent 工程不止是一次模型调用</h2><p>从问题、组件到验证与交付，找到章节所处的环节。组件按需求采用，图中分组不替代正式阅读顺序。</p><a href="' + href(first, graphSection?.sectionId) + '">查看工程全景与章节位置 →</a></div><button type="button" data-lw-image="' + esc(asset('agent-engineering-landscape-v12.png')) + '" data-lw-alt="Agent工程全景与30篇章节位置"><img src="' + esc(asset('agent-engineering-landscape-v12.png')) + '" alt="Agent工程全景与30篇章节位置" loading="lazy"><span>放大工程全景</span></button></section>' : '') + '</div>';
+    const browseNote = browseNoteHTML();
+    return '<div class="lw-home">' + practice + heading('职业学习 · ' + esc(careerTitle), esc(careerTitle), esc(careerSummary)) + startSelect() + (browseNote || '<section class="lw-entry"' + (careerEntry ? ' data-task-state="' + esc(careerEntry.state) + '"' : '') + ' aria-labelledby="lw-entry-title"><div class="lw-entry-copy"><span class="lw-entry-status">' + esc(entryState.label) + '</span><h2 id="lw-entry-title">' + esc(entryState.title) + '</h2><p>' + (careerEntry ? esc(entryState.description) : entryState.description) + '</p><small>学习记录只表示浏览位置，不表示通过或等级</small></div><a class="primary"' + entryAttrs + ' href="' + entryHref + '">' + esc(entryState.action) + ' →</a>' + interruptControl + '</section>') + (local.startingPoint === 'beginner' && !dynamicCareer() ? '<div class="lw-route-hint">零基础起步：先读开篇，再做<a href="' + href(unit('01-foundation'), unit('01-foundation').sections.find(s => s.title === '先做入口诊断')?.sectionId) + '">基础诊断</a>，按实际缺项补学。</div>' : local.startingPoint && !dynamicCareer() ? '<div class="lw-route-hint">已有基础：可直接查具体问题。正式先修保留在各篇说明中，不锁住阅读。</div>' : '') + '<div class="lw-tabs" aria-label="教材浏览方式"><a href="#path"' + (!showCatalog ? ' aria-current="page"' : '') + '>学习路线</a><a href="#learn"' + (showCatalog ? ' aria-current="page"' : '') + '>课程目录 <small>' + countLabel + '</small></a></div>' + (showCatalog ? catalog() : stages()) + (!routeOnly && !showCatalog ? '<section class="lw-panorama"><div><span class="lw-kicker">先看全貌</span><h2>Agent 工程不止是一次模型调用</h2><p>从问题、组件到验证与交付，找到章节所处的环节。组件按需求采用，图中分组不替代正式阅读顺序。</p><a href="' + href(first, graphSection?.sectionId) + '">查看工程全景与章节位置 →</a></div><button type="button" data-lw-image="' + esc(asset('agent-engineering-landscape-v12.png')) + '" data-lw-alt="Agent工程全景与30篇章节位置"><img src="' + esc(asset('agent-engineering-landscape-v12.png')) + '" alt="Agent工程全景与30篇章节位置" loading="lazy"><span>放大工程全景</span></button></section>' : '') + '</div>';
   }
   function readerPage() {
     const location = loc(), c = corpus(location.version);
@@ -1222,7 +1292,7 @@
     if (!prerequisites || prerequisites.some(p => !p)) return errorPage('本篇前置章节来源无法核对，请重新加载教材。', 'reload', 'missing');
     const prereqLabel = prerequisites.length ? '需掌握的前置 · ' + prerequisites.length + ' 篇' : '需掌握的前置：无';
     const priorHTML = '<aside class="lw-prerequisites" id="lw-prerequisites" aria-labelledby="lw-prereq-title"><h2 id="lw-prereq-title" tabindex="-1">需掌握的前置</h2>' + (prerequisites.length ? '<ul>' + prerequisites.map(p => '<li><a href="' + esc(href(p)) + '">' + esc(p.navigationLabel) + '</a></li>').join('') + '</ul>' : '<p>无前置章节</p>') + '</aside>';
-    return '<div class="lw-reader-layout lw-detail"><div class="lw-reader-top" id="lw-reader-start" tabindex="-1"><a href="#learn">← 返回课程</a><span>' + esc(u.navigationLabel) + '</span></div>' + missingLocation + hiddenNotice + '<div class="lw-prereq-strip" id="lw-prereq-strip" hidden><span>' + esc(prereqLabel) + '</span>' + (prerequisites.length ? '<button type="button" data-lw-prereq-location aria-label="查看需掌握的前置章节">查看章节</button>' : '') + '</div><div class="lw-reader-columns">' + priorHTML + '<div class="lw-reading"><details class="lw-section-toc"><summary>本篇小节</summary><ul>' + u.sections.filter(s => s.level > 1 && !hiddenSection(s.sectionId)).map(s => '<li class="lw-level-' + s.level + '"><a href="' + href(u, s.sectionId) + '">' + esc(s.title) + '</a></li>').join('') + '</ul></details><article class="lw-prose" aria-label="' + esc(u.title) + '">' + markdown(u, true) + '</article><nav class="lw-pagination" aria-label="相邻篇章">' + (index > 0 ? '<a href="' + href(c.units[index - 1]) + '">← 上一篇<br><strong>' + esc(c.units[index - 1].navigationLabel) + '</strong></a>' : '<a href="#learn">返回课程</a>') + (index < c.units.length - 1 ? '<a href="' + href(c.units[index + 1]) + '">下一篇 →<br><strong>' + esc(c.units[index + 1].navigationLabel) + '</strong></a>' : '<a href="#projects">带着作品复盘 →</a>') + '</nav></div></div></div>';
+    return '<div class="lw-reader-layout lw-detail">' + browseNoteHTML() + '<div class="lw-reader-top" id="lw-reader-start" tabindex="-1"><a href="#learn">← 返回课程</a><span>' + esc(u.navigationLabel) + '</span></div>' + missingLocation + hiddenNotice + '<div class="lw-prereq-strip" id="lw-prereq-strip" hidden><span>' + esc(prereqLabel) + '</span>' + (prerequisites.length ? '<button type="button" data-lw-prereq-location aria-label="查看需掌握的前置章节">查看章节</button>' : '') + '</div><div class="lw-reader-columns">' + priorHTML + '<div class="lw-reading"><details class="lw-section-toc"><summary>本篇小节</summary><ul>' + u.sections.filter(s => s.level > 1 && !hiddenSection(s.sectionId)).map(s => '<li class="lw-level-' + s.level + '"><a href="' + href(u, s.sectionId) + '">' + esc(s.title) + '</a></li>').join('') + '</ul></details><article class="lw-prose" aria-label="' + esc(u.title) + '">' + markdown(u, true) + '</article><nav class="lw-pagination" aria-label="相邻篇章">' + (index > 0 ? '<a href="' + href(c.units[index - 1]) + '">← 上一篇<br><strong>' + esc(c.units[index - 1].navigationLabel) + '</strong></a>' : '<a href="#learn">返回课程</a>') + (index < c.units.length - 1 ? '<a href="' + href(c.units[index + 1]) + '">下一篇 →<br><strong>' + esc(c.units[index + 1].navigationLabel) + '</strong></a>' : '<a href="#projects">带着作品复盘 →</a>') + '</nav></div></div></div>';
   }
   function projectsPage() {
     if (!corpus()) return careerState.active && careerState.status === 'loading' ? loadingPage() : errorPage('项目章节指引尚未加载。', careerState.errorKind === 'content-refresh' ? 'content-refresh' : 'reload', careerState.errorKind || 'missing');
@@ -1506,12 +1576,7 @@
     document.body.classList.toggle('lw-active', isWorkbench);
     const banner = document.getElementById('save-status'); if (isWorkbench && banner) banner.textContent = storageError || recordNotice || (dynamicCareer() ? '阅读记录保存在此浏览器。自动评分未接入。' : '阅读记录保存在此浏览器，未同步账户。');
     if (isWorkbench) probeContentIdentity({ reason: 'enter' });
-    if (dynamicCareer() && careerState.career?.title) {
-      const brand = document.querySelector('.brand strong span');
-      if (brand) brand.textContent = careerState.career.title + '学习';
-      const side = document.querySelector('.side-note strong');
-      if (side) side.textContent = careerState.career.title;
-    }
+    paintLearningChrome();
     let entry = document.getElementById('lw-assistant-entry');
     if (!entry) { entry = document.createElement('div'); entry.id = 'lw-assistant-entry'; entry.className = 'lw-assistant-entry'; document.getElementById('app')?.prepend(entry); }
     entry.hidden = view === 'generation' || view === 'settings';
@@ -1722,7 +1787,7 @@
       if (topic && queryHistory.some(h => h.response?.dialog?.status === 'answered' && JSON.stringify(canonicalTopic(h.response.dialog.context)) === JSON.stringify(topic))) dialogTopic = topic;
     }
   } catch { /* A damaged query cache is not used as a recommendation. */ }
-  globalThis.LearningWorkbench = { version: VERSION, agentVersion: DIALOG_AGENT_VERSION, workbenchVersion: WORKBENCH_VERSION, page, mount, beforeRender, markdown, validateResponse, currentContext, refreshAssistant, careerContentState, shouldDelegateView, currentTask, setTask, induceCareerTask, careerTask: careerId => readCareerTask(careerId), careerTaskKey: CAREER_TASK_KEY, practice: () => local.practice, readingRecords: () => local, recordIsCurrent: currentRecord, recordsExportData: () => { captureNotes(); return { current: local }; }, compareContentIdentity, localContentIdentity, applyServerIdentity, noteContentVersionMismatch, probeContentIdentity, snoozeContentUpdate, hardRefreshToNewContent, exportLocalLearningRecords, contentUpdateMarkup, contentCutoverState, stopContentProbes, isFixtureResponse, noteFixtureSession, fixtureSession: () => fixtureSession, learningErrorCard };
+  globalThis.LearningWorkbench = { version: VERSION, agentVersion: DIALOG_AGENT_VERSION, workbenchVersion: WORKBENCH_VERSION, page, mount, beforeRender, markdown, validateResponse, currentContext, refreshAssistant, careerContentState, shouldDelegateView, currentTask, setTask, induceCareerTask, careerTask: careerId => readCareerTask(careerId), careerTaskKey: CAREER_TASK_KEY, practice: () => local.practice, readingRecords: () => local, recordIsCurrent: currentRecord, recordsExportData: () => { captureNotes(); return { current: local }; }, compareContentIdentity, localContentIdentity, applyServerIdentity, noteContentVersionMismatch, probeContentIdentity, snoozeContentUpdate, hardRefreshToNewContent, exportLocalLearningRecords, contentUpdateMarkup, contentCutoverState, stopContentProbes, isFixtureResponse, noteFixtureSession, fixtureSession: () => fixtureSession, learningErrorCard, followCareerRoute, readingCareer: () => careerState.status === 'ready' && careerState.career ? { ...careerState.career } : null };
   globalThis.addEventListener?.('resize', readerGeometry);
   globalThis.addEventListener?.('scroll', () => {
     if (geometryFrame) return;
