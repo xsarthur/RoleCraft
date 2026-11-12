@@ -80,7 +80,10 @@
     if (error?.status >= 500 || error?.code === 'network_error') return '服务暂时不可用，请稍后再试。';
     if (error?.status === 401) return '登录已失效，请重新登录。';
     if (error?.status === 403) return '当前操作未获授权，请重新登录后再试。';
-    return error?.message || '请求未完成，请稍后再试。';
+    const name = error?.name || '';
+    const message = typeof error?.message === 'string' ? error.message : '';
+    if (name === 'ReferenceError' || name === 'TypeError' || name === 'SyntaxError' || /is not defined/.test(message)) return '请求未完成，请稍后再试。';
+    return message || '请求未完成，请稍后再试。';
   }
 
   function validCareerCandidate(career) {
@@ -217,7 +220,8 @@
     if (!canConfirm) {
       const payload = await writeAccountCareer(careerId);
       const returned = payload?.career && typeof payload.career === 'object' ? payload.career : {};
-      return { ...career, ...returned, careerId, title: returned.title || career.title || '' };
+      const returnedTitle = typeof returned.title === 'string' ? returned.title.trim() : '';
+      return { ...candidate, ...returned, careerId, title: returnedTitle || candidate.title || '' };
     }
     const expected = {
       status: candidate.status || 'published',
@@ -767,16 +771,21 @@
     let failed = null;
     try {
       let stored = career;
+      let persisted = true;
       if (state.me?.user) {
         stored = await confirmAccountCareer(career);
         if (switchRequestId !== state.switchRequestId) return;
-        state.me = { user: state.me.user ? { ...state.me.user } : null, activeCareer: { ...stored, careerId, title: stored.title || title } };
-        try { writeLocalCareer(state.me.activeCareer); }
-        catch { notify('账户已切换，但本机未能保存。刷新后需要重新选择。'); }
+      }
+      const nextCareer = { ...stored, careerId, title: (typeof stored?.title === 'string' && stored.title.trim()) || title };
+      if (state.me?.user) {
+        state.me = { user: state.me.user ? { ...state.me.user } : null, activeCareer: nextCareer };
         state.conflict = null;
         clearConflictDismissal();
-      } else {
-        writeLocalCareer({ ...career, careerId, title });
+      }
+      try { writeLocalCareer(nextCareer); }
+      catch {
+        persisted = false;
+        state.localCareer = { ...nextCareer, schema: 1, writtenAt: new Date().toISOString(), summary: nextCareer.summary || '', contentVersion: nextCareer.contentVersion || '', indexVersion: nextCareer.indexVersion || '', textbookVersionId: nextCareer.textbookVersionId || '', corpusHash: nextCareer.corpusHash || '' };
       }
       if (switchRequestId !== state.switchRequestId) return;
       resetCareerSelection();
@@ -784,7 +793,7 @@
       if (dialog?.open) closeDialog(dialog);
       render();
       emit('career_switch');
-      notify('已切换到 ' + (currentCareer()?.title || title) + '。');
+      notify(persisted ? '已切换到 ' + (nextCareer.title || title) + '。' : '已切换到 ' + (nextCareer.title || title) + '。本机浏览器未能保存，刷新后需要重新选择。');
     } catch (err) {
       failed = err;
       if (switchRequestId !== state.switchRequestId) return;

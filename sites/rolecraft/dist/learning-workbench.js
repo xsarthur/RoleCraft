@@ -189,9 +189,18 @@
     const [path, search = ''] = location.hash.slice(1).split('?'), p = path.split('/');
     const resume = new URLSearchParams(search).get('resume') === '1';
     const routed = careerRoute();
-    if (routed && (!careerState.careerId || careerState.careerId === routed.careerId)) return { careerId: routed.careerId, unitId: routed.unitId, sectionId: routed.sectionId, version: careerState.career?.contentVersion || '', resume };
+    const loadedVersion = careerState.career?.contentVersion || '';
+    if (routed && (!careerState.careerId || careerState.careerId === routed.careerId)) return { careerId: routed.careerId, unitId: routed.unitId, sectionId: routed.sectionId, version: loadedVersion, resume };
     // A switch replaces the surface without changing a stale browse hash.
-    if (careerState.active && careerState.careerId && routed && routed.careerId !== careerState.careerId) return { careerId: careerState.careerId, unitId: '', sectionId: '', version: careerState.career?.contentVersion || '', resume: false };
+    if (careerState.active && careerState.careerId && routed && routed.careerId !== careerState.careerId) return { careerId: careerState.careerId, unitId: '', sectionId: '', version: loadedVersion, resume: false };
+    // Empty hash and #learn are the current-career home. Use that career's own
+    // content version. Agent textbook-v13 must not be applied to another book.
+    if (careerState.active && careerState.careerId) {
+      const version = loadedVersion || (careerState.careerId === AGENT_CAREER_ID ? CURRENT : '');
+      const agentChapter = p[0] === 'learn' && p[1] === 'agent' && !dynamicCareer();
+      if (agentChapter) return { careerId: careerState.careerId, unitId: p[2] || '', sectionId: p[3] || '', version: version || CURRENT, resume };
+      return { careerId: careerState.careerId, unitId: '', sectionId: '', version, resume: false };
+    }
     return { careerId: '', unitId: p[0] === 'learn' && p[1] === 'agent' ? p[2] || '' : '', sectionId: p[0] === 'learn' && p[1] === 'agent' ? p[3] || '' : '', version: CURRENT, resume };
   }
   function href(u, s = '') {
