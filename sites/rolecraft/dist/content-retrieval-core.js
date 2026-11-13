@@ -12,12 +12,15 @@ const frames=[
  {id:'foundation',label:'确定起点并补齐程序基础',units:['01-foundation','00-learning-route'],patterns:[/零基础|没学过编程|不会编程|不会写代码|初学|从零|入门|从哪.{0,4}开始|基础预备|补学|先修/]},
  {id:'model_candidate',label:'校验模型响应与业务候选',units:['f02'],patterns:[/接模型|调用模型|模型接口|模型响应|模型输出|结构化|json|编造|乱输出|大模型返回/i]},
  {id:'http',label:'处理外部请求和失败边界',units:['f01'],patterns:[/http|api|网络请求|接口请求|第三方接口|请求超时|网络异常|状态码/i]},
- {id:'selection',label:'选择最小可用方案',units:['c01-selection'],patterns:[/选型|方案选择|工作流|workflow|多.?agent|固定流程|要不要.{0,8}agent|普通程序|最小可用方案/i]},
+ {id:'selection',label:'选择最小可用方案',units:['c01-selection'],patterns:[/选型|方案选择|工作流|workflow|多.?agent|固定流程|要不要.{0,8}agent|普通程序|最小可用方案|(?:agent|智能体)(?:\s|的){0,2}架构/i]},
  {id:'runtime',label:'实现受控的动态循环',units:['c01-control-loop'],patterns:[/控制循环|动态循环|运行时|自己决定下一步|工具调用|下一步.{0,10}决定/]},
  {id:'problem',label:'确认值得解决的真实问题',units:['p01-discovery','p01-mvp'],patterns:[/用户访谈|真实需求|需求证据|值得.{0,8}解决|痛点|产品需求|mvp|最小产品/i]},
  {id:'release',label:'发布和回退时保留任务事实',units:['e04'],patterns:[/发布|上线|部署|回退|回滚|灰度/]},
  {id:'delivery',label:'用作品证据复盘交付',units:['p02'],patterns:[/独立作品|交付|复盘|作品证据|实训/]},
- {id:'orientation',label:'认识 Agent 与工程全貌',units:['00-learning-route'],patterns:[/agent.{0,8}(是什么|全貌|架构|组成)|什么是.{0,8}agent|工程全景|运行闭环|全貌|架构/i]}
+ // “架构” is not an overview cue. The opening only mentions Anthropic’s
+ // architecture definition in passing and sends the comparison to 方案选择.
+ // Bare 架构 / “agent架构” must not lock this frame onto 00-learning-route.
+ {id:'orientation',label:'认识 Agent 与工程全貌',units:['00-learning-route'],patterns:[/agent.{0,8}(是什么|全貌|组成)|什么是.{0,8}agent|工程全景|运行闭环|全貌/i]}
 ];
 const v12Frames=[
  {id:'python_foundations',label:'理解对象并发与模型输出边界',units:['n01-python-model-foundations'],patterns:[/python|浅拷贝|深拷贝|事件循环|装饰器|lru|注意力|因果掩码/i]},
