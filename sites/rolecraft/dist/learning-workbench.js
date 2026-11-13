@@ -54,7 +54,7 @@
     currentSubmissionId: '', submissions: [], updatedAt: ''
   });
   const empty = () => ({ pendingNoteIds: [], corpusVersion: CURRENT, startingPoint: null, visits: [], bookmarks: [], notes: {}, project: { title: '', problem: '', evidence: '', result: '', gap: '', next: '' }, practice: emptyPractice(), task: { state: 'not_started', unitId: '', sectionId: '', reason: '', updatedAt: '' } });
-  let local = empty(), storageError = '', activeView = '', assistantOpen = false, query = '', response = null, submission = null, pending = false, requestId = 0, controller = null;
+  let local = empty(), storageError = '', activeView = '', assistantOpen = false, askReturnPending = false, pageLockY = null, query = '', response = null, submission = null, pending = false, requestId = 0, controller = null;
   let careerPractice = { draft: '', saved: false, submitted: false, feedback: '练习反馈：尚未提交。提交后只回显本页草稿，不表示通过或等级。' };
   // The public page keeps the original Agent corpus for anonymous reading. Once an
   // account has an active career, the reader must use that career's API catalog and
@@ -123,7 +123,7 @@
     readScopedRecords();
     careerPractice = { draft: '', saved: false, submitted: false, feedback: '练习反馈：尚未提交。' };
     ++requestId; controller?.abort(); pending = false;
-    query = ''; response = null; submission = null; dialogTopic = null; queryHistory = []; restoredResponse = false; assistantOpen = false;
+    query = ''; response = null; submission = null; dialogTopic = null; queryHistory = []; restoredResponse = false; assistantOpen = false; askReturnPending = false; syncAskLayout();
     return true;
   }
   readScopedRecords();
@@ -473,7 +473,7 @@
     const career = session?.activeCareer;
     const careerId = career?.careerId || '';
     const changedCareer = careerState.careerId !== careerId;
-    if (changedCareer) { query = ''; response = null; submission = null; dialogTopic = null; queryHistory = []; restoredResponse = false; assistantOpen = false; }
+    if (changedCareer) { query = ''; response = null; submission = null; dialogTopic = null; queryHistory = []; restoredResponse = false; assistantOpen = false; askReturnPending = false; syncAskLayout(); }
     careerController?.abort();
     careerController = null;
     clearTimeout(careerPhaseTimer);
@@ -1330,8 +1330,9 @@
   }
   function currentContext() {
     const l = loc(), related = globalThis.LearningExperienceV13?.queryContext?.(), u = activeView === 'learn' && l.version === CURRENT ? unit(l.unitId) : unit(related?.unitId);
-    const currentUnitId = contextEnabled && u ? u.unitId : null;
-    const currentSectionId = contextEnabled && u ? section(u, activeView === 'learn' ? l.sectionId : related?.sectionId)?.sectionId || null : null;
+    const sec = u ? section(u, activeView === 'learn' ? l.sectionId : related?.sectionId) : null;
+    const currentUnitId = u ? u.unitId : null;
+    const currentSectionId = sec?.sectionId || null;
     const career = careerState.active ? careerState.career : null;
     const c = { careerId: careerState.active ? careerState.careerId : AGENT_CAREER_ID, contentVersion: career?.contentVersion || CURRENT, textbookVersionId: career?.textbookVersionId || null, startingPoint: startingEnabled ? (globalThis.LearningExperienceV13?.startingPoint?.() ?? local.startingPoint) : null, currentUnitId, currentSectionId, useCurrentContext: Boolean(currentUnitId), corpusVersion: career?.contentVersion || CURRENT };
     const topic = canonicalTopic(dialogTopic); if (topic) c.previousContext = topic;
@@ -1344,40 +1345,120 @@
     return '依据当前教材';
   }
   function isRuleFallback(r) { return /concept|rule|static_rules/i.test(String(r?.engineMode || '')); }
-  function resultHTML() {
-    if (pending) return '<div class="lw-assistant-state lw-state-loading" role="status" aria-live="polite" aria-atomic="true"><span class="lw-state-mark lw-query-spinner" aria-hidden="true"><span></span></span><div><h3>正在查找教材依据</h3><p>请求 ' + esc(submission?.requestId || '生成中') + ' · 正在向当前教材检索服务查询；完成后会显示原文和出处。等待期间不会重复提交。</p><div class="lw-query-indeterminate" aria-hidden="true"><span></span></div></div></div>';
-    if (!response) return '<div class="lw-find-empty"><h3>把学习或项目问题说出来</h3><p>根据教材简答，并提供对应章节入口。职业知识以外的问题会被过滤。</p><div class="lw-examples"><button data-lw-example="ReAct是什么">ReAct 是什么</button><button data-lw-example="程序改了一版，怎么判断效果真的变好了">怎样比较改动后的效果</button></div></div>';
-    const d = response.dialog || {}, status = d.status || response.status;
-    const identity = { contentVersion: response?.contentVersion || response?.corpusVersion || '', textbookVersionId: response?.textbookVersionId || '', indexVersion: response?.indexVersion || '', corpusHash: response?.corpusHash || '' };
-    const identityValue = value => esc(value || '服务未提供');
-    const head = '<div class="lw-result-meta">' + (restoredResponse ? '<p class="lw-small">本会话此前问题' + (status === 'answered' ? ' · 已重新核对当前教材出处' : '') + '</p>' : '') + '<p><strong>已提交问题：</strong>' + esc(submission?.query || query) + '</p><span class="lw-mode">请求 ' + esc(response?.requestId || submission?.requestId || '未知') + ' · ' + esc(modeLabel(response)) + '</span><details class="lw-result-identity"><summary>查看本次版本身份</summary><p>教材版本：' + identityValue(identity.contentVersion) + '<br>教材身份：' + identityValue(identity.textbookVersionId) + '<br>索引版本：' + identityValue(identity.indexVersion) + '<br>语料 SHA256：' + identityValue(identity.corpusHash) + '</p></details></div>';
-    if (response?.contentVersionMismatch) return head + contentUpdateMarkup('alert');
-    if (status === 'unavailable') return head + (isRuleFallback(response) ? '<div class="lw-fallback-notice" role="note"><strong>规则降级</strong><span>当前未调用外部模型；规则检索也未返回可核对结果。</span></div>' : '') + '<div class="lw-assistant-state lw-state-error" role="alert"><span class="lw-state-mark" aria-hidden="true">!</span><div><h3>检索暂时失败</h3><p>' + esc(d.message || response.message || response.error?.message || '教材问答资源没有就绪。你仍可通过目录阅读。') + '</p><div class="lw-state-actions"><button class="outline" data-lw-retry>重试本题</button><a href="#learn">打开课程目录</a></div></div></div>';
-    if (status === 'invalid_input') return head + '<div class="lw-message"><h3>请检查输入</h3><p>' + esc(d.message || response.message || '请输入 1—1200 字的问题描述。') + '</p></div>';
-    if (status === 'unrelated' || status === 'related_uncovered') return head + (isRuleFallback(response) ? '<div class="lw-fallback-notice" role="note"><strong>规则降级</strong><span>语义检索当前不可用，本次使用本地规则检查；没有匹配时不会编造教材答案。</span></div>' : '') + '<div class="lw-assistant-state lw-state-empty"><span class="lw-state-mark" aria-hidden="true">?</span><div><h3>没有找到匹配的教材内容</h3><p>' + esc(d.message || (status === 'unrelated' ? '这里只回答 Agent 职业学习相关问题。' : '当前教材没有足够依据回答这个问题。')) + '</p><p class="lw-small">可以换一种说法，或从课程目录确认教材覆盖范围。</p><div class="lw-examples"><button data-lw-example="ReAct是什么">换问：ReAct 是什么</button><button data-lw-example="如何验证 Agent 改动后的效果">换问：如何验证改动效果</button></div><a href="#learn">打开课程目录 →</a></div></div>';
-    if (status === 'needs_clarification') {
-      const c = response.clarification || {}, options = Array.isArray(c.options) ? c.options : [];
-      return head + '<div class="lw-message"><h3>请补充你指的含义</h3><p>' + esc(d.message || (typeof c === 'string' ? c : c.question || c.message) || '你想解决哪一类职业问题？') + '</p><div class="lw-clarifications">' + options.slice(0, 3).map((o, i) => '<button class="outline" data-lw-clarify="' + i + '">' + esc(typeof o === 'string' ? o : o.label || o.title || o.query) + '</button>').join('') + '</div></div>';
+  function askChapterLabel() {
+    if (activeView !== 'learn') return '';
+    const reading = unit(loc().unitId, loc().version);
+    return String(reading?.navigationLabel || reading?.title || '').trim();
+  }
+  function askPlaceholder() {
+    const name = String(careerState.career?.title || '').trim();
+    return name ? '描述你在「' + name + '」学习或项目中遇到的问题' : '描述你在学习或项目中遇到的问题';
+  }
+  function measureAskLayout() {
+    const vw = window.innerWidth || document.documentElement.clientWidth || 0;
+    if (vw < 760) return { mode: 'page', width: 0 };
+    const cap = Math.min(480, vw * 0.42);
+    const app = document.getElementById('app');
+    const main = document.getElementById('main-content');
+    let column = app ? app.getBoundingClientRect().width : (main ? main.getBoundingClientRect().width : vw);
+    if (document.body.classList.contains('lw-ask-side')) {
+      const applied = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--lw-ask-width')) || 0;
+      column += applied;
     }
-    if (status !== 'answered') return head + '<p class="lw-message">问答响应无法识别，请重试。</p>';
-    const refs = d.citations || [], used = d.scope?.contextUsed, topic = canonicalTopic(used), tu = topic && unit(topic.unitId), ts = topic && section(tu, topic.sectionId);
-    const filtered = (d.scope?.filteredSegments || []).filter(x => x.reason !== 'excluded');
-    const fallbackNotice = isRuleFallback(response) ? '<div class="lw-fallback-notice" role="note"><strong>规则降级</strong><span>语义检索当前不可用，本次按本地教材词项和规则匹配；结果仍经过版本与原文核对。</span></div>' : '';
-    return head + fallbackNotice + (filtered.length ? '<div class="lw-dialog-scope"><p>本次只回答 Agent 学习相关部分。</p><p class="lw-small">已过滤：' + esc(filtered.map(x => x.text).join('；')) + '</p></div>' : '') + (topic ? '<p class="lw-small">' + (used.origin === 'previous_answer' ? '结合上一个已核问答主题：' : '结合当前阅读：') + esc(tu.navigationLabel) + ' / ' + esc(ts.title) + '</p>' : '') + '<div class="lw-dialog-answer"><h3>教材简答</h3>' + d.sentences.map(sentence => '<p>' + esc(sentence.text) + ' ' + sentence.citationIds.map(cid => { const index = refs.findIndex(r => r.id === cid); return '<a class="lw-citation-link" href="#lw-citation-' + (index + 1) + '" data-lw-citation="' + (index + 1) + '" aria-label="来源 ' + (index + 1) + '：' + esc(refs[index].sectionTitle) + '">来源 ' + (index + 1) + '</a>'; }).join(' ') + '</p>').join('') + '</div><h3 class="lw-sources-heading">对应教材</h3>' + refs.map((r, i) => {
-      const u = unit(r.unitId), s = section(u, r.sectionId);
-      const resultIdentity = { contentVersion: r.version || response?.contentVersion || response?.corpusVersion || '', textbookVersionId: r.textbookVersionId || response?.textbookVersionId || '', indexVersion: r.indexVersion || response?.indexVersion || '', corpusHash: r.corpusHash || response?.corpusHash || '' };
-      const displayIdentity = value => esc(value || '服务未提供');
-      return '<article class="lw-result-card lw-dialog-source" id="lw-citation-' + (i + 1) + '" tabindex="-1"><span class="lw-result-position">来源 ' + (i + 1) + ' · 第 ' + String(u.order).padStart(2, '0') + ' 篇 · ' + esc(u.navigationLabel) + '</span><h4>' + esc(s.title) + '</h4><a class="primary" data-lw-result href="' + esc(r.href) + '">阅读这一节 →</a><details class="lw-dialog-quote"><summary>展开教材原文 · 来源 ' + (i + 1) + '</summary><blockquote>' + esc(r.quote) + '</blockquote></details><details class="lw-dialog-source-info"><summary>查看出处与版本</summary><p>教材版本：' + displayIdentity(resultIdentity.contentVersion) + '<br>教材身份：' + displayIdentity(resultIdentity.textbookVersionId) + '<br>索引版本：' + displayIdentity(resultIdentity.indexVersion) + '<br>语料 SHA256：' + displayIdentity(resultIdentity.corpusHash) + '</p><p>' + esc(u.title) + '<br>' + esc(u.sourcePath) + ' · ' + esc(s.title) + '</p><p class="lw-hash">原稿 SHA256：' + esc(r.sourceSha256 || u.sourceSha256) + '<br>稳定定位：' + esc(r.href) + '</p></details></article>';
-    }).join('') + '<p class="lw-small">简答来自教材原文提取，可进入小节阅读完整条件与例子。</p>';
+    if (!(column > 0)) column = vw;
+    if (column - cap < 360) return { mode: 'page', width: 0 };
+    return { mode: 'side', width: Math.round(cap) };
+  }
+  function askCandidates(citations) {
+    const seen = new Set(), cards = [];
+    for (const ref of Array.isArray(citations) ? citations : []) {
+      if (!ref || typeof ref.href !== 'string' || !ref.href || typeof ref.quote !== 'string' || !ref.quote.trim()) continue;
+      const key = String(ref.unitId || '') + '\n' + String(ref.sectionId || '');
+      if (!key.trim() || seen.has(key)) continue;
+      const source = section(unit(ref.unitId), ref.sectionId);
+      const title = String(source?.title || ref.sectionTitle || '').trim();
+      if (!title) continue;
+      seen.add(key);
+      cards.push({ href: ref.href, title, quote: ref.quote.trim() });
+      if (cards.length >= 3) break;
+    }
+    return cards;
+  }
+  function askState(kind, title, detail, actions) {
+    const mark = kind === 'error' ? '!' : kind === 'empty' ? '?' : '…';
+    return '<div class="lw-assistant-state lw-state-' + kind + '"><span class="lw-state-mark" aria-hidden="true">' + mark + '</span><div><h3>' + esc(title) + '</h3>' + (detail ? '<p>' + esc(detail) + '</p>' : '') + (actions || '') + '</div></div>';
+  }
+  function askFallback(value) { return isRuleFallback(value) ? '<p class="lw-ask-fallback">当前使用规则检索</p>' : ''; }
+  function askPartial(dialog) {
+    const filtered = (dialog?.scope?.filteredSegments || []).filter(item => item && item.reason !== 'excluded' && typeof item.text === 'string' && item.text.trim());
+    if (!filtered.length) return '';
+    return '<p class="lw-ask-note">本次只回答与当前教材相关的部分。</p><p class="lw-ask-note">' + esc(filtered.map(item => item.text).join('；')) + '</p>';
+  }
+  function askStatusText() {
+    if (pending) return '正在查找教材依据';
+    if (!response) return '';
+    const status = response.dialog?.status || response.status;
+    if (status === 'answered') {
+      const count = askCandidates(response.dialog?.citations).length;
+      return count ? '找到 ' + count + ' 处相关教材' : '没有找到匹配的教材内容';
+    }
+    if (status === 'unrelated') return '这个问题不在本教材范围内';
+    if (status === 'related_uncovered' || status === 'no_match') return '没有找到匹配的教材内容';
+    if (status === 'needs_clarification') return '请再补充一下';
+    if (status === 'invalid_input') return response.dialog?.message || response.message || '请先写下要问的问题';
+    if (response.contentVersionMismatch) return '教材已更新';
+    return '暂时无法完成这次问答';
+  }
+  function launcherButton(expanded) {
+    const status = pending ? '检索中' : (response ? '有结果' : '');
+    return '<button class="lw-assistant-launcher" id="lw-assistant-launcher" type="button" data-lw-toggle aria-expanded="' + (expanded ? 'true' : 'false') + '" aria-controls="lw-find-panel"><span class="lw-launcher-icon" aria-hidden="true">⌕</span><span>问教材</span>' + (status ? '<span class="lw-launcher-status">' + status + '</span>' : '') + '</button>';
+  }
+  function historyHTML() {
+    if (!queryHistory.length) return '';
+    return '<details class="lw-query-history"><summary>最近问题 · 本会话</summary><div class="lw-ask-history">' + queryHistory.map((item, index) => '<button type="button" class="lw-ask-text" data-lw-history="' + index + '">' + esc(item.query) + '</button>').join('') + '</div></details>';
+  }
+  function resultHTML() {
+    const catalog = '<div class="lw-state-actions"><a href="#learn">打开课程目录</a></div>';
+    const retry = '<div class="lw-state-actions"><button type="button" class="lw-ask-text" data-lw-retry>重试本题</button><a href="#learn">打开课程目录</a></div>';
+    if (pending) return askState('loading', '正在查找教材依据', '正在向当前教材查找依据，完成后会列出相关原文。桌面上你可以先继续阅读。', '<div class="lw-query-indeterminate" aria-hidden="true"><span></span></div>');
+    if (!response) return '';
+    if (response.contentVersionMismatch) return contentUpdateMarkup('alert');
+    const dialog = response.dialog || {}, status = dialog.status || response.status;
+    if (status === 'invalid_input') return askState('empty', dialog.message || response.message || '请先写下要问的问题', '', '');
+    if (status === 'unavailable') {
+      const raw = String(dialog.message || response.message || response.error?.message || '').trim();
+      const reason = raw && !/只回答\s*Agent/i.test(raw) ? raw.replace(/。$/, '') : '';
+      return askFallback(response) + askState('error', '暂时无法完成这次问答', reason ? reason + '。你仍可通过目录阅读教材。' : '教材问答暂时没有就绪。', retry);
+    }
+    if (status === 'unrelated') return askFallback(response) + askState('empty', '这个问题不在本教材范围内', '这里只回答与当前教材相关的学习问题。请换一个学习或项目问题。', catalog);
+    if (status === 'related_uncovered' || status === 'no_match') return askFallback(response) + askState('empty', '没有找到匹配的教材内容', '当前教材没有足够依据回答这个问题。可以换一种说法，或从课程目录确认覆盖范围。', catalog);
+    if (status === 'needs_clarification') {
+      const options = Array.isArray(response.clarification?.options) ? response.clarification.options : [];
+      const buttons = options.slice(0, 3).map((option, index) => {
+        const label = typeof option === 'string' ? option : (option?.label || option?.title || option?.query || '');
+        return label ? '<button type="button" class="lw-ask-text" data-lw-clarify="' + index + '">' + esc(label) + '</button>' : '';
+      }).join('');
+      return askState('empty', '请再补充一下', '请补充你指的含义。', buttons ? '<div class="lw-state-actions">' + buttons + '</div>' : '');
+    }
+    if (status !== 'answered') return askState('error', '暂时无法完成这次问答', '教材问答暂时没有就绪。', retry);
+    const cards = askCandidates(dialog.citations);
+    const head = askFallback(response) + askPartial(dialog);
+    if (!cards.length) return head + askState('empty', '没有找到匹配的教材内容', '当前教材没有足够依据回答这个问题。可以换一种说法，或从课程目录确认覆盖范围。', catalog);
+    return head + '<p class="lw-ask-count">找到 ' + cards.length + ' 处相关教材</p>' + cards.map((card, index) => '<a class="lw-ask-card" data-lw-result href="' + esc(card.href) + '" aria-label="打开这一节：' + esc(card.title) + '"><span class="lw-ask-kicker">相关 ' + (index + 1) + '</span><h3>' + esc(card.title) + '</h3><blockquote>' + esc(card.quote) + '</blockquote><span class="lw-ask-jump">打开这一节</span></a>').join('');
   }
   function assistantHTML() {
-    const c = currentContext(), u = unit(c.currentUnitId), s = section(u, c.currentSectionId), t = canonicalTopic(dialogTopic), tu = t && unit(t.unitId), ts = t && section(tu, t.sectionId), invalid = response?.status === 'invalid_input';
-    const feedback = pending ? '正在理解问题并查教材。请稍候，发送控件已暂时禁用。' : invalid ? response.dialog?.message || response.message : response ? assistantOpen ? '本题已完成' : '本题已完成，展开查看' : '';
-    if (!assistantOpen) return '<div class="lw-assistant" id="lw-assistant"><button class="lw-assistant-launcher" id="lw-assistant-launcher" type="button" data-lw-toggle aria-expanded="false" aria-controls="lw-find-panel"><span class="lw-launcher-icon" aria-hidden="true">⌕</span><span>问教材</span>' + (pending || response ? '<span class="lw-launcher-status">' + esc(pending ? '检索中' : '有结果') + '</span>' : '') + '</button></div>';
-    const careerLabel = careerState.active ? (careerState.career?.title || '当前职业') : 'Agent 开发者';
-    const dialogDescription = dynamicCareer() ? '当前职业教材是否支持问答由服务返回；未接入时会明确显示不可用。' : '根据当前教材简答，并提供原文入口。';
-    const sendButton = pending ? '<button id="lw-query-submit" class="primary lw-query-submit is-loading" type="submit" disabled aria-disabled="true" aria-busy="true"><span class="lw-query-submit-spinner" aria-hidden="true"></span><span>正在查询…</span></button>' : '<button id="lw-query-submit" class="primary lw-query-submit" type="submit">发送</button>';
-    return '<div class="lw-assistant is-open" id="lw-assistant"><aside class="lw-assistant-drawer" id="lw-find-panel" role="dialog" aria-label="Agent 学习问答" aria-modal="true"><div class="lw-assistant-head"><div><h2>Agent 学习问答</h2><p>' + esc(dialogDescription) + '</p></div><button class="outline" data-lw-collapse aria-expanded="true" aria-controls="lw-find-panel">收起</button></div><div class="lw-context"><span>职业：' + esc(careerLabel) + '</span><span>' + (u ? '章节上下文：' + esc(u.navigationLabel) + (s ? ' / ' + esc(s.title) : '') : '全部教材') + '</span>' + (u ? '<button data-lw-clear-context>清除章节上下文</button>' : activeView === 'learn' && loc().version === CURRENT && unit(loc().unitId) ? '<button data-lw-use-context>结合当前阅读</button>' : '') + (tu ? '<span>问答主题：' + esc(tu.navigationLabel) + ' / ' + esc(ts.title) + '</span>' : '<span>尚无问答主题</span>') + '<button data-lw-clear-topic>清除问答主题</button></div><div class="lw-find-results" id="lw-find-results" aria-busy="' + pending + '">' + resultHTML() + (queryHistory.length ? '<details class="lw-query-history"><summary>最近问题 · 本会话</summary>' + queryHistory.map((h,i) => '<button class="outline" data-lw-history="' + i + '">' + esc(h.query) + '</button>').join('') + '</details>' : '') + '</div><form id="lw-find-form"' + (pending ? ' aria-busy="true"' : '') + '><label for="lw-query">问教材</label><textarea id="lw-query" rows="1" placeholder="' + esc(globalThis.LearningExperienceV13?.inputHint?.() || '描述 Agent 开发、学习或项目中的问题') + '" aria-describedby="lw-query-feedback"' + (invalid ? ' aria-invalid="true"' : '') + '>' + esc(query) + '</textarea>' + sendButton + '<button class="lw-open-toggle" type="button" data-lw-toggle aria-expanded="true" aria-controls="lw-find-panel" aria-label="收起学习问答">⌄</button><p id="lw-query-feedback" class="lw-query-feedback" role="status" aria-live="polite" aria-atomic="true">' + esc(feedback) + '</p></form></aside></div>';
+    const page = measureAskLayout().mode === 'page';
+    const chapter = askChapterLabel();
+    const topic = canonicalTopic(dialogTopic);
+    const invalid = (response?.dialog?.status || response?.status) === 'invalid_input';
+    const feedback = invalid ? (response.dialog?.message || response.message || '请先写下要问的问题') : '';
+    const send = pending
+      ? '<button id="lw-query-submit" class="primary lw-query-submit is-loading" type="submit" disabled aria-disabled="true" aria-busy="true"><span class="lw-query-submit-spinner" aria-hidden="true"></span><span>正在查找…</span></button>'
+      : '<button id="lw-query-submit" class="primary lw-query-submit" type="submit">发送</button>';
+    return '<div class="lw-assistant is-open" id="lw-assistant">' + launcherButton(true) + '<aside class="lw-assistant-drawer" id="lw-find-panel" role="' + (page ? 'dialog' : 'complementary') + '" aria-label="问教材"' + (page ? ' aria-modal="true"' : '') + '><div class="lw-assistant-head"><div><h2>问教材</h2>' + (chapter ? '<p class="lw-ask-chapter">' + esc(chapter) + '</p>' : '') + '</div><button type="button" class="lw-ask-close" data-lw-collapse aria-label="关闭问教材"><span aria-hidden="true">×</span></button></div><p class="lw-ask-live" role="status" aria-live="polite" aria-atomic="true">' + esc(askStatusText()) + '</p><div class="lw-find-results" id="lw-find-results" aria-busy="' + (pending ? 'true' : 'false') + '">' + resultHTML() + historyHTML() + '</div><form id="lw-find-form"' + (pending ? ' aria-busy="true"' : '') + '>' + (topic ? '<button type="button" class="lw-ask-text" data-lw-clear-topic>清除问答主题</button>' : '') + '<label for="lw-query">问教材</label><textarea id="lw-query" rows="2" placeholder="' + esc(askPlaceholder()) + '" aria-describedby="lw-query-feedback"' + (invalid ? ' aria-invalid="true"' : '') + '>' + esc(query) + '</textarea>' + send + '<p id="lw-query-feedback" class="lw-query-feedback">' + esc(feedback) + '</p></form></aside></div>';
+  }
+  function collapsedAssistantHTML() {
+    return (askReturnPending ? '<button type="button" class="lw-ask-return" data-lw-ask-return>返回本题结果</button>' : '') + '<div class="lw-assistant" id="lw-assistant">' + launcherButton(false) + '</div>';
   }
   function validateSource(result) {
     const c = corpus(), u = unit(result?.unitId), s = section(u, result?.sectionId);
@@ -1417,7 +1498,7 @@
   async function find(specificQuery, specificContext) {
     const expression = (specificQuery ?? query).trim(), context = specificContext || currentContext();
     if (pending && expression === submission?.query && JSON.stringify(context) === JSON.stringify(submission.context)) return;
-    if (!expression || expression.length > 1200) { ++requestId; controller?.abort(); pending = false; restoredResponse = false; submission = { query: specificQuery ?? query, context, requestId: uuid() }; response = { status: 'invalid_input', requestId: submission.requestId, message: !expression ? '先描述一个你想解决的问题。' : '请把问题控制在 1200 字以内，当前输入已保留。' }; assistantOpen = true; assistantScroll = 0; refreshAssistant(false); document.getElementById('lw-query')?.focus(); return; }
+    if (!expression || expression.length > 1200) { ++requestId; controller?.abort(); pending = false; restoredResponse = false; submission = { query: specificQuery ?? query, context, requestId: uuid() }; response = { status: 'invalid_input', requestId: submission.requestId, message: !expression ? '请先写下要问的问题' : '问题超出长度限制，请缩短后再发送' }; assistantOpen = true; assistantScroll = 0; refreshAssistant(false); document.getElementById('lw-query')?.focus({ preventScroll: true }); return; }
     query = expression;
     const id = ++requestId; controller?.abort(); const activeController = new AbortController(); controller = activeController;
     const requestKey = uuid();
@@ -1478,14 +1559,86 @@
     };
     place();
   }
+  function syncAskLayout() {
+    const host = document.getElementById('lw-assistant-host');
+    const open = assistantOpen && host && !host.hidden;
+    const shell = open ? measureAskLayout() : { mode: 'closed', width: 0 };
+    const page = shell.mode === 'page', side = shell.mode === 'side';
+    document.body.classList.toggle('lw-ask-open', open);
+    document.body.classList.toggle('lw-ask-side', side);
+    document.body.classList.toggle('lw-ask-page', page);
+    document.documentElement.style.setProperty('--lw-ask-width', side ? shell.width + 'px' : '0px');
+    const panel = document.getElementById('lw-find-panel');
+    if (panel) {
+      if (page) { panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-modal', 'true'); }
+      else { panel.setAttribute('role', 'complementary'); panel.removeAttribute('aria-modal'); }
+    }
+    if (page) {
+      if (pageLockY == null) {
+        pageLockY = window.scrollY || document.documentElement.scrollTop || 0;
+        document.body.style.position = 'fixed';
+        document.body.style.top = '-' + pageLockY + 'px';
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        document.body.style.width = '100%';
+      }
+    } else if (pageLockY != null) {
+      const y = pageLockY;
+      pageLockY = null;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      window.scrollTo(0, y);
+    }
+    if (!page) {
+      const bar = document.querySelector('.topbar');
+      const bottom = bar ? bar.getBoundingClientRect().bottom : 0;
+      document.documentElement.style.setProperty('--lw-reader-top', Math.max(0, Math.round(bottom)) + 'px');
+    }
+  }
+  function yieldCapsuleReading(visible) {
+    const prose = document.querySelector('.lw-prose');
+    const launcher = document.getElementById('lw-assistant-launcher');
+    if (!visible || !prose || !launcher) {
+      document.documentElement.style.setProperty('--lw-capsule-inline-inset', '0px');
+      return;
+    }
+    const cap = launcher.getBoundingClientRect();
+    const box = prose.getBoundingClientRect();
+    const applied = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--lw-capsule-inline-inset')) || 0;
+    const pad = parseFloat(getComputedStyle(prose).paddingRight) || 0;
+    const contentRight = box.right - Math.max(0, pad - applied);
+    const inset = cap.width > 0 ? Math.max(0, Math.ceil(contentRight - cap.left + 8)) : 0;
+    document.documentElement.style.setProperty('--lw-capsule-inline-inset', inset + 'px');
+  }
+  function syncCapsuleClearance() {
+    const host = document.getElementById('lw-assistant-host');
+    const visible = Boolean(host && !host.hidden && !assistantOpen);
+    let height = 0;
+    let bandTop = window.innerHeight || 0;
+    if (visible) for (const node of host.querySelectorAll('.lw-assistant-launcher, .lw-ask-return')) {
+      const rect = node.getBoundingClientRect();
+      if (!(rect.height > 0)) continue;
+      height = Math.max(height, Math.ceil(rect.height));
+      bandTop = Math.min(bandTop, rect.top);
+    }
+    const occupied = height ? Math.min(window.innerHeight || height, Math.max(height, Math.ceil((window.innerHeight || 0) - bandTop))) : 0;
+    document.body.classList.toggle('lw-ask-capsule', visible && height > 0);
+    document.documentElement.style.setProperty('--lw-capsule-clearance', occupied + 'px');
+    yieldCapsuleReading(visible && height > 0);
+  }
   function refreshAssistant(preserveScroll = true) {
     const previousResults = document.getElementById('lw-find-results'); if (preserveScroll && previousResults && assistantOpen) assistantScroll = previousResults.scrollTop;
     try { sessionStorage.setItem(scopedAuxKey(SESSION), JSON.stringify(sessionValue())); } catch { /* Reading and in-memory questions remain available. */ }
     const host = document.getElementById('lw-assistant-host');
     const focused = document.activeElement?.id === 'lw-query', submitFocused = document.activeElement?.id === 'lw-query-submit', input = focused ? document.getElementById('lw-query') : null, range = input ? [input.selectionStart, input.selectionEnd] : null;
     const entry = document.getElementById('lw-assistant-entry');
-    if (entry) entry.innerHTML = '<button class="lw-assistant-launcher" id="lw-assistant-launcher" type="button" data-lw-toggle aria-expanded="' + assistantOpen + '" aria-controls="lw-find-panel"><span class="lw-launcher-icon" aria-hidden="true">⌕</span><span>问教材</span>' + (pending || response ? '<span class="lw-launcher-status">' + esc(pending ? '检索中' : '有结果') + '</span>' : '') + '</button>';
-    if (host) host.innerHTML = assistantOpen ? assistantHTML() : '';
+    if (entry) { entry.hidden = true; entry.innerHTML = ''; }
+    if (host) host.innerHTML = host.hidden ? '' : (assistantOpen ? assistantHTML() : collapsedAssistantHTML());
+    syncAskLayout();
+    syncCapsuleClearance();
     const nextResults = document.getElementById('lw-find-results'); if (nextResults) nextResults.scrollTop = assistantScroll;
     revealContentUpdateActions(nextResults);
     if (focused) { const next = document.getElementById('lw-query'); next?.focus({ preventScroll: true }); if (range && next?.setSelectionRange) next.setSelectionRange(range[0], range[1]); }
@@ -1498,25 +1651,23 @@
     return [...panel.querySelectorAll('a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), summary, [tabindex]:not([tabindex="-1"])')].filter(el => !el.hasAttribute('disabled') && el.getAttribute('aria-hidden') !== 'true' && el.getClientRects().length > 0);
   }
   function syncBackgroundInert() {
+    const page = assistantOpen && document.body.classList.contains('lw-ask-page');
     const sidebar = document.getElementById('primary-sidebar');
     const app = document.getElementById('app');
     const topbar = document.querySelector('.topbar');
     const main = document.getElementById('main-content');
-    if (main) main.inert = assistantOpen;
-    if (app) app.inert = assistantOpen;
-    if (topbar) topbar.inert = assistantOpen;
+    if (main) main.inert = page;
+    if (app) app.inert = page;
+    if (topbar) topbar.inert = page;
     if (sidebar) {
-      sidebar.inert = assistantOpen || document.body.classList.contains('lw-detail-active') || globalThis.innerWidth <= 760;
+      sidebar.inert = page || document.body.classList.contains('lw-detail-active') || globalThis.innerWidth <= 760;
       sidebar.setAttribute('aria-hidden', String(sidebar.inert));
     }
   }
   function collapse() {
     const results = document.getElementById('lw-find-results'); if (results) assistantScroll = results.scrollTop;
     assistantOpen = false; refreshAssistant();
-    const visible = node => { const r = node?.getBoundingClientRect?.(); return node?.isConnected && r && r.bottom > 0 && r.top < innerHeight; };
-    const replacement = trigger?.id ? document.getElementById(trigger.id) : null;
-    const target = visible(trigger) ? trigger : visible(replacement) ? replacement : document.getElementById('main-content');
-    target?.focus({ preventScroll: true });
+    document.getElementById('lw-assistant-launcher')?.focus({ preventScroll: true });
   }
   function captureNotes() {
     if (renderedRecordScope !== recordScope.key) return;
@@ -1546,10 +1697,10 @@
     if (strip) strip.hidden = !prior || prior.getBoundingClientRect().bottom > top;
     const stripHeight = strip && !strip.hidden ? strip.getBoundingClientRect().height : 0;
     document.documentElement.style.setProperty('--lw-reader-top', top + 'px');
-    document.documentElement.style.setProperty('--lw-reader-scroll-offset', (top + stripHeight + 12) + 'px');
     prior?.classList.remove('lw-prereq-sticky');
-    const launcherHeight = document.getElementById('lw-assistant-launcher')?.getBoundingClientRect?.().height || 48;
-    document.body.style.setProperty('--lw-reader-bottom-clearance', Math.max(105, launcherHeight + 32) + 'px');
+    const returnExtra = askReturnPending && !assistantOpen ? 52 : 0;
+    document.documentElement.style.setProperty('--lw-reader-scroll-offset', (top + stripHeight + 12 + returnExtra) + 'px');
+    syncCapsuleClearance();
     if (globalThis.innerWidth <= 760) for (const diagram of document.querySelectorAll('[data-lw-inline-diagram]')) {
       if (diagram.dataset.lwDiagramPositioned || !diagram.clientWidth) continue;
       diagram.scrollLeft = diagram.dataset.lwInlineDiagram === 'center' ? Math.max(0, (diagram.scrollWidth - diagram.clientWidth) / 2) : 0;
@@ -1639,10 +1790,11 @@
     if (el.hasAttribute('data-lw-content-snooze')) { e.preventDefault(); snoozeContentUpdate(); return; }
     if (el.hasAttribute('data-lw-citation')) { e.preventDefault(); const card = document.getElementById('lw-citation-' + el.dataset.lwCitation); card?.focus({preventScroll:true}); card?.scrollIntoView({block:'nearest'}); return; }
     if (el.hasAttribute('data-lw-prereq-location')) { focusReaderTarget(document.getElementById('lw-prereq-title')); return; }
-    if (el.hasAttribute('data-lw-result')) { const results = document.getElementById('lw-find-results'); if (results) assistantScroll = results.scrollTop; assistantOpen = false; refreshAssistant(); return; }
+    if (el.hasAttribute('data-lw-result')) { const results = document.getElementById('lw-find-results'); if (results) assistantScroll = results.scrollTop; if (document.body.classList.contains('lw-ask-page') || measureAskLayout().mode === 'page') { askReturnPending = true; assistantOpen = false; refreshAssistant(); } return; }
     if (el.hasAttribute('data-lw-image')) { trigger = el; const d = document.getElementById('lw-image-dialog'), image = d.querySelector('img'); const narrow = el.dataset.lwImageNarrow; const useNarrow = Boolean(narrow && globalThis.matchMedia && globalThis.matchMedia('(max-width: 640px)').matches); const label = (el.dataset.lwAlt || '').trim(); const name = label || '查看教学图（可选增强）'; image.src = useNarrow ? narrow : el.dataset.lwImage; image.alt = name; d.setAttribute('aria-label', name); d.querySelector('.lw-image-scroll')?.setAttribute('aria-label', name); d.showModal(); d.querySelector('[data-lw-close-image]')?.focus(); return; }
     if (el.hasAttribute('data-lw-close-image')) { document.getElementById('lw-image-dialog').close(); return; }
-    if (el.hasAttribute('data-lw-toggle')) { if (assistantOpen) { collapse(); return; } trigger = el; assistantOpen = true; refreshAssistant(); document.getElementById('lw-query')?.focus(); return; }
+    if (el.hasAttribute('data-lw-ask-return')) { e.preventDefault(); assistantOpen = true; refreshAssistant(); document.getElementById('lw-query')?.focus({ preventScroll: true }); return; }
+    if (el.hasAttribute('data-lw-toggle')) { if (assistantOpen) { collapse(); return; } trigger = el; assistantOpen = true; refreshAssistant(); document.getElementById('lw-query')?.focus({ preventScroll: true }); return; }
     if (el.hasAttribute('data-lw-collapse')) { collapse(); return; }
     if (el.hasAttribute('data-lw-example')) { query = el.dataset.lwExample; refreshAssistant(); document.getElementById('lw-query')?.focus(); return; }
     if (el.hasAttribute('data-lw-clear-start')) { startingEnabled = false; refreshAssistant(); return; }
@@ -1752,10 +1904,10 @@
       diagram.scrollLeft += (e.key === 'ArrowRight' ? 1 : -1) * Math.max(80, diagram.clientWidth * .6);
       return;
     }
-    if (e.target.id === 'lw-query' && e.key === 'Enter' && !e.shiftKey && !e.isComposing && !composing) { e.preventDefault(); if (pending) return; query = e.target.value; find(); }
+    if (e.target.id === 'lw-query' && e.key === 'Enter' && !e.shiftKey && !e.isComposing && !composing && e.keyCode !== 229) { e.preventDefault(); if (pending) return; query = e.target.value; find(); }
     const imageOpen = document.getElementById('lw-image-dialog')?.open;
     if (e.key === 'Escape' && assistantOpen && !imageOpen) { e.preventDefault(); collapse(); return; }
-    if (e.key === 'Tab' && assistantOpen && !imageOpen) {
+    if (e.key === 'Tab' && assistantOpen && document.body.classList.contains('lw-ask-page') && !imageOpen) {
       const items = drawerFocusables();
       if (!items.length) return;
       const first = items[0], last = items[items.length - 1], active = document.activeElement;
@@ -1788,15 +1940,14 @@
     }
   } catch { /* A damaged query cache is not used as a recommendation. */ }
   globalThis.LearningWorkbench = { version: VERSION, agentVersion: DIALOG_AGENT_VERSION, workbenchVersion: WORKBENCH_VERSION, page, mount, beforeRender, markdown, validateResponse, currentContext, refreshAssistant, careerContentState, shouldDelegateView, currentTask, setTask, induceCareerTask, careerTask: careerId => readCareerTask(careerId), careerTaskKey: CAREER_TASK_KEY, practice: () => local.practice, readingRecords: () => local, recordIsCurrent: currentRecord, recordsExportData: () => { captureNotes(); return { current: local }; }, compareContentIdentity, localContentIdentity, applyServerIdentity, noteContentVersionMismatch, probeContentIdentity, snoozeContentUpdate, hardRefreshToNewContent, exportLocalLearningRecords, contentUpdateMarkup, contentCutoverState, stopContentProbes, isFixtureResponse, noteFixtureSession, fixtureSession: () => fixtureSession, learningErrorCard, followCareerRoute, readingCareer: () => careerState.status === 'ready' && careerState.career ? { ...careerState.career } : null };
-  globalThis.addEventListener?.('resize', readerGeometry);
+  globalThis.addEventListener?.('resize', () => { readerGeometry(); syncAskLayout(); syncCapsuleClearance(); syncBackgroundInert(); });
   globalThis.addEventListener?.('scroll', () => {
     if (geometryFrame) return;
-    geometryFrame = requestAnimationFrame(() => { geometryFrame = 0; readerGeometry(); });
+    geometryFrame = requestAnimationFrame(() => { geometryFrame = 0; readerGeometry(); if (document.body.classList.contains('lw-ask-side')) syncAskLayout(); syncCapsuleClearance(); });
   }, { passive: true });
   document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') probeContentIdentity({ reason: 'visible' }); });
   if (typeof setInterval === 'function') {
     cutover.timer = setInterval(() => probeContentIdentity({ reason: 'interval' }), CUTOVER_PROBE_MS);
     if (cutover.timer && typeof cutover.timer.unref === 'function') cutover.timer.unref();
   }
-  document.addEventListener('click', e => { if (assistantOpen && !e.target.closest('#lw-assistant-host,button,a,input,textarea,select,summary,dialog')) collapse(); });
 })();
