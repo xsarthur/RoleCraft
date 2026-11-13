@@ -254,3 +254,11 @@ body.lw-ask-open #lw-assistant-host .lw-ask-history{display:flex;flex-direction:
 @media(prefers-reduced-motion:reduce){
   body.lw-ask-page #main-content,body.lw-ask-page #primary-sidebar,#lw-assistant-host .lw-assistant,#lw-assistant-host .lw-assistant-drawer{transition:none;animation:none}
 }
+.v13-voice{display:grid;gap:8px;margin:8px 0 4px;padding:14px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.v13-voice-actions,.v13-voice .v13-actions{display:flex;flex-wrap:wrap;gap:8px}
+.v13-voice-consent{display:flex;gap:8px;align-items:flex-start;color:var(--muted);font-size:12px;line-height:1.6}
+.v13-voice-consent input{margin-top:3px}
+.v13-voice-preview{margin:0;padding:10px 12px;border-radius:8px;background:#f9f7f3;white-space:pre-wrap;line-height:1.7}
+.v13-eval{margin:12px 0;padding:14px 16px;border:1px solid #e4d3b0;border-radius:12px;background:#fffaf1;line-height:1.7}
+.v13-eval h3{margin:4px 0 8px;font-size:18px}
+.v13-eval-kicker{margin:0;color:#87672d;font-size:12px;font-weight:700}

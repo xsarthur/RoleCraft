@@ -1339,6 +1339,7 @@
     return c;
   }
   function modeLabel(r) {
+    if (r?.dialog?.answerMode === 'synthesized') return '根据教材摘录组织的回答';
     if (r?.dialog?.answerMode === 'extractive' && /semantic/.test(r?.engineMode || '')) return '教材原文提取 · 离线语义检索';
     if (/semantic|embedding/.test(r?.engineMode || '')) return '离线语义检索 · 查询留在本机';
     if (/concept|rule/.test(r?.engineMode || '')) return '当前使用规则检索';
@@ -1399,6 +1400,12 @@
     if (!response) return '';
     const status = response.dialog?.status || response.status;
     if (status === 'answered') {
+      const synthesis = response.dialog?.synthesis;
+      if (response.dialog?.answerMode === 'synthesized' && synthesis) {
+        if (synthesis.status === 'failed') return '这次没能生成回答';
+        if (synthesis.status === 'insufficient') return '现有教材摘录不足以回答';
+        return '已根据教材摘录组织回答';
+      }
       const count = askCandidates(response.dialog?.citations).length;
       return count ? '找到 ' + count + ' 处相关教材' : '没有找到匹配的教材内容';
     }
@@ -1416,6 +1423,18 @@
   function historyHTML() {
     if (!queryHistory.length) return '';
     return '<details class="lw-query-history"><summary>最近问题 · 本会话</summary><div class="lw-ask-history">' + queryHistory.map((item, index) => '<button type="button" class="lw-ask-text" data-lw-history="' + index + '">' + esc(item.query) + '</button>').join('') + '</div></details>';
+  }
+  function askSourceLinks(citations, showQuote) {
+    const cards = askCandidates(citations);
+    if (!cards.length) return '';
+    return '<div class="lw-ask-sources"><p class="lw-ask-note">出处</p>' + cards.map(card => '<a class="lw-ask-card" data-lw-result href="' + esc(card.href) + '" aria-label="打开这一节：' + esc(card.title) + '"><span class="lw-ask-kicker">出处</span><h3>' + esc(card.title) + '</h3>' + (showQuote ? '<details><summary>查看出处原文</summary><blockquote>' + esc(card.quote) + '</blockquote></details>' : '') + '<span class="lw-ask-jump">打开这一节</span></a>').join('') + '</div>';
+  }
+  function askSynthesisHTML(dialog, catalog) {
+    const synthesis = dialog.synthesis || {};
+    const partial = askFallback(response) + askPartial(dialog);
+    if (synthesis.status === 'failed') return partial + askState('error', '这次没能生成回答', synthesis.message || '这次没能根据教材摘录生成回答。请稍后重试。出处仍可打开，但那些原文不是生成的回答。', askSourceLinks(dialog.citations, false) || catalog);
+    if (synthesis.status === 'insufficient') return partial + askState('empty', '现有教材摘录不足以回答', synthesis.message || '现有教材摘录不足以回答这个问题。', askSourceLinks(dialog.citations, false) || catalog);
+    return partial + '<div class="lw-ask-answer"><p>' + esc(synthesis.answer) + '</p><p class="lw-ask-note">以上内容只根据本次检索到的教材摘录组织。</p></div>' + askSourceLinks(dialog.citations, true);
   }
   function resultHTML() {
     const catalog = '<div class="lw-state-actions"><a href="#learn">打开课程目录</a></div>';
@@ -1441,6 +1460,7 @@
       return askState('empty', '请再补充一下', '请补充你指的含义。', buttons ? '<div class="lw-state-actions">' + buttons + '</div>' : '');
     }
     if (status !== 'answered') return askState('error', '暂时无法完成这次问答', '教材问答暂时没有就绪。', retry);
+    if (dialog.answerMode === 'synthesized' && dialog.synthesis) return askSynthesisHTML(dialog, catalog);
     const cards = askCandidates(dialog.citations);
     const head = askFallback(response) + askPartial(dialog);
     if (!cards.length) return head + askState('empty', '没有找到匹配的教材内容', '当前教材没有足够依据回答这个问题。可以换一种说法，或从课程目录确认覆盖范围。', catalog);
@@ -1478,7 +1498,13 @@
       return { ...r, requestId: r.requestId || submitted?.requestId, dialog: { status: dialogStatus, answerMode: 'extractive', sentences: [], citations: [], scope: { relatedSegments: [], filteredSegments: [], contextUsed: null }, message: r.message || r.error?.message || (dialogStatus === 'unavailable' ? '当前职业教材问答接口暂不可用。' : '当前教材没有足够依据回答这个问题。'), context: null }, results: Array.isArray(r.results) ? r.results : [] };
     }
     const d = r?.dialog, statuses = {answered:'recommended',related_uncovered:'no_match',unrelated:'no_match',needs_clarification:'needs_clarification',unavailable:'unavailable',invalid_input:'invalid_input'};
-    if (!d || !Object.hasOwn(statuses, d.status) || r.status !== statuses[d.status] || d.answerMode !== 'extractive' || !Array.isArray(d.sentences) || !Array.isArray(d.citations) || !Array.isArray(r.results) || !d.scope || !Array.isArray(d.scope.relatedSegments) || !Array.isArray(d.scope.filteredSegments) || typeof d.message !== 'string') throw Error('问答响应不符合当前教材合同，请重试。');
+    if (!d || !Object.hasOwn(statuses, d.status) || r.status !== statuses[d.status] || !['extractive','synthesized'].includes(d.answerMode) || !Array.isArray(d.sentences) || !Array.isArray(d.citations) || !Array.isArray(r.results) || !d.scope || !Array.isArray(d.scope.relatedSegments) || !Array.isArray(d.scope.filteredSegments) || typeof d.message !== 'string') throw Error('问答响应不符合当前教材合同，请重试。');
+    if (d.answerMode === 'synthesized') {
+      const synthesis = d.synthesis;
+      if (!synthesis || !['answered','insufficient','failed'].includes(synthesis.status)) throw Error('教材问答的组织结果无法核对，请重试。');
+      if (synthesis.status === 'answered' && (typeof synthesis.answer !== 'string' || !synthesis.answer.trim())) throw Error('教材问答的组织结果无法核对，请重试。');
+      if (synthesis.status !== 'answered' && typeof synthesis.answer === 'string' && synthesis.answer.trim()) throw Error('生成失败时不能把摘录当成回答。');
+    }
     if (!['unavailable','invalid_input'].includes(d.status) && (r.corpusVersion !== c.corpusVersion || r.corpusHash !== c.corpusHash)) throw Error('问答与阅读资源的版本不一致，请重新加载。');
     if (d.scope.relatedSegments.some(v => typeof v !== 'string') || d.scope.filteredSegments.some(v => !v || typeof v.text !== 'string' || typeof v.reason !== 'string')) throw Error('问答范围信息无法核对。');
     if (d.scope.contextUsed && (!canonicalTopic(d.scope.contextUsed) || !['previous_answer','current_section'].includes(d.scope.contextUsed.origin))) throw Error('问答使用的主题来源无法核对。');
