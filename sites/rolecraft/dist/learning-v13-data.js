@@ -3,8 +3,8 @@ globalThis.RolecraftLearningV13={
   "schemaVersion": "1",
   "version": "app-v13-textbook-v13-learning-data-1",
   "corpusVersion": "textbook-v13",
-  "corpusHash": "ee61414054cc125e99e3a3bf472e2c1198df2a547e9d0af9e6045418a327ea00",
-  "bookSha256": "700697a100d09f274822ca2923c3889dd284a1f000bc91679acc85b51108d35f",
+  "corpusHash": "bf8d679f10b93d45154045345d5652e041a29a07e7523d991384de9ff8ba7331",
+  "bookSha256": "60dc6b9bc9716a0e37ffb9745d47bba11650dfc577c1393f54b0f518027d0fff",
   "sourceBindings": [
     {
       "path": "sites/rolecraft/team/textbook-v12-qa-matrix.json",
@@ -23,22 +23,22 @@ globalThis.RolecraftLearningV13={
     {
       "path": "sites/rolecraft/server/retrieval/content-v13-index.json",
       "sourcePath": "server/retrieval/content-v13-index.json",
-      "sha256": "9e3251fa7133733c70e810a8f2e26e39c0ea1bea909e9c42c38dadd32bc298e7",
-      "bytes": 1692597,
+      "sha256": "ee9d00bc2ffbe6fc76240231662b12c8bc186df7b5f30cf5323111afd3804038",
+      "bytes": 1691844,
       "kind": "same_corpus_derived_input"
     },
     {
       "path": "sites/rolecraft/dist/content-v13-data.js",
       "sourcePath": "dist/content-v13-data.js",
-      "sha256": "619790f1b0af306f6b307a911ac9d5d3b475845c4352723d0102625c001db117",
-      "bytes": 1642555,
+      "sha256": "9d78b8f902340c6228b2a64ce0a4e6ceb11d0b4d64ef675597dd95b392a6e02e",
+      "bytes": 1641852,
       "kind": "same_corpus_derived_input"
     },
     {
       "path": "sites/rolecraft/textbooks/v13/agent-engineering-textbook.md",
       "sourcePath": "textbooks/v13/agent-engineering-textbook.md",
-      "sha256": "700697a100d09f274822ca2923c3889dd284a1f000bc91679acc85b51108d35f",
-      "bytes": 541659,
+      "sha256": "60dc6b9bc9716a0e37ffb9745d47bba11650dfc577c1393f54b0f518027d0fff",
+      "bytes": 541489,
       "kind": "frozen_teaching_input"
     },
     {
@@ -51,15 +51,15 @@ globalThis.RolecraftLearningV13={
     {
       "path": "sites/rolecraft/textbooks/v13/assembly-manifest.json",
       "sourcePath": "textbooks/v13/assembly-manifest.json",
-      "sha256": "527cdb7abfba4f852e208cb0426b51f0f24781e494b235fa5187c8b526e97c06",
+      "sha256": "d6fb4923255bce37e7ea8ddee2698b16dccb4eaca2900f076b135b501430eab6",
       "bytes": 41518,
       "kind": "frozen_teaching_input"
     },
     {
       "path": "sites/rolecraft/textbooks/v13/00-learning-route.md",
       "sourcePath": "textbooks/v13/00-learning-route.md",
-      "sha256": "b2496a6e23d6a45fcc5e179eeb75b1c759c003f584f6300517d58e572ea3b805",
-      "bytes": 18061,
+      "sha256": "37fa5990db73d92bbb20f66d677f84d46e66f18b8dc07bd1c4c6bfc2cacd1a9b",
+      "bytes": 17891,
       "kind": "frozen_teaching_input"
     },
     {
@@ -269,8 +269,8 @@ globalThis.RolecraftLearningV13={
   "metadata": {
     "version": "app-v13-textbook-v13-learning-data-1",
     "corpusVersion": "textbook-v13",
-    "corpusHash": "ee61414054cc125e99e3a3bf472e2c1198df2a547e9d0af9e6045418a327ea00",
-    "generatedAt": "2026-11-11T01:07:37.832Z",
+    "corpusHash": "bf8d679f10b93d45154045345d5652e041a29a07e7523d991384de9ff8ba7331",
+    "generatedAt": "2026-11-13T03:07:37.327Z",
     "role": "课程架构师",
     "status": "rebound_to_textbook_v13_pending_independent_qa",
     "counts": {
@@ -312,22 +312,22 @@ globalThis.RolecraftLearningV13={
       {
         "path": "sites/rolecraft/server/retrieval/content-v13-index.json",
         "sourcePath": "server/retrieval/content-v13-index.json",
-        "sha256": "9e3251fa7133733c70e810a8f2e26e39c0ea1bea909e9c42c38dadd32bc298e7",
-        "bytes": 1692597,
+        "sha256": "ee9d00bc2ffbe6fc76240231662b12c8bc186df7b5f30cf5323111afd3804038",
+        "bytes": 1691844,
         "kind": "same_corpus_derived_input"
       },
       {
         "path": "sites/rolecraft/dist/content-v13-data.js",
         "sourcePath": "dist/content-v13-data.js",
-        "sha256": "619790f1b0af306f6b307a911ac9d5d3b475845c4352723d0102625c001db117",
-        "bytes": 1642555,
+        "sha256": "9d78b8f902340c6228b2a64ce0a4e6ceb11d0b4d64ef675597dd95b392a6e02e",
+        "bytes": 1641852,
         "kind": "same_corpus_derived_input"
       },
       {
         "path": "sites/rolecraft/textbooks/v13/agent-engineering-textbook.md",
         "sourcePath": "textbooks/v13/agent-engineering-textbook.md",
-        "sha256": "700697a100d09f274822ca2923c3889dd284a1f000bc91679acc85b51108d35f",
-        "bytes": 541659,
+        "sha256": "60dc6b9bc9716a0e37ffb9745d47bba11650dfc577c1393f54b0f518027d0fff",
+        "bytes": 541489,
         "kind": "frozen_teaching_input"
       },
       {
@@ -340,15 +340,15 @@ globalThis.RolecraftLearningV13={
       {
         "path": "sites/rolecraft/textbooks/v13/assembly-manifest.json",
         "sourcePath": "textbooks/v13/assembly-manifest.json",
-        "sha256": "527cdb7abfba4f852e208cb0426b51f0f24781e494b235fa5187c8b526e97c06",
+        "sha256": "d6fb4923255bce37e7ea8ddee2698b16dccb4eaca2900f076b135b501430eab6",
         "bytes": 41518,
         "kind": "frozen_teaching_input"
       },
       {
         "path": "sites/rolecraft/textbooks/v13/00-learning-route.md",
         "sourcePath": "textbooks/v13/00-learning-route.md",
-        "sha256": "b2496a6e23d6a45fcc5e179eeb75b1c759c003f584f6300517d58e572ea3b805",
-        "bytes": 18061,
+        "sha256": "37fa5990db73d92bbb20f66d677f84d46e66f18b8dc07bd1c4c6bfc2cacd1a9b",
+        "bytes": 17891,
         "kind": "frozen_teaching_input"
       },
       {
@@ -561,7 +561,7 @@ globalThis.RolecraftLearningV13={
     "selfTestPolicy": "learner_self_assessment_only; exclude_Q10_Q99; deduplicated_visited_knowledgePoint_question_union",
     "sourceLinePolicy": "exact_quote_startLine_endLine; original_QA_broader_range_preserved_in_reviewSourceRange",
     "stagePolicy": "existing_v12_client_6_stage_labels_and_membership; not_replacement_for_formal_prerequisites",
-    "bookSha256": "700697a100d09f274822ca2923c3889dd284a1f000bc91679acc85b51108d35f"
+    "bookSha256": "60dc6b9bc9716a0e37ffb9745d47bba11650dfc577c1393f54b0f518027d0fff"
   },
   "role": {
     "id": "agent",
@@ -729,7 +729,7 @@ globalThis.RolecraftLearningV13={
       "navigationLabel": "认识 Agent 工程",
       "coreQuestion": "认识 Agent 工程",
       "sourcePath": "textbooks/v13/00-learning-route.md",
-      "sourceSha256": "b2496a6e23d6a45fcc5e179eeb75b1c759c003f584f6300517d58e572ea3b805",
+      "sourceSha256": "37fa5990db73d92bbb20f66d677f84d46e66f18b8dc07bd1c4c6bfc2cacd1a9b",
       "prerequisiteUnitIds": [],
       "prerequisites": [],
       "href": "#learn/agent/00-learning-route",
@@ -2052,7 +2052,7 @@ globalThis.RolecraftLearningV13={
       "startLine": 1,
       "endLine": 17,
       "sourcePath": "textbooks/v13/00-learning-route.md",
-      "sourceSha256": "b2496a6e23d6a45fcc5e179eeb75b1c759c003f584f6300517d58e572ea3b805",
+      "sourceSha256": "37fa5990db73d92bbb20f66d677f84d46e66f18b8dc07bd1c4c6bfc2cacd1a9b",
       "href": "#learn/agent/00-learning-route/s-3b82fdeafaab",
       "childSectionIds": [],
       "questionIds": [
@@ -2070,7 +2070,7 @@ globalThis.RolecraftLearningV13={
       "startLine": 18,
       "endLine": 40,
       "sourcePath": "textbooks/v13/00-learning-route.md",
-      "sourceSha256": "b2496a6e23d6a45fcc5e179eeb75b1c759c003f584f6300517d58e572ea3b805",
+      "sourceSha256": "37fa5990db73d92bbb20f66d677f84d46e66f18b8dc07bd1c4c6bfc2cacd1a9b",
       "href": "#learn/agent/00-learning-route/s-f8fb3240438f",
       "childSectionIds": [],
       "questionIds": []
@@ -2084,9 +2084,9 @@ globalThis.RolecraftLearningV13={
       "kind": "core",
       "order": 3,
       "startLine": 41,
-      "endLine": 59,
+      "endLine": 57,
       "sourcePath": "textbooks/v13/00-learning-route.md",
-      "sourceSha256": "b2496a6e23d6a45fcc5e179eeb75b1c759c003f584f6300517d58e572ea3b805",
+      "sourceSha256": "37fa5990db73d92bbb20f66d677f84d46e66f18b8dc07bd1c4c6bfc2cacd1a9b",
       "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
       "childSectionIds": [],
       "questionIds": [
@@ -2101,10 +2101,10 @@ globalThis.RolecraftLearningV13={
       "level": 2,
       "kind": "core",
       "order": 4,
-      "startLine": 60,
-      "endLine": 69,
+      "startLine": 58,
+      "endLine": 67,
       "sourcePath": "textbooks/v13/00-learning-route.md",
-      "sourceSha256": "b2496a6e23d6a45fcc5e179eeb75b1c759c003f584f6300517d58e572ea3b805",
+      "sourceSha256": "37fa5990db73d92bbb20f66d677f84d46e66f18b8dc07bd1c4c6bfc2cacd1a9b",
       "href": "#learn/agent/00-learning-route/s-eff1d4393846",
       "childSectionIds": [],
       "questionIds": [
@@ -2119,10 +2119,10 @@ globalThis.RolecraftLearningV13={
       "level": 2,
       "kind": "core",
       "order": 5,
-      "startLine": 105,
-      "endLine": 128,
+      "startLine": 103,
+      "endLine": 126,
       "sourcePath": "textbooks/v13/00-learning-route.md",
-      "sourceSha256": "b2496a6e23d6a45fcc5e179eeb75b1c759c003f584f6300517d58e572ea3b805",
+      "sourceSha256": "37fa5990db73d92bbb20f66d677f84d46e66f18b8dc07bd1c4c6bfc2cacd1a9b",
       "href": "#learn/agent/00-learning-route/s-39f96e054e8b",
       "childSectionIds": [],
       "questionIds": []
@@ -2135,10 +2135,10 @@ globalThis.RolecraftLearningV13={
       "level": 2,
       "kind": "navigation",
       "order": 6,
-      "startLine": 129,
-      "endLine": 135,
+      "startLine": 127,
+      "endLine": 133,
       "sourcePath": "textbooks/v13/00-learning-route.md",
-      "sourceSha256": "b2496a6e23d6a45fcc5e179eeb75b1c759c003f584f6300517d58e572ea3b805",
+      "sourceSha256": "37fa5990db73d92bbb20f66d677f84d46e66f18b8dc07bd1c4c6bfc2cacd1a9b",
       "href": "#learn/agent/00-learning-route/s-95736b77b4cb",
       "childSectionIds": [],
       "questionIds": []
@@ -6220,7 +6220,7 @@ globalThis.RolecraftLearningV13={
           "sectionId": "s-3b82fdeafaab",
           "knowledgePointId": "00-learning-route:s-3b82fdeafaab",
           "sourcePath": "textbooks/v13/00-learning-route.md",
-          "sourceSha256": "b2496a6e23d6a45fcc5e179eeb75b1c759c003f584f6300517d58e572ea3b805",
+          "sourceSha256": "37fa5990db73d92bbb20f66d677f84d46e66f18b8dc07bd1c4c6bfc2cacd1a9b",
           "sectionTitle": "认识 Agent 工程",
           "href": "#learn/agent/00-learning-route/s-3b82fdeafaab",
           "quote": "",
@@ -6247,7 +6247,7 @@ globalThis.RolecraftLearningV13={
           "sectionId": "s-3b82fdeafaab",
           "knowledgePointId": "00-learning-route:s-3b82fdeafaab",
           "sourcePath": "textbooks/v13/00-learning-route.md",
-          "sourceSha256": "b2496a6e23d6a45fcc5e179eeb75b1c759c003f584f6300517d58e572ea3b805",
+          "sourceSha256": "37fa5990db73d92bbb20f66d677f84d46e66f18b8dc07bd1c4c6bfc2cacd1a9b",
           "sectionTitle": "认识 Agent 工程",
           "href": "#learn/agent/00-learning-route/s-3b82fdeafaab",
           "quote": "Agent 是一种围绕目标、依据新观察选择下一步，并通过工具与环境交互的软件系统。本书讨论基于大语言模型的 Agent：模型解释当前信息，提出下一步调查或候选结果；运行 Agent 的应用程序（下文称宿主程序）限定允许范围，决定能否执行，记录实际观察，再根据完成条件继续、等待或结束。它的价值来自把语言理解接到可核对的任务过程。",
@@ -7051,12 +7051,12 @@ globalThis.RolecraftLearningV13={
           "sectionId": "s-eff1d4393846",
           "knowledgePointId": "00-learning-route:s-eff1d4393846",
           "sourcePath": "textbooks/v13/00-learning-route.md",
-          "sourceSha256": "b2496a6e23d6a45fcc5e179eeb75b1c759c003f584f6300517d58e572ea3b805",
+          "sourceSha256": "37fa5990db73d92bbb20f66d677f84d46e66f18b8dc07bd1c4c6bfc2cacd1a9b",
           "sectionTitle": "一套可交付系统还需要哪些工程工作",
           "href": "#learn/agent/00-learning-route/s-eff1d4393846",
           "quote": "",
-          "startLine": 60,
-          "endLine": 69
+          "startLine": 58,
+          "endLine": 67
         },
         {
           "unitId": "p01-mvp",
@@ -7102,16 +7102,16 @@ globalThis.RolecraftLearningV13={
           "sectionId": "s-eff1d4393846",
           "knowledgePointId": "00-learning-route:s-eff1d4393846",
           "sourcePath": "textbooks/v13/00-learning-route.md",
-          "sourceSha256": "b2496a6e23d6a45fcc5e179eeb75b1c759c003f584f6300517d58e572ea3b805",
+          "sourceSha256": "37fa5990db73d92bbb20f66d677f84d46e66f18b8dc07bd1c4c6bfc2cacd1a9b",
           "sectionTitle": "一套可交付系统还需要哪些工程工作",
           "href": "#learn/agent/00-learning-route/s-eff1d4393846",
           "quote": "运行闭环回答一次任务如何推进，工程全景回答怎样设计、实现、评价和交付这种能力。本版以30个阅读单元补齐软件/模型先修、记忆、规划、协议、检索、图编排和协作，并连接安全、运营与独立项目。图中的组件按任务选择，箭头不表示每个产品都必须使用全部组件，也不是先修顺序。",
-          "startLine": 62,
-          "endLine": 62,
+          "startLine": 60,
+          "endLine": 60,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 62,
-            "endLine": 62,
+            "startLine": 60,
+            "endLine": 60,
             "section": "## 一套可交付系统还需要哪些工程工作"
           }
         },
@@ -8256,12 +8256,12 @@ globalThis.RolecraftLearningV13={
           "sectionId": "s-7547e5ce91f8",
           "knowledgePointId": "00-learning-route:s-7547e5ce91f8",
           "sourcePath": "textbooks/v13/00-learning-route.md",
-          "sourceSha256": "b2496a6e23d6a45fcc5e179eeb75b1c759c003f584f6300517d58e572ea3b805",
+          "sourceSha256": "37fa5990db73d92bbb20f66d677f84d46e66f18b8dc07bd1c4c6bfc2cacd1a9b",
           "sectionTitle": "一次任务怎样形成反馈闭环",
           "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
           "quote": "",
           "startLine": 41,
-          "endLine": 59
+          "endLine": 57
         },
         {
           "unitId": "c01-control-loop",
@@ -8326,16 +8326,16 @@ globalThis.RolecraftLearningV13={
           "sectionId": "s-7547e5ce91f8",
           "knowledgePointId": "00-learning-route:s-7547e5ce91f8",
           "sourcePath": "textbooks/v13/00-learning-route.md",
-          "sourceSha256": "b2496a6e23d6a45fcc5e179eeb75b1c759c003f584f6300517d58e572ea3b805",
+          "sourceSha256": "37fa5990db73d92bbb20f66d677f84d46e66f18b8dc07bd1c4c6bfc2cacd1a9b",
           "sectionTitle": "一次任务怎样形成反馈闭环",
           "href": "#learn/agent/00-learning-route/s-7547e5ce91f8",
           "quote": "“继续”还须有目标内理由与资源额度。没有新信息时应补来源、请求澄清或合理停止；循环不是用重复请求掩盖未知的许可。[固定流程](c01-fixed-workflow.md)使用相同组件与边界，但合法路径由代码规定；[完整动态循环](c01-control-loop.md)解释观察驱动的控制与恢复。版本评价和服务发布属于工程生命周期，不是每轮必须调用的工具。",
-          "startLine": 58,
-          "endLine": 58,
+          "startLine": 56,
+          "endLine": 56,
           "usage": "support",
           "reviewSourceRange": {
-            "startLine": 58,
-            "endLine": 58,
+            "startLine": 56,
+            "endLine": 56,
             "section": "## 一次任务怎样形成反馈闭环"
           }
         },

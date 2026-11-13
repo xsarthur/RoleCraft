@@ -56,6 +56,13 @@ for(const unit of units){for(const match of unit.bodyMarkdown.matchAll(/(?:^|[(\
 // Narrow siblings are published from the assembly manifest even when the chapter
 // markdown keeps a single desk image. The workbench switches them at <=640px.
 for(const asset of assembly.assets){const name=path.posix.basename(asset.path);if(/-narrow-v02\.svg$/.test(name))referencedAssets.add(name);}
+// The opening PNG figures stay in the chapter. The workbench still embeds these
+// SVG diagrams beside them, so they remain published after the learner-facing
+// full-scale SVG and DOT links are removed from the prose.
+for(const name of ['agent-runtime-loop.svg','agent-engineering-landscape-v12.svg']){
+ if(!assetHash.has(name))throw Error('Learning-route diagram missing from assembly: '+name);
+ referencedAssets.add(name);
+}
 if(!referencedAssets.size)throw Error('v13 corpus has no publishable figures');
 const svgViewBox=raw=>{const match=raw.toString('utf8').match(/viewBox\s*=\s*["']\s*[-\d.]+\s+[-\d.]+\s+([-\d.]+)\s+([-\d.]+)\s*["']/);if(!match)return null;const viewBoxWidth=Number(match[1]),viewBoxHeight=Number(match[2]);return Number.isFinite(viewBoxWidth)&&Number.isFinite(viewBoxHeight)&&viewBoxWidth>0&&viewBoxHeight>0?{viewBoxWidth,viewBoxHeight}:null;};
 mkdirSync(path.join(project,'dist/content-v13-assets'),{recursive:true});
@@ -105,5 +112,6 @@ writeFileSync(path.join(here,'content-v13-index.json'),JSON.stringify(corpus,nul
 writeFileSync(path.join(project,'dist/content-v13-data.js'),'/* Generated from textbooks/v13; do not edit. */\nglobalThis.RolecraftContentV13='+JSON.stringify(corpus)+';\n');
 const route=units.find(unit=>unit.unitId==='00-learning-route');
 const routeAssets=['agent-runtime-loop.png','agent-runtime-loop.svg','agent-engineering-landscape-v12.png','agent-engineering-landscape-v12.svg'];
-if(!routeAssets.every(name=>route.bodyMarkdown.includes('assets/'+name)&&assets.some(asset=>asset.name===name)))throw Error('Learning-route figures were not published');
+const routeFigures=['agent-runtime-loop.png','agent-engineering-landscape-v12.png'];
+if(!routeAssets.every(name=>assets.some(asset=>asset.name===name))||!routeFigures.every(name=>route.bodyMarkdown.includes('assets/'+name)))throw Error('Learning-route figures were not published');
 console.log(JSON.stringify({units:units.length,sections:units.reduce((count,unit)=>count+unit.sections.length,0),assets:assets.length,references:references.length,corpusHash:corpus.corpusHash,bookSha256,routeAssets}));
