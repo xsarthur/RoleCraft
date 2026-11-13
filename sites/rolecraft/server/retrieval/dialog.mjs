@@ -131,6 +131,53 @@ async function answerFrom(corpus,recommendation,text,usedContext,rawQuestion=tex
   sentences.push({text:x.sentence,citationIds:[ci.id]});}
  return {results:usedResults,sentences,citations};
 }
+function genericArchitectureQuery(text){
+ const normalized=String(text||'').normalize('NFKC').toLowerCase().replace(/\s+/g,'').replace(/[？?。！!，,、.]+/g,'');
+ return normalized==='架构'||normalized==='系统架构'||normalized==='信息架构';
+}
+function overviewArchitectureQuery(text){
+ return /(?:是什么|什么是|全貌|运行闭环)/.test(text||'')&&/(?:agent|智能体)(?:\s|的){0,2}架构/i.test(text||'');
+}
+function pinOpeningCitation(corpus,recommendation,answer,query){
+ if(!overviewArchitectureQuery(query))return answer;
+ const openings=recommendation.results.filter(r=>r.unitId==='00-learning-route');
+ const opening=/运行闭环/.test(query)
+  ?openings.find(r=>/反馈闭环|运行闭环/.test(r.sectionTitle))||openings.find(r=>/运行闭环|反馈闭环/.test(r.evidenceExcerpt))||openings[0]
+  :openings[0];
+ if(!opening)return answer;
+ const unit=corpus.units.find(u=>u.unitId===opening.unitId),section=unit?.sections.find(s=>s.sectionId===opening.sectionId);
+ if(!section)return answer;
+ const existing=answer.citations.find(c=>c.unitId===opening.unitId&&c.sectionId===opening.sectionId);
+ let openingCitation,openingSentence;
+ if(existing){
+  const sentence=answer.sentences.find(s=>s.citationIds.includes(existing.id)&&existing.quote.includes(s.text));
+  if(!sentence)return answer;
+  openingCitation=existing;openingSentence=sentence.text;
+ }else{
+  const pool=sentencePool(section);
+  const quote=(pool.find(x=>opening.evidenceExcerpt.includes(x.sentence))||pool[0])?.sentence;
+  if(!quote)return answer;
+  const quoteStart=section.bodyMarkdown.indexOf(quote);
+  if(quoteStart<0)return answer;
+  openingCitation={...opening,corpusVersion:corpus.corpusVersion,corpusHash:corpus.corpusHash,quote,quoteStart,quoteEnd:quoteStart+quote.length};
+  openingSentence=quote;
+ }
+ const extra=answer.citations.find(c=>!(c.unitId===opening.unitId&&c.sectionId===opening.sectionId));
+ const citations=[],sentences=[],results=[];
+ const push=(citation,sentenceText,result)=>{
+  const id='c'+(citations.length+1);
+  citations.push({...citation,id});
+  sentences.push({text:sentenceText,citationIds:[id]});
+  results.push(result);
+ };
+ push(openingCitation,openingSentence,opening);
+ if(extra){
+  const sentence=answer.sentences.find(s=>s.citationIds.includes(extra.id)&&extra.quote.includes(s.text));
+  const result=answer.results.find(r=>r.unitId===extra.unitId&&r.sectionId===extra.sectionId);
+  if(sentence&&result)push(extra,sentence.text,result);
+ }
+ return {results,sentences,citations};
+}
 export async function answerContentDialog(corpus,input,recommend,options={}){
  const base=shell(corpus);
  if(!input||typeof input!=='object'||Array.isArray(input)||Object.keys(input).some(k=>!['query','startingPoint','currentUnitId','currentSectionId','corpusVersion','previousContext'].includes(k)))return finish(base,'invalid_input','请求字段不合法，请重新输入。');
@@ -180,14 +227,16 @@ export async function answerContentDialog(corpus,input,recommend,options={}){
   if(unknown.length)return finish(base,'related_uncovered','问题属于职业知识，但当前教材中尚未找到这些具体对象的足够依据：'+unknown.join('、')+'。');
   const retrievalInput={...oldInput,query,...(context?{currentUnitId:context.unitId,currentSectionId:context.sectionId}:{})};
   let recommendation=await recommend(retrievalInput,options);
+  const genericArchitecture=genericArchitectureQuery(input.query);
+  const overviewArchitecture=overviewArchitectureQuery(input.query);
   const rankedTopics=proto.filter(p=>p.category==='topic').map(p=>({...p,similarity:dot(wholeVector,p.vector),rank:dot(wholeVector,p.vector)+(p.cues.test(query)?0.12:0)})).sort((a,b)=>b.rank-a.rank),topic=rankedTopics[0];
   const domainTopic=proto.filter(p=>p.category==='related').map(p=>({...p,similarity:dot(wholeVector,p.vector)})).sort((a,b)=>b.similarity-a.similarity)[0];
-  if(recommendation.status!=='unavailable'&&topic&&(topic.cues.test(query)||topic.similarity>=0.52&&topic.rank>=domainTopic.similarity+0.02)){
+  if(!genericArchitecture&&!overviewArchitecture&&recommendation.status!=='unavailable'&&topic&&(topic.cues.test(query)||topic.similarity>=0.52&&topic.rank>=domainTopic.similarity+0.02)){
    const {scores,provenance}=await semanticScores(corpus,query+'。'+topic.text);
    const candidates=corpus.units.filter(u=>topic.units.includes(u.unitId)).flatMap(u=>u.sections.map(s=>({u,s,score:(scores.get(u.unitId+'/'+s.sectionId)||0)+(topic.hints.test(s.title)?0.12:0)+(u.unitId===topic.units[0]?0.06:0)+(s.level===1?0.03:0)}))).filter(x=>sentencePool(x.s).length&&!administrative.test(x.s.title)&&!/^练习|从演算到作品/.test(x.s.title)).sort((a,b)=>b.score-a.score);
    const selected=candidates.slice(0,3).map(x=>sourceResult(corpus,x.u,x.s,query)).filter(Boolean);
    recommendation={...recommendation,status:selected.length?'recommended':'no_match',results:selected,clarification:null,interpretedIntents:[{id:'dialog_topic_'+topic.id,label:topic.text,evidence:[query],unitIds:topic.units}],matchingMethods:['local_semantic_vectors','local_dialog_topic_vectors'],semanticProvenance:provenance,dialogTopic:{id:topic.id,unitIds:topic.units,description:topic.text,focusTerm:topic.focusTerm||null}};
-  }else if(recommendation.status==='no_match'&&retained.some(x=>x.topic.similarity>=0.58)){
+  }else if(!genericArchitecture&&recommendation.status==='no_match'&&retained.some(x=>x.topic.similarity>=0.58)){
    const expandedTopic=query+'。'+retained.filter(x=>x.topic.similarity>=0.58).map(x=>x.topic.text).join('。');
    const {scores,provenance}=await semanticScores(corpus,expandedTopic);
    const semanticIntents=retained.filter(x=>x.topic.similarity>=0.58).map((x,i)=>({id:'dialog_semantic_'+i,label:x.topic.text,evidence:[x.text],unitIds:x.topic.units}));
@@ -202,7 +251,7 @@ export async function answerContentDialog(corpus,input,recommend,options={}){
   if(recommendation.status!=='recommended')return finish(base,'related_uncovered','问题属于职业知识，但当前教材中尚未找到足够依据。');
   const answerQuery=context?(context.focusTerm||'')+' '+retained.map(x=>x.text).join('，'):query+(recommendation.dialogTopic?'。'+recommendation.dialogTopic.description:'');
   const rawQuestion=(context?.focusTerm||'')+' '+retained.map(x=>x.text).join('，');
-  const answer=await answerFrom(corpus,recommendation,answerQuery,context,rawQuestion);Object.assign(base.dialog,{sentences:answer.sentences,citations:answer.citations});base.results=answer.results;
+  const answer=pinOpeningCitation(corpus,recommendation,await answerFrom(corpus,recommendation,answerQuery,context,rawQuestion),input.query);Object.assign(base.dialog,{sentences:answer.sentences,citations:answer.citations});base.results=answer.results;
   if(!answer.sentences.length)return finish(base,'related_uncovered','已找到相关方向，但现有正文尚不足以提取可靠的简短回答，请直接查看课程目录。');
   const first=answer.citations[0],firstSection=corpus.units.find(u=>u.unitId===first.unitId)?.sections.find(s=>s.sectionId===first.sectionId),suggestedFocus=context?.focusTerm||recommendation.dialogTopic?.focusTerm||(/\bReAct\b/.test(query)?'ReAct':null),focusTerm=suggestedFocus&&plain(firstSection?.bodyMarkdown||'').toLowerCase().includes(suggestedFocus.toLowerCase())?suggestedFocus:null;base.dialog.context={unitId:first.unitId,sectionId:first.sectionId,corpusVersion:corpus.corpusVersion,sourceSha256:first.sourceSha256,...(focusTerm?{focusTerm}:{})};
   base.limitations=[...(recommendation.limitations||[]),'回答为教材原文提取，不是生成式模型辅导；有限语义分类仍可能需要澄清。'];
