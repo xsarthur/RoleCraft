@@ -84,6 +84,15 @@ function interpret(input,options={}){
  if(!interpretedIntents.length&&input.currentUnitId&&/(?:这一节|这里|刚才|上面|继续学|接着学)/.test(input.query)){
   const f=availableFrames.find(f=>f.units[0]===input.currentUnitId);if(f&&!excludedIds.has(f.id))interpretedIntents=[{id:f.id,label:f.label,evidence:['当前阅读上下文'],unitIds:f.units}];
  }
+ // An overview cue together with an architecture cue asks what the structure is.
+ // Selection may also match “agent架构”, but the opening stays the first result.
+ const asked=positive.map(p=>p.text).join(' ');
+ if(/(?:是什么|什么是|全貌|运行闭环)/.test(asked)&&/(?:agent|智能体)(?:\s|的){0,2}架构/i.test(asked)&&!excludedIds.has('orientation')){
+  const frame=frameById.get('orientation');
+  let orientation=interpretedIntents.find(i=>i.id==='orientation');
+  if(!orientation){const evidence=[...asked.matchAll(/是什么|什么是|全貌|运行闭环/g)].map(m=>m[0]);orientation={id:'orientation',label:frame.label,evidence:evidence.length?[...new Set(evidence)]:['全貌'],unitIds:frame.units};}
+  interpretedIntents=[orientation,...interpretedIntents.filter(i=>i.id!=='orientation')];
+ }
  return {interpretedIntents,excludedIntents,positiveText:positive.map(p=>p.text).join('，')};
 }
 function excerpt(section,query,exactTerms=[]){
