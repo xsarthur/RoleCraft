@@ -1,8 +1,9 @@
-import { readFileSync, existsSync, realpathSync } from 'node:fs';
+import { readFileSync, realpathSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import '../../dist/content-retrieval-core.js';
+import { assessVectorIdentity } from './semantic.mjs';
 const here=path.dirname(fileURLToPath(import.meta.url)),project=path.resolve(here,'../..');
 const sha=s=>createHash('sha256').update(s).digest('hex');
 const core=globalThis.RolecraftContentRetrieval;
@@ -101,9 +102,21 @@ function enrichResponse(response,corpus,{dialog=false}={}){
  };
  return parent;
 }
+function publishedSemanticIdentity(identity){
+ if(identity?.prepared===true)return {prepared:true,passages:identity.passages,corpusHash:identity.corpusHash,modelHash:identity.modelHash,chunkHash:identity.chunkHash};
+ const published={prepared:false,reason:identity?.reason||'vector_identity_unreadable'};
+ if(identity?.mismatches)published.mismatches=identity.mismatches;
+ if(identity?.expected)published.expected=identity.expected;
+ if(identity?.actual)published.actual=identity.actual;
+ if(identity?.message)published.message=identity.message;
+ return published;
+}
 export function getContentReadiness(version=CURRENT_VERSION){
- try{const corpus=loadCorpus(version);const retrievalVersion=retrievalVersionFor(version);return {available:true,retrievalVersion,contentVersion:corpus.corpusVersion,textbookVersionId:TEXTBOOK_IDS[corpus.corpusVersion],indexVersion:retrievalVersion,corpusVersion:corpus.corpusVersion,corpusHash:corpus.corpusHash,bookSha256:corpus.bookSha256,units:corpus.units.length,localSemanticPrepared:existsSync(path.join(here,'model-lock.json'))&&existsSync(path.join(here,'vectors-'+versions[version].folder+'.json')),runtimeSupported:Number(process.versions.node.split('.')[0])===24,requiredNodeMajor:24,nodeVersion:process.version,providerCalled:false};}
- catch{return {available:false,retrievalVersion:retrievalVersionFor(version),contentVersion:version,textbookVersionId:TEXTBOOK_IDS[version]||null,indexVersion:retrievalVersionFor(version),corpusVersion:version,localSemanticPrepared:false,providerCalled:false};}
+ try{
+  const corpus=loadCorpus(version);const retrievalVersion=retrievalVersionFor(version);
+  const semanticIdentity=publishedSemanticIdentity(assessVectorIdentity(corpus));
+  return {available:true,retrievalVersion,contentVersion:corpus.corpusVersion,textbookVersionId:TEXTBOOK_IDS[corpus.corpusVersion],indexVersion:retrievalVersion,corpusVersion:corpus.corpusVersion,corpusHash:corpus.corpusHash,bookSha256:corpus.bookSha256,units:corpus.units.length,localSemanticPrepared:semanticIdentity.prepared===true,semanticIdentity,runtimeSupported:Number(process.versions.node.split('.')[0])===24,requiredNodeMajor:24,nodeVersion:process.version,providerCalled:false};
+ }catch(error){return {available:false,retrievalVersion:retrievalVersionFor(version),contentVersion:version,textbookVersionId:TEXTBOOK_IDS[version]||null,indexVersion:retrievalVersionFor(version),corpusVersion:version,localSemanticPrepared:false,semanticIdentity:{prepared:false,reason:'corpus_unavailable',message:error?.message||'corpus unavailable'},providerCalled:false};}
 }
 const versionedResource=(entry,version)=>({...entry,href:entry.href.includes('?')?entry.href:entry.href+'?version='+version});
 export function getContentCatalog(version=CURRENT_VERSION){const c=loadCorpus(version);return {corpusVersion:c.corpusVersion,corpusHash:c.corpusHash,bookSha256:c.bookSha256,units:c.units.map(({bodyMarkdown,...u})=>({...u,sections:u.sections.map(({bodyMarkdown,searchText,...s})=>s)})),assets:c.assets.map(e=>versionedResource(e,version)),references:c.references.map(e=>versionedResource(e,version)),compatibility:c.compatibility||null,readiness:getContentReadiness(version)};}

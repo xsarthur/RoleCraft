@@ -1,6 +1,7 @@
 // Derive the formal Agent workbench package from textbooks/v13.
 // v12 sources and derived artifacts are not modified.
 import {readFileSync,writeFileSync,mkdirSync,realpathSync,copyFileSync,existsSync} from 'node:fs';
+import {assessVectorIdentity} from './semantic.mjs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
@@ -106,4 +107,10 @@ writeFileSync(path.join(project,'dist/content-v13-data.js'),'/* Generated from t
 const route=units.find(unit=>unit.unitId==='00-learning-route');
 const routeAssets=['agent-runtime-loop.png','agent-runtime-loop.svg','agent-engineering-landscape-v12.png','agent-engineering-landscape-v12.svg'];
 if(!routeAssets.every(name=>route.bodyMarkdown.includes('assets/'+name)&&assets.some(asset=>asset.name===name)))throw Error('Learning-route figures were not published');
-console.log(JSON.stringify({units:units.length,sections:units.reduce((count,unit)=>count+unit.sections.length,0),assets:assets.length,references:references.length,corpusHash:corpus.corpusHash,bookSha256,routeAssets}));
+const vectorIdentity=assessVectorIdentity(corpus);
+if(!vectorIdentity.prepared){
+ console.error('vectors-v13.json does not match the content index just written. This script does not rebuild vectors.');
+ console.error('From this directory, after npm ci and node prepare-model.mjs, run: node semantic.mjs textbook-v13');
+ console.error('Commit the updated vectors-v13.json in the same change, then run: node check-vector-identity.mjs');
+}
+console.log(JSON.stringify({units:units.length,sections:units.reduce((count,unit)=>count+unit.sections.length,0),assets:assets.length,references:references.length,corpusHash:corpus.corpusHash,bookSha256,routeAssets,vectorIdentityPrepared:vectorIdentity.prepared===true,vectorRebuild:'node semantic.mjs textbook-v13'}));
