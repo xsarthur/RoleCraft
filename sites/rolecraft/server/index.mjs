@@ -9,6 +9,9 @@ import { getExtractor } from './retrieval/semantic.mjs';
 import { loadCareerImports } from './careers.mjs';
 import { loadUiuxCareer, presentUiuxCatalog, uiuxChapter, queryUiuxLearning, getUiuxAsset, UIUX_CAREER_ID, UIUX_CONTENT_VERSION } from './uiux-catalog.mjs';
 import { analyzeVoiceRequest, probeLocalAsr } from './voice/index.mjs';
+import { getAskTextbookReadiness } from './learning/model-provider.mjs';
+import { composeAskTextbookResponse } from './learning/ask-textbook.mjs';
+import { evaluatePracticeAnswer } from './learning/practice-evaluation.mjs';
 
 export const PRODUCT_VERSION = 'local-mvp-0.4';
 // Public 1.0 release identity. PRODUCT_VERSION remains the legacy account/
@@ -528,7 +531,7 @@ export function createRolecraftServer(options={}) {
       if(req.headers['sec-fetch-site']==='cross-site')reject(403,'origin_rejected','拒绝跨站请求');
       const u=new URL(req.url,origin), pathname=u.pathname, method=req.method;
       if(pathname.startsWith('/api/')) {
-        if(method==='GET' && pathname==='/api/health')return send(200,{productVersion:PRODUCT_VERSION,mode:deploymentMode,generation:await readiness(),contentRetrieval:getContentReadiness(),authChannels:authChannelFlags()});
+        if(method==='GET' && pathname==='/api/health')return send(200,{productVersion:PRODUCT_VERSION,mode:deploymentMode,generation:await readiness(),askTextbook:getAskTextbookReadiness(),contentRetrieval:getContentReadiness(),authChannels:authChannelFlags()});
         // Thin read for mid-session textbook identity. Does not change the pinned corpus.
         if(method==='GET' && pathname==='/api/content/identity'){
           const readiness=getContentReadiness();
@@ -613,12 +616,24 @@ export function createRolecraftServer(options={}) {
             return send(200,{requestId,status:retrieval.status,agentVersion:AGENT_VERSION,engineMode:'local_lexical_retrieval',providerCalled:false,resultType:learningResultType(query),...snapshot,corpusVersion:snapshot.contentVersion,corpusHash:snapshot.corpusHash,results,dialog:null,clarification:null,limitations:retrieval.limitations||[]});
           }
           if(career.career_id!==seededCareer.careerId) return send(200,{requestId,status:'unavailable',agentVersion:AGENT_VERSION,engineMode:'local_semantic_retrieval',providerCalled:false,resultType:learningResultType(query),...snapshot,corpusVersion:snapshot.contentVersion,results:[],dialog:null,clarification:null,limitations:['当前职业的教材已发布，但 v0.12 本地检索适配器尚未为该职业准备独立索引；可以打开课程目录。']});
-          const retrieval=await dialogContent({query,corpusVersion:snapshot.contentVersion,...context});
+          const retrieved=await dialogContent({query,corpusVersion:snapshot.contentVersion,...context});
+          const retrieval=await composeAskTextbookResponse({query,retrieval:retrieved,transport:options.modelTransport});
           const mappedStatus=retrieval.status==='recommended'||retrieval.status==='answered'?'recommended':retrieval.status==='needs_clarification'?'needs_clarification':retrieval.status==='unavailable'?'unavailable':retrieval.status==='invalid_input'?'invalid_input':'no_match';
           const retrievalResultType=retrieval.resultType||retrieval.dialog?.resultType||mappedStatus;
           const results=(retrieval.results||[]).slice(0,6).map(r=>learningResultView(r,career));
-          const limitations=[...(Array.isArray(retrieval.limitations)?retrieval.limitations:[]),'结果来自当前已核验教材原文；本版本未调用外部模型，不自动写入学习记录。'];
-          return send(200,{requestId,status:mappedStatus,agentVersion:AGENT_VERSION,intent:retrieval.intent||learningResultType(query),retrievalResultType,uncertainty:retrieval.uncertainty||retrieval.dialog?.uncertainty||null,engineMode:retrieval.engineMode||retrieval.dialog?.engineMode||'local_semantic_retrieval',providerCalled:retrieval.providerCalled===true,resultType:learningResultType(query),...snapshot,corpusVersion:retrieval.corpusVersion||snapshot.contentVersion,corpusHash:retrieval.corpusHash||snapshot.corpusHash,results,dialog:retrieval.dialog||null,clarification:retrieval.clarification||null,limitations});
+          const limitations=Array.isArray(retrieval.limitations)?retrieval.limitations:[];
+          return send(200,{requestId,status:mappedStatus,agentVersion:AGENT_VERSION,intent:retrieval.intent||learningResultType(query),retrievalResultType,uncertainty:retrieval.uncertainty||retrieval.dialog?.uncertainty||null,engineMode:retrieval.engineMode||retrieval.dialog?.engineMode||'local_semantic_retrieval',providerCalled:retrieval.providerCalled===true,resultType:learningResultType(query),...snapshot,corpusVersion:retrieval.corpusVersion||snapshot.contentVersion,corpusHash:retrieval.corpusHash||snapshot.corpusHash,results,dialog:retrieval.dialog||null,clarification:retrieval.clarification||null,limitations,askTextbook:retrieval.askTextbook||null});
+        }
+        if(method==='POST' && pathname==='/api/practice/evaluate') {
+          const b=await body(req);
+          if(!b || typeof b!=='object' || Array.isArray(b)) reject(400,'input_invalid','需要 JSON 对象');
+          if(Object.hasOwn(b,'audio')||Object.hasOwn(b,'audioBase64')||Object.hasOwn(b,'recording')) reject(400,'input_invalid','评价只接受已确认的文字和参考材料');
+          const allowed=['questionId','question','answer','confirmed','personalEvidenceRequired','answerKind','references','reviewedAnswer','transcriptStatus'];
+          for(const key of Object.keys(b)) if(!allowed.includes(key)) reject(400,'input_invalid',`不支持字段：${key}`);
+          if(b.confirmed!=null && typeof b.confirmed!=='boolean') reject(400,'input_invalid','confirmed 必须为布尔值');
+          if(b.personalEvidenceRequired!=null && typeof b.personalEvidenceRequired!=='boolean') reject(400,'input_invalid','personalEvidenceRequired 必须为布尔值');
+          if(b.references!=null && !Array.isArray(b.references)) reject(400,'input_invalid','references 必须为数组');
+          return send(200, await evaluatePracticeAnswer(b,{transport:options.modelTransport}));
         }
         if(method==='GET' && pathname==='/api/careers') {
           const query=u.searchParams.get('q')||'';

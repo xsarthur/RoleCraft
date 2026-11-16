@@ -758,11 +758,38 @@
     if (emailSubmit && !emailSubmit.disabled && emailError) emailError.textContent = '';
   }
 
+  function storageKeys(store) {
+    const keys = [];
+    try { for (let i = 0; i < store.length; i++) keys.push(store.key(i)); } catch { /* storage may be blocked */ }
+    return keys.filter(Boolean);
+  }
+
+  function clearPreviousCareerCache(previousCareer) {
+    const select = globalThis.RolecraftCareerIsolation?.selectCacheKeysToClear;
+    if (typeof select !== 'function') return;
+    for (const key of select(storageKeys(localStorage), previousCareer)) {
+      try { localStorage.removeItem(key); } catch { /* keep going through the rest of the cache */ }
+    }
+    for (const key of select(storageKeys(sessionStorage), previousCareer)) {
+      try { sessionStorage.removeItem(key); } catch { /* session cache is best-effort */ }
+    }
+  }
+
+  function finishCareerSwitch(previousCareer) {
+    const previous = careerIdOf(previousCareer) ? previousCareer : { careerId: globalThis.RolecraftCareerIsolation?.AGENT_CAREER_ID || 'agent-developer' };
+    clearPreviousCareerCache(previous);
+    const hash = globalThis.RolecraftCareerIsolation?.postSwitchHash?.() || '#learn';
+    const nextUrl = location.pathname + location.search + hash;
+    try { history.replaceState(null, '', nextUrl); } catch { location.hash = hash; }
+    location.reload();
+  }
+
   async function switchToCareer(career, sourceButton) {
     const careerId = careerIdOf(career);
     const title = typeof career?.title === 'string' ? career.title.trim() : '';
     if (!careerId || !title || state.switchInFlight) return;
     if (currentCareer()?.careerId === careerId) return;
+    const previousCareer = currentCareer() ? { ...currentCareer() } : null;
     const switchRequestId = ++state.switchRequestId;
     state.switchInFlight = true;
     state.switchingCareerId = careerId;
@@ -791,9 +818,10 @@
       resetCareerSelection();
       const dialog = document.getElementById('rc-career-dialog');
       if (dialog?.open) closeDialog(dialog);
+      if (persisted) { finishCareerSwitch(previousCareer); return; }
       render();
       emit('career_switch');
-      notify(persisted ? '已切换到 ' + (nextCareer.title || title) + '。' : '已切换到 ' + (nextCareer.title || title) + '。本机浏览器未能保存，刷新后需要重新选择。');
+      notify('已切换到 ' + (nextCareer.title || title) + '。本机浏览器未能保存，刷新后需要重新选择。');
     } catch (err) {
       failed = err;
       if (switchRequestId !== state.switchRequestId) return;
@@ -876,6 +904,7 @@
 
   async function chooseLocalCareer() {
     if (state.conflictBusy || !state.conflict || !state.localCareer) return;
+    const previousCareer = state.me?.activeCareer ? { ...state.me.activeCareer } : null;
     const localId = state.localCareer.careerId;
     const localBefore = { ...state.localCareer };
     state.conflictBusy = true;
@@ -894,9 +923,8 @@
       clearConflictDismissal();
       state.conflictChoice = 'local';
       if (dialog?.open) dialog.close();
-      render();
-      emit('career_switch');
-      notify('已使用本机职业，并同步到当前账户。');
+      finishCareerSwitch(previousCareer);
+      return;
     } catch (err) {
       if (!state.me?.user) {
         state.conflictChoice = 'closed';
@@ -930,9 +958,7 @@
     state.conflictChoice = 'account';
     const dialog = document.getElementById('rc-career-conflict-dialog');
     if (dialog?.open) dialog.close();
-    render();
-    emit('career_switch');
-    notify('已切换到 ' + (account.title || '账户职业') + '。');
+    finishCareerSwitch(previous);
   }
 
   function careerDialog() {
@@ -1120,6 +1146,8 @@
       return false;
     }
   }
+
+  state.localCareer = readLocalCareer();
 
   function init() {
     state.localCareer = readLocalCareer();
