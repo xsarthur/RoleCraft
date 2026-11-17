@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { composeAskTextbookResponse, assessSynthesisGate, ASK_TEXTBOOK_FAILURE_MESSAGE, ASK_TEXTBOOK_INSUFFICIENT_MESSAGE, ASK_TEXTBOOK_OUT_OF_SCOPE_MESSAGE } from './ask-textbook.mjs';
+import { composeAskTextbookResponse, assessSynthesisGate, intentAligned, ASK_TEXTBOOK_FAILURE_MESSAGE, ASK_TEXTBOOK_INSUFFICIENT_MESSAGE, ASK_TEXTBOOK_OUT_OF_SCOPE_MESSAGE } from './ask-textbook.mjs';
 import { getAskTextbookReadiness, loadAskTextbookConfig } from './model-provider.mjs';
 
 const env = {
@@ -123,6 +123,38 @@ test('selection definition excerpt for agent架构 is in scope', () => {
   const gate = assessSynthesisGate(retrieval, 'agent架构');
   assert.equal(gate.pass, true);
   assert.equal(gate.reason, 'in_scope');
+});
+
+test('这个系统的架构是什么样的 aligns when the excerpt contains 系统 and 架构', () => {
+  const quote = '运行 Agent 的应用程序是一个软件系统。这与 Anthropic 的架构定义一致。';
+  const retrieval = answeredRetrieval({ quote, title: '认识 Agent 工程', related: 0.6128, unrelated: 0.419 });
+  assert.equal(intentAligned('这个系统的架构是什么样的', quote), true);
+  const gate = assessSynthesisGate(retrieval, '这个系统的架构是什么样的');
+  assert.equal(gate.pass, true);
+  assert.equal(gate.reason, 'in_scope');
+});
+
+test('这个系统的架构是什么样的 aligns on natural 架构 or 系统架构 wording', () => {
+  const quotes = [
+    '这与 Anthropic 的架构定义一致；本文进一步采用宿主准入与事实记录的工程约束。',
+    '模型配置不能把优势全部归于系统架构。控制权划分才是比较对象。',
+  ];
+  for (const quote of quotes) {
+    const retrieval = answeredRetrieval({ quote, title: '认识 Agent 工程', related: 0.6128, unrelated: 0.419 });
+    assert.equal(intentAligned('这个系统的架构是什么样的', quote), true, quote);
+    const gate = assessSynthesisGate(retrieval, '这个系统的架构是什么样的');
+    assert.equal(gate.pass, true, quote);
+    assert.equal(gate.reason, 'in_scope');
+  }
+});
+
+test('这个系统的架构是什么样的 stays misaligned without those content words', () => {
+  const quote = '失败报告给出 service.py；读后发现它调用动态注册的处理器，实际处理器随配置变化。';
+  const retrieval = answeredRetrieval({ quote, title: '迁移：未知路径', related: 0.6128, unrelated: 0.419 });
+  assert.equal(intentAligned('这个系统的架构是什么样的', quote), false);
+  const gate = assessSynthesisGate(retrieval, '这个系统的架构是什么样的');
+  assert.equal(gate.pass, false);
+  assert.equal(gate.reason, 'intent_misaligned');
 });
 
 test('weak architecture hit is not treated as in-scope', async () => {

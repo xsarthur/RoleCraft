@@ -12,7 +12,16 @@ export const ASK_TEXTBOOK_OUT_OF_SCOPE_MESSAGE = '这里只回答与当前教材
 export const ASK_TEXTBOOK_OUT_OF_SCOPE_TITLE = '这个问题不在本教材范围内';
 
 const BLOCKING = new Set(['unrelated', 'related_uncovered', 'needs_clarification', 'invalid_input', 'unavailable', 'no_match']);
-const STOP_GRAMS = new Set(['什么', '怎么', '如何', '为什么', '怎样', '是否', '哪些', '哪个', '一下', '可以', '这个', '那个', '我们', '你们', '请你', '请问', '学习', '教材', '问题', '一个', '没有', '不是', '以及', '还是', '进行', '关于']);
+// Interrogative and function words are removed before keyword extraction.
+// Longer phrases come first so “是什么样” is not left behind as “是什么”.
+const CJK_FUNCTION_PHRASES = ['是什么样的', '是什么样', '什么样的', '什么样', '为什么', '是什么', '什么是', '怎么', '如何', '怎样', '是否', '哪些', '哪个', '什么', '这个', '那个', '我们', '你们', '请你', '请问', '可以', '一下', '一个', '没有', '不是', '以及', '还是', '进行', '关于', '学习', '教材', '问题'];
+const CJK_SPLIT = /[的了是在和与及或把被对从为而也就都很吗呢吧啊着过得地\u0000]+/u;
+
+function cjkContentTerms(question) {
+  let text = String(question || '').replace(/[^\u4e00-\u9fff]/g, '');
+  for (const phrase of CJK_FUNCTION_PHRASES) text = text.split(phrase).join('\u0000');
+  return [...new Set(text.split(CJK_SPLIT).map(part => part.trim()).filter(part => part.length >= 2))];
+}
 
 export function intentAligned(query, excerpt, { contextUsed = false, focusTerm = '' } = {}) {
   const question = String(query || '').normalize('NFKC').toLowerCase();
@@ -20,19 +29,16 @@ export function intentAligned(query, excerpt, { contextUsed = false, focusTerm =
   const focus = String(focusTerm || '').normalize('NFKC').toLowerCase();
   if (contextUsed && focus && hay.includes(focus)) return true;
   const latin = [...new Set((question.match(/[a-z][a-z0-9_+-]{1,}/g) || []))];
-  const cjk = question.replace(/[^\u4e00-\u9fff]/g, '');
-  const grams = [];
-  for (let i = 0; i + 2 <= cjk.length; i++) {
-    const gram = cjk.slice(i, i + 2);
-    if (!STOP_GRAMS.has(gram)) grams.push(gram);
-  }
+  const terms = cjkContentTerms(question);
   const latinHits = latin.filter(token => hay.includes(token));
-  const gramHits = grams.filter(gram => hay.includes(gram));
+  const termHits = terms.filter(term => hay.includes(term));
   const latinOk = latin.length > 0 && latinHits.length >= 1 && latinHits.length / latin.length >= 0.5;
-  const gramOk = grams.length > 0 && gramHits.length >= 1 && gramHits.length / grams.length >= 0.33;
-  if (latin.length && grams.length) return latinOk || gramOk;
+  // At least half of the content words must occur. One of 「系统」「架构」 is
+  // enough, so a sentence that says 架构 is not rejected for missing 个系/是什.
+  const termOk = terms.length > 0 && termHits.length >= 1 && termHits.length * 2 >= terms.length;
+  if (latin.length && terms.length) return latinOk || termOk;
   if (latin.length) return latinOk;
-  if (grams.length) return gramOk;
+  if (terms.length) return termOk;
   return false;
 }
 

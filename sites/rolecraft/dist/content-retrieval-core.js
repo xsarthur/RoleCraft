@@ -12,15 +12,16 @@ const frames=[
  {id:'foundation',label:'确定起点并补齐程序基础',units:['01-foundation','00-learning-route'],patterns:[/零基础|没学过编程|不会编程|不会写代码|初学|从零|入门|从哪.{0,4}开始|基础预备|补学|先修/]},
  {id:'model_candidate',label:'校验模型响应与业务候选',units:['f02'],patterns:[/接模型|调用模型|模型接口|模型响应|模型输出|结构化|json|编造|乱输出|大模型返回/i]},
  {id:'http',label:'处理外部请求和失败边界',units:['f01'],patterns:[/http|api|网络请求|接口请求|第三方接口|请求超时|网络异常|状态码/i]},
- {id:'selection',label:'选择最小可用方案',units:['c01-selection'],patterns:[/选型|方案选择|工作流|workflow|多.?agent|固定流程|要不要.{0,8}agent|普通程序|最小可用方案|(?:agent|智能体)(?:\s|的){0,2}架构/i]},
+ {id:'selection',label:'选择最小可用方案',units:['c01-selection'],patterns:[/选型|方案选择|工作流|workflow|多.?agent|固定流程|要不要.{0,8}agent|普通程序|最小可用方案|(?:agent|智能体|系统)(?:\s|的){0,2}架构/i]},
  {id:'runtime',label:'实现受控的动态循环',units:['c01-control-loop'],patterns:[/控制循环|动态循环|运行时|自己决定下一步|工具调用|下一步.{0,10}决定/]},
  {id:'problem',label:'确认值得解决的真实问题',units:['p01-discovery','p01-mvp'],patterns:[/用户访谈|真实需求|需求证据|值得.{0,8}解决|痛点|产品需求|mvp|最小产品/i]},
  {id:'release',label:'发布和回退时保留任务事实',units:['e04'],patterns:[/发布|上线|部署|回退|回滚|灰度/]},
  {id:'delivery',label:'用作品证据复盘交付',units:['p02'],patterns:[/独立作品|交付|复盘|作品证据|实训/]},
- // “架构” alone is not an overview cue, so bare 架构 / 系统架构 / 信息架构
- // stay off this frame. “agent架构” is assembled below: 方案选择 stays first
- // and this opening is added after it. 是什么 / 全貌 / 运行闭环 keep the
- // opening first. 多agent架构 stays on 方案选择 and does not pull the opening.
+ // Exact 架构 / 系统架构 / 信息架构 stay off this frame. “agent架构” and
+ // “系统的架构” are assembled below: 方案选择 stays first and this opening
+ // is added after it. 是什么 / 全貌 / 运行闭环 keep the opening first;
+ // “是什么样” is not that cue. 多agent架构 stays on 方案选择 and does not
+ // pull the opening.
  {id:'orientation',label:'认识 Agent 与工程全貌',units:['00-learning-route'],patterns:[/agent.{0,8}(是什么|全貌|组成)|什么是.{0,8}agent|工程全景|运行闭环|全貌/i]}
 ];
 const v12Frames=[
@@ -85,15 +86,17 @@ function interpret(input,options={}){
  if(!interpretedIntents.length&&input.currentUnitId&&/(?:这一节|这里|刚才|上面|继续学|接着学)/.test(input.query)){
   const f=availableFrames.find(f=>f.units[0]===input.currentUnitId);if(f&&!excludedIds.has(f.id))interpretedIntents=[{id:f.id,label:f.label,evidence:['当前阅读上下文'],unitIds:f.units}];
  }
- // Bare “agent架构” keeps 方案选择 first and also surfaces the opening.
+ // Bare “agent架构” / “系统的架构” keeps 方案选择 first and also surfaces the opening.
  // Overview cues keep the opening first. 多agent架构 stays on selection.
+ // Exact 架构 / 系统架构 / 信息架构 are generic and must not become selection.
  const asked=positive.map(p=>p.text).join(' ');
  const shape=architectureQuery(asked);
+ if(shape.generic)interpretedIntents=interpretedIntents.filter(i=>i.id!=='selection'||i.evidence.some(e=>!/^(?:agent|智能体|系统)(?:\s|的){0,2}架构$/i.test(String(e||'').trim())));
  if(shape.multi)interpretedIntents=interpretedIntents.filter(i=>i.id!=='orientation');
  else if(shape.architecture&&!excludedIds.has('orientation')){
   const frame=frameById.get('orientation');
   let orientation=interpretedIntents.find(i=>i.id==='orientation');
-  if(!orientation){const evidence=shape.overview?[...asked.matchAll(/是什么|什么是|全貌|运行闭环/g)].map(m=>m[0]):['agent架构'];orientation={id:'orientation',label:frame.label,evidence:evidence.length?[...new Set(evidence)]:['agent架构'],unitIds:frame.units};}
+  if(!orientation){const evidence=shape.overview?[...asked.matchAll(/是什么(?!样)|什么是|全貌|运行闭环/g)].map(m=>m[0]):['agent架构'];orientation={id:'orientation',label:frame.label,evidence:evidence.length?[...new Set(evidence)]:['agent架构'],unitIds:frame.units};}
   const rest=interpretedIntents.filter(i=>i.id!=='orientation');
   interpretedIntents=shape.overview?[orientation,...rest]:[...rest,orientation];
  }
@@ -103,8 +106,10 @@ function architectureQuery(text){
  const asked=String(text||'');
  const normalized=asked.normalize('NFKC').toLowerCase().replace(/\s+/g,'').replace(/[？?。！!，,、.]+/g,'');
  const generic=normalized==='架构'||normalized==='系统架构'||normalized==='信息架构';
- const architecture=/(?:agent|智能体)(?:\s|的){0,2}架构/i.test(asked);
- const overview=architecture&&/(?:是什么|什么是|全貌|运行闭环)/.test(asked);
+ // Exact 系统架构 stays generic. A non-generic “系统的架构” joins agent/智能体.
+ const architecture=!generic&&/(?:agent|智能体|系统)(?:\s|的){0,2}架构/i.test(asked);
+ // “是什么样” contains “是什么”; the lookahead keeps that sentence on the bare path.
+ const overview=architecture&&/(?:是什么(?!样)|什么是|全貌|运行闭环)/.test(asked);
  const multi=architecture&&/多\s*agent|多智能体/i.test(asked);
  return {generic,architecture,overview,multi,bare:architecture&&!overview&&!multi&&!generic};
 }
