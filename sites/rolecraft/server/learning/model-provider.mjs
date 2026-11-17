@@ -1,8 +1,8 @@
 /**
  * Shared model client for 问教材 synthesis and 题库对照评价.
  * Model name, timeout, and max tokens are separate from chapter generation.
- * Each model is posted to /responses first. A provider error other than timeout
- * or provider_rate_limit retries that same model once on /chat/completions,
+ * Each model is posted to /chat/completions first. A provider error other than
+ * timeout or provider_rate_limit retries that same model once on /responses,
  * still inside the original timeout. OPENAI_MODEL and GENERATE_MODEL are intentionally unread.
  * The API key and base URL follow the generation adapter (OPENAI_API_KEY, OPENAI_BASE_URL).
  */
@@ -112,30 +112,30 @@ async function requestModelText({ config, model, instructions, userContent, tran
   else signal?.addEventListener('abort', onAbort, { once: true });
   try {
     try {
-      const payload = await postModel(transport, `${config.baseUrl}/responses`, {
+      const payload = await postModel(transport, `${config.baseUrl}/chat/completions`, {
         model,
-        store: false,
-        input: [
+        messages: [
           { role: 'system', content: instructions },
           { role: 'user', content: userContent },
         ],
-        max_output_tokens: config.maxOutputTokens,
+        max_tokens: config.maxOutputTokens,
       }, config, controller.signal);
-      if (payload?.status === 'incomplete') throw providerError('provider_incomplete');
-      return outputText(payload);
+      return chatCompletionText(payload);
     } catch (error) {
       const coded = asProviderError(error, controller);
       if (coded.code === 'timeout' || coded.code === 'provider_rate_limit') throw coded;
     }
-    const payload = await postModel(transport, `${config.baseUrl}/chat/completions`, {
+    const payload = await postModel(transport, `${config.baseUrl}/responses`, {
       model,
-      messages: [
+      store: false,
+      input: [
         { role: 'system', content: instructions },
         { role: 'user', content: userContent },
       ],
-      max_tokens: config.maxOutputTokens,
+      max_output_tokens: config.maxOutputTokens,
     }, config, controller.signal);
-    return chatCompletionText(payload);
+    if (payload?.status === 'incomplete') throw providerError('provider_incomplete');
+    return outputText(payload);
   } catch (error) {
     throw asProviderError(error, controller);
   } finally {

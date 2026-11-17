@@ -19,8 +19,7 @@ const reference = {
 
 function responseFor(text, status = 200) {
   return new Response(JSON.stringify({
-    status: 'completed',
-    output_text: text,
+    choices: [{ message: { role: 'assistant', content: text } }],
   }), { status, headers: { 'content-type': 'application/json' } });
 }
 
@@ -62,10 +61,10 @@ test('evaluation payload includes the user answer and reference materials', asyn
   });
   assert.equal(calls.length, 1);
   assert.equal(calls[0].model, 'claude-sonnet-5-5');
-  assert.match(calls[0].input[0].content, /不得因为措辞/);
-  assert.match(calls[0].input[1].content, /Agent 会根据新的观察决定下一步/);
-  assert.match(calls[0].input[1].content, /并通过工具与环境交互/);
-  assert.match(calls[0].input[1].content, /已审阅的参考解析/);
+  assert.match(calls[0].messages[0].content, /不得因为措辞/);
+  assert.match(calls[0].messages[1].content, /Agent 会根据新的观察决定下一步/);
+  assert.match(calls[0].messages[1].content, /并通过工具与环境交互/);
+  assert.match(calls[0].messages[1].content, /已审阅的参考解析/);
   assert.equal(result.providerCalled, true);
   assert.equal(result.evaluation.verdict, '部分准确');
   assert.match(result.label, /不是认证/);
@@ -93,10 +92,10 @@ test('double model failure surfaces an evaluation-failure message', async () => 
     },
   });
   assert.deepEqual(calls, [
-    { model: 'claude-sonnet-5-5', path: '/v1/responses' },
     { model: 'claude-sonnet-5-5', path: '/v1/chat/completions' },
-    { model: 'deepseek-v4-flash', path: '/v1/responses' },
+    { model: 'claude-sonnet-5-5', path: '/v1/responses' },
     { model: 'deepseek-v4-flash', path: '/v1/chat/completions' },
+    { model: 'deepseek-v4-flash', path: '/v1/responses' },
   ]);
   assert.equal(result.providerCalled, true);
   assert.equal(result.status, 'failed');

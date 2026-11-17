@@ -25,8 +25,7 @@ const env = {
 
 function responseFor(text, status = 200) {
   return new Response(JSON.stringify({
-    status: 'completed',
-    output: [{ type: 'message', content: [{ type: 'output_text', text }] }],
+    choices: [{ message: { role: 'assistant', content: text } }],
   }), { status, headers: { 'content-type': 'application/json' } });
 }
 
@@ -200,12 +199,15 @@ test('successful synthesis uses only the retrieved excerpt', async () => {
     },
   });
   assert.equal(calls.length, 1);
-  assert.equal(calls[0].url, 'https://www.9898.ai/v1/responses');
+  assert.equal(calls[0].url, 'https://www.9898.ai/v1/chat/completions');
   assert.equal(calls[0].body.model, 'claude-sonnet-5-5');
   assert.equal(calls[0].body.model === env.OPENAI_MODEL, false);
-  assert.equal(calls[0].body.input[0].content, SYNTHESIS_INSTRUCTIONS);
-  assert.match(calls[0].body.input[0].content, /不得使用摘录以外的知识/);
-  assert.match(calls[0].body.input[1].content, new RegExp(quote.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+  assert.equal(calls[0].body.model === env.GENERATE_MODEL, false);
+  assert.equal(Object.hasOwn(calls[0].body, 'store'), false);
+  assert.equal(Object.hasOwn(calls[0].body, 'max_output_tokens'), false);
+  assert.equal(calls[0].body.messages[0].content, SYNTHESIS_INSTRUCTIONS);
+  assert.match(calls[0].body.messages[0].content, /不得使用摘录以外的知识/);
+  assert.match(calls[0].body.messages[1].content, new RegExp(quote.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
   assert.equal(result.providerCalled, true);
   assert.equal(result.dialog.answerMode, 'synthesized');
   assert.equal(result.dialog.synthesis.status, 'answered');
@@ -272,11 +274,12 @@ test('synthesis user message sends the full retrieved excerpts from the architec
     },
   });
   assert.equal(calls.length, 1);
-  assert.equal(calls[0].body.input[0].content, SYNTHESIS_INSTRUCTIONS);
-  assert.match(calls[0].body.input[0].content, /「这个系统」/);
-  assert.match(calls[0].body.input[0].content, /「系统的架构」/);
-  assert.match(calls[0].body.input[0].content, /不要因为摘录没有点名某个产品名称，就判定依据不足/);
-  const content = calls[0].body.input[1].content;
+  assert.equal(calls[0].url, 'https://www.9898.ai/v1/chat/completions');
+  assert.equal(calls[0].body.messages[0].content, SYNTHESIS_INSTRUCTIONS);
+  assert.match(calls[0].body.messages[0].content, /「这个系统」/);
+  assert.match(calls[0].body.messages[0].content, /「系统的架构」/);
+  assert.match(calls[0].body.messages[0].content, /不要因为摘录没有点名某个产品名称，就判定依据不足/);
+  const content = calls[0].body.messages[1].content;
   assert.equal(content.startsWith('问题：这个系统的架构是什么样的\n\n教材摘录：\n'), true);
   const first = content.indexOf('[1] 为一个任务选择最小可用方案：程序、单次模型、流程与动态 Agent\n');
   const second = content.indexOf('[2] 先看一张图：谁决定下一步？\n');
@@ -324,7 +327,7 @@ test('empty evidence falls back to the quote, and unique caption prose is kept',
     retrieval,
     env,
     transport(_url, options) {
-      calls.push(JSON.parse(options.body).input[1].content);
+      calls.push(JSON.parse(options.body).messages[1].content);
       return responseFor(JSON.stringify({ sufficient: true, answer: '教材摘录说明 ReAct 会按新的观察交错选择下一步。' }));
     },
   });
@@ -368,10 +371,10 @@ test('double LLM failure returns a generation-failure message instead of raw sni
     },
   });
   assert.deepEqual(calls, [
-    { model: 'claude-sonnet-5-5', path: '/v1/responses' },
     { model: 'claude-sonnet-5-5', path: '/v1/chat/completions' },
-    { model: 'deepseek-v4-flash', path: '/v1/responses' },
+    { model: 'claude-sonnet-5-5', path: '/v1/responses' },
     { model: 'deepseek-v4-flash', path: '/v1/chat/completions' },
+    { model: 'deepseek-v4-flash', path: '/v1/responses' },
   ]);
   assert.equal(result.providerCalled, true);
   assert.equal(result.dialog.synthesis.status, 'failed');
