@@ -135,11 +135,29 @@ const SYNTHESIS_INSTRUCTIONS = [
   '不要把摘录原样堆砌成回答。只输出一个 JSON 对象。',
 ].join('');
 
+function proseWithoutImages(text) {
+  return String(text || '').replace(/!\[[^\]]*\]\([^)]*\)/g, '').replace(/\s+/g, '');
+}
+
+// The retrieved window is already bounded. Synthesis has no input-size limit
+// (output is capped by ASK_TEXTBOOK_MAX_OUTPUT_TOKENS), so this does not trim it.
+function usableExcerpt(text) {
+  if (typeof text !== 'string') return '';
+  const raw = text.trim();
+  if (!raw || !proseWithoutImages(raw)) return '';
+  return raw;
+}
+
 function snippetBlock(retrieval) {
   const citations = retrieval?.dialog?.citations || [];
   return citations.map((citation, index) => {
     const title = citation.sectionTitle || citation.title || citation.unitTitle || '教材';
-    return `[${index + 1}] ${title}\n${String(citation.quote || '').trim()}`;
+    const excerpt = usableExcerpt(citation.evidenceExcerpt);
+    const quote = String(citation.quote || '').trim();
+    const quoteProse = proseWithoutImages(quote);
+    const extra = excerpt && quoteProse && !proseWithoutImages(excerpt).includes(quoteProse) ? quote : '';
+    const body = excerpt ? (extra ? `${excerpt}\n${extra}` : excerpt) : quote;
+    return `[${index + 1}] ${title}\n${body}`;
   }).filter(Boolean).join('\n\n');
 }
 
