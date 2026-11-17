@@ -61,6 +61,7 @@ test('evaluation payload includes the user answer and reference materials', asyn
   });
   assert.equal(calls.length, 1);
   assert.equal(calls[0].model, 'claude-sonnet-5-5');
+  assert.equal(Object.hasOwn(calls[0], 'stream'), false);
   assert.match(calls[0].messages[0].content, /不得因为措辞/);
   assert.match(calls[0].messages[1].content, /Agent 会根据新的观察决定下一步/);
   assert.match(calls[0].messages[1].content, /并通过工具与环境交互/);

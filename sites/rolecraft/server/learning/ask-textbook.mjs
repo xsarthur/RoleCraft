@@ -4,7 +4,8 @@
  * excerpt alignment. The synthesis model is never asked to decide scope.
  */
 
-import { completeWithFallback, getAskTextbookReadiness } from './model-provider.mjs';
+import { completeWithFallback, streamWithFallback, getAskTextbookReadiness } from './model-provider.mjs';
+import { createSynthesisStreamParser, parseSynthesisText } from './synthesis-stream.mjs';
 
 export const ASK_TEXTBOOK_FAILURE_MESSAGE = '这次没能根据教材摘录生成回答。请稍后重试。出处仍可打开，但那些原文不是生成的回答。';
 export const ASK_TEXTBOOK_INSUFFICIENT_MESSAGE = '现有教材摘录不足以回答这个问题。';
@@ -131,9 +132,10 @@ const SYNTHESIS_INSTRUCTIONS = [
   '你是职造的教材问答。只能根据用户消息中的教材摘录组织回答。',
   '不得使用摘录以外的知识，不得补造机制、数字、命令、案例或出处。',
   '如果问题里的「这个系统」「该系统」或「系统的架构」是在教材学习语境下提问，就把摘录中描述的体系、控制路径或方案划分当作要说明的架构，依据摘录作答；不要因为摘录没有点名某个产品名称，就判定依据不足。',
-  '只有当摘录里确实没有可用来说明该问题的结构、机制或定义时，才返回 {"sufficient":false}。',
-  '如果摘录足够，返回 {"sufficient":true,"answer":"用自己的话连贯说明，每个论断都能在摘录中找到依据"}。',
-  '不要把摘录原样堆砌成回答。只输出一个 JSON 对象。',
+  '先单独输出一行 sufficient: true 或 sufficient: false。',
+  '只有当摘录里确实没有可用来说明该问题的结构、机制或定义时，才输出 sufficient: false，并且不要输出回答正文。',
+  '如果摘录足够，第一行必须是 sufficient: true，换行后再用自己的话连贯说明，每个论断都能在摘录中找到依据。',
+  '不要把摘录原样堆砌成回答。不要输出 JSON，不要加标题或代码围栏。',
 ].join('');
 
 function proseWithoutImages(text) {
@@ -163,14 +165,7 @@ function snippetBlock(retrieval) {
 }
 
 function parseSynthesis(text) {
-  const trimmed = String(text || '').trim().replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '');
-  let parsed;
-  try { parsed = JSON.parse(trimmed); } catch { return null; }
-  if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed) || typeof parsed.sufficient !== 'boolean') return null;
-  if (parsed.sufficient === false) return { sufficient: false };
-  const answer = typeof parsed.answer === 'string' ? parsed.answer.trim() : '';
-  if (!answer) return null;
-  return { sufficient: true, answer: answer.slice(0, 1800) };
+  return parseSynthesisText(text);
 }
 
 function withSynthesis(retrieval, synthesis, providerCalled) {
@@ -186,7 +181,36 @@ function withSynthesis(retrieval, synthesis, providerCalled) {
   return next;
 }
 
-export async function composeAskTextbookResponse({ query, retrieval, env = process.env, transport, signal } = {}) {
+async function completeSynthesis({ query, retrieval, env, transport, signal, onAnswerDelta }) {
+  const snippets = snippetBlock(retrieval);
+  const userContent = `问题：${String(query || '').trim()}\n\n教材摘录：\n${snippets}`;
+  if (!onAnswerDelta) {
+    const completion = await completeWithFallback({ instructions: SYNTHESIS_INSTRUCTIONS, userContent, env, transport, signal });
+    return { ...completion, parsed: completion.ok ? parseSynthesis(completion.text) : null };
+  }
+  const parser = createSynthesisStreamParser();
+  let committed = false;
+  const completion = await streamWithFallback({
+    instructions: SYNTHESIS_INSTRUCTIONS,
+    userContent,
+    env,
+    transport,
+    signal,
+    onAttempt() { if (!committed) parser.reset(); },
+    isCommitted: () => committed,
+    onDelta(chunk) {
+      const delta = parser.push(chunk);
+      if (!delta) return;
+      committed = true;
+      onAnswerDelta(delta);
+    },
+  });
+  const parsed = parser.finish();
+  if (committed && parsed?.sufficient && parsed.answer) return { ...completion, ok: true, parsed };
+  return { ...completion, parsed: completion.ok ? parsed : null, committed };
+}
+
+export async function composeAskTextbookResponse({ query, retrieval, env = process.env, transport, signal, onAnswerDelta } = {}) {
   const gate = assessSynthesisGate(retrieval, query);
   if (!gate.pass) {
     if (gate.reason === 'unrelated') return untouched(retrieval, 'unrelated', env, ASK_TEXTBOOK_OUT_OF_SCOPE_MESSAGE);
@@ -195,14 +219,7 @@ export async function composeAskTextbookResponse({ query, retrieval, env = proce
   }
   const readiness = getAskTextbookReadiness(env);
   if (!readiness.configured) return untouched(retrieval, 'not_configured', env);
-  const snippets = snippetBlock(retrieval);
-  const completion = await completeWithFallback({
-    instructions: SYNTHESIS_INSTRUCTIONS,
-    userContent: `问题：${String(query || '').trim()}\n\n教材摘录：\n${snippets}`,
-    env,
-    transport,
-    signal,
-  });
+  const completion = await completeSynthesis({ query, retrieval, env, transport, signal, onAnswerDelta });
   if (!completion.providerCalled) return untouched(retrieval, 'not_configured', env);
   if (!completion.ok) {
     return withSynthesis(retrieval, {
@@ -214,7 +231,7 @@ export async function composeAskTextbookResponse({ query, retrieval, env = proce
       fallbackUsed: false,
     }, true);
   }
-  const parsed = parseSynthesis(completion.text);
+  const parsed = completion.parsed;
   if (!parsed) {
     return withSynthesis(retrieval, {
       status: 'failed',

@@ -617,12 +617,30 @@ export function createRolecraftServer(options={}) {
           }
           if(career.career_id!==seededCareer.careerId) return send(200,{requestId,status:'unavailable',agentVersion:AGENT_VERSION,engineMode:'local_semantic_retrieval',providerCalled:false,resultType:learningResultType(query),...snapshot,corpusVersion:snapshot.contentVersion,results:[],dialog:null,clarification:null,limitations:['当前职业的教材已发布，但 v0.12 本地检索适配器尚未为该职业准备独立索引；可以打开课程目录。']});
           const retrieved=await dialogContent({query,corpusVersion:snapshot.contentVersion,...context});
+          const present=retrieval=>{
+            const mappedStatus=retrieval.status==='recommended'||retrieval.status==='answered'?'recommended':retrieval.status==='needs_clarification'?'needs_clarification':retrieval.status==='unavailable'?'unavailable':retrieval.status==='invalid_input'?'invalid_input':'no_match';
+            const retrievalResultType=retrieval.resultType||retrieval.dialog?.resultType||mappedStatus;
+            const results=(retrieval.results||[]).slice(0,6).map(r=>learningResultView(r,career));
+            const limitations=Array.isArray(retrieval.limitations)?retrieval.limitations:[];
+            return {requestId,status:mappedStatus,agentVersion:AGENT_VERSION,intent:retrieval.intent||learningResultType(query),retrievalResultType,uncertainty:retrieval.uncertainty||retrieval.dialog?.uncertainty||null,engineMode:retrieval.engineMode||retrieval.dialog?.engineMode||'local_semantic_retrieval',providerCalled:retrieval.providerCalled===true,resultType:learningResultType(query),...snapshot,corpusVersion:retrieval.corpusVersion||snapshot.contentVersion,corpusHash:retrieval.corpusHash||snapshot.corpusHash,results,dialog:retrieval.dialog||null,clarification:retrieval.clarification||null,limitations,askTextbook:retrieval.askTextbook||null};
+          };
+          const wantsStream=String(req.headers.accept||'').toLowerCase().includes('text/event-stream');
+          if(wantsStream){
+            const abort=new AbortController();
+            res.on('close',()=>{if(!res.writableEnded)abort.abort();});
+            res.writeHead(200,{'Content-Type':'text/event-stream; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','X-Accel-Buffering':'no','X-Rolecraft-Release-Version':RELEASE_VERSION});
+            const sendEvent=(event,data)=>{if(!res.writableEnded)res.write(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`);};
+            try {
+              const retrieval=await composeAskTextbookResponse({query,retrieval:retrieved,transport:options.modelTransport,signal:abort.signal,onAnswerDelta:delta=>{if(delta)sendEvent('answer',{delta});}});
+              sendEvent('done',present(retrieval));
+            } catch(error) {
+              sendEvent('error',{message:error instanceof ApiError?error.message:'本地服务未能完成请求；请检查服务端运行状态'});
+            }
+            res.end();
+            return;
+          }
           const retrieval=await composeAskTextbookResponse({query,retrieval:retrieved,transport:options.modelTransport});
-          const mappedStatus=retrieval.status==='recommended'||retrieval.status==='answered'?'recommended':retrieval.status==='needs_clarification'?'needs_clarification':retrieval.status==='unavailable'?'unavailable':retrieval.status==='invalid_input'?'invalid_input':'no_match';
-          const retrievalResultType=retrieval.resultType||retrieval.dialog?.resultType||mappedStatus;
-          const results=(retrieval.results||[]).slice(0,6).map(r=>learningResultView(r,career));
-          const limitations=Array.isArray(retrieval.limitations)?retrieval.limitations:[];
-          return send(200,{requestId,status:mappedStatus,agentVersion:AGENT_VERSION,intent:retrieval.intent||learningResultType(query),retrievalResultType,uncertainty:retrieval.uncertainty||retrieval.dialog?.uncertainty||null,engineMode:retrieval.engineMode||retrieval.dialog?.engineMode||'local_semantic_retrieval',providerCalled:retrieval.providerCalled===true,resultType:learningResultType(query),...snapshot,corpusVersion:retrieval.corpusVersion||snapshot.contentVersion,corpusHash:retrieval.corpusHash||snapshot.corpusHash,results,dialog:retrieval.dialog||null,clarification:retrieval.clarification||null,limitations,askTextbook:retrieval.askTextbook||null});
+          return send(200,present(retrieval));
         }
         if(method==='POST' && pathname==='/api/practice/evaluate') {
           const b=await body(req);

@@ -1611,6 +1611,59 @@ function mergeAdjacentCitationCards(citations) {
     if (!d.citations.some(ref => ref.unitId === d.context.unitId && ref.sectionId === d.context.sectionId && ref.sourceSha256 === d.context.sourceSha256)) throw Error('下一问答主题不属于这次已验证的出处。');
     return r;
   }
+async function consumeLearningQueryStream(response, onDelta) {
+  if (!response?.body || typeof response.body.getReader !== 'function') throw Error('教材问答没有可读取的流');
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+  let buffer = '';
+  let donePayload = null;
+  const feed = block => {
+    const lines = block.split('\n');
+    let event = 'message';
+    const data = [];
+    for (const line of lines) {
+      if (line.startsWith('event:')) event = line.slice(6).trim();
+      else if (line.startsWith('data:')) data.push(line.slice(5).replace(/^ /, ''));
+    }
+    if (!data.length) return;
+    const payload = JSON.parse(data.join('\n'));
+    if (event === 'answer' && typeof payload.delta === 'string' && payload.delta) onDelta(payload.delta);
+    else if (event === 'done') donePayload = payload;
+    else if (event === 'error') throw Error(payload.message || '教材问答中断');
+  };
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, { stream: true }).replace(/\r\n/g, '\n');
+    let splitAt = buffer.indexOf('\n\n');
+    while (splitAt >= 0) {
+      feed(buffer.slice(0, splitAt));
+      buffer = buffer.slice(splitAt + 2);
+      splitAt = buffer.indexOf('\n\n');
+    }
+  }
+  buffer += decoder.decode().replace(/\r\n/g, '\n');
+  if (buffer.trim()) feed(buffer);
+  if (!donePayload) throw Error('教材问答没有完成');
+  return donePayload;
+}
+
+function paintAskStreamDelta(doc, delta) {
+  if (!delta) return;
+  const results = doc.getElementById('lw-find-results');
+  if (!results) return;
+  let node = doc.getElementById('lw-ask-stream-text');
+  if (!node) {
+    const history = typeof results.querySelector === 'function' ? results.querySelector('.lw-query-history') : null;
+    results.innerHTML = '<div class="lw-ask-answer" id="lw-ask-stream"><p id="lw-ask-stream-text"></p><p class="lw-ask-note">以上内容只根据本次检索到的教材摘录组织。</p></div>';
+    if (history && typeof results.appendChild === 'function') results.appendChild(history);
+    node = doc.getElementById('lw-ask-stream-text');
+  }
+  if (node) node.textContent = (node.textContent || '') + delta;
+  const live = typeof doc.querySelector === 'function' ? doc.querySelector('.lw-ask-live') : null;
+  if (live) live.textContent = '正在根据教材摘录组织回答';
+}
+/* end ask-stream-client */
   async function find(specificQuery, specificContext) {
     const expression = (specificQuery ?? query).trim(), context = specificContext || currentContext();
     if (pending && expression === submission?.query && JSON.stringify(context) === JSON.stringify(submission.context)) return;
@@ -1626,7 +1679,7 @@ function mergeAdjacentCitationCards(citations) {
       let result;
       try {
         const agentBody = { requestId: requestKey, query: expression, careerId: submitted.context.careerId || AGENT_CAREER_ID, contentVersion: submitted.context.contentVersion || CURRENT, textbookVersionId: submitted.context.textbookVersionId || null, useCurrentContext: submitted.context.useCurrentContext === true, locale: 'zh-CN', workbenchVersion: WORKBENCH_VERSION, agentVersion: DIALOG_AGENT_VERSION, ...(submitted.context.useCurrentContext && submitted.context.currentUnitId ? { currentUnitId: submitted.context.currentUnitId, currentSectionId: submitted.context.currentSectionId || null } : {}) };
-        let http = await fetch('/api/agent/learning/query', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Rolecraft-Agent-Version': DIALOG_AGENT_VERSION, 'X-Rolecraft-Agent-Request-Id': requestKey }, body: JSON.stringify(agentBody), signal: activeController.signal, credentials: 'omit' });
+        let http = await fetch('/api/agent/learning/query', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'text/event-stream', 'X-Rolecraft-Agent-Version': DIALOG_AGENT_VERSION, 'X-Rolecraft-Agent-Request-Id': requestKey }, body: JSON.stringify(agentBody), signal: activeController.signal, credentials: 'omit' });
         if (!http.ok && !dynamicCareer() && (http.status === 404 || http.status === 405)) {
           const legacyContext = { query: expression, corpusVersion: submitted.context.corpusVersion || CURRENT, ...(submitted.context.startingPoint ? { startingPoint: submitted.context.startingPoint } : {}), ...(submitted.context.useCurrentContext && submitted.context.currentUnitId && submitted.context.currentSectionId ? { currentUnitId: submitted.context.currentUnitId, currentSectionId: submitted.context.currentSectionId } : {}), ...(submitted.context.previousContext ? { previousContext: submitted.context.previousContext } : {}) };
           http = await fetch('/api/content/dialog', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Rolecraft-Agent-Version': DIALOG_AGENT_VERSION, 'X-Rolecraft-Agent-Request-Id': requestKey }, body: JSON.stringify(legacyContext), signal: activeController.signal, credentials: 'omit' });
@@ -1636,7 +1689,9 @@ function mergeAdjacentCitationCards(citations) {
           const error = Error(payload?.error?.message || (http.status === 404 ? (dynamicCareer() ? '当前职业的教材问答接口尚未接入，请先通过课程目录阅读章节。' : '当前预览只有静态阅读资源，请启动本地问答服务。') : '本地问答服务暂不可用。'));
           error.status = http.status; error.code = payload?.error?.code; throw error;
         }
-        result = await http.json();
+        const contentType = http.headers?.get?.('content-type') || '';
+        if (contentType.includes('text/event-stream') && http.body) result = await consumeLearningQueryStream(http, delta => paintAskStreamDelta(document, delta));
+        else result = await http.json();
         if (!result.requestId) result = { ...result, requestId: requestKey };
       } finally { clearTimeout(timeout); }
       if (id !== requestId) return;

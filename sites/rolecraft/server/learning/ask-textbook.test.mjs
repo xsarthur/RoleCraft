@@ -7,9 +7,10 @@ const SYNTHESIS_INSTRUCTIONS = [
   '你是职造的教材问答。只能根据用户消息中的教材摘录组织回答。',
   '不得使用摘录以外的知识，不得补造机制、数字、命令、案例或出处。',
   '如果问题里的「这个系统」「该系统」或「系统的架构」是在教材学习语境下提问，就把摘录中描述的体系、控制路径或方案划分当作要说明的架构，依据摘录作答；不要因为摘录没有点名某个产品名称，就判定依据不足。',
-  '只有当摘录里确实没有可用来说明该问题的结构、机制或定义时，才返回 {"sufficient":false}。',
-  '如果摘录足够，返回 {"sufficient":true,"answer":"用自己的话连贯说明，每个论断都能在摘录中找到依据"}。',
-  '不要把摘录原样堆砌成回答。只输出一个 JSON 对象。',
+  '先单独输出一行 sufficient: true 或 sufficient: false。',
+  '只有当摘录里确实没有可用来说明该问题的结构、机制或定义时，才输出 sufficient: false，并且不要输出回答正文。',
+  '如果摘录足够，第一行必须是 sufficient: true，换行后再用自己的话连贯说明，每个论断都能在摘录中找到依据。',
+  '不要把摘录原样堆砌成回答。不要输出 JSON，不要加标题或代码围栏。',
 ].join('');
 
 const env = {
@@ -381,5 +382,104 @@ test('double LLM failure returns a generation-failure message instead of raw sni
   assert.equal(result.dialog.synthesis.answer, null);
   assert.equal(result.dialog.synthesis.message, ASK_TEXTBOOK_FAILURE_MESSAGE);
   assert.notEqual(result.dialog.synthesis.message, quote);
+  assert.equal(result.dialog.citations[0].quote, quote);
+});
+
+function sseChunk(content) {
+  return `data: ${JSON.stringify({ choices: [{ delta: { content } }] })}\n\n`;
+}
+
+function streamingChat(chunks, onPull) {
+  const encoder = new TextEncoder();
+  let index = 0;
+  return new Response(new ReadableStream({
+    pull(controller) {
+      onPull?.(index);
+      if (index >= chunks.length) {
+        controller.close();
+        return;
+      }
+      controller.enqueue(encoder.encode(chunks[index]));
+      index += 1;
+    },
+  }), { status: 200, headers: { 'content-type': 'text/event-stream' } });
+}
+
+test('streaming synthesis shows answer pieces before completion and keeps every citation', async () => {
+  const quote = 'ReAct 将推理和行动交错进行，新的观察会改变下一步工具选择。';
+  const retrieval = answeredRetrieval({ quote, title: '三种策略' });
+  const deltas = [];
+  let resolved = false;
+  let streamedBeforeEnd = false;
+  const chunks = [sseChunk('sufficient: true\n'), sseChunk('教材摘录'), sseChunk('说明交错。'), 'data: [DONE]\n\n'];
+  const result = await composeAskTextbookResponse({
+    query: 'ReAct 推理和行动如何交错',
+    retrieval,
+    env,
+    onAnswerDelta(delta) {
+      assert.equal(resolved, false);
+      assert.equal(delta.includes('sufficient'), false);
+      deltas.push(delta);
+    },
+    transport(url, options) {
+      const body = JSON.parse(options.body);
+      assert.equal(body.stream, true);
+      assert.equal(body.model, 'claude-sonnet-5-5');
+      assert.match(body.messages[1].content, new RegExp(quote.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+      assert.equal(Object.hasOwn(body, 'store'), false);
+      return streamingChat(chunks, index => {
+        if (index === chunks.length - 1 && deltas.length > 0) streamedBeforeEnd = true;
+      });
+    },
+  });
+  resolved = true;
+  assert.equal(streamedBeforeEnd, true);
+  assert.deepEqual(deltas, ['教材摘录', '说明交错。']);
+  assert.equal(result.dialog.synthesis.status, 'answered');
+  assert.equal(result.dialog.synthesis.answer, '教材摘录说明交错。');
+  assert.equal(result.dialog.synthesis.fallbackUsed, false);
+  assert.deepEqual(result.dialog.citations, retrieval.dialog.citations);
+  assert.equal(result.dialog.citations.length, 1);
+});
+
+test('streaming insufficient signal never releases answer text', async () => {
+  const quote = 'ReAct 将推理和行动交错进行，新的观察会改变下一步工具选择。';
+  const retrieval = answeredRetrieval({ quote });
+  let released = '';
+  const result = await composeAskTextbookResponse({
+    query: 'ReAct 推理和行动如何交错',
+    retrieval,
+    env,
+    onAnswerDelta(delta) { released += delta; },
+    transport() {
+      return streamingChat([
+        sseChunk('{"sufficient":'),
+        sseChunk('false,"answer":"不要把这段显示出来。"}'),
+        'data: [DONE]\n\n',
+      ]);
+    },
+  });
+  assert.equal(released, '');
+  assert.equal(result.dialog.synthesis.status, 'insufficient');
+  assert.equal(result.dialog.synthesis.answer, null);
+  assert.equal(JSON.stringify(result.dialog.synthesis).includes('不要把这段显示出来'), false);
+  assert.equal(result.dialog.citations[0].quote, quote);
+});
+
+test('streaming line-protocol insufficient does not emit the following prose', async () => {
+  const quote = 'ReAct 将推理和行动交错进行，新的观察会改变下一步工具选择。';
+  let calls = 0;
+  const result = await composeAskTextbookResponse({
+    query: 'ReAct 推理和行动如何交错',
+    retrieval: answeredRetrieval({ quote }),
+    env,
+    onAnswerDelta() { calls += 1; },
+    transport() {
+      return streamingChat([sseChunk('sufficient: false\n不要显示这段回答。'), 'data: [DONE]\n\n']);
+    },
+  });
+  assert.equal(calls, 0);
+  assert.equal(result.dialog.synthesis.status, 'insufficient');
+  assert.equal(result.dialog.synthesis.answer, null);
   assert.equal(result.dialog.citations[0].quote, quote);
 });

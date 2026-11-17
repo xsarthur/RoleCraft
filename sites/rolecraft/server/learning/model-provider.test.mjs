@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { readFileSync } from 'node:fs';
-import { completeWithFallback } from './model-provider.mjs';
+import { completeWithFallback, streamWithFallback } from './model-provider.mjs';
 
 const env = {
   OPENAI_API_KEY: 'test-key-not-a-secret',
@@ -263,6 +263,145 @@ test('unusable chat content is not returned and the fallback model is used', asy
   });
   assert.equal(result.ok, true);
   assert.equal(result.text, 'fallback text');
+  assert.equal(result.model, 'deepseek-v4-flash');
+  assert.equal(result.fallbackUsed, true);
+});
+
+function sseChunk(content) {
+  return `data: ${JSON.stringify({ choices: [{ delta: { content } }] })}\n\n`;
+}
+
+function streamingChat(chunks, onPull) {
+  const encoder = new TextEncoder();
+  let index = 0;
+  return new Response(new ReadableStream({
+    pull(controller) {
+      onPull?.(index);
+      if (index >= chunks.length) {
+        controller.close();
+        return;
+      }
+      controller.enqueue(encoder.encode(chunks[index]));
+      index += 1;
+    },
+  }), { status: 200, headers: { 'content-type': 'text/event-stream' } });
+}
+
+test('streaming chat completions emits deltas before resolution and does not call responses', async () => {
+  const deltas = [];
+  let resolved = false;
+  let streamedBeforeEnd = false;
+  const chunks = [sseChunk('sufficient: true\n'), sseChunk('教材'), sseChunk('摘录'), 'data: [DONE]\n\n'];
+  const result = await streamWithFallback({
+    instructions,
+    userContent,
+    env,
+    onDelta(chunk) {
+      assert.equal(resolved, false);
+      deltas.push(chunk);
+    },
+    transport(url, options) {
+      const body = JSON.parse(options.body);
+      assert.equal(new URL(url).pathname, '/v1/chat/completions');
+      assert.equal(body.stream, true);
+      assert.equal(body.model, 'claude-sonnet-5-5');
+      assert.equal(body.max_tokens, 1200);
+      assert.equal(Object.hasOwn(body, 'store'), false);
+      assert.equal(Object.hasOwn(body, 'max_output_tokens'), false);
+      assert.equal(options.headers.Authorization, 'Bearer test-key-not-a-secret');
+      return streamingChat(chunks, index => {
+        if (index < chunks.length - 1 && deltas.length > 0) streamedBeforeEnd = true;
+      });
+    },
+  });
+  resolved = true;
+  assert.equal(streamedBeforeEnd, true);
+  assert.deepEqual(deltas, ['sufficient: true\n', '教材', '摘录']);
+  assert.equal(result.ok, true);
+  assert.equal(result.model, 'claude-sonnet-5-5');
+  assert.equal(result.fallbackUsed, false);
+  assert.equal(result.text.includes('教材摘录'), true);
+});
+
+test('streaming chat failure can still succeed on responses without showing a partial answer first', async () => {
+  const calls = [];
+  const deltas = [];
+  const result = await streamWithFallback({
+    instructions,
+    userContent,
+    env,
+    onDelta(chunk) { deltas.push(chunk); },
+    transport(url, options) {
+      const body = JSON.parse(options.body);
+      calls.push({ model: body.model, path: new URL(url).pathname, stream: body.stream === true });
+      if (url.endsWith('/chat/completions')) return jsonResponse({ error: { message: 'not implemented', secret: 'SECRET_PROVIDER_BODY' } }, 500);
+      assert.equal(Object.hasOwn(body, 'stream'), false);
+      return jsonResponse({ output_text: 'sufficient: true\n回退后的回答' });
+    },
+  });
+  assert.deepEqual(calls, [
+    { model: 'claude-sonnet-5-5', path: '/v1/chat/completions', stream: true },
+    { model: 'claude-sonnet-5-5', path: '/v1/responses', stream: false },
+  ]);
+  assert.deepEqual(deltas, ['sufficient: true\n回退后的回答']);
+  assert.equal(result.ok, true);
+  assert.equal(result.fallbackUsed, false);
+  assert.equal(JSON.stringify(result).includes('SECRET_PROVIDER_BODY'), false);
+});
+
+test('streaming timeout does not call responses, and the fallback model streams chat first', async () => {
+  const calls = [];
+  const result = await streamWithFallback({
+    instructions,
+    userContent,
+    env: { ...env, ASK_TEXTBOOK_TIMEOUT_MS: '1000' },
+    onDelta() {},
+    transport(url, options) {
+      const body = JSON.parse(options.body);
+      calls.push({ model: body.model, path: new URL(url).pathname, stream: body.stream === true });
+      if (url.endsWith('/responses')) throw new Error('responses should not run after a streaming timeout');
+      if (body.model === 'claude-sonnet-5-5') {
+        return new Promise((resolve, reject) => {
+          const fail = () => {
+            const error = new Error('The operation was aborted');
+            error.name = 'AbortError';
+            reject(error);
+          };
+          if (options.signal?.aborted) fail();
+          else options.signal?.addEventListener('abort', fail, { once: true });
+        });
+      }
+      return streamingChat([sseChunk('sufficient: true\n备用回答'), 'data: [DONE]\n\n']);
+    },
+  });
+  assert.deepEqual(calls, [
+    { model: 'claude-sonnet-5-5', path: '/v1/chat/completions', stream: true },
+    { model: 'deepseek-v4-flash', path: '/v1/chat/completions', stream: true },
+  ]);
+  assert.equal(result.ok, true);
+  assert.equal(result.model, 'deepseek-v4-flash');
+  assert.equal(result.fallbackUsed, true);
+});
+
+test('streaming rate limit skips responses for that model', async () => {
+  const calls = [];
+  const result = await streamWithFallback({
+    instructions,
+    userContent,
+    env,
+    onDelta() {},
+    transport(url, options) {
+      const body = JSON.parse(options.body);
+      calls.push({ model: body.model, path: new URL(url).pathname });
+      if (body.model === 'claude-sonnet-5-5') return jsonResponse({ error: { message: 'slow down' } }, 429);
+      if (url.endsWith('/responses')) throw new Error('fallback responses should not be called');
+      return streamingChat([sseChunk('sufficient: true\n备用回答'), 'data: [DONE]\n\n']);
+    },
+  });
+  assert.deepEqual(calls, [
+    { model: 'claude-sonnet-5-5', path: '/v1/chat/completions' },
+    { model: 'deepseek-v4-flash', path: '/v1/chat/completions' },
+  ]);
   assert.equal(result.model, 'deepseek-v4-flash');
   assert.equal(result.fallbackUsed, true);
 });
