@@ -219,6 +219,114 @@ test('insufficient excerpts do not become a fabricated answer', async () => {
   assert.equal(JSON.stringify(result.dialog.synthesis).includes('Yao'), false);
 });
 
+test('synthesis user message sends the full retrieved excerpts from the architecture probe', async () => {
+  const openingQuote = '需要解释自由文本，不等于需要动态 Agent；需要多次模型调用，也不等于需要多 Agent。';
+  const openingExcerpt = '> **本章先给结论**\n>\n> 需要解释自由文本，不等于需要动态 Agent；需要多次模型调用，也不等于需要多 Agent。只有当**下一步必须依赖新的观察，而且预先列出的路径无法合理覆盖这些变化**时，动态决策才有独立价值。\n>\n> 先冻结任务、输入、权限和验收，再选择能完成同一目标的最小方案。方案越动态，探索能力越强，路径、权限、预算、恢复和验证成本也越高。';
+  const imageExcerpt = '![候选视觉稿：c01 先冻结条件，再看谁控制下一步](assets/c01-selection-control-map-v03.svg)';
+  const captionQuote = '四种方案从普通程序到动态 Agent，表达的是控制权逐步交给运行时；底部共同证据框表示所有方案都应在同一任务、权限、材料和验收条件下比较。';
+  const definitionQuote = '这与 Anthropic 的架构定义一致；本文进一步采用宿主准入与事实记录的工程约束。';
+  const definitionExcerpt = '“Agent”在不同产品中有不同用法。本书采用控制路径的区分：固定工作流由代码预列步骤与合法分支，动态 Agent 让模型根据新观察提议业务路径。这与 Anthropic 的架构定义一致；本文进一步采用宿主准入与事实记录的工程约束。这里仅以该文支持概念区分与最小足够方案原则。[Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)';
+  const items = [
+    { title: '为一个任务选择最小可用方案：程序、单次模型、流程与动态 Agent', quote: openingQuote, evidenceExcerpt: openingExcerpt },
+    { title: '先看一张图：谁决定下一步？', quote: captionQuote, evidenceExcerpt: imageExcerpt },
+    { title: '认识 Agent 工程', quote: definitionQuote, evidenceExcerpt: definitionExcerpt },
+  ];
+  const retrieval = {
+    status: 'recommended',
+    providerCalled: false,
+    results: items.map((item, index) => ({ unitId: 'c01', sectionId: `s${index + 1}`, sectionTitle: item.title, evidenceExcerpt: item.evidenceExcerpt, title: item.title })),
+    limitations: ['回答为教材原文提取，不是生成式模型辅导'],
+    dialog: {
+      status: 'answered',
+      answerMode: 'extractive',
+      message: '以下是教材中的简要回答。',
+      sentences: items.map((item, index) => ({ text: item.quote, citationIds: [`c${index + 1}`] })),
+      citations: items.map((item, index) => ({ id: `c${index + 1}`, quote: item.quote, evidenceExcerpt: item.evidenceExcerpt, sectionTitle: item.title, unitTitle: '方案选择', href: `#learn/agent/c01/s${index + 1}` })),
+      scope: {
+        relatedSegments: ['问题'],
+        filteredSegments: [],
+        contextUsed: null,
+        classification: { segments: [{ decision: 'related', relatedSimilarity: 0.74, unrelatedSimilarity: 0.2 }] },
+      },
+      context: null,
+    },
+  };
+  const calls = [];
+  const result = await composeAskTextbookResponse({
+    query: '这个系统的架构是什么样的',
+    retrieval,
+    env,
+    transport(url, options) {
+      calls.push({ url, body: JSON.parse(options.body) });
+      return responseFor(JSON.stringify({ sufficient: true, answer: '教材摘录把控制权划分写成固定工作流与动态 Agent 的区别，并要求先冻结任务再选最小方案。' }));
+    },
+  });
+  assert.equal(calls.length, 1);
+  const content = calls[0].body.input[1].content;
+  assert.equal(content.startsWith('问题：这个系统的架构是什么样的\n\n教材摘录：\n'), true);
+  const first = content.indexOf('[1] 为一个任务选择最小可用方案：程序、单次模型、流程与动态 Agent\n');
+  const second = content.indexOf('[2] 先看一张图：谁决定下一步？\n');
+  const third = content.indexOf('[3] 认识 Agent 工程\n');
+  assert.equal(first >= 0 && first < second && second < third, true);
+  assert.equal(content.includes(openingExcerpt), true);
+  assert.equal(content.includes('动态决策才有独立价值'), true);
+  assert.equal(content.includes('先冻结任务、输入、权限和验收'), true);
+  assert.equal(content.split(openingQuote).length - 1, 1);
+  assert.equal(content.includes(captionQuote), true);
+  assert.equal(content.includes('c01-selection-control-map-v03.svg'), false);
+  assert.equal(content.includes(definitionExcerpt), true);
+  assert.equal(content.includes('本书采用控制路径的区分'), true);
+  assert.equal(content.split(definitionQuote).length - 1, 1);
+  assert.equal(result.dialog.answerMode, 'synthesized');
+  assert.deepEqual(result.dialog.citations.map(item => item.quote), items.map(item => item.quote));
+  assert.deepEqual(result.dialog.sentences.map(item => item.text), items.map(item => item.quote));
+});
+
+test('empty evidence falls back to the quote, and unique caption prose is kept', async () => {
+  const excerpt = 'ReAct 将推理和行动交错进行，新的观察会改变下一步工具选择。停止条件写在同一窗口里。';
+  const caption = '四种方案从普通程序到动态 Agent，表达的是控制权逐步交给运行时。';
+  const quoteOnly = 'ReAct 将推理和行动交错进行，新的观察会改变下一步工具选择。';
+  const retrieval = answeredRetrieval({ quote: excerpt, title: '三种策略' });
+  retrieval.dialog.citations = [
+    { id: 'c1', quote: caption, evidenceExcerpt: excerpt, sectionTitle: '三种策略', unitTitle: '规划与反思', href: '#learn/agent/n03/s1' },
+    { id: 'c2', quote: quoteOnly, evidenceExcerpt: '   ', sectionTitle: '认识 Agent 工程', unitTitle: '认识 Agent 工程', href: '#learn/agent/n00/s1' },
+    { id: 'c3', quote: quoteOnly, evidenceExcerpt: '![仅有图片](assets/diagram.svg)', sectionTitle: '图示', unitTitle: '认识 Agent 工程', href: '#learn/agent/n00/s2' },
+  ];
+  retrieval.dialog.sentences = [
+    { text: caption, citationIds: ['c1'] },
+    { text: quoteOnly, citationIds: ['c2'] },
+    { text: quoteOnly, citationIds: ['c3'] },
+  ];
+  retrieval.results = retrieval.dialog.citations.map((citation, index) => ({
+    unitId: 'n03',
+    sectionId: `s${index + 1}`,
+    sectionTitle: citation.sectionTitle,
+    evidenceExcerpt: citation.evidenceExcerpt,
+    title: citation.sectionTitle,
+  }));
+  const calls = [];
+  const result = await composeAskTextbookResponse({
+    query: 'ReAct 推理和行动如何交错',
+    retrieval,
+    env,
+    transport(_url, options) {
+      calls.push(JSON.parse(options.body).input[1].content);
+      return responseFor(JSON.stringify({ sufficient: true, answer: '教材摘录说明 ReAct 会按新的观察交错选择下一步。' }));
+    },
+  });
+  assert.equal(calls.length, 1);
+  const content = calls[0];
+  assert.equal(content.includes(excerpt), true);
+  assert.equal(content.includes(caption), true);
+  assert.equal(content.indexOf(excerpt) < content.indexOf(caption), true);
+  const emptyBlock = content.slice(content.indexOf('[2] 认识 Agent 工程\n'));
+  assert.equal(emptyBlock.startsWith(`[2] 认识 Agent 工程\n${quoteOnly}`), true);
+  assert.equal(content.includes('[3] 图示\n' + quoteOnly), true);
+  assert.equal(content.includes('diagram.svg'), false);
+  assert.equal(result.dialog.citations[0].quote, caption);
+  assert.equal(result.dialog.citations[1].quote, quoteOnly);
+});
+
 test('double LLM failure returns a generation-failure message instead of raw snippets', async () => {
   const quote = 'ReAct 将推理和行动交错进行，新的观察会改变下一步工具选择。';
   const calls = [];
