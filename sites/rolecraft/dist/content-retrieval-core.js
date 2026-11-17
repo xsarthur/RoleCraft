@@ -17,9 +17,10 @@ const frames=[
  {id:'problem',label:'确认值得解决的真实问题',units:['p01-discovery','p01-mvp'],patterns:[/用户访谈|真实需求|需求证据|值得.{0,8}解决|痛点|产品需求|mvp|最小产品/i]},
  {id:'release',label:'发布和回退时保留任务事实',units:['e04'],patterns:[/发布|上线|部署|回退|回滚|灰度/]},
  {id:'delivery',label:'用作品证据复盘交付',units:['p02'],patterns:[/独立作品|交付|复盘|作品证据|实训/]},
- // “架构” is not an overview cue. The opening only mentions Anthropic’s
- // architecture definition in passing and sends the comparison to 方案选择.
- // Bare 架构 / “agent架构” must not lock this frame onto 00-learning-route.
+ // “架构” alone is not an overview cue, so bare 架构 / 系统架构 / 信息架构
+ // stay off this frame. “agent架构” is assembled below: 方案选择 stays first
+ // and this opening is added after it. 是什么 / 全貌 / 运行闭环 keep the
+ // opening first. 多agent架构 stays on 方案选择 and does not pull the opening.
  {id:'orientation',label:'认识 Agent 与工程全貌',units:['00-learning-route'],patterns:[/agent.{0,8}(是什么|全貌|组成)|什么是.{0,8}agent|工程全景|运行闭环|全貌/i]}
 ];
 const v12Frames=[
@@ -84,16 +85,46 @@ function interpret(input,options={}){
  if(!interpretedIntents.length&&input.currentUnitId&&/(?:这一节|这里|刚才|上面|继续学|接着学)/.test(input.query)){
   const f=availableFrames.find(f=>f.units[0]===input.currentUnitId);if(f&&!excludedIds.has(f.id))interpretedIntents=[{id:f.id,label:f.label,evidence:['当前阅读上下文'],unitIds:f.units}];
  }
- // An overview cue together with an architecture cue asks what the structure is.
- // Selection may also match “agent架构”, but the opening stays the first result.
+ // Bare “agent架构” keeps 方案选择 first and also surfaces the opening.
+ // Overview cues keep the opening first. 多agent架构 stays on selection.
  const asked=positive.map(p=>p.text).join(' ');
- if(/(?:是什么|什么是|全貌|运行闭环)/.test(asked)&&/(?:agent|智能体)(?:\s|的){0,2}架构/i.test(asked)&&!excludedIds.has('orientation')){
+ const shape=architectureQuery(asked);
+ if(shape.multi)interpretedIntents=interpretedIntents.filter(i=>i.id!=='orientation');
+ else if(shape.architecture&&!excludedIds.has('orientation')){
   const frame=frameById.get('orientation');
   let orientation=interpretedIntents.find(i=>i.id==='orientation');
-  if(!orientation){const evidence=[...asked.matchAll(/是什么|什么是|全貌|运行闭环/g)].map(m=>m[0]);orientation={id:'orientation',label:frame.label,evidence:evidence.length?[...new Set(evidence)]:['全貌'],unitIds:frame.units};}
-  interpretedIntents=[orientation,...interpretedIntents.filter(i=>i.id!=='orientation')];
+  if(!orientation){const evidence=shape.overview?[...asked.matchAll(/是什么|什么是|全貌|运行闭环/g)].map(m=>m[0]):['agent架构'];orientation={id:'orientation',label:frame.label,evidence:evidence.length?[...new Set(evidence)]:['agent架构'],unitIds:frame.units};}
+  const rest=interpretedIntents.filter(i=>i.id!=='orientation');
+  interpretedIntents=shape.overview?[orientation,...rest]:[...rest,orientation];
  }
  return {interpretedIntents,excludedIntents,positiveText:positive.map(p=>p.text).join('，')};
+}
+function architectureQuery(text){
+ const asked=String(text||'');
+ const normalized=asked.normalize('NFKC').toLowerCase().replace(/\s+/g,'').replace(/[？?。！!，,、.]+/g,'');
+ const generic=normalized==='架构'||normalized==='系统架构'||normalized==='信息架构';
+ const architecture=/(?:agent|智能体)(?:\s|的){0,2}架构/i.test(asked);
+ const overview=architecture&&/(?:是什么|什么是|全貌|运行闭环)/.test(asked);
+ const multi=architecture&&/多\s*agent|多智能体/i.test(asked);
+ return {generic,architecture,overview,multi,bare:architecture&&!overview&&!multi&&!generic};
+}
+function architecturePriority(intent,query){
+ const shape=architectureQuery(query);
+ if(intent?.id==='orientation'&&shape.architecture&&!shape.multi){
+  if(/运行闭环/.test(query||''))return ({s})=>/反馈闭环|运行闭环/.test(s.title)?3:/认识 Agent 工程/.test(s.title)?2:0;
+  return ({s})=>s.level===1&&/认识 Agent 工程/.test(s.title)?3:0;
+ }
+ if(intent?.id==='selection'&&shape.bare){
+  return ({s})=>{
+   if(s.level===1&&/最小可用方案/.test(s.title))return 4;
+   if(/谁决定下一步/.test(s.title))return 3;
+   if(/四种方案的控制权/.test(s.title))return 2;
+   if(/迁移：未知路径|动态 Agent 的限制/.test(s.title))return -1;
+   return 0;
+  };
+ }
+ if(intent?.id==='selection'&&shape.multi)return ({s})=>/多 Agent 的升级点/.test(s.title)?4:/迁移：未知路径|动态 Agent 的限制/.test(s.title)?-1:0;
+ return null;
 }
 function excerpt(section,query,exactTerms=[]){
  const body=section.bodyMarkdown,tokens=tokenize(query);const paragraphs=body.split(/\n\s*\n/).filter(p=>!/^\s*(?:#|```|\|)/.test(p)&&p.trim().length>18);
@@ -143,7 +174,12 @@ function recommend(corpus,input,options={}){
  }
  const forbiddenUnitIds=new Set(result.excludedIntents.flatMap(i=>i.unitIds));
  const queryTokens=tokenize(interpreted.positiveText);
- const allSections=corpus.units.flatMap(u=>u.sections.map(s=>({u,s}))).filter(({u,s})=>s.searchText.length>35&&(s.level>1||u.unitId==='00-learning-route')&&!/下一步|来源与版本|审校|本轮|历史验证|原版验证|原文验证|代码运行说明/.test(s.title));
+ // “下一步” only marks a navigation title such as “下一步” / “下一节”.
+ // The teaching heading “谁决定下一步？” stays eligible. c01-selection’s
+ // level-1 conclusion is long enough to join the pool; short chrome still drops.
+ const navigationTitle=/^(?:下一步|下一节)(?:学习|[：:].*)?$|来源与版本|审校|本轮|历史验证|原版验证|原文验证|代码运行说明/;
+ const introUnits=new Set(['00-learning-route','c01-selection']);
+ const allSections=corpus.units.flatMap(u=>u.sections.map(s=>({u,s}))).filter(({u,s})=>s.searchText.length>35&&(s.level>1||introUnits.has(u.unitId))&&!navigationTitle.test(s.title));
  const termText=positiveParts.filter(p=>!frontendReact.includes(p)).map(p=>p.text).join('，');
  const recalled=termRecall(corpus,allSections,termText,forbiddenUnitIds);
  const preferredUnits=result.interpretedIntents.flatMap(i=>i.unitIds);
@@ -172,19 +208,51 @@ function recommend(corpus,input,options={}){
  if(requestedBeginner&&intents.some(i=>!['foundation','orientation'].includes(i.id))&&!intents.some(i=>i.id==='foundation'))intents=[{id:'foundation',label:'先确定基础起点',evidence:['用户选择零基础'],unitIds:['01-foundation','00-learning-route']},...intents];
  if(requestedBeginner)intents=[...intents.filter(i=>i.id==='foundation'),...intents.filter(i=>i.id!=='foundation')];
  const selected=new Set();
+ function pack(c,intent){
+  const exactTerms=intent?.term?[intent.term]:matchedTerms(c),evidenceExcerpt=excerpt(c.s,interpreted.positiveText,exactTerms);
+  if(!c.s.bodyMarkdown.includes(evidenceExcerpt))return null;
+  if(intent?.term&&!englishTerms(prose(evidenceExcerpt)).some(t=>t.key===intent.term))return null;
+  const reason=intent?.term?`本节正文实际提及“${intent.evidence.join('、')}”；这里只定位已有论述，内容范围请以原文为准。`:`你表达了“${intent.evidence.join('、')}”；这一小节说明${intent.label}的具体机制。${requestedBeginner&&!['foundation','orientation'].includes(intent.id)?'这是目标预览，请先完成基础诊断与相关先修。':''}`;
+  return {unitId:c.u.unitId,sectionId:c.s.sectionId,order:c.u.order,unitTitle:c.u.title,sectionTitle:c.s.title,title:c.s.title,reason,evidenceExcerpt,sourcePath:c.u.sourcePath,sourceSha256:c.u.sourceSha256,version:corpus.corpusVersion,href:c.s.href,intentId:intent.id,matchingBasis:intent.term?'source_term':'task_intent',matchedSourceTerms:exactTerms,prerequisiteUnitIds:c.u.prerequisiteUnitIds};
+ }
  for(const intent of intents.slice(0,3)){
-  const candidates=allSections.filter(({u,s})=>intent.unitIds.includes(u.unitId)&&!forbiddenUnitIds.has(u.unitId)&&(!intent.sectionKeys||intent.sectionKeys.includes(u.unitId+'/'+s.sectionId))).sort((a,b)=>score(b,intent)-score(a,intent));
+  const priority=architecturePriority(intent,input.query);
+  const candidates=allSections.filter(({u,s})=>intent.unitIds.includes(u.unitId)&&!forbiddenUnitIds.has(u.unitId)&&(!intent.sectionKeys||intent.sectionKeys.includes(u.unitId+'/'+s.sectionId))).sort((a,b)=>{if(priority){const delta=priority(b)-priority(a);if(delta)return delta;}return score(b,intent)-score(a,intent);});
   const primary=(intent.id==='foundation'&&candidates.find(x=>x.u.unitId==='01-foundation'&&x.s.title==='先做入口诊断'))||(intent.preferredUnit&&candidates.find(x=>x.u.unitId===intent.preferredUnit))||(intent.term?candidates[0]:candidates.find(x=>x.u.unitId===intent.unitIds[0]))||candidates[0];
   const secondary=candidates.find(x=>x.u.unitId!==primary?.u.unitId)||candidates.find(x=>x!==primary);
   for(const c of [primary,secondary].filter(Boolean)){
    const key=c.u.unitId+'/'+c.s.sectionId;if(selected.has(key))continue;selected.add(key);
-   const exactTerms=intent.term?[intent.term]:matchedTerms(c),evidenceExcerpt=excerpt(c.s,interpreted.positiveText,exactTerms);if(!c.s.bodyMarkdown.includes(evidenceExcerpt))continue;
-   if(intent.term&&!englishTerms(prose(evidenceExcerpt)).some(t=>t.key===intent.term))continue;
-   const reason=intent.term?`本节正文实际提及“${intent.evidence.join('、')}”；这里只定位已有论述，内容范围请以原文为准。`:`你表达了“${intent.evidence.join('、')}”；这一小节说明${intent.label}的具体机制。${requestedBeginner&&!['foundation','orientation'].includes(intent.id)?'这是目标预览，请先完成基础诊断与相关先修。':''}`;
-   result.results.push({unitId:c.u.unitId,sectionId:c.s.sectionId,order:c.u.order,unitTitle:c.u.title,sectionTitle:c.s.title,title:c.s.title,reason,evidenceExcerpt,sourcePath:c.u.sourcePath,sourceSha256:c.u.sourceSha256,version:corpus.corpusVersion,href:c.s.href,intentId:intent.id,matchingBasis:intent.term?'source_term':'task_intent',matchedSourceTerms:exactTerms,prerequisiteUnitIds:c.u.prerequisiteUnitIds});
+   const packed=pack(c,intent);if(packed)result.results.push(packed);
   }
+ }
+ const shape=architectureQuery(input.query);
+ const locate=(unitId,pred)=>allSections.find(({u,s})=>u.unitId===unitId&&pred(s))||null;
+ const take=(list,c,intent)=>{
+  if(!c||!intent)return;
+  const key=c.u.unitId+'/'+c.s.sectionId;
+  const existing=result.results.find(r=>r.unitId+'/'+r.sectionId===key);
+  if(existing){list.push(existing);return;}
+  const packed=pack(c,intent);if(packed)list.push(packed);
+ };
+ if(shape.multi){
+  const selectionIntent=result.interpretedIntents.find(i=>i.id==='selection')||{id:'selection',label:'选择最小可用方案',evidence:['多agent架构'],unitIds:['c01-selection']};
+  const pinned=[];take(pinned,locate('c01-selection',s=>/多 Agent 的升级点/.test(s.title)),selectionIntent);
+  const keys=new Set(pinned.map(r=>r.unitId+'/'+r.sectionId));
+  const rest=result.results.filter(r=>!keys.has(r.unitId+'/'+r.sectionId)&&r.unitId!=='00-learning-route');
+  result.results=[...pinned,...rest];
+ }else if(shape.bare){
+  const selectionIntent=result.interpretedIntents.find(i=>i.id==='selection')||{id:'selection',label:'选择最小可用方案',evidence:['agent架构'],unitIds:['c01-selection']};
+  const orientationIntent=result.interpretedIntents.find(i=>i.id==='orientation')||{id:'orientation',label:'认识 Agent 与工程全貌',evidence:['agent架构'],unitIds:['00-learning-route']};
+  const pinned=[];
+  take(pinned,locate('c01-selection',s=>s.level===1&&/最小可用方案/.test(s.title)),selectionIntent);
+  take(pinned,locate('c01-selection',s=>/谁决定下一步/.test(s.title)),selectionIntent);
+  take(pinned,locate('00-learning-route',s=>s.title==='认识 Agent 工程'),orientationIntent);
+  take(pinned,locate('c01-selection',s=>/四种方案的控制权/.test(s.title)),selectionIntent);
+  const keys=new Set(pinned.map(r=>r.unitId+'/'+r.sectionId));
+  const rest=result.results.filter(r=>!keys.has(r.unitId+'/'+r.sectionId)&&!/迁移：未知路径|动态 Agent 的限制/.test(r.sectionTitle||r.title||''));
+  result.results=[...pinned,...rest];
  }
  result.results=result.results.slice(0,6);result.status=result.results.length?'recommended':'no_match';return result;
 }
-root.RolecraftContentRetrieval={recommend,interpret,validate,clauses,frames:[...frames,...v12Frames].map(f=>({id:f.id,label:f.label,units:f.units})),tokenize};
+root.RolecraftContentRetrieval={recommend,interpret,validate,clauses,architectureQuery,frames:[...frames,...v12Frames].map(f=>({id:f.id,label:f.label,units:f.units})),tokenize};
 })(globalThis);
