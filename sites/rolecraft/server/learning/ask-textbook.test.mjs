@@ -109,6 +109,22 @@ for (const status of ['no_match', 'related_uncovered', 'needs_clarification', 'i
   });
 }
 
+test('exercise excerpt for agent架构 stays misaligned', () => {
+  const quote = '失败报告给出 service.py；读后发现它调用动态注册的处理器，实际处理器随配置变化。';
+  const retrieval = answeredRetrieval({ quote, title: '迁移：未知路径', related: 0.7, unrelated: 0.28 });
+  const gate = assessSynthesisGate(retrieval, 'agent架构');
+  assert.equal(gate.pass, false);
+  assert.equal(gate.reason, 'intent_misaligned');
+});
+
+test('selection definition excerpt for agent架构 is in scope', () => {
+  const quote = '需要解释自由文本，不等于需要动态 Agent；需要多次模型调用，也不等于需要多 Agent。';
+  const retrieval = answeredRetrieval({ quote, title: '为一个任务选择最小可用方案：程序、单次模型、流程与动态 Agent', related: 0.74, unrelated: 0.2 });
+  const gate = assessSynthesisGate(retrieval, 'agent架构');
+  assert.equal(gate.pass, true);
+  assert.equal(gate.reason, 'in_scope');
+});
+
 test('weak architecture hit is not treated as in-scope', async () => {
   let calls = 0;
   const quote = '迁移：未知路径时，宿主程序不能把模型猜测当成已发生的事实。';
