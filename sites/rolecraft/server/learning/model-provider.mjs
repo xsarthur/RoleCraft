@@ -1,7 +1,9 @@
 /**
- * Shared Responses-API client for 问教材 synthesis and 题库对照评价.
+ * Shared model client for 问教材 synthesis and 题库对照评价.
  * Model name, timeout, and max tokens are separate from chapter generation.
- * OPENAI_MODEL and GENERATE_MODEL are intentionally unread.
+ * Each model is posted to /responses first. A provider error other than timeout
+ * or provider_rate_limit retries that same model once on /chat/completions,
+ * still inside the original timeout. OPENAI_MODEL and GENERATE_MODEL are intentionally unread.
  * The API key and base URL follow the generation adapter (OPENAI_API_KEY, OPENAI_BASE_URL).
  */
 
@@ -56,6 +58,52 @@ function outputText(payload) {
   return texts[0];
 }
 
+function asProviderError(error, controller) {
+  if (controller.signal.aborted || error?.name === 'AbortError' || error?.code === 'timeout') {
+    return error?.code === 'timeout' ? error : providerError('timeout');
+  }
+  if (typeof error?.code === 'string' && error.code.startsWith('provider_')) return error;
+  return providerError('network_error');
+}
+
+function httpStatusError(status) {
+  if (status === 429) return providerError('provider_rate_limit');
+  if (status >= 500) return providerError('provider_unavailable');
+  return providerError('provider_invalid_response');
+}
+
+// OpenAI-style clients concatenate string parts and text/output_text fragments with no separator.
+function chatContentParts(content) {
+  if (typeof content === 'string') return [content];
+  if (!Array.isArray(content)) return [];
+  return content.map(part => {
+    if (typeof part === 'string') return part;
+    if (!part || typeof part !== 'object' || typeof part.text !== 'string') return '';
+    if (part.type != null && part.type !== 'text' && part.type !== 'output_text') return '';
+    return part.text;
+  });
+}
+
+function chatCompletionText(payload) {
+  const text = chatContentParts(payload?.choices?.[0]?.message?.content).join('');
+  if (!text.trim()) throw providerError('provider_invalid_response');
+  return text;
+}
+
+async function postModel(transport, url, body, config, signal) {
+  const response = await (transport || fetch)(url, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${config.apiKey}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+    signal,
+  });
+  if (!response?.ok) {
+    try { await response.body?.cancel?.(); } catch { /* ignore */ }
+    throw httpStatusError(response?.status);
+  }
+  return response.json();
+}
+
 async function requestModelText({ config, model, instructions, userContent, transport, signal }) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), config.timeoutMs);
@@ -63,32 +111,33 @@ async function requestModelText({ config, model, instructions, userContent, tran
   if (signal?.aborted) controller.abort();
   else signal?.addEventListener('abort', onAbort, { once: true });
   try {
-    const body = {
+    try {
+      const payload = await postModel(transport, `${config.baseUrl}/responses`, {
+        model,
+        store: false,
+        input: [
+          { role: 'system', content: instructions },
+          { role: 'user', content: userContent },
+        ],
+        max_output_tokens: config.maxOutputTokens,
+      }, config, controller.signal);
+      if (payload?.status === 'incomplete') throw providerError('provider_incomplete');
+      return outputText(payload);
+    } catch (error) {
+      const coded = asProviderError(error, controller);
+      if (coded.code === 'timeout' || coded.code === 'provider_rate_limit') throw coded;
+    }
+    const payload = await postModel(transport, `${config.baseUrl}/chat/completions`, {
       model,
-      store: false,
-      input: [
+      messages: [
         { role: 'system', content: instructions },
         { role: 'user', content: userContent },
       ],
-      max_output_tokens: config.maxOutputTokens,
-    };
-    const response = await (transport || fetch)(`${config.baseUrl}/responses`, {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${config.apiKey}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-      signal: controller.signal,
-    });
-    if (!response?.ok) {
-      try { await response.body?.cancel?.(); } catch { /* ignore */ }
-      throw providerError(response?.status === 429 ? 'provider_rate_limit' : response?.status >= 500 ? 'provider_unavailable' : 'provider_invalid_response');
-    }
-    const payload = await response.json();
-    if (payload?.status === 'incomplete') throw providerError('provider_incomplete');
-    return outputText(payload);
+      max_tokens: config.maxOutputTokens,
+    }, config, controller.signal);
+    return chatCompletionText(payload);
   } catch (error) {
-    if (error?.code && error.code.startsWith('provider_')) throw error;
-    if (controller.signal.aborted || error?.name === 'AbortError') throw providerError('timeout');
-    throw providerError('network_error');
+    throw asProviderError(error, controller);
   } finally {
     clearTimeout(timer);
     signal?.removeEventListener('abort', onAbort);
