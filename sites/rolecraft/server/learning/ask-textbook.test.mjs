@@ -3,6 +3,15 @@ import test from 'node:test';
 import { composeAskTextbookResponse, assessSynthesisGate, intentAligned, ASK_TEXTBOOK_FAILURE_MESSAGE, ASK_TEXTBOOK_INSUFFICIENT_MESSAGE, ASK_TEXTBOOK_OUT_OF_SCOPE_MESSAGE } from './ask-textbook.mjs';
 import { getAskTextbookReadiness, loadAskTextbookConfig } from './model-provider.mjs';
 
+const SYNTHESIS_INSTRUCTIONS = [
+  '你是职造的教材问答。只能根据用户消息中的教材摘录组织回答。',
+  '不得使用摘录以外的知识，不得补造机制、数字、命令、案例或出处。',
+  '如果问题里的「这个系统」「该系统」或「系统的架构」是在教材学习语境下提问，就把摘录中描述的体系、控制路径或方案划分当作要说明的架构，依据摘录作答；不要因为摘录没有点名某个产品名称，就判定依据不足。',
+  '只有当摘录里确实没有可用来说明该问题的结构、机制或定义时，才返回 {"sufficient":false}。',
+  '如果摘录足够，返回 {"sufficient":true,"answer":"用自己的话连贯说明，每个论断都能在摘录中找到依据"}。',
+  '不要把摘录原样堆砌成回答。只输出一个 JSON 对象。',
+].join('');
+
 const env = {
   OPENAI_API_KEY: 'test-key-not-a-secret',
   OPENAI_BASE_URL: 'https://www.9898.ai/v1',
@@ -194,6 +203,7 @@ test('successful synthesis uses only the retrieved excerpt', async () => {
   assert.equal(calls[0].url, 'https://www.9898.ai/v1/responses');
   assert.equal(calls[0].body.model, 'claude-sonnet-5-5');
   assert.equal(calls[0].body.model === env.OPENAI_MODEL, false);
+  assert.equal(calls[0].body.input[0].content, SYNTHESIS_INSTRUCTIONS);
   assert.match(calls[0].body.input[0].content, /不得使用摘录以外的知识/);
   assert.match(calls[0].body.input[1].content, new RegExp(quote.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
   assert.equal(result.providerCalled, true);
@@ -262,6 +272,10 @@ test('synthesis user message sends the full retrieved excerpts from the architec
     },
   });
   assert.equal(calls.length, 1);
+  assert.equal(calls[0].body.input[0].content, SYNTHESIS_INSTRUCTIONS);
+  assert.match(calls[0].body.input[0].content, /「这个系统」/);
+  assert.match(calls[0].body.input[0].content, /「系统的架构」/);
+  assert.match(calls[0].body.input[0].content, /不要因为摘录没有点名某个产品名称，就判定依据不足/);
   const content = calls[0].body.input[1].content;
   assert.equal(content.startsWith('问题：这个系统的架构是什么样的\n\n教材摘录：\n'), true);
   const first = content.indexOf('[1] 为一个任务选择最小可用方案：程序、单次模型、流程与动态 Agent\n');
@@ -327,6 +341,20 @@ test('empty evidence falls back to the quote, and unique caption prose is kept',
   assert.equal(result.dialog.citations[1].quote, quoteOnly);
 });
 
+test('fenced synthesis JSON is still parsed', async () => {
+  const quote = 'ReAct 将推理和行动交错进行，新的观察会改变下一步工具选择。';
+  const result = await composeAskTextbookResponse({
+    query: 'ReAct 推理和行动如何交错',
+    retrieval: answeredRetrieval({ quote }),
+    env,
+    transport() {
+      return responseFor('```json\n{"sufficient":true,"answer":"教材摘录说明，ReAct 会交错推理和行动。"}\n```');
+    },
+  });
+  assert.equal(result.dialog.synthesis.status, 'answered');
+  assert.match(result.dialog.synthesis.answer, /交错推理和行动/);
+});
+
 test('double LLM failure returns a generation-failure message instead of raw snippets', async () => {
   const quote = 'ReAct 将推理和行动交错进行，新的观察会改变下一步工具选择。';
   const calls = [];
@@ -334,12 +362,17 @@ test('double LLM failure returns a generation-failure message instead of raw sni
     query: 'ReAct 推理和行动如何交错',
     retrieval: answeredRetrieval({ quote }),
     env,
-    transport(_url, options) {
-      calls.push(JSON.parse(options.body).model);
+    transport(url, options) {
+      calls.push({ model: JSON.parse(options.body).model, path: new URL(url).pathname });
       return responseFor('upstream failed', 503);
     },
   });
-  assert.deepEqual(calls, ['claude-sonnet-5-5', 'deepseek-v4-flash']);
+  assert.deepEqual(calls, [
+    { model: 'claude-sonnet-5-5', path: '/v1/responses' },
+    { model: 'claude-sonnet-5-5', path: '/v1/chat/completions' },
+    { model: 'deepseek-v4-flash', path: '/v1/responses' },
+    { model: 'deepseek-v4-flash', path: '/v1/chat/completions' },
+  ]);
   assert.equal(result.providerCalled, true);
   assert.equal(result.dialog.synthesis.status, 'failed');
   assert.equal(result.dialog.synthesis.answer, null);

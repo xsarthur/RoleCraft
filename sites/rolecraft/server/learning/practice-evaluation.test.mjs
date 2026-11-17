@@ -87,12 +87,17 @@ test('double model failure surfaces an evaluation-failure message', async () => 
     confirmed: true,
   }, {
     env,
-    transport(_url, options) {
-      calls.push(JSON.parse(options.body).model);
+    transport(url, options) {
+      calls.push({ model: JSON.parse(options.body).model, path: new URL(url).pathname });
       return responseFor('nope', 500);
     },
   });
-  assert.deepEqual(calls, ['claude-sonnet-5-5', 'deepseek-v4-flash']);
+  assert.deepEqual(calls, [
+    { model: 'claude-sonnet-5-5', path: '/v1/responses' },
+    { model: 'claude-sonnet-5-5', path: '/v1/chat/completions' },
+    { model: 'deepseek-v4-flash', path: '/v1/responses' },
+    { model: 'deepseek-v4-flash', path: '/v1/chat/completions' },
+  ]);
   assert.equal(result.providerCalled, true);
   assert.equal(result.status, 'failed');
   assert.equal(result.evaluation, null);
