@@ -1,7 +1,16 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { composeAskTextbookResponse, assessSynthesisGate, intentAligned, ASK_TEXTBOOK_FAILURE_MESSAGE, ASK_TEXTBOOK_INSUFFICIENT_MESSAGE, ASK_TEXTBOOK_OUT_OF_SCOPE_MESSAGE } from './ask-textbook.mjs';
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { composeAskTextbookResponse, assessSynthesisGate, excerptGroundsQuery, intentAligned, ASK_TEXTBOOK_FAILURE_MESSAGE, ASK_TEXTBOOK_INSUFFICIENT_MESSAGE, ASK_TEXTBOOK_OUT_OF_SCOPE_MESSAGE } from './ask-textbook.mjs';
 import { getAskTextbookReadiness, loadAskTextbookConfig } from './model-provider.mjs';
+import '../../dist/content-retrieval-core.js';
+import { selectAskCitations } from '../retrieval/dialog.mjs';
+
+const here = path.dirname(fileURLToPath(import.meta.url));
+const corpus = JSON.parse(readFileSync(path.join(here, '../retrieval/content-v13-index.json'), 'utf8'));
+const core = globalThis.RolecraftContentRetrieval;
 
 const SYNTHESIS_INSTRUCTIONS = [
   '你是职造的教材问答。只能根据用户消息中的教材摘录组织回答。',
@@ -23,6 +32,7 @@ const env = {
   OPENAI_MODEL: 'gpt-should-stay-unused',
   GENERATE_MODEL: 'generate-should-stay-unused',
 };
+const offlineEnv = { ...env, OPENAI_API_KEY: '' };
 
 function responseFor(text, status = 200) {
   return new Response(JSON.stringify({
@@ -482,4 +492,194 @@ test('streaming line-protocol insufficient does not emit the following prose', a
   assert.equal(result.dialog.synthesis.status, 'insufficient');
   assert.equal(result.dialog.synthesis.answer, null);
   assert.equal(result.dialog.citations[0].quote, quote);
+});
+
+const RAG_SECTION = /固定 RAG 与 Agentic RAG/;
+
+function isRagSection(item) {
+  return item?.unitId === 'n05-retrieval-ingestion' && RAG_SECTION.test(item.sectionTitle || item.title || '');
+}
+
+function retrievalFromQuery(query, related, unrelated) {
+  const recommendation = core.recommend(corpus, { query, startingPoint: 'developer' });
+  const literal = selectAskCitations(corpus, recommendation, query);
+  assert.ok(literal, `${query} should keep retrieved textbook sections`);
+  return {
+    status: 'recommended',
+    providerCalled: false,
+    results: literal.results,
+    limitations: [],
+    dialog: {
+      status: 'answered',
+      answerMode: 'extractive',
+      message: '以下是教材中的简要回答。',
+      sentences: literal.sentences,
+      citations: literal.citations,
+      scope: {
+        relatedSegments: [query],
+        filteredSegments: [],
+        contextUsed: null,
+        classification: { segments: [{ decision: 'related', relatedSimilarity: related, unrelatedSimilarity: unrelated }] },
+      },
+      context: null,
+    },
+  };
+}
+
+function assertExactQuotes(result) {
+  assert.equal(result.results.length, result.dialog.citations.length);
+  assert.ok(result.results.length >= 1 && result.results.length <= 3);
+  for (const citation of result.dialog.citations) {
+    const unit = corpus.units.find(item => item.unitId === citation.unitId);
+    const section = unit.sections.find(item => item.sectionId === citation.sectionId);
+    assert.equal(section.bodyMarkdown.slice(citation.quoteStart, citation.quoteEnd), citation.quote);
+    assert.equal(section.bodyMarkdown.includes(citation.evidenceExcerpt), true);
+    assert.equal(result.dialog.sentences.some(sentence => sentence.citationIds.includes(citation.id) && citation.quote.includes(sentence.text)), true);
+  }
+}
+
+async function askOffline(query, related, unrelated) {
+  let calls = 0;
+  const retrieval = retrievalFromQuery(query, related, unrelated);
+  const gate = assessSynthesisGate(retrieval, query);
+  const result = await composeAskTextbookResponse({
+    query,
+    retrieval,
+    env: offlineEnv,
+    transport() { calls += 1; throw new Error('should not call'); },
+  });
+  return { calls, gate, result };
+}
+
+test('RAG below 0.53 stays in scope and returns multiple unit-19 sections', async () => {
+  const unit = corpus.units.find(item => item.unitId === 'n05-retrieval-ingestion');
+  assert.equal(unit.order, 19);
+  const { calls, gate, result } = await askOffline('RAG', 0.5088, 0.3935);
+  assert.equal(gate.pass, true);
+  assert.equal(gate.reason, 'in_scope');
+  assert.equal(calls, 0);
+  assert.equal(result.providerCalled, false);
+  assert.equal(result.status, 'recommended');
+  assert.equal(result.dialog.status, 'answered');
+  assert.notEqual(result.dialog.status, 'related_uncovered');
+  assert.ok(result.results.length >= 2 && result.results.length <= 3);
+  assert.equal(result.results.some(isRagSection), true);
+  assert.equal(result.dialog.citations.some(isRagSection), true);
+  assertExactQuotes(result);
+});
+
+test('固定 RAG below 0.53 returns the unit-19 RAG section', async () => {
+  const { calls, gate, result } = await askOffline('固定 RAG', 0.4777, 0.39);
+  assert.equal(gate.reason, 'in_scope');
+  assert.equal(calls, 0);
+  assert.equal(result.status, 'recommended');
+  assert.equal(result.dialog.status, 'answered');
+  assert.equal(result.results.some(isRagSection), true);
+  assert.equal(result.dialog.citations.some(isRagSection), true);
+  assertExactQuotes(result);
+});
+
+test('Agentic RAG below 0.53 returns the unit-19 RAG section', async () => {
+  const { calls, gate, result } = await askOffline('Agentic RAG', 0.474, 0.39);
+  assert.equal(gate.reason, 'in_scope');
+  assert.equal(calls, 0);
+  assert.equal(result.status, 'recommended');
+  assert.equal(result.dialog.status, 'answered');
+  assert.equal(result.results.some(isRagSection), true);
+  assert.equal(result.dialog.citations.some(isRagSection), true);
+  assertExactQuotes(result);
+});
+
+test('broad RAG can still be synthesized without dropping the retrieved sections', async () => {
+  const retrieval = retrievalFromQuery('RAG', 0.5088, 0.3935);
+  let calls = 0;
+  const result = await composeAskTextbookResponse({
+    query: 'RAG',
+    retrieval,
+    env,
+    transport() {
+      calls += 1;
+      return responseFor('sufficient: true\n教材摘录对照了固定 RAG 与 Agentic RAG：前者预先排定检索和生成，后者按观察选择下一步检索。');
+    },
+  });
+  assert.equal(calls, 1);
+  assert.equal(result.providerCalled, true);
+  assert.equal(result.dialog.status, 'answered');
+  assert.equal(result.dialog.synthesis.status, 'answered');
+  assert.ok(result.dialog.citations.length >= 2 && result.dialog.citations.length <= 3);
+  assert.equal(result.dialog.citations.some(isRagSection), true);
+  assert.equal(result.results.length, result.dialog.citations.length);
+});
+
+test('a short query under 0.53 without the term in the excerpt stays blocked', async () => {
+  const quote = '迁移：未知路径时，宿主程序不能把模型猜测当成已发生的事实。';
+  const retrieval = answeredRetrieval({ quote, title: '迁移：未知路径', related: 0.52, unrelated: 0.2 });
+  assert.equal(excerptGroundsQuery('量子计算', retrieval), false);
+  assert.equal(assessSynthesisGate(retrieval, '量子计算').reason, 'weak_relevance');
+  let calls = 0;
+  const result = await composeAskTextbookResponse({
+    query: '量子计算',
+    retrieval,
+    env,
+    transport() { calls += 1; throw new Error('should not call'); },
+  });
+  assert.equal(calls, 0);
+  assert.equal(result.providerCalled, false);
+  assert.equal(result.status, 'no_match');
+  assert.equal(result.dialog.status, 'related_uncovered');
+  assert.equal(result.results.length, 0);
+  assert.equal(result.dialog.citations.length, 0);
+});
+
+test('RAG does not match inside a longer Latin word', () => {
+  const retrieval = answeredRetrieval({ quote: 'drag the slider to compare two runs.', title: '比较两次运行', related: 0.5, unrelated: 0.2 });
+  assert.equal(excerptGroundsQuery('RAG', retrieval), false);
+  assert.equal(assessSynthesisGate(retrieval, 'RAG').reason, 'weak_relevance');
+});
+
+for (const query of ['红烧肉怎么做', '明天上海天气怎么样']) {
+  test(`${query} stays out of scope and does not call synthesis`, async () => {
+    const recommendation = core.recommend(corpus, { query, startingPoint: 'developer' });
+    assert.equal(recommendation.status, 'no_match');
+    assert.equal(recommendation.results.length, 0);
+    let calls = 0;
+    const retrieval = {
+      status: 'no_match',
+      providerCalled: false,
+      results: [],
+      dialog: {
+        status: 'unrelated',
+        answerMode: 'extractive',
+        message: '旧文案',
+        sentences: [],
+        citations: [],
+        scope: { relatedSegments: [], filteredSegments: [], contextUsed: null },
+        context: null,
+      },
+    };
+    const result = await composeAskTextbookResponse({
+      query,
+      retrieval,
+      env,
+      transport() { calls += 1; throw new Error('should not call'); },
+    });
+    assert.equal(calls, 0);
+    assert.equal(result.providerCalled, false);
+    assert.equal(result.dialog.status, 'unrelated');
+    assert.equal(result.dialog.message, ASK_TEXTBOOK_OUT_OF_SCOPE_MESSAGE);
+    assert.equal(result.askTextbook.invoked, false);
+    assert.equal(result.results.length, 0);
+  });
+}
+
+test('architecture and specialist questions are not rewritten as broad term cards', () => {
+  for (const query of ['agent架构', '这个系统的架构是什么样的', 'ReAct', 'ReAct 是什么']) {
+    const recommendation = core.recommend(corpus, { query, startingPoint: 'developer' });
+    assert.equal(selectAskCitations(corpus, recommendation, query), null, query);
+  }
+});
+
+test('dialog keeps literal section selection ahead of the embedding sentence picker', () => {
+  const source = readFileSync(path.join(here, '../retrieval/dialog.mjs'), 'utf8');
+  assert.match(source, /selectAskCitations\(corpus,\s*lexicalRecommendation,\s*input\.query\)/);
 });

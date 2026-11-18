@@ -1,7 +1,10 @@
 /**
  * 问教材: local retrieval gate, then excerpt-only synthesis.
  * Relatedness is decided here from the existing dialog classification and
- * excerpt alignment. The synthesis model is never asked to decide scope.
+ * excerpt alignment. A retrieved title or excerpt that already contains the
+ * query stays in scope even when the embedding score is under 0.53. The
+ * synthesis model is never asked to decide scope, and unrelated questions
+ * never reach it.
  */
 
 import { completeWithFallback, streamWithFallback, getAskTextbookReadiness } from './model-provider.mjs';
@@ -22,6 +25,35 @@ function cjkContentTerms(question) {
   let text = String(question || '').replace(/[^\u4e00-\u9fff]/g, '');
   for (const phrase of CJK_FUNCTION_PHRASES) text = text.split(phrase).join('\u0000');
   return [...new Set(text.split(CJK_SPLIT).map(part => part.trim()).filter(part => part.length >= 2))];
+}
+
+export function contentTokens(query) {
+  const question = String(query || '').normalize('NFKC').trim();
+  const latin = [...new Set((question.toLowerCase().match(/[a-z][a-z0-9_+-]{1,}/g) || []))];
+  const terms = cjkContentTerms(question);
+  return { question, latin, terms, tokens: [...latin, ...terms] };
+}
+
+function tokenIn(hay, token) {
+  const text = String(hay || '').normalize('NFKC').toLowerCase();
+  const needle = String(token || '').normalize('NFKC').toLowerCase();
+  if (!needle) return false;
+  if (/[a-z]/.test(needle)) {
+    const escaped = needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return new RegExp(`(?:^|[^a-z0-9_+-])${escaped}(?:[^a-z0-9_+-]|$)`).test(text);
+  }
+  return text.includes(needle);
+}
+
+export function textHasQueryTokens(text, query) {
+  const { tokens } = contentTokens(query);
+  return tokens.length > 0 && tokens.every(token => tokenIn(text, token));
+}
+
+// Literal textbook evidence. “RAG” inside a retrieved RAG section is enough;
+// the same token inside a longer Latin word is not.
+export function excerptGroundsQuery(query, retrieval) {
+  return textHasQueryTokens(excerptText(retrieval), query);
 }
 
 export function intentAligned(query, excerpt, { contextUsed = false, focusTerm = '' } = {}) {
@@ -52,7 +84,7 @@ function excerptText(retrieval) {
   return parts.join('\n');
 }
 
-function classificationOk(dialog) {
+function classificationOk(dialog, retrieval, query) {
   const segments = Array.isArray(dialog?.scope?.classification?.segments) ? dialog.scope.classification.segments : null;
   if (!segments || !segments.length) return false;
   const related = segments.filter(segment => segment?.decision === 'related');
@@ -61,7 +93,11 @@ function classificationOk(dialog) {
   const margin = Math.max(...related.map(segment => (Number(segment.relatedSimilarity) || 0) - (Number(segment.unrelatedSimilarity) || 0)));
   const contextUsed = Boolean(dialog?.scope?.contextUsed);
   if (contextUsed && best >= 0.43 && margin >= 0.02) return true;
-  return best >= 0.53 && margin >= 0.025;
+  // 0.53 is the historical dialog bar. It stays for hits that do not actually
+  // contain the question. A related decision whose retrieved title or excerpt
+  // already contains the query is not a weak hit.
+  if (best >= 0.53 && margin >= 0.025) return true;
+  return excerptGroundsQuery(query, retrieval);
 }
 
 export function assessSynthesisGate(retrieval, query) {
@@ -76,8 +112,8 @@ export function assessSynthesisGate(retrieval, query) {
   if (!results.length || !sentences.length || !citations.length) return { pass: false, reason: 'empty_retrieval' };
   const answered = dialogStatus === 'answered' && (topStatus === 'recommended' || topStatus === 'answered');
   if (!answered) return { pass: false, reason: 'not_answered' };
-  if (!classificationOk(dialog)) return { pass: false, reason: 'weak_relevance' };
-  const aligned = intentAligned(query, excerptText(retrieval), {
+  if (!classificationOk(dialog, retrieval, query)) return { pass: false, reason: 'weak_relevance' };
+  const aligned = excerptGroundsQuery(query, retrieval) || intentAligned(query, excerptText(retrieval), {
     contextUsed: Boolean(dialog?.scope?.contextUsed),
     focusTerm: dialog?.scope?.contextUsed?.focusTerm || dialog?.context?.focusTerm || '',
   });
