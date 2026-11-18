@@ -19,6 +19,20 @@ node semantic.mjs
 
 模型固定 `Xenova/bge-small-zh-v1.5`、commit `75c43b069aac4d136ba6bc1122f995fedcfd2781`、int8；来源和各文件 SHA256 在 `model-lock.json`。核心权重 SHA256 为 `b9837c19ce154ff0726d398ee77abbc03a7faf0476c6f93016c84e531be7ebb5`。运行仅允许固定本地模型路径，`allowRemoteModels=false`；缺失/损坏模型返回 `unavailable`，不会临时联网下载或冒充成功。`semantic.mjs` 可重新构建与当前 corpus/model/chunk hash 绑定的原文向量。任务描述向量在本地按元数据 hash 构建与复用。
 
+## 更新教材后必须同时更新向量
+
+`build-content-v13.mjs` 只重建 `content-v13-index.json` 和阅读包，不会重写 `vectors-v13.json`。教材源、内容索引或切分/模型身份变了而向量文件仍是旧的 corpusHash、modelHash、chunkHash 或条目身份时，`POST /api/content/recommend` 和 `POST /api/agent/learning/query` 会失败。向量文件仅仅存在不够：`/api/health` 的 `localSemanticPrepared` 只在身份一致时为 true。
+
+在本目录、已经按上文执行 `npm ci` 与 `node prepare-model.mjs` 之后，重建内容后必须在同一次变更里准备并提交新向量：
+
+```sh
+node build-content-v13.mjs
+node semantic.mjs textbook-v13
+node check-vector-identity.mjs
+```
+
+`node semantic.mjs textbook-v13` 是现有的显式向量准备，会加载本地模型并覆盖 `vectors-v13.json`。回滚语料同样处理：改过 textbook-v12 索引后执行 `node semantic.mjs textbook-v12`。`node check-vector-identity.mjs` 不加载 ONNX，只核对已发布的 textbook-v13 / textbook-v12 语料、切分结果、`model-lock.json` 与 `vectors-*.json`。不一致时退出码为 1。内容变更的检查和 `deploy/setup.sh` 都会执行它；不要只更新索引。
+
 启动项目现有服务即可消费新增路由；不需要改变现有账户或生成配置。`ROLECRAFT_RETRIEVAL_MODE=concept` 是管理员明确选择的规则降级，返回 `local_concept_retrieval`，不能包装成向量或大模型理解。`file://` 的纯静态阅读也只使用该诚实规则降级；本轮正式可体验入口是本地 HTTP。
 
 从工作区根目录用 Node 24 运行 `node scripts/start-local.mjs`。这台机器可复现的启动命令是 `/Users/shengxiong/.nvm/versions/node/v24.16.0/bin/node scripts/start-local.mjs`；该绝对路径只是本机安装位置，其他机器自行使用其 Node 24 可执行文件。原端口/数据库默认位置和 launcher 信号转发不变。

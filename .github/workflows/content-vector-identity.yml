@@ -1,0 +1,17 @@
+name: content vector identity
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  vector-identity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Fail when published vectors do not match the textbook
+        run: node sites/rolecraft/server/retrieval/check-vector-identity.mjs
