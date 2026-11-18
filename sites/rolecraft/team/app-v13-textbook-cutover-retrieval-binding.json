@@ -1,17 +1,17 @@
 {
   "kind": "engineering_binding_not_independent_acceptance",
-  "builtAt": "2026-10-24T07:09:18.462Z",
+  "builtAt": "2026-11-13T03:08:03.871Z",
   "retrievalVersion": "content-retrieval-0.13-v13",
   "corpusVersion": "textbook-v13",
-  "corpusHash": "fe53e75a2950535f536eb709805f657a547887c9dec4fb5b22467c13310ca344",
-  "bookSha256": "10fbf9a57b6a5c26ae0d096c40646c9b869e460def557e1b34538b8408ff15f4",
+  "corpusHash": "bf8d679f10b93d45154045345d5652e041a29a07e7523d991384de9ff8ba7331",
+  "bookSha256": "60dc6b9bc9716a0e37ffb9745d47bba11650dfc577c1393f54b0f518027d0fff",
   "units": 30,
-  "sections": 349,
+  "sections": 382,
   "rollbackCorpus": "textbook-v12",
   "activeCurrent": "textbook-v13",
   "sourceBinding": {
     "assemblyManifestPath": "textbooks/v13/assembly-manifest.json",
-    "assemblyManifestSha256": "b8308eaa11ba15cd53337516b81a59769f42a9a864bd44d30fde82c218da9db6",
+    "assemblyManifestSha256": "d6fb4923255bce37e7ea8ddee2698b16dccb4eaca2900f076b135b501430eab6",
     "curriculumPath": "team/textbook-v13-workbench-curriculum.json",
     "curriculumSha256": "c1a76ab0f06837490dde7dd4a1d5635c3b6139b3aba61ebf18801f0e562f1499",
     "baseCurriculumPath": "team/textbook-v12-curriculum.json",
@@ -28,9 +28,9 @@
   },
   "passageVectors": {
     "corpusVersion": "textbook-v13",
-    "corpusHash": "fe53e75a2950535f536eb709805f657a547887c9dec4fb5b22467c13310ca344",
-    "chunkHash": "07b53a16af196bcfad8d898a835093c78ae62fcaecad876086dcd93369b62bb6",
-    "count": 682
+    "corpusHash": "bf8d679f10b93d45154045345d5652e041a29a07e7523d991384de9ff8ba7331",
+    "chunkHash": "96e6ada62b5cc11bbbdaea12c74b3402e28e4d44c62009ab05aea95d6ed99424",
+    "count": 649
   },
   "taskVectors": {
     "corpusVersion": "textbook-v13",
@@ -40,8 +40,8 @@
   "files": [
     {
       "path": "server/index.mjs",
-      "bytes": 91790,
-      "sha256": "b914c3d812eb5eba11999a91279edc5e5df1f395af1a5125d2144a92c7932a39"
+      "bytes": 93662,
+      "sha256": "758ef8dd1f61bb17630e8838977a3bc157da216bf7ed17306460090563f466f5"
     },
     {
       "path": "server/careers.mjs",
@@ -75,13 +75,13 @@
     },
     {
       "path": "server/retrieval/build-content-v13.mjs",
-      "bytes": 9612,
-      "sha256": "096811d1cbd1c0686eb1b47c388b1bd7026fb0524af82d5dcae03dc0dc628e10"
+      "bytes": 10153,
+      "sha256": "d06b7116d26b0d993737d811a6bdf0599047f0fae332935223d2327dcd594ec9"
     },
     {
       "path": "server/retrieval/rebind-learning-v13.mjs",
-      "bytes": 11307,
-      "sha256": "bf2293513ace595de9d50861a1efa862e8cc4331024c209cc9facce426642e70"
+      "bytes": 12435,
+      "sha256": "f4d37e8867671aa7418a7dae8787dbd3a8217310b90a19a6b9c59eb867b2f7c6"
     },
     {
       "path": "server/retrieval/bind-v13.mjs",
@@ -90,8 +90,8 @@
     },
     {
       "path": "server/retrieval/smoke-v13-cutover.mjs",
-      "bytes": 6572,
-      "sha256": "19c4f807a53ccc2cceb565b575b16a75508076197f5719b822abbb047af2fd39"
+      "bytes": 6726,
+      "sha256": "99e4c04c667047130bb61aa8d3aa5a519ec3f36dba0b61a879ebf3d1722e1ee8"
     },
     {
       "path": "dist/content-retrieval-core.js",
@@ -100,43 +100,43 @@
     },
     {
       "path": "dist/content-v13-data.js",
-      "bytes": 1759525,
-      "sha256": "8efaefa4e93fc8a35cd617992b3a172fc9a63f65a230a110d36e06a5a4b482b7"
+      "bytes": 1641852,
+      "sha256": "9d78b8f902340c6228b2a64ce0a4e6ceb11d0b4d64ef675597dd95b392a6e02e"
     },
     {
       "path": "dist/learning-v13-data.js",
-      "bytes": 848753,
-      "sha256": "eb876d5949b4f2fff8e6078c35c7f37c0c226f92317ef09dcefa3bbd70f19512"
+      "bytes": 842331,
+      "sha256": "9d869155b598b9271b0339cb5e79e22febb47f747ee95e1db15170689359e8f1"
     },
     {
       "path": "dist/learning-workbench.js",
-      "bytes": 142419,
-      "sha256": "2edc94c3fc48caca55817dceee2bf609f543ed2709e73a4bfb8589dae19c93fd"
+      "bytes": 167949,
+      "sha256": "20e892a65384b9603fa221a70517fd04586b5d3c1549ab68732f881d28d2b1a4"
     },
     {
       "path": "dist/learning-experience-v13.js",
-      "bytes": 38179,
-      "sha256": "e8f6b3ed564e07fe6841ccf6dae8dd98b0f70190f1cb7347ce21402743ee4618"
+      "bytes": 39237,
+      "sha256": "391bfed4aa37672cc7210c18d61fe743a8f125557dd8590557303e8b152c93ba"
     },
     {
       "path": "dist/index.html",
-      "bytes": 5107,
-      "sha256": "4ecca1af20cb7b319f76177468387d0d343f1245b7e9da2ee5e90237cb5a7d58"
+      "bytes": 6272,
+      "sha256": "167f5d9186313d4a44ea1de60b4f352596f0a0bc14b7a6afa8f7d5358b506b79"
     },
     {
       "path": "dist/app.js",
-      "bytes": 170351,
-      "sha256": "5613ca39b192fce55e69d5dbfac931759fbbe1d23ca09db72facb44e5e7f4bfe"
+      "bytes": 170425,
+      "sha256": "e35f08efebfa9f9eb1c3f5b4acb07431436847cdd4d7fee1bfa4df1be484ebc6"
     },
     {
       "path": "server/retrieval/content-v13-index.json",
-      "bytes": 1805409,
-      "sha256": "230140c8c24e1772f57223439629e93f9f41329d2ea70c2e36fe4230ab3ac13e"
+      "bytes": 1691844,
+      "sha256": "ee9d00bc2ffbe6fc76240231662b12c8bc186df7b5f30cf5323111afd3804038"
     },
     {
       "path": "server/retrieval/vectors-v13.json",
-      "bytes": 7397109,
-      "sha256": "250560472656b9cf6118013beef6533bcf25a7cca0f77c56493853b644e83069"
+      "bytes": 7038880,
+      "sha256": "b219a46ab84e1c4a565e7db20e059e8a810ad9bfc5d43b09ae9cd3935cf35dbc"
     },
     {
       "path": "server/retrieval/intent-vectors-v13.json",
@@ -150,18 +150,18 @@
     },
     {
       "path": "textbooks/v13/assembly-manifest.json",
-      "bytes": 37906,
-      "sha256": "b8308eaa11ba15cd53337516b81a59769f42a9a864bd44d30fde82c218da9db6"
+      "bytes": 41518,
+      "sha256": "d6fb4923255bce37e7ea8ddee2698b16dccb4eaca2900f076b135b501430eab6"
     },
     {
       "path": "textbooks/v13/README.md",
-      "bytes": 8418,
-      "sha256": "4208df0fc4292e70fbcbd0241d2c93324195e655eab20957b29adc9e00ccdc9f"
+      "bytes": 7787,
+      "sha256": "c47e6f50bcb76bfa4e3d78548fac222deccc4fddfb4cc57adc1f03d6fd9f55dd"
     },
     {
       "path": "textbooks/v13/agent-engineering-textbook.md",
-      "bytes": 588659,
-      "sha256": "10fbf9a57b6a5c26ae0d096c40646c9b869e460def557e1b34538b8408ff15f4"
+      "bytes": 541489,
+      "sha256": "60dc6b9bc9716a0e37ffb9745d47bba11650dfc577c1393f54b0f518027d0fff"
     },
     {
       "path": "team/textbook-v13-workbench-curriculum.json",
@@ -175,68 +175,68 @@
     },
     {
       "path": "textbooks/v13/00-learning-route.md",
-      "bytes": 19070,
-      "sha256": "6209eb140acdad0716433537230163e5e134fd9a0391189773e67116e9226be1"
+      "bytes": 17891,
+      "sha256": "37fa5990db73d92bbb20f66d677f84d46e66f18b8dc07bd1c4c6bfc2cacd1a9b"
     },
     {
       "path": "textbooks/v13/01-foundation.md",
-      "bytes": 12826,
-      "sha256": "dd626cdab8f8ea610288d136795ff3f9b09905fe57e80bd4b22f329cf5fc3549"
+      "bytes": 11873,
+      "sha256": "f05e2d1cdbe7e777e2d1e16e5b81ef3c0b17753680847b6d07a21d66d806beb2"
     },
     {
       "path": "textbooks/v13/n01-python-model-foundations.md",
-      "bytes": 19834,
-      "sha256": "d603e3391c0bfa39f84b934bc31cf45c7b840bbfb764baa95857bbdd295a8f3c"
+      "bytes": 18901,
+      "sha256": "2ec169244d2b0b996fe3d81e197209de7c891e5958ea8f1dc9764638f8ea8f48"
     },
     {
       "path": "textbooks/v13/p01-discovery.md",
-      "bytes": 14696,
-      "sha256": "50b71d0a6c805c310c9e35ea7994c6c0f0caec2d56d56e4c329dc1e5daa50ef4"
+      "bytes": 13749,
+      "sha256": "b28d860f75cb7db629a14efd25f6be755ed1f8f4c01a2396fd13eddbf08f5520"
     },
     {
       "path": "textbooks/v13/02-task-acceptance.md",
-      "bytes": 8611,
-      "sha256": "0ce1fda0c37b9aca0e84930c649fff000c9d59e9a7d45db1fc75387a41313dc4"
+      "bytes": 8257,
+      "sha256": "1904672e4e6b50dec202417c0898d9603fb5ac3014192bb5111fcfa0cafb230a"
     },
     {
       "path": "textbooks/v13/03-trust-boundary.md",
-      "bytes": 7500,
-      "sha256": "192aa0e59c71d04b66af3541c04b07c5bca84fc89336bf53a3f96cb56b0e093f"
+      "bytes": 7161,
+      "sha256": "76007d90647d98231e8c78afb165cdb715ff5319a7b5cfbea5890c5d4e71a84a"
     },
     {
       "path": "textbooks/v13/f01.md",
-      "bytes": 16618,
-      "sha256": "4543142df40d21f51a01da39ee372b419c290c16ca79b32b45bb8d158559c19e"
+      "bytes": 16022,
+      "sha256": "63654ebed136c726f4634e1f5a8c8f78aa13c85a836774e73006454e44e2ad9f"
     },
     {
       "path": "textbooks/v13/f02.md",
-      "bytes": 18026,
-      "sha256": "471f023bbf22bc48b52edafb9392a2e8920030492277f661ebadc3a239da27c9"
+      "bytes": 17430,
+      "sha256": "131beeb79aa645590b1d7e33e1e0c3d0dbde4ebbc5b2cf62e37c49f32f00a477"
     },
     {
       "path": "textbooks/v13/n02-context-memory-prompt.md",
-      "bytes": 16744,
-      "sha256": "dea786898b29d16ca5239efadc9310863dc4256a66de0b858fa167016c696b37"
+      "bytes": 16196,
+      "sha256": "b6195720d77cbfb7811d235a02de829ed7e2f7d1b8f4ce9cff68163ae6d8497a"
     },
     {
       "path": "textbooks/v13/c01-selection.md",
-      "bytes": 12641,
-      "sha256": "8c855a17b829681e0db27ee95b54a949eb631e8ef9477cd34aee2a9307ca0998"
+      "bytes": 12669,
+      "sha256": "0d215aaf677c2763f4942bc50f10467586154d2b01d28aa5e143e26670b0a361"
     },
     {
       "path": "textbooks/v13/c01-control-primer.md",
-      "bytes": 7049,
-      "sha256": "55dddd96e778f087146f3525fe1b05db2a046535041f37462c8ce5ac1b4e7b4d"
+      "bytes": 7001,
+      "sha256": "040377c00fbebfc582192d8253082f470c3f103026da431e16fa04a851dcba59"
     },
     {
       "path": "textbooks/v13/c02.md",
-      "bytes": 24154,
-      "sha256": "48a47e3ee721615b721764ffb7705ba4e40cd6cab9d13e6c95496a61c43e673a"
+      "bytes": 23211,
+      "sha256": "6ca79653c2e17df6a1dfdecbd9069ea9bd1bfbe96a3ba29d0b31fac9b6de3a27"
     },
     {
       "path": "textbooks/v13/c03.md",
-      "bytes": 26839,
-      "sha256": "34902340954f80327f119b3a42967b7632cfe11e6fbdc9da1c336f8776489699"
+      "bytes": 25878,
+      "sha256": "a47078c01e25b10a85d158242abdb99d2be03fd12924a37bf94608021be556da"
     },
     {
       "path": "textbooks/v13/n04-tools-mcp.md",
@@ -245,18 +245,18 @@
     },
     {
       "path": "textbooks/v13/e01.md",
-      "bytes": 33913,
-      "sha256": "952ddc1255f6ffd24db9f9c4fba7073f09f6bb047feef932e23c99e045651879"
+      "bytes": 33865,
+      "sha256": "6be197f4a6561c680401d64fc0d3c1d690901f6d105990dfaa9d59fdb998d405"
     },
     {
       "path": "textbooks/v13/c01-fixed-workflow.md",
-      "bytes": 15348,
-      "sha256": "d1be3357c6d9a5a4f450c155171b272edf36818a9500f90623aa127a0ad3edba"
+      "bytes": 15300,
+      "sha256": "55eea1525d37637e7849ade9451665abe93c1f0f906c68967bafd098c4896bfc"
     },
     {
       "path": "textbooks/v13/c01-control-loop.md",
-      "bytes": 88055,
-      "sha256": "4daae1bd5f037129b84c927c7c69d7df9993886d1fda2e6cdc736c4a0bd31fc4"
+      "bytes": 49732,
+      "sha256": "351303c802ec3bb5bc1df7d586f7bfd67a15e7adbd52c1cbbbf6405c7922fd2b"
     },
     {
       "path": "textbooks/v13/n03-planning-reflection.md",
@@ -270,18 +270,18 @@
     },
     {
       "path": "textbooks/v13/n06-graph-orchestration.md",
-      "bytes": 12738,
-      "sha256": "2a8559e7993f760a61a958779460d30252b9cd9d39e9ff609a644e79471f2d1c"
+      "bytes": 12734,
+      "sha256": "cc0c17f740cc88e4168f639f65d306bdc34f28ca2db1898a06c2f3b5b216179a"
     },
     {
       "path": "textbooks/v13/n07-multiagent-a2a.md",
-      "bytes": 13292,
-      "sha256": "6cb245af3c740a3c9c2f888de96b843242bf3c415ae6bc1d3620ae7d9eda425c"
+      "bytes": 13287,
+      "sha256": "58083f4c61986d2dd53049f70248f406a4933fbd896ac77e86d0a7bdbf7cce66"
     },
     {
       "path": "textbooks/v13/e02.md",
-      "bytes": 26572,
-      "sha256": "db81dcde17cfc56e8232f3087ba01af7de7e473bdf937306e560a0a23da3bdeb"
+      "bytes": 26519,
+      "sha256": "58c2aa3c4f848cad33a04d424bd638967f5795a62a5f52658a54a35e9853e52a"
     },
     {
       "path": "textbooks/v13/n10-evaluation-projects.md",
@@ -290,13 +290,13 @@
     },
     {
       "path": "textbooks/v13/p01-mvp.md",
-      "bytes": 12094,
-      "sha256": "472be4f44db9d5900542dfa8602ab430e2dc2b8f286679381bf913642da2e620"
+      "bytes": 12046,
+      "sha256": "9a0388bbee78c36a471d293d17a56b7644742955220c481a497d8263974d8214"
     },
     {
       "path": "textbooks/v13/e03.md",
-      "bytes": 26844,
-      "sha256": "fc4e1b5c8d3dc9847f712fb6cf75be0e7ed9d417087696bf69f2c29de1e4ef1e"
+      "bytes": 26796,
+      "sha256": "9f95f2337a02173d263daab2fc9134b105c8efa019f62228e278428aa357f746"
     },
     {
       "path": "textbooks/v13/n08-sandbox-security.md",
@@ -305,13 +305,13 @@
     },
     {
       "path": "textbooks/v13/e04.md",
-      "bytes": 22394,
-      "sha256": "af717323a8f93ee2746c4c1cad0b627b20b8995ea8a1af8ce30cca556d551711"
+      "bytes": 22346,
+      "sha256": "b5b139ecfa8caeb9b116406d1114b92c30e0b3673b0bf0534bd13d0f29e368e7"
     },
     {
       "path": "textbooks/v13/e05.md",
-      "bytes": 22458,
-      "sha256": "861412ed0c03040ad4e444062bd406295702599d6585a2b45203db00a6d6498b"
+      "bytes": 22410,
+      "sha256": "43af1d95cc9555160804d012838e93aae5cde8ce788d9feb1f0f9f9d986ef562"
     },
     {
       "path": "textbooks/v13/n09-runtime-delivery.md",
@@ -320,8 +320,8 @@
     },
     {
       "path": "textbooks/v13/p02.md",
-      "bytes": 22109,
-      "sha256": "746f7ab77fbaf4776e0df8eabd015194336f9ff957a60a38901718fc78a8fe66"
+      "bytes": 22061,
+      "sha256": "5a438e3f4576cdf15075fc7c8c7e1c4870232eb14f9c1ce97d1a30fa5806d566"
     },
     {
       "path": "textbooks/v13/assets/00-learning-route-demand-control-evidence-narrow-v02.svg",
@@ -424,16 +424,6 @@
       "sha256": "fad2379ad07797ad046ed507b63f4efc9bb2db24d1d1a6347ca1f062a5a6e718"
     },
     {
-      "path": "textbooks/v13/assets/agent-runtime-loop.dot",
-      "bytes": 2125,
-      "sha256": "7fcde3319a3f611f3909472530a29e73480ab5a8049b65313be53278e312ee5b"
-    },
-    {
-      "path": "dist/content-v13-assets/agent-runtime-loop.dot",
-      "bytes": 2125,
-      "sha256": "7fcde3319a3f611f3909472530a29e73480ab5a8049b65313be53278e312ee5b"
-    },
-    {
       "path": "textbooks/v13/assets/agent-runtime-loop.png",
       "bytes": 386511,
       "sha256": "9497f77fa43566eb621549175ee55870a02b50e8ebd3144405e820d0ac2c7106"
@@ -454,6 +444,56 @@
       "sha256": "e89fefde160c05f307c01f826575eb37ea2d1f0e45dbb40b0708b74c5ec86ba1"
     },
     {
+      "path": "textbooks/v13/assets/c01-control-loop-crash-window-compare-narrow-v01.svg",
+      "bytes": 5297,
+      "sha256": "b51df20210c4deec7c1141bab186440bf55961b4c88211074265ab1ff4806125"
+    },
+    {
+      "path": "dist/content-v13-assets/c01-control-loop-crash-window-compare-narrow-v01.svg",
+      "bytes": 5297,
+      "sha256": "b51df20210c4deec7c1141bab186440bf55961b4c88211074265ab1ff4806125"
+    },
+    {
+      "path": "textbooks/v13/assets/c01-control-loop-crash-window-compare-v01.svg",
+      "bytes": 7681,
+      "sha256": "fcf25632b560b44be4e92d8806da8989fd1822874ddd8f38be782b9f6bf3c75f"
+    },
+    {
+      "path": "dist/content-v13-assets/c01-control-loop-crash-window-compare-v01.svg",
+      "bytes": 7681,
+      "sha256": "fcf25632b560b44be4e92d8806da8989fd1822874ddd8f38be782b9f6bf3c75f"
+    },
+    {
+      "path": "textbooks/v13/assets/c01-control-loop-four-commit-steps-narrow-v01.svg",
+      "bytes": 6762,
+      "sha256": "36ffb1a5af75e945338a914e28ce90d6e41bfff24105dc05ef5dd793bdb05f84"
+    },
+    {
+      "path": "dist/content-v13-assets/c01-control-loop-four-commit-steps-narrow-v01.svg",
+      "bytes": 6762,
+      "sha256": "36ffb1a5af75e945338a914e28ce90d6e41bfff24105dc05ef5dd793bdb05f84"
+    },
+    {
+      "path": "textbooks/v13/assets/c01-control-loop-four-commit-swimlane-v01.svg",
+      "bytes": 7707,
+      "sha256": "e2f7692a2391241134ba99ce177f67bcaa914fa1090be8c564c46a4f89c2deda"
+    },
+    {
+      "path": "dist/content-v13-assets/c01-control-loop-four-commit-swimlane-v01.svg",
+      "bytes": 7707,
+      "sha256": "e2f7692a2391241134ba99ce177f67bcaa914fa1090be8c564c46a4f89c2deda"
+    },
+    {
+      "path": "textbooks/v13/assets/c01-control-loop-ledger-recovery-card-narrow-v02.svg",
+      "bytes": 6324,
+      "sha256": "a7e4c77cd15d58ce6b22f76d768a31452733eae1d67eb0cf5450737e057c62a9"
+    },
+    {
+      "path": "dist/content-v13-assets/c01-control-loop-ledger-recovery-card-narrow-v02.svg",
+      "bytes": 6324,
+      "sha256": "a7e4c77cd15d58ce6b22f76d768a31452733eae1d67eb0cf5450737e057c62a9"
+    },
+    {
       "path": "textbooks/v13/assets/c01-control-loop-ledger-recovery-card-v01.svg",
       "bytes": 3409,
       "sha256": "02d15fe2fe7ad3291621fffb6dcaf144edb91b8bd41facdd84e8b9167755688a"
@@ -464,6 +504,46 @@
       "sha256": "02d15fe2fe7ad3291621fffb6dcaf144edb91b8bd41facdd84e8b9167755688a"
     },
     {
+      "path": "textbooks/v13/assets/c01-control-loop-ledger-recovery-card-v02.svg",
+      "bytes": 7770,
+      "sha256": "4cf1f35f5eab46c39b40fedac62ce8685fdfd9d5f7c6f1692fe25968ae1e7f6c"
+    },
+    {
+      "path": "dist/content-v13-assets/c01-control-loop-ledger-recovery-card-v02.svg",
+      "bytes": 7770,
+      "sha256": "4cf1f35f5eab46c39b40fedac62ce8685fdfd9d5f7c6f1692fe25968ae1e7f6c"
+    },
+    {
+      "path": "textbooks/v13/assets/c01-control-loop-mainloop-priority-narrow-v01.svg",
+      "bytes": 10799,
+      "sha256": "3a5a9e68f606f77fc1e015da02cd0e83e97b71dc89c08e8eed2138fc0110ca02"
+    },
+    {
+      "path": "dist/content-v13-assets/c01-control-loop-mainloop-priority-narrow-v01.svg",
+      "bytes": 10799,
+      "sha256": "3a5a9e68f606f77fc1e015da02cd0e83e97b71dc89c08e8eed2138fc0110ca02"
+    },
+    {
+      "path": "textbooks/v13/assets/c01-control-loop-mainloop-priority-v01.svg",
+      "bytes": 10968,
+      "sha256": "a6b4e278cca420e182a0b3f72b19798bd473ff270af7f1515c76dcc0c1b1ef18"
+    },
+    {
+      "path": "dist/content-v13-assets/c01-control-loop-mainloop-priority-v01.svg",
+      "bytes": 10968,
+      "sha256": "a6b4e278cca420e182a0b3f72b19798bd473ff270af7f1515c76dcc0c1b1ef18"
+    },
+    {
+      "path": "textbooks/v13/assets/c01-control-loop-observe-effect-map-narrow-v02.svg",
+      "bytes": 7383,
+      "sha256": "11d9356d4d973a03102eea978197acf995b47931eacba6b224da47608a8f49c5"
+    },
+    {
+      "path": "dist/content-v13-assets/c01-control-loop-observe-effect-map-narrow-v02.svg",
+      "bytes": 7383,
+      "sha256": "11d9356d4d973a03102eea978197acf995b47931eacba6b224da47608a8f49c5"
+    },
+    {
       "path": "textbooks/v13/assets/c01-control-loop-observe-effect-map-v01.svg",
       "bytes": 5278,
       "sha256": "877fd916de96e39322f48e5bf59adbf5c764a143ebcc429e16fab8c8f4ef4c0e"
@@ -472,6 +552,36 @@
       "path": "dist/content-v13-assets/c01-control-loop-observe-effect-map-v01.svg",
       "bytes": 5278,
       "sha256": "877fd916de96e39322f48e5bf59adbf5c764a143ebcc429e16fab8c8f4ef4c0e"
+    },
+    {
+      "path": "textbooks/v13/assets/c01-control-loop-observe-effect-map-v02.svg",
+      "bytes": 8803,
+      "sha256": "d5cad5d3e7fe1685e01bb385a6720306202c9e9038cea0a98fa737351ad0af7a"
+    },
+    {
+      "path": "dist/content-v13-assets/c01-control-loop-observe-effect-map-v02.svg",
+      "bytes": 8803,
+      "sha256": "d5cad5d3e7fe1685e01bb385a6720306202c9e9038cea0a98fa737351ad0af7a"
+    },
+    {
+      "path": "textbooks/v13/assets/c01-control-loop-recovery-six-branch-narrow-v01.svg",
+      "bytes": 10445,
+      "sha256": "4e47fe0d32bcf616b2659ec3133dfaf1d36ece126370dc433ec469e19c488c63"
+    },
+    {
+      "path": "dist/content-v13-assets/c01-control-loop-recovery-six-branch-narrow-v01.svg",
+      "bytes": 10445,
+      "sha256": "4e47fe0d32bcf616b2659ec3133dfaf1d36ece126370dc433ec469e19c488c63"
+    },
+    {
+      "path": "textbooks/v13/assets/c01-control-loop-recovery-six-branch-v01.svg",
+      "bytes": 10712,
+      "sha256": "db2b26eea2a2d2e0b1f228ebd910996b6dc03373ffc0b733601a407abc019917"
+    },
+    {
+      "path": "dist/content-v13-assets/c01-control-loop-recovery-six-branch-v01.svg",
+      "bytes": 10712,
+      "sha256": "db2b26eea2a2d2e0b1f228ebd910996b6dc03373ffc0b733601a407abc019917"
     },
     {
       "path": "textbooks/v13/assets/c01-control-primer-overview-narrow-v02.svg",
@@ -1150,23 +1260,23 @@
     },
     {
       "path": "dist/content-v13-references/textbook-README.md",
-      "bytes": 8418,
-      "sha256": "4208df0fc4292e70fbcbd0241d2c93324195e655eab20957b29adc9e00ccdc9f"
+      "bytes": 7787,
+      "sha256": "c47e6f50bcb76bfa4e3d78548fac222deccc4fddfb4cc57adc1f03d6fd9f55dd"
     },
     {
       "path": "dist/content-v13-references/agent-engineering-textbook.md",
-      "bytes": 588659,
-      "sha256": "10fbf9a57b6a5c26ae0d096c40646c9b869e460def557e1b34538b8408ff15f4"
+      "bytes": 541489,
+      "sha256": "60dc6b9bc9716a0e37ffb9745d47bba11650dfc577c1393f54b0f518027d0fff"
     },
     {
       "path": "textbooks/v13/examples/README.md",
-      "bytes": 308,
-      "sha256": "36ab07fe2ec6012b717fed5d6c4c3e2dd333e2ea14f738df2c1f25a4175e494e"
+      "bytes": 299,
+      "sha256": "a6c6c864a8b889b07e1e40004b371d5237b0b68181253a48a3a828e202269ce7"
     },
     {
       "path": "dist/content-v13-references/examples-README.md",
-      "bytes": 308,
-      "sha256": "36ab07fe2ec6012b717fed5d6c4c3e2dd333e2ea14f738df2c1f25a4175e494e"
+      "bytes": 299,
+      "sha256": "a6c6c864a8b889b07e1e40004b371d5237b0b68181253a48a3a828e202269ce7"
     },
     {
       "path": "textbooks/v13/examples/n01-runtime-boundaries.py",
